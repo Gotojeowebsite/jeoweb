@@ -1,11 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jeoweb</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Unblocked Games — Play Anywhere</title>
+	<link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <h1>The goal is too create a fire ass gaming website</h1>
+<body class="theme-dark">
+	<header class="topbar">
+		<div class="brand">⟡ Unblocked Games</div>
+		<div class="controls">
+			<button id="themeToggle" aria-label="Toggle theme">Light</button>
+		</div>
+	</header>
+
+	<nav class="tabs">
+		<button class="tab-button active" data-tab="games">Games</button>
+		<button class="tab-button" data-tab="proxies">Proxies</button>
+		<button class="tab-button" data-tab="folders">Folders</button>
+	</nav>
+
+	<main class="main">
+		<section id="panel-games" class="tab-panel active">
+			<div class="toolbar">
+				<input id="searchInput" placeholder="Search games..." />
+				<select id="categoryFilter">
+					<option value="">All</option>
+					<option value="action">Action</option>
+					<option value="puzzle">Puzzle</option>
+					<option value="strategy">Strategy</option>
+					<option value="sports">Sports</option>
+					<option value="folder">Folder</option>
+				</select>
+				<button id="refreshGames">Refresh</button>
+			</div>
+
+			<div id="gameGrid" class="game-grid">
+				<!-- populated by app.js -->
+			</div>
+		</section>
+
+		<section id="panel-proxies" class="tab-panel">
+			<div class="panel-inner">
+				<p class="muted">Proxies tab — add proxies here later.</p>
+				<!-- placeholders for future proxy UI -->
+			</div>
+		</section>
+
+		<section id="panel-folders" class="tab-panel">
+			<div class="panel-inner">
+				<p class="muted">Detected game folders:</p>
+				<ul id="folderList"></ul>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<span>© 2026 Unblocked Games</span>
+	</footer>
+
+	<!-- Play modal -->
+	<div id="playModal" class="modal hidden" aria-hidden="true">
+		<div class="modal-inner">
+			<button id="closeModal" class="modal-close" aria-label="Close">✕</button>
+			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+		</div>
+	</div>
+
+	<!-- dynamic loader + global error handlers -->
+	<script>
+		(function(){
+			function showOverlay(msg){
+				let el = document.getElementById('errorOverlay');
+				if (!el){
+					el = document.createElement('div');
+					el.id = 'errorOverlay';
+					el.style.cssText = [
+						'position:fixed',
+						'inset:16px',
+						'padding:16px',
+						'border-radius:12px',
+						'background:rgba(0,0,0,0.85)',
+						'color:#fff',
+						'font-family:system-ui,Segoe UI,Roboto',
+						'z-index:99999',
+						'overflow:auto',
+						'max-height:60vh'
+					].join(';');
+					document.body.appendChild(el);
+				}
+				el.textContent = msg;
+				el.style.display = 'block';
+			}
+
+			window.addEventListener('error', function(e){
+				console.error(e.error || e.message);
+				showOverlay('Error: ' + (e.error?.message || e.message));
+			});
+
+			window.addEventListener('unhandledrejection', function(e){
+				console.error('Unhandled rejection', e.reason);
+				showOverlay('Unhandled rejection: ' + (e.reason?.message || String(e.reason)));
+			});
+
+			function loadScript(src){
+				return new Promise(function(resolve, reject){
+					const s = document.createElement('script');
+					s.src = src;
+					s.defer = true;
+					s.onload = () => resolve(src);
+					s.onerror = () => reject(new Error('Failed to load ' + src));
+					document.body.appendChild(s);
+				});
+			}
+
+			// Try to load games.js then app.js; surface errors clearly.
+			(async function start(){
+				try{
+					await loadScript('games.js');
+					// quick check for generated list so server-side scan issues surface early
+					try {
+						const r = await fetch('games_list.json?ts=' + Date.now(), {cache:'no-store'});
+						if (!r.ok) console.warn('games_list.json not available (status ' + r.status + ')');
+					} catch (e) {
+						console.warn('games_list.json check failed', e);
+					}
+					await loadScript('app.js');
+				} catch (err) {
+					console.error(err);
+					showOverlay(err.message || String(err));
+				}
+			})();
+
+			// ESC closes modal if open (useful while debugging)
+			document.addEventListener('keydown', function(e){
+				if (e.key === 'Escape'){
+					const modal = document.getElementById('playModal');
+					if (modal && !modal.classList.contains('hidden')){
+						const close = document.getElementById('closeModal');
+						if (close) close.click();
+					}
+				}
+			});
+
+			// Keep theme toggle label usable if app.js didn't initialize
+			const themeBtn = document.getElementById('themeToggle');
+			if (themeBtn){
+				const update = () => themeBtn.textContent = document.body.classList.contains('theme-light') ? 'Dark' : 'Light';
+				update();
+				themeBtn.addEventListener('click', update);
+			}
+		})();
+	</script>
 </body>
 </html>
