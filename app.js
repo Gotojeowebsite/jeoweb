@@ -3,10 +3,12 @@ class App {
 		this.staticGames = window.STATIC_GAMES || [];
 		this.generatedGames = [];
 		this.games = [];
+		this.homeworkItems = window.HOMEWORK_ITEMS || [];
 		this.initElements();
 		this.loadTheme();
 		this.bindUI();
 		this.loadGames();
+		this.renderHomework();
 	}
 
 	initElements() {
@@ -14,6 +16,7 @@ class App {
 		this.categoryFilter = document.getElementById('categoryFilter');
 		this.gameGrid = document.getElementById('gameGrid');
 		this.folderList = document.getElementById('folderList');
+		this.homeworkGrid = document.getElementById('homeworkGrid');
 		this.refreshBtn = document.getElementById('refreshGames');
 		this.themeToggle = document.getElementById('themeToggle');
 		this.playModal = document.getElementById('playModal');
@@ -152,8 +155,43 @@ class App {
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden','true');
 	}
+
+	renderHomework() {
+		if (!this.homeworkGrid) return;
+		this.homeworkGrid.innerHTML = '';
+		
+		if (this.homeworkItems.length === 0) {
+			this.homeworkGrid.innerHTML = `<div class="muted">No homework assignments available</div>`;
+			return;
+		}
+
+		this.homeworkItems.forEach(hw => {
+			const card = document.createElement('div');
+			card.className = 'game-card';
+			card.innerHTML = `
+				<div class="game-thumb">${hw.emoji}</div>
+				<div style="flex:1">
+					<div style="font-weight:700">${hw.title}</div>
+					<div class="muted" style="font-size:12px">${hw.subject}</div>
+					<div style="font-size:13px;margin-top:4px">${hw.description}</div>
+				</div>
+				<div style="margin-top:10px">
+					<button class="play-btn">Open</button>
+				</div>
+			`;
+			card.querySelector('.play-btn').addEventListener('click', (e)=> {
+				this.openPlayer(hw.url);
+			});
+			this.homeworkGrid.appendChild(card);
+		});
+	}
 }
 
-window.addEventListener('DOMContentLoaded', ()=> {
+// Initialize app immediately if DOM is ready, or wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+	window.addEventListener('DOMContentLoaded', ()=> {
+		window.app = new App();
+	});
+} else {
 	window.app = new App();
-});
+}

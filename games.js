@@ -57,6 +57,49 @@ const GAMES = [
     }
 ];
 
+const HOMEWORK = [
+	{
+		id: 1,
+		title: "Introduction to Web Development",
+		subject: "Computer Science",
+		emoji: "💻",
+		description: "Learn the basics of HTML, CSS, and JavaScript",
+		url: "/homework/webdev-intro"
+	},
+	{
+		id: 2,
+		title: "Shakespeare's Hamlet",
+		subject: "Literature",
+		emoji: "📚",
+		description: "Complete reading of Hamlet with analysis questions",
+		url: "/homework/hamlet"
+	},
+	{
+		id: 3,
+		title: "Algebra II Practice",
+		subject: "Mathematics",
+		emoji: "📐",
+		description: "Quadratic equations and polynomial functions",
+		url: "/homework/algebra2"
+	},
+	{
+		id: 4,
+		title: "The Solar System",
+		subject: "Science",
+		emoji: "🌍",
+		description: "Study guide for planetary science unit",
+		url: "/homework/solar-system"
+	},
+	{
+		id: 5,
+		title: "World War II History",
+		subject: "History",
+		emoji: "📜",
+		description: "Timeline and key events of WWII",
+		url: "/homework/wwii"
+	}
+];
+
 window.STATIC_GAMES = [
 	{
 		id: 1,
@@ -115,3 +158,5 @@ window.STATIC_GAMES = [
 		url: "/games/snake/"
 	}
 ];
+
+window.HOMEWORK_ITEMS = HOMEWORK;
