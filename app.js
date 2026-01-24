@@ -116,7 +116,7 @@ class App {
 					<div class="muted" style="font-size:12px">${g.category}</div>
 				</div>
 				<div style="margin-top:10px">
-					<button class="play-btn">Play</button>
+					<button class="play-btn">Open</button>
 				</div>
 			`;
 			card.querySelector('.play-btn').addEventListener('click', (e)=> {
