@@ -2,11 +2,14 @@ class App {
 	constructor() {
 		this.staticGames = window.STATIC_GAMES || [];
 		this.generatedGames = [];
+		this.generatedAssets = [];
 		this.games = [];
+		this.homeworkItems = window.HOMEWORK_ITEMS || [];
 		this.initElements();
 		this.loadTheme();
 		this.bindUI();
 		this.loadGames();
+		this.renderHomework();
 	}
 
 	initElements() {
@@ -14,6 +17,7 @@ class App {
 		this.categoryFilter = document.getElementById('categoryFilter');
 		this.gameGrid = document.getElementById('gameGrid');
 		this.folderList = document.getElementById('folderList');
+		this.homeworkGrid = document.getElementById('homeworkGrid');
 		this.refreshBtn = document.getElementById('refreshGames');
 		this.themeToggle = document.getElementById('themeToggle');
 		this.playModal = document.getElementById('playModal');
@@ -71,6 +75,19 @@ class App {
 		} catch (err) {
 			this.generatedGames = [];
 		}
+		
+		// try to fetch assets list
+		try {
+			const res = await fetch('assets_list.json?ts=' + Date.now(), {cache: 'no-store'});
+			if (res.ok) {
+				this.generatedAssets = await res.json();
+			} else {
+				this.generatedAssets = [];
+			}
+		} catch (err) {
+			this.generatedAssets = [];
+		}
+		
 		this.mergeGames();
 		this.renderGames();
 		this.renderFolders();
@@ -78,7 +95,7 @@ class App {
 
 	mergeGames() {
 		const map = new Map();
-		[...this.staticGames, ...this.generatedGames].forEach(g=>{
+		[...this.staticGames, ...this.generatedGames, ...this.generatedAssets].forEach(g=>{
 			const key = (g.url || g.path || g.name).replace(/\/+$/, '');
 			if (!map.has(key)) {
 				map.set(key, {
@@ -113,7 +130,7 @@ class App {
 					<div class="muted" style="font-size:12px">${g.category}</div>
 				</div>
 				<div style="margin-top:10px">
-					<button class="play-btn">Play</button>
+					<button class="play-btn">Open</button>
 				</div>
 			`;
 			card.querySelector('.play-btn').addEventListener('click', (e)=> {
@@ -125,14 +142,15 @@ class App {
 
 	renderFolders() {
 		this.folderList.innerHTML = '';
-		const folders = this.generatedGames.map(g=>({name:g.name,url:g.url}));
+		const folders = [...this.generatedGames, ...this.generatedAssets].map(g=>({name:g.name,url:g.url,type:g.category}));
 		if (folders.length === 0) {
-			this.folderList.innerHTML = '<li class="muted">No folders detected. Run the scan script on the server to generate games_list.json.</li>';
+			this.folderList.innerHTML = '<li class="muted">No folders detected. Run the scan script on the server to generate games_list.json and assets_list.json.</li>';
 			return;
 		}
 		folders.forEach(f=>{
 			const li = document.createElement('li');
-			li.innerHTML = `<a href="#" data-url="${f.url}">${f.name}</a>`;
+			const label = f.type === 'asset' ? '📦' : '🗂️';
+			li.innerHTML = `<a href="#" data-url="${f.url}">${label} ${f.name}</a>`;
 			li.querySelector('a').addEventListener('click', (e)=>{ e.preventDefault(); this.openPlayer(f.url); });
 			this.folderList.appendChild(li);
 		});
@@ -152,8 +170,43 @@ class App {
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden','true');
 	}
+
+	renderHomework() {
+		if (!this.homeworkGrid) return;
+		this.homeworkGrid.innerHTML = '';
+		
+		if (this.homeworkItems.length === 0) {
+			this.homeworkGrid.innerHTML = `<div class="muted">No homework assignments available</div>`;
+			return;
+		}
+
+		this.homeworkItems.forEach(hw => {
+			const card = document.createElement('div');
+			card.className = 'game-card';
+			card.innerHTML = `
+				<div class="game-thumb">${hw.emoji}</div>
+				<div style="flex:1">
+					<div style="font-weight:700">${hw.title}</div>
+					<div class="muted" style="font-size:12px">${hw.subject}</div>
+					<div style="font-size:13px;margin-top:4px">${hw.description}</div>
+				</div>
+				<div style="margin-top:10px">
+					<button class="play-btn">Open</button>
+				</div>
+			`;
+			card.querySelector('.play-btn').addEventListener('click', (e)=> {
+				this.openPlayer(hw.url);
+			});
+			this.homeworkGrid.appendChild(card);
+		});
+	}
 }
 
-window.addEventListener('DOMContentLoaded', ()=> {
+// Initialize app immediately if DOM is ready, or wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+	window.addEventListener('DOMContentLoaded', ()=> {
+		window.app = new App();
+	});
+} else {
 	window.app = new App();
-});
+}
