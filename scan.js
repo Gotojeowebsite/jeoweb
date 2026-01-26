@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = __dirname;
 const ASSETS_DIR = path.join(ROOT, 'Assets');
 const OUTFILE = path.join(ROOT, 'games_list.json');
 
@@ -22,7 +22,7 @@ function scan() {
 					name: it.name,
 					url: `Assets/${it.name}/`,
 					category: 'action', // Default category, can be improved
-					image: logoPath ? logoPath.replace(/\\/g, '/') : 'https://via.placeholder.com/210x120.png?text=No+Logo'
+					image: logoPath || 'https://via.placeholder.com/210x120.png?text=No+Logo'
 				});
 			}
 		}
@@ -32,4 +32,3 @@ function scan() {
 }
 
 scan();
-

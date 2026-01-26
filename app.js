@@ -84,7 +84,7 @@ class App {
 				map.set(key, {
 					name: g.name || g.folder || key.split('/').pop(),
 					category: g.category || g.type || (g.folder ? 'folder' : 'unknown'),
-					emoji: g.emoji || '🕹️',
+					image: g.image || 'https://via.placeholder.com/210x120.png?text=No+Image',
 					url: g.url || g.path || key
 				});
 			}
@@ -107,12 +107,10 @@ class App {
 			const card = document.createElement('div');
 			card.className = 'game-card';
 			card.innerHTML = `
-				<div class="game-thumb">${g.emoji}</div>
-				<div style="flex:1">
-					<div style="font-weight:700">${g.name}</div>
-					<div class="muted" style="font-size:12px">${g.category}</div>
-				</div>
-				<div style="margin-top:10px">
+				<div class="game-thumb" style="background-image: url('${g.image}')"></div>
+				<div class="game-card-content">
+					<div class="game-card-title">${g.name}</div>
+					<div class="game-card-category">${g.category}</div>
 					<button class="play-btn">Play</button>
 				</div>
 			`;

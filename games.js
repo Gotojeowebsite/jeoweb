@@ -1,117 +1,38 @@
-const GAMES = [
-    {
-        id: 1,
-        name: "Pac-Man",
-        category: "action",
-        emoji: "👻",
-        url: "/games/pacman"
-    },
-    {
-        id: 2,
-        name: "2048",
-        category: "puzzle",
-        emoji: "🔢",
-        url: "/games/2048"
-    },
-    {
-        id: 3,
-        name: "Tetris",
-        category: "puzzle",
-        emoji: "⬜",
-        url: "/games/tetris"
-    },
-    {
-        id: 4,
-        name: "Chess",
-        category: "strategy",
-        emoji: "♞",
-        url: "/games/chess"
-    },
-    {
-        id: 5,
-        name: "Flappy Bird",
-        category: "action",
-        emoji: "🐦",
-        url: "/games/flappybird"
-    },
-    {
-        id: 6,
-        name: "Sudoku",
-        category: "puzzle",
-        emoji: "🧩",
-        url: "/games/sudoku"
-    },
-    {
-        id: 7,
-        name: "Basketball",
-        category: "sports",
-        emoji: "🏀",
-        url: "/games/basketball"
-    },
-    {
-        id: 8,
-        name: "Snake",
-        category: "action",
-        emoji: "🐍",
-        url: "/games/snake"
-    }
-];
-
 window.STATIC_GAMES = [
 	{
-		id: 1,
-		name: "Pac-Man",
-		category: "action",
-		emoji: "👻",
-		url: "/games/pacman/"
+		"name": "0v0",
+		"url": "Assets/0v0/",
+		"category": "action",
+		"image": "Assets/0v0/logo.jpeg"
 	},
 	{
-		id: 2,
-		name: "2048",
-		category: "puzzle",
-		emoji: "🔢",
-		url: "/games/2048/"
+		"name": "1",
+		"url": "Assets/1/",
+		"category": "action",
+		"image": "https://via.placeholder.com/210x120.png?text=No+Logo"
 	},
 	{
-		id: 3,
-		name: "Tetris",
-		category: "puzzle",
-		emoji: "⬜",
-		url: "/games/tetris/"
+		"name": "1on1Basketball",
+		"url": "Assets/1on1Basketball/",
+		"category": "action",
+		"image": "https://via.placeholder.com/210x120.png?text=No+Logo"
 	},
 	{
-		id: 4,
-		name: "Chess",
-		category: "strategy",
-		emoji: "♞",
-		url: "/games/chess/"
+		"name": "1on1Hokey",
+		"url": "Assets/1on1Hokey/",
+		"category": "action",
+		"image": "https://via.placeholder.com/210x120.png?text=No+Logo"
 	},
 	{
-		id: 5,
-		name: "Flappy Bird",
-		category: "action",
-		emoji: "🐦",
-		url: "/games/flappybird/"
+		"name": "1on1soccer",
+		"url": "Assets/1on1soccer/",
+		"category": "action",
+		"image": "https://via.placeholder.com/210x120.png?text=No+Logo"
 	},
 	{
-		id: 6,
-		name: "Sudoku",
-		category: "puzzle",
-		emoji: "🧩",
-		url: "/games/sudoku/"
-	},
-	{
-		id: 7,
-		name: "Basketball",
-		category: "sports",
-		emoji: "🏀",
-		url: "/games/basketball/"
-	},
-	{
-		id: 8,
-		name: "Snake",
-		category: "action",
-		emoji: "🐍",
-		url: "/games/snake/"
+		"name": "1on1SoccerBigHeads",
+		"url": "Assets/1on1SoccerBigHeads/",
+		"category": "action",
+		"image": "https://via.placeholder.com/210x120.png?text=No+Logo"
 	}
 ];
