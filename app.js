@@ -2,6 +2,7 @@ class App {
 	constructor() {
 		this.staticGames = window.STATIC_GAMES || [];
 		this.generatedGames = [];
+		this.generatedAssets = [];
 		this.games = [];
 		this.homeworkItems = window.HOMEWORK_ITEMS || [];
 		this.initElements();
@@ -74,6 +75,19 @@ class App {
 		} catch (err) {
 			this.generatedGames = [];
 		}
+		
+		// try to fetch assets list
+		try {
+			const res = await fetch('assets_list.json?ts=' + Date.now(), {cache: 'no-store'});
+			if (res.ok) {
+				this.generatedAssets = await res.json();
+			} else {
+				this.generatedAssets = [];
+			}
+		} catch (err) {
+			this.generatedAssets = [];
+		}
+		
 		this.mergeGames();
 		this.renderGames();
 		this.renderFolders();
@@ -81,7 +95,7 @@ class App {
 
 	mergeGames() {
 		const map = new Map();
-		[...this.staticGames, ...this.generatedGames].forEach(g=>{
+		[...this.staticGames, ...this.generatedGames, ...this.generatedAssets].forEach(g=>{
 			const key = (g.url || g.path || g.name).replace(/\/+$/, '');
 			if (!map.has(key)) {
 				map.set(key, {
@@ -128,14 +142,15 @@ class App {
 
 	renderFolders() {
 		this.folderList.innerHTML = '';
-		const folders = this.generatedGames.map(g=>({name:g.name,url:g.url}));
+		const folders = [...this.generatedGames, ...this.generatedAssets].map(g=>({name:g.name,url:g.url,type:g.category}));
 		if (folders.length === 0) {
-			this.folderList.innerHTML = '<li class="muted">No folders detected. Run the scan script on the server to generate games_list.json.</li>';
+			this.folderList.innerHTML = '<li class="muted">No folders detected. Run the scan script on the server to generate games_list.json and assets_list.json.</li>';
 			return;
 		}
 		folders.forEach(f=>{
 			const li = document.createElement('li');
-			li.innerHTML = `<a href="#" data-url="${f.url}">${f.name}</a>`;
+			const label = f.type === 'asset' ? '📦' : '🗂️';
+			li.innerHTML = `<a href="#" data-url="${f.url}">${label} ${f.name}</a>`;
 			li.querySelector('a').addEventListener('click', (e)=>{ e.preventDefault(); this.openPlayer(f.url); });
 			this.folderList.appendChild(li);
 		});
