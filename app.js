@@ -156,6 +156,11 @@ class App {
 	}
 }
 
-window.addEventListener('DOMContentLoaded', ()=> {
+// Initialize when DOM is ready or immediately if already loaded
+if (document.readyState === 'loading') {
+	window.addEventListener('DOMContentLoaded', ()=> {
+		window.app = new App();
+	});
+} else {
 	window.app = new App();
-});
+}
