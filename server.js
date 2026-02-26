@@ -52,12 +52,34 @@ const mimeTypes = {
 const server = http.createServer((req, res) => {
 	// Enable CORS
 	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 	res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
 	if (req.method === 'OPTIONS') {
 		res.writeHead(200);
 		res.end();
+		return;
+	}
+
+	// API endpoint to verify game existence
+	if (req.url === '/api/verify-games' && req.method === 'POST') {
+		let body = '';
+		req.on('data', chunk => body += chunk.toString());
+		req.on('end', () => {
+			try {
+				const games = JSON.parse(body);
+				const verified = games.filter(game => {
+					const gamePath = path.join(ROOT, game.url);
+					const indexPath = path.join(gamePath, 'index.html');
+					return fs.existsSync(indexPath);
+				});
+				res.writeHead(200, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify(verified));
+			} catch (err) {
+				res.writeHead(400, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify({ error: 'Invalid request' }));
+			}
+		});
 		return;
 	}
 

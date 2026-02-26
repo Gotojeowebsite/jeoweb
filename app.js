@@ -71,12 +71,12 @@ class App {
 		} catch (err) {
 			this.generatedGames = [];
 		}
-		this.mergeGames();
+		await this.mergeGames();
 		this.renderGames();
 		this.renderFolders();
 	}
 
-	mergeGames() {
+	async mergeGames() {
 		const map = new Map();
 		[...this.staticGames, ...this.generatedGames].forEach(g=>{
 			const key = (g.url || g.path || g.name).replace(/\/+$/, '');
@@ -89,7 +89,26 @@ class App {
 				});
 			}
 		});
-		this.games = Array.from(map.values());
+		const allGames = Array.from(map.values());
+		
+		// Verify games exist on server
+		try {
+			const res = await fetch('/api/verify-games', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(allGames)
+			});
+			if (res.ok) {
+				this.games = await res.json();
+			} else {
+				// Fallback to all games if verification fails
+				this.games = allGames;
+			}
+		} catch (err) {
+			console.warn('Game verification failed, showing all games:', err);
+			// Fallback to all games if verification fails
+			this.games = allGames;
+		}
 	}
 
 	renderGames() {
