@@ -4,16 +4,17 @@ const path = require('path');
 
 const ROOT = __dirname;
 const ASSETS_DIR = path.join(ROOT, 'Assets');
-const OUTFILE = path.join(ROOT, 'games_list.json');
 const PORT = process.env.PORT || 3000;
 
-// Scan function
-function scan() {
+// Store games in memory
+let cachedGames = [];
+
+// Scan function - returns games array
+function scanGames() {
 	const results = [];
 	if (!fs.existsSync(ASSETS_DIR)) {
 		console.error('Assets folder not found:', ASSETS_DIR);
-		fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
-		return;
+		return results;
 	}
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
 	for (const it of items) {
@@ -30,8 +31,13 @@ function scan() {
 			}
 		}
 	}
-	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
-	console.log(`[${new Date().toLocaleTimeString()}] Scanned Assets folder - found ${results.length} games`);
+	return results;
+}
+
+// Initial scan on startup
+function scan() {
+	cachedGames = scanGames();
+	console.log(`[${new Date().toLocaleTimeString()}] Scanned Assets folder - found ${cachedGames.length} games`);
 }
 
 // MIME types
@@ -50,39 +56,29 @@ const mimeTypes = {
 
 // Create HTTP server
 const server = http.createServer((req, res) => {
-	// Enable CORS
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-	res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-	if (req.method === 'OPTIONS') {
-		res.writeHead(200);
-		res.end();
-		return;
-	}
-
-	// API endpoint to verify game existence
-	if (req.url === '/api/verify-games' && req.method === 'POST') {
-		let body = '';
-		req.on('data', chunk => body += chunk.toString());
-		req.on('end', () => {
-			try {
-				const games = JSON.parse(body);
-				const verified = games.filter(game => {
-					const gamePath = path.join(ROOT, game.url);
-					const indexPath = path.join(gamePath, 'index.html');
-					return fs.existsSync(indexPath);
-				});
-				res.writeHead(200, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify(verified));
-			} catch (err) {
-				res.writeHead(400, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify({ error: 'Invalid request' }));
+	// Handle index.html specially - inject games list
+	if (req.url === '/' || req.url === '/index.html') {
+		fs.readFile(path.join(ROOT, 'index.html'), 'utf-8', (err, data) => {
+			if (err) {
+				res.writeHead(404, { 'Content-Type': 'text/html' });
+				res.end('<h1>404 - Not Found</h1>');
+				return;
 			}
+			// Re-scan games when serving the page
+			cachedGames = scanGames();
+			// Inject games list into the HTML
+			const gamesList = JSON.stringify(cachedGames);
+			const modifiedHtml = data.replace(
+				'</head>',
+				`<script>window.GAMES_LIST = ${gamesList};</script>\n</head>`
+			);
+			res.writeHead(200, { 'Content-Type': 'text/html' });
+			res.end(modifiedHtml);
 		});
 		return;
 	}
 
+	// For all other files, serve normally
 	let filePath = path.join(ROOT, req.url === '/' ? 'index.html' : req.url);
 	const ext = path.extname(filePath).toLowerCase();
 

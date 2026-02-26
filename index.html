@@ -3,63 +3,61 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Jeoweb</title>
+	<title>Jeo Unblocked Games</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body class="theme-dark">
+	<!-- Header -->
 	<header class="topbar">
-		<div class="brand">⟡ Unblocked Games</div>
-		<div class="controls">
-			<button id="themeToggle" aria-label="Toggle theme">Light</button>
+		<div class="header-left">
+			<div class="brand-section">
+				<div class="brand-icon">⚡</div>
+				<div class="brand-text">JEO</div>
+			</div>
+		</div>
+		<div class="header-right">
+			<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
 		</div>
 	</header>
 
-	<nav class="tabs">
-		<button class="tab-button active" data-tab="games">Games</button>
-		<button class="tab-button" data-tab="proxies">Proxies</button>
-		<button class="tab-button" data-tab="folders">Folders</button>
-	</nav>
-
+	<!-- Main Content -->
 	<main class="main">
-		<section id="panel-games" class="tab-panel active">
-			<div class="toolbar">
-				<input id="searchInput" placeholder="Search games..." />
-				<select id="categoryFilter">
-					<option value="">All</option>
-					<option value="action">Action</option>
-					<option value="puzzle">Puzzle</option>
-					<option value="strategy">Strategy</option>
-					<option value="sports">Sports</option>
-					<option value="folder">Folder</option>
-				</select>
-				<button id="refreshGames">Refresh</button>
-			</div>
+		<!-- Hero Section -->
+		<section class="hero">
+			<h1>Play Unlimited Games</h1>
+			<p>Access hundreds of unblocked games instantly</p>
+		</section>
 
+		<!-- Search & Filter -->
+		<section class="toolbar-section">
+			<div class="search-container">
+				<input id="searchInput" class="search-input" placeholder="🔍 Search games..." />
+			</div>
+			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
+		</section>
+
+		<!-- Games Grid -->
+		<section class="games-section">
 			<div id="gameGrid" class="game-grid">
 				<!-- populated by app.js -->
 			</div>
 		</section>
 
-		<section id="panel-proxies" class="tab-panel">
-			<div class="panel-inner">
-				<p class="muted">Proxies tab — add proxies here later.</p>
-				<!-- placeholders for future proxy UI -->
-			</div>
-		</section>
-
-		<section id="panel-folders" class="tab-panel">
-			<div class="panel-inner">
-				<p class="muted">Detected game folders:</p>
-				<ul id="folderList"></ul>
-			</div>
+		<!-- Folders Tab -->
+		<section class="folders-section">
+			<h2>Available Games</h2>
+			<ul id="folderList" class="folder-list">
+				<!-- populated by app.js -->
+			</ul>
 		</section>
 	</main>
 
+	<!-- Footer -->
 	<footer class="footer">
-		<span>© 2026 Unblocked Games</span>
+		<p>© 2026 Jeo Unblocked Games • Play Smart, Play Free</p>
 	</footer>
 
-	<!-- Play modal -->
+	<!-- Play Modal -->
 	<div id="playModal" class="modal hidden" aria-hidden="true">
 		<div class="modal-inner">
 			<button id="closeModal" class="modal-close" aria-label="Close">✕</button>
@@ -67,7 +65,7 @@
 		</div>
 	</div>
 
-	<!-- dynamic loader + global error handlers -->
+	<!-- Script Loader -->
 	<script>
 		(function(){
 			function showOverlay(msg){
@@ -78,14 +76,15 @@
 					el.style.cssText = [
 						'position:fixed',
 						'inset:16px',
-						'padding:16px',
-						'border-radius:12px',
-						'background:rgba(0,0,0,0.85)',
+						'padding:24px',
+						'border-radius:16px',
+						'background:rgba(0,0,0,0.95)',
 						'color:#fff',
 						'font-family:system-ui,Segoe UI,Roboto',
 						'z-index:99999',
 						'overflow:auto',
-						'max-height:60vh'
+						'max-height:60vh',
+						'border:1px solid rgba(255,255,255,0.1)'
 					].join(';');
 					document.body.appendChild(el);
 				}
@@ -114,17 +113,8 @@
 				});
 			}
 
-			// Try to load games.js then app.js; surface errors clearly.
 			(async function start(){
 				try{
-					await loadScript('games.js');
-					// quick check for generated list so server-side scan issues surface early
-					try {
-						const r = await fetch('games_list.json?ts=' + Date.now(), {cache:'no-store'});
-						if (!r.ok) console.warn('games_list.json not available (status ' + r.status + ')');
-					} catch (e) {
-						console.warn('games_list.json check failed', e);
-					}
 					await loadScript('app.js');
 				} catch (err) {
 					console.error(err);
@@ -132,7 +122,6 @@
 				}
 			})();
 
-			// ESC closes modal if open (useful while debugging)
 			document.addEventListener('keydown', function(e){
 				if (e.key === 'Escape'){
 					const modal = document.getElementById('playModal');
@@ -142,14 +131,6 @@
 					}
 				}
 			});
-
-			// Keep theme toggle label usable if app.js didn't initialize
-			const themeBtn = document.getElementById('themeToggle');
-			if (themeBtn){
-				const update = () => themeBtn.textContent = document.body.classList.contains('theme-light') ? 'Dark' : 'Light';
-				update();
-				themeBtn.addEventListener('click', update);
-			}
 		})();
 	</script>
 </body>
