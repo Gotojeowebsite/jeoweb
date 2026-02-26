@@ -137,9 +137,13 @@ class App {
 	}
 
 	openPlayer(url) {
-		// ensure index.html resolution: if url ends with '/', keep it; else use as-is
+		// ensure index.html resolution: if url ends with '/', append index.html
 		let target = url;
-		if (target.endsWith('/')) target = target;
+		if (target.endsWith('/')) {
+			target = target + 'index.html';
+		} else if (!target.includes('.html') && !target.includes('.swf')) {
+			target = target + '/index.html';
+		}
 		this.gameFrame.src = target;
 		this.playModal.classList.remove('hidden');
 		this.playModal.setAttribute('aria-hidden','false');
