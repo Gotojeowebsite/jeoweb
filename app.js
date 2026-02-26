@@ -31,11 +31,25 @@ class App {
 	}
 
 	async resolveGames() {
+		// Try games_list.json first (works on GitHub Pages and local)
+		try {
+			const response = await fetch('games_list.json', { cache: 'no-store' });
+			if (response.ok) {
+				const data = await response.json();
+				if (Array.isArray(data) && data.length > 0) {
+					return data;
+				}
+			}
+		} catch (error) {
+			console.warn('Could not load games_list.json', error);
+		}
+
+		// Fallback: try server API (only works when server.js is running locally)
 		try {
 			const apiResponse = await fetch('/api/games', { cache: 'no-store' });
 			if (apiResponse.ok) {
 				const apiData = await apiResponse.json();
-				if (Array.isArray(apiData)) {
+				if (Array.isArray(apiData) && apiData.length > 0) {
 					return apiData;
 				}
 			}
