@@ -1,14 +1,49 @@
 class App {
 	constructor() {
-		// Games list is injected into the HTML by the server
-		this.games = window.GAMES_LIST || [];
-		console.log('Games loaded:', this.games);
+		this.games = [];
+		this.autoRefreshTimer = null;
 		
 		this.initElements();
 		this.loadTheme();
 		this.bindUI();
+		this.bootstrap();
+	}
+
+	async bootstrap() {
+		await this.reloadGames();
+		this.startAutoRefresh();
+	}
+
+	async reloadGames() {
+		this.games = await this.resolveGames();
+		console.log('Games loaded:', this.games.length);
 		this.renderGames();
 		this.renderFolders();
+	}
+
+	startAutoRefresh() {
+		if (this.autoRefreshTimer) {
+			clearInterval(this.autoRefreshTimer);
+		}
+		this.autoRefreshTimer = setInterval(() => {
+			this.reloadGames();
+		}, 10000);
+	}
+
+	async resolveGames() {
+		try {
+			const apiResponse = await fetch('/api/games', { cache: 'no-store' });
+			if (apiResponse.ok) {
+				const apiData = await apiResponse.json();
+				if (Array.isArray(apiData)) {
+					return apiData;
+				}
+			}
+		} catch (error) {
+			console.warn('Could not load /api/games', error);
+		}
+
+		return [];
 	}
 
 	initElements() {
@@ -53,8 +88,7 @@ class App {
 	}
 
 	refreshGames() {
-		// Reload the page to get updated games list
-		location.reload();
+		this.reloadGames();
 	}
 
 	renderGames() {

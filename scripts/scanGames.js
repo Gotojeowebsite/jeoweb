@@ -16,13 +16,14 @@ function scan() {
 	for (const it of items) {
 		if (it.isDirectory()) {
 			const idx = path.join(ASSETS_DIR, it.name, 'index.html');
-			if (fs.existsSync(idx)) {
-                const logoPath = ['logo.jpeg', 'logo.jpg', 'logo.png'].map(logo => path.join('Assets', it.name, logo)).find(logo => fs.existsSync(path.join(ROOT, logo)));
+			const logoCandidates = ['logo.jpeg', 'logo.jpg', 'logo.png'];
+			const logoFile = logoCandidates.find(file => fs.existsSync(path.join(ASSETS_DIR, it.name, file)));
+			if (fs.existsSync(idx) && logoFile) {
 				results.push({
 					name: it.name,
 					url: `Assets/${it.name}/`,
 					category: 'action', // Default category, can be improved
-					image: logoPath ? logoPath.replace(/\\/g, '/') : 'https://via.placeholder.com/210x120.png?text=No+Logo'
+					image: `Assets/${it.name}/${logoFile}`
 				});
 			}
 		}

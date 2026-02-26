@@ -20,13 +20,14 @@ function scanGames() {
 	for (const it of items) {
 		if (it.isDirectory()) {
 			const idx = path.join(ASSETS_DIR, it.name, 'index.html');
-			if (fs.existsSync(idx)) {
-                const logoPath = ['logo.jpeg', 'logo.jpg', 'logo.png'].map(logo => path.join('Assets', it.name, logo)).find(logo => fs.existsSync(path.join(ROOT, logo)));
+			const logoCandidates = ['logo.jpeg', 'logo.jpg', 'logo.png'];
+			const logoFile = logoCandidates.find(file => fs.existsSync(path.join(ASSETS_DIR, it.name, file)));
+			if (fs.existsSync(idx) && logoFile) {
 				results.push({
 					name: it.name,
 					url: `Assets/${it.name}/`,
 					category: 'action',
-					image: logoPath || 'https://via.placeholder.com/210x120.png?text=No+Logo'
+					image: `Assets/${it.name}/${logoFile}`
 				});
 			}
 		}
@@ -56,6 +57,19 @@ const mimeTypes = {
 
 // Create HTTP server
 const server = http.createServer((req, res) => {
+	if (req.url === '/api/games') {
+		const games = scanGames();
+		cachedGames = games;
+		res.writeHead(200, {
+			'Content-Type': 'application/json',
+			'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+			'Pragma': 'no-cache',
+			'Expires': '0'
+		});
+		res.end(JSON.stringify(games));
+		return;
+	}
+
 	// Handle index.html specially - inject games list
 	if (req.url === '/' || req.url === '/index.html') {
 		fs.readFile(path.join(ROOT, 'index.html'), 'utf-8', (err, data) => {
@@ -72,7 +86,12 @@ const server = http.createServer((req, res) => {
 				'</head>',
 				`<script>window.GAMES_LIST = ${gamesList};</script>\n</head>`
 			);
-			res.writeHead(200, { 'Content-Type': 'text/html' });
+			res.writeHead(200, {
+				'Content-Type': 'text/html',
+				'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+				'Pragma': 'no-cache',
+				'Expires': '0'
+			});
 			res.end(modifiedHtml);
 		});
 		return;
