@@ -8,27 +8,43 @@ const OUTFILE = path.join(ROOT, 'games_list.json');
 // Image extensions to look for (priority order)
 const IMAGE_EXTS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico'];
 
-// Find the best image in a game folder
+// Recursively collect all image files from a folder and its subfolders
+function collectImages(dir, baseDir) {
+	const results = [];
+	try {
+		const entries = fs.readdirSync(dir, { withFileTypes: true });
+		for (const entry of entries) {
+			const fullPath = path.join(dir, entry.name);
+			if (entry.isDirectory()) {
+				results.push(...collectImages(fullPath, baseDir));
+			} else if (IMAGE_EXTS.includes(path.extname(entry.name).toLowerCase())) {
+				results.push(path.relative(baseDir, fullPath));
+			}
+		}
+	} catch (e) {}
+	return results;
+}
+
+// Find the best image in a game folder (searches all subfolders)
 function findImage(folderPath, folderName) {
 	try {
-		const files = fs.readdirSync(folderPath);
+		const allImages = collectImages(folderPath, folderPath);
+		if (allImages.length === 0) return null;
+
 		const priorityNames = ['logo', 'icon', 'splash', 'thumb', 'thumbnail', folderName.toLowerCase()];
 
-		const imageFiles = files.filter(f => {
-			const ext = path.extname(f).toLowerCase();
-			return IMAGE_EXTS.includes(ext);
-		});
-
-		if (imageFiles.length === 0) return null;
-
-		// Try priority names first
+		// Try priority names first (any depth)
 		for (const name of priorityNames) {
-			const match = imageFiles.find(f => path.basename(f, path.extname(f)).toLowerCase() === name);
+			const match = allImages.find(f => path.basename(f, path.extname(f)).toLowerCase() === name);
 			if (match) return `Assets/${folderName}/${match}`;
 		}
 
-		// Fallback: first image found
-		return `Assets/${folderName}/${imageFiles[0]}`;
+		// Prefer images in the root folder over subfolders
+		const rootImages = allImages.filter(f => !f.includes(path.sep) && !f.includes('/'));
+		if (rootImages.length > 0) return `Assets/${folderName}/${rootImages[0]}`;
+
+		// Fallback: first image found anywhere
+		return `Assets/${folderName}/${allImages[0]}`;
 	} catch (e) {
 		return null;
 	}

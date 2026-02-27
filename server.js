@@ -10,17 +10,34 @@ let cachedGames = [];
 
 const IMAGE_EXTS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico'];
 
+function collectImages(dir, baseDir) {
+	const results = [];
+	try {
+		const entries = fs.readdirSync(dir, { withFileTypes: true });
+		for (const entry of entries) {
+			const fullPath = path.join(dir, entry.name);
+			if (entry.isDirectory()) {
+				results.push(...collectImages(fullPath, baseDir));
+			} else if (IMAGE_EXTS.includes(path.extname(entry.name).toLowerCase())) {
+				results.push(path.relative(baseDir, fullPath));
+			}
+		}
+	} catch (e) {}
+	return results;
+}
+
 function findImage(folderPath, folderName) {
 	try {
-		const files = fs.readdirSync(folderPath);
+		const allImages = collectImages(folderPath, folderPath);
+		if (allImages.length === 0) return null;
 		const priorityNames = ['logo', 'icon', 'splash', 'thumb', 'thumbnail', folderName.toLowerCase()];
-		const imageFiles = files.filter(f => IMAGE_EXTS.includes(path.extname(f).toLowerCase()));
-		if (imageFiles.length === 0) return null;
 		for (const name of priorityNames) {
-			const match = imageFiles.find(f => path.basename(f, path.extname(f)).toLowerCase() === name);
+			const match = allImages.find(f => path.basename(f, path.extname(f)).toLowerCase() === name);
 			if (match) return `Assets/${folderName}/${match}`;
 		}
-		return `Assets/${folderName}/${imageFiles[0]}`;
+		const rootImages = allImages.filter(f => !f.includes(path.sep) && !f.includes('/'));
+		if (rootImages.length > 0) return `Assets/${folderName}/${rootImages[0]}`;
+		return `Assets/${folderName}/${allImages[0]}`;
 	} catch (e) {
 		return null;
 	}
