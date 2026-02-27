@@ -26,29 +26,34 @@
 		<section class="hero">
 			<h1>Play Unlimited Games</h1>
 			<p>Access hundreds of unblocked games instantly</p>
+			<div class="stats-bar">
+				<div class="stat-item">
+					<span class="stat-number" id="gameCount">0</span>
+					<span class="stat-label">Games Available</span>
+				</div>
+			</div>
 		</section>
 
 		<!-- Search & Filter -->
 		<section class="toolbar-section">
 			<div class="search-container">
-				<input id="searchInput" class="search-input" placeholder="🔍 Search games..." />
+				<span class="search-icon">🔍</span>
+				<input id="searchInput" class="search-input" placeholder="Search games..." />
 			</div>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 		</section>
+
+		<!-- Loading state -->
+		<div id="loadingState" class="loading-state">
+			<div class="spinner"></div>
+			<p>Loading games...</p>
+		</div>
 
 		<!-- Games Grid -->
 		<section class="games-section">
 			<div id="gameGrid" class="game-grid">
 				<!-- populated by app.js -->
 			</div>
-		</section>
-
-		<!-- Folders Tab -->
-		<section class="folders-section">
-			<h2>Available Games</h2>
-			<ul id="folderList" class="folder-list">
-				<!-- populated by app.js -->
-			</ul>
 		</section>
 	</main>
 

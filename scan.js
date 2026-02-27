@@ -57,7 +57,7 @@ function scan() {
 		results.push({
 			name: it.name,
 			url: `Assets/${it.name}/`,
-			image: image || ''
+			image: image || 'notavailable.svg'
 		});
 	}
 

@@ -57,7 +57,7 @@ function scanGames() {
 		results.push({
 			name: it.name,
 			url: `Assets/${it.name}/`,
-			image: image || ''
+			image: image || 'notavailable.svg'
 		});
 	}
 	results.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
