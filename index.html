@@ -49,8 +49,18 @@
 			<p>Loading games...</p>
 		</div>
 
+		<!-- Proxies Section -->
+		<section class="proxies-section">
+			<h2 class="section-title">🌐 Proxies</h2>
+			<p class="section-subtitle">Browse the web freely with these proxy tools</p>
+			<div id="proxyGrid" class="proxy-grid">
+				<!-- populated by app.js -->
+			</div>
+		</section>
+
 		<!-- Games Grid -->
 		<section class="games-section">
+			<h2 class="section-title">🎮 Games</h2>
 			<div id="gameGrid" class="game-grid">
 				<!-- populated by app.js -->
 			</div>
@@ -66,7 +76,7 @@
 	<div id="playModal" class="modal hidden" aria-hidden="true">
 		<div class="modal-inner">
 			<button id="closeModal" class="modal-close" aria-label="Close">✕</button>
-			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation allow-modals"></iframe>
 		</div>
 	</div>
 
