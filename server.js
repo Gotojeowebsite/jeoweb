@@ -305,7 +305,7 @@ async function handleInterstellarAssetProxy(req, res) {
 			return;
 		}
 
-		const fetch = (await import(path.join(ROOT, 'Assets', 'interstellar', 'node_modules', 'node-fetch', 'src', 'index.js'))).default;
+		const fetch = (await import('node-fetch')).default;
 		const asset = await fetch(reqTarget);
 		if (!asset.ok) {
 			res.writeHead(404, { 'Content-Type': 'text/html' });
@@ -335,7 +335,7 @@ async function handleInterstellarAssetProxy(req, res) {
 // Initialize Interstellar bare server
 async function initBareServer() {
 	try {
-		const bareModule = require(path.join(ROOT, 'Assets', 'interstellar', 'node_modules', '@nebula-services', 'bare-server-node'));
+		const bareModule = require('@nebula-services/bare-server-node');
 		bareServer = bareModule.createBareServer('/ca/');
 		console.log('✓ Interstellar proxy (bare server) initialized on /ca/');
 	} catch (e) {
