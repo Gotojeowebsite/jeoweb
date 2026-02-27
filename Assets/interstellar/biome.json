@@ -1,0 +1,39 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "files": {
+    "includes": ["**", "!**/static/assets/history", "!**/static/assets/mathematics", "!**/static/assets/json/**/*.min.json", "!**/Masqr.js", "!**/node_modules", "!**/package-lock.json", "!**/package.json", "!**/*.md", "!**/bun.lockb", "!**/Failed.html"]
+  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    },
+    "includes": ["**", "!**/pnpm-lock.yaml", "!**/dist/**", "!**/node_modules/**", "!**/assets/bundled/**", "!**/*.min.json", "!**/.astro/**"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 320,
+    "attributePosition": "auto",
+    "includes": ["**", "!**/pnpm-lock.yaml", "!**/dist/**", "!**/node_modules/**", "!**/assets/bundled/**", "!**/*.min.json", "!**/.astro/**"]
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": true,
+      "bracketSpacing": true
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 3
+    },
+    "linter": {
+      "enabled": true
+    }
+  }
+}
