@@ -147,8 +147,10 @@ this.gameGrid.appendChild(card);
 
 openPlayer(url) {
 var target = url;
+if (!target.match(/\.(html|swf)(\?|$)/i)) {
 if (target.endsWith('/')) target += 'index.html';
-else if (target.indexOf('.html') === -1 && target.indexOf('.swf') === -1) target += '/index.html';
+else target += '/index.html';
+}
 this.gameFrame.src = target;
 this.playModal.classList.remove('hidden');
 this.playModal.setAttribute('aria-hidden', 'false');

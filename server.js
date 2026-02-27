@@ -48,15 +48,18 @@ function scanGames() {
 		if (!it.isDirectory()) continue;
 
 		const folderPath = path.join(ASSETS_DIR, it.name);
-		const indexPath = path.join(folderPath, 'index.html');
 
-		if (!fs.existsSync(indexPath)) continue;
+		// Find any .html file in the folder (prefer index.html)
+		const files = fs.readdirSync(folderPath);
+		const htmlFiles = files.filter(f => f.toLowerCase().endsWith('.html'));
+		if (htmlFiles.length === 0) continue;
+		const htmlFile = htmlFiles.find(f => f.toLowerCase() === 'index.html') || htmlFiles[0];
 
 		const image = findImage(folderPath, it.name);
 
 		results.push({
 			name: it.name,
-			url: `Assets/${it.name}/`,
+			url: `Assets/${it.name}/${htmlFile}`,
 			image: image || 'notavailable.svg'
 		});
 	}
