@@ -1,12 +1,8 @@
 class App {
 constructor() {
 this.games = [];
-this.proxies = [];
 this.autoRefreshTimer = null;
 this.fallbackImage = 'notavailable.svg';
-
-// Define which items are proxies (by folder name or type field)
-this.proxyNames = ['interstellar', 'interstellar proxy'];
 
 this.initElements();
 this.loadTheme();
@@ -21,12 +17,9 @@ this.startAutoRefresh();
 
 async reloadGames() {
 const allItems = await this.resolveGames();
-// Separate proxies from games
-this.proxies = allItems.filter(g => g.type === 'proxy' || this.proxyNames.includes(g.name.toLowerCase()));
-this.games = allItems.filter(g => g.type !== 'proxy' && !this.proxyNames.includes(g.name.toLowerCase()));
-console.log('Games loaded:', this.games.length, '| Proxies:', this.proxies.length);
+this.games = allItems;
+console.log('Games loaded:', this.games.length);
 this.updateCounter();
-this.renderProxies();
 this.renderGames();
 this.hideLoading();
 }
@@ -61,7 +54,6 @@ return [];
 initElements() {
 this.searchInput = document.getElementById('searchInput');
 this.gameGrid = document.getElementById('gameGrid');
-this.proxyGrid = document.getElementById('proxyGrid');
 this.gameCount = document.getElementById('gameCount');
 this.loadingState = document.getElementById('loadingState');
 this.refreshBtn = document.getElementById('refreshGames');
@@ -136,9 +128,6 @@ setTimeout(() => this.refreshBtn.classList.remove('spinning'), 600);
 
 renderGames() {
 const q = (this.searchInput.value || '').toLowerCase();
-// Render proxies
-this.renderProxies(q);
-// Render games
 this.gameGrid.innerHTML = '';
 const filtered = this.games.filter(g => !q || g.name.toLowerCase().includes(q));
 if (filtered.length === 0) {
@@ -155,35 +144,6 @@ card.querySelector('.play-btn').addEventListener('click', function() { window.ap
 card.addEventListener('dblclick', function() { window.app.openPlayer(g.url); });
 this.gameGrid.appendChild(card);
 });
-}
-
-renderProxies(q) {
-if (!this.proxyGrid) return;
-q = q || (this.searchInput.value || '').toLowerCase();
-this.proxyGrid.innerHTML = '';
-const proxiesSection = this.proxyGrid.closest('.proxies-section');
-const filtered = this.proxies.filter(p => !q || p.name.toLowerCase().includes(q) || 'proxy'.includes(q));
-if (filtered.length === 0) {
-if (proxiesSection) proxiesSection.style.display = 'none';
-return;
-}
-if (proxiesSection) proxiesSection.style.display = '';
-filtered.forEach((p, i) => {
-const imgSrc = p.image || this.fallbackImage;
-const displayName = p.name.charAt(0).toUpperCase() + p.name.slice(1);
-const card = document.createElement('div');
-card.className = 'proxy-card';
-card.style.animationDelay = Math.min(i * 0.05, 0.3) + 's';
-card.innerHTML = '<div class="proxy-icon"><img src="' + imgSrc + '" alt="' + displayName + '" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /></div><div class="proxy-info"><div class="proxy-name">' + displayName + '</div><div class="proxy-desc">Web Proxy — Browse Freely</div></div><button class="proxy-launch-btn">🚀 Launch</button>';
-card.querySelector('.proxy-launch-btn').addEventListener('click', function() { window.app.openProxy(p); });
-card.addEventListener('dblclick', function() { window.app.openProxy(p); });
-this.proxyGrid.appendChild(card);
-});
-}
-
-openProxy(proxy) {
-// Open proxy in full page — proxies need root-level access for service workers
-window.location.href = proxy.url;
 }
 
 openPlayer(url) {
