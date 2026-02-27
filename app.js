@@ -182,8 +182,8 @@ this.proxyGrid.appendChild(card);
 }
 
 openProxy(proxy) {
-// Open proxy in full page (not iframe) — proxies need root-level access for service workers
-window.location.href = '/proxy';
+// Open proxy in full page — proxies need root-level access for service workers
+window.location.href = proxy.url;
 }
 
 openPlayer(url) {

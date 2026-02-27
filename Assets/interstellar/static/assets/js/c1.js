@@ -162,7 +162,7 @@ function Custom(app) {
     const customApp = {
       name: `[Custom] ${title}`,
       link: link,
-      image: "/assets/media/icons/custom.webp",
+      image: "assets/media/icons/custom.webp",
       custom: false,
     };
 
@@ -237,13 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-let path = "/assets/json/a.min.json";
+let path = "assets/json/a.min.json";
 if (g) {
-  path = "/assets/json/g.min.json";
+  path = "assets/json/g.min.json";
 } else if (c) {
-  path = "/assets/json/t.min.json";
+  path = "assets/json/t.min.json";
 } else if (a) {
-  path = "/assets/json/a.min.json";
+  path = "assets/json/a.min.json";
 }
 fetch(path)
   .then(response => {
