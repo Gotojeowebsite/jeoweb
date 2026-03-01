@@ -1,18 +1,18 @@
 class App {
 constructor() {
 this.games = [];
-this.autoRefreshTimer = null;
 this.fallbackImage = 'notavailable.svg';
 
 this.initElements();
 this.loadTheme();
+this.loadAccent();
+this.loadBackground();
 this.bindUI();
 this.bootstrap();
 }
 
 async bootstrap() {
 await this.reloadGames();
-this.startAutoRefresh();
 }
 
 async reloadGames() {
@@ -22,11 +22,6 @@ console.log('Games loaded:', this.games.length);
 this.updateCounter();
 this.renderGames();
 this.hideLoading();
-}
-
-startAutoRefresh() {
-if (this.autoRefreshTimer) clearInterval(this.autoRefreshTimer);
-this.autoRefreshTimer = setInterval(() => this.reloadGames(), 15000);
 }
 
 async resolveGames() {
@@ -73,9 +68,8 @@ const target = this.games.length;
 const current = parseInt(this.gameCount.textContent) || 0;
 if (current === target) return;
 const step = target > current ? 1 : -1;
-const duration = 600;
 const steps = Math.abs(target - current);
-const interval = Math.max(duration / steps, 10);
+const interval = Math.max(Math.floor(500 / steps), 5);
 let count = current;
 const timer = setInterval(() => {
 count += step;
@@ -112,11 +106,130 @@ if (this.themeToggle) this.themeToggle.textContent = '☀️';
 }
 }
 
+loadAccent() {
+const saved = localStorage.getItem('site-accent');
+if (saved) this.setAccent(saved, false);
+const swatches = document.querySelectorAll('.color-swatch');
+swatches.forEach(s => {
+s.addEventListener('click', () => {
+const color = s.dataset.color;
+this.setAccent(color, true);
+swatches.forEach(sw => sw.classList.remove('active'));
+s.classList.add('active');
+});
+if (saved && s.dataset.color === saved) s.classList.add('active');
+});
+}
+
+setAccent(color, save) {
+document.documentElement.style.setProperty('--primary', color);
+const r = parseInt(color.slice(1,3),16), g = parseInt(color.slice(3,5),16), b = parseInt(color.slice(5,7),16);
+const darker = '#' + [r,g,b].map(c => Math.max(0, c - 30).toString(16).padStart(2,'0')).join('');
+document.documentElement.style.setProperty('--primary-hover', darker);
+if (save) localStorage.setItem('site-accent', color);
+}
+
+loadBackground() {
+// Background color
+const savedBg = localStorage.getItem('site-bg-color');
+if (savedBg) this.setBgColor(savedBg, false);
+const bgSwatches = document.querySelectorAll('.bg-swatch');
+bgSwatches.forEach(s => {
+s.addEventListener('click', () => {
+const color = s.dataset.bg;
+this.setBgColor(color, true);
+bgSwatches.forEach(sw => sw.classList.remove('active'));
+s.classList.add('active');
+});
+if (savedBg && s.dataset.bg === savedBg) s.classList.add('active');
+});
+
+// Background image
+const savedImg = localStorage.getItem('site-bg-image');
+if (savedImg) this.applyBgImage(savedImg);
+
+const fileInput = document.getElementById('bgImageInput');
+const clearBtn = document.getElementById('bgImageClear');
+if (fileInput) {
+fileInput.addEventListener('change', (e) => {
+const file = e.target.files[0];
+if (!file) return;
+const reader = new FileReader();
+reader.onload = (ev) => {
+const dataUrl = ev.target.result;
+try { localStorage.setItem('site-bg-image', dataUrl); } catch(err) {
+console.warn('Image too large for localStorage, applying without saving');
+}
+this.applyBgImage(dataUrl);
+};
+reader.readAsDataURL(file);
+});
+}
+if (clearBtn) {
+clearBtn.addEventListener('click', () => {
+localStorage.removeItem('site-bg-image');
+this.removeBgImage();
+});
+}
+}
+
+setBgColor(color, save) {
+document.documentElement.style.setProperty('--bg', color);
+// derive a slightly lighter surface
+const r = parseInt(color.slice(1,3),16), g = parseInt(color.slice(3,5),16), b = parseInt(color.slice(5,7),16);
+const lighter = '#' + [r,g,b].map(c => Math.min(255, c + 12).toString(16).padStart(2,'0')).join('');
+const cardL = '#' + [r,g,b].map(c => Math.min(255, c + 18).toString(16).padStart(2,'0')).join('');
+document.documentElement.style.setProperty('--bg-surface', lighter);
+document.documentElement.style.setProperty('--card-bg', cardL);
+if (save) localStorage.setItem('site-bg-color', color);
+}
+
+applyBgImage(dataUrl) {
+document.body.style.backgroundImage = 'url(' + dataUrl + ')';
+document.body.style.backgroundSize = 'cover';
+document.body.style.backgroundPosition = 'center';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.classList.add('has-bg-image');
+const preview = document.getElementById('bgPreview');
+if (preview) {
+preview.style.backgroundImage = 'url(' + dataUrl + ')';
+preview.classList.remove('hidden');
+}
+}
+
+removeBgImage() {
+document.body.style.backgroundImage = '';
+document.body.style.backgroundSize = '';
+document.body.style.backgroundPosition = '';
+document.body.style.backgroundAttachment = '';
+document.body.classList.remove('has-bg-image');
+const preview = document.getElementById('bgPreview');
+if (preview) {
+preview.style.backgroundImage = '';
+preview.classList.add('hidden');
+}
+}
+
 bindUI() {
 this.searchInput.addEventListener('input', () => this.renderGames());
 this.refreshBtn.addEventListener('click', () => this.refreshGames());
 this.themeToggle.addEventListener('click', () => this.toggleTheme());
 this.closeModal.addEventListener('click', () => this.closePlayer());
+
+// Color picker toggle
+const colorBtn = document.getElementById('colorPickerBtn');
+const colorMenu = document.getElementById('colorMenu');
+if (colorBtn && colorMenu) {
+colorBtn.addEventListener('click', (e) => {
+e.stopPropagation();
+colorMenu.classList.toggle('open');
+});
+document.addEventListener('click', (e) => {
+if (!colorMenu.contains(e.target) && e.target !== colorBtn) {
+colorMenu.classList.remove('open');
+}
+});
+}
 }
 
 refreshGames() {
@@ -138,7 +251,6 @@ filtered.forEach((g, i) => {
 const imgSrc = g.image || this.fallbackImage;
 const card = document.createElement('div');
 card.className = 'game-card';
-card.style.animationDelay = Math.min(i * 0.03, 0.5) + 's';
 card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /></div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
 card.querySelector('.play-btn').addEventListener('click', function() { window.app.openPlayer(g.url); });
 card.addEventListener('dblclick', function() { window.app.openPlayer(g.url); });
