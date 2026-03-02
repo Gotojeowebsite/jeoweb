@@ -56,6 +56,9 @@ this.themeToggle = document.getElementById('themeToggle');
 this.playModal = document.getElementById('playModal');
 this.gameFrame = document.getElementById('gameFrame');
 this.closeModal = document.getElementById('closeModal');
+this.fullscreenBtn = document.getElementById('fullscreenBtn');
+this.openNewTabBtn = document.getElementById('openNewTabBtn');
+this.currentGameUrl = '';
 }
 
 hideLoading() {
@@ -215,6 +218,8 @@ this.searchInput.addEventListener('input', () => this.renderGames());
 this.refreshBtn.addEventListener('click', () => this.refreshGames());
 this.themeToggle.addEventListener('click', () => this.toggleTheme());
 this.closeModal.addEventListener('click', () => this.closePlayer());
+this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
+this.openNewTabBtn.addEventListener('click', () => this.openGameInNewTab());
 
 // Color picker toggle
 const colorBtn = document.getElementById('colorPickerBtn');
@@ -264,10 +269,26 @@ if (!target.match(/\.(html|swf)(\?|$)/i)) {
 if (target.endsWith('/')) target += 'index.html';
 else target += '/index.html';
 }
+this.currentGameUrl = target;
 this.gameFrame.src = target;
 this.playModal.classList.remove('hidden');
 this.playModal.setAttribute('aria-hidden', 'false');
 document.body.style.overflow = 'hidden';
+}
+
+toggleFullscreen() {
+const modalInner = this.playModal.querySelector('.modal-inner');
+if (!document.fullscreenElement) {
+(modalInner.requestFullscreen || modalInner.webkitRequestFullscreen || modalInner.msRequestFullscreen).call(modalInner);
+} else {
+(document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+}
+}
+
+openGameInNewTab() {
+if (this.currentGameUrl) {
+window.open(this.currentGameUrl, '_blank');
+}
 }
 
 closePlayer() {

@@ -110,7 +110,12 @@
 	<!-- Play Modal -->
 	<div id="playModal" class="modal hidden" aria-hidden="true">
 		<div class="modal-inner">
-			<button id="closeModal" class="modal-close" aria-label="Close">✕</button>
+			<div class="modal-toolbar">
+				<button id="fullscreenBtn" class="modal-tool-btn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
+				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
+				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Not working? Open directly">🔗 Not working?</button>
+				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
+			</div>
 			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation allow-modals"></iframe>
 		</div>
 	</div>

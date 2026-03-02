@@ -525,6 +525,71 @@ transition: opacity 0.2s;
 
 .modal.hidden { opacity: 0; pointer-events: none; }
 
+
+
+/* Modal Toolbar */
+.modal-toolbar {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 8px;
+padding: 8px 12px;
+background: var(--bg-surface);
+border-bottom: 1px solid var(--border);
+flex-shrink: 0;
+}
+
+.modal-tool-btn {
+background: rgba(255,255,255,0.08);
+color: var(--text);
+border: 1px solid var(--border);
+padding: 6px 14px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 13px;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: background 0.2s, border-color 0.2s;
+}
+
+.modal-tool-btn:hover {
+background: rgba(255,255,255,0.14);
+border-color: var(--primary);
+}
+
+body.theme-light .modal-tool-btn {
+background: rgba(0,0,0,0.05);
+}
+
+body.theme-light .modal-tool-btn:hover {
+background: rgba(0,0,0,0.1);
+}
+
+.modal-close-btn {
+background: rgba(255,255,255,0.08);
+color: var(--text);
+border: 1px solid var(--border);
+width: 36px;
+height: 36px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: background 0.2s, border-color 0.2s;
+font-weight: 600;
+margin-left: auto;
+}
+
+.modal-close-btn:hover {
+background: rgba(239,68,68,0.2);
+border-color: #ef4444;
+color: #ef4444;
+}
+
 .modal-inner {
 width: 95%;
 max-width: 1400px;
@@ -535,33 +600,11 @@ overflow: hidden;
 position: relative;
 border: 1px solid var(--border);
 box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
-}
-
-.modal-close {
-position: absolute;
-right: 12px;
-top: 12px;
-z-index: 10;
-background: rgba(0,0,0,0.5);
-color: #fff;
-border: none;
-width: 36px;
-height: 36px;
-border-radius: 8px;
-cursor: pointer;
-font-size: 16px;
 display: flex;
-align-items: center;
-justify-content: center;
-transition: background 0.2s;
-font-weight: 600;
+flex-direction: column;
 }
 
-.modal-close:hover {
-background: rgba(0,0,0,0.7);
-}
-
-.modal iframe { width: 100%; height: 100%; border: 0; }
+.modal iframe { width: 100%; flex: 1; border: 0; }
 
 /* ========================================
    FOOTER
