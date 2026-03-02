@@ -4,7 +4,11 @@
   "description": "Jeoweb - Games & Proxy",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "media:init": "git lfs install && node scripts/install-hooks.js",
+    "media:ingest": "node scripts/media-ingest.js",
+    "media:validate": "node scripts/media-validate.js",
+    "media:hooks": "node scripts/install-hooks.js"
   },
   "engines": {
     "node": ">=16.0.0"
