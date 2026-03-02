@@ -272,6 +272,156 @@ background: rgba(255,255,255,0.8);
    MAIN
    ======================================== */
 
+/* ========================================
+   ULTRAVIOLET PROXY SECTION
+   ======================================== */
+
+.uv-section {
+	margin-bottom: 32px;
+}
+
+.uv-card {
+	background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(59, 130, 246, 0.10));
+	border: 1px solid rgba(124, 58, 237, 0.25);
+	border-radius: var(--radius);
+	padding: 28px 32px;
+	position: relative;
+	overflow: hidden;
+}
+
+.uv-card::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+.uv-header {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 10px;
+}
+
+.uv-icon {
+	font-size: 28px;
+	width: 48px;
+	height: 48px;
+	background: rgba(124, 58, 237, 0.15);
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.uv-title-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.uv-title {
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--text);
+	letter-spacing: -0.3px;
+}
+
+.uv-badge {
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #fff;
+	background: var(--primary);
+	padding: 3px 10px;
+	border-radius: 20px;
+}
+
+.uv-desc {
+	font-size: 14px;
+	color: var(--muted);
+	margin-bottom: 18px;
+}
+
+.uv-form {
+	display: flex;
+	gap: 10px;
+}
+
+.uv-input {
+	flex: 1;
+	padding: 12px 18px;
+	border: 1px solid rgba(124, 58, 237, 0.2);
+	background: var(--card-bg);
+	color: var(--text);
+	border-radius: var(--radius);
+	font-size: 14px;
+	outline: none;
+	transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.uv-input:focus {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.uv-input::placeholder {
+	color: var(--muted);
+}
+
+.uv-go-btn {
+	padding: 12px 28px;
+	background: var(--primary);
+	color: #fff;
+	border: none;
+	border-radius: var(--radius);
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s, transform 0.1s;
+	white-space: nowrap;
+}
+
+.uv-go-btn:hover {
+	background: var(--primary-hover);
+}
+
+.uv-go-btn:active {
+	transform: scale(0.97);
+}
+
+/* Light theme adjustments */
+body.theme-light .uv-card {
+	background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(59, 130, 246, 0.05));
+	border-color: rgba(124, 58, 237, 0.15);
+}
+
+body.theme-light .uv-icon {
+	background: rgba(124, 58, 237, 0.1);
+}
+
+body.theme-light .uv-input {
+	border-color: rgba(124, 58, 237, 0.12);
+}
+
+@media (max-width: 768px) {
+	.uv-card { padding: 20px; }
+	.uv-title { font-size: 18px; }
+	.uv-form { flex-direction: column; }
+	.uv-go-btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+	.uv-card { padding: 16px; }
+	.uv-icon { width: 40px; height: 40px; font-size: 22px; }
+	.uv-title { font-size: 16px; }
+}
+
 .main {
 max-width: 1200px;
 margin: 0 auto;
@@ -421,6 +571,216 @@ margin-bottom: 16px;
 }
 
 .games-section { margin-bottom: 40px; }
+
+/* ========================================
+   CAROUSEL SECTIONS (Favorites & Recent)
+   ======================================== */
+
+.carousel-section {
+	margin-bottom: 32px;
+}
+
+.carousel-section.hidden {
+	display: none;
+}
+
+.carousel-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+
+.carousel-title-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.carousel-icon {
+	font-size: 20px;
+}
+
+.carousel-title {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--text);
+	letter-spacing: -0.3px;
+}
+
+.carousel-count {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--primary);
+	background: rgba(124, 58, 237, 0.12);
+	padding: 2px 10px;
+	border-radius: 20px;
+	letter-spacing: 0.5px;
+}
+
+.carousel-track-wrap {
+	position: relative;
+}
+
+.carousel-track {
+	display: flex;
+	gap: 14px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	padding: 4px 2px 12px;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	background: var(--bg-surface);
+	color: var(--text);
+	font-size: 20px;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s, border-color 0.2s, opacity 0.2s, box-shadow 0.2s;
+	opacity: 0;
+	pointer-events: none;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-track-wrap:hover .carousel-arrow {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.carousel-arrow:hover {
+	background: var(--primary);
+	color: #fff;
+	border-color: var(--primary);
+}
+
+.carousel-arrow-left {
+	left: -6px;
+}
+
+.carousel-arrow-right {
+	right: -6px;
+}
+
+/* Carousel Cards */
+.carousel-card {
+	flex: 0 0 180px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+	cursor: pointer;
+	position: relative;
+}
+
+.carousel-card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(255,255,255,0.12);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+body.theme-light .carousel-card:hover {
+	border-color: rgba(0,0,0,0.12);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.carousel-card .game-thumb {
+	height: 110px;
+}
+
+.carousel-card .game-card-content {
+	padding: 10px 12px;
+}
+
+.carousel-card .game-card-title {
+	font-size: 13px;
+	margin-bottom: 0;
+}
+
+.carousel-card .heart-btn {
+	top: 6px;
+	right: 6px;
+	width: 30px;
+	height: 30px;
+	font-size: 14px;
+}
+
+/* ========================================
+   HEART / FAVORITE BUTTON
+   ======================================== */
+
+.heart-btn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(0, 0, 0, 0.55);
+	backdrop-filter: blur(6px);
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.2s, background 0.2s, color 0.2s;
+	z-index: 5;
+	line-height: 1;
+	padding: 0;
+}
+
+.heart-btn:hover {
+	background: rgba(0, 0, 0, 0.7);
+	transform: scale(1.1);
+	color: #ff4d6d;
+}
+
+.heart-btn.hearted {
+	color: #ff4d6d;
+	background: rgba(255, 77, 109, 0.2);
+	backdrop-filter: blur(6px);
+}
+
+.heart-btn.hearted:hover {
+	background: rgba(255, 77, 109, 0.35);
+}
+
+@keyframes heartPop {
+	0% { transform: scale(1); }
+	30% { transform: scale(1.35); }
+	60% { transform: scale(0.95); }
+	100% { transform: scale(1); }
+}
+
+.heart-btn.pop {
+	animation: heartPop 0.4s ease;
+}
+
+/* Ensure game-card is position relative for heart overlay */
+.game-card {
+	position: relative;
+}
 
 .game-grid {
 display: grid;
@@ -637,6 +997,9 @@ gap: 12px;
 .game-thumb { height: 110px; }
 .section-title { font-size: 18px; }
 .color-menu { right: -40px; }
+.carousel-card { flex: 0 0 155px; }
+.carousel-card .game-thumb { height: 95px; }
+.carousel-arrow { display: none; }
 }
 
 @media (max-width: 480px) {
@@ -651,4 +1014,7 @@ gap: 10px;
 .game-thumb { height: 100px; }
 .game-card-content { padding: 10px; }
 .modal-inner { height: 95vh; width: 100%; border-radius: 0; }
+.carousel-card { flex: 0 0 140px; }
+.carousel-card .game-thumb { height: 85px; }
+.carousel-section { margin-bottom: 24px; }
 }

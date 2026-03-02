@@ -73,6 +73,24 @@
 
 	<!-- Main Content -->
 	<main class="main">
+		<!-- Ultraviolet Proxy Section -->
+		<section class="uv-section">
+			<div class="uv-card">
+				<div class="uv-header">
+					<div class="uv-icon">🌐</div>
+					<div class="uv-title-group">
+						<h2 class="uv-title">Ultraviolet</h2>
+						<span class="uv-badge">PROXY</span>
+					</div>
+				</div>
+				<p class="uv-desc">Browse any website freely. Enter a URL or search term below.</p>
+				<form id="uvForm" class="uv-form" autocomplete="off">
+					<input id="uvInput" class="uv-input" type="text" placeholder="Enter URL or search..." />
+					<button type="submit" class="uv-go-btn">Go →</button>
+				</form>
+			</div>
+		</section>
+
 		<!-- Hero Section -->
 		<section class="hero">
 			<h1>Play Unlimited Games</h1>
@@ -88,6 +106,38 @@
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 		</section>
 
+		<!-- Favorites Section -->
+		<section id="favoritesSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">❤️</span>
+					<h2 class="carousel-title">Favorites</h2>
+					<span id="favCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="favoritesTrack" aria-label="Scroll left">‹</button>
+				<div id="favoritesTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="favoritesTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Recently Played Section -->
+		<section id="recentSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">🕐</span>
+					<h2 class="carousel-title">Recently Played</h2>
+					<span id="recentCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="recentTrack" aria-label="Scroll left">‹</button>
+				<div id="recentTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="recentTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
 		<!-- Loading state -->
 		<div id="loadingState" class="loading-state">
 			<div class="spinner"></div>
@@ -96,6 +146,7 @@
 
 		<!-- Games Grid -->
 		<section class="games-section">
+			<h2 class="section-title">All Games</h2>
 			<div id="gameGrid" class="game-grid">
 				<!-- populated by app.js -->
 			</div>
@@ -176,6 +227,27 @@
 					showOverlay(err.message || String(err));
 				}
 			})();
+
+			/* Ultraviolet Proxy */
+			document.getElementById('uvForm').addEventListener('submit', function(e){
+				e.preventDefault();
+				var raw = document.getElementById('uvInput').value.trim();
+				if (!raw) return;
+				var url;
+				if (/^https?:\/\//i.test(raw)) {
+					url = raw;
+				} else if (/\.[a-z]{2,}$/i.test(raw)) {
+					url = 'https://' + raw;
+				} else {
+					url = 'https://www.google.com/search?q=' + encodeURIComponent(raw);
+				}
+				/* Open in modal using the game frame */
+				var modal = document.getElementById('playModal');
+				var frame = document.getElementById('gameFrame');
+				frame.src = url;
+				modal.classList.remove('hidden');
+				modal.setAttribute('aria-hidden', 'false');
+			});
 
 			document.addEventListener('keydown', function(e){
 				if (e.key === 'Escape'){
