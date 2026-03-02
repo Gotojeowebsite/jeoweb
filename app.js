@@ -10,6 +10,7 @@ class App {
 		this.loadTheme();
 		this.loadAccent();
 		this.loadBackground();
+		this.initCloaker();
 		this.bindUI();
 		this.bootstrap();
 	}
@@ -122,18 +123,30 @@ class App {
 	}
 
 	loadAccent() {
+		const defaultAccent = '#7c3aed';
 		const saved = localStorage.getItem('site-accent');
+		const currentAccent = saved || defaultAccent;
 		if (saved) this.setAccent(saved, false);
-		const swatches = document.querySelectorAll('.color-swatch');
-		swatches.forEach(s => {
-			s.addEventListener('click', () => {
-				const color = s.dataset.color;
-				this.setAccent(color, true);
-				swatches.forEach(sw => sw.classList.remove('active'));
-				s.classList.add('active');
+
+		const accentInput = document.getElementById('accentColorInput');
+		const accentValue = document.getElementById('accentColorValue');
+		const accentReset = document.getElementById('accentReset');
+
+		if (accentInput) {
+			accentInput.value = currentAccent;
+			if (accentValue) accentValue.textContent = currentAccent;
+			accentInput.addEventListener('input', () => {
+				this.setAccent(accentInput.value, true);
+				if (accentValue) accentValue.textContent = accentInput.value;
 			});
-			if (saved && s.dataset.color === saved) s.classList.add('active');
-		});
+		}
+		if (accentReset) {
+			accentReset.addEventListener('click', () => {
+				this.setAccent(defaultAccent, true);
+				if (accentInput) accentInput.value = defaultAccent;
+				if (accentValue) accentValue.textContent = defaultAccent;
+			});
+		}
 	}
 
 	setAccent(color, save) {
@@ -146,18 +159,30 @@ class App {
 
 	loadBackground() {
 		// Background color
+		const defaultBg = '#0c0b14';
 		const savedBg = localStorage.getItem('site-bg-color');
+		const currentBg = savedBg || defaultBg;
 		if (savedBg) this.setBgColor(savedBg, false);
-		const bgSwatches = document.querySelectorAll('.bg-swatch');
-		bgSwatches.forEach(s => {
-			s.addEventListener('click', () => {
-				const color = s.dataset.bg;
-				this.setBgColor(color, true);
-				bgSwatches.forEach(sw => sw.classList.remove('active'));
-				s.classList.add('active');
+
+		const bgInput = document.getElementById('bgColorInput');
+		const bgValue = document.getElementById('bgColorValue');
+		const bgReset = document.getElementById('bgReset');
+
+		if (bgInput) {
+			bgInput.value = currentBg;
+			if (bgValue) bgValue.textContent = currentBg;
+			bgInput.addEventListener('input', () => {
+				this.setBgColor(bgInput.value, true);
+				if (bgValue) bgValue.textContent = bgInput.value;
 			});
-			if (savedBg && s.dataset.bg === savedBg) s.classList.add('active');
-		});
+		}
+		if (bgReset) {
+			bgReset.addEventListener('click', () => {
+				this.setBgColor(defaultBg, true);
+				if (bgInput) bgInput.value = defaultBg;
+				if (bgValue) bgValue.textContent = defaultBg;
+			});
+		}
 
 		// Background image
 		const savedImg = localStorage.getItem('site-bg-image');
@@ -239,10 +264,30 @@ class App {
 			colorBtn.addEventListener('click', (e) => {
 				e.stopPropagation();
 				colorMenu.classList.toggle('open');
+				// close cloaker if open
+				const cm = document.getElementById('cloakerMenu');
+				if (cm) cm.classList.remove('open');
 			});
 			document.addEventListener('click', (e) => {
 				if (!colorMenu.contains(e.target) && e.target !== colorBtn) {
 					colorMenu.classList.remove('open');
+				}
+			});
+		}
+
+		// Cloaker toggle
+		const cloakerBtn = document.getElementById('cloakerBtn');
+		const cloakerMenu = document.getElementById('cloakerMenu');
+		if (cloakerBtn && cloakerMenu) {
+			cloakerBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				cloakerMenu.classList.toggle('open');
+				// close color menu if open
+				if (colorMenu) colorMenu.classList.remove('open');
+			});
+			document.addEventListener('click', (e) => {
+				if (!cloakerMenu.contains(e.target) && !cloakerBtn.contains(e.target)) {
+					cloakerMenu.classList.remove('open');
 				}
 			});
 		}
@@ -444,6 +489,112 @@ class App {
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden', 'true');
 		document.body.style.overflow = '';
+	}
+
+	/* =============== TAB CLOAKER =============== */
+
+	initCloaker() {
+		this.originalTitle = document.title;
+		this.originalFavicon = this.getCurrentFavicon();
+
+		// Restore saved cloak
+		const savedCloak = JSON.parse(localStorage.getItem('jeo-cloak') || 'null');
+		if (savedCloak) {
+			this.applyCloak(savedCloak.title, savedCloak.icon, false);
+		}
+
+		// Preset buttons
+		document.querySelectorAll('.cloaker-preset').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const title = btn.dataset.title;
+				const icon = btn.dataset.icon;
+				this.applyCloak(title, icon, true);
+				this.highlightActivePreset(title, icon);
+				// Populate custom inputs
+				const ti = document.getElementById('cloakerTitle');
+				const ii = document.getElementById('cloakerIcon');
+				if (ti) ti.value = title;
+				if (ii) ii.value = icon;
+			});
+		});
+
+		// Custom apply
+		const applyBtn = document.getElementById('cloakerApply');
+		if (applyBtn) {
+			applyBtn.addEventListener('click', () => {
+				const title = (document.getElementById('cloakerTitle').value || '').trim();
+				const icon = (document.getElementById('cloakerIcon').value || '').trim();
+				if (title || icon) {
+					this.applyCloak(title || document.title, icon || '', true);
+					this.highlightActivePreset(null, null);
+				}
+			});
+		}
+
+		// Reset
+		const resetBtn = document.getElementById('cloakerReset');
+		if (resetBtn) {
+			resetBtn.addEventListener('click', () => {
+				this.resetCloak();
+			});
+		}
+
+		// Highlight current preset if saved
+		if (savedCloak) {
+			this.highlightActivePreset(savedCloak.title, savedCloak.icon);
+			const ti = document.getElementById('cloakerTitle');
+			const ii = document.getElementById('cloakerIcon');
+			if (ti) ti.value = savedCloak.title || '';
+			if (ii) ii.value = savedCloak.icon || '';
+		}
+	}
+
+	getCurrentFavicon() {
+		const link = document.querySelector('link[rel*="icon"]');
+		return link ? link.href : '';
+	}
+
+	applyCloak(title, iconUrl, save) {
+		if (title) document.title = title;
+		if (iconUrl) {
+			let link = document.querySelector('link[rel*="icon"]');
+			if (!link) {
+				link = document.createElement('link');
+				link.rel = 'icon';
+				document.head.appendChild(link);
+			}
+			link.href = iconUrl;
+			link.type = 'image/x-icon';
+		}
+		if (save) {
+			localStorage.setItem('jeo-cloak', JSON.stringify({ title: title, icon: iconUrl }));
+		}
+	}
+
+	resetCloak() {
+		document.title = this.originalTitle;
+		const link = document.querySelector('link[rel*="icon"]');
+		if (link && this.originalFavicon) {
+			link.href = this.originalFavicon;
+		} else if (link) {
+			link.remove();
+		}
+		localStorage.removeItem('jeo-cloak');
+		this.highlightActivePreset(null, null);
+		const ti = document.getElementById('cloakerTitle');
+		const ii = document.getElementById('cloakerIcon');
+		if (ti) ti.value = '';
+		if (ii) ii.value = '';
+	}
+
+	highlightActivePreset(title, icon) {
+		document.querySelectorAll('.cloaker-preset').forEach(btn => {
+			if (title && btn.dataset.title === title && btn.dataset.icon === icon) {
+				btn.classList.add('active');
+			} else {
+				btn.classList.remove('active');
+			}
+		});
 	}
 }
 

@@ -28,33 +28,66 @@
 			<a href="/logs.html" class="header-nav-link">Logs</a>
 		</div>
 		<div class="header-right">
+			<div class="cloaker-wrap">
+				<button id="cloakerBtn" class="header-btn" aria-label="Tab Cloaker" data-tooltip="Tab Cloaker">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><circle cx="9" cy="10" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.5" fill="currentColor" stroke="none"/><path d="M8 15c0 0 1.5 2 4 2s4-2 4-2"/><path d="M2 12h3M19 12h3"/></svg>
+				</button>
+				<div id="cloakerMenu" class="cloaker-menu">
+					<div class="color-menu-label">Tab Cloaker</div>
+					<div class="cloaker-presets">
+						<button class="cloaker-preset" data-title="Google" data-icon="https://www.google.com/favicon.ico">
+							<img src="https://www.google.com/favicon.ico" alt="" width="16" height="16"/>Google
+						</button>
+						<button class="cloaker-preset" data-title="Google Drive" data-icon="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png">
+							<img src="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png" alt="" width="16" height="16"/>Google Drive
+						</button>
+						<button class="cloaker-preset" data-title="Google Docs" data-icon="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+							<img src="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico" alt="" width="16" height="16"/>Google Docs
+						</button>
+						<button class="cloaker-preset" data-title="Google Classroom" data-icon="https://ssl.gstatic.com/classroom/favicon.png">
+							<img src="https://ssl.gstatic.com/classroom/favicon.png" alt="" width="16" height="16"/>Classroom
+						</button>
+						<button class="cloaker-preset" data-title="Gmail - Inbox" data-icon="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico">
+							<img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="" width="16" height="16"/>Gmail
+						</button>
+						<button class="cloaker-preset" data-title="Khan Academy" data-icon="https://cdn.kastatic.org/images/favicon.ico">
+							<img src="https://cdn.kastatic.org/images/favicon.ico" alt="" width="16" height="16"/>Khan Academy
+						</button>
+						<button class="cloaker-preset" data-title="Canvas" data-icon="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">
+							<img src="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" alt="" width="16" height="16"/>Canvas
+						</button>
+						<button class="cloaker-preset" data-title="Wikipedia" data-icon="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+							<img src="https://en.wikipedia.org/static/favicon/wikipedia.ico" alt="" width="16" height="16"/>Wikipedia
+						</button>
+					</div>
+					<div class="menu-divider"></div>
+					<div class="color-menu-label">Custom</div>
+					<div class="cloaker-custom">
+						<input type="text" id="cloakerTitle" class="cloaker-input" placeholder="Tab title..." />
+						<input type="text" id="cloakerIcon" class="cloaker-input" placeholder="Favicon URL..." />
+						<button id="cloakerApply" class="cloaker-apply-btn">Apply Custom</button>
+					</div>
+					<div class="menu-divider"></div>
+					<button id="cloakerReset" class="cloaker-reset-btn">Reset to Default</button>
+				</div>
+			</div>
 			<div class="color-picker-wrap">
-				<button id="colorPickerBtn" class="header-btn" aria-label="Change accent color">🎨</button>
+				<button id="colorPickerBtn" class="header-btn" aria-label="Change accent color" data-tooltip="Customize">🎨</button>
 				<div id="colorMenu" class="color-menu">
 					<div class="color-menu-label">Accent Color</div>
-					<div class="color-swatches">
-						<button class="color-swatch active" data-color="#7c3aed" title="Purple" style="--swatch:#7c3aed"></button>
-						<button class="color-swatch" data-color="#3b82f6" title="Blue" style="--swatch:#3b82f6"></button>
-						<button class="color-swatch" data-color="#06b6d4" title="Cyan" style="--swatch:#06b6d4"></button>
-						<button class="color-swatch" data-color="#10b981" title="Green" style="--swatch:#10b981"></button>
-						<button class="color-swatch" data-color="#f59e0b" title="Amber" style="--swatch:#f59e0b"></button>
-						<button class="color-swatch" data-color="#ef4444" title="Red" style="--swatch:#ef4444"></button>
-						<button class="color-swatch" data-color="#ec4899" title="Pink" style="--swatch:#ec4899"></button>
-						<button class="color-swatch" data-color="#f97316" title="Orange" style="--swatch:#f97316"></button>
+					<div class="color-wheel-row">
+						<input type="color" id="accentColorInput" class="color-wheel-input" value="#7c3aed" />
+						<span class="color-wheel-value" id="accentColorValue">#7c3aed</span>
+						<button class="color-reset-btn" id="accentReset" title="Reset">↺</button>
 					</div>
 
 					<div class="menu-divider"></div>
 
 					<div class="color-menu-label">Background</div>
-					<div class="color-swatches">
-						<button class="bg-swatch" data-bg="#0c0b14" title="Default" style="--swatch:#0c0b14"></button>
-						<button class="bg-swatch" data-bg="#0f172a" title="Slate" style="--swatch:#0f172a"></button>
-						<button class="bg-swatch" data-bg="#1a1a2e" title="Navy" style="--swatch:#1a1a2e"></button>
-						<button class="bg-swatch" data-bg="#0d1117" title="Charcoal" style="--swatch:#0d1117"></button>
-						<button class="bg-swatch" data-bg="#1b1b1b" title="Dark" style="--swatch:#1b1b1b"></button>
-						<button class="bg-swatch" data-bg="#191724" title="Rosé Pine" style="--swatch:#191724"></button>
-						<button class="bg-swatch" data-bg="#162016" title="Forest" style="--swatch:#162016"></button>
-						<button class="bg-swatch" data-bg="#1c1412" title="Mocha" style="--swatch:#1c1412"></button>
+					<div class="color-wheel-row">
+						<input type="color" id="bgColorInput" class="color-wheel-input" value="#0c0b14" />
+						<span class="color-wheel-value" id="bgColorValue">#0c0b14</span>
+						<button class="color-reset-btn" id="bgReset" title="Reset">↺</button>
 					</div>
 
 					<div class="menu-divider"></div>
@@ -68,7 +101,9 @@
 					<div id="bgPreview" class="bg-preview hidden"></div>
 				</div>
 			</div>
-			<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+			<div class="theme-btn-wrap" data-tooltip="Dark Mode">
+				<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+			</div>
 		</div>
 	</header>
 
