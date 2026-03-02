@@ -73,24 +73,6 @@
 
 	<!-- Main Content -->
 	<main class="main">
-		<!-- Ultraviolet Proxy Section -->
-		<section class="uv-section">
-			<div class="uv-card">
-				<div class="uv-header">
-					<div class="uv-icon">🌐</div>
-					<div class="uv-title-group">
-						<h2 class="uv-title">Ultraviolet</h2>
-						<span class="uv-badge">PROXY</span>
-					</div>
-				</div>
-				<p class="uv-desc">Browse any website freely. Enter a URL or search term below.</p>
-				<form id="uvForm" class="uv-form" autocomplete="off">
-					<input id="uvInput" class="uv-input" type="text" placeholder="Enter URL or search..." />
-					<button type="submit" class="uv-go-btn">Go →</button>
-				</form>
-			</div>
-		</section>
-
 		<!-- Hero Section -->
 		<section class="hero">
 			<h1>Play Unlimited Games</h1>
@@ -227,27 +209,6 @@
 					showOverlay(err.message || String(err));
 				}
 			})();
-
-			/* Ultraviolet Proxy */
-			document.getElementById('uvForm').addEventListener('submit', function(e){
-				e.preventDefault();
-				var raw = document.getElementById('uvInput').value.trim();
-				if (!raw) return;
-				var url;
-				if (/^https?:\/\//i.test(raw)) {
-					url = raw;
-				} else if (/\.[a-z]{2,}$/i.test(raw)) {
-					url = 'https://' + raw;
-				} else {
-					url = 'https://www.google.com/search?q=' + encodeURIComponent(raw);
-				}
-				/* Open in modal using the game frame */
-				var modal = document.getElementById('playModal');
-				var frame = document.getElementById('gameFrame');
-				frame.src = url;
-				modal.classList.remove('hidden');
-				modal.setAttribute('aria-hidden', 'false');
-			});
 
 			document.addEventListener('keydown', function(e){
 				if (e.key === 'Escape'){
