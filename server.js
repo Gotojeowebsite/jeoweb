@@ -98,6 +98,19 @@ const server = http.createServer((req, res) => {
 		return;
 	}
 
+	if (req.url === '/logs' || req.url === '/logs.html') {
+		fs.readFile(path.join(ROOT, 'logs.html'), 'utf-8', (err, data) => {
+			if (err) {
+				res.writeHead(404, { 'Content-Type': 'text/html' });
+				res.end('<h1>404 - Not Found</h1>');
+				return;
+			}
+			res.writeHead(200, { 'Content-Type': 'text/html', 'Cache-Control': 'no-store' });
+			res.end(data);
+		});
+		return;
+	}
+
 	if (req.url === '/' || req.url === '/index.html') {
 		fs.readFile(path.join(ROOT, 'index.html'), 'utf-8', (err, data) => {
 			if (err) {

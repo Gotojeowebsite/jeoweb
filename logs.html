@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Update Logs — Jeo</title>
+	<link rel="stylesheet" href="/styles.css" />
+	<style>
+		.logs-page {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 40px 24px 80px;
+		}
+
+		.logs-hero {
+			text-align: center;
+			margin-bottom: 36px;
+			padding: 32px 0 0;
+		}
+
+		.logs-hero h1 {
+			font-size: 32px;
+			font-weight: 700;
+			margin-bottom: 8px;
+			color: var(--text);
+			letter-spacing: -0.5px;
+		}
+
+		.logs-hero p {
+			font-size: 15px;
+			color: var(--muted);
+		}
+
+		.back-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			color: var(--primary);
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 500;
+			margin-bottom: 24px;
+			transition: opacity 0.2s;
+		}
+
+		.back-link:hover {
+			opacity: 0.8;
+		}
+
+		.commits-loading {
+			text-align: center;
+			padding: 64px 0;
+			color: var(--muted);
+		}
+
+		.commits-loading .spinner {
+			width: 32px;
+			height: 32px;
+			border: 2px solid var(--border);
+			border-top-color: var(--primary);
+			border-radius: 50%;
+			animation: spin360 0.7s linear infinite;
+			margin: 0 auto 12px;
+		}
+
+		.commits-error {
+			text-align: center;
+			padding: 48px 20px;
+			color: var(--muted);
+		}
+
+		.commits-error h3 {
+			color: #ef4444;
+			margin-bottom: 8px;
+		}
+
+		.commit-list {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+		}
+
+		.commit-date-group {
+			margin-bottom: 24px;
+		}
+
+		.commit-date-header {
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: var(--primary);
+			padding: 8px 0;
+			margin-bottom: 8px;
+			border-bottom: 1px solid var(--border);
+		}
+
+		.commit-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 14px;
+			padding: 14px 16px;
+			border-radius: var(--radius);
+			background: var(--card-bg);
+			border: 1px solid var(--border);
+			margin-bottom: 8px;
+			transition: border-color 0.2s, box-shadow 0.2s;
+		}
+
+		.commit-item:hover {
+			border-color: rgba(255,255,255,0.12);
+			box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+		}
+
+		body.theme-light .commit-item:hover {
+			border-color: rgba(0,0,0,0.1);
+			box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+		}
+
+		.commit-dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: var(--primary);
+			flex-shrink: 0;
+			margin-top: 6px;
+		}
+
+		.commit-info {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.commit-message {
+			font-size: 14px;
+			font-weight: 600;
+			color: var(--text);
+			margin-bottom: 6px;
+			word-break: break-word;
+		}
+
+		.commit-meta {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			flex-wrap: wrap;
+			font-size: 12px;
+			color: var(--muted);
+		}
+
+		.commit-author {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+		}
+
+		.commit-author img {
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+		}
+
+		.commit-sha {
+			font-family: 'SF Mono', 'Fira Code', monospace;
+			font-size: 11px;
+			background: rgba(124, 58, 237, 0.1);
+			color: var(--primary);
+			padding: 2px 8px;
+			border-radius: 4px;
+		}
+
+		.commit-sha a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.commit-sha a:hover {
+			text-decoration: underline;
+		}
+
+		.commit-time {
+			white-space: nowrap;
+		}
+
+		.load-more-wrap {
+			text-align: center;
+			padding: 24px 0;
+		}
+
+		.load-more-btn {
+			padding: 10px 28px;
+			border: 1px solid var(--border);
+			background: var(--card-bg);
+			color: var(--text);
+			border-radius: var(--radius);
+			cursor: pointer;
+			font-weight: 600;
+			font-size: 13px;
+			transition: border-color 0.2s, background 0.2s;
+		}
+
+		.load-more-btn:hover {
+			border-color: var(--primary);
+			background: var(--primary);
+			color: #fff;
+		}
+
+		.commit-count-badge {
+			font-size: 13px;
+			color: var(--muted);
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		@media (max-width: 768px) {
+			.logs-page { padding: 24px 16px 60px; }
+			.logs-hero h1 { font-size: 24px; }
+			.commit-item { padding: 12px; gap: 10px; }
+			.commit-meta { gap: 8px; }
+		}
+
+		@media (max-width: 480px) {
+			.logs-page { padding: 16px 12px 48px; }
+			.logs-hero h1 { font-size: 20px; }
+			.logs-hero { padding-top: 20px; margin-bottom: 24px; }
+		}
+	</style>
+</head>
+<body class="theme-dark">
+
+	<header class="topbar">
+		<div class="header-left">
+			<a href="/" class="brand-section">
+				<div class="brand-text">jeo</div>
+			</a>
+		</div>
+		<div class="header-right">
+			<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+		</div>
+	</header>
+
+	<main class="logs-page">
+		<a href="/" class="back-link">← Back to Games</a>
+
+		<section class="logs-hero">
+			<h1>Update Logs</h1>
+			<p>All commits from the GitHub repository</p>
+		</section>
+
+		<div id="commitCountBadge" class="commit-count-badge"></div>
+
+		<div id="commitsContainer">
+			<div class="commits-loading" id="commitsLoading">
+				<div class="spinner"></div>
+				<p>Fetching commits from GitHub...</p>
+			</div>
+		</div>
+
+		<div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+			<button id="loadMoreBtn" class="load-more-btn">Load More</button>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<p>© 2026 jeo</p>
+	</footer>
+
+	<script>
+	(function() {
+		// ---- Theme persistence (same as main site) ----
+		const theme = localStorage.getItem('jeo-theme') || 'dark';
+		document.body.className = 'theme-' + theme;
+		const themeToggle = document.getElementById('themeToggle');
+		themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+		themeToggle.addEventListener('click', function() {
+			const isDark = document.body.classList.contains('theme-dark');
+			document.body.className = isDark ? 'theme-light' : 'theme-dark';
+			themeToggle.textContent = isDark ? '☀️' : '🌙';
+			localStorage.setItem('jeo-theme', isDark ? 'light' : 'dark');
+		});
+
+		// Accent color persistence
+		const accent = localStorage.getItem('jeo-accent');
+		if (accent) {
+			document.documentElement.style.setProperty('--primary', accent);
+		}
+
+		// Background persistence
+		const bgColor = localStorage.getItem('jeo-bg-color');
+		if (bgColor) {
+			document.documentElement.style.setProperty('--bg', bgColor);
+		}
+
+		// ---- GitHub Commits ----
+		const OWNER = 'Gotojeowebsite';
+		const REPO = 'jeoweb';
+		const PER_PAGE = 30;
+		let currentPage = 1;
+		let allCommits = [];
+
+		const container = document.getElementById('commitsContainer');
+		const loading = document.getElementById('commitsLoading');
+		const loadMoreWrap = document.getElementById('loadMoreWrap');
+		const loadMoreBtn = document.getElementById('loadMoreBtn');
+		const countBadge = document.getElementById('commitCountBadge');
+
+		async function fetchCommits(page) {
+			const url = `https://api.github.com/repos/${OWNER}/${REPO}/commits?per_page=${PER_PAGE}&page=${page}`;
+			const resp = await fetch(url);
+			if (!resp.ok) throw new Error(`GitHub API error: ${resp.status}`);
+			return resp.json();
+		}
+
+		function formatDate(dateStr) {
+			const d = new Date(dateStr);
+			return d.toLocaleDateString('en-US', {
+				weekday: 'long',
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
+		}
+
+		function formatTime(dateStr) {
+			const d = new Date(dateStr);
+			return d.toLocaleTimeString('en-US', {
+				hour: '2-digit',
+				minute: '2-digit',
+				hour12: true
+			});
+		}
+
+		function groupByDate(commits) {
+			const groups = {};
+			commits.forEach(function(c) {
+				const dateKey = formatDate(c.commit.author.date);
+				if (!groups[dateKey]) groups[dateKey] = [];
+				groups[dateKey].push(c);
+			});
+			return groups;
+		}
+
+		function renderCommits(commits) {
+			const grouped = groupByDate(commits);
+			let html = '';
+
+			Object.keys(grouped).forEach(function(dateKey) {
+				html += '<div class="commit-date-group">';
+				html += '<div class="commit-date-header">' + dateKey + '</div>';
+
+				grouped[dateKey].forEach(function(c) {
+					const msg = c.commit.message.split('\n')[0];
+					const time = formatTime(c.commit.author.date);
+					const sha = c.sha.substring(0, 7);
+					const authorName = c.commit.author.name;
+					const avatarUrl = c.author ? c.author.avatar_url : '';
+					const commitUrl = c.html_url;
+
+					html += '<div class="commit-item">';
+					html += '  <div class="commit-dot"></div>';
+					html += '  <div class="commit-info">';
+					html += '    <div class="commit-message">' + escapeHtml(msg) + '</div>';
+					html += '    <div class="commit-meta">';
+					if (avatarUrl) {
+						html += '      <span class="commit-author"><img src="' + avatarUrl + '&s=36" alt=""/>' + escapeHtml(authorName) + '</span>';
+					} else {
+						html += '      <span class="commit-author">' + escapeHtml(authorName) + '</span>';
+					}
+					html += '      <span class="commit-time">🕐 ' + time + '</span>';
+					html += '      <span class="commit-sha"><a href="' + commitUrl + '" target="_blank" rel="noopener">' + sha + '</a></span>';
+					html += '    </div>';
+					html += '  </div>';
+					html += '</div>';
+				});
+
+				html += '</div>';
+			});
+
+			return html;
+		}
+
+		function escapeHtml(str) {
+			var div = document.createElement('div');
+			div.textContent = str;
+			return div.innerHTML;
+		}
+
+		async function loadPage(page) {
+			try {
+				const commits = await fetchCommits(page);
+				allCommits = allCommits.concat(commits);
+
+				loading.style.display = 'none';
+				container.innerHTML = renderCommits(allCommits);
+				countBadge.textContent = 'Showing ' + allCommits.length + ' commits';
+
+				if (commits.length === PER_PAGE) {
+					loadMoreWrap.style.display = 'block';
+				} else {
+					loadMoreWrap.style.display = 'none';
+				}
+			} catch (err) {
+				loading.style.display = 'none';
+				container.innerHTML = '<div class="commits-error"><h3>Failed to load commits</h3><p>' + escapeHtml(err.message) + '</p></div>';
+			}
+		}
+
+		loadMoreBtn.addEventListener('click', function() {
+			currentPage++;
+			loadMoreBtn.textContent = 'Loading...';
+			loadPage(currentPage).then(function() {
+				loadMoreBtn.textContent = 'Load More';
+			});
+		});
+
+		// Initial load
+		loadPage(1);
+	})();
+	</script>
+</body>
+</html>

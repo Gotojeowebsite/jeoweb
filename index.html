@@ -25,6 +25,7 @@
 			<a href="/" class="brand-section">
 				<div class="brand-text">jeo</div>
 			</a>
+			<a href="/logs.html" class="header-nav-link">Logs</a>
 		</div>
 		<div class="header-right">
 			<div class="color-picker-wrap">
@@ -135,6 +136,9 @@
 		</section>
 	</main>
 
+	<!-- Last Updated Badge -->
+	<div id="lastUpdated" class="last-updated-badge"></div>
+
 	<!-- Footer -->
 	<footer class="footer">
 		<p>© 2026 jeo</p>
@@ -208,6 +212,21 @@
 					console.error(err);
 					showOverlay(err.message || String(err));
 				}
+
+				// Fetch last commit for "Last Updated" badge
+				try {
+					const resp = await fetch('https://api.github.com/repos/Gotojeowebsite/jeoweb/commits?per_page=1');
+					if (resp.ok) {
+						const data = await resp.json();
+						if (data.length > 0) {
+							const d = new Date(data[0].commit.author.date);
+							const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+							const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+							const el = document.getElementById('lastUpdated');
+							if (el) el.textContent = 'Last updated: ' + dateStr + ' at ' + timeStr;
+						}
+					}
+				} catch(e) { console.warn('Could not fetch last commit', e); }
 			})();
 
 			document.addEventListener('keydown', function(e){
