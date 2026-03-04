@@ -32,6 +32,7 @@
 			<a href="." class="brand-section">
 				<div class="brand-text">jeo</div>
 			</a>
+			<a href="flash.html" class="header-nav-link">⚡ Flash Games</a>
 			<a href="logs.html" class="header-nav-link">Logs</a>
 		</div>
 		<div class="header-right">
@@ -119,7 +120,23 @@
 		<!-- Hero Section -->
 		<section class="hero">
 			<h1>Play Unlimited Games</h1>
-			<p><span id="gameCount">0</span> games available — no downloads, no sign-ups</p>
+			<p class="hero-subtitle">No downloads, no sign-ups — just play</p>
+			<div class="stats-row">
+				<div class="stat-card">
+					<div class="stat-number" id="gameCount">0</div>
+					<div class="stat-label">Total Games</div>
+				</div>
+				<div class="stat-divider"></div>
+				<div class="stat-card">
+					<div class="stat-number stat-webgl" id="webglCount">0</div>
+					<div class="stat-label">WebGL Games</div>
+				</div>
+				<div class="stat-divider"></div>
+				<a href="flash.html" class="stat-card stat-card-link">
+					<div class="stat-number stat-flash" id="flashCount">0</div>
+					<div class="stat-label">⚡ Flash Games</div>
+				</a>
+			</div>
 		</section>
 
 		<!-- Search & Filter -->
@@ -128,6 +145,13 @@
 				<span class="search-icon">🔍</span>
 				<input id="searchInput" class="search-input" placeholder="Search games..." />
 			</div>
+			<label class="flash-toggle" data-tooltip="Show/hide Flash games">
+				<span class="flash-toggle-label">⚡ Flash</span>
+				<div class="toggle-switch">
+					<input type="checkbox" id="flashToggle" checked />
+					<span class="toggle-slider"></span>
+				</div>
+			</label>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 		</section>
 

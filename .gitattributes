@@ -1,11 +1,6 @@
 Assets/media/**/*.srt filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.vtt filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.ass filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.jpg filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.png filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.webp filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.gif filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.mkv filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.webm filter=lfs diff=lfs merge=lfs -text
@@ -18,4 +13,23 @@ Assets/media/**/*.ogg filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.aac filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.flac filter=lfs diff=lfs merge=lfs -text
 Assets/media/**/*.wav filter=lfs diff=lfs merge=lfs -text
-Assets/media/**/*.swf filter=lfs diff=lfs merge=lfs -text
+
+# All images across Assets
+Assets/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.gif filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.webp filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.ico filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.svg filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.bmp filter=lfs diff=lfs merge=lfs -text
+
+# All SWF files across Assets
+Assets/**/*.swf filter=lfs diff=lfs merge=lfs -text
+
+# Other large binaries
+Assets/**/*.wasm filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.data filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.unity3d filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.unityweb filter=lfs diff=lfs merge=lfs -text
+Assets/**/*.mp3 filter=lfs diff=lfs merge=lfs -text

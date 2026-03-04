@@ -6,11 +6,14 @@ class App {
 		this.recentlyPlayed = JSON.parse(localStorage.getItem('jeo-recent') || '[]');
 		this.MAX_RECENT = 20;
 
+		this.showFlash = localStorage.getItem('jeo-show-flash') !== 'false';
+
 		this.initElements();
 		this.loadTheme();
 		this.loadAccent();
 		this.loadBackground();
 		this.initCloaker();
+		this.initFlashToggle();
 		this.bindUI();
 		this.bootstrap();
 	}
@@ -55,8 +58,11 @@ class App {
 		this.searchInput = document.getElementById('searchInput');
 		this.gameGrid = document.getElementById('gameGrid');
 		this.gameCount = document.getElementById('gameCount');
+		this.webglCount = document.getElementById('webglCount');
+		this.flashCount = document.getElementById('flashCount');
 		this.loadingState = document.getElementById('loadingState');
 		this.refreshBtn = document.getElementById('refreshGames');
+		this.flashToggle = document.getElementById('flashToggle');
 		this.themeToggle = document.getElementById('themeToggle');
 		this.playModal = document.getElementById('playModal');
 		this.gameFrame = document.getElementById('gameFrame');
@@ -78,21 +84,28 @@ class App {
 		if (this.loadingState) this.loadingState.style.display = 'none';
 	}
 
+	animateCounter(el, target) {
+		if (!el) return;
+		const current = parseInt(el.textContent) || 0;
+		if (current === target) return;
+		const step = target > current ? 1 : -1;
+		const steps = Math.abs(target - current);
+		const interval = Math.max(Math.floor(500 / steps), 5);
+		let count = current;
+		const timer = setInterval(() => {
+			count += step;
+			el.textContent = count;
+			if (count === target) clearInterval(timer);
+		}, interval);
+	}
+
 	updateCounter() {
-		if (this.gameCount) {
-			const target = this.games.length;
-			const current = parseInt(this.gameCount.textContent) || 0;
-			if (current === target) return;
-			const step = target > current ? 1 : -1;
-			const steps = Math.abs(target - current);
-			const interval = Math.max(Math.floor(500 / steps), 5);
-			let count = current;
-			const timer = setInterval(() => {
-				count += step;
-				this.gameCount.textContent = count;
-				if (count === target) clearInterval(timer);
-			}, interval);
-		}
+		const total = this.games.length;
+		const flashGames = this.games.filter(g => g.type === 'flash').length;
+		const webglGames = total - flashGames;
+		this.animateCounter(this.gameCount, total);
+		this.animateCounter(this.webglCount, webglGames);
+		this.animateCounter(this.flashCount, flashGames);
 	}
 
 	loadTheme() {
@@ -293,6 +306,17 @@ class App {
 		}
 	}
 
+	initFlashToggle() {
+		if (this.flashToggle) {
+			this.flashToggle.checked = this.showFlash;
+			this.flashToggle.addEventListener('change', () => {
+				this.showFlash = this.flashToggle.checked;
+				localStorage.setItem('jeo-show-flash', this.showFlash);
+				this.renderGames();
+			});
+		}
+	}
+
 	refreshGames() {
 		this.refreshBtn.classList.add('spinning');
 		this.reloadGames().then(() => {
@@ -303,7 +327,11 @@ class App {
 	renderGames() {
 		const q = (this.searchInput.value || '').toLowerCase();
 		this.gameGrid.innerHTML = '';
-		const filtered = this.games.filter(g => !q || g.name.toLowerCase().includes(q));
+		const filtered = this.games.filter(g => {
+			if (!this.showFlash && g.type === 'flash') return false;
+			if (q && !g.name.toLowerCase().includes(q)) return false;
+			return true;
+		});
 		if (filtered.length === 0) {
 			this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No games found</h3><p>Try a different search term</p></div>';
 			return;
@@ -311,9 +339,10 @@ class App {
 		filtered.forEach((g, i) => {
 			const imgSrc = g.image || this.fallbackImage;
 			const isFav = this.isFavorite(g.name);
+			const flashBadge = g.type === 'flash' ? '<span class="flash-badge">⚡ Flash</span>' : '';
 			const card = document.createElement('div');
 			card.className = 'game-card';
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button></div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + flashBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });

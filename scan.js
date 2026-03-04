@@ -25,6 +25,22 @@ function collectImages(dir, baseDir) {
 	return results;
 }
 
+// Recursively check if a folder contains any .swf files
+function hasSwfFiles(dir) {
+	try {
+		const entries = fs.readdirSync(dir, { withFileTypes: true });
+		for (const entry of entries) {
+			const fullPath = path.join(dir, entry.name);
+			if (entry.isDirectory()) {
+				if (hasSwfFiles(fullPath)) return true;
+			} else if (path.extname(entry.name).toLowerCase() === '.swf') {
+				return true;
+			}
+		}
+	} catch (e) {}
+	return false;
+}
+
 // Find the best image in a game folder (searches all subfolders)
 function findImage(folderPath, folderName) {
 	try {
@@ -59,6 +75,9 @@ function scan() {
 	}
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
+	let flashCount = 0;
+	let webglCount = 0;
+
 	for (const it of items) {
 		if (!it.isDirectory()) continue;
 
@@ -71,17 +90,22 @@ function scan() {
 		const htmlFile = htmlFiles.find(f => f.toLowerCase() === 'index.html') || htmlFiles[0];
 
 		const image = findImage(folderPath, it.name);
+		const isFlash = hasSwfFiles(folderPath);
+
+		if (isFlash) flashCount++;
+		else webglCount++;
 
 		results.push({
 			name: it.name,
 			url: `Assets/${it.name}/${htmlFile}`,
-			image: image || 'notavailable.svg'
+			image: image || 'notavailable.svg',
+			type: isFlash ? 'flash' : 'webgl'
 		});
 	}
 
 	results.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
-	console.log(`Wrote ${OUTFILE} -> ${results.length} games`);
+	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${webglCount} WebGL)`);
 }
 
 scan();
