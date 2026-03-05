@@ -2,9 +2,14 @@
 set -euo pipefail
 
 if ! command -v pwsh >/dev/null 2>&1; then
-  echo "PowerShell (pwsh) is required to run import-flash.ps1 in Codespaces."
+  echo "PowerShell (pwsh) is required."
   echo "Install with: sudo apt-get update && sudo apt-get install -y powershell"
   exit 1
+fi
+
+if ! command -v wget >/dev/null 2>&1; then
+  echo "wget is required for URL downloads."
+  echo "Install with: sudo apt-get update && sudo apt-get install -y wget"
 fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
