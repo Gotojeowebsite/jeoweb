@@ -98,12 +98,12 @@ async function main() {
     let pushSuccess = false;
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        run('git push origin main');
+        run('git push --force origin main');
         pushSuccess = true;
         break;
       } catch (e) {
-        console.log(`  Push attempt ${attempt + 1} failed, retrying in 5s...`);
-        await new Promise(r => setTimeout(r, 5000));
+        console.log(`  Push attempt ${attempt + 1} failed, retrying in 10s...`);
+        await new Promise(r => setTimeout(r, 10000));
       }
     }
 
