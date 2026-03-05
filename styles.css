@@ -893,6 +893,67 @@ margin-bottom: 16px;
 .games-section { margin-bottom: 40px; }
 
 /* ========================================
+   WHAT'S NEW BUTTON
+   ======================================== */
+
+.whats-new-section {
+	margin-bottom: 24px;
+}
+
+.whats-new-section.hidden {
+	display: none;
+}
+
+.whats-new-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 22px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: var(--accent, #6c5ce7);
+	background: transparent;
+	border: 1.5px solid var(--accent, #6c5ce7);
+	border-radius: 999px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.whats-new-btn:hover {
+	background: var(--accent, #6c5ce7);
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.whats-new-btn:active {
+	transform: translateY(0);
+}
+
+.whats-new-dot {
+	width: 8px;
+	height: 8px;
+	background: #00d2a0;
+	border-radius: 50%;
+	box-shadow: 0 0 6px #00d2a0;
+	animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.whats-new-arrow {
+	transition: transform 0.2s;
+}
+
+.whats-new-btn:hover .whats-new-arrow {
+	transform: translateX(3px);
+}
+
+/* ========================================
    CAROUSEL SECTIONS (Favorites & Recent)
    ======================================== */
 

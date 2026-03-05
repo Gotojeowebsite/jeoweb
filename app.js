@@ -478,12 +478,7 @@ class App {
 			if (this.newlyAddedSection) this.newlyAddedSection.classList.add('hidden');
 			return;
 		}
-		this.newlyAddedSection.classList.remove('hidden');
-		this.newlyAddedCount.textContent = newGames.length;
-		this.newlyAddedTrack.innerHTML = '';
-		newGames.forEach(g => {
-			this.newlyAddedTrack.appendChild(this.createCarouselCard(g));
-		});
+		if (this.newlyAddedSection) this.newlyAddedSection.classList.remove('hidden');
 	}
 
 	createCarouselCard(g) {

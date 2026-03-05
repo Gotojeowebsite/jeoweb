@@ -689,7 +689,7 @@ function Import-GameFromUrl($url, $gameName) {
         $finalCount = (Get-ChildItem -Path $gameDir -Recurse -File).Count
         Write-Host ""
         Write-Host "  OK    Assets/$gameName/ ($finalCount files)" -ForegroundColor Green
-        return $true
+        return $gameName
     }
     finally {
         Remove-Item -Path $tempDir -Recurse -Force -ErrorAction SilentlyContinue
@@ -813,6 +813,25 @@ Write-Host ""
 Write-Host "  === Jeo Game Importer ===" -ForegroundColor White
 Write-Host ""
 
+# ============================================================
+#  UPDATE recently_added.json (prepend a game name)
+# ============================================================
+function Add-ToRecentlyAdded($name) {
+    $raFile = Join-Path $PSScriptRoot "recently_added.json"
+    $list = @()
+    if (Test-Path $raFile) {
+        try {
+            $raw = Get-Content -Path $raFile -Raw -ErrorAction Stop
+            $parsed = $raw | ConvertFrom-Json -ErrorAction Stop
+            if ($parsed -is [array]) { $list = @($parsed) }
+        } catch { }
+    }
+    # Remove if already present, then prepend
+    $list = @($name) + @($list | Where-Object { $_ -ne $name })
+    $list | ConvertTo-Json | Set-Content -Path $raFile -Encoding UTF8
+    Write-Host "  Updated recently_added.json (now $($list.Count) entries)" -ForegroundColor DarkGreen
+}
+
 if ($flagFetchImages) {
     Fetch-MissingImages
     Update-GamesList
@@ -821,11 +840,12 @@ elseif ($flagScan) {
     Update-GamesList
 }
 elseif ($inputUrl) {
-    $success = Import-GameFromUrl $inputUrl $inputName
-    if ($success) {
+    $importedName = Import-GameFromUrl $inputUrl $inputName
+    if ($importedName) {
         Write-Host ""
         Write-Host "  Updating games list..." -ForegroundColor Gray
         Update-GamesList
+        Add-ToRecentlyAdded $importedName
     }
 }
 else {
