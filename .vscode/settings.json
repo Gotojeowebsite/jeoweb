@@ -1,0 +1,13 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^node scan\\.js && echo \"---\" && git status --short \\| head -20$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "liveServer.settings.port": 5503,
+    "git.autoRepositoryDetection": "subFolders",
+    "git.scanRepositories": [
+        "."
+    ]
+}

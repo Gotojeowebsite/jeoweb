@@ -1,0 +1,26 @@
+{
+  "name": "jeoweb",
+  "version": "1.0.0",
+  "description": "Jeoweb - Games & Proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "flash:import": "pwsh -NoLogo -NoProfile -File ./import-flash.ps1",
+    "flash:fetch-images": "pwsh -NoLogo -NoProfile -File ./import-flash.ps1 --fetch-images",
+    "grab": "node scripts/grab-game.js",
+    "game:download": "node scripts/download-game.js",
+    "game:add": "node scripts/add-game.js",
+    "game:scan": "node scan.js",
+    "media:init": "git lfs install && node scripts/install-hooks.js",
+    "media:ingest": "node scripts/media-ingest.js",
+    "media:validate": "node scripts/media-validate.js",
+    "media:hooks": "node scripts/install-hooks.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@nebula-services/bare-server-node": "^2.0.4",
+    "node-fetch": "^3.3.2"
+  }
+}
