@@ -19,7 +19,20 @@ class App {
 	}
 
 	async bootstrap() {
+		await this.loadNewlyAdded();
 		await this.reloadGames();
+	}
+
+	async loadNewlyAdded() {
+		try {
+			const res = await fetch('recently_added.json', { cache: 'no-store' });
+			if (res.ok) {
+				const data = await res.json();
+				if (Array.isArray(data)) this.newlyAddedNames = data;
+			}
+		} catch (e) {
+			console.warn('Could not load recently_added.json', e);
+		}
 	}
 
 	async reloadGames() {
@@ -78,6 +91,12 @@ class App {
 		this.recentSection = document.getElementById('recentSection');
 		this.recentTrack = document.getElementById('recentTrack');
 		this.recentCount = document.getElementById('recentCount');
+
+		// Newly added elements
+		this.newlyAddedSection = document.getElementById('newlyAddedSection');
+		this.newlyAddedTrack = document.getElementById('newlyAddedTrack');
+		this.newlyAddedCount = document.getElementById('newlyAddedCount');
+		this.newlyAddedNames = [];
 	}
 
 	hideLoading() {
@@ -412,6 +431,7 @@ class App {
 	renderCarousels() {
 		this.renderFavorites();
 		this.renderRecent();
+		this.renderNewlyAdded();
 		this.bindCarouselArrows();
 	}
 
@@ -446,6 +466,23 @@ class App {
 		this.recentTrack.innerHTML = '';
 		recentGames.forEach(g => {
 			this.recentTrack.appendChild(this.createCarouselCard(g));
+		});
+	}
+
+	renderNewlyAdded() {
+		const newGames = this.newlyAddedNames
+			.map(name => this.games.find(g => g.name === name))
+			.filter(Boolean);
+
+		if (newGames.length === 0) {
+			if (this.newlyAddedSection) this.newlyAddedSection.classList.add('hidden');
+			return;
+		}
+		this.newlyAddedSection.classList.remove('hidden');
+		this.newlyAddedCount.textContent = newGames.length;
+		this.newlyAddedTrack.innerHTML = '';
+		newGames.forEach(g => {
+			this.newlyAddedTrack.appendChild(this.createCarouselCard(g));
 		});
 	}
 
