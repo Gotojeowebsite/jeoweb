@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Super Mario Wiki, the Mario encyclopedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"mdy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"85c1a3fea5feac6e84f269a1","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Main_Page","wgTitle":"Main Page","wgCurRevisionId":5021128,"wgRevisionId":5021128,"wgArticleId":1,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Super Mario Wiki"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Main_Page","wgRelevantArticleId":1,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgIsMainPage":true,"wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false},"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":false,"wgPopupsFlags":4};
+RLSTATE={"ext.gadget.InterwikiLinkIcons":"ready","ext.gadget.ResponsiveDesktop":"ready","ext.gadget.StaffHighlights":"ready","ext.gadget.ResponsiveStyle":"ready","ext.gadget.MainPageStyle":"ready","ext.gadget.NavboxStyle":"ready","ext.gadget.GlobalStyle":"ready","ext.gadget.TableStyle":"ready","ext.gadget.ProjectPageStyle":"ready","ext.gadget.ShroomStyle":"ready","site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.monobook.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","skins.monobook.scripts","mmv.head","mmv.bootstrap.autostart","ext.gadget.GlobalScript","ext.gadget.Countdown","ext.gadget.VideoResizer","ext.gadget.ExplainTooltips","ext.gadget.RecentChangesRefresh","ext.gadget.DarkToggle","ext.gadget.Tabber","ext.gadget.ShroomScript","ext.gadget.YouTubePopups","ext.gadget.Awards","ext.popups"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=skins.monobook.styles&amp;only=styles&amp;skin=monobook"/>
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=monobook"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=ext.gadget.GlobalStyle%2CInterwikiLinkIcons%2CMainPageStyle%2CNavboxStyle%2CProjectPageStyle%2CResponsiveDesktop%2CResponsiveStyle%2CShroomStyle%2CStaffHighlights%2CTableStyle&amp;only=styles&amp;skin=monobook"/>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=monobook"/>
+<meta name="generator" content="MediaWiki 1.39.17"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="theme-color" content="#D10200"/>
+<meta name="description" content="The Super Mario Wiki is a comprehensive encyclopedia dedicated to the Super Mario video game franchise from Nintendo, with 34,631 articles."/>
+<meta name="twitter:site" content="@SMWikiOfficial"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="viewport" content="width=1000"/>
+<link rel="apple-touch-icon" href="https://mario.wiki.gallery/images/apple-touch-icon.png"/>
+<link rel="icon" href="https://mario.wiki.gallery/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Super Mario Wiki"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.mariowiki.com/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Super Mario Wiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="canonical" href="https://www.mariowiki.com/"/>
+<meta property="og:image" content="https://mario.wiki.gallery/images/mariowiki.png"/>
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/global.css">
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/desktop.css">
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/responsive.css">
+<style type="text/css">
+@import url(https://wiki.gallery/1_39/css/dark/all.css) (prefers-color-scheme: dark);
+@import url(https://wiki.gallery/1_39/css/dark/niwa.css) (prefers-color-scheme: dark);
+@import url(/MediaWiki:Dark.css?action=raw&ctype=text/css) (prefers-color-scheme: dark);
+@import url(https://wiki.gallery/1_39/css/dark/monobook.css) (prefers-color-scheme: dark);
+@import url(/MediaWiki:DarkMonobook.css?action=raw&ctype=text/css) (prefers-color-scheme: dark);
+@import url(/MediaWiki:DarkShroom.css?action=raw&ctype=text/css) (prefers-color-scheme: dark);
+</style>
+<link rel="preconnect" href="https://a.pub.network/" crossorigin />
+<link rel="preconnect" href="https://b.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.pub.network/" crossorigin />
+<link rel="preconnect" href="https://d.pub.network/" crossorigin />
+<link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+<link rel="preconnect" href="https://btloader.com/" crossorigin />
+<link rel="preconnect" href="https://api.btloader.com/" crossorigin />
+<link rel="preconnect" href="https://confiant-integrations.global.ssl.fastly.net" crossorigin />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WQFK2W4X3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WQFK2W4X3');
+</script>
+<!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = 'www.mariowiki.com';
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://cmp.inmobi.com'
+    .concat('/choice/', 'v0NnnH1M4W081', '/', host, '/choice.js?tag_version=V3');
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        if(args[0] === 'init' && typeof args[3] === 'object') {
+          args[3] = Object.assign(args[3], { tag_version: 'V3' });
+        }
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+<script data-cfasync="false" type="text/javascript">
+  var freestar = freestar || {};
+  freestar.queue = freestar.queue || [];
+  freestar.config = freestar.config || {};
+  freestar.config.disabledProducts = {
+    googleInterstitial: true,
+    videoAdhesion: true,
+    video: true,
+  };
+  freestar.config.enabled_slots = [];
+  freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+</script>
+<script src="https://a.pub.network/mariowiki-com/pubfig.min.js" data-cfasync="false" async></script>
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/freestar/ads.css">
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/freestar/dark.css">
+<link rel="stylesheet" href="https://wiki.gallery/1_39/css/freestar/sticky.css">
+<meta property="og:title" content="Super Mario Wiki"/>
+<meta property="og:url" content="https://www.mariowiki.com/"/>
+<meta property="og:description" content="The Super Mario Wiki is a comprehensive encyclopedia dedicated to the Super Mario video game franchise from Nintendo, with 34,631 articles."/>
+<meta property="article:modified_time" content="2025-08-17T00:07:56Z"/>
+<meta property="article:published_time" content="2025-08-17T00:07:56Z"/>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","name":"Super Mario Wiki, the Mario encyclopedia","headline":"Super Mario Wiki, the Mario encyclopedia","mainEntityOfPage":"Main Page","identifier":"https:\/\/www.mariowiki.com\/","url":"https:\/\/www.mariowiki.com\/","description":"The Super Mario Wiki is a comprehensive encyclopedia dedicated to the Super Mario video game franchise from Nintendo, with 34,631 articles.","dateModified":"2025-08-17T00:07:56Z","datePublished":"2025-08-17T00:07:56Z","image":{"@type":"ImageObject"},"author":{"@type":"Organization","name":"Super Mario Wiki","url":"https:\/\/www.mariowiki.com","logo":{"@type":"ImageObject","caption":"Super Mario Wiki"}},"publisher":{"@type":"Organization","name":"Super Mario Wiki","url":"https:\/\/www.mariowiki.com","logo":{"@type":"ImageObject","caption":"Super Mario Wiki"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/www.mariowiki.com\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+<meta property="og:type" content="website"/>
+</head>
+<body class="mw-1_39 porple mariowiki desktop rootpage ns-content anon newbie niwa light mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Main_Page rootpage-Main_Page skin-monobook action-view"><div id="globalWrapper">
+	<div id="column-content">
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="siteNotice"></div>
+			<div class="mw-indicators">
+			</div>
+			<h1 id="firstHeading" class="firstHeading mw-first-heading" style="display: none"><span class="mw-page-title-main">Main Page</span></h1>
+			<div id="bodyContent" class="monobook-body">
+				<div id="siteSub">From the Super Mario Wiki, the Mario encyclopedia</div>
+				<div id="contentSub" ></div>
+				
+				<div id="jump-to-nav"></div><a href="#column-one" class="mw-jump-link">Jump to navigation</a><a href="#searchInput" class="mw-jump-link">Jump to search</a>
+				<!-- start content -->
+				<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div id="adBanner" class="adWrapper" style="margin:0 0 12.5px"><!-- Tag ID: mariowiki_leaderboard_atf -->
+<div align="center" data-freestar-ad="__320x100 __970x90" id="mariowiki_leaderboard_atf">
+  <script data-cfasync="false" type="text/javascript">
+    freestar.config.enabled_slots.push({ placementName: "mariowiki_leaderboard_atf", slotId: "mariowiki_leaderboard_atf" });
+  </script>
+</div></div><div class="mw-parser-output"><table id="welcome" class="mainpagebox">
+<tbody><tr>
+<td>
+<table style="width:100%;overflow:visible !important">
+<tbody><tr>
+<td style="width:100%;text-align:center;white-space:nowrap">
+<div id="WelcomeDiv" style="font-size:160%;padding:0.1em 0;margin:0.2em 0 -0.5em"><span class="MainTopText"><a href="/MarioWiki:Introduction" title="MarioWiki:Introduction">Welcome to the <b>Super Mario Wiki</b>!</a></span></div>
+<div id="WithText" class="MainTopText">with <a href="/Special:Statistics" title="Special:Statistics">34,632</a> <a href="/Special:AllPages" title="Special:AllPages">articles</a> covering <i><a href="/Super_Mario_(franchise)" title="Super Mario (franchise)">Super Mario</a></i> and <a href="/MarioWiki:Coverage" title="MarioWiki:Coverage">more</a></div>
+<p id="linksRow1" style="font-variant:small-caps;margin:-9px 10px 0"><a href="/MarioWiki:Links" title="MarioWiki:Links"><span title="Other websites about the red-capped plumber">Links</span></a> | <a href="/MarioWiki:Glossary" title="MarioWiki:Glossary"><span title="Terms used around the wiki">Glossary</span></a> | <a href="/MarioWiki:Maintenance" title="MarioWiki:Maintenance"><span title="Help us maintain various aspects of the wiki and fix articles">Maintenance</span></a> | <a href="/MarioWiki:About" title="MarioWiki:About"><span title="A quick overview of the wiki and how you can join">About</span></a> | <a href="/Help:Contents" title="Help:Contents"><span title="The place to find out">Help</span></a></p>
+<p id="linksRow2" class="plainlinks" style="font-variant:small-caps;margin:2px 10px 0"><a href="/MarioWiki:Proposals" title="MarioWiki:Proposals"><span title="Ideas to improve the wiki where users give their votes and opinions">Proposals</span></a> | <a href="https://www.marioboards.com/" class="extiw" title="mb:"><span title="Our official forum, with a lot to discuss">Mario Boards</span></a> | <a href="/MarioWiki:Anniversary" title="MarioWiki:Anniversary"><span title="Celebrate our 21 years of activity with us in August">Anniversary</span></a></p>
+<p id="iconsRow3" style="margin:5px 10px 0"><a href="/MarioWiki:Discord_servers" title="Chat with us on Discord"><img alt="Chat with us on Discord" src="https://mario.wiki.gallery/images/9/9f/Discord_icon.svg" decoding="async" loading="eager" width="24" height="24" data-file-width="512" data-file-height="512" /></a><a href="https://bsky.app/profile/mariowiki.com" title="Follow us on Bluesky" target="_blank" rel="nofollow"><img alt="Follow us on Bluesky" src="https://mario.wiki.gallery/images/5/5e/Bluesky_icon.svg" decoding="async" loading="eager" width="24" height="24" data-file-width="512" data-file-height="512" /></a><a href="https://www.facebook.com/smwiki" title="Like us on Facebook" target="_blank" rel="nofollow"><img alt="Like us on Facebook" src="https://mario.wiki.gallery/images/1/1b/Facebook_icon.svg" decoding="async" loading="eager" width="24" height="24" data-file-width="512" data-file-height="512" /></a><a href="https://x.com/SMWikiOfficial" title="Follow us on X" target="_blank" rel="nofollow"><img alt="Follow us on X" src="https://mario.wiki.gallery/images/c/cc/X_icon.svg" decoding="async" loading="eager" width="24" height="24" data-file-width="512" data-file-height="512" /></a><a href="https://www.youtube.com/@MarioWiki" title="Subscribe to us on YouTube" target="_blank" rel="nofollow"><img alt="Subscribe to us on YouTube" src="https://mario.wiki.gallery/images/4/4f/YouTube_icon.svg" decoding="async" loading="eager" width="24" height="24" data-file-width="512" data-file-height="512" /></a></p>
+</td></tr></tbody></table>
+</td>
+<td id="nav-container" style="padding:2px">
+<table id="nav" class="mainpagebox" style="line-height:23px">
+<tbody><tr>
+<td><div style="margin-left:-1px">
+<ul><li><a href="/List_of_games" title="List of games"><span title="All the games Mario has ever appeared in, right here">Games</span></a></li>
+<li><a href="/List_of_characters" title="List of characters"><span title="Every Super Mario character, no matter how obscure">Characters</span></a></li>
+<li><a href="/List_of_locations" title="List of locations"><span title="The various places in the Super Mario games">Locations</span></a></li>
+<li><a href="/List_of_items" title="List of items"><span title="Every power-up and mushroom, even collectibles">Items</span></a></li></ul>
+</div>
+</td>
+<td><div style="margin:0 -7px 0 -6px">
+<ul><li><a href="/List_of_allies" title="List of allies"><span title="Throughout their travels, Mario and company have picked up many friends">Allies</span></a></li>
+<li><a href="/List_of_enemies" title="List of enemies"><span title="Super Mario games wouldn&#39;t be much of a challenge without these fiends">Enemies</span></a></li>
+<li><a href="/List_of_species" title="List of species"><span title="The many species that Mario and friends have run into over the years">Species</span></a></li>
+<li><a href="/List_of_moves" title="List of moves"><span title="The attacks and abilities used by Mario and others">Moves</span></a></li></ul>
+</div>
+</td>
+<td><div style="margin-right:-3px">
+<ul><li><a href="/List_of_albums" title="List of albums"><span title="Soundtracks and compilations of catchy Mario music">Albums</span></a></li>
+<li><a href="/List_of_television_series_and_films" title="List of television series and films"><span title="Everything Mario has starred in on the screen, big or small">TV &amp; films</span></a></li>
+<li><a href="/List_of_publications" title="List of publications"><span title="Information on Mario books, magazines, and comics">Publications</span></a></li>
+<li><a href="/List_of_merchandise" title="List of merchandise"><span title="The stuff we Mario fanatics spend our hard-earned cash on">Merchandise</span></a></li></ul>
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<table id="announce" class="mainpagebox">
+<tbody><tr>
+<td>Issue 227 of <i><a href="/The_%27Shroom:Main_Page" title="The &#39;Shroom:Main Page">The 'Shroom</a></i> has been released!
+</td></tr></tbody></table>
+<table id="todo" class="mainpagebox useronly">
+<tbody><tr>
+<td><div class="todo-wrapper" style="display:flex;flex-wrap:wrap;justify-content:center;text-align:center;line-height:1.4"><div class="todo-entry todo-group1" style=""><big><a href="/MarioWiki:Proposals#List_of_ongoing_talk_page_proposals" title="MarioWiki:Proposals">4</a></big><br /><small>Ongoing<br /><span class="explain" title="talk page proposal">TPP</span>s</small></div><div class="todo-entry todo-group1" style=""><big><a href="/MarioWiki:Proposals#Unimplemented_proposals" title="MarioWiki:Proposals">40+</a></big><br /><small>Unimplemented<br />proposals</small></div><div class="todo-entry todo-group1" style=""><big><a href="/Category:Talk_pages_with_unresolved_issues" title="Category:Talk pages with unresolved issues">287</a></big><br /><small>Unresolved<br />discussions</small></div><div class="todo-entry todo-group2" style=""><big><a href="/Category:Articles_under_construction" title="Category:Articles under construction">59</a></big><br /><small>Construction<br />projects</small></div><div class="todo-entry todo-group2" style=""><big><a href="/Category:Articles_to_be_rewritten" title="Category:Articles to be rewritten">208</a></big><br /><small>Rewrites<br />needed</small></div><div class="todo-entry todo-group2" style=""><big><a href="/Category:Articles_with_sourcing_issues" title="Category:Articles with sourcing issues">18234</a></big><br /><small>Sourcing<br />issues</small></div><div class="todo-entry todo-group2" style=""><big><a href="/Category:Stubs" title="Category:Stubs">986</a></big><br /><small>Stub<br />articles</small></div><div class="todo-entry todo-group2" style=""><big><a href="/Special:WantedPages" title="Special:WantedPages">1000+</a></big><br /><small>Wanted<br />articles</small></div><div class="todo-entry todo-group3" style=""><big><a href="/Category:Pages_to_be_immediately_deleted" title="Category:Pages to be immediately deleted">1</a></big><br /><small>Immediate<br />deletion</small></div><div class="todo-entry todo-group3" style=""><big><a href="/Category:Pages_requested_to_be_deleted" title="Category:Pages requested to be deleted">14</a></big><br /><small>Requested<br />deletions</small></div><div class="todo-entry todo-group3" style=""><big><a href="/Category:Pages_with_move_suggestions" title="Category:Pages with move suggestions">49</a></big><br /><small>Suggested<br />moves</small></div><div class="todo-entry todo-group3" style=""><big><a href="/Category:Pages_with_merge_suggestions" title="Category:Pages with merge suggestions">93</a></big><br /><small>Suggested<br />merges</small></div><div class="todo-entry todo-group3" style=""><big><a href="/Category:Pages_with_split_suggestions" title="Category:Pages with split suggestions">69</a></big><br /><small>Suggested<br />splits</small></div><div class="todo-entry todo-group4" style=""><big><a href="/Category:Articles_with_unknown_foreign_name_meanings" title="Category:Articles with unknown foreign name meanings">1</a></big><br /><small>Unknown<br />meaning</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Category:Images_to_be_reuploaded_with_higher_quality" title="Category:Images to be reuploaded with higher quality">3891</a></big><br /><small>Image<br />quality</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Category:Articles_that_need_an_image" title="Category:Articles that need an image">738</a></big><br /><small>Images<br />needed</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Category:Articles_that_need_media" title="Category:Articles that need media">525</a></big><br /><small>Media<br />needed</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Category:Media_files_to_be_reuploaded_with_higher_quality" title="Category:Media files to be reuploaded with higher quality">17</a></big><br /><small>Media<br />quality</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Special:UnusedFiles" title="Special:UnusedFiles">75+</a></big><br /><small>Unused<br />files</small></div><div class="todo-entry todo-group5" style=""><big><a href="/Category:Files_to_be_used" title="Category:Files to be used">22</a></big><br /><small>To be<br />used</small></div></div>
+</td></tr></tbody></table>
+<table id="mp-body" style="width:100%;border-spacing:0;margin:10px 0" cellspacing="0" cellpadding="0">
+
+<tbody><tr valign="top">
+<td style="width:60%;padding:0 10px 0 0">
+<table id="featured" class="mainpagebox">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="Featured_article">Featured article</span></h2>
+</th></tr>
+<tr>
+<td style="position:relative">
+<div style="padding:3px 8px 2px">
+<div style="margin-bottom:1.66em"><div class="mainpage-image-wrapper" style="float:left;clear:left;background:#fff;--darkbg:#222;border:1px solid #3B587E;margin:0 0.7em 0.2em 0">
+<a href="/File:Mkwii.jpg" class="image"><img alt="Mario Kart Wii box art" src="https://mario.wiki.gallery/images/thumb/2/29/Mkwii.jpg/100px-Mkwii.jpg" decoding="async" loading="lazy" width="100" height="142" srcset="https://mario.wiki.gallery/images/thumb/2/29/Mkwii.jpg/150px-Mkwii.jpg 1.5x, https://mario.wiki.gallery/images/thumb/2/29/Mkwii.jpg/200px-Mkwii.jpg 2x" data-file-width="1059" data-file-height="1500" /></a></div>
+<i><b><a href="/Mario_Kart_Wii" title="Mario Kart Wii">Mario Kart Wii</a></b></i> is a multiplayer-oriented racing game from the <i><a href="/Mario_Kart" title="Mario Kart">Mario Kart</a></i> series for the <a href="/Wii" title="Wii">Wii</a>, developed by <a href="/Nintendo_Entertainment_Analysis_and_Development" title="Nintendo Entertainment Analysis and Development">Nintendo EAD</a>. <i>Mario Kart Wii</i> retains the traditional premise of the franchise, with players selecting <a href="/Super_Mario_(franchise)" title="Super Mario (franchise)"><i>Super Mario</i>–franchise</a> characters to use as drivers alongside themed vehicles. As with most racing games, the overarching goal is to place first among other competitors, achieved through the usage of item-based weaponry common to the series and taking the fastest routes to secure the lead. Several new key elements introduced to <i>Mario Kart Wii</i> include increasing the number of racers per race from eight to twelve, <a href="/Jump_Boost" title="Jump Boost">tricks</a>, and a new type of vehicle to the franchise: <a href="/Bike" title="Bike">bikes</a>. The game takes advantage of features unique to the Wii, most particularly its motion control capabilities. A <a href="/Wii#Wii_Wheel" title="Wii">Wii Wheel</a> was included in most releases, though the game is still compatible with other controllers such as a regular <a href="/Wii#Wii_Remote" title="Wii">Wii Remote</a> held sideways, the Wii Remote and Nunchuk, the Nintendo GameCube controller, and the Classic Controller and Classic Controller Pro. Additional game modes are also present, such as the traditional Grand Prix, Versus, Battle, and Time Trial modes.</div>
+<div class="noprint" style="float:right;position:absolute;right:0;bottom:0;padding:0 17px 2px 0"><b><a href="/MarioWiki:Featured_articles" title="MarioWiki:Featured articles">More featured articles...</a></b></div>
+</div>
+</td></tr></tbody></table>
+<table id="poll" class="mainpagebox">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="Community_poll">Community poll</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="text-align:left;padding:3px 8px 2px 5px">
+<div id="poll-container"><script>window.answerOtherHTML=undefined</script><script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/16693530.js"></script><noscript><a href="https://poll.fm/16693530">Link to poll</a></noscript> </div>
+<div class="noprint plainlinks" style="float:right;padding:0;margin:-1.07em 8px 2px 0"><br /><span id="poll-extra-links"><b><a href="https://www.marioboards.com/threads/45007/latest" class="extiw" title="mb:threads/45007/latest">Discuss</a></b> • <b><a target="_blank" rel="nofollow" class="external text" href="https://docs.google.com/forms/d/e/1FAIpQLScEtpPM1A4tEmc2LpFtEkux-pnthkVxsJqPxXBGtVLdORaLyQ/viewform">Submit poll</a></b> • </span><b><a href="/MarioWiki:Polls" title="MarioWiki:Polls">Archive...</a></b></div>
+</div>
+</td></tr></tbody></table>
+<table id="shroom-left" class="mainpagebox shroom-box">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="MarioWiki_newspaper">MarioWiki newspaper</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="text-align:left;padding:4px 5px">
+<div><div class="shroombg v2 mainpage shroomwinter" style="text-align:center; padding:0">
+<div><a href="/The_%27Shroom:Main_Page" title="The &#39;Shroom, newspaper of the Super Mario Wiki"><img alt="The &#39;Shroom, newspaper of the Super Mario Wiki" src="https://mario.wiki.gallery/images/c/cc/Shroom200Logo.svg" decoding="async" loading="lazy" width="300" height="68" class="shroomlogo" data-file-width="399" data-file-height="90" /></a></div>
+<hr />
+<div style="font-size:16px"><b><a href="/The_%27Shroom:Issue_227" title="The &#39;Shroom:Issue 227">Issue 227</a></b></div>
+<div style="font-size:11px"><a href="/The_%27Shroom:Calendar" title="The &#39;Shroom:Calendar">Next Issue: <b>March 21<sup>st</sup>, 2026</b></a></div>
+<hr />
+<div class="shroomfooter">
+<ul><li><a href="/The_%27Shroom:About" title="The &#39;Shroom:About">About</a></li>
+<li><a href="/The_%27Shroom:Archives" title="The &#39;Shroom:Archives">Archives</a></li>
+<li><a href="/The_%27Shroom_talk:Main_Page" title="The &#39;Shroom talk:Main Page">Comments</a></li>
+<li><a href="/The_%27Shroom:Spotlight" title="The &#39;Shroom:Spotlight">Spotlight</a></li>
+<li><a href="/The_%27Shroom:Sign_up" title="The &#39;Shroom:Sign up">Sign up</a></li>
+<li><a href="/The_%27Shroom:Contact_us" title="The &#39;Shroom:Contact us">Contact us</a></li></ul>
+</div>
+</div></div>
+</div>
+</td></tr></tbody></table>
+<table id="mwe-left" class="mainpagebox mwe-box" style="display:none !important">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="Mushroom_World_Encyclopedia">Mushroom World Encyclopedia</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="padding:3px 8px 2px">
+<div><div class="floatleft"><a href="/MarioWiki:Mushroom_World_Encyclopedia" title="Mushroom World Encyclopedia"><img alt="Mushroom World Encyclopedia" src="https://mario.wiki.gallery/images/thumb/1/12/Mushroom_world_encyclopedia.png/100px-Mushroom_world_encyclopedia.png" decoding="async" loading="lazy" width="100" height="85" class="invert-dark" srcset="https://mario.wiki.gallery/images/thumb/1/12/Mushroom_world_encyclopedia.png/150px-Mushroom_world_encyclopedia.png 1.5x, https://mario.wiki.gallery/images/1/12/Mushroom_world_encyclopedia.png 2x" data-file-width="200" data-file-height="169" /></a></div> The <b><a href="/MarioWiki:Mushroom_World_Encyclopedia" title="MarioWiki:Mushroom World Encyclopedia">Mushroom World Encyclopedia</a></b> is a multilingual and open-content project which includes the independent encyclopedias covering the <i><a href="/Super_Mario_(franchise)" title="Super Mario (franchise)">Super Mario</a></i> franchise from different areas of the world.
+<div style="text-align:center;margin-top:9px"><a class="mw-selflink selflink">English</a> | <a href="https://wikimario.fr/Wiki_Mario" class="extiw" title="fr:Wiki Mario">French</a> | <a href="https://mariowiki.net/wiki/MarioWiki:Hauptseite" class="extiw" title="de:MarioWiki:Hauptseite">German</a> | <a href="https://www.mariowiki.it/Pagina_principale" class="extiw" title="it:Pagina principale">Italian</a></div></div>
+</div>
+</td></tr></tbody></table>
+<table id="maintain-left" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/MarioWiki:Maintenance/Main_page" title="MarioWiki:Maintenance/Main page">Help us maintain this page...</a>
+</td></tr></tbody></table>
+<table id="rc-left" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Special:RecentChanges" title="Special:RecentChanges">View recent changes to the wiki...</a>
+</td></tr></tbody></table>
+<table id="random-left" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Special:Random" title="Special:Random">Check out a random article...</a>
+</td></tr></tbody></table>
+<table id="faq-left" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/MarioWiki:FAQ" title="MarioWiki:FAQ">Answers to frequently asked questions...</a>
+</td></tr></tbody></table>
+<table id="editing-left" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Help:Editing" title="Help:Editing">An introduction for new editors...</a>
+</td></tr></tbody></table>
+</td>
+<td style="width:40%;padding:0">
+<table id="news" class="mainpagebox">
+<tbody><tr>
+<th>
+<h2><span id="Mario_&amp;_Nintendo_news"></span><span class="mw-headline" id="Mario_.26_Nintendo_news">Mario &amp; Nintendo news</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="padding:0 8px 1px 0;margin-top:-1px">
+<div><div class="mainpage-image-wrapper" style="float:right;clear:right;background:#fff;--darkbg:#222;border:1px solid #3B587E;margin:0 0 0.2em 0.7em">
+<a href="/File:Marios_tennis_english_cover.jpg" class="image"><img alt="North American box art for Mario&#39;s Tennis" src="https://mario.wiki.gallery/images/thumb/b/b2/Marios_tennis_english_cover.jpg/150px-Marios_tennis_english_cover.jpg" decoding="async" loading="lazy" width="150" height="150" srcset="https://mario.wiki.gallery/images/thumb/b/b2/Marios_tennis_english_cover.jpg/225px-Marios_tennis_english_cover.jpg 1.5x, https://mario.wiki.gallery/images/thumb/b/b2/Marios_tennis_english_cover.jpg/300px-Marios_tennis_english_cover.jpg 2x" data-file-width="640" data-file-height="640" /></a></div>
+<ul><li><i><b><a href="/Mario%27s_Tennis" title="Mario&#39;s Tennis">Mario's Tennis</a></b> (pictured)</i> and <i><b><a href="/Mario_Clash" title="Mario Clash">Mario Clash</a></b></i> were <a target="_blank" rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=X5w3lAC4B5I">announced</a> to be released on <a href="/Virtual_Boy_-_Nintendo_Classics" title="Virtual Boy - Nintendo Classics">Virtual Boy - Nintendo Classics</a> on March 10, 2026. Additionally, <i><b><a href="/Mario_vs._Donkey_Kong" title="Mario vs. Donkey Kong">Mario vs. Donkey Kong</a></b></i> will release on <a href="/Game_Boy_Advance_-_Nintendo_Classics" title="Game Boy Advance - Nintendo Classics">Game Boy Advance - Nintendo Classics</a> on the same day.</li>
+<li>The <a href="/Super_Mario_Land_2_-_6_Golden_Coins_(Nintendo_Music)" title="Super Mario Land 2 - 6 Golden Coins (Nintendo Music)">soundtrack</a> for <i><b><a href="/Super_Mario_Land_2_-_6_Golden_Coins" title="Super Mario Land 2 - 6 Golden Coins">Super Mario Land 2 - 6 Golden Coins</a></b></i> was made available on the <a href="/Nintendo_Music" title="Nintendo Music">Nintendo Music</a> app on February 23, 2026.</li>
+<li>Select products in the <b><a href="/My_Mario" title="My Mario">My Mario</a></b> line, including the <i><b><a href="/Hello,_Mario!_(game)" title="Hello, Mario! (game)">Hello, Mario!</a></b></i> application, were released outside of Japan on February 19, 2026. The sixth episode of <i><a href="/It%27s_Me,_Mario!_Stop_Motion_Shorts" title="It&#39;s Me, Mario! Stop Motion Shorts">It's Me, Mario! Stop Motion Shorts</a></i>, "<b><a href="/Balancing_Act_(episode)" title="Balancing Act (episode)">Balancing Act</a></b>", was also released on the same day.</li>
+<li><b><a href="/Virtual_Boy_-_Nintendo_Classics" title="Virtual Boy - Nintendo Classics">Virtual Boy - Nintendo Classics</a></b> was released on February 17, 2026 for <a href="/Nintendo_Switch_Online" title="Nintendo Switch Online">Nintendo Switch Online + Expansion Pack</a> subscribers, with <i><b><a href="/Virtual_Boy_Wario_Land" title="Virtual Boy Wario Land">Virtual Boy Wario Land</a></b></i> included as a launch game.</li></ul></div>
+</div>
+</td></tr></tbody></table>
+<table id="dyk" class="mainpagebox">
+<tbody><tr>
+<th>
+<h2><span id="Did_you_know?"></span><span class="mw-headline" id="Did_you_know.3F">Did you know?</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="padding:0 8px 1px 0;margin-top:-2px">
+<div><div class="mainpage-image-wrapper" style="float:right;clear:right;background:#fff;--darkbg:#222;border:1px solid #3B587E;margin:0 0 0.2em 0.7em">
+<a href="/File:MKT_Icon_NinjaScroll.png" class="image"><img alt="Ninja Scroll from Mario Kart Tour" src="https://mario.wiki.gallery/images/thumb/a/a3/MKT_Icon_NinjaScroll.png/150px-MKT_Icon_NinjaScroll.png" decoding="async" loading="lazy" width="150" height="150" class="sprite" srcset="https://mario.wiki.gallery/images/thumb/a/a3/MKT_Icon_NinjaScroll.png/225px-MKT_Icon_NinjaScroll.png 1.5x, https://mario.wiki.gallery/images/thumb/a/a3/MKT_Icon_NinjaScroll.png/300px-MKT_Icon_NinjaScroll.png 2x" data-file-width="512" data-file-height="512" /></a></div>
+<ul><li>The kanji on the <b><a href="/Ninja_Scroll" title="Ninja Scroll">Ninja Scroll</a></b> <a href="/Glider" title="Glider">glider</a> from <i><a href="/Mario_Kart_Tour" title="Mario Kart Tour">Mario Kart Tour</a> (pictured)</i> translates to "way of the ninja".</li>
+<li><b><a href="/Wario" title="Wario">Wario</a></b>'s favorite food was originally <a href="https://en.wikipedia.org/wiki/cr%C3%AApe" class="extiw" title="wikipedia:crêpe">crêpes</a> according to his creator <a href="/Hiroji_Kiyotake" title="Hiroji Kiyotake">Hiroji Kiyotake</a>.</li>
+<li>A <b><a href="/List_of_Yoshi%27s_New_Island_glitches#Inside_Smiley_Blocks" title="List of Yoshi&#39;s New Island glitches">glitch</a></b> in <i><a href="/Yoshi%27s_New_Island" title="Yoshi&#39;s New Island">Yoshi's New Island</a></i> lets the player clip into the smiling blocks found in the level <a href="/Beware_the_Boo_Brigade" title="Beware the Boo Brigade">Beware the Boo Brigade</a>.</li>
+<li>In <i><a href="/Donkey_Kong_Country:_Tropical_Freeze" title="Donkey Kong Country: Tropical Freeze">Donkey Kong Country: Tropical Freeze</a></i>, <a href="/Samus" title="Samus">Samus</a>'s <a href="https://www.metroidwiki.org/wiki/Gunship" class="extiw" title="metroidwiki:Gunship">Gunship</a> can be seen in the background of the level <b><a href="/Busted_Bayou" title="Busted Bayou">Busted Bayou</a></b>.</li></ul></div>
+</div>
+</td></tr></tbody></table>
+<table id="shroom-right" class="mainpagebox shroom-box" style="display:none !important">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="MarioWiki_newspaper_2">MarioWiki newspaper</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="text-align:left;padding:4px 5px">
+<div><div class="shroombg v2 mainpage shroomwinter" style="text-align:center; padding:0">
+<div><a href="/The_%27Shroom:Main_Page" title="The &#39;Shroom, newspaper of the Super Mario Wiki"><img alt="The &#39;Shroom, newspaper of the Super Mario Wiki" src="https://mario.wiki.gallery/images/c/cc/Shroom200Logo.svg" decoding="async" loading="lazy" width="300" height="68" class="shroomlogo" data-file-width="399" data-file-height="90" /></a></div>
+<hr />
+<div style="font-size:16px"><b><a href="/The_%27Shroom:Issue_227" title="The &#39;Shroom:Issue 227">Issue 227</a></b></div>
+<div style="font-size:11px"><a href="/The_%27Shroom:Calendar" title="The &#39;Shroom:Calendar">Next Issue: <b>March 21<sup>st</sup>, 2026</b></a></div>
+<hr />
+<div class="shroomfooter">
+<ul><li><a href="/The_%27Shroom:About" title="The &#39;Shroom:About">About</a></li>
+<li><a href="/The_%27Shroom:Archives" title="The &#39;Shroom:Archives">Archives</a></li>
+<li><a href="/The_%27Shroom_talk:Main_Page" title="The &#39;Shroom talk:Main Page">Comments</a></li>
+<li><a href="/The_%27Shroom:Spotlight" title="The &#39;Shroom:Spotlight">Spotlight</a></li>
+<li><a href="/The_%27Shroom:Sign_up" title="The &#39;Shroom:Sign up">Sign up</a></li>
+<li><a href="/The_%27Shroom:Contact_us" title="The &#39;Shroom:Contact us">Contact us</a></li></ul>
+</div>
+</div></div>
+</div>
+</td></tr></tbody></table>
+<table id="mwe-right" class="mainpagebox mwe-box">
+<tbody><tr>
+<th>
+<h2><span class="mw-headline" id="Mushroom_World_Encyclopedia_2">Mushroom World Encyclopedia</span></h2>
+</th></tr>
+<tr>
+<td>
+<div style="padding:3px 8px 2px">
+<div><div class="floatleft"><a href="/MarioWiki:Mushroom_World_Encyclopedia" title="Mushroom World Encyclopedia"><img alt="Mushroom World Encyclopedia" src="https://mario.wiki.gallery/images/thumb/1/12/Mushroom_world_encyclopedia.png/100px-Mushroom_world_encyclopedia.png" decoding="async" loading="lazy" width="100" height="85" class="invert-dark" srcset="https://mario.wiki.gallery/images/thumb/1/12/Mushroom_world_encyclopedia.png/150px-Mushroom_world_encyclopedia.png 1.5x, https://mario.wiki.gallery/images/1/12/Mushroom_world_encyclopedia.png 2x" data-file-width="200" data-file-height="169" /></a></div> The <b><a href="/MarioWiki:Mushroom_World_Encyclopedia" title="MarioWiki:Mushroom World Encyclopedia">Mushroom World Encyclopedia</a></b> is a multilingual and open-content project which includes the independent encyclopedias covering the <i><a href="/Super_Mario_(franchise)" title="Super Mario (franchise)">Super Mario</a></i> franchise from different areas of the world.
+<div style="text-align:center;margin-top:9px"><a class="mw-selflink selflink">English</a> | <a href="https://wikimario.fr/Wiki_Mario" class="extiw" title="fr:Wiki Mario">French</a> | <a href="https://mariowiki.net/wiki/MarioWiki:Hauptseite" class="extiw" title="de:MarioWiki:Hauptseite">German</a> | <a href="https://www.mariowiki.it/Pagina_principale" class="extiw" title="it:Pagina principale">Italian</a></div></div>
+</div>
+</td></tr></tbody></table>
+<table id="maintain-right" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/MarioWiki:Maintenance/Main_page" title="MarioWiki:Maintenance/Main page">Help us maintain this page...</a>
+</td></tr></tbody></table>
+<table id="rc-right" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Special:RecentChanges" title="Special:RecentChanges">View recent changes to the wiki...</a>
+</td></tr></tbody></table>
+<table id="random-right" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Special:Random" title="Special:Random">Check out a random article...</a>
+</td></tr></tbody></table>
+<table id="faq-right" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/MarioWiki:FAQ" title="MarioWiki:FAQ">Answers to frequently asked questions...</a>
+</td></tr></tbody></table>
+<table id="editing-right" class="mainpagebox maintain" style="display:none !important">
+<tbody><tr>
+<td><a href="/Help:Editing" title="Help:Editing">An introduction for new editors...</a>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<table id="niwa" class="mainpagebox" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td>
+<table style="width:100%" class="plainlinks">
+<tbody><tr>
+<td id="niwa-logo" rowspan="2" style="text-align:center"><a href="/MarioWiki:Nintendo_Independent_Wiki_Alliance" title="Nintendo Independent Wiki Alliance"><img alt="Nintendo Independent Wiki Alliance" src="https://mario.wiki.gallery/images/thumb/1/19/Niwalogo.png/125px-Niwalogo.png" decoding="async" loading="lazy" width="125" height="75" class="invert-dark" srcset="https://mario.wiki.gallery/images/thumb/1/19/Niwalogo.png/188px-Niwalogo.png 1.5x, https://mario.wiki.gallery/images/1/19/Niwalogo.png 2x" data-file-width="237" data-file-height="142" /></a>
+</td>
+<td id="niwa-intro"><b><a href="/MarioWiki:Nintendo_Independent_Wiki_Alliance" title="MarioWiki:Nintendo Independent Wiki Alliance">NIWA</a></b> is a group of open-content encyclopedias based on Nintendo franchises.
+</td></tr>
+<tr style="font-size:smaller">
+<td><div id="niwa-list" class="pixelated" style="column-width:220px">
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/4/4e/ARMS_Institute_icon.png/16px-ARMS_Institute_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/4/4e/ARMS_Institute_icon.png/24px-ARMS_Institute_icon.png 1.5x, https://mario.wiki.gallery/images/4/4e/ARMS_Institute_icon.png 2x" data-file-width="32" data-file-height="32" /> <a href="https://armswiki.org/wiki/Home" class="extiw" title="armswiki:Home">ARMS Institute</a><span class="niwa-series">: <i>ARMS</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/5/5a/Bulbapedia_icon.png/16px-Bulbapedia_icon.png" decoding="async" loading="lazy" width="16" height="15" srcset="https://mario.wiki.gallery/images/thumb/5/5a/Bulbapedia_icon.png/24px-Bulbapedia_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/5/5a/Bulbapedia_icon.png/32px-Bulbapedia_icon.png 2x" data-file-width="121" data-file-height="110" /> <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page" class="extiw" title="bulbapedia:Main Page">Bulbapedia</a><span class="niwa-series">: <i>Pokémon</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/5/54/Chibi-Robo%21_Wiki_icon.png/16px-Chibi-Robo%21_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/5/54/Chibi-Robo%21_Wiki_icon.png/24px-Chibi-Robo%21_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/5/54/Chibi-Robo%21_Wiki_icon.png/32px-Chibi-Robo%21_Wiki_icon.png 2x" data-file-width="64" data-file-height="64" /> <a href="https://chibi-robo.wiki/wiki/Chibi-Robo_Wiki" class="extiw" title="chibirobo:Chibi-Robo Wiki">Chibi-Robo! Wiki</a><span class="niwa-series">: <i>Chibi-Robo!</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/2/2e/Dragalia_Lost_Wiki_icon.png/16px-Dragalia_Lost_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/2/2e/Dragalia_Lost_Wiki_icon.png/24px-Dragalia_Lost_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/2/2e/Dragalia_Lost_Wiki_icon.png 2x" data-file-width="32" data-file-height="32" /> <a href="https://dragalialost.wiki/w/Dragalia_Lost_Wiki" class="extiw" title="dragaliawiki:Dragalia Lost Wiki">Dragalia Lost Wiki</a><span class="niwa-series">: <i>Dragalia Lost</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/4/46/Fire_Emblem_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" class="sprite" data-file-width="16" data-file-height="16" /> <a href="https://fireemblemwiki.org/wiki/Main_Page" class="extiw" title="fireemblem:Main Page">Fire Emblem Wiki</a><span class="niwa-series">: <i>Fire Emblem</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/a/a7/F-Zero_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" class="sprite" data-file-width="16" data-file-height="16" /> <a href="https://mutecity.org/wiki/F-Zero_Wiki" class="extiw" title="fzerowiki:F-Zero Wiki">F-Zero Wiki</a><span class="niwa-series">: <i>F-Zero</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/3/37/Golden_Sun_Universe_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://goldensunwiki.net/wiki/Main_Page" class="extiw" title="goldensun:Main Page">Golden Sun Universe</a><span class="niwa-series">: <i>Golden Sun</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/3/35/Hard_Drop_Tetris_Wiki_icon.png/16px-Hard_Drop_Tetris_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/3/35/Hard_Drop_Tetris_Wiki_icon.png/24px-Hard_Drop_Tetris_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/3/35/Hard_Drop_Tetris_Wiki_icon.png/32px-Hard_Drop_Tetris_Wiki_icon.png 2x" data-file-width="72" data-file-height="72" /> <a href="https://harddrop.com/wiki/Tetris_Wiki" class="extiw" title="harddrop:Tetris Wiki">Hard Drop Tetris Wiki</a><span class="niwa-series">: <i>Tetris</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/d/df/Icaruspedia_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://www.kidicaruswiki.org/wiki/Main_Page" class="extiw" title="icaruspedia:Main Page">Icaruspedia</a><span class="niwa-series">: <i>Kid Icarus</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/2/21/Inkipedia_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://splatoonwiki.org/wiki/Main_Page" class="extiw" title="inkipedia:Main Page">Inkipedia</a><span class="niwa-series">: <i>Splatoon</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/a/a5/Kingdom_Hearts_Wiki_icon.png/16px-Kingdom_Hearts_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/a/a5/Kingdom_Hearts_Wiki_icon.png/24px-Kingdom_Hearts_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/a/a5/Kingdom_Hearts_Wiki_icon.png 2x" data-file-width="26" data-file-height="26" /> <a href="https://www.khwiki.com/" class="extiw" title="khwiki:">Kingdom Hearts Wiki</a><span class="niwa-series">: <i>Kingdom Hearts</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/d/d4/Kovopedia_icon.png/16px-Kovopedia_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/d/d4/Kovopedia_icon.png/24px-Kovopedia_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/d/d4/Kovopedia_icon.png/32px-Kovopedia_icon.png 2x" data-file-width="256" data-file-height="256" /> <a href="https://kovopedia.com/wiki/Main_Page" class="extiw" title="kovopedia:Main Page">Kovopedia</a><span class="niwa-series">: <i>Magical Vacation</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/3/35/Lylat_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" class="sprite" data-file-width="16" data-file-height="16" /> <a href="https://www.starfoxwiki.info/wiki/Lylat_Wiki" class="extiw" title="lylatwiki:Lylat Wiki">Lylat Wiki</a><span class="niwa-series">: <i>Star Fox</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/5/52/Metroid_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://www.metroidwiki.org/wiki/Main_Page" class="extiw" title="metroidwiki:Main Page">Metroid Wiki</a><span class="niwa-series">: <i>Metroid</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/5/5b/MiiWiki_icon.png/16px-MiiWiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/5/5b/MiiWiki_icon.png/24px-MiiWiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/5/5b/MiiWiki_icon.png/32px-MiiWiki_icon.png 2x" data-file-width="48" data-file-height="48" /> <a href="https://miiwiki.org/wiki/Mii_Wiki" class="extiw" title="miiwiki:Mii Wiki">MiiWiki</a><span class="niwa-series">: Mii games</span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/0/01/NintendoWiki_icon.png/16px-NintendoWiki_icon.png" decoding="async" loading="lazy" width="16" height="15" srcset="https://mario.wiki.gallery/images/thumb/0/01/NintendoWiki_icon.png/24px-NintendoWiki_icon.png 1.5x, https://mario.wiki.gallery/images/0/01/NintendoWiki_icon.png 2x" data-file-width="31" data-file-height="30" /> <a href="https://niwanetwork.org/wiki/Main_Page" class="extiw" title="nwiki:Main Page">NintendoWiki</a><span class="niwa-series">: Nintendo</span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/b/b7/Nookipedia_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://nookipedia.com/wiki/Main_Page" class="extiw" title="nookipedia:Main Page">Nookipedia</a><span class="niwa-series">: <i>Animal Crossing</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/a/a2/Pikipedia_icon.png/16px-Pikipedia_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/a/a2/Pikipedia_icon.png/24px-Pikipedia_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/a/a2/Pikipedia_icon.png/32px-Pikipedia_icon.png 2x" data-file-width="128" data-file-height="128" /> <a href="https://www.pikminwiki.com/" class="extiw" title="pikipedia:">Pikipedia</a><span class="niwa-series">: <i>Pikmin</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/b/b6/Pikmin_Fanon_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://pikminfanon.com/wiki/Main_Page" class="extiw" title="pikminfanon:Main Page">Pikmin Fanon</a><span class="niwa-series">: <i>Pikmin</i> fanworks</span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/d/d7/Rhythm_Heaven_Wiki_icon.png/16px-Rhythm_Heaven_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/d/d7/Rhythm_Heaven_Wiki_icon.png/24px-Rhythm_Heaven_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/d/d7/Rhythm_Heaven_Wiki_icon.png/32px-Rhythm_Heaven_Wiki_icon.png 2x" data-file-width="256" data-file-height="256" /> <a href="https://rhwiki.net/wiki/Home" class="extiw" title="rhythmheaven:Home">Rhythm Heaven Wiki</a><span class="niwa-series">: <i>Rhythm Heaven</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/f/fa/SmashWiki_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://www.ssbwiki.com/" class="extiw" title="smashwiki:">SmashWiki</a><span class="niwa-series">: <i>Super Smash Bros.</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/4/44/Starfy_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" class="sprite" data-file-width="16" data-file-height="16" /> <a href="https://starfywiki.org/wiki/Main_Page" class="extiw" title="starfywiki:Main Page">Starfy Wiki</a><span class="niwa-series">: <i>The Legendary Starfy</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/e/e7/StrategyWiki_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://strategywiki.org/wiki/Main_Page" class="extiw" title="strategywiki:Main Page">StrategyWiki</a><span class="niwa-series">: Strategy guides</span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/b/bb/Super_Mario_Wiki_icon.svg" decoding="async" loading="lazy" width="16" height="16" data-file-width="512" data-file-height="512" /> <a class="mw-selflink selflink">Super Mario Wiki</a><span class="niwa-series">: <i>Super Mario</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/d/d2/Ukikipedia_icon.png/16px-Ukikipedia_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/d/d2/Ukikipedia_icon.png/24px-Ukikipedia_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/d/d2/Ukikipedia_icon.png/32px-Ukikipedia_icon.png 2x" data-file-width="256" data-file-height="256" /> <a href="https://ukikipedia.net/wiki/Main_Page" class="extiw" title="ukikipedia:Main Page">Ukikipedia</a><span class="niwa-series">: <i>Super Mario 64</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/2/26/Drawn_to_Life_Wiki_icon.png/16px-Drawn_to_Life_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/2/26/Drawn_to_Life_Wiki_icon.png/24px-Drawn_to_Life_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/2/26/Drawn_to_Life_Wiki_icon.png/32px-Drawn_to_Life_Wiki_icon.png 2x" data-file-width="270" data-file-height="270" /> <a href="https://drawntolife.wiki/en/Main_Page" class="extiw" title="drawntolife:Main Page">Wapopedia</a><span class="niwa-series">: <i>Drawn to Life</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/1/16/Wars_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" class="sprite" data-file-width="16" data-file-height="16" /> <a href="https://warswiki.org/wiki/Main_Page" class="extiw" title="warswiki:Main Page">Wars Wiki</a><span class="niwa-series">: <i>Nintendo Wars</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/f/f9/WikiBound_icon.png" decoding="async" loading="lazy" width="16" height="16" data-file-width="16" data-file-height="16" /> <a href="https://wikibound.info/wiki/WikiBound" class="extiw" title="wikibound:WikiBound">WikiBound</a><span class="niwa-series">: <i>EarthBound</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/0/0a/WiKirby_icon.png/16px-WiKirby_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/0/0a/WiKirby_icon.png/24px-WiKirby_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/0/0a/WiKirby_icon.png/32px-WiKirby_icon.png 2x" data-file-width="353" data-file-height="349" /> <a href="https://wikirby.com/wiki/Kirby_Wiki" class="extiw" title="wikirby:Kirby Wiki">WiKirby</a><span class="niwa-series">: <i>Kirby</i></span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/e/eb/Xeno_Series_Wiki_icon.png/16px-Xeno_Series_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/e/eb/Xeno_Series_Wiki_icon.png/24px-Xeno_Series_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/e/eb/Xeno_Series_Wiki_icon.png/32px-Xeno_Series_Wiki_icon.png 2x" data-file-width="48" data-file-height="48" /> <a href="https://www.xenoserieswiki.org/wiki/Main_Page" class="extiw" title="xenoseries:Main Page">Xeno Series Wiki</a><span class="niwa-series">: <i>Xeno</i> series</span></div>
+<div style="break-inside:avoid"><img alt="" src="https://mario.wiki.gallery/images/thumb/e/eb/Zelda_Wiki_icon.png/16px-Zelda_Wiki_icon.png" decoding="async" loading="lazy" width="16" height="16" srcset="https://mario.wiki.gallery/images/thumb/e/eb/Zelda_Wiki_icon.png/24px-Zelda_Wiki_icon.png 1.5x, https://mario.wiki.gallery/images/thumb/e/eb/Zelda_Wiki_icon.png/32px-Zelda_Wiki_icon.png 2x" data-file-width="48" data-file-height="48" /> <a href="https://zeldawiki.wiki/wiki/Main_Page" class="extiw" title="zeldawiki:Main Page">Zelda Wiki</a><span class="niwa-series">: <i>The Legend of Zelda</i></span></div>
+</div>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20260304033119
+Cache expiry: 3600
+Reduced expiry: true
+Complications: []
+CPU time usage: 0.169 seconds
+Real time usage: 0.188 seconds
+Preprocessor visited node count: 4296/1000000
+Post‐expand include size: 37936/4194304 bytes
+Template argument size: 7094/4194304 bytes
+Highest expansion depth: 10/100
+Expensive parser function count: 93/1000
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1/5000000 bytes
+ExtLoops count: 0/10000
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   78.017      1 -total
+ 70.05%   54.653      1 Template:ToDoList
+ 63.68%   49.683     48 Template:ToDoList/cat
+  6.40%    4.990      1 Template:NIWA_Main
+  3.85%    3.007     31 Template:NIWA_Main/entry
+  2.90%    2.263      1 Template:DidYouKnow
+  2.49%    1.941      1 Template:Poll
+  2.09%    1.634      4 Template:ToDoList/link
+  1.58%    1.236      1 Template:Featured
+  1.32%    1.027      2 Template:Announcement
+-->
+
+<!-- Saved in parser cache with key mario?hwiki:pcache:idhash:1-0!canonical and timestamp 20260304033119 and revision id 5021128.
+ -->
+</div><div id="adBox" class="adWrapper" style="margin-top:10px"><!-- Tag ID: mariowiki_incontent_3 -->
+<div align="center" data-freestar-ad="__336x280 __970x250" id="mariowiki_incontent_3">
+  <script data-cfasync="false" type="text/javascript">
+    freestar.config.enabled_slots.push({ placementName: "mariowiki_incontent_3", slotId: "mariowiki_incontent_3" });
+  </script>
+</div></div><div id="cmp-privacy-link" style="height:1.5em"></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://www.mariowiki.com/index.php?title=Main_Page&amp;oldid=5021128">https://www.mariowiki.com/index.php?title=Main_Page&amp;oldid=5021128</a>"</div></div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Super_Mario_Wiki" title="Category:Super Mario Wiki">Super Mario Wiki</a></li></ul></div></div>
+				<!-- end content -->
+				<div class="visualClear"></div>
+			</div>
+		</div>
+		<div class="visualClear"></div>
+	</div>
+	<div id="column-one" >
+		<h2>Navigation menu</h2>
+		<div role="navigation" class="portlet" id="p-cactions" aria-labelledby="p-cactions-label">
+			<h3 id="p-cactions-label" >Page actions</h3>
+			<div class="pBody">
+				<ul >
+				<li id="ca-nstab-main" class="selected mw-list-item"><a href="/" title="View the content page [c]" accesskey="c">Main page</a></li><li id="ca-talk" class="mw-list-item"><a href="/Talk:Main_Page" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li><li id="ca-view" class="selected mw-list-item"><a href="/">Read</a></li><li id="ca-viewsource" class="mw-list-item"><a href="/Main_Page?action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="mw-list-item"><a href="/Main_Page?action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				
+				</ul>
+			</div>
+		</div>
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-cactions-mobile"
+	id="p-cactions-mobile" aria-labelledby="p-cactions-mobile-label">
+	<h3 id="p-cactions-mobile-label" >Page actions</h3>
+	<div class="pBody">
+		<ul ><li id="main-mobile" class="selected mw-list-item"><a href="/" title="Main page">Main page</a></li><li id="talk-mobile" class="mw-list-item"><a href="/Talk:Main_Page" title="Discussion">Discussion</a></li><li id="ca-more" class="mw-list-item"><a href="#p-cactions">More</a></li><li id="ca-tools" class="mw-list-item"><a href="#p-tb" title="Tools">Tools</a></li><li id="ca-languages" class="mw-list-item"><a href="#p-lang" title="Languages">Languages</a></li></ul>
+		
+	</div>
+</div>
+
+		<div role="navigation" class="portlet" id="p-personal" aria-labelledby="p-personal-label">
+			<h3 id="p-personal-label" >Personal tools</h3>
+			<div class="pBody">
+				<ul >
+				<li id="pt-anonuserpage" class="mw-list-item">Not logged in</li><li id="pt-anontalk" class="mw-list-item"><a href="/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount" class="mw-list-item"><a href="/index.php?title=Special:CreateAccount&amp;returnto=Main+Page" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login" class="mw-list-item"><a href="/index.php?title=Special:UserLogin&amp;returnto=Main+Page" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="portlet" id="p-logo" role="banner">
+			<a href="/" class="mw-wiki-logo"></a>
+		</div>
+		<div id="sidebar">
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-Browse"
+	id="p-Browse" aria-labelledby="p-Browse-label">
+	<h3 id="p-Browse-label" >Browse</h3>
+	<div class="pBody">
+		<ul ><li id="n-Games" class="mw-list-item"><a href="/List_of_games" title="All the games Mario has ever appeared in, right here">Games</a></li><li id="n-Characters" class="mw-list-item"><a href="/List_of_characters" title="Every Super Mario character, no matter how obscure">Characters</a></li><li id="n-Locations" class="mw-list-item"><a href="/List_of_locations" title="The various places in the Super Mario games">Locations</a></li><li id="n-Items" class="mw-list-item"><a href="/List_of_items" title="Every power-up and mushroom, even collectibles">Items</a></li><li id="n-Allies" class="mw-list-item"><a href="/List_of_allies" title="Throughout their travels, Mario and company have picked up many friends">Allies</a></li><li id="n-Enemies" class="mw-list-item"><a href="/List_of_enemies" title="Super Mario games wouldn&#039;t be much of a challenge without these fiends">Enemies</a></li><li id="n-Species" class="mw-list-item"><a href="/List_of_species" title="The many species that Mario and friends have run into over the years">Species</a></li><li id="n-Moves" class="mw-list-item"><a href="/List_of_moves" title="The attacks and abilities used by Mario and others">Moves</a></li></ul>
+		
+	</div>
+</div>
+
+		<div role="search" class="portlet" id="p-search">
+			<h3 id="p-search-label" ><label for="searchInput">Search</label></h3>
+			<div class="pBody" id="searchBody">
+				<form action="/index.php" id="searchform"><input type="hidden" value="Special:Search" name="title"><input type="search" name="search" placeholder="Search MarioWiki" aria-label="Search MarioWiki" autocapitalize="sentences" title="Search the Super Mario Wiki [f]" accesskey="f" id="searchInput"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" class="searchButton" id="searchButton"/> <input type="submit" name="fulltext" value="Search" title="Search the pages for this text" class="searchButton mw-fallbackSearchButton" id="mw-searchButton"/></form>
+			</div>
+		</div>
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-Navigation"
+	id="p-Navigation" aria-labelledby="p-Navigation-label">
+	<h3 id="p-Navigation-label" >Navigation</h3>
+	<div class="pBody">
+		<ul ><li id="n-mainpage-description" class="mw-list-item"><a href="/" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Featured-articles" class="mw-list-item"><a href="/MarioWiki:Featured_articles" title="Articles that represent the best the wiki has to offer">Featured articles</a></li><li id="n-Wiki-maintenance" class="mw-list-item"><a href="/MarioWiki:Maintenance" title="Help us maintain various aspects of the wiki and fix articles">Wiki maintenance</a></li><li id="n-recentchanges" class="mw-list-item"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage" class="mw-list-item"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help" class="mw-list-item"><a href="/Help:Contents" title="The place to find out">Help</a></li></ul>
+		
+	</div>
+</div>
+
+<div role="navigation" class="portlet mw-portlet mw-portlet-Community"
+	id="p-Community" aria-labelledby="p-Community-label">
+	<h3 id="p-Community-label" >Community</h3>
+	<div class="pBody">
+		<ul ><li id="n-The-.27Shroom" class="mw-list-item"><a href="/The_%27Shroom:Main_Page" title="Our community newspaper, updated monthly">The &#039;Shroom</a></li><li id="n-Proposals" class="mw-list-item"><a href="/MarioWiki:Proposals" title="Ideas to improve the wiki where users give their votes and opinions">Proposals</a></li><li id="n-Mario-Boards" class="mw-list-item"><a href="https://www.marioboards.com/" title="Our official forum, with a lot to discuss">Mario Boards</a></li><li id="n-Discord-servers" class="mw-list-item"><a href="/MarioWiki:Discord_servers" title="Chat with us on Discord">Discord servers</a></li></ul>
+		
+	</div>
+</div>
+
+<div role="navigation" class="portlet mw-portlet mw-portlet-tb"
+	id="p-tb" aria-labelledby="p-tb-label">
+	<h3 id="p-tb-label" >Tools</h3>
+	<div class="pBody">
+		<ul ><li id="t-whatlinkshere" class="mw-list-item"><a href="/Special:WhatLinksHere/Main_Page" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/Special:RecentChangesLinked/Main_Page" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages" class="mw-list-item"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=Main_Page&amp;oldid=5021128" title="Permanent link to this revision of this page">Permanent link</a></li><li id="t-info" class="mw-list-item"><a href="/Main_Page?action=info" title="Information and statistics about this page">Page information</a></li></ul>
+		
+	</div>
+</div>
+
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-lang"
+	id="p-lang" aria-labelledby="p-lang-label">
+	<h3 id="p-lang-label" >Languages</h3>
+	<div class="pBody">
+		<ul ><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://mariowiki.net/wiki/MarioWiki:Hauptseite" title="MarioWiki:Hauptseite – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://wikimario.fr/Wiki_Mario" title="Wiki Mario – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://www.mariowiki.it/Pagina_principale" title="Pagina principale – Italian" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li></ul>
+		
+	</div>
+</div>
+
+		</div>
+		<a href="#sidebar" title="Jump to navigation"
+			class="menu-toggle" id="sidebar-toggle"></a>
+		<a href="#p-personal" title="user tools"
+			class="menu-toggle" id="p-personal-toggle"></a>
+		<a href="#globalWrapper" title="back to top"
+			class="menu-toggle" id="globalWrapper-toggle"></a>
+	</div>
+	<!-- end of the left (by default at least) column -->
+	<div class="visualClear"></div>
+	<div id="footer" class="mw-footer" role="contentinfo"
+		>
+		<div id="f-copyrightico" class="footer-icons">
+			<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_self"><img src="//mario.wiki.gallery/resources/assets/licenses/cc-by-sa.png" alt="Attribution-ShareAlike 4.0 International" width="88" height="31" loading="lazy"/></a>
+		</div>
+		<div id="f-poweredbyico" class="footer-icons">
+			<a href="https://www.mediawiki.org/" target="_self"><img src="//mario.wiki.gallery/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="//mario.wiki.gallery/resources/assets/poweredby_mediawiki_132x47.png 1.5x, //mario.wiki.gallery/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a>
+		</div>
+		<ul id="f-list">
+			<li id="lastmod"> This page was last edited on August 17, 2025, at 00:07.</li><li id="copyright">Content is available under <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International</a> unless otherwise noted.</li>
+			<li id="privacy"><a href="https://www.porplemontage.com/privacy">Privacy policy</a></li><li id="about"><a href="/MarioWiki:About">About MarioWiki</a></li><li id="disclaimer"><a href="/MarioWiki:General_disclaimer">Disclaimers</a></li><li id="mobileview"><a href="https://www.mariowiki.com/index.php?title=Main_Page&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+		</ul>
+	</div>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.169","walltime":"0.188","ppvisitednodes":{"value":4296,"limit":1000000},"postexpandincludesize":{"value":37936,"limit":4194304},"templateargumentsize":{"value":7094,"limit":4194304},"expansiondepth":{"value":10,"limit":100},"expensivefunctioncount":{"value":93,"limit":1000},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1,"limit":5000000},"timingprofile":["100.00%   78.017      1 -total"," 70.05%   54.653      1 Template:ToDoList"," 63.68%   49.683     48 Template:ToDoList/cat","  6.40%    4.990      1 Template:NIWA_Main","  3.85%    3.007     31 Template:NIWA_Main/entry","  2.90%    2.263      1 Template:DidYouKnow","  2.49%    1.941      1 Template:Poll","  2.09%    1.634      4 Template:ToDoList/link","  1.58%    1.236      1 Template:Featured","  1.32%    1.027      2 Template:Announcement"]},"loops":{"limitreport-count-limited":{"value":0,"limit":10000}},"cachereport":{"timestamp":"20260304033119","ttl":3600,"transientcontent":true}}});mw.config.set({"wgBackendResponseTime":69});});</script>
+</body>
+<!-- Cached 20260304042718 -->
+</html>
