@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="header-nav-link feedback-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Request a game!! or even report a bug!</a>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Requested Games - Jeo Unblocked Games</title>
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+		.req-page {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 32px 20px;
+		}
+		.req-header {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			margin-bottom: 32px;
+		}
+		.req-header h1 {
+			font-size: 1.5rem;
+			color: var(--text);
+			margin: 0;
+			font-weight: 700;
+		}
+		.back-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 18px;
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: var(--accent, #6c5ce7);
+			background: transparent;
+			border: 1.5px solid var(--accent, #6c5ce7);
+			border-radius: 999px;
+			text-decoration: none;
+			cursor: pointer;
+			transition: background 0.2s, color 0.2s;
+		}
+		.back-btn:hover {
+			background: var(--accent, #6c5ce7);
+			color: #fff;
+		}
+		.req-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+			gap: 18px;
+		}
+		.req-card {
+			background: var(--card-bg, #232336);
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: transform 0.15s, box-shadow 0.15s;
+			position: relative;
+		}
+		.req-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+		}
+		.req-card img {
+			width: 100%;
+			aspect-ratio: 4/3;
+			object-fit: cover;
+			display: block;
+			background: var(--card-bg, #232336);
+		}
+		.req-card-title {
+			padding: 10px 12px;
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: var(--text);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.req-badge {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			background: linear-gradient(135deg, #06b6d4, #0e7490);
+			color: #fff;
+			font-size: 0.65rem;
+			font-weight: 700;
+			padding: 2px 7px;
+			border-radius: 999px;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+		}
+		.req-empty {
+			text-align: center;
+			padding: 80px 20px;
+			color: var(--text-muted, #888);
+			font-size: 1.1rem;
+		}
+		.req-count {
+			color: var(--text-muted, #888);
+			font-size: 0.9rem;
+			font-weight: 400;
+			margin-left: 4px;
+		}
+	</style>
+</head>
+<body class="theme-dark">
+	<div class="req-page">
+		<div class="req-header">
+			<a href="index.html" class="back-btn">← Back</a>
+			<h1>📩 Requested Games <span id="countBadge" class="req-count"></span></h1>
+		</div>
+		<div id="reqGrid" class="req-grid"></div>
+		<div id="emptyMsg" class="req-empty" style="display:none;">No requested games yet — check back soon!</div>
+	</div>
+
+	<script>
+	(async () => {
+		const theme = localStorage.getItem('site-theme') || 'dark';
+		document.body.className = 'theme-' + theme;
+
+		const fallback = 'notavailable.svg';
+		let games = [];
+
+		try {
+			const res = await fetch('games_list.json', { cache: 'no-store' });
+			if (res.ok) {
+				const text = await res.text();
+				games = JSON.parse(text.replace(/^\uFEFF/, ''));
+			}
+		} catch (e) {
+			console.warn('Failed to load data', e);
+		}
+
+		const requestedGames = games.filter(g => g.requested);
+
+		const grid = document.getElementById('reqGrid');
+		const emptyMsg = document.getElementById('emptyMsg');
+		const countBadge = document.getElementById('countBadge');
+
+		if (requestedGames.length === 0) {
+			emptyMsg.style.display = '';
+			return;
+		}
+
+		countBadge.textContent = '(' + requestedGames.length + ')';
+
+		requestedGames.forEach(g => {
+			const card = document.createElement('div');
+			card.className = 'req-card';
+			const img = g.image || fallback;
+			card.innerHTML = '<img src="' + img + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallback + '\';" />'
+				+ '<span class="req-badge">📩 Requested</span>'
+				+ '<div class="req-card-title">' + g.name + '</div>';
+			card.addEventListener('click', () => { window.location.href = g.url; });
+			grid.appendChild(card);
+		});
+	})();
+	</script>
+</body>
+</html>

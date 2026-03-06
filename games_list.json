@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "name": "0v0",
     "url": "Assets/0v0/index.html",
@@ -504,6 +504,12 @@
     "type": "flash"
   },
   {
+    "name": "Call-Of-Duty-Zomebies",
+    "url": "Assets/Call-Of-Duty-Zomebies/index.html",
+    "image": "Assets/Call-Of-Duty-Zomebies/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "camper-strike",
     "url": "Assets/camper-strike/index.html",
     "image": "Assets/camper-strike/camper-strike.png",
@@ -626,7 +632,7 @@
   {
     "name": "ctr-holiday",
     "url": "Assets/ctr-holiday/index.html",
-    "image": "Assets/ctr-holiday/favicon.ico",
+    "image": "Assets/ctr-holiday/Holiday_Gift.webp",
     "type": "flash"
   },
   {
@@ -662,7 +668,7 @@
   {
     "name": "death-run-3d",
     "url": "Assets/death-run-3d/index.html",
-    "image": "Assets/death-run-3d/TemplateData56/gears.gif",
+    "image": "Assets/death-run-3d/TemplateData/favicon.ico",
     "type": "webgl"
   },
   {
@@ -1322,7 +1328,7 @@
   {
     "name": "idle-breakout",
     "url": "Assets/idle-breakout/index.html",
-    "image": "Assets/idle-breakout/assets/thumbnail.png",
+    "image": "Assets/idle-breakout/assets/particles/thumbnail.png",
     "type": "webgl"
   },
   {
@@ -1632,12 +1638,6 @@
     "type": "flash"
   },
   {
-    "name": "nzp-gay",
-    "url": "Assets/nzp-gay/index.html",
-    "image": "Assets/nzp-gay/logo.png",
-    "type": "webgl"
-  },
-  {
     "name": "offroaders",
     "url": "Assets/offroaders/index.html",
     "image": "Assets/offroaders/logo.jpg",
@@ -1778,7 +1778,7 @@
   {
     "name": "push-your-luck",
     "url": "Assets/push-your-luck/index.html",
-    "image": "Assets/push-your-luck/assets/favicon.ico",
+    "image": "Assets/push-your-luck/assets/atlas/Bg.png",
     "type": "webgl"
   },
   {
@@ -2092,6 +2092,13 @@
     "url": "Assets/sugarsugar3/index.html",
     "image": "Assets/sugarsugar3/logo.jpeg",
     "type": "flash"
+  },
+  {
+    "name": "super-punch-out",
+    "url": "Assets/super-punch-out/index.html",
+    "image": "Assets/super-punch-out/logo.png",
+    "type": "snes",
+    "requested": true
   },
   {
     "name": "superd",

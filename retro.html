@@ -21,7 +21,7 @@
 	
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Flash Games — Jeo Unblocked</title>
+	<title>Retro Games — Jeo Unblocked</title>
 	<link rel="stylesheet" href="styles.css" />
 
 </head>
@@ -32,7 +32,8 @@
 			<a href="." class="brand-section">
 				<div class="brand-text">jeo</div>
 			</a>
-			<a href="flash.html" class="header-nav-link active-nav">⚡ Flash Games</a>
+			<a href="flash.html" class="header-nav-link">⚡ Flash Games</a>
+			<a href="retro.html" class="header-nav-link active-nav">🎮 Retro Games</a>
 			<a href="logs.html" class="header-nav-link">Logs</a>
 		</div>
 		<div class="header-right">
@@ -119,9 +120,9 @@
 	<main class="main">
 		<!-- Hero Section -->
 		<section class="hero">
-			<div class="flash-hero-badge">⚡</div>
-			<h1>Flash Games</h1>
-			<p class="hero-subtitle">Classic Flash games preserved and playable — <span class="stat-flash" id="flashPageCount" style="font-weight:700">0</span> titles</p>
+			<div class="flash-hero-badge">🎮</div>
+			<h1>Retro Games</h1>
+			<p class="hero-subtitle">Classic console games emulated in your browser — <span class="stat-retro" id="retroPageCount" style="font-weight:700">0</span> titles</p>
 			<a href="." class="back-link">← Back to All Games</a>
 		</section>
 
@@ -129,20 +130,20 @@
 		<section class="toolbar-section">
 			<div class="search-container">
 				<span class="search-icon">🔍</span>
-				<input id="searchInput" class="search-input" placeholder="Search flash games..." />
+				<input id="searchInput" class="search-input" placeholder="Search retro games..." />
 			</div>
 		</section>
 
 		<!-- Loading state -->
 		<div id="loadingState" class="loading-state">
 			<div class="spinner"></div>
-			<p>Loading flash games...</p>
+			<p>Loading retro games...</p>
 		</div>
 
 		<!-- Games Grid -->
 		<section class="games-section">
 			<div id="gameGrid" class="game-grid">
-				<!-- populated by flash-app.js -->
+				<!-- populated by script -->
 			</div>
 		</section>
 	</main>
@@ -192,7 +193,7 @@
 			}
 		});
 
-		class FlashApp {
+		class RetroApp {
 			constructor() {
 				this.games = [];
 				this.fallbackImage = 'notavailable.svg';
@@ -213,7 +214,7 @@
 					if (resp.ok) {
 						const data = await resp.json();
 						if (Array.isArray(data)) {
-							this.games = data.filter(g => g.type === 'flash');
+							this.games = data.filter(g => g.type === 'snes');
 						}
 					}
 				} catch(e) { console.warn('Could not load games_list.json', e); }
@@ -224,7 +225,7 @@
 						if (resp.ok) {
 							const data = await resp.json();
 							if (Array.isArray(data)) {
-								this.games = data.filter(g => g.type === 'flash');
+								this.games = data.filter(g => g.type === 'snes');
 							}
 						}
 					} catch(e) {}
@@ -238,7 +239,7 @@
 			initElements() {
 				this.searchInput = document.getElementById('searchInput');
 				this.gameGrid = document.getElementById('gameGrid');
-				this.flashPageCount = document.getElementById('flashPageCount');
+				this.retroPageCount = document.getElementById('retroPageCount');
 				this.loadingState = document.getElementById('loadingState');
 				this.themeToggle = document.getElementById('themeToggle');
 				this.playModal = document.getElementById('playModal');
@@ -252,9 +253,9 @@
 			hideLoading() { if (this.loadingState) this.loadingState.style.display = 'none'; }
 
 			updateCounter() {
-				if (!this.flashPageCount) return;
+				if (!this.retroPageCount) return;
 				const target = this.games.length;
-				const current = parseInt(this.flashPageCount.textContent) || 0;
+				const current = parseInt(this.retroPageCount.textContent) || 0;
 				if (current === target) return;
 				const step = target > current ? 1 : -1;
 				const steps = Math.abs(target - current);
@@ -262,7 +263,7 @@
 				let count = current;
 				const timer = setInterval(() => {
 					count += step;
-					this.flashPageCount.textContent = count;
+					this.retroPageCount.textContent = count;
 					if (count === target) clearInterval(timer);
 				}, interval);
 			}
@@ -438,7 +439,7 @@
 				this.gameGrid.innerHTML = '';
 				const filtered = this.games.filter(g => !q || g.name.toLowerCase().includes(q));
 				if (filtered.length === 0) {
-					this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No flash games found</h3><p>Try a different search term</p></div>';
+					this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No retro games found</h3><p>Try a different search term</p></div>';
 					return;
 				}
 				filtered.forEach(g => {
@@ -446,7 +447,7 @@
 					const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
 					const card = document.createElement('div');
 					card.className = 'game-card';
-					card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><span class="flash-badge">⚡ Flash</span>' + requestedBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
+					card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><span class="retro-badge">🎮 Retro</span>' + requestedBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
 					card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 					card.addEventListener('dblclick', () => this.playGame(g));
 					this.gameGrid.appendChild(card);
@@ -559,9 +560,9 @@
 		}
 
 		if (document.readyState === 'loading') {
-			window.addEventListener('DOMContentLoaded', () => new FlashApp());
+			window.addEventListener('DOMContentLoaded', () => new RetroApp());
 		} else {
-			new FlashApp();
+			new RetroApp();
 		}
 	})();
 	</script>

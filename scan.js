@@ -41,6 +41,24 @@ function hasSwfFiles(dir) {
 	return false;
 }
 
+// Check if an HTML file uses our local EmulatorJS (SNES/retro game)
+function isEmulatorGame(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		return content.includes("EJS_pathtodata = '/emulatorjs/'");
+	} catch (e) {}
+	return false;
+}
+
+// Check if an HTML file has the <!--REQUESTED GAME--> marker
+function isRequestedGame(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		return content.includes('<!--REQUESTED GAME-->');
+	} catch (e) {}
+	return false;
+}
+
 // Find the best image in a game folder (searches all subfolders)
 function findImage(folderPath, folderName) {
 	try {
@@ -76,6 +94,7 @@ function scan() {
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
 	let flashCount = 0;
+	let snesCount = 0;
 	let webglCount = 0;
 
 	for (const it of items) {
@@ -90,22 +109,28 @@ function scan() {
 		const htmlFile = htmlFiles.find(f => f.toLowerCase() === 'index.html') || htmlFiles[0];
 
 		const image = findImage(folderPath, it.name);
+		const htmlFilePath = path.join(folderPath, htmlFile);
 		const isFlash = hasSwfFiles(folderPath);
+		const isSnes = !isFlash && isEmulatorGame(htmlFilePath);
+		const requested = isRequestedGame(htmlFilePath);
 
 		if (isFlash) flashCount++;
+		else if (isSnes) snesCount++;
 		else webglCount++;
 
-		results.push({
+		const entry = {
 			name: it.name,
 			url: `Assets/${it.name}/${htmlFile}`,
 			image: image || 'notavailable.svg',
-			type: isFlash ? 'flash' : 'webgl'
-		});
+			type: isFlash ? 'flash' : isSnes ? 'snes' : 'webgl'
+		};
+		if (requested) entry.requested = true;
+		results.push(entry);
 	}
 
 	results.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
-	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${webglCount} WebGL)`);
+	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${snesCount} Retro/SNES, ${webglCount} WebGL)`);
 }
 
 scan();

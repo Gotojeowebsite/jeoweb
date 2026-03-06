@@ -34,6 +34,7 @@
 				<div class="brand-text">jeo</div>
 			</a>
 			<a href="flash.html" class="header-nav-link">⚡ Flash Games</a>
+			<a href="retro.html" class="header-nav-link">🎮 Retro Games</a>
 			<a href="logs.html" class="header-nav-link">Logs</a>
 			<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="header-nav-link feedback-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Help me make this website better!!!</a>
 		</div>
@@ -138,6 +139,11 @@
 					<div class="stat-number stat-flash" id="flashCount">0</div>
 					<div class="stat-label">⚡ Flash Games</div>
 				</a>
+				<div class="stat-divider"></div>
+				<a href="retro.html" class="stat-card stat-card-link">
+					<div class="stat-number stat-retro" id="retroCount">0</div>
+					<div class="stat-label">🎮 Retro Games</div>
+				</a>
 			</div>
 		</section>
 
@@ -151,6 +157,13 @@
 				<span class="flash-toggle-label">⚡ Flash</span>
 				<div class="toggle-switch">
 					<input type="checkbox" id="flashToggle" checked />
+					<span class="toggle-slider"></span>
+				</div>
+			</label>
+			<label class="retro-toggle" data-tooltip="Show/hide Retro games">
+				<span class="retro-toggle-label">🎮 Retro</span>
+				<div class="toggle-switch retro-switch">
+					<input type="checkbox" id="retroToggle" checked />
 					<span class="toggle-slider"></span>
 				</div>
 			</label>
@@ -194,6 +207,11 @@
 			<a href="new.html" class="whats-new-btn">
 				<span class="whats-new-dot"></span>
 				See what's new
+				<span class="whats-new-arrow">→</span>
+			</a>
+			<a href="requested.html" id="requestedBtn" class="whats-new-btn" style="display:none;margin-left:10px">
+				<span class="requested-dot"></span>
+				Requested a game?
 				<span class="whats-new-arrow">→</span>
 			</a>
 		</section>
