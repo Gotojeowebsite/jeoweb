@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "name": "0v0",
     "url": "Assets/0v0/index.html",
@@ -632,7 +632,7 @@
   {
     "name": "ctr-holiday",
     "url": "Assets/ctr-holiday/index.html",
-    "image": "Assets/ctr-holiday/Holiday_Gift.webp",
+    "image": "Assets/ctr-holiday/favicon.ico",
     "type": "flash"
   },
   {
@@ -668,7 +668,7 @@
   {
     "name": "death-run-3d",
     "url": "Assets/death-run-3d/index.html",
-    "image": "Assets/death-run-3d/TemplateData/favicon.ico",
+    "image": "Assets/death-run-3d/TemplateData56/gears.gif",
     "type": "webgl"
   },
   {
@@ -1188,6 +1188,12 @@
     "type": "webgl"
   },
   {
+    "name": "grannyembed",
+    "url": "Assets/grannyembed/count.ajax?id=2.html",
+    "image": "Assets/grannyembed/logo.gif",
+    "type": "webgl"
+  },
+  {
     "name": "greyhound-ty",
     "url": "Assets/greyhound-ty/index.html",
     "image": "Assets/greyhound-ty/greyhound tycocn.jpeg",
@@ -1328,7 +1334,7 @@
   {
     "name": "idle-breakout",
     "url": "Assets/idle-breakout/index.html",
-    "image": "Assets/idle-breakout/assets/particles/thumbnail.png",
+    "image": "Assets/idle-breakout/assets/thumbnail.png",
     "type": "webgl"
   },
   {
@@ -1778,7 +1784,7 @@
   {
     "name": "push-your-luck",
     "url": "Assets/push-your-luck/index.html",
-    "image": "Assets/push-your-luck/assets/atlas/Bg.png",
+    "image": "Assets/push-your-luck/assets/favicon.ico",
     "type": "webgl"
   },
   {
@@ -2097,8 +2103,7 @@
     "name": "super-punch-out",
     "url": "Assets/super-punch-out/index.html",
     "image": "Assets/super-punch-out/logo.png",
-    "type": "snes",
-    "requested": true
+    "type": "webgl"
   },
   {
     "name": "superd",
