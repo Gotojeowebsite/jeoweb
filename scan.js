@@ -41,13 +41,23 @@ function hasSwfFiles(dir) {
 	return false;
 }
 
-// Check if an HTML file uses our local EmulatorJS (SNES/retro game)
+// Check if an HTML file uses our local EmulatorJS (retro game)
 function isEmulatorGame(htmlPath) {
 	try {
 		const content = fs.readFileSync(htmlPath, 'utf-8');
 		return content.includes("EJS_pathtodata = '/emulatorjs/'");
 	} catch (e) {}
 	return false;
+}
+
+// Detect the specific emulator core used (snes, gba, etc.)
+function getEmulatorCore(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		const match = content.match(/EJS_core\s*=\s*['"]([^'"]+)['"]/);
+		if (match) return match[1];
+	} catch (e) {}
+	return null;
 }
 
 // Check if an HTML file has the <!--REQUESTED GAME--> marker
@@ -94,7 +104,7 @@ function scan() {
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
 	let flashCount = 0;
-	let snesCount = 0;
+	let retroCount = 0;
 	let webglCount = 0;
 
 	for (const it of items) {
@@ -111,18 +121,28 @@ function scan() {
 		const image = findImage(folderPath, it.name);
 		const htmlFilePath = path.join(folderPath, htmlFile);
 		const isFlash = hasSwfFiles(folderPath);
-		const isSnes = !isFlash && isEmulatorGame(htmlFilePath);
+		const isRetro = !isFlash && isEmulatorGame(htmlFilePath);
 		const requested = isRequestedGame(htmlFilePath);
 
-		if (isFlash) flashCount++;
-		else if (isSnes) snesCount++;
-		else webglCount++;
+		// Determine specific retro type (snes, gba, etc.)
+		let type = 'webgl';
+		if (isFlash) {
+			type = 'flash';
+			flashCount++;
+		} else if (isRetro) {
+			const core = getEmulatorCore(htmlFilePath);
+			if (core === 'gba') type = 'gba';
+			else type = 'snes';
+			retroCount++;
+		} else {
+			webglCount++;
+		}
 
 		const entry = {
 			name: it.name,
 			url: `Assets/${it.name}/${htmlFile}`,
 			image: image || 'notavailable.svg',
-			type: isFlash ? 'flash' : isSnes ? 'snes' : 'webgl'
+			type
 		};
 		if (requested) entry.requested = true;
 		results.push(entry);
@@ -130,7 +150,7 @@ function scan() {
 
 	results.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
-	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${snesCount} Retro/SNES, ${webglCount} WebGL)`);
+	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${retroCount} Retro, ${webglCount} WebGL)`);
 }
 
 scan();

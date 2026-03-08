@@ -219,7 +219,7 @@
 					if (resp.ok) {
 						const data = await resp.json();
 						if (Array.isArray(data)) {
-							this.games = data.filter(g => g.type === 'snes');
+							this.games = data.filter(g => g.type === 'snes' || g.type === 'gba');
 						}
 					}
 				} catch(e) { console.warn('Could not load games_list.json', e); }
@@ -230,7 +230,7 @@
 						if (resp.ok) {
 							const data = await resp.json();
 							if (Array.isArray(data)) {
-								this.games = data.filter(g => g.type === 'snes');
+								this.games = data.filter(g => g.type === 'snes' || g.type === 'gba');
 							}
 						}
 					} catch(e) {}
