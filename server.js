@@ -4,72 +4,9 @@ const path = require('path');
 
 const ROOT = __dirname;
 const ASSETS_DIR = path.join(ROOT, 'Assets');
-const VOTES_FILE = path.join(ROOT, 'votes.json');
 const PORT = process.env.PORT || 3000;
 
 let cachedGames = [];
-
-// ---- Votes storage ----
-// votes.json structure: { "game-name": { "userId1": true, "userId2": true }, ... }
-function loadVotes() {
-	try {
-		return JSON.parse(fs.readFileSync(VOTES_FILE, 'utf8'));
-	} catch (e) {
-		return {};
-	}
-}
-
-function saveVotes(votes) {
-	fs.writeFileSync(VOTES_FILE, JSON.stringify(votes));
-}
-
-function getVoteCounts(votes) {
-	const counts = {};
-	for (const game in votes) {
-		counts[game] = Object.keys(votes[game]).length;
-	}
-	return counts;
-}
-
-function getUserVotes(votes, userId) {
-	const userVotes = [];
-	for (const game in votes) {
-		if (votes[game][userId]) userVotes.push(game);
-	}
-	return userVotes;
-}
-
-function parseCookies(cookieHeader) {
-	const cookies = {};
-	if (!cookieHeader) return cookies;
-	cookieHeader.split(';').forEach(c => {
-		const [key, ...rest] = c.trim().split('=');
-		if (key) cookies[key] = rest.join('=');
-	});
-	return cookies;
-}
-
-function getOrCreateUserId(req, res) {
-	const cookies = parseCookies(req.headers.cookie);
-	let uid = cookies['jeo-uid'];
-	if (!uid || uid.length < 8) {
-		uid = require('crypto').randomBytes(16).toString('hex');
-		res.setHeader('Set-Cookie', 'jeo-uid=' + uid + '; Path=/; Max-Age=315360000; SameSite=Lax');
-	}
-	return uid;
-}
-
-function readBody(req) {
-	return new Promise((resolve, reject) => {
-		let body = '';
-		req.on('data', chunk => {
-			body += chunk;
-			if (body.length > 1024) { req.destroy(); reject(new Error('Body too large')); }
-		});
-		req.on('end', () => resolve(body));
-		req.on('error', reject);
-	});
-}
 
 const IMAGE_EXTS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico'];
 
@@ -151,49 +88,6 @@ const mimeTypes = {
 };
 
 const server = http.createServer(async (req, res) => {
-	// ---- Vote API ----
-	if (req.url === '/api/votes' && req.method === 'GET') {
-		const uid = getOrCreateUserId(req, res);
-		const votes = loadVotes();
-		res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-		res.end(JSON.stringify({ counts: getVoteCounts(votes), myVotes: getUserVotes(votes, uid) }));
-		return;
-	}
-
-	if (req.url === '/api/votes' && req.method === 'POST') {
-		try {
-			const uid = getOrCreateUserId(req, res);
-			const body = await readBody(req);
-			const { game, action } = JSON.parse(body);
-			if (!game || typeof game !== 'string' || game.length > 200) {
-				res.writeHead(400, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify({ error: 'Invalid game name' }));
-				return;
-			}
-			const votes = loadVotes();
-			if (action === 'upvote') {
-				if (!votes[game]) votes[game] = {};
-				votes[game][uid] = true;
-			} else if (action === 'unvote') {
-				if (votes[game]) {
-					delete votes[game][uid];
-					if (Object.keys(votes[game]).length === 0) delete votes[game];
-				}
-			} else {
-				res.writeHead(400, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify({ error: 'Invalid action' }));
-				return;
-			}
-			saveVotes(votes);
-			res.writeHead(200, { 'Content-Type': 'application/json' });
-			res.end(JSON.stringify({ counts: getVoteCounts(votes), myVotes: getUserVotes(votes, uid) }));
-		} catch (e) {
-			res.writeHead(400, { 'Content-Type': 'application/json' });
-			res.end(JSON.stringify({ error: 'Bad request' }));
-		}
-		return;
-	}
-
 	if (req.url === '/api/games') {
 		cachedGames = scanGames();
 		res.writeHead(200, {

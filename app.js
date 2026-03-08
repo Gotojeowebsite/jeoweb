@@ -8,9 +8,6 @@ class App {
 
 		this.showFlash = localStorage.getItem('jeo-show-flash') !== 'false';
 		this.showRetro = localStorage.getItem('jeo-show-retro') !== 'false';
-		this.sortMode = localStorage.getItem('jeo-sort') || 'votes'; // 'votes' or 'az'
-		this.voteCounts = {};
-		this.myVotes = [];
 
 		this.initElements();
 		this.loadTheme();
@@ -19,14 +16,12 @@ class App {
 		this.initCloaker();
 		this.initFlashToggle();
 		this.initRetroToggle();
-		this.initSortToggle();
 		this.bindUI();
 		this.bootstrap();
 	}
 
 	async bootstrap() {
 		await this.loadNewlyAdded();
-		await this.loadVotes();
 		await this.reloadGames();
 		this.checkTutorial();
 	}
@@ -110,9 +105,6 @@ class App {
 
 		// Requested button
 		this.requestedBtn = document.getElementById('requestedBtn');
-
-		// Sort toggle
-		this.sortToggle = document.getElementById('sortToggle');
 	}
 
 	hideLoading() {
@@ -365,91 +357,6 @@ class App {
 		}
 	}
 
-	initSortToggle() {
-		if (this.sortToggle) {
-			this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
-			this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
-			this.sortToggle.addEventListener('click', () => {
-				this.sortMode = this.sortMode === 'votes' ? 'az' : 'votes';
-				localStorage.setItem('jeo-sort', this.sortMode);
-				this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
-				this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
-				this.renderGames();
-			});
-		}
-	}
-
-	async loadVotes() {
-		try {
-			const res = await fetch('/api/votes', { credentials: 'same-origin' });
-			if (res.ok) {
-				const data = await res.json();
-				this.voteCounts = data.counts || {};
-				this.myVotes = data.myVotes || [];
-				return;
-			}
-		} catch (e) {}
-		// Fallback to localStorage
-		this.myVotes = JSON.parse(localStorage.getItem('jeo-votes') || '[]');
-		this.voteCounts = {};
-		this.myVotes.forEach(g => this.voteCounts[g] = 1);
-	}
-
-	async toggleVote(gameName, btn) {
-		const hasVoted = this.myVotes.includes(gameName);
-		const action = hasVoted ? 'unvote' : 'upvote';
-		try {
-			const res = await fetch('/api/votes', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				credentials: 'same-origin',
-				body: JSON.stringify({ game: gameName, action })
-			});
-			if (res.ok) {
-				const data = await res.json();
-				this.voteCounts = data.counts || {};
-				this.myVotes = data.myVotes || [];
-				this._updateVoteUI(gameName);
-				return;
-			}
-		} catch (e) {}
-		// Fallback to localStorage
-		if (hasVoted) {
-			this.myVotes = this.myVotes.filter(g => g !== gameName);
-			delete this.voteCounts[gameName];
-		} else {
-			this.myVotes.push(gameName);
-			this.voteCounts[gameName] = 1;
-		}
-		localStorage.setItem('jeo-votes', JSON.stringify(this.myVotes));
-		this._updateVoteUI(gameName);
-	}
-
-	_updateVoteUI(gameName) {
-		const count = this.voteCounts[gameName] || 0;
-		const voted = this.myVotes.includes(gameName);
-		document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
-			b.classList.toggle('upvoted', voted);
-			b.querySelector('.upvote-count').textContent = count || '';
-		});
-		document.querySelectorAll('.heart-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(heartBtn => {
-			const thumb = heartBtn.closest('.game-thumb');
-			if (!thumb) return;
-			let badge = thumb.querySelector('.vote-count-badge');
-			if (count > 0) {
-				if (!badge) {
-					badge = document.createElement('span');
-					badge.className = 'vote-count-badge';
-					thumb.insertBefore(badge, heartBtn.nextSibling);
-				}
-				badge.textContent = '▲ ' + count;
-				badge.classList.toggle('voted', voted);
-			} else if (badge) {
-				badge.remove();
-			}
-		});
-	}
-
 	refreshGames() {
 		this.refreshBtn.classList.add('spinning');
 		this.reloadGames().then(() => {
@@ -466,17 +373,7 @@ class App {
 			if (q && !g.name.toLowerCase().includes(q)) return false;
 			return true;
 		});
-		// Sort
-		if (this.sortMode === 'votes') {
-			filtered.sort((a, b) => {
-				const va = this.voteCounts[a.name] || 0;
-				const vb = this.voteCounts[b.name] || 0;
-				if (vb !== va) return vb - va;
-				return a.name.localeCompare(b.name);
-			});
-		} else {
-			filtered.sort((a, b) => a.name.localeCompare(b.name));
-		}
+		filtered.sort((a, b) => a.name.localeCompare(b.name));
 		if (filtered.length === 0) {
 			this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No games found</h3><p>Try a different search term</p></div>';
 			return;
@@ -488,15 +385,11 @@ class App {
 			const retroBadge = g.type === 'snes' ? '<span class="retro-badge">🎮 Retro</span>' : '';
 			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
 			const badgeHtml = flashBadge + retroBadge + requestedBadge;
-			const voteCount = this.voteCounts[g.name] || 0;
-			const hasVoted = this.myVotes.includes(g.name);
-			const voteBadge = voteCount > 0 ? '<span class="vote-count-badge' + (hasVoted ? ' voted' : '') + '">▲ ' + voteCount + '</span>' : '';
 			const card = document.createElement('div');
 			card.className = 'game-card';
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + voteBadge + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="upvote-btn' + (hasVoted ? ' upvoted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Upvote">▲ <span class="upvote-count">' + (voteCount || '') + '</span></button><button class="play-btn">▶ Play</button></div></div>';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">▶ Play</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
-			card.querySelector('.upvote-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleVote(g.name, e.currentTarget); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });
 			this.gameGrid.appendChild(card);
 		});
@@ -525,10 +418,6 @@ class App {
 				btn.classList.remove('pop');
 				void btn.offsetWidth;
 				btn.classList.add('pop');
-			}
-			// Auto-upvote when favoriting
-			if (!this.myVotes.includes(name)) {
-				this.toggleVote(name);
 			}
 		}
 		localStorage.setItem('jeo-favorites', JSON.stringify(this.favorites));
@@ -833,12 +722,6 @@ class App {
 				position: 'bottom'
 			},
 			{
-				target: '#sortToggle',
-				title: 'Sort Order 🔥',
-				text: 'Switch between Popular (most upvoted first) and A-Z sorting. Your preference is saved!',
-				position: 'bottom'
-			},
-			{
 				target: '.game-card',
 				title: 'Game Cards 🎮',
 				text: 'Each card shows the game thumbnail. Click Play to start, or double-click the card!',
@@ -847,13 +730,7 @@ class App {
 			{
 				target: '.heart-btn',
 				title: 'Favorite Games ♥',
-				text: 'Click the heart to add a game to your Favorites carousel. This also auto-upvotes the game!',
-				position: 'top'
-			},
-			{
-				target: '.upvote-btn',
-				title: 'Upvote Games ▲',
-				text: 'Click the arrow to upvote a game. The most upvoted games appear first and show up on the Popular page. You get one vote per game!',
+				text: 'Click the heart to add a game to your Favorites carousel for quick access later.',
 				position: 'top'
 			},
 			{
