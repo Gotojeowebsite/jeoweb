@@ -132,6 +132,7 @@
 				<span class="search-icon">🔍</span>
 				<input id="searchInput" class="search-input" placeholder="Search flash games..." />
 			</div>
+			<button id="sortToggle" class="sort-toggle-btn" data-tooltip="Toggle sort order">🔥</button>
 		</section>
 
 		<!-- Loading state -->
@@ -197,16 +198,71 @@
 			constructor() {
 				this.games = [];
 				this.fallbackImage = 'notavailable.svg';
+				this.sortMode = localStorage.getItem('jeo-sort') || 'votes';
+				this.voteCounts = {};
+				this.myVotes = [];
 				this.initElements();
 				this.loadTheme();
 				this.loadAccent();
 				this.loadBackground();
 				this.initCloaker();
+				this.initSortToggle();
 				this.bindUI();
 				this.bootstrap();
 			}
 
-			async bootstrap() { await this.loadGames(); }
+			async bootstrap() {
+				await this.loadVotes();
+				await this.loadGames();
+			}
+
+			async loadVotes() {
+				try {
+					const res = await fetch('/api/votes');
+					if (res.ok) {
+						const data = await res.json();
+						this.voteCounts = data.counts || {};
+						this.myVotes = data.myVotes || [];
+					}
+				} catch (e) { console.warn('Could not load votes', e); }
+			}
+
+			async toggleVote(gameName) {
+				const hasVoted = this.myVotes.includes(gameName);
+				try {
+					const res = await fetch('/api/votes', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ game: gameName, action: hasVoted ? 'unvote' : 'upvote' })
+					});
+					if (res.ok) {
+						const data = await res.json();
+						this.voteCounts = data.counts || {};
+						this.myVotes = data.myVotes || [];
+						document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
+							b.classList.toggle('upvoted', this.myVotes.includes(gameName));
+							b.querySelector('.upvote-count').textContent = this.voteCounts[gameName] || '';
+						});
+					}
+				} catch (e) { console.warn('Vote failed', e); }
+			}
+
+			escapeAttr(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+			initSortToggle() {
+				this.sortToggle = document.getElementById('sortToggle');
+				if (this.sortToggle) {
+					this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
+					this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
+					this.sortToggle.addEventListener('click', () => {
+						this.sortMode = this.sortMode === 'votes' ? 'az' : 'votes';
+						localStorage.setItem('jeo-sort', this.sortMode);
+						this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
+						this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
+						this.renderGames();
+					});
+				}
+			}
 
 			async loadGames() {
 				try {
@@ -438,6 +494,16 @@
 				const q = (this.searchInput.value || '').toLowerCase();
 				this.gameGrid.innerHTML = '';
 				const filtered = this.games.filter(g => !q || g.name.toLowerCase().includes(q));
+				if (this.sortMode === 'votes') {
+					filtered.sort((a, b) => {
+						const va = this.voteCounts[a.name] || 0;
+						const vb = this.voteCounts[b.name] || 0;
+						if (vb !== va) return vb - va;
+						return a.name.localeCompare(b.name);
+					});
+				} else {
+					filtered.sort((a, b) => a.name.localeCompare(b.name));
+				}
 				if (filtered.length === 0) {
 					this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No flash games found</h3><p>Try a different search term</p></div>';
 					return;
@@ -445,10 +511,13 @@
 				filtered.forEach(g => {
 					const imgSrc = g.image || this.fallbackImage;
 					const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
+					const voteCount = this.voteCounts[g.name] || 0;
+					const hasVoted = this.myVotes.includes(g.name);
 					const card = document.createElement('div');
 					card.className = 'game-card';
-					card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><span class="flash-badge">⚡ Flash</span>' + requestedBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
+					card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><span class="flash-badge">⚡ Flash</span>' + requestedBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="upvote-btn' + (hasVoted ? ' upvoted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Upvote">▲ <span class="upvote-count">' + (voteCount || '') + '</span></button><button class="play-btn">▶ Play</button></div></div>';
 					card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
+					card.querySelector('.upvote-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleVote(g.name); });
 					card.addEventListener('dblclick', () => this.playGame(g));
 					this.gameGrid.appendChild(card);
 				});

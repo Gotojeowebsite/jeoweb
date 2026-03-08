@@ -8,6 +8,9 @@ class App {
 
 		this.showFlash = localStorage.getItem('jeo-show-flash') !== 'false';
 		this.showRetro = localStorage.getItem('jeo-show-retro') !== 'false';
+		this.sortMode = localStorage.getItem('jeo-sort') || 'votes'; // 'votes' or 'az'
+		this.voteCounts = {};
+		this.myVotes = [];
 
 		this.initElements();
 		this.loadTheme();
@@ -16,13 +19,16 @@ class App {
 		this.initCloaker();
 		this.initFlashToggle();
 		this.initRetroToggle();
+		this.initSortToggle();
 		this.bindUI();
 		this.bootstrap();
 	}
 
 	async bootstrap() {
 		await this.loadNewlyAdded();
+		await this.loadVotes();
 		await this.reloadGames();
+		this.checkTutorial();
 	}
 
 	async loadNewlyAdded() {
@@ -104,6 +110,9 @@ class App {
 
 		// Requested button
 		this.requestedBtn = document.getElementById('requestedBtn');
+
+		// Sort toggle
+		this.sortToggle = document.getElementById('sortToggle');
 	}
 
 	hideLoading() {
@@ -356,6 +365,78 @@ class App {
 		}
 	}
 
+	initSortToggle() {
+		if (this.sortToggle) {
+			this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
+			this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
+			this.sortToggle.addEventListener('click', () => {
+				this.sortMode = this.sortMode === 'votes' ? 'az' : 'votes';
+				localStorage.setItem('jeo-sort', this.sortMode);
+				this.sortToggle.textContent = this.sortMode === 'votes' ? '🔥' : '🔤';
+				this.sortToggle.title = this.sortMode === 'votes' ? 'Sorted by popular — click for A-Z' : 'Sorted A-Z — click for popular';
+				this.renderGames();
+			});
+		}
+	}
+
+	async loadVotes() {
+		try {
+			const res = await fetch('/api/votes');
+			if (res.ok) {
+				const data = await res.json();
+				this.voteCounts = data.counts || {};
+				this.myVotes = data.myVotes || [];
+			}
+		} catch (e) {
+			console.warn('Could not load votes', e);
+		}
+	}
+
+	async toggleVote(gameName, btn) {
+		const hasVoted = this.myVotes.includes(gameName);
+		const action = hasVoted ? 'unvote' : 'upvote';
+		try {
+			const res = await fetch('/api/votes', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ game: gameName, action })
+			});
+			if (res.ok) {
+				const data = await res.json();
+				this.voteCounts = data.counts || {};
+				this.myVotes = data.myVotes || [];
+				// Update all vote buttons for this game
+				document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
+					const count = this.voteCounts[gameName] || 0;
+					const voted = this.myVotes.includes(gameName);
+					b.classList.toggle('upvoted', voted);
+					b.querySelector('.upvote-count').textContent = count || '';
+				});
+				// Update vote badge on card thumbnail
+				document.querySelectorAll('.heart-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(heartBtn => {
+					const thumb = heartBtn.closest('.game-thumb');
+					if (!thumb) return;
+					const count = this.voteCounts[gameName] || 0;
+					const voted = this.myVotes.includes(gameName);
+					let badge = thumb.querySelector('.vote-count-badge');
+					if (count > 0) {
+						if (!badge) {
+							badge = document.createElement('span');
+							badge.className = 'vote-count-badge';
+							thumb.insertBefore(badge, heartBtn.nextSibling);
+						}
+						badge.textContent = '▲ ' + count;
+						badge.classList.toggle('voted', voted);
+					} else if (badge) {
+						badge.remove();
+					}
+				});
+			}
+		} catch (e) {
+			console.warn('Vote failed', e);
+		}
+	}
+
 	refreshGames() {
 		this.refreshBtn.classList.add('spinning');
 		this.reloadGames().then(() => {
@@ -372,6 +453,17 @@ class App {
 			if (q && !g.name.toLowerCase().includes(q)) return false;
 			return true;
 		});
+		// Sort
+		if (this.sortMode === 'votes') {
+			filtered.sort((a, b) => {
+				const va = this.voteCounts[a.name] || 0;
+				const vb = this.voteCounts[b.name] || 0;
+				if (vb !== va) return vb - va;
+				return a.name.localeCompare(b.name);
+			});
+		} else {
+			filtered.sort((a, b) => a.name.localeCompare(b.name));
+		}
 		if (filtered.length === 0) {
 			this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No games found</h3><p>Try a different search term</p></div>';
 			return;
@@ -383,11 +475,15 @@ class App {
 			const retroBadge = g.type === 'snes' ? '<span class="retro-badge">🎮 Retro</span>' : '';
 			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
 			const badgeHtml = flashBadge + retroBadge + requestedBadge;
+			const voteCount = this.voteCounts[g.name] || 0;
+			const hasVoted = this.myVotes.includes(g.name);
+			const voteBadge = voteCount > 0 ? '<span class="vote-count-badge' + (hasVoted ? ' voted' : '') + '">▲ ' + voteCount + '</span>' : '';
 			const card = document.createElement('div');
 			card.className = 'game-card';
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><button class="play-btn">▶ Play</button></div>';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + voteBadge + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="upvote-btn' + (hasVoted ? ' upvoted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Upvote">▲ <span class="upvote-count">' + (voteCount || '') + '</span></button><button class="play-btn">▶ Play</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
+			card.querySelector('.upvote-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleVote(g.name, e.currentTarget); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });
 			this.gameGrid.appendChild(card);
 		});
@@ -416,6 +512,10 @@ class App {
 				btn.classList.remove('pop');
 				void btn.offsetWidth;
 				btn.classList.add('pop');
+			}
+			// Auto-upvote when favoriting
+			if (!this.myVotes.includes(name)) {
+				this.toggleVote(name);
 			}
 		}
 		localStorage.setItem('jeo-favorites', JSON.stringify(this.favorites));
@@ -689,6 +789,219 @@ class App {
 				btn.classList.remove('active');
 			}
 		});
+	}
+
+	/* =============== TUTORIAL SYSTEM =============== */
+
+	checkTutorial() {
+		if (!localStorage.getItem('jeo-tutorial-done')) {
+			setTimeout(() => this.startTutorial(), 800);
+		}
+	}
+
+	startTutorial() {
+		this.tutorialSteps = [
+			{
+				target: '.hero',
+				title: 'Welcome to Jeo! 👋',
+				text: 'This is your gaming hub. You can see how many games are available — WebGL, Flash, and Retro!',
+				position: 'bottom'
+			},
+			{
+				target: '.search-container',
+				title: 'Search Games 🔍',
+				text: 'Type any game name here to instantly filter and find what you want to play.',
+				position: 'bottom'
+			},
+			{
+				target: '.flash-toggle',
+				title: 'Toggle Game Types ⚡',
+				text: 'Use these toggles to show or hide Flash and Retro games from the grid.',
+				position: 'bottom'
+			},
+			{
+				target: '#sortToggle',
+				title: 'Sort Order 🔥',
+				text: 'Switch between Popular (most upvoted first) and A-Z sorting. Your preference is saved!',
+				position: 'bottom'
+			},
+			{
+				target: '.game-card',
+				title: 'Game Cards 🎮',
+				text: 'Each card shows the game thumbnail. Click Play to start, or double-click the card!',
+				position: 'top'
+			},
+			{
+				target: '.heart-btn',
+				title: 'Favorite Games ♥',
+				text: 'Click the heart to add a game to your Favorites carousel. This also auto-upvotes the game!',
+				position: 'top'
+			},
+			{
+				target: '.upvote-btn',
+				title: 'Upvote Games ▲',
+				text: 'Click the arrow to upvote a game. The most upvoted games appear first and show up on the Popular page. You get one vote per game!',
+				position: 'top'
+			},
+			{
+				target: '#cloakerBtn',
+				title: 'Tab Cloaker 🥸',
+				text: 'Disguise your tab! Make it look like Google, Google Docs, or anything else. Your teacher won\'t notice.',
+				position: 'bottom-left'
+			},
+			{
+				target: '#colorPickerBtn',
+				title: 'Customize 🎨',
+				text: 'Change the accent color, background color, or upload a custom background image. Make it yours!',
+				position: 'bottom-left'
+			},
+			{
+				target: '#themeToggle',
+				title: 'Dark / Light Mode 🌙',
+				text: 'Toggle between dark and light themes.',
+				position: 'bottom-left'
+			}
+		];
+		this.tutorialStep = 0;
+		this.showTutorialOverlay();
+	}
+
+	showTutorialOverlay() {
+		// Remove any existing overlay
+		const existing = document.getElementById('tutorialOverlay');
+		if (existing) existing.remove();
+
+		if (this.tutorialStep >= this.tutorialSteps.length) {
+			this.endTutorial();
+			return;
+		}
+
+		const step = this.tutorialSteps[this.tutorialStep];
+		const targetEl = document.querySelector(step.target);
+
+		// Scroll target into view first, then position after scroll settles
+		if (targetEl) {
+			targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+
+		// Wait for scroll to settle before building overlay
+		setTimeout(() => {
+			this._buildTutorialOverlay(step, targetEl);
+		}, 400);
+	}
+
+	_buildTutorialOverlay(step, targetEl) {
+		// Create overlay — uses position:fixed, no scroll offset needed
+		const overlay = document.createElement('div');
+		overlay.id = 'tutorialOverlay';
+		overlay.className = 'tutorial-overlay';
+
+		// Spotlight — the box-shadow on this IS the backdrop
+		if (targetEl) {
+			const rect = targetEl.getBoundingClientRect();
+			const pad = 10;
+
+			const spotlight = document.createElement('div');
+			spotlight.className = 'tutorial-spotlight';
+			spotlight.style.position = 'fixed';
+			spotlight.style.top = (rect.top - pad) + 'px';
+			spotlight.style.left = (rect.left - pad) + 'px';
+			spotlight.style.width = (rect.width + pad * 2) + 'px';
+			spotlight.style.height = (rect.height + pad * 2) + 'px';
+			spotlight.addEventListener('click', (e) => {
+				e.stopPropagation();
+				this.nextTutorialStep();
+			});
+			overlay.appendChild(spotlight);
+		} else {
+			// No target — just a light backdrop
+			const bg = document.createElement('div');
+			bg.className = 'tutorial-backdrop';
+			bg.addEventListener('click', (e) => {
+				e.stopPropagation();
+				this.nextTutorialStep();
+			});
+			overlay.appendChild(bg);
+		}
+
+		// Tooltip
+		const tooltip = document.createElement('div');
+		tooltip.className = 'tutorial-tooltip';
+		tooltip.innerHTML = '<div class="tutorial-tooltip-title">' + step.title + '</div>'
+			+ '<div class="tutorial-tooltip-text">' + step.text + '</div>'
+			+ '<div class="tutorial-tooltip-footer">'
+			+ '<span class="tutorial-progress">' + (this.tutorialStep + 1) + ' / ' + this.tutorialSteps.length + '</span>'
+			+ '<div class="tutorial-btns">'
+			+ '<button class="tutorial-skip-btn">Skip</button>'
+			+ '<button class="tutorial-next-btn">' + (this.tutorialStep === this.tutorialSteps.length - 1 ? 'Finish! 🎉' : 'Next →') + '</button>'
+			+ '</div></div>';
+
+		overlay.appendChild(tooltip);
+		document.body.appendChild(overlay);
+
+		// Position tooltip after render
+		requestAnimationFrame(() => {
+			if (targetEl) {
+				const rect = targetEl.getBoundingClientRect();
+				const ttRect = tooltip.getBoundingClientRect();
+				let top, left;
+
+				if (step.position === 'bottom' || step.position === 'bottom-left') {
+					top = rect.bottom + 20;
+				} else {
+					top = rect.top - ttRect.height - 20;
+					// If tooltip would go off the top, put it below
+					if (top < 16) top = rect.bottom + 20;
+				}
+
+				if (step.position === 'bottom-left') {
+					left = Math.max(16, rect.right - ttRect.width);
+				} else {
+					left = rect.left + (rect.width / 2) - (ttRect.width / 2);
+				}
+
+				// Keep on screen
+				left = Math.max(16, Math.min(left, window.innerWidth - ttRect.width - 16));
+				top = Math.max(16, Math.min(top, window.innerHeight - ttRect.height - 16));
+
+				tooltip.style.position = 'fixed';
+				tooltip.style.top = top + 'px';
+				tooltip.style.left = left + 'px';
+				tooltip.style.opacity = '1';
+				tooltip.style.transform = 'translateY(0)';
+			} else {
+				// Center the tooltip
+				tooltip.style.position = 'fixed';
+				tooltip.style.top = '50%';
+				tooltip.style.left = '50%';
+				tooltip.style.transform = 'translate(-50%, -50%)';
+				tooltip.style.opacity = '1';
+			}
+		});
+
+		// Button handlers
+		tooltip.querySelector('.tutorial-next-btn').addEventListener('click', (e) => {
+			e.stopPropagation();
+			this.nextTutorialStep();
+		});
+		tooltip.querySelector('.tutorial-skip-btn').addEventListener('click', (e) => {
+			e.stopPropagation();
+			this.endTutorial();
+		});
+	}
+
+	nextTutorialStep() {
+		this.tutorialStep++;
+		this.showTutorialOverlay();
+	}
+
+	endTutorial() {
+		localStorage.setItem('jeo-tutorial-done', '1');
+		const overlay = document.getElementById('tutorialOverlay');
+		if (overlay) {
+			overlay.classList.add('tutorial-fadeout');
+			setTimeout(() => overlay.remove(), 300);
+		}
 	}
 }
 

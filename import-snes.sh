@@ -9,7 +9,7 @@
 #    ./import-snes.sh <rom-file> [game-name]
 #
 #  Examples:
-#    ./import-snes.sh ~/roms/SuperMarioWorld.sfc
+#    ./roms/SuperMarioWorld.sfc
 #    ./import-snes.sh ~/roms/SuperMarioWorld.sfc super-mario-world
 #    ./import-snes.sh ~/roms/Zelda.smc zelda-link-to-the-past
 #

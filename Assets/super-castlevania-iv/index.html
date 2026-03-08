@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <title>Super Castlevania Iv | SNES</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        #game {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="game"></div>
+
+    <script>
+        EJS_player = '#game';
+        EJS_core = 'snes9x';
+        EJS_gameUrl = 'Super Castlevania IV.zip';
+        EJS_pathtodata = '/emulatorjs/';
+        EJS_startOnLoaded = true;
+        EJS_color = '#1a1a2e';
+    </script>
+    <script src="/emulatorjs/loader.js"></script>
+</body>
+</html>
