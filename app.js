@@ -381,15 +381,18 @@ class App {
 
 	async loadVotes() {
 		try {
-			const res = await fetch('/api/votes');
+			const res = await fetch('/api/votes', { credentials: 'same-origin' });
 			if (res.ok) {
 				const data = await res.json();
 				this.voteCounts = data.counts || {};
 				this.myVotes = data.myVotes || [];
+				return;
 			}
-		} catch (e) {
-			console.warn('Could not load votes', e);
-		}
+		} catch (e) {}
+		// Fallback to localStorage
+		this.myVotes = JSON.parse(localStorage.getItem('jeo-votes') || '[]');
+		this.voteCounts = {};
+		this.myVotes.forEach(g => this.voteCounts[g] = 1);
 	}
 
 	async toggleVote(gameName, btn) {
@@ -399,42 +402,52 @@ class App {
 			const res = await fetch('/api/votes', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
+				credentials: 'same-origin',
 				body: JSON.stringify({ game: gameName, action })
 			});
 			if (res.ok) {
 				const data = await res.json();
 				this.voteCounts = data.counts || {};
 				this.myVotes = data.myVotes || [];
-				// Update all vote buttons for this game
-				document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
-					const count = this.voteCounts[gameName] || 0;
-					const voted = this.myVotes.includes(gameName);
-					b.classList.toggle('upvoted', voted);
-					b.querySelector('.upvote-count').textContent = count || '';
-				});
-				// Update vote badge on card thumbnail
-				document.querySelectorAll('.heart-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(heartBtn => {
-					const thumb = heartBtn.closest('.game-thumb');
-					if (!thumb) return;
-					const count = this.voteCounts[gameName] || 0;
-					const voted = this.myVotes.includes(gameName);
-					let badge = thumb.querySelector('.vote-count-badge');
-					if (count > 0) {
-						if (!badge) {
-							badge = document.createElement('span');
-							badge.className = 'vote-count-badge';
-							thumb.insertBefore(badge, heartBtn.nextSibling);
-						}
-						badge.textContent = '▲ ' + count;
-						badge.classList.toggle('voted', voted);
-					} else if (badge) {
-						badge.remove();
-					}
-				});
+				this._updateVoteUI(gameName);
+				return;
 			}
-		} catch (e) {
-			console.warn('Vote failed', e);
+		} catch (e) {}
+		// Fallback to localStorage
+		if (hasVoted) {
+			this.myVotes = this.myVotes.filter(g => g !== gameName);
+			delete this.voteCounts[gameName];
+		} else {
+			this.myVotes.push(gameName);
+			this.voteCounts[gameName] = 1;
 		}
+		localStorage.setItem('jeo-votes', JSON.stringify(this.myVotes));
+		this._updateVoteUI(gameName);
+	}
+
+	_updateVoteUI(gameName) {
+		const count = this.voteCounts[gameName] || 0;
+		const voted = this.myVotes.includes(gameName);
+		document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
+			b.classList.toggle('upvoted', voted);
+			b.querySelector('.upvote-count').textContent = count || '';
+		});
+		document.querySelectorAll('.heart-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(heartBtn => {
+			const thumb = heartBtn.closest('.game-thumb');
+			if (!thumb) return;
+			let badge = thumb.querySelector('.vote-count-badge');
+			if (count > 0) {
+				if (!badge) {
+					badge = document.createElement('span');
+					badge.className = 'vote-count-badge';
+					thumb.insertBefore(badge, heartBtn.nextSibling);
+				}
+				badge.textContent = '▲ ' + count;
+				badge.classList.toggle('voted', voted);
+			} else if (badge) {
+				badge.remove();
+			}
+		});
 	}
 
 	refreshGames() {

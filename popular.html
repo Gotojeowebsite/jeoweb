@@ -205,8 +205,8 @@
 				this.games = [];
 				this.allGames = [];
 				this.fallbackImage = 'notavailable.svg';
-				this.voteCounts = {};
 				this.myVotes = [];
+				this.voteCounts = {};
 				this.initElements();
 				this.loadTheme();
 				this.loadAccent();
@@ -223,22 +223,28 @@
 
 			async loadVotes() {
 				try {
-					const res = await fetch('/api/votes');
+					const res = await fetch('/api/votes', { credentials: 'same-origin' });
 					if (res.ok) {
 						const data = await res.json();
 						this.voteCounts = data.counts || {};
 						this.myVotes = data.myVotes || [];
+						return;
 					}
-				} catch (e) { console.warn('Could not load votes', e); }
+				} catch (e) {}
+				this.myVotes = JSON.parse(localStorage.getItem('jeo-votes') || '[]');
+				this.voteCounts = {};
+				this.myVotes.forEach(g => this.voteCounts[g] = 1);
 			}
 
 			async toggleVote(gameName) {
 				const hasVoted = this.myVotes.includes(gameName);
+				const action = hasVoted ? 'unvote' : 'upvote';
 				try {
 					const res = await fetch('/api/votes', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ game: gameName, action: hasVoted ? 'unvote' : 'upvote' })
+						credentials: 'same-origin',
+						body: JSON.stringify({ game: gameName, action })
 					});
 					if (res.ok) {
 						const data = await res.json();
@@ -248,10 +254,23 @@
 							b.classList.toggle('upvoted', this.myVotes.includes(gameName));
 							b.querySelector('.upvote-count').textContent = this.voteCounts[gameName] || '';
 						});
-						// Update counter — game may have lost all votes
 						this.updateCounter();
+						return;
 					}
-				} catch (e) { console.warn('Vote failed', e); }
+				} catch (e) {}
+				if (hasVoted) {
+					this.myVotes = this.myVotes.filter(g => g !== gameName);
+					delete this.voteCounts[gameName];
+				} else {
+					this.myVotes.push(gameName);
+					this.voteCounts[gameName] = 1;
+				}
+				localStorage.setItem('jeo-votes', JSON.stringify(this.myVotes));
+				document.querySelectorAll('.upvote-btn[data-game="' + this.escapeAttr(gameName) + '"]').forEach(b => {
+					b.classList.toggle('upvoted', this.myVotes.includes(gameName));
+					b.querySelector('.upvote-count').textContent = this.voteCounts[gameName] || '';
+				});
+				this.updateCounter();
 			}
 
 			escapeAttr(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
