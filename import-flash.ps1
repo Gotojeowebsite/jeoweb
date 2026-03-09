@@ -25,14 +25,92 @@ $gamesListFile = Join-Path $PSScriptRoot "games_list.json"
 $normalizedArgs = @($args | ForEach-Object { $_ -replace '^[\u2013\u2014]+', '--' })
 $flagFetchImages = $normalizedArgs -contains '--fetch-images'
 $flagScan        = $normalizedArgs -contains '--scan'
-$positionalArgs  = @($normalizedArgs | Where-Object { $_ -notlike '--*' })
+$flagHelp        = ($normalizedArgs -contains '--help') -or ($args -contains '-h') -or ($args -contains '/?')
+$positionalArgs  = @($normalizedArgs | Where-Object { $_ -notlike '--*' -and $_ -notin @('-h','/?') })
 $inputUrl        = if ($positionalArgs.Count -ge 1) { $positionalArgs[0] } else { $null }
 $inputName       = if ($positionalArgs.Count -ge 2) { $positionalArgs[1] } else { $null }
+
+function Show-Usage {
+    Write-Host "  Usage:" -ForegroundColor Cyan
+    Write-Host "    pwsh import-flash.ps1 <URL> [game-name]"
+    Write-Host "    pwsh import-flash.ps1 --fetch-images"
+    Write-Host "    pwsh import-flash.ps1 --scan"
+    Write-Host "    pwsh import-flash.ps1 --help"
+    Write-Host ""
+}
+
+function ConvertTo-GameSlug($name) {
+    if ([string]::IsNullOrWhiteSpace($name)) { return $null }
+
+    $slug = $name.ToLowerInvariant()
+    $slug = $slug -replace '[\s_]+', '-'
+    $slug = $slug -replace '[^a-z0-9\-]', '-'
+    $slug = $slug -replace '-{2,}', '-'
+    $slug = $slug.Trim('-')
+
+    if (-not $slug) { return $null }
+    return $slug
+}
+
+function Join-UrlPath($baseUrl, $childPath) {
+    if ([string]::IsNullOrWhiteSpace($baseUrl) -or [string]::IsNullOrWhiteSpace($childPath)) {
+        return $null
+    }
+
+    try {
+        $baseUri = [System.Uri]::new($baseUrl)
+        return [System.Uri]::new($baseUri, $childPath).AbsoluteUri
+    } catch {
+        return ($baseUrl.TrimEnd('/') + '/' + $childPath.TrimStart('/'))
+    }
+}
+
+function Get-DownloadedGameRoot($downloadDir) {
+    if (-not (Test-Path $downloadDir)) { return $null }
+
+    $candidates = @()
+
+    $rootFiles = Get-ChildItem -Path $downloadDir -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -notin @('wget.log','robots.txt','robots.txt.html','.listing') }
+    if ($rootFiles) {
+        $rootHtmlCount = @($rootFiles | Where-Object { $_.Extension -in @('.html','.htm') }).Count
+        $candidates += [PSCustomObject]@{
+            Path      = $downloadDir
+            HtmlCount = $rootHtmlCount
+            FileCount = @($rootFiles).Count
+        }
+    }
+
+    foreach ($dir in @(Get-ChildItem -Path $downloadDir -Directory -ErrorAction SilentlyContinue)) {
+        $resolved = Find-GameRoot $dir.FullName
+        if (-not (Test-Path $resolved)) { continue }
+
+        $files = @(Get-ChildItem -Path $resolved -Recurse -File -ErrorAction SilentlyContinue)
+        if ($files.Count -eq 0) { continue }
+
+        $htmlCount = @($files | Where-Object { $_.Extension -in @('.html','.htm') }).Count
+        $candidates += [PSCustomObject]@{
+            Path      = $resolved
+            HtmlCount = $htmlCount
+            FileCount = $files.Count
+        }
+    }
+
+    if (-not $candidates) { return $null }
+
+    return ($candidates |
+        Sort-Object -Property @(
+            @{ Expression = 'HtmlCount'; Descending = $true },
+            @{ Expression = 'FileCount'; Descending = $true },
+            @{ Expression = 'Path'; Descending = $false }
+        ) |
+        Select-Object -First 1 -ExpandProperty Path)
+}
 
 # ============================================================
 #  IMAGE SEARCH - downloads a game thumbnail from Bing
 # ============================================================
-function Download-GameImage($searchName, $destDir) {
+function Save-GameImage($searchName, $destDir) {
     $queries = @(
         "$searchName game logo",
         "$searchName game thumbnail",
@@ -257,7 +335,7 @@ function Get-UnityManifestFile($rootDir) {
     return $null
 }
 
-function Extract-AssetPaths($localDir) {
+function Get-AssetPaths($localDir) {
     $paths = @{}
     $textFiles = Get-ChildItem -Path $localDir -Recurse -File -ErrorAction SilentlyContinue |
         Where-Object {
@@ -349,7 +427,7 @@ function Import-GameFromUrl($url, $gameName) {
         $gameName = $segments | Select-Object -Last 1
         if (-not $gameName) { $gameName = $uri.Host -replace '\..*$', '' }
     }
-    $gameName = $gameName.ToLower() -replace '\s+', '-' -replace '[^a-z0-9\-]', ''
+    $gameName = ConvertTo-GameSlug $gameName
     if (-not $gameName) {
         Write-Host "  ERROR: Cannot determine game name. Usage: pwsh import-flash.ps1 <URL> <name>" -ForegroundColor Red
         return $false
@@ -402,13 +480,12 @@ function Import-GameFromUrl($url, $gameName) {
             $url 2>&1 | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
 
         # ---- locate downloaded content ----
-        $topDirs = Get-ChildItem -Path $tempDir -Directory -ErrorAction SilentlyContinue
-        if (-not $topDirs -or $topDirs.Count -eq 0) {
+        $gameRoot = Get-DownloadedGameRoot $tempDir
+        if (-not $gameRoot) {
             Write-Host "  ERROR: No files downloaded. Check the URL." -ForegroundColor Red
             return $false
         }
 
-        $gameRoot = Find-GameRoot $topDirs[0].FullName
         $allFiles = Get-ChildItem -Path $gameRoot -Recurse -File -ErrorAction SilentlyContinue
         if (-not $allFiles -or $allFiles.Count -eq 0) {
             Write-Host "  ERROR: Download produced no usable files." -ForegroundColor Red
@@ -454,12 +531,12 @@ function Import-GameFromUrl($url, $gameName) {
                     # Try downloading from original site (resolve relative to manifest URL)
                     $bjBaseUrl = $baseUrl
                     if ($bjDir) { $bjBaseUrl = "$baseUrl$bjDir/" }
-                    $assetUrl = "$bjBaseUrl$val"
+                    $assetUrl = Join-UrlPath $bjBaseUrl $val
 
                     $dlOk = $false
                     # Try multiple URL patterns
                     $tryUrls = @($assetUrl)
-                    if ($bjDir) { $tryUrls += "$baseUrl$val" }
+                    if ($bjDir) { $tryUrls += (Join-UrlPath $baseUrl $val) }
 
                     foreach ($tryUrl in $tryUrls) {
                         try {
@@ -530,7 +607,7 @@ function Import-GameFromUrl($url, $gameName) {
 
         # ---- Step 2: Scan JS/CSS/HTML for dynamic asset paths and download them ----
         Write-Host "  [2/4] Scanning JS/CSS/HTML for dynamic asset references..." -ForegroundColor Gray
-        $assetPaths = Extract-AssetPaths $gameDir
+        $assetPaths = Get-AssetPaths $gameDir
 
         if ($assetPaths -and $assetPaths.Count -gt 0) {
             # Filter to only assets not already downloaded
@@ -561,7 +638,7 @@ function Import-GameFromUrl($url, $gameName) {
 
                 # Download each asset individually with wget
                 foreach ($asset in $deduped) {
-                    $assetUrl  = "$baseUrl$asset"
+                    $assetUrl  = Join-UrlPath $baseUrl $asset
                     $localPath = Join-Path $gameDir ($asset.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
                     $localDir  = Split-Path $localPath -Parent
 
@@ -625,7 +702,7 @@ function Import-GameFromUrl($url, $gameName) {
 
                         $retryOk = 0
                         foreach ($asset in $stillMissing) {
-                            $assetUrl  = "$baseUrl$asset"
+                            $assetUrl  = Join-UrlPath $baseUrl $asset
                             $localPath = Join-Path $gameDir ($asset.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
                             $localDir  = Split-Path $localPath -Parent
                             try {
@@ -670,7 +747,7 @@ function Import-GameFromUrl($url, $gameName) {
             }
 
             # ---- Recursive pass: scan newly downloaded JS files for more assets ----
-            $newAssets = Extract-AssetPaths $gameDir
+            $newAssets = Get-AssetPaths $gameDir
             if ($newAssets) {
                 $secondMissing = @()
                 foreach ($ap in $newAssets) {
@@ -690,7 +767,7 @@ function Import-GameFromUrl($url, $gameName) {
                 if ($secondMissing.Count -gt 0) {
                     Write-Host "  Second pass: $($secondMissing.Count) more assets to fetch" -ForegroundColor Gray
                     foreach ($asset in $secondMissing) {
-                        $assetUrl  = "$baseUrl$asset"
+                        $assetUrl  = Join-UrlPath $baseUrl $asset
                         $localPath = Join-Path $gameDir ($asset.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
                         $localDir  = Split-Path $localPath -Parent
                         try {
@@ -782,8 +859,8 @@ function Import-GameFromUrl($url, $gameName) {
 
         if ($needsSimWorker) {
             $simCandidates = @(
-                "${baseUrl}simulation_worker.bundle.js",
-                "https://web.archive.org/web/20250906225331/${baseUrl}simulation_worker.bundle.js"
+                (Join-UrlPath $baseUrl 'simulation_worker.bundle.js'),
+                ("https://web.archive.org/web/20250906225331/" + (Join-UrlPath $baseUrl 'simulation_worker.bundle.js'))
             )
 
             foreach ($candidate in $simCandidates) {
@@ -849,7 +926,7 @@ function Import-GameFromUrl($url, $gameName) {
         # ---- Step 3: Search for thumbnail online ----
         Write-Host "  [3/4] Searching for thumbnail..." -ForegroundColor Gray
         $prettyName = $gameName -replace '-', ' '
-        $imgResult = Download-GameImage $prettyName $gameDir
+        $imgResult = Save-GameImage $prettyName $gameDir
         if ($imgResult) {
             Write-Host "  IMG   Downloaded: $(Split-Path $imgResult -Leaf)" -ForegroundColor Green
         } else {
@@ -959,8 +1036,11 @@ function Import-SwfFiles {
     $imported = 0; $skipped = 0
 
     foreach ($swf in $swfFiles) {
-        $gameName = [IO.Path]::GetFileNameWithoutExtension($swf.Name) -replace '\s+', '-'
-        $gameName = $gameName.ToLower()
+        $gameName = ConvertTo-GameSlug ([IO.Path]::GetFileNameWithoutExtension($swf.Name))
+        if (-not $gameName) {
+            Write-Host "  SKIP  $($swf.Name) -> could not derive a safe folder name" -ForegroundColor DarkYellow
+            $skipped++; continue
+        }
         $gameDir  = Join-Path $assetsDir $gameName
 
         if (Test-Path $gameDir) {
@@ -976,7 +1056,7 @@ function Import-SwfFiles {
 
         # Always search for thumbnail online
         $prettyName = $gameName -replace '-', ' '
-        $imgResult  = Download-GameImage $prettyName $gameDir
+        $imgResult  = Save-GameImage $prettyName $gameDir
         $imgStatus  = if ($imgResult) { "[image found]" } else { "[no image]" }
         Write-Host "  OK    $gameName/ <- $($swf.Name) $imgStatus" -ForegroundColor Green
         $imported++
@@ -989,7 +1069,7 @@ function Import-SwfFiles {
 # ============================================================
 #  FETCH MISSING IMAGES  (search online for games without logos)
 # ============================================================
-function Fetch-MissingImages {
+function Update-MissingImages {
     Write-Host "`n  Scanning for games missing thumbnail images..." -ForegroundColor Cyan
     $dirs    = Get-ChildItem -Path $assetsDir -Directory | Sort-Object { $_.Name.ToLower() }
     $fetched = 0; $failed = 0; $already = 0
@@ -1005,7 +1085,7 @@ function Fetch-MissingImages {
         if ($hasLogo) { $already++; continue }
 
         $prettyName = $d.Name -replace '-', ' '
-        $result = Download-GameImage $prettyName $d.FullName
+        $result = Save-GameImage $prettyName $d.FullName
         if ($result) {
             Write-Host "  IMG   $($d.Name)/" -ForegroundColor Green
             $fetched++
@@ -1035,18 +1115,36 @@ function Add-ToRecentlyAdded($name) {
         try {
             $raw = Get-Content -Path $raFile -Raw -ErrorAction Stop
             $parsed = $raw | ConvertFrom-Json -ErrorAction Stop
-            if ($parsed -is [array]) { $list = @($parsed) }
+            if ($parsed -is [array]) {
+                $list = @($parsed)
+            }
+            elseif ($parsed -is [System.Collections.IEnumerable] -and $parsed -isnot [string]) {
+                $list = @($parsed)
+            }
+            elseif ($parsed) {
+                $list = @($parsed)
+            }
         } catch { }
     }
     # Remove if already present, then prepend
-    $list = @($name) + @($list | Where-Object { $_ -ne $name })
+    $list = @($name) + @($list | Where-Object { $_ -and $_ -ne $name })
+    if ($list.Count -gt 50) {
+        $list = @($list | Select-Object -First 50)
+    }
     $list | ConvertTo-Json | Set-Content -Path $raFile -Encoding UTF8
     Write-Host "  Updated recently_added.json (now $($list.Count) entries)" -ForegroundColor DarkGreen
 }
 
+if (-not (Test-Path $assetsDir)) {
+    New-Item -ItemType Directory -Path $assetsDir -Force | Out-Null
+}
+
 if ($flagFetchImages) {
-    Fetch-MissingImages
+    Update-MissingImages
     Update-GamesList
+}
+elseif ($flagHelp) {
+    Show-Usage
 }
 elseif ($flagScan) {
     Update-GamesList
