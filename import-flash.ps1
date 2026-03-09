@@ -316,7 +316,8 @@ $assetExtensions = @(
     'png','jpg','jpeg','gif','webp','bmp','ico','svg',
     'ttf','woff','woff2','otf','eot','fnt',
     'json','xml','atlas','csv','txt',
-    'js','css','map',
+    'js','mjs','css','map',
+    'html','htm','php','asp','aspx',
     'mp4','webm','ogv',
     'zip','gz','br'
 )
@@ -454,6 +455,104 @@ function Get-AssetPaths($localDir) {
     } | Sort-Object
 }
 
+function Download-UnityBuildFiles($gameDir, $baseUrl, $url) {
+    $unityManifestPath = Get-UnityManifestFile $gameDir
+    if (-not $unityManifestPath) { return 0 }
+
+    try {
+        $bjData = Get-Content -Path $unityManifestPath.FullName -Raw | ConvertFrom-Json
+        $unityFields = @('dataUrl','wasmCodeUrl','wasmFrameworkUrl','asmCodeUrl','asmFrameworkUrl','asmMemoryUrl','codeUrl','frameworkUrl','memoryUrl')
+        $bjDir = [System.IO.Path]::GetRelativePath($gameDir, $unityManifestPath.DirectoryName).Replace('\','/')
+        if ($bjDir -eq '.') { $bjDir = '' }
+
+        $unityDlCount = 0
+        foreach ($field in $unityFields) {
+            $val = $bjData.$field
+            if (-not $val) { continue }
+
+            $val = $val -replace '^\./+', ''
+            $assetRelPath = if ($bjDir) { "$bjDir/$val" } else { $val }
+            $localPath = Join-Path $gameDir ($assetRelPath.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+            if (Test-Path $localPath) { continue }
+
+            $localDir2 = Split-Path $localPath -Parent
+            if (-not (Test-Path $localDir2)) {
+                New-Item -ItemType Directory -Path $localDir2 -Force | Out-Null
+            }
+
+            $bjBaseUrl = $baseUrl
+            if ($bjDir) { $bjBaseUrl = "$baseUrl$bjDir/" }
+            $assetUrl = Join-UrlPath $bjBaseUrl $val
+
+            $dlOk = $false
+            $tryUrls = @($assetUrl)
+            if ($bjDir) { $tryUrls += (Join-UrlPath $baseUrl $val) }
+
+            foreach ($tryUrl in $tryUrls) {
+                try {
+                    Write-Host "    Fetching $val ..." -ForegroundColor DarkGray
+                    & wget -q --no-check-certificate --timeout=60 --tries=3 `
+                        "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
+                        "--header=Referer: $url" `
+                        "--header=Accept: */*" `
+                        -O $localPath `
+                        $tryUrl 2>&1 | Out-Null
+
+                    if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
+                        $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
+                        if ($hdr -notmatch '<!DOCTYPE|<html|<HTML|403 Forbidden|Access Denied') {
+                            $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
+                            Write-Host "    +  $val (${fsize}KB)" -ForegroundColor DarkGreen
+                            $unityDlCount++
+                            $dlOk = $true
+                            break
+                        }
+                    }
+                    Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                } catch {
+                    Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                }
+            }
+
+            if (-not $dlOk) {
+                foreach ($tryUrl in $tryUrls) {
+                    try {
+                        Invoke-WebRequest -Uri $tryUrl -OutFile $localPath `
+                            -UseBasicParsing -TimeoutSec 60 -ErrorAction Stop `
+                            -Headers @{
+                                "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                                "Referer"    = $url
+                                "Accept"     = "*/*"
+                            }
+                        if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
+                            $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
+                            if ($hdr -notmatch '<!DOCTYPE|<html|403|Access Denied') {
+                                $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
+                                Write-Host "    +  $val (${fsize}KB) [fallback]" -ForegroundColor DarkGreen
+                                $unityDlCount++
+                                $dlOk = $true
+                                break
+                            }
+                        }
+                        Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                    } catch {
+                        Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                    }
+                }
+            }
+
+            if (-not $dlOk) {
+                Write-Host "    !  MISSING $val" -ForegroundColor Yellow
+            }
+        }
+
+        return $unityDlCount
+    } catch {
+        Write-Host "  Could not parse Unity manifest: $_" -ForegroundColor DarkYellow
+        return 0
+    }
+}
+
 # ============================================================
 #  DOWNLOAD GAME FROM URL  (wget + JS asset extraction)
 # ============================================================
@@ -483,9 +582,10 @@ function Import-GameFromUrl($url, $gameName) {
     }
 
     $gameDir = Join-Path $assetsDir $gameName
+    $refreshExisting = $false
     if (Test-Path $gameDir) {
-        Write-Host "  SKIP  Assets/$gameName/ already exists. Delete it first to re-download." -ForegroundColor DarkYellow
-        return $false
+        $refreshExisting = $true
+        Write-Host "  INFO  Assets/$gameName/ already exists. Refreshing missing files and repairing the import." -ForegroundColor DarkYellow
     }
 
     Write-Host ""
@@ -554,104 +654,9 @@ function Import-GameFromUrl($url, $gameName) {
             Remove-Item -Force -ErrorAction SilentlyContinue
 
         # ---- Step 1b: Unity manifest — directly download critical game data ----
-        $unityManifestPath = Get-UnityManifestFile $gameDir
-        if ($unityManifestPath) {
-            Write-Host "  [1b/4] Unity game detected — downloading build data..." -ForegroundColor Gray
-            try {
-                $bjData = Get-Content -Path $unityManifestPath.FullName -Raw | ConvertFrom-Json
-                $unityFields = @('dataUrl','wasmCodeUrl','wasmFrameworkUrl','asmCodeUrl','asmFrameworkUrl','asmMemoryUrl','codeUrl','frameworkUrl','memoryUrl')
-                $bjDir = [System.IO.Path]::GetRelativePath($gameDir, $unityManifestPath.DirectoryName).Replace('\','/')
-                if ($bjDir -eq '.') { $bjDir = '' }
-                $unityDlCount = 0
-                foreach ($field in $unityFields) {
-                    $val = $bjData.$field
-                    if (-not $val) { continue }
-                    $val = $val -replace '^\./+', ''
-                    # Resolve relative to the Unity manifest location
-                    $assetRelPath = if ($bjDir) { "$bjDir/$val" } else { $val }
-                    $localPath = Join-Path $gameDir ($assetRelPath.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
-                    if (Test-Path $localPath) { continue }
-
-                    $localDir2 = Split-Path $localPath -Parent
-                    if (-not (Test-Path $localDir2)) {
-                        New-Item -ItemType Directory -Path $localDir2 -Force | Out-Null
-                    }
-
-                    # Try downloading from original site (resolve relative to manifest URL)
-                    $bjBaseUrl = $baseUrl
-                    if ($bjDir) { $bjBaseUrl = "$baseUrl$bjDir/" }
-                    $assetUrl = Join-UrlPath $bjBaseUrl $val
-
-                    $dlOk = $false
-                    # Try multiple URL patterns
-                    $tryUrls = @($assetUrl)
-                    if ($bjDir) { $tryUrls += (Join-UrlPath $baseUrl $val) }
-
-                    foreach ($tryUrl in $tryUrls) {
-                        try {
-                            Write-Host "    Fetching $val ..." -ForegroundColor DarkGray
-                            & wget -q --no-check-certificate --timeout=60 --tries=3 `
-                                "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
-                                "--header=Referer: $url" `
-                                "--header=Accept: */*" `
-                                -O $localPath `
-                                $tryUrl 2>&1 | Out-Null
-
-                            if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
-                                # Validate it's not an error page
-                                $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
-                                if ($hdr -notmatch '<!DOCTYPE|<html|<HTML|403 Forbidden|Access Denied') {
-                                    $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
-                                    Write-Host "    +  $val (${fsize}KB)" -ForegroundColor DarkGreen
-                                    $unityDlCount++
-                                    $dlOk = $true
-                                    break
-                                }
-                            }
-                            Remove-Item $localPath -Force -ErrorAction SilentlyContinue
-                        } catch {
-                            Remove-Item $localPath -Force -ErrorAction SilentlyContinue
-                        }
-                    }
-
-                    # Fallback: try Invoke-WebRequest with session
-                    if (-not $dlOk) {
-                        foreach ($tryUrl in $tryUrls) {
-                            try {
-                                Invoke-WebRequest -Uri $tryUrl -OutFile $localPath `
-                                    -UseBasicParsing -TimeoutSec 60 -ErrorAction Stop `
-                                    -Headers @{
-                                        "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-                                        "Referer"    = $url
-                                        "Accept"     = "*/*"
-                                    }
-                                if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
-                                    $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
-                                    if ($hdr -notmatch '<!DOCTYPE|<html|403|Access Denied') {
-                                        $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
-                                        Write-Host "    +  $val (${fsize}KB) [fallback]" -ForegroundColor DarkGreen
-                                        $unityDlCount++
-                                        $dlOk = $true
-                                        break
-                                    }
-                                }
-                                Remove-Item $localPath -Force -ErrorAction SilentlyContinue
-                            } catch {
-                                Remove-Item $localPath -Force -ErrorAction SilentlyContinue
-                            }
-                        }
-                    }
-
-                    if (-not $dlOk) {
-                        Write-Host "    !  MISSING $val" -ForegroundColor Yellow
-                    }
-                }
-                if ($unityDlCount -gt 0) {
-                    Write-Host "  Unity build data: $unityDlCount files downloaded" -ForegroundColor Gray
-                }
-            } catch {
-                Write-Host "  Could not parse Unity manifest: $_" -ForegroundColor DarkYellow
-            }
+        $unityDlCount = Download-UnityBuildFiles $gameDir $baseUrl $url
+        if ($unityDlCount -gt 0) {
+            Write-Host "  [1b/4] Unity build data: $unityDlCount files downloaded" -ForegroundColor Gray
         }
 
         # ---- Step 2: Scan JS/CSS/HTML for dynamic asset paths and download them ----
@@ -848,6 +853,11 @@ function Import-GameFromUrl($url, $gameName) {
                     }
                 }
             }
+
+            $lateUnityDlCount = Download-UnityBuildFiles $gameDir $baseUrl $url
+            if ($lateUnityDlCount -gt 0) {
+                Write-Host "  Late Unity manifest recovery: $lateUnityDlCount files downloaded" -ForegroundColor Gray
+            }
         } else {
             Write-Host "  No dynamic asset references found in code" -ForegroundColor Gray
         }
@@ -1026,7 +1036,12 @@ function Import-GameFromUrl($url, $gameName) {
 
         $finalCount = (Get-ChildItem -Path $gameDir -Recurse -File).Count
         Write-Host ""
-        Write-Host "  OK    Assets/$gameName/ ($finalCount files)" -ForegroundColor Green
+        if ($refreshExisting) {
+            Write-Host "  OK    Repaired Assets/$gameName/ ($finalCount files)" -ForegroundColor Green
+        }
+        else {
+            Write-Host "  OK    Assets/$gameName/ ($finalCount files)" -ForegroundColor Green
+        }
         return $gameName
     }
     finally {
