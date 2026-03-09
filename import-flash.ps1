@@ -195,6 +195,68 @@ $assetExtensions = @(
 )
 $extPattern = ($assetExtensions -join '|')
 
+function Resolve-AssetPath($assetPath, $relDir) {
+    if (-not $assetPath) { return $null }
+
+    $normalized = $assetPath.Trim()
+    if (-not $normalized) { return $null }
+
+    $normalized = $normalized -replace '\\', '/'
+    $normalized = $normalized -replace '[?#].*$', ''
+    $normalized = $normalized -replace '^\./+', ''
+
+    if (-not $normalized) { return $null }
+    if ($normalized -match '^(?:https?:|data:|javascript:|mailto:|tel:)') { return $null }
+
+    if ($normalized.StartsWith('/')) {
+        return $normalized.TrimStart('/')
+    }
+
+    if ($relDir) {
+        try {
+            $baseUri = [System.Uri]::new("https://local/$relDir/")
+            $resolved = [System.Uri]::new($baseUri, $normalized).AbsolutePath.TrimStart('/')
+            if ($resolved) { return $resolved }
+        } catch {}
+    }
+
+    return $normalized
+}
+
+function Add-AssetPath($paths, $assetPath, $relDir) {
+    $resolvedPath = Resolve-AssetPath $assetPath $relDir
+    if ($resolvedPath -and -not $paths.ContainsKey($resolvedPath)) {
+        $paths[$resolvedPath] = $true
+    }
+}
+
+function Get-UnityManifestFile($rootDir) {
+    $candidate = Get-ChildItem -Path $rootDir -Recurse -File -Filter '*.json' -ErrorAction SilentlyContinue |
+        Where-Object { $_.Length -lt 5MB } |
+        Sort-Object FullName |
+        Where-Object {
+            $_.Name -match '^(?:build|game|webgl)\.json$'
+        } |
+        Select-Object -First 1
+
+    if ($candidate) { return $candidate }
+
+    $jsonFiles = Get-ChildItem -Path $rootDir -Recurse -File -Filter '*.json' -ErrorAction SilentlyContinue |
+        Where-Object { $_.Length -lt 5MB } |
+        Sort-Object FullName
+
+    foreach ($jsonFile in $jsonFiles) {
+        try {
+            $raw = Get-Content -Path $jsonFile.FullName -Raw -ErrorAction Stop
+            if ($raw -match '"(?:dataUrl|wasmCodeUrl|wasmFrameworkUrl|asmCodeUrl|frameworkUrl|codeUrl)"\s*:') {
+                return $jsonFile
+            }
+        } catch {}
+    }
+
+    return $null
+}
+
 function Extract-AssetPaths($localDir) {
     $paths = @{}
     $textFiles = Get-ChildItem -Path $localDir -Recurse -File -ErrorAction SilentlyContinue |
@@ -202,6 +264,26 @@ function Extract-AssetPaths($localDir) {
             $_.Extension.ToLower() -in @('.html','.htm','.js','.css','.json','.xml','.svg') -and
             $_.Length -lt 50MB
         }
+
+    # --- Unity manifest: extract dataUrl, wasmCodeUrl, wasmFrameworkUrl, etc. ---
+    $buildJsonFiles = Get-ChildItem -Path $localDir -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object {
+            ($_.Extension -eq '.json' -and $_.Length -lt 5MB -and $_.Name -match '^(?:build|game|webgl)\.json$') -or
+            $_.Name -match '\.loader\.js$'
+        }
+    foreach ($bjf in $buildJsonFiles) {
+        try {
+            $bjContent = [System.IO.File]::ReadAllText($bjf.FullName)
+            # Match Unity JSON fields like "dataUrl": "file.data.unityweb"
+            $unityMatches = [regex]::Matches($bjContent, '"(?:dataUrl|wasmCodeUrl|wasmFrameworkUrl|asmCodeUrl|asmFrameworkUrl|asmMemoryUrl|codeUrl|frameworkUrl|memoryUrl)"\s*:\s*"([^"]+)"')
+            $manifestRelDir = [System.IO.Path]::GetRelativePath($localDir, $bjf.DirectoryName).Replace('\','/')
+            if ($manifestRelDir -eq '.') { $manifestRelDir = '' }
+            foreach ($m in $unityMatches) {
+                Add-AssetPath $paths $m.Groups[1].Value $manifestRelDir
+            }
+        } catch { continue }
+    }
+
     foreach ($f in $textFiles) {
         try {
             $content = [System.IO.File]::ReadAllText($f.FullName)
@@ -209,34 +291,30 @@ function Extract-AssetPaths($localDir) {
             if ($relDir -eq '.') { $relDir = '' }
 
             # Match quoted paths like "models/car.glb" or './audio/engine.ogg'
-            $matches1 = [regex]::Matches($content, "[""']\.{0,2}/?((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-]+\.(?:$extPattern))[""']")
+            # Supports multi-dot filenames like "Game.data.unityweb"
+            $matches1 = [regex]::Matches($content, "[""']\.{0,2}/?((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-][a-zA-Z0-9_\-\.]*\.(?:$extPattern))[""']")
             foreach ($m in $matches1) {
-                $assetPath = $m.Groups[1].Value -replace '^\./+', ''
-                # If asset path is relative and the file is in a subdir, resolve it
-                if ($relDir -and -not $assetPath.Contains('/') -and -not ($assetPath -match '^https?:')) {
-                    # Root-relative path (starts with no dir) — try as-is first
-                }
-                if (-not $paths.ContainsKey($assetPath)) {
-                    $paths[$assetPath] = $true
-                }
+                Add-AssetPath $paths $m.Groups[1].Value $relDir
             }
 
             # Also match src="..." href="..." url(...) patterns for paths without quotes
-            $matches2 = [regex]::Matches($content, "(?:src|href|url)\s*[\(=]\s*[""']?((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-]+\.(?:$extPattern))[""'\)]")
+            $matches2 = [regex]::Matches($content, "(?:src|href|url)\s*[\(=]\s*[""']?((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-][a-zA-Z0-9_\-\.]*\.(?:$extPattern))[""'\)]")
             foreach ($m in $matches2) {
-                $assetPath = $m.Groups[1].Value -replace '^\./+', ''
-                if (-not $paths.ContainsKey($assetPath)) {
-                    $paths[$assetPath] = $true
-                }
+                Add-AssetPath $paths $m.Groups[1].Value $relDir
             }
 
             # Match webpack-style paths like e.exports="audio/engine.ogg" or n="models/car.glb"
-            $matches3 = [regex]::Matches($content, "=\s*[""']((?:[a-zA-Z0-9_\-]+/)+[a-zA-Z0-9_\-]+\.(?:$extPattern))[""']")
+            # Also matches paths without subdirectories now (removed the + requirement)
+            $matches3 = [regex]::Matches($content, "=\s*[""']((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-][a-zA-Z0-9_\-\.]*\.(?:$extPattern))[""']")
             foreach ($m in $matches3) {
-                $assetPath = $m.Groups[1].Value
-                if (-not $paths.ContainsKey($assetPath)) {
-                    $paths[$assetPath] = $true
-                }
+                Add-AssetPath $paths $m.Groups[1].Value $relDir
+            }
+
+            # Match JSON key-value pairs like "someKey": "filename.ext"
+            # Catches Unity build.json and other config files
+            $matches4 = [regex]::Matches($content, '"[a-zA-Z_][a-zA-Z0-9_]*"\s*:\s*"((?:[a-zA-Z0-9_\-]+/)*[a-zA-Z0-9_\-][a-zA-Z0-9_\-\.]*\.(?:' + $extPattern + '))"')
+            foreach ($m in $matches4) {
+                Add-AssetPath $paths $m.Groups[1].Value $relDir
             }
         } catch { continue }
     }
@@ -301,7 +379,7 @@ function Import-GameFromUrl($url, $gameName) {
     New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
 
     try {
-        Write-Host "  [1/3] Downloading via wget (HTML-linked files)..." -ForegroundColor Gray
+        Write-Host "  [1/4] Downloading via wget (HTML-linked files)..." -ForegroundColor Gray
         $domain = ([uri]$url).Host
 
         & wget `
@@ -318,6 +396,7 @@ function Import-GameFromUrl($url, $gameName) {
             --tries=3 `
             --waitretry=1 `
             --no-check-certificate `
+            "--accept=html,htm,js,css,json,xml,png,jpg,jpeg,gif,webp,svg,ico,woff,woff2,ttf,otf,eot,mp3,ogg,wav,wasm,data,unityweb,unity3d,mem,pck,bin,map,glb,gltf,mp4,webm" `
             "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
             -P $tempDir `
             $url 2>&1 | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
@@ -348,8 +427,109 @@ function Import-GameFromUrl($url, $gameName) {
             -ErrorAction SilentlyContinue |
             Remove-Item -Force -ErrorAction SilentlyContinue
 
+        # ---- Step 1b: Unity manifest — directly download critical game data ----
+        $unityManifestPath = Get-UnityManifestFile $gameDir
+        if ($unityManifestPath) {
+            Write-Host "  [1b/4] Unity game detected — downloading build data..." -ForegroundColor Gray
+            try {
+                $bjData = Get-Content -Path $unityManifestPath.FullName -Raw | ConvertFrom-Json
+                $unityFields = @('dataUrl','wasmCodeUrl','wasmFrameworkUrl','asmCodeUrl','asmFrameworkUrl','asmMemoryUrl','codeUrl','frameworkUrl','memoryUrl')
+                $bjDir = [System.IO.Path]::GetRelativePath($gameDir, $unityManifestPath.DirectoryName).Replace('\','/')
+                if ($bjDir -eq '.') { $bjDir = '' }
+                $unityDlCount = 0
+                foreach ($field in $unityFields) {
+                    $val = $bjData.$field
+                    if (-not $val) { continue }
+                    $val = $val -replace '^\./+', ''
+                    # Resolve relative to the Unity manifest location
+                    $assetRelPath = if ($bjDir) { "$bjDir/$val" } else { $val }
+                    $localPath = Join-Path $gameDir ($assetRelPath.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                    if (Test-Path $localPath) { continue }
+
+                    $localDir2 = Split-Path $localPath -Parent
+                    if (-not (Test-Path $localDir2)) {
+                        New-Item -ItemType Directory -Path $localDir2 -Force | Out-Null
+                    }
+
+                    # Try downloading from original site (resolve relative to manifest URL)
+                    $bjBaseUrl = $baseUrl
+                    if ($bjDir) { $bjBaseUrl = "$baseUrl$bjDir/" }
+                    $assetUrl = "$bjBaseUrl$val"
+
+                    $dlOk = $false
+                    # Try multiple URL patterns
+                    $tryUrls = @($assetUrl)
+                    if ($bjDir) { $tryUrls += "$baseUrl$val" }
+
+                    foreach ($tryUrl in $tryUrls) {
+                        try {
+                            Write-Host "    Fetching $val ..." -ForegroundColor DarkGray
+                            & wget -q --no-check-certificate --timeout=60 --tries=3 `
+                                "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
+                                "--header=Referer: $url" `
+                                "--header=Accept: */*" `
+                                -O $localPath `
+                                $tryUrl 2>&1 | Out-Null
+
+                            if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
+                                # Validate it's not an error page
+                                $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
+                                if ($hdr -notmatch '<!DOCTYPE|<html|<HTML|403 Forbidden|Access Denied') {
+                                    $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
+                                    Write-Host "    +  $val (${fsize}KB)" -ForegroundColor DarkGreen
+                                    $unityDlCount++
+                                    $dlOk = $true
+                                    break
+                                }
+                            }
+                            Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                        } catch {
+                            Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                        }
+                    }
+
+                    # Fallback: try Invoke-WebRequest with session
+                    if (-not $dlOk) {
+                        foreach ($tryUrl in $tryUrls) {
+                            try {
+                                Invoke-WebRequest -Uri $tryUrl -OutFile $localPath `
+                                    -UseBasicParsing -TimeoutSec 60 -ErrorAction Stop `
+                                    -Headers @{
+                                        "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                                        "Referer"    = $url
+                                        "Accept"     = "*/*"
+                                    }
+                                if ((Test-Path $localPath) -and (Get-Item $localPath).Length -gt 1000) {
+                                    $hdr = [System.Text.Encoding]::ASCII.GetString(([System.IO.File]::ReadAllBytes($localPath) | Select-Object -First 100))
+                                    if ($hdr -notmatch '<!DOCTYPE|<html|403|Access Denied') {
+                                        $fsize = [math]::Round((Get-Item $localPath).Length / 1024)
+                                        Write-Host "    +  $val (${fsize}KB) [fallback]" -ForegroundColor DarkGreen
+                                        $unityDlCount++
+                                        $dlOk = $true
+                                        break
+                                    }
+                                }
+                                Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                            } catch {
+                                Remove-Item $localPath -Force -ErrorAction SilentlyContinue
+                            }
+                        }
+                    }
+
+                    if (-not $dlOk) {
+                        Write-Host "    !  MISSING $val" -ForegroundColor Yellow
+                    }
+                }
+                if ($unityDlCount -gt 0) {
+                    Write-Host "  Unity build data: $unityDlCount files downloaded" -ForegroundColor Gray
+                }
+            } catch {
+                Write-Host "  Could not parse Unity manifest: $_" -ForegroundColor DarkYellow
+            }
+        }
+
         # ---- Step 2: Scan JS/CSS/HTML for dynamic asset paths and download them ----
-        Write-Host "  [2/3] Scanning JS/CSS/HTML for dynamic asset references..." -ForegroundColor Gray
+        Write-Host "  [2/4] Scanning JS/CSS/HTML for dynamic asset references..." -ForegroundColor Gray
         $assetPaths = Extract-AssetPaths $gameDir
 
         if ($assetPaths -and $assetPaths.Count -gt 0) {
@@ -389,7 +569,8 @@ function Import-GameFromUrl($url, $gameName) {
                         New-Item -ItemType Directory -Path $localDir -Force | Out-Null
                     }
 
-                    $originHost = "$([uri]$url |% { "$($_.Scheme)://$($_.Host)" })"
+                    $originUri = [uri]$url
+                    $originHost = "$($originUri.Scheme)://$($originUri.Host)"
                     & wget -q --no-check-certificate --timeout=20 --tries=2 `
                         "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
                         "--header=Referer: $url" `
@@ -451,14 +632,14 @@ function Import-GameFromUrl($url, $gameName) {
                                 if (-not (Test-Path $localDir)) {
                                     New-Item -ItemType Directory -Path $localDir -Force | Out-Null
                                 }
-                                $resp = Invoke-WebRequest -Uri $assetUrl -OutFile $localPath `
+                                Invoke-WebRequest -Uri $assetUrl -OutFile $localPath `
                                     -UseBasicParsing -TimeoutSec 20 -ErrorAction Stop `
                                     -WebSession $session `
                                     -Headers @{
                                         "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
                                         "Referer"    = $url
                                         "Accept"     = "*/*"
-                                        "Origin"     = "$([uri]$url |% { "$($_.Scheme)://$($_.Host)" })"
+                                        "Origin"     = "$(([uri]$url).Scheme)://$(([uri]$url).Host)"
                                     }
                                 $size = (Get-Item $localPath).Length
                                 $ext = [System.IO.Path]::GetExtension($localPath).ToLower()
@@ -521,7 +702,7 @@ function Import-GameFromUrl($url, $gameName) {
                                 -Headers @{
                                     "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
                                     "Referer"    = $url
-                                    "Origin"     = "$([uri]$url |% { "$($_.Scheme)://$($_.Host)" })"
+                                    "Origin"     = "$(([uri]$url).Scheme)://$(([uri]$url).Host)"
                                 }
                             $size = (Get-Item $localPath).Length
                             $ext = [System.IO.Path]::GetExtension($localPath).ToLower()
@@ -608,7 +789,7 @@ function Import-GameFromUrl($url, $gameName) {
             foreach ($candidate in $simCandidates) {
                 try {
                     Invoke-WebRequest -Uri $candidate -OutFile $simWorkerPath -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop `
-                        -Headers @{ "User-Agent" = "Mozilla/5.0"; "Referer" = $url; "Origin" = "$([uri]$url |% { "$($_.Scheme)://$($_.Host)" })"; "Accept" = "*/*" }
+                        -Headers @{ "User-Agent" = "Mozilla/5.0"; "Referer" = $url; "Origin" = "$(([uri]$url).Scheme)://$(([uri]$url).Host)"; "Accept" = "*/*" }
 
                     $simSize = (Get-Item $simWorkerPath).Length
                     if ($simSize -lt 200000) {
@@ -666,7 +847,7 @@ function Import-GameFromUrl($url, $gameName) {
         }
 
         # ---- Step 3: Search for thumbnail online ----
-        Write-Host "  [3/3] Searching for thumbnail..." -ForegroundColor Gray
+        Write-Host "  [3/4] Searching for thumbnail..." -ForegroundColor Gray
         $prettyName = $gameName -replace '-', ' '
         $imgResult = Download-GameImage $prettyName $gameDir
         if ($imgResult) {
@@ -684,6 +865,37 @@ function Import-GameFromUrl($url, $gameName) {
             } else {
                 Write-Host "  WARNING: No HTML files found in download" -ForegroundColor Yellow
             }
+        }
+
+        # ---- Step 4: Final verification ----
+        Write-Host "  [4/4] Verifying download completeness..." -ForegroundColor Gray
+        $buildJsonCheck = Get-UnityManifestFile $gameDir
+        if ($buildJsonCheck) {
+            try {
+                $bjVerify = Get-Content -Path $buildJsonCheck.FullName -Raw | ConvertFrom-Json
+                $criticalFields = @('dataUrl','wasmCodeUrl','wasmFrameworkUrl','asmCodeUrl','asmFrameworkUrl','codeUrl','frameworkUrl')
+                $missingCritical = @()
+                foreach ($cf in $criticalFields) {
+                    $val = $bjVerify.$cf
+                    if (-not $val) { continue }
+                    $val = $val -replace '^\./+', ''
+                    $bjVerifyDir = [System.IO.Path]::GetRelativePath($gameDir, $buildJsonCheck.DirectoryName).Replace('\','/')
+                    if ($bjVerifyDir -eq '.') { $bjVerifyDir = '' }
+                    $checkPath = if ($bjVerifyDir) { "$bjVerifyDir/$val" } else { $val }
+                    $fullCheck = Join-Path $gameDir ($checkPath.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                    if (-not (Test-Path $fullCheck)) {
+                        $missingCritical += $val
+                    }
+                }
+                if ($missingCritical.Count -gt 0) {
+                    Write-Host "  WARNING: Unity build files MISSING (game may not work):" -ForegroundColor Yellow
+                    foreach ($mc in $missingCritical) {
+                        Write-Host "    !  $mc" -ForegroundColor Yellow
+                    }
+                } else {
+                    Write-Host "  Unity build files: all present" -ForegroundColor Green
+                }
+            } catch {}
         }
 
         $finalCount = (Get-ChildItem -Path $gameDir -Recurse -File).Count
