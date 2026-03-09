@@ -1,0 +1,109 @@
+JEOWEB SCRIPT INDEX
+===================
+
+This file lists the main import/repair scripts in this workspace and what each one does.
+
+1) Website / HTML5 / Flash importer
+----------------------------------
+File: import-flash.ps1
+Purpose: Imports a website game from a URL into Assets/ and updates the site lists.
+Supports: Single import and batch import.
+Also now auto-recovers common missing runtime files during import, including:
+- mirrored Poki Unity Build files
+- secondary Poki SDK files
+- Godot manifest / icon / service worker files
+- Defold archive manifests and archive piece files
+Batch file: flash-batch.txt
+Batch format: URL | Game-Name
+Example:
+  pwsh ./import-flash.ps1 --batch ./flash-batch.txt
+
+File: import-flash.sh
+Purpose: Shell version of the website importer.
+Use when running from bash instead of PowerShell.
+
+2) Batch website import list
+----------------------------
+File: flash-batch.txt
+Purpose: Queue multiple web game URLs for import-flash.ps1.
+Format:
+  https://example.com/game/index.html | My-Game-Name
+
+3) GBA ROM import
+-----------------
+File: import-gba.sh
+Purpose: Imports one GBA ROM into the site.
+
+File: import-gba-batch.sh
+Purpose: Batch import multiple GBA ROMs.
+Use when dropping many .gba files at once.
+
+4) SNES ROM import
+------------------
+File: import-snes.sh
+Purpose: Imports one SNES ROM into the site.
+
+File: import-snes-batch.sh
+Purpose: Batch import multiple SNES ROMs.
+Use when dropping many .smc/.sfc files at once.
+
+5) Broken game repair script
+----------------------------
+File: repair-games.sh
+Purpose: Repairs partially downloaded or broken web games.
+Current fixes included:
+- cookie-clicker full asset repair
+- snek-io missing index.html
+- bridge-race missing Build/
+- fortzone missing Build/
+- thorns-and-ballons missing Build/
+- baldi-basics Unity loader support
+- fighter-aircraft-pilot CDN data fix
+- solar-smash misplaced CDN data fix
+- deadly-decent CDN build fix
+- smash-karts CDN build fix
+- retro-bowl-college redownload
+- ragdoll-hit mirrored Poki Build/ fix
+Run:
+  bash ./repair-games.sh
+
+6) Site scanner
+---------------
+File: scan.js
+Purpose: Scans Assets/ and regenerates games_list.json.
+Run:
+  node ./scan.js
+
+7) Local web server
+-------------------
+File: server.js
+Purpose: Serves the site locally and auto-scans games every 30 seconds.
+Includes support for:
+- .wasm MIME type
+- .unityweb MIME type
+- .br Content-Encoding
+- .gz Content-Encoding
+Run:
+  node ./server.js
+Open:
+  http://localhost:3000
+
+8) Generated / supporting files
+-------------------------------
+File: games_list.json
+Purpose: Auto-generated game catalog.
+
+File: recently_added.json
+Purpose: Auto-generated recent additions list.
+
+File: media_catalog.json
+Purpose: Media catalog data.
+
+9) Recommended workflow
+-----------------------
+- Import website games with import-flash.ps1 or import-flash.sh
+- Batch website imports with flash-batch.txt
+- Import emulator ROMs with import-gba-batch.sh or import-snes-batch.sh
+- Repair broken imports with repair-games.sh
+- Rebuild the catalog with scan.js
+- Test locally with server.js

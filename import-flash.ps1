@@ -312,7 +312,7 @@ function Update-GamesList {
 $assetExtensions = @(
     'glb','gltf','obj','fbx','dae',
     'mp3','ogg','wav','flac','m4a','aac',
-    'wasm','data','bin','mem','pck','unityweb','unity3d',
+    'wasm','data','bin','mem','pck','unityweb','unity3d','pak','pk3','pk4',
     'png','jpg','jpeg','gif','webp','bmp','ico','svg',
     'ttf','woff','woff2','otf','eot','fnt',
     'json','xml','atlas','csv','txt',
@@ -551,6 +551,423 @@ function Download-UnityBuildFiles($gameDir, $baseUrl, $url) {
         Write-Host "  Could not parse Unity manifest: $_" -ForegroundColor DarkYellow
         return 0
     }
+}
+
+function Test-DownloadedAssetLooksValid($path, $minBytes = 1) {
+    if (-not (Test-Path $path)) { return $false }
+
+    try {
+        $item = Get-Item $path -ErrorAction Stop
+        if ($item.Length -lt $minBytes) { return $false }
+
+        $ext = [System.IO.Path]::GetExtension($path).ToLowerInvariant()
+        if ($ext -in @('.html','.htm','.svg','.xml','.json','.js','.css','.txt','.ico','.png')) {
+            return $true
+        }
+
+        $headerBytes = [System.IO.File]::ReadAllBytes($path) | Select-Object -First 160
+        $headerText = [System.Text.Encoding]::ASCII.GetString($headerBytes)
+        if ($headerText -match '<!DOCTYPE|<html|<HTML|403 Forbidden|Access Denied|<Error>') {
+            return $false
+        }
+
+        return $true
+    } catch {
+        return $false
+    }
+}
+
+function Save-UrlToFile($destPath, $assetUrl, $refererUrl, $minBytes = 1) {
+    $destDir = Split-Path $destPath -Parent
+    if (-not (Test-Path $destDir)) {
+        New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+    }
+
+    $origin = $null
+    try {
+        $uri = [uri]$refererUrl
+        $origin = "$($uri.Scheme)://$($uri.Host)"
+    } catch {}
+
+    try {
+        & wget -q --no-check-certificate --timeout=25 --tries=2 `
+            "--header=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
+            "--header=Referer: $refererUrl" `
+            "--header=Accept: */*" `
+            $(if ($origin) { "--header=Origin: $origin" }) `
+            -O $destPath `
+            $assetUrl 2>&1 | Out-Null
+    } catch {}
+
+    if (Test-DownloadedAssetLooksValid $destPath $minBytes) {
+        return $true
+    }
+
+    Remove-Item $destPath -Force -ErrorAction SilentlyContinue
+
+    try {
+        $headers = @{
+            "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "Referer"    = $refererUrl
+            "Accept"     = "*/*"
+        }
+        if ($origin) { $headers["Origin"] = $origin }
+
+        Invoke-WebRequest -Uri $assetUrl -OutFile $destPath -UseBasicParsing -TimeoutSec 25 -ErrorAction Stop -Headers $headers
+        if (Test-DownloadedAssetLooksValid $destPath $minBytes) {
+            return $true
+        }
+    } catch {}
+
+    Remove-Item $destPath -Force -ErrorAction SilentlyContinue
+    return $false
+}
+
+function Repair-PokiSecondarySdkFiles($gameDir, $baseUrl, $url) {
+    $downloaded = 0
+    $sdkFiles = Get-ChildItem -Path $gameDir -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -in @('poki-sdk.js','sdk.js') }
+
+    foreach ($sdkFile in $sdkFiles) {
+        try {
+            $content = Get-Content -Path $sdkFile.FullName -Raw -ErrorAction Stop
+            $sdkRefs = [regex]::Matches($content, 'patch/poki-sdk-[A-Za-z0-9._-]+\.js|poki-sdk-(?:core|kids|playground|hoist)-[A-Za-z0-9._-]+\.js|ma\.js')
+            foreach ($m in $sdkRefs) {
+                $rel = $m.Value
+                $dest = Join-Path $gameDir ($rel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                if (Test-Path $dest) { continue }
+
+                $assetUrl = Join-UrlPath $baseUrl $rel
+                if (Save-UrlToFile $dest $assetUrl $url 20) {
+                    Write-Host "    +  auto SDK $rel" -ForegroundColor DarkGreen
+                    $downloaded++
+                }
+            }
+        } catch {}
+    }
+
+    return $downloaded
+}
+
+function Repair-GodotSupportFiles($gameDir, $baseUrl, $url) {
+    $indexPath = Join-Path $gameDir 'index.html'
+    if (-not (Test-Path $indexPath)) { return 0 }
+
+    $downloaded = 0
+    try {
+        $content = Get-Content -Path $indexPath -Raw -ErrorAction Stop
+        $refs = New-Object System.Collections.Generic.List[string]
+
+        foreach ($m in [regex]::Matches($content, 'href="([^"]+)"')) {
+            $refs.Add($m.Groups[1].Value)
+        }
+        foreach ($m in [regex]::Matches($content, 'serviceWorker\s*:\s*"([^"]+)"')) {
+            $refs.Add($m.Groups[1].Value)
+        }
+
+        $uniqueRefs = $refs | Where-Object {
+            $_ -and $_ -notmatch '^(?:https?:)?//' -and $_ -notmatch '^/'
+        } | Sort-Object -Unique
+
+        foreach ($rel in $uniqueRefs) {
+            $dest = Join-Path $gameDir ($rel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+            if (Test-Path $dest) { continue }
+
+            $assetUrl = Join-UrlPath $baseUrl $rel
+            if (Save-UrlToFile $dest $assetUrl $url 1) {
+                Write-Host "    +  auto support $rel" -ForegroundColor DarkGreen
+                $downloaded++
+                continue
+            }
+
+            if ($rel -match '\.manifest\.json$') {
+                [System.IO.File]::WriteAllText($dest, "{`n  `"name`": `"Game`",`n  `"short_name`": `"Game`",`n  `"start_url`": `"./index.html`",`n  `"display`": `"fullscreen`",`n  `"background_color`": `"#000000`",`n  `"theme_color`": `"#000000`",`n  `"icons`": []`n}`n")
+                Write-Host "    +  fallback support $rel" -ForegroundColor DarkGreen
+                $downloaded++
+            }
+            elseif ($rel -match '\.service\.worker\.js$') {
+                [System.IO.File]::WriteAllText($dest, "self.addEventListener('install', () => self.skipWaiting());`nself.addEventListener('activate', event => event.waitUntil(self.clients.claim()));`nself.addEventListener('fetch', () => {});`n")
+                Write-Host "    +  fallback support $rel" -ForegroundColor DarkGreen
+                $downloaded++
+            }
+            elseif ($rel -match '\.(?:png|jpg|jpeg|webp|ico)$') {
+                $fallbackIcon = Join-Path $gameDir 'index.png'
+                if (Test-Path $fallbackIcon) {
+                    Copy-Item $fallbackIcon $dest -Force -ErrorAction SilentlyContinue
+                    if (Test-Path $dest) {
+                        Write-Host "    +  fallback support $rel" -ForegroundColor DarkGreen
+                        $downloaded++
+                    }
+                }
+            }
+        }
+    } catch {}
+
+    return $downloaded
+}
+
+function Repair-DefoldArchiveFiles($gameDir, $baseUrl, $url) {
+    $dmloaderPath = Join-Path $gameDir 'dmloader.js'
+    $indexPath = Join-Path $gameDir 'index.html'
+    if (-not (Test-Path $dmloaderPath) -or -not (Test-Path $indexPath)) { return 0 }
+
+    $downloaded = 0
+    try {
+        $indexContent = Get-Content -Path $indexPath -Raw -ErrorAction Stop
+        $exeMatch = [regex]::Match($indexContent, 'EngineLoader\.load\(\s*"[^"]+"\s*,\s*"([^"]+)"')
+        if ($exeMatch.Success) {
+            $exeName = $exeMatch.Groups[1].Value
+            foreach ($rel in @("${exeName}_wasm.js","${exeName}_asmjs.js")) {
+                $dest = Join-Path $gameDir $rel
+                if (-not (Test-Path $dest)) {
+                    if (Save-UrlToFile $dest (Join-UrlPath $baseUrl $rel) $url 100) {
+                        Write-Host "    +  auto defold $rel" -ForegroundColor DarkGreen
+                        $downloaded++
+                    }
+                }
+            }
+        }
+
+        $manifestRel = $null
+        foreach ($candidate in @('archive/archive_files.json','split/archive_files.json','archive_files.json')) {
+            $dest = Join-Path $gameDir ($candidate.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+            if ((Test-Path $dest) -or (Save-UrlToFile $dest (Join-UrlPath $baseUrl $candidate) $url 20)) {
+                $manifestRel = $candidate
+                break
+            }
+        }
+
+        if ($manifestRel) {
+            $manifestPath = Join-Path $gameDir ($manifestRel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+            $manifestDirRel = Split-Path $manifestRel -Parent
+            if ($manifestDirRel -eq '') { $manifestDirRel = '.' }
+
+            $manifestJson = Get-Content -Path $manifestPath -Raw -ErrorAction Stop | ConvertFrom-Json
+            foreach ($entry in $manifestJson.content) {
+                foreach ($piece in $entry.pieces) {
+                    $pieceName = $piece.name
+                    if (-not $pieceName) { continue }
+
+                    $pieceRel = if ($manifestDirRel -eq '.') { $pieceName } else { "$manifestDirRel/$pieceName" }
+                    $dest = Join-Path $gameDir ($pieceRel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                    if (Test-Path $dest) { continue }
+
+                    if (Save-UrlToFile $dest (Join-UrlPath $baseUrl $pieceRel) $url 20) {
+                        Write-Host "    +  auto defold $pieceRel" -ForegroundColor DarkGreen
+                        $downloaded++
+                    }
+                }
+            }
+        }
+    } catch {}
+
+    return $downloaded
+}
+
+function Repair-PokiUnityMirrorFiles($gameDir, $baseUrl, $url) {
+    $indexPath = Join-Path $gameDir 'index.html'
+    if (-not (Test-Path $indexPath)) { return 0 }
+
+    $downloaded = 0
+    try {
+        $content = Get-Content -Path $indexPath -Raw -ErrorAction Stop
+        $unityMirrorRefs = [regex]::Matches($content, '"(?:loader_filename|data_filename|framework_filename|code_filename)":"([^"]+)"')
+        foreach ($m in $unityMirrorRefs) {
+            $fileName = $m.Groups[1].Value
+            $dest = Join-Path $gameDir ("Build/" + $fileName).Replace('/', [System.IO.Path]::DirectorySeparatorChar)
+            if (Test-Path $dest) { continue }
+
+            $assetUrl = Join-UrlPath $baseUrl ("Build/" + $fileName)
+            if (Save-UrlToFile $dest $assetUrl $url 100) {
+                Write-Host "    +  auto mirror Build/$fileName" -ForegroundColor DarkGreen
+                $downloaded++
+            }
+        }
+    } catch {}
+
+    return $downloaded
+}
+
+function Repair-AbsoluteAssetMappings($gameDir, $baseUrl, $url) {
+    $downloaded = 0
+    $textFiles = Get-ChildItem -Path $gameDir -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object {
+            $_.Extension.ToLowerInvariant() -in @('.html','.htm','.js','.json') -and $_.Length -lt 20MB
+        }
+
+    $mappingPattern = '(?<full>(?<local>(?:[A-Za-z0-9_\-]+/)*[A-Za-z0-9_\-][A-Za-z0-9_.\-]*\.(?:pak|pk3|pk4|wasm|data|bin|mem|pck|unityweb|unity3d|zip))"\s*:\s*")(?<remote>https?://[^"'']+\.(?:pak|pk3|pk4|wasm|data|bin|mem|pck|unityweb|unity3d|zip)(?:\?[^"'']*)?)'
+
+    foreach ($textFile in $textFiles) {
+        try {
+            $content = Get-Content -Path $textFile.FullName -Raw -ErrorAction Stop
+            $changed = $false
+
+            foreach ($m in [regex]::Matches($content, $mappingPattern)) {
+                $localRel = $m.Groups['local'].Value.TrimEnd('"')
+                $remoteUrl = $m.Groups['remote'].Value
+                if (-not $localRel -or -not $remoteUrl) { continue }
+
+                $dest = Join-Path $gameDir ($localRel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                if (-not (Test-Path $dest)) {
+                    if (Save-UrlToFile $dest $remoteUrl $url 1000) {
+                        Write-Host "    +  auto absolute $localRel" -ForegroundColor DarkGreen
+                        $downloaded++
+                    }
+                }
+
+                if (Test-Path $dest) {
+                    $escapedRemote = [regex]::Escape($remoteUrl)
+                    $content = [regex]::Replace($content, $escapedRemote, [System.Text.RegularExpressions.MatchEvaluator]{ param($x) $localRel }, 1)
+                    $changed = $true
+                }
+            }
+
+            if ($changed) {
+                [System.IO.File]::WriteAllText($textFile.FullName, $content, [System.Text.Encoding]::UTF8)
+            }
+        } catch {}
+    }
+
+    return $downloaded
+}
+
+function Get-ReferencedRelativeAssetsFromText($content, $relDir) {
+    $paths = @{}
+    if ([string]::IsNullOrWhiteSpace($content)) { return @() }
+
+    $pattern = '(?:(?:"([^"]+\.(?:js|mjs|json|wasm|bin|data|png|jpg|jpeg|webp|gif|svg|css|ico|ogg|mp3|m4a|wav))")|(?:''([^'']+\.(?:js|mjs|json|wasm|bin|data|png|jpg|jpeg|webp|gif|svg|css|ico|ogg|mp3|m4a|wav))''))'
+    foreach ($m in [regex]::Matches($content, $pattern)) {
+        $assetPath = if ($m.Groups[1].Success) { $m.Groups[1].Value } else { $m.Groups[2].Value }
+        if (-not $assetPath) { continue }
+        if ($assetPath -match '^(?:https?:|data:|javascript:|mailto:|tel:)') { continue }
+
+        Add-AssetPath $paths $assetPath $relDir
+    }
+
+    return @($paths.Keys | Sort-Object -Unique)
+}
+
+function Repair-SplitPayloadFiles($gameDir, $baseUrl, $url) {
+    $downloaded = 0
+    $textFiles = Get-ChildItem -Path $gameDir -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object {
+            $_.Extension.ToLowerInvariant() -in @('.html','.htm','.js') -and $_.Length -lt 10MB
+        }
+
+    foreach ($textFile in $textFiles) {
+        try {
+            $content = Get-Content -Path $textFile.FullName -Raw -ErrorAction Stop
+            $splitRefs = [regex]::Matches($content, 'getParts\(\s*["'']([^"'']+)["'']\s*,\s*(\d+)\s*,\s*(\d+)\s*\)')
+            foreach ($m in $splitRefs) {
+                $baseName = $m.Groups[1].Value
+                $start = [int]$m.Groups[2].Value
+                $end = [int]$m.Groups[3].Value
+                if ($end -lt $start -or ($end - $start) -gt 200) { continue }
+
+                for ($part = $start; $part -le $end; $part++) {
+                    $rel = "$baseName.part$part"
+                    $dest = Join-Path $gameDir ($rel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+                    if (Test-Path $dest) { continue }
+
+                    $assetUrl = Join-UrlPath $baseUrl $rel
+                    if (Save-UrlToFile $dest $assetUrl $url 100) {
+                        Write-Host "    +  auto split $rel" -ForegroundColor DarkGreen
+                        $downloaded++
+                    }
+                }
+            }
+        } catch {}
+    }
+
+    return $downloaded
+}
+
+function Repair-ConstructRuntimeFiles($gameDir, $baseUrl, $url) {
+    $indexPath = Join-Path $gameDir 'index.html'
+    if (-not (Test-Path $indexPath)) { return 0 }
+
+    $downloaded = 0
+    $queue = New-Object System.Collections.Generic.Queue[string]
+    $seen = New-Object 'System.Collections.Generic.HashSet[string]'
+
+    try {
+        $indexContent = Get-Content -Path $indexPath -Raw -ErrorAction Stop
+
+        foreach ($seedRef in @(
+            'scripts/main.js',
+            'workermain.js',
+            'scripts/c3runtime.js',
+            'data.json',
+            'config.json',
+            'scripts/dispatchworker.js',
+            'scripts/jobworker.js',
+            'scriptsInEvents.js',
+            'scripts/scriptsInEvents.js'
+        )) {
+            $queue.Enqueue($seedRef)
+        }
+
+        foreach ($m in [regex]::Matches($indexContent, 'constructNet_scriptURLs\s*=\s*\[(.*?)\]', [System.Text.RegularExpressions.RegexOptions]::Singleline)) {
+            foreach ($ref in (Get-ReferencedRelativeAssetsFromText $m.Groups[1].Value '')) {
+                $queue.Enqueue($ref)
+            }
+        }
+
+        foreach ($ref in (Get-ReferencedRelativeAssetsFromText $indexContent '')) {
+            if ($ref -match '^(?:scripts/|workermain\.js$|sw\.js$|offline\.json$|data\.json$|config\.json$)') {
+                $queue.Enqueue($ref)
+            }
+        }
+    } catch {
+        return 0
+    }
+
+    while ($queue.Count -gt 0) {
+        $rel = $queue.Dequeue()
+        if ([string]::IsNullOrWhiteSpace($rel)) { continue }
+        if ($seen.Contains($rel)) { continue }
+        $null = $seen.Add($rel)
+
+        $dest = Join-Path $gameDir ($rel.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+        if (-not (Test-Path $dest)) {
+            $assetUrl = Join-UrlPath $baseUrl $rel
+            if (Save-UrlToFile $dest $assetUrl $url 20) {
+                Write-Host "    +  auto construct $rel" -ForegroundColor DarkGreen
+                $downloaded++
+            } else {
+                continue
+            }
+        }
+
+        $ext = [System.IO.Path]::GetExtension($dest).ToLowerInvariant()
+        if ($ext -notin @('.js','.mjs','.json','.html','.htm','.css')) { continue }
+
+        try {
+            $content = Get-Content -Path $dest -Raw -ErrorAction Stop
+            $relDir = Split-Path $rel -Parent
+            if ($relDir -eq '.') { $relDir = '' }
+
+            foreach ($ref in (Get-ReferencedRelativeAssetsFromText $content $relDir)) {
+                if (-not $seen.Contains($ref)) {
+                    $queue.Enqueue($ref)
+                }
+            }
+        } catch {}
+    }
+
+    return $downloaded
+}
+
+function Invoke-AutoRuntimeRecovery($gameDir, $baseUrl, $url) {
+    $recovered = 0
+    $recovered += Repair-AbsoluteAssetMappings $gameDir $baseUrl $url
+    $recovered += Repair-PokiSecondarySdkFiles $gameDir $baseUrl $url
+    $recovered += Repair-GodotSupportFiles $gameDir $baseUrl $url
+    $recovered += Repair-DefoldArchiveFiles $gameDir $baseUrl $url
+    $recovered += Repair-PokiUnityMirrorFiles $gameDir $baseUrl $url
+    $recovered += Repair-SplitPayloadFiles $gameDir $baseUrl $url
+    $recovered += Repair-ConstructRuntimeFiles $gameDir $baseUrl $url
+    return $recovered
 }
 
 # ============================================================
@@ -858,8 +1275,18 @@ function Import-GameFromUrl($url, $gameName) {
             if ($lateUnityDlCount -gt 0) {
                 Write-Host "  Late Unity manifest recovery: $lateUnityDlCount files downloaded" -ForegroundColor Gray
             }
+
+            $autoRecoveryCount = Invoke-AutoRuntimeRecovery $gameDir $baseUrl $url
+            if ($autoRecoveryCount -gt 0) {
+                Write-Host "  Auto runtime recovery: $autoRecoveryCount files downloaded" -ForegroundColor Gray
+            }
         } else {
             Write-Host "  No dynamic asset references found in code" -ForegroundColor Gray
+
+            $autoRecoveryCount = Invoke-AutoRuntimeRecovery $gameDir $baseUrl $url
+            if ($autoRecoveryCount -gt 0) {
+                Write-Host "  Auto runtime recovery: $autoRecoveryCount files downloaded" -ForegroundColor Gray
+            }
         }
 
         # ---- Step 2b: Recover known blocked runtime files from trusted mirrors ----

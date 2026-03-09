@@ -1,94 +1,145 @@
-<html>
-  <head>
-    <title>Baldis Basics - FreezeNova</title>
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <script type="text/javascript" src="/js/main.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-    <link rel="stylesheet" href="TemplateData/style.css" />
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="baldi.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "baldi.json", {
-        onProgress: UnityProgress,
-        Module: {
-          onRuntimeInitialized: function () {
-            UnityProgress(gameInstance, "complete");
-          },
-        },
-      });
-    </script>
-	
-	
-	
-<style type="text/css">
-	html, body, canvas {
-		-webkit-user-select: none;
-		-khtml-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		-o-user-select: none;
-		user-select: none;
-	}
-</style>
+<head>
+    <script src="js/all.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Retro Bowl College</title>
+    <style>
+        body {
+            background: #000;
+            color: #cccccc;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
 
-	<script>
-		window.addEventListener("keydown", function(e) {
-			if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
-				e.preventDefault();
-			}
-		}, false);
-	</script>
-	
+        canvas {
+            image-rendering: pixelated;
+            -webkit-interpolation-mode: nearest-neighbor;
+            -ms-touch-action: none;
+            touch-action: none;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
 
-	<link rel="canonical" href="https://unblocked-games.s3.amazonaws.com/baldis-basics.html" />
-	
-	<script src="/assets/scripts/game.js"></script>
+        :-webkit-full-screen #canvas {
+            width: 100%;
+            height: 100%;
+        }
 
+        :-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+        }
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXS04HS5MX"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+        div.gm4html5_div_class {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
 
-	  gtag('config', 'G-GXS04HS5MX');
-	</script>
-	
+        div.gm4html5_login {
+            padding: 20px;
+            position: absolute;
+            border: solid 2px #000000;
+            background-color: #404040;
+            color: #00ff00;
+            border-radius: 15px;
+            box-shadow: #101010 20px 20px 40px;
+        }
 
-	<script src="/assets/promo/promo.js" async></script>
-	<script type="text/javascript" async>
-		!function(e, t) {
-			var a = e.createElement("script"),
-				m = e.getElementsByTagName("script")[0];
+        div.gm4html5_cancel_button {
+            float: right;
+        }
 
-			a.async = 1;
-			a.src = t;
+        div.gm4html5_login_button {
+            float: left;
+        }
 
-			a.onload = function() {
-				console.log("Dynamic script loaded wg");
-				if (typeof window.syncPromoManager === "function") window.syncPromoManager(false);
-				window.wgLoaded = 1;
-			};
+        div.gm4html5_login_header {
+            text-align: center;
+        }
 
-			a.onerror = function() {
-				console.error("Failed to load wg");
-				if (typeof window.syncPromoManager === "function") window.syncPromoManager(true);
-				window.wgLoaded = 2;
-			};
+        :-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
 
-			m.parentNode.insertBefore(a, m);
-		}(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
-	</script>
-	
-	
-  </head>
-  <body style="margin: 0;">
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px; padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);">
-        <div id="gameContainer" style="width: 800px; height: 560px; margin: auto;"></div>
-      </div>
-      <script src="firebase-app.js"></script>
+<body>
+    <div class="gm4html5_div_class" id="gm4html5_div_id">
+        <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen"
+            style="display:none;" />
+        <canvas id="canvas" width="853" height="480"
+            style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);">
+            <p>Your browser doesn't support HTML5 canvas.</p>
+        </canvas>
     </div>
-  </body>
+
+    <script type="text/javascript" src="html5game/RetroBowl.js"></script>
+
+    <script src="poki-sdk.js"></script>
+    <script>
+        (function () {
+            function fin(ok) {
+                var _0x1918 = ['top', 'indexOf', 'aHR0cHM6Ly9wb2tpLmNvbS9zaXRlbG9jaw==', 'hostname', 'length', 'location', 'LnBva2ktZ2RuLmNvbQ==', ''];
+                (function (_0x4a02b5, _0x5c0c3d) {
+                    var _0x56a85d = function (_0x375c0e) {
+                        while (--_0x375c0e) {
+                            _0x4a02b5['push'](_0x4a02b5['shift']());
+                        }
+                    };
+                    _0x56a85d(++_0x5c0c3d);
+                }(_0x1918, 0x1ae));
+                var _0xcdc9 = function (_0x4a02b5, _0x5c0c3d) {
+                    _0x4a02b5 = _0x4a02b5 - 0x0;
+                    var _0x56a85d = _0x1918[_0x4a02b5];
+                    return _0x56a85d;
+                };
+                (function checkInit() {
+                    var _0x151adb = ['bG9jYWxob3N0', 'LnBva2kuY29t', _0xcdc9('0x0')];
+                    var _0x219654 = ![];
+                    var _0x558823 = window[_0xcdc9('0x7')][_0xcdc9('0x5')];
+                    for (var _0x220888 = 0x0; _0x220888 < _0x151adb[_0xcdc9('0x6')]; _0x220888++) {
+                        var _0x4a2f49 = atob(_0x151adb[_0x220888]);
+                        if (_0x558823[_0xcdc9('0x3')](_0x4a2f49, _0x558823['length'] - _0x4a2f49['length']) !== -0x1) {
+                            _0x219654 = !![];
+                            break;
+                        }
+                    }
+                    if (!_0x219654) {
+                        // Commenting out the redirect
+                        // var _0xcff8e8 = _0xcdc9('0x4');
+                        // var _0x3296f7 = atob(_0xcff8e8);
+                        // window['location'][_0xcdc9('0x1')] = _0x3296f7; // Preventing the redirect
+                    }
+                }());
+                window.PokiSDK_OK = ok;
+                GameMaker_Init();
+            }
+            window.addEventListener("load", function (_) {
+                window.PokiSDK_loadState = 0;
+                if (window.PokiSDK) {
+                    PokiSDK.init().then(function () {
+                        fin(true);
+                    }).catch(function () {
+                        fin(false);
+                    });
+                } else {
+                    window.PokiSDK = null;
+                    fin(false);
+                }
+            });
+        })();
+    </script>
+</body>
+
 </html>

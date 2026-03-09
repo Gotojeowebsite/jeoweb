@@ -152,7 +152,23 @@ const server = http.createServer(async (req, res) => {
 				res.end('<h1>404 - Not Found</h1>');
 			}
 		} else {
-			res.writeHead(200, { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' });
+			const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
+			// Add Content-Encoding for pre-compressed files
+			if (filePath.endsWith('.br')) {
+				headers['Content-Encoding'] = 'br';
+				// Set Content-Type based on the actual file type before .br extension
+				const innerExt = path.extname(filePath.slice(0, -3));
+				if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+				else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
+				else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
+			} else if (filePath.endsWith('.gz')) {
+				headers['Content-Encoding'] = 'gzip';
+				const innerExt = path.extname(filePath.slice(0, -3));
+				if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+				else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
+				else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
+			}
+			res.writeHead(200, headers);
 			res.end(data);
 		}
 	});
