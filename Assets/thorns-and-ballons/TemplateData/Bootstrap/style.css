@@ -1,0 +1,85 @@
+.modal-content {
+    border-radius: 20px;
+    font-family: 'Industry';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.modal-header {
+    border-bottom: none !important;
+    position: relative;
+}
+
+.modal-body {
+    padding-top: 0 !important;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-custom {
+    background-color: #24DF34 !important;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+    background-color: #1fbe2c !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-pulse {
+    position: relative;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(36, 223, 52, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px 10px rgba(36, 223, 52, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(36, 223, 52, 0);
+    }
+}
+
+.modal-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 140px;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .modal-img {
+        max-height: 80px;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem !important;
+    }
+}
+
+@font-face {
+    font-family: 'Industry';
+    src: url('./fonts/Industry-Bold.woff2') format('woff2'),
+    url('./fonts/Industry-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

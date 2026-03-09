@@ -7,6 +7,7 @@
 #
 #  Usage:
 #    Download from URL:     pwsh import-flash.ps1 <URL> [game-name]
+#    Batch from text file:  pwsh import-flash.ps1 --batch flash-batch.txt
 #    Import SWF files:      pwsh import-flash.ps1
 #    Fetch missing images:  pwsh import-flash.ps1 --fetch-images
 #    Rescan games list:     pwsh import-flash.ps1 --scan
@@ -14,6 +15,7 @@
 #  Examples:
 #    pwsh import-flash.ps1 https://example.com/games/cool-game/
 #    pwsh import-flash.ps1 https://example.com/game/ my-cool-game
+#    pwsh import-flash.ps1 --batch flash-batch.txt
 #    pwsh import-flash.ps1 --fetch-images
 # ============================================================
 
@@ -22,20 +24,67 @@ $importDir     = Join-Path $PSScriptRoot "flash-import"
 $gamesListFile = Join-Path $PSScriptRoot "games_list.json"
 
 # ---- Parse arguments (normalize dashes — accept em-dash, en-dash, etc.) ----
-$normalizedArgs = @($args | ForEach-Object { $_ -replace '^[\u2013\u2014]+', '--' })
-$flagFetchImages = $normalizedArgs -contains '--fetch-images'
-$flagScan        = $normalizedArgs -contains '--scan'
-$flagHelp        = ($normalizedArgs -contains '--help') -or ($args -contains '-h') -or ($args -contains '/?')
-$positionalArgs  = @($normalizedArgs | Where-Object { $_ -notlike '--*' -and $_ -notin @('-h','/?') })
-$inputUrl        = if ($positionalArgs.Count -ge 1) { $positionalArgs[0] } else { $null }
-$inputName       = if ($positionalArgs.Count -ge 2) { $positionalArgs[1] } else { $null }
+$normalizedArgs   = @($args | ForEach-Object { $_ -replace '^[\u2013\u2014]+', '--' })
+$flagFetchImages  = $false
+$flagScan         = $false
+$flagHelp         = $false
+$batchFile        = $null
+$positionalArgs   = @()
+
+for ($i = 0; $i -lt $normalizedArgs.Count; $i++) {
+    $arg = $normalizedArgs[$i]
+    switch ($arg) {
+        '--fetch-images' {
+            $flagFetchImages = $true
+            continue
+        }
+        '--scan' {
+            $flagScan = $true
+            continue
+        }
+        '--help' {
+            $flagHelp = $true
+            continue
+        }
+        '--batch' {
+            if ($i + 1 -lt $normalizedArgs.Count) {
+                $batchFile = $normalizedArgs[$i + 1]
+                $i++
+            }
+            else {
+                Write-Host "  ERROR: --batch requires a text file path" -ForegroundColor Red
+                $flagHelp = $true
+            }
+            continue
+        }
+        '-h' {
+            $flagHelp = $true
+            continue
+        }
+        '/?' {
+            $flagHelp = $true
+            continue
+        }
+        default {
+            $positionalArgs += $arg
+        }
+    }
+}
+
+$inputUrl         = if ($positionalArgs.Count -ge 1) { $positionalArgs[0] } else { $null }
+$inputName        = if ($positionalArgs.Count -ge 2) { $positionalArgs[1] } else { $null }
 
 function Show-Usage {
     Write-Host "  Usage:" -ForegroundColor Cyan
     Write-Host "    pwsh import-flash.ps1 <URL> [game-name]"
+    Write-Host "    pwsh import-flash.ps1 --batch <text-file>"
     Write-Host "    pwsh import-flash.ps1 --fetch-images"
     Write-Host "    pwsh import-flash.ps1 --scan"
     Write-Host "    pwsh import-flash.ps1 --help"
+    Write-Host ""
+    Write-Host "  Batch file format:" -ForegroundColor Cyan
+    Write-Host "    https://example.com/game-page | game-name"
+    Write-Host "    https://example.com/other-game | other-name"
     Write-Host ""
 }
 
@@ -1067,6 +1116,120 @@ function Import-SwfFiles {
 }
 
 # ============================================================
+#  BATCH DOWNLOAD FROM TEXT FILE
+# ============================================================
+function Import-GameBatch($batchPath) {
+    if ([string]::IsNullOrWhiteSpace($batchPath)) {
+        Write-Host "  ERROR: Missing batch file path" -ForegroundColor Red
+        return 0
+    }
+
+    $resolvedBatchPath = $batchPath
+    if (-not [System.IO.Path]::IsPathRooted($resolvedBatchPath)) {
+        $resolvedBatchPath = Join-Path $PSScriptRoot $resolvedBatchPath
+    }
+
+    if (-not (Test-Path $resolvedBatchPath)) {
+        Write-Host "  ERROR: Batch file not found: $resolvedBatchPath" -ForegroundColor Red
+        return 0
+    }
+
+    $entries = @()
+    $lineNumber = 0
+    foreach ($rawLine in @(Get-Content -Path $resolvedBatchPath -ErrorAction Stop)) {
+        $lineNumber++
+        $line = $rawLine.Trim()
+
+        if (-not $line -or $line.StartsWith('#')) {
+            continue
+        }
+
+        $url = $null
+        $name = $null
+
+        if ($line -match '\|') {
+            $parts = $line -split '\s*\|\s*', 3
+            $url = if ($parts.Count -ge 1) { $parts[0].Trim() } else { $null }
+            $name = if ($parts.Count -ge 2) { $parts[1].Trim() } else { $null }
+        }
+        elseif ($line -match "`t") {
+            $parts = $line -split "`t+", 3
+            $url = if ($parts.Count -ge 1) { $parts[0].Trim() } else { $null }
+            $name = if ($parts.Count -ge 2) { $parts[1].Trim() } else { $null }
+        }
+        elseif ($line -match '^(?<url>https?://\S+)\s+(?<name>.+)$') {
+            $url = $Matches.url.Trim()
+            $name = $Matches.name.Trim()
+        }
+        else {
+            $url = $line
+        }
+
+        if (-not $url -or $url -notmatch '^https?://') {
+            Write-Host "  SKIP  Line $lineNumber is not a valid URL entry: $rawLine" -ForegroundColor DarkYellow
+            continue
+        }
+
+        if ([string]::IsNullOrWhiteSpace($name)) {
+            $name = $null
+        }
+
+        $entries += [PSCustomObject]@{
+            Line = $lineNumber
+            Url  = $url
+            Name = $name
+        }
+    }
+
+    if ($entries.Count -eq 0) {
+        Write-Host "  No valid batch entries found in $resolvedBatchPath" -ForegroundColor Yellow
+        return 0
+    }
+
+    Write-Host "  Batch file: $resolvedBatchPath" -ForegroundColor Cyan
+    Write-Host "  Entries:    $($entries.Count)" -ForegroundColor Cyan
+    Write-Host ""
+
+    $importedNames = @()
+    $imported = 0
+    $skipped = 0
+    $failed = 0
+    $current = 0
+
+    foreach ($entry in $entries) {
+        $current++
+        Write-Host "  [$current/$($entries.Count)] Line $($entry.Line)" -ForegroundColor White
+        $result = Import-GameFromUrl $entry.Url $entry.Name
+        if ($result) {
+            $imported++
+            $importedNames += $result
+        }
+        else {
+            $targetName = if ($entry.Name) { ConvertTo-GameSlug $entry.Name } else { $null }
+            $targetDir = if ($targetName) { Join-Path $assetsDir $targetName } else { $null }
+            if ($targetDir -and (Test-Path $targetDir)) {
+                $skipped++
+            }
+            else {
+                $failed++
+            }
+        }
+        Write-Host ""
+    }
+
+    if ($imported -gt 0) {
+        Write-Host "  Updating games list..." -ForegroundColor Gray
+        Update-GamesList
+        foreach ($name in $importedNames) {
+            Add-ToRecentlyAdded $name
+        }
+    }
+
+    Write-Host "  Batch complete -> Imported: $imported | Skipped: $skipped | Failed: $failed" -ForegroundColor Cyan
+    return $imported
+}
+
+# ============================================================
 #  FETCH MISSING IMAGES  (search online for games without logos)
 # ============================================================
 function Update-MissingImages {
@@ -1148,6 +1311,9 @@ elseif ($flagHelp) {
 }
 elseif ($flagScan) {
     Update-GamesList
+}
+elseif ($batchFile) {
+    Import-GameBatch $batchFile | Out-Null
 }
 elseif ($inputUrl) {
     $importedName = Import-GameFromUrl $inputUrl $inputName

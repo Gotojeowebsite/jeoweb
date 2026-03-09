@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Hollow Knight demo recreation</title>
+  </head>
+  <body>
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">
+          JavaScript appears to be disabled. Please enable it to view this
+          content.
+        </p>
+      </div>
+    </noscript>
+
+    <script>
+      var constructNet_madeInC2 = false;
+      var constructNet_gameID = 56169;
+      var constructNet_gameVersionRecordID = 63500;
+      var constructNet_gameHost = "https://construct-arcade.com";
+      var constructNet_gameURL =
+        "https://www.construct.net/en/free-online-games/hollow-knight-demo-recreation-56169/play";
+      var constructNet_gameEmbedURL =
+        "https://games.construct.net/56169/63500/embed.html";
+      var constructNet_scriptURLs = [
+        "scripts/supportcheck.js",
+        "scripts/offlineclient.js",
+        "scripts/main.js",
+        "scripts/register-sw.js",
+      ];
+    </script>
+    <script>
+      "use strict";
+      console.log("starting game function");
+      (function () {
+        var gameStarted = false;
+
+        /*
+     Two main purposes:
+      - Keep alive to track active players
+      - Redirect if embedded and not via permitted URL
+     */
+        window.PlayGame = {
+          init: function () {
+            PlayGame.startGame();
+            // PlayGame.initMessageListener();
+            // PlayGame.checkInFrame();
+            // PlayGame.preventPageScrolling();
+
+            // // Fire initial keep alive ASAP, then timed.
+            // PlayGame.keepAlive();
+            // setInterval(function () {
+            //   PlayGame.keepAlive();
+            // }, 20000);
+          },
+
+          initMessageListener: function () {
+            window.addEventListener("message", function (e) {
+              const message = e.data;
+              if (message === "AuthStep2") {
+                // Check hosted on intended domain
+                PlayGame.startGame();
+              }
+            });
+          },
+
+          checkInFrame: function () {},
+          isInFrame: function () {
+            return true;
+          },
+
+          setCookie: function (name, value, days) {
+            return;
+          },
+
+          getCookie: function (name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(";");
+            for (let i = 0; i < ca.length; i++) {
+              let c = ca[i];
+              while (c.charAt(0) === " ") c = c.substring(1, c.length);
+              if (c.indexOf(nameEQ) === 0)
+                return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+          },
+
+          keepAlive: function () {},
+
+          // Last step to load the game, includes required scripts
+          startGame: function () {
+            if (gameStarted === true) return;
+            console.log("starting game");
+
+            // Add javascript tags
+            let promiseArray = [];
+            for (let i = 0; i < constructNet_scriptURLs.length; i++) {
+              promiseArray.push(PlayGame.addScript(constructNet_scriptURLs[i]));
+            }
+
+            Promise.all(promiseArray).then(function (values) {
+              if (constructNet_madeInC2) {
+                jQuery(document).ready(function () {
+                  cr_createRuntime("c2canvas");
+                });
+                document.addEventListener(
+                  "visibilitychange",
+                  PlayGame.c2onVisibilityChanged,
+                  false
+                );
+                document.addEventListener(
+                  "mozvisibilitychange",
+                  PlayGame.c2onVisibilityChanged,
+                  false
+                );
+                document.addEventListener(
+                  "webkitvisibilitychange",
+                  PlayGame.c2onVisibilityChanged,
+                  false
+                );
+                document.addEventListener(
+                  "msvisibilitychange",
+                  PlayGame.c2onVisibilityChanged,
+                  false
+                );
+              }
+
+              gameStarted = true;
+            });
+          },
+          c2onVisibilityChanged: function () {
+            if (
+              document.hidden ||
+              document.mozHidden ||
+              document.webkitHidden ||
+              document.msHidden
+            )
+              cr_setSuspended(true);
+            else cr_setSuspended(false);
+          },
+
+          addScript: function (src) {
+            return new Promise(function (resolve, reject) {
+              const s = document.createElement("script");
+              s.setAttribute("src", src);
+              s.onload = resolve;
+              s.onerror = reject;
+              s.async = false;
+              document.body.appendChild(s);
+            });
+          },
+
+          // Prevent parent frame scrolling when certain keys pressed
+          preventPageScrolling: function () {
+            document.addEventListener("keydown", function (event) {
+              if (
+                event.target &&
+                event.target.tagName &&
+                ["input", "textarea", "datalist", "select"].includes(
+                  event.target.tagName.toLowerCase()
+                )
+              ) {
+                // Keyboard presses for input elements: allow
+                return;
+              }
+
+              // Otherwise block arrow keys only to prevent scrolling
+              if (
+                ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"].includes(
+                  event.key
+                )
+              ) {
+                event.preventDefault();
+              }
+            });
+
+            // Right click
+            document.oncontextmenu = function (event) {
+              if (event.preventDefault !== undefined) event.preventDefault();
+              if (event.stopPropagation !== undefined) event.stopPropagation();
+            };
+
+            // Mouse wheel
+            document.addEventListener(
+              "mousewheel",
+              function (event) {
+                event.preventDefault();
+              },
+              { passive: false }
+            );
+          },
+        };
+        PlayGame.init();
+      })();
+    </script>
+  </body>
+</html>

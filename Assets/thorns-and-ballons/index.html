@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>GameTemplateUniversal</title>
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <link rel="stylesheet" href="TemplateData/Bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="TemplateData/Bootstrap/style.css" />
+    <script>
+      const overlayBackgroundColor = "";
+      const progressBarFillColor = "#CCCCCC";
+      const progressBarBackgroundColor = "";
+      const progressBarBorderColor = "";
+    </script>
+  </head>
+  <body class="dark">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loading-cover" style="display: none">
+      <div id="unity-loading-bar">
+        <div id="unity-logo"><img src="logo.png" /></div>
+        <div id="unity-progress-bar-empty" style="display: none">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="trends"
+      tabindex="-1"
+      aria-labelledby="trendsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header p-3 pb-2">
+            <h5
+              class="modal-title text-center w-100"
+              id="trendsModalLabel"
+            ></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <img src="" alt="" class="img-fluid modal-img" />
+                </div>
+                <div class="col-12 py-2">
+                  <p class="text-center fw-bold m-0"></p>
+                </div>
+                <div class="col-12 text-center">
+                  <a
+                    href=""
+                    target="_blank"
+                    class="btn btn-custom btn-lg btn-pulse"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/TAB_new.loader.js";
+      const config = {
+        dataUrl: buildUrl + "/TAB_new.data.unityweb",
+        frameworkUrl: buildUrl + "/TAB_new.framework.js.unityweb",
+        codeUrl: buildUrl + "/TAB_new.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Moon Jam Studio",
+        productName: "GameTemplateUniversal",
+        productVersion: "1.2.2",
+      };
+
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingCover = document.querySelector("#loading-cover");
+      const progressBarEmpty = document.querySelector(
+        "#unity-progress-bar-empty"
+      );
+      const progressBarFull = document.querySelector(
+        "#unity-progress-bar-full"
+      );
+      const spinner = document.querySelector(".spinner");
+
+      if (
+        overlayBackgroundColor !== "-" &&
+        overlayBackgroundColor !== " " &&
+        overlayBackgroundColor !== ""
+      )
+        canvas.style.background = overlayBackgroundColor;
+
+      if (
+        progressBarFillColor !== "-" &&
+        progressBarFillColor !== " " &&
+        progressBarFillColor !== ""
+      )
+        progressBarFull.style.background = progressBarFillColor;
+
+      if (
+        progressBarBackgroundColor !== "-" &&
+        progressBarBackgroundColor !== " " &&
+        progressBarBackgroundColor !== ""
+      )
+        progressBarEmpty.style.background = progressBarBackgroundColor;
+
+      if (
+        progressBarBorderColor !== "-" &&
+        progressBarBorderColor !== " " &&
+        progressBarBorderColor !== ""
+      )
+        progressBarEmpty.style.border.color = progressBarBorderColor;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+      }
+
+      loadingCover.style.display = "";
+
+      const unityLoader = document.createElement("script");
+      unityLoader.src = loaderUrl;
+      unityLoader.onload = async () => {
+        //await _gpAwaiter.ready;
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none";
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        })
+          .then((unityInstance) => {
+            window.unityInstance = unityInstance;
+            //_unityAwaiter.done(unityInstance);
+            loadingCover.style.display = "none";
+          })
+          .catch((message) => {
+            //_unityAwaiter.abort(message);
+            alert(message);
+          });
+      };
+      document.body.appendChild(unityLoader);
+
+      document.addEventListener("pointerdown", () => {
+        container.focus();
+        window.focus();
+        canvas.focus();
+      });
+    </script>
+    <script src="TemplateData/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+      function openModalFromUnity(jsonData) {
+        const data = JSON.parse(jsonData);
+
+        document.getElementById("trendsModalLabel").innerHTML = data.title;
+        document.querySelector("#trends .modal-body img").src = data.imageUrl;
+        document.querySelector("#trends .modal-body img").alt = data.subtitle;
+        document.querySelector("#trends .modal-body .fw-bold").innerHTML =
+          data.subtitle;
+
+        const linkElement = document.querySelector("#trends .modal-body a");
+
+        linkElement.href = data.linkUrl;
+        linkElement.innerHTML = data.buttonText;
+
+        linkElement.onclick = function () {
+          notifyUnityButtonClicked();
+        };
+
+        const modal = new bootstrap.Modal(document.getElementById("trends"));
+        modal.show();
+      }
+
+      function notifyUnityButtonClicked() {
+        if (typeof unityInstance !== "undefined" && unityInstance !== null) {
+          unityInstance.SendMessage("Bootstrap", "NotifyButtonClicked");
+        }
+      }
+    </script>
+  </body>
+</html>
