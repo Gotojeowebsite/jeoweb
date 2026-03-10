@@ -1,0 +1,30 @@
+name: Export Git LFS objects
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export-lfs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Git LFS
+        run: |
+          sudo apt update
+          sudo apt install -y git-lfs
+          git lfs install
+      - name: Fetch all LFS objects
+        run: |
+          git lfs fetch --all
+      - name: Archive LFS objects
+        run: |
+          mkdir -p out
+          tar -C .git -czf out/git-lfs-objects.tar.gz lfs/objects || true
+          du -sh out/git-lfs-objects.tar.gz || true
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: git-lfs-objects
+          path: out/git-lfs-objects.tar.gz
