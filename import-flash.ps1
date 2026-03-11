@@ -18,6 +18,18 @@
 #    pwsh import-flash.ps1 --batch flash-batch.txt
 #    pwsh import-flash.ps1 --fetch-images
 # ============================================================
+# The ultimate offline-mirror wget command
+
+
+& wget --mirror `
+       --page-requisites `
+       --adjust-extension `
+       --convert-links `
+       --no-parent `
+       --execute robots=off `
+       --no-check-certificate `
+       --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)" `
+       $targetUrl
 
 $assetsDir     = Join-Path $PSScriptRoot "Assets"
 $importDir     = Join-Path $PSScriptRoot "flash-import"
@@ -1777,3 +1789,23 @@ else {
 }
 
 Write-Host ""
+
+
+# ============================================================
+#  DEEP ARCHIVAL HANDOFF
+#  Automatically triggers the Chaos Monkey batch runner 
+#  after the initial download completes.
+# ============================================================
+
+Write-Host "`n=======================================================" -ForegroundColor Cyan
+Write-Host " INITIAL IMPORT COMPLETE. HANDING OFF TO CHAOS MONKEY..." -ForegroundColor Magenta
+Write-Host "=======================================================" -ForegroundColor Cyan
+
+# Check if a batch file was passed to this script, otherwise default to flash-batch.txt
+$ChaosBatch = if ($BatchFile) { $BatchFile } else { "./flash-batch.txt" }
+
+if (Test-Path $ChaosBatch) {
+    & pwsh ./chaos-batch-runner.ps1 -BatchFile $ChaosBatch
+} else {
+    Write-Host "[!] Could not auto-trigger chaos runner. Batch file not found: $ChaosBatch" -ForegroundColor Red
+}
