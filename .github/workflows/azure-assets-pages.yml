@@ -1,0 +1,49 @@
+name: Upload Assets to Azure and Deploy Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  upload-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      AZURE_CONTAINER: assets
+      AZURE_BLOB_BASE_URL: ${{ secrets.AZURE_BLOB_BASE_URL }}
+      AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: Install rsync
+      run: sudo apt-get update && sudo apt-get install -y rsync
+
+    - name: Upload Assets to Azure Blob Storage
+      uses: azure/cli@v1
+      with:
+        azcliversion: '2.55.0'
+        inlineScript: |
+          az storage blob upload-batch --connection-string "$AZURE_STORAGE_CONNECTION_STRING" -s Assets -d $AZURE_CONTAINER --no-progress --overwrite
+
+    - name: Prepare site-build copy (exclude Assets)
+      run: |
+        rsync -a --exclude='.git' --exclude='Assets' ./ site-build/
+
+    - name: Replace asset URLs in site-build
+      run: |
+        chmod +x scripts/replace_asset_urls.sh
+        scripts/replace_asset_urls.sh "$AZURE_BLOB_BASE_URL" site-build
+
+    - name: Configure Pages
+      uses: actions/configure-pages@v3
+
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: site-build
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v1
