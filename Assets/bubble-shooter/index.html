@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Bubble Shooter - FREE Web Game</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="MobileOptimized" content="960"/>
+
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"/>
+
+    <meta charset="utf-8"/>
+
+    <script src="game.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-40526637-40', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body style="padding: 0; margin: 0;">
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAhE1OK7thLJ7BSdMz-1NhdxJ6lBD3b9Fs",
+        authDomain: "bubble-shooter-ea236.firebaseapp.com",
+        databaseURL: "https://bubble-shooter-ea236.firebaseio.com",
+        projectId: "bubble-shooter-ea236",
+        storageBucket: "bubble-shooter-ea236.appspot.com",
+        messagingSenderId: "187142092220"
+    };
+    firebase.initializeApp(config);
+
+</script>
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '315805345538760',
+            xfbml: true,
+            version: 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+</script>
+
+</body>
+
+</html>

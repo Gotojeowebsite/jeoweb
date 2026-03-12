@@ -19,17 +19,63 @@
 #    pwsh import-flash.ps1 --fetch-images
 # ============================================================
 # The ultimate offline-mirror wget command
+# ============================================================
+#  SMART URL EXTRACTOR (Strips Portal Wrappers & Ads)
+#  Finds the true game link hidden inside the website's iframe
+# ============================================================
+function Resolve-GameUrl {
+    param([string]$OriginalUrl)
 
+    # 1. Hardcoded fix specifically for 1games.io (Auto-injects /game/)
+    if ($OriginalUrl -match "1games\.io/([^/]+)/?$") {
+        $slug = $matches[1]
+        # Make sure it isn't already formatted correctly
+        if ($slug -ne "game" -and $OriginalUrl -notmatch "1games\.io/game/") {
+            $FixedUrl = "https://1games.io/game/$slug/"
+            Write-Host " [!] Auto-fixed 1games.io portal link to: $FixedUrl" -ForegroundColor Green
+            return $FixedUrl
+        }
+    }
 
-& wget --mirror `
-       --page-requisites `
-       --adjust-extension `
-       --convert-links `
-       --no-parent `
-       --execute robots=off `
-       --no-check-certificate `
-       --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)" `
-       $targetUrl
+    # 2. Generic Iframe Hunter for all other websites
+    Write-Host " [?] Scanning $OriginalUrl for hidden game iframes..." -ForegroundColor Yellow
+    try {
+        $response = Invoke-WebRequest -Uri $OriginalUrl -UseBasicParsing -ErrorAction SilentlyContinue
+        
+        # Regex to hunt down the <iframe src="..."> tag
+        if ($response.Content -match '(?i)<iframe[^>]+src=["'']([^"'']+)["''][^>]*>') {
+            $iframeSrc = $matches[1]
+            
+            # If the iframe link is relative (e.g. "/games/zombie/index.html"), make it a full URL
+            if ($iframeSrc.StartsWith("/")) {
+                $uri = [System.Uri]$OriginalUrl
+                $iframeSrc = "{0}://{1}{2}" -f $uri.Scheme, $uri.Authority, $iframeSrc
+            }
+            
+            Write-Host " [!] Extracted raw game link: $iframeSrc" -ForegroundColor Green
+            return $iframeSrc
+        }
+    } catch {
+        # If the scan fails, just silently move on
+    }
+
+    # 3. Fallback: If no iframe is found, just return the original URL
+    return $OriginalUrl
+}
+
+# 1. Grab the raw game link using our Smart Extractor from earlier
+$CleanTargetUrl = Resolve-GameUrl -OriginalUrl $Url
+
+Write-Host " [⬇] Commencing surgical asset extraction on: $CleanTargetUrl" -ForegroundColor Cyan
+
+# 2. The upgraded Wget command. 
+# Notice the new --header="Referer: $Url" flag! We feed it the original portal link.
+& wget -q --mirror --page-requisites --adjust-extension --convert-links `
+       --no-parent --execute robots=off --no-check-certificate `
+       --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" `
+       --header="Referer: $Url" `
+       --header="Accept: */*" `
+       --directory-prefix=$TargetDir --no-host-directories $CleanTargetUrl
 
 $assetsDir     = Join-Path $PSScriptRoot "Assets"
 $importDir     = Join-Path $PSScriptRoot "flash-import"

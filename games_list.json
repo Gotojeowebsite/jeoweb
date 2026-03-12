@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "name": "0v0",
     "url": "Assets/0v0/index.html",
@@ -33,7 +33,7 @@
     "name": "2006-fifa-world-cup-germany-2006",
     "url": "Assets/2006-fifa-world-cup-germany-2006/index.html",
     "image": "Assets/2006-fifa-world-cup-germany-2006/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "2048",
@@ -45,7 +45,7 @@
     "name": "2k-sports-major-league-baseball-2k7",
     "url": "Assets/2k-sports-major-league-baseball-2k7/index.html",
     "image": "Assets/2k-sports-major-league-baseball-2k7/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "3dtanks",
@@ -219,13 +219,13 @@
     "name": "avatar-the-last-airbender",
     "url": "Assets/avatar-the-last-airbender/index.html",
     "image": "Assets/avatar-the-last-airbender/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "avatar-the-last-airbender-the-burning-earth",
     "url": "Assets/avatar-the-last-airbender-the-burning-earth/index.html",
     "image": "Assets/avatar-the-last-airbender-the-burning-earth/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "awesomecars",
@@ -255,31 +255,31 @@
     "name": "backyard-baseball",
     "url": "Assets/backyard-baseball/index.html",
     "image": "Assets/backyard-baseball/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "backyard-basketball",
     "url": "Assets/backyard-basketball/index.html",
     "image": "Assets/backyard-basketball/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "backyard-football",
     "url": "Assets/backyard-football/index.html",
     "image": "Assets/backyard-football/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "backyard-hockey",
     "url": "Assets/backyard-hockey/index.html",
     "image": "Assets/backyard-hockey/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "backyard-skateboarding",
     "url": "Assets/backyard-skateboarding/index.html",
     "image": "Assets/backyard-skateboarding/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "bacon-may-die",
@@ -339,7 +339,7 @@
     "name": "batman-vengeance",
     "url": "Assets/batman-vengeance/index.html",
     "image": "Assets/batman-vengeance/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "battle-sim",
@@ -394,6 +394,12 @@
     "url": "Assets/blackknight/index.html",
     "image": "Assets/blackknight/blackknight.png",
     "type": "flash"
+  },
+  {
+    "name": "block-breaker",
+    "url": "Assets/block-breaker/index.html",
+    "image": "Assets/block-breaker/logo.png",
+    "type": "webgl"
   },
   {
     "name": "blocky-puzzle",
@@ -489,13 +495,13 @@
     "name": "bomberman-max-2-blue-advance",
     "url": "Assets/bomberman-max-2-blue-advance/index.html",
     "image": "Assets/bomberman-max-2-blue-advance/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "bomberman-tournament",
     "url": "Assets/bomberman-tournament/index.html",
     "image": "Assets/bomberman-tournament/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "boombot2",
@@ -513,7 +519,7 @@
     "name": "boulder-dash-ex",
     "url": "Assets/boulder-dash-ex/index.html",
     "image": "Assets/boulder-dash-ex/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "boxhead2play",
@@ -525,7 +531,7 @@
     "name": "boxing-fever",
     "url": "Assets/boxing-fever/index.html",
     "image": "Assets/boxing-fever/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "breakingthebank",
@@ -543,7 +549,7 @@
     "name": "bruce-lee-return-of-the-legend",
     "url": "Assets/bruce-lee-return-of-the-legend/index.html",
     "image": "Assets/bruce-lee-return-of-the-legend/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "btd3",
@@ -567,6 +573,12 @@
     "name": "btts",
     "url": "Assets/btts/index.html",
     "image": "Assets/btts/icon.png",
+    "type": "webgl"
+  },
+  {
+    "name": "bubble-shooter",
+    "url": "Assets/bubble-shooter/index.html",
+    "image": "Assets/bubble-shooter/logo.png",
     "type": "webgl"
   },
   {
@@ -651,43 +663,49 @@
     "name": "Captain-America-and-the-Advengers",
     "url": "Assets/Captain-America-and-the-Advengers/index.html",
     "image": "Assets/Captain-America-and-the-Advengers/logo.gif",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "Captain-Commando",
     "url": "Assets/Captain-Commando/index.html",
     "image": "Assets/Captain-Commando/logo.gif",
+    "type": "snes"
+  },
+  {
+    "name": "capybara-clicker",
+    "url": "Assets/capybara-clicker/index.html",
+    "image": "Assets/capybara-clicker/logo.png",
     "type": "webgl"
   },
   {
     "name": "cartoon-network-block-party",
     "url": "Assets/cartoon-network-block-party/index.html",
     "image": "Assets/cartoon-network-block-party/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "cartoon-network-speedway",
     "url": "Assets/cartoon-network-speedway/index.html",
     "image": "Assets/cartoon-network-speedway/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "casper",
     "url": "Assets/casper/index.html",
     "image": "Assets/casper/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "cat-in-the-hat-the",
     "url": "Assets/cat-in-the-hat-the/index.html",
     "image": "Assets/cat-in-the-hat-the/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "catwoman",
     "url": "Assets/catwoman/index.html",
     "image": "Assets/catwoman/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "cell-machine",
@@ -702,10 +720,16 @@
     "type": "flash"
   },
   {
+    "name": "chess",
+    "url": "Assets/chess/index.html",
+    "image": "Assets/chess/logo.jpg",
+    "type": "webgl"
+  },
+  {
     "name": "chessmaster",
     "url": "Assets/chessmaster/index.html",
     "image": "Assets/chessmaster/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "chibiknight",
@@ -714,21 +738,33 @@
     "type": "flash"
   },
   {
+    "name": "chicken-jockey-clicker",
+    "url": "Assets/chicken-jockey-clicker/index.html",
+    "image": "Assets/chicken-jockey-clicker/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "chicken-little",
     "url": "Assets/chicken-little/index.html",
     "image": "Assets/chicken-little/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "chicken-shoot",
     "url": "Assets/chicken-shoot/index.html",
     "image": "Assets/chicken-shoot/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "chicken-shoot-2",
     "url": "Assets/chicken-shoot-2/index.html",
     "image": "Assets/chicken-shoot-2/logo.png",
+    "type": "gba"
+  },
+  {
+    "name": "chill-guy-clicker",
+    "url": "Assets/chill-guy-clicker/index.html",
+    "image": "Assets/chill-guy-clicker/24122704/logo.png",
     "type": "webgl"
   },
   {
@@ -741,7 +777,7 @@
     "name": "Chromo-Trigger",
     "url": "Assets/Chromo-Trigger/index.html",
     "image": "Assets/Chromo-Trigger/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "circlo",
@@ -752,7 +788,7 @@
   {
     "name": "clash-royale",
     "url": "Assets/clash-royale/index.html",
-    "image": "Assets/clash-royale/logo.png",
+    "image": "Assets/clash-royale/branding/logo.png",
     "type": "webgl"
   },
   {
@@ -765,7 +801,7 @@
     "name": "Clock-Tower",
     "url": "Assets/Clock-Tower/index.html",
     "image": "Assets/Clock-Tower/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "computerbashing",
@@ -786,9 +822,21 @@
     "type": "webgl"
   },
   {
+    "name": "core-ball",
+    "url": "Assets/core-ball/index.html",
+    "image": "Assets/core-ball/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "craftmine",
     "url": "Assets/craftmine/index.html",
     "image": "Assets/craftmine/images/craftmine.png",
+    "type": "webgl"
+  },
+  {
+    "name": "crazy-cow-3d",
+    "url": "Assets/crazy-cow-3d/index.html",
+    "image": "Assets/crazy-cow-3d/logo.png",
     "type": "webgl"
   },
   {
@@ -802,6 +850,18 @@
     "url": "Assets/creativekillchamber/index.html",
     "image": "Assets/creativekillchamber/creativekillchamber.jpg",
     "type": "flash"
+  },
+  {
+    "name": "crossword-puzzles",
+    "url": "Assets/crossword-puzzles/index.html",
+    "image": "Assets/crossword-puzzles/logo.png",
+    "type": "webgl"
+  },
+  {
+    "name": "crossy-road-space",
+    "url": "Assets/crossy-road-space/index.html",
+    "image": "Assets/crossy-road-space/logo.jpeg",
+    "type": "webgl"
   },
   {
     "name": "crushthecastle",
@@ -830,7 +890,7 @@
   {
     "name": "ctr-holiday",
     "url": "Assets/ctr-holiday/index.html",
-    "image": "Assets/ctr-holiday/favicon.ico",
+    "image": "Assets/ctr-holiday/Holiday_Gift.webp",
     "type": "flash"
   },
   {
@@ -861,7 +921,7 @@
     "name": "dbz-legend-of-kakarot-gba",
     "url": "Assets/dbz-legend-of-kakarot-gba/index.html",
     "image": "Assets/dbz-legend-of-kakarot-gba/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "deadly-decent",
@@ -878,7 +938,7 @@
   {
     "name": "death-run-3d",
     "url": "Assets/death-run-3d/index.html",
-    "image": "Assets/death-run-3d/TemplateData56/gears.gif",
+    "image": "Assets/death-run-3d/TemplateData/favicon.ico",
     "type": "webgl"
   },
   {
@@ -891,13 +951,13 @@
     "name": "dexter-s-laboratory-chess-challenge",
     "url": "Assets/dexter-s-laboratory-chess-challenge/index.html",
     "image": "Assets/dexter-s-laboratory-chess-challenge/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "dexter-s-laboratory-deesaster-strikes",
     "url": "Assets/dexter-s-laboratory-deesaster-strikes/index.html",
     "image": "Assets/dexter-s-laboratory-deesaster-strikes/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "dig-to-china",
@@ -939,7 +999,7 @@
     "name": "donkey-kong-country",
     "url": "Assets/donkey-kong-country/index.html",
     "image": "Assets/donkey-kong-country/logo.webp",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "donkeykong",
@@ -999,37 +1059,37 @@
     "name": "dragon-ball-advanced-adventure",
     "url": "Assets/dragon-ball-advanced-adventure/index.html",
     "image": "Assets/dragon-ball-advanced-adventure/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "dragon-ball-z-hyper-dimension",
     "url": "Assets/dragon-ball-z-hyper-dimension/index.html",
     "image": "Assets/dragon-ball-z-hyper-dimension/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "dragon-ball-z-super-butouden-3",
     "url": "Assets/dragon-ball-z-super-butouden-3/index.html",
     "image": "Assets/dragon-ball-z-super-butouden-3/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "dragon-ball-z-super-saiya-densetsu",
     "url": "Assets/dragon-ball-z-super-saiya-densetsu/index.html",
     "image": "Assets/dragon-ball-z-super-saiya-densetsu/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "dragon-ball-z-team-training-v9-2",
     "url": "Assets/dragon-ball-z-team-training-v9-2/index.html",
     "image": "Assets/dragon-ball-z-team-training-v9-2/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "dragon-ball-z-the-legacy-of-goku-i-ii",
     "url": "Assets/dragon-ball-z-the-legacy-of-goku-i-ii/index.html",
     "image": "Assets/dragon-ball-z-the-legacy-of-goku-i-ii/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "dragon-vs-bricks",
@@ -1113,7 +1173,7 @@
     "name": "earthbound",
     "url": "Assets/earthbound/index.html",
     "image": "Assets/earthbound/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "edge-surf",
@@ -1275,31 +1335,31 @@
     "name": "fifa-soccer-06",
     "url": "Assets/fifa-soccer-06/index.html",
     "image": "Assets/fifa-soccer-06/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "fifa-soccer-07",
     "url": "Assets/fifa-soccer-07/index.html",
     "image": "Assets/fifa-soccer-07/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "fifa-soccer-2003",
     "url": "Assets/fifa-soccer-2003/index.html",
     "image": "Assets/fifa-soccer-2003/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "fifa-soccer-2004",
     "url": "Assets/fifa-soccer-2004/index.html",
     "image": "Assets/fifa-soccer-2004/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "fifa-soccer-2005",
     "url": "Assets/fifa-soccer-2005/index.html",
     "image": "Assets/fifa-soccer-2005/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "fighter-aircraft-pilot",
@@ -1311,31 +1371,31 @@
     "name": "final-fantasy-iii",
     "url": "Assets/final-fantasy-iii/index.html",
     "image": "Assets/final-fantasy-iii/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "final-fantasy-iii-es",
     "url": "Assets/final-fantasy-iii-es/index.html",
     "image": "Assets/final-fantasy-iii-es/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "final-fight",
     "url": "Assets/final-fight/index.html",
     "image": "Assets/final-fight/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "final-fight-2",
     "url": "Assets/final-fight-2/index.html",
     "image": "Assets/final-fight-2/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "final-fight-3",
     "url": "Assets/final-fight-3/index.html",
     "image": "Assets/final-fight-3/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "fire-boy1",
@@ -1401,7 +1461,7 @@
     "name": "flashback-the-quest-for-identity",
     "url": "Assets/flashback-the-quest-for-identity/index.html",
     "image": "Assets/flashback-the-quest-for-identity/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "flashflightsimulator",
@@ -1461,7 +1521,7 @@
     "name": "front-mission",
     "url": "Assets/front-mission/index.html",
     "image": "Assets/front-mission/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "fruitninja",
@@ -1563,7 +1623,8 @@
     "name": "Granny",
     "url": "Assets/Granny/index.html",
     "image": "Assets/Granny/logo.gif",
-    "type": "webgl"
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "greyhound-ty",
@@ -1623,7 +1684,7 @@
     "name": "harvest-moon",
     "url": "Assets/harvest-moon/index.html",
     "image": "Assets/harvest-moon/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "hba",
@@ -1736,7 +1797,7 @@
   {
     "name": "idle-breakout",
     "url": "Assets/idle-breakout/index.html",
-    "image": "Assets/idle-breakout/assets/thumbnail.png",
+    "image": "Assets/idle-breakout/assets/particles/thumbnail.png",
     "type": "webgl"
   },
   {
@@ -1749,13 +1810,13 @@
     "name": "ihatovo-monogatari",
     "url": "Assets/ihatovo-monogatari/index.html",
     "image": "Assets/ihatovo-monogatari/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "illusion-of-gaia",
     "url": "Assets/illusion-of-gaia/index.html",
     "image": "Assets/illusion-of-gaia/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "impossiblequiz",
@@ -1773,7 +1834,7 @@
     "name": "indiana-jones-greatest-adventures",
     "url": "Assets/indiana-jones-greatest-adventures/index.html",
     "image": "Assets/indiana-jones-greatest-adventures/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "interactivebuddy",
@@ -1785,7 +1846,7 @@
     "name": "international-superstar-soccer-deluxe",
     "url": "Assets/international-superstar-soccer-deluxe/index.html",
     "image": "Assets/international-superstar-soccer-deluxe/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "jacksmith",
@@ -1815,7 +1876,7 @@
     "name": "judge-dredd",
     "url": "Assets/judge-dredd/index.html",
     "image": "Assets/judge-dredd/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "jumpix2",
@@ -1833,7 +1894,7 @@
     "name": "kirby-super-star",
     "url": "Assets/kirby-super-star/index.html",
     "image": "Assets/kirby-super-star/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "kittencannon",
@@ -1875,25 +1936,25 @@
     "name": "legend-of-the-mystical-ninja-the",
     "url": "Assets/legend-of-the-mystical-ninja-the/index.html",
     "image": "Assets/legend-of-the-mystical-ninja-the/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "legend-of-zelda-the-a-link-to-the-past",
     "url": "Assets/legend-of-zelda-the-a-link-to-the-past/index.html",
     "image": "Assets/legend-of-zelda-the-a-link-to-the-past/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "legend-of-zelda-the-a-link-to-the-past-four-swords",
     "url": "Assets/legend-of-zelda-the-a-link-to-the-past-four-swords/index.html",
     "image": "Assets/legend-of-zelda-the-a-link-to-the-past-four-swords/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "legend-of-zelda-the-the-minish-cap",
     "url": "Assets/legend-of-zelda-the-the-minish-cap/index.html",
     "image": "Assets/legend-of-zelda-the-the-minish-cap/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "magnetface",
@@ -1947,13 +2008,13 @@
     "name": "metroid-fusion",
     "url": "Assets/metroid-fusion/index.html",
     "image": "Assets/metroid-fusion/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "metroid-zero-mission",
     "url": "Assets/metroid-zero-mission/index.html",
     "image": "Assets/metroid-zero-mission/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "metroidelements",
@@ -2019,7 +2080,7 @@
     "name": "mortal-kombat-ii",
     "url": "Assets/mortal-kombat-ii/index.html",
     "image": "Assets/mortal-kombat-ii/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "motherload",
@@ -2091,37 +2152,37 @@
     "name": "nba-jam-tournament-edition",
     "url": "Assets/nba-jam-tournament-edition/index.html",
     "image": "Assets/nba-jam-tournament-edition/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "need-for-speed-carbon-own-the-city",
     "url": "Assets/need-for-speed-carbon-own-the-city/index.html",
     "image": "Assets/need-for-speed-carbon-own-the-city/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "need-for-speed-most-wanted",
     "url": "Assets/need-for-speed-most-wanted/index.html",
     "image": "Assets/need-for-speed-most-wanted/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "need-for-speed-porsche-unleashed",
     "url": "Assets/need-for-speed-porsche-unleashed/index.html",
     "image": "Assets/need-for-speed-porsche-unleashed/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "need-for-speed-underground",
     "url": "Assets/need-for-speed-underground/index.html",
     "image": "Assets/need-for-speed-underground/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "need-for-speed-underground-2",
     "url": "Assets/need-for-speed-underground-2/index.html",
     "image": "Assets/need-for-speed-underground-2/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "newgroundsrumble",
@@ -2193,7 +2254,7 @@
     "name": "out-of-this-world",
     "url": "Assets/out-of-this-world/index.html",
     "image": "Assets/out-of-this-world/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "outofthisworld",
@@ -2277,7 +2338,7 @@
     "name": "pilotwings",
     "url": "Assets/pilotwings/index.html",
     "image": "Assets/pilotwings/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "pirates",
@@ -2295,67 +2356,67 @@
     "name": "pokemon-advanced-version-v3-0",
     "url": "Assets/pokemon-advanced-version-v3-0/index.html",
     "image": "Assets/pokemon-advanced-version-v3-0/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-adventure-blue-chapter-b1-1",
     "url": "Assets/pokemon-adventure-blue-chapter-b1-1/index.html",
     "image": "Assets/pokemon-adventure-blue-chapter-b1-1/logo.webp",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-adventure-gold-chapter-v1-2",
     "url": "Assets/pokemon-adventure-gold-chapter-v1-2/index.html",
     "image": "Assets/pokemon-adventure-gold-chapter-v1-2/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-adventure-green-chapter-b3",
     "url": "Assets/pokemon-adventure-green-chapter-b3/index.html",
     "image": "Assets/pokemon-adventure-green-chapter-b3/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-adventure-red-chapter-beta-15-expansion-fix-patch-c-gba",
     "url": "Assets/pokemon-adventure-red-chapter-beta-15-expansion-fix-patch-c-gba/index.html",
     "image": "Assets/pokemon-adventure-red-chapter-beta-15-expansion-fix-patch-c-gba/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-adventure-yellow-chapter",
     "url": "Assets/pokemon-adventure-yellow-chapter/index.html",
     "image": "Assets/pokemon-adventure-yellow-chapter/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-emerald-version",
     "url": "Assets/pokemon-emerald-version/index.html",
     "image": "Assets/pokemon-emerald-version/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-firered-version",
     "url": "Assets/pokemon-firered-version/index.html",
     "image": "Assets/pokemon-firered-version/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-leafgreen-version",
     "url": "Assets/pokemon-leafgreen-version/index.html",
     "image": "Assets/pokemon-leafgreen-version/logo.png",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-ruby-version",
     "url": "Assets/pokemon-ruby-version/index.html",
     "image": "Assets/pokemon-ruby-version/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "pokemon-sapphire-version",
     "url": "Assets/pokemon-sapphire-version/index.html",
     "image": "Assets/pokemon-sapphire-version/logo.jpg",
-    "type": "webgl"
+    "type": "gba"
   },
   {
     "name": "polarjump",
@@ -2396,7 +2457,7 @@
   {
     "name": "push-your-luck",
     "url": "Assets/push-your-luck/index.html",
-    "image": "Assets/push-your-luck/assets/favicon.ico",
+    "image": "Assets/push-your-luck/assets/atlas/Bg.png",
     "type": "webgl"
   },
   {
@@ -2427,7 +2488,7 @@
     "name": "radical-dreamers",
     "url": "Assets/radical-dreamers/index.html",
     "image": "Assets/radical-dreamers/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "raftwars",
@@ -2544,16 +2605,22 @@
     "type": "webgl"
   },
   {
+    "name": "sans-fight",
+    "url": "Assets/sans-fight/index.html",
+    "image": "Assets/sans-fight/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "secret-of-evermore",
     "url": "Assets/secret-of-evermore/index.html",
     "image": "Assets/secret-of-evermore/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "secret-of-mana",
     "url": "Assets/secret-of-mana/index.html",
     "image": "Assets/secret-of-mana/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "sentryknight",
@@ -2565,7 +2632,7 @@
     "name": "shadowrun",
     "url": "Assets/shadowrun/index.html",
     "image": "Assets/shadowrun/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "shellshockers",
@@ -2648,7 +2715,7 @@
   {
     "name": "snow-rider-3d",
     "url": "Assets/snow-rider-3d/index.html",
-    "image": "Assets/snow-rider-3d/logo.png",
+    "image": "Assets/snow-rider-3d/TemplateData/logo.png",
     "type": "webgl"
   },
   {
@@ -2685,7 +2752,7 @@
     "name": "soul-blazer",
     "url": "Assets/soul-blazer/index.html",
     "image": "Assets/soul-blazer/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "soundboard",
@@ -2733,13 +2800,13 @@
     "name": "star-fox",
     "url": "Assets/star-fox/index.html",
     "image": "Assets/star-fox/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "star-fox-2",
     "url": "Assets/star-fox-2/index.html",
     "image": "Assets/star-fox-2/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "steal-a-brainrot",
@@ -2750,7 +2817,7 @@
   {
     "name": "steal-a-brainrot-2player",
     "url": "Assets/steal-a-brainrot-2player/index.html",
-    "image": "Assets/steal-a-brainrot-2player/logo.png",
+    "image": "Assets/steal-a-brainrot-2player/TemplateData/logo.png",
     "type": "webgl"
   },
   {
@@ -2787,13 +2854,13 @@
     "name": "street-fighter-ii-the-world-warrior",
     "url": "Assets/street-fighter-ii-the-world-warrior/index.html",
     "image": "Assets/street-fighter-ii-the-world-warrior/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "street-fighter-ii-turbo",
     "url": "Assets/street-fighter-ii-turbo/index.html",
     "image": "Assets/street-fighter-ii-turbo/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "strikeforceheroes2",
@@ -2829,19 +2896,19 @@
     "name": "super-castlevania-iv",
     "url": "Assets/super-castlevania-iv/index.html",
     "image": "Assets/super-castlevania-iv/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-double-dragon",
     "url": "Assets/super-double-dragon/index.html",
     "image": "Assets/super-double-dragon/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-ghouls-n-ghosts",
     "url": "Assets/super-ghouls-n-ghosts/index.html",
     "image": "Assets/super-ghouls-n-ghosts/logo.gif",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-liquid-soccer",
@@ -2853,37 +2920,38 @@
     "name": "super-mario-kart",
     "url": "Assets/super-mario-kart/index.html",
     "image": "Assets/super-mario-kart/logo.gif",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-mario-rpg-legend-of-the-seven-stars",
     "url": "Assets/super-mario-rpg-legend-of-the-seven-stars/index.html",
     "image": "Assets/super-mario-rpg-legend-of-the-seven-stars/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-mario-world",
     "url": "Assets/super-mario-world/index.html",
     "image": "Assets/super-mario-world/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-metroid",
     "url": "Assets/super-metroid/index.html",
     "image": "Assets/super-metroid/logo.jpg",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "super-punch-out",
     "url": "Assets/super-punch-out/index.html",
     "image": "Assets/super-punch-out/logo.png",
-    "type": "webgl"
+    "type": "snes",
+    "requested": true
   },
   {
     "name": "super-tennis",
     "url": "Assets/super-tennis/index.html",
     "image": "Assets/super-tennis/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "superd",
@@ -2955,7 +3023,7 @@
     "name": "tales-of-phantasia",
     "url": "Assets/tales-of-phantasia/index.html",
     "image": "Assets/tales-of-phantasia/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "tank-trouble-2",
@@ -2979,7 +3047,7 @@
     "name": "teenage-mutant-ninja-turtles-iv-turtles-in-time",
     "url": "Assets/teenage-mutant-ninja-turtles-iv-turtles-in-time/index.html",
     "image": "Assets/teenage-mutant-ninja-turtles-iv-turtles-in-time/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "temple-run-2",
@@ -2991,7 +3059,7 @@
     "name": "terranigma",
     "url": "Assets/terranigma/index.html",
     "image": "Assets/terranigma/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "the-final-earth",
@@ -3063,7 +3131,7 @@
     "name": "top-gear-2",
     "url": "Assets/top-gear-2/index.html",
     "image": "Assets/top-gear-2/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "tosstheturtle",
@@ -3105,19 +3173,19 @@
     "name": "ultima-runes-of-virtue-ii",
     "url": "Assets/ultima-runes-of-virtue-ii/index.html",
     "image": "Assets/ultima-runes-of-virtue-ii/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "ultima-vi-the-false-prophet",
     "url": "Assets/ultima-vi-the-false-prophet/index.html",
     "image": "Assets/ultima-vi-the-false-prophet/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "ultima-vii-the-black-gate",
     "url": "Assets/ultima-vii-the-black-gate/index.html",
     "image": "Assets/ultima-vii-the-black-gate/logo.gif",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "ultimateflashsonic",
@@ -3195,13 +3263,13 @@
     "name": "where-in-the-world-is-carmen-sandiego",
     "url": "Assets/where-in-the-world-is-carmen-sandiego/index.html",
     "image": "Assets/where-in-the-world-is-carmen-sandiego/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "wild-guns",
     "url": "Assets/wild-guns/index.html",
     "image": "Assets/wild-guns/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "wolf3d",
@@ -3231,7 +3299,7 @@
     "name": "worms",
     "url": "Assets/worms/index.html",
     "image": "Assets/worms/logo.png",
-    "type": "webgl"
+    "type": "snes"
   },
   {
     "name": "xenos",
