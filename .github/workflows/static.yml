@@ -26,20 +26,50 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+          
       - name: Pull LFS files
         run: git lfs pull
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          
       - name: Generate games list
         run: node scan.js
+
+      # --- CLOUDFLARE R2 MAGIC STARTS HERE ---
+      
+      - name: Sync Assets to Cloudflare R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          aws s3 sync ./Assets s3://${{ secrets.R2_BUCKET_NAME }}/Assets \
+            --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+            --delete
+
+      - name: Rewrite Asset URLs
+        # This replaces local "Assets/" with your public R2 dev URL.
+        # I included .json files here just in case your node scan.js script generates a JSON list!
+        run: |
+          find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.json" \) -exec sed -i 's|Assets/|https://pub-dc5c4751775643a9a0c40d918e546ab4.r2.dev/Assets/|g' {} +
+
+      - name: Remove local Assets folder
+        # Deletes the heavy files so GitHub Pages stays lightweight and fast.
+        run: rm -rf ./Assets
+
+      # --- CLOUDFLARE R2 MAGIC ENDS HERE ---
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
