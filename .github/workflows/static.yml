@@ -24,12 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true
+        # (LFS commands completely removed from here!)
           
-      - name: Pull LFS files
-        run: git lfs pull
-        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -51,13 +47,10 @@ jobs:
             --delete
 
       - name: Rewrite Asset URLs
-        # This replaces local "Assets/" with your public R2 dev URL.
-        # I included .json files here just in case your node scan.js script generates a JSON list!
         run: |
           find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.json" \) -exec sed -i 's|Assets/|https://pub-dc5c4751775643a9a0c40d918e546ab4.r2.dev/Assets/|g' {} +
 
       - name: Remove local Assets folder
-        # Deletes the heavy files so GitHub Pages stays lightweight and fast.
         run: rm -rf ./Assets
 
       # --- CLOUDFLARE R2 MAGIC ENDS HERE ---
