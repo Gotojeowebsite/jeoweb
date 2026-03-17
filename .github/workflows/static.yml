@@ -24,8 +24,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        # (LFS commands completely removed from here!)
-          
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,28 +32,7 @@ jobs:
           
       - name: Generate games list
         run: node scan.js
-
-      # --- CLOUDFLARE R2 MAGIC STARTS HERE ---
-      
-      - name: Sync Assets to Cloudflare R2
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: auto
-        run: |
-          aws s3 sync ./Assets s3://${{ secrets.R2_BUCKET_NAME }}/Assets \
-            --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
-            --delete
-
-      - name: Rewrite Asset URLs
-        run: |
-          find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.json" \) -exec sed -i 's|Assets/|https://pub-dc5c4751775643a9a0c40d918e546ab4.r2.dev/Assets/|g' {} +
-
-      - name: Remove local Assets folder
-        run: rm -rf ./Assets
-
-      # --- CLOUDFLARE R2 MAGIC ENDS HERE ---
-
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
