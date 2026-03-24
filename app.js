@@ -326,6 +326,16 @@ class App {
 		this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
 		this.openNewTabBtn.addEventListener('click', () => this.openGameInNewTab());
 
+		const shareBtn = document.getElementById('shareWebsiteBtn');
+		if (shareBtn) {
+			shareBtn.addEventListener('click', () => {
+				navigator.clipboard.writeText(window.location.origin).then(() => {
+					shareBtn.textContent = '✅ Copied!';
+					setTimeout(() => shareBtn.textContent = '🔗 Share Website', 2000);
+				});
+			});
+		}
+
 		// Color picker toggle
 		const colorBtn = document.getElementById('colorPickerBtn');
 		const colorMenu = document.getElementById('colorMenu');
@@ -531,7 +541,10 @@ class App {
 
 	renderNewlyAdded() {
 		const newGames = this.newlyAddedNames
-			.map(name => this.games.find(g => g.name === name))
+			.map(item => {
+				const gameName = typeof item === 'string' ? item : item.name;
+				return this.games.find(g => g.name === gameName);
+			})
 			.filter(Boolean);
 
 		const hasRequested = this.games.some(g => g.requested);
@@ -541,6 +554,17 @@ class App {
 			return;
 		}
 		if (this.newlyAddedSection) this.newlyAddedSection.classList.remove('hidden');
+
+		if (this.newlyAddedCount) {
+			this.newlyAddedCount.textContent = newGames.length;
+		}
+
+		if (this.newlyAddedTrack) {
+			this.newlyAddedTrack.innerHTML = '';
+			newGames.forEach(g => {
+				this.newlyAddedTrack.appendChild(this.createCarouselCard(g));
+			});
+		}
 	}
 
 	createCarouselCard(g) {
@@ -586,10 +610,43 @@ class App {
 			else target += '/index.html';
 		}
 		this.currentGameUrl = target;
-		this.gameFrame.src = target;
+
+		const loadingOverlay = document.getElementById('gameLoadingOverlay');
+		if (loadingOverlay) {
+			loadingOverlay.classList.remove('hidden');
+		}
+
+		// Show modal first so iframe layout doesn't break
 		this.playModal.classList.remove('hidden');
 		this.playModal.setAttribute('aria-hidden', 'false');
 		document.body.style.overflow = 'hidden';
+		this.gameFrame.src = target;
+
+		let iframeLoaded = false;
+		let minTimeElapsed = false;
+
+		const hideOverlay = () => {
+			if (loadingOverlay && iframeLoaded && minTimeElapsed) {
+				loadingOverlay.classList.add('hidden');
+			}
+		};
+
+		// Enforce a minimum 4.5 second display time for the loading screen
+		setTimeout(() => {
+			minTimeElapsed = true;
+			hideOverlay();
+		}, 4500);
+
+		// Hide overlay after iframe loads (if minimum time has elapsed)
+		this.gameFrame.onload = () => {
+			iframeLoaded = true;
+			hideOverlay();
+		};
+
+		// Ultimate fallback: force hide after 12 seconds
+		setTimeout(() => {
+			if (loadingOverlay) loadingOverlay.classList.add('hidden');
+		}, 12000);
 	}
 
 	toggleFullscreen() {

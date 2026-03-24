@@ -141,3 +141,19 @@ File: scripts/remediation.js
 Purpose: Self-healing script that reads "broken" games, tracks missing 404 assets, spoof-fetches them from the original host, and repairs the game.
 Run:
   node scripts/remediation.js
+
+File: scripts/detect-broken-games.js
+Purpose: Highly advanced testing script that launches games locally in a headless browser. Simulates human clicks and monitors WebGL context/memory to detect games that crash silently or get stuck on loading screens, marking them as "broken" in the catalog.
+Run:
+  node scripts/detect-broken-games.js
+
+File: scripts/deep-asset-scraper.js
+Purpose: The "Foolproof" Deep Downloader. Uses Puppeteer to traverse DOMs, penetrate nested iframes, spoof Origin/Referer headers, and intercept WebAssembly/Godot/Unity stream blobs directly from the network protocol to build 1:1 offline copies of heavily protected games (e.g. Poki).
+Run:
+  node scripts/deep-asset-scraper.js <Portal_URL> <Game_Slug>
+
+File: scripts/deep-batch-runner.js
+Purpose: Batch processing script for the deep asset scraper. It reads the URLs and slugs from 'deep-batch.txt', downloads them sequentially, and automatically rebuilds the catalog once finished.
+Format for deep-batch.txt: URL | Game-Slug
+Run:
+  node scripts/deep-batch-runner.js

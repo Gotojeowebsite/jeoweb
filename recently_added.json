@@ -1,52 +1,93 @@
 [
-  "deer-adventures",
-  "dancing-beat",
-  "fake-cup-head",
-  "crossy-road-space",
-  "crossword-puzzles",
-  "crazy-cow-3d",
-  "cowboy-safari",
-  "core-ball",
-  "animal-craft",
-  "arcade-tennis",
-  "sans-fight",
-  "bat-smash",
-  "block-breaker",
-  "brain-lines",
-  "bubble-shooter",
-  "capybara-clicker",
-  "car-chaos",
-  "cat-and-granny",
-  "chase-run",
-  "chess",
-  "chicken-jockey-clicker",
-  "chill-guy-clicker",
-  "city-brawl",
-  "hallow-knight",
-  "pizza-tower",
-  "steal-a-brainrot-2player",
-  "baldi-basics",
-  "sparta-hoppers",
-  "smash-karts",
-  "incredibox",
-  "snek-io",
-  "fighter-aircraft-pilot",
-  "blocky-puzzle",
-  "99-nights-in-the-forest",
-  "super-liquid-soccer",
-  "drift-king",
-  "call-of-duty-zombies",
-  "thorns-and-ballons",
-  "escape-car",
-  "fortzone",
-  "solar-smash",
-  "idle-ants",
-  "bridge-race",
-  "cookie-clicker",
-  "deadly-decent",
-  "retro-bowl-college",
-  "ragdoll-hit",
-  "shellshockers",
-  "obby-but-you-are-in-a-bike",
-  "snow-rider-3d"
+  {
+    "name": "grass-cutter",
+    "url": "Assets/grass-cutter/index.html",
+    "image": "Assets/grass-cutter/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/9437ce7af96357dcaa1911b80c3a4146/grass-cutter.png",
+    "type": "webgl"
+  },
+  {
+    "name": "harvest-simulator",
+    "url": "Assets/harvest-simulator/index.html",
+    "image": "Assets/harvest-simulator/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/650c30540036f907df04798e2a13c4be/harvest-simulator.png",
+    "type": "webgl"
+  },
+  {
+    "name": "slice-master",
+    "url": "Assets/slice-master/index.html",
+    "image": "Assets/slice-master/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/743089b5c6b4dda8bd05d920ab00a0b3/slice-master.png",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "retro-bowl-college",
+    "url": "Assets/retro-bowl-college/index.html",
+    "image": "Assets/retro-bowl-college/html5game/splash.png",
+    "type": "webgl"
+  },
+  {
+    "name": "cookie-clicker",
+    "url": "Assets/cookie-clicker/index.html",
+    "image": "Assets/cookie-clicker/img/bunnies.png",
+    "type": "webgl"
+  },
+  {
+    "name": "zombiealienparasites",
+    "url": "Assets/zombiealienparasites/index.html",
+    "image": "Assets/zombiealienparasites/logo.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "yuriusshouseofspooks",
+    "url": "Assets/yuriusshouseofspooks/index.html",
+    "image": "Assets/yuriusshouseofspooks/logo.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "you-are-bezos",
+    "url": "Assets/you-are-bezos/index.html",
+    "image": "Assets/you-are-bezos/img/icon.png",
+    "type": "webgl"
+  },
+  {
+    "name": "yearofthesnake",
+    "url": "Assets/yearofthesnake/index.html",
+    "image": "Assets/yearofthesnake/logo.png",
+    "type": "flash"
+  },
+  {
+    "name": "xtremecliffdiving",
+    "url": "Assets/xtremecliffdiving/index.html",
+    "image": "Assets/xtremecliffdiving/logo.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "xenos",
+    "url": "Assets/xenos/index.html",
+    "image": "Assets/xenos/logo.png",
+    "type": "flash"
+  },
+  {
+    "name": "worms",
+    "url": "Assets/worms/index.html",
+    "image": "Assets/worms/logo.png",
+    "type": "snes"
+  },
+  {
+    "name": "worlds-hardest-game",
+    "url": "Assets/worlds-hardest-game/index.html",
+    "image": "Assets/worlds-hardest-game/images/splash.jpg",
+    "type": "webgl"
+  },
+  {
+    "name": "worlds-hardest-game-2",
+    "url": "Assets/worlds-hardest-game-2/index.html",
+    "image": "Assets/worlds-hardest-game-2/the-worlds-hardest-game-2.jpg",
+    "type": "webgl"
+  },
+  {
+    "name": "wordle",
+    "url": "Assets/wordle/index.html",
+    "image": "Assets/wordle/img/logo_144x144.png",
+    "type": "webgl"
+  }
 ]

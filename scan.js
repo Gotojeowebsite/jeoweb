@@ -138,19 +138,38 @@ function scan() {
 			webglCount++;
 		}
 
+		// Get folder creation time to determine "recently added"
+		const stat = fs.statSync(folderPath);
+		const addedTime = stat.birthtimeMs || stat.mtimeMs;
+
 		const entry = {
 			name: it.name,
 			url: `Assets/${it.name}/${htmlFile}`,
 			image: image || 'notavailable.svg',
-			type
+			type,
+			addedTime
 		};
 		if (requested) entry.requested = true;
 		results.push(entry);
 	}
 
+	// Create recently added list (Top 30 newest)
+	const recentList = [...results]
+		.sort((a, b) => b.addedTime - a.addedTime)
+		.slice(0, 30)
+		.map(g => {
+			const { addedTime, ...rest } = g;
+			return rest; // Remove addedTime from the final JSON so it stays clean
+		});
+	fs.writeFileSync(path.join(ROOT, 'recently_added.json'), JSON.stringify(recentList, null, 2));
+
+	// Remove addedTime from main results before saving to keep it clean
+	results.forEach(g => delete g.addedTime);
+
 	results.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
 	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${retroCount} Retro, ${webglCount} WebGL)`);
+	console.log(`Wrote recently_added.json -> Updated with ${recentList.length} newest games.`);
 }
 
 scan();

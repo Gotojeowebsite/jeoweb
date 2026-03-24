@@ -3,8 +3,7 @@
     "name": "0v0",
     "url": "Assets/0v0/index.html",
     "image": "Assets/0v0/logo.jpeg",
-    "type": "webgl",
-    "status": "broken"
+    "type": "webgl"
   },
   {
     "name": "1",
@@ -1628,6 +1627,12 @@
     "requested": true
   },
   {
+    "name": "grass-cutter",
+    "url": "Assets/grass-cutter/index.html",
+    "image": "Assets/grass-cutter/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/9437ce7af96357dcaa1911b80c3a4146/grass-cutter.png",
+    "type": "webgl"
+  },
+  {
     "name": "greyhound-ty",
     "url": "Assets/greyhound-ty/index.html",
     "image": "Assets/greyhound-ty/greyhound tycocn.jpeg",
@@ -1686,6 +1691,12 @@
     "url": "Assets/harvest-moon/index.html",
     "image": "Assets/harvest-moon/logo.png",
     "type": "snes"
+  },
+  {
+    "name": "harvest-simulator",
+    "url": "Assets/harvest-simulator/index.html",
+    "image": "Assets/harvest-simulator/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/650c30540036f907df04798e2a13c4be/harvest-simulator.png",
+    "type": "webgl"
   },
   {
     "name": "hba",
@@ -2678,6 +2689,13 @@
     "type": "flash"
   },
   {
+    "name": "slice-master",
+    "url": "Assets/slice-master/index.html",
+    "image": "Assets/slice-master/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/743089b5c6b4dda8bd05d920ab00a0b3/slice-master.png",
+    "type": "webgl",
+    "requested": true
+  },
+  {
     "name": "slope",
     "url": "Assets/slope/index.html",
     "image": "Assets/slope/slope4.jpeg",
@@ -2872,7 +2890,7 @@
   {
     "name": "subway-surfers",
     "url": "Assets/subway-surfers/index.html",
-    "image": "Assets/subway-surfers/favicon.ico",
+    "image": "Assets/subway-surfers/93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/preload/splash.png",
     "type": "webgl"
   },
   {

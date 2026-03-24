@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, shrink-to-fit=no viewport-fit=cover" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="robots" content="noindex, follow">
+		<link rel="icon" type="image/x-icon" href="https://a.poki-cdn.com/img/favicon.ico">
+
+		
+
+		
+<style>
+* {
+	box-sizing: border-box;
+}
+
+/* SAFARI GROWING IFRAME FIX */
+html, body { height: 100%; width: 100%; overflow: hidden; }
+body { overflow: auto;-webkit-overflow-scrolling: touch; }
+/* END SAFARI GROWING IFRAME FIX */
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: #002B50;
+}
+
+#gameframe {
+	flex-grow: 1;
+	border: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	z-index: 999998;
+	position: relative;
+	transform-origin: bottom left;
+	transform: scale3d(1, 1, 1); /* hardware accelerated scaling */
+	transition: transform 0.3s ease-in;
+	will-change: transform;
+	/* iOS safari growing iframe fix */
+	height: 1px; /* this works because flex-grow is more important */
+	min-width: 100%;
+	width: 1px;
+}
+
+#footer {
+	padding: 10px 16px;
+	height: 64px;
+	width: 100%;
+	background: #fff;
+	display: flex;
+}
+
+#store-info,
+#game-info {
+	display: flex;
+	flex-direction: column;
+}
+
+#game-info {
+	flex-grow: 1;
+}
+
+#store-info {
+	flex-shrink: 1;
+	justify-content: center;
+    align-items: center;
+}
+
+#store-info {
+	flex-direction: row;
+	margin: 0 16px;
+}
+
+h2{
+	font-size:inherit;
+}
+
+#game-info h2 {
+	font-family: Torus, Arial, sans-serif;
+	font-size: 20px;
+	color: #002B50;
+	margin: 2px 0 0;
+	line-height:24px;
+}
+
+#game-info p {
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	color: #7E91AB;
+	font-size: min(max(8px, 3vw), 12px);
+	margin: 0;
+	white-space: nowrap;
+}
+
+#thumb-info {
+	display:flex;
+}
+
+#thumb {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.24);
+	margin-right: 16px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+#poki-logo {
+	flex-shrink: 0;
+}
+
+#poki-logo-img {
+	margin-top: -4px;
+	height: 52px;
+	vertical-align: bottom;
+}
+
+.store-link {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 8px;
+	max-width: 130px;
+}
+
+.store-link img {
+	width: 100%;
+}
+
+#adInfo {
+	padding: 10px 16px;
+	height: 64px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #FFF;
+	display: none;
+	align-items: center;
+	pointer-events: none;
+	transition: opacity 500ms ease-in;
+}
+
+#adInfo .logo {
+	margin: 4px;
+}
+
+#adInfo .textContainer {
+	display: inline-block;
+	margin-left: 16px;
+}
+
+.textContainer > .title {
+	font: bold 16px/20px Proxima Nova;
+	color: #002B50;
+	margin: 0;
+}
+
+.textContainer > .status {
+	font: 12px/16px Proxima Nova;
+	color: #5D6B84;
+	margin: 0;
+}
+
+@keyframes scaleDelay {
+	0%,
+	80%,
+	100% {
+		transform: scale(0);
+	}
+
+	40% {
+		transform: scale(1);
+	}
+}
+.spinner {
+	position: absolute;
+	display: flex;
+	top: 50%;
+	left: 50%;
+	margin-left: -33px;
+	margin-top: -9px;
+	width: 66px;
+}
+.spinner > div {
+	width: 18px;
+	height: 18px;
+	margin: 0 2px;
+	border-radius: 100%;
+	background: #fff;
+	animation: scaleDelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+	animation-delay: -.32s;
+}
+.spinner .bounce2 {
+	animation-delay: -.16s;
+}
+</style>
+
+
+		
+
+		<link rel="canonical" href="https://poki.com/en/g/subway-surfers"/>
+
+	</head>
+	<body>
+		<div class="spinner" id="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+
+		<iframe id="gameframe" src="about:blank" allow="autoplay; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; microphone *" scrolling="no"></iframe>
+
+		<script type="text/javascript">
+		window.PARAMS = {"gameUri":"https://5dd312fa-015f-11ea-ad56-9cb6d0d995f7.gdn.poki.com/93f0a8aa-9a9c-4448-b720-5bd4c4de3798/index.html?country=US&ccpaApplies=0&url_referrer=https%3A%2F%2Fpoki.com%2Fen%2Fg%2Fsubway-surfers&tag=pg-5492a6b8b08dfaf986bf966055322c6b9fea268f&site_id=3&iso_lang=en&poki_url=https%3A%2F%2Fpoki.com%2Fen%2Fg%2Fsubway-surfers&hoist=yes&nonPersonalized=n&cloudsavegames=n&familyFriendly=n&categories=3%2C4%2C6%2C9%2C86%2C93%2C96%2C103%2C228%2C903%2C929%2C1103%2C1126%2C1140%2C1185%2C1190%2C1193&ab=3a2be277f2600b776d954fa5f8c0891730d7ee8e&experiment=control-259e7ca0&special_condition=landing&game_id=5dd312fa-015f-11ea-ad56-9cb6d0d995f7&game_version_id=93f0a8aa-9a9c-4448-b720-5bd4c4de3798&inspector=0&csp=1","onPoki":true,"onKids":false,"isLocal":false,"gameID":"5dd312fa-015f-11ea-ad56-9cb6d0d995f7","gameVersion":"93f0a8aa-9a9c-4448-b720-5bd4c4de3798","footer":null,"canonical":"https://poki.com/en/g/subway-surfers","contentGameID":29160,"bot":{"verified":false,"score":99},"experiment":"control-259e7ca0","cloudSaveGames":false,"localisations":{"playingad":"Playing Ad","loading":"Loading","preparing":"Preparing..."}};
+		</script>
+
+
+		
+
+		
+		<svg style="display:none">
+			<symbol id="favIcon" viewBox="0 0 36 36">
+				<g fill="none">
+					<path d="M18.0837 0C12.3552 0 7.6096 1.9567 4.3607 5.657 1.5489 8.86 0 13.224 0 17.945c0 4.8601 1.578 9.3005 4.444 12.5035C7.694 34.081 12.4103 36 18.0837 36c5.551 0 10.2023-1.914 13.4495-5.5361C34.4134 27.2512 36 22.8445 36 18.0556c0-4.8365-1.5852-9.2762-4.4637-12.5017C28.2945 1.921 23.6426 0 18.0837 0z" fill="#002b50" />
+					<path d="M18.0002 30.2865c-6.7867 0-12.3074-5.5782-12.3074-12.4339 0-6.5792 5.636-12.1375 12.3074-12.1375 6.6715 0 12.3076 5.5583 12.3076 12.1375 0 6.8557-5.5216 12.4339-12.3076 12.4339" fill="#fff" />
+					<path d="M17.9182 18.8012c-5.4178 0-8.1573.939-9.2878 1.2275.9465 4.3075 4.7498 7.5394 9.2878 7.5394 4.5374 0 8.3411-3.2319 9.2878-7.5394-1.1304-.2884-3.8702-1.2275-9.2878-1.2275" fill="#009cff" />
+				</g>
+			</symbol>
+		</svg>
+
+		<div id="adInfo">
+			<svg class="logo" width="36px" height="36px">
+				<use href="#favIcon" />
+			</svg>
+			<div class="textContainer">
+				<h2 class="title">We’ll be back after this short break</h2>
+				<p class="status">Playing Ad : 05</p>
+			</div>
+		</div>
+		
+
+		<script>
+			// [iOS Fix] Full screen, taking nav bar into account
+			const resize = () => {
+				window.scrollTo(0, 0);
+				document.body.style.width = document.documentElement.style.width = window.innerWidth+'px';
+				document.body.style.height = document.documentElement.style.height = window.innerHeight+'px';
+			};
+			window.addEventListener('resize', resize);
+			resize();
+
+			// [iOS] Fix initial resizing not going well
+			setTimeout(()=>{
+				resize();
+			}, 3000);
+		</script>
+
+		<script>
+			(()=>{var e={452(e,o,t){var n;n=function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.setStatus=o.setDuration=o.setDurationProgress=o.displayAdInfo=o.ADSTATUS=void 0;var n=t.g.PARAMS.localisations;o.ADSTATUS={LOADING:"loading",PREPARING:"preparing"};var a=document.querySelector("#adInfo"),i=a.querySelector(".status"),r=0;o.displayAdInfo=function(e){a.style.display=e?"flex":"none"},o.setDurationProgress=function(e){var o=r-e,t=Math.floor(o/60),a=String(Math.round(o%60)).padStart(2,"0");i.innerText="".concat(n.playingad," ").concat(t,":").concat(a)},o.setDuration=function(e){r=e,(0,o.setDurationProgress)(0)},o.setStatus=function(e){switch(e){case o.ADSTATUS.PREPARING:i.innerText=n.preparing;break;case o.ADSTATUS.LOADING:i.innerText=n.loading}}}.apply(o,[t,o]),void 0===n||(e.exports=n)},885(e,o,t){var n,a;n=[t,o,t(906),t(500),t(393),t(747),t(834),t(263)],void 0===(a=function(e,o,t,n,a,i,r,s){"use strict";var c,d=window,p=/^((?!chrome|android).)*safari/i.test(navigator.userAgent),u=d.PARAMS,l=u.environment,g=u.isLocal,m=u.onPoki,w=u.onKids,v=u.gameID,f=u.contentGameID,h=u.bot,k=u.playtestUri,y=u.playtestVersion,_=u.playtestDeviceCategory,S=u.metrictestUri,b=u.metrictestVersion,x=u.metrictestDeviceCategory,A=u.cloudSaveGames,T=d.PARAMS,P=T.gameUri,N=T.gameVersion;if(m||g||"development"===l?(0,a.setupSdkPlatformCommunication)():w||((0,a.setupAdListeners)(),(0,t.updateSession)(window.location.pathname,"external",f),d.user=(0,t.getUser)(),d.context={tag:null,site:{id:null,domain:"games.poki.com",prefix:""},page:{id:f,type:"external",path:window.location.pathname,pageview_id:(0,t.uuid)()},user:d.user,session:d.session},d.pokiGTM=d.pokiGTM||[],d.tracker=d.tracker||[],d.updateSession=t.updateSession,(0,a.setupSdkGtmCommunication)()),m)try{k&&y?function(){var e=navigator;if(e.connection&&e.connection.effectiveType&&"4g"!==e.connection.effectiveType)return!1;if(e.hardwareConcurrency<8)return!1;if(!document.createElement("canvas").getContext("webgl2",{failIfMajorPerformanceCaveat:!0}))return!1;if("desktop"===_&&(0,s.default)())return!1;if(p){var o=e.userAgent.match(/Version\/([\d]+)/);if(!o||parseInt(o[1],10)<18)return!1}else if(void 0===window.MediaStreamTrackProcessor)return!1;return!0}()&&(P=k,N=y):S&&b&&("desktop"===x&&(0,s.default)()||(P=S,N=b));var G=(0,i.default)(P);try{window.localStorage.removeItem("poki_savegame_migrated_".concat(v))}catch(e){}A&&(P="".concat(G,"/poki-savegame-cloudsavegame.html?next=").concat(encodeURIComponent(P)))}catch(e){}(0,n.default)((function(){var e=document.getElementById("gameframe");e.src=P,e.onload=function(){var o=document.getElementById("spinner");o&&o.parentElement&&o.parentElement.removeChild(o),setTimeout((function(){e.focus()}),0)}})),document.addEventListener("focus",(function(){var e;null===(e=document.getElementById("gameframe"))||void 0===e||e.focus()})),window.location.ancestorOrigins&&window.location.ancestorOrigins.length>0&&(c=window.location.ancestorOrigins[window.location.ancestorOrigins.length-1]),window.parent&&window.parent.postMessage({type:"pubHostInitialized",content:{gameVersion:N,gameID:v,topOrigin:c,bot:h}},"*"),m||g||w||(0,r.pushEvent)("pubHost","initialized",{gameID:v,gameVersion:N,contentGameID:f,topOrigin:c,bot:h})}.apply(o,n))||(e.exports=a)},393(e,o,t){var n,a;n=[t,o,t(834),t(452)],a=function(e,o,t,n){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.setupAdListeners=o.setupSdkGtmCommunication=o.setupSdkPlatformCommunication=void 0;var a=window.PARAMS,i=a.contentGameID,r=a.gameVersion,s=a.gameID;o.setupSdkPlatformCommunication=function(){window.addEventListener("message",(function(e){var o=document.getElementById("gameframe");e.source===o.contentWindow?function(e){e.data.type&&(void 0===e.data.content&&(e.data.content={}),e.data.content.pokifordevs={game_id:s,game_version_id:r,content_game_id:i}),window.parent.postMessage(e.data,"*")}(e):function(e,o){o.contentWindow&&(e.data.type&&void 0===e.data.content&&(e.data.content={}),o.contentWindow.postMessage(e.data,"*"))}(e,o)}))},o.setupSdkGtmCommunication=function(){window.addEventListener("message",(function(e){var o=e.data.type;if(o){var n=e.data.content||{};n.pokifordevs={game_id:s,game_version_id:r,content_game_id:i},(0,t.pushEvent)("sdk","message",{content:n,type:o})}}))},o.setupAdListeners=function(){window.addEventListener("message",(function(e){if(e.data.type){var o=e.data.content,t=o.data;switch(o.event){case"pokiTrackingScreenCommercialBreak":case"pokiTrackingScreenRewardedBreak":(0,n.displayAdInfo)(!0),(0,n.setStatus)(n.ADSTATUS.PREPARING);break;case"pokiTrackingAdsStatusPrebidRequested":(0,n.setStatus)(n.ADSTATUS.LOADING);break;case"pokiTrackingAdsStatusStarted":(0,n.setDuration)(t.duration);break;case"pokiTrackingAdsStatusCompleted":case"pokiTrackingAdsStatusLimit":case"pokiTrackingAdsStatusError":(0,n.displayAdInfo)(!1);break;case"pokiTrackingAdsVideoProgress":(0,n.setDurationProgress)(t.currentTime)}}}))}}.apply(o,n),void 0===a||(e.exports=a)},834(e,o,t){var n;n=function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.pushEvent=function(e,o,n){"undefined"!=typeof window&&t.context&&t.pokiGTM&&t.pokiGTM.push({event:"".concat(e,"-").concat(o),eventNoun:e,eventVerb:o,eventData:n||{}})};var t=window}.apply(o,[t,o]),void 0===n||(e.exports=n)},500(e,o,t){var n;n=function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.default=function e(o){0===window.innerWidth||0===window.innerHeight?window.setTimeout((function(){e(o)}),500):o()}}.apply(o,[t,o]),void 0===n||(e.exports=n)},747(e,o,t){var n;n=function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.default=function(e){var o=document.createElement("a");o.href=e;var t=o.pathname;return t.endsWith("/index.html")&&(t=t.slice(0,-10)),"".concat(o.protocol,"//").concat(o.hostname).concat(o.pathname)}}.apply(o,[t,o]),void 0===n||(e.exports=n)},263(e,o,t){var n;n=function(e,o){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.default=function(){return"MacIntel"===window.navigator.platform&&void 0!==window.navigator.standalone&&navigator.maxTouchPoints>1}}.apply(o,[t,o]),void 0===n||(e.exports=n)},906(e,o,t){"use strict";function n(e,o){fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:o,mode:"no-cors",keepalive:!0,credentials:"omit"}).catch((function(t){console.error(t);try{var n="XMLHttpRequest"in window?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");n.open("POST",e,!0),n.setRequestHeader("Content-Type","text/plain"),n.send(o)}catch(e){}}))}t.r(o),t.d(o,{beacon:()=>n,getCookie:()=>i,getSession:()=>I,getUser:()=>v,isSessionExpired:()=>j,logError:()=>p,markSessionInteraction:()=>L,protocolVersion:()=>d,removeCookie:()=>r,setCookie:()=>s,setUserTTL:()=>f,updateSession:()=>U,updateSessionProperties:()=>E,uuid:()=>c});var a=15552e3;function i(e){var o=new RegExp("".concat(e,"=([^;]+)(?:;|$)")).exec(document.cookie);return o?o[1]:""}function r(e){document.cookie="".concat(e,"=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; samesite=lax")}function s(e,o,t){document.cookie="".concat(e,"=").concat(o,"; path=/; samesite=lax; max-age=").concat(Math.min(t||a,a))}function c(){for(var e=Math.floor(Date.now()/1e3),o="",t=0;t<4;t++)o=String.fromCharCode(255&e)+o,e>>=8;if(window.crypto&&crypto.getRandomValues&&Uint32Array){var n=new Uint32Array(12);crypto.getRandomValues(n);for(var a=0;a<12;a++)o+=String.fromCharCode(255&n[a])}else for(var i=0;i<12;i++)o+=String.fromCharCode(Math.floor(256*Math.random()));return btoa(o).replace(/\+/g,"-").replace(/\//g,"_").replace(/=/g,"")}var d=7;function p(e,o,t){console.error(e);var a=[{k:"where",v:o},{k:"error",v:e.name&&e.message?"".concat(e.name,": ").concat(e.message):JSON.stringify(e)}];if(void 0!==t){var i=t;"string"!=typeof e&&(i=JSON.stringify(e)),a.push({k:"extra",v:i})}n("https://t.poki.io/l",JSON.stringify({c:"observer-error",ve:7,d:a}))}var u="poki_uid",l="poki_uid_new",g="poki_uid_version",m="poki_uid_ttl",w=15552e3;function v(){var e,o,t,n,a=null===(e=window[window._pokiUserGlobalName])||void 0===e?void 0:e.id,r=(null===(o=window[window._pokiUserGlobalName])||void 0===o?void 0:o.is_new)||!1,d=(null===(t=window[window._pokiUserGlobalName])||void 0===t?void 0:t.version)||0,p=(null===(n=window[window._pokiUserGlobalName])||void 0===n?void 0:n.ttl)||w;return a||(a=i(u),r="1"===i(l),d=parseInt(i(g),10)||0,p=parseInt(i(m),10)||p),a&&function(e){if(!/^[A-Za-z0-9-_]+$/.test(e))return!1;try{return 16===atob(e.replace(/-/g,"+").replace(/_/g,"/")).length}catch(e){return!1}}(a)||(a=c(),r=!0,d=2,p=w),s(u,a,p),s(l,r?"1":"0",p),s(g,d,p),s(m,p,p),window[window._pokiUserGlobalName]={id:a,is_new:r,version:d,ttl:p},{id:a,is_new:r,version:d,ttl:p}}function f(e){s(u,i(u),e),s(l,i(l),e),s(g,i(g),e),s(m,e,e),window[window._pokiUserGlobalName]&&(window[window._pokiUserGlobalName].ttl=e)}function h(e){if(!e)return"";try{var o=/^[a-zA-Z][a-zA-Z0-9+\-.]*:\/\//.test(e);return new URL(o?e:"https://".concat(e)).hostname||""}catch(e){return""}}function k(e){if(/^\d{1,3}(\.\d{1,3}){3}$/.test(e)||e.includes(":"))return e;if("gemini.google.com"===e)return"gemini-google";if("bard.google.com"===e)return"bard-google";if("com.google.android.googlequicksearchbox"===e)return e;var o=function(e){if(!e)return"";if(/^\d{1,3}(\.\d{1,3}){3}$/.test(e)||e.includes(":"))return e;var o=e.split(".").filter(Boolean);if(o.length<=2)return e;var t=new Set(["co.uk","gov.uk","ac.uk","sch.uk","com.au","net.au","org.au","com.br","com.mx","com.tr","com.ar","com.cn","com.hk","com.tw","com.sg","com.my","com.id","co.nz","co.in","co.kr","co.za","co.jp"]),n=o.slice(-2).join("."),a=o.slice(-3).join(".");return t.has(n)?o.slice(-3).join("."):t.has(a)?o.slice(-4).join("."):n}(e);return o?o.split(".")[0]||o:e||""}function y(e,o){var t=e.getAll(o);return t&&0!==t.length?t[t.length-1]:""}window._pokiUserGlobalName=window._pokiUserGlobalName||"user";var _=new Set(["authorize.roblox.com","accounts.google.com","appleid.apple.com","idmsa.apple.com","login.microsoftonline.com","login.live.com"]),S=new Set(["doubleclick","googlesyndication","googleapis","googleadservices"]),b=new Set(["doubleclick","googlesyndication","googleapis","googleadservices","adsenseformobileapps"]),x=new Set(["google","bing","brave","yahoo","baidu","yandex","duckduckgo","aol","ask","avg","babylon","googleweblight","info","izito","msn","myway","naver","qo-search","searchencrypt","search-results","searchlock","seznam","so","sogou","startpage","startpagina","startsiden","virgilio","wp","zapmeta","100searchengines","dailysearches","easyfindanswers","ecosia","findretro","geniol","gsearch","gosearcresults","gosrch","juniorsafesearch","karmasearch","keyboardsearch","kvasir","metager","mojeek","mysearcheasy","onlineradiok","panda-search","petalsearch","presearch","qwant","rammerhead","relatedsearches","search","search-browser","searchbip","searcheira","search-io","search-load","searchmusic-online","search-redirect","searchsafe","searchsail","search-sprint","search-tab","searchspear","sosearcher","srchoffer","syndicatedsearch","trojanwall","voicecommandsearcher","web-explore","webcrawler","yellow-search","ziyuan","ziyuanm","zuiben","coccoc","zhanlian"]);function A(){var e,o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=o.search,n=void 0===t?"":t,a=o.referrer,i=void 0===a?"":a,r=new URLSearchParams(n),s=h(i),c=k(s),d=""!==i,p=r.has("tt"),u=r.has("sc"),l=y(r,"utm_source"),g=y(r,"utm_medium"),m=y(r,"utm_term"),w=y(r,"poki_source"),v=y(r,"placement"),f=y(r,"gclid"),A=y(r,"msclkid"),T=y(r,"yclid"),P=y(r,"ttclid"),N=y(r,"fbclid"),G=y(r,"adgroup"),D=y(r,"creative"),I=y(r,"network");e=c||(""===s&&""!==i?"":i);var O,C,M=!d||"poki"===e||b.has(e),U=(O=(i||"").match(/^android-app:\/\/([^/]+)/i))?O[1].toLowerCase():null,j=function(e){var o=(e||"").match(/^ios-app:\/\/([^/]+)/i);return o?o[1].toLowerCase():null}(i),E=function(e){var o=(e||"").match(/^mobileapp::\d+-([^/]+)/i);return o?o[1].toLowerCase():null}(i),L=M&&v.includes("mobileapp::")&&v.includes("mobileapp::2-")?function(e){var o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:/^mobileapp::2-([^/]+)/,t=(e||"").match(o);return t?t[1]:null}(v):null;C="chrome_extension"===l?"poki_chrome_extension":"edge_extension"===l?"poki_edge_extension":p?"tiktok":u?"snapchat":"android_app"===w?"poki_android_app":"web_app_manifest"===l?"pwa":U||j||E||(!d&&l?l:L||(M&&v?k(h(v))||v:"g"===I?"google":"ytv"===I?"youtube":d||f||A||T||P||N||G||D?!d&&f&&/^\d+$/.test(f)?"direct":""===e&&d?"unknown":e||"unknown":"direct"));var R,z=S.has(C)||!!(f||A||T||P||N||G||D)||"cpc"===g||"rtb-cpm"===g||"ppc"===g||"paid"===g,J=(s||"").toLowerCase(),V=!_.has(J)&&(x.has(C)||/^com\.google\.android\.googlequicksearchbox$/.test(J)||function(e){return/^webcache\.googleusercontent\.com$/.test(e)}(J)||!!m&&"share"!==g);return R="snapchat"===l?"cpc":N&&!l?"organic":z?"cpc":V?"organic":_.has(J)?"oauth":"pwa"===C||"poki_android_app"===C||d||"social"===g||"email"===g?"referral":C?"unknown":"direct","direct"===C&&"direct"!==R&&"unknown"!==R&&"referral"!==R&&(C="unknown"),S.has(C)&&(C="unknown"),"poki"===C&&"cpc"===R&&(C="unknown"),{source:C,medium:R}}var T=18e5,P="poki_session";window._pokiSessionGlobalName=window._pokiSessionGlobalName||"session";var N=["poki.at","poki.be","poki.by","poki.ch","poki.cn","poki.co.id","poki.co.il","poki.com.br","poki.com","poki.cz","poki.de","poki.dk","poki.fi","poki.it","poki.jp","poki.nl","poki.pl","poki.pt","poki.se","www.trochoi.net"];function G(){try{var e=new URL(document.referrer).hostname;return N.indexOf(e)>-1?"poki":e}catch(e){}return""}function D(e,o){if(!e)return!1;if(!(e&&e.page&&e.landing_page&&e.previous_page))return!1;if(!e.tab_id)return!1;if(!e.expire||Date.now()>e.expire)return!1;if(e.expire>Date.now()+T)return!1;if(o){var t=A({referrer:document.referrer,search:window.location.search}),n=t.source,a=t.medium;if("oauth"!==a&&n!==e.source)return!1;var i="cpc"===a,r="cpc"===e.medium;if(i&&!r)return!1}return!0}function I(){var e=null;D(window[window._pokiSessionGlobalName],!1)&&(e=window[window._pokiSessionGlobalName]);try{var o=sessionStorage.getItem(P);if(o){var t=JSON.parse(o);D(t,!1)&&(!e||t.depth>e.depth)&&(e=t)}}catch(e){try{p(e,"getSession",sessionStorage.getItem(P))}catch(o){p(e,"getSession",o)}}return e}function O(){var e=0;window[window._pokiSessionGlobalName]&&window[window._pokiSessionGlobalName].count&&(e=window[window._pokiSessionGlobalName].count);try{var o=sessionStorage.getItem(P);if(o){var t=JSON.parse(o);t&&t.count&&t.count>e&&(e=t.count)}}catch(e){try{p(e,"getPreviousSessionCount",sessionStorage.getItem(P))}catch(o){p(e,"getPreviousSessionCount",o)}}try{var n=i(P);if(n){var a=JSON.parse(n);a&&a.count&&a.count>e&&(e=a.count)}}catch(e){try{p(e,"getPreviousSessionCount",i(P))}catch(o){p(e,"getPreviousSessionCount",o)}}return e}function C(){if(window[window._pokiSessionGlobalName]&&window[window._pokiSessionGlobalName].tab_id)return window[window._pokiSessionGlobalName].tab_id;try{var e=sessionStorage.getItem(P);if(e){var o=JSON.parse(e);if(o&&o.tab_id)return o.tab_id}}catch(e){}return c()}function M(){var e=0,o=I();o&&(e=o.depth);try{var t=i(P);if(t){var n=JSON.parse(t);!D(n,!o)||o&&n.id!==o.id||(e=Math.max(e,n.depth))}}catch(e){var a=null;try{a=i(P)||null}catch(e){}p(e,"getSessionDepth",a)}return e}function U(e,o,t){var n,a=null;try{(a=I())?(a.previous_page.path=a.page.path,a.previous_page.type=a.page.type,a.previous_page.id=a.page.id,a.previous_page.start=a.page.start,a.previous_page.pageview_id=a.page.pageview_id,a.page.path=e,a.page.type=o,a.page.id=t,a.page.start=Date.now(),a.page.pageview_id=c(),a.depth=M()+1,a.expire=Date.now()+T):a=function(e,o,t){try{var n=i(P);if(n){var a=JSON.parse(n);if(D(a,!0))return a.previous_page.path=a.page.path,a.previous_page.type=a.page.type,a.previous_page.id=a.page.id,a.previous_page.start=a.page.start,a.previous_page.pageview_id=a.page.pageview_id,a.page.path=e,a.page.type=o,a.page.id=t,a.page.start=Date.now(),a.page.pageview_id=c(),a.depth=M()+1,a.expire=Date.now()+T,a.tab_id=C(),s(P,JSON.stringify(a)),a}}catch(e){var r=null;try{r=i(P)||null}catch(e){}p(e,"getSessionDepth",r)}var d=c(),u=A({referrer:document.referrer,search:window.location.search}),l=u.source,g=u.medium;return{id:c(),expire:Date.now()+T,tab_id:C(),depth:1,count:O()+1,page:{path:e,type:o,id:t,start:Date.now(),pageview_id:d},previous_page:{},landing_page:{path:e,type:o,id:t,start:Date.now(),pageview_id:d},referrer_domain:G(),source:l,medium:g}}(e,o,t),a.count>1&&(n=parseInt(i(m),10)||w,s(l,"0",n),window[window._pokiUserGlobalName]&&(window[window._pokiUserGlobalName].is_new=!1));var r=JSON.stringify(a);try{sessionStorage.setItem(P,r)}catch(e){p(e,"updateSession-1")}window[window._pokiSessionGlobalName]=a;try{s(P,r)}catch(e){p(e,"updateSession-4")}}catch(e){p(e,"updateSession-2")}return a}function j(){try{return!I()}catch(e){return p(e,"isSessionExpired"),!0}}function E(e){try{var o=I();if(!o)return;e(o);var t=JSON.stringify(o);try{sessionStorage.setItem(P,t)}catch(e){}window[window._pokiSessionGlobalName]=o,s(P,t)}catch(e){p(e,"updateSessionProperties")}}function L(){E((function(e){e.expire=Date.now()+T}))}}},o={};function t(n){var a=o[n];if(void 0!==a)return a.exports;var i=o[n]={exports:{}};return e[n](i,i.exports,t),i.exports}t.d=(e,o)=>{for(var n in o)t.o(o,n)&&!t.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:o[n]})},t.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),t.o=(e,o)=>Object.prototype.hasOwnProperty.call(e,o),t.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t(885)})();
+		</script>
+
+		
+	</body>
+</html>

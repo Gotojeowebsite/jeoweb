@@ -246,10 +246,26 @@
 			<div class="modal-toolbar">
 				<button id="fullscreenBtn" class="modal-tool-btn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
 				<button id="lockMouseBtn" class="modal-tool-btn" aria-label="Lock Mouse" title="Lock Mouse (for 3D games)">🖱️</button>
+				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">➕ Request Game</a>
 				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
 				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Not working? Open directly">🔗 Not working?</button>
 				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
 			</div>
+			
+			<!-- Custom Loading Overlay -->
+			<div id="gameLoadingOverlay" class="game-loading-overlay hidden">
+				<div class="loading-content">
+					<div class="loading-spinner-large"></div>
+					<h2>Loading Game...</h2>
+					<p>While you wait, help us improve Jeoweb!</p>
+					<div class="loading-actions">
+						<button id="shareWebsiteBtn" class="loading-btn share-btn">🔗 Share Website</button>
+						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="loading-btn bug-btn">🐛 Report Bug</a>
+						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="loading-btn request-btn">➕ Request Game</a>
+					</div>
+				</div>
+			</div>
+
 			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation allow-modals allow-pointer-lock"></iframe>
 		</div>
 	</div>
