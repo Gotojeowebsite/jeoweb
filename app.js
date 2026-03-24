@@ -192,11 +192,25 @@ class App {
 	}
 
 	setAccent(color, save) {
-		document.documentElement.style.setProperty('--primary', color);
-		const r = parseInt(color.slice(1,3),16), g = parseInt(color.slice(3,5),16), b = parseInt(color.slice(5,7),16);
-		const darker = '#' + [r,g,b].map(c => Math.max(0, c - 30).toString(16).padStart(2,'0')).join('');
-		document.documentElement.style.setProperty('--primary-hover', darker);
-		if (save) localStorage.setItem('site-accent', color);
+		document.documentElement.style.setProperty('--accent', color);
+		// Simple darken for hover effect.
+		try {
+			let r = parseInt(color.slice(1, 3), 16),
+				g = parseInt(color.slice(3, 5), 16),
+				b = parseInt(color.slice(5, 7), 16);
+			// Darken by a factor (e.g., 0.8)
+			r = Math.floor(r * 0.9);
+			g = Math.floor(g * 0.9);
+			b = Math.floor(b * 0.9);
+			const hoverColor = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+			document.documentElement.style.setProperty('--accent-hover', hoverColor);
+		} catch (e) {
+			document.documentElement.style.setProperty('--accent-hover', color);
+		}
+
+		if (save) {
+			localStorage.setItem('site-accent', color);
+		}
 	}
 
 	loadBackground() {
@@ -266,10 +280,21 @@ class App {
 	}
 
 	applyBgImage(dataUrl) {
-		document.body.style.backgroundImage = 'url(' + dataUrl + ')';
-		document.body.style.backgroundSize = 'cover';
-		document.body.style.backgroundPosition = 'center';
-		document.body.style.backgroundAttachment = 'fixed';
+		let bgLayer = document.querySelector('.custom-background-layer');
+		if (!bgLayer) {
+			bgLayer = document.createElement('img');
+			bgLayer.className = 'custom-background-layer';
+			document.body.appendChild(bgLayer);
+		}
+		bgLayer.src = dataUrl;
+
+		let overlay = document.querySelector('.accessibility-overlay');
+		if (!overlay) {
+			overlay = document.createElement('div');
+			overlay.className = 'accessibility-overlay';
+			document.body.appendChild(overlay);
+		}
+
 		document.body.classList.add('has-bg-image');
 		const preview = document.getElementById('bgPreview');
 		if (preview) {
@@ -279,10 +304,12 @@ class App {
 	}
 
 	removeBgImage() {
-		document.body.style.backgroundImage = '';
-		document.body.style.backgroundSize = '';
-		document.body.style.backgroundPosition = '';
-		document.body.style.backgroundAttachment = '';
+		const bgLayer = document.querySelector('.custom-background-layer');
+		if (bgLayer) bgLayer.remove();
+
+		const overlay = document.querySelector('.accessibility-overlay');
+		if (overlay) overlay.remove();
+
 		document.body.classList.remove('has-bg-image');
 		const preview = document.getElementById('bgPreview');
 		if (preview) {
@@ -386,7 +413,7 @@ class App {
 			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
 			const badgeHtml = flashBadge + retroBadge + requestedBadge;
 			const card = document.createElement('div');
-			card.className = 'game-card';
+			card.className = 'game-card' + (g.status === 'broken' ? ' broken' : '');
 			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">▶ Play</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
@@ -520,7 +547,7 @@ class App {
 		const imgSrc = g.image || this.fallbackImage;
 		const isFav = this.isFavorite(g.name);
 		const card = document.createElement('div');
-		card.className = 'carousel-card';
+		card.className = 'carousel-card' + (g.status === 'broken' ? ' broken' : '');
 		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button></div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {

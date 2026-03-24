@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@nebula-services/bare-server-node": "^2.0.4",
-    "node-fetch": "^3.3.2"
+    "jsonrepair": "^3.13.3",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.40.0"
   }
 }

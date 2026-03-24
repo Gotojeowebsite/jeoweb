@@ -124,3 +124,20 @@ Run:
   pwsh ./chaos-batch-runner.ps1
 
   pwsh ./import-flash.ps1 --batch ./flash-batch.txt
+
+11) Node.js Automated Pipelines
+----------------------------------
+File: scripts/asset-scraper.js
+Purpose: Headless browser script (Puppeteer) to properly intercept and download dynamic game assets (WebGL payloads, .wasm, .data). Replaces static crawling.
+Run: 
+  node scripts/asset-scraper.js
+
+File: scripts/qa-tester.js
+Purpose: Quality Assurance script that iterates over games_list.json, tests if games load without 404/500 errors, and safely sets "status": "broken" if they fail.
+Run:
+  node scripts/qa-tester.js
+
+File: scripts/remediation.js
+Purpose: Self-healing script that reads "broken" games, tracks missing 404 assets, spoof-fetches them from the original host, and repairs the game.
+Run:
+  node scripts/remediation.js
