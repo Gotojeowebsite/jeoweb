@@ -42,7 +42,7 @@ body.theme-light {
 html { scroll-behavior: smooth; }
 
 body {
-font-family: -apple-system, 'Inter', 'Segoe UI', system-ui, sans-serif;
+font-family: 'Poppins', -apple-system, 'Inter', 'Segoe UI', system-ui, sans-serif;
 background: linear-gradient(135deg, #09090e 0%, #151226 50%, #0d0b17 100%);
 background-attachment: fixed;
 color: var(--text);
@@ -51,8 +51,33 @@ transition: background 0.3s, color 0.3s;
 }
 
 /* ========================================
-   CUSTOM BACKGROUND & A11Y OVERLAY
+   LOGO ANIMATION
    ======================================== */
+.brand-logo-svg {
+	margin-right: 8px;
+	overflow: visible;
+}
+
+.brand-logo-svg path {
+	transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transform-origin: center;
+}
+
+.brand-section:hover .logo-top {
+	transform: translateY(-3px) scale(1.05);
+}
+
+.brand-section:hover .logo-bottom {
+	transform: translateY(3px) scale(0.95);
+}
+
+.brand-text {
+font-size: 24px;
+font-weight: 800;
+color: var(--text);
+letter-spacing: -0.5px;
+text-transform: lowercase;
+}
 .custom-background-layer {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
@@ -129,18 +154,33 @@ z-index: 100;
 	box-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
 }
 
-.brand-section {
-display: flex;
-align-items: center;
-text-decoration: none;
-gap: 0;
+/* Ripple Effect */
+.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple-anim 0.6s linear;
+	background-color: rgba(255, 255, 255, 0.4);
+	pointer-events: none;
 }
 
-.brand-text {
-font-size: 22px;
-font-weight: 700;
-color: var(--text);
-letter-spacing: -0.5px;
+@keyframes ripple-anim {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+/* Staggered Waterfall Loading for Game Cards */
+@keyframes waterfall-in {
+	0% {
+		opacity: 0;
+		transform: translateY(30px) scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 .header-right { display: flex; align-items: center; gap: 8px; }
@@ -685,13 +725,16 @@ color: var(--accent);
 	font-size: 10px;
 	font-weight: 700;
 	color: #fff;
-	background: linear-gradient(135deg, #f59e0b, #d97706);
+	background: rgba(245, 158, 11, 0.4);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(245, 158, 11, 0.5);
 	padding: 3px 8px;
 	border-radius: 6px;
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	z-index: 5;
-	box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+	box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
 }
 
 .flash-hero-badge {
@@ -707,13 +750,16 @@ color: var(--accent);
 	font-size: 10px;
 	font-weight: 700;
 	color: #fff;
-	background: linear-gradient(135deg, #ec4899, #be185d);
+	background: rgba(236, 72, 153, 0.4);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(236, 72, 153, 0.5);
 	padding: 3px 8px;
 	border-radius: 6px;
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	z-index: 5;
-	box-shadow: 0 2px 6px rgba(236, 72, 153, 0.3);
+	box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
 }
 
 .requested-badge {
@@ -723,13 +769,16 @@ color: var(--accent);
 	font-size: 10px;
 	font-weight: 700;
 	color: #fff;
-	background: linear-gradient(135deg, #06b6d4, #0e7490);
+	background: rgba(6, 182, 212, 0.4);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(6, 182, 212, 0.5);
 	padding: 3px 8px;
 	border-radius: 6px;
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
 	z-index: 5;
-	box-shadow: 0 2px 6px rgba(6, 182, 212, 0.3);
+	box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
 }
 
 .retro-toggle {
@@ -1224,24 +1273,44 @@ margin-bottom: 16px;
 	-webkit-backdrop-filter: var(--glass-blur);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
 	cursor: pointer;
 	position: relative;
 	box-shadow: var(--shadow-md);
+	opacity: 0;
+	animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+}
+
+.carousel-card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: var(--radius);
+	background-image: var(--card-img);
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+	transition: opacity 0.4s ease, filter 0.4s ease;
+	opacity: 0;
+	filter: blur(12px) brightness(0.8);
+	transform: scale(0.9);
+}
+
+.carousel-card:hover::before {
+	opacity: 0.8;
+	filter: blur(20px) brightness(1.2);
+	transform: scale(1.05) translateY(10px);
 }
 
 .carousel-card:hover {
-	transform: translateY(-6px) scale(1.02);
 	border-color: rgba(255, 255, 255, 0.2);
-	box-shadow: var(--shadow-lg);
 }
 
 body.theme-light .carousel-card:hover {
 	border-color: rgba(0, 0, 0, 0.15);
-	box-shadow: var(--shadow-lg);
 }
 
 .carousel-card .game-thumb {
@@ -1335,19 +1404,40 @@ backdrop-filter: var(--glass-blur);
 -webkit-backdrop-filter: var(--glass-blur);
 border: 1px solid var(--border);
 border-radius: var(--radius);
-overflow: hidden;
 display: flex;
 flex-direction: column;
-transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
 cursor: pointer;
 position: relative;
 box-shadow: var(--shadow-md);
+opacity: 0;
+animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+transform-style: preserve-3d;
+transform: perspective(1000px);
+}
+
+.game-card::before {
+content: '';
+position: absolute;
+inset: 0;
+border-radius: var(--radius);
+background-image: var(--card-img);
+background-size: cover;
+background-position: center;
+z-index: -1;
+transition: opacity 0.4s ease, filter 0.4s ease;
+opacity: 0;
+filter: blur(12px) brightness(0.8);
+transform: scale(0.9);
+}
+
+.game-card:hover::before {
+opacity: 0.8;
+filter: blur(20px) brightness(1.2);
+transform: scale(1.05) translateY(10px);
 }
 
 .game-card:hover {
-transform: translateY(-6px) scale(1.02);
 border-color: rgba(255, 255, 255, 0.2);
-box-shadow: var(--shadow-lg);
 }
 
 body.theme-light .game-card:hover {
@@ -1360,6 +1450,8 @@ height: 140px;
 position: relative;
 overflow: hidden;
 background: var(--bg);
+border-top-left-radius: var(--radius);
+border-top-right-radius: var(--radius);
 }
 
 .game-thumb img {

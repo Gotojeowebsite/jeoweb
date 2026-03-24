@@ -16,8 +16,76 @@ class App {
 		this.initCloaker();
 		this.initFlashToggle();
 		this.initRetroToggle();
+		this.initAnimations();
 		this.bindUI();
 		this.bootstrap();
+	}
+
+	initAnimations() {
+		// 3D Parallax Hover for cards
+		document.addEventListener('mousemove', (e) => {
+			const card = e.target.closest('.game-card, .carousel-card');
+			if (!card) return;
+			
+			const rect = card.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			
+			const centerX = rect.width / 2;
+			const centerY = rect.height / 2;
+			
+			const rotateX = ((y - centerY) / centerY) * -8; // Max rotation 8deg
+			const rotateY = ((x - centerX) / centerX) * 8;
+			
+			card.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+			card.style.transition = 'none'; // remove transition for smooth tracking
+		});
+
+		document.addEventListener('mouseleave', (e) => {
+			// Actually we need mouseout from the card
+		}, true);
+
+		// More reliable way for mouseleave:
+		document.addEventListener('mouseout', (e) => {
+			const card = e.target.closest('.game-card, .carousel-card');
+			if (!card) return;
+			// check if leaving the card entirely
+			if (!card.contains(e.relatedTarget)) {
+				card.style.transform = ''; // reset to default CSS
+				card.style.transition = 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.3s';
+			}
+		});
+
+		// Ripple Click Effect
+		document.addEventListener('click', (e) => {
+			const btn = e.target.closest('button, .header-nav-link');
+			if (!btn || btn.classList.contains('color-wheel-input')) return;
+			
+			// Don't add ripples to elements without position relative
+			const style = window.getComputedStyle(btn);
+			if (style.position === 'static') {
+				btn.style.position = 'relative';
+				btn.style.overflow = 'hidden';
+			} else if (style.overflow !== 'hidden') {
+				btn.style.overflow = 'hidden';
+			}
+
+			const rect = btn.getBoundingClientRect();
+			const ripple = document.createElement('span');
+			const diameter = Math.max(rect.width, rect.height);
+			const radius = diameter / 2;
+
+			ripple.style.width = ripple.style.height = `${diameter}px`;
+			ripple.style.left = `${e.clientX - rect.left - radius}px`;
+			ripple.style.top = `${e.clientY - rect.top - radius}px`;
+			ripple.className = 'ripple';
+
+			btn.appendChild(ripple);
+
+			setTimeout(() => {
+				ripple.remove();
+			}, 600);
+		});
 	}
 
 	async bootstrap() {
@@ -402,12 +470,27 @@ class App {
 	}
 
 	renderGames() {
-		const q = (this.searchInput.value || '').toLowerCase();
+		const q = (this.searchInput.value || '').toLowerCase().trim();
+		const terms = q.split(/\s+/).filter(Boolean);
+		const rawQ = q.replace(/[^a-z0-9]/g, '');
+
 		this.gameGrid.innerHTML = '';
 		const filtered = this.games.filter(g => {
 			if (!this.showFlash && g.type === 'flash') return false;
 			if (!this.showRetro && g.type === 'snes') return false;
-			if (q && !g.name.toLowerCase().includes(q)) return false;
+			
+			if (q) {
+				const rawName = g.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+				const spacedName = g.name.toLowerCase().replace(/[-_]/g, ' ');
+				
+				// 1. Direct match on alphanumeric string (handles "subwaysurfers" == "subway-surfers")
+				const exactMatch = rawName.includes(rawQ);
+				
+				// 2. Out of order / spaced matching (handles "surfers subway" == "subway-surfers")
+				const outOfOrderMatch = terms.length > 0 && terms.every(term => spacedName.includes(term) || rawName.includes(term.replace(/[^a-z0-9]/g, '')));
+				
+				if (!exactMatch && !outOfOrderMatch) return false;
+			}
 			return true;
 		});
 		filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -424,10 +507,12 @@ class App {
 			const badgeHtml = flashBadge + retroBadge + requestedBadge;
 			const card = document.createElement('div');
 			card.className = 'game-card' + (g.status === 'broken' ? ' broken' : '');
+			card.style.setProperty('--card-img', `url('${imgSrc}')`);
 			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">▶ Play</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });
+			card.style.animationDelay = `${i * 0.03}s`;
 			this.gameGrid.appendChild(card);
 		});
 	}
@@ -511,8 +596,8 @@ class App {
 		this.favoritesSection.classList.remove('hidden');
 		this.favCount.textContent = favGames.length;
 		this.favoritesTrack.innerHTML = '';
-		favGames.forEach(g => {
-			this.favoritesTrack.appendChild(this.createCarouselCard(g));
+		favGames.forEach((g, i) => {
+			this.favoritesTrack.appendChild(this.createCarouselCard(g, i));
 		});
 	}
 
@@ -528,8 +613,8 @@ class App {
 		this.recentSection.classList.remove('hidden');
 		this.recentCount.textContent = recentGames.length;
 		this.recentTrack.innerHTML = '';
-		recentGames.forEach(g => {
-			this.recentTrack.appendChild(this.createCarouselCard(g));
+		recentGames.forEach((g, i) => {
+			this.recentTrack.appendChild(this.createCarouselCard(g, i));
 		});
 	}
 
@@ -561,23 +646,25 @@ class App {
 
 		if (this.newlyAddedTrack) {
 			this.newlyAddedTrack.innerHTML = '';
-			newGames.forEach(g => {
-				this.newlyAddedTrack.appendChild(this.createCarouselCard(g));
+			newGames.forEach((g, i) => {
+				this.newlyAddedTrack.appendChild(this.createCarouselCard(g, i));
 			});
 		}
 	}
 
-	createCarouselCard(g) {
+	createCarouselCard(g, index = 0) {
 		const imgSrc = g.image || this.fallbackImage;
 		const isFav = this.isFavorite(g.name);
 		const card = document.createElement('div');
 		card.className = 'carousel-card' + (g.status === 'broken' ? ' broken' : '');
+		card.style.setProperty('--card-img', `url('${imgSrc}')`);
 		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button></div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {
 			if (e.target.closest('.heart-btn')) return;
 			this.playGame(g);
 		});
+		card.style.animationDelay = `${index * 0.05}s`;
 		return card;
 	}
 
