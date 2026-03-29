@@ -50,6 +50,7 @@
 			<a href="retro.html" class="header-nav-link">🎮 Retro Games</a>
 			<a href="logs.html" class="header-nav-link">Logs</a>
 			<a href="links.html" class="header-nav-link">🔗 Links</a>
+			<a href="make-your-own.html" class="header-nav-link" style="color: var(--accent); font-weight: bold;">🚀 Host Your Own</a>
 			<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="header-nav-link feedback-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Help me make this website better!!!</a>
 		</div>
 		<div class="header-right">
@@ -128,6 +129,9 @@
 			</div>
 			<div class="theme-btn-wrap" data-tooltip="Dark Mode">
 				<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+			</div>
+			<div class="settings-btn-wrap" data-tooltip="Settings">
+				<button id="settingsBtn" class="header-btn" aria-label="Settings">⚙️</button>
 			</div>
 		</div>
 	</header>
@@ -253,28 +257,111 @@
 		<p>© 2026 jeo</p>
 	</footer>
 
+	<!-- Settings Modal -->
+	<div id="settingsModal" class="modal hidden" aria-hidden="true" style="z-index: 100000;">
+		<div class="modal-inner" style="max-width: 600px; max-height: 80vh; padding: 24px; border-radius: var(--radius); background: var(--card-bg); overflow-y: auto;">
+			<div class="modal-toolbar" style="margin-bottom: 20px;">
+				<h2 style="margin: 0; font-size: 24px; font-weight: bold; color: var(--text);">⚙️ Settings</h2>
+				<div style="flex-grow: 1;"></div>
+				<button id="closeSettingsModal" class="modal-close-btn" aria-label="Close">✕</button>
+			</div>
+
+			<div class="settings-section">
+				<h3>🚨 Panic Button</h3>
+				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Instantly hide the game and open a safe website. (Tip: pressing `Esc` also closes games)</p>
+				<div style="display: flex; gap: 10px; margin-bottom: 10px;">
+					<input type="text" id="panicKeyInput" class="cloaker-input" placeholder="Click to set hotkey..." readonly style="cursor: pointer; width: 120px; flex-shrink: 0;" />
+					<input type="text" id="panicUrlInput" class="cloaker-input" placeholder="Safe URL (e.g. https://classroom.google.com)" />
+					<button id="savePanicBtn" class="cloaker-apply-btn">Save</button>
+				</div>
+			</div>
+
+			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+			<div class="settings-section">
+				<h3>📦 Export / Import Profile</h3>
+				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Moving to your own site? Export your favorites, history, and settings!</p>
+				<div style="display: flex; gap: 10px;">
+					<button id="exportProfileBtn" class="loading-btn share-btn" style="flex: 1; padding: 10px; background: rgba(124, 58, 237, 0.2); border: 1px solid var(--accent); color: var(--text);">📤 Export Profile</button>
+					<label for="importProfileInput" class="loading-btn bug-btn" style="flex: 1; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); color: var(--text); cursor: pointer; text-align: center;">📥 Import Profile</label>
+					<input type="file" id="importProfileInput" accept=".jeo,.json" hidden />
+				</div>
+			</div>
+
+			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+			<div class="settings-section">
+				<h3>🎨 Theme Presets</h3>
+				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Choose a pre-built aesthetic for Jeoweb.</p>
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+					<button class="theme-preset-btn" data-preset="default" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Default</button>
+					<button class="theme-preset-btn" data-preset="cyberpunk" style="padding:10px; border-radius:8px; border:1px solid #f0f; background:#110022; color:#0ff; text-shadow: 0 0 5px #0ff; cursor:pointer;">Cyberpunk</button>
+					<button class="theme-preset-btn" data-preset="matrix" style="padding:10px; border-radius:8px; border:1px solid #0f0; background:#000; color:#0f0; font-family: monospace; cursor:pointer;">Matrix Hacker</button>
+					<button class="theme-preset-btn" data-preset="crt" style="padding:10px; border-radius:8px; border:1px solid #fff; background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; cursor:pointer; font-family: monospace;">Retro CRT</button>
+				</div>
+			</div>
+
+			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+			<div class="settings-section">
+				<h3>✨ Animations & Effects</h3>
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+					<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+						<span style="color:var(--text); font-size:14px;">3D Card Hover</span>
+						<div class="toggle-switch"><input type="checkbox" id="animHoverToggle" checked /><span class="toggle-slider"></span></div>
+					</label>
+					<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+						<span style="color:var(--text); font-size:14px;">Click Ripples</span>
+						<div class="toggle-switch"><input type="checkbox" id="animRippleToggle" checked /><span class="toggle-slider"></span></div>
+					</label>
+				</div>
+			</div>
+
+			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+
+			<div class="settings-section">
+				<h3>📐 Layout & Style</h3>
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+					<button class="layout-btn" data-layout="normal" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer;">Normal Grid</button>
+					<button class="layout-btn" data-layout="compact" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Compact Grid</button>
+				</div>
+				<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+					<button class="radius-btn" data-radius="square" style="padding:10px; border-radius:0px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Square</button>
+					<button class="radius-btn" data-radius="rounded" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer; font-size:14px;">Rounded</button>
+					<button class="radius-btn" data-radius="pill" style="padding:10px; border-radius:24px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Pill</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Play Modal -->
 	<div id="playModal" class="modal hidden" aria-hidden="true">
 		<div class="modal-inner">
 			<div class="modal-toolbar">
 				<button id="fullscreenBtn" class="modal-tool-btn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
-				<button id="lockMouseBtn" class="modal-tool-btn" aria-label="Lock Mouse" title="Lock Mouse (for 3D games)">🖱️</button>
 				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">➕ Request Game</a>
+				<a href="make-your-own.html" target="_blank" class="modal-tool-btn" style="text-decoration:none; color: var(--accent); border-color: var(--accent); background: rgba(124, 58, 237, 0.1);">🚀 Host Your Own</a>
 				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
-				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Not working? Open directly">🔗 Not working?</button>
+				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">🐛 Not working? Report it!</a>
+				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab">🔗 Open in new tab</button>
 				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
 			</div>
 			
 			<!-- Custom Loading Overlay -->
 			<div id="gameLoadingOverlay" class="game-loading-overlay hidden">
+				<div id="loadingDynamicBg" class="dynamic-bg"></div>
 				<div class="loading-content">
-					<div class="loading-spinner-large"></div>
-					<h2>Loading Game...</h2>
-					<p>While you wait, help us improve Jeoweb!</p>
-					<div class="loading-actions">
+					<svg class="loading-brand-logo" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M12 2L2 7l10 5 10-5-10-5z" class="logo-top"/>
+						<path d="M2 17l10 5 10-5M2 12l10 5 10-5" class="logo-bottom"/>
+					</svg>
+					<h2 id="loadingGameTitle">Loading Game...</h2>
+					<div class="loading-progress-container">
+						<div id="loadingProgressBar" class="loading-progress-bar"></div>
+					</div>
+					<p id="rotatingTip" class="rotating-tip">Jeo is fetching your game...</p>
+					<div class="loading-actions" style="margin-top: 24px;">
 						<button id="shareWebsiteBtn" class="loading-btn share-btn">🔗 Share Website</button>
-						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="loading-btn bug-btn">🐛 Report Bug</a>
-						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="loading-btn request-btn">➕ Request Game</a>
 					</div>
 				</div>
 			</div>
@@ -367,6 +454,5 @@
 		})();
 	</script>
 	<script src="theme-manager.js"></script>
-	<script src="pointer-lock.js"></script>
 </body>
 </html>

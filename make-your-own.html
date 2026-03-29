@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Make Your Own Jeoweb</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+		.guide-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 40px 24px;
+		}
+		.guide-header {
+			text-align: center;
+			margin-bottom: 48px;
+		}
+		.guide-header h1 {
+			font-size: 42px;
+			font-weight: 800;
+			background: linear-gradient(135deg, #a855f7, #ec4899);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin-bottom: 16px;
+			letter-spacing: -1px;
+		}
+		.guide-header p {
+			font-size: 16px;
+			color: var(--muted);
+			max-width: 600px;
+			margin: 0 auto;
+			line-height: 1.6;
+		}
+		.guide-card {
+			background: var(--card-bg);
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 32px;
+			margin-bottom: 32px;
+			backdrop-filter: var(--glass-blur);
+			-webkit-backdrop-filter: var(--glass-blur);
+		}
+		.guide-card h2 {
+			font-size: 24px;
+			font-weight: 700;
+			color: var(--text);
+			margin-bottom: 16px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+		.guide-card h2 span {
+			background: var(--accent);
+			color: white;
+			width: 32px;
+			height: 32px;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 16px;
+		}
+		.guide-step {
+			margin-bottom: 24px;
+		}
+		.guide-step h3 {
+			font-size: 18px;
+			color: var(--text);
+			margin-bottom: 8px;
+			font-weight: 600;
+		}
+		.guide-step p {
+			color: var(--muted);
+			font-size: 15px;
+			line-height: 1.6;
+			margin-bottom: 12px;
+		}
+		.guide-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: var(--accent);
+			color: white;
+			padding: 10px 20px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 600;
+			transition: background 0.2s, transform 0.2s;
+			margin-top: 8px;
+		}
+		.guide-btn:hover {
+			background: var(--accent-hover);
+			transform: translateY(-2px);
+		}
+		.code-block {
+			background: rgba(0,0,0,0.4);
+			border: 1px solid var(--border);
+			padding: 12px 16px;
+			border-radius: 8px;
+			font-family: monospace;
+			color: var(--text);
+			margin: 12px 0;
+			font-size: 14px;
+		}
+		body.theme-light .code-block {
+			background: rgba(0,0,0,0.05);
+		}
+	</style>
+</head>
+
+<body class="theme-dark">
+	
+	<!-- Reuse existing topbar for consistency -->
+	<header class="topbar">
+		<div class="header-left">
+			<a href="." class="brand-section">
+				<svg class="brand-logo-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<defs>
+						<linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" stop-color="#a855f7" />
+							<stop offset="100%" stop-color="#ec4899" />
+						</linearGradient>
+					</defs>
+					<path d="M12 2L2 7l10 5 10-5-10-5z" class="logo-top"/>
+					<path d="M2 17l10 5 10-5M2 12l10 5 10-5" class="logo-bottom"/>
+				</svg>
+				<div class="brand-text">jeo</div>
+			</a>
+			<a href="flash.html" class="header-nav-link">⚡ Flash Games</a>
+			<a href="retro.html" class="header-nav-link">🎮 Retro Games</a>
+			<a href="logs.html" class="header-nav-link">Logs</a>
+			<a href="links.html" class="header-nav-link">🔗 Links</a>
+			<a href="make-your-own.html" class="header-nav-link" style="color: var(--accent); font-weight: bold;">🚀 Host Your Own</a>
+		</div>
+		<div class="header-right">
+			<div class="theme-btn-wrap" data-tooltip="Dark Mode">
+				<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="main guide-container">
+		<div class="guide-header">
+			<h1>Make Your Own Unblockable Site</h1>
+			<p>If Jeoweb ever gets blocked by your school or network, you can easily create your own private copy in under 5 minutes. It's completely free and requires zero coding knowledge!</p>
+		</div>
+
+		<div class="guide-card">
+			<h2><span>0</span> Prerequisites</h2>
+			<div class="guide-step">
+				<p>To get started, you will need a free GitHub account. GitHub is where the code for this website lives.</p>
+				<a href="https://github.com/signup" target="_blank" class="guide-btn">Create a GitHub Account</a>
+			</div>
+		</div>
+
+		<div class="guide-card">
+			<h2><span>1</span> Method 1: Using GitHub Pages (Easiest)</h2>
+			<div class="guide-step">
+				<h3>Step 1: Fork the Repository</h3>
+				<p>"Forking" simply means making a personal copy of the code to your own account.</p>
+				<p>Go to the Jeoweb repository and click the <strong>"Fork"</strong> button in the top right corner.</p>
+				<a href="https://github.com/Gotojeowebsite/jeoweb/fork" target="_blank" class="guide-btn">Fork Jeoweb Now</a>
+			</div>
+			
+			<div class="guide-step">
+				<h3>Step 2: Enable GitHub Pages</h3>
+				<p>Once you have your own copy (it will say <em>your-username/jeoweb</em> at the top), go to the <strong>Settings</strong> tab of your repository.</p>
+				<p>On the left sidebar, click on <strong>Pages</strong>. Under the "Build and deployment" section, find "Branch". Change it from "None" to <strong>main</strong>, and click <strong>Save</strong>.</p>
+			</div>
+
+			<div class="guide-step">
+				<h3>Step 3: Find Your New Website Link</h3>
+				<p>Wait about 1-2 minutes for GitHub to build your site. Your personal unblocked games site will be available at:</p>
+				<div class="code-block">https://[Your-GitHub-Username].github.io/jeoweb/</div>
+				<p><em>(Replace [Your-GitHub-Username] with your actual username!)</em></p>
+				<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" style="color: var(--accent); font-size: 14px; text-decoration: none;">📖 View Official GitHub Pages Docs</a>
+			</div>
+		</div>
+
+		<div class="guide-card">
+			<h2><span>2</span> Method 2: Using Netlify (Custom Links)</h2>
+			<div class="guide-step">
+				<p>If you want a custom link that doesn't have "github.io" in it, Netlify is a great free option.</p>
+				<h3>Step 1: Fork the Repo</h3>
+				<p>Just like Method 1, you must first <a href="https://github.com/Gotojeowebsite/jeoweb/fork" target="_blank" style="color:var(--accent)">Fork the repository</a> to your GitHub account.</p>
+			</div>
+			
+			<div class="guide-step">
+				<h3>Step 2: Sign Up & Import</h3>
+				<p>Create a free account on Netlify using your GitHub account.</p>
+				<a href="https://app.netlify.com/signup" target="_blank" class="guide-btn">Sign up for Netlify</a>
+				<p style="margin-top: 12px;">Once logged in, click <strong>"Add new site"</strong> -> <strong>"Import an existing project"</strong> -> choose <strong>GitHub</strong>.</p>
+				<p>Select your newly forked <code>jeoweb</code> repository.</p>
+			</div>
+
+			<div class="guide-step">
+				<h3>Step 3: Deploy</h3>
+				<p>Scroll down to the bottom and simply click <strong>"Deploy without build commands"</strong> (or just "Deploy site"). Wait a minute for it to finish.</p>
+			</div>
+
+			<div class="guide-step">
+				<h3>Step 4: Customize Your Link</h3>
+				<p>Netlify will give your site a random funny name. Go to <strong>Site configuration</strong> -> <strong>Site details</strong> -> <strong>Site information</strong> and click <strong>Change site name</strong>.</p>
+				<p>You can name it something sneaky like <code>my-secret-math-homework.netlify.app</code>!</p>
+				<a href="https://docs.netlify.com/site-deploys/create-deploys/" target="_blank" style="color: var(--accent); font-size: 14px; text-decoration: none;">📖 View Official Netlify Docs</a>
+			</div>
+		</div>
+
+		<div class="guide-card">
+			<h2><span>3</span> How to Stay Updated</h2>
+			<div class="guide-step">
+				<p>I add new games to the main Jeoweb repository all the time! To get the new games on your personal site, you need to "Sync" your fork.</p>
+				<p>Go to your GitHub repository page (<em>your-username/jeoweb</em>). Right under the green "Code" button, you will see a button that says <strong>"Sync fork"</strong>.</p>
+				<p>Click it, then click <strong>"Update branch"</strong>. Within a few minutes, your personal website will automatically update with all the new games!</p>
+			</div>
+		</div>
+
+		<div style="text-align: center; margin-top: 40px;">
+			<a href="." class="guide-btn" style="padding: 14px 28px; font-size: 18px;">⬅ Back to Games</a>
+		</div>
+
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p>© 2026 jeo</p>
+	</footer>
+
+	<script>
+		// Simple theme toggler for this page
+		document.getElementById('themeToggle').addEventListener('click', () => {
+			if (document.body.classList.contains('theme-light')) {
+				document.body.classList.remove('theme-light');
+				document.body.classList.add('theme-dark');
+				localStorage.setItem('site-theme', 'dark');
+				document.getElementById('themeToggle').textContent = '🌙';
+			} else {
+				document.body.classList.remove('theme-dark');
+				document.body.classList.add('theme-light');
+				localStorage.setItem('site-theme', 'light');
+				document.getElementById('themeToggle').textContent = '☀️';
+			}
+		});
+		
+		// Load saved theme
+		if (localStorage.getItem('site-theme') === 'light') {
+			document.body.classList.add('theme-light');
+			document.body.classList.remove('theme-dark');
+			document.getElementById('themeToggle').textContent = '☀️';
+		}
+	</script>
+	<script src="theme-manager.js"></script>
+</body>
+</html>

@@ -13,6 +13,7 @@ class App {
 		this.loadTheme();
 		this.loadAccent();
 		this.loadBackground();
+		this.loadCustomizations();
 		this.initCloaker();
 		this.initFlashToggle();
 		this.initRetroToggle();
@@ -21,9 +22,25 @@ class App {
 		this.bootstrap();
 	}
 
+	loadCustomizations() {
+		// Layout
+		const layout = localStorage.getItem('jeo-layout') || 'normal';
+		if (layout === 'compact') document.body.classList.add('layout-compact');
+		
+		// Radius
+		const radius = localStorage.getItem('jeo-radius') || 'rounded';
+		document.body.classList.add(`radius-${radius}`);
+
+		// Animations
+		this.animHover = localStorage.getItem('jeo-anim-hover') !== 'false';
+		this.animRipple = localStorage.getItem('jeo-anim-ripple') !== 'false';
+		if (!this.animHover) document.body.classList.add('no-anim-hover');
+	}
+
 	initAnimations() {
 		// 3D Parallax Hover for cards
 		document.addEventListener('mousemove', (e) => {
+			if (!this.animHover) return;
 			const card = e.target.closest('.game-card, .carousel-card');
 			if (!card) return;
 			
@@ -41,10 +58,6 @@ class App {
 			card.style.transition = 'none'; // remove transition for smooth tracking
 		});
 
-		document.addEventListener('mouseleave', (e) => {
-			// Actually we need mouseout from the card
-		}, true);
-
 		// More reliable way for mouseleave:
 		document.addEventListener('mouseout', (e) => {
 			const card = e.target.closest('.game-card, .carousel-card');
@@ -58,6 +71,7 @@ class App {
 
 		// Ripple Click Effect
 		document.addEventListener('click', (e) => {
+			if (!this.animRipple) return;
 			const btn = e.target.closest('button, .header-nav-link');
 			if (!btn || btn.classList.contains('color-wheel-input')) return;
 			
@@ -107,6 +121,7 @@ class App {
 	}
 
 	async reloadGames() {
+		this.renderSkeletons();
 		const allItems = await this.resolveGames();
 		this.games = allItems;
 		console.log('Games loaded:', this.games.length);
@@ -114,6 +129,22 @@ class App {
 		this.renderCarousels();
 		this.renderGames();
 		this.hideLoading();
+	}
+
+	renderSkeletons() {
+		if (this.gameGrid) {
+			this.gameGrid.innerHTML = '';
+			for(let i=0; i<12; i++) {
+				this.gameGrid.innerHTML += `
+				<div class="skeleton-card">
+					<div class="skeleton-thumb"></div>
+					<div class="skeleton-content">
+						<div class="skeleton-title"></div>
+						<div class="skeleton-btn"></div>
+					</div>
+				</div>`;
+			}
+		}
 	}
 
 	async resolveGames() {
@@ -438,6 +469,258 @@ class App {
 				}
 			});
 		}
+
+		// Settings Modal Logic
+		const settingsBtn = document.getElementById('settingsBtn');
+		const settingsModal = document.getElementById('settingsModal');
+		const closeSettingsModal = document.getElementById('closeSettingsModal');
+		
+		if (settingsBtn && settingsModal && closeSettingsModal) {
+			settingsBtn.addEventListener('click', () => {
+				settingsModal.classList.remove('hidden');
+				settingsModal.setAttribute('aria-hidden', 'false');
+				document.body.style.overflow = 'hidden';
+			});
+			closeSettingsModal.addEventListener('click', () => {
+				settingsModal.classList.add('hidden');
+				settingsModal.setAttribute('aria-hidden', 'true');
+				document.body.style.overflow = '';
+			});
+		}
+
+		// Export Profile
+		const exportProfileBtn = document.getElementById('exportProfileBtn');
+		if (exportProfileBtn) {
+			exportProfileBtn.addEventListener('click', () => {
+				const profileData = {
+					favorites: JSON.parse(localStorage.getItem('jeo-favorites') || '[]'),
+					recentlyPlayed: JSON.parse(localStorage.getItem('jeo-recent') || '[]'),
+					theme: localStorage.getItem('site-theme'),
+					accent: localStorage.getItem('site-accent'),
+					bgColor: localStorage.getItem('site-bg-color'),
+					bgImage: localStorage.getItem('site-bg-image'),
+					cloak: JSON.parse(localStorage.getItem('jeo-cloak') || 'null'),
+					panicConfig: JSON.parse(localStorage.getItem('jeo-panic') || 'null')
+				};
+
+				const blob = new Blob([JSON.stringify(profileData, null, 2)], { type: 'application/json' });
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = `jeoweb-profile-${new Date().toISOString().slice(0,10)}.jeo`;
+				document.body.appendChild(a);
+				a.click();
+				document.body.removeChild(a);
+				URL.revokeObjectURL(url);
+
+				const originalText = exportProfileBtn.textContent;
+				exportProfileBtn.textContent = '✅ Exported!';
+				setTimeout(() => exportProfileBtn.textContent = originalText, 2000);
+			});
+		}
+
+		// Import Profile
+		const importProfileInput = document.getElementById('importProfileInput');
+		if (importProfileInput) {
+			importProfileInput.addEventListener('change', (e) => {
+				const file = e.target.files[0];
+				if (!file) return;
+
+				const reader = new FileReader();
+				reader.onload = (ev) => {
+					try {
+						const data = JSON.parse(ev.target.result);
+						if (data.favorites) localStorage.setItem('jeo-favorites', JSON.stringify(data.favorites));
+						if (data.recentlyPlayed) localStorage.setItem('jeo-recent', JSON.stringify(data.recentlyPlayed));
+						if (data.theme) localStorage.setItem('site-theme', data.theme);
+						if (data.accent) localStorage.setItem('site-accent', data.accent);
+						if (data.bgColor) localStorage.setItem('site-bg-color', data.bgColor);
+						if (data.bgImage) localStorage.setItem('site-bg-image', data.bgImage);
+						if (data.cloak) localStorage.setItem('jeo-cloak', JSON.stringify(data.cloak));
+						if (data.panicConfig) localStorage.setItem('jeo-panic', JSON.stringify(data.panicConfig));
+						
+						alert('Profile imported successfully! The page will now reload.');
+						window.location.reload();
+					} catch (err) {
+						alert('Invalid profile file.');
+						console.error(err);
+					}
+				};
+				reader.readAsText(file);
+			});
+		}
+
+		// Panic Button Logic
+		this.panicConfig = JSON.parse(localStorage.getItem('jeo-panic') || '{"key":"","url":"https://classroom.google.com"}');
+		const panicKeyInput = document.getElementById('panicKeyInput');
+		const panicUrlInput = document.getElementById('panicUrlInput');
+		const savePanicBtn = document.getElementById('savePanicBtn');
+
+		if (panicKeyInput && panicUrlInput && savePanicBtn) {
+			panicKeyInput.value = this.panicConfig.key || '';
+			panicUrlInput.value = this.panicConfig.url || 'https://classroom.google.com';
+
+			// Record Hotkey
+			panicKeyInput.addEventListener('keydown', (e) => {
+				e.preventDefault();
+				if (e.key === 'Escape' || e.key === 'Backspace' || e.key === 'Delete') {
+					panicKeyInput.value = '';
+				} else {
+					panicKeyInput.value = e.key;
+				}
+			});
+
+			// Save
+			savePanicBtn.addEventListener('click', () => {
+				this.panicConfig = {
+					key: panicKeyInput.value,
+					url: panicUrlInput.value || 'https://classroom.google.com'
+				};
+				localStorage.setItem('jeo-panic', JSON.stringify(this.panicConfig));
+				const og = savePanicBtn.textContent;
+				savePanicBtn.textContent = 'Saved!';
+				setTimeout(() => savePanicBtn.textContent = og, 2000);
+			});
+		}
+
+		// Listen for Panic Key globally
+		document.addEventListener('keydown', (e) => {
+			if (this.panicConfig && this.panicConfig.key && e.key === this.panicConfig.key) {
+				// Don't trigger if they are typing in an input!
+				if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+				
+				e.preventDefault();
+				
+				// Hide game modal if open
+				if (this.playModal && !this.playModal.classList.contains('hidden')) {
+					this.closePlayer();
+				}
+				
+				// Hide settings if open
+				if (settingsModal && !settingsModal.classList.contains('hidden')) {
+					settingsModal.classList.add('hidden');
+				}
+
+				// The ultimate panic: replace the whole document body with an iframe to the safe site
+				document.body.innerHTML = `<iframe src="${this.panicConfig.url}" style="position:fixed;top:0;left:0;width:100vw;height:100vh;border:none;z-index:9999999;background:#fff;"></iframe>`;
+			}
+		});
+
+		// Theme Presets Logic
+		document.querySelectorAll('.theme-preset-btn').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const preset = btn.dataset.preset;
+				if (preset === 'default') {
+					document.body.className = 'theme-dark';
+					this.setBgColor('#0c0b14', true);
+					this.setAccent('#7c3aed', true);
+					this.removeBgImage();
+					localStorage.removeItem('site-bg-image');
+					if (this.themeToggle) this.themeToggle.textContent = '🌙';
+					localStorage.setItem('site-theme', 'dark');
+				} else if (preset === 'cyberpunk') {
+					document.body.className = 'theme-dark';
+					this.setBgColor('#110022', true);
+					this.setAccent('#ff00ff', true); // Neon pink
+					this.removeBgImage();
+					localStorage.removeItem('site-bg-image');
+					if (this.themeToggle) this.themeToggle.textContent = '🌙';
+					localStorage.setItem('site-theme', 'dark');
+				} else if (preset === 'matrix') {
+					document.body.className = 'theme-dark';
+					this.setBgColor('#000000', true);
+					this.setAccent('#00ff00', true); // Hacker green
+					this.removeBgImage();
+					localStorage.removeItem('site-bg-image');
+					if (this.themeToggle) this.themeToggle.textContent = '🌙';
+					localStorage.setItem('site-theme', 'dark');
+				} else if (preset === 'crt') {
+					document.body.className = 'theme-dark';
+					this.setBgColor('#111111', true);
+					this.setAccent('#ffffff', true); // White retro
+					this.removeBgImage();
+					localStorage.removeItem('site-bg-image');
+					if (this.themeToggle) this.themeToggle.textContent = '🌙';
+					localStorage.setItem('site-theme', 'dark');
+				}
+				// Force input fields to update their colors
+				const bgInput = document.getElementById('bgColorInput');
+				const accentInput = document.getElementById('accentColorInput');
+				if (bgInput) bgInput.value = localStorage.getItem('site-bg-color') || '#0c0b14';
+				if (accentInput) accentInput.value = localStorage.getItem('site-accent') || '#7c3aed';
+			});
+		});
+
+		// Animation Toggles Logic
+		const animHoverToggle = document.getElementById('animHoverToggle');
+		const animRippleToggle = document.getElementById('animRippleToggle');
+		
+		if (animHoverToggle) {
+			animHoverToggle.checked = this.animHover;
+			animHoverToggle.addEventListener('change', () => {
+				this.animHover = animHoverToggle.checked;
+				localStorage.setItem('jeo-anim-hover', this.animHover);
+				if (this.animHover) document.body.classList.remove('no-anim-hover');
+				else document.body.classList.add('no-anim-hover');
+			});
+		}
+		if (animRippleToggle) {
+			animRippleToggle.checked = this.animRipple;
+			animRippleToggle.addEventListener('change', () => {
+				this.animRipple = animRippleToggle.checked;
+				localStorage.setItem('jeo-anim-ripple', this.animRipple);
+			});
+		}
+
+		// Layout Buttons Logic
+		document.querySelectorAll('.layout-btn').forEach(btn => {
+			const layout = btn.dataset.layout;
+			// Highlight current
+			const savedLayout = localStorage.getItem('jeo-layout') || 'normal';
+			if (layout === savedLayout) {
+				btn.style.borderColor = 'var(--accent)';
+				btn.style.background = 'rgba(124,58,237,0.1)';
+			}
+
+			btn.addEventListener('click', () => {
+				document.body.classList.remove('layout-compact');
+				if (layout === 'compact') document.body.classList.add('layout-compact');
+				localStorage.setItem('jeo-layout', layout);
+				
+				// Update UI highlighting
+				document.querySelectorAll('.layout-btn').forEach(b => {
+					b.style.borderColor = 'var(--border)';
+					b.style.background = 'var(--bg)';
+				});
+				btn.style.borderColor = 'var(--accent)';
+				btn.style.background = 'rgba(124,58,237,0.1)';
+			});
+		});
+
+		// Border Radius Logic
+		document.querySelectorAll('.radius-btn').forEach(btn => {
+			const r = btn.dataset.radius;
+			// Highlight current
+			const savedRadius = localStorage.getItem('jeo-radius') || 'rounded';
+			if (r === savedRadius) {
+				btn.style.borderColor = 'var(--accent)';
+				btn.style.background = 'rgba(124,58,237,0.1)';
+			}
+
+			btn.addEventListener('click', () => {
+				document.body.classList.remove('radius-square', 'radius-rounded', 'radius-pill');
+				document.body.classList.add(`radius-${r}`);
+				localStorage.setItem('jeo-radius', r);
+
+				// Update UI highlighting
+				document.querySelectorAll('.radius-btn').forEach(b => {
+					b.style.borderColor = 'var(--border)';
+					b.style.background = 'var(--bg)';
+				});
+				btn.style.borderColor = 'var(--accent)';
+				btn.style.background = 'rgba(124,58,237,0.1)';
+			});
+		});
 	}
 
 	initFlashToggle() {
@@ -571,7 +854,7 @@ class App {
 
 	playGame(game) {
 		this.trackRecentPlay(game);
-		this.openPlayer(game.url);
+		this.openPlayer(game.url, game);
 	}
 
 	/* =============== CAROUSEL RENDERING =============== */
@@ -690,7 +973,7 @@ class App {
 		return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	}
 
-	openPlayer(url) {
+	openPlayer(url, game) {
 		var target = url;
 		if (!target.match(/\.(html|swf)(\?|$)/i)) {
 			if (target.endsWith('/')) target += 'index.html';
@@ -699,30 +982,81 @@ class App {
 		this.currentGameUrl = target;
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
+		const loadingGameTitle = document.getElementById('loadingGameTitle');
+		const loadingDynamicBg = document.getElementById('loadingDynamicBg');
+		const progressBar = document.getElementById('loadingProgressBar');
+		
+		if (loadingGameTitle && game) loadingGameTitle.textContent = `Loading ${game.name}...`;
+		if (loadingDynamicBg && game && game.image) loadingDynamicBg.style.backgroundImage = `url('${game.image}')`;
+		if (progressBar) progressBar.style.width = '10%';
+
 		if (loadingOverlay) {
 			loadingOverlay.classList.remove('hidden');
+		}
+
+		// Tips rotation
+		const tips = [
+			"Jeo is fetching your game...",
+			"Tip: Use Tab Cloaker if the teacher walks by...",
+			"Reticulating splines...",
+			"Downloading more RAM...",
+			"Preparing the fun...",
+			"Did you know? You can favorite games to find them faster!",
+		];
+		const rotatingTip = document.getElementById('rotatingTip');
+		let tipIndex = 0;
+		let tipInterval = null;
+		if (rotatingTip) {
+			rotatingTip.textContent = tips[0];
+			tipInterval = setInterval(() => {
+				tipIndex = (tipIndex + 1) % tips.length;
+				rotatingTip.style.opacity = 0;
+				setTimeout(() => {
+					rotatingTip.textContent = tips[tipIndex];
+					rotatingTip.style.opacity = 1;
+				}, 300);
+			}, 3000);
 		}
 
 		// Show modal first so iframe layout doesn't break
 		this.playModal.classList.remove('hidden');
 		this.playModal.setAttribute('aria-hidden', 'false');
 		document.body.style.overflow = 'hidden';
+		
+		// Move iframe off-screen
+		this.gameFrame.classList.add('offscreen-iframe');
 		this.gameFrame.src = target;
+
+		// Fake progress
+		let progress = 10;
+		const progressInterval = setInterval(() => {
+			if (progress < 90) {
+				progress += Math.random() * 15;
+				if (progress > 90) progress = 90;
+				if (progressBar) progressBar.style.width = `${progress}%`;
+			}
+		}, 500);
 
 		let iframeLoaded = false;
 		let minTimeElapsed = false;
 
 		const hideOverlay = () => {
 			if (loadingOverlay && iframeLoaded && minTimeElapsed) {
-				loadingOverlay.classList.add('hidden');
+				clearInterval(progressInterval);
+				if (tipInterval) clearInterval(tipInterval);
+				if (progressBar) progressBar.style.width = '100%';
+				setTimeout(() => {
+					loadingOverlay.classList.add('hidden');
+					this.gameFrame.classList.remove('offscreen-iframe');
+				}, 400); // Wait a moment at 100%
 			}
 		};
 
-		// Enforce a minimum 4.5 second display time for the loading screen
+		// Enforce a minimum 2 second display time for the loading screen
 		setTimeout(() => {
 			minTimeElapsed = true;
 			hideOverlay();
-		}, 4500);
+		}, 2000);
 
 		// Hide overlay after iframe loads (if minimum time has elapsed)
 		this.gameFrame.onload = () => {
@@ -732,7 +1066,12 @@ class App {
 
 		// Ultimate fallback: force hide after 12 seconds
 		setTimeout(() => {
-			if (loadingOverlay) loadingOverlay.classList.add('hidden');
+			if (loadingOverlay) {
+				clearInterval(progressInterval);
+				if (tipInterval) clearInterval(tipInterval);
+				loadingOverlay.classList.add('hidden');
+				this.gameFrame.classList.remove('offscreen-iframe');
+			}
 		}, 12000);
 	}
 
@@ -756,6 +1095,7 @@ class App {
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden', 'true');
 		document.body.style.overflow = '';
+		this.gameFrame.classList.remove('offscreen-iframe');
 	}
 
 	/* =============== TAB CLOAKER =============== */
