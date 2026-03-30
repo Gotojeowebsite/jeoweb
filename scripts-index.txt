@@ -152,8 +152,35 @@ Purpose: The "Foolproof" Deep Downloader. Uses Puppeteer to traverse DOMs, penet
 Run:
   node scripts/deep-asset-scraper.js <Portal_URL> <Game_Slug>
 
-File: scripts/deep-batch-runner.js
+File: scripts-deep-batch-runner.js
 Purpose: Batch processing script for the deep asset scraper. It reads the URLs and slugs from 'deep-batch.txt', downloads them sequentially, and automatically rebuilds the catalog once finished.
 Format for deep-batch.txt: URL | Game-Slug
 Run:
   node scripts/deep-batch-runner.js
+
+12) Automated Testing & Scanning (Python)
+-----------------------------------------
+Prerequisites:
+  pip install playwright Pillow
+  playwright install chromium
+
+File: test_performance.py
+Purpose: Lightweight safety check for low-end PCs. Tests the first 5 games to ensure the system can handle headless browser automation.
+Run:
+  python test_performance.py
+
+File: broken_game_scanner.py
+Purpose: Comprehensive batch-testing script. Launches games, monitors 404s, and uses image analysis to detect "Black/White Screen" failures.
+Features: 
+  - Automatically marks broken games by injecting `<!--GAME BROKEN-->` into index.html.
+  - Logs results to broken_games.txt.
+Run:
+  python broken_game_scanner.py
+
+File: deep_scan_games.py
+Purpose: Strict validation tool to ensure games are 100% offline-ready and air-gapped.
+Features:
+  - Blocks and logs all external network requests (CDNs, analytics, APIs).
+  - Saves a list of verified offline games to working_games.txt.
+Run:
+  python deep_scan_games.py

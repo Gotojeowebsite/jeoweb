@@ -94,6 +94,15 @@ function findImage(folderPath, folderName) {
 	}
 }
 
+// Check if an HTML file has the <!--GAME BROKEN--> marker
+function isBrokenGame(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		return content.includes('<!--GAME BROKEN-->');
+	} catch (e) {}
+	return false;
+}
+
 function scan() {
 	const results = [];
 	if (!fs.existsSync(ASSETS_DIR)) {
@@ -123,6 +132,7 @@ function scan() {
 		const isFlash = hasSwfFiles(folderPath);
 		const isRetro = !isFlash && isEmulatorGame(htmlFilePath);
 		const requested = isRequestedGame(htmlFilePath);
+		const broken = isBrokenGame(htmlFilePath);
 
 		// Determine specific retro type (snes, gba, etc.)
 		let type = 'webgl';
@@ -150,6 +160,7 @@ function scan() {
 			addedTime
 		};
 		if (requested) entry.requested = true;
+		if (broken) entry.status = 'broken';
 		results.push(entry);
 	}
 

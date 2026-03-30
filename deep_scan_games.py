@@ -13,7 +13,7 @@ WORKING_GAMES_FILE = "working_games.txt"
 # 1. Setup a local web server to serve the Assets folder
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=ASSETS_DIR, **kwargs)
+        super().__init__(*args, directory=os.getcwd(), **kwargs)
     
     # Suppress server logs to keep our console output clean
     def log_message(self, format, *args):
@@ -62,7 +62,7 @@ def deep_scan_assets():
             page.on("response", on_response)
             page.on("request", on_request)
 
-            game_url = f"http://127.0.0.1:{PORT}/{game_name}/index.html"
+            game_url = f"http://127.0.0.1:{PORT}/Assets/{game_name}/index.html"
             print(f"Testing: {game_name}...")
 
             try:
