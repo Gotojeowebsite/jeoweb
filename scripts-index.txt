@@ -161,7 +161,7 @@ Run:
 12) Automated Testing & Scanning (Python)
 -----------------------------------------
 Prerequisites:
-  pip install playwright Pillow
+  pip install playwright
   playwright install chromium
 
 File: test_performance.py
@@ -170,12 +170,19 @@ Run:
   python test_performance.py
 
 File: broken_game_scanner.py
-Purpose: Comprehensive batch-testing script. Launches games, monitors 404s, and uses image analysis to detect "Black/White Screen" failures.
+Purpose: Comprehensive offline-readiness scanner. Detects true hard-failure breakage (missing critical local assets, runtime startup failures, and blocking external dependencies).
 Features: 
-  - Automatically marks broken games by injecting `<!--GAME BROKEN-->` into index.html.
-  - Logs results to broken_games.txt.
+  - Outputs broken_games.txt and broken_games.json for hard failures only.
+  - Outputs needs_review_games.txt for warnings and working_games.txt for clean games.
+  - Saves full structured results to scan_results.json.
+  - Optional marker sync via --sync-markers.
+  - Persistent resume/checkpoint support via --resume and --state-file.
 Run:
   python broken_game_scanner.py
+Resume from last checkpoint:
+  python broken_game_scanner.py --resume
+Use a custom checkpoint file:
+  python broken_game_scanner.py --resume --state-file scan_state.json
 
 File: deep_scan_games.py
 Purpose: Strict validation tool to ensure games are 100% offline-ready and air-gapped.
