@@ -123,7 +123,14 @@ class App {
 	async reloadGames() {
 		this.renderSkeletons();
 		const allItems = await this.resolveGames();
-		this.games = allItems;
+		const scanStatusByName = await this.resolveScanStatusMap();
+		this.games = allItems.map((game) => {
+			const currentStatus = this.normalizeScanStatus(game.status);
+			const scannedStatus = scanStatusByName.get(game.name) || '';
+			const mergedStatus = scannedStatus || currentStatus;
+			if (!mergedStatus) return game;
+			return { ...game, status: mergedStatus };
+		});
 		console.log('Games loaded:', this.games.length);
 		this.updateCounter();
 		this.renderCarousels();
@@ -167,6 +174,37 @@ class App {
 			console.warn('Could not load /api/games', e);
 		}
 		return [];
+	}
+
+	normalizeScanStatus(status) {
+		const raw = String(status || '').toLowerCase();
+		if (raw === 'broken' || raw === 'warning' || raw === 'under_maintenance' || raw === 'under-maintenance') {
+			return 'under_maintenance';
+		}
+		return '';
+	}
+
+	isUnderMaintenance(game) {
+		return this.normalizeScanStatus(game && game.status) === 'under_maintenance';
+	}
+
+	async resolveScanStatusMap() {
+		const statusByName = new Map();
+		try {
+			const response = await fetch('scan_results.json', { cache: 'no-store' });
+			if (!response.ok) return statusByName;
+			const data = await response.json();
+			if (!Array.isArray(data)) return statusByName;
+			data.forEach((item) => {
+				if (!item || typeof item !== 'object') return;
+				const name = typeof item.name === 'string' ? item.name : '';
+				const normalized = this.normalizeScanStatus(item.status);
+				if (name && normalized) statusByName.set(name, normalized);
+			});
+		} catch (e) {
+			console.warn('Could not load scan_results.json', e);
+		}
+		return statusByName;
 	}
 
 	initElements() {
@@ -784,14 +822,17 @@ class App {
 		filtered.forEach((g, i) => {
 			const imgSrc = g.image || this.fallbackImage;
 			const isFav = this.isFavorite(g.name);
+			const isMaintenance = this.isUnderMaintenance(g);
 			const flashBadge = g.type === 'flash' ? '<span class="flash-badge">⚡ Flash</span>' : '';
 			const retroBadge = g.type === 'snes' ? '<span class="retro-badge">🎮 Retro</span>' : '';
 			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
-			const badgeHtml = flashBadge + retroBadge + requestedBadge;
+			const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
+			const badgeHtml = flashBadge + retroBadge + requestedBadge + maintenanceBadge;
+			const playLabel = isMaintenance ? '⚠ Play at Risk' : '▶ Play';
 			const card = document.createElement('div');
-			card.className = 'game-card' + (g.status === 'broken' ? ' broken' : '');
+			card.className = 'game-card' + (isMaintenance ? ' under-maintenance' : '');
 			card.style.setProperty('--card-img', `url('${imgSrc}')`);
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">▶ Play</button></div></div>';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">' + playLabel + '</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });
@@ -853,6 +894,12 @@ class App {
 	}
 
 	playGame(game) {
+		if (this.isUnderMaintenance(game)) {
+			const proceed = window.confirm(
+				game.name + ' is currently under maintenance and may not work correctly.\n\nYou can still play at your own risk.\n\nContinue?'
+			);
+			if (!proceed) return;
+		}
 		this.trackRecentPlay(game);
 		this.openPlayer(game.url, game);
 	}
@@ -938,10 +985,12 @@ class App {
 	createCarouselCard(g, index = 0) {
 		const imgSrc = g.image || this.fallbackImage;
 		const isFav = this.isFavorite(g.name);
+		const isMaintenance = this.isUnderMaintenance(g);
+		const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
 		const card = document.createElement('div');
-		card.className = 'carousel-card' + (g.status === 'broken' ? ' broken' : '');
+		card.className = 'carousel-card' + (isMaintenance ? ' under-maintenance' : '');
 		card.style.setProperty('--card-img', `url('${imgSrc}')`);
-		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button></div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
+		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {
 			if (e.target.closest('.heart-btn')) return;

@@ -11,17 +11,20 @@ Output files:
     broken_games.txt / broken_games.json     -> hard failures only
     needs_review_games.txt                   -> warnings that may need fixes
     working_games.txt                        -> clean scans
+    checked_games.txt                        -> all scanned game names
     scan_results.json                        -> full structured report
 """
 
 import argparse
 import http.server
 import json
+import multiprocessing as mp
 import os
 import re
 import socketserver
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
@@ -105,6 +108,16 @@ ADVISORY_WARNING_CODES = {
     "EXTERNAL_NONCRITICAL_FAILED",
     "LOCAL_IGNORED_HTTP",
     "LOCAL_IGNORED_MISSING",
+}
+
+RETRYABLE_SCAN_CODES = {
+    "SCAN_HARD_TIMEOUT",
+    "SCAN_WORKER_CRASH",
+    "SCAN_WORKER_NO_RESULT",
+    "SCAN_WORKER_ERROR",
+    "NAV_TIMEOUT",
+    "NAV_ERROR",
+    "NAV_EXCEPTION",
 }
 
 
@@ -195,7 +208,10 @@ class Config:
     port: int
     wait_seconds: float
     timeout_ms: int
+    hard_timeout_seconds: float
     batch_size: int
+    max_attempts: int
+    parallel_workers: int
     max_games: Optional[int]
     only_games: Optional[Set[str]]
     strict_external: bool
@@ -205,6 +221,7 @@ class Config:
     report_json: Path
     working_log: Path
     review_log: Path
+    checked_log: Path
     resume: bool
     state_file: Path
 
@@ -240,7 +257,7 @@ class OfflineAwareHandler(http.server.SimpleHTTPRequestHandler):
     def copyfile(self, source, outputfile) -> None:
         try:
             super().copyfile(source, outputfile)
-        except (BrokenPipeError, ConnectionResetError):
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
             # Browser aborts are expected during heavy scans.
             return
 
@@ -257,7 +274,25 @@ def parse_args() -> Config:
     parser.add_argument("--port", type=int, default=8081, help="Temporary local server port")
     parser.add_argument("--wait-seconds", type=float, default=8.0, help="Time to let each game bootstrap")
     parser.add_argument("--timeout-ms", type=int, default=25000, help="Navigation timeout in milliseconds")
+    parser.add_argument(
+        "--hard-timeout-seconds",
+        type=float,
+        default=120.0,
+        help="Hard wall-clock timeout per game; timed-out games are marked broken and scan continues",
+    )
     parser.add_argument("--batch-size", type=int, default=20, help="Games per browser context batch")
+    parser.add_argument(
+        "--max-attempts",
+        type=int,
+        default=2,
+        help="Maximum isolated retry attempts per game when a worker times out/crashes",
+    )
+    parser.add_argument(
+        "--parallel-workers",
+        type=int,
+        default=1,
+        help="Number of games to scan in parallel (1 keeps sequential order)",
+    )
     parser.add_argument("--max-games", type=int, default=None, help="Limit scan to first N games")
     parser.add_argument("--only", nargs="*", default=None, help="Only scan these game folder names")
     parser.add_argument(
@@ -274,6 +309,7 @@ def parse_args() -> Config:
     parser.add_argument("--broken-json", default="broken_games.json", help="Output JSON file for broken games")
     parser.add_argument("--report-json", default="scan_results.json", help="Output JSON file with all results")
     parser.add_argument("--working-log", default="working_games.txt", help="Output text file for clean games")
+    parser.add_argument("--checked-log", default="checked_games.txt", help="Output text file for all scanned games")
     parser.add_argument(
         "--review-log",
         default="needs_review_games.txt",
@@ -301,7 +337,10 @@ def parse_args() -> Config:
         port=args.port,
         wait_seconds=max(args.wait_seconds, 0.1),
         timeout_ms=max(args.timeout_ms, 1000),
+        hard_timeout_seconds=max(args.hard_timeout_seconds, 5.0),
         batch_size=max(args.batch_size, 1),
+        max_attempts=max(args.max_attempts, 1),
+        parallel_workers=max(args.parallel_workers, 1),
         max_games=args.max_games if args.max_games and args.max_games > 0 else None,
         only_games=set(args.only) if args.only else None,
         strict_external=args.strict_external,
@@ -310,6 +349,7 @@ def parse_args() -> Config:
         broken_json=(root_dir / args.broken_json).resolve(),
         report_json=(root_dir / args.report_json).resolve(),
         working_log=(root_dir / args.working_log).resolve(),
+        checked_log=(root_dir / args.checked_log).resolve(),
         review_log=(root_dir / args.review_log).resolve(),
         resume=args.resume,
         state_file=(root_dir / args.state_file).resolve(),
@@ -433,6 +473,10 @@ def collect_targets(config: Config, catalog: Dict[str, Dict[str, object]]) -> Li
 
 def split_batches(items: List[GameTarget], batch_size: int) -> List[List[GameTarget]]:
     return [items[i : i + batch_size] for i in range(0, len(items), batch_size)]
+
+
+def build_game_url(config: Config, target: GameTarget) -> str:
+    return f"http://localhost:{config.port}/Assets/{quote(target.name)}/{safe_url_path(target.entry_file)}"
 
 
 def safe_url_path(path: str) -> str:
@@ -688,9 +732,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     page.on("console", on_console)
     page.on("pageerror", on_page_error)
 
-    game_url = (
-        f"http://localhost:{config.port}/Assets/{quote(target.name)}/{safe_url_path(target.entry_file)}"
-    )
+    game_url = build_game_url(config, target)
 
     try:
         page.goto(game_url, wait_until="domcontentloaded", timeout=config.timeout_ms)
@@ -756,6 +798,147 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     )
 
 
+def make_broken_result(target: GameTarget, elapsed_seconds: float, code: str, message: str, url: str) -> GameResult:
+    return GameResult(
+        name=target.name,
+        game_type=target.game_type,
+        entry_file=target.entry_file,
+        status="broken",
+        elapsed_seconds=elapsed_seconds,
+        critical_issues=[Issue(code=code, message=message, severity="critical", url=url)],
+        warnings=[],
+        probe={},
+    )
+
+
+def scan_one_game_worker(config: Config, target: GameTarget, output_queue) -> None:
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=True,
+                args=["--disable-dev-shm-usage", "--no-sandbox", "--disable-setuid-sandbox"],
+            )
+            context = browser.new_context(viewport={"width": 1280, "height": 720})
+            result = scan_one_game(context, config, target)
+            context.close()
+            browser.close()
+
+        output_queue.put({"ok": True, "result": result.as_dict()})
+    except Exception as exc:
+        output_queue.put({"ok": False, "error": str(exc)})
+
+
+def run_isolated_game_scan(config: Config, target: GameTarget) -> GameResult:
+    game_url = build_game_url(config, target)
+    start_time = time.perf_counter()
+
+    ctx = mp.get_context("spawn")
+    output_queue = ctx.Queue()
+    process = ctx.Process(target=scan_one_game_worker, args=(config, target, output_queue))
+    process.start()
+
+    try:
+        process.join(config.hard_timeout_seconds)
+        elapsed = time.perf_counter() - start_time
+
+        if process.is_alive():
+            process.terminate()
+            process.join(timeout=5)
+            if process.is_alive():
+                process.kill()
+                process.join(timeout=5)
+            return make_broken_result(
+                target,
+                elapsed,
+                "SCAN_HARD_TIMEOUT",
+                f"Game scan exceeded hard timeout of {config.hard_timeout_seconds:.0f}s",
+                game_url,
+            )
+
+        if process.exitcode not in (0, None):
+            return make_broken_result(
+                target,
+                elapsed,
+                "SCAN_WORKER_CRASH",
+                f"Isolated worker exited with code {process.exitcode}",
+                game_url,
+            )
+
+        payload = None
+        try:
+            if not output_queue.empty():
+                payload = output_queue.get_nowait()
+        except Exception:
+            payload = None
+
+        if not isinstance(payload, dict):
+            return make_broken_result(
+                target,
+                elapsed,
+                "SCAN_WORKER_NO_RESULT",
+                "Isolated worker finished without returning a scan result",
+                game_url,
+            )
+
+        if not payload.get("ok"):
+            return make_broken_result(
+                target,
+                elapsed,
+                "SCAN_WORKER_ERROR",
+                f"Isolated worker exception: {payload.get('error', 'unknown error')}",
+                game_url,
+            )
+
+        raw_result = payload.get("result")
+        if isinstance(raw_result, dict):
+            parsed = GameResult.from_dict(raw_result)
+            if parsed.name:
+                return parsed
+
+        return make_broken_result(
+            target,
+            elapsed,
+            "SCAN_WORKER_NO_RESULT",
+            "Isolated worker returned an invalid scan payload",
+            game_url,
+        )
+    finally:
+        try:
+            output_queue.close()
+        except Exception:
+            pass
+
+
+def scan_one_game_with_retries(config: Config, target: GameTarget) -> GameResult:
+    last_result: Optional[GameResult] = None
+    for attempt in range(1, config.max_attempts + 1):
+        if config.max_attempts > 1:
+            print(f"  Attempt {attempt}/{config.max_attempts}...")
+
+        result = run_isolated_game_scan(config, target)
+        last_result = result
+
+        has_retryable_critical = any(issue.code in RETRYABLE_SCAN_CODES for issue in result.critical_issues)
+        should_retry = result.status == "broken" and has_retryable_critical and attempt < config.max_attempts
+        if should_retry:
+            lead = result.critical_issues[0].message if result.critical_issues else "retrying after critical failure"
+            print(f"  RETRY: {lead}")
+            continue
+
+        return result
+
+    if last_result is not None:
+        return last_result
+
+    return make_broken_result(
+        target,
+        0.0,
+        "SCAN_WORKER_NO_RESULT",
+        "Unexpected empty scan result after retry loop",
+        build_game_url(config, target),
+    )
+
+
 def write_outputs(config: Config, results: List[GameResult]) -> None:
     broken = [r for r in results if r.status == "broken"]
     warning = [r for r in results if r.status == "warning"]
@@ -771,6 +954,10 @@ def write_outputs(config: Config, results: List[GameResult]) -> None:
 
     with config.working_log.open("w", encoding="utf-8") as handle:
         for result in ok:
+            handle.write(f"{result.name}\n")
+
+    with config.checked_log.open("w", encoding="utf-8") as handle:
+        for result in results:
             handle.write(f"{result.name}\n")
 
     with config.review_log.open("w", encoding="utf-8") as handle:
@@ -861,21 +1048,17 @@ def run_scan(config: Config) -> List[GameResult]:
         f"Scanning {len(remaining_targets)} remaining games "
         f"(total target set: {len(targets)}) in batches of {config.batch_size}..."
     )
+    if config.parallel_workers > 1:
+        print(f"Parallel workers: {config.parallel_workers}")
 
     try:
-        with sync_playwright() as p:
-            browser = p.chromium.launch(
-                headless=True,
-                args=["--disable-dev-shm-usage", "--no-sandbox", "--disable-setuid-sandbox"],
-            )
-
-            batches = split_batches(remaining_targets, config.batch_size)
-            for batch_index, batch in enumerate(batches, start=1):
-                print(f"\n--- Batch {batch_index}/{len(batches)} ({len(batch)} games) ---")
-                context = browser.new_context(viewport={"width": 1280, "height": 720})
+        batches = split_batches(remaining_targets, config.batch_size)
+        for batch_index, batch in enumerate(batches, start=1):
+            print(f"\n--- Batch {batch_index}/{len(batches)} ({len(batch)} games) ---")
+            if config.parallel_workers == 1:
                 for target in batch:
                     print(f"Testing: {target.name} ({target.game_type})")
-                    result = scan_one_game(context, config, target)
+                    result = scan_one_game_with_retries(config, target)
                     results.append(result)
                     save_state_results(config.state_file, results, len(targets))
                     write_outputs(config, results)
@@ -889,9 +1072,42 @@ def run_scan(config: Config) -> List[GameResult]:
                         print(f"  REVIEW: {lead}")
                     else:
                         print("  OK")
-                context.close()
+                continue
 
-            browser.close()
+            for target in batch:
+                print(f"Queueing: {target.name} ({target.game_type})")
+
+            with ThreadPoolExecutor(max_workers=config.parallel_workers) as executor:
+                future_map = {
+                    executor.submit(scan_one_game_with_retries, config, target): target
+                    for target in batch
+                }
+                for future in as_completed(future_map):
+                    target = future_map[future]
+                    try:
+                        result = future.result()
+                    except Exception as exc:
+                        result = make_broken_result(
+                            target,
+                            0.0,
+                            "SCAN_WORKER_ERROR",
+                            f"Parallel scan execution exception: {exc}",
+                            build_game_url(config, target),
+                        )
+
+                    results.append(result)
+                    save_state_results(config.state_file, results, len(targets))
+                    write_outputs(config, results)
+
+                    if result.status == "broken":
+                        lead = result.critical_issues[0].message if result.critical_issues else "hard failure"
+                        print(f"Done {target.name}: BROKEN - {lead}")
+                    elif result.status == "warning":
+                        ordered = order_warnings_for_output(result.warnings)
+                        lead = ordered[0].message if ordered else "needs review"
+                        print(f"Done {target.name}: REVIEW - {lead}")
+                    else:
+                        print(f"Done {target.name}: OK")
     finally:
         server.shutdown()
         server.server_close()
@@ -910,6 +1126,7 @@ def run_scan(config: Config) -> List[GameResult]:
     print(f"  Needs review: {warning_count}")
     print(f"  OK: {ok_count}")
     print(f"  Broken log: {config.broken_log}")
+    print(f"  Checked log: {config.checked_log}")
     print(f"  Review log: {config.review_log}")
     print(f"  Full report: {config.report_json}")
 
