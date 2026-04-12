@@ -123,11 +123,13 @@ class App {
 	async reloadGames() {
 		this.renderSkeletons();
 		const allItems = await this.resolveGames();
-		const scanStatusByName = await this.resolveScanStatusMap();
+		const maintenanceStatusByName = await this.resolveMaintenanceStatusMap();
+		const scanStatusByName = maintenanceStatusByName.size ? new Map() : await this.resolveScanStatusMap();
 		this.games = allItems.map((game) => {
 			const currentStatus = this.normalizeScanStatus(game.status);
+			const maintenanceStatus = maintenanceStatusByName.get(game.name) || '';
 			const scannedStatus = scanStatusByName.get(game.name) || '';
-			const mergedStatus = scannedStatus || currentStatus;
+			const mergedStatus = maintenanceStatus || scannedStatus || currentStatus;
 			if (!mergedStatus) return game;
 			return { ...game, status: mergedStatus };
 		});
@@ -178,7 +180,7 @@ class App {
 
 	normalizeScanStatus(status) {
 		const raw = String(status || '').toLowerCase();
-		if (raw === 'broken' || raw === 'warning' || raw === 'under_maintenance' || raw === 'under-maintenance') {
+		if (raw === 'broken' || raw === 'under_maintenance' || raw === 'under-maintenance') {
 			return 'under_maintenance';
 		}
 		return '';
@@ -203,6 +205,27 @@ class App {
 			});
 		} catch (e) {
 			console.warn('Could not load scan_results.json', e);
+		}
+		return statusByName;
+	}
+
+	async resolveMaintenanceStatusMap() {
+		const statusByName = new Map();
+		try {
+			const response = await fetch('maintenance_status.json', { cache: 'no-store' });
+			if (!response.ok) return statusByName;
+			const data = await response.json();
+			const games = data && typeof data === 'object' ? data.games : null;
+			if (!games || typeof games !== 'object') return statusByName;
+			Object.entries(games).forEach(([name, entry]) => {
+				if (!name || !entry || typeof entry !== 'object') return;
+				const raw = String(entry.status || '').toLowerCase();
+				if (raw === 'under_maintenance' || raw === 'under-maintenance') {
+					statusByName.set(name, 'under_maintenance');
+				}
+			});
+		} catch (e) {
+			console.warn('Could not load maintenance_status.json', e);
 		}
 		return statusByName;
 	}

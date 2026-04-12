@@ -68,6 +68,11 @@ IGNORED_LOCAL_404_PATTERNS = [
     re.compile(r"\.map$", re.IGNORECASE),
     re.compile(r"^/js/main\.js$", re.IGNORECASE),
     re.compile(r"^/css/main\.css$", re.IGNORECASE),
+    re.compile(r"^/assets/scripts/game\.js$", re.IGNORECASE),
+    re.compile(r"^/assets/promo/promo\.js$", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/challenge-platform/scripts/jsd/main\.js$", re.IGNORECASE),
+    re.compile(r"^/gadgets/evthdlr", re.IGNORECASE),
+    re.compile(r"^/sockjs-node/", re.IGNORECASE),
     re.compile(r"/emulatorjs/cores/reports/[^/]+\.json$", re.IGNORECASE),
     re.compile(r"-legacy-wasm\.data$", re.IGNORECASE),
 ]
@@ -79,6 +84,19 @@ OPTIONAL_EXTERNAL_HOST_PATTERNS = [
     re.compile(r"(^|\.)googlesyndication\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)fonts\.googleapis\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)gstatic\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)acscdn\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)api\.gameanalytics\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)gamemonkey\.org$", re.IGNORECASE),
+    re.compile(r"(^|\.)gamedistribution\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)poki\.comsa$", re.IGNORECASE),
+    re.compile(r"(^|\.)doubleclick\.netsa$", re.IGNORECASE),
+    re.compile(r"(^|\.)googleapis\.comsa$", re.IGNORECASE),
+    re.compile(r"(^|\.)api\.azgames\.io$", re.IGNORECASE),
+    re.compile(r"(^|\.)ubg235\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)raygun\.io$", re.IGNORECASE),
+    re.compile(r"(^|\.)crwdcntrl\.net$", re.IGNORECASE),
+    re.compile(r"(^|\.)improvedigital\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)cloudflareinsights\.com$", re.IGNORECASE),
 ]
 
 CRITICAL_RUNTIME_ERROR_TOKENS = (
@@ -510,7 +528,15 @@ def should_ignore_local_404(path: str) -> bool:
     return False
 
 
+def is_generated_mirror_path(path: str) -> bool:
+    low = path.lower()
+    return "/_external_mirror/" in low or "/_snapshot_mirror/" in low
+
+
 def is_critical_local_path(path: str, resource_type: str) -> bool:
+    if is_generated_mirror_path(path):
+        return False
+
     suffix = Path(path).suffix.lower()
     if suffix in CRITICAL_EXTENSIONS:
         return True
@@ -653,6 +679,10 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 add_issue("warning", "LOCAL_IGNORED_MISSING", "Ignored optional local asset missing", url)
                 return
 
+            if is_generated_mirror_path(path):
+                add_issue("warning", "LOCAL_MIRROR_REQUEST_FAILED", f"Generated mirror request failed: {error_text}", url)
+                return
+
             if is_critical_local_path(path, resource_type):
                 add_issue("critical", "LOCAL_REQUEST_FAILED", f"Critical local request failed: {error_text}", url)
             else:
@@ -691,6 +721,15 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                     "warning",
                     "LOCAL_IGNORED_HTTP",
                     f"Ignored optional local HTTP {response.status}",
+                    url,
+                )
+                return
+
+            if is_generated_mirror_path(path):
+                add_issue(
+                    "warning",
+                    "LOCAL_MIRROR_HTTP",
+                    f"Generated mirror local HTTP {response.status}",
                     url,
                 )
                 return
@@ -782,6 +821,24 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
             "No successful EmulatorJS core load observed during wait window",
             game_url,
         )
+
+    # Strict mode can over-report games as broken when only third-party runtime calls fail,
+    # even if the game surface has loaded and the local core is present.
+    if config.strict_external and has_surface and critical_issues:
+        external_only_codes = {"EXTERNAL_DEPENDENCY", "EXTERNAL_CRITICAL_FAILED", "EXTERNAL_HTTP_ERROR"}
+        if all(issue.code in external_only_codes for issue in critical_issues):
+            downgraded = [
+                Issue(code=issue.code, message=issue.message, severity="warning", url=issue.url)
+                for issue in critical_issues
+            ]
+            critical_issues.clear()
+            warnings.extend(downgraded)
+            add_issue(
+                "warning",
+                "STRICT_EXTERNAL_DOWNGRADED",
+                "External runtime dependency failed but game surface loaded",
+                game_url,
+            )
 
     actionable_warnings = [issue for issue in warnings if is_actionable_warning(issue)]
     status = "broken" if critical_issues else ("warning" if actionable_warnings else "ok")

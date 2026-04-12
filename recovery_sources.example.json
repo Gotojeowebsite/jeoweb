@@ -1,0 +1,20 @@
+[
+  {
+    "name": "your-index-catalog",
+    "type": "index-json",
+    "index_url": "https://example.com/game-catalog.json",
+    "name_field": "name",
+    "url_field": "url"
+  },
+  {
+    "name": "your-search-endpoint",
+    "type": "search-html",
+    "query_url": "https://example.com/search?q={query}",
+    "result_regex": "https://example\\.com/games/[a-zA-Z0-9\\-_/]+"
+  },
+  {
+    "name": "single-direct-url",
+    "type": "direct",
+    "url": "https://example.com/games/some-game/index.html"
+  }
+]

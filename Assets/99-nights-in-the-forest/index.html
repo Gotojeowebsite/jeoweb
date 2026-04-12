@@ -8,113 +8,6 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <script>
-      // Intercept network requests to redirect GamePush SDK to local file
-
-      // Override fetch to intercept GamePush SDK requests
-      const originalFetch = window.fetch;
-      window.fetch = function (resource, options) {
-        // Check if the request is for the GamePush SDK
-        if (
-          typeof resource === "string" &&
-          resource.includes("gs.eponesh.com/sdk/gamepush.js")
-        ) {
-          console.log(
-            "Intercepted GamePush SDK request, redirecting to local file"
-          );
-          // Return local gamepush.js instead
-          return originalFetch("./gamepush.js", options);
-        } else if (resource.includes("api.eponesh.com")) {
-          return;
-        }
-
-        // For all other requests, use original fetch
-        return originalFetch.apply(this, arguments);
-      };
-
-      // Override XMLHttpRequest to intercept GamePush SDK requests
-      const OriginalXMLHttpRequest = window.XMLHttpRequest;
-      window.XMLHttpRequest = function () {
-        const xhr = new OriginalXMLHttpRequest();
-        const originalOpen = xhr.open;
-
-        xhr.open = function (method, url, async, user, password) {
-          // Check if the request is for the GamePush SDK
-          if (
-            typeof url === "string" &&
-            url.includes("gs.eponesh.com/sdk/gamepush.js")
-          ) {
-            console.log(
-              "Intercepted GamePush SDK XHR request, redirecting to local file"
-            );
-            // Redirect to local gamepush.js
-            url = "./gamepush.js";
-          } else if (url.includes("api.eponesh.com")) {
-            return;
-          }
-
-          return originalOpen.call(this, method, url, async, user, password);
-        };
-
-        return xhr;
-      };
-
-      // Override dynamic script loading that might bypass fetch/XHR
-      const originalCreateElement = document.createElement;
-      document.createElement = function (tagName) {
-        const element = originalCreateElement.call(this, tagName);
-
-        if (tagName.toLowerCase() === "script") {
-          const originalSetAttribute = element.setAttribute;
-          element.setAttribute = function (name, value) {
-            if (
-              name.toLowerCase() === "src" &&
-              typeof value === "string" &&
-              value.includes("gs.eponesh.com/sdk/gamepush.js")
-            ) {
-              console.log(
-                "Intercepted script src for GamePush SDK, redirecting to local file"
-              );
-              value = "./gamepush.js";
-            }
-            return originalSetAttribute.call(this, name, value);
-          };
-
-          // Also intercept direct src property assignment
-          Object.defineProperty(element, "src", {
-            set: function (value) {
-              if (
-                typeof value === "string" &&
-                value.includes("gs.eponesh.com/sdk/gamepush.js")
-              ) {
-                console.log(
-                  "Intercepted script src property for GamePush SDK, redirecting to local file"
-                );
-                value = "./gamepush.js";
-              }
-              return Object.getOwnPropertyDescriptor(
-                HTMLScriptElement.prototype,
-                "src"
-              ).set.call(this, value);
-            },
-            get: function () {
-              return Object.getOwnPropertyDescriptor(
-                HTMLScriptElement.prototype,
-                "src"
-              ).get.call(this);
-            },
-            configurable: true,
-            enumerable: true,
-          });
-        }
-
-        return element;
-      };
-
-      console.log(
-        "GamePush SDK interception initialized - all requests will redirect to local file"
-      );
-    </script>
   </head>
   <body>
     <div id="unity-container">
@@ -128,12 +21,6 @@
       <div id="unity-warning"></div>
     </div>
     <script>
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
-        }
-      });
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");

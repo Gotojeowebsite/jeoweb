@@ -104,7 +104,7 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-98DP5VKS42"></script>
+  
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -116,7 +116,7 @@
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      js.src="_external_mirror/platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
