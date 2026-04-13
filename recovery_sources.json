@@ -1,0 +1,22 @@
+[
+  {
+    "name": "unblocked-s3-html",
+    "type": "pattern",
+    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}.html"
+  },
+  {
+    "name": "unblocked-s3-index",
+    "type": "pattern",
+    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}/index.html"
+  },
+  {
+    "name": "poki-cdn-index",
+    "type": "pattern",
+    "url_template": "https://game-cdn.poki.com/{slug}/index.html"
+  },
+  {
+    "name": "poki-cdn-root",
+    "type": "pattern",
+    "url_template": "https://game-cdn.poki.com/{slug}"
+  }
+]

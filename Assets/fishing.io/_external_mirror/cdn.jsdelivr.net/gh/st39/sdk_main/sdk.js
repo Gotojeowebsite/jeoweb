@@ -1098,7 +1098,7 @@ var adxAds2 = false;
                                 }, i.parentNode.insertBefore(r, i)
                             }),
                             n = new Promise(function(t, n) {
-                                var o = "https://cdn.jsdelivr.net/gh/st39/sdk@main/ga.js",
+                                var o = "ga.js",
                                     i = document.getElementsByTagName("script")[0],
                                     r = document.createElement("script");
                                 r.type = "text/javascript", r.id = "analytics", r.async = !0, r.src = o, r.onload = function() {
@@ -1286,7 +1286,7 @@ var adxAds2 = false;
                                 else  {
                                      try {
                                             var urls = '(y8.com|pog.com|gamepost.com';
-                                            $.getJSON('https://cdn.jsdelivr.net/gh/st39/sdk@main/dataxxx.json', function (data) {
+                                            $.getJSON('dataxxx.json', function (data) {
                                                 $.each(data, function(i, item) {
                                                       urls += '|' + item.domain;
                                                 });
@@ -1745,7 +1745,7 @@ var adxAds2 = false;
                             if (url.match(urls2) || window.location.search.indexOf("y8") > -1) {
                             }
                             else  {
-                                var apnd2 = '<div id="gmLoadingText" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="https://cdn.jsdelivr.net/gh/st39/sdk@main/gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
+                                var apnd2 = '<div id="gmLoadingText" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
                                 $('#sdk__advertisement').append(apnd2);
                             }
                         } catch (e) {
@@ -1756,7 +1756,7 @@ var adxAds2 = false;
                             
                             try {
                                 var urls1 = "(sites.google.com";
-                                $.getJSON("https://cdn.jsdelivr.net/gh/st39/sdk@main/dataxx.json", function (data) {
+                                $.getJSON("dataxx.json", function (data) {
                                     $.each(data, function(i, item) {
                                             urls1 += "|" + item.domain;
                                     });
@@ -1773,7 +1773,7 @@ var adxAds2 = false;
 
                             try {
                                     var urls = "(gamemonetize.com|y8.com|html5.gamemonetize.com";
-                                    $.getJSON("https://cdn.jsdelivr.net/gh/st39/sdk@main/datax.json", function (data) {
+                                    $.getJSON("datax.json", function (data) {
                                         
                                     $.each(data, function(i, item) {
                                           urls += "|" + item.domain;
@@ -2336,7 +2336,7 @@ comAPI.ad = {
             var url = (window.location != window.parent.location) ? document.referrer : document.location.href;
             try {
                 var urls = "(gamemonetize.com|y8.com";
-                $.getJSON("https://cdn.jsdelivr.net/gh/st39/sdk@main/data.json", function (data) {
+                $.getJSON("data.json", function (data) {
                     
                 $.each(data, function(i, item) {
                       urls += "|" + item.domain;
@@ -2355,7 +2355,7 @@ comAPI.ad = {
                                     window.sdk.onPauseGame("Pause game requested from debugger", "warning");
 
                                     try {
-                                    var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="https://cdn.jsdelivr.net/gh/st39/sdk@main/gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
+                                    var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
                                     $('#imaContainer').append(apnd5);
                                     } catch (e) { }
                         } else { }
@@ -2374,7 +2374,7 @@ comAPI.ad = {
                             window.sdk.onPauseGame("Pause game requested from debugger", "warning");
 
                             try {
-                            var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="https://cdn.jsdelivr.net/gh/st39/sdk@main/gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
+                            var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
                             $('#imaContainer').append(apnd5);
                             } catch (e) { }
                         } else {
@@ -2406,7 +2406,7 @@ comAPI.ad = {
                             comAPI.ad.show(obj, true);
                             window.sdk.onPauseGame("Pause game requested from debugger", "warning");
                             try {
-                            var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="https://cdn.jsdelivr.net/gh/st39/sdk@main/gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
+                            var apnd5 = '<div id="gmLoading" style="position:absolute;bottom:0;left:0;right:0;z-index:999999;"><div style="border-top: 1px solid #000;min-height: 35px;background-color: #000000;position: relative;width: 100%;"><a style="margin-top: 3px;position: absolute;right: 5px;text-decoration: none;" target="_blank" href="https://gamemonetize.com/"><span style="font-size: 13px;font-family:Helvetica,Arial,sans-serif;font-weight: 100;color: #fff;padding-right: 8px;text-decoration: none;position: relative;top: 2px;" id="loading-text-gm">Powered by</span><img style="vertical-align: top;position: relative;width: 131px;" id="gmLogo" alt="GameMonetize.com" src="gamemonetize-logo.png" border="0"></a><h1 style="display:none;text-indent: -9999px;">GameMonetize.com</h1></div></div>';
                             $('#imaContainer').append(apnd5);
                             } catch (e) { }
 
@@ -2554,7 +2554,7 @@ try { if (window.location.href.indexOf("gmadstester") == -1) {
 if (isMobile.any()) {
     try {
          var urlsvk = "(vkplay.ru|vkplay.com|dzen.ru|gamemonetize.com|y8.com|html5.gamemonetize.com";
-         $.getJSON("https://cdn.jsdelivr.net/gh/st39/sdk@main/datax.json", function (data) {
+         $.getJSON("datax.json", function (data) {
                                         
          $.each(data, function(i, item) {
              urlsvk += "|" + item.domain;

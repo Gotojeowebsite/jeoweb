@@ -1,0 +1,331 @@
+﻿body, html {
+    background: #000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    white-space: nowrap;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Main layout */
+.layout {
+    height: 100%;
+    font-size: 0;
+}
+.layout iframe {
+    width: 100%;
+    height: calc(100% - 34px);
+}
+
+/* Top Bar */
+.topBar {
+    height: 20px;
+    background: #2B2B2B;
+    font-size: 12px;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 5;
+}
+.topBar .loggedIn {
+    display: flex;
+    align-items: center;
+    color: #c0c0c0;
+}
+.topBar .loggedIn img {
+    margin-left: 5px;
+}
+.topBar .loggedOut {
+    padding-right: 3px;
+}
+.topBar .loggedOut span {
+    color: #fff;
+    display: inline-block;
+    margin-right: 4px;
+    opacity: 0.2;
+    transition: opacity 0.2s ease-in;
+}
+.topBar:hover .loggedOut span {
+    opacity: 1;
+}
+.topBar a {
+    color: #fff;
+    background: #dc0d8a;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1px 9px;
+    border-radius: 2px;
+}
+.topBar .loggedOut a:hover {
+    text-decoration: underline;
+}
+
+/* Controls */
+ul.controls {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: #2B2B2B;
+    width: 100%;
+    height: 34px;
+    align-items: center;
+    list-style: none;
+}
+ul.controls li {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+ul.controls li {
+    flex: 0;
+    white-space: nowrap;
+}
+ul.controls li:first-child {
+    flex: 1;
+}
+
+/* Links*/
+ul.controls a {
+    display: block;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+}
+ul.controls a img {
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in;
+}
+ul.controls a:hover img {
+    opacity: 1;
+}
+
+/* Showcase logo */
+#ShowcaseLink {
+    position: absolute;
+    left: 50%;
+    margin-left: -24px;
+}
+#ShowcaseLink a:hover img {
+    animation: trophy;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+@keyframes trophy {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    90% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+}
+
+/* C3 logo */
+#C3Link img:first-child {
+    margin-right: 8px;
+}
+#C3Link:hover img:first-child {
+    animation: spin;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes spin { 
+    0% {
+        -webkit-transform:rotate(0) scale(1);
+        transform:rotate(0) scale(1);
+    }
+    50% {
+        -webkit-transform:rotate(180deg) scale(0.9);
+        transform:rotate(180deg) scale(0.9);
+    }
+    100% {
+        -webkit-transform:rotate(360deg) scale(1.1);
+        transform:rotate(360deg) scale(1.1);
+    } 
+}
+@media screen and (max-width: 360px) {
+    #C3Link img:last-child {
+        display: none;
+    }
+}
+
+
+/* Closer match main view game page share pop */
+.sharePop {
+    font-family: arial, verdana;
+    font-size: 13px;
+}
+.sharePop a {
+    text-decoration: none;
+}
+.sharePop a:hover {
+    text-decoration: underline;
+}
+.sharePop input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+}
+.sharePop ul li a > span:last-child {
+    padding-top: 7px !important;
+    font-size: 14px !important;
+}
+
+/* Instructions */
+#InstructionsPop {
+    min-width: 200px;
+    max-width: 90%;
+}
+#InstructionsPop h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+#InstructionsPop p {
+    font-size: 13px;
+}
+#InstructionsPop > div {
+    width: 100%;
+}
+#InstructionsPop .articleRender {
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+/* Login/reg */
+.authPop > div {
+    display: flex;
+    flex-direction: column;
+}
+.authPop h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    min-width: 100%;
+}
+.authPop iframe {
+    flex: 100;
+    width: 100%;
+    height: 100%;
+}
+#RegisterPop {
+    max-width: 300px;
+    min-height: 300px;
+}
+#LoginPop {
+    max-width: 300px;
+    height: 225px;
+}
+
+/* Logout button */
+#LogoutLink {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#NoEmbeddingNotice {
+    display: none;
+    width: 100%;
+    height: calc(100% - 34px - 20px);
+    background: #000;
+    align-items: center;
+    justify-content: center;
+}
+#NoEmbeddingNotice > a,
+#Wrap404 > a {
+    font-size: 15px;
+    display: inline-flex;
+    max-width: 70%;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: rgba(59, 64, 69, 0.7);
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: normal;
+    text-align: center;
+}
+#NoEmbeddingNotice > a:hover,
+#Wrap404 > a:hover {
+    text-decoration: underline;
+}
+#Wrap404 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pregame ad */
+#APop {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 54px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#APop .unit {
+    background: #000;
+    display: block;
+    border-radius: 3px;
+    max-width: 100%;
+    max-height: 100%;
+}
+#ALink {
+    display: block;
+    background-size: 100%;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+#APop .bar {
+    height: 34px;
+    width: 100%;
+    background: #2B2B2B;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+#APop .bar span:first-child {
+    flex: 1;
+    height: 34px;
+    line-height: 34px;
+    text-align: right;
+    padding-right: 10px;
+}
+#APop .bar span:last-child {
+    min-width: 50px;
+    text-align: center;
+    height: 34px;
+    line-height: 34px;
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}

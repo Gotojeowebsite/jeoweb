@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet'/>
+    <style type="text/css">
+		body.eagle {
+			display: flex;
+			justify-content:center;
+		}
+        button {
+			display: none;
+            background: #38569c;
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 40px;
+            color: #ffffff;
+            font-size: 13px;
+            cursor: pointer;
+			align-items: center;
+			justify-content: center;
+			border-radius: 3px;
+			box-shadow: none;
+			line-height: 1;
+        }
+
+        button.eagle {
+            font-size: 12px;
+            font-weight: 700;
+            background: #2553B4;
+            border-radius: 40px;
+            position: relative;
+            display: none;
+            align-items: center;
+            justify-content: flex-start;    
+            padding: 0 4px;
+			margin-left: 0;
+        }
+
+		button.visible {
+			display:flex;
+		}
+
+        i.eagle {
+            width: 34px;
+            height: 34px;
+            background-image: url('./assets/fb.png');
+        }
+
+        span.eagle {
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 700;
+            margin-left: 7px;
+        }
+
+        button i {
+            font-size: 18px !important;
+        }
+
+        button span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;">
+<div id="fb-root"></div>
+<script type="text/javascript">
+
+//    this.fb.api(`/${this.userService.userId}/picture?type=large`)
+//        .then((response) => {
+//        this.profileImage = response.data.url;
+//    });
+    var fbReadyResolve, fbReadyReject;
+    var fbReady = new Promise(function (resolve, reject) {
+        fbReadyResolve = resolve;
+        fbReadyReject = reject;
+    });
+
+    var __openedFBForm = false;
+    var fbActions = {
+        "arkLogin": function () {
+            if (__openedFBForm) return;
+            __openedFBForm = true;
+
+            fbReady
+                .then(facebookLogin)
+                .catch(function (error) {
+                    console.error('Error has occurred while loading Facebook library', error);
+                });
+        }
+    };
+
+    function facebookLogin() {
+        window.FB.login(function (response) {
+            __openedFBForm = false;
+            if (!response.authResponse) {
+                return;
+            }
+            window.FB.api('/me?fields=id,name,email,first_name,last_name', function (res) {
+                if (res.id) {
+                    arkPostMessage({
+                        type  : 'ark-fb-action',
+                        action: 'update-user-info',
+                        data  : {
+                            access_token: response.authResponse.accessToken,
+                            id          : res.id,
+                            name        : res.name,
+                            first_name  : res.first_name,
+                            last_name   : res.last_name,
+                            email       : res.email
+                        }
+                    });
+                }
+            });
+        }, {
+            scope: 'public_profile,email'
+        });
+    }
+
+    function arkOnMessage(msg) {
+        if (msg.data.type === 'EAGLE_BUTTON') {
+            setEagleButton();
+        }
+        if (msg.data.type === 'DEFAULT_BUTTON') {
+            setDefaultButton();
+        }
+        if (typeof (msg.data) === "object" && typeof (msg.data.action) !== "undefined") {
+            __openedFBForm = false;
+            if (typeof (fbActions[msg.data.action]) === "function") {
+                fbActions[msg.data.action](msg.data);
+            }
+        }
+
+    }
+    function arkPostMessage(msg) {
+        parent.postMessage(msg, "*");
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener('message', arkOnMessage, false);
+
+    } else {
+        window.attachEvent('onmessage', arkOnMessage);
+    }
+
+    window.fbAsyncInit = function () {
+        var fbAppId = getParameterByName("fbid");
+        var appId = fbAppId ? fbAppId : "1429736807162095";
+        window.FB.init({
+            appId: appId,
+            status: true,
+            cookie: true,
+            xfbml: true,
+            version: 'v3.3'
+        });
+
+        fbReadyResolve();
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.onerror = fbReadyReject;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function setEagleButton() {
+        const button = document.getElementsByTagName('button')[0];
+        const icon =  document.getElementsByTagName('i')[0];
+        const spanText =  document.getElementsByTagName('span')[0];
+		document.body.classList.add("eagle");
+        button.classList.add("eagle");
+        icon.classList.remove(...icon.classList)
+        icon.classList.add("eagle");
+        
+        spanText.classList.add("eagle");
+        spanText.innerHTML = "Sign in with Facebook";
+
+		button.classList.add('visible');
+    }
+    function setDefaultButton() {
+        const button = document.getElementsByTagName('button')[0];
+        button.classList.add('visible');
+    }
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+		setDefaultButton();
+  	});
+</script>
+<button onclick="fbActions.arkLogin()" type="button">
+    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+    <span>Login with Facebook</span>
+</button>
+</body>
+</html>

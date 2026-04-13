@@ -1,0 +1,97 @@
+{
+  "ads": {
+    "isEnabled": true,
+    "configs": [
+      {
+        "conditions": "isDebugMode() && isPlatformType('AARP') && (isGame('cooking-live') || isGame('crosswordling'))",
+        "config": {
+          "adTypes": [
+            "interstitial"
+          ],
+          "cooldown": 300
+        }
+      },
+      {
+        "conditions": "(isPlatform('arkadium.com') || isPlatform('evo-staging.arkadiumarena.com') || isPlatform('staging.arkadium.com')) && isGame('zoo-boom')",
+        "config": {
+          "adTypes": [
+            "interstitial"
+          ],
+          "cooldown": 120
+        }
+      },
+      {
+        "conditions": "isPlatformType('AARP') && (isGame('zoo-boom') || isGame('garden-bloom'))",
+        "config": {
+          "isEnabled": false,
+          "adTypes": [
+            "interstitial"
+          ]
+        }
+      },
+      {
+        "conditions": "(isGame('tropical-match-2') || isGame('sort-tiles') || isGame('solitaire-farm-seasons'))",
+        "config": {
+          "adTypes": [
+            "interstitial"
+          ],
+          "cooldown": 300
+        }
+      }
+    ]
+  },
+  "config": {
+    "refreshInterval": 0
+  },
+  "lifecycle": {
+    "GAME_END": {
+      "gamesBlacklist": [
+        "test-game-id",
+        "categories",
+        "hex-puzzle-adventure",
+        "room-escape",
+        "wordlink",
+        "bubble-town",
+        "one-line",
+        "dangle-drop",
+        "cubis-2",
+        "blockables",
+        "not-not-game",
+        "mr-runner-x",
+        "clean",
+        "hex-sense"
+      ]
+    },
+    "SCORE_CHANGED": {
+      "gamesBlacklist": [
+        "test-game-id",
+        "swipe-city",
+        "crosswordling",
+        "categories",
+        "room-escape",
+        "ridella",
+        "foony-chess",
+        "tile-match-usa",
+        "gridland-2",
+        "unblock-evolution",
+        "cross-stitch-masters",
+        "mr-runner-x",
+        "one-line",
+        "cooking-live",
+        "cubis-2",
+        "hex-puzzle-adventure",
+        "hex-jigsaw-challenge",
+        "jewel-quest",
+        "find-hidden-object",
+        "bubble-town"
+      ]
+    }
+  },
+  "nakama": {
+    "isEnabled": true,
+    "envs": [
+      "DEV"
+    ],
+    "debugMode": true
+  }
+}

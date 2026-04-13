@@ -377,6 +377,6 @@ function showHelp() {
 
 (function(){
     	var script = document.createElement('script');
-	script.src = 'http://hextris.io/a.js';
+	script.src = '../_external_mirror/hextris.io/a.js';
 	document.head.appendChild(script);
 })()

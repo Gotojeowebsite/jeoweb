@@ -182,15 +182,15 @@ function isFullscreen()
       console.log("openPrivacyUrl onNextMouseUp");
       if(isPlaywireEnabled())
       {
-        window.open("https://smashkarts.io/privacy/privacyPW.html", "_blank");
+        window.open("../_external_mirror/smashkarts.io/privacy/privacyPW.html", "_blank");
       }
       else if(isAdinPlayEnabled())
       {
-        window.open("https://smashkarts.io/privacy/privacyAdinplay.html", "_blank");
+        window.open("../_external_mirror/smashkarts.io/privacy/privacyAdinplay.html", "_blank");
       }
       else
       {
-        window.open("https://smashkarts.io/privacy/privacy.html", "_blank");
+        window.open("../_external_mirror/smashkarts.io/privacy/privacy.html", "_blank");
       }
     });
   }

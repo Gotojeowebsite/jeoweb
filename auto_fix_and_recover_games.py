@@ -96,6 +96,9 @@ CSS_URL_RE = re.compile(r"(?i)url\(\s*['\"]?([^\)'\"]+)['\"]?\s*\)")
 LOCALHOST_ISSUE_RE = re.compile(r"https?://(?:localhost|127\.0\.0\.1):\d+/(.+)", re.IGNORECASE)
 SCRIPT_TAG_WITH_SRC_RE = re.compile(r"(?is)<script\b[^>]*\bsrc\s*=\s*['\"]([^'\"]+)['\"][^>]*>\s*</script>")
 LINK_TAG_WITH_HREF_RE = re.compile(r"(?is)<link\b[^>]*\bhref\s*=\s*['\"]([^'\"]+)['\"][^>]*>")
+ABS_HTTP_URL_RE = re.compile(r"https?://[^\s\"'<>\)]+", re.IGNORECASE)
+
+TEXT_MIRROR_EXTENSIONS = {".html", ".htm", ".js", ".mjs", ".css", ".json", ".txt"}
 
 GLOBAL_OPTIONAL_STUBS: Dict[str, str] = {
     "/assets/scripts/game.js": "/* optional local stub: assets/scripts/game.js */\n",
@@ -549,16 +552,21 @@ def strip_nonessential_external_refs(
 
 
 def should_consider_external_url(url: str) -> bool:
-    parsed = urlparse(url)
+    try:
+        parsed = urlparse(url)
+        host = parsed.hostname or ""
+    except ValueError:
+        return False
+
     if parsed.scheme not in {"http", "https"}:
         return False
-    if is_local_runtime_host(parsed.hostname or ""):
+    if is_local_runtime_host(host):
         return False
-    if is_tracking_host(parsed.hostname or ""):
+    if is_tracking_host(host):
         return False
-    if is_nonessential_external_host(parsed.hostname or ""):
+    if is_nonessential_external_host(host):
         return False
-    if (parsed.hostname or "").endswith((".comsa", ".netsa")):
+    if host.endswith((".comsa", ".netsa")):
         return False
 
     if len(parsed.query or "") > 300 and not has_downloadable_extension(parsed.path):
@@ -616,7 +624,7 @@ def download_to_path(
 
     try:
         data = fetch_bytes(url, allow_insecure_ssl_fallback=allow_insecure_ssl_fallback)
-    except (HTTPError, URLError, TimeoutError, OSError) as exc:
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
         logger.log("warning", game, step, "download failed", url=url, error=str(exc))
         return False
 
@@ -682,6 +690,137 @@ def mirror_external_assets(
             entry_file.write_text(updated, encoding="utf-8")
             logger.log("info", game, step, "patched html with mirrored references", replacements=len(replacements))
 
+    return downloaded
+
+
+def normalize_discovered_absolute_url(url: str) -> str:
+    cleaned = (url or "").strip()
+    while cleaned and cleaned[-1] in {",", ";", ")", "]", "}"}:
+        cleaned = cleaned[:-1]
+    return cleaned
+
+
+def extract_hosts_from_issue_urls(record: Dict[str, object]) -> Set[str]:
+    out: Set[str] = set()
+    for url in extract_issue_urls(record):
+        try:
+            host = (urlparse(url).hostname or "").strip().lower()
+        except ValueError:
+            host = ""
+        if host:
+            out.add(host)
+    return out
+
+
+def discover_existing_mirror_hosts(game_dir: Path) -> Set[str]:
+    out: Set[str] = set()
+    mirror_root = game_dir / "_external_mirror"
+    if not mirror_root.exists() or not mirror_root.is_dir():
+        return out
+
+    for child in mirror_root.iterdir():
+        if child.is_dir():
+            out.add(child.name.strip().lower())
+    return out
+
+
+def mirror_external_refs_in_text_assets(
+    cfg: Config,
+    game: str,
+    record: Dict[str, object],
+    game_dir: Path,
+    logger: JsonLogger,
+) -> int:
+    step = "mirror_external_refs_in_text_assets"
+    if not game_dir.exists():
+        return 0
+
+    downloaded = 0
+    scanned_files = 0
+    patched_files = 0
+
+    allowed_hosts = extract_hosts_from_issue_urls(record) | discover_existing_mirror_hosts(game_dir)
+    if not allowed_hosts:
+        logger.log("info", game, step, "no relevant mirror hosts discovered")
+        return 0
+
+    for candidate in sorted(game_dir.rglob("*")):
+        if not candidate.is_file():
+            continue
+        if candidate.suffix.lower() not in TEXT_MIRROR_EXTENSIONS:
+            continue
+        # Skip huge files to keep repair runs bounded.
+        try:
+            if candidate.stat().st_size > 3_000_000:
+                continue
+        except OSError:
+            continue
+
+        scanned_files += 1
+        text = candidate.read_text(encoding="utf-8", errors="ignore")
+        discovered = {
+            normalize_discovered_absolute_url(u)
+            for u in ABS_HTTP_URL_RE.findall(text)
+            if u and normalize_discovered_absolute_url(u)
+        }
+        if not discovered:
+            continue
+
+        replacements: Dict[str, str] = {}
+        for url in sorted(discovered):
+            if not should_consider_external_url(url):
+                continue
+
+            try:
+                host = (urlparse(url).hostname or "").strip().lower()
+            except ValueError:
+                continue
+            if not host or host not in allowed_hosts:
+                continue
+
+            out_rel = safe_rel_from_url(url, prefix="_external_mirror")
+            out_path = game_dir / out_rel
+            if not (out_path.exists() and out_path.stat().st_size > 0):
+                if download_to_path(
+                    url,
+                    out_path,
+                    cfg.dry_run,
+                    logger,
+                    game,
+                    step,
+                    allow_insecure_ssl_fallback=cfg.allow_insecure_ssl_fallback,
+                ):
+                    downloaded += 1
+
+            if out_path.exists() and out_path.stat().st_size > 0:
+                rel_from_file = os.path.relpath(out_path, start=candidate.parent).replace("\\", "/")
+                replacements[url] = rel_from_file
+
+        if not replacements:
+            continue
+
+        updated = text
+        for src, dst in replacements.items():
+            updated = updated.replace(src, dst)
+
+        if updated != text:
+            patched_files += 1
+            if cfg.dry_run:
+                logger.log("info", game, step, "dry-run text rewrite skipped", file=str(candidate))
+            else:
+                backup_once(candidate)
+                candidate.write_text(updated, encoding="utf-8")
+
+    logger.log(
+        "info",
+        game,
+        step,
+        "text asset mirror pass complete",
+        allowed_hosts=sorted(allowed_hosts),
+        scanned_files=scanned_files,
+        patched_files=patched_files,
+        downloaded=downloaded,
+    )
     return downloaded
 
 
@@ -762,6 +901,90 @@ def fill_missing_files_from_issue_urls(
         for candidate in candidates:
             if download_to_path(
                 candidate,
+                local_path,
+                cfg.dry_run,
+                logger,
+                game,
+                step,
+                allow_insecure_ssl_fallback=cfg.allow_insecure_ssl_fallback,
+            ):
+                fixed += 1
+                break
+
+    return fixed
+
+
+def reconstruct_mirror_source_urls(local_path: Path, root_dir: Path) -> List[str]:
+    try:
+        rel = local_path.resolve().relative_to(root_dir.resolve())
+    except Exception:
+        return []
+
+    parts = list(rel.parts)
+    lower_parts = [p.lower() for p in parts]
+    if "_external_mirror" not in lower_parts:
+        return []
+
+    idx = lower_parts.index("_external_mirror")
+    if len(parts) <= idx + 2:
+        return []
+
+    host = parts[idx + 1].strip()
+    path_tail = "/".join(parts[idx + 2 :]).strip("/")
+    if not host or not path_tail:
+        return []
+    if "/" in host or "\\" in host:
+        return []
+
+    candidates = [
+        f"https://{host}/{path_tail}",
+        f"http://{host}/{path_tail}",
+    ]
+
+    out: List[str] = []
+    seen: Set[str] = set()
+    for url in candidates:
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append(url)
+    return out
+
+
+def refill_missing_mirror_files(
+    cfg: Config,
+    game: str,
+    record: Dict[str, object],
+    logger: JsonLogger,
+) -> int:
+    step = "refill_missing_mirror_files"
+    missing_paths = extract_missing_local_paths(game, record, cfg.root_dir)
+    if not missing_paths:
+        return 0
+
+    fixed = 0
+    for local_path in missing_paths:
+        low = str(local_path).replace("\\", "/").lower()
+        if "/_external_mirror/" not in low:
+            continue
+
+        if local_path.exists() and local_path.stat().st_size > 0:
+            continue
+
+        candidates = reconstruct_mirror_source_urls(local_path, cfg.root_dir)
+        if not candidates:
+            logger.log(
+                "warning",
+                game,
+                step,
+                "could not reconstruct source URL from mirror path",
+                path=str(local_path),
+            )
+            continue
+
+        for url in candidates:
+            if download_to_path(
+                url,
                 local_path,
                 cfg.dry_run,
                 logger,
@@ -1112,6 +1335,32 @@ def discover_recovery_candidates(game: str, providers: List[Dict[str, object]], 
                 if direct_url.startswith(("http://", "https://")):
                     out.append(direct_url)
 
+            elif ptype == "pattern":
+                template = str(provider.get("url_template", "")).strip()
+                if not template:
+                    continue
+
+                slug = slugify(game)
+                variants = [
+                    slug,
+                    slug.replace("-", ""),
+                    slug.replace("-", "_"),
+                ]
+
+                seen_variant: Set[str] = set()
+                for variant in variants:
+                    if not variant or variant in seen_variant:
+                        continue
+                    seen_variant.add(variant)
+
+                    candidate = (
+                        template.replace("{slug}", variant)
+                        .replace("{name}", game)
+                        .replace("{query}", quote_plus(game))
+                    )
+                    if candidate.startswith(("http://", "https://")):
+                        out.append(candidate)
+
         except Exception as exc:
             logger.log("warning", game, "discover_candidates", "provider query failed", provider=pname, error=str(exc))
 
@@ -1437,6 +1686,8 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
         if not game:
             continue
 
+        active_record: Dict[str, object] = record
+
         game_dir = cfg.assets_dir / game
         entry_file = find_entry_file(game_dir, record)
         logger.log("info", game, "start_game", "processing game", index=idx, total=len(targets))
@@ -1494,8 +1745,33 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
             per_game[game] = game_result
             continue
 
+        fresh_record = check.get("result") if isinstance(check, dict) else None
+        if isinstance(fresh_record, dict):
+            active_record = fresh_record
+
+        # Strategy 1b: mirror absolute external refs discovered in JS/CSS/JSON/HTML text assets.
+        changes_1b = mirror_external_refs_in_text_assets(cfg, game, active_record, game_dir, logger)
+        game_result["attempts"].append({"strategy": "mirror_external_refs_in_text_assets", "changes": changes_1b})
+
+        if changes_1b > 0:
+            check = run_game_validation(cfg, game, logger)
+            game_result["attempts"].append({"strategy": "validate_after_text_mirror", "result": check})
+            if validation_passed(cfg, str(check["status"])):
+                fixed_local.append(game)
+                game_result["fixed"] = True
+                game_result["final_status"] = str(check["status"])
+                per_game[game] = game_result
+                continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
+        else:
+            game_result["attempts"].append(
+                {"strategy": "validate_after_text_mirror", "skipped": True, "reason": "no_changes"}
+            )
+
         # Strategy 2: create known optional global stubs used by ad/challenge wrappers.
-        changes_stub = create_optional_global_stubs(cfg, game, record, logger)
+        changes_stub = create_optional_global_stubs(cfg, game, active_record, logger)
         game_result["attempts"].append({"strategy": "create_optional_global_stubs", "changes": changes_stub})
 
         if changes_stub > 0:
@@ -1507,13 +1783,16 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
                 game_result["final_status"] = str(check["status"])
                 per_game[game] = game_result
                 continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
         else:
             game_result["attempts"].append(
                 {"strategy": "validate_after_optional_stubs", "skipped": True, "reason": "no_changes"}
             )
 
         # Strategy 3: fill missing local files using filenames discovered in external issue URLs.
-        changes_2 = fill_missing_files_from_issue_urls(cfg, game, record, logger)
+        changes_2 = fill_missing_files_from_issue_urls(cfg, game, active_record, logger)
         game_result["attempts"].append({"strategy": "fill_missing_files_from_issue_urls", "changes": changes_2})
 
         if changes_2 > 0:
@@ -1525,13 +1804,37 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
                 game_result["final_status"] = str(check["status"])
                 per_game[game] = game_result
                 continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
         else:
             game_result["attempts"].append(
                 {"strategy": "validate_after_missing_fill", "skipped": True, "reason": "no_changes"}
             )
 
-        # Strategy 4: recover missing GamePush bundle assets from known SDK hosts.
-        changes_gp = fill_missing_gp_bundle_assets(cfg, game, record, logger)
+        # Strategy 4: refill missing generated mirror files by reconstructing their source URLs.
+        changes_mirror_refill = refill_missing_mirror_files(cfg, game, active_record, logger)
+        game_result["attempts"].append({"strategy": "refill_missing_mirror_files", "changes": changes_mirror_refill})
+
+        if changes_mirror_refill > 0:
+            check = run_game_validation(cfg, game, logger)
+            game_result["attempts"].append({"strategy": "validate_after_mirror_refill", "result": check})
+            if validation_passed(cfg, str(check["status"])):
+                fixed_local.append(game)
+                game_result["fixed"] = True
+                game_result["final_status"] = str(check["status"])
+                per_game[game] = game_result
+                continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
+        else:
+            game_result["attempts"].append(
+                {"strategy": "validate_after_mirror_refill", "skipped": True, "reason": "no_changes"}
+            )
+
+        # Strategy 5: recover missing GamePush bundle assets from known SDK hosts.
+        changes_gp = fill_missing_gp_bundle_assets(cfg, game, active_record, logger)
         game_result["attempts"].append({"strategy": "fill_missing_gp_bundle_assets", "changes": changes_gp})
 
         if changes_gp > 0:
@@ -1543,13 +1846,16 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
                 game_result["final_status"] = str(check["status"])
                 per_game[game] = game_result
                 continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
         else:
             game_result["attempts"].append(
                 {"strategy": "validate_after_gp_bundle_fill", "skipped": True, "reason": "no_changes"}
             )
 
-        # Strategy 5: create placeholders for optional missing local assets (audio/save/config files).
-        changes_ph = create_optional_local_asset_placeholders(cfg, game, record, logger)
+        # Strategy 6: create placeholders for optional missing local assets (audio/save/config files).
+        changes_ph = create_optional_local_asset_placeholders(cfg, game, active_record, logger)
         game_result["attempts"].append({"strategy": "create_optional_local_asset_placeholders", "changes": changes_ph})
 
         if changes_ph > 0:
@@ -1561,13 +1867,16 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
                 game_result["final_status"] = str(check["status"])
                 per_game[game] = game_result
                 continue
+            fresh_record = check.get("result") if isinstance(check, dict) else None
+            if isinstance(fresh_record, dict):
+                active_record = fresh_record
         else:
             game_result["attempts"].append(
                 {"strategy": "validate_after_placeholders", "skipped": True, "reason": "no_changes"}
             )
 
-        # Strategy 6: recover emulatorjs core files if scanner flagged missing/failed core URLs.
-        changes_3 = repair_emulator_cores(cfg, game, record, logger)
+        # Strategy 7: recover emulatorjs core files if scanner flagged missing/failed core URLs.
+        changes_3 = repair_emulator_cores(cfg, game, active_record, logger)
         game_result["attempts"].append({"strategy": "repair_emulator_cores", "changes": changes_3})
 
         if changes_3 > 0:

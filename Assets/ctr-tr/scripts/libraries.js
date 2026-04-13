@@ -37,7 +37,7 @@ hide:function(){if(this.valueIsPlaceholder()&&this.input.hasClass("placeholder")
 "type=$1text$1"));this.fakePassword=c.val(a.attr("placeholder")).addClass("placeholder").focus(function(){a.trigger("focus");b(this).hide()});b(a[0].form).submit(function(){c.remove();a.show()})}}};var e=!!("placeholder"in document.createElement("input"));b.fn.placeholder=function(){return e?this:this.each(function(){var a=b(this),c=new d(a);c.show(!0);a.focus(function(){c.hide()});a.blur(function(){c.show(!1)});b.browser.msie&&(b(window).load(function(){a.val()&&a.removeClass("placeholder");c.show(!0)}),
 a.focus(function(){if(""===this.value){var a=this.createTextRange();a.collapse(!0);a.moveStart("character",0);a.select()}}))})}})(jQuery);
 
-/* ajaxHooks | https://github.com/jaubourg/ajaxHooks/blob/master/src/xdr.js | MIT License */
+/* ajaxHooks | ../_external_mirror/github.com/jaubourg/ajaxHooks/blob/master/src/xdr.js | MIT License */
 window.XDomainRequest&&jQuery.ajaxTransport(function(b){if(b.crossDomain&&b.async){b.timeout&&(b.xdrTimeout=b.timeout,delete b.timeout);var a;return{send:function(g,d){function c(b,c,e,f){a.onload=a.onerror=a.ontimeout=jQuery.noop;a=void 0;d(b,c,e,f)}a=new XDomainRequest;a.onload=function(){c(200,"OK",{text:a.responseText},"Content-Type: "+a.contentType)};a.onerror=function(){c(404,"Not Found")};a.onprogress=jQuery.noop;a.ontimeout=function(){c(0,"timeout")};a.timeout=b.xdrTimeout||Number.MAX_VALUE;
 a.open(b.type,b.url);a.send(b.hasContent&&b.data||null)},abort:function(){a&&(a.onerror=jQuery.noop,a.abort())}}}});
 

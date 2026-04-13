@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>tween.js | JavaScript/TypeScript animation engine</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="tween.js" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="JavaScript/TypeScript animation engine" />
+<meta property="og:description" content="JavaScript/TypeScript animation engine" />
+<link rel="canonical" href="https://tweenjs.github.io/tween.js/" />
+<meta property="og:url" content="https://tweenjs.github.io/tween.js/" />
+<meta property="og:site_name" content="tween.js" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="tween.js" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"JavaScript/TypeScript animation engine","headline":"tween.js","name":"tween.js","url":"https://tweenjs.github.io/tween.js/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/tween.js/assets/css/style.css?v=20079e65f77bb2b8e52cc9d7dbed044b86e537d3">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/tween.js/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="tweenjs">tween.js</h1>
+
+<p>JavaScript (TypeScript) tweening engine for easy animations, incorporating optimised Robert Penner’s equations.</p>
+
+<p><a href="https://npmjs.org/package/@tweenjs/tween.js"><img src="https://img.shields.io/npm/v/@tweenjs/tween.js.svg" alt="NPM Version" /></a>
+<a href="https://cdnjs.com/libraries/tween.js"><img src="https://img.shields.io/cdnjs/v/tween.js.svg" alt="CDNJS" /></a>
+<a href="https://npmjs.org/package/@tweenjs/tween.js"><img src="https://img.shields.io/npm/dm/@tweenjs/tween.js.svg" alt="NPM Downloads" /></a>
+<a href="https://github.com/tweenjs/tween.js/actions"><img src="https://github.com/tweenjs/tween.js/workflows/build%20and%20tests/badge.svg?branch=master" alt="Build and Tests" /></a></p>
+
+<p>More languages: <a href="/tween.js/">English</a>, <a href="/tween.js/README_zh-CN.html">简体中文</a></p>
+
+<hr />
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"box"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+	<span class="nf">#box</span> <span class="p">{</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="no">deeppink</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+		<span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">,</span> <span class="nx">Easing</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js</span><span class="dl">'</span>
+
+	<span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">box</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Get the element we want to animate.</span>
+
+	<span class="kd">const</span> <span class="nx">coords</span> <span class="o">=</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="c1">// Start at (0, 0)</span>
+
+	<span class="kd">const</span> <span class="nx">tween</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tween</span><span class="p">(</span><span class="nx">coords</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span> <span class="c1">// Create a new tween that modifies 'coords'.</span>
+		<span class="p">.</span><span class="nx">to</span><span class="p">({</span><span class="na">x</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">},</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">// Move to (300, 200) in 1 second.</span>
+		<span class="p">.</span><span class="nx">easing</span><span class="p">(</span><span class="nx">Easing</span><span class="p">.</span><span class="nx">Quadratic</span><span class="p">.</span><span class="nx">InOut</span><span class="p">)</span> <span class="c1">// Use an easing function to make the animation smooth.</span>
+		<span class="p">.</span><span class="nx">onUpdate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+			<span class="c1">// Called after tween.js updates 'coords'.</span>
+			<span class="c1">// Move 'box' to the position described by 'coords' with a CSS translation.</span>
+			<span class="nx">box</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">transform</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">translate(</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">coords</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">px, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">coords</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">px)</span><span class="dl">'</span><span class="p">)</span>
+		<span class="p">})</span>
+		<span class="p">.</span><span class="nx">start</span><span class="p">()</span> <span class="c1">// Start the tween immediately.</span>
+
+	<span class="c1">// Setup the animation loop.</span>
+	<span class="kd">function</span> <span class="nx">animate</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">tween</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+		<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><a href="https://codepen.io/trusktr/pen/KKGaBVz?editors=1000">Try this example on CodePen</a></p>
+
+<h1 id="features">Features</h1>
+
+<ul>
+  <li>Does one thing only and does it well: tweens properties of an object</li>
+  <li>Doesn’t take care of CSS units (e.g. appending <code class="language-plaintext highlighter-rouge">px</code>)</li>
+  <li>Doesn’t interpolate colors</li>
+  <li>Easing functions are reusable outside of Tween</li>
+  <li>Can also use custom easing functions</li>
+  <li>Doesn’t make its own animation loop, making it flexible for integration into
+any animation loop.</li>
+</ul>
+
+<h1 id="examples">Examples</h1>
+
+<table>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/00_hello_world.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/00_hello_world.png" alt="hello world" />
+			</a>
+		</td>
+		<td>
+			hello world<br />
+			(<a href="examples/00_hello_world.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/01_bars.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/01_bars.png" alt="Bars" />
+			</a>
+		</td>
+		<td>
+			Bars<br />
+			(<a href="examples/01_bars.html">source</a>)
+		</td>
+	<tr>
+	</tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/02_black_and_red.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/02_black_and_red.png" alt="Black and red" />
+			</a>
+		</td>
+		<td>
+			Black and red<br />
+			(<a href="examples/02_black_and_red.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/03_graphs.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/03_graphs.png" alt="Graphs" />
+			</a>
+		</td>
+		<td>
+			Graphs<br />
+			(<a href="examples/03_graphs.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/04_simplest.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/04_simplest.png" alt="Simplest possible example" />
+			</a>
+		</td>
+		<td>
+			Simplest possible example<br />
+			(<a href="examples/04_simplest.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/05_video_and_time.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/06_video_and_time.png" alt="Video and time" />
+			</a>
+		</td>
+		<td>
+			Video and time<br />
+			(<a href="examples/05_video_and_time.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/06_array_interpolation.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/03_graphs.png" alt="Array interpolation" />
+			</a>
+		</td>
+		<td>
+			Array interpolation<br />
+			(<a href="examples/06_array_interpolation.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/07_dynamic_to.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/07_dynamic_to.png" alt="Dynamic to, object" />
+			</a>
+		</td>
+		<td>
+			Dynamic to, object<br />
+			(<a href="examples/07_dynamic_to.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/07a_dynamic_to_two_array_values.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/07a_dynamic_to.png" alt="Dynamic to, interpolation array" />
+			</a>
+		</td>
+		<td>
+			Dynamic to, interpolation array<br />
+			(<a href="examples/07a_dynamic_to_two_array_values.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/07b_dynamic_to_an_array_of_values.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/07b_dynamic_to.png" alt="Dynamic to, large interpolation array" />
+			</a>
+		</td>
+		<td>
+			Dynamic to, large interpolation array<br />
+			(<a href="examples/07b_dynamic_to_an_array_of_values.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/08_repeat.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/08_repeat.png" alt="Repeat" />
+			</a>
+		</td>
+		<td>
+			Repeat<br />
+			(<a href="examples/08_repeat.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/09_relative_values.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/09_relative.png" alt="Relative values" />
+			</a>
+		</td>
+		<td>
+			Relative values<br />
+			(<a href="examples/09_relative_values.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/10_yoyo.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/10_yoyo.png" alt="Yoyo" />
+			</a>
+		</td>
+		<td>
+			Yoyo<br />
+			(<a href="examples/10_yoyo.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/11_stop_all_chained_tweens.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/11_stop_all_chained_tweens.png" alt="Stop all chained tweens" />
+			</a>
+		</td>
+		<td>
+			Stop all chained tweens<br />
+			(<a href="examples/11_stop_all_chained_tweens.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/12_graphs_custom_functions.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/03_graphs.png" alt="Custom functions" />
+			</a>
+		</td>
+		<td>
+			Custom functions<br />
+			(<a href="examples/12_graphs_custom_functions.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/13_relative_start_time.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/13_relative_start_time.png" alt="Relative start time" />
+			</a>
+		</td>
+		<td>
+			Relative start time<br />
+			(<a href="examples/13_relative_start_time.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/14_pause_tween.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/14_pause_tween.png" alt="Pause tween" />
+			</a>
+		</td>
+		<td>
+			Pause tween<br />
+			(<a href="examples/14_pause_tween.html">source</a>)
+		</td>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/15_complex_properties.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/15_complex_properties.png" alt="Complex properties" />
+			</a>
+		</td>
+		<td>
+			Complex properties<br />
+			(<a href="examples/15_complex_properties.html">source</a>)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://tweenjs.github.io/tween.js/examples/16_animate_an_array_of_values.html">
+				<img width="100" height="50" src="https://tweenjs.github.io/tween.js/assets/examples/16_animate_an_array_of_values.png" alt="Animate an array of values" />
+			</a>
+		</td>
+		<td>
+			Animate an array of values<br />
+			(<a href="examples/16_animate_an_array_of_values.html">source</a>)
+		</td>
+	</tr>
+</table>
+
+<h1 id="installation">Installation</h1>
+
+<p>The recommended method is to use <code class="language-plaintext highlighter-rouge">import</code> syntax. Here we’ve listed various
+install methods starting roughly with the most recommended first and least
+desirable last. Evaluate all of the following methods to pick what is most
+suitable for your project.</p>
+
+<h2 id="with-npm-install-and-import-from-node_modules">With <code class="language-plaintext highlighter-rouge">npm install</code> and <code class="language-plaintext highlighter-rouge">import</code> from <code class="language-plaintext highlighter-rouge">node_modules</code></h2>
+
+<p>You can add tween.js as an npm dependency:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> @tweenjs/tween.js
+</code></pre></div></div>
+
+<h3 id="without-a-build-tool">Without a build tool</h3>
+
+<h4 id="installed-locally">Installed locally</h4>
+
+<p>You can import from <code class="language-plaintext highlighter-rouge">node_modules</code> if you serve <code class="language-plaintext highlighter-rouge">node_modules</code> as part of your
+website, using a standard <code class="language-plaintext highlighter-rouge">importmap</code> script tag. First, assuming <code class="language-plaintext highlighter-rouge">node_modules</code>
+is at the root of your website, you can write an import map like so in your HTML
+file:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
+	<span class="p">{</span>
+		<span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">@tweenjs/tween.js</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/node_modules/@tweenjs/tween.js/dist/tween.esm.js</span><span class="dl">"</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Now in any of your module scripts you can import Tween.js by its package name:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tweenjs/tween.js</span><span class="dl">'</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h4 id="import-from-cdn">Import from CDN</h4>
+
+<p>Note that, without the <code class="language-plaintext highlighter-rouge">importmap</code>, you can import directly from a CDN as with the first example above, like so:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://unpkg.com/browse/@tweenjs/tween.js@23.1.3/dist/tween.esm.js</span><span class="dl">'</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>You can also link your <code class="language-plaintext highlighter-rouge">importmap</code> to the CDN instead of a local <code class="language-plaintext highlighter-rouge">node_modules</code> folder, if you prefer that:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"importmap"</span><span class="nt">&gt;</span>
+	<span class="p">{</span>
+		<span class="dl">"</span><span class="s2">imports</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="dl">"</span><span class="s2">@tweenjs/tween.js</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://unpkg.com/browse/@tweenjs/tween.js@23.1.3/dist/tween.esm.js</span><span class="dl">"</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tweenjs/tween.js</span><span class="dl">'</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="with-a-build-tool">With a build tool</h3>
+
+<p>If you are using <a href="https://nodejs.org/">Node.js</a>,
+<a href="https://parceljs.org/">Parcel</a>, <a href="https://webpack.js.org/">Webpack</a>,
+<a href="https://rollupjs.org/">Rollup</a>, <a href="https://vitejs.dev/">Vite</a>, or another build
+tool, then you can install <code class="language-plaintext highlighter-rouge">@tweenjs/tween.js</code> with <code class="language-plaintext highlighter-rouge">npm install
+@tweenjs/tween.js</code>, and <code class="language-plaintext highlighter-rouge">import</code> the library into your JavaScript (or
+TypeScript) file, and the build tool will know how to find the source code from
+<code class="language-plaintext highlighter-rouge">node_modules</code> without needing to create an <code class="language-plaintext highlighter-rouge">importmap</code> script:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">TWEEN</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@tweenjs/tween.js</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>However, note that this approach requires always running a build tool for your
+app to work, while the <code class="language-plaintext highlighter-rouge">importmap</code> approach will simply work without any build
+tools as a simple static HTML site.</p>
+
+<h2 id="manual-build">Manual build</h2>
+
+<p>Another approach is to download the source code with git, manually build the
+library, then place the output in your project. Node.js is required for this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/tweenjs/tween.js
+<span class="nb">cd </span>tween.js
+npm <span class="nb">install
+</span>npm run build
+</code></pre></div></div>
+
+<p>This will create some builds in the <code class="language-plaintext highlighter-rouge">dist</code> directory. There are currently two different builds of the library:</p>
+
+<ul>
+  <li>ES6 Module in <code class="language-plaintext highlighter-rouge">/dist/tween.esm.js</code> (recommended)</li>
+  <li>UMD in <code class="language-plaintext highlighter-rouge">/dist/tween.umd.js</code> (deprecated, will be removed in a future major version)</li>
+</ul>
+
+<p>You are now able to copy one of those two files into your project, and use like this (recommended):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">path/to/tween.esm.js</span><span class="dl">'</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>or (deprecated, to be removed in future major):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"path/to/tween.umd.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+	<span class="kd">const</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">}</span> <span class="o">=</span> <span class="nx">TWEEN</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>where <code class="language-plaintext highlighter-rouge">path/to</code> is replaced with the location where you placed the file.</p>
+
+<blockquote>
+  <p>[!Note]
+You can also download these files from unpkg, for example here:
+https://unpkg.com/browse/@tweenjs/tween.js@23.1.3/dist/</p>
+</blockquote>
+
+<h2 id="global-variable-from-cdn-deprecated">Global variable from CDN (deprecated)</h2>
+
+<blockquote>
+  <p>[!Note]
+This method is deprecated and will be removed in a future major version!</p>
+</blockquote>
+
+<p>Install a global <code class="language-plaintext highlighter-rouge">TWEEN</code> variable from a content-delivery network (CDN) using the UMD file.</p>
+
+<p>From cdnjs:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tween.js/23.1.3/tween.umd.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Or from unpkg.com:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/@tweenjs/tween.js@^23.1.3/dist/tween.umd.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Then use the <code class="language-plaintext highlighter-rouge">TWEEN</code> variable in any script:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+	<span class="kd">const</span> <span class="p">{</span><span class="nx">Tween</span><span class="p">,</span> <span class="nx">Easing</span><span class="p">,</span> <span class="nx">Group</span> <span class="cm">/*, ...*/</span><span class="p">}</span> <span class="o">=</span> <span class="nx">TWEEN</span>
+
+	<span class="kd">const</span> <span class="nx">tween</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tween</span><span class="p">(</span><span class="nx">someObject</span><span class="p">)</span>
+	<span class="c1">// ...</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!Note]
+unpkg.com supports a semver version in the URL, where the <code class="language-plaintext highlighter-rouge">^</code> in the
+URL tells unpkg to give you the latest version 20.x.x.</p>
+</blockquote>
+
+<h2 id="commonjs-deprecated">CommonJS (deprecated)</h2>
+
+<p>Skip this section if you don’t know what CommonJS is!</p>
+
+<blockquote>
+  <p>[!Note]
+This method is deprecated and will be removed in a future major version!</p>
+</blockquote>
+
+<p>Any of the above methods work in older systems that still use CommonJS. Repeat
+any of the above methods but using <code class="language-plaintext highlighter-rouge">dist/tween.cjs</code> instead of
+<code class="language-plaintext highlighter-rouge">dist/tween.esm.js</code> or <code class="language-plaintext highlighter-rouge">dist/tween.umd.js</code>.</p>
+
+<h1 id="documentation">Documentation</h1>
+
+<ul>
+  <li><a href="/tween.js/docs/user_guide.html">User guide</a></li>
+  <li><a href="/tween.js/docs/contributor_guide.html">Contributor guide</a></li>
+  <li><a href="https://web.archive.org/web/20220601192930/http://learningthreejs.com/blog/2011/08/17/tweenjs-for-smooth-animation/">Tutorial</a> using tween.js with three.js</li>
+  <li>Also: <a href="https://github.com/jsm174/libtween">libtween</a>, a port of tween.js to C by <a href="https://github.com/jsm174">jsm174</a></li>
+</ul>
+
+<h1 id="tests">Tests</h1>
+
+<p>You need to install <code class="language-plaintext highlighter-rouge">npm</code> first–this comes with node.js, so install that one first. Then, cd to <code class="language-plaintext highlighter-rouge">tween.js</code>’s (or wherever you cloned the repo) directory and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>To run the tests run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">test</span>
+</code></pre></div></div>
+
+<p>If you want to add any feature or change existing features, you <em>must</em> run the
+tests to make sure you didn’t break anything else. Any pull request (PR) needs
+to have updated passing tests for feature changes (or new passing tests for new
+features or fixes) in <code class="language-plaintext highlighter-rouge">src/tests.ts</code> to be accepted. See
+<a href="/tween.js/CONTRIBUTING.md">contributing</a> for more information.</p>
+
+<h1 id="people">People</h1>
+
+<p>Maintainers: <a href="https://github.com/trusktr">Joe Pea (@trusktr)</a>.</p>
+
+<p><a href="http://github.com/tweenjs/tween.js/contributors">All contributors</a>.</p>
+
+<h1 id="projects-using-tweenjs">Projects using tween.js</h1>
+
+<p><a href="https://lume.io"><img src="./assets/projects/11_lume.jpg" width="100" alt="Lume" /></a>
+<a href="https://aframe.io"><img src="https://tweenjs.github.io/tween.js/assets/projects/10_aframe.png" alt="A-Frame VR" /></a>
+<a href="http://www.moma.org/interactives/exhibitions/2012/inventingabstraction/"><img src="https://tweenjs.github.io/tween.js/assets/projects/09_moma.png" alt="MOMA Inventing Abstraction 1910-1925" /></a>
+<a href="http://www.chromeweblab.com/"><img src="https://tweenjs.github.io/tween.js/assets/projects/08_web_lab.png" alt="Web Lab" /></a>
+<a href="http://5013.es/toys/macchina"><img src="https://tweenjs.github.io/tween.js/assets/projects/07_macchina.png" alt="MACCHINA I" /></a>
+<a href="http://egraether.com/mine3d/"><img src="https://tweenjs.github.io/tween.js/assets/projects/06_minesweeper3d.png" alt="Minesweeper 3D" /></a>
+<a href="http://ro.me"><img src="https://tweenjs.github.io/tween.js/assets/projects/05_rome.png" alt="ROME" /></a>
+<a href="http://data-arts.appspot.com/globe"><img src="https://tweenjs.github.io/tween.js/assets/projects/04_webgl_globe.png" alt="WebGL Globe" /></a>
+<a href="http://www.androidify.com/"><img src="https://tweenjs.github.io/tween.js/assets/projects/03_androidify.png" alt="Androidify" /></a>
+<a href="http://thewildernessdowntown.com/"><img src="https://tweenjs.github.io/tween.js/assets/projects/01_wilderness.png" alt="The Wilderness Downtown" /></a>
+<a href="http://dejavis.org/linechart"><img src="https://tweenjs.github.io/tween.js/assets/projects/00_linechart.png" alt="Linechart" /></a></p>
+
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/tweenjs/tween.js/edit/main/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

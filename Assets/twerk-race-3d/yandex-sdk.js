@@ -1912,7 +1912,7 @@ var YaGames;
         return (
           (0, m.T)(
             new Error(
-              "Player.getID() is deprecated. Please, use Player.getUniqueID().\nhttps://yandex.ru/dev/games/doc/dg/sdk/sdk-player.html#sdk-player__profile-data"
+              "Player.getID() is deprecated. Please, use Player.getUniqueID().\n_external_mirror/yandex.ru/dev/games/doc/dg/sdk/sdk-player.html"
             )
           ),
           N.sendOnceDeprecatedUsage("Player.getID"),
@@ -2384,7 +2384,7 @@ var YaGames;
           const t = String(e.url_prefix);
           return /\.(png|jpg|svg)$/.test(t) ? t : `${t}/default256x256`;
         }
-        return "https://yastatic.net/s3/games-static/static-data/images/payments/default-product-image.png";
+        return "_external_mirror/yastatic.net/s3/games-static/static-data/images/payments/default-product-image.png";
       }
       get price() {
         const { price: e } = this._productData;
@@ -3188,7 +3188,7 @@ var YaGames;
           ? /\.(png|jpg|svg)$/.test(String(t.url_prefix))
             ? t.url_prefix
             : `${t.url_prefix}/default256x256`
-          : "https://yastatic.net/s3/games-static/static-data/images/bonuses/default-bonus-image.png";
+          : "_external_mirror/yastatic.net/s3/games-static/static-data/images/bonuses/default-bonus-image.png";
       },
     });
     h("Bonus");

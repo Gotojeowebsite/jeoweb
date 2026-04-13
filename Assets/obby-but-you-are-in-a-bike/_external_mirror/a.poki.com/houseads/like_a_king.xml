@@ -1,0 +1,26 @@
+<VAST version="3.0">
+    <Ad id="poki-housead">
+        <InLine>
+            <AdSystem>Poki</AdSystem>
+            <AdTitle>Poki House Ad</AdTitle>
+            <Impression id="poki-house"/>
+            <Creatives>
+                <Creative sequence="1">
+                    <Linear>
+                        <Duration>00:00:11</Duration>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" scalable="1" maintainAspectRatio="1" codec="H.264">
+                                <![CDATA[https://a.poki.com/houseads/like_a_king_compressed.mp4]]>
+                              </MediaFile>
+                        </MediaFiles>
+                        <VideoClicks>
+                            <ClickThrough>
+                              <![CDATA[https://poki.com/en/g/like-a-king?utm_source=houseAds&utm_medium=houseAds&utm_campaign=houseAds]]>
+                            </ClickThrough>
+                          </VideoClicks>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>

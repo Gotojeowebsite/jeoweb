@@ -15879,8 +15879,8 @@
         "use strict";
         n.d(t, { Z: () => i });
         const i = {
-          app: { trophy: "https://gs.eponesh.com/sdk/static/icons/trophy.svg" },
-          cdn: { trophy: "https://gs.eponesh.com/sdk/static/icons/reward.png" },
+          app: { trophy: "../../_external_mirror/gs.eponesh.com/sdk/static/icons/trophy.svg" },
+          cdn: { trophy: "../../_external_mirror/gs.eponesh.com/sdk/static/icons/reward.png" },
         };
       },
       8293: (e, t, n) => {

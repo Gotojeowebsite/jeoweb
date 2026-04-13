@@ -1,0 +1,239 @@
+﻿.popBG {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.55);
+	z-index:7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+.popBG>div {
+	background: #fff;
+	-webkit-box-shadow: 0 0 32px 17px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 32px 17px rgba(0, 0, 0, 0.35);
+	box-shadow: 0 0 32px 17px rgba(0, 0, 0, 0.35);
+	border-radius: 3px;
+}
+
+/* EMBED */
+.embedPop {
+	display: none;
+	height: 415px;
+}
+.embedPop iframe {
+	border: 0;
+}
+.embedPop>div {
+	flex: 1;
+	min-width: 650px;
+	max-width: 650px;
+}
+.embedPop>div:last-child {
+	flex: 0;
+	min-width: 350px;
+	max-width: 350px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.embedPop>div:last-child>div {
+	flex: 1;
+	min-width: 100%;
+	height: 42px;
+}
+.embedPop>div:last-child>div:nth-child(2) {
+	height: calc(100% - 84px);
+	overflow-y: auto;
+}
+.embedPop textarea {
+	margin: 0;
+	padding: 10px 20px;
+	border: 0;
+	font-size: 1.15rem;
+	line-height: 135%;
+	height: auto;
+	background: #efefef;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+}
+.embedPop iframe {
+	height: 100%;
+	width: 100%;
+}
+.embedTop {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.embedTop>span {
+	flex: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+.embedTop>a {
+	flex: 0;
+	min-width: 42px;
+	max-width: 42px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #c0c0c0;
+}
+.embedTop>a:hover {
+	text-decoration: none;
+	color: #2B2B2B;
+}
+#CopyEmbedCode {
+	line-height: 100% !important;
+	padding: 10px 30px 9px 30px;
+}
+.embedCopyWrap {
+	background: #efefef;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 10px;
+}
+.embedOpts {
+	padding: 0 10px;
+	padding-bottom: 10px;
+}
+.embedOpts p {
+	font-size: 1rem;
+	line-height: 120% !important;
+	padding: 0;
+	margin: 0;
+}
+
+/* SHARE */
+.sharePop {
+	display: none;
+	padding: 20px;
+	flex-wrap: wrap;
+	max-width: 500px;
+}
+.sharePop ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+.sharePop ul li {
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+}
+.sharePop ul li a {
+	display: flex;
+	width: 80px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.sharePop ul li a>span {
+	width: 64px;
+}
+.sharePop ul li a>span:first-child {
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.sharePop ul li a>span:first-child img {
+	border-radius: 50%;
+	display: block;
+}
+.sharePop ul li a>span:last-child {
+	font-size: 1rem;
+	color: #909090;
+	padding-top: 3px;
+}
+.sharePop ul li a:hover {
+	text-decoration: none;
+}
+.sharePop .shareURL {
+	width: 100%;
+}
+.sharePop .shareURL>div {
+	background: #efefef;
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	border-radius: 3px;
+	padding: 10px;
+}
+.sharePop .shareURL>div>div:first-child {
+	flex: 1;
+	padding-right: 10px;
+}
+.sharePop .shareURL>div>div:last-child {
+	flex: 0;
+}
+.sharePop .shareURL>div>div:last-child a {
+	line-height: 100% !important;
+	padding: 10px 30px;
+    color: #fff;
+    background: #dc0d8a;
+    text-transform: uppercase;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    display: inline-block;
+}
+.sharePop .shareURL input[type=text] {
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 1rem;
+}
+@media screen and (max-width: 525px) {
+	.sharePop {
+		max-width: 95%;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.embedPop {
+		flex-wrap: wrap;
+		min-width: 95%;
+		max-width: 95%;
+		height: 500px;
+		max-height: 90%;
+	}
+	.embedPop>div {
+		flex: 1;
+		min-width: 100%;
+		max-width: 100%;
+	}
+	.embedPop>div:first-child {
+		height: 250px;
+	}
+	.embedPop>div:last-child {
+		height: 250px;
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+	.embedPop>div:last-child>div:nth-child(2) {
+		height: calc(250px - 84px);
+	}
+}

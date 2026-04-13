@@ -73,7 +73,7 @@ function createMoreGamesButton() {
 
 function addFlyOutWidget() {
   const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/gh/docklib/partners@master/partner-1e3cf89f.js'
+  script.src = '../../cdn.jsdelivr.net/gh/docklib/partners_master/partner-1e3cf89f.js'
   document.body.appendChild(script)
 }
 
@@ -146,7 +146,7 @@ async function loadScripts() {
     `)
 
     await createScriptTag({
-      src: 'https://stpd.cloud/assets/libraries/inview.min.js',
+      src: '../../stpd.cloud/assets/libraries/inview.min.js',
     })
 
     await createScriptTag({ inline: 'inView.offset(-200);' })
@@ -195,7 +195,7 @@ async function loadScripts() {
     await createScriptTag({ src: 'https://stpd.cloud/saas/6883', async: true })
 
     await createScriptTag({
-      src: 'https://stats.senty.com.au/js/script.outbound-links.pageview-props.tagged-events.js',
+      src: '../../stats.senty.com.au/js/script.outbound-links.pageview-props.tagged-events.js',
       defer: true,
       attributes: {
         'data-domain': '3kh0.github.io',

@@ -1,0 +1,747 @@
+{
+  "started_at": 1776051397,
+  "scan_report": "C:\\Users\\Jeo\\Desktop\\Jeoweb\\jeoweb\\broken_games.json",
+  "targets": 5,
+  "fixed_local_count": 1,
+  "recovered_count": 0,
+  "unresolved_count": 4,
+  "fixed_local": [
+    "1on1soccer"
+  ],
+  "recovered": [],
+  "unresolved": [
+    "0v0",
+    "2006-fifa-world-cup-germany-2006",
+    "2k-sports-major-league-baseball-2k7",
+    "99-nights-in-the-forest"
+  ],
+  "per_game": {
+    "0v0": {
+      "initial_status": "broken",
+      "fixed": false,
+      "recovered": false,
+      "final_status": "broken",
+      "attempts": [
+        {
+          "strategy": "strip_nonessential_external_refs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_strip_refs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "mirror_external_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
+            "return_code": 0,
+            "elapsed_seconds": 13.487,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 0v0 (webgl)\n  REVIEW: External dependency requested for game runtime\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_vnz4j2ip\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_vnz4j2ip\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_vnz4j2ip\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_vnz4j2ip\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "0v0",
+              "type": "webgl",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 7.887,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/offlineClient.js"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/offlineClient.js"
+                },
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js"
+                },
+                {
+                  "code": "CONSOLE_ERROR",
+                  "message": "Error requesting https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js:",
+                  "severity": "warning",
+                  "url": ""
+                },
+                {
+                  "code": "CONSOLE_ERROR",
+                  "message": "ProgressEvent",
+                  "severity": "warning",
+                  "url": ""
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 0,
+                "unityLoadingBar": false,
+                "unityProgress": "",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": false
+              }
+            }
+          }
+        },
+        {
+          "strategy": "mirror_external_refs_in_text_assets",
+          "changes": 134
+        },
+        {
+          "strategy": "validate_after_text_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "LOCAL_MIRROR_HTTP: Generated mirror local HTTP 404",
+            "return_code": 0,
+            "elapsed_seconds": 10.492,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 0v0 (webgl)\n  REVIEW: Generated mirror local HTTP 404\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_er6rgd5h\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_er6rgd5h\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_er6rgd5h\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_er6rgd5h\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "0v0",
+              "type": "webgl",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 6.184,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "LOCAL_MIRROR_HTTP",
+                  "message": "Generated mirror local HTTP 404",
+                  "severity": "warning",
+                  "url": "http://localhost:8081/Assets/_external_mirror/427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js"
+                },
+                {
+                  "code": "CONSOLE_ERROR",
+                  "message": "Project model unavailable",
+                  "severity": "warning",
+                  "url": ""
+                },
+                {
+                  "code": "PAGE_ERROR",
+                  "message": "Cannot read properties of null (reading 'project')",
+                  "severity": "warning",
+                  "url": ""
+                },
+                {
+                  "code": "LOCAL_MIRROR_HTTP",
+                  "message": "Generated mirror local HTTP 404",
+                  "severity": "warning",
+                  "url": "http://localhost:8081/Assets/_external_mirror/427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/offlineClient.js"
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 0,
+                "unityLoadingBar": false,
+                "unityProgress": "",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": false
+              }
+            }
+          }
+        },
+        {
+          "strategy": "create_optional_global_stubs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_optional_stubs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_files_from_issue_urls",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_missing_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "refill_missing_mirror_files",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror_refill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_gp_bundle_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_gp_bundle_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_local_asset_placeholders",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_placeholders",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "repair_emulator_cores",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_core_repair",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "discover_recovery_candidates",
+          "count": 4
+        }
+      ]
+    },
+    "1on1soccer": {
+      "initial_status": "broken",
+      "fixed": true,
+      "recovered": false,
+      "final_status": "ok",
+      "attempts": [
+        {
+          "strategy": "strip_nonessential_external_refs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_strip_refs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "mirror_external_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror",
+          "result": {
+            "status": "ok",
+            "lead_issue": "No issues detected",
+            "return_code": 0,
+            "elapsed_seconds": 10.35,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 1on1soccer (flash)\n  OK\n\nScan complete.\n  Broken: 0\n  Needs review: 0\n  OK: 1\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate__v7p2kwe\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate__v7p2kwe\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate__v7p2kwe\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate__v7p2kwe\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "1on1soccer",
+              "type": "flash",
+              "entry_file": "index.html",
+              "status": "ok",
+              "elapsed_seconds": 5.721,
+              "critical_issues": [],
+              "warnings": [],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 0,
+                "unityLoadingBar": false,
+                "unityProgress": "",
+                "hasRuffleGlobal": true,
+                "hasRetroGlobal": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "2006-fifa-world-cup-germany-2006": {
+      "initial_status": "broken",
+      "fixed": false,
+      "recovered": false,
+      "final_status": "broken",
+      "attempts": [
+        {
+          "strategy": "strip_nonessential_external_refs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_strip_refs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "mirror_external_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
+            "return_code": 0,
+            "elapsed_seconds": 11.189,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 2006-fifa-world-cup-germany-2006 (gba)\n  REVIEW: Failed to fetch\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_oqh5psc6\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_oqh5psc6\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_oqh5psc6\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_oqh5psc6\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "2006-fifa-world-cup-germany-2006",
+              "type": "gba",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 6.394,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "LOCAL_IGNORED_HTTP",
+                  "message": "Ignored optional local HTTP 404",
+                  "severity": "warning",
+                  "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+                },
+                {
+                  "code": "PAGE_ERROR",
+                  "message": "Failed to fetch",
+                  "severity": "warning",
+                  "url": ""
+                },
+                {
+                  "code": "PAGE_ERROR",
+                  "message": "Wake Lock permission request denied",
+                  "severity": "warning",
+                  "url": ""
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 197,
+                "unityLoadingBar": false,
+                "unityProgress": "",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": true
+              }
+            }
+          }
+        },
+        {
+          "strategy": "mirror_external_refs_in_text_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_text_mirror",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_global_stubs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_optional_stubs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_files_from_issue_urls",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_missing_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "refill_missing_mirror_files",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror_refill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_gp_bundle_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_gp_bundle_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_local_asset_placeholders",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_placeholders",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "repair_emulator_cores",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_core_repair",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "discover_recovery_candidates",
+          "count": 12
+        }
+      ]
+    },
+    "2k-sports-major-league-baseball-2k7": {
+      "initial_status": "broken",
+      "fixed": false,
+      "recovered": false,
+      "final_status": "broken",
+      "attempts": [
+        {
+          "strategy": "strip_nonessential_external_refs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_strip_refs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "mirror_external_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
+            "return_code": 0,
+            "elapsed_seconds": 9.664,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 2k-sports-major-league-baseball-2k7 (gba)\n  REVIEW: Failed to fetch\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_hzfy8faf\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_hzfy8faf\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_hzfy8faf\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_hzfy8faf\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "2k-sports-major-league-baseball-2k7",
+              "type": "gba",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 5.646,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "LOCAL_IGNORED_HTTP",
+                  "message": "Ignored optional local HTTP 404",
+                  "severity": "warning",
+                  "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+                },
+                {
+                  "code": "PAGE_ERROR",
+                  "message": "Failed to fetch",
+                  "severity": "warning",
+                  "url": ""
+                },
+                {
+                  "code": "NO_RENDER_SURFACE",
+                  "message": "No game surface detected after bootstrap wait",
+                  "severity": "warning",
+                  "url": "http://localhost:8081/Assets/2k-sports-major-league-baseball-2k7/index.html"
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 0,
+                "bodyTextLength": 197,
+                "unityLoadingBar": false,
+                "unityProgress": "",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": true
+              }
+            }
+          }
+        },
+        {
+          "strategy": "mirror_external_refs_in_text_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_text_mirror",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_global_stubs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_optional_stubs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_files_from_issue_urls",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_missing_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "refill_missing_mirror_files",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror_refill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_gp_bundle_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_gp_bundle_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_local_asset_placeholders",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_placeholders",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "repair_emulator_cores",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_core_repair",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "discover_recovery_candidates",
+          "count": 12
+        }
+      ]
+    },
+    "99-nights-in-the-forest": {
+      "initial_status": "broken",
+      "fixed": false,
+      "recovered": false,
+      "final_status": "broken",
+      "attempts": [
+        {
+          "strategy": "strip_nonessential_external_refs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_strip_refs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "mirror_external_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
+            "return_code": 0,
+            "elapsed_seconds": 10.681,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 99-nights-in-the-forest (webgl)\n  REVIEW: External dependency requested for game runtime\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_z0g37jb3\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_z0g37jb3\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_z0g37jb3\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_z0g37jb3\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "99-nights-in-the-forest",
+              "type": "webgl",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 5.97,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 0,
+                "unityLoadingBar": true,
+                "unityProgress": "100%",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": false
+              }
+            }
+          }
+        },
+        {
+          "strategy": "mirror_external_refs_in_text_assets",
+          "changes": 2
+        },
+        {
+          "strategy": "validate_after_text_mirror",
+          "result": {
+            "status": "warning",
+            "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
+            "return_code": 0,
+            "elapsed_seconds": 11.447,
+            "timed_out": false,
+            "stdout_tail": "Scan server active on port 8081\nScanning 1 remaining games (total target set: 1) in batches of 1...\n\n--- Batch 1/1 (1 games) ---\nTesting: 99-nights-in-the-forest (webgl)\n  REVIEW: External dependency requested for game runtime\n\nScan complete.\n  Broken: 0\n  Needs review: 1\n  OK: 0\n  Broken log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_bfooxpxj\\broken.txt\n  Checked log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_bfooxpxj\\checked.txt\n  Review log: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_bfooxpxj\\review.txt\n  Full report: C:\\Users\\Jeo\\AppData\\Local\\Temp\\game_doctor_validate_bfooxpxj\\report.json\n",
+            "stderr_tail": "",
+            "result": {
+              "name": "99-nights-in-the-forest",
+              "type": "webgl",
+              "entry_file": "index.html",
+              "status": "warning",
+              "elapsed_seconds": 6.675,
+              "critical_issues": [],
+              "warnings": [
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_DEPENDENCY",
+                  "message": "External dependency requested for game runtime",
+                  "severity": "warning",
+                  "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                },
+                {
+                  "code": "EXTERNAL_CRITICAL_FAILED",
+                  "message": "External runtime dependency failed",
+                  "severity": "warning",
+                  "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+                }
+              ],
+              "probe": {
+                "readyState": "complete",
+                "surfaceCount": 1,
+                "bodyTextLength": 0,
+                "unityLoadingBar": true,
+                "unityProgress": "100%",
+                "hasRuffleGlobal": false,
+                "hasRetroGlobal": false
+              }
+            }
+          }
+        },
+        {
+          "strategy": "create_optional_global_stubs",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_optional_stubs",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_files_from_issue_urls",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_missing_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "refill_missing_mirror_files",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_mirror_refill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "fill_missing_gp_bundle_assets",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_gp_bundle_fill",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "create_optional_local_asset_placeholders",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_placeholders",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "repair_emulator_cores",
+          "changes": 0
+        },
+        {
+          "strategy": "validate_after_core_repair",
+          "skipped": true,
+          "reason": "no_changes"
+        },
+        {
+          "strategy": "discover_recovery_candidates",
+          "count": 12
+        }
+      ]
+    }
+  },
+  "maintenance_counts": {
+    "under_maintenance": 3,
+    "healthy": 2
+  }
+}

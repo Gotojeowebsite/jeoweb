@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2007, Scott Schiller. All rights reserved.
  * Code provided under the BSD License:
- * http://schillmania.com/projects/soundmanager2/license.txt
+ * ../_external_mirror/schillmania.com/projects/soundmanager2/license.txt
  *
  * V2.97a.20130101
  */
