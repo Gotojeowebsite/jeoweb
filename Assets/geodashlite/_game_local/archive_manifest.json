@@ -1,0 +1,42 @@
+{
+  "created_utc": 1776107749,
+  "start_url": "https://games.mathpapers.us/geodashlite/geodashlite.html",
+  "start_host": "games.mathpapers.us",
+  "max_pages": 1,
+  "max_depth": 0,
+  "rewrite_links": true,
+  "allow_subdomains": true,
+  "visited_pages": [
+    "https://games.mathpapers.us/geodashlite/geodashlite.html"
+  ],
+  "captured_assets": {
+    "https://games.mathpapers.us/geodashlite/Build/GeometryDashLite.json": "games.mathpapers.us/geodashlite/Build/GeometryDashLite.json",
+    "https://games.mathpapers.us/geodashlite/Build/GeometryDashLite.wasm.code.unityweb": "games.mathpapers.us/geodashlite/Build/GeometryDashLite.wasm.code.unityweb",
+    "https://games.mathpapers.us/geodashlite/Build/GeometryDashLite.wasm.framework.unityweb": "games.mathpapers.us/geodashlite/Build/GeometryDashLite.wasm.framework.unityweb",
+    "https://games.mathpapers.us/geodashlite/Build/UnityLoader.js": "games.mathpapers.us/geodashlite/Build/UnityLoader.js",
+    "https://games.mathpapers.us/geodashlite/Build/updater.js": "games.mathpapers.us/geodashlite/Build/updater.js",
+    "https://games.mathpapers.us/geodashlite/geodashlite.html": "games.mathpapers.us/geodashlite/geodashlite.html",
+    "https://games.mathpapers.us/geodashlite/image/loading.png?v=1": "games.mathpapers.us/geodashlite/image/loading__q_1d365e2dc4.png",
+    "https://games.mathpapers.us/geodashlite/image/process_bar_back.png": "games.mathpapers.us/geodashlite/image/process_bar_back.png",
+    "https://games.mathpapers.us/geodashlite/image/process_bar_front.png": "games.mathpapers.us/geodashlite/image/process_bar_front.png",
+    "https://games.mathpapers.us/themes/geometrydashlite.io/rs/css/home.css?v=1": "games.mathpapers.us/themes/geometrydashlite.io/rs/css/home.css__q_1d365e2dc4.html",
+    "https://games.mathpapers.us/themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js": "games.mathpapers.us/themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js.html",
+    "https://geometrydashlite.io/geometry-dash-game": "geometrydashlite.io/geometry-dash-game.html"
+  },
+  "failed_requests": {
+    "https://games.mathpapers.us/themes/geometrydashlite.io/rs/css/home.css?v=1": "net::ERR_ABORTED",
+    "https://games.mathpapers.us/themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js": "net::ERR_ABORTED",
+    "https://analytics.google.com/g/collect?_c=1&_ee=1&_eu=AAAAAGA&_fv=2&_gaz=1&_p=1776107733532&_s=1&_ss=2&are=1&cid=628249731.1776107734&dl=https%3A%2F%2Fgames.mathpapers.us%2Fgeodashlite%2Fgeodashlite.html&dma=0&dt=Geometry+Dash+Lite&en=page_view&frm=0&gcd=13l3l3l3l1l1&gtm=45je6490v868365026za200zb896239539zd896239539&npa=0&pscdl=noapi&rcb=16&sct=1&seg=0&sid=1776107734&sr=1440x900&tag_exp=0~115616985~115938465~115938468~116363098~117266401&tfd=1101&tid=G-98DP5VKS42&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&v=2": "net::ERR_ABORTED",
+    "https://games.mathpapers.us/geodashlite/Build/GeometryDashLite.data.unityweb": "response capture failed: Response.body: Protocol error (Network.getResponseBody): Request content was evicted from inspector cache",
+    "https://analytics.google.com/g/collect?_c=1&_et=1751&_eu=AEAAAGQ&_p=1776107733532&_s=2&ae=a&are=1&cid=628249731.1776107734&dl=https%3A%2F%2Fgames.mathpapers.us%2Fgeodashlite%2Fgeodashlite.html&dma=0&dt=Geometry+Dash+Lite&en=scroll&epn.percent_scrolled=90&frm=0&gcd=13l3l3l3l1l1&gtm=45je6490v868365026za200zb896239539zd896239539&npa=0&pscdl=noapi&rcb=16&sct=1&seg=0&sid=1776107734&sr=1440x900&tag_exp=0~115616985~115938465~115938468~116363098~117266401&tfd=2857&tid=G-98DP5VKS42&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&v=2": "net::ERR_ABORTED",
+    "https://eu-west-1-cs-rtb.openwebmp.com/sync-iframe?gdpr=0&gdpr_consent=&gpp=&gpp_sid=&redirect=https%3A%2F%2Fcm.mgid.com%2Fm%3Fcdsp%3D834183%26c%3D%7BpartnerId%7D&us_privacy=": "net::ERR_BLOCKED_BY_ORB",
+    "https://cm.mgid.com/google?gdpr=0&gdpr_consent=&google_cver=1&google_gid=CAESEDUJsg04oH8Q018QGtv5Ca8&google_ula=%7Bguid%7D%2C5&muidn=q3dIZHiSY4fc": "net::ERR_BLOCKED_BY_ORB",
+    "https://sync.bfmio.com/sync?expiration=1776194146&gdpr_consent=%5BGDPR_CONSENT%5D&is_secure=true&nuid=019d8845-6ecb-740e-82d1-8e05efdcc115gdpr%3D0&pid=194&uid=AQALhh96bpwkqgIR0z3uAQEBAQEBAQCciURyqgEBAJyJRHKq": "net::ERR_ABORTED",
+    "https://ad.mrtnsvr.com/sync/pubmatic?gdpr=0&gdpr_consent=": "net::ERR_CONNECTION_CLOSED",
+    "https://ads.pubmatic.com/AdServer/js/user_sync.html?gdpr=0&gdpr_consent=&google_cver=1&google_gid=CAESEPdpQjRJvEYiSgIJbWzPhMw&p=156578&predirect=": "net::ERR_BLOCKED_BY_ORB",
+    "https://pbs.yahoo.com/setuid?bidder=rubicon&gdpr=0&uid=MNXKOZCC-1G-B2W6": "net::ERR_BLOCKED_BY_ORB",
+    "https://rtb.adentifi.com/CookieSyncPubMatic&gdpr=0&gdpr_consent=&us_privacy=&gpp=&gpp_sid=": "net::ERR_ABORTED",
+    "https://user-sync.fwmrm.net/ad/u?dspid=71&dspuid=ad1A49HM7qEAP3y-AtGn0wAAGFwAAAAB&gdpr=0&gdpr_consent=&mode=user-register": "net::ERR_TOO_MANY_REDIRECTS",
+    "https://cs.admanmedia.com/725cf09ae99fe8956893951f6570d867.gif?gdpr=0&gdpr_consent=%5BGDPR_CONSENT%5D&puid=019d8845-6ecb-740e-82d1-8e05efdcc115&redir=https%3A%2F%2Fs.seedtag.com%2Fcs%2Fcookiesync%2Fillumin%3Fchanneluid%3D%5BUID%5D": "net::ERR_ABORTED"
+  }
+}

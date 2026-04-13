@@ -1,0 +1,386 @@
+@font-face {
+    font-family: 'LTSans-R';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSans-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'LTSans-M';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSans-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'LTSans-L';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSans-Light.woff2');
+}
+
+@font-face {
+    font-family: 'LTSerif-R';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSerif-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'LTSerif-M';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSerif-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'LTSerif-L';
+    font-weight: normal;
+    src: url('https://cdn.flashtalking.com/209527/fontRL_3705_LifeTimeFitness/fonts/LTSerif-Light.woff2');
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+#main {
+    border: 1px solid #666666;
+    position: absolute;
+    overflow: hidden;
+    width: 726px;
+    height: 88px;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+}
+
+.frameSize {
+    position: absolute;
+    width: 728px;
+    height: 90px;
+    left: -1px;
+    top: -1px;
+}
+
+#ctaContainer {
+    position: absolute;
+    width: 590px;
+    display: flex;
+    justify-content: center;
+    left: 45px;
+    top: 30px;
+}
+
+#cta {
+    border: .4px solid #ffffff50;
+    opacity: 0;
+    padding: 6px 22px 5px 22px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+}
+
+.filledcta #cta {
+    background-color: #fff;
+    color: #313131;
+}
+
+
+#footer {
+    position: absolute;
+    left: 595px;
+    top: 0px;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+}
+
+.headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+    top: 3px;
+    line-height: 1.15;
+}
+
+
+
+.headline,
+.subheadline,
+#club_location_txt {
+    width:560px;
+    left: 44px;
+    opacity: 0;
+}
+
+
+
+#f1_headline_txt,
+#f1_subheadline_txt {
+    opacity: 1;
+}
+
+.subheadline {
+    top: 12px;
+    letter-spacing: 0.1em;
+}
+
+#club_location_txt {
+    opacity: 0;
+    top: 52px;
+    left: 374px;
+    width: 556px;
+    letter-spacing: 0.1em;
+}
+
+.logo,
+.text {
+    position: absolute;
+}
+
+/* headline/subheadline */
+
+
+.subheadline.eyebrow {
+
+}
+
+/* .headline.footer {
+    height: 59px;
+    top: 25px;
+    width: 586px;
+    left: 93px;
+    align-items: flex-start;
+}
+
+.subheadline.footer {
+    width: 586px;
+    left: 93px;
+} */
+
+.headline.ltsans {
+    font-family: 'LTSans-R';
+}
+
+.subheadline.ltsans {
+    font-family: 'LTSans-M';
+}
+
+.headline.oversizedlogo, 
+.subheadline.oversizedlogo {
+    left: 47px;
+    width: 374px;
+}
+
+.headline.clubname,
+.subheadline.clubname {
+    width: 570px;
+}
+
+.headline.left {
+    text-align: left;
+    align-items: start;
+    width: 426px;
+    height: auto;
+    left: 100px;
+    top: auto;
+    position: relative;
+}
+
+.subheadline.left {
+    display: flex;
+    text-align: left;
+    /* align-items: end; */
+    width: 426px;
+    height: auto;
+    left: 100px;
+    top: auto;
+    position: relative;
+    margin-bottom: 6px;
+}
+.headline.nosymbol {
+    width: 522px;
+    left: 100px;
+}
+
+
+.subheadline.nosymbol {
+    top: 40px;
+    left: 0px;
+    width: 102px;
+    text-align: center;
+}
+
+
+/* logo */
+.logo1 {
+    left: 615px;
+    top: 31px;
+    opacity: 0;
+    width: 72px;
+}
+
+.logo2 {
+    left: 19px;
+    top: 39px;
+    opacity: 0;
+    width: 26px;
+}
+
+.oversizedlogo.logo1 {
+    width: 166px;
+    left: 534px;
+    top: 13px;
+}
+
+.oversizedlogo.logo2 {
+    width: 0px;
+}
+
+.nosymbol.logo2 {
+    width: 0px;
+}
+
+/* .footer.logo1 {
+    width: 70px;
+    left: 22px;
+    top: 36px;
+} */
+/* .left.logo1 {
+    width: 70px;
+    left: 18px;
+    top: 36px;
+} */
+
+/* .footer.logo2 {
+    left: 680px;
+    top: 39px;
+} */
+
+
+.clubname.logo1 {
+    top: 31px;
+    width: 72px;
+    left: 615px;
+}
+
+.bottomcta.logo1 {
+    left: 276px;
+    top: 30px;
+    width: 140px;
+}
+
+.bottomcta.logo2 {
+    width: 0px;
+}
+
+
+/* cta  */
+.caps {
+    text-transform: uppercase;
+}
+
+.defaultcta #cta {
+    background-color: transparent;
+}
+
+.filledcta #cta {
+    background-color: #fff;
+    color: #313131;
+}
+.bottomcta#ctaContainer {
+    left: 354px;
+    top: 14px;
+}
+.macOS.chrome .bottomcta#ctaContainer {
+    top: 32px;
+}
+/* .headline.eyebrow {
+    height: 59px;
+    top: 25px;
+    align-items: flex-start;
+} */
+
+.textWrap.footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 90px;
+    position: absolute;
+    left: 93px;
+}
+.textWrap.eyebrow {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 562px;
+    height: 90px;
+    position: absolute;
+    left: 45px;
+}
+
+
+.textWrap.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 515px;
+    height: 90px;
+    position: absolute;
+    left: 90px;
+    flex-direction: column-reverse;
+}
+
+.headline.footer {
+    height: auto;
+    top: auto;
+    width: 100%;
+    /* left: 93px; */
+    /* align-items: flex-start; */
+    left: 0px;
+    position: relative;
+}
+
+
+
+.headline.eyebrow {
+    height: auto;
+    top: auto;
+    width: 100%;
+    /* left: 93px; */
+    /* align-items: flex-start; */
+    left: 0px;
+    position: relative;
+}
+.subheadline.footer {
+    width: 100%;
+    left: 0px;
+    position: relative;
+    top: auto;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subheadline.eyebrow {
+    width: 100%;
+    left: 0px;
+    position: relative;
+    top: auto;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .default
+.eyebrow
+.caps
+.oversizedlogo
+.clubname
+.nosymbol
+.footer
+.left
+.defaultcta
+.filledcta
+.bottomcta */

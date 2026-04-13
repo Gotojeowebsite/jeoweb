@@ -220,18 +220,38 @@
 			</div>
 		</section>
 
-		<!-- Recently Added Button -->
-		<section id="newlyAddedSection" class="whats-new-section hidden">
-			<a href="new.html" class="whats-new-btn">
-				<span class="whats-new-dot"></span>
-				See what's new
-				<span class="whats-new-arrow">→</span>
-			</a>
-			<a href="requested.html" id="requestedBtn" class="whats-new-btn" style="display:none;margin-left:10px">
-				<span class="requested-dot"></span>
-				Requested a game?
-				<span class="whats-new-arrow">→</span>
-			</a>
+		<!-- Newly Added Carousel -->
+		<section id="newlyAddedSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">✨</span>
+					<h2 class="carousel-title">Newly Added</h2>
+					<span id="newlyAddedCount" class="carousel-count">0</span>
+				</div>
+				<a href="new.html" class="carousel-view-all">See what's new →</a>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="newlyAddedTrack" aria-label="Scroll left">‹</button>
+				<div id="newlyAddedTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="newlyAddedTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Requested Games Carousel -->
+		<section id="requestedSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">📋</span>
+					<h2 class="carousel-title">Requested Games</h2>
+					<span id="requestedCount" class="carousel-count">0</span>
+				</div>
+				 <a href="requested.html" class="carousel-view-all">Browse all requested -></a>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="requestedTrack" aria-label="Scroll left">‹</button>
+				<div id="requestedTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="requestedTrack" aria-label="Scroll right">›</button>
+			</div>
 		</section>
 
 		<!-- Loading state -->

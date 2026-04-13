@@ -27,13 +27,15 @@
     "name": "1v1space",
     "url": "Assets/1v1space/index.html",
     "image": "Assets/1v1space/splash.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "2006-fifa-world-cup-germany-2006",
     "url": "Assets/2006-fifa-world-cup-germany-2006/index.html",
     "image": "Assets/2006-fifa-world-cup-germany-2006/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "2048",
@@ -45,7 +47,8 @@
     "name": "2k-sports-major-league-baseball-2k7",
     "url": "Assets/2k-sports-major-league-baseball-2k7/index.html",
     "image": "Assets/2k-sports-major-league-baseball-2k7/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "3dtanks",
@@ -153,7 +156,8 @@
     "name": "angelunder",
     "url": "Assets/angelunder/index.html",
     "image": "Assets/angelunder/TemplateData/babusgames-logo.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "angry-bird",
@@ -219,13 +223,15 @@
     "name": "avatar-the-last-airbender",
     "url": "Assets/avatar-the-last-airbender/index.html",
     "image": "Assets/avatar-the-last-airbender/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "avatar-the-last-airbender-the-burning-earth",
     "url": "Assets/avatar-the-last-airbender-the-burning-earth/index.html",
     "image": "Assets/avatar-the-last-airbender-the-burning-earth/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "awesomecars",
@@ -255,31 +261,36 @@
     "name": "backyard-baseball",
     "url": "Assets/backyard-baseball/index.html",
     "image": "Assets/backyard-baseball/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "backyard-basketball",
     "url": "Assets/backyard-basketball/index.html",
     "image": "Assets/backyard-basketball/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "backyard-football",
     "url": "Assets/backyard-football/index.html",
     "image": "Assets/backyard-football/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "backyard-hockey",
     "url": "Assets/backyard-hockey/index.html",
     "image": "Assets/backyard-hockey/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "backyard-skateboarding",
     "url": "Assets/backyard-skateboarding/index.html",
     "image": "Assets/backyard-skateboarding/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "bacon-may-die",
@@ -308,7 +319,7 @@
   {
     "name": "bad-time-sim",
     "url": "Assets/bad-time-sim/index.html",
-    "image": "Assets/bad-time-sim/badtime sim.jpeg",
+    "image": "Assets/bad-time-sim/badtime_sim_logo.png",
     "type": "webgl"
   },
   {
@@ -330,6 +341,13 @@
     "type": "webgl"
   },
   {
+    "name": "basket-random",
+    "url": "Assets/basket-random/index.html",
+    "image": "Assets/basket-random/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
     "name": "basketball-stars",
     "url": "Assets/basketball-stars/index.html",
     "image": "Assets/basketball-stars/basketball-stars.png",
@@ -339,7 +357,8 @@
     "name": "batman-vengeance",
     "url": "Assets/batman-vengeance/index.html",
     "image": "Assets/batman-vengeance/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "battle-sim",
@@ -369,13 +388,15 @@
     "name": "Big-Tower-Tinysquare",
     "url": "Assets/Big-Tower-Tinysquare/index.html",
     "image": "Assets/Big-Tower-Tinysquare/download (8).jpeg",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "BigFalapyTower",
     "url": "Assets/BigFalapyTower/index.html",
     "image": "Assets/BigFalapyTower/images/icon-128.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "bigredbutton",
@@ -471,7 +492,8 @@
     "name": "bobtherobber1",
     "url": "Assets/bobtherobber1/index.html",
     "image": "Assets/bobtherobber1/btr.jpg",
-    "type": "webgl"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "bobtherobber2",
@@ -483,7 +505,8 @@
     "name": "bobtherobber5",
     "url": "Assets/bobtherobber5/index.html",
     "image": "Assets/bobtherobber5/btr5.png",
-    "type": "webgl"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "bomberman",
@@ -495,13 +518,15 @@
     "name": "bomberman-max-2-blue-advance",
     "url": "Assets/bomberman-max-2-blue-advance/index.html",
     "image": "Assets/bomberman-max-2-blue-advance/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "bomberman-tournament",
     "url": "Assets/bomberman-tournament/index.html",
     "image": "Assets/bomberman-tournament/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "boombot2",
@@ -519,7 +544,8 @@
     "name": "boulder-dash-ex",
     "url": "Assets/boulder-dash-ex/index.html",
     "image": "Assets/boulder-dash-ex/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "boxhead2play",
@@ -531,7 +557,8 @@
     "name": "boxing-fever",
     "url": "Assets/boxing-fever/index.html",
     "image": "Assets/boxing-fever/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "breakingthebank",
@@ -549,13 +576,15 @@
     "name": "bruce-lee-return-of-the-legend",
     "url": "Assets/bruce-lee-return-of-the-legend/index.html",
     "image": "Assets/bruce-lee-return-of-the-legend/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "btd3",
     "url": "Assets/btd3/index.html",
     "image": "Assets/btd3/images (2).jpeg",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "btd4",
@@ -663,49 +692,57 @@
     "name": "Captain-America-and-the-Advengers",
     "url": "Assets/Captain-America-and-the-Advengers/index.html",
     "image": "Assets/Captain-America-and-the-Advengers/logo.gif",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "Captain-Commando",
     "url": "Assets/Captain-Commando/index.html",
     "image": "Assets/Captain-Commando/logo.gif",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "capybara-clicker",
     "url": "Assets/capybara-clicker/index.html",
     "image": "Assets/capybara-clicker/logo.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "cartoon-network-block-party",
     "url": "Assets/cartoon-network-block-party/index.html",
     "image": "Assets/cartoon-network-block-party/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "cartoon-network-speedway",
     "url": "Assets/cartoon-network-speedway/index.html",
     "image": "Assets/cartoon-network-speedway/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "casper",
     "url": "Assets/casper/index.html",
     "image": "Assets/casper/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "cat-in-the-hat-the",
     "url": "Assets/cat-in-the-hat-the/index.html",
     "image": "Assets/cat-in-the-hat-the/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "catwoman",
     "url": "Assets/catwoman/index.html",
     "image": "Assets/catwoman/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "cell-machine",
@@ -723,13 +760,15 @@
     "name": "chess",
     "url": "Assets/chess/index.html",
     "image": "Assets/chess/logo.jpg",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "chessmaster",
     "url": "Assets/chessmaster/index.html",
     "image": "Assets/chessmaster/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "chibiknight",
@@ -741,31 +780,36 @@
     "name": "chicken-jockey-clicker",
     "url": "Assets/chicken-jockey-clicker/index.html",
     "image": "Assets/chicken-jockey-clicker/logo.png",
-    "type": "webgl"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "chicken-little",
     "url": "Assets/chicken-little/index.html",
     "image": "Assets/chicken-little/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "chicken-shoot",
     "url": "Assets/chicken-shoot/index.html",
     "image": "Assets/chicken-shoot/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "chicken-shoot-2",
     "url": "Assets/chicken-shoot-2/index.html",
     "image": "Assets/chicken-shoot-2/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "chill-guy-clicker",
     "url": "Assets/chill-guy-clicker/index.html",
     "image": "Assets/chill-guy-clicker/24122704/logo.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "chrome-dino",
@@ -777,7 +821,8 @@
     "name": "Chromo-Trigger",
     "url": "Assets/Chromo-Trigger/index.html",
     "image": "Assets/Chromo-Trigger/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "circlo",
@@ -801,7 +846,8 @@
     "name": "Clock-Tower",
     "url": "Assets/Clock-Tower/index.html",
     "image": "Assets/Clock-Tower/logo.jpg",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "computerbashing",
@@ -813,12 +859,13 @@
     "name": "connect3",
     "url": "Assets/connect3/index.html",
     "image": "Assets/connect3/connect3.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "cookie-clicker",
     "url": "Assets/cookie-clicker/index.html",
-    "image": "Assets/cookie-clicker/img/bunnies.png",
+    "image": "Assets/cookie-clicker/_external_mirror/db.duckmath.org/html/cookie_clicker/img/favicon.ico",
     "type": "webgl"
   },
   {
@@ -861,7 +908,8 @@
     "name": "crossy-road-space",
     "url": "Assets/crossy-road-space/index.html",
     "image": "Assets/crossy-road-space/logo.jpeg",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "crushthecastle",
@@ -878,7 +926,7 @@
   {
     "name": "csgo-clicker",
     "url": "Assets/csgo-clicker/index.html",
-    "image": "Assets/csgo-clicker/images/case1.png",
+    "image": "Assets/csgo-clicker/_external_mirror/i.imgur.com/BzuCWzL.png",
     "type": "webgl"
   },
   {
@@ -921,7 +969,8 @@
     "name": "dbz-legend-of-kakarot-gba",
     "url": "Assets/dbz-legend-of-kakarot-gba/index.html",
     "image": "Assets/dbz-legend-of-kakarot-gba/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "deadly-decent",
@@ -951,13 +1000,15 @@
     "name": "dexter-s-laboratory-chess-challenge",
     "url": "Assets/dexter-s-laboratory-chess-challenge/index.html",
     "image": "Assets/dexter-s-laboratory-chess-challenge/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "dexter-s-laboratory-deesaster-strikes",
     "url": "Assets/dexter-s-laboratory-deesaster-strikes/index.html",
     "image": "Assets/dexter-s-laboratory-deesaster-strikes/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "dig-to-china",
@@ -999,7 +1050,8 @@
     "name": "donkey-kong-country",
     "url": "Assets/donkey-kong-country/index.html",
     "image": "Assets/donkey-kong-country/logo.webp",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "donkeykong",
@@ -1047,7 +1099,8 @@
     "name": "doublewires",
     "url": "Assets/doublewires/index.html",
     "image": "Assets/doublewires/doublewires.png",
-    "type": "flash"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "drag-racers",
@@ -1059,37 +1112,43 @@
     "name": "dragon-ball-advanced-adventure",
     "url": "Assets/dragon-ball-advanced-adventure/index.html",
     "image": "Assets/dragon-ball-advanced-adventure/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "dragon-ball-z-hyper-dimension",
     "url": "Assets/dragon-ball-z-hyper-dimension/index.html",
     "image": "Assets/dragon-ball-z-hyper-dimension/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "dragon-ball-z-super-butouden-3",
     "url": "Assets/dragon-ball-z-super-butouden-3/index.html",
     "image": "Assets/dragon-ball-z-super-butouden-3/logo.jpg",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "dragon-ball-z-super-saiya-densetsu",
     "url": "Assets/dragon-ball-z-super-saiya-densetsu/index.html",
     "image": "Assets/dragon-ball-z-super-saiya-densetsu/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "dragon-ball-z-team-training-v9-2",
     "url": "Assets/dragon-ball-z-team-training-v9-2/index.html",
     "image": "Assets/dragon-ball-z-team-training-v9-2/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "dragon-ball-z-the-legacy-of-goku-i-ii",
     "url": "Assets/dragon-ball-z-the-legacy-of-goku-i-ii/index.html",
     "image": "Assets/dragon-ball-z-the-legacy-of-goku-i-ii/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "dragon-vs-bricks",
@@ -1104,6 +1163,13 @@
     "type": "webgl"
   },
   {
+    "name": "dreadhead-parkout",
+    "url": "Assets/dreadhead-parkout/index.html",
+    "image": "Assets/dreadhead-parkout/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
     "name": "drift-king",
     "url": "Assets/drift-king/index.html",
     "image": "Assets/drift-king/logo.jpeg",
@@ -1113,13 +1179,15 @@
     "name": "ducklife1",
     "url": "Assets/ducklife1/index.html",
     "image": "Assets/ducklife1/ducklife.png",
-    "type": "flash"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "ducklife2",
     "url": "Assets/ducklife2/index.html",
     "image": "Assets/ducklife2/ducklife2.png",
-    "type": "flash"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "ducklife3",
@@ -1173,7 +1241,8 @@
     "name": "earthbound",
     "url": "Assets/earthbound/index.html",
     "image": "Assets/earthbound/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "edge-surf",
@@ -1191,7 +1260,8 @@
     "name": "eel-slap",
     "url": "Assets/eel-slap/index.html",
     "image": "Assets/eel-slap/eel-slap.png",
-    "type": "webgl"
+    "type": "webgl",
+    "status": "broken"
   },
   {
     "name": "eggycar",
@@ -1323,7 +1393,8 @@
     "name": "fancypantsadventure2",
     "url": "Assets/fancypantsadventure2/index.html",
     "image": "Assets/fancypantsadventure2/logo.jpg",
-    "type": "flash"
+    "type": "flash",
+    "status": "broken"
   },
   {
     "name": "fancypantsadventure3",
@@ -1335,31 +1406,36 @@
     "name": "fifa-soccer-06",
     "url": "Assets/fifa-soccer-06/index.html",
     "image": "Assets/fifa-soccer-06/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "fifa-soccer-07",
     "url": "Assets/fifa-soccer-07/index.html",
     "image": "Assets/fifa-soccer-07/logo.png",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "fifa-soccer-2003",
     "url": "Assets/fifa-soccer-2003/index.html",
     "image": "Assets/fifa-soccer-2003/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "fifa-soccer-2004",
     "url": "Assets/fifa-soccer-2004/index.html",
     "image": "Assets/fifa-soccer-2004/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "fifa-soccer-2005",
     "url": "Assets/fifa-soccer-2005/index.html",
     "image": "Assets/fifa-soccer-2005/logo.jpg",
-    "type": "gba"
+    "type": "gba",
+    "status": "broken"
   },
   {
     "name": "fighter-aircraft-pilot",
@@ -1371,31 +1447,36 @@
     "name": "final-fantasy-iii",
     "url": "Assets/final-fantasy-iii/index.html",
     "image": "Assets/final-fantasy-iii/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "final-fantasy-iii-es",
     "url": "Assets/final-fantasy-iii-es/index.html",
     "image": "Assets/final-fantasy-iii-es/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "final-fight",
     "url": "Assets/final-fight/index.html",
     "image": "Assets/final-fight/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "final-fight-2",
     "url": "Assets/final-fight-2/index.html",
     "image": "Assets/final-fight-2/logo.jpg",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "final-fight-3",
     "url": "Assets/final-fight-3/index.html",
     "image": "Assets/final-fight-3/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "fire-boy1",
@@ -1430,7 +1511,7 @@
   {
     "name": "fishing.io",
     "url": "Assets/fishing.io/index.html",
-    "image": "Assets/fishing.io/fishing.io.jpeg",
+    "image": "Assets/fishing.io/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/splash.png",
     "type": "webgl"
   },
   {
@@ -1461,7 +1542,8 @@
     "name": "flashback-the-quest-for-identity",
     "url": "Assets/flashback-the-quest-for-identity/index.html",
     "image": "Assets/flashback-the-quest-for-identity/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "flashflightsimulator",
@@ -1521,7 +1603,8 @@
     "name": "front-mission",
     "url": "Assets/front-mission/index.html",
     "image": "Assets/front-mission/logo.png",
-    "type": "snes"
+    "type": "snes",
+    "status": "broken"
   },
   {
     "name": "fruitninja",
@@ -1552,6 +1635,27 @@
     "url": "Assets/geodash/index.html",
     "image": "Assets/geodash/geoscratchicon.png",
     "type": "webgl"
+  },
+  {
+    "name": "geodashlite",
+    "url": "Assets/geodashlite/index.html",
+    "image": "Assets/geodashlite/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "geojump",
+    "url": "Assets/geojump/index.html",
+    "image": "Assets/geojump/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "geoneondash",
+    "url": "Assets/geoneondash/index.html",
+    "image": "Assets/geoneondash/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "georgeandtheprinter",
@@ -1809,7 +1913,7 @@
   {
     "name": "idle-breakout",
     "url": "Assets/idle-breakout/index.html",
-    "image": "Assets/idle-breakout/assets/particles/thumbnail.png",
+    "image": "Assets/idle-breakout/media/posts/496/idle-breakout.webp",
     "type": "webgl"
   },
   {
@@ -1817,6 +1921,13 @@
     "url": "Assets/idle-shark/index.html",
     "image": "Assets/idle-shark/favicon.ico",
     "type": "webgl"
+  },
+  {
+    "name": "idledices",
+    "url": "Assets/idledices/index.html",
+    "image": "Assets/idledices/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "ihatovo-monogatari",
@@ -1967,6 +2078,13 @@
     "url": "Assets/legend-of-zelda-the-the-minish-cap/index.html",
     "image": "Assets/legend-of-zelda-the-the-minish-cap/logo.png",
     "type": "gba"
+  },
+  {
+    "name": "ltf-idle",
+    "url": "Assets/ltf-idle/index.html",
+    "image": "Assets/ltf-idle/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "magnetface",
@@ -2443,6 +2561,13 @@
     "type": "webgl"
   },
   {
+    "name": "poom",
+    "url": "Assets/poom/index.html",
+    "image": "Assets/poom/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
     "name": "portal2d",
     "url": "Assets/portal2d/index.html",
     "image": "Assets/portal2d/logo.png",
@@ -2459,6 +2584,13 @@
     "url": "Assets/precision-client/index.html",
     "image": "Assets/precision-client/logo.png",
     "type": "webgl"
+  },
+  {
+    "name": "protektor",
+    "url": "Assets/protektor/index.html",
+    "image": "Assets/protektor/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "push-the-square",
@@ -2583,7 +2715,7 @@
   {
     "name": "Rocket League",
     "url": "Assets/Rocket League/index.html",
-    "image": "notavailable.svg",
+    "image": "Assets/Rocket League/logo.svg",
     "type": "webgl"
   },
   {
@@ -2597,6 +2729,13 @@
     "url": "Assets/rooftop-snipers/index.html",
     "image": "Assets/rooftop-snipers/img/thumb.png",
     "type": "webgl"
+  },
+  {
+    "name": "route-digger",
+    "url": "Assets/route-digger/index.html",
+    "image": "Assets/route-digger/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "run2",
@@ -2649,7 +2788,7 @@
   {
     "name": "shellshockers",
     "url": "Assets/shellshockers/index.html",
-    "image": "Assets/shellshockers/logo.jpg",
+    "image": "Assets/shellshockers/_external_mirror/cdn.jsdelivr.net/gh/shellbros/shellbros.github.io_6bf9789/img/logo.svg",
     "type": "webgl"
   },
   {
@@ -2657,6 +2796,13 @@
     "url": "Assets/shoppingcarthero3/index.html",
     "image": "Assets/shoppingcarthero3/logo.jpg",
     "type": "flash"
+  },
+  {
+    "name": "shuttledeck",
+    "url": "Assets/shuttledeck/index.html",
+    "image": "Assets/shuttledeck/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "siftheads",
@@ -2846,6 +2992,13 @@
     "type": "flash"
   },
   {
+    "name": "stickman-hook",
+    "url": "Assets/stickman-hook/index.html",
+    "image": "Assets/stickman-hook/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
     "name": "stickrpg",
     "url": "Assets/stickrpg/index.html",
     "image": "Assets/stickrpg/logo.jpg",
@@ -2983,6 +3136,13 @@
     "url": "Assets/superfighters/index.html",
     "image": "Assets/superfighters/logo.jpg",
     "type": "flash"
+  },
+  {
+    "name": "superfowlist",
+    "url": "Assets/superfowlist/index.html",
+    "image": "Assets/superfowlist/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "superhot",
@@ -3144,7 +3304,7 @@
     "name": "thorns-and-ballons",
     "url": "Assets/thorns-and-ballons/index.html",
     "image": "Assets/thorns-and-ballons/logo.png",
-    "type": "webgl"
+    "type": "flash"
   },
   {
     "name": "top-gear-2",
@@ -3185,7 +3345,7 @@
   {
     "name": "twerk-race-3d",
     "url": "Assets/twerk-race-3d/index.html",
-    "image": "Assets/twerk-race-3d/logo.jpg",
+    "image": "Assets/twerk-race-3d/_external_mirror/yastatic.net/s3/games-static/favicons-console/logo.svg",
     "type": "webgl"
   },
   {
@@ -3229,6 +3389,13 @@
     "url": "Assets/unrealflash/index.html",
     "image": "Assets/unrealflash/logo.webp",
     "type": "flash"
+  },
+  {
+    "name": "veloce",
+    "url": "Assets/veloce/index.html",
+    "image": "Assets/veloce/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "vex3",

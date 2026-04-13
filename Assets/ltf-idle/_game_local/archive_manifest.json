@@ -1,0 +1,24 @@
+{
+  "created_utc": 1776107990,
+  "start_url": "https://games.mathpapers.us/ltf-idle/index.html",
+  "start_host": "games.mathpapers.us",
+  "max_pages": 1,
+  "max_depth": 0,
+  "rewrite_links": true,
+  "allow_subdomains": true,
+  "visited_pages": [
+    "https://games.mathpapers.us/ltf-idle/index.html"
+  ],
+  "captured_assets": {
+    "https://games.mathpapers.us/ltf-idle/index.html": "games.mathpapers.us/ltf-idle/index.html",
+    "https://games.mathpapers.us/ltf-idle/ltf-idle.swf": "games.mathpapers.us/ltf-idle/ltf-idle.swf",
+    "https://unpkg.com/@ruffle-rs/ruffle@0.2.0-nightly.2026.4.12/b26bc0cb82a5cbb0a87b.wasm": "unpkg.com/_ruffle-rs/ruffle_0.2.0-nightly.2026.4.12/b26bc0cb82a5cbb0a87b.wasm",
+    "https://unpkg.com/@ruffle-rs/ruffle@0.2.0-nightly.2026.4.12/core.ruffle.7dba7f12c58b425161a0.js": "unpkg.com/_ruffle-rs/ruffle_0.2.0-nightly.2026.4.12/core.ruffle.7dba7f12c58b425161a0.js",
+    "https://unpkg.com/@ruffle-rs/ruffle@0.2.0-nightly.2026.4.12/ruffle.js": "unpkg.com/_ruffle-rs/ruffle_0.2.0-nightly.2026.4.12/ruffle.js"
+  },
+  "failed_requests": {
+    "https://unpkg.com/@ruffle-rs/ruffle": "response capture failed: Response.body: Response body is unavailable for redirect responses",
+    "https://unpkg.com/@ruffle-rs/ruffle/core.ruffle.7dba7f12c58b425161a0.js": "response capture failed: Response.body: Response body is unavailable for redirect responses",
+    "https://unpkg.com/@ruffle-rs/ruffle/b26bc0cb82a5cbb0a87b.wasm": "response capture failed: Response.body: Response body is unavailable for redirect responses"
+  }
+}

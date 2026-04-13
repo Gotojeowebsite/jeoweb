@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veloce</title>
+  <style>
+    html, body { margin:0; height:100%; background:#000; color:#fff; font-family: system-ui, -apple-system, Segoe UI, sans-serif; }
+    .wrap { position:relative; height:100%; }
+    iframe { border:0; width:100%; height:100%; display:block; background:#000; }
+    .fallback { position:absolute; inset:0; display:none; align-items:center; justify-content:center; flex-direction:column; gap:12px; background:#000; text-align:center; padding:24px; }
+    .fallback a { color:#fff; background:#1f2937; padding:10px 16px; border-radius:8px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <iframe id="gameFrame" src="_game_local/games.mathpapers.us/veloce/index.html" loading="eager" referrerpolicy="no-referrer" allowfullscreen></iframe>
+    <div id="fallback" class="fallback">
+      <div>This source blocks iframe embedding right now.</div>
+      <a href="_game_local/games.mathpapers.us/veloce/index.html" target="_blank" rel="noopener noreferrer">Open game source in new tab</a>
+    </div>
+  </div>
+  <script>
+    const frame = document.getElementById('gameFrame');
+    const fallback = document.getElementById('fallback');
+    let loaded = false;
+    frame.addEventListener('load', () => { loaded = true; });
+    setTimeout(() => { if (!loaded) fallback.style.display = 'flex'; }, 4000);
+  </script>
+</body>
+</html>

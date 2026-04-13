@@ -262,9 +262,6 @@ class App {
 		this.newlyAddedTrack = document.getElementById('newlyAddedTrack');
 		this.newlyAddedCount = document.getElementById('newlyAddedCount');
 		this.newlyAddedNames = [];
-
-		// Requested button
-		this.requestedBtn = document.getElementById('requestedBtn');
 	}
 
 	hideLoading() {
@@ -972,9 +969,23 @@ class App {
 	}
 
 	renderRequestedBtn() {
-		if (!this.requestedBtn) return;
-		const hasRequested = this.games.some(g => g.requested);
-		this.requestedBtn.style.display = hasRequested ? '' : 'none';
+		if (!this.requestedSection) return;
+		const requestedGames = this.games.filter(g => g.requested);
+		
+		if (requestedGames.length === 0) {
+			this.requestedSection.classList.add('hidden');
+			return;
+		}
+		
+		this.requestedSection.classList.remove('hidden');
+		if (this.requestedCount) this.requestedCount.textContent = requestedGames.length;
+		
+		if (this.requestedTrack) {
+			this.requestedTrack.innerHTML = '';
+			requestedGames.forEach((g, i) => {
+				this.requestedTrack.appendChild(this.createCarouselCard(g, i));
+			});
+		}
 	}
 
 	renderNewlyAdded() {
@@ -985,9 +996,7 @@ class App {
 			})
 			.filter(Boolean);
 
-		const hasRequested = this.games.some(g => g.requested);
-
-		if (newGames.length === 0 && !hasRequested) {
+		if (newGames.length === 0) {
 			if (this.newlyAddedSection) this.newlyAddedSection.classList.add('hidden');
 			return;
 		}

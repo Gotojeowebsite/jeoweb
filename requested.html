@@ -1,116 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="header-nav-link feedback-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Request a game!! or even report a bug!</a>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Requested Games - Jeo Unblocked Games</title>
 	<link rel="stylesheet" href="styles.css" />
 	<style>
 		.req-page {
-			max-width: 1100px;
+			max-width: 1200px;
 			margin: 0 auto;
-			padding: 32px 20px;
+			padding: 28px 20px;
 		}
-		.req-header {
+		.req-toolbar {
 			display: flex;
 			align-items: center;
-			gap: 16px;
-			margin-bottom: 32px;
+			justify-content: space-between;
+			gap: 12px;
+			flex-wrap: wrap;
+			margin-bottom: 18px;
 		}
-		.req-header h1 {
-			font-size: 1.5rem;
-			color: var(--text);
-			margin: 0;
-			font-weight: 700;
-		}
-		.back-btn {
-			display: inline-flex;
+		.req-actions {
+			display: flex;
 			align-items: center;
-			gap: 6px;
-			padding: 8px 18px;
-			font-size: 0.9rem;
-			font-weight: 600;
-			color: var(--accent, #6c5ce7);
-			background: transparent;
-			border: 1.5px solid var(--accent, #6c5ce7);
-			border-radius: 999px;
-			text-decoration: none;
-			cursor: pointer;
-			transition: background 0.2s, color 0.2s;
-		}
-		.back-btn:hover {
-			background: var(--accent, #6c5ce7);
-			color: #fff;
-		}
-		.req-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-			gap: 18px;
-		}
-		.req-card {
-			background: var(--card-bg, #232336);
-			border-radius: 12px;
-			overflow: hidden;
-			cursor: pointer;
-			transition: transform 0.15s, box-shadow 0.15s;
-			position: relative;
-		}
-		.req-card:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-		}
-		.req-card img {
-			width: 100%;
-			aspect-ratio: 4/3;
-			object-fit: cover;
-			display: block;
-			background: var(--card-bg, #232336);
-		}
-		.req-card-title {
-			padding: 10px 12px;
-			font-size: 0.9rem;
-			font-weight: 600;
-			color: var(--text);
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.req-badge {
-			position: absolute;
-			top: 8px;
-			left: 8px;
-			background: linear-gradient(135deg, #06b6d4, #0e7490);
-			color: #fff;
-			font-size: 0.65rem;
-			font-weight: 700;
-			padding: 2px 7px;
-			border-radius: 999px;
-			text-transform: uppercase;
-			letter-spacing: 0.04em;
+			gap: 10px;
+			flex-wrap: wrap;
 		}
 		.req-empty {
 			text-align: center;
-			padding: 80px 20px;
+			padding: 44px 20px;
 			color: var(--text-muted, #888);
-			font-size: 1.1rem;
+			font-size: 1rem;
 		}
 		.req-count {
 			color: var(--text-muted, #888);
 			font-size: 0.9rem;
-			font-weight: 400;
+			font-weight: 500;
 			margin-left: 4px;
+		}
+		.request-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 8px 14px;
+			border: 1px solid var(--border);
+			border-radius: 999px;
+			text-decoration: none;
+			color: var(--text);
+			background: var(--card-bg);
+			font-size: 0.88rem;
+			font-weight: 600;
+			transition: border-color 0.2s, color 0.2s;
+		}
+		.request-link:hover {
+			color: var(--accent);
+			border-color: var(--accent);
 		}
 	</style>
 </head>
 <body class="theme-dark">
 	<div class="req-page">
-		<div class="req-header">
-			<a href="index.html" class="back-btn">← Back</a>
-			<h1>📩 Requested Games <span id="countBadge" class="req-count"></span></h1>
+		<div class="req-toolbar">
+			<div class="req-actions">
+				<a href="index.html" class="back-link">← Back</a>
+				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="request-link">➕ Request a Game / Report a Bug</a>
+			</div>
 		</div>
-		<div id="reqGrid" class="req-grid"></div>
-		<div id="emptyMsg" class="req-empty" style="display:none;">No requested games yet — check back soon!</div>
+
+		<section id="requestedSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">📋</span>
+					<h1 class="carousel-title">Requested Games</h1>
+					<span id="requestedCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="requestedTrack" aria-label="Scroll left">‹</button>
+				<div id="requestedTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="requestedTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<div id="emptyMsg" class="req-empty" style="display:none;">No requested games yet - check back soon.</div>
 	</div>
 
 	<script>
@@ -128,31 +99,43 @@
 				games = JSON.parse(text.replace(/^\uFEFF/, ''));
 			}
 		} catch (e) {
-			console.warn('Failed to load data', e);
+			console.warn('Failed to load games list', e);
 		}
 
-		const requestedGames = games.filter(g => g.requested);
-
-		const grid = document.getElementById('reqGrid');
+		const requestedGames = games.filter(g => g && g.requested && g.url);
+		const section = document.getElementById('requestedSection');
+		const track = document.getElementById('requestedTrack');
+		const count = document.getElementById('requestedCount');
 		const emptyMsg = document.getElementById('emptyMsg');
-		const countBadge = document.getElementById('countBadge');
 
 		if (requestedGames.length === 0) {
 			emptyMsg.style.display = '';
 			return;
 		}
 
-		countBadge.textContent = '(' + requestedGames.length + ')';
+		section.classList.remove('hidden');
+		count.textContent = String(requestedGames.length);
 
-		requestedGames.forEach(g => {
+		requestedGames.forEach((g, i) => {
+			const name = g.name || 'Unknown Game';
+			const imgSrc = g.image || fallback;
 			const card = document.createElement('div');
-			card.className = 'req-card';
-			const img = g.image || fallback;
-			card.innerHTML = '<img src="' + img + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallback + '\';" />'
-				+ '<span class="req-badge">📩 Requested</span>'
-				+ '<div class="req-card-title">' + g.name + '</div>';
+			card.className = 'carousel-card';
+			card.style.setProperty('--card-img', "url('" + imgSrc + "')");
+			card.style.animationDelay = (i * 0.04) + 's';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + fallback + '\';" /><span class="requested-badge">📩 Requested</span></div><div class="game-card-content"><div class="game-card-title">' + name + '</div></div>';
 			card.addEventListener('click', () => { window.location.href = g.url; });
-			grid.appendChild(card);
+			track.appendChild(card);
+		});
+
+		document.querySelectorAll('.carousel-arrow').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const target = document.getElementById(btn.dataset.target);
+				if (!target) return;
+				const scrollAmt = target.clientWidth * 0.7;
+				const dir = btn.classList.contains('carousel-arrow-left') ? -1 : 1;
+				target.scrollBy({ left: dir * scrollAmt, behavior: 'smooth' });
+			});
 		});
 	})();
 	</script>

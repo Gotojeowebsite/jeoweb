@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geo Jump Temporarily Unavailable</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #25314d 0%, #0f1421 55%, #090c13 100%);
+      color: #f2f6ff;
+    }
+    .card {
+      width: min(680px, 92vw);
+      background: rgba(6, 10, 18, 0.85);
+      border: 1px solid #2f3a53;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+    }
+    h1 { margin: 0 0 12px; font-size: 1.5rem; }
+    p { margin: 8px 0; line-height: 1.45; color: #c8d4ef; }
+    code { color: #8bd2ff; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Geo Jump is temporarily unavailable</h1>
+    <p>The upstream Unity build file <code>Build/Geo_GD.json</code> is currently missing at the source mirror, so this title cannot boot locally right now.</p>
+    <p>This page is shown intentionally to prevent a blank white screen. Once the source build returns, the local bundle can be repaired automatically.</p>
+  </main>
+</body>
+</html>

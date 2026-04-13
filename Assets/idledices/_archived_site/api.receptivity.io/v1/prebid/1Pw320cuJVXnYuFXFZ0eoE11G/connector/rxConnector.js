@@ -1,0 +1,1 @@
+(()=>{try{let t=document.currentScript,e=new URL(t.src);e.searchParams.append("tl",!0);setTimeout(()=>function(t,e){var a=document.head,c=document.createElement("script");c.async=!0;c.type="text/javascript";c.src=t;for(const t in e)c.setAttribute(`data-${t}`,e[t]);a.appendChild(c)}(e.toString(),t.dataset),10e3);}catch{}})();

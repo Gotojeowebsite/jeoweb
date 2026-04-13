@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="t d">
+  <title id="t">Rocket League</title>
+  <desc id="d">Local thumbnail placeholder for Rocket League in the archive catalog.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <g fill="none" stroke="#e2e8f0" stroke-width="8" opacity="0.65">
+    <path d="M120 370 C180 320, 260 320, 320 370 C380 420, 460 420, 520 370"/>
+    <path d="M60 120 L580 120" opacity="0.28"/>
+  </g>
+  <circle cx="320" cy="248" r="44" fill="#f8fafc" opacity="0.9"/>
+  <rect x="284" y="208" width="72" height="18" rx="9" fill="#111827" opacity="0.75"/>
+  <text x="50%" y="420" text-anchor="middle" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="1.5">Rocket League</text>
+</svg>

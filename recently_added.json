@@ -1,34 +1,101 @@
 [
   {
-    "name": "grass-cutter",
-    "url": "Assets/grass-cutter/index.html",
-    "image": "Assets/grass-cutter/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/9437ce7af96357dcaa1911b80c3a4146/grass-cutter.png",
-    "type": "webgl"
-  },
-  {
-    "name": "harvest-simulator",
-    "url": "Assets/harvest-simulator/index.html",
-    "image": "Assets/harvest-simulator/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/650c30540036f907df04798e2a13c4be/harvest-simulator.png",
-    "type": "webgl"
-  },
-  {
-    "name": "slice-master",
-    "url": "Assets/slice-master/index.html",
-    "image": "Assets/slice-master/cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/743089b5c6b4dda8bd05d920ab00a0b3/slice-master.png",
+    "name": "veloce",
+    "url": "Assets/veloce/index.html",
+    "image": "Assets/veloce/favicon.ico",
     "type": "webgl",
     "requested": true
   },
   {
-    "name": "retro-bowl-college",
-    "url": "Assets/retro-bowl-college/index.html",
-    "image": "Assets/retro-bowl-college/html5game/splash.png",
-    "type": "webgl"
+    "name": "superfowlist",
+    "url": "Assets/superfowlist/index.html",
+    "image": "Assets/superfowlist/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
-    "name": "cookie-clicker",
-    "url": "Assets/cookie-clicker/index.html",
-    "image": "Assets/cookie-clicker/img/bunnies.png",
-    "type": "webgl"
+    "name": "stickman-hook",
+    "url": "Assets/stickman-hook/index.html",
+    "image": "Assets/stickman-hook/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "shuttledeck",
+    "url": "Assets/shuttledeck/index.html",
+    "image": "Assets/shuttledeck/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "route-digger",
+    "url": "Assets/route-digger/index.html",
+    "image": "Assets/route-digger/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "protektor",
+    "url": "Assets/protektor/index.html",
+    "image": "Assets/protektor/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "poom",
+    "url": "Assets/poom/index.html",
+    "image": "Assets/poom/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "ltf-idle",
+    "url": "Assets/ltf-idle/index.html",
+    "image": "Assets/ltf-idle/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "idledices",
+    "url": "Assets/idledices/index.html",
+    "image": "Assets/idledices/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "geoneondash",
+    "url": "Assets/geoneondash/index.html",
+    "image": "Assets/geoneondash/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "geojump",
+    "url": "Assets/geojump/index.html",
+    "image": "Assets/geojump/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "geodashlite",
+    "url": "Assets/geodashlite/index.html",
+    "image": "Assets/geodashlite/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "dreadhead-parkout",
+    "url": "Assets/dreadhead-parkout/index.html",
+    "image": "Assets/dreadhead-parkout/favicon.ico",
+    "type": "webgl",
+    "requested": true
+  },
+  {
+    "name": "basket-random",
+    "url": "Assets/basket-random/index.html",
+    "image": "Assets/basket-random/favicon.ico",
+    "type": "webgl",
+    "requested": true
   },
   {
     "name": "zombiealienparasites",
@@ -89,5 +156,41 @@
     "url": "Assets/wordle/index.html",
     "image": "Assets/wordle/img/logo_144x144.png",
     "type": "webgl"
+  },
+  {
+    "name": "wolf3d",
+    "url": "Assets/wolf3d/index.html",
+    "image": "Assets/wolf3d/art/wolf3d.png",
+    "type": "webgl"
+  },
+  {
+    "name": "wild-guns",
+    "url": "Assets/wild-guns/index.html",
+    "image": "Assets/wild-guns/logo.png",
+    "type": "snes"
+  },
+  {
+    "name": "where-in-the-world-is-carmen-sandiego",
+    "url": "Assets/where-in-the-world-is-carmen-sandiego/index.html",
+    "image": "Assets/where-in-the-world-is-carmen-sandiego/logo.png",
+    "type": "snes"
+  },
+  {
+    "name": "webretro-local",
+    "url": "Assets/webretro-local/index.html",
+    "image": "Assets/webretro-local/assets/bar.png",
+    "type": "webgl"
+  },
+  {
+    "name": "warp",
+    "url": "Assets/warp/index.html",
+    "image": "Assets/warp/logo.png",
+    "type": "flash"
+  },
+  {
+    "name": "warfare1944",
+    "url": "Assets/warfare1944/index.html",
+    "image": "Assets/warfare1944/logo.jpg",
+    "type": "flash"
   }
 ]
