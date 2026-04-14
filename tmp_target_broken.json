@@ -1,0 +1,46 @@
+[
+  {
+    "name": "geojump",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 5.039,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/geojump/_game_local/games.mathpapers.us/geojump/Build/Geo_GD.json"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Function statements require a function name",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Unexpected identifier '_0x98ce99'",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false
+    }
+  }
+]

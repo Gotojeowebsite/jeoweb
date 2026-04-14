@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": 1776184488,
+  "updated_at": 1776184613,
   "total_targets": 9,
   "completed": 9,
   "results": [
@@ -9,7 +9,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "ok",
-      "elapsed_seconds": 8.152,
+      "elapsed_seconds": 8.073,
       "critical_issues": [],
       "warnings": [],
       "probe": {
@@ -27,7 +27,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 8.093,
+      "elapsed_seconds": 8.315,
       "critical_issues": [],
       "warnings": [
         {
@@ -82,37 +82,61 @@
           "code": "EXTERNAL_DEPENDENCY",
           "message": "External dependency requested for game runtime",
           "severity": "warning",
-          "url": "http://serve.adclixx.net/promoload?d=1"
+          "url": "http://zoover.adnetasia.com/shared/bannerpages/darttagsbanner.aspx?h=104"
         },
         {
           "code": "EXTERNAL_CRITICAL_FAILED",
           "message": "External runtime dependency failed",
           "severity": "warning",
-          "url": "http://serve.adclixx.net/promoload?d=1"
+          "url": "http://zoover.adnetasia.com/shared/bannerpages/darttagsbanner.aspx?h=104"
         },
         {
           "code": "EXTERNAL_NONCRITICAL",
           "message": "External non-critical request detected",
           "severity": "warning",
-          "url": "http://ad.foxnetworks.com/rw8iB6KBH8jmQnZey8cD4v0.jpg"
+          "url": "http://ad.mail.ru/wide_skyscraper.jpg"
         },
         {
           "code": "EXTERNAL_NONCRITICAL_FAILED",
           "message": "External non-critical request failed",
           "severity": "warning",
-          "url": "http://ad.foxnetworks.com/rw8iB6KBH8jmQnZey8cD4v0.jpg"
+          "url": "http://ad.mail.ru/wide_skyscraper.jpg"
         },
         {
           "code": "EXTERNAL_NONCRITICAL",
           "message": "External non-critical request detected",
           "severity": "warning",
-          "url": "http://juicyads.com/53QTXr5r3pi4AvMxK.jpg"
+          "url": "http://juicyads.com/skyscraper.jpg"
         },
         {
           "code": "EXTERNAL_NONCRITICAL_FAILED",
           "message": "External non-critical request failed",
           "severity": "warning",
-          "url": "http://juicyads.com/53QTXr5r3pi4AvMxK.jpg"
+          "url": "http://juicyads.com/skyscraper.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL",
+          "message": "External non-critical request detected",
+          "severity": "warning",
+          "url": "http://partnerads.ysm.yahoo.com/ZvjInUZLo.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL_FAILED",
+          "message": "External non-critical request failed",
+          "severity": "warning",
+          "url": "http://partnerads.ysm.yahoo.com/ZvjInUZLo.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL",
+          "message": "External non-critical request detected",
+          "severity": "warning",
+          "url": "http://advertising.aol.com/RxyiUQl9t.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL_FAILED",
+          "message": "External non-critical request failed",
+          "severity": "warning",
+          "url": "http://advertising.aol.com/RxyiUQl9t.jpg"
         },
         {
           "code": "PAGE_ERROR",
@@ -124,13 +148,25 @@
           "code": "EXTERNAL_NONCRITICAL",
           "message": "External non-critical request detected",
           "severity": "warning",
-          "url": "http://ads.yahoo.com/nMyUYpE5bPVQGzfd.jpg"
+          "url": "http://juicyads.com/GhTQX3f7B.jpg"
         },
         {
           "code": "EXTERNAL_NONCRITICAL_FAILED",
           "message": "External non-critical request failed",
           "severity": "warning",
-          "url": "http://ads.yahoo.com/nMyUYpE5bPVQGzfd.jpg"
+          "url": "http://juicyads.com/GhTQX3f7B.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL",
+          "message": "External non-critical request detected",
+          "severity": "warning",
+          "url": "http://as.inbox.com/banner.jpg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL_FAILED",
+          "message": "External non-critical request failed",
+          "severity": "warning",
+          "url": "http://as.inbox.com/banner.jpg"
         }
       ],
       "probe": {
@@ -148,7 +184,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "ok",
-      "elapsed_seconds": 8.335,
+      "elapsed_seconds": 8.218,
       "critical_issues": [],
       "warnings": [
         {
@@ -179,7 +215,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "ok",
-      "elapsed_seconds": 8.134,
+      "elapsed_seconds": 8.047,
       "critical_issues": [],
       "warnings": [],
       "probe": {
@@ -197,7 +233,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 9.386,
+      "elapsed_seconds": 8.95,
       "critical_issues": [],
       "warnings": [
         {
@@ -234,13 +270,13 @@
           "code": "LOCAL_HTTP_ERROR",
           "message": "Local HTTP 404",
           "severity": "warning",
-          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/496/responsive/idle-breakout-lg.webp"
+          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/435/responsive/dino-chaos-idle-xs.jpg"
         },
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Local HTTP 404",
           "severity": "warning",
-          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/435/responsive/dino-chaos-idle-xs.jpg"
+          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/496/responsive/idle-breakout-lg.webp"
         },
         {
           "code": "LOCAL_HTTP_ERROR",
@@ -252,13 +288,13 @@
           "code": "LOCAL_HTTP_ERROR",
           "message": "Local HTTP 404",
           "severity": "warning",
-          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/376/responsive/idle-startup-tycoon512-xs.jpg"
+          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/404/responsive/idle-restaurant-512-xs.jpg"
         },
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Local HTTP 404",
           "severity": "warning",
-          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/404/responsive/idle-restaurant-512-xs.jpg"
+          "url": "http://localhost:8081/Assets/idle-breakout/media/posts/376/responsive/idle-startup-tycoon512-xs.jpg"
         },
         {
           "code": "EXTERNAL_DEPENDENCY",
@@ -300,7 +336,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 8.039,
+      "elapsed_seconds": 8.046,
       "critical_issues": [],
       "warnings": [
         {
@@ -331,12 +367,12 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 8.057,
+      "elapsed_seconds": 8.139,
       "critical_issues": [],
       "warnings": [
         {
-          "code": "PAGE_ERROR",
-          "message": "abort({}) at Error",
+          "code": "CONSOLE_ERROR",
+          "message": "[Construct 3] Failed to load audio 'media/confirmation_002.webm':  EncodingError: Unable to decode audio data",
           "severity": "warning",
           "url": ""
         },
@@ -354,13 +390,13 @@
         },
         {
           "code": "CONSOLE_ERROR",
-          "message": "[Construct 3] Failed to load audio 'media/confirmation_002.webm':  EncodingError: Unable to decode audio data",
+          "message": "[Construct 3] Failed to load audio 'media/glass_001.webm':  EncodingError: Unable to decode audio data",
           "severity": "warning",
           "url": ""
         },
         {
-          "code": "CONSOLE_ERROR",
-          "message": "[Construct 3] Failed to load audio 'media/drop_004.webm':  EncodingError: Unable to decode audio data",
+          "code": "PAGE_ERROR",
+          "message": "abort({}) at Error",
           "severity": "warning",
           "url": ""
         },
@@ -372,7 +408,7 @@
         },
         {
           "code": "CONSOLE_ERROR",
-          "message": "[Construct 3] Failed to load audio 'media/glass_001.webm':  EncodingError: Unable to decode audio data",
+          "message": "[Construct 3] Failed to load audio 'media/drop_004.webm':  EncodingError: Unable to decode audio data",
           "severity": "warning",
           "url": ""
         },
@@ -395,8 +431,8 @@
           "url": ""
         },
         {
-          "code": "PAGE_ERROR",
-          "message": "Unable to decode audio data",
+          "code": "CONSOLE_ERROR",
+          "message": "[Construct 3] Failed to load audio 'media/cloth_03.webm':  EncodingError: Unable to decode audio data",
           "severity": "warning",
           "url": ""
         },
@@ -407,8 +443,8 @@
           "url": ""
         },
         {
-          "code": "CONSOLE_ERROR",
-          "message": "[Construct 3] Failed to load audio 'media/cloth_03.webm':  EncodingError: Unable to decode audio data",
+          "code": "PAGE_ERROR",
+          "message": "Unable to decode audio data",
           "severity": "warning",
           "url": ""
         }
@@ -428,7 +464,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 8.128,
+      "elapsed_seconds": 8.05,
       "critical_issues": [],
       "warnings": [
         {
@@ -465,7 +501,7 @@
       "type": "webgl",
       "entry_file": "index.html",
       "status": "warning",
-      "elapsed_seconds": 8.065,
+      "elapsed_seconds": 8.12,
       "critical_issues": [],
       "warnings": [
         {

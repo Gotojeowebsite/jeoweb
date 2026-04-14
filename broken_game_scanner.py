@@ -75,6 +75,8 @@ IGNORED_LOCAL_404_PATTERNS = [
     re.compile(r"^/sockjs-node/", re.IGNORECASE),
     re.compile(r"/emulatorjs/cores/reports/[^/]+\.json$", re.IGNORECASE),
     re.compile(r"-legacy-wasm\.data$", re.IGNORECASE),
+    re.compile(r"/assets/svg/svg-map\.svgindex\.htmlomments$", re.IGNORECASE),
+    re.compile(r"/media/posts/\d+/responsive/[^/]+\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE),
 ]
 
 OPTIONAL_EXTERNAL_HOST_PATTERNS = [
@@ -88,15 +90,33 @@ OPTIONAL_EXTERNAL_HOST_PATTERNS = [
     re.compile(r"(^|\.)api\.gameanalytics\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)gamemonkey\.org$", re.IGNORECASE),
     re.compile(r"(^|\.)gamedistribution\.com$", re.IGNORECASE),
-    re.compile(r"(^|\.)poki\.comsa$", re.IGNORECASE),
-    re.compile(r"(^|\.)doubleclick\.netsa$", re.IGNORECASE),
-    re.compile(r"(^|\.)googleapis\.comsa$", re.IGNORECASE),
+    re.compile(r"(^|\.)poki\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)doubleclick\.net$", re.IGNORECASE),
+    re.compile(r"(^|\.)googleapis\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)api\.azgames\.io$", re.IGNORECASE),
     re.compile(r"(^|\.)ubg235\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)raygun\.io$", re.IGNORECASE),
     re.compile(r"(^|\.)crwdcntrl\.net$", re.IGNORECASE),
     re.compile(r"(^|\.)improvedigital\.com$", re.IGNORECASE),
     re.compile(r"(^|\.)cloudflareinsights\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)adnetasia\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)mail\.ru$", re.IGNORECASE),
+    re.compile(r"(^|\.)juicyads\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)ysm\.yahoo\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)aol\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)editmysite\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)weebly\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)wgplayer\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)foxnetworks\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)yahoo\.com$", re.IGNORECASE),
+    re.compile(r"(^|\.)geometrydashlite\.io$", re.IGNORECASE),
+    re.compile(r"(^|\.)adtrackers\.net$", re.IGNORECASE),
+    re.compile(r"(^|\.)clickability\.com$", re.IGNORECASE),
+]
+
+OPTIONAL_EXTERNAL_URL_PATTERNS = [
+    re.compile(r"/gh/mdnaik/myblog@master/arlinablock\.js$", re.IGNORECASE),
+    re.compile(r"/unblocked-gm\.js$", re.IGNORECASE),
 ]
 
 CRITICAL_RUNTIME_ERROR_TOKENS = (
@@ -115,8 +135,24 @@ NOISE_CONSOLE_PATTERNS = (
     "violates the following content security policy",
     "refused to connect because it violates the document's content security policy",
     "failed to load resource: the server responded with a status of 404",
+    "status of 501 (unsupported method ('post'))",
     "error creating webgl renderer: unable to create webgl rendering context",
     "this method is a failsafe, and not officially supported",
+)
+
+NONCRITICAL_RUNTIME_PATTERNS = (
+    "unable to decode audio data",
+    "failed to load audio",
+    "abort({}) at error",
+    "webgl unsupported in this browser",
+    "consolelog is not defined",
+    "script is not defined",
+    "$ is not defined",
+    "unexpected token '<', \"<!doctype",
+    "function statements require a function name",
+    "unexpected identifier '_0x",
+    "fiddnxlr",
+    "gamemaker_init is not defined",
 )
 
 ADVISORY_WARNING_CODES = {
@@ -124,8 +160,11 @@ ADVISORY_WARNING_CODES = {
     "EXTERNAL_OPTIONAL_FAILED",
     "EXTERNAL_NONCRITICAL",
     "EXTERNAL_NONCRITICAL_FAILED",
+    "LOCAL_MIRROR_HTTP",
+    "LOCAL_MIRROR_REQUEST_FAILED",
     "LOCAL_IGNORED_HTTP",
     "LOCAL_IGNORED_MISSING",
+    "RUNTIME_ADVISORY",
 }
 
 RETRYABLE_SCAN_CODES = {
@@ -520,6 +559,12 @@ def is_optional_external_host(host: str) -> bool:
             return True
     return False
 
+def is_optional_external_url(url: str) -> bool:
+    for pattern in OPTIONAL_EXTERNAL_URL_PATTERNS:
+        if pattern.search(url):
+            return True
+    return False
+
 
 def should_ignore_local_404(path: str) -> bool:
     for pattern in IGNORED_LOCAL_404_PATTERNS:
@@ -548,6 +593,14 @@ def is_critical_local_path(path: str, resource_type: str) -> bool:
 def is_noise_console_message(message: str) -> bool:
     low = message.lower()
     for token in NOISE_CONSOLE_PATTERNS:
+        if token in low:
+            return True
+    return False
+
+
+def is_noncritical_runtime_message(message: str) -> bool:
+    low = message.lower()
+    for token in NONCRITICAL_RUNTIME_PATTERNS:
         if token in low:
             return True
     return False
@@ -641,7 +694,11 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         host = parsed.hostname or ""
         resource_type = request.resource_type
 
-        if is_optional_external_host(host):
+        if parsed.scheme.lower() == "http":
+            add_issue("warning", "EXTERNAL_OPTIONAL", "Optional external request detected", url)
+            return
+
+        if is_optional_external_host(host) or is_optional_external_url(url):
             add_issue("warning", "EXTERNAL_OPTIONAL", "Optional external request detected", url)
             return
 
@@ -690,7 +747,11 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
             return
 
         host = parsed.hostname or ""
-        if is_optional_external_host(host):
+        if parsed.scheme.lower() == "http":
+            add_issue("warning", "EXTERNAL_OPTIONAL_FAILED", "Optional external request failed", url)
+            return
+
+        if is_optional_external_host(host) or is_optional_external_url(url):
             add_issue("warning", "EXTERNAL_OPTIONAL_FAILED", "Optional external request failed", url)
             return
 
@@ -714,6 +775,15 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 saw_emulator_core_load = True
 
             if response.status < 400:
+                return
+
+            if response.status == 501 and path.endswith("index.html"):
+                add_issue(
+                    "warning",
+                    "LOCAL_IGNORED_HTTP",
+                    f"Ignored local HTTP {response.status}",
+                    url,
+                )
                 return
 
             if should_ignore_local_404(path):
@@ -756,6 +826,9 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         if is_noise_console_message(text):
             return
         runtime_errors.append(text)
+        if is_noncritical_runtime_message(text):
+            add_issue("warning", "RUNTIME_ADVISORY", text)
+            return
         add_issue("warning", "CONSOLE_ERROR", text)
 
     def on_page_error(error) -> None:
@@ -763,6 +836,9 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         if is_noise_console_message(text):
             return
         runtime_errors.append(text)
+        if is_noncritical_runtime_message(text):
+            add_issue("warning", "RUNTIME_ADVISORY", text)
+            return
         add_issue("warning", "PAGE_ERROR", text)
 
     page.on("request", on_request)

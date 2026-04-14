@@ -1,0 +1,143 @@
+[
+  {
+    "name": "geojump",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 5.144,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/geojump/_game_local/games.mathpapers.us/geojump/Build/Geo_GD.json"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Function statements require a function name",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Unexpected identifier '_0x98ce99'",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false
+    }
+  },
+  {
+    "name": "route-digger",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 5.138,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "abort({}) at Error",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/back_004.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/click_003.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/drop_004.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/confirmation_002.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/error_004.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/glass_001.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/error_007.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/select_004.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/switch_002.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/select_001.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "[Construct 3] Failed to load audio 'media/cloth_03.webm':  EncodingError: Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false
+    }
+  }
+]

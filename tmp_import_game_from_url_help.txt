@@ -1,0 +1,52 @@
+usage: import_game_from_url.py [-h] [--url URL] [--input INPUT] [--slug SLUG]
+                               [--type TYPE] [--assets-dir ASSETS_DIR]
+                               [--games-list GAMES_LIST]
+                               [--max-pages MAX_PAGES] [--max-depth MAX_DEPTH]
+                               [--timeout-seconds TIMEOUT_SECONDS]
+                               [--min-delay MIN_DELAY] [--max-delay MAX_DELAY]
+                               [--max-iframes-per-page MAX_IFRAMES_PER_PAGE]
+                               [--allow-subdomains | --no-allow-subdomains]
+                               [--capture-external-assets | --no-capture-external-assets]
+                               [--rewrite-links | --no-rewrite-links]
+                               [--browser {chromium,firefox,webkit}]
+                               [--headful] [--overwrite]
+                               [--allow-host ALLOW_HOST]
+                               [--summary-json SUMMARY_JSON]
+
+Mirror game URLs into local Assets/<slug> and register metadata.
+
+options:
+  -h, --help            show this help message and exit
+  --url URL             Game URL to import (repeatable)
+  --input INPUT         Optional file of URLs. Supports lines: '<url>' or
+                        '<slug>,<url>'.
+  --slug SLUG           Slug for single --url import
+  --type TYPE           Game type for games_list.json (default: webgl)
+  --assets-dir ASSETS_DIR
+                        Assets root directory
+  --games-list GAMES_LIST
+                        games_list.json path
+  --max-pages MAX_PAGES
+                        Max pages to crawl per import
+  --max-depth MAX_DEPTH
+                        Max crawl depth per import
+  --timeout-seconds TIMEOUT_SECONDS
+                        Navigation timeout per page
+  --min-delay MIN_DELAY
+                        Min delay between pages
+  --max-delay MAX_DELAY
+                        Max delay between pages
+  --max-iframes-per-page MAX_IFRAMES_PER_PAGE
+                        Max iframes to trigger
+  --allow-subdomains, --no-allow-subdomains
+  --capture-external-assets, --no-capture-external-assets
+  --rewrite-links, --no-rewrite-links
+  --browser {chromium,firefox,webkit}
+  --headful             Run browser with visible window
+  --overwrite           Delete existing Assets/<slug>/_archived_site before
+                        import
+  --allow-host ALLOW_HOST
+                        Restrict imports to this host (repeatable). If
+                        omitted, all hosts allowed.
+  --summary-json SUMMARY_JSON
+                        Summary report output path

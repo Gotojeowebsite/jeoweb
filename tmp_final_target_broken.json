@@ -1,0 +1,52 @@
+[
+  {
+    "name": "geojump",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 5.537,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/geojump/_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/1bringmeback.mp3"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/geojump/_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/die_Audio.mp3"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/geojump/_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/button_Click.mp3"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://html5.api.gamedistribution.com/main.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://html5.api.gamedistribution.com/main.min.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false
+    }
+  }
+]

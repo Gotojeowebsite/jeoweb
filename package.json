@@ -5,6 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "covers:fix": "python3 fix_game_covers.py --apply",
+    "covers:audit": "python3 fix_game_covers.py --check-only",
+    "game:import-full": "python3 import_game_from_url.py",
     "flash:import": "pwsh -NoLogo -NoProfile -File ./import-flash.ps1",
     "flash:fetch-images": "pwsh -NoLogo -NoProfile -File ./import-flash.ps1 --fetch-images",
     "grab": "node scripts/grab-game.js",

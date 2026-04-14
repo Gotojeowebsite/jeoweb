@@ -1,0 +1,15 @@
+usage: fix_game_covers.py [-h] [--games-list GAMES_LIST]
+                          [--assets-dir ASSETS_DIR] [--report REPORT]
+                          [--apply] [--check-only]
+
+Audit and repair missing game cover image paths in games_list.json
+
+options:
+  -h, --help            show this help message and exit
+  --games-list GAMES_LIST
+                        Path to games_list.json
+  --assets-dir ASSETS_DIR
+                        Assets directory path
+  --report REPORT       Output JSON report path
+  --apply               Write repaired paths back to games_list.json
+  --check-only          Do not modify games_list.json (default behavior).
