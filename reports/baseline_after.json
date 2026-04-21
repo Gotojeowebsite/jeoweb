@@ -1,0 +1,51 @@
+{
+  "catalog_total": 573,
+  "catalog_by_type": {
+    "webgl": 210,
+    "flash": 251,
+    "gba": 55,
+    "snes": 57
+  },
+  "catalog_broken": 69,
+  "triage_unresolved_total": 68,
+  "triage_bucket_counts": {
+    "local_missing_asset": 49,
+    "external_dep_blocking": 12,
+    "runtime_error": 6,
+    "unknown": 1
+  },
+  "triage_top_codes": [
+    [
+      "LOCAL_HTTP_ERROR",
+      247
+    ],
+    [
+      "PAGE_ERROR",
+      117
+    ],
+    [
+      "CONSOLE_ERROR",
+      77
+    ],
+    [
+      "EXTERNAL_OPTIONAL",
+      43
+    ],
+    [
+      "EXTERNAL_OPTIONAL_FAILED",
+      43
+    ],
+    [
+      "EXTERNAL_DEPENDENCY",
+      36
+    ],
+    [
+      "EXTERNAL_CRITICAL_FAILED",
+      36
+    ],
+    [
+      "LOCAL_IGNORED_HTTP",
+      19
+    ]
+  ]
+}

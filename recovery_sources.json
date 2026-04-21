@@ -1,22 +1,108 @@
 [
   {
+    "name": "3kh0-gh-pages-index",
+    "type": "pattern",
+    "url_template": "https://3kh0.github.io/{slug}/index.html",
+    "priority": 10,
+    "health_probe_url": "https://3kh0.github.io/",
+    "notes": "3kh0 unblocked mirror — high hit rate on HTML5 games",
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "3kh0-gh-pages-root",
+    "type": "pattern",
+    "url_template": "https://3kh0.github.io/{slug}/",
+    "priority": 11,
+    "health_probe_url": "https://3kh0.github.io/",
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "wanted5games-cdn-files",
+    "type": "pattern",
+    "url_template": "https://cdn.wanted5games.com/files/{slug}/index.html",
+    "priority": 20,
+    "health_probe_url": "https://cdn.wanted5games.com/",
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "wanted5games-cdn-games",
+    "type": "pattern",
+    "url_template": "https://cdn.wanted5games.com/games/{slug}/index.html",
+    "priority": 21,
+    "health_probe_url": "https://cdn.wanted5games.com/",
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "wanted5games-root",
+    "type": "pattern",
+    "url_template": "https://wanted5games.com/games/{slug}/",
+    "priority": 22,
+    "health_probe_url": "https://wanted5games.com/",
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "cloudfront-files",
+    "type": "pattern",
+    "url_template": "https://d3rtzzzsiu7gdr.cloudfront.net/files/{slug}/index.html",
+    "priority": 30,
+    "health_probe_url": "https://d3rtzzzsiu7gdr.cloudfront.net/",
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "htmlgames-cdn",
+    "type": "pattern",
+    "url_template": "https://cdn.htmlgames.com/games/{slug}/index.html",
+    "priority": 40,
+    "health_probe_url": "https://cdn.htmlgames.com/",
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "ubg77-gh-pages",
+    "type": "pattern",
+    "url_template": "https://ubg77.github.io/{slug}/index.html",
+    "priority": 50,
+    "health_probe_url": "https://ubg77.github.io/",
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "1games-io",
+    "type": "pattern",
+    "url_template": "https://1games.io/game/{slug}/",
+    "priority": 60,
+    "health_probe_url": "https://1games.io/",
+    "applies_to": ["webgl"]
+  },
+  {
     "name": "unblocked-s3-html",
     "type": "pattern",
-    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}.html"
+    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}.html",
+    "priority": 70,
+    "health_probe_url": "https://unblocked-games.s3.amazonaws.com/",
+    "applies_to": ["webgl", "flash"]
   },
   {
     "name": "unblocked-s3-index",
     "type": "pattern",
-    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}/index.html"
+    "url_template": "https://unblocked-games.s3.amazonaws.com/{slug}/index.html",
+    "priority": 71,
+    "health_probe_url": "https://unblocked-games.s3.amazonaws.com/",
+    "applies_to": ["webgl", "flash"]
   },
   {
     "name": "poki-cdn-index",
     "type": "pattern",
-    "url_template": "https://game-cdn.poki.com/{slug}/index.html"
+    "url_template": "https://game-cdn.poki.com/{slug}/index.html",
+    "priority": 90,
+    "health_probe_url": "https://game-cdn.poki.com/",
+    "notes": "Protected CDN — often 403; kept last",
+    "applies_to": ["webgl"]
   },
   {
     "name": "poki-cdn-root",
     "type": "pattern",
-    "url_template": "https://game-cdn.poki.com/{slug}"
+    "url_template": "https://game-cdn.poki.com/{slug}",
+    "priority": 91,
+    "health_probe_url": "https://game-cdn.poki.com/",
+    "applies_to": ["webgl"]
   }
 ]

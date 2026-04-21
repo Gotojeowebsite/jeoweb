@@ -1,0 +1,25 @@
+{
+  "catalog_total": 573,
+  "catalog_by_type": {
+    "webgl": 211,
+    "flash": 250,
+    "gba": 55,
+    "snes": 57
+  },
+  "catalog_broken": 69,
+  "catalog_requested": 17,
+  "supervisor_v16": {
+    "targets": 69,
+    "fixed_local_count": 0,
+    "recovered_count": 1,
+    "unresolved_count": 68
+  },
+  "maintenance_status_games": 5,
+  "maintenance_status_generated_at": 1776051397,
+  "status_writers": [
+    "scan.js (intended)",
+    "auto_fix_and_recover_games.py (intended)",
+    "scripts/qa.js (to convert)",
+    "scripts/qa-tester.js (to convert)"
+  ]
+}

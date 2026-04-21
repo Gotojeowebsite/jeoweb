@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
-<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-<script>
-    window.ezstandalone = window.ezstandalone || {};
-    ezstandalone.cmd = ezstandalone.cmd || [];
-</script>
-<script src="//ezoicanalytics.com/analytics.js"></script>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-DQM8XXB9GC');
-	</script>
-	
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Jeo Unblocked Games</title>
-	<link rel="preconnect" href="https://fonts.goo agleapis.com">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css" />
 
+	<!-- Third-party analytics/consent: all loaded async and made non-blocking so failures
+	     don't prevent the catalog from rendering. onerror swallows network errors. -->
+	<script async data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js" onerror="void 0"></script>
+	<script async data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js" onerror="void 0"></script>
+	<script async src="//www.ezojs.com/ezoic/sa.min.js" onerror="void 0"></script>
+	<script>
+		window.ezstandalone = window.ezstandalone || {};
+		ezstandalone.cmd = ezstandalone.cmd || [];
+	</script>
+	<script async src="//ezoicanalytics.com/analytics.js" onerror="void 0"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC" onerror="void 0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){ try { dataLayer.push(arguments); } catch (e) {} }
+		gtag('js', new Date());
+		gtag('config', 'G-DQM8XXB9GC');
+	</script>
 </head>
 
 <body class="theme-dark">
@@ -185,7 +185,15 @@
 					<span class="toggle-slider"></span>
 				</div>
 			</label>
+			<label class="retro-toggle" data-tooltip="Hide games marked as under maintenance">
+				<span class="retro-toggle-label">⚠ Maintenance</span>
+				<div class="toggle-switch retro-switch">
+					<input type="checkbox" id="hideMaintenanceToggle" checked />
+					<span class="toggle-slider"></span>
+				</div>
+			</label>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
+			<span id="statusFreshness" class="status-freshness" title="Time since the last supervisor / scanner run"></span>
 		</section>
 
 		<!-- Favorites Section -->

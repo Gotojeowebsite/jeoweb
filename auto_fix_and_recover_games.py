@@ -379,7 +379,47 @@ def is_ssl_verify_error(exc: Exception) -> bool:
     return False
 
 
+DEAD_HOST_FAIL_THRESHOLD = 3
+_DEAD_HOSTS: Dict[str, int] = {}
+
+
+def _host_of(url: str) -> str:
+    try:
+        return (urlparse(url).netloc or "").lower()
+    except Exception:
+        return ""
+
+
+def is_host_dead(url: str) -> bool:
+    host = _host_of(url)
+    if not host:
+        return False
+    return _DEAD_HOSTS.get(host, 0) >= DEAD_HOST_FAIL_THRESHOLD
+
+
+def mark_host_dead(url: str) -> None:
+    host = _host_of(url)
+    if not host:
+        return
+    _DEAD_HOSTS[host] = _DEAD_HOSTS.get(host, 0) + 1
+
+
+def reset_dead_host_cache() -> None:
+    _DEAD_HOSTS.clear()
+
+
+def dead_host_snapshot() -> Dict[str, int]:
+    return dict(_DEAD_HOSTS)
+
+
+class DeadHostError(RuntimeError):
+    """Raised when a fetch is short-circuited because host is marked dead for the run."""
+
+
 def fetch_bytes(url: str, timeout: float = 30.0, allow_insecure_ssl_fallback: bool = True) -> bytes:
+    if is_host_dead(url):
+        raise DeadHostError(f"host cached as dead for this run: {_host_of(url)}")
+
     req = Request(
         url,
         headers={
@@ -395,11 +435,31 @@ def fetch_bytes(url: str, timeout: float = 30.0, allow_insecure_ssl_fallback: bo
             return resp.read()
     except Exception as exc:
         if not allow_insecure_ssl_fallback or not is_ssl_verify_error(exc):
+            mark_host_dead(url)
             raise
 
         insecure_ctx = ssl._create_unverified_context()
-        with urlopen(req, timeout=timeout, context=insecure_ctx) as resp:
-            return resp.read()
+        try:
+            with urlopen(req, timeout=timeout, context=insecure_ctx) as resp:
+                return resp.read()
+        except Exception:
+            mark_host_dead(url)
+            raise
+
+
+def probe_provider_host(url: str, timeout: float = 6.0) -> bool:
+    """Fast HEAD-like GET to check a provider's host is reachable. Returns True if 2xx/3xx/4xx
+    (anything that proves the host answered). Returns False on DNS/connect/timeout errors."""
+    try:
+        fetch_bytes(url, timeout=timeout, allow_insecure_ssl_fallback=True)
+        return True
+    except HTTPError:
+        # Host answered with an HTTP error — still reachable, still useful for pattern probing.
+        return True
+    except DeadHostError:
+        return False
+    except Exception:
+        return False
 
 
 def sanitize_rel_path(path_value: str, default_name: str = "index.html") -> str:
@@ -1277,15 +1337,77 @@ def load_recovery_providers(path: Optional[Path]) -> List[Dict[str, object]]:
         payload = json.load(handle)
     if not isinstance(payload, list):
         return []
-    return [p for p in payload if isinstance(p, dict)]
+    providers = [p for p in payload if isinstance(p, dict) and not bool(p.get("disabled", False))]
+
+    def sort_key(p: Dict[str, object]) -> float:
+        try:
+            return float(p.get("priority", 1000))
+        except Exception:
+            return 1000.0
+
+    providers.sort(key=sort_key)
+    return providers
 
 
-def discover_recovery_candidates(game: str, providers: List[Dict[str, object]], logger: JsonLogger) -> List[str]:
+_PROVIDER_HEALTH_CACHE: Dict[str, bool] = {}
+
+
+def provider_health_ok(provider: Dict[str, object], logger: JsonLogger) -> bool:
+    probe_url = str(provider.get("health_probe_url", "")).strip()
+    if not probe_url:
+        return True
+    host = _host_of(probe_url)
+    if not host:
+        return True
+    if host in _PROVIDER_HEALTH_CACHE:
+        return _PROVIDER_HEALTH_CACHE[host]
+    if is_host_dead(probe_url):
+        _PROVIDER_HEALTH_CACHE[host] = False
+        return False
+    ok = probe_provider_host(probe_url, timeout=6.0)
+    _PROVIDER_HEALTH_CACHE[host] = ok
+    logger.log(
+        "info" if ok else "warning",
+        "*",
+        "provider_health",
+        f"provider host {'reachable' if ok else 'unreachable'}",
+        provider=str(provider.get("name", "")),
+        host=host,
+    )
+    return ok
+
+
+def provider_applies_to(provider: Dict[str, object], game_type: str) -> bool:
+    applies = provider.get("applies_to")
+    if not applies:
+        return True
+    if isinstance(applies, list) and applies:
+        return str(game_type or "").strip().lower() in {str(t).strip().lower() for t in applies}
+    return True
+
+
+def discover_recovery_candidates(
+    game: str,
+    providers: List[Dict[str, object]],
+    logger: JsonLogger,
+    game_type: str = "",
+) -> List[str]:
     out: List[str] = []
+    skipped_disabled = 0
+    skipped_dead = 0
+    skipped_type = 0
 
     for provider in providers:
         ptype = str(provider.get("type", "")).strip().lower()
         pname = str(provider.get("name", "provider")).strip() or "provider"
+
+        if game_type and not provider_applies_to(provider, game_type):
+            skipped_type += 1
+            continue
+
+        if not provider_health_ok(provider, logger):
+            skipped_dead += 1
+            continue
 
         try:
             if ptype == "index-json":
@@ -1361,19 +1483,32 @@ def discover_recovery_candidates(game: str, providers: List[Dict[str, object]], 
                     if candidate.startswith(("http://", "https://")):
                         out.append(candidate)
 
+        except DeadHostError as exc:
+            logger.log("info", game, "discover_candidates", "provider skipped: host marked dead", provider=pname, error=str(exc))
         except Exception as exc:
             logger.log("warning", game, "discover_candidates", "provider query failed", provider=pname, error=str(exc))
 
-    # Deduplicate while preserving order.
+    # Deduplicate while preserving order and drop any that resolve to a now-dead host.
     deduped: List[str] = []
     seen: Set[str] = set()
     for url in out:
         if url in seen:
             continue
+        if is_host_dead(url):
+            continue
         seen.add(url)
         deduped.append(url)
 
-    logger.log("info", game, "discover_candidates", "candidate discovery complete", count=len(deduped))
+    logger.log(
+        "info",
+        game,
+        "discover_candidates",
+        "candidate discovery complete",
+        count=len(deduped),
+        skipped_dead=skipped_dead,
+        skipped_disabled=skipped_disabled,
+        skipped_type=skipped_type,
+    )
     return deduped
 
 
@@ -1656,6 +1791,8 @@ def write_maintenance_status(cfg: Config, per_game: Dict[str, Dict[str, object]]
 
 def run_pipeline(cfg: Config) -> Dict[str, object]:
     logger = JsonLogger(cfg.log_jsonl)
+    reset_dead_host_cache()
+    _PROVIDER_HEALTH_CACHE.clear()
     targets = load_scan_targets(cfg)
 
     if not targets:
@@ -1900,7 +2037,8 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
                 backup_dir = Path(tempfile.mkdtemp(prefix=f"{slugify(game)}_backup_"))
                 shutil.copytree(game_dir, backup_dir / game, dirs_exist_ok=True)
 
-            candidates = discover_recovery_candidates(game, providers, logger)
+            game_type = str(record.get("type", "") or active_record.get("type", "")).strip().lower()
+            candidates = discover_recovery_candidates(game, providers, logger, game_type=game_type)
             game_result["attempts"].append({"strategy": "discover_recovery_candidates", "count": len(candidates)})
 
             recovered_ok = False
@@ -1966,6 +2104,8 @@ def run_pipeline(cfg: Config) -> Dict[str, object]:
         "recovered": recovered,
         "unresolved": unresolved,
         "per_game": per_game,
+        "dead_host_cache": dead_host_snapshot(),
+        "provider_health": dict(_PROVIDER_HEALTH_CACHE),
     }
 
     cfg.summary_json.write_text(json.dumps(summary, indent=2), encoding="utf-8")

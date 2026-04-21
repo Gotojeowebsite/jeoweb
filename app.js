@@ -8,6 +8,9 @@ class App {
 
 		this.showFlash = localStorage.getItem('jeo-show-flash') !== 'false';
 		this.showRetro = localStorage.getItem('jeo-show-retro') !== 'false';
+		// Hide-maintenance defaults ON the first visit so users don't land on broken games.
+		this.hideMaintenance = localStorage.getItem('jeo-hide-maintenance') !== 'false';
+		this.statusFreshness = { generatedAt: null, source: '' };
 
 		this.initElements();
 		this.loadTheme();
@@ -17,6 +20,7 @@ class App {
 		this.initCloaker();
 		this.initFlashToggle();
 		this.initRetroToggle();
+		this.initMaintenanceToggle();
 		this.initAnimations();
 		this.bindUI();
 		this.bootstrap();
@@ -137,6 +141,7 @@ class App {
 		this.updateCounter();
 		this.renderCarousels();
 		this.renderGames();
+		this.renderStatusFreshness();
 		this.hideLoading();
 	}
 
@@ -216,6 +221,9 @@ class App {
 			if (!response.ok) return statusByName;
 			const data = await response.json();
 			const games = data && typeof data === 'object' ? data.games : null;
+			if (data && typeof data === 'object' && Number.isFinite(data.generated_at)) {
+				this.statusFreshness = { generatedAt: Number(data.generated_at), source: 'maintenance_status.json' };
+			}
 			if (!games || typeof games !== 'object') return statusByName;
 			Object.entries(games).forEach(([name, entry]) => {
 				if (!name || !entry || typeof entry !== 'object') return;
@@ -228,6 +236,23 @@ class App {
 			console.warn('Could not load maintenance_status.json', e);
 		}
 		return statusByName;
+	}
+
+	renderStatusFreshness() {
+		const el = document.getElementById('statusFreshness');
+		if (!el) return;
+		const ts = this.statusFreshness && this.statusFreshness.generatedAt;
+		if (!ts) { el.textContent = ''; return; }
+		const ageMs = Date.now() - ts * 1000;
+		const hours = Math.floor(ageMs / 3600000);
+		const days = Math.floor(hours / 24);
+		let label;
+		if (ageMs < 60000) label = 'fresh (<1 min)';
+		else if (hours < 1) label = Math.floor(ageMs / 60000) + ' min ago';
+		else if (days < 1) label = hours + ' h ago';
+		else label = days + ' d ago';
+		el.textContent = '🛈 status: ' + label;
+		el.setAttribute('data-age-days', String(days));
 	}
 
 	initElements() {
@@ -803,6 +828,17 @@ class App {
 		}
 	}
 
+	initMaintenanceToggle() {
+		const toggle = document.getElementById('hideMaintenanceToggle');
+		if (!toggle) return;
+		toggle.checked = this.hideMaintenance;
+		toggle.addEventListener('change', () => {
+			this.hideMaintenance = toggle.checked;
+			localStorage.setItem('jeo-hide-maintenance', this.hideMaintenance);
+			this.renderGames();
+		});
+	}
+
 	refreshGames() {
 		this.refreshBtn.classList.add('spinning');
 		this.reloadGames().then(() => {
@@ -819,7 +855,8 @@ class App {
 		const filtered = this.games.filter(g => {
 			if (!this.showFlash && g.type === 'flash') return false;
 			if (!this.showRetro && g.type === 'snes') return false;
-			
+			if (this.hideMaintenance && this.isUnderMaintenance(g)) return false;
+
 			if (q) {
 				const rawName = g.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 				const spacedName = g.name.toLowerCase().replace(/[-_]/g, ' ');
