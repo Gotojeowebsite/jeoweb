@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Brawl Simulator 3D Save System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #2a2a2a;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .success {
+            color: #4CAF50;
+        }
+        .error {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brawl Simulator 3D - Save System Test</h1>
+
+    <button onclick="testSave()">Test Save Game Data</button>
+    <button onclick="testLoad()">Test Load Game Data</button>
+    <button onclick="clearSave()">Clear Save Data</button>
+    <button onclick="viewSave()">View Current Save</button>
+
+    <div id="status"></div>
+
+    <script>
+        const GAME_SAVE_KEY = 'brawl_simulator_3d_saves';
+        const statusDiv = document.getElementById('status');
+
+        function testSave() {
+            try {
+                const testData = {
+                    playerLevel: 10,
+                    coins: 5000,
+                    unlockedCharacters: ['warrior', 'mage', 'archer'],
+                    achievements: {
+                        firstWin: true,
+                        tenWins: true
+                    },
+                    timestamp: new Date().toISOString()
+                };
+
+                localStorage.setItem(GAME_SAVE_KEY, JSON.stringify(testData));
+
+                statusDiv.innerHTML = `<span class="success">✓ Save successful!</span><br>
+                    <strong>Saved data:</strong><br>
+                    <pre>${JSON.stringify(testData, null, 2)}</pre>`;
+            } catch (e) {
+                statusDiv.innerHTML = `<span class="error">✗ Save failed: ${e.message}</span>`;
+            }
+        }
+
+        function testLoad() {
+            try {
+                const savedData = localStorage.getItem(GAME_SAVE_KEY);
+
+                if (savedData && savedData !== 'no data') {
+                    const data = JSON.parse(savedData);
+                    statusDiv.innerHTML = `<span class="success">✓ Load successful!</span><br>
+                        <strong>Loaded data:</strong><br>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    statusDiv.innerHTML = '<span class="error">No save data found</span>';
+                }
+            } catch (e) {
+                statusDiv.innerHTML = `<span class="error">✗ Load failed: ${e.message}</span>`;
+            }
+        }
+
+        function clearSave() {
+            try {
+                localStorage.removeItem(GAME_SAVE_KEY);
+                statusDiv.innerHTML = '<span class="success">✓ Save data cleared</span>';
+            } catch (e) {
+                statusDiv.innerHTML = `<span class="error">✗ Clear failed: ${e.message}</span>`;
+            }
+        }
+
+        function viewSave() {
+            try {
+                const savedData = localStorage.getItem(GAME_SAVE_KEY);
+
+                if (savedData) {
+                    try {
+                        const parsed = JSON.parse(savedData);
+                        statusDiv.innerHTML = `<strong>Current save data (parsed):</strong><br>
+                            <pre>${JSON.stringify(parsed, null, 2)}</pre>`;
+                    } catch {
+                        statusDiv.innerHTML = `<strong>Current save data (raw):</strong><br>
+                            <pre>${savedData}</pre>`;
+                    }
+                } else {
+                    statusDiv.innerHTML = '<span class="error">No save data exists</span>';
+                }
+            } catch (e) {
+                statusDiv.innerHTML = `<span class="error">✗ View failed: ${e.message}</span>`;
+            }
+        }
+
+        // Check on load
+        window.onload = function() {
+            const savedData = localStorage.getItem(GAME_SAVE_KEY);
+            if (savedData) {
+                statusDiv.innerHTML = '<span class="success">✓ Save data exists in localStorage</span>';
+            } else {
+                statusDiv.innerHTML = '<span>No existing save data</span>';
+            }
+        };
+    </script>
+</body>
+</html>

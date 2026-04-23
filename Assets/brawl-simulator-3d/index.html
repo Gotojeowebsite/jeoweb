@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Brawl Simulator 3D</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/style.css">
+    <style>
+        canvas:focus {
+            outline: none;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            overscroll-behavior: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            height: 100%;
+            background-color: rgb(65, 65, 65);
+        }
+
+        #loading-text {
+            color: #f0f0f0 !important;
+            background: transparent !important;
+            -webkit-text-fill-color: initial !important;
+            font-size: 48px;
+            font-family: cursive;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            white-space: nowrap;
+        }
+
+        /* Loading animation */
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        #loading-text {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            #loading-text {
+                font-size: 24px;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #loading-text {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark">
+    <div id="loading-text">LOADING... 0.00 MB / 101.82 MB</div>
+
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+    </div>
+    <div id="loading-cover" style="display: none;">
+        <div id="unity-loading-bar">
+            <div id="unity-logo"><img src="_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full" style="width: 0%;"></div>
+            </div>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script>
+        var loadingText = document.querySelector("#loading-text");
+        let totalBytes = 0;
+        let loadedBytes = 0;
+        const NO_DATA = 'no data';
+        const GAME_SAVE_KEY = 'brawl_simulator_3d_saves';
+        const GAME_CLOUD_STATE_KEY = 'brawl_simulator_3d_cloud_state_v2';
+        const GAME_STATS_KEY = 'brawl_simulator_3d_stats';
+
+        function safeJsonParse(raw) {
+            try {
+                return JSON.parse(raw);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function asJsonString(value) {
+            if (typeof value === 'string') {
+                return value;
+            }
+            return JSON.stringify(value);
+        }
+
+        function getEnvironmentPayload() {
+            return JSON.stringify({
+                language: "en",
+                domain: "com",
+                deviceType: "desktop",
+                isMobile: false,
+                isDesktop: true,
+                isTablet: false,
+                isTV: false,
+                appID: "local",
+                browserLang: navigator.language || "en",
+                payload: null,
+                platform: navigator.platform,
+                browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : 'Other',
+            });
+        }
+
+        function getAuthPayload() {
+            return JSON.stringify({
+                playerAuth: "resolved",
+                playerName: "LocalPlayer",
+                playerId: "local_player_001",
+                playerPhoto: NO_DATA,
+                payingStatus: "unknown",
+            });
+        }
+
+        function readCloudState() {
+            const stateRaw = localStorage.getItem(GAME_CLOUD_STATE_KEY);
+            if (stateRaw) {
+                const parsedState = safeJsonParse(stateRaw);
+                if (parsedState && Array.isArray(parsedState.saves)) {
+                    return parsedState;
+                }
+            }
+
+            const legacyRaw = localStorage.getItem(GAME_SAVE_KEY);
+            if (!legacyRaw || legacyRaw === NO_DATA) {
+                return null;
+            }
+
+            // Ignore legacy-corrupted values from older wrappers.
+            if (legacyRaw === '[object Object]' || legacyRaw === 'undefined' || legacyRaw === 'null') {
+                return null;
+            }
+
+            const parsedLegacy = safeJsonParse(legacyRaw);
+            if (parsedLegacy && Array.isArray(parsedLegacy.saves)) {
+                return parsedLegacy;
+            }
+            if (Array.isArray(parsedLegacy)) {
+                return { saves: parsedLegacy.map(asJsonString), updatedAt: Date.now() };
+            }
+            if (parsedLegacy !== null) {
+                return { saves: [JSON.stringify(parsedLegacy)], updatedAt: Date.now() };
+            }
+            return { saves: [legacyRaw], updatedAt: Date.now() };
+        }
+
+        function writeCloudState(saveValue) {
+            const normalized = asJsonString(saveValue);
+            const state = {
+                saves: [normalized],
+                updatedAt: Date.now(),
+            };
+            localStorage.setItem(GAME_CLOUD_STATE_KEY, JSON.stringify(state));
+            // Keep legacy key for backward compatibility with previous wrapper versions.
+            localStorage.setItem(GAME_SAVE_KEY, normalized);
+            return state;
+        }
+
+        function getSerializedCloudSaves() {
+            const state = readCloudState();
+            if (!state || !Array.isArray(state.saves) || state.saves.length === 0) {
+                return NO_DATA;
+            }
+            return JSON.stringify(state.saves.map(asJsonString));
+        }
+
+        function readStatsPayload() {
+            const raw = localStorage.getItem(GAME_STATS_KEY);
+            return raw && raw !== NO_DATA ? raw : NO_DATA;
+        }
+
+        function writeStatsPayload(jsonStats) {
+            const normalized = asJsonString(jsonStats);
+            localStorage.setItem(GAME_STATS_KEY, normalized);
+            return normalized;
+        }
+
+        async function fetchWithProgress(url) {
+            const response = await fetch(url);
+            const reader = response.body.getReader();
+            let chunks = [];
+            let received = 0;
+            while (true) {
+                const {
+                    done,
+                    value
+                } = await reader.read();
+                if (done) break;
+                received += value.length;
+                loadedBytes += value.length;
+                chunks.push(value);
+                let mbDone = (loadedBytes / (1024 * 1024)).toFixed(2);
+                let mbTotal = '101.82';
+                loadingText.textContent = `LOADING... ${mbDone} MB / ${mbTotal} MB`;
+            }
+            let fullBuffer = new Uint8Array(received);
+            let offset = 0;
+            for (let chunk of chunks) {
+                fullBuffer.set(chunk, offset);
+                offset += chunk.length;
+            }
+            return fullBuffer.buffer;
+        }
+
+        async function mergeFiles(fileParts, mimeType) {
+            const buffers = await Promise.all(
+                fileParts.map(part => fetchWithProgress(part))
+            );
+            const mergedBlob = mimeType ? new Blob(buffers, { type: mimeType }) : new Blob(buffers);
+            return URL.createObjectURL(mergedBlob);
+        }
+
+        function getParts(file, start, end) {
+            let parts = [];
+            for (let i = start; i <= end; i++) {
+                parts.push(file + ".part" + i);
+            }
+            return parts;
+        }
+
+        (async () => {
+            const buildPath = "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build";
+            const [wasmUrl, dataUrl] = await Promise.all([
+                mergeFiles(getParts(buildPath + "/brawl.wasm", 1, 4), "application/wasm"),
+                mergeFiles(getParts(buildPath + "/brawl.data", 1, 2), "application/octet-stream"),
+            ]);
+            const hideFullScreenButton = "";
+            const buildUrl = buildPath;
+            const loaderUrl = buildUrl + "/brawl.loader.js";
+            const config = {
+                dataUrl: dataUrl,
+                frameworkUrl: buildUrl + "/brawl.framework.js",
+                codeUrl: wasmUrl,
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "Fire Games",
+                productName: "Brawl 2018",
+                productVersion: "1.07"
+            };
+
+            const container = document.querySelector("#unity-container");
+            const canvas = document.querySelector("#unity-canvas");
+            const loadingCover = document.querySelector("#loading-cover");
+            const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+            const progressBarFull = document.querySelector("#unity-progress-bar-full");
+            const spinner = document.querySelector('.spinner');
+
+            const canFullscreen = (function () {
+                for (const key of [
+                    'exitFullscreen',
+                    'webkitExitFullscreen',
+                    'webkitCancelFullScreen',
+                    'mozCancelFullScreen',
+                    'msExitFullscreen',
+                ]) {
+                    if (key in document) {
+                        return true;
+                    }
+                }
+                return false;
+            }());
+
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                container.className = "unity-mobile";
+            }
+
+            loadingCover.style.display = "";
+
+            window.StartUnityInstance;
+            window.ygGameInstance = null;
+            window.ysdk = null;
+            window.initYSDK = false;
+            window.initGame = false;
+            window.syncInit = true;  // Changed to true for local play
+            window.isVisibility = true;
+            window.isPausedGame = false;
+            window.NO_DATA = NO_DATA;
+
+            document.addEventListener('contextmenu', event => event.preventDefault());
+            document.addEventListener('visibilitychange', () => SetVisibility(!document.hidden));
+            window.addEventListener('blur', () => SetVisibility(false));
+            window.addEventListener('focus', () => SetVisibility(true));
+
+            window.addEventListener('pointerdown', () => {
+                FocusGame();
+                SetVisibility(true);
+            });
+
+            const oRequestPointerLock = Element.prototype.requestPointerLock;
+            Element.prototype.requestPointerLock = async function hkRequestPointerLock(...args) {
+                try {
+                    (args[0] ||= {}).unadjustedMovement = true;
+                    await oRequestPointerLock.apply(this, args);
+                } catch (err) {
+                    console.log(err);
+                }
+            };
+
+            window.InstallBlurFocusBlocker = function () {
+                if (!('onblur' in document)) return;
+                if (window.blurFocusHandlersInstalled) return;
+
+                window.addEventListener('blur', function () {
+                    let blockerButton = document.createElement('button');
+                    blockerButton.style.position = 'fixed';
+                    blockerButton.style.top = '0';
+                    blockerButton.style.left = '0';
+                    blockerButton.style.width = '100%';
+                    blockerButton.style.height = '100%';
+                    blockerButton.style.zIndex = '9999';
+                    blockerButton.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                    blockerButton.style.border = 'none';
+                    blockerButton.style.cursor = 'default';
+
+                    document.body.appendChild(blockerButton);
+
+                    function removeBlocker() {
+                        if (blockerButton && blockerButton.parentNode) {
+                            blockerButton.parentNode.removeChild(blockerButton);
+                        }
+                        window.removeEventListener('focus', removeBlocker);
+                    }
+
+                    window.addEventListener('focus', removeBlocker);
+                });
+
+                window.blurFocusHandlersInstalled = true;
+            }
+
+            window.FocusGame = function () {
+                if (!isPausedGame) canvas.focus();
+            }
+
+            window.SetVisibility = function (visibility) {
+                if (ysdk !== null && initGame === true && isVisibility !== visibility) {
+                    isVisibility = visibility;
+                    if (!visibility) {
+                        YG2Instance('SetFocusWindowGame', 'false');
+                    }
+                    else {
+                        YG2Instance('SetFocusWindowGame', 'true');
+                    }
+                }
+            }
+
+            const PauseCallback = () => {
+                isPausedGame = true;
+                YG2Instance('SetPauseGame', 'true');
+            };
+
+            const ResumeCallback = () => {
+                isPausedGame = false;
+                YG2Instance('SetPauseGame', 'false');
+            };
+
+            const script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = () => {
+                StartUnityInstance = function () {
+                    createUnityInstance(canvas, config, (progress) => {
+                        spinner.style.display = "none";
+                        progressBarEmpty.style.display = "";
+                        const adjustedProgress = Math.max(progress, 0.05);
+                        progressBarFull.style.width = `${100 * adjustedProgress}%`;
+                    }).then((unityInstance) => {
+                        ygGameInstance = unityInstance;
+                        loadingCover.style.background = "";
+                        loadingCover.style.display = "none";
+                    }).catch((message) => {
+                        console.error(message);
+                    });
+                };
+
+                InstallBlurFocusBlocker();
+                InitYSDK();
+
+                if (IsLocalHost() || syncInit)
+                    StartUnityInstance_IfUnloaded();
+            };
+
+            window.StartUnityInstance_IfUnloaded = function () {
+                if (spinner.style.display !== "none")
+                    StartUnityInstance();
+            }
+
+            window.IsLocalHost = function () {
+                return true; // Always return true for local play
+            }
+
+            window.YG2Instance = function (method, arg) {
+                if (ygGameInstance == null)
+                    return;
+
+                if (!initGame) {
+                    setTimeout(function () {
+                        if (arg !== undefined) {
+                            ygGameInstance.SendMessage('YG2Instance', method, arg);
+                        } else {
+                            ygGameInstance.SendMessage('YG2Instance', method);
+                        }
+                    }, 100);
+                }
+                else {
+                    if (arg !== undefined) {
+                        ygGameInstance.SendMessage('YG2Instance', method, arg);
+                    } else {
+                        ygGameInstance.SendMessage('YG2Instance', method);
+                    }
+                }
+            }
+
+            window.LogStyledMessage = function (message, style) {
+                console.log('%c' + message, style || 'color: #FFDF73; background-color: #454545');
+            }
+
+            window.InitYSDK = async function () {
+                // Skip Yandex SDK initialization for local play
+                LogStyledMessage('Local Play Mode - Skipping Yandex SDK');
+                initYSDK = true;
+                if (ygGameInstance != null)
+                    ygGameInstance.SendMessage('YG2Instance', 'InitSDKComplete');
+
+                StartUnityInstance_IfUnloaded();
+            }
+
+            window.InitGame = function () {
+                loadingText.remove();
+                initGame = true;
+
+                const environmentPayload = getEnvironmentPayload();
+                const authPayload = getAuthPayload();
+                const saveString = getSerializedCloudSaves();
+                const statsPayload = readStatsPayload();
+
+                environmentData = environmentPayload;
+                playerData = authPayload;
+                cloudSaves = saveString;
+                statsSaves = statsPayload;
+
+                ygGameInstance.SendMessage("YG2Instance", "SetEnvirData", environmentPayload);
+                ygGameInstance.SendMessage("YG2Instance", "SetAuth", authPayload);
+                ygGameInstance.SendMessage("YG2Instance", "SetLoadSaves", saveString);
+                ygGameInstance.SendMessage("YG2Instance", "ReceiveStats", statsPayload);
+                ygGameInstance.SendMessage("YG2Instance", "InitSDKComplete");
+
+                setTimeout(function () {
+                    if (isPausedGame == true) YG2Instance("SetPauseGame", "true");
+                }, 100);
+            }
+
+            // LocalStorage Save/Load implementation
+            window.cloudSaves = window.NO_DATA;
+
+            // Save game data to localStorage
+            window.SaveCloud = function (jsonData, flush) {
+                try {
+                    const state = writeCloudState(jsonData);
+                    const savePayload = JSON.stringify(state.saves.map(asJsonString));
+                    cloudSaves = savePayload;
+                    if (window.initGame) {
+                        YG2Instance('SetLoadSaves', savePayload);
+                    }
+                    console.log('Game saved successfully to localStorage');
+                } catch (e) {
+                    console.error('Failed to save game: ', e.message);
+                }
+            }
+
+            // Load game data from localStorage
+            window.LoadCloud = function () {
+                return new Promise((resolve) => {
+                    try {
+                        const payload = getSerializedCloudSaves();
+                        cloudSaves = payload;
+                        YG2Instance('SetLoadSaves', payload);
+                        resolve(payload);
+                    } catch (e) {
+                        console.error('Failed to load game saves: ', e.message);
+                        cloudSaves = window.NO_DATA;
+                        YG2Instance('SetLoadSaves', window.NO_DATA);
+                        resolve(window.NO_DATA);
+                    }
+                });
+            }
+
+            // Stub functions for features not available locally
+            window.StickyAdActivity = function (show) {
+                console.log('Ads disabled in local mode');
+            }
+
+            window.RewardedAdvShow = function (id) {
+                console.log('Rewarded ads disabled in local mode');
+                try {
+                    // Simulate open -> reward -> close so gameplay does not stall waiting for callbacks.
+                    YG2Instance('OpenRewardedAdv');
+                    setTimeout(() => {
+                        YG2Instance('RewardAdv', id || '');
+                        YG2Instance('CloseRewardedAdv');
+                        FocusGame();
+                    }, 120);
+                } catch (e) {
+                    console.error('Rewarded ad callback simulation failed: ', e.message);
+                    YG2Instance('ErrorRewardedAdv');
+                    FocusGame();
+                }
+            }
+
+            window.InterAdvShow = function () {
+                console.log('Interstitial ads disabled in local mode');
+                try {
+                    YG2Instance('OpenInterAdv');
+                    setTimeout(() => {
+                        YG2Instance('CloseInterAdv', 'true');
+                        FocusGame();
+                    }, 120);
+                } catch (e) {
+                    console.error('Interstitial ad callback simulation failed: ', e.message);
+                    YG2Instance('ErrorInterAdv');
+                    FocusGame();
+                }
+            }
+
+            window.reviewData = 'false';
+
+            window.InitReview = function () {
+                return Promise.resolve('false');
+            }
+
+            window.Review = function () {
+                console.log('Review disabled in local mode');
+            }
+
+            window.statsSaves = window.NO_DATA;
+
+            window.GetStats = function () {
+                return new Promise((resolve) => {
+                    try {
+                        const statsPayload = readStatsPayload();
+                        statsSaves = statsPayload;
+                        YG2Instance('ReceiveStats', statsPayload);
+                        resolve(statsPayload);
+                    } catch (e) {
+                        console.error('Failed to read stats: ', e.message);
+                        statsSaves = window.NO_DATA;
+                        YG2Instance('ReceiveStats', window.NO_DATA);
+                        resolve(window.NO_DATA);
+                    }
+                });
+            }
+
+            window.SetStats = function (jsonStats) {
+                try {
+                    const statsPayload = writeStatsPayload(jsonStats);
+                    statsSaves = statsPayload;
+                } catch (e) {
+                    console.error('Failed to save stats: ', e.message);
+                }
+            }
+
+            window.paymentsData = window.NO_DATA;
+            let payments = null;
+
+            window.InitPayments = function (sendback) {
+                return Promise.resolve(window.NO_DATA);
+            }
+
+            window.BuyPayments = function (id) {
+                console.log('Payments disabled in local mode - granting:', id);
+                YG2Instance('OnPurchaseSuccess', id);
+            }
+
+            window.ConsumePurchase = function (id, onPurchaseSuccess) {
+                console.log('Consume purchase disabled in local mode:', id);
+            }
+
+            window.ConsumePurchases = function (onPurchaseSuccess) {
+                console.log('Consume purchases disabled in local mode');
+            }
+
+            window.SetLeaderboard = function (nameLB, score) {
+                console.log('Leaderboards disabled in local mode');
+            }
+
+            window.GetLeaderboard = function (nameLB, quantityTop, quantityAround, photoSizeLB, auth) {
+                YG2Instance('LeaderboardEntries', window.NO_DATA);
+            }
+
+            window.InitPlayer = function () {
+                const authPayload = getAuthPayload();
+                playerData = authPayload;
+                if (window.initGame) {
+                    YG2Instance('SetAuth', authPayload);
+                }
+                return Promise.resolve(authPayload);
+            }
+
+            window.RequestingEnvironmentData = function () {
+                const environmentPayload = getEnvironmentPayload();
+                environmentData = environmentPayload;
+                if (window.initGame) {
+                    YG2Instance('SetEnvirData', environmentPayload);
+                }
+                return Promise.resolve(environmentPayload);
+            }
+
+            window.allGamesData = window.NO_DATA;
+
+            window.GetAllGames = function () {
+                return Promise.resolve(window.NO_DATA);
+            }
+
+            window.gameLabelData = 'false';
+
+            window.InitGameLabel = function () {
+                return Promise.resolve('false');
+            }
+
+            window.GameLabelShowDialog = function () {
+                console.log('Game label disabled in local mode');
+            }
+
+            window.OpenAuthDialog = function () {
+                console.log('Auth dialog disabled in local mode - already logged in as LocalPlayer');
+            }
+
+            window.player = {
+                getData: function() {
+                    const payload = getSerializedCloudSaves();
+                    const parsed = payload === NO_DATA ? [] : safeJsonParse(payload);
+                    return Promise.resolve({ saves: Array.isArray(parsed) ? parsed : [] });
+                },
+                setData: function(data, flush) {
+                    if (data.saves && data.saves.length > 0) {
+                        SaveCloud(data.saves[0], flush);
+                    }
+                }
+            };
+
+            window.environmentData = getEnvironmentPayload();
+            window.playerData = getAuthPayload();
+
+            LogStyledMessage('[Local Mode] Brawl Simulator 3D with localStorage saves');
+
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
