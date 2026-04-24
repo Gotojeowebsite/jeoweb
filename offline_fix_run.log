@@ -1,0 +1,14 @@
+
+> jeoweb@1.0.0 game:offline:fix
+> node scripts/fix-offline-games.js
+
+Refreshing offline broken list...
+Total catalog games: 574
+Offline-blocked games: 378
+Wrote: offline_broken_games.txt
+Wrote: offline_broken_games.json
+Wrote: offline_broken_games_details.json
+Prepared scan report with 378 games: offline_fix_targets.scan_report.json
+Running repair supervisor...
+Pipeline failed: host cached as dead for this run: cdn.jsdelivr.net
+Command failed (1): python3 auto_fix_and_recover_games.py --scan-report offline_fix_targets.scan_report.json --summary-json offline_fix_summary.json --log-jsonl offline_fix_log.jsonl --maintenance-json maintenance_status.json --test-wait-seconds 5 --test-timeout-ms 20000 --hard-timeout-seconds 60 --validation-call-timeout-seconds 240 --strict-external-test

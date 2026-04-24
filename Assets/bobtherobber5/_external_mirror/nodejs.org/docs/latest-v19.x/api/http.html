@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&display=fallback">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/hljs.css">
-  <link rel="canonical" href="https://nodejs.org/api/http.html">
+  <link rel="canonical" href="../../../api/http.html">
   <script async defer src="assets/api.js" type="text/javascript"></script>
   
 </head>
@@ -408,24 +408,24 @@
         <span class="collapsed-arrow">&#x25ba;</span><span class="expanded-arrow">&#x25bc;</span>
         Other versions
       </a>
-      <div class="picker"><ol id="alt-docs"><li><a href="https://nodejs.org/docs/latest-v19.x/api/http.html">19.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v18.x/api/http.html">18.x <b>LTS</b></a></li>
-<li><a href="https://nodejs.org/docs/latest-v17.x/api/http.html">17.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v16.x/api/http.html">16.x <b>LTS</b></a></li>
-<li><a href="https://nodejs.org/docs/latest-v15.x/api/http.html">15.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v14.x/api/http.html">14.x <b>LTS</b></a></li>
-<li><a href="https://nodejs.org/docs/latest-v13.x/api/http.html">13.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v12.x/api/http.html">12.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v11.x/api/http.html">11.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v10.x/api/http.html">10.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v9.x/api/http.html">9.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v8.x/api/http.html">8.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v7.x/api/http.html">7.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v6.x/api/http.html">6.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v5.x/api/http.html">5.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v4.x/api/http.html">4.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v0.12.x/api/http.html">0.12.x</a></li>
-<li><a href="https://nodejs.org/docs/latest-v0.10.x/api/http.html">0.10.x</a></li></ol></div>
+      <div class="picker"><ol id="alt-docs"><li><a href="http.html">19.x</a></li>
+<li><a href="../../latest-v18.x/api/http.html">18.x <b>LTS</b></a></li>
+<li><a href="../../latest-v17.x/api/http.html">17.x</a></li>
+<li><a href="../../latest-v16.x/api/http.html">16.x <b>LTS</b></a></li>
+<li><a href="../../latest-v15.x/api/http.html">15.x</a></li>
+<li><a href="../../latest-v14.x/api/http.html">14.x <b>LTS</b></a></li>
+<li><a href="../../latest-v13.x/api/http.html">13.x</a></li>
+<li><a href="../../latest-v12.x/api/http.html">12.x</a></li>
+<li><a href="../../latest-v11.x/api/http.html">11.x</a></li>
+<li><a href="../../latest-v10.x/api/http.html">10.x</a></li>
+<li><a href="../../latest-v9.x/api/http.html">9.x</a></li>
+<li><a href="../../latest-v8.x/api/http.html">8.x</a></li>
+<li><a href="../../latest-v7.x/api/http.html">7.x</a></li>
+<li><a href="../../latest-v6.x/api/http.html">6.x</a></li>
+<li><a href="../../latest-v5.x/api/http.html">5.x</a></li>
+<li><a href="../../latest-v4.x/api/http.html">4.x</a></li>
+<li><a href="../../latest-v0.12.x/api/http.html">0.12.x</a></li>
+<li><a href="../../latest-v0.10.x/api/http.html">0.10.x</a></li></ol></div>
     </li>
   
             <li class="picker-header">
@@ -1532,7 +1532,7 @@ for network transmission.</p>
 <p>When the value is a string an exception will be thrown if it contains
 characters outside the <code>latin1</code> encoding.</p>
 <p>If you need to pass UTF-8 characters in the value please encode the value
-using the <a href="https://www.rfc-editor.org/rfc/rfc8187.txt">RFC 8187</a> standard.</p>
+using the <a href="../../../../www.rfc-editor.org/rfc/rfc8187.txt">RFC 8187</a> standard.</p>
 <pre><code class="language-js"><span class="hljs-keyword">const</span> filename = <span class="hljs-string">'Rock 🎵.txt'</span>;
 request.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">'Content-Disposition'</span>, <span class="hljs-string">`attachment; filename*=utf-8''<span class="hljs-subst">${<span class="hljs-built_in">encodeURIComponent</span>(filename)}</span>`</span>);</code> <button class="copy-button">copy</button></pre>
 <h4><code>request.setNoDelay([noDelay])</code><span><a class="mark" href="#requestsetnodelaynodelay" id="requestsetnodelaynodelay">#</a></span><a aria-hidden="true" class="legacy" id="http_request_setnodelay_nodelay"></a></h4>

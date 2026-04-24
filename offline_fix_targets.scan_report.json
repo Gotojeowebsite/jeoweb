@@ -1,0 +1,2044 @@
+[
+  {
+    "name": "0v0",
+    "type": "webgl",
+    "url": "Assets/0v0/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Error requesting https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js:",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "ProgressEvent",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/offlineClient.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/offlineClient.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/data.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "1",
+    "type": "webgl",
+    "url": "Assets/1/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "1v1space",
+    "type": "webgl",
+    "url": "Assets/1v1space/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in iframe",
+        "severity": "critical",
+        "url": "https://flowlab.io/game/embed/1225623"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "2006-fifa-world-cup-germany-2006",
+    "type": "gba",
+    "url": "Assets/2006-fifa-world-cup-germany-2006/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "2048",
+    "type": "webgl",
+    "url": "Assets/2048/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "2k-sports-major-league-baseball-2k7",
+    "type": "gba",
+    "url": "Assets/2k-sports-major-league-baseball-2k7/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "99-nights-in-the-forest",
+    "type": "webgl",
+    "url": "Assets/99-nights-in-the-forest/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "connection_error",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "GamePush Field \"name\" not exists on player model",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "GamePush Error: Field \"name\" not exists on player model\n    at Pe.getField (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:13876:37)\n    at Pe._convert (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:13976:28)\n    at Pe.set (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:13925:40)\n    at set name (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:13777:18)\n    at Pe.<anonymous> (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:5444:28)\n    at Generator.next (<anonymous>)\n    at http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:4743:43\n    at new Promise (<anonymous>)\n    at me (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:4717:20)\n    at Pe.re (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:5440:20)\n    at Pe.<anonymous> (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:5435:44)\n    at Generator.next (<anonymous>)\n    at a (http://localhost:8081/Assets/99-nights-in-the-forest/TemplateData/gp_bundle/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl:4720:23)",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Field \"name\" not exists on player model",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=23944&publicToken=ujcWENZkwMoH5ScnwZMsJBXLMCMGCoBl"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "achievementunlocked",
+    "type": "flash",
+    "url": "Assets/achievementunlocked/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "adrenalinechallenge",
+    "type": "flash",
+    "url": "Assets/adrenalinechallenge/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "amazing-rope-police",
+    "type": "webgl",
+    "url": "Assets/amazing-rope-police/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "angelunder",
+    "type": "webgl",
+    "url": "Assets/angelunder/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/angelunder/Build/Webgl.loader.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "angry-bird",
+    "type": "webgl",
+    "url": "Assets/angry-bird/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.325,tbsd_.32,tbnd_.-357&srt=325&gadget=default&container=default&view=default&e=&rt=dl.381,ol.385,prt.385"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.325,tbsd_.32,tbnd_.-357&srt=325&gadget=default&container=default&view=default&e=&rt=dl.381,ol.385,prt.385"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/angry-bird/_external_mirror/cdn.jsdelivr.net/gh/gertdoro/UnityExplorer_cffa09e09790018403c996d37adb6c4450e8f6c6/Runtime/birds/birds.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/gadgets/evthdlr?t=err&gadget=undefined&container=undefined&jsurl=-top-&line=1&session=1776016690050&count=0&msg=Uncaught%20SyntaxError%3A%20Unexpected%20token%20%27%3C%27%2C%20%22%3C!DOCTYPE%20%22...%20is%20not%20valid%20JSON"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "angry-sharks",
+    "type": "webgl",
+    "url": "Assets/angry-sharks/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "aqua-park",
+    "type": "webgl",
+    "url": "Assets/aqua-park/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://t.y8.com/log"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://t.y8.com/log"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://playtomic.y8.com/v1?hash=1"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://playtomic.y8.com/v1?hash=1"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/v1/json/time/server/unix"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/v1/json/time/server/unix"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/user_data/autologin?callback=idnet_autologin&app_id=5d1c462fd55930501e8d25a1"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/user_data/autologin?callback=idnet_autologin&app_id=5d1c462fd55930501e8d25a1"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/v1/json/protection-lists"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://account.y8.com/api/v1/json/protection-lists"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdp.cloud.unity3d.com/v1/events"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdp.cloud.unity3d.com/v1/events"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "avalanche",
+    "type": "flash",
+    "url": "Assets/avalanche/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "avatar-the-last-airbender",
+    "type": "gba",
+    "url": "Assets/avatar-the-last-airbender/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "avatar-the-last-airbender-the-burning-earth",
+    "type": "gba",
+    "url": "Assets/avatar-the-last-airbender-the-burning-earth/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backrooms",
+    "type": "webgl",
+    "url": "Assets/backrooms/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backyard-baseball",
+    "type": "gba",
+    "url": "Assets/backyard-baseball/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backyard-basketball",
+    "type": "gba",
+    "url": "Assets/backyard-basketball/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backyard-football",
+    "type": "gba",
+    "url": "Assets/backyard-football/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backyard-hockey",
+    "type": "gba",
+    "url": "Assets/backyard-hockey/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "backyard-skateboarding",
+    "type": "gba",
+    "url": "Assets/backyard-skateboarding/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bad-ice-cream",
+    "type": "flash",
+    "url": "Assets/bad-ice-cream/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bad-ice-cream-2",
+    "type": "flash",
+    "url": "Assets/bad-ice-cream-2/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bad-ice-cream-3",
+    "type": "flash",
+    "url": "Assets/bad-ice-cream-3/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bad-time-sim",
+    "type": "webgl",
+    "url": "Assets/bad-time-sim/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/gh/bobydob/JSEngine@e0d0fdf3302614fa5c723aff4c7857549e9487bd/build/bts-sans/data.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/gh/bobydob/JSEngine@e0d0fdf3302614fa5c723aff4c7857549e9487bd/build/bts-sans/data.js"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/bad-time-sim/offlineClient.js"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Invalid or unexpected token",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "gadgets is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "critical",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "critical",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Error requesting https://cdn.jsdelivr.net/gh/bobydob/JSEngine@e0d0fdf3302614fa5c723aff4c7857549e9487bd/build/bts-sans/data.js:",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "ProgressEvent",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.318,tbsd_.24,tbnd_.-342&srt=318&gadget=default&container=default&view=default&e=&rt=dl.349,ol.362,prt.362"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.318,tbsd_.24,tbnd_.-342&srt=318&gadget=default&container=default&view=default&e=&rt=dl.349,ol.362,prt.362"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.321,tbsd_.14,tbnd_.-335&srt=321&gadget=default&container=default&view=default&e=&rt=dl.374,ol.379,prt.379"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.321,tbsd_.14,tbnd_.-335&srt=321&gadget=default&container=default&view=default&e=&rt=dl.374,ol.379,prt.379"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/_external_mirror/cdn.jsdelivr.net/gh/bobydob/JSEngine_e0d0fdf3302614fa5c723aff4c7857549e9487bd/build/bts-sans/data.js"
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Project model unavailable",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Cannot read properties of null (reading 'project')",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.322,tbsd_.12,tbnd_.-334&srt=322&gadget=default&container=default&view=default&e=&rt=dl.350,ol.358,prt.358"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.322,tbsd_.12,tbnd_.-334&srt=322&gadget=default&container=default&view=default&e=&rt=dl.350,ol.358,prt.358"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.310,tbsd_.728,tbnd_.-1038&srt=310&gadget=default&container=default&view=default&e=&rt=dl.1106,ol.1421,prt.1421"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.310,tbsd_.728,tbnd_.-1038&srt=310&gadget=default&container=default&view=default&e=&rt=dl.1106,ol.1421,prt.1421"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.349,tbsd_.109,tbnd_.-458&srt=349&gadget=default&container=default&view=default&e=&rt=dl.527,ol.535,prt.535"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.349,tbsd_.109,tbnd_.-458&srt=349&gadget=default&container=default&view=default&e=&rt=dl.527,ol.535,prt.535"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "baldi-basics",
+    "type": "webgl",
+    "url": "Assets/baldi-basics/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in link",
+        "severity": "critical",
+        "url": "https://unblocked-games.s3.amazonaws.com/baldis-basics.html"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "ballistic-chickens",
+    "type": "webgl",
+    "url": "Assets/ballistic-chickens/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "basket-random",
+    "type": "webgl",
+    "url": "Assets/basket-random/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "consolelog is not defined",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "basketball-stars",
+    "type": "webgl",
+    "url": "Assets/basketball-stars/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "IMA SDK is either not loaded from a google domain or is not a supported version.",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Invalid regular expression: /[Ã€-ÃŸ][Â€-Â¿]|[Ã -Ã¯][Â€-Â¿]{2}|[Ã°-Ã·][Â€-Â¿]{3}/g: Range out of order in character class",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@orange-games/phaser-cachebuster@2.0/build/phaser-cachebuster.min.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@orange-games/phaser-cachebuster@2.0/build/phaser-cachebuster.min.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@orange-games/phaser-super-storage@1.0/build/phaser-super-storage.min.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@orange-games/phaser-super-storage@1.0/build/phaser-super-storage.min.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "batman-vengeance",
+    "type": "gba",
+    "url": "Assets/batman-vengeance/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "battle-sim",
+    "type": "webgl",
+    "url": "Assets/battle-sim/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Invalid or unexpected token",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "gadgets is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "critical",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "critical",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.337,tbsd_.27,tbnd_.-364&srt=337&gadget=default&container=default&view=default&e=&rt=dl.417,ol.427,prt.427"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.337,tbsd_.27,tbnd_.-364&srt=337&gadget=default&container=default&view=default&e=&rt=dl.417,ol.427,prt.427"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/battle-sim/_external_mirror/cdn.jsdelivr.net/gh/gertdoro/UnityBookPage_d022f9378a6b8608796253add7a654c14920f454/Assets/Book-Page_Curl/sprites/tabs.wasm.code.unityweb"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/battle-sim/_external_mirror/cdn.jsdelivr.net/gh/gertdoro/UnityBookPage_d022f9378a6b8608796253add7a654c14920f454/Assets/Book-Page_Curl/sprites/tabs.wasm.framework.unityweb"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/battle-sim/_external_mirror/cdn.jsdelivr.net/gh/gertdoro/UnityBookPage_d022f9378a6b8608796253add7a654c14920f454/Assets/Book-Page_Curl/sprites/tabs.data.unityweb"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Unexpected token '<'",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "UnityLoader[r] is not a function",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "battleforgondor",
+    "type": "flash",
+    "url": "Assets/battleforgondor/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "Big-Tower-Tinysquare",
+    "type": "webgl",
+    "url": "Assets/Big-Tower-Tinysquare/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in link",
+        "severity": "critical",
+        "url": "https://www.coolmathgames.com/0-big-tower-tiny-square"
+      },
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by link",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776027724986&cv=11&fst=1776027724986&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=128235649.1776027725&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776027724986&cv=11&fst=1776027724986&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=128235649.1776027725&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/Big-Tower-Tinysquare/data.js"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/Big-Tower-Tinysquare/offlineClient.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5829551249359723"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5829551249359723"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WKRSNN8"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WKRSNN8"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=1059762265&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=150308033&gjid=1519503026&cid=1755578229.1776027725&tid=UA-1192998-2&_gid=1593903325.1776027725&_r=1&_slc=1&z=1336200590"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=1059762265&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=150308033&gjid=1519503026&cid=1755578229.1776027725&tid=UA-1192998-2&_gid=1593903325.1776027725&_r=1&_slc=1&z=1336200590"
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Project model unavailable",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Cannot read properties of null (reading 'project')",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776031059239&cv=11&fst=1776031059239&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=866751378.1776031059&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776031059239&cv=11&fst=1776031059239&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=866751378.1776031059&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=472496937&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=831804723&gjid=1738010058&cid=504350305.1776031059&tid=UA-1192998-2&_gid=116357036.1776031059&_r=1&_slc=1&z=1645159004"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=472496937&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=831804723&gjid=1738010058&cid=504350305.1776031059&tid=UA-1192998-2&_gid=116357036.1776031059&_r=1&_slc=1&z=1645159004"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776034044963&cv=11&fst=1776034044963&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=1339278409.1776034045&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1776034044963&cv=11&fst=1776034044963&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=1339278409.1776034045&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=748482682&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=1620372377&gjid=776207763&cid=1028309887.1776034045&tid=UA-1192998-2&_gid=625320996.1776034045&_r=1&_slc=1&z=1489640797"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=748482682&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=1620372377&gjid=776207763&cid=1028309887.1776034045&tid=UA-1192998-2&_gid=625320996.1776034045&_r=1&_slc=1&z=1489640797"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1775924041302&cv=11&fst=1775924041302&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=1819652181.1775924041&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://www.googleadservices.com/pagead/conversion/386269532/?random=1775924041302&cv=11&fst=1775924041302&bg=ffffff&guid=ON&async=1&gtm=45He3ap0v831857104&gcd=11l1l1l1l1&u_w=1280&u_h=720&url=http%3A%2F%2Flocalhost%3A8081%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&label=DZr4CMr_l80CENyCmLgB&hn=www.googleadservices.com&frm=0&tiba=BigTower1.0%20CG&value=1&bttype=purchase&auid=1819652181.1775924041&fledge=1&capi=1&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&rfmt=3&fmt=4"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=97055675&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=837248516&gjid=498468900&cid=1760945238.1775924041&tid=UA-1192998-2&_gid=1101395299.1775924041&_r=1&_slc=1&z=618030449"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.google-analytics.com/j/collect?v=1&_v=j101&a=97055675&t=event&_s=1&dl=http%3A%2F%2Flocalhost%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ul=en-us&de=UTF-8&dt=BigTower1.0%20CG&sd=24-bit&sr=1280x720&vp=1280x720&je=0&ec=gamePlayPage&ea=userVisit&el=%2FAssets%2FBig-Tower-Tinysquare%2Findex.html&ev=0&_u=IEBAAEABCAAAACAAI~&jid=837248516&gjid=498468900&cid=1760945238.1775924041&tid=UA-1192998-2&_gid=1101395299.1775924041&_r=1&_slc=1&z=618030449"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "BigFalapyTower",
+    "type": "webgl",
+    "url": "Assets/BigFalapyTower/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in link",
+        "severity": "critical",
+        "url": "https://www.coolmathgames.com/0-big-flappy-tower-tiny-square"
+      },
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by link",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bigredbutton",
+    "type": "flash",
+    "url": "Assets/bigredbutton/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bitlife",
+    "type": "webgl",
+    "url": "Assets/bitlife/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "writeStringToMemory is deprecated and should not be called! Use stringToUTF8() instead!",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "blackknight",
+    "type": "flash",
+    "url": "Assets/blackknight/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "blocky-puzzle",
+    "type": "webgl",
+    "url": "Assets/blocky-puzzle/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is warning",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "TypeError: Failed to fetch\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:190578\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:190312\n    at Object.next (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:190417)\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:189331\n    at new Promise (<anonymous>)\n    at vr (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:189076)\n    at gr (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:190449)\n    at t.loadPokiSettings (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:214550)\n    at t.init (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:213846)\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:90833",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "TypeError: Failed to fetch\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:192632\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:192134\n    at Object.next (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:192239)\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:191153\n    at new Promise (<anonymous>)\n    at yr (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:190898)\n    at br (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:192271)\n    at t.loadPokiSettings (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:214573)\n    at t.init (http://localhost:8081/Assets/blocky-puzzle/ma.js:1:213846)\n    at http://localhost:8081/Assets/blocky-puzzle/ma.js:1:90833",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://imasdk.googleapis.com/js/sdkloader/ima3.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://imasdk.googleapis.com/js/sdkloader/ima3.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://games.playtropolis.com/scripts/prebid/prebid8.48.0.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://games.playtropolis.com/scripts/prebid/prebid8.48.0.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://c.amazon-adsystem.com/aax2/apstag.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://c.amazon-adsystem.com/aax2/apstag.js"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloons-player-pack2",
+    "type": "flash",
+    "url": "Assets/bloons-player-pack2/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in script",
+        "severity": "critical",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloons-player-pack3",
+    "type": "flash",
+    "url": "Assets/bloons-player-pack3/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in script",
+        "severity": "critical",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloons-player-pack4",
+    "type": "flash",
+    "url": "Assets/bloons-player-pack4/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in script",
+        "severity": "critical",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloons-player-pack5",
+    "type": "flash",
+    "url": "Assets/bloons-player-pack5/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "EXTERNAL_RUNTIME_LINK",
+        "message": "External runtime dependency detected in script",
+        "severity": "critical",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloonstd",
+    "type": "flash",
+    "url": "Assets/bloonstd/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloonstd2",
+    "type": "flash",
+    "url": "Assets/bloonstd2/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bloxors",
+    "type": "flash",
+    "url": "Assets/bloxors/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bobtherobber1",
+    "type": "flash",
+    "url": "Assets/bobtherobber1/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_INIT_RUNTIME_ERROR",
+        "message": "Game did not initialize due to runtime errors",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/bobtherobber1/index.html"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.314,tbsd_.31,tbnd_.-345&srt=314&gadget=default&container=default&view=default&e=&rt=dl.371,ol.373,prt.373"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.314,tbsd_.31,tbnd_.-345&srt=314&gadget=default&container=default&view=default&e=&rt=dl.371,ol.373,prt.373"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.308,tbsd_.12,tbnd_.-320&srt=308&gadget=default&container=default&view=default&e=&rt=dl.406,ol.407,prt.407"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.308,tbsd_.12,tbnd_.-320&srt=308&gadget=default&container=default&view=default&e=&rt=dl.406,ol.407,prt.407"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.314,tbsd_.14,tbnd_.-328&srt=314&gadget=default&container=default&view=default&e=&rt=dl.305,ol.306,prt.306"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.314,tbsd_.14,tbnd_.-328&srt=314&gadget=default&container=default&view=default&e=&rt=dl.305,ol.306,prt.306"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.309,tbsd_.11,tbnd_.-321&srt=309&gadget=default&container=default&view=default&e=&rt=dl.1339,ol.1339,prt.1339"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.309,tbsd_.11,tbnd_.-321&srt=309&gadget=default&container=default&view=default&e=&rt=dl.1339,ol.1339,prt.1339"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "http://acscdn.com/script/aclib.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "http://acscdn.com/script/aclib.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.1.0-nightly.2023.11.10/ruffle.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.1.0-nightly.2023.11.10/ruffle.js"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib.runInPagePush is not a function",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-D6XL3ZN4KW"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-D6XL3ZN4KW"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.311,tbsd_.43,tbnd_.-354&srt=311&gadget=default&container=default&view=default&e=&rt=dl.56,ol.57,prt.57"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.311,tbsd_.43,tbnd_.-354&srt=311&gadget=default&container=default&view=default&e=&rt=dl.56,ol.57,prt.57"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bobtherobber2",
+    "type": "webgl",
+    "url": "Assets/bobtherobber2/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "MISSING_LOCAL_ASSET",
+        "message": "Missing local asset referenced by script",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 501",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/bobtherobber2/json/null.json?https://rubick.gameanalytics.com/v2/command_center?game_key=a7204cd6b6d828f9cf910eae915aad32&interval_seconds=1000000"
+      },
+      {
+        "code": "DYNAMIC_LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Blocked: js/null.js",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Cannot read properties of undefined (reading 'requestAds')",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_CONSOLE_ERROR",
+        "message": "Failed to load resource: the server responded with a status of 501 (Unsupported method ('POST'))",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "critical",
+        "url": ""
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "name": "bobtherobber5",
+    "type": "flash",
+    "url": "Assets/bobtherobber5/index.html",
+    "entry_file": "index.html",
+    "status": "broken",
+    "critical_issues": [
+      {
+        "code": "DYNAMIC_SCAN_STATUS",
+        "message": "Scanner status is broken",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_INIT_RUNTIME_ERROR",
+        "message": "Game did not initialize due to runtime errors",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/bobtherobber5/index.html"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.325,tbsd_.29,tbnd_.-354&srt=325&gadget=default&container=default&view=default&e=&rt=dl.438,ol.440,prt.440"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.325,tbsd_.29,tbnd_.-354&srt=325&gadget=default&container=default&view=default&e=&rt=dl.438,ol.440,prt.440"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.315,tbsd_.12,tbnd_.-327&srt=315&gadget=default&container=default&view=default&e=&rt=dl.331,ol.331,prt.331"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.315,tbsd_.12,tbnd_.-327&srt=315&gadget=default&container=default&view=default&e=&rt=dl.331,ol.331,prt.331"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.322,tbsd_.13,tbnd_.-335&srt=322&gadget=default&container=default&view=default&e=&rt=dl.307,ol.308,prt.308"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.322,tbsd_.13,tbnd_.-335&srt=322&gadget=default&container=default&view=default&e=&rt=dl.307,ol.308,prt.308"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.317,tbsd_.15,tbnd_.-332&srt=317&gadget=default&container=default&view=default&e=&rt=dl.328,ol.329,prt.329"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.317,tbsd_.15,tbnd_.-332&srt=317&gadget=default&container=default&view=default&e=&rt=dl.328,ol.329,prt.329"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "http://acscdn.com/script/aclib.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "http://acscdn.com/script/aclib.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.1.0-nightly.2023.11.10/ruffle.js"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "critical",
+        "url": "https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.1.0-nightly.2023.11.10/ruffle.js"
+      },
+      {
+        "code": "DYNAMIC_PAGE_ERROR",
+        "message": "aclib.runInPagePush is not a function",
+        "severity": "critical",
+        "url": ""
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-D6XL3ZN4KW"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-D6XL3ZN4KW"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.446,tbsd_.27,tbnd_.-473&srt=446&gadget=default&container=default&view=default&e=&rt=dl.57,ol.60,prt.60"
+      },
+      {
+        "code": "DYNAMIC_EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "critical",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.446,tbsd_.27,tbnd_.-473&srt=446&gadget=default&container=default&view=default&e=&rt=dl.57,ol.60,prt.60"
+      }
+    ],
+    "warnings": []
+  }
+]

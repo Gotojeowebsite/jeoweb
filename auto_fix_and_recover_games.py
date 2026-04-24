@@ -684,7 +684,7 @@ def download_to_path(
 
     try:
         data = fetch_bytes(url, allow_insecure_ssl_fallback=allow_insecure_ssl_fallback)
-    except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
+    except (DeadHostError, HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
         logger.log("warning", game, step, "download failed", url=url, error=str(exc))
         return False
 

@@ -10,6 +10,7 @@ class App {
 		this.showRetro = localStorage.getItem('jeo-show-retro') !== 'false';
 		// Hide-maintenance defaults ON the first visit so users don't land on broken games.
 		this.hideMaintenance = localStorage.getItem('jeo-hide-maintenance') !== 'false';
+		this.offlineBlockedNames = new Set();
 		this.statusFreshness = { generatedAt: null, source: '' };
 
 		this.initElements();
@@ -127,6 +128,7 @@ class App {
 	async reloadGames() {
 		this.renderSkeletons();
 		const allItems = await this.resolveGames();
+		this.offlineBlockedNames = new Set();
 		const maintenanceStatusByName = await this.resolveMaintenanceStatusMap();
 		const scanStatusByName = maintenanceStatusByName.size ? new Map() : await this.resolveScanStatusMap();
 		this.games = allItems.map((game) => {
@@ -191,6 +193,10 @@ class App {
 		return '';
 	}
 
+	normalizeGameName(name) {
+		return String(name || '').trim().toLowerCase();
+	}
+
 	isUnderMaintenance(game) {
 		return this.normalizeScanStatus(game && game.status) === 'under_maintenance';
 	}
@@ -212,6 +218,42 @@ class App {
 			console.warn('Could not load scan_results.json', e);
 		}
 		return statusByName;
+	}
+
+	async resolveOfflineBlockedSet() {
+		const blocked = new Set();
+		try {
+			const response = await fetch('offline_broken_games.json', { cache: 'no-store' });
+			if (response.ok) {
+				const data = await response.json();
+				const names = Array.isArray(data)
+					? data
+					: (data && Array.isArray(data.games) ? data.games : []);
+				names.forEach((name) => {
+					const normalized = this.normalizeGameName(name);
+					if (normalized) blocked.add(normalized);
+				});
+				return blocked;
+			}
+		} catch (e) {
+			console.warn('Could not load offline_broken_games.json', e);
+		}
+
+		try {
+			const response = await fetch('offline_broken_games.txt', { cache: 'no-store' });
+			if (response.ok) {
+				const text = await response.text();
+				text
+					.split(/\r?\n/)
+					.map((line) => this.normalizeGameName(line))
+					.filter(Boolean)
+					.forEach((name) => blocked.add(name));
+			}
+		} catch (e) {
+			console.warn('Could not load offline_broken_games.txt', e);
+		}
+
+		return blocked;
 	}
 
 	async resolveMaintenanceStatusMap() {
