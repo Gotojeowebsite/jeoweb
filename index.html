@@ -27,6 +27,7 @@
 		gtag('js', new Date());
 		gtag('config', 'G-DQM8XXB9GC');
 	</script>
+	<link rel="stylesheet" href="styles/account-and-reset.css">
 </head>
 
 <body class="theme-dark">
@@ -132,6 +133,9 @@
 			</div>
 			<div class="settings-btn-wrap" data-tooltip="Settings">
 				<button id="settingsBtn" class="header-btn" aria-label="Settings">⚙️</button>
+			</div>
+			<div class="jeo-header-account" id="jeoAccountSlot">
+				<a href="login.html" class="jeo-header-signin">Sign in</a>
 			</div>
 		</div>
 	</header>
@@ -482,5 +486,86 @@
 		})();
 	</script>
 	<script src="theme-manager.js"></script>
+	<script src="account-system.js"></script>
+	<script src="reset-progress.js"></script>
+	<script>
+	(function () {
+		const slot = document.getElementById('jeoAccountSlot');
+		if (!slot || !window.JeoAccount) return;
+		const PRESET_GRADS = {
+			p1: ['#7a5cff','#22d3ee'], p2: ['#ff6b9d','#7a5cff'], p3: ['#22c55e','#0ea5e9'],
+			p4: ['#f59e0b','#ef4444'], p5: ['#06b6d4','#8b5cf6'], p6: ['#ec4899','#f43f5e'],
+			p7: ['#10b981','#3b82f6'], p8: ['#f97316','#a78bfa'],
+		};
+		function presetBg(p) { const [a,b] = (PRESET_GRADS[p] || PRESET_GRADS.p1); return `linear-gradient(135deg, ${a}, ${b})`; }
+
+		function render(state) {
+			slot.innerHTML = '';
+			if (!state) {
+				const a = document.createElement('a');
+				a.href = 'login.html'; a.className = 'jeo-header-signin'; a.textContent = 'Sign in';
+				slot.appendChild(a);
+				const b = document.createElement('a');
+				b.href = 'signup.html'; b.className = 'jeo-header-signin';
+				b.style.background = 'rgba(255,255,255,0.06)'; b.style.color = '#e7e7ee';
+				b.textContent = 'Create';
+				slot.appendChild(b);
+				return;
+			}
+			const av = document.createElement('div');
+			av.className = 'jeo-header-avatar';
+			if (state.profile.avatar_data_url) av.style.backgroundImage = `url(${state.profile.avatar_data_url})`;
+			else av.style.backgroundImage = presetBg(state.profile.avatar_preset);
+			av.title = state.profile.name;
+			av.innerHTML = '<div class="badge"></div>';
+			av.onclick = (e) => { e.stopPropagation(); openMenu(state); };
+			slot.appendChild(av);
+		}
+
+		function openMenu(state) {
+			document.querySelectorAll('.jeo-header-menu').forEach(n => n.remove());
+			const m = document.createElement('div');
+			m.className = 'jeo-header-menu';
+			m.innerHTML = `
+				<div class="who">Signed in as <strong></strong></div>
+				<button data-act="export">Export encrypted save…</button>
+				<button data-act="download">Download .jeo file…</button>
+				<button class="danger" data-act="logout">Log out (forget device)</button>`;
+			m.querySelector('strong').textContent = state.profile.name;
+			document.body.appendChild(m);
+			m.onclick = async (e) => {
+				const act = e.target.dataset?.act; if (!act) return;
+				if (act === 'logout') {
+					await JeoAccount.signOut({ forgetDevice: true });
+					m.remove(); window.location.reload();
+				} else if (act === 'export' || act === 'download') {
+					const pw = prompt('Enter a passphrase to encrypt your export (≥ 8 chars).\nThis can be the same as the one you used at signup, or a new one.');
+					if (!pw || pw.length < 8) return;
+					try {
+						const blob = await JeoAccount.exportBlob(pw);
+						if (act === 'download') {
+							const a = document.createElement('a');
+							const safe = (state.profile.name || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
+							a.href = URL.createObjectURL(new Blob([blob], { type: 'text/plain' }));
+							a.download = `${safe}.jeo`; a.click();
+							URL.revokeObjectURL(a.href);
+						} else {
+							await navigator.clipboard.writeText(blob);
+							alert('Encrypted save copied to clipboard.');
+						}
+					} catch (err) { alert(String(err.message || err)); }
+					m.remove();
+				}
+			};
+			setTimeout(() => {
+				const off = (e) => { if (!m.contains(e.target)) { m.remove(); document.removeEventListener('click', off); } };
+				document.addEventListener('click', off);
+			}, 0);
+		}
+
+		render(JeoAccount.getState());
+		JeoAccount.onChange(render);
+	})();
+	</script>
 </body>
 </html>

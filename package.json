@@ -14,6 +14,13 @@
     "game:download": "node scripts/download-game.js",
     "game:add": "node scripts/add-game.js",
     "game:scan": "node scan.js",
+    "game:heal": "node scripts/maintenance-toggle.js heal",
+    "game:break": "node scripts/maintenance-toggle.js break",
+    "game:maintenance:list": "node scripts/maintenance-toggle.js list",
+    "game:fix-recents": "node scripts/fix-broken-recents.js --apply",
+    "game:fix-recents:dry": "node scripts/fix-broken-recents.js",
+    "game:cover": "node scripts/generate-cover.js",
+    "game:cover:fill": "node scripts/generate-cover.js --all-missing",
     "game:offline:audit": "node scripts/audit-offline-readiness.js",
     "game:offline:refresh": "node scan.js && node scripts/audit-offline-readiness.js",
     "game:offline:fix": "node scripts/fix-offline-games.js",
@@ -29,6 +36,7 @@
     "@nebula-services/bare-server-node": "^2.0.4",
     "jsonrepair": "^3.13.3",
     "node-fetch": "^3.3.2",
+    "playwright": "^1.59.1",
     "puppeteer": "^24.40.0"
   }
 }

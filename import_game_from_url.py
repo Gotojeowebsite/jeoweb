@@ -20,7 +20,7 @@ import shutil
 import time
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlsplit
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".ico"}
 HTML_EXTS = {".html", ".htm"}
@@ -114,9 +114,47 @@ def slugify(value: str) -> str:
     return lowered or "imported-game"
 
 
+def _extract_query_label(url: str, keys: Tuple[str, ...]) -> Optional[str]:
+    split = urlsplit(url)
+    if not split.query:
+        return None
+
+    for raw_key, raw_value in parse_qsl(split.query, keep_blank_values=True):
+        if raw_key.lower() not in keys:
+            continue
+        value = raw_value.strip()
+        if value:
+            return value
+    return None
+
+
+def derive_title(url: str) -> str:
+    query_title = _extract_query_label(url, ("title", "name", "game"))
+    if query_title:
+        return query_title
+
+    split = urlsplit(url)
+    path = split.path.strip("/")
+    if path:
+        tail = path.split("/")[-1]
+        tail = tail.split(".")[0]
+        if tail:
+            return tail.replace("-", " ").replace("_", " ").title()
+
+    return split.netloc.replace(".", " ").title()
+
+
 def derive_slug(url: str, provided: Optional[str]) -> str:
     if provided:
         return slugify(provided)
+
+    query_slug = _extract_query_label(url, ("link", "slug", "id"))
+    if query_slug:
+        return slugify(query_slug)
+
+    query_title = _extract_query_label(url, ("title", "name", "game"))
+    if query_title:
+        return slugify(query_title)
 
     split = urlsplit(url)
     path = split.path.strip("/")
@@ -233,6 +271,7 @@ def make_launcher_html(title: str, target_rel: str) -> str:
 def upsert_games_list(
     games_list_path: Path,
     slug: str,
+    display_name: str,
     game_type: str,
     cover_rel: str,
     source_url: str,
@@ -249,6 +288,7 @@ def upsert_games_list(
 
     payload = {
         "name": slug,
+        "displayName": display_name,
         "url": url_value,
         "image": image_value,
         "type": game_type,
@@ -293,6 +333,7 @@ async def import_one(
         raise ImportErrorWithReason(f"Host not allowed by --allow-host list: {host}")
 
     slug = derive_slug(url, slug_input or args.slug)
+    title = derive_title(url)
     slug_dir = assets_dir / slug
     archive_dir = slug_dir / "_archived_site"
 
@@ -337,7 +378,7 @@ async def import_one(
     entry_file = choose_entry_file(archive_dir, manifest)
 
     launcher_target_rel = entry_file.relative_to(slug_dir).as_posix()
-    launcher_html = make_launcher_html(title=slug.replace("-", " ").title(), target_rel=launcher_target_rel)
+    launcher_html = make_launcher_html(title=title, target_rel=launcher_target_rel)
     launcher_path = slug_dir / "index.html"
     launcher_path.write_text(launcher_html, encoding="utf-8")
 
@@ -347,6 +388,7 @@ async def import_one(
     upsert_games_list(
         games_list_path=games_list_path,
         slug=slug,
+        display_name=title,
         game_type=args.type,
         cover_rel=cover_rel,
         source_url=url,
@@ -384,6 +426,10 @@ async def run_imports(args: argparse.Namespace) -> List[Dict[str, object]]:
         if not input_path.exists():
             raise ImportErrorWithReason(f"Input file not found: {input_path}")
         tasks.extend(parse_input_lines(input_path))
+    else:
+        default_input_path = repo_root / "games.txt"
+        if default_input_path.exists():
+            tasks.extend(parse_input_lines(default_input_path))
 
     if not tasks:
         raise ImportErrorWithReason("No URLs provided. Use --url and/or --input")

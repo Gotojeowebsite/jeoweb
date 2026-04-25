@@ -1,19 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="t d">
-  <title id="t">Rocket League</title>
-  <desc id="d">Local thumbnail placeholder for Rocket League in the archive catalog.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="50%" stop-color="#1d4ed8"/>
-      <stop offset="100%" stop-color="#16a34a"/>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
     </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="40%" r="70%">
+      <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.45)"/>
+    </radialGradient>
   </defs>
-  <rect width="640" height="480" fill="url(#bg)"/>
-  <g fill="none" stroke="#e2e8f0" stroke-width="8" opacity="0.65">
-    <path d="M120 370 C180 320, 260 320, 320 370 C380 420, 460 420, 520 370"/>
-    <path d="M60 120 L580 120" opacity="0.28"/>
+  <rect width="512" height="512" fill="url(#g)"/>
+  <g opacity="0.18" fill="#fff">
+    <circle cx="80" cy="80" r="42"/>
+    <circle cx="430" cy="120" r="28"/>
+    <circle cx="60" cy="430" r="24"/>
+    <circle cx="450" cy="430" r="60"/>
   </g>
-  <circle cx="320" cy="248" r="44" fill="#f8fafc" opacity="0.9"/>
-  <rect x="284" y="208" width="72" height="18" rx="9" fill="#111827" opacity="0.75"/>
-  <text x="50%" y="420" text-anchor="middle" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="1.5">Rocket League</text>
+  <rect width="512" height="512" fill="url(#vignette)"/>
+  <text x="50%" y="46%" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Helvetica,Arial,sans-serif"
+        font-size="180" font-weight="800" fill="rgba(255,255,255,0.18)" text-anchor="middle" dominant-baseline="middle">RL</text>
+  <text x="50%" y="78%" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Helvetica,Arial,sans-serif"
+        font-size="46" font-weight="700" fill="#fff" text-anchor="middle" dominant-baseline="middle">Rocket League</text>
 </svg>

@@ -76,11 +76,17 @@ function findImage(folderPath, folderName) {
 		if (allImages.length === 0) return null;
 
 		const priorityNames = ['logo', 'icon', 'splash', 'thumb', 'thumbnail', folderName.toLowerCase()];
+		const isRoot = (f) => !f.includes(path.sep) && !f.includes('/');
 
-		// Try priority names first (any depth)
+		// Try priority names first — prefer root-level matches over deep ones
+		// (otherwise a stray logo.png inside _archived_site/ overrides a real
+		// logo.svg placed at the folder root).
 		for (const name of priorityNames) {
-			const match = allImages.find(f => path.basename(f, path.extname(f)).toLowerCase() === name);
-			if (match) return `Assets/${folderName}/${match}`;
+			const matches = allImages.filter(f => path.basename(f, path.extname(f)).toLowerCase() === name);
+			if (!matches.length) continue;
+			const root = matches.find(isRoot);
+			const pick = root || matches[0];
+			return `Assets/${folderName}/${pick}`;
 		}
 
 		// Prefer images in the root folder over subfolders

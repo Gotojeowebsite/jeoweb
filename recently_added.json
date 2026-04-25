@@ -1,5 +1,111 @@
 [
   {
+    "name": "crossyroad",
+    "url": "Assets/crossyroad/index.html",
+    "image": "Assets/crossyroad/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "templerun2",
+    "url": "Assets/templerun2/index.html",
+    "image": "Assets/templerun2/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "subwaysurfers",
+    "url": "Assets/subwaysurfers/index.html",
+    "image": "Assets/subwaysurfers/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "amongus",
+    "url": "Assets/amongus/index.html",
+    "image": "Assets/amongus/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "geometrydash",
+    "url": "Assets/geometrydash/index.html",
+    "image": "Assets/geometrydash/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "cookie",
+    "url": "Assets/cookie/index.html",
+    "image": "Assets/cookie/logo.svg",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "index",
+    "url": "Assets/index/index.html",
+    "image": "Assets/index/_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png",
+    "type": "webgl",
+    "status": "broken"
+  },
+  {
+    "name": "brawl",
+    "url": "Assets/brawl/index.html",
+    "image": "Assets/brawl/logo.svg",
+    "type": "webgl"
+  },
+  {
+    "name": "balatro",
+    "url": "Assets/balatro/index.html",
+    "image": "Assets/balatro/logo.svg",
+    "type": "flash"
+  },
+  {
+    "name": "bobtherobber5",
+    "url": "Assets/bobtherobber5/index.html",
+    "image": "Assets/bobtherobber5/btr5.png",
+    "type": "flash",
+    "status": "broken"
+  },
+  {
+    "name": "bobtherobber1",
+    "url": "Assets/bobtherobber1/index.html",
+    "image": "Assets/bobtherobber1/btr.jpg",
+    "type": "flash",
+    "status": "broken"
+  },
+  {
+    "name": "bloons-player-pack5",
+    "url": "Assets/bloons-player-pack5/index.html",
+    "image": "Assets/bloons-player-pack5/player 5.jpeg",
+    "type": "flash"
+  },
+  {
+    "name": "bloons-player-pack4",
+    "url": "Assets/bloons-player-pack4/index.html",
+    "image": "Assets/bloons-player-pack4/player 4.jpeg",
+    "type": "flash"
+  },
+  {
+    "name": "bloons-player-pack3",
+    "url": "Assets/bloons-player-pack3/index.html",
+    "image": "Assets/bloons-player-pack3/player pack3.jpeg",
+    "type": "flash"
+  },
+  {
+    "name": "bloons-player-pack2",
+    "url": "Assets/bloons-player-pack2/index.html",
+    "image": "Assets/bloons-player-pack2/player pack.jpeg",
+    "type": "flash"
+  },
+  {
+    "name": "batman-vengeance",
+    "url": "Assets/batman-vengeance/index.html",
+    "image": "Assets/batman-vengeance/logo.png",
+    "type": "gba",
+    "status": "broken"
+  },
+  {
     "name": "bad-ice-cream-3",
     "url": "Assets/bad-ice-cream-3/index.html",
     "image": "Assets/bad-ice-cream-3/bad-ice-cream-3.png",
@@ -73,54 +179,6 @@
     "status": "broken"
   },
   {
-    "name": "astray",
-    "url": "Assets/astray/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "aquapark-slides",
-    "url": "Assets/aquapark-slides/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "aqua-park",
-    "url": "Assets/aqua-park/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "angry-bird",
-    "url": "Assets/angry-bird/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "angelunder",
-    "url": "Assets/angelunder/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "among-us",
-    "url": "Assets/among-us/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "99-nights-in-the-forest",
-    "url": "Assets/99-nights-in-the-forest/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
-    "name": "9007199254740992",
-    "url": "Assets/9007199254740992/index.html",
-    "image": "notavailable.svg",
-    "type": "webgl"
-  },
-  {
     "name": "2k-sports-major-league-baseball-2k7",
     "url": "Assets/2k-sports-major-league-baseball-2k7/index.html",
     "image": "Assets/2k-sports-major-league-baseball-2k7/logo.png",
@@ -135,57 +193,9 @@
     "status": "broken"
   },
   {
-    "name": "0v0",
-    "url": "Assets/0v0/index.html",
-    "image": "notavailable.svg",
+    "name": "amazing-rope-police",
+    "url": "Assets/amazing-rope-police/index.html",
+    "image": "Assets/amazing-rope-police/splash.jpeg",
     "type": "webgl"
-  },
-  {
-    "name": "brawl-simulator-3d",
-    "url": "Assets/brawl-simulator-3d/index.html",
-    "image": "Assets/brawl-simulator-3d/_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png",
-    "type": "webgl"
-  },
-  {
-    "name": "zombiealienparasites",
-    "url": "Assets/zombiealienparasites/index.html",
-    "image": "Assets/zombiealienparasites/logo.jpg",
-    "type": "flash"
-  },
-  {
-    "name": "yuriusshouseofspooks",
-    "url": "Assets/yuriusshouseofspooks/index.html",
-    "image": "Assets/yuriusshouseofspooks/logo.jpg",
-    "type": "flash"
-  },
-  {
-    "name": "you-are-bezos",
-    "url": "Assets/you-are-bezos/index.html",
-    "image": "Assets/you-are-bezos/img/icon.png",
-    "type": "webgl"
-  },
-  {
-    "name": "yearofthesnake",
-    "url": "Assets/yearofthesnake/index.html",
-    "image": "Assets/yearofthesnake/logo.png",
-    "type": "flash"
-  },
-  {
-    "name": "xtremecliffdiving",
-    "url": "Assets/xtremecliffdiving/index.html",
-    "image": "Assets/xtremecliffdiving/logo.jpg",
-    "type": "flash"
-  },
-  {
-    "name": "xenos",
-    "url": "Assets/xenos/index.html",
-    "image": "Assets/xenos/logo.png",
-    "type": "flash"
-  },
-  {
-    "name": "worms",
-    "url": "Assets/worms/index.html",
-    "image": "Assets/worms/logo.png",
-    "type": "snes"
   }
 ]

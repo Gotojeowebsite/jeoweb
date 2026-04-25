@@ -9,5 +9,6 @@
     "git.autoRepositoryDetection": "subFolders",
     "git.scanRepositories": [
         "."
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

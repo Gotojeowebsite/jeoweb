@@ -148,8 +148,37 @@ const server = http.createServer(async (req, res) => {
 					}
 				});
 			} else {
-				res.writeHead(404, { 'Content-Type': 'text/html' });
-				res.end('<h1>404 - Not Found</h1>');
+				// Archive fallback: deep-import games reference assets like
+				//   foo.js?v=14   -> on disk as  foo__q_<hash>.js
+				// (the `?` was rewritten to `__q_<hash>` by the original
+				// archiver). Pick the first sibling with the same basename.
+				const dir = path.dirname(filePath);
+				const ext2 = path.extname(filePath);
+				const base = path.basename(filePath, ext2);
+				fs.readdir(dir, (e3, names) => {
+					if (e3 || !names) {
+						res.writeHead(404, { 'Content-Type': 'text/html' });
+						res.end('<h1>404 - Not Found</h1>');
+						return;
+					}
+					const prefix = base + '__q_';
+					const hit = names.find(n => n.startsWith(prefix) && n.endsWith(ext2));
+					if (!hit) {
+						res.writeHead(404, { 'Content-Type': 'text/html' });
+						res.end('<h1>404 - Not Found</h1>');
+						return;
+					}
+					const realPath = path.join(dir, hit);
+					fs.readFile(realPath, (e4, d4) => {
+						if (e4) {
+							res.writeHead(404, { 'Content-Type': 'text/html' });
+							res.end('<h1>404 - Not Found</h1>');
+						} else {
+							res.writeHead(200, { 'Content-Type': mimeTypes[ext2] || 'application/octet-stream' });
+							res.end(d4);
+						}
+					});
+				});
 			}
 		} else {
 			const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };

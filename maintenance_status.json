@@ -6,17 +6,21 @@
     "healthy": 29
   },
   "games": {
-    "0v0": {
-      "status": "healthy",
-      "reason": "manual_override_healthy",
-      "lead_issue": "",
-      "final_status": "ok"
-    },
     "1": {
       "status": "healthy",
       "reason": "final_status_ok",
       "lead_issue": "",
       "final_status": "ok"
+    },
+    "2048": {
+      "status": "healthy",
+      "reason": "final_status_ok",
+      "lead_issue": "",
+      "final_status": "ok"
+    },
+    "0v0": {
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "1v1space": {
       "status": "healthy",
@@ -25,28 +29,16 @@
       "final_status": "ok"
     },
     "2006-fifa-world-cup-germany-2006": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
-    },
-    "2048": {
       "status": "healthy",
-      "reason": "final_status_ok",
-      "lead_issue": "",
-      "final_status": "ok"
+      "reason": "manual_override_healthy"
     },
     "2k-sports-major-league-baseball-2k7": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "99-nights-in-the-forest": {
       "status": "under_maintenance",
-      "reason": "manual_override_maintenance",
-      "lead_issue": "",
-      "final_status": "ok"
+      "reason": "manual_override_maintenance"
     },
     "achievementunlocked": {
       "status": "healthy",
@@ -97,16 +89,12 @@
       "final_status": "ok"
     },
     "avatar-the-last-airbender": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "avatar-the-last-airbender-the-burning-earth": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "backrooms": {
       "status": "under_maintenance",
@@ -115,52 +103,36 @@
       "final_status": "broken"
     },
     "backyard-baseball": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "backyard-basketball": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "backyard-football": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "backyard-hockey": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "backyard-skateboarding": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bad-ice-cream": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bad-ice-cream-2": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bad-ice-cream-3": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bad-time-sim": {
       "status": "healthy",
@@ -193,10 +165,8 @@
       "final_status": "ok"
     },
     "batman-vengeance": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "LOCAL_IGNORED_HTTP: Ignored optional local HTTP 404",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "battle-sim": {
       "status": "healthy",
@@ -247,28 +217,20 @@
       "final_status": "ok"
     },
     "bloons-player-pack2": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bloons-player-pack3": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bloons-player-pack4": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bloons-player-pack5": {
-      "status": "under_maintenance",
-      "reason": "broken_without_issue_details",
-      "lead_issue": "EXTERNAL_DEPENDENCY: External dependency requested for game runtime",
-      "final_status": "broken"
+      "status": "healthy",
+      "reason": "manual_override_healthy"
     },
     "bloonstd": {
       "status": "healthy",
@@ -305,6 +267,50 @@
       "reason": "hard_failure_init_runtime_error",
       "lead_issue": "INIT_RUNTIME_ERROR: Game did not initialize due to runtime errors",
       "final_status": "broken"
+    },
+    "1on1soccer": {
+      "status": "healthy",
+      "reason": "manual_override_healthy"
+    },
+    "balatro": {
+      "status": "healthy",
+      "reason": "manual_override_healthy"
+    },
+    "brawl": {
+      "status": "healthy",
+      "reason": "manual_override_healthy"
+    },
+    "amongus": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "cookie": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "crossyroad": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "geometrydash": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "index": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "subwaysurfers": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
+    },
+    "templerun2": {
+      "status": "under_maintenance",
+      "reason": "manual_override_maintenance"
     }
+  },
+  "summary": {
+    "healthy": 49,
+    "under_maintenance": 11
   }
 }

@@ -1,0 +1,117 @@
+/* Jeoweb account header + reset-progress UI */
+
+/* ---- header avatar / sign-in button ---- */
+.jeo-header-account { display: inline-flex; align-items: center; gap: 8px; }
+.jeo-header-signin {
+  background: linear-gradient(90deg,#7a5cff,#22d3ee); color: #0a0a14; border: 0;
+  border-radius: 10px; padding: 8px 14px; font-weight: 700; cursor: pointer;
+  font-family: inherit; font-size: 13px; transition: transform .08s;
+}
+.jeo-header-signin:hover { transform: translateY(-1px); }
+.jeo-header-avatar {
+  position: relative; width: 36px; height: 36px; border-radius: 50%;
+  background-size: cover; background-position: center; border: 2px solid rgba(255,255,255,0.15);
+  cursor: pointer; transition: border-color .15s;
+}
+.jeo-header-avatar:hover { border-color: #a78bfa; }
+.jeo-header-avatar .badge {
+  position: absolute; bottom: -2px; right: -2px; background: #22c55e;
+  width: 10px; height: 10px; border-radius: 50%; border: 2px solid #0a0a14;
+}
+.jeo-header-menu {
+  position: absolute; top: 48px; right: 16px; min-width: 220px; z-index: 9000;
+  background: rgba(20,20,30,0.97); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 6px;
+  box-shadow: 0 20px 50px -10px rgba(0,0,0,0.6);
+}
+.jeo-header-menu .who { padding: 10px 12px; font-size: 13px; color: #b5b8c7; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 4px; }
+.jeo-header-menu .who strong { color: #fff; }
+.jeo-header-menu button {
+  display: block; width: 100%; text-align: left; background: transparent; color: #e7e7ee;
+  border: 0; padding: 9px 12px; border-radius: 8px; cursor: pointer; font: inherit; font-size: 14px;
+}
+.jeo-header-menu button:hover { background: rgba(255,255,255,0.06); }
+.jeo-header-menu .danger { color: #ff8a8a; }
+
+/* ---- kebab on cards ---- */
+.jeo-card-kebab {
+  position: absolute; top: 6px; right: 6px; z-index: 5;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(0,0,0,0.55); color: #fff; border: 0;
+  font-size: 18px; line-height: 1; cursor: pointer;
+  opacity: 0; transition: opacity .15s, background .15s, transform .08s;
+  display: grid; place-items: center; padding: 0 0 4px;
+}
+.game-card:hover .jeo-card-kebab,
+[data-slug]:hover .jeo-card-kebab,
+[data-name]:hover .jeo-card-kebab,
+[data-game]:hover .jeo-card-kebab { opacity: 1; }
+.jeo-card-kebab:hover { background: rgba(0,0,0,0.85); transform: scale(1.08); }
+.jeo-card-menu {
+  position: absolute; z-index: 9001; min-width: 180px;
+  background: rgba(20,20,30,0.97); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 4px;
+  box-shadow: 0 12px 30px -8px rgba(0,0,0,0.6);
+}
+.jeo-card-menu-item {
+  display: block; width: 100%; text-align: left; background: transparent; color: #e7e7ee;
+  border: 0; padding: 8px 12px; border-radius: 6px; cursor: pointer; font: inherit; font-size: 14px;
+}
+.jeo-card-menu-item:hover { background: rgba(255,255,255,0.07); }
+
+/* ---- reset modal ---- */
+.jeo-reset-modal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; }
+.jeo-reset-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); }
+.jeo-reset-card {
+  position: relative; width: min(440px, 92vw); padding: 22px;
+  background: #11111c; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+  box-shadow: 0 20px 60px -10px rgba(0,0,0,0.7); color: #e7e7ee;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+}
+.jeo-reset-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.jeo-reset-game { color: #ffd99e; }
+.jeo-reset-body { font-size: 14px; color: #b5b8c7; line-height: 1.5; margin: 0 0 16px; }
+.jeo-reset-confirm { display: block; font-size: 13px; color: #b5b8c7; margin-bottom: 6px; }
+.jeo-reset-confirm code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-size: 12px; }
+.jeo-reset-input {
+  width: 100%; background: rgba(0,0,0,0.4); color: #fff; border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 10px 12px; font-size: 15px; font-family: ui-monospace, monospace;
+  letter-spacing: 0.06em; outline: none;
+}
+.jeo-reset-input:focus { border-color: #ef4444; }
+.jeo-reset-actions { display: flex; gap: 10px; margin-top: 16px; }
+.jeo-reset-cancel, .jeo-reset-go {
+  flex: 1; padding: 10px 14px; border-radius: 10px; border: 0; font: inherit; font-weight: 600;
+  cursor: pointer; transition: opacity .15s, transform .08s;
+}
+.jeo-reset-cancel { background: rgba(255,255,255,0.06); color: #e7e7ee; }
+.jeo-reset-cancel:hover { background: rgba(255,255,255,0.1); }
+.jeo-reset-go { background: linear-gradient(90deg,#ef4444,#dc2626); color: #fff; }
+.jeo-reset-go:hover:not(:disabled) { transform: translateY(-1px); }
+.jeo-reset-go:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ---- undo toast ---- */
+.jeo-undo-toast {
+  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+  z-index: 10001; background: #11111c; color: #e7e7ee;
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+  padding: 12px 14px 10px; min-width: 280px; max-width: 92vw;
+  box-shadow: 0 16px 40px -10px rgba(0,0,0,0.6);
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.jeo-undo-msg { font-size: 14px; }
+.jeo-undo-btn {
+  background: linear-gradient(90deg,#22d3ee,#7af0a3); color: #0a0a14;
+  border: 0; border-radius: 8px; padding: 7px 14px; font: inherit; font-weight: 700; cursor: pointer;
+}
+.jeo-undo-bar { grid-column: 1 / -1; height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+.jeo-undo-bar-fill { height: 100%; width: 100%; background: linear-gradient(90deg,#22d3ee,#7af0a3); }
+
+/* ---- launcher reset button ---- */
+.jeo-launcher-reset {
+  background: rgba(0,0,0,0.5); color: #ffb0b0; border: 1px solid rgba(255,100,100,0.3);
+  border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 12px; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.jeo-launcher-reset:hover { background: rgba(239,68,68,0.2); color: #fff; border-color: #ef4444; }

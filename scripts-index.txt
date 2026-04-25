@@ -74,6 +74,48 @@ Purpose: Scans Assets/ and regenerates games_list.json.
 Run:
   node ./scan.js
 
+6b) Maintenance flag toggle
+---------------------------
+File: scripts/maintenance-toggle.js
+Purpose: One-shot heal/break/clear of any slug. Updates BOTH
+  maintenance_overrides.json (durable) AND maintenance_status.json (live)
+  so the homepage updates without re-running the supervisor.
+Run:
+  node scripts/maintenance-toggle.js heal  bloons-player-pack2
+  node scripts/maintenance-toggle.js break some-actually-broken-game
+  node scripts/maintenance-toggle.js clear some-slug
+  node scripts/maintenance-toggle.js list
+  npm run game:heal -- bloons-player-pack2
+
+6c) Triage / repair broken recents
+----------------------------------
+File: scripts/fix-broken-recents.js
+Purpose: Walks recently_added.json and classifies each entry as
+  EMPTY (delete), ETHANYO_TRAP (hide + stub), REBASEABLE (rewrite
+  <base href> + absolute /assets paths to local archive),
+  UNRECOVERABLE_BASE (hide), PSEUDO_GAME (hide), or OK. After
+  --apply, runs scan.js to refresh the catalog.
+Idempotent: rerunning is safe.
+Run:
+  node scripts/fix-broken-recents.js                 # dry run
+  node scripts/fix-broken-recents.js --apply
+  node scripts/fix-broken-recents.js --apply --only=brawl,balatro
+  npm run game:fix-recents:dry
+  npm run game:fix-recents
+
+6d) Cover generator
+-------------------
+File: scripts/generate-cover.js
+Purpose: Writes a deterministic gradient SVG cover for any slug
+  missing one. Palette is derived from the slug name so the same game
+  always gets the same colors. --all-missing scans recently_added.json
+  and games_list.json and fills every game whose current cover is
+  notavailable.svg, an ethanyo placeholder, or a missing/sub-2KB file.
+Run:
+  node scripts/generate-cover.js balatro "Balatro"
+  node scripts/generate-cover.js --all-missing
+  npm run game:cover:fill
+
 7) Local web server
 -------------------
 File: server.js

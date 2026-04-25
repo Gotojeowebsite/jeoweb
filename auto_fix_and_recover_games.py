@@ -1739,6 +1739,15 @@ def classify_maintenance_status(
         }
 
     if final_status == "broken":
+        # Smart heal: if the local folder is self-contained (has an HTML entry
+        # plus a recognized primary asset) and there's no specific issue,
+        # treat as healthy rather than false-flagging maintenance.
+        if local_folder_looks_playable(game):
+            return {
+                "status": "healthy",
+                "reason": "auto_heal_local_assets_present",
+                "lead_issue": lead_issue,
+            }
         return {
             "status": "under_maintenance",
             "reason": "broken_without_issue_details",
@@ -1746,6 +1755,33 @@ def classify_maintenance_status(
         }
 
     return {"status": "healthy", "reason": "default_healthy"}
+
+
+def local_folder_looks_playable(game: str) -> bool:
+    """Cheap, side-effect-free check: does Assets/<game>/ contain enough to play?"""
+    folder = Path(__file__).resolve().parent / "Assets" / game
+    if not folder.is_dir():
+        return False
+    has_html = any(folder.glob("*.html")) or (folder / "index.html").exists()
+    if not has_html:
+        return False
+    primary_globs = (
+        "*.swf", "*.wasm", "*.data", "*.unityweb", "*.pck",
+        "**/*.swf", "**/*.wasm", "**/*.data", "**/*.unityweb", "**/*.pck",
+    )
+    for pattern in primary_globs:
+        for hit in folder.glob(pattern):
+            if hit.is_file() and hit.stat().st_size > 1024:
+                return True
+    # Retro emulator games are playable as long as the HTML wires EmulatorJS.
+    try:
+        for html in folder.glob("*.html"):
+            text = html.read_text(encoding="utf-8", errors="ignore")
+            if "EJS_pathtodata" in text or "emulatorjs" in text.lower():
+                return True
+    except Exception:
+        pass
+    return False
 
 
 def write_maintenance_status(cfg: Config, per_game: Dict[str, Dict[str, object]], logger: JsonLogger) -> Dict[str, object]:

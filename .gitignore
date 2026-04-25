@@ -1,2 +1,9 @@
 node_modules/
 package-lock.json
+
+# Versioned supervisor/scanner checkpoints — regenerable
+pipeline_artifacts/
+
+.venv/
+
+.venv/
