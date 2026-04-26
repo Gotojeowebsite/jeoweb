@@ -1,0 +1,83 @@
+{
+  "title": "Balatro",
+  "slug": "balatro",
+  "author": "LocalThunk",
+  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/?title=Balatro&author=LocalThunk&link=balatro",
+  "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/balatro/img.webp",
+  "remoteRoots": [
+    "https://ethanyo.global.ssl.fastly.net/misc/balatro/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/balatro/"
+  ],
+  "downloadedAt": "2026-04-26T13:33:27.969Z",
+  "assetsDownloaded": 44,
+  "failedCount": 16,
+  "failed": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/data.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/scripts/c3runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/c2runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/balatro/datafile_game.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/balatro/datafile_game.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/workermain.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/balatro/b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/balatro/+%20canvas.toDataURL(",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/balatro/+%20canvas.toDataURL(",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/datafile_game.data",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/+%20canvas.toDataURL(",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/balatro/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/balatro/b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/balatro/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/b",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/balatro/url",
+      "error": "HTTP 403"
+    }
+  ],
+  "indexMissingRefs": [],
+  "offlineReady": true
+}

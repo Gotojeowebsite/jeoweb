@@ -108,6 +108,44 @@
 .jeo-undo-bar { grid-column: 1 / -1; height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; margin-top: 6px; }
 .jeo-undo-bar-fill { height: 100%; width: 100%; background: linear-gradient(90deg,#22d3ee,#7af0a3); }
 
+/* ---- backup reminder banner ---- */
+.jeo-backup-banner {
+  position: fixed; bottom: 16px; right: 16px; z-index: 9500;
+  width: min(360px, calc(100vw - 32px));
+  background: linear-gradient(135deg, rgba(40,30,15,0.97), rgba(20,15,30,0.97));
+  border: 1px solid rgba(255,180,80,0.35); border-radius: 14px;
+  padding: 14px 16px; color: #e7e7ee;
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,0.7);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  animation: jeoBackupSlide .25s ease-out;
+}
+@keyframes jeoBackupSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.jeo-backup-banner .jbb-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: #ffd99e; }
+.jeo-backup-banner .jbb-body { font-size: 13px; color: #c8cad6; line-height: 1.45; margin-bottom: 10px; }
+.jeo-backup-banner .jbb-body strong { color: #fff; }
+.jeo-backup-banner .jbb-actions { display: flex; gap: 8px; }
+.jeo-backup-banner .jbb-btn {
+  flex: 1; padding: 8px 10px; border: 0; border-radius: 8px;
+  font: inherit; font-weight: 600; font-size: 13px; cursor: pointer;
+  transition: transform .08s, opacity .15s;
+}
+.jeo-backup-banner .jbb-primary { background: linear-gradient(90deg,#22d3ee,#7af0a3); color: #0a0a14; }
+.jeo-backup-banner .jbb-primary:hover { transform: translateY(-1px); }
+.jeo-backup-banner .jbb-ghost { background: rgba(255,255,255,0.06); color: #b5b8c7; }
+.jeo-backup-banner .jbb-ghost:hover { background: rgba(255,255,255,0.1); }
+.jeo-backup-banner .jbb-close {
+  position: absolute; top: 6px; right: 8px; background: transparent; border: 0;
+  color: #9aa0b4; cursor: pointer; font-size: 16px; padding: 4px 6px;
+}
+.jeo-backup-banner .jbb-close:hover { color: #fff; }
+
+/* "Last backup" line in the avatar menu */
+.jeo-header-menu .backup-status {
+  padding: 4px 12px 8px; font-size: 12px; color: #9aa0b4;
+  border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 4px;
+}
+.jeo-header-menu .backup-status.stale { color: #ffb380; }
+
 /* ---- launcher reset button ---- */
 .jeo-launcher-reset {
   background: rgba(0,0,0,0.5); color: #ffb0b0; border: 1px solid rgba(255,100,100,0.3);

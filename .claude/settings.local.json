@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check c:/Users/Jeo/Desktop/Jeoweb/jeoweb/account-system.js)",
+      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/play/crossyroad.html\" -A \"Mozilla/5.0\" -o /tmp/crossy.html -w \"%{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/play/?title=Balatro&author=LocalThunk&link=balatro\" -A \"Mozilla/5.0\" -o /tmp/balatro.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/g\" -A \"Mozilla/5.0\" -o /tmp/ethanyo_list.html -w \"%{http_code}\\\\n\")",
+      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/misc/frame.html?link=balatro&title=Balatro\" -A \"Mozilla/5.0\" -o /tmp/frame.html -w \"%{http_code}\\\\n\")"
+    ]
+  }
+}

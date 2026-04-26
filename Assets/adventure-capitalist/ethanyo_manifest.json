@@ -1,0 +1,217 @@
+{
+  "title": "Adventure Capitalist",
+  "slug": "adventure-capitalist",
+  "author": "Hyper Hippo",
+  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/adcap.html",
+  "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/img.webp",
+  "remoteRoots": [
+    "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/",
+    "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/",
+    "https://rawcdn.githack.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/"
+  ],
+  "downloadedAt": "2026-04-26T13:39:36.972Z",
+  "assetsDownloaded": 82,
+  "failedCount": 49,
+  "failed": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/blob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/script.src",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/data.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/c2runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/scripts/c3runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/Release/webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/workermain.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/webgl.data",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/Release/datafile_webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/datafile_webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/url",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/datafile_webgl.data",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/buffer,bufferSize",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/buffer,bufferSize",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/buffer,bufferSize",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/b",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/build.temp.asm.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/build.wasm",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/build.temp.asm.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/build.wasm",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/build.wasm",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/build.temp.asm.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/script.src",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/adventure-capitalist/blob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/Release/webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/Release/datafile_webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/Release/datafile_webgl.data",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/Release/webgl.data",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/blob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/buffer,bufferSize",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/datafile_webgl.data",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/ptr",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/a,b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/a,b",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/ptr",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EmulatorOS/gfile/a353d35ac44f2c72439d6d765636765f0fd9b0f0/adcap/Release/b,d,e",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/a,b",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/ptr",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/webgl.html.mem",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/adventure-capitalist/b,d,e",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/webgl.html.mem",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/adventure-capitalist/b,d,e",
+      "error": "HTTP 403"
+    }
+  ],
+  "indexMissingRefs": [],
+  "offlineReady": true
+}

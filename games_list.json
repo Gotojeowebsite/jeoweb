@@ -123,6 +123,12 @@
     "type": "flash"
   },
   {
+    "name": "adventure-capitalist",
+    "url": "Assets/adventure-capitalist/index.html",
+    "image": "Assets/adventure-capitalist/logo.webp",
+    "type": "webgl"
+  },
+  {
     "name": "amazing-rope-police",
     "url": "Assets/amazing-rope-police/index.html",
     "image": "Assets/amazing-rope-police/splash.jpeg",
@@ -162,7 +168,7 @@
   {
     "name": "angelunder",
     "url": "Assets/angelunder/index.html",
-    "image": "Assets/angelunder/TemplateData/babusgames-logo.png",
+    "image": "Assets/angelunder/TemplateData\\babusgames-logo.png",
     "type": "webgl"
   },
   {
@@ -174,7 +180,7 @@
   {
     "name": "angry-sharks",
     "url": "Assets/angry-sharks/index.html",
-    "image": "Assets/angry-sharks/assets/img/splash.png",
+    "image": "Assets/angry-sharks/assets\\img\\splash.png",
     "type": "webgl"
   },
   {
@@ -214,9 +220,21 @@
     "type": "flash"
   },
   {
+    "name": "asmallworldcup",
+    "url": "Assets/asmallworldcup/index.html",
+    "image": "Assets/asmallworldcup/logo.webp",
+    "type": "webgl"
+  },
+  {
     "name": "astray",
     "url": "Assets/astray/index.html",
     "image": "Assets/astray/splash.png",
+    "type": "webgl"
+  },
+  {
+    "name": "astrosurvivor",
+    "url": "Assets/astrosurvivor/index.html",
+    "image": "Assets/astrosurvivor/logo.webp",
     "type": "webgl"
   },
   {
@@ -254,7 +272,7 @@
   {
     "name": "backrooms",
     "url": "Assets/backrooms/index.html",
-    "image": "Assets/backrooms/img/icon.png",
+    "image": "Assets/backrooms/img\\icon.png",
     "type": "webgl"
   },
   {
@@ -325,8 +343,8 @@
   {
     "name": "balatro",
     "url": "Assets/balatro/index.html",
-    "image": "Assets/balatro/logo.svg",
-    "type": "flash"
+    "image": "Assets/balatro/logo.webp",
+    "type": "webgl"
   },
   {
     "name": "balldodge",
@@ -341,9 +359,15 @@
     "type": "webgl"
   },
   {
+    "name": "bankrob2",
+    "url": "Assets/bankrob2/index.html",
+    "image": "Assets/bankrob2/logo.webp",
+    "type": "webgl"
+  },
+  {
     "name": "basket-random",
     "url": "Assets/basket-random/index.html",
-    "image": "Assets/basket-random/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/basket-random/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -370,6 +394,12 @@
     "url": "Assets/beat-up-pc/index.html",
     "image": "Assets/beat-up-pc/beat pc.jpeg",
     "type": "flash"
+  },
+  {
+    "name": "bendy",
+    "url": "Assets/bendy/index.html",
+    "image": "Assets/bendy/logo.webp",
+    "type": "webgl"
   },
   {
     "name": "bigredbutton",
@@ -450,6 +480,18 @@
     "type": "flash"
   },
   {
+    "name": "blumgiracers",
+    "url": "Assets/blumgiracers/index.html",
+    "image": "Assets/blumgiracers/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "blumgislime",
+    "url": "Assets/blumgislime/index.html",
+    "image": "Assets/blumgislime/logo.webp",
+    "type": "webgl"
+  },
+  {
     "name": "bobtherobber1",
     "url": "Assets/bobtherobber1/index.html",
     "image": "Assets/bobtherobber1/btr.jpg",
@@ -516,12 +558,6 @@
     "status": "broken"
   },
   {
-    "name": "brawl",
-    "url": "Assets/brawl/index.html",
-    "image": "Assets/brawl/logo.svg",
-    "type": "webgl"
-  },
-  {
     "name": "brawl-simulator-3d",
     "url": "Assets/brawl-simulator-3d/index.html",
     "image": "Assets/brawl-simulator-3d/logo.png",
@@ -552,12 +588,6 @@
     "image": "Assets/btd3/images (2).jpeg",
     "type": "webgl",
     "status": "broken"
-  },
-  {
-    "name": "btd4",
-    "url": "Assets/btd4/index.html",
-    "image": "Assets/btd4/logo.svg",
-    "type": "webgl"
   },
   {
     "name": "btd5",
@@ -640,7 +670,7 @@
   {
     "name": "cannon-basketball-4",
     "url": "Assets/cannon-basketball-4/index.html",
-    "image": "Assets/cannon-basketball-4/assets/images/splash.png",
+    "image": "Assets/cannon-basketball-4/assets\\images\\splash.png",
     "type": "webgl"
   },
   {
@@ -830,19 +860,6 @@
     "status": "broken"
   },
   {
-    "name": "cookie",
-    "url": "Assets/cookie/index.html",
-    "image": "Assets/cookie/logo.svg",
-    "type": "webgl",
-    "status": "broken"
-  },
-  {
-    "name": "cookie-clicker",
-    "url": "Assets/cookie-clicker/index.html",
-    "image": "Assets/cookie-clicker/logo.svg",
-    "type": "webgl"
-  },
-  {
     "name": "core-ball",
     "url": "Assets/core-ball/index.html",
     "image": "Assets/core-ball/logo.png",
@@ -851,7 +868,7 @@
   {
     "name": "craftmine",
     "url": "Assets/craftmine/index.html",
-    "image": "Assets/craftmine/images/craftmine.png",
+    "image": "Assets/craftmine/images\\craftmine.png",
     "type": "webgl"
   },
   {
@@ -879,16 +896,15 @@
     "type": "webgl"
   },
   {
+    "name": "crossy-road",
+    "url": "Assets/crossy-road/index.html",
+    "image": "Assets/crossy-road/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "crossy-road-space",
     "url": "Assets/crossy-road-space/index.html",
     "image": "Assets/crossy-road-space/logo.jpeg",
-    "type": "webgl",
-    "status": "broken"
-  },
-  {
-    "name": "crossyroad",
-    "url": "Assets/crossyroad/index.html",
-    "image": "Assets/crossyroad/logo.svg",
     "type": "webgl",
     "status": "broken"
   },
@@ -907,7 +923,7 @@
   {
     "name": "csgo-clicker",
     "url": "Assets/csgo-clicker/index.html",
-    "image": "Assets/csgo-clicker/_external_mirror/i.imgur.com/BzuCWzL.png",
+    "image": "Assets/csgo-clicker/images\\case1.png",
     "type": "webgl"
   },
   {
@@ -919,7 +935,7 @@
   {
     "name": "ctr-holiday",
     "url": "Assets/ctr-holiday/index.html",
-    "image": "Assets/ctr-holiday/Holiday_Gift.webp",
+    "image": "Assets/ctr-holiday/favicon.ico",
     "type": "flash"
   },
   {
@@ -931,7 +947,7 @@
   {
     "name": "cubefield",
     "url": "Assets/cubefield/index.html",
-    "image": "Assets/cubefield/assets/icon.png",
+    "image": "Assets/cubefield/assets\\icon.png",
     "type": "flash"
   },
   {
@@ -968,13 +984,13 @@
   {
     "name": "death-run-3d",
     "url": "Assets/death-run-3d/index.html",
-    "image": "Assets/death-run-3d/TemplateData/favicon.ico",
+    "image": "Assets/death-run-3d/img\\death.png",
     "type": "webgl"
   },
   {
     "name": "defend-the-tank",
     "url": "Assets/defend-the-tank/index.html",
-    "image": "Assets/defend-the-tank/branding/logo.png",
+    "image": "Assets/defend-the-tank/branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -1324,13 +1340,13 @@
   {
     "name": "exo",
     "url": "Assets/exo/index.html",
-    "image": "Assets/exo/img/small.jpg",
+    "image": "Assets/exo/img\\small.jpg",
     "type": "webgl"
   },
   {
     "name": "factoryballs",
     "url": "Assets/factoryballs/index.html",
-    "image": "Assets/factoryballs/images/splash.png",
+    "image": "Assets/factoryballs/images\\splash.png",
     "type": "webgl"
   },
   {
@@ -1491,7 +1507,7 @@
   {
     "name": "fishing.io",
     "url": "Assets/fishing.io/index.html",
-    "image": "Assets/fishing.io/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/splash.png",
+    "image": "Assets/fishing.io/_external_mirror\\43868287-283533260613887793.preview.editmysite.com\\uploads\\b\\8156145-741051280210564939\\files\\assets\\img\\splash.png",
     "type": "webgl"
   },
   {
@@ -1601,13 +1617,7 @@
   {
     "name": "game-inside",
     "url": "Assets/game-inside/index.html",
-    "image": "Assets/game-inside/img/icon.png",
-    "type": "webgl"
-  },
-  {
-    "name": "geochallenge",
-    "url": "Assets/geochallenge/index.html",
-    "image": "Assets/geochallenge/logo.svg",
+    "image": "Assets/game-inside/img\\icon.png",
     "type": "webgl"
   },
   {
@@ -1619,38 +1629,31 @@
   {
     "name": "geodashlite",
     "url": "Assets/geodashlite/index.html",
-    "image": "Assets/geodashlite/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/geodashlite/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
     "name": "geojump",
     "url": "Assets/geojump/index.html",
-    "image": "Assets/geojump/_archive/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/geojump/_archive\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
-  },
-  {
-    "name": "geometrydash",
-    "url": "Assets/geometrydash/index.html",
-    "image": "Assets/geometrydash/logo.svg",
-    "type": "webgl",
-    "status": "broken"
   },
   {
     "name": "geoneondash",
     "url": "Assets/geoneondash/index.html",
-    "image": "Assets/geoneondash/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/geoneondash/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
     "name": "georgeandtheprinter",
     "url": "Assets/georgeandtheprinter/index.html",
-    "image": "Assets/georgeandtheprinter/img/icon.png",
+    "image": "Assets/georgeandtheprinter/img\\icon.png",
     "type": "webgl"
   },
   {
     "name": "getaway-shootout",
     "url": "Assets/getaway-shootout/index.html",
-    "image": "Assets/getaway-shootout/img/images.jpg",
+    "image": "Assets/getaway-shootout/img\\images.jpg",
     "type": "webgl"
   },
   {
@@ -1668,7 +1671,7 @@
   {
     "name": "gimme-the-airpod",
     "url": "Assets/gimme-the-airpod/index.html",
-    "image": "Assets/gimme-the-airpod/img/logo.png",
+    "image": "Assets/gimme-the-airpod/img\\logo.png",
     "type": "webgl"
   },
   {
@@ -1715,12 +1718,6 @@
     "requested": true
   },
   {
-    "name": "grass-cutter",
-    "url": "Assets/grass-cutter/index.html",
-    "image": "Assets/grass-cutter/logo.svg",
-    "type": "webgl"
-  },
-  {
     "name": "greyhound-ty",
     "url": "Assets/greyhound-ty/index.html",
     "image": "Assets/greyhound-ty/greyhound tycocn.jpeg",
@@ -1729,7 +1726,7 @@
   {
     "name": "grindcraft",
     "url": "Assets/grindcraft/index.html",
-    "image": "Assets/grindcraft/img/splash.png",
+    "image": "Assets/grindcraft/img\\splash.png",
     "type": "webgl"
   },
   {
@@ -1897,7 +1894,7 @@
   {
     "name": "idle-breakout",
     "url": "Assets/idle-breakout/index.html",
-    "image": "Assets/idle-breakout/media/posts/496/idle-breakout.webp",
+    "image": "Assets/idle-breakout/media\\posts\\496\\idle-breakout.webp",
     "type": "webgl"
   },
   {
@@ -1909,7 +1906,7 @@
   {
     "name": "idledices",
     "url": "Assets/idledices/index.html",
-    "image": "Assets/idledices/_archive/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/idledices/_archive\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -1935,15 +1932,6 @@
     "url": "Assets/incredibox/index.html",
     "image": "Assets/incredibox/logo.jpg",
     "type": "webgl"
-  },
-  {
-    "name": "index",
-    "url": "Assets/index/index.html",
-    "image": "Assets/index/_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png",
-    "type": "webgl",
-    "status": "broken",
-    "displayName": "Index",
-    "source_url": "https://ethanyo.freetls.fastly.net/misc/brawl/index.html"
   },
   {
     "name": "indiana-jones-greatest-adventures",
@@ -1972,7 +1960,7 @@
   {
     "name": "jelly-truck",
     "url": "Assets/jelly-truck/index.html",
-    "image": "Assets/jelly-truck/images/jt.png",
+    "image": "Assets/jelly-truck/images\\jt.png",
     "type": "webgl"
   },
   {
@@ -2024,12 +2012,6 @@
     "type": "flash"
   },
   {
-    "name": "krunker",
-    "url": "Assets/krunker/index.html",
-    "image": "Assets/krunker/logo.svg",
-    "type": "webgl"
-  },
-  {
     "name": "learn2fly2",
     "url": "Assets/learn2fly2/index.html",
     "image": "Assets/learn2fly2/logo.jpg",
@@ -2074,7 +2056,7 @@
   {
     "name": "ltf-idle",
     "url": "Assets/ltf-idle/index.html",
-    "image": "Assets/ltf-idle/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/ltf-idle/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "flash"
   },
   {
@@ -2082,12 +2064,6 @@
     "url": "Assets/magnetface/index.html",
     "image": "Assets/magnetface/logo.png",
     "type": "flash"
-  },
-  {
-    "name": "mario",
-    "url": "Assets/mario/index.html",
-    "image": "Assets/mario/logo.svg",
-    "type": "webgl"
   },
   {
     "name": "mariocombat",
@@ -2164,7 +2140,7 @@
   {
     "name": "minesweeper",
     "url": "Assets/minesweeper/index.html",
-    "image": "Assets/minesweeper/img/minesweeper.png",
+    "image": "Assets/minesweeper/img\\minesweeper.png",
     "type": "webgl"
   },
   {
@@ -2362,7 +2338,7 @@
   {
     "name": "om-bounce",
     "url": "Assets/om-bounce/index.html",
-    "image": "Assets/om-bounce/assets/icon.jpeg",
+    "image": "Assets/om-bounce/assets\\icon.jpeg",
     "type": "webgl"
   },
   {
@@ -2428,7 +2404,7 @@
   {
     "name": "paperio2",
     "url": "Assets/paperio2/index.html",
-    "image": "Assets/paperio2/images/logo.png",
+    "image": "Assets/paperio2/images\\logo.png",
     "type": "webgl"
   },
   {
@@ -2440,7 +2416,7 @@
   {
     "name": "particle-clicker",
     "url": "Assets/particle-clicker/index.html",
-    "image": "Assets/particle-clicker/assets/mobile/icon.png",
+    "image": "Assets/particle-clicker/assets\\mobile\\icon.png",
     "type": "webgl"
   },
   {
@@ -2554,7 +2530,7 @@
   {
     "name": "poom",
     "url": "Assets/poom/index.html",
-    "image": "Assets/poom/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/poom/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -2578,7 +2554,7 @@
   {
     "name": "protektor",
     "url": "Assets/protektor/index.html",
-    "image": "Assets/protektor/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/protektor/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -2590,7 +2566,7 @@
   {
     "name": "push-your-luck",
     "url": "Assets/push-your-luck/index.html",
-    "image": "Assets/push-your-luck/assets/atlas/Bg.png",
+    "image": "Assets/push-your-luck/assets\\atlas\\Bg.png",
     "type": "webgl"
   },
   {
@@ -2650,13 +2626,13 @@
   {
     "name": "retro-bowl",
     "url": "Assets/retro-bowl/index.html",
-    "image": "Assets/retro-bowl/img/icon.jpg",
+    "image": "Assets/retro-bowl/img\\icon.jpg",
     "type": "webgl"
   },
   {
     "name": "retro-bowl-college",
     "url": "Assets/retro-bowl-college/index.html",
-    "image": "Assets/retro-bowl-college/html5game/splash.png",
+    "image": "Assets/retro-bowl-college/html5game\\splash.png",
     "type": "webgl"
   },
   {
@@ -2716,7 +2692,7 @@
   {
     "name": "rooftop-snipers",
     "url": "Assets/rooftop-snipers/index.html",
-    "image": "Assets/rooftop-snipers/img/thumb.png",
+    "image": "Assets/rooftop-snipers/img\\thumb.png",
     "type": "webgl"
   },
   {
@@ -2788,7 +2764,7 @@
   {
     "name": "shuttledeck",
     "url": "Assets/shuttledeck/index.html",
-    "image": "Assets/shuttledeck/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/shuttledeck/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -2873,7 +2849,7 @@
   {
     "name": "snowbattle",
     "url": "Assets/snowbattle/index.html",
-    "image": "Assets/snowbattle/img/logo.png",
+    "image": "Assets/snowbattle/img\\logo.png",
     "type": "webgl"
   },
   {
@@ -2885,7 +2861,7 @@
   {
     "name": "soldier-legend",
     "url": "Assets/soldier-legend/index.html",
-    "image": "Assets/soldier-legend/images/logo.jpg",
+    "image": "Assets/soldier-legend/images\\logo.jpg",
     "type": "webgl"
   },
   {
@@ -2897,7 +2873,7 @@
   {
     "name": "sort-the-court",
     "url": "Assets/sort-the-court/index.html",
-    "image": "Assets/sort-the-court/TemplateData/logo.png",
+    "image": "Assets/sort-the-court/TemplateData\\logo.png",
     "type": "webgl"
   },
   {
@@ -2909,7 +2885,7 @@
   {
     "name": "soundboard",
     "url": "Assets/soundboard/index.html",
-    "image": "Assets/soundboard/img/better_eye.jpeg",
+    "image": "Assets/soundboard/img\\better_eye.jpeg",
     "type": "webgl"
   },
   {
@@ -2981,7 +2957,7 @@
   {
     "name": "stickman-hook",
     "url": "Assets/stickman-hook/index.html",
-    "image": "Assets/stickman-hook/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/stickman-hook/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -3029,7 +3005,7 @@
   {
     "name": "subway-surfers",
     "url": "Assets/subway-surfers/index.html",
-    "image": "Assets/subway-surfers/93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/preload/splash.png",
+    "image": "Assets/subway-surfers/93f0a8aa-9a9c-4448-b720-5bd4c4de3798\\assets\\preload\\splash.png",
     "type": "webgl"
   },
   {
@@ -3133,7 +3109,7 @@
   {
     "name": "superfowlist",
     "url": "Assets/superfowlist/index.html",
-    "image": "Assets/superfowlist/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/superfowlist/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -3169,7 +3145,7 @@
   {
     "name": "swerve",
     "url": "Assets/swerve/index.html",
-    "image": "Assets/swerve/img/favicon.jpg",
+    "image": "Assets/swerve/img\\favicon.jpg",
     "type": "webgl"
   },
   {
@@ -3211,7 +3187,7 @@
   {
     "name": "tanuki-sunset",
     "url": "Assets/tanuki-sunset/index.html",
-    "image": "Assets/tanuki-sunset/img/logo.png",
+    "image": "Assets/tanuki-sunset/img\\logo.png",
     "type": "webgl"
   },
   {
@@ -3225,13 +3201,6 @@
     "url": "Assets/temple-run-2/index.html",
     "image": "Assets/temple-run-2/079dea52d8f43464bedd59bc35cc7999.jpg",
     "type": "webgl"
-  },
-  {
-    "name": "templerun2",
-    "url": "Assets/templerun2/index.html",
-    "image": "Assets/templerun2/logo.svg",
-    "type": "webgl",
-    "status": "broken"
   },
   {
     "name": "terranigma",
@@ -3326,13 +3295,13 @@
   {
     "name": "tube-jumpers",
     "url": "Assets/tube-jumpers/index.html",
-    "image": "Assets/tube-jumpers/img/icon.jpg",
+    "image": "Assets/tube-jumpers/img\\icon.jpg",
     "type": "webgl"
   },
   {
     "name": "tunnel-rush",
     "url": "Assets/tunnel-rush/index.html",
-    "image": "Assets/tunnel-rush/img/tunnel.jpg",
+    "image": "Assets/tunnel-rush/img\\tunnel.jpg",
     "type": "webgl"
   },
   {
@@ -3392,7 +3361,7 @@
   {
     "name": "veloce",
     "url": "Assets/veloce/index.html",
-    "image": "Assets/veloce/_archived_site/games.mathpapers.org/defend-the-tank/branding/logo.png",
+    "image": "Assets/veloce/_archived_site\\games.mathpapers.org\\defend-the-tank\\branding\\logo.png",
     "type": "webgl"
   },
   {
@@ -3416,7 +3385,7 @@
   {
     "name": "vex6",
     "url": "Assets/vex6/index.html",
-    "image": "Assets/vex6/assets/images/logo.png",
+    "image": "Assets/vex6/assets\\images\\logo.png",
     "type": "webgl"
   },
   {
@@ -3458,19 +3427,19 @@
   {
     "name": "wolf3d",
     "url": "Assets/wolf3d/index.html",
-    "image": "Assets/wolf3d/art/wolf3d.png",
+    "image": "Assets/wolf3d/art\\wolf3d.png",
     "type": "webgl"
   },
   {
     "name": "wordle",
     "url": "Assets/wordle/index.html",
-    "image": "Assets/wordle/img/logo_144x144.png",
+    "image": "Assets/wordle/img\\logo_144x144.png",
     "type": "webgl"
   },
   {
     "name": "worlds-hardest-game",
     "url": "Assets/worlds-hardest-game/index.html",
-    "image": "Assets/worlds-hardest-game/images/splash.jpg",
+    "image": "Assets/worlds-hardest-game/images\\splash.jpg",
     "type": "webgl"
   },
   {

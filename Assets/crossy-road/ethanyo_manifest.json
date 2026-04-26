@@ -1,0 +1,229 @@
+{
+  "title": "Crossy Road",
+  "slug": "crossy-road",
+  "author": "Hipster Whale",
+  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/crossyroad.html",
+  "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/crossyroad.png",
+  "remoteRoots": [
+    "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/models/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/models/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/scripts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/fonts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/fonts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/"
+  ],
+  "downloadedAt": "2026-04-26T13:33:19.410Z",
+  "assetsDownloaded": 477,
+  "failedCount": 274,
+  "failed": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/c2runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/data.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/scripts/c3runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/workermain.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/editundobrk-regular-webfont.woff2",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/editundobrk-regular-webfont.woff",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/fonts/editundobrk-regular-webfont.woff",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/fonts/8-BIT%20WONDER.woff",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/editundobrk-regular-webfont.woff",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/editundobrk-regular-webfont.woff2",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/8-BIT%20WONDER.woff",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/touchControllerConfig.json",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/image/png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/touchControllerConfig.json",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/touchControllerConfig.json",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/8-BIT%20WONDER.woff",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/image/png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/d[f]",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/d[f]",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/d",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/d[f]",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/image/png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/a",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/d",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/models/dinosaur-world.json",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/scripts/a",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/a",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/d",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/adToCoin.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/adToCoin.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/models/dinosaur-world.json",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/adToCoinBlink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/models/dinosaur-world.json",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/adToCoin.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/adToCoinBlink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/arrow-left.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-left.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-right.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/adToCoinBlink.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/arrow-left.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/arrow-right.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/arrow-up-blink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-up-blink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-up.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/arrow-right.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/crossy-road/arrow-up-blink.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/arrow-up_toggle-blink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/crossy-road/arrow-up.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-up_toggle-blink.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/crossy-road/sprites/arrow-up_toggle.png",
+      "error": "HTTP 404"
+    }
+  ],
+  "indexMissingRefs": [],
+  "offlineReady": true
+}

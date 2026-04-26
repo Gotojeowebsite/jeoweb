@@ -1,17 +1,57 @@
 [
   {
-    "name": "crossyroad",
-    "url": "Assets/crossyroad/index.html",
-    "image": "Assets/crossyroad/logo.svg",
-    "type": "webgl",
-    "status": "broken"
+    "name": "bendy",
+    "url": "Assets/bendy/index.html",
+    "image": "Assets/bendy/logo.webp",
+    "type": "webgl"
   },
   {
-    "name": "templerun2",
-    "url": "Assets/templerun2/index.html",
-    "image": "Assets/templerun2/logo.svg",
-    "type": "webgl",
-    "status": "broken"
+    "name": "adventure-capitalist",
+    "url": "Assets/adventure-capitalist/index.html",
+    "image": "Assets/adventure-capitalist/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "blumgiracers",
+    "url": "Assets/blumgiracers/index.html",
+    "image": "Assets/blumgiracers/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "blumgislime",
+    "url": "Assets/blumgislime/index.html",
+    "image": "Assets/blumgislime/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "bankrob2",
+    "url": "Assets/bankrob2/index.html",
+    "image": "Assets/bankrob2/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "astrosurvivor",
+    "url": "Assets/astrosurvivor/index.html",
+    "image": "Assets/astrosurvivor/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "asmallworldcup",
+    "url": "Assets/asmallworldcup/index.html",
+    "image": "Assets/asmallworldcup/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "balatro",
+    "url": "Assets/balatro/index.html",
+    "image": "Assets/balatro/logo.webp",
+    "type": "webgl"
+  },
+  {
+    "name": "crossy-road",
+    "url": "Assets/crossy-road/index.html",
+    "image": "Assets/crossy-road/logo.png",
+    "type": "webgl"
   },
   {
     "name": "subwaysurfers",
@@ -21,6 +61,12 @@
     "status": "broken"
   },
   {
+    "name": "brawl-simulator-3d",
+    "url": "Assets/brawl-simulator-3d/index.html",
+    "image": "Assets/brawl-simulator-3d/logo.png",
+    "type": "webgl"
+  },
+  {
     "name": "amongus",
     "url": "Assets/amongus/index.html",
     "image": "Assets/amongus/logo.svg",
@@ -28,174 +74,120 @@
     "status": "broken"
   },
   {
-    "name": "geometrydash",
-    "url": "Assets/geometrydash/index.html",
-    "image": "Assets/geometrydash/logo.svg",
-    "type": "webgl",
+    "name": "front-mission",
+    "url": "Assets/front-mission/index.html",
+    "image": "Assets/front-mission/logo.png",
+    "type": "snes",
     "status": "broken"
   },
   {
-    "name": "cookie",
-    "url": "Assets/cookie/index.html",
-    "image": "Assets/cookie/logo.svg",
-    "type": "webgl",
-    "status": "broken"
+    "name": "frogger",
+    "url": "Assets/frogger/index.html",
+    "image": "Assets/frogger/frogger .jpeg",
+    "type": "flash"
   },
   {
-    "name": "index",
-    "url": "Assets/index/index.html",
-    "image": "Assets/index/_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png",
-    "type": "webgl",
-    "status": "broken"
-  },
-  {
-    "name": "brawl",
-    "url": "Assets/brawl/index.html",
-    "image": "Assets/brawl/logo.svg",
+    "name": "fortzone",
+    "url": "Assets/fortzone/index.html",
+    "image": "Assets/fortzone/logo.png",
     "type": "webgl"
   },
   {
-    "name": "balatro",
-    "url": "Assets/balatro/index.html",
-    "image": "Assets/balatro/logo.svg",
+    "name": "flower-shop",
+    "url": "Assets/flower-shop/index.html",
+    "image": "Assets/flower-shop/flower shop keeper 2.jpeg",
     "type": "flash"
   },
   {
-    "name": "bobtherobber5",
-    "url": "Assets/bobtherobber5/index.html",
-    "image": "Assets/bobtherobber5/btr5.png",
-    "type": "flash",
+    "name": "flashback-the-quest-for-identity",
+    "url": "Assets/flashback-the-quest-for-identity/index.html",
+    "image": "Assets/flashback-the-quest-for-identity/logo.png",
+    "type": "snes",
     "status": "broken"
   },
   {
-    "name": "bobtherobber1",
-    "url": "Assets/bobtherobber1/index.html",
-    "image": "Assets/bobtherobber1/btr.jpg",
-    "type": "flash",
-    "status": "broken"
-  },
-  {
-    "name": "bloons-player-pack5",
-    "url": "Assets/bloons-player-pack5/index.html",
-    "image": "Assets/bloons-player-pack5/player 5.jpeg",
-    "type": "flash"
-  },
-  {
-    "name": "bloons-player-pack4",
-    "url": "Assets/bloons-player-pack4/index.html",
-    "image": "Assets/bloons-player-pack4/player 4.jpeg",
-    "type": "flash"
-  },
-  {
-    "name": "bloons-player-pack3",
-    "url": "Assets/bloons-player-pack3/index.html",
-    "image": "Assets/bloons-player-pack3/player pack3.jpeg",
-    "type": "flash"
-  },
-  {
-    "name": "bloons-player-pack2",
-    "url": "Assets/bloons-player-pack2/index.html",
-    "image": "Assets/bloons-player-pack2/player pack.jpeg",
-    "type": "flash"
-  },
-  {
-    "name": "batman-vengeance",
-    "url": "Assets/batman-vengeance/index.html",
-    "image": "Assets/batman-vengeance/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "bad-ice-cream-3",
-    "url": "Assets/bad-ice-cream-3/index.html",
-    "image": "Assets/bad-ice-cream-3/bad-ice-cream-3.png",
-    "type": "flash"
-  },
-  {
-    "name": "bad-ice-cream-2",
-    "url": "Assets/bad-ice-cream-2/index.html",
-    "image": "Assets/bad-ice-cream-2/bad-ice-cream-2.png",
-    "type": "flash"
-  },
-  {
-    "name": "bad-ice-cream",
-    "url": "Assets/bad-ice-cream/index.html",
-    "image": "Assets/bad-ice-cream/bad-ice-cream.png",
-    "type": "flash"
-  },
-  {
-    "name": "backyard-skateboarding",
-    "url": "Assets/backyard-skateboarding/index.html",
-    "image": "Assets/backyard-skateboarding/logo.jpg",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "backyard-hockey",
-    "url": "Assets/backyard-hockey/index.html",
-    "image": "Assets/backyard-hockey/logo.jpg",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "backyard-football",
-    "url": "Assets/backyard-football/index.html",
-    "image": "Assets/backyard-football/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "backyard-basketball",
-    "url": "Assets/backyard-basketball/index.html",
-    "image": "Assets/backyard-basketball/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "backyard-baseball",
-    "url": "Assets/backyard-baseball/index.html",
-    "image": "Assets/backyard-baseball/logo.jpg",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "backrooms",
-    "url": "Assets/backrooms/index.html",
-    "image": "Assets/backrooms/img/icon.png",
+    "name": "fishing.io",
+    "url": "Assets/fishing.io/index.html",
+    "image": "Assets/fishing.io/_external_mirror\\43868287-283533260613887793.preview.editmysite.com\\uploads\\b\\8156145-741051280210564939\\files\\assets\\img\\splash.png",
     "type": "webgl"
   },
   {
-    "name": "avatar-the-last-airbender-the-burning-earth",
-    "url": "Assets/avatar-the-last-airbender-the-burning-earth/index.html",
-    "image": "Assets/avatar-the-last-airbender-the-burning-earth/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "avatar-the-last-airbender",
-    "url": "Assets/avatar-the-last-airbender/index.html",
-    "image": "Assets/avatar-the-last-airbender/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "2k-sports-major-league-baseball-2k7",
-    "url": "Assets/2k-sports-major-league-baseball-2k7/index.html",
-    "image": "Assets/2k-sports-major-league-baseball-2k7/logo.png",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "2006-fifa-world-cup-germany-2006",
-    "url": "Assets/2006-fifa-world-cup-germany-2006/index.html",
-    "image": "Assets/2006-fifa-world-cup-germany-2006/logo.jpg",
-    "type": "gba",
-    "status": "broken"
-  },
-  {
-    "name": "amazing-rope-police",
-    "url": "Assets/amazing-rope-police/index.html",
-    "image": "Assets/amazing-rope-police/splash.jpeg",
+    "name": "fireboywatergirlforesttemple",
+    "url": "Assets/fireboywatergirlforesttemple/index.html",
+    "image": "Assets/fireboywatergirlforesttemple/logo.jpeg",
     "type": "webgl"
+  },
+  {
+    "name": "fire-boy3",
+    "url": "Assets/fire-boy3/index.html",
+    "image": "Assets/fire-boy3/fire 3.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "fire-boy2",
+    "url": "Assets/fire-boy2/index.html",
+    "image": "Assets/fire-boy2/fire 2.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "fire-boy1",
+    "url": "Assets/fire-boy1/index.html",
+    "image": "Assets/fire-boy1/fire boy 1.jpg",
+    "type": "flash"
+  },
+  {
+    "name": "final-fight-3",
+    "url": "Assets/final-fight-3/index.html",
+    "image": "Assets/final-fight-3/logo.png",
+    "type": "snes",
+    "status": "broken"
+  },
+  {
+    "name": "final-fight-2",
+    "url": "Assets/final-fight-2/index.html",
+    "image": "Assets/final-fight-2/logo.jpg",
+    "type": "snes",
+    "status": "broken"
+  },
+  {
+    "name": "final-fight",
+    "url": "Assets/final-fight/index.html",
+    "image": "Assets/final-fight/logo.png",
+    "type": "snes",
+    "status": "broken"
+  },
+  {
+    "name": "final-fantasy-iii-es",
+    "url": "Assets/final-fantasy-iii-es/index.html",
+    "image": "Assets/final-fantasy-iii-es/logo.png",
+    "type": "snes",
+    "status": "broken"
+  },
+  {
+    "name": "final-fantasy-iii",
+    "url": "Assets/final-fantasy-iii/index.html",
+    "image": "Assets/final-fantasy-iii/logo.png",
+    "type": "snes",
+    "status": "broken"
+  },
+  {
+    "name": "fighter-aircraft-pilot",
+    "url": "Assets/fighter-aircraft-pilot/index.html",
+    "image": "Assets/fighter-aircraft-pilot/logo.jpg",
+    "type": "webgl"
+  },
+  {
+    "name": "fifa-soccer-2005",
+    "url": "Assets/fifa-soccer-2005/index.html",
+    "image": "Assets/fifa-soccer-2005/logo.jpg",
+    "type": "gba",
+    "status": "broken"
+  },
+  {
+    "name": "fifa-soccer-2004",
+    "url": "Assets/fifa-soccer-2004/index.html",
+    "image": "Assets/fifa-soccer-2004/logo.jpg",
+    "type": "gba",
+    "status": "broken"
   }
 ]

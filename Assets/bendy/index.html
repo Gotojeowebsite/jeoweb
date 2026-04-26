@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <!-- base stripped for offline -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Unity WebGL Player | OldCh2RippedTwo</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+        }
+
+        body {
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        .webgl-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #unityContainer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+
+        .fullscreen {
+            cursor: pointer;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('TemplateData/fullscreen.png') no-repeat center;
+        }
+    </style>
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    
+<script>
+(function(){
+  function resizeUnityContainer() {
+    var c = document.getElementById("unityContainer");
+    if (c) { c.style.width = window.innerWidth + "px"; c.style.height = window.innerHeight + "px"; }
+  }
+  window.addEventListener("resize", resizeUnityContainer);
+  resizeUnityContainer();
+  UnityLoader.instantiate("unityContainer", "Build/BATIM.json", {
+    onProgress: typeof UnityProgress === "function" ? UnityProgress : undefined,
+    Module: { onRuntimeInitialized: function(){
+      var t = document.querySelector("#loading-text");
+      if (t) t.remove();
+    }}
+  });
+})();
+</script>
+</head>
+
+<body>
+    <div class="webgl-content">
+      <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
+        <div id="unityContainer"></div>
+    </div>
+</body>
+
+</html>

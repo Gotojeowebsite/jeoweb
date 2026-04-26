@@ -86,6 +86,7 @@
 						<button class="cloaker-preset" data-title="Wikipedia" data-icon="https://en.wikipedia.org/static/favicon/wikipedia.ico">
 							<img src="https://en.wikipedia.org/static/favicon/wikipedia.ico" alt="" width="16" height="16"/>Wikipedia
 						</button>
+						
 					</div>
 					<div class="menu-divider"></div>
 					<div class="color-menu-label">Custom</div>
@@ -522,38 +523,64 @@
 			slot.appendChild(av);
 		}
 
+		function backupLabel(days) {
+			if (!Number.isFinite(days)) return { text: 'Last backup: never — download a .jeo file now', stale: true };
+			if (days < 1) return { text: 'Last backup: today', stale: false };
+			if (days < 2) return { text: 'Last backup: yesterday', stale: false };
+			const d = Math.floor(days);
+			return { text: `Last backup: ${d} day${d === 1 ? '' : 's'} ago`, stale: d >= 7 };
+		}
+
+		async function downloadBackup(state) {
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 8 chars).\nUse this passphrase + the .jeo file to sign in on another device.');
+			if (!pw || pw.length < 8) return false;
+			try {
+				const blob = await JeoAccount.exportBlob(pw);
+				const a = document.createElement('a');
+				const safe = (state.profile.name || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
+				const stamp = new Date().toISOString().slice(0,10);
+				a.href = URL.createObjectURL(new Blob([blob], { type: 'text/plain' }));
+				a.download = `${safe}-${stamp}.jeo`; a.click();
+				URL.revokeObjectURL(a.href);
+				return true;
+			} catch (err) { alert(String(err.message || err)); return false; }
+		}
+
+		async function copyBackup() {
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 8 chars).');
+			if (!pw || pw.length < 8) return;
+			try {
+				const blob = await JeoAccount.exportBlob(pw);
+				await navigator.clipboard.writeText(blob);
+				alert('Encrypted save copied to clipboard.');
+			} catch (err) { alert(String(err.message || err)); }
+		}
+
 		function openMenu(state) {
 			document.querySelectorAll('.jeo-header-menu').forEach(n => n.remove());
 			const m = document.createElement('div');
 			m.className = 'jeo-header-menu';
+			const bk = backupLabel(JeoAccount.getBackupAgeDays());
 			m.innerHTML = `
 				<div class="who">Signed in as <strong></strong></div>
-				<button data-act="export">Export encrypted save…</button>
-				<button data-act="download">Download .jeo file…</button>
+				<div class="backup-status${bk.stale ? ' stale' : ''}"></div>
+				<button data-act="download">⬇ Download .jeo backup</button>
+				<button data-act="export">Copy encrypted save</button>
 				<button class="danger" data-act="logout">Log out (forget device)</button>`;
 			m.querySelector('strong').textContent = state.profile.name;
+			m.querySelector('.backup-status').textContent = bk.text;
 			document.body.appendChild(m);
 			m.onclick = async (e) => {
 				const act = e.target.dataset?.act; if (!act) return;
 				if (act === 'logout') {
+					if (!confirm('Log out and forget this device?\n\nMake sure you have downloaded a .jeo backup — without it you cannot sign back in.')) return;
 					await JeoAccount.signOut({ forgetDevice: true });
 					m.remove(); window.location.reload();
-				} else if (act === 'export' || act === 'download') {
-					const pw = prompt('Enter a passphrase to encrypt your export (≥ 8 chars).\nThis can be the same as the one you used at signup, or a new one.');
-					if (!pw || pw.length < 8) return;
-					try {
-						const blob = await JeoAccount.exportBlob(pw);
-						if (act === 'download') {
-							const a = document.createElement('a');
-							const safe = (state.profile.name || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
-							a.href = URL.createObjectURL(new Blob([blob], { type: 'text/plain' }));
-							a.download = `${safe}.jeo`; a.click();
-							URL.revokeObjectURL(a.href);
-						} else {
-							await navigator.clipboard.writeText(blob);
-							alert('Encrypted save copied to clipboard.');
-						}
-					} catch (err) { alert(String(err.message || err)); }
+				} else if (act === 'download') {
+					if (await downloadBackup(state)) dismissBackupBanner();
+					m.remove();
+				} else if (act === 'export') {
+					await copyBackup();
 					m.remove();
 				}
 			};
@@ -563,8 +590,55 @@
 			}, 0);
 		}
 
+		// ---- backup-reminder banner ----
+		// Shown when last backup is >= 7 days ago (or never). Snoozed for 24h
+		// after dismiss; suppressed for the rest of the session after download.
+		const SNOOZE_KEY = 'jeo:backupBannerSnoozeUntil';
+		let bannerEl = null;
+		function dismissBackupBanner({ snoozeHours = 24 } = {}) {
+			if (bannerEl) { bannerEl.remove(); bannerEl = null; }
+			try { localStorage.setItem(SNOOZE_KEY, String(Date.now() + snoozeHours * 3600_000)); } catch {}
+		}
+		function maybeShowBackupBanner(state) {
+			if (!state) return;
+			if (bannerEl) return;
+			const snooze = parseInt(localStorage.getItem(SNOOZE_KEY) || '0', 10);
+			if (Date.now() < snooze) return;
+			const days = JeoAccount.getBackupAgeDays();
+			if (Number.isFinite(days) && days < 7) return;
+
+			const el = document.createElement('div');
+			el.className = 'jeo-backup-banner';
+			const never = !Number.isFinite(days);
+			el.innerHTML = `
+				<button class="jbb-close" aria-label="Dismiss">×</button>
+				<div class="jbb-title">${never ? 'Back up your account' : 'Time to back up your save'}</div>
+				<div class="jbb-body">
+					${never
+						? 'Your game progress is only on this device. <strong>Download a <code>.jeo</code> file</strong> so you can sign in on another computer — or recover if Jeoweb gets blocked.'
+						: 'It\'s been over a week since your last backup. Download a fresh <strong><code>.jeo</code> file</strong> so newer save data is portable if this device or the site becomes unavailable.'}
+				</div>
+				<div class="jbb-actions">
+					<button class="jbb-btn jbb-primary" data-act="download">Download .jeo</button>
+					<button class="jbb-btn jbb-ghost" data-act="later">Remind me later</button>
+				</div>`;
+			document.body.appendChild(el);
+			bannerEl = el;
+			el.addEventListener('click', async (e) => {
+				const act = e.target.dataset?.act || (e.target.classList?.contains('jbb-close') ? 'later' : null);
+				if (act === 'download') {
+					const ok = await downloadBackup(JeoAccount.getState() || state);
+					if (ok) dismissBackupBanner({ snoozeHours: 24 * 365 }); // effectively for session; re-evaluates next load
+				} else if (act === 'later') {
+					dismissBackupBanner({ snoozeHours: 24 });
+				}
+			});
+		}
+
 		render(JeoAccount.getState());
-		JeoAccount.onChange(render);
+		JeoAccount.onChange((state) => { render(state); maybeShowBackupBanner(state); });
+		// Initial check after a short delay so account-system has loaded from device.
+		setTimeout(() => maybeShowBackupBanner(JeoAccount.getState()), 1500);
 	})();
 	</script>
 </body>

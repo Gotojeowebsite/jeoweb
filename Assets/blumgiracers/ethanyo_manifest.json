@@ -1,0 +1,218 @@
+{
+  "title": "Blumgi Racers",
+  "slug": "blumgiracers",
+  "author": "Blumgi",
+  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/blumgiracers.html",
+  "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/img.webp",
+  "remoteRoots": [
+    "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/"
+  ],
+  "downloadedAt": "2026-04-26T13:36:38.468Z",
+  "assetsDownloaded": 395,
+  "failedCount": 223,
+  "failed": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/data.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/c2runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/Box2D_v2.3.1_min.wasm.wasm",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/Box2D_v2.3.1_min.wasm.wasm",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/workermain.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/Box2D_v2.3.1_min.wasm.temp.asm.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/sw.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/sw.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/Box2D_v2.3.1_min.wasm.js.mem",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/Box2D_v2.3.1_min.wasm.temp.asm.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/Box2D_v2.3.1_min.wasm.js.mem",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/this._localFileBlobs[src]",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/this._localFileBlobs[src]",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/workerScriptBlob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/workerScriptBlob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/sw.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/workerScriptBlob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/ret",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/ret",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/this._localFileBlobs[src]",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/url",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/url,baseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/blob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/url,baseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/blob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/ret",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/blob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/opts.workerMainUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/opts.workerMainUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/opts.workerMainUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/url,baseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/originalUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/originalUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/url,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/url,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/originalUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/s",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/loadUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/s",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/loadUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/s",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/blumgiracers/url,this._runtimeBaseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/$%7Binfo.url%7D",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/$%7Binfo.url%7D",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/blumgiracers/scripts/blobUrl",
+      "error": "HTTP 404"
+    }
+  ],
+  "indexMissingRefs": [],
+  "offlineReady": true
+}

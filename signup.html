@@ -86,14 +86,18 @@
 
   <div class="card save-card" id="step2" style="display:none">
     <div style="font-weight:700;font-size:16px;margin-bottom:8px">Save your encrypted backup</div>
-    <div class="sub" style="margin:0 0 12px">Copy this string somewhere safe, or download it as a <code>.jeo</code> file. You'll paste it (or upload the file) on the sign-in page on any other device.</div>
+    <div class="sub" style="margin:0 0 12px">
+      This <code>.jeo</code> file <strong>is</strong> your account. It carries your settings, favorites, and game progress.
+      Sign in on another computer by uploading this file + your passphrase.
+      <strong>Re-download it every week or so</strong> so newer save data stays portable — and keep a copy somewhere off this device in case Jeoweb gets blocked or this computer dies.
+    </div>
     <textarea class="blob-out" id="blobOut" readonly></textarea>
     <div class="row2">
       <button class="btn" id="copyBtn">Copy</button>
       <button class="btn" id="dlBtn">Download .jeo</button>
     </div>
-    <div class="warn">⚠ The passphrase is <strong>not</strong> in this file. You must remember it. We can't reset it.</div>
-    <label class="check" style="margin-top:14px"><input type="checkbox" id="saved"> <span>I've saved my backup and remember my passphrase.</span></label>
+    <div class="warn">⚠ The passphrase is <strong>not</strong> in this file. You must remember it. We can't reset it. No server stores anything — if you lose both the file and the passphrase, the data is gone.</div>
+    <label class="check" style="margin-top:14px"><input type="checkbox" id="saved"> <span>I've downloaded the <code>.jeo</code> file and remember my passphrase.</span></label>
     <button class="btn" id="doneBtn" disabled>Continue to Jeoweb</button>
   </div>
 

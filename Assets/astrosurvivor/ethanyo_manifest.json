@@ -1,0 +1,224 @@
+{
+  "title": "Astro Survivors",
+  "slug": "astrosurvivor",
+  "author": "Venturous",
+  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/astrosurvivor.html",
+  "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/img.webp",
+  "remoteRoots": [
+    "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/astrosurvivor/icons/",
+    "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/icons/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/astrosurvivor/icons/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/astrosurvivor/icons/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/astrosurvivor/scripts/",
+    "https://raw.githubusercontent.com/55gms/55gms/main/static/misc/astrosurvivor/scripts/"
+  ],
+  "downloadedAt": "2026-04-26T13:34:19.118Z",
+  "assetsDownloaded": 408,
+  "failedCount": 282,
+  "failed": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/icons/icon-128.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/c2runtime.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/data.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.wasm",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/workermain.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.wasm",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/sw.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.temp.asm.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.js.mem",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/sw.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.temp.asm.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/Box2D_v2.3.1_min.wasm.js.mem",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/icons/icon-16.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/icons/icon-32.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/icons/icon-32.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/icons/icon-64.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/icons/icon-16.png",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/sw.js",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/workerScriptBlob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/this._localFileBlobs[src]",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/icons/icon-64.png",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/this._localFileBlobs[src]",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/workerScriptBlob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/workerScriptBlob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/ret",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/url",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/url",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/ret",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/this._localFileBlobs[src]",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/url",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/url,baseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/blob",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/blob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/ret",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/blob",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/url,baseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/opts.workerMainUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/opts.workerMainUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/url,baseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/opts.workerMainUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/url,this._runtimeBaseUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/originalUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/originalUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/originalUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/workerMainUrl,this._runtimeBaseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/55gms/55gms@master/static/misc/astrosurvivor/scripts/url,this._runtimeBaseUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/loadUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/astrosurvivor/s",
+      "error": "HTTP 404"
+    }
+  ],
+  "indexMissingRefs": [],
+  "offlineReady": true
+}
