@@ -146,6 +146,78 @@
 }
 .jeo-header-menu .backup-status.stale { color: #ffb380; }
 
+/* ---- recovery codes modal (shown after backup export) ---- */
+.jeo-recovery-modal {
+  position: fixed; inset: 0; z-index: 10010; display: grid; place-items: center;
+  background: rgba(0,0,0,0.65); backdrop-filter: blur(4px);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.jrm-card {
+  width: min(520px, 92vw); max-height: 90vh; overflow: auto;
+  background: #11111c; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+  padding: 22px; color: #e7e7ee;
+  box-shadow: 0 24px 60px -10px rgba(0,0,0,0.7);
+}
+.jrm-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.jrm-sub { font-size: 13px; color: #b5b8c7; line-height: 1.55; margin-bottom: 14px; }
+.jrm-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 12px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.05); border-radius: 10px;
+}
+.jrm-code {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  font-family: ui-monospace, monospace; font-size: 13px;
+}
+.jrm-code span {
+  color: #9aa0b4; font-size: 11px; font-weight: 600; flex-shrink: 0;
+  background: rgba(255,255,255,0.04); padding: 2px 6px; border-radius: 4px;
+}
+.jrm-code code { color: #22d3ee; flex: 1; word-break: break-all; }
+.jrm-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.jrm-btn {
+  flex: 1; padding: 10px 14px; border: 0; border-radius: 10px;
+  font: inherit; font-weight: 600; cursor: pointer; transition: transform .08s, background .15s;
+  background: rgba(255,255,255,0.06); color: #e7e7ee;
+}
+.jrm-btn:hover { background: rgba(255,255,255,0.1); }
+.jrm-btn.jrm-primary { background: linear-gradient(90deg,#22d3ee,#7af0a3); color: #0a0a14; }
+.jrm-btn.jrm-primary:hover { transform: translateY(-1px); }
+.jrm-btn.jrm-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.1); }
+@media (max-width: 480px) { .jrm-grid { grid-template-columns: 1fr; } }
+
+/* ---- inactivity lock screen ---- */
+.jeo-lock-screen {
+  position: fixed; inset: 0; z-index: 10020;
+  display: grid; place-items: center;
+  background: rgba(8,8,12,0.94); backdrop-filter: blur(10px);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.jeo-lock-card {
+  width: min(380px, 92vw); padding: 24px;
+  background: #14141f; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+  text-align: center; color: #e7e7ee;
+  box-shadow: 0 24px 60px -10px rgba(0,0,0,0.7);
+}
+.jeo-lock-card h2 { margin: 0 0 6px; font-size: 18px; }
+.jeo-lock-card p { color: #b5b8c7; font-size: 13px; margin: 0 0 14px; }
+.jeo-lock-card input {
+  width: 100%; padding: 11px 14px; border-radius: 10px;
+  background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+  font-size: 15px; outline: none; font-family: inherit;
+}
+.jeo-lock-card input:focus-visible { border-color: #22d3ee; box-shadow: 0 0 0 3px rgba(34,211,238,0.18); }
+.jeo-lock-card button {
+  margin-top: 12px; width: 100%; padding: 11px 14px; border: 0; border-radius: 10px;
+  background: linear-gradient(90deg,#22d3ee,#7af0a3); color: #0a0a14;
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+
 /* ---- launcher reset button ---- */
 .jeo-launcher-reset {
   background: rgba(0,0,0,0.5); color: #ffb0b0; border: 1px solid rgba(255,100,100,0.3);

@@ -134,24 +134,10 @@ const server = http.createServer(async (req, res) => {
 	let filePath = path.join(ROOT, decodedPath);
 	const ext = path.extname(filePath).toLowerCase();
 
-	fs.readFile(filePath, (err, data) => {
+	fs.stat(filePath, (err, stats) => {
 		if (err) {
-			if (err.code === 'EISDIR') {
-				filePath = path.join(filePath, 'index.html');
-				fs.readFile(filePath, (err2, data2) => {
-					if (err2) {
-						res.writeHead(404, { 'Content-Type': 'text/html' });
-						res.end('<h1>404 - Not Found</h1>');
-					} else {
-						res.writeHead(200, { 'Content-Type': 'text/html' });
-						res.end(data2);
-					}
-				});
-			} else {
-				// Archive fallback: deep-import games reference assets like
-				//   foo.js?v=14   -> on disk as  foo__q_<hash>.js
-				// (the `?` was rewritten to `__q_<hash>` by the original
-				// archiver). Pick the first sibling with the same basename.
+			if (err.code === 'ENOENT' || err.code === 'ENOTDIR') {
+				// File not found, try archive fallback
 				const dir = path.dirname(filePath);
 				const ext2 = path.extname(filePath);
 				const base = path.basename(filePath, ext2);
@@ -169,38 +155,66 @@ const server = http.createServer(async (req, res) => {
 						return;
 					}
 					const realPath = path.join(dir, hit);
-					fs.readFile(realPath, (e4, d4) => {
-						if (e4) {
-							res.writeHead(404, { 'Content-Type': 'text/html' });
-							res.end('<h1>404 - Not Found</h1>');
-						} else {
-							res.writeHead(200, { 'Content-Type': mimeTypes[ext2] || 'application/octet-stream' });
-							res.end(d4);
-						}
-					});
+					serveFile(realPath, res);
 				});
+			} else {
+				res.writeHead(500, { 'Content-Type': 'text/html' });
+				res.end('<h1>500 - Server Error</h1>');
 			}
+		} else if (stats.isDirectory()) {
+			// Directory requested, try index.html
+			const indexPath = path.join(filePath, 'index.html');
+			fs.stat(indexPath, (e, s) => {
+				if (e || !s.isFile()) {
+					res.writeHead(404, { 'Content-Type': 'text/html' });
+					res.end('<h1>404 - Not Found</h1>');
+				} else {
+					serveFile(indexPath, res);
+				}
+			});
 		} else {
-			const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
-			// Add Content-Encoding for pre-compressed files
-			if (filePath.endsWith('.br')) {
-				headers['Content-Encoding'] = 'br';
-				// Set Content-Type based on the actual file type before .br extension
-				const innerExt = path.extname(filePath.slice(0, -3));
-				if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
-				else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
-				else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
-			} else if (filePath.endsWith('.gz')) {
-				headers['Content-Encoding'] = 'gzip';
-				const innerExt = path.extname(filePath.slice(0, -3));
-				if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
-				else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
-				else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
-			}
-			res.writeHead(200, headers);
-			res.end(data);
+			// Regular file, serve it
+			serveFile(filePath, res);
 		}
 	});
+
+	function serveFile(filePath, res) {
+		const ext = path.extname(filePath).toLowerCase();
+		const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
+
+		// Add Content-Encoding for pre-compressed files
+		if (filePath.endsWith('.br')) {
+			headers['Content-Encoding'] = 'br';
+			const innerExt = path.extname(filePath.slice(0, -3));
+			if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+			else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
+			else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
+		} else if (filePath.endsWith('.gz')) {
+			headers['Content-Encoding'] = 'gzip';
+			const innerExt = path.extname(filePath.slice(0, -3));
+			if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+			else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
+			else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
+		}
+
+		fs.stat(filePath, (err, stats) => {
+			if (err) {
+				res.writeHead(404, { 'Content-Type': 'text/html' });
+				res.end('<h1>404 - Not Found</h1>');
+				return;
+			}
+
+			headers['Content-Length'] = stats.size;
+			res.writeHead(200, headers);
+
+			const stream = fs.createReadStream(filePath);
+			stream.pipe(res);
+			stream.on('error', () => {
+				res.writeHead(500, { 'Content-Type': 'text/html' });
+				res.end('<h1>500 - Server Error</h1>');
+			});
+		});
+	}
 });
 
 console.log('Starting game scanner...');

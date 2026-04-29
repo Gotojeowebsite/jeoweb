@@ -2,60 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Create account — Jeoweb</title>
-<style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; background: radial-gradient(circle at 70% 20%, #102330 0%, #0a0a14 60%, #050509 100%); color: #e7e7ee; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
-  .wrap { max-width: 520px; margin: 0 auto; padding: 48px 20px; }
-  .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
-  .logo span { background: linear-gradient(90deg,#22d3ee,#7af0a3); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sub { color: #9aa0b4; font-size: 14px; margin-bottom: 28px; line-height: 1.5; }
-  .card { background: rgba(20,20,30,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; }
-  label { display: block; font-size: 13px; color: #b5b8c7; margin: 16px 0 6px; }
-  input[type=text], input[type=password] {
-    width: 100%; background: rgba(0,0,0,0.35); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
-    padding: 12px 14px; font-size: 15px; outline: none; transition: border-color .15s; font-family: inherit;
-  }
-  input:focus { border-color: #22d3ee; }
-  .pw-row { position: relative; }
-  .pw-row .eye { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #9aa0b4; cursor: pointer; padding: 6px; }
-  .strength { height: 6px; background: #1c1c2a; border-radius: 4px; margin-top: 8px; overflow: hidden; }
-  .strength > div { height: 100%; width: 0%; transition: width .2s, background .2s; }
-  .meta { font-size: 12px; color: #9aa0b4; margin-top: 6px; min-height: 16px; }
-  .avatars { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 8px; }
-  .avatars .a { aspect-ratio: 1/1; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform .1s, border-color .15s; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 18px; }
-  .avatars .a.sel { border-color: #22d3ee; transform: scale(1.06); }
-  .upload-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
-  .upload-row .preview { width: 48px; height: 48px; border-radius: 50%; background: #1c1c2a; background-size: cover; background-position: center; }
-  .upload-row button { background: rgba(255,255,255,0.06); color: #e7e7ee; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 13px; }
-  .check { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: 13px; color: #c8cad6; line-height: 1.45; }
-  .check input { margin-top: 3px; }
-  .btn { width: 100%; margin-top: 18px; padding: 13px 16px; border: 0; border-radius: 12px; background: linear-gradient(90deg,#22d3ee,#7af0a3); color: #0a0a14; font-weight: 700; font-size: 15px; cursor: pointer; transition: transform .08s, opacity .15s; }
-  .btn:hover { transform: translateY(-1px); }
-  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .err { color: #ff8a8a; font-size: 13px; margin-top: 10px; min-height: 18px; }
-  .alt { text-align: center; margin-top: 18px; font-size: 13px; color: #9aa0b4; }
-  .alt a { color: #22d3ee; text-decoration: none; }
-  .alt a:hover { text-decoration: underline; }
-
-  /* save screen */
-  .save-card .blob-out { width: 100%; min-height: 130px; resize: vertical; background: rgba(0,0,0,0.45); color: #d8e0ff; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; font-family: ui-monospace, SF Mono, Menlo, monospace; font-size: 12px; line-height: 1.5; word-break: break-all; }
-  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-  .row2 .btn { margin-top: 0; }
-  .warn { background: rgba(255,180,80,0.08); border: 1px solid rgba(255,180,80,0.25); color: #ffd99e; padding: 12px; border-radius: 10px; font-size: 13px; margin-top: 14px; line-height: 1.5; }
-</style>
+<link rel="stylesheet" href="styles/auth.css">
 </head>
 <body>
 <div class="wrap">
   <div class="logo"><span>Jeoweb</span> · Create account</div>
-  <div class="sub">Pick a name, an avatar, and a passphrase. Your save lives only on this device until you export it. <strong>If you lose your passphrase, no one can recover the data — not even us.</strong></div>
+  <div class="step-rail" id="rail">
+    <div class="step-dot active" data-step="1"><span>1</span><label>Name</label></div>
+    <div class="step-dot" data-step="2"><span>2</span><label>Passphrase</label></div>
+    <div class="step-dot" data-step="3"><span>3</span><label>Recovery</label></div>
+    <div class="step-dot" data-step="4"><span>4</span><label>Backup</label></div>
+  </div>
+  <div class="sub">Pick a name, an avatar, and a strong passphrase. Your save lives only on this device until you export it. Recovery codes let you sign back in if you lose your passphrase — keep them somewhere safe.</div>
 
   <div class="card" id="step1">
-    <form id="form">
+    <form id="form" autocomplete="off">
       <label for="name">Display name</label>
       <input type="text" id="name" maxlength="32" autocomplete="nickname" required>
+      <div class="field-msg" id="nameMsg"></div>
 
       <label>Avatar</label>
       <div class="avatars" id="avatars"></div>
@@ -68,35 +34,55 @@
 
       <label for="pw">Passphrase</label>
       <div class="pw-row">
-        <input type="password" id="pw" autocomplete="new-password" minlength="8">
-        <button type="button" class="eye" id="eye" aria-label="Show passphrase">👁</button>
+        <input type="password" id="pw" autocomplete="new-password" minlength="12">
+        <button type="button" class="eye" id="eye" aria-label="Show passphrase" data-tooltip="Show / hide">👁</button>
       </div>
       <div class="strength"><div id="strbar"></div></div>
-      <div class="meta" id="strmeta">At least 8 characters.</div>
+      <div class="meta" id="strmeta">At least 12 characters. Pick something memorable but unique.</div>
 
       <label for="pw2">Confirm passphrase</label>
-      <input type="password" id="pw2" autocomplete="new-password" minlength="8">
+      <input type="password" id="pw2" autocomplete="new-password" minlength="12">
+      <div class="field-msg" id="pw2Msg"></div>
 
-      <label class="check"><input type="checkbox" id="agree"> <span>I understand: if I lose this passphrase, my data is gone forever. There is no recovery.</span></label>
+      <label class="check"><input type="checkbox" id="agree"> <span>I understand: my data lives on this device. If I lose my passphrase <strong>and</strong> all 8 recovery codes, no one can recover the data.</span></label>
 
-      <button type="submit" class="btn" id="go" disabled>Create account</button>
-      <div class="err" id="err"></div>
+      <button type="submit" class="btn" id="go" disabled>Continue →</button>
+      <div class="err" id="err" role="alert"></div>
     </form>
+  </div>
+
+  <!-- Recovery codes step -->
+  <div class="card recovery-card" id="step3" style="display:none">
+    <div style="font-weight:700;font-size:18px;margin-bottom:6px">🛟 Your 8 recovery codes</div>
+    <div class="sub" style="margin:0 0 12px">
+      Print or save these. Each code is <strong>single-use</strong> — they let you sign back in if you forget your passphrase.
+      Keep them somewhere your passphrase isn't stored.
+    </div>
+    <div class="recovery-grid" id="recoveryGrid"></div>
+    <div class="row2" style="margin-top:14px">
+      <button class="btn btn-ghost" id="recCopyBtn">Copy all</button>
+      <button class="btn" id="recDlBtn">Download codes (.txt)</button>
+    </div>
+    <label class="check" style="margin-top:14px">
+      <input type="checkbox" id="recSaved">
+      <span>I've saved my recovery codes somewhere safe (printed, password manager, or another device).</span>
+    </label>
+    <button class="btn" id="recDoneBtn" disabled>Continue to backup →</button>
   </div>
 
   <div class="card save-card" id="step2" style="display:none">
     <div style="font-weight:700;font-size:16px;margin-bottom:8px">Save your encrypted backup</div>
     <div class="sub" style="margin:0 0 12px">
       This <code>.jeo</code> file <strong>is</strong> your account. It carries your settings, favorites, and game progress.
-      Sign in on another computer by uploading this file + your passphrase.
-      <strong>Re-download it every week or so</strong> so newer save data stays portable — and keep a copy somewhere off this device in case Jeoweb gets blocked or this computer dies.
+      Sign in on another computer by uploading this file + your passphrase (or any one of your recovery codes).
+      <strong>Re-download it every week or so</strong> so newer save data stays portable.
     </div>
     <textarea class="blob-out" id="blobOut" readonly></textarea>
     <div class="row2">
       <button class="btn" id="copyBtn">Copy</button>
       <button class="btn" id="dlBtn">Download .jeo</button>
     </div>
-    <div class="warn">⚠ The passphrase is <strong>not</strong> in this file. You must remember it. We can't reset it. No server stores anything — if you lose both the file and the passphrase, the data is gone.</div>
+    <div class="warn">⚠ The passphrase is <strong>not</strong> in this file. You must remember it (or use a recovery code). No server stores anything.</div>
     <label class="check" style="margin-top:14px"><input type="checkbox" id="saved"> <span>I've downloaded the <code>.jeo</code> file and remember my passphrase.</span></label>
     <button class="btn" id="doneBtn" disabled>Continue to Jeoweb</button>
   </div>
@@ -139,7 +125,7 @@
 
   function paintPreview() {
     const prev = $('preview');
-    if (avatarDataUrl) { prev.style.backgroundImage = `url(${avatarDataUrl})`; }
+    if (avatarDataUrl) prev.style.backgroundImage = `url(${avatarDataUrl})`;
     else { const [a,b] = PRESET_GRADS[selectedPreset]; prev.style.backgroundImage = `linear-gradient(135deg, ${a}, ${b})`; }
   }
   paintPreview();
@@ -181,63 +167,122 @@
     });
   }
 
-  // passphrase strength + form gate
-  function strength(pw) {
-    let s = 0;
-    if (pw.length >= 8) s++; if (pw.length >= 12) s++; if (pw.length >= 16) s++;
-    if (/[a-z]/.test(pw) && /[A-Z]/.test(pw)) s++;
-    if (/[0-9]/.test(pw)) s++;
-    if (/[^A-Za-z0-9]/.test(pw)) s++;
-    return Math.min(s, 5);
+  function setStep(n) {
+    document.querySelectorAll('.step-dot').forEach(d => {
+      const s = Number(d.dataset.step);
+      d.classList.toggle('active', s === n);
+      d.classList.toggle('done', s < n);
+    });
   }
+
+  // passphrase strength + form gate
   function updateStrength() {
-    const pw = $('pw').value, s = strength(pw);
+    const pw = $('pw').value;
+    const q = window.JeoAccount.passphraseQuality(pw);
     const colors = ['#444', '#ef4444', '#f59e0b', '#facc15', '#84cc16', '#22c55e'];
-    const labels = ['', 'very weak', 'weak', 'fair', 'good', 'strong'];
-    $('strbar').style.width = `${s * 20}%`;
-    $('strbar').style.background = colors[s];
-    $('strmeta').textContent = pw.length < 8 ? 'At least 8 characters.' : `Strength: ${labels[s]}`;
+    $('strbar').style.width = `${q.score * 20}%`;
+    $('strbar').style.background = colors[q.score];
+    if (!pw) $('strmeta').textContent = 'At least 12 characters.';
+    else if (q.reason) $('strmeta').textContent = q.reason;
+    else $('strmeta').textContent = `${q.label} — would take ${q.crackTime} to crack offline (${q.bits} bits)`;
   }
   function refreshGate() {
     const pw = $('pw').value, pw2 = $('pw2').value, name = $('name').value.trim();
-    const ok = name.length >= 2 && pw.length >= 8 && pw === pw2 && $('agree').checked;
+    const q = window.JeoAccount.passphraseQuality(pw);
+    const match = pw && pw === pw2;
+    $('pw2Msg').textContent = pw2 && !match ? "Passphrases don't match." : '';
+    $('pw2Msg').className = pw2 && match ? 'field-msg ok' : 'field-msg err-msg';
+    $('nameMsg').textContent = name && name.length < 2 ? 'Name must be at least 2 characters.' : '';
+    const ok = name.length >= 2 && q.ok && match && $('agree').checked;
     $('go').disabled = !ok;
   }
   $('pw').oninput = () => { updateStrength(); refreshGate(); };
   $('pw2').oninput = refreshGate; $('name').oninput = refreshGate; $('agree').onchange = refreshGate;
   $('eye').onclick = () => { const t = $('pw').type; $('pw').type = $('pw2').type = (t === 'password' ? 'text' : 'password'); };
 
+  let _generatedBlob = null;
+  let _generatedCodes = null;
+
   $('form').onsubmit = async (e) => {
     e.preventDefault(); $('err').textContent = '';
     $('go').disabled = true; $('go').textContent = 'Creating…';
     try {
-      const blob = await JeoAccount.signUp({
+      const res = await JeoAccount.signUp({
         name: $('name').value.trim(),
         passphrase: $('pw').value,
         avatarDataUrl,
         avatarPreset: avatarDataUrl ? null : selectedPreset,
       });
+      _generatedBlob = res.blob;
+      _generatedCodes = res.recoveryCodes;
+      // Step 3: Recovery codes
       $('step1').style.display = 'none';
-      $('step2').style.display = '';
-      $('blobOut').value = blob;
-      $('copyBtn').onclick = async () => {
-        try { await navigator.clipboard.writeText(blob); $('copyBtn').textContent = 'Copied ✓'; }
-        catch { $('blobOut').select(); document.execCommand('copy'); $('copyBtn').textContent = 'Copied ✓'; }
-      };
-      $('dlBtn').onclick = () => {
-        const a = document.createElement('a');
-        const safe = ($('name').value.trim() || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
-        a.href = URL.createObjectURL(new Blob([blob], { type: 'text/plain' }));
-        a.download = `${safe}.jeo`; a.click();
-        URL.revokeObjectURL(a.href);
-      };
-      $('saved').onchange = () => { $('doneBtn').disabled = !$('saved').checked; };
-      $('doneBtn').onclick = () => window.location.replace('index.html');
+      $('step3').style.display = '';
+      setStep(3);
+      const grid = $('recoveryGrid');
+      grid.innerHTML = '';
+      _generatedCodes.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = 'rec-code';
+        div.innerHTML = `<span class="rec-num">${String(i + 1).padStart(2, '0')}</span><code>${c}</code>`;
+        grid.appendChild(div);
+      });
     } catch (e2) {
       $('err').textContent = String(e2.message || e2);
-      $('go').disabled = false; $('go').textContent = 'Create account';
+      $('go').disabled = false; $('go').textContent = 'Continue →';
     }
   };
+
+  $('recCopyBtn').onclick = async () => {
+    const text = _generatedCodes.map((c, i) => `${i + 1}. ${c}`).join('\n');
+    try { await navigator.clipboard.writeText(text); $('recCopyBtn').textContent = 'Copied ✓'; setTimeout(() => $('recCopyBtn').textContent = 'Copy all', 1500); }
+    catch { alert(text); }
+  };
+  $('recDlBtn').onclick = () => {
+    const name = $('name').value.trim() || 'jeoweb';
+    const safe = name.replace(/[^a-z0-9_-]+/gi, '_');
+    const text =
+`Jeoweb recovery codes for ${name}
+Generated ${new Date().toLocaleString()}
+
+Each code is single-use. If you lose your passphrase, sign in at jeoweb.app/login.html
+and use one of these codes — then set a new passphrase.
+
+${_generatedCodes.map((c, i) => `${String(i + 1).padStart(2, '0')}.  ${c}`).join('\n')}
+
+Keep this page somewhere your .jeo file is NOT stored.
+`;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
+    a.download = `${safe}-recovery-codes.txt`; a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  $('recSaved').onchange = () => { $('recDoneBtn').disabled = !$('recSaved').checked; };
+  $('recDoneBtn').onclick = () => {
+    $('step3').style.display = 'none';
+    $('step2').style.display = '';
+    setStep(4);
+    $('blobOut').value = _generatedBlob;
+  };
+
+  $('copyBtn').onclick = async () => {
+    try { await navigator.clipboard.writeText(_generatedBlob); $('copyBtn').textContent = 'Copied ✓'; }
+    catch { $('blobOut').select(); document.execCommand('copy'); $('copyBtn').textContent = 'Copied ✓'; }
+  };
+  $('dlBtn').onclick = () => {
+    const a = document.createElement('a');
+    const safe = ($('name').value.trim() || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
+    a.href = URL.createObjectURL(new Blob([_generatedBlob], { type: 'text/plain' }));
+    a.download = `${safe}.jeo`; a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  $('saved').onchange = () => { $('doneBtn').disabled = !$('saved').checked; };
+  $('doneBtn').onclick = () => window.location.replace('index.html');
+
+  // Honor OS prefers-color-scheme on the auth pages
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    document.documentElement.classList.add('light');
+  }
 </script>
 </body>
 </html>

@@ -2,58 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Sign in — Jeoweb</title>
-<style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; background: radial-gradient(circle at 30% 20%, #1a1530 0%, #0a0a14 60%, #050509 100%); color: #e7e7ee; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
-  .wrap { max-width: 460px; margin: 0 auto; padding: 48px 20px; }
-  .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 6px; }
-  .logo span { background: linear-gradient(90deg,#a78bfa,#22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sub { color: #9aa0b4; font-size: 14px; margin-bottom: 28px; }
-  .card { background: rgba(20,20,30,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; }
-  label { display: block; font-size: 13px; color: #b5b8c7; margin: 14px 0 6px; }
-  input[type=text], input[type=password], textarea {
-    width: 100%; background: rgba(0,0,0,0.35); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
-    padding: 12px 14px; font-size: 15px; font-family: inherit; outline: none; transition: border-color .15s;
-  }
-  textarea { min-height: 110px; resize: vertical; font-family: ui-monospace, SF Mono, Menlo, monospace; font-size: 12px; line-height: 1.5; }
-  input:focus, textarea:focus { border-color: #a78bfa; }
-  .pw-row { position: relative; }
-  .pw-row .eye { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #9aa0b4; cursor: pointer; padding: 6px; }
-  .btn { width: 100%; margin-top: 18px; padding: 13px 16px; border: 0; border-radius: 12px; background: linear-gradient(90deg,#7a5cff,#22d3ee); color: #0a0a14; font-weight: 700; font-size: 15px; cursor: pointer; transition: transform .08s, opacity .15s; }
-  .btn:hover { transform: translateY(-1px); }
-  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .btn-ghost { background: transparent; color: #b5b8c7; border: 1px solid rgba(255,255,255,0.12); margin-top: 10px; }
-  .err { color: #ff8a8a; font-size: 13px; margin-top: 10px; min-height: 18px; }
-  .ok  { color: #7af0a3; font-size: 13px; margin-top: 10px; }
-  .drop { margin-top: 8px; padding: 14px; border: 1px dashed rgba(255,255,255,0.18); border-radius: 10px; text-align: center; color: #9aa0b4; font-size: 13px; cursor: pointer; transition: background .15s, border-color .15s; }
-  .drop.over { background: rgba(122,92,255,0.08); border-color: #a78bfa; color: #fff; }
-  .alt { text-align: center; margin-top: 18px; font-size: 13px; color: #9aa0b4; }
-  .alt a { color: #a78bfa; text-decoration: none; }
-  .alt a:hover { text-decoration: underline; }
-</style>
+<link rel="stylesheet" href="styles/auth.css">
 </head>
 <body>
 <div class="wrap">
   <div class="logo"><span>Jeoweb</span> · Sign in</div>
   <div class="sub">
-    Paste your encrypted save below, or upload a <code>.jeo</code> file. Everything stays on your device — there is no server.
+    Drop your <code>.jeo</code> file (or paste the encrypted save) below. Everything stays on your device — there is no server.
     Signing in here will <strong>restore your settings, favorites, and game progress</strong> on this computer.
   </div>
 
   <div class="card">
-    <form id="form">
-      <label for="blob">Encrypted save</label>
-      <textarea id="blob" placeholder="jeo1.…" autocomplete="off" spellcheck="false"></textarea>
-      <div class="drop" id="drop">Drop a <strong>.jeo</strong> file here, or click to choose</div>
-      <input type="file" id="file" accept=".jeo,.txt,.jeo.txt" hidden>
+    <div class="tabs">
+      <button class="tab active" data-tab="pass">Passphrase</button>
+      <button class="tab" data-tab="recovery">Recovery code</button>
+    </div>
 
-      <label for="pw">Passphrase</label>
-      <div class="pw-row">
-        <input type="password" id="pw" autocomplete="current-password">
-        <button type="button" class="eye" id="eye" aria-label="Show passphrase">👁</button>
+    <form id="form" autocomplete="off">
+      <label for="blob">Encrypted save</label>
+      <div class="drop" id="drop">
+        <span id="dropLabel">Drop a <strong>.jeo</strong> file here, or click to choose</span>
+      </div>
+      <input type="file" id="file" accept=".jeo,.txt,.jeo.txt" hidden>
+      <details class="paste-toggle">
+        <summary>…or paste it as text</summary>
+        <textarea id="blob" placeholder="jeo1.… or jeo2.…" autocomplete="off" spellcheck="false"></textarea>
+      </details>
+
+      <div id="passSection">
+        <label for="pw">Passphrase</label>
+        <div class="pw-row">
+          <input type="password" id="pw" autocomplete="current-password">
+          <button type="button" class="eye" id="eye" aria-label="Show passphrase">👁</button>
+        </div>
+        <label class="check" style="margin-top:10px">
+          <input type="checkbox" id="rememberDevice" checked>
+          <span>Remember this device — stay signed in after closing the tab.</span>
+        </label>
+      </div>
+
+      <div id="recoverySection" style="display:none">
+        <label for="rec">Recovery code</label>
+        <input type="text" id="rec" autocomplete="off" placeholder="JEO-XXXX-XXXX-XXXX-XXXX" style="font-family:ui-monospace,monospace;letter-spacing:0.05em">
+        <div class="field-msg">Each code is single-use. After signing in we'll prompt you to set a new passphrase.</div>
       </div>
 
       <button type="submit" class="btn" id="go">Unlock</button>
@@ -69,7 +62,19 @@
 <script src="account-system.js"></script>
 <script>
   const $ = (id) => document.getElementById(id);
-  const drop = $('drop'), file = $('file'), blob = $('blob'), pw = $('pw'), err = $('err'), go = $('go');
+  const drop = $('drop'), file = $('file'), blob = $('blob'), pw = $('pw'), rec = $('rec'), err = $('err'), go = $('go');
+  let mode = 'pass';
+
+  document.querySelectorAll('.tab').forEach(t => {
+    t.onclick = () => {
+      document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === t));
+      mode = t.dataset.tab;
+      $('passSection').style.display = mode === 'pass' ? '' : 'none';
+      $('recoverySection').style.display = mode === 'recovery' ? '' : 'none';
+      go.textContent = mode === 'pass' ? 'Unlock' : 'Use recovery code';
+      err.textContent = '';
+    };
+  });
 
   drop.onclick = () => file.click();
   drop.ondragover = (e) => { e.preventDefault(); drop.classList.add('over'); };
@@ -82,6 +87,8 @@
   async function readFile(f) {
     if (f.size > 5 * 1024 * 1024) { err.textContent = 'File is larger than 5 MB.'; return; }
     blob.value = (await f.text()).trim();
+    $('dropLabel').innerHTML = `<strong>${f.name}</strong> · ${(f.size / 1024).toFixed(1)} KB <span style="opacity:.6">— ready</span>`;
+    drop.classList.add('loaded');
   }
 
   $('eye').onclick = () => { pw.type = pw.type === 'password' ? 'text' : 'password'; };
@@ -89,17 +96,37 @@
   $('form').onsubmit = async (e) => {
     e.preventDefault();
     err.textContent = '';
-    if (!blob.value.trim()) { err.textContent = 'Paste your save or upload the .jeo file.'; return; }
-    if (!pw.value) { err.textContent = 'Enter your passphrase.'; return; }
+    if (!blob.value.trim()) { err.textContent = 'Drop your .jeo file first (or paste the text).'; return; }
     go.disabled = true; go.textContent = 'Decrypting…';
     try {
-      await JeoAccount.signInWithBlob({ blob: blob.value.trim(), passphrase: pw.value, stayOnDevice: true });
+      if (mode === 'pass') {
+        if (!pw.value) throw new Error('Enter your passphrase.');
+        await JeoAccount.signInWithBlob({
+          blob: blob.value.trim(),
+          passphrase: pw.value,
+          stayOnDevice: $('rememberDevice').checked,
+        });
+        if (!$('rememberDevice').checked) sessionStorage.setItem('jeo:session-only', '1');
+      } else {
+        if (!rec.value) throw new Error('Enter a recovery code.');
+        await JeoAccount.signInWithRecoveryCode({
+          blob: blob.value.trim(),
+          code: rec.value,
+          stayOnDevice: true,
+        });
+        // Force passphrase reset after recovery
+        sessionStorage.setItem('jeo:force-passphrase-reset', '1');
+      }
       window.location.replace('index.html');
     } catch (e2) {
       err.textContent = String(e2.message || e2);
-      go.disabled = false; go.textContent = 'Unlock';
+      go.disabled = false; go.textContent = mode === 'pass' ? 'Unlock' : 'Use recovery code';
     }
   };
+
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    document.documentElement.classList.add('light');
+  }
 </script>
 </body>
 </html>

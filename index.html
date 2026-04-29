@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 	<title>Jeo Unblocked Games</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -31,7 +31,21 @@
 </head>
 
 <body class="theme-dark">
-	
+	<a class="skip-link" href="#mainContent">Skip to games</a>
+	<script>
+		// Pick initial theme from OS preference if user hasn't set one.
+		(function() {
+			try {
+				const stored = localStorage.getItem('site-theme');
+				if (!stored && window.matchMedia) {
+					if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+						document.body.classList.remove('theme-dark');
+						document.body.classList.add('theme-light');
+					}
+				}
+			} catch {}
+		})();
+	</script>
 	<header class="topbar">
 		<div class="header-left">
 			<a href="." class="brand-section">
@@ -274,8 +288,9 @@
 		</div>
 
 		<!-- Games Grid -->
-		<section class="games-section">
+		<section class="games-section" id="mainContent">
 			<h2 class="section-title">All Games</h2>
+			<div id="searchResultsLive" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 			<div id="gameGrid" class="game-grid">
 				<!-- populated by app.js -->
 			</div>
@@ -532,28 +547,81 @@
 		}
 
 		async function downloadBackup(state) {
-			const pw = prompt('Enter a passphrase to encrypt your save (≥ 8 chars).\nUse this passphrase + the .jeo file to sign in on another device.');
-			if (!pw || pw.length < 8) return false;
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 12 chars).\nUse this passphrase + the .jeo file to sign in on another device.');
+			if (!pw) return false;
 			try {
-				const blob = await JeoAccount.exportBlob(pw);
+				const { blob, recoveryCodes } = await JeoAccount.exportBlob(pw);
 				const a = document.createElement('a');
 				const safe = (state.profile.name || 'jeoweb').replace(/[^a-z0-9_-]+/gi, '_');
 				const stamp = new Date().toISOString().slice(0,10);
 				a.href = URL.createObjectURL(new Blob([blob], { type: 'text/plain' }));
 				a.download = `${safe}-${stamp}.jeo`; a.click();
 				URL.revokeObjectURL(a.href);
+				showRecoveryCodes(recoveryCodes, safe);
 				return true;
-			} catch (err) { alert(String(err.message || err)); return false; }
+			} catch (err) {
+				if (window.JeoToast) JeoToast.error(String(err.message || err));
+				else alert(String(err.message || err));
+				return false;
+			}
 		}
 
 		async function copyBackup() {
-			const pw = prompt('Enter a passphrase to encrypt your save (≥ 8 chars).');
-			if (!pw || pw.length < 8) return;
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 12 chars).');
+			if (!pw) return;
 			try {
-				const blob = await JeoAccount.exportBlob(pw);
+				const { blob, recoveryCodes } = await JeoAccount.exportBlob(pw);
 				await navigator.clipboard.writeText(blob);
-				alert('Encrypted save copied to clipboard.');
-			} catch (err) { alert(String(err.message || err)); }
+				if (window.JeoToast) JeoToast.success('Encrypted save copied to clipboard.');
+				else alert('Encrypted save copied to clipboard.');
+				showRecoveryCodes(recoveryCodes, 'jeoweb');
+			} catch (err) {
+				if (window.JeoToast) JeoToast.error(String(err.message || err));
+				else alert(String(err.message || err));
+			}
+		}
+
+		function showRecoveryCodes(codes, safeName) {
+			if (!Array.isArray(codes) || codes.length === 0) return;
+			const m = document.createElement('div');
+			m.className = 'jeo-recovery-modal';
+			m.innerHTML = `
+				<div class="jrm-card">
+					<div class="jrm-title">🛟 Your recovery codes were rotated</div>
+					<div class="jrm-sub">Each export generates a fresh set of single-use codes. Save these somewhere safe — they let you sign back in if you forget your passphrase.</div>
+					<div class="jrm-grid">
+						${codes.map((c, i) => `<div class="jrm-code"><span>${String(i+1).padStart(2,'0')}</span><code>${c}</code></div>`).join('')}
+					</div>
+					<div class="jrm-actions">
+						<button class="jrm-btn jrm-ghost" data-act="copy">Copy all</button>
+						<button class="jrm-btn" data-act="dl">Download .txt</button>
+						<button class="jrm-btn jrm-primary" data-act="close">I've saved them</button>
+					</div>
+				</div>`;
+			document.body.appendChild(m);
+			m.onclick = (e) => {
+				const act = e.target.dataset?.act;
+				if (act === 'copy') {
+					navigator.clipboard.writeText(codes.map((c, i) => `${i+1}. ${c}`).join('\n'));
+					e.target.textContent = 'Copied ✓';
+				} else if (act === 'dl') {
+					const text = `Jeoweb recovery codes\nGenerated ${new Date().toLocaleString()}\n\n` + codes.map((c, i) => `${String(i+1).padStart(2,'0')}.  ${c}`).join('\n');
+					const a = document.createElement('a');
+					a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
+					a.download = `${safeName}-recovery-codes.txt`; a.click();
+					URL.revokeObjectURL(a.href);
+				} else if (act === 'close' || e.target === m) {
+					m.remove();
+				}
+			};
+		}
+
+		async function deleteAccount() {
+			const ok = prompt('Type DELETE in caps to confirm permanent account deletion.\n\nThis will wipe all your settings, favorites, saves, and the encrypted account data on this device. The .jeo file you downloaded earlier will still work elsewhere.');
+			if (ok !== 'DELETE') return;
+			await JeoAccount.deleteAccount();
+			if (window.JeoToast) JeoToast.success('Account deleted on this device.');
+			setTimeout(() => window.location.reload(), 600);
 		}
 
 		function openMenu(state) {
@@ -566,7 +634,9 @@
 				<div class="backup-status${bk.stale ? ' stale' : ''}"></div>
 				<button data-act="download">⬇ Download .jeo backup</button>
 				<button data-act="export">Copy encrypted save</button>
-				<button class="danger" data-act="logout">Log out (forget device)</button>`;
+				<button data-act="lock">🔒 Lock now</button>
+				<button class="danger" data-act="logout">Log out (forget device)</button>
+				<button class="danger" data-act="delete">🗑 Delete account on this device…</button>`;
 			m.querySelector('strong').textContent = state.profile.name;
 			m.querySelector('.backup-status').textContent = bk.text;
 			document.body.appendChild(m);
@@ -582,6 +652,12 @@
 				} else if (act === 'export') {
 					await copyBackup();
 					m.remove();
+				} else if (act === 'lock') {
+					JeoAccount.lock();
+					m.remove();
+				} else if (act === 'delete') {
+					m.remove();
+					await deleteAccount();
 				}
 			};
 			setTimeout(() => {
@@ -636,9 +712,62 @@
 		}
 
 		render(JeoAccount.getState());
-		JeoAccount.onChange((state) => { render(state); maybeShowBackupBanner(state); });
+		JeoAccount.onChange((state, info) => {
+			render(state);
+			maybeShowBackupBanner(state);
+			if (info && info.locked) showLockScreen();
+			else hideLockScreen();
+		});
 		// Initial check after a short delay so account-system has loaded from device.
 		setTimeout(() => maybeShowBackupBanner(JeoAccount.getState()), 1500);
+
+		// ---- inactivity lock UI ----
+		let lockEl = null;
+		function showLockScreen() {
+			if (lockEl) return;
+			lockEl = document.createElement('div');
+			lockEl.className = 'jeo-lock-screen';
+			lockEl.innerHTML = `
+				<div class="jeo-lock-card">
+					<h2>🔒 Locked</h2>
+					<p>Your session locked after inactivity. Enter your passphrase to continue, or reload the page.</p>
+					<form id="lockForm"><input type="password" id="lockPw" autocomplete="current-password" autofocus><button type="submit">Unlock</button></form>
+					<button id="lockReload" style="margin-top:8px;background:transparent;color:#9aa0b4;border:1px solid rgba(255,255,255,0.1);">Sign out instead</button>
+					<div id="lockErr" style="color:#ff8a8a;font-size:12px;margin-top:8px;min-height:14px"></div>
+				</div>`;
+			document.body.appendChild(lockEl);
+			lockEl.querySelector('#lockForm').onsubmit = async (e) => {
+				e.preventDefault();
+				try {
+					await JeoAccount.unlock(lockEl.querySelector('#lockPw').value);
+					hideLockScreen();
+				} catch (err) {
+					lockEl.querySelector('#lockErr').textContent = String(err.message || err);
+				}
+			};
+			lockEl.querySelector('#lockReload').onclick = async () => {
+				await JeoAccount.signOut({ forgetDevice: true });
+				window.location.reload();
+			};
+		}
+		function hideLockScreen() { if (lockEl) { lockEl.remove(); lockEl = null; } }
+
+		// ---- recovery-mode notice ----
+		if (sessionStorage.getItem('jeo:force-passphrase-reset')) {
+			sessionStorage.removeItem('jeo:force-passphrase-reset');
+			setTimeout(() => {
+				if (window.JeoToast) {
+					JeoToast.warn('Signed in with a recovery code. Open the avatar menu → Download .jeo backup to set a new passphrase and rotate codes.', 12000);
+				}
+			}, 1200);
+		}
+
+		// ---- session-only mode ----
+		if (sessionStorage.getItem('jeo:session-only')) {
+			window.addEventListener('beforeunload', () => {
+				try { JeoAccount.signOut({ forgetDevice: true }); } catch {}
+			});
+		}
 	})();
 	</script>
 </body>
