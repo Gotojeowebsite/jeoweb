@@ -58,14 +58,36 @@
     
 <script>
 (function(){
+  var totalBuildSizeMb = 135.6;
+
   function resizeUnityContainer() {
     var c = document.getElementById("unityContainer");
     if (c) { c.style.width = window.innerWidth + "px"; c.style.height = window.innerHeight + "px"; }
   }
+
+  function updateLoadingText(progress) {
+    var t = document.querySelector("#loading-text");
+    if (!t) return;
+    var clamped = Math.max(0, Math.min(1, typeof progress === "number" ? progress : 0));
+    var loadedMb = clamped * totalBuildSizeMb;
+    t.textContent = "LOADING... " + loadedMb.toFixed(1) + " / " + totalBuildSizeMb.toFixed(1) + " MB";
+  }
+
   window.addEventListener("resize", resizeUnityContainer);
   resizeUnityContainer();
+  updateLoadingText(0);
   UnityLoader.instantiate("unityContainer", "Build/BATIM.json", {
-    onProgress: typeof UnityProgress === "function" ? UnityProgress : undefined,
+    cacheControl: {
+      dataUrl: "immutable",
+      wasmCodeUrl: "immutable",
+      wasmFrameworkUrl: "immutable"
+    },
+    onProgress: function(progress) {
+      updateLoadingText(progress);
+      if (typeof UnityProgress === "function") {
+        UnityProgress.apply(null, arguments);
+      }
+    },
     Module: { onRuntimeInitialized: function(){
       var t = document.querySelector("#loading-text");
       if (t) t.remove();
