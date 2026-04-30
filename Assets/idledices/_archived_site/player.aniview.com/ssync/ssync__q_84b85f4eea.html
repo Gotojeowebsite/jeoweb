@@ -1,0 +1,417 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+</head>
+<body>
+<script>
+  (function (w) {
+    var syncs = [{
+      "url": "https://secure.adnxs.com/getuid?https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D55%26key%3D%24UID&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&us_privacy=[AV_CCPA]",
+      "e": "sync",
+      "pr": "55",
+      "t": 3
+    },
+      {
+        "url": "https://secure-assets.rubiconproject.com/utils/xapi/multi-sync.html?p=17184&endpoint=us-east",
+        "e": "sync",
+        "pr": "5",
+        "t": 3
+      }, {
+        "url": "https://sync.1rx.io/usersync2/rmpssp?sub=aniview&gdpr=[AV_GDPR]&gdpr_pd=0&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&redir=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D200%26key%3D%5BRX_UUID%5D",
+        "e": "sync",
+        "pr": "200",
+        "t": 3
+      }, {
+        "url": "https://ups.analytics.yahoo.com/ups/58543/occ?gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]",
+        "e": "sync",
+        "pr": "78",
+        "t": 3
+      }, {
+        "url": "https://onetag-sys.com/usync/?pubId=57e618150c70d90&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&us_privacy=[AV_CCPA]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]",
+        "e": "sync",
+        "pr": "20",
+        "t": 3
+      }, {
+        "url": "https://ads.pubmatic.com/AdServer/js/user_sync.html?p=160993&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&predirect=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D1%26key%3D",
+        "e": "sync",
+        "pr": "1",
+        "t": 3
+      },
+      {
+        "url": "https://pixel-sync.sitescout.com/dmp/pixelSync?nid=117&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&redir=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D72%26pid%3D[AV_PUBLISHERID]%26key%3D%7BuserId%7D",
+        "e": "sync",
+        "pr": "72",
+        "t": 3
+      }, {
+        "url": "https://x.bidswitch.net/sync?ssp=&user_id=[AV_UID]&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&us_privacy=[AV_CCPA]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]",
+        "e": "sync",
+        "pr": "24",
+        "t": 1
+      },
+      {
+        "url": "https://x.bidswitch.net/check_uuid/https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D24%26pid%3D62f53b2c7850d0786f227f64%26key%3D%24%7BBSW_UUID%7D?gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&us_privacy=[AV_CCPA]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]",
+        "e": "sync",
+        "pr": "24",
+        "t": 1
+      },
+      {
+        "url": "https://bttrack.com/pixel/cookiesyncredir?&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&us_privacy=[AV_CCPA]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&rurl=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D204%26pid%3D[AV_PUBLISHERID]%26key%3D%7Bglobalid%7D",
+        "e": "sync",
+        "pr": "204",
+        "t": 3
+      },
+      {
+        "url": "https://ap.lijit.com/pixel?us_privacy=[AV_CCPA]&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&redir=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D18%26key%3D%24UID",
+        "e": "sync",
+        "pr": "18",
+        "t": 3
+      },
+      {
+        "url": "https://prebid.a-mo.net/cchain/0?gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&cb=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fbiddername%3D105%26pid%3D[AV_PUBLISHERID]%26key%3D",
+        "e": "sync",
+        "pr": "105",
+        "t": 3
+      },
+      {
+        "url": "https://u.openx.net/w/1.0/cm?id=ec4c2ec9-18b8-454e-98be-3ee1e6bfea65&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&r=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fbiddername%3D23%26key%3D",
+        "e": "sync",
+        "pr": "23",
+        "t": 3
+      },
+      {
+        "url": "https://sync.richaudience.com/f7872c90c5d3791e2b51f7edce1a0a5d/?p=1ru8dKmJJV&consentString=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&r=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fbiddername%3D107%26gdpr%3D[AV_GDPR]%26gdpr_consent%3D[AV_CONSENT]%26ccpa%3D[AV_CCPA]%26key%3D%5BPDID%5D",
+        "e": "sync",
+        "pr": "107",
+        "t": 3
+      },
+      {
+        "url": "https://prebid-match.dotomi.com/match/bounce/current?version=1&networkId=72582&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&us_privacy=[AV_CCPA]&rurl=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D38%26pid%3D[AV_PUBLISHERID]%26key%3D",
+        "e": "sync",
+        "pr": "38",
+        "t": 1
+      },{
+        "url": "https://match.sharethrough.com/universal/v1?supply_id=e4beePad&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&us_privacy=[AV_CCPA]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]",
+        "e": "sync",
+        "pr": "142",
+        "t": 3
+      },{
+        "url": "https://ssbsync.smartadserver.com/api/sync?callerId=54&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&us_privacy=[AV_CCPA]&rdir=",
+        "e": "sync",
+        "pr": "49",
+        "t": 3
+      },{
+        "url": "https://sync.colossusssp.com/83cc494f58882e299834b487aefedebe.gif?puid=669e9bb2aaf074dd9e077ec4&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&us_privacy=[AV_CCPA]&redir=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fbiddername%3D99%26pid%3D[AV_PUBLISHERID]%26auid%3D[AV_UID]%26gdpr%3D[AV_GDPR]%26gdpr_consent%3D[AV_CONSENT]%26key%3D%5BUID%5D",
+        "e": "sync",
+        "pr": "99",
+        "t": 3
+      },{
+        "url": "https://ssp.disqus.com/redirectuser/?partner=&gdpr=[AV_GDPR]&gdpr_consent=[AV_CONSENT]&gpp=[AV_GPP]&gpp_sid=[AV_GPP_SID]&us_privacy=[AV_CCPA]&r=https%3A%2F%2Fsync.aniview.com%2Fcookiesyncendpoint%3Fauid%3D[AV_UID]%26biddername%3D52%26key%3DBUYERUID",
+        "e": "sync",
+        "pr": "52",
+        "t": 3
+      }
+    ];
+
+    function getConsent(apiName, callback) {
+      var locator = apiName + 'Locator';
+      var secondaryLocator = apiName === '__tcfapi' ? '__cmpLocator' : null;
+      var cmpFrame;
+      try {
+        cmpFrame = top.frames[locator] || top.frames['__cmpLocator'];
+      } catch (e) {
+      }
+      if (!cmpFrame && secondaryLocator) {
+        try {
+          cmpFrame = top.frames[secondaryLocator]
+        } catch (e) {
+        }
+      }
+      if (!cmpFrame) {
+        cmpFrame = top;
+      }
+      function tcfCallback(cmpReturn) {
+        if (cmpReturn && cmpReturn.returnValue && cmpReturn.success) {
+          window.removeEventListener('message', sfCallback, false)
+          callback(cmpReturn.returnValue.tcString || '', cmpReturn.returnValue.gdprApplies)
+          if (cmpReturn.returnValue.tcString) {
+            callback = function(){}
+          }
+        }
+      }
+      function gppCallback(cmpReturn) {
+        if (cmpReturn && cmpReturn.returnValue && cmpReturn.success) {
+          if (cmpReturn.returnValue.pingData) {
+            callback(cmpReturn.returnValue.pingData.gppString || "", cmpReturn.returnValue.pingData.applicableSections || []);
+            if (cmpReturn.returnValue.pingData.gppString) {
+              callback = function(){}
+            }
+          }
+        }
+      }
+      try {
+        var callId = Math.random() + '';
+        var apiName;
+        var callback;
+        var apiCall = apiName + 'Call';
+        var apiReturn = apiName + 'Return';
+
+        var msg = {};
+        msg[apiCall] = {
+          command: 'addEventListener',
+          version: 2,
+          //parameter: null, //Dont send null, sometimes cmps dont accept it
+          callId: callId,
+        }
+        //Define callback for __cmpReturn message
+        var sfCallback;
+        window.addEventListener(
+          'message',
+          (sfCallback = function (event) {
+            if (event) {
+              var json =
+                typeof event.data === 'string' && event.data.indexOf('Return') > -1
+                  ? JSON.parse(event.data)
+                  : event.data
+              if (json && json[apiReturn] && json[apiReturn].callId === callId) {
+                //Cleanup callback
+                var cmpReturn = json[apiReturn]
+                if (cmpReturn && cmpReturn.returnValue && cmpReturn.success) {
+                  window.removeEventListener('message', sfCallback, false)
+                  if (apiName === "__tcfapi") {
+                    tcfCallback(cmpReturn)
+                  } else {
+                    if (apiName === "__gpp") {
+                      gppCallback(cmpReturn)
+                    }
+                  }
+                }
+              }
+            }
+          }),
+          false,
+        );
+        //Request consent data
+        //We found we should also call top in yahoo in order to get the consent
+        top.postMessage(msg, '*');
+        cmpFrame.postMessage(msg, '*');
+        setTimeout(function () {
+          callback();
+        }, 500);
+      } catch (e) {
+        callback()
+      }
+    }
+
+    //function(consentString, gdprApplies, gppString, gppSections)
+    function getConsents(params, callback) {
+      var gotConsent = false;
+      var gotGpp = false;
+      function consentResponse() {
+        if (gotConsent && gotGpp) {
+          callback()
+        }
+      }
+      if (!params.consent && params.gdpr !== 0) {
+        gotConsent = false;
+        getConsent("__tcfapi", function(consentString, gdprApplies){
+          params.consent = consentString || '';
+          params.gdpr = gdprApplies || '';
+          gotConsent = true;
+          consentResponse();
+        });
+      } else {
+        gotConsent = true;
+        consentResponse();
+      }
+      if (!params.gpp || !params.gpp_sid) {
+        gotGpp = false;
+        getConsent("__gpp", function(gppString, gppSections){
+          params.gpp = gppString || '';
+          if (gppSections && gppSections.join) {
+            gppSections = gppSections.join(",")
+          }
+          params.gpp_sid = gppSections || '';
+          gotGpp = true;
+          consentResponse();
+        })
+      } else {
+        gotGpp = true;
+        consentResponse();
+      }
+    }
+    var syncTimeout = 1000 * 60 * 60 * 1; //1 hour
+    function getParams() {
+      var params = {};
+      var search = location.search.replace("?", "");
+      search.split("&").forEach(function (keyVal) {
+        var param = keyVal.split("=");
+        if (param.length == 2) {
+          params[param[0]] = param[1];
+        }
+      });
+
+      return params;
+    }
+
+    function canStore() {
+      try {
+        var testKey = "av_testStorage";
+        localStorage.setItem(testKey, "test");
+        localStorage.removeItem(testKey);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    var configKey = "av_sd_"
+
+    function getConfig(pid) {
+      try {
+        var key = configKey + pid;
+        var configStr = localStorage.getItem(key);
+        return JSON.parse(configStr) || {};
+        return true;
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveConfig(config, pid) {
+      try {
+        var key = configKey + pid;
+        var configStr = JSON.stringify(config);
+        localStorage.setItem(key, configStr);
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    var aniCRegex = new RegExp('(^| )' + 'aniC' + '=([^;]+)');
+
+    function getAvUid() {
+      var match = document.cookie.match(aniCRegex);
+      if (match)
+        return match[2];
+      return "";
+    }
+
+    var syncCalled = false;
+
+    function syncPixels(params) {
+      if (syncCalled)
+        return;
+      syncCalled = true;
+      var gdpr = params.gdpr || params.AV_GDPR || "";
+      gdpr = gdpr == 1 || gdpr == "true" ? 1 : 0;
+      var consent = params.consent || params.gdpr_consent || params.AV_CONSENT || "";
+      var gpp = params.gpp || params.AV_GPP || "";
+      var gpp_sid = params.gpp_sid || params.AV_GPP_SID || "";
+      var ccpa = params.ccpa || params.us_privacy || params.AV_CCPA || "";
+      var pid = params.pid || "";
+      if (params.pid && typeof params.sspid === 'string') {
+        var ssps = params.sspid.split(',');
+        if (ssps.length > 0) {
+          var filteredSyncs = syncs.filter(function (sync) {
+            if (sync && sync.pr) {
+              return ssps.indexOf(sync.pr) > -1;
+            }
+            return false;
+          })
+          if (filteredSyncs.length > 0) {
+            syncs = filteredSyncs
+          }
+        }
+      }
+      syncs.forEach(function (sync) {
+        if (sync && sync.url) {
+          var url = sync.url.replace(/\[AV_UID\]/g, getAvUid());
+          url = url.replace(/\[AV_PUBLISHERID\]/g, pid);
+          url = url.replace(/\[AV_GDPR\]/g, gdpr);
+          url = url.replace(/\[AV_CONSENT\]/g, consent);
+          url = url.replace(/\[AV_CCPA\]/g, ccpa);
+          url = url.replace(/\[AV_GPP\]/g, gpp);
+          url = url.replace(/\[AV_GPP_SID\]/g, gpp_sid);
+          if (sync.t == 1) {
+            (new Image).src = url;
+          } else {
+            var elType = sync.t == 2 ? "script" : "iframe";
+            var el = document.createElement(elType);
+            el.style.display = "none";
+            el.src = url;
+            document.body.appendChild(el);
+          }
+        }
+      })
+    }
+
+    function syncSupply(params) {
+      var st = params.st === "script" ? "script" : params.st === "iframe" ? "iframe" : "img";
+      var el = document.createElement(st);
+      var urlParams =
+        "pid=" + params.pid +
+        "&gdpr=" + params.gdpr +
+        "&consent=" + params.consent +
+        "&ccpa=&gpp=" + params.gpp +
+        "&gpp_sid=" + params.gpp_sid +
+        (params.r ? "&r=" + params.r : "");
+      el.src = "https://sync.aniview.com/ssync?" + urlParams;
+      el.onload = function(){
+        syncPixels(params)
+      };
+      document.body.appendChild(el);
+      setTimeout(function(){
+        syncPixels(params)
+      }, 500);
+    }
+
+    function start() {
+      var params = getParams();
+      var syncMap = [];
+      if (!params.pid) {
+        params.pid = '';
+      }
+
+      var sync = false;
+      if (canStore()) {
+        var config = getConfig(params.pid);
+        config.lastSync = config.lastSync || 0
+        if (Date.now() - config.lastSync > syncTimeout) {
+          sync = true;
+        }
+      } else {
+        if (Math.random() <= 0.25) {
+          sync = true;
+        }
+      }
+
+      if (sync) {
+        saveConfig({lastSync: Date.now()}, params.pid);
+        params.gdpr = params.gdpr || params.AV_GDPR || "";
+        params.consent = params.consent || params.gdpr_consent || params.AV_CONSENT || "";
+        if (params.consent[0] === "$" || params.consent[0] === "[") {
+          params.consent = "";
+          params.gdpr = "";
+        }
+        params.gpp = params.gpp || params.AV_GPP || "";
+        params.gpp_sid = params.gpp_sid || params.AV_GPP_SID || "";
+        if (params.gpp[0] === "$" || params.gpp[0] === "[") {
+          params.gpp = "";
+          params.gpp_sid = "";
+        }
+        if (params.r && (params.r[0] === "$" || params.r[0] === "[")) {
+          params.r = "";
+        }
+
+        getConsents(params, function() {
+          syncSupply(params);
+        })
+      }
+    }
+
+    start();
+  })(window);
+
+</script>
+
+
+</body></html>

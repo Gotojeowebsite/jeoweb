@@ -1,3 +1,4 @@
+<!--GAME BROKEN-->
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -17,12 +18,10 @@
         }
 
         body {
-            background: #1a1a1a;
+            background: #000;
             position: fixed;
             width: 100%;
             height: 100%;
-            font-family: Arial, sans-serif;
-            color: #fff;
         }
 
         .webgl-content {
@@ -35,80 +34,6 @@
             position: absolute;
             width: 100%;
             height: 100%;
-        }
-
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            text-align: center;
-        }
-
-        #loading-content {
-            max-width: 600px;
-        }
-
-        #loading-title {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #ff6b6b;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        #loading-bar-container {
-            width: 300px;
-            height: 20px;
-            background: #333;
-            border: 2px solid #666;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 20px auto;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        #loading-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            width: 0%;
-            transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-        }
-
-        #loading-text {
-            font-size: 16px;
-            color: #aaa;
-            margin-top: 20px;
-            min-height: 20px;
-        }
-
-        #loading-percent {
-            font-size: 28px;
-            font-weight: bold;
-            color: #4CAF50;
-            margin-top: 15px;
-        }
-
-        #loading-error {
-            display: none;
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(255, 107, 107, 0.2);
-            border-left: 4px solid #ff6b6b;
-            border-radius: 4px;
-            font-size: 14px;
-            line-height: 1.5;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .footer {
@@ -128,249 +53,32 @@
             height: 24px;
             background: url('TemplateData/fullscreen.png') no-repeat center;
         }
-
-        .spinner {
-            border: 4px solid #333;
-            border-top: 4px solid #4CAF50;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     
-<!-- Resource loading shim - handles missing game assets gracefully -->
-<script>
-(function() {
-  // Intercept XMLHttpRequest to handle missing resources
-  var originalXhrOpen = XMLHttpRequest.prototype.open;
-  var originalFetch = window.fetch;
-  var missingResources = {};
-
-  XMLHttpRequest.prototype.open = function(method, url) {
-    // Check if this is a resource request with "undefined" in the path
-    if (typeof url === 'string' && url.includes('/undefined/')) {
-      console.warn("Intercepted request with undefined path:", url);
-      // Mark as handled but don't block
-    }
-    return originalXhrOpen.apply(this, arguments);
-  };
-
-  window.fetch = function() {
-    var url = arguments[0];
-    var promise = originalFetch.apply(this, arguments);
-    
-    return promise.then(function(response) {
-      // If a resource with "undefined" in path returns 404, return empty response
-      if (response.status === 404 && typeof url === 'string' && url.includes('/undefined/')) {
-        console.warn("Missing resource (not blocking):", url);
-        // Return empty blob for missing HTML/text files
-        if (url.includes('.html') || url.includes('.txt')) {
-          return new Response(new Blob([''], { type: 'text/html' }), {
-            status: 200,
-            statusText: 'OK (Polyfilled)'
-          });
-        }
-        // Return empty array buffer for binary files
-        return new Response(new ArrayBuffer(0), {
-          status: 200,
-          statusText: 'OK (Polyfilled)'
-        });
-      }
-      return response;
-    }).catch(function(err) {
-      // If request to undefined path fails, create a polyfilled response
-      if (typeof url === 'string' && url.includes('/undefined/')) {
-        console.warn("Request failed (polyfilling):", url, err);
-        return new Response(new Blob([''], { type: 'text/html' }), {
-          status: 200,
-          statusText: 'OK (Polyfilled)'
-        });
-      }
-      return Promise.reject(err);
-    });
-  };
-
-  // Copy properties to maintain compatibility
-  if (originalFetch.blob) window.fetch.blob = originalFetch.blob;
-  if (originalFetch.formData) window.fetch.formData = originalFetch.formData;
-})();
-</script>
-    
-    
 <script>
 (function(){
-  var totalBuildSizeMb = 135.6;
-  var loadingScreen = null;
-  var isLoaded = false;
-  var hasError = false;
-
-  function getLoadingScreen() {
-    if (!loadingScreen) {
-      loadingScreen = document.getElementById("loading-screen");
-    }
-    return loadingScreen;
-  }
-
-  function hideLoadingScreen() {
-    var screen = getLoadingScreen();
-    if (screen && !hasError) {
-      screen.style.opacity = "0";
-      screen.style.transition = "opacity 0.3s ease";
-      setTimeout(function() {
-        screen.style.display = "none";
-      }, 300);
-    }
-  }
-
-  function showError(message) {
-    hasError = true;
-    var errorEl = document.getElementById("loading-error");
-    if (errorEl) {
-      errorEl.textContent = message;
-      errorEl.style.display = "block";
-    }
-    console.error("Game Loading Error:", message);
-  }
-
   function resizeUnityContainer() {
     var c = document.getElementById("unityContainer");
     if (c) { c.style.width = window.innerWidth + "px"; c.style.height = window.innerHeight + "px"; }
   }
-
-  function updateLoadingProgress(progress) {
-    var bar = document.getElementById("loading-bar");
-    var percent = document.getElementById("loading-percent");
-    var text = document.getElementById("loading-text");
-    
-    // Ensure progress is a valid number
-    progress = typeof progress === "number" && !isNaN(progress) ? progress : 0;
-    var clamped = Math.max(0, Math.min(1, progress));
-    
-    if (bar) {
-      bar.style.width = (clamped * 100) + "%";
-    }
-    
-    if (percent) {
-      var percentValue = Math.round(clamped * 100);
-      percent.textContent = percentValue + "%";
-    }
-    
-    if (text) {
-      var loadedMb = clamped * totalBuildSizeMb;
-      text.textContent = "Downloading: " + loadedMb.toFixed(1) + " / " + totalBuildSizeMb.toFixed(1) + " MB";
-    }
-  }
-
-  // Listen for Service Worker progress updates as a fallback for Unity's loader
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.addEventListener('message', function(event) {
-      if (event.data.type === 'PROGRESS_UPDATE') {
-        var data = event.data;
-        if (data.url.includes('BATIM.data.unityweb')) {
-          var progress = data.loaded / data.total;
-          updateLoadingProgress(progress);
-        }
-      }
-    });
-  }
-
-  // Set initial state
   window.addEventListener("resize", resizeUnityContainer);
   resizeUnityContainer();
-  updateLoadingProgress(0);
-
-  // Monitor for network errors
-  var originalFetch = window.fetch;
-  var failedRequests = {};
-  
-  window.fetch = function() {
-    var promise = originalFetch.apply(this, arguments);
-    var url = arguments[0];
-    
-    return promise.then(function(response) {
-      if (response.status >= 400) {
-        failedRequests[url] = response.status;
-        // Don't block loading for 404s during initial load
-        if (response.status === 404 && !isLoaded) {
-          console.warn("Missing resource (will retry):", url, response.status);
-        }
-      }
-      return response;
-    }).catch(function(error) {
-      failedRequests[url] = error.message;
-      return Promise.reject(error);
-    });
-  };
-
-  try {
-    UnityLoader.instantiate("unityContainer", "Build/BATIM.json", {
-      cacheControl: {
-        dataUrl: "immutable",
-        wasmCodeUrl: "immutable",
-        wasmFrameworkUrl: "immutable"
-      },
-      onProgress: function(progress) {
-        updateLoadingProgress(progress);
-        if (typeof UnityProgress === "function") {
-          UnityProgress.apply(null, arguments);
-        }
-      },
-      Module: {
-        onRuntimeInitialized: function() {
-          isLoaded = true;
-          hideLoadingScreen();
-          console.log("Unity game loaded successfully");
-          if (window.parent && window.parent !== window) {
-            window.parent.postMessage({ type: 'GAME_READY' }, '*');
-          }
-        }
-      },
-      onerror: function(e) {
-        showError("Failed to load game. The game files may be incomplete. Error: " + (e ? e.toString() : "Unknown error"));
-      }
-    });
-
-    // Set timeout for error handling
-    setTimeout(function() {
-      if (!isLoaded && !hasError) {
-        var screenEl = document.getElementById("loading-screen");
-        if (screenEl && screenEl.style.display !== "none") {
-          showError("Loading is taking longer than expected. The game files may be corrupted or incomplete. Please refresh the page.");
-        }
-      }
-    }, 120000); // 2 minutes timeout
-
-  } catch (err) {
-    showError("Failed to initialize game loader. " + err.message);
-  }
+  UnityLoader.instantiate("unityContainer", "Build/BATIM.json", {
+    onProgress: typeof UnityProgress === "function" ? UnityProgress : undefined,
+    Module: { onRuntimeInitialized: function(){
+      var t = document.querySelector("#loading-text");
+      if (t) t.remove();
+    }}
+  });
 })();
 </script>
 </head>
 
 <body>
-    <div id="loading-screen" class="loading-screen">
-      <div id="loading-content">
-        <div id="loading-title">BENDY</div>
-        <div class="spinner"></div>
-        <div id="loading-bar-container">
-          <div id="loading-bar"></div>
-        </div>
-        <div id="loading-percent">0%</div>
-        <div id="loading-text">Initializing...</div>
-        <div id="loading-error"></div>
-      </div>
-    </div>
-    
     <div class="webgl-content">
+      <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
         <div id="unityContainer"></div>
     </div>
 </body>

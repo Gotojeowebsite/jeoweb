@@ -1,1 +1,64 @@
-[]
+[
+  {
+    "name": "bendy",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 15.176,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/bendy/undefined/pages/home.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://api.gamejolt.com/api/game/v1_2/scores/tables?game_id=231092&format=json&signature=5cc2d78e9dfd323e995ad971383be02c"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://api.gamejolt.com/api/game/v1_2/scores/tables?game_id=231092&format=json&signature=5cc2d78e9dfd323e995ad971383be02c"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://config.uca.cloud.unity3d.com/"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdp.cloud.unity3d.com/v1/events"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdp.cloud.unity3d.com/v1/events"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false
+    }
+  }
+]

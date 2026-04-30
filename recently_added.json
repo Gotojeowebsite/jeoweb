@@ -1,10 +1,24 @@
 [
   {
+    "name": "bendy",
+    "url": "Assets/bendy/index.html",
+    "image": "Assets/bendy/logo.webp",
+    "type": "webgl",
+    "size": 136046125
+  },
+  {
+    "name": "idledices",
+    "url": "Assets/idledices/index.html",
+    "image": "Assets/idledices/_archived_site/aax-eu.amazon-adsystem.com/s/dcm__q_872fcdd84a.gif",
+    "type": "webgl",
+    "size": 10911602
+  },
+  {
     "name": "shellshockers",
     "url": "Assets/shellshockers/index.html",
     "image": "Assets/shellshockers/img/logo.svg",
     "type": "webgl",
-    "size": 364617707
+    "size": 364635309
   },
   {
     "name": "crossy-road",
@@ -26,13 +40,6 @@
     "image": "Assets/blumgiracers/logo.webp",
     "type": "webgl",
     "size": 9973009
-  },
-  {
-    "name": "bendy",
-    "url": "Assets/bendy/index.html",
-    "image": "Assets/bendy/logo.webp",
-    "type": "webgl",
-    "size": 136055005
   },
   {
     "name": "bankrob2",
@@ -211,14 +218,6 @@
     "image": "Assets/avatar-the-last-airbender-the-burning-earth/logo.png",
     "type": "gba",
     "size": 2781116,
-    "status": "broken"
-  },
-  {
-    "name": "avatar-the-last-airbender",
-    "url": "Assets/avatar-the-last-airbender/index.html",
-    "image": "Assets/avatar-the-last-airbender/logo.png",
-    "type": "gba",
-    "size": 3994935,
     "status": "broken"
   }
 ]

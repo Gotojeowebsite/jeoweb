@@ -2,7 +2,7 @@
   "title": "Bendy",
   "slug": "bendy",
   "author": "98Corbins",
-  "source": "https://ethanyo.global.ssl.fastly.net/misc/play/?title=Bendy&author=98Corbins&link=bendy",
+  "source": "https://ethanyo.freetls.fastly.net/misc/play/?title=Bendy&author=98Corbins&link=bendy",
   "coverUrl": "https://ethanyo.global.ssl.fastly.net/misc/bendy/img.webp",
   "remoteRoots": [
     "https://ethanyo.global.ssl.fastly.net/misc/bendy/",
@@ -11,20 +11,16 @@
     "https://raw.githubusercontent.com/genizy/web-port/main/bendy/Build/",
     "https://cdn.jsdelivr.net/gh/genizy/web-port@main/bendy/Build/"
   ],
-  "downloadedAt": "2026-04-26T14:38:43.526Z",
-  "assetsDownloaded": 243,
-  "failedCount": 196,
+  "downloadedAt": "2026-04-30T18:45:50.961Z",
+  "assetsDownloaded": 218,
+  "failedCount": 174,
   "failed": [
-    {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/TemplateData/fullscreen.png",
-      "error": "HTTP 403"
-    },
     {
       "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/mergedBlob",
       "error": "HTTP 403"
     },
     {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/BATIM.data.unityweb",
+      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/TemplateData/fullscreen.png",
       "error": "HTTP 403"
     },
     {
@@ -40,14 +36,6 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/BATIM.wasm.code.unityweb",
-      "error": "HTTP 403"
-    },
-    {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/BATIM.wasm.framework.unityweb",
-      "error": "HTTP 403"
-    },
-    {
       "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/scripts/c3runtime.js",
       "error": "HTTP 403"
     },
@@ -56,11 +44,11 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/n",
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/n",
       "error": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/BATIM.data.unityweb",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/n",
       "error": "HTTP 404"
     },
     {
@@ -68,7 +56,11 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e.Module.progressLogoUrl",
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/r",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressLogoUrl",
       "error": "HTTP 404"
     },
     {
@@ -76,11 +68,7 @@
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/n",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/r",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e.Module.progressLogoUrl",
       "error": "HTTP 404"
     },
     {
@@ -92,19 +80,11 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e.Module.progressFullUrl",
-      "error": "HTTP 404"
-    },
-    {
       "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e.Module.progressEmptyUrl",
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressEmptyUrl",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressLogoUrl",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e.Module.progressFullUrl",
       "error": "HTTP 404"
     },
     {
@@ -112,11 +92,19 @@
       "error": "HTTP 403"
     },
     {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressEmptyUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressFullUrl",
+      "error": "HTTP 404"
+    },
+    {
       "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/e.Module.progressEmptyUrl",
       "error": "HTTP 403"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/s",
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/a",
       "error": "HTTP 404"
     },
     {
@@ -124,11 +112,11 @@
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/a",
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/s",
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/e.Module.progressFullUrl",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/s",
       "error": "HTTP 404"
     },
     {
@@ -140,11 +128,7 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/o.backgroundUrl",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e[r]",
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/o.backgroundUrl",
       "error": "HTTP 404"
     },
     {
@@ -152,7 +136,11 @@
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/s",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/o.backgroundUrl",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/e[r]",
       "error": "HTTP 404"
     },
     {
@@ -164,35 +152,11 @@
       "error": "HTTP 403"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/inflate.js",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/StreamingAssets",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/o.backgroundUrl",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/inflate.js",
-      "error": "HTTP 404"
-    },
-    {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/inflate.js",
-      "error": "HTTP 403"
-    },
-    {
-      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/o.backgroundUrl",
-      "error": "HTTP 403"
-    },
-    {
       "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/utils/common.js",
       "error": "HTTP 404"
     },
     {
-      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/utils/strings.js",
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/StreamingAssets",
       "error": "HTTP 404"
     },
     {
@@ -208,11 +172,47 @@
       "error": "HTTP 403"
     },
     {
+      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/o.backgroundUrl",
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/utils/strings.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/zlib/inflate.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/zlib/constants.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/zlib/inflate.js",
+      "error": "HTTP 404"
+    },
+    {
       "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/utils/strings.js",
       "error": "HTTP 403"
     },
     {
+      "url": "https://cdn.jsdelivr.net/gh/kfm5/55gms-web-port-archive@main/bendy/zlib/inflate.js",
+      "error": "HTTP 403"
+    },
+    {
       "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/zlib/constants.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/zlib/zstream.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ethanyo.global.ssl.fastly.net/misc/bendy/zlib/messages.js",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kfm5/55gms-web-port-archive/main/bendy/Build/zlib/messages.js",
       "error": "HTTP 404"
     }
   ],
