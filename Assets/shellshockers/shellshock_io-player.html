@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width" />
+	<title>Adplayer</title>
+	<script async src="//api.adinplay.com/player/v2/SSK/shellshock.io/player.min.js"></script>
+	<script>
+	var aiptag = aiptag || {};
+	aiptag.cmd = aiptag.cmd || [];
+	aiptag.cmd.player = aiptag.cmd.player || [];
+
+	aiptag.cmd.player.push(function() {
+		adplayer = new aipPlayer({
+			AD_WIDTH: 960,
+			AD_HEIGHT: 540,
+			AD_FULLSCREEN: false,
+			AD_CENTERPLAYER: false,
+			LOADING_TEXT: 'loading advertisement',
+			PREROLL_ELEM: function(){return document.getElementById('preroll')},
+			AIP_COMPLETE: function ()  {
+				/*******************
+				 ***** WARNING *****
+				 *******************
+				 Please do not remove the PREROLL_ELEM
+				 from the page, it will be hidden automaticly.
+				 If you do want to remove it use the AIP_REMOVE callback
+				*/
+				alert("Ad Completed");
+			},
+			AIP_REMOVE: function ()  {
+				// Here it's save to remove the PREROLL_ELEM from the page
+				// But it's not necessary
+			}
+		});
+	});
+	</script>
+</head>
+<body style="margin:0;padding:0;">
+	<button onclick="aiptag.cmd.player.push(function() { adplayer.startPreRoll(); });">Show Ad</button>
+	<div id="preroll"></div>
+</body>
+</html>

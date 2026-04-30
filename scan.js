@@ -69,6 +69,24 @@ function isRequestedGame(htmlPath) {
 	return false;
 }
 
+// Recursively calculate the total size of a folder and its subfolders
+function getFolderSize(dir) {
+	let totalSize = 0;
+	try {
+		const entries = fs.readdirSync(dir, { withFileTypes: true });
+		for (const entry of entries) {
+			const fullPath = path.join(dir, entry.name);
+			if (entry.isDirectory()) {
+				totalSize += getFolderSize(fullPath);
+			} else {
+				const stats = fs.statSync(fullPath);
+				totalSize += stats.size;
+			}
+		}
+	} catch (e) {}
+	return totalSize;
+}
+
 // Find the best image in a game folder (searches all subfolders)
 function findImage(folderPath, folderName) {
 	try {
@@ -157,13 +175,15 @@ function scan() {
 		// Get folder creation time to determine "recently added"
 		const stat = fs.statSync(folderPath);
 		const addedTime = stat.birthtimeMs || stat.mtimeMs;
+		const size = getFolderSize(folderPath);
 
 		const entry = {
 			name: it.name,
 			url: `Assets/${it.name}/${htmlFile}`,
 			image: image || 'notavailable.svg',
 			type,
-			addedTime
+			addedTime,
+			size
 		};
 		if (requested) entry.requested = true;
 		if (broken) entry.status = 'broken';

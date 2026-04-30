@@ -1,0 +1,426 @@
+$faction-red: #FF4029;
+$faction-red-dark: #982313;
+$faction-blue: #66BBFE;
+$faction-blue-dark: #0B93BD;
+
+.hvsm-animation {
+	animation: hvsm-animation var(--gauge-timer-sec) alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hvsm-paused {
+	animation-play-state: paused;
+}
+
+.hvsm-dashboard {
+	width: 12.7em;
+    top: 6em;
+}
+
+.hvsm-character-area {
+    transition: opacity .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+}
+
+.hvsm-heroes-area-glow {
+    left: -9.3em;
+    top: 3em;
+	box-shadow:
+	0 0 60px 30px #0ff,  /* inner white */
+    0 0 100px 60px #00DCFF, /* middle magenta */
+    0 0 140px 90px #fff; /* outer cyan */
+}
+
+.hvsm-monsters-area-glow {
+	right: -10em;
+    top: 3em;
+	box-shadow: 0 0 40px var(--gauge-shadow-blur) var(--ss-red-btn-fill);
+}
+
+.hvsm-popup-desc {
+	align-self: center;
+}
+
+.hvsm-popup-item-grid-wrap {
+	width: 100%;
+    height: 100%;
+	padding: 0;
+}
+
+.hvsm-popup-item-grid-wrap .equip_purchase_items {
+	padding: 0;
+}
+.hvsm-popup-item-grid-wrap h1 {
+	font-size: 1.6em;
+    line-height: 1.3;
+}
+.hvsm-popup-item-grid #equip_grid {
+	flex-wrap: wrap;
+    max-width: 12em;
+	padding-bottom: 1em;
+	gap: 0.7em;
+}
+
+.hvsm-popup-item-grid h3 {
+	margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.hvsm-popup-item-grid img {
+	max-width: 100%;
+	height: auto;
+}
+
+.hvsm-popup-item-grid .equip_cost {display: none;}
+
+.hvsm-popup-open {
+	top: 4em;
+}
+
+/* .hvsm-popup-heroes-column #equip_grid .grid-item,
+#equip_grid .grid-item.item-tag-heroes {
+	background-image: linear-gradient(to right bottom, #47f2e8, #00e5f3, #00d7fc, #00c7ff, #00b6ff, #00a9f5, #009ceb, #008fe0, #0085c9, #007ab3, #006f9d, #046487);
+}
+
+.hvsm-popup-monsters-column #equip_grid .grid-item,
+#equip_grid .grid-item.item-tag-monsters {
+	background-image: linear-gradient(to right bottom, #ff5154, #f84f51, #f14e4f, #ea4c4c, #e34a4a, #d94443, #d03e3c, #c63835, #b72c28, #a7201c, #98120f, #890000);
+} */
+
+/* .hvsm-popup-monsters-column #equip_grid .grid-item:not(:hover),
+#equip_grid .grid-item.item-tag-monsters:not(:hover) {
+	border-color: var(--ss-red-btn-fill);
+} */
+@keyframes hvsm-animation {
+	0% {
+		transform: translate(-50%, 0) scale(-1) rotate(var(--gauge-value-start)); 
+	}
+	100% {
+		transform: translate(-50%, 0) scale(-1) rotate(var(--gauge-value)); 
+	}
+  }
+
+.gauge-meter {
+
+	#egg-org-meter-popup & {
+		top: auto;
+	}
+
+	top: 7em;
+	z-index: 5;
+    height: 8em;
+    width: 28em;
+}
+/* // ss-shell-meter */
+
+.ss-shell-meter .gauge {
+	width: 15em;
+	height: 10em;
+    position:relative;
+    min-width: 28em;
+    min-height: 10em;
+}
+
+.ss-shell-meter .gauge:hover {
+	cursor: pointer;
+}
+
+.ss-shell-meter .gauge .needle {
+    transform-origin: bottom center;
+    transition: transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    bottom: 0;
+    width: 4em;
+    height: 25em;
+    margin-bottom: -4%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(var(--gauge-value)) scale(-1);
+}
+
+.ss-shell-meter .gauge .meter-gauge {
+	width: 30em;
+}
+
+.ss-shell-meter .gauge .needle img {
+    top: 3.7em;
+    width: 2.1em;
+}
+
+.ss-shell-meter {
+	.glow {
+		position: absolute;
+		width: 8.2em;
+		top: 2.1em;
+	}
+
+	.blue {
+		right: -.9em;
+	}
+	.red {
+		left: -.9em;
+	}
+}
+
+#factionPopup {
+	width: 35em;
+	height: 48em;
+
+
+}
+
+.factions-popup-no-account {
+	bottom: 5em;
+	width: 20em;
+	z-index: 500;
+}
+
+.faction-popup-faction-img {
+	opacity: .5;
+
+	&.faction-active {
+		opacity: 1;
+	}
+
+
+}
+
+.faction-popup-title {
+	line-height: 1.1;
+}
+
+.factions-egg-org-logo {
+	width: 5em;
+	top: -.8em;
+}
+
+.faction-egg-assasins,
+.notify-group-eggOrg {
+	border-color: #FF4029;
+	background: linear-gradient(0deg, #982313 0%, #000000 44%);
+}
+.faction-egg-masters {
+	border-color: #66BBFE;
+	background: linear-gradient(0deg, #0B93BD 0%, #000000 44%);
+}
+
+.factions-types-wrap {
+	top: 7em;
+
+	> div {
+		left: 45%;
+	}
+}
+
+
+/* Faction Area Styles */
+
+/* Animation Styles */
+.faction-animation {
+	animation: faction-rotate var(--faction-timer-sec, 0.5s) ease-out forwards;
+  }
+  
+  .faction-paused {
+	animation-play-state: paused;
+  }
+  
+  @keyframes faction-rotate {
+	from {
+	  transform: rotate(var(--faction-value-start, 180deg));
+	}
+	to {
+	  transform: rotate(var(--faction-value, 180deg));
+	}
+  }
+  
+  /* Faction Labels */
+  .faction-labels {
+	display: flex;
+	justify-content: space-between;
+	width: 14em;
+    bottom: -.9em;
+  }
+  
+  .faction-0-label {
+	background-color: $faction-blue;
+	color: white;
+  }
+  
+  .faction-1-label {
+	background-color: $faction-red-dark;
+	color: white;
+  }
+  .faction-label {
+	font-weight: bold;
+	padding: .1em .2em;
+	width: 6.5em;
+	border: .15em solid #333;
+	transition: all 0.1s ease-in-out;
+
+	img {
+		width: .9em;
+		margin-right: 0.3em;
+	}
+
+	span {
+		font-size: 1em;
+	}
+
+  }
+
+  .tool-tip-text.faction-tooltip {
+	bottom: -2em;
+	z-index: 3;
+	width: 13em;
+	}
+
+	.tool-tip > span.faction-tooltip:after {
+top: -39%;
+    transform: rotate(180deg) translate(-50%, 0);
+    left: 44%;
+	}
+
+  .faction-label-txt {
+	  font-size: 0.6em;
+  }
+
+  .faction-txt-red {
+	  color: $faction-red;
+  }
+
+  .faction-txt-blue {
+	  color: $faction-blue;
+  }
+
+  #faction-a {
+	.faction-img {
+		width: 23em;
+	}
+	.ss_button {
+		right: 3.5em;
+	}
+ }
+
+  #faction-b {
+  .faction-img {
+    width: 19.5em;
+  }
+  .ss_button {
+	left: 2.5em;
+  }
+}
+
+.ss_join_faction_button,
+.faction-switch-cost {
+	color: var(--ss-brown) !important;
+}
+
+.ss_join_faction_button,
+.faction-switch-cost,
+.ss_equip_faction_button  {
+	text-shadow: none;
+}
+
+.ss_equip_faction_button,
+.ss_join_faction_button {
+	box-shadow: var(--ss-btn-dark-shadow);
+}
+
+.ss_join_faction_button {
+	bottom: -3em;
+}
+
+.ss_equip_faction_button {
+	background-color: $faction-blue !important;
+	color: var(--ss-blue5) !important;
+	bottom: -2.5em;
+}
+
+.faction-switch-cost {
+	background: var(--ss-offwhite);
+	margin-top: .3em;
+    padding: .2em .3em;
+	border: .2em solid var(--ss-brown);
+
+	img {
+		width: 1em;
+		height: auto;
+	}
+
+
+}
+
+.faction-logo {
+	bottom: 1em;
+	right: 1em;
+	width: 6em;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.factions-game-score {
+	width: 30em;
+	top: 1.8em;
+	z-index: 6;
+
+	.faction-label {
+		width: 5.5em;
+	}
+
+	.faction-1-label {
+		.faction-game-logo {
+			left: -1.2em;
+		}
+	}
+
+	.faction-0-label {
+		.faction-game-logo {
+			right: -1.2em;
+		}
+	}
+
+	.faction-game-logo {
+		width: 2em;
+	}
+
+	.tool-tip-text.faction-tooltip {
+		bottom: 0;
+		top: auto;
+		left: 0;
+		transform: translateX(-92%) scale(0.7);
+	}
+	.tool-tip > span.faction-tooltip:after {
+		top: auto;
+		transform: rotate(270deg) translate(50%, 0);
+		bottom: 0;
+		right: -6%;
+		left: auto;
+	}
+}
+
+.text-factions-a {
+	color: $faction-blue;
+}
+
+.text-factions-b {
+	color: $faction-red;
+}
+
+.faction-hover {
+	width: 10em;
+	margin-left: -1.75em;
+}
+
+// notify-group-eggOrg
+#notificationPopup {
+	.notify-group-eggOrg { 
+		h1 {
+			text-shadow: none;
+		}
+	}
+	p, .notify-group .item-name {
+		color: var(--ss-white) !important;
+	}
+}

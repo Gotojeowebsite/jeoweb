@@ -1,0 +1,241 @@
+<style>
+	/* Main Site styles are setup in stylesheet.css -- not sure what uses this yet - Nate */
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        color: #532a19;
+    }
+
+    .label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        text-shadow:
+            0em 0em .05em #000,
+            0em .05em .1em #000;
+    }
+
+    .help {
+        position: absolute;
+        left: 5px;
+        padding: 0;
+        opacity: 1;
+        background: rgba(192, 192, 192, 0.75);
+        width: 510px;
+        height: 240px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: #000;
+        border-width: 3px;
+        pointer-events: none;
+    }
+
+    .key {
+        color: black;
+        display: inline-block;
+        position: relative;
+        left: -50%;
+        background: #fff;
+        font-size: 20px;
+        font-weight: 900;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        padding-top: 6px;
+        border: solid;
+        border-width: 2px;
+        border-color: #000;
+        border-radius: 8px;
+        border-bottom-width: 4px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .captionCenter {
+        position: relative;
+        left: -50%;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+        text-align: center;
+    }
+
+    .captionLeft {
+        position: relative;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    html, body {
+        --egg-brown: #532a19;
+        color: var(--egg-brown);
+        background: #ced;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+    }
+
+	input, textarea, select:focus {
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+		outline: none;
+	}
+
+	.chat {
+		background: transparent;
+		position: absolute;
+		resize: none;
+		border-style: solid;
+        align-items: center;
+		border-spacing: 8px;
+		border-width: 0px;
+		padding: 4px;
+        padding-left: 16px;
+        padding-right: 16px;
+		font-size: 18px;
+        font-weight: 600;
+		color: #fff;
+        pointer-events: none;
+        overflow: hidden;
+        text-shadow:
+            0em 0em .05em #000,
+            0em .05em .1em #000;
+	}
+
+    .shadow {
+        text-shadow:
+            0em 0em .05em #000,
+            0em .05em .1em #000;            
+    }
+
+	.chatInput {
+		color: #ff0;
+		visibility: none;
+	}
+
+	.chatBox {
+		height: 120px;
+	}
+
+	.playerList {
+        text-align: right;
+        line-height: 1.5;
+	}
+
+    .title {
+        position: absolute;
+        background: #ced;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+	h1 {
+        font-family: Nunito, sans-serif;
+		text-align: center;
+		font-size: 24pt;
+        font-weight: 900;
+        margin: 8px;
+	}
+
+	h2 {
+        font-family: Nunito, sans-serif;
+        text-align: center;
+		font-size: 16pt;
+        font-weight: 700;
+        margin: 8px;
+	}
+
+	p {
+        font-family: Nunito, sans-serif;
+		margin: 0px;
+		padding: 1px;
+		font-size: 12pt;
+		font-weight: 600;
+        line-height: 16px;
+	}
+
+	.textInput {
+        padding: 4px;
+        padding-left: 8px;
+        border-style: solid;
+		border-width: 4px;
+		border-color: #532a19;
+        border-radius: 12px;
+		font-size: 16pt;
+	}
+
+    .button {
+        border-radius: 12px;
+        padding: 4px;
+        background-color: #532a19;
+        color: white;
+        font-size: 16pt;
+        cursor: pointer;
+    }
+
+	.center {
+		display: block;
+		margin: 0 auto;
+	}
+
+    .arrow-up {
+        width: 0;
+        height: 0;
+        left: 50%;
+        right: 50%;
+        margin: auto;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid white;
+    }
+
+    .arrow-down {
+        width: 0;
+        height: 0;
+        left: 50%;
+        right: 50%;
+        margin: auto;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid white;
+    }
+
+    .arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid white;
+    }
+
+    .arrow-left {
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid white;
+    }
+</style>

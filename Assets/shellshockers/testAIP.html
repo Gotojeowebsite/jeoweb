@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width" />
+	<title>AdinPlay Ads</title>
+	<script async src="//api.adinplay.com/libs/aiptag/pub/SSK/shellshock.io/tag.min.js"></script>
+	<script>
+	var aiptag = aiptag || {};
+	aiptag.cmd = aiptag.cmd || [];
+	aiptag.cmd.display = aiptag.cmd.display || [];	aiptag.cmd.player = aiptag.cmd.player || [];
+	// Settings
+	aiptag.consented = true; // GDPR setting, please set this value to false if an EU user has declined or not yet accepted marketing cookies, for users outside the EU please use true and for users accepted the GDPR also use true
+	
+	aiptag.cmd.player.push(function() {
+		adplayer = new aipPlayer({
+			AD_WIDTH: 960,
+			AD_HEIGHT: 540,
+			AD_FULLSCREEN: false,
+			AD_CENTERPLAYER: false,
+			LOADING_TEXT: 'loading advertisement',
+			PREROLL_ELEM: function(){return document.getElementById('preroll')},
+			AIP_COMPLETE: function ()  {
+				/*******************
+				 ***** WARNING *****
+				 *******************
+				 Please do not remove the PREROLL_ELEM
+				 from the page, it will be hidden automaticly.
+				 If you do want to remove it use the AIP_REMOVE callback.
+				*/
+				alert("Ad Completed");
+			},
+			AIP_REMOVE: function ()  {
+				// Here it's save to remove the PREROLL_ELEM from the page.
+				// But it's not necessary.
+			}
+		});
+	});
+	</script>
+</head>
+<body style="margin:0;padding:0;">
+		<div id='shellshock-io_300x250'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('shellshock-io_300x250'); });
+		</script>
+	</div>
+	<button onclick="aiptag.cmd.display.push(function() { aipDisplayTag.display('shellshock-io_300x250'); });">Refresh Ad</button>
+
+	<div style="width: 100%; height: 250px; border: solid 1px black;">
+		<div id="shellshock-io_multisize" style="position: relative; text-align: center">
+			
+		</div>
+	</div>
+	<script type='text/javascript'>aiptag.cmd.display.push(function() { aipDisplayTag.display('shellshock-io_multisize'); });</script>
+	<button onclick="aiptag.cmd.display.push(function() { aipDisplayTag.display('shellshock-io_multisize'); });">Refresh Ad</button>
+
+	<br><br>
+	<button onclick="aiptag.cmd.player.push(function() { adplayer.startPreRoll(); });">Show Video Ad</button>
+	<div id="preroll"></div>
+	</body>
+</html>

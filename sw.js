@@ -20,6 +20,69 @@ const NO_CACHE_EXT = /\.(unityweb|wasm|data|pck|mem|symbols|nes|smc|gba|bin|iso|
 // game shows up immediately, with no stale fallback from the SW cache.
 const GAME_PATH = /\/Assets\//i;
 
+let lastProgressUpdate = 0;
+const PROGRESS_THROTTLE = 100; // ms
+
+async function fetchWithProgress(request) {
+    const response = await fetch(request);
+    if (!response.ok || !response.body) return response;
+
+    const contentLength = response.headers.get('content-length');
+    // If no content-length, we can't show accurate progress, but we can still stream
+    if (!contentLength) return response;
+
+    const total = parseInt(contentLength, 10);
+    let loaded = 0;
+    const url = request.url;
+
+    const reader = response.body.getReader();
+    const stream = new ReadableStream({
+        async start(controller) {
+            try {
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        broadcastProgress(url, loaded, total, true);
+                        controller.close();
+                        break;
+                    }
+                    loaded += value.byteLength;
+                    
+                    const now = Date.now();
+                    if (now - lastProgressUpdate > PROGRESS_THROTTLE) {
+                        lastProgressUpdate = now;
+                        broadcastProgress(url, loaded, total, false);
+                    }
+                    
+                    controller.enqueue(value);
+                }
+            } catch (err) {
+                controller.error(err);
+            }
+        }
+    });
+
+    return new Response(stream, {
+        headers: response.headers,
+        status: response.status,
+        statusText: response.statusText
+    });
+}
+
+function broadcastProgress(url, loaded, total, isDone) {
+    self.clients.matchAll().then(clients => {
+        clients.forEach(client => {
+            client.postMessage({
+                type: 'PROGRESS_UPDATE',
+                url: url,
+                loaded: loaded,
+                total: total,
+                isDone: isDone
+            });
+        });
+    });
+}
+
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS))
@@ -43,7 +106,7 @@ self.addEventListener('fetch', (event) => {
 
     // Game assets and large binaries: network-first, no caching.
     if (GAME_PATH.test(url) || NO_CACHE_EXT.test(url)) {
-        event.respondWith(fetch(req).catch(() => caches.match(req)));
+        event.respondWith(fetchWithProgress(req).catch(() => fetch(req).catch(() => caches.match(req))));
         return;
     }
 

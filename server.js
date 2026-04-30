@@ -134,6 +134,15 @@ const server = http.createServer(async (req, res) => {
 	let filePath = path.join(ROOT, decodedPath);
 	const ext = path.extname(filePath).toLowerCase();
 
+	// Handle requests with "undefined" in the path (missing game assets)
+	// Return empty response to prevent breaking game loading
+	if (decodedPath.includes('/undefined/')) {
+		console.log('[BENDY] Intercepting undefined path request:', decodedPath);
+		res.writeHead(200, { 'Content-Type': 'application/octet-stream' });
+		res.end(Buffer.alloc(0)); // Return empty buffer
+		return;
+	}
+
 	fs.stat(filePath, (err, stats) => {
 		if (err) {
 			if (err.code === 'ENOENT' || err.code === 'ENOTDIR') {

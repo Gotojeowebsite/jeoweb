@@ -1,0 +1,27 @@
+ required:
+    id="<unique element id>"
+    ref="<unique element id>" (convenient if it's the same as the id)
+
+optional:
+    :hide-header="true/false"
+    :hide-content="true/false"
+    :hide-close="true/false"
+    :hide-cancel="true/false"
+    :hide-confirm="true/false"
+    :overlay-type="ui.overlayType.light" OR "ui.overlayType.none" (default is dark)
+    :overlay-class=":ui.overlayClass.inGame" OR add more
+    :overlay-close="true" will allow the overlay click to close popup
+
+    :popup-model="myModel" - the data object within vueData that either populates, or gets populated by, the popup
+
+    @popup-cancel="<method to handle the cancel button click>"
+    @popup-confirm="<method to handle the confirm button click>"
+
+Popup models can have these optional functions:
+    validate() - return true or false and update flags to show validation errors (e.g. to show a message that a textbox is empty)
+    reset() - to reset a form to default values when it's closed and re-opened
+
+The popup code will call these functions automatically if they exist.
+
+Vue doesn't have a way to provide custom functions to instances of components, so this seemed the easiest way - even
+though having functions in data is FROWNED UPON. These functions are all about keeping the data clean, so I'm cool with it.

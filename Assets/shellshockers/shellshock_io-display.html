@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width" />
+	<title>Display</title>
+	<script async src="//api.adinplay.com/display/pub/SSK/shellshock.io/display.min.js"></script>
+	<script>
+	var aiptag = aiptag || {};
+	aiptag.cmd = aiptag.cmd || [];
+	aiptag.cmd.display = aiptag.cmd.display || [];
+	</script>
+</head>
+<body style="margin:0;padding:0;">
+	<div id='shellshock-io_multisize'>
+		<script type='text/javascript'>
+			aiptag.cmd.display.push(function() { aipDisplayTag.display('shellshock-io_multisize'); });
+		</script>
+	</div>
+	<button onclick="aiptag.cmd.display.push(function() { aipDisplayTag.refresh('shellshock-io_multisize'); });">Refresh Ad</button>
+</body>
+</html>

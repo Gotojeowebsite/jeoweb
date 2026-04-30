@@ -24,7 +24,69 @@ class App {
 		this.initMaintenanceToggle();
 		this.initAnimations();
 		this.bindUI();
+		this.initProgressTracking();
 		this.bootstrap();
+	}
+
+	initProgressTracking() {
+		this.currentLoadingGame = null;
+		this.loadedBytes = new Map();
+		this.totalGameSize = 0;
+		this.gameReadyReceived = false;
+
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.addEventListener('message', (event) => {
+				if (event.data.type === 'PROGRESS_UPDATE') {
+					this.handleProgressUpdate(event.data);
+				}
+			});
+		}
+
+		window.addEventListener('message', (event) => {
+			if (event.data.type === 'GAME_READY') {
+				this.gameReadyReceived = true;
+				if (this.hideOverlayFn) this.hideOverlayFn();
+			}
+		});
+	}
+
+	handleProgressUpdate(data) {
+		if (!this.currentLoadingGame) return;
+		
+		const { url, loaded, total, isDone } = data;
+		// Check if URL belongs to the current game folder
+		// We use the slug/name to identify if this asset belongs to the game
+		if (url.includes(`/Assets/${this.currentLoadingGame.name}/`)) {
+			this.loadedBytes.set(url, loaded);
+			this.updateRealProgress();
+		}
+	}
+
+	updateRealProgress() {
+		const progressBar = document.getElementById('loadingProgressBar');
+		const rotatingTip = document.getElementById('rotatingTip');
+		if (!progressBar || !this.currentLoadingGame) return;
+
+		let currentTotalLoaded = 0;
+		this.loadedBytes.forEach(bytes => currentTotalLoaded += bytes);
+		
+		const totalSize = this.currentLoadingGame.size || 0;
+		if (totalSize > 0) {
+			let progress = (currentTotalLoaded / totalSize) * 100;
+			// Keep it within 10-95% range while loading assets to keep the fake/real transition smooth
+			// and ensure the final 100% comes from the iframe onload.
+			let displayProgress = 10 + (progress * 0.85); 
+			if (displayProgress > 95) displayProgress = 95;
+			
+			progressBar.style.width = `${displayProgress}%`;
+			
+			if (rotatingTip) {
+				const loadedMb = (currentTotalLoaded / (1024 * 1024)).toFixed(1);
+				const totalMb = (totalSize / (1024 * 1024)).toFixed(1);
+				rotatingTip.textContent = `Downloading assets: ${loadedMb} / ${totalMb} MB (${Math.round(progress)}%)`;
+				rotatingTip.style.opacity = 1;
+			}
+		}
 	}
 
 	loadCustomizations() {
@@ -43,9 +105,11 @@ class App {
 	}
 
 	initAnimations() {
+		// Respect prefers-reduced-motion for tilt
+		const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		// 3D Parallax Hover for cards
 		document.addEventListener('mousemove', (e) => {
-			if (!this.animHover) return;
+			if (!this.animHover || reduceMotion) return;
 			const card = e.target.closest('.game-card, .carousel-card');
 			if (!card) return;
 			
@@ -786,47 +850,40 @@ class App {
 		});
 
 		// Theme Presets Logic
+		const PRESETS = {
+			default:      { theme: 'dark',  bg: '#0c0b14', accent: '#7c3aed' },
+			cyberpunk:    { theme: 'dark',  bg: '#110022', accent: '#ff00ff' },
+			matrix:       { theme: 'dark',  bg: '#000000', accent: '#00ff00' },
+			crt:          { theme: 'dark',  bg: '#111111', accent: '#ffffff' },
+			pastel:       { theme: 'light', bg: '#fdf4ff', accent: '#f9a8d4' },
+			'solar-light':{ theme: 'light', bg: '#fdf6e3', accent: '#268bd2' },
+			vaporwave:    { theme: 'dark',  bg: '#1a0033', accent: '#ff77e9' },
+			forest:       { theme: 'dark',  bg: '#0f1a14', accent: '#3fa67a' },
+			y2k:          { theme: 'light', bg: '#dde6ff', accent: '#7c87ff' },
+			holo:         { theme: 'dark',  bg: '#06070b', accent: '#a3ff77', grad: 'linear-gradient(135deg,#ff77e9,#22d3ee,#a3ff77)' },
+		};
 		document.querySelectorAll('.theme-preset-btn').forEach(btn => {
 			btn.addEventListener('click', () => {
 				const preset = btn.dataset.preset;
-				if (preset === 'default') {
-					document.body.className = 'theme-dark';
-					this.setBgColor('#0c0b14', true);
-					this.setAccent('#7c3aed', true);
-					this.removeBgImage();
-					localStorage.removeItem('site-bg-image');
-					if (this.themeToggle) this.themeToggle.textContent = '🌙';
-					localStorage.setItem('site-theme', 'dark');
-				} else if (preset === 'cyberpunk') {
-					document.body.className = 'theme-dark';
-					this.setBgColor('#110022', true);
-					this.setAccent('#ff00ff', true); // Neon pink
-					this.removeBgImage();
-					localStorage.removeItem('site-bg-image');
-					if (this.themeToggle) this.themeToggle.textContent = '🌙';
-					localStorage.setItem('site-theme', 'dark');
-				} else if (preset === 'matrix') {
-					document.body.className = 'theme-dark';
-					this.setBgColor('#000000', true);
-					this.setAccent('#00ff00', true); // Hacker green
-					this.removeBgImage();
-					localStorage.removeItem('site-bg-image');
-					if (this.themeToggle) this.themeToggle.textContent = '🌙';
-					localStorage.setItem('site-theme', 'dark');
-				} else if (preset === 'crt') {
-					document.body.className = 'theme-dark';
-					this.setBgColor('#111111', true);
-					this.setAccent('#ffffff', true); // White retro
-					this.removeBgImage();
-					localStorage.removeItem('site-bg-image');
-					if (this.themeToggle) this.themeToggle.textContent = '🌙';
-					localStorage.setItem('site-theme', 'dark');
-				}
-				// Force input fields to update their colors
+				const cfg = PRESETS[preset];
+				if (!cfg) return;
+				document.body.className = cfg.theme === 'light' ? 'theme-light' : 'theme-dark';
+				this.setBgColor(cfg.bg, true);
+				this.setAccent(cfg.accent, true);
+				if (cfg.grad) document.documentElement.style.setProperty('--accent-grad', cfg.grad);
+				else document.documentElement.style.removeProperty('--accent-grad');
+				localStorage.setItem('site-theme', cfg.theme);
+				localStorage.setItem('site-preset', preset);
+				if (cfg.grad) localStorage.setItem('site-accent-grad', cfg.grad);
+				else localStorage.removeItem('site-accent-grad');
+				this.removeBgImage();
+				localStorage.removeItem('site-bg-image');
+				if (this.themeToggle) this.themeToggle.textContent = cfg.theme === 'light' ? '☀️' : '🌙';
 				const bgInput = document.getElementById('bgColorInput');
 				const accentInput = document.getElementById('accentColorInput');
-				if (bgInput) bgInput.value = localStorage.getItem('site-bg-color') || '#0c0b14';
-				if (accentInput) accentInput.value = localStorage.getItem('site-accent') || '#7c3aed';
+				if (bgInput) bgInput.value = cfg.bg;
+				if (accentInput) accentInput.value = cfg.accent;
+				if (window.JeoToast) window.JeoToast.info(`Applied "${preset}" theme`);
 			});
 		});
 
@@ -850,6 +907,63 @@ class App {
 				localStorage.setItem('jeo-anim-ripple', this.animRipple);
 			});
 		}
+
+		// Glass intensity slider
+		const glassSlider = document.getElementById('glassSlider');
+		const glassValue = document.getElementById('glassValue');
+		if (glassSlider) {
+			const saved = Number(localStorage.getItem('jeo:glass') || '16');
+			glassSlider.value = saved;
+			document.documentElement.style.setProperty('--glass-blur', `blur(${saved}px)`);
+			if (glassValue) glassValue.textContent = `${saved}px`;
+			glassSlider.addEventListener('input', () => {
+				const v = glassSlider.value;
+				document.documentElement.style.setProperty('--glass-blur', `blur(${v}px)`);
+				if (glassValue) glassValue.textContent = `${v}px`;
+				localStorage.setItem('jeo:glass', v);
+			});
+		}
+
+		// Accent mode (solid / gradient)
+		const accentSolidBtn = document.getElementById('accentSolidBtn');
+		const accentGradBtn = document.getElementById('accentGradBtn');
+		const gStop1 = document.getElementById('accentGradStop1');
+		const gStop2 = document.getElementById('accentGradStop2');
+		const gAngle = document.getElementById('accentGradAngle');
+		const applyAccentGrad = () => {
+			if (!gStop1 || !gStop2 || !gAngle) return;
+			const grad = `linear-gradient(${gAngle.value}deg, ${gStop1.value}, ${gStop2.value})`;
+			document.documentElement.style.setProperty('--accent-grad', grad);
+			localStorage.setItem('site-accent-grad', grad);
+		};
+		const setAccentMode = (mode) => {
+			if (mode === 'grad') {
+				accentSolidBtn?.classList.remove('active');
+				accentGradBtn?.classList.add('active');
+				gStop1?.removeAttribute('hidden');
+				gStop2?.removeAttribute('hidden');
+				gAngle?.removeAttribute('hidden');
+				applyAccentGrad();
+				localStorage.setItem('jeo:accent-mode', 'grad');
+			} else {
+				accentSolidBtn?.classList.add('active');
+				accentGradBtn?.classList.remove('active');
+				gStop1?.setAttribute('hidden', '');
+				gStop2?.setAttribute('hidden', '');
+				gAngle?.setAttribute('hidden', '');
+				document.documentElement.style.removeProperty('--accent-grad');
+				localStorage.removeItem('site-accent-grad');
+				localStorage.setItem('jeo:accent-mode', 'solid');
+			}
+		};
+		accentSolidBtn?.addEventListener('click', () => setAccentMode('solid'));
+		accentGradBtn?.addEventListener('click', () => setAccentMode('grad'));
+		[gStop1, gStop2, gAngle].forEach(el => el?.addEventListener('input', applyAccentGrad));
+		// restore saved mode
+		const savedMode = localStorage.getItem('jeo:accent-mode');
+		if (savedMode === 'grad') setAccentMode('grad');
+		const savedGrad = localStorage.getItem('site-accent-grad');
+		if (savedGrad) document.documentElement.style.setProperty('--accent-grad', savedGrad);
 
 		// Layout Buttons Logic
 		document.querySelectorAll('.layout-btn').forEach(btn => {
@@ -976,7 +1090,24 @@ class App {
 				: `${filtered.length} games shown`;
 		}
 		if (filtered.length === 0) {
-			this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No games found</h3><p>Try a different search term</p></div>';
+			const safeQ = (q || '').replace(/[<>"']/g, '');
+			this.gameGrid.innerHTML = `
+				<div class="empty-state-illustrated">
+					<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<rect x="14" y="20" width="36" height="30" rx="3"/>
+						<rect x="20" y="26" width="24" height="8" rx="1.5"/>
+						<circle cx="22" cy="42" r="2"/>
+						<circle cx="42" cy="42" r="2"/>
+						<path d="M14 28 L8 28 M14 36 L8 36 M50 28 L56 28 M50 36 L56 36"/>
+						<path d="M24 12 L40 12 M28 8 L36 8" />
+					</svg>
+					<h3>No games found</h3>
+					<p>${safeQ ? `Nothing matches "<strong>${safeQ}</strong>".` : 'Try a different search.'}</p>
+					<div class="empty-actions">
+						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener">📩 Request "${safeQ || 'a game'}"</a>
+						<button class="secondary" onclick="document.getElementById('searchInput').value='';document.getElementById('searchInput').dispatchEvent(new Event('input'))">Clear search</button>
+					</div>
+				</div>`;
 			return;
 		}
 		filtered.forEach((g, i) => {
@@ -993,9 +1124,12 @@ class App {
 			card.className = 'game-card' + (isMaintenance ? ' under-maintenance' : '');
 			card.style.setProperty('--card-img', `url('${imgSrc}')`);
 			card.dataset.slug = g.name;
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">' + playLabel + '</button></div></div>';
+			const isWish = this.isWishlisted(g.name);
+			const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Wishlist" title="Wishlist">' + (isWish ? '🔖' : '📑') + '</button>';
+			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + wishBtn + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">' + playLabel + '</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
+			card.querySelector('.wish-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleWishlist(g); });
 			card.addEventListener('dblclick', () => { this.playGame(g); });
 			card.style.animationDelay = `${i * 0.03}s`;
 			this.gameGrid.appendChild(card);
@@ -1051,6 +1185,18 @@ class App {
 			this.recentlyPlayed = this.recentlyPlayed.slice(0, this.MAX_RECENT);
 		}
 		localStorage.setItem('jeo-recent', JSON.stringify(this.recentlyPlayed));
+		// Trending log: keep last 200 plays with timestamps
+		try {
+			const log = JSON.parse(localStorage.getItem('jeo:playlog') || '[]');
+			log.push({ slug: name, ts: Date.now() });
+			while (log.length > 200) log.shift();
+			localStorage.setItem('jeo:playlog', JSON.stringify(log));
+			localStorage.setItem('jeo:lastPlayed', name);
+		} catch {}
+		// Fire achievements check (if available)
+		if (window.JeoAchievements) {
+			try { window.JeoAchievements.onEvent('play', { slug: name }); } catch {}
+		}
 		this.renderCarousels();
 	}
 
@@ -1068,11 +1214,157 @@ class App {
 	/* =============== CAROUSEL RENDERING =============== */
 
 	renderCarousels() {
+		this.renderSpotlight();
+		this.renderContinuePlaying();
 		this.renderFavorites();
+		this.renderTrending();
+		this.renderWishlist();
 		this.renderRecent();
 		this.renderNewlyAdded();
 		this.renderRequestedBtn();
 		this.bindCarouselArrows();
+	}
+
+	/* =============== SPOTLIGHT (Game of the Day) =============== */
+	pickGameOfTheDay() {
+		if (!this.games || this.games.length === 0) return null;
+		// Eligibility: skip Flash/retro if user has those toggled off, skip maintenance
+		const eligible = this.games.filter(g => {
+			if (this.isUnderMaintenance(g)) return false;
+			if (!this.showFlash && g.type === 'flash') return false;
+			if (!this.showRetro && g.type === 'snes') return false;
+			return true;
+		});
+		if (!eligible.length) return null;
+		const day = new Date();
+		const seed = day.getUTCFullYear() * 10000 + (day.getUTCMonth() + 1) * 100 + day.getUTCDate();
+		// Mulberry32 hash for stable per-day index
+		let h = seed >>> 0;
+		h = Math.imul(h ^ (h >>> 15), 0x2c1b3c6d);
+		h = Math.imul(h ^ (h >>> 12), 0x297a2d39);
+		h ^= h >>> 15;
+		const idx = (h >>> 0) % eligible.length;
+		return eligible[idx];
+	}
+
+	renderSpotlight() {
+		const sec = document.getElementById('spotlightSection');
+		if (!sec) return;
+		// Honor dismissal for the day
+		const today = new Date().toISOString().slice(0, 10);
+		if (localStorage.getItem('jeo:spotlight:dismissed') === today) {
+			sec.classList.add('hidden');
+			return;
+		}
+		const game = this.pickGameOfTheDay();
+		if (!game) { sec.classList.add('hidden'); return; }
+		const img = game.image || this.fallbackImage;
+		const bg = document.getElementById('spotlightBg');
+		const cover = document.getElementById('spotlightCover');
+		const title = document.getElementById('spotlightTitle');
+		const sub = document.getElementById('spotlightSub');
+		const playBtn = document.getElementById('spotlightPlay');
+		const skipBtn = document.getElementById('spotlightSkip');
+		if (bg) bg.style.backgroundImage = `url('${img}')`;
+		if (cover) { cover.style.backgroundImage = `url('${img}')`; cover.setAttribute('aria-label', game.name); }
+		if (title) title.textContent = game.name;
+		if (sub) {
+			const typeLabel = game.type === 'flash' ? '⚡ Flash' : (game.type === 'snes' || game.type === 'gba' ? '🎮 Retro' : '🎮 WebGL');
+			sub.textContent = `Today's pick · ${typeLabel}`;
+		}
+		if (playBtn) playBtn.onclick = () => this.playGame(game);
+		if (skipBtn) skipBtn.onclick = () => {
+			localStorage.setItem('jeo:spotlight:dismissed', today);
+			sec.classList.add('hidden');
+		};
+		sec.classList.remove('hidden');
+	}
+
+	/* =============== CONTINUE PLAYING =============== */
+	renderContinuePlaying() {
+		const sec = document.getElementById('continueSection');
+		if (!sec) return;
+		const lastSlug = localStorage.getItem('jeo:lastPlayed');
+		if (!lastSlug) { sec.classList.add('hidden'); return; }
+		const game = this.games.find(g => g.name === lastSlug);
+		if (!game) { sec.classList.add('hidden'); return; }
+		const cover = document.getElementById('continueCover');
+		const title = document.getElementById('continueTitle');
+		const playBtn = document.getElementById('continuePlay');
+		const dismissBtn = document.getElementById('continueDismiss');
+		if (cover) cover.style.backgroundImage = `url('${game.image || this.fallbackImage}')`;
+		if (title) title.textContent = game.name;
+		if (playBtn) playBtn.onclick = () => this.playGame(game);
+		if (dismissBtn) dismissBtn.onclick = () => {
+			localStorage.removeItem('jeo:lastPlayed');
+			sec.classList.add('hidden');
+		};
+		sec.classList.remove('hidden');
+	}
+
+	/* =============== TRENDING (your top this week) =============== */
+	renderTrending() {
+		const sec = document.getElementById('trendingSection');
+		const track = document.getElementById('trendingTrack');
+		const count = document.getElementById('trendingCount');
+		if (!sec || !track) return;
+		const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
+		let log = [];
+		try { log = JSON.parse(localStorage.getItem('jeo:playlog') || '[]'); } catch {}
+		const tally = new Map();
+		for (const e of log) {
+			if (e.ts < cutoff) continue;
+			tally.set(e.slug, (tally.get(e.slug) || 0) + 1);
+		}
+		// Need 3+ unique games or 5+ total plays to be useful
+		const totalPlays = [...tally.values()].reduce((a, b) => a + b, 0);
+		if (tally.size < 3 || totalPlays < 5) { sec.classList.add('hidden'); return; }
+		const ranked = [...tally.entries()]
+			.sort((a, b) => b[1] - a[1])
+			.slice(0, 12)
+			.map(([slug]) => this.games.find(g => g.name === slug))
+			.filter(Boolean);
+		if (ranked.length === 0) { sec.classList.add('hidden'); return; }
+		sec.classList.remove('hidden');
+		if (count) count.textContent = ranked.length;
+		track.innerHTML = '';
+		ranked.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
+	}
+
+	/* =============== WISHLIST =============== */
+	getWishlist() {
+		try { return JSON.parse(localStorage.getItem('jeo:wishlist') || '[]'); }
+		catch { return []; }
+	}
+	setWishlist(arr) {
+		localStorage.setItem('jeo:wishlist', JSON.stringify(arr));
+	}
+	isWishlisted(name) { return this.getWishlist().includes(name); }
+	toggleWishlist(game) {
+		const list = this.getWishlist();
+		const i = list.indexOf(game.name);
+		if (i >= 0) list.splice(i, 1);
+		else list.push(game.name);
+		this.setWishlist(list);
+		this.renderCarousels();
+		this.renderGames();
+		if (window.JeoToast) window.JeoToast.info(i >= 0 ? `Removed from wishlist` : `Added to wishlist`);
+		if (window.JeoAchievements) window.JeoAchievements.onEvent('wishlist', { count: list.length });
+	}
+
+	renderWishlist() {
+		const sec = document.getElementById('wishlistSection');
+		const track = document.getElementById('wishlistTrack');
+		const count = document.getElementById('wishlistCount');
+		if (!sec || !track) return;
+		const list = this.getWishlist()
+			.map(name => this.games.find(g => g.name === name))
+			.filter(Boolean);
+		if (list.length === 0) { sec.classList.add('hidden'); return; }
+		sec.classList.remove('hidden');
+		if (count) count.textContent = list.length;
+		track.innerHTML = '';
+		list.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
 	}
 
 	renderFavorites() {
@@ -1164,7 +1456,7 @@ class App {
 		card.className = 'carousel-card' + (isMaintenance ? ' under-maintenance' : '');
 		card.style.setProperty('--card-img', `url('${imgSrc}')`);
 		card.dataset.slug = g.name;
-		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
+		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {
 			if (e.target.closest('.heart-btn')) return;
@@ -1205,6 +1497,7 @@ class App {
 		this.currentGameUrl = target;
 		this.currentGameSlug = this.deriveSlugFromUrl(target);
 		this.currentGameName = game ? game.name : this.currentGameSlug;
+		this.currentSessionStart = Date.now();
 		if (window.JeoSaves && this.currentGameSlug) {
 			try { window.JeoSaves.bindGame(this.currentGameSlug); } catch {}
 			this.refreshSaveSidebar();
@@ -1223,6 +1516,11 @@ class App {
 			loadingOverlay.classList.remove('hidden');
 		}
 
+		// Progress Tracking Initialization
+		this.currentLoadingGame = game;
+		this.loadedBytes.clear();
+		this.totalGameSize = game ? (game.size || 0) : 0;
+
 		// Tips rotation
 		const tips = [
 			"Jeo is fetching your game...",
@@ -1235,17 +1533,24 @@ class App {
 		const rotatingTip = document.getElementById('rotatingTip');
 		let tipIndex = 0;
 		let tipInterval = null;
-		if (rotatingTip) {
-			rotatingTip.textContent = tips[0];
-			tipInterval = setInterval(() => {
-				tipIndex = (tipIndex + 1) % tips.length;
-				rotatingTip.style.opacity = 0;
-				setTimeout(() => {
-					rotatingTip.textContent = tips[tipIndex];
-					rotatingTip.style.opacity = 1;
-				}, 300);
-			}, 3000);
-		}
+		
+		const startTips = () => {
+			if (rotatingTip) {
+				rotatingTip.textContent = tips[0];
+				tipInterval = setInterval(() => {
+					// Don't rotate tips if we are showing real progress
+					if (this.loadedBytes.size > 0 && this.totalGameSize > 0) return;
+					
+					tipIndex = (tipIndex + 1) % tips.length;
+					rotatingTip.style.opacity = 0;
+					setTimeout(() => {
+						rotatingTip.textContent = tips[tipIndex];
+						rotatingTip.style.opacity = 1;
+					}, 300);
+				}, 3000);
+			}
+		};
+		startTips();
 
 		// Show modal first so iframe layout doesn't break
 		this.playModal.classList.remove('hidden');
@@ -1256,9 +1561,14 @@ class App {
 		this.gameFrame.classList.add('offscreen-iframe');
 		this.gameFrame.src = target;
 
-		// Fake progress
+		// Fake progress (acts as a baseline if no assets are tracked yet)
 		let progress = 10;
 		const progressInterval = setInterval(() => {
+			// If we have real progress updates, stop the fake one
+			if (this.loadedBytes.size > 0 && this.totalGameSize > 0) {
+				clearInterval(progressInterval);
+				return;
+			}
 			if (progress < 90) {
 				progress += Math.random() * 15;
 				if (progress > 90) progress = 90;
@@ -1268,40 +1578,48 @@ class App {
 
 		let iframeLoaded = false;
 		let minTimeElapsed = false;
+		this.gameReadyReceived = false;
 
-		const hideOverlay = () => {
-			if (loadingOverlay && iframeLoaded && minTimeElapsed) {
+		this.hideOverlayFn = () => {
+			// Requirements to hide:
+			// 1. Min time (2s) passed
+			// 2. Iframe loaded
+			// 3. IF it's a complex game (has size > 1MB), wait for GAME_READY OR 90% progress
+			const isLargeGame = this.totalGameSize > 1024 * 1024;
+			const readyToHide = iframeLoaded && minTimeElapsed && (!isLargeGame || this.gameReadyReceived || progress >= 90);
+
+			if (loadingOverlay && readyToHide) {
 				clearInterval(progressInterval);
 				if (tipInterval) clearInterval(tipInterval);
 				if (progressBar) progressBar.style.width = '100%';
 				setTimeout(() => {
 					loadingOverlay.classList.add('hidden');
 					this.gameFrame.classList.remove('offscreen-iframe');
-				}, 400); // Wait a moment at 100%
+					this.gameFrame.focus();
+					this.hideOverlayFn = null;
+				}, 400); 
 			}
 		};
 
-		// Enforce a minimum 2 second display time for the loading screen
+		// Enforce a minimum 2 second display time
 		setTimeout(() => {
 			minTimeElapsed = true;
-			hideOverlay();
+			if (this.hideOverlayFn) this.hideOverlayFn();
 		}, 2000);
 
-		// Hide overlay after iframe loads (if minimum time has elapsed)
+		// Hide overlay after iframe loads
 		this.gameFrame.onload = () => {
 			iframeLoaded = true;
-			hideOverlay();
+			if (this.hideOverlayFn) this.hideOverlayFn();
 		};
 
-		// Ultimate fallback: force hide after 12 seconds
+		// Ultimate fallback
 		setTimeout(() => {
-			if (loadingOverlay) {
-				clearInterval(progressInterval);
-				if (tipInterval) clearInterval(tipInterval);
-				loadingOverlay.classList.add('hidden');
-				this.gameFrame.classList.remove('offscreen-iframe');
+			if (this.hideOverlayFn) {
+				this.gameReadyReceived = true; // Force it
+				this.hideOverlayFn();
 			}
-		}, 12000);
+		}, 15000);
 	}
 
 	toggleFullscreen() {
@@ -1323,6 +1641,19 @@ class App {
 		if (window.JeoSaves) {
 			try { window.JeoSaves.unbindGame(); } catch {}
 		}
+		// Record session duration
+		if (this.currentGameSlug && this.currentSessionStart) {
+			const dur = Date.now() - this.currentSessionStart;
+			if (dur > 5000 && dur < 12 * 60 * 60 * 1000) {
+				try {
+					const log = JSON.parse(localStorage.getItem('jeo:sessions') || '[]');
+					log.push({ slug: this.currentGameSlug, start: this.currentSessionStart, dur });
+					while (log.length > 500) log.shift();
+					localStorage.setItem('jeo:sessions', JSON.stringify(log));
+				} catch {}
+			}
+		}
+		this.currentSessionStart = null;
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';

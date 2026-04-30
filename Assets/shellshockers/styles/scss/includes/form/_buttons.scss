@@ -1,0 +1,289 @@
+/* ----------------------------------------------------------------- Buttons -- */
+#btn_horizontal {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: var(--ss-space-lg);
+}
+
+.ss_button {
+	font-family: 'Nunito', sans-serif;
+	border-radius: var(--border-radius);
+	border-width: var(--ss-common-border-width);
+	border-style: solid;
+	border-color: var(--ss-blue5);
+	background: var(--ss-blue3);
+	color: var(--ss-white);
+	text-align: center;
+	font-weight: 700;
+	line-height: 1em;
+	padding: var(--ss-space-sm) var(--ss-space-lg);
+	box-shadow: 0.1em 0.1em 3px var(--ss-blue4);
+	margin: 0 0 var(--ss-space-md) 0;
+	cursor: pointer;
+	/* white-space: nowrap; */
+	text-shadow: var(--ss-btn-common-txt-shadow);
+}
+
+.ss_button:disabled:hover {
+	cursor: not-allowed;
+}
+
+.ss_button:disabled {
+	opacity: 0.5;
+}
+
+.ss_button_as_text {
+	background: none;
+	border: 0;
+	font-family: 'Nunito', sans-serif;
+}
+
+.ss_button_as_text:hover {
+	cursor: pointer;	
+}
+
+#btn_horizontal:not(.pause-popup--btn-group) .ss_button {
+	margin: 0 var(--ss-space-md) 0 0;
+}
+
+#btn_horizontal:not(.pause-popup--btn-group) .ss_button:first-child {
+	margin-left: var(--ss-space-md) !important;
+}
+
+.btn_green {
+	background: var(--ss-green1);
+	border-color: var(--ss-green2);
+}
+
+.btn_red {
+	background-color: var(--ss-red-btn-fill);
+	border-color: var(--ss-red-btn-outline);
+}
+
+.btn_pink {
+	background-color: var(--ss-pink);
+	border-color: var(--ss-pink1);
+}
+
+.btn_blue {
+	background-color: var(--ss-blue3);
+	border-color: var(--ss-blue5);
+}
+
+.btn_gray {
+	background-color: var(--ss-gray1);
+	border-color: var(--ss-gray2);
+}
+
+.btn_blue_light, .btn-selected {
+	background-color: var(--ss-blue7);
+	border-color: var(--ss-blue5);
+}
+
+.btn_yolk {
+	background: var(--ss-yolk);
+	border-color: var(--ss-brown);
+}
+
+.btn_vip-button {
+	background: var(--ss-vip-blue);
+	border-color: var(--ss-blue5);
+}
+
+.btn_toggleoff {
+	color: var(--ss-blue5) !important;
+	text-shadow: none !important;
+}
+
+.btn_toggleoff:hover {
+	color: var(--ss-blue1) !important;
+}
+
+.btn_toggleon {
+	border-color: var(--ss-white) !important;
+	color: var(--ss-white) !important;
+	background: var(--ss-yolk) !important;
+	text-shadow: var(--ss-btn-common-txt-shadow);
+
+	box-shadow: 
+		0.05em 0.05em 0.3em var(--ss-blue4),
+		inset -0.1em -0.1em 0.3em var(--ss-yolk2),
+		inset 0.1em 0.1em 0.3em var(--ss-yolk0) !important;
+}
+
+.btn_medium {
+	font-size: 1.3em;
+	padding: var(--ss-space-md) var(--ss-space-md);
+	border-radius: 0.3em;
+	font-family: 'Sigmar One', Sans-Serif;
+	font-weight: 100;
+	min-width: 9em;
+	text-transform: uppercase;
+}
+
+.btn_big {
+	height: 1.8em;
+	font-size: 2em;
+	padding: 0 var(--ss-space-sm);
+	border-radius: var(--ss-border-radius-sm);
+	font-family: 'Sigmar One', Sans-Serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	border-width: calc(var(--ss-common-border-width)/2);
+}
+
+.btn_play_w_friends {
+	line-height: 1;
+}
+
+.btn_game_mode {
+	line-height: 1.3;
+}
+
+#play_game > .btn_game_mode {
+	top: 20px;
+}
+
+.btn_game_mode h3, .btn_game_mode p {
+	margin: 0 !important;
+	padding-left: 0.55em;
+}
+
+.btn_game_mode h3 {
+	font-size: .434em;
+}
+
+.btn_game_mode p {
+	font-family: Nunito, sans-serif;
+	font-size: .355em;
+	font-weight: 700;
+}
+
+.btn_game_mode .open-close {
+	right: var(--ss-space-md)}
+
+.btn_game_mode .open-close i {
+	font-size: calc(var(--ss-space-lg)*2);
+	transition: transform .3s ease-in-out;
+	color: var(--ss-blue5);
+
+}
+
+.btn_height_auto {
+	height: auto;
+}
+
+.btn_sm {
+	width: auto;
+	font-size: .7em;
+	text-shadow: var(--ss-btn-common-txt-shadow-blur);
+	border-width: 0.24em;
+	min-width: 7em;
+}
+.btn_md { min-width: 8em;  }
+.btn_lg { min-width: 15em; }
+.btn_wfull { width: 100% !important; }
+
+.btn-media {
+	font-size: 60%;
+	min-width: auto;
+}
+
+.btn-twitch {
+	background: var(--twitch-lt-purple);
+	border-color: var(--ss-twitch);
+}
+
+.btn-twitch:hover {
+	background: var(--ss-twitch);
+	border-color: var(--twitch-lt-purple);
+
+}
+
+.twitch-btn-pink:hover {
+	background: var(--twitch-dk-pink);
+}
+
+.twitch-btn-purple {
+	background-color: var(--twitch-lt-purple);
+	border: 0.15em solid var(--twitch-dk-purple);
+}
+
+.twitch-btn-purple:hover {
+	background: var(--twitch-dk-purple);
+}
+
+.btn-account-w-icon,
+.btn-account-status  {
+	height: calc(var(--ss-space-lg)*3);
+	padding: 0;
+	margin: 0 0 0 calc(var(--ss-space-lg)/3);
+}
+
+.btn-account-status.btn_vip svg {
+	width: 2.4em;
+	height: 2.4em;
+	vertical-align: bottom;
+	fill: var(--ss-white);
+	filter: drop-shadow(var(--ss-btn-common-txt-shadow));
+}
+
+.btn-account-w-icon {
+	width: calc(var(--ss-space-lg)*3);
+}
+
+.btn-account-w-icon i {
+	font-size: 1.3em;
+}
+
+.btn-fullscreen {
+	width: 1.3em;
+	height: 1.3em;
+	fill: currentColor;
+}
+
+.btn-account-status {
+	width: 11em;
+}
+
+.btn-purchase {
+	font-size: 1.3em;
+}
+
+.btn_tutorial {
+	max-width: 12em;
+	margin-top: 0.6em;
+}
+
+.numberArrow {
+	width: 1.5em;
+	margin-bottom: -0.6em;
+}
+
+.ss_smtab {
+	color: var(--ss-blue3);
+	display: block;
+	border: 0;
+	background: var(--ss-blue2);
+	cursor: pointer;
+	width: calc(var(--ss-space-lg)*1.7);
+	height: calc(var(--ss-space-lg)*1.7);
+	display: grid;
+	align-items: center;
+}
+
+.ss_smtab.selected, .ss_smtab:hover {
+	background: var(--ss-white);
+}
+
+.btn_server {
+	top: 4em;
+	left: 0;
+}
+
+.ss_button_cg_user {
+	background: var(--cg-brand-bg);
+	border: 0;
+	padding: 0 .6em;
+}

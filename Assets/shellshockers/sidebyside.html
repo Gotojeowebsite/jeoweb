@@ -1,0 +1,32 @@
+<html>
+<style>
+	body { padding: 0; margin: 0; white-space: nowrap;}
+	object { width: 100%; height: 100%; }
+</style>
+
+<script>
+	window.onload = function () {
+		resize();
+	}
+
+	window.onresize = function () {
+		resize();
+	}
+
+	function resize () {
+		var el = document.getElementById('container');
+		el.style.height = window.innerWidth * .375;
+	}
+</script>
+
+<body>
+	<div id="container" style="display: flex">
+		<div style="flex: auto; margin: 0.1em">
+			<object type="text/html" data="index.php"></object>
+		</div>
+		<div style="flex: auto; margin: 0.1em">
+			<object type="text/html" data="index.php"></object>
+		</div>
+	</div>
+</body>
+</html>

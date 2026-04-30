@@ -1,0 +1,31 @@
+/** ---------------------------------------------- PWA */
+.btn-pwa {
+	height: 2.5em;
+	margin-top: .6em;
+	cursor: pointer;
+}
+.btn-pwa-download {
+	display: flex;
+	align-items: center;
+	padding: .3em;
+	margin: 0 auto;
+}
+.pwa-btn-img-box {
+	position: relative;
+	margin-right: 1.5em;
+}
+
+.pwa-btn-img-box,
+.pwa-btn-img-box img {
+	height: 5em;
+    width: 5em;
+}
+.pwa-btn-img-box i {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.pwa-popup .popup_sm_content{
+	text-align: left;
+	width: 90%;
+}

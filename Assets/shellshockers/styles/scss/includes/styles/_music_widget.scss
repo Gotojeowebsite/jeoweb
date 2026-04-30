@@ -1,0 +1,205 @@
+/**--------------------------------Music Widget -------------*/
+.in-game-widgets {
+	position: absolute;
+	left: 1em;
+	bottom: 11em;
+	z-index: 5;
+}
+.music-widget {
+    min-width: 21.2em;
+	max-width: 21.2em;
+	margin-top: var(--ss-space-sm);
+	background-color: white;
+	padding: .7em;
+	opacity: 1;
+}
+
+.music-widget--fade-out {
+	opacity: 0;
+	transition: opacity 1s linear;
+}
+
+/* .music-widget,
+.music-widget--cover-image {
+	border: var(--ss-space-sm) solid var(--ss-blue3);
+} */
+.music-widget--wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.music-widget--content {
+	order: 2;
+	flex: 0 1 14em;
+	overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.music-widget--content header {
+	background-color: var(--ss-blue3)
+}
+
+.music-widget--now-playing {
+	font-size: .8em;
+	padding-left: .4em;
+	padding-right: .4em;
+}
+
+.music-widget--now-playing,
+.music-widget--song-title,
+.music-widget--album-title {
+	margin: 0;
+	text-align: left;
+}
+
+.music-widget--album-title,
+.music-widget--song-title {
+	font-size: .7em;
+
+}
+
+.music-widget--album-title a,
+.music-widget--song-title a {
+	font-size: 1em;
+}
+
+.music-widget--album-title,
+.music-widget--album-title a,
+.music-widget--song-title,
+.music-widget--song-title a {
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+.music-widget--album-title,
+.music-widget--album-title a,
+.music-widget--song-title,
+.music-widget--song-title a,
+.music-widget--album-title {
+	color: var(--ss-blue3);
+}
+
+.music-widget--song-title {
+
+}
+
+.music-widget--content-wrapper {
+	overflow: hidden;
+	height: 1em;
+}
+
+.text-slide {
+	padding-left: 100%;
+	will-change: transform;
+	animation: slide 15s linear infinite;
+}
+
+.music-widget--cover-image {
+	order: 1;
+	margin-right: .3em;
+	height: 4em;
+	flex: 0 0 4em;
+	background-color: var(--ss-blue2);
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.music-widget--cover-controls button {
+	background: none;
+	border: 0;
+}
+
+.music-widget--cover-control-icon {
+	display: none;
+	position: relative;
+	z-index: 2;
+}
+
+.music-widget--cover-image:hover .music-widget--cover-control-icon {
+	display: block;
+	cursor: pointer;
+}
+
+.music-widget--cover-image img {
+	max-width: 3.5em;
+	min-width: 3.5em;
+}
+
+.music-widget--cover-image .ss-absolute {
+	position: absolute;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.music-widget--sponsor {
+	order: 3;
+	margin-left: .3em;
+	flex: 0 0 5%;
+}
+
+.music-widget--sponsor {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+}
+
+.music-widget--sponsor .music-widget--sponsor-icon {
+	max-width: 100%;
+	color: var(--ss-orange1);
+}
+
+.music-widget--volume-control input[type='range']::-webkit-slider-runnable-track {
+	height: 10px;
+	-webkit-appearance: none;
+	color: #13bba4;
+	margin-top: -1px;
+}
+
+.music-widget--volume-control h3,
+.music-widget--volume-control label {
+	font-size: .7em;
+}
+
+.music-widget--volume-control .ss_slider.label {
+	color: var(--ss-blue3);
+}
+
+.music-widget--volume-control input[type=range]::-webkit-slider-runnable-track {
+	cursor: pointer;
+	background: var(--ss-blue3);
+	height: .1em;
+}
+  
+.music-widget--volume-control input[type=range]::-moz-range-track {
+	cursor: pointer;
+	background: var(--ss-blue3);
+	height: .1em;
+}
+.music-widget--sponsor--settings-btn {
+	background: none;
+	border: 0;
+	color: var(--ss-blue4);
+	cursor: pointer;
+}
+
+/**---text color ---*/
+.music-widget--cover-control-icon,
+.music-widget--now-playing {
+	color: var(--ss-white);
+}
+
+@keyframes slide {
+	0% {
+		transform: translate(0, 0);
+	  }
+	  100% {
+		transform: translate(-200%, 0);
+	  }
+  }

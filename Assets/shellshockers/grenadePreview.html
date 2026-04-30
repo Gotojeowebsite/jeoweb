@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Grenade Explosion Preview</title>
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/babylonjs-sprite.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: #1a1a2e; color: #eee; font-family: sans-serif; display: flex; height: 100%; overflow: hidden; }
+#canvasWrap { flex: 1; min-width: 0; position: relative; overflow: hidden; }
+#renderCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; outline: none; }
+#controls {
+	width: 320px; flex-shrink: 0; padding: 16px; overflow-y: auto; background: #16213e;
+	display: flex; flex-direction: column; gap: 12px; border-left: 1px solid #333;
+}
+#controls h2 { font-size: 14px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+#controls label { display: block; font-size: 13px; margin-bottom: 4px; }
+#controls select, #controls input, #controls button {
+	width: 100%; padding: 6px 8px; border: 1px solid #444; border-radius: 4px;
+	background: #0f3460; color: #eee; font-size: 13px;
+}
+#controls button {
+	background: #e94560; border: none; cursor: pointer; font-weight: bold;
+	padding: 10px; font-size: 15px; margin-top: 4px;
+}
+#controls button:hover { background: #c73650; }
+#controls button:active { transform: scale(0.98); }
+#autoRepeat { display: flex; align-items: center; gap: 8px; }
+#autoRepeat label { margin: 0; flex-shrink: 0; }
+#autoRepeat input { width: 60px; }
+.color-preview {
+	height: 24px; border-radius: 4px; margin-top: 4px;
+	background: linear-gradient(to right, #000, #fff);
+}
+#customColorEditor { display: none; }
+#customColorEditor textarea {
+	width: 100%; height: 120px; background: #0a0a23; color: #7fdbca;
+	font-family: monospace; font-size: 12px; border: 1px solid #444; border-radius: 4px; padding: 6px;
+}
+.preset-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.preset-btn {
+	width: auto !important; padding: 4px 10px !important; font-size: 12px !important;
+	background: #0f3460 !important; font-weight: normal !important;
+}
+.preset-btn:hover { background: #1a4a8a !important; }
+.preset-btn.active { background: #e94560 !important; }
+.side-by-side { display: flex; gap: 12px; }
+.side-col { flex: 1; min-width: 0; }
+.side-col select { width: 100%; }
+.cell-preview {
+	width: 80px; height: 80px;
+	border: 2px solid #444; border-radius: 4px; background: #000; cursor: pointer;
+	transition: border-color 0.15s;
+}
+.cell-preview:hover { border-color: #e94560; }
+#spritePicker {
+	display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+	background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center;
+}
+#spritePicker.open { display: flex; }
+#spritePickerInner {
+	background: #16213e; border-radius: 8px; padding: 16px; max-height: 90vh; overflow-y: auto;
+}
+#spritePickerInner h3 { margin: 0 0 12px; font-size: 15px; }
+#spriteGrid {
+	display: grid; gap: 4px;
+}
+#spriteGrid canvas {
+	width: 56px; height: 56px; border: 2px solid #333; border-radius: 4px;
+	background: #000; cursor: pointer; transition: border-color 0.1s;
+}
+#spriteGrid canvas:hover { border-color: #e94560; }
+#spriteGrid canvas.selected { border-color: #e94560; box-shadow: 0 0 6px #e94560; }
+</style>
+</head>
+<body>
+<div id="canvasWrap"><canvas id="renderCanvas"></canvas></div>
+<div id="spritePicker">
+	<div id="spritePickerInner">
+		<h3>Select Particle Sprite</h3>
+		<div id="spriteGrid"></div>
+	</div>
+</div>
+<div id="controls">
+	<h1 style="font-size:18px;">Grenade FX Preview</h1>
+
+	<div class="side-by-side">
+		<div class="side-col">
+			<h2>Fire</h2>
+			<select id="fireColorSelect"></select>
+			<div id="firePreview" class="color-preview"></div>
+		</div>
+		<div class="side-col">
+			<h2>Smoke</h2>
+			<select id="smokeColorSelect"></select>
+			<div id="smokePreview" class="color-preview"></div>
+		</div>
+	</div>
+
+	<h2>Sprite</h2>
+	<canvas id="cellPreview" width="64" height="64" class="cell-preview" title="Click to change"></canvas>
+
+	<h2>Sound</h2>
+	<select id="soundSelect">
+		<option value="">None</option>
+	</select>
+
+	<h2>Presets</h2>
+	<div class="preset-row">
+		<button class="preset-btn" data-fire="default" data-smoke="default" data-cell="0">Standard</button>
+		<button class="preset-btn" data-fire="gold" data-smoke="white" data-cell="3">Holy</button>
+		<button class="preset-btn" data-fire="corrupt" data-smoke="corrupt" data-cell="4">Corrupt</button>
+		<button class="preset-btn" data-fire="rainbow" data-smoke="white" data-cell="1">Unicorn</button>
+		<button class="preset-btn" data-fire="thermal" data-smoke="thermal" data-cell="0">Thermal</button>
+		<button class="preset-btn" data-fire="thermal" data-smoke="supernova" data-cell="0">Supernova</button>
+		<button class="preset-btn" data-fire="black" data-smoke="black" data-cell="0">Black</button>
+		<button class="preset-btn" data-fire="red" data-smoke="red" data-cell="0">Red</button>
+		<button class="preset-btn" data-fire="blue" data-smoke="blue" data-cell="0">Blue</button>
+	</div>
+
+	<div id="autoRepeat">
+		<label><input type="checkbox" id="autoCheck"> Auto-repeat</label>
+		<input type="number" id="autoInterval" value="2" min="0.5" max="10" step="0.5"> sec
+	</div>
+
+	<button id="triggerBtn">Trigger Explosion (Space)</button>
+	<p style="font-size:11px;color:#666;margin-top:8px;">Scroll to zoom.</p>
+</div>
+
+<script>
+// ─── Color Definitions (from clientGame.js) ───
+const C4 = (r,g,b,a) => new BABYLON.Color4(r,g,b,a);
+
+const fireColors = {
+	default: [
+		{ pos: 0, color: C4(1, 0.9, 0.8, 1) },
+		{ pos: 0.2, color: C4(1, 0.5, 0.1, 1) },
+		{ pos: 0.4, color: C4(0.6, 0.2, 0.1, 1) },
+		{ pos: 0.7, color: C4(0, 0, 0, 0) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	rainbow: [
+		{ pos: 0, color: C4(1, 0.1, 0.1, 1) },
+		{ pos: 0.2, color: C4(1, 1, 0.1, 1) },
+		{ pos: 0.4, color: C4(0.1, 1, 0.1, 1) },
+		{ pos: 0.7, color: C4(0.1, 0.1, 1, 0.5) },
+		{ pos: 1, color: C4(1, 0.1, 1, 0) }
+	],
+	gold: [
+		{ pos: 0, color: C4(1, 1, 0.3, 1) },
+		{ pos: 0.4, color: C4(1, 0.8, 0.2, 1) },
+		{ pos: 1, color: C4(1, 0.6, 0.1, 0) }
+	],
+	corrupt: [
+		{ pos: 0, color: C4(1, 0.1, 0.1, 1) },
+		{ pos: 0.3, color: C4(1, 1, 1, 1) },
+		{ pos: 0.6, color: C4(1, 0.1, 0.1, 1) },
+		{ pos: 1, color: C4(1, 1, 1, 0) }
+	],
+	thermal: [
+		{ pos: 0, color: C4(1, 0.9, 0.8, 1) },
+		{ pos: 0.2, color: C4(1, 0.5, 0.1, 1) },
+		{ pos: 0.4, color: C4(0.6, 0.2, 0.1, 1) },
+		{ pos: 0.5, color: C4(1, 1, 1, 1) },
+		{ pos: 0.6, color: C4(1, 1, 1, 0) },
+		{ pos: 0.7, color: C4(1, 1, 1, 1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	black: [
+		{ pos: 0, color: C4(0, 0, 0, 1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	red: [
+		{ pos: 0, color: C4(1, 0.7, 0.3, 1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	blue: [
+		{ pos: 0, color: C4(0.3, 0.7, 1, 1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	]
+};
+
+const smokeColors = {
+	default: [
+		{ pos: 0, color: C4(0.3, 0.3, 0.3, 1) },
+		{ pos: 1, color: C4(0.7, 0.7, 0.7, 0) }
+	],
+	white: [
+		{ pos: 0, color: C4(1, 1, 1, 0.5) },
+		{ pos: 1, color: C4(1, 1, 1, 0) }
+	],
+	corrupt: [
+		{ pos: 0, color: C4(1, 1, 1, 0.6) },
+		{ pos: 0.5, color: C4(1, 0.1, 0.1, 0.4) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	thermal: [
+		{ pos: 0, color: C4(0.5, 0.1, 0.01, 0.3) },
+		{ pos: 0.3, color: C4(0.7, 0.4, 0, 0.1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	supernova: [
+		{ pos: 0, color: C4(1, 1, 1, 0.5) },
+		{ pos: 1, color: C4(1, 0, 1, 0) }
+	],
+	black: [
+		{ pos: 0, color: C4(0, 0, 0, 1) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	softblack: [
+		{ pos: 0, color: C4(0, 0, 0, 0.5) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	red: [
+		{ pos: 0, color: C4(1, 0.7, 0.3, 1) },
+		{ pos: 0.5, color: C4(1, 0.3, 0, 0.6) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	],
+	blue: [
+		{ pos: 0, color: C4(0.3, 0.7, 1, 1) },
+		{ pos: 0.5, color: C4(0, 0.3, 1, 0.6) },
+		{ pos: 1, color: C4(0, 0, 0, 0) }
+	]
+};
+
+// ─── Easing (from math.js) ───
+const Ease = {
+	linear: t => t,
+	inQuad: t => t * t,
+	outQuad: t => t * (2 - t),
+	inOutQuad: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
+};
+
+// ─── Color lerp (from clientGame.js) ───
+function lerpColors(colors, p, ref) {
+	for (let i = colors.length - 2; i >= 0; i--) {
+		if (p >= colors[i].pos) {
+			BABYLON.Color4.LerpToRef(
+				colors[i].color, colors[i + 1].color,
+				(p - colors[i].pos) * (1 / (colors[i + 1].pos - colors[i].pos)),
+				ref
+			);
+			return;
+		}
+	}
+}
+
+// ─── Populate dropdowns ───
+function populateSelect(id, obj) {
+	const sel = document.getElementById(id);
+	for (const key of Object.keys(obj)) {
+		const opt = document.createElement('option');
+		opt.value = key; opt.textContent = key;
+		sel.appendChild(opt);
+	}
+}
+populateSelect('fireColorSelect', fireColors);
+populateSelect('smokeColorSelect', smokeColors);
+
+// ─── Load particle sprite sheet ───
+const particlesImg = new Image();
+particlesImg.src = 'img/particles.webp';
+
+// ─── Load sound sprites ───
+let soundCtx = null;
+let soundBuffer = null;
+let soundSprites = {};
+
+fetch('sound/sounds.json')
+	.then(r => r.json())
+	.then(data => {
+		soundSprites = data.spritemap;
+		const select = document.getElementById('soundSelect');
+		Object.keys(soundSprites)
+			.filter(k => k.startsWith('grenade') && k !== 'grenade_beep' && k !== 'grenade_pin')
+			.sort()
+			.forEach(k => {
+				const opt = document.createElement('option');
+				opt.value = k;
+				opt.textContent = k.replace('grenade_', '').replace('grenade', 'default');
+				select.appendChild(opt);
+			});
+		select.value = 'grenade';
+		return fetch('sound/sounds.webm');
+	})
+	.then(r => r.arrayBuffer())
+	.then(buf => {
+		soundCtx = new (window.AudioContext || window.webkitAudioContext)();
+		return soundCtx.decodeAudioData(buf);
+	})
+	.then(decoded => { soundBuffer = decoded; });
+
+function playSound(name) {
+	if (!soundCtx || !soundBuffer || !name) return;
+	const sprite = soundSprites[name];
+	if (!sprite) return;
+	if (soundCtx.state === 'suspended') soundCtx.resume();
+	const source = soundCtx.createBufferSource();
+	source.buffer = soundBuffer;
+	source.connect(soundCtx.destination);
+	source.start(0, sprite.start, sprite.end - sprite.start);
+}
+
+// ─── Color gradient preview ───
+function renderGradient(elId, colors) {
+	const el = document.getElementById(elId);
+	const stops = colors.map(s => {
+		const c = s.color;
+		return `rgba(${c.r*255|0},${c.g*255|0},${c.b*255|0},${c.a}) ${s.pos*100}%`;
+	});
+	el.style.background = `linear-gradient(to right, ${stops.join(', ')})`;
+}
+renderGradient('firePreview', fireColors.default);
+renderGradient('smokePreview', smokeColors.default);
+
+document.getElementById('fireColorSelect').onchange = function() {
+	renderGradient('firePreview', fireColors[this.value]);
+};
+document.getElementById('smokeColorSelect').onchange = function() {
+	renderGradient('smokePreview', smokeColors[this.value]);
+};
+
+// ─── Cell sprite picker ───
+const cellPreviewCanvas = document.getElementById('cellPreview');
+const cellPreviewCtx = cellPreviewCanvas.getContext('2d');
+
+const CELL_SIZE = 128;
+const FIRST_CELL = 16; // explosion sprites start at cell 16 in the sheet
+let maxCell = 0;
+let selectedCell = 0;
+
+function drawCellPreview(ctx, canvas, cell) {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	if (!particlesImg.complete) return;
+	const cols = Math.floor(particlesImg.naturalWidth / CELL_SIZE);
+	const col = (FIRST_CELL + cell) % cols;
+	const row = Math.floor((FIRST_CELL + cell) / cols);
+	ctx.drawImage(particlesImg, col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE, 0, 0, canvas.width, canvas.height);
+}
+
+function updateMaxCell() {
+	if (!particlesImg.complete) return;
+	const cols = Math.floor(particlesImg.naturalWidth / CELL_SIZE);
+	const rows = Math.floor(particlesImg.naturalHeight / CELL_SIZE);
+	maxCell = (cols * rows) - FIRST_CELL - 1;
+}
+
+// ─── Sprite picker overlay ───
+const spritePicker = document.getElementById('spritePicker');
+const spriteGrid = document.getElementById('spriteGrid');
+
+function openPicker() {
+	if (!particlesImg.complete) return;
+	const cols = Math.floor(particlesImg.naturalWidth / CELL_SIZE);
+
+	spriteGrid.innerHTML = '';
+	spriteGrid.style.gridTemplateColumns = `repeat(${Math.min(cols, 8)}, 56px)`;
+
+	for (let i = 0; i <= maxCell; i++) {
+		const c = document.createElement('canvas');
+		c.width = 64; c.height = 64;
+		if (i === selectedCell) c.classList.add('selected');
+		const ctx = c.getContext('2d');
+		const col = (FIRST_CELL + i) % cols;
+		const row = Math.floor((FIRST_CELL + i) / cols);
+		ctx.drawImage(particlesImg, col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE, 0, 0, 64, 64);
+		c.addEventListener('click', () => {
+			selectedCell = i;
+			drawCellPreview(cellPreviewCtx, cellPreviewCanvas, i);
+			spritePicker.classList.remove('open');
+		});
+		spriteGrid.appendChild(c);
+	}
+
+	spritePicker.classList.add('open');
+}
+
+spritePicker.addEventListener('click', (e) => {
+	if (e.target === spritePicker) spritePicker.classList.remove('open');
+});
+
+cellPreviewCanvas.addEventListener('click', openPicker);
+
+particlesImg.addEventListener('load', () => {
+	updateMaxCell();
+	drawCellPreview(cellPreviewCtx, cellPreviewCanvas, selectedCell);
+});
+
+
+// ─── Preset buttons ───
+document.querySelectorAll('.preset-btn').forEach(btn => {
+	btn.onclick = () => {
+		document.getElementById('fireColorSelect').value = btn.dataset.fire;
+		document.getElementById('smokeColorSelect').value = btn.dataset.smoke;
+		selectedCell = +btn.dataset.cell;
+		drawCellPreview(cellPreviewCtx, cellPreviewCanvas, selectedCell);
+		renderGradient('firePreview', fireColors[btn.dataset.fire]);
+		renderGradient('smokePreview', smokeColors[btn.dataset.smoke]);
+		document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+		btn.classList.add('active');
+	};
+});
+
+// ─── Babylon.js Scene ───
+const canvas = document.getElementById('renderCanvas');
+const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true });
+const scene = new BABYLON.Scene(engine);
+scene.clearColor = new BABYLON.Color4(0.08, 0.08, 0.15, 1);
+
+const camera = new BABYLON.ArcRotateCamera('cam', -Math.PI/2, Math.PI/3, 8, BABYLON.Vector3.Zero(), scene);
+camera.attachControl(canvas, true);
+camera.inputs.removeByType('ArcRotateCameraPointersInput');
+camera.lowerRadiusLimit = 2;
+camera.upperRadiusLimit = 25;
+camera.wheelPrecision = 20;
+
+// Simple ground plane for reference
+const ground = BABYLON.MeshBuilder.CreateGround('ground', { width: 10, height: 10 }, scene);
+const groundMat = new BABYLON.StandardMaterial('gmat', scene);
+groundMat.diffuseColor = new BABYLON.Color3(0.15, 0.15, 0.2);
+groundMat.specularColor = BABYLON.Color3.Black();
+ground.material = groundMat;
+
+
+// Light
+new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
+
+// ─── Particle Sprite Managers ───
+const FIRST_FRAME = FIRST_CELL + 128; // offset by 128 matching game's atlas layout
+const MAX_SPRITES = 400;
+const color4White = new BABYLON.Color4(1, 1, 1, 1);
+
+// Load particles.webp into a DynamicTexture (mirroring the game's approach)
+const atlasTexture = new BABYLON.DynamicTexture('atlas', 2048, scene, true, BABYLON.Texture.NEAREST_SAMPLINGMODE);
+
+particlesImg.addEventListener('load', () => {
+	const ctx = atlasTexture.getContext();
+	ctx.save();
+	ctx.scale(1, -1);
+	ctx.drawImage(particlesImg, 0, -particlesImg.height);
+	ctx.restore();
+	atlasTexture.update();
+});
+
+function createParticleManager(blendMode) {
+	const manager = new BABYLON.SpriteManager('pm', '', MAX_SPRITES, 128, scene);
+	manager.texture = atlasTexture;
+
+	manager.oldRender = manager.render;
+	manager.render = function() {
+		engine.setDepthFunctionToLessOrEqual();
+		engine.setAlphaMode(BABYLON.Engine.ALPHA_COMBINE);
+		this.oldRender();
+		engine.setAlphaMode(BABYLON.Engine.ALPHA_DISABLE);
+		engine.setDepthFunctionToLess();
+	};
+
+	if (blendMode !== undefined) {
+		manager.blendMode = blendMode;
+	}
+
+	for (let i = 0; i < MAX_SPRITES; i++) {
+		const s = new BABYLON.Sprite('', manager);
+		s.isVisible = false;
+	}
+
+	manager.nextIdx = 0;
+
+	manager.getSprite = function(cell) {
+		const s = this.sprites[this.nextIdx];
+		s.cellIndex = cell !== undefined ? FIRST_FRAME + cell : Math.floor(Math.random() * (maxCell + 1)) + FIRST_FRAME;
+		s.isVisible = true;
+		s.easing = Ease.linear;
+		s.startSize = -1;
+		s.endSize = -1;
+		s.gravity = 0;
+		s.dx = 0;
+		s.dy = 0;
+		s.dz = 0;
+		s.float = 0;
+		s.anim = 0;
+		s.slow = 0;
+		s.angle = 0;
+		s.rotate = 0;
+		s.stopped = false;
+		s.animColors = null;
+		s.collide = false;
+		s.color.copyFrom(color4White);
+		this.nextIdx = ++this.nextIdx % this.sprites.length;
+		return s;
+	};
+
+	return manager;
+}
+
+const explosionSmokeManager = createParticleManager();
+const explosionFireManager = createParticleManager(BABYLON.Engine.ALPHA_ADD);
+
+// ─── Particle Update (from clientGame.js) ───
+function updateParticles(manager, delta) {
+	for (let i = 0; i < manager.sprites.length; i++) {
+		const s = manager.sprites[i];
+		if (!s.isVisible) continue;
+
+		const anim = s.easing(s.anim);
+
+		if (s.endSize >= 0) {
+			s.size = s.startSize + anim * (s.endSize - s.startSize);
+		}
+
+		if (s.animColors) {
+			lerpColors(s.animColors, anim, s.color);
+		}
+
+		if (!s.stopped) {
+			s.position.x += s.dx * delta;
+			s.position.y += s.dy * delta + (s.float || 0);
+			s.position.z += s.dz * delta;
+
+			if (s.rotate) s.angle += s.rotate * delta;
+
+			// Simple ground collision (y=0)
+			if (s.collide && s.position.y < 0.05) {
+				s.stopped = true;
+				s.position.y = 0.05;
+			} else if (s.gravity) {
+				s.dy -= s.gravity * delta;
+			}
+
+			if (s.slow) {
+				const f = Math.pow(s.slow, delta);
+				s.dx *= f;
+				s.dy *= f;
+				s.dz *= f;
+			}
+		}
+
+		s.anim += delta / s.animLength;
+		if (s.anim >= 1) s.isVisible = false;
+	}
+}
+
+// ─── Explosion (from clientGame.js) ───
+function addExplosionSprite(manager, animLength, x, y, z, dx, dy, dz, size, cell, colorName, isSmoke) {
+	const s = manager.getSprite(cell);
+	s.animLength = animLength;
+	s.easing = Ease.inOutQuad;
+	s.position.x = x;
+	s.position.y = y;
+	s.position.z = z;
+	s.size = size;
+	s.dx = dx;
+	s.dy = dy;
+	s.dz = dz;
+	s.slow = 0.7;
+	s.angle = Math.random() * Math.PI * 2;
+	s.rotate = Math.random() * 0.04 - 0.02;
+
+	if (isSmoke) {
+		s.animColors = smokeColors[colorName] || smokeColors.default;
+	} else {
+		s.animColors = fireColors[colorName] || fireColors.default;
+	}
+
+	return s;
+}
+
+function triggerExplosion() {
+	playSound(document.getElementById('soundSelect').value);
+	const fireColorName = document.getElementById('fireColorSelect').value;
+	const smokeColorName = document.getElementById('smokeColorSelect').value;
+	const cell = selectedCell;
+	const damage = 150;
+
+	const x = 0, y = 0.5, z = 0;
+	const count = Math.floor(damage / 4);
+
+	for (let i = 0; i < count; i++) {
+		const animLength = Math.random() * 80 + 80;
+		const size = Math.random() * 1 + 0.5;
+		const se = (0.9 - size) * 0.5;
+		const dx = ((Math.random() * 2) - 1) * se;
+		const dy = ((Math.random() * 2) - 1) * se + 0.1;
+		const dz = ((Math.random() * 2) - 1) * se;
+
+		const s = addExplosionSprite(explosionSmokeManager, animLength, x, y, z, dx, dy, dz, size, cell, smokeColorName, true);
+		s.float = Math.random() * 0.015 + 0.001;
+		s.collide = true;
+
+		const sf = addExplosionSprite(explosionFireManager, animLength * 0.075, x, y, z, dx * 1.5, dy * 1.5, dz * 1.5, size, cell, fireColorName, false);
+		sf.collide = true;
+	}
+}
+
+// ─── Render Loop ───
+let lastTime = performance.now();
+engine.runRenderLoop(() => {
+	const now = performance.now();
+	const delta = Math.min((now - lastTime) / 16.667, 3); // normalize to ~60fps ticks, cap at 3
+	lastTime = now;
+
+	updateParticles(explosionSmokeManager, delta);
+	updateParticles(explosionFireManager, delta);
+	scene.render();
+});
+
+window.addEventListener('resize', () => engine.resize());
+
+// ─── Trigger controls ───
+document.getElementById('triggerBtn').onclick = triggerExplosion;
+document.addEventListener('keydown', e => {
+	if (e.code === 'Space' && e.target === document.body) {
+		e.preventDefault();
+		triggerExplosion();
+	}
+});
+
+// Auto-repeat
+let autoTimer = null;
+document.getElementById('autoCheck').onchange = function() {
+	clearInterval(autoTimer);
+	if (this.checked) {
+		const sec = +document.getElementById('autoInterval').value || 2;
+		triggerExplosion();
+		autoTimer = setInterval(triggerExplosion, sec * 1000);
+	}
+};
+document.getElementById('autoInterval').onchange = function() {
+	if (document.getElementById('autoCheck').checked) {
+		clearInterval(autoTimer);
+		const sec = +this.value || 2;
+		autoTimer = setInterval(triggerExplosion, sec * 1000);
+	}
+};
+</script>
+</body>
+</html>

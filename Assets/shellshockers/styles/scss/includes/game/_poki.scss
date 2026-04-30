@@ -1,0 +1,24 @@
+/* ----------------------------------------------------------------- poki stuff -- */
+.poki-reward-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn_reward {
+	background-color: var(--ss-blue2);
+	display: flex;
+	align-items: center;
+	text-shadow: var(--ss-space-micro) var(--ss-space-micro) var(--ss-shadow);
+}
+
+.playing-poki #inGameScaler {
+	width: auto;
+	float: none;
+	margin: 0 auto;
+}
+
+.playing-poki .respawn-container {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+}

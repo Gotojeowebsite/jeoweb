@@ -1,0 +1,44 @@
+<script>
+
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+function openFirebaseDb () {
+    return new Promise((resolve, reject) => {
+        let req = window.indexedDB.open('firebaseLocalStorageDb');
+        req.onsuccess = () => {
+			let db = req.result;
+			let transaction = db.transaction(['firebaseLocalStorage'], 'readwrite');
+			let store = transaction.objectStore('firebaseLocalStorage');
+			resolve({ db, store });
+		}
+		req.onerror = err => reject(err);
+		req.onupgradeneeded = () => {
+			let db = req.result;
+			let store = db.createObjectStore('firebaseLocalStorage', { keyPath: 'fbase_key' });
+			resolve({ db, store });
+		}
+    });
+}
+
+window.onload = () => {
+	window.parent.postMessage('REDIRECT', '*')
+}
+
+window.onmessage = e => {
+	let data = e.data;
+
+	if (data.firebaseDb) {
+		openFirebaseDb().then(({ db, store }) => {
+			for (let o of data.firebaseDb) {
+				store.put(o);
+			}
+		})
+	}
+
+	if (data.storage) {
+		for (let k in data.storage) {
+			localStorage.setItem(k, data.storage[k]);
+		}
+	}
+}
+</script>

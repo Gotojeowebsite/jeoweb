@@ -184,6 +184,36 @@
 			</div>
 		</section>
 
+		<!-- Spotlight: Game of the Day -->
+		<section id="spotlightSection" class="spotlight-section hidden" aria-label="Featured game">
+			<div class="spotlight-bg" id="spotlightBg"></div>
+			<div class="spotlight-inner">
+				<div class="spotlight-cover" id="spotlightCover" role="img" aria-label=""></div>
+				<div class="spotlight-meta">
+					<span class="spotlight-eyebrow">⭐ Game of the Day</span>
+					<h2 class="spotlight-title" id="spotlightTitle"></h2>
+					<p class="spotlight-sub" id="spotlightSub"></p>
+					<div class="spotlight-actions">
+						<button id="spotlightPlay" class="spotlight-btn primary">▶ Play now</button>
+						<button id="spotlightSkip" class="spotlight-btn">Maybe later</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Continue Playing band -->
+		<section id="continueSection" class="continue-section hidden" aria-label="Continue playing">
+			<div class="continue-card" id="continueCard">
+				<div class="continue-cover" id="continueCover"></div>
+				<div class="continue-meta">
+					<span class="continue-eyebrow">⏱ Continue playing</span>
+					<h3 class="continue-title" id="continueTitle"></h3>
+				</div>
+				<button id="continuePlay" class="continue-btn">▶ Continue</button>
+				<button id="continueDismiss" class="continue-dismiss" aria-label="Dismiss">✕</button>
+			</div>
+		</section>
+
 		<!-- Search & Filter -->
 		<section class="toolbar-section">
 			<div class="search-container">
@@ -211,6 +241,7 @@
 					<span class="toggle-slider"></span>
 				</div>
 			</label>
+			<button id="surpriseMeBtn" class="refresh-btn surprise-btn" data-tooltip="Pick a random game">🎲 Surprise Me</button>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 			<span id="statusFreshness" class="status-freshness" title="Time since the last supervisor / scanner run"></span>
 		</section>
@@ -228,6 +259,38 @@
 				<button class="carousel-arrow carousel-arrow-left" data-target="favoritesTrack" aria-label="Scroll left">‹</button>
 				<div id="favoritesTrack" class="carousel-track"></div>
 				<button class="carousel-arrow carousel-arrow-right" data-target="favoritesTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Trending This Week Section -->
+		<section id="trendingSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">🔥</span>
+					<h2 class="carousel-title">Your Top This Week</h2>
+					<span id="trendingCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="trendingTrack" aria-label="Scroll left">‹</button>
+				<div id="trendingTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="trendingTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Wishlist Section -->
+		<section id="wishlistSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">🔖</span>
+					<h2 class="carousel-title">On Your Wishlist</h2>
+					<span id="wishlistCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="wishlistTrack" aria-label="Scroll left">‹</button>
+				<div id="wishlistTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="wishlistTrack" aria-label="Scroll right">›</button>
 			</div>
 		</section>
 
@@ -318,6 +381,8 @@
 				<button class="settings-tab active" data-tab="general" role="tab" aria-selected="true">🛡 General</button>
 				<button class="settings-tab" data-tab="appearance" role="tab" aria-selected="false">🎨 Appearance</button>
 				<button class="settings-tab" data-tab="profile" role="tab" aria-selected="false">📦 Profile</button>
+				<button class="settings-tab" data-tab="stats" role="tab" aria-selected="false">📊 Stats</button>
+				<button class="settings-tab" data-tab="about" role="tab" aria-selected="false">ℹ About</button>
 			</nav>
 
 			<div class="settings-body">
@@ -337,11 +402,36 @@
 					<div class="settings-section">
 						<h3>🎨 Theme Presets</h3>
 						<p class="settings-help">Choose a pre-built aesthetic for Jeoweb.</p>
-						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-							<button class="theme-preset-btn" data-preset="default" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Default</button>
-							<button class="theme-preset-btn" data-preset="cyberpunk" style="padding:10px; border-radius:8px; border:1px solid #f0f; background:#110022; color:#0ff; text-shadow: 0 0 5px #0ff; cursor:pointer;">Cyberpunk</button>
-							<button class="theme-preset-btn" data-preset="matrix" style="padding:10px; border-radius:8px; border:1px solid #0f0; background:#000; color:#0f0; font-family: monospace; cursor:pointer;">Matrix Hacker</button>
-							<button class="theme-preset-btn" data-preset="crt" style="padding:10px; border-radius:8px; border:1px solid #fff; background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; cursor:pointer; font-family: monospace;">Retro CRT</button>
+						<div class="preset-grid">
+							<button class="theme-preset-btn preset-tile" data-preset="default" style="background:#0c0b14; color:#fff; border:1px solid #7c3aed;">Default</button>
+							<button class="theme-preset-btn preset-tile" data-preset="cyberpunk" style="background:#110022; color:#0ff; border:1px solid #f0f; text-shadow: 0 0 5px #0ff;">Cyberpunk</button>
+							<button class="theme-preset-btn preset-tile" data-preset="matrix" style="background:#000; color:#0f0; border:1px solid #0f0; font-family: monospace;">Matrix</button>
+							<button class="theme-preset-btn preset-tile" data-preset="crt" style="background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; border:1px solid #fff; font-family: monospace;">Retro CRT</button>
+							<button class="theme-preset-btn preset-tile" data-preset="pastel" style="background:#fdf4ff; color:#9d174d; border:1px solid #f9a8d4;">Pastel</button>
+							<button class="theme-preset-btn preset-tile" data-preset="solar-light" style="background:#fdf6e3; color:#268bd2; border:1px solid #268bd2;">Solar Light</button>
+							<button class="theme-preset-btn preset-tile" data-preset="vaporwave" style="background:#1a0033; color:#ff77e9; border:1px solid #22d3ee; text-shadow: 0 0 6px #ff77e9;">Vaporwave</button>
+							<button class="theme-preset-btn preset-tile" data-preset="forest" style="background:#0f1a14; color:#3fa67a; border:1px solid #3fa67a;">Forest</button>
+							<button class="theme-preset-btn preset-tile" data-preset="y2k" style="background:linear-gradient(135deg,#dde6ff,#fff); color:#445; border:1px solid #7c87ff;">Y2K</button>
+							<button class="theme-preset-btn preset-tile" data-preset="holo" style="background:#06070b; color:#fff; border:1px solid transparent; background-image:linear-gradient(#06070b,#06070b),linear-gradient(135deg,#ff77e9,#22d3ee,#a3ff77); background-origin:border-box; background-clip:padding-box,border-box;">Holographic</button>
+						</div>
+					</div>
+
+					<div class="settings-section">
+						<h3>🌫 Glass intensity</h3>
+						<p class="settings-help">How blurry frosted-glass surfaces feel.</p>
+						<input id="glassSlider" type="range" min="0" max="24" step="1" value="16" class="settings-slider" />
+						<div class="settings-slider-row"><span>Off</span><span id="glassValue">16px</span><span>Heavy</span></div>
+					</div>
+
+					<div class="settings-section">
+						<h3>🌈 Accent style</h3>
+						<p class="settings-help">Use a single color or a holographic gradient.</p>
+						<div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+							<button id="accentSolidBtn" class="accent-mode-btn active" data-mode="solid">Solid</button>
+							<button id="accentGradBtn" class="accent-mode-btn" data-mode="grad">Gradient</button>
+							<input type="color" id="accentGradStop1" value="#ff77e9" class="grad-stop" hidden />
+							<input type="color" id="accentGradStop2" value="#22d3ee" class="grad-stop" hidden />
+							<input type="range" id="accentGradAngle" min="0" max="360" value="135" class="settings-slider" style="flex: 1; min-width: 120px;" hidden />
 						</div>
 					</div>
 
@@ -382,6 +472,20 @@
 							<label for="importProfileInput" class="loading-btn bug-btn" style="flex: 1; min-width: 140px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); color: var(--text); cursor: pointer; text-align: center;">📥 Import Profile</label>
 							<input type="file" id="importProfileInput" accept=".jeo,.json" hidden />
 						</div>
+					</div>
+				</section>
+
+				<section class="settings-tab-pane" data-tab="stats" role="tabpanel" hidden>
+					<div id="statsTabBody"><p class="settings-help">Loading stats…</p></div>
+				</section>
+
+				<section class="settings-tab-pane" data-tab="about" role="tabpanel" hidden>
+					<div class="settings-section">
+						<h3>ℹ About Jeoweb</h3>
+						<p class="settings-help">Static-first, self-hosted unblocked games portal. Privacy-first: all data stays on your device.</p>
+						<p class="settings-help"><strong>Version:</strong> <span id="aboutVersion">v2.0</span></p>
+						<p class="settings-help"><strong>Source:</strong> <a href="https://github.com/Gotojeowebsite/jeoweb" target="_blank" rel="noopener" style="color:var(--accent)">github.com/Gotojeowebsite/jeoweb</a></p>
+						<button id="changelogBtn" class="accent-mode-btn" type="button">📜 View recent changes</button>
 					</div>
 				</section>
 			</div>
@@ -551,6 +655,9 @@
 	<script src="account-system.js"></script>
 	<script src="save-manager.js"></script>
 	<script src="toast.js"></script>
+	<script src="achievements.js"></script>
+	<script src="surprise-me.js"></script>
+	<script src="stats.js"></script>
 	<script src="command-palette.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>

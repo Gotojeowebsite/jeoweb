@@ -1,0 +1,49 @@
+<!--<audio id="player" preload="metadata" controls>
+    <source src="https://uswest2-music.shellshock.io/shellshock.ogg" type="audio/ogg">Your browser does not support the audio element.
+</audio>-->
+
+<script>
+	var el = new Audio("https://uswest2-music.shellshock.io/shellshock.ogg");//document.getElementById('player');
+
+    el.addEventListener('error', e => { console.log('MUSIC ERROR: ', e) });
+    el.addEventListener('abort', e => { console.log('MUSIC ABORT: ', e) });
+    el.addEventListener('emptied', e => { console.log('MUSIC EMPTIED: ', e) });
+    el.addEventListener('ended', e => { console.log('MUSIC ENDED: ', e) });
+    el.addEventListener('suspend', e => { console.log('MUSIC SUSPEND: ', e) });
+    el.addEventListener('waiting', e => { console.log('MUSIC WAITING: ', e) });
+    el.addEventListener('pause', e => { console.log('MUSIC PAUSED: ', e) });
+
+    el.addEventListener('canplay', e => { console.log('MUSIC CAN PLAY: ', e) });
+    el.addEventListener('canplaythrough', e => { console.log('MUSIC CAN PLAY THROUGH: ', e) });
+    el.addEventListener('durationchange', e => { console.log('MUSIC DURATION CHANGED: ', e) });
+    el.addEventListener('loadeddata', e => { console.log('MUSIC LOADED DATA: ', e) });
+    el.addEventListener('loadedmetadata', e => { console.log('MUSIC LOADED METADATA: ', e) });
+    el.addEventListener('loadstart', e => { console.log('MUSIC LOAD START: ', e) });
+    el.addEventListener('playing', e => { console.log('MUSIC PLAYING: ', e) });
+    //el.addEventListener('progress', e => { console.log('MUSIC PROGRESS: ', e) });
+    el.addEventListener('ratechange', e => { console.log('MUSIC RATE CHANGE: ', e) });
+    el.addEventListener('seeked', e => { console.log('MUSIC SEEKED: ', e) });
+    el.addEventListener('seeking', e => { console.log('MUSIC SEEKING: ', e) });
+    //el.addEventListener('timeupdate', e => { console.log('MUSIC TIME UPDATE: ', e) });
+
+    el.addEventListener('stalled', e => { console.log('MUSIC STALLED: ', e) });
+
+
+	el.onloadstart = e => {
+		//console.log(e);
+		console.dir(el);
+	}
+
+	el.onloadedmetadata = e => {
+		console.log(e);
+	}
+
+	function play () {
+		//var el = document.getElementById('player');
+		el.play().then(e => { console.log('promise!') })
+	}
+</script>
+
+
+
+<button onclick="play()">PLAY</button>
