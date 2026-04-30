@@ -543,12 +543,66 @@ class App {
 	}
 
 	bindUI() {
-		this.searchInput.addEventListener('input', () => this.renderGames());
+		// Debounced search input — avoids re-rendering on every keystroke
+		let _searchTimer = null;
+		this.searchInput.addEventListener('input', () => {
+			if (_searchTimer) clearTimeout(_searchTimer);
+			_searchTimer = setTimeout(() => this.renderGames(), 140);
+		});
 		this.refreshBtn.addEventListener('click', () => this.refreshGames());
 		this.themeToggle.addEventListener('click', () => this.toggleTheme());
 		this.closeModal.addEventListener('click', () => this.closePlayer());
 		this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
 		this.openNewTabBtn.addEventListener('click', () => this.openGameInNewTab());
+
+		// Save sidebar wiring
+		const sbToggle = document.getElementById('saveSidebarToggle');
+		const sbClose = document.getElementById('saveSidebarClose');
+		const sb = document.getElementById('saveSidebar');
+		const saveNowBtn = document.getElementById('saveNowBtn');
+		const saveLabelBtn = document.getElementById('saveLabelBtn');
+		const sbList = document.getElementById('saveSidebarList');
+		if (sbToggle && sb) {
+			sbToggle.addEventListener('click', () => {
+				const willShow = sb.classList.contains('hidden');
+				sb.classList.toggle('hidden');
+				sb.setAttribute('aria-hidden', willShow ? 'false' : 'true');
+				if (willShow) this.refreshSaveSidebar();
+			});
+		}
+		if (sbClose && sb) {
+			sbClose.addEventListener('click', () => {
+				sb.classList.add('hidden');
+				sb.setAttribute('aria-hidden', 'true');
+			});
+		}
+		if (saveNowBtn) saveNowBtn.addEventListener('click', () => this.saveNowFromSidebar(false));
+		if (saveLabelBtn) saveLabelBtn.addEventListener('click', () => this.saveNowFromSidebar(true));
+		if (sbList) {
+			sbList.addEventListener('click', (e) => {
+				const btn = e.target.closest('button[data-act]');
+				if (!btn) return;
+				const row = btn.closest('.save-row');
+				if (!row) return;
+				const id = Number(row.dataset.id);
+				this.handleSaveAction(id, btn.dataset.act);
+			});
+		}
+		// Ctrl/Cmd+S to save the active game
+		document.addEventListener('keydown', (e) => {
+			if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+				if (this.currentGameSlug && this.playModal && !this.playModal.classList.contains('hidden')) {
+					e.preventDefault();
+					this.saveNowFromSidebar(false);
+				}
+			}
+		});
+		// Refresh status line when an autosave happens
+		if (window.JeoSaves && window.JeoSaves.on) {
+			window.JeoSaves.on('autosave', () => {
+				if (this.currentGameSlug && sb && !sb.classList.contains('hidden')) this.refreshSaveSidebar();
+			});
+		}
 
 		const shareBtn = document.getElementById('shareWebsiteBtn');
 		if (shareBtn) {
@@ -914,6 +968,13 @@ class App {
 			return true;
 		});
 		filtered.sort((a, b) => a.name.localeCompare(b.name));
+		// Announce result count to screen readers
+		const live = document.getElementById('searchResultsLive');
+		if (live) {
+			live.textContent = q
+				? `${filtered.length} game${filtered.length === 1 ? '' : 's'} match "${q}"`
+				: `${filtered.length} games shown`;
+		}
 		if (filtered.length === 0) {
 			this.gameGrid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><h3>No games found</h3><p>Try a different search term</p></div>';
 			return;
@@ -1142,6 +1203,12 @@ class App {
 			else target += '/index.html';
 		}
 		this.currentGameUrl = target;
+		this.currentGameSlug = this.deriveSlugFromUrl(target);
+		this.currentGameName = game ? game.name : this.currentGameSlug;
+		if (window.JeoSaves && this.currentGameSlug) {
+			try { window.JeoSaves.bindGame(this.currentGameSlug); } catch {}
+			this.refreshSaveSidebar();
+		}
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
 		const loadingGameTitle = document.getElementById('loadingGameTitle');
@@ -1253,11 +1320,102 @@ class App {
 	}
 
 	closePlayer() {
+		if (window.JeoSaves) {
+			try { window.JeoSaves.unbindGame(); } catch {}
+		}
+		const sb = document.getElementById('saveSidebar');
+		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden', 'true');
 		document.body.style.overflow = '';
 		this.gameFrame.classList.remove('offscreen-iframe');
+		this.currentGameSlug = null;
+	}
+
+	deriveSlugFromUrl(url) {
+		try {
+			const m = String(url || '').match(/Assets\/([^\/]+)\//i);
+			return m ? decodeURIComponent(m[1]) : null;
+		} catch { return null; }
+	}
+
+	formatRelTime(ts) {
+		const s = Math.max(1, Math.floor((Date.now() - ts) / 1000));
+		if (s < 60) return s + 's ago';
+		const m = Math.floor(s / 60);
+		if (m < 60) return m + 'm ago';
+		const h = Math.floor(m / 60);
+		if (h < 24) return h + 'h ago';
+		const d = Math.floor(h / 24);
+		return d + 'd ago';
+	}
+
+	async refreshSaveSidebar() {
+		const list = document.getElementById('saveSidebarList');
+		const status = document.getElementById('saveSidebarStatus');
+		if (!list || !window.JeoSaves || !this.currentGameSlug) return;
+		const saves = await window.JeoSaves.listSaves(this.currentGameSlug);
+		if (status) {
+			const last = window.JeoSaves.getLastAutoSaveAt();
+			status.textContent = last ? 'Auto-save: ' + this.formatRelTime(last) : 'Auto-save active';
+		}
+		if (!saves.length) {
+			list.innerHTML = '<p class="save-empty">No saves yet for this game. Press <kbd>Ctrl/Cmd+S</kbd> while playing.</p>';
+			return;
+		}
+		const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+		list.innerHTML = saves.map(r => `
+			<div class="save-row${r.pinned ? ' pinned' : ''}" data-id="${r.id}">
+				<div class="save-row-head">
+					<span class="save-row-kind ${r.kind}">${r.pinned ? '📌 ' : ''}${esc(r.kind)}</span>
+					<span class="save-row-label">${esc(r.label || '(no label)')}</span>
+				</div>
+				<div class="save-row-time">${this.formatRelTime(r.ts)} · ${new Date(r.ts).toLocaleString()}</div>
+				<div class="save-row-actions">
+					<button data-act="restore">↩ Restore</button>
+					<button data-act="pin">${r.pinned ? '📍 Unpin' : '📌 Pin'}</button>
+					<button data-act="delete" class="danger">🗑 Delete</button>
+				</div>
+			</div>
+		`).join('');
+	}
+
+	async handleSaveAction(id, action) {
+		if (!window.JeoSaves) return;
+		try {
+			if (action === 'restore') {
+				if (!window.confirm('Restore this save? The game iframe will reload to apply changes.')) return;
+				await window.JeoSaves.restoreSave(id);
+				this.gameFrame.src = this.currentGameUrl + '?_r=' + Date.now();
+			} else if (action === 'pin') {
+				const saves = await window.JeoSaves.listSaves(this.currentGameSlug);
+				const cur = saves.find(s => s.id === id);
+				await window.JeoSaves.pinSave(id, !cur?.pinned);
+			} else if (action === 'delete') {
+				if (!window.confirm('Delete this save? This cannot be undone.')) return;
+				await window.JeoSaves.deleteSave(id);
+			}
+			this.refreshSaveSidebar();
+		} catch (e) {
+			console.error('save action failed', e);
+			alert('Save action failed: ' + (e.message || e));
+		}
+	}
+
+	async saveNowFromSidebar(withLabel = false) {
+		if (!window.JeoSaves || !this.currentGameSlug) return;
+		let label = '';
+		if (withLabel) {
+			label = window.prompt('Label this save:', '') || '';
+			if (!label.trim()) return;
+		}
+		try {
+			await window.JeoSaves.saveNow({ slug: this.currentGameSlug, kind: 'manual', label: label.trim() });
+			this.refreshSaveSidebar();
+		} catch (e) {
+			alert('Save failed: ' + (e.message || e));
+		}
 	}
 
 	/* =============== TAB CLOAKER =============== */

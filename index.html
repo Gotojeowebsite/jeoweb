@@ -415,6 +415,23 @@
 			</div>
 
 			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation allow-modals allow-pointer-lock"></iframe>
+
+			<!-- Save Sidebar -->
+			<button id="saveSidebarToggle" class="save-sidebar-toggle" aria-label="Open saves" title="Saves (Ctrl+S to save now)">💾</button>
+			<aside id="saveSidebar" class="save-sidebar hidden" aria-hidden="true">
+				<header class="save-sidebar-head">
+					<h3>Saves</h3>
+					<span id="saveSidebarStatus" class="save-sidebar-status">Auto-save off</span>
+					<button id="saveSidebarClose" class="save-sidebar-close" aria-label="Close saves">✕</button>
+				</header>
+				<div class="save-sidebar-actions">
+					<button id="saveNowBtn" class="save-action-btn primary">💾 Save now</button>
+					<button id="saveLabelBtn" class="save-action-btn">🏷 Save with label</button>
+				</div>
+				<div id="saveSidebarList" class="save-sidebar-list" role="list">
+					<p class="save-empty">No saves yet for this game. Press <kbd>Ctrl/Cmd+S</kbd> while playing.</p>
+				</div>
+			</aside>
 		</div>
 	</div>
 
@@ -503,6 +520,9 @@
 	</script>
 	<script src="theme-manager.js"></script>
 	<script src="account-system.js"></script>
+	<script src="save-manager.js"></script>
+	<script src="toast.js"></script>
+	<script src="command-palette.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>
 	(function () {
