@@ -66,6 +66,8 @@
           window.JeoToast.success(`${a.icon} Achievement: ${a.label}`, { ttl: 5000 });
         }
       }
+      if (window.JeoSounds) try { window.JeoSounds.play('achievement'); } catch {}
+      if (window.JeoConfetti) try { window.JeoConfetti.burst({ count: 50, y: 100 }); } catch {}
     }
   }
 

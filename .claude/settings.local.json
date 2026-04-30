@@ -6,7 +6,11 @@
       "Read(//tmp/**)",
       "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/play/?title=Balatro&author=LocalThunk&link=balatro\" -A \"Mozilla/5.0\" -o /tmp/balatro.html -w \"%{http_code}\\\\n\")",
       "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/g\" -A \"Mozilla/5.0\" -o /tmp/ethanyo_list.html -w \"%{http_code}\\\\n\")",
-      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/misc/frame.html?link=balatro&title=Balatro\" -A \"Mozilla/5.0\" -o /tmp/frame.html -w \"%{http_code}\\\\n\")"
+      "Bash(curl -sL \"https://ethanyo.global.ssl.fastly.net/misc/misc/frame.html?link=balatro&title=Balatro\" -A \"Mozilla/5.0\" -o /tmp/frame.html -w \"%{http_code}\\\\n\")",
+      "Bash(node --check /workspaces/jeoweb/confetti.js /workspaces/jeoweb/sounds.js /workspaces/jeoweb/achievements.js)",
+      "Bash(node --check /workspaces/jeoweb/seasonal-themes.js /workspaces/jeoweb/avatars.js)",
+      "Bash(node /workspaces/jeoweb/scan.js)",
+      "Bash(git add *)"
     ]
   }
 }

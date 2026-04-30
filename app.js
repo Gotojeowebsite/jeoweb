@@ -1066,6 +1066,10 @@ class App {
 			if (!this.showFlash && g.type === 'flash') return false;
 			if (!this.showRetro && g.type === 'snes') return false;
 			if (this.hideMaintenance && this.isUnderMaintenance(g)) return false;
+			if (this.activeTag) {
+				const tags = g.tags || [];
+				if (!tags.includes(this.activeTag)) return false;
+			}
 
 			if (q) {
 				const rawName = g.name.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -1193,6 +1197,15 @@ class App {
 			localStorage.setItem('jeo:playlog', JSON.stringify(log));
 			localStorage.setItem('jeo:lastPlayed', name);
 		} catch {}
+		// First-play confetti for a brand-new game
+		try {
+			const seen = JSON.parse(localStorage.getItem('jeo:gamesSeen') || '[]');
+			if (!seen.includes(name)) {
+				seen.push(name);
+				localStorage.setItem('jeo:gamesSeen', JSON.stringify(seen));
+				if (window.JeoConfetti) setTimeout(() => window.JeoConfetti.burst({ y: window.innerHeight * 0.3 }), 100);
+			}
+		} catch {}
 		// Fire achievements check (if available)
 		if (window.JeoAchievements) {
 			try { window.JeoAchievements.onEvent('play', { slug: name }); } catch {}
@@ -1222,7 +1235,34 @@ class App {
 		this.renderRecent();
 		this.renderNewlyAdded();
 		this.renderRequestedBtn();
+		this.renderTagChips();
 		this.bindCarouselArrows();
+	}
+
+	/* =============== TAG CHIPS =============== */
+	renderTagChips() {
+		const row = document.getElementById('tagChipRow');
+		if (!row || !this.games) return;
+		const tally = new Map();
+		for (const g of this.games) {
+			if (!g.tags) continue;
+			for (const t of g.tags) tally.set(t, (tally.get(t) || 0) + 1);
+		}
+		const top = [...tally.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+		if (!top.length) { row.classList.add('hidden'); return; }
+		row.classList.remove('hidden');
+		const active = this.activeTag || null;
+		row.innerHTML = top.map(([t, n]) =>
+			`<button class="tag-chip${active === t ? ' active' : ''}" data-tag="${this.escapeAttr(t)}">${this.escapeAttr(t)} <span class="tag-count">${n}</span></button>`
+		).join('');
+		row.querySelectorAll('.tag-chip').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const tag = btn.dataset.tag;
+				this.activeTag = (this.activeTag === tag) ? null : tag;
+				this.renderTagChips();
+				this.renderGames();
+			});
+		});
 	}
 
 	/* =============== SPOTLIGHT (Game of the Day) =============== */

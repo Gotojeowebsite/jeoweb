@@ -242,6 +242,7 @@
 				</div>
 			</label>
 			<button id="surpriseMeBtn" class="refresh-btn surprise-btn" data-tooltip="Pick a random game">🎲 Surprise Me</button>
+			<div id="tagChipRow" class="tag-chip-row hidden" role="group" aria-label="Filter by tag"></div>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 			<span id="statusFreshness" class="status-freshness" title="Time since the last supervisor / scanner run"></span>
 		</section>
@@ -446,6 +447,10 @@
 								<span style="color:var(--text); font-size:14px;">Click Ripples</span>
 								<div class="toggle-switch"><input type="checkbox" id="animRippleToggle" checked /><span class="toggle-slider"></span></div>
 							</label>
+							<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+								<span style="color:var(--text); font-size:14px;">UI Sounds</span>
+								<div class="toggle-switch"><input type="checkbox" id="soundsToggle" /><span class="toggle-slider"></span></div>
+							</label>
 						</div>
 					</div>
 
@@ -493,6 +498,42 @@
 	</div>
 
 	<script>
+	// Sounds toggle + changelog modal + extras
+	document.addEventListener('DOMContentLoaded', () => {
+		const soundsToggle = document.getElementById('soundsToggle');
+		if (soundsToggle && window.JeoSounds) {
+			soundsToggle.checked = window.JeoSounds.isEnabled();
+			soundsToggle.addEventListener('change', () => {
+				window.JeoSounds.setEnabled(soundsToggle.checked);
+				if (soundsToggle.checked) window.JeoSounds.play('open');
+			});
+		}
+		const cl = document.getElementById('changelogBtn');
+		if (cl) cl.addEventListener('click', async () => {
+			const existing = document.getElementById('jeoChangelog');
+			if (existing) existing.remove();
+			const modal = document.createElement('div');
+			modal.id = 'jeoChangelog';
+			modal.innerHTML = `<div class="jcl-card">
+				<header><h3>📜 Recent changes</h3><button class="jcl-x" aria-label="Close">✕</button></header>
+				<div class="jcl-body"><p class="settings-help">Loading…</p></div></div>`;
+			document.body.appendChild(modal);
+			modal.querySelector('.jcl-x').addEventListener('click', () => modal.remove());
+			modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+			try {
+				const r = await fetch('https://api.github.com/repos/Gotojeowebsite/jeoweb/commits?per_page=10');
+				if (!r.ok) throw new Error('fetch failed');
+				const data = await r.json();
+				const list = data.map(c => `
+					<li><div class="jcl-msg">${(c.commit.message || '').split('\n')[0].replace(/[<>"']/g, m => ({'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}</div>
+					<div class="jcl-meta">${new Date(c.commit.author.date).toLocaleString()} · ${c.commit.author.name}</div></li>`).join('');
+				modal.querySelector('.jcl-body').innerHTML = `<ul class="jcl-list">${list}</ul>`;
+			} catch (err) {
+				modal.querySelector('.jcl-body').innerHTML = `<p class="settings-help">Could not load changelog: ${err.message}</p>`;
+			}
+		});
+	});
+
 	// Settings tab switcher (Sprint E)
 	(function () {
 		document.addEventListener('click', (e) => {
@@ -656,8 +697,12 @@
 	<script src="save-manager.js"></script>
 	<script src="toast.js"></script>
 	<script src="achievements.js"></script>
+	<script src="confetti.js"></script>
+	<script src="sounds.js"></script>
 	<script src="surprise-me.js"></script>
 	<script src="stats.js"></script>
+	<script src="avatars.js"></script>
+	<script src="seasonal-themes.js"></script>
 	<script src="command-palette.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>

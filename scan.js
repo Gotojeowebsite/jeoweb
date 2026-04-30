@@ -127,6 +127,25 @@ function isBrokenGame(htmlPath) {
 	return false;
 }
 
+// Parse <!--TAG foo--> and <!--GENRE bar--> markers
+function parseTagsAndGenre(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		const tags = [];
+		const tagRe = /<!--\s*TAG\s+([a-z0-9\-_ ]+?)\s*-->/gi;
+		let m;
+		while ((m = tagRe.exec(content)) !== null) {
+			const tag = m[1].trim().toLowerCase();
+			if (tag && !tags.includes(tag)) tags.push(tag);
+		}
+		let genre = null;
+		const gMatch = content.match(/<!--\s*GENRE\s+([a-z0-9\-_ ]+?)\s*-->/i);
+		if (gMatch) genre = gMatch[1].trim().toLowerCase();
+		return { tags, genre };
+	} catch (e) {}
+	return { tags: [], genre: null };
+}
+
 function scan() {
 	const results = [];
 	if (!fs.existsSync(ASSETS_DIR)) {
@@ -157,6 +176,7 @@ function scan() {
 		const isRetro = !isFlash && isEmulatorGame(htmlFilePath);
 		const requested = isRequestedGame(htmlFilePath);
 		const broken = isBrokenGame(htmlFilePath);
+		const { tags, genre } = parseTagsAndGenre(htmlFilePath);
 
 		// Determine specific retro type (snes, gba, etc.)
 		let type = 'webgl';
@@ -183,10 +203,13 @@ function scan() {
 			image: image || 'notavailable.svg',
 			type,
 			addedTime,
+			addedDate: new Date(addedTime).toISOString().slice(0, 10),
 			size
 		};
 		if (requested) entry.requested = true;
 		if (broken) entry.status = 'broken';
+		if (tags && tags.length) entry.tags = tags;
+		if (genre) entry.genre = genre;
 		results.push(entry);
 	}
 
