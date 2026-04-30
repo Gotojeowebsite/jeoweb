@@ -307,80 +307,109 @@
 
 	<!-- Settings Modal -->
 	<div id="settingsModal" class="modal hidden" aria-hidden="true" style="z-index: 100000;">
-		<div class="modal-inner" style="max-width: 600px; max-height: 80vh; padding: 24px; border-radius: var(--radius); background: var(--card-bg); overflow-y: auto;">
-			<div class="modal-toolbar" style="margin-bottom: 20px;">
-				<h2 style="margin: 0; font-size: 24px; font-weight: bold; color: var(--text);">⚙️ Settings</h2>
+		<div class="modal-inner settings-modal-inner">
+			<div class="modal-toolbar settings-toolbar">
+				<h2 class="settings-title">⚙️ Settings</h2>
 				<div style="flex-grow: 1;"></div>
 				<button id="closeSettingsModal" class="modal-close-btn" aria-label="Close">✕</button>
 			</div>
 
-			<div class="settings-section">
-				<h3>🚨 Panic Button</h3>
-				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Instantly hide the game and open a safe website. (Tip: pressing `Esc` also closes games)</p>
-				<div style="display: flex; gap: 10px; margin-bottom: 10px;">
-					<input type="text" id="panicKeyInput" class="cloaker-input" placeholder="Click to set hotkey..." readonly style="cursor: pointer; width: 120px; flex-shrink: 0;" />
-					<input type="text" id="panicUrlInput" class="cloaker-input" placeholder="Safe URL (e.g. https://classroom.google.com)" />
-					<button id="savePanicBtn" class="cloaker-apply-btn">Save</button>
-				</div>
-			</div>
+			<nav class="settings-tabs" role="tablist" aria-label="Settings categories">
+				<button class="settings-tab active" data-tab="general" role="tab" aria-selected="true">🛡 General</button>
+				<button class="settings-tab" data-tab="appearance" role="tab" aria-selected="false">🎨 Appearance</button>
+				<button class="settings-tab" data-tab="profile" role="tab" aria-selected="false">📦 Profile</button>
+			</nav>
 
-			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+			<div class="settings-body">
+				<section class="settings-tab-pane active" data-tab="general" role="tabpanel">
+					<div class="settings-section">
+						<h3>🚨 Panic Button</h3>
+						<p class="settings-help">Instantly hide the game and open a safe website. (Tip: pressing `Esc` also closes games.)</p>
+						<div style="display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;">
+							<input type="text" id="panicKeyInput" class="cloaker-input" placeholder="Click to set hotkey..." readonly style="cursor: pointer; width: 120px; flex-shrink: 0;" />
+							<input type="text" id="panicUrlInput" class="cloaker-input" placeholder="Safe URL (e.g. https://classroom.google.com)" style="flex: 1; min-width: 200px;" />
+							<button id="savePanicBtn" class="cloaker-apply-btn">Save</button>
+						</div>
+					</div>
+				</section>
 
-			<div class="settings-section">
-				<h3>📦 Export / Import Profile</h3>
-				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Moving to your own site? Export your favorites, history, and settings!</p>
-				<div style="display: flex; gap: 10px;">
-					<button id="exportProfileBtn" class="loading-btn share-btn" style="flex: 1; padding: 10px; background: rgba(124, 58, 237, 0.2); border: 1px solid var(--accent); color: var(--text);">📤 Export Profile</button>
-					<label for="importProfileInput" class="loading-btn bug-btn" style="flex: 1; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); color: var(--text); cursor: pointer; text-align: center;">📥 Import Profile</label>
-					<input type="file" id="importProfileInput" accept=".jeo,.json" hidden />
-				</div>
-			</div>
+				<section class="settings-tab-pane" data-tab="appearance" role="tabpanel" hidden>
+					<div class="settings-section">
+						<h3>🎨 Theme Presets</h3>
+						<p class="settings-help">Choose a pre-built aesthetic for Jeoweb.</p>
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+							<button class="theme-preset-btn" data-preset="default" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Default</button>
+							<button class="theme-preset-btn" data-preset="cyberpunk" style="padding:10px; border-radius:8px; border:1px solid #f0f; background:#110022; color:#0ff; text-shadow: 0 0 5px #0ff; cursor:pointer;">Cyberpunk</button>
+							<button class="theme-preset-btn" data-preset="matrix" style="padding:10px; border-radius:8px; border:1px solid #0f0; background:#000; color:#0f0; font-family: monospace; cursor:pointer;">Matrix Hacker</button>
+							<button class="theme-preset-btn" data-preset="crt" style="padding:10px; border-radius:8px; border:1px solid #fff; background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; cursor:pointer; font-family: monospace;">Retro CRT</button>
+						</div>
+					</div>
 
-			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+					<div class="settings-section">
+						<h3>✨ Animations & Effects</h3>
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+							<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+								<span style="color:var(--text); font-size:14px;">3D Card Hover</span>
+								<div class="toggle-switch"><input type="checkbox" id="animHoverToggle" checked /><span class="toggle-slider"></span></div>
+							</label>
+							<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+								<span style="color:var(--text); font-size:14px;">Click Ripples</span>
+								<div class="toggle-switch"><input type="checkbox" id="animRippleToggle" checked /><span class="toggle-slider"></span></div>
+							</label>
+						</div>
+					</div>
 
-			<div class="settings-section">
-				<h3>🎨 Theme Presets</h3>
-				<p style="color: var(--muted); font-size: 14px; margin-bottom: 12px;">Choose a pre-built aesthetic for Jeoweb.</p>
-				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-					<button class="theme-preset-btn" data-preset="default" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Default</button>
-					<button class="theme-preset-btn" data-preset="cyberpunk" style="padding:10px; border-radius:8px; border:1px solid #f0f; background:#110022; color:#0ff; text-shadow: 0 0 5px #0ff; cursor:pointer;">Cyberpunk</button>
-					<button class="theme-preset-btn" data-preset="matrix" style="padding:10px; border-radius:8px; border:1px solid #0f0; background:#000; color:#0f0; font-family: monospace; cursor:pointer;">Matrix Hacker</button>
-					<button class="theme-preset-btn" data-preset="crt" style="padding:10px; border-radius:8px; border:1px solid #fff; background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; cursor:pointer; font-family: monospace;">Retro CRT</button>
-				</div>
-			</div>
+					<div class="settings-section">
+						<h3>📐 Layout & Style</h3>
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+							<button class="layout-btn" data-layout="normal" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer;">Normal Grid</button>
+							<button class="layout-btn" data-layout="compact" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Compact Grid</button>
+						</div>
+						<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+							<button class="radius-btn" data-radius="square" style="padding:10px; border-radius:0px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Square</button>
+							<button class="radius-btn" data-radius="rounded" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer; font-size:14px;">Rounded</button>
+							<button class="radius-btn" data-radius="pill" style="padding:10px; border-radius:24px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Pill</button>
+						</div>
+					</div>
+				</section>
 
-			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
-
-			<div class="settings-section">
-				<h3>✨ Animations & Effects</h3>
-				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-					<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
-						<span style="color:var(--text); font-size:14px;">3D Card Hover</span>
-						<div class="toggle-switch"><input type="checkbox" id="animHoverToggle" checked /><span class="toggle-slider"></span></div>
-					</label>
-					<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
-						<span style="color:var(--text); font-size:14px;">Click Ripples</span>
-						<div class="toggle-switch"><input type="checkbox" id="animRippleToggle" checked /><span class="toggle-slider"></span></div>
-					</label>
-				</div>
-			</div>
-
-			<hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
-
-			<div class="settings-section">
-				<h3>📐 Layout & Style</h3>
-				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-					<button class="layout-btn" data-layout="normal" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer;">Normal Grid</button>
-					<button class="layout-btn" data-layout="compact" style="padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;">Compact Grid</button>
-				</div>
-				<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-					<button class="radius-btn" data-radius="square" style="padding:10px; border-radius:0px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Square</button>
-					<button class="radius-btn" data-radius="rounded" style="padding:10px; border-radius:8px; border:1px solid var(--accent); background:rgba(124,58,237,0.1); color:var(--text); cursor:pointer; font-size:14px;">Rounded</button>
-					<button class="radius-btn" data-radius="pill" style="padding:10px; border-radius:24px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; font-size:14px;">Pill</button>
-				</div>
+				<section class="settings-tab-pane" data-tab="profile" role="tabpanel" hidden>
+					<div class="settings-section">
+						<h3>📦 Export / Import Profile</h3>
+						<p class="settings-help">Moving to your own site? Export your favorites, history, and settings.</p>
+						<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+							<button id="exportProfileBtn" class="loading-btn share-btn" style="flex: 1; min-width: 140px; padding: 10px; background: rgba(124, 58, 237, 0.2); border: 1px solid var(--accent); color: var(--text);">📤 Export Profile</button>
+							<label for="importProfileInput" class="loading-btn bug-btn" style="flex: 1; min-width: 140px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); color: var(--text); cursor: pointer; text-align: center;">📥 Import Profile</label>
+							<input type="file" id="importProfileInput" accept=".jeo,.json" hidden />
+						</div>
+					</div>
+				</section>
 			</div>
 		</div>
 	</div>
+
+	<script>
+	// Settings tab switcher (Sprint E)
+	(function () {
+		document.addEventListener('click', (e) => {
+			const tab = e.target.closest('.settings-tab');
+			if (!tab) return;
+			const id = tab.dataset.tab;
+			const root = tab.closest('.settings-modal-inner');
+			if (!root) return;
+			root.querySelectorAll('.settings-tab').forEach(t => {
+				const on = t.dataset.tab === id;
+				t.classList.toggle('active', on);
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+			});
+			root.querySelectorAll('.settings-tab-pane').forEach(p => {
+				const on = p.dataset.tab === id;
+				p.classList.toggle('active', on);
+				if (on) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+			});
+		});
+	})();
+	</script>
 
 	<!-- Play Modal -->
 	<div id="playModal" class="modal hidden" aria-hidden="true">
@@ -414,7 +443,7 @@
 				</div>
 			</div>
 
-			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation allow-modals allow-pointer-lock"></iframe>
+			<iframe id="gameFrame" src="" frameborder="0" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-modals allow-pointer-lock allow-orientation-lock allow-presentation" allow="autoplay; fullscreen; pointer-lock; gamepad"></iframe>
 
 			<!-- Save Sidebar -->
 			<button id="saveSidebarToggle" class="save-sidebar-toggle" aria-label="Open saves" title="Saves (Ctrl+S to save now)">💾</button>
