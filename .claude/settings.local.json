@@ -10,7 +10,10 @@
       "Bash(node --check /workspaces/jeoweb/confetti.js /workspaces/jeoweb/sounds.js /workspaces/jeoweb/achievements.js)",
       "Bash(node --check /workspaces/jeoweb/seasonal-themes.js /workspaces/jeoweb/avatars.js)",
       "Bash(node /workspaces/jeoweb/scan.js)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(grep -E \"\\\\.js$|\\\\.css$|\\\\.html$\")",
+      "Bash(git ls-tree *)",
+      "Bash(git commit *)"
     ]
   }
 }
