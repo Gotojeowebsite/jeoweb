@@ -937,11 +937,17 @@ color: var(--text);
 border-radius: var(--radius);
 font-size: 14px;
 outline: none;
-transition: border-color 0.2s;
+transition: border-color 0.2s ease, box-shadow 0.25s ease, background 0.2s ease;
 }
 
 .search-input:focus {
 border-color: var(--accent);
+box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.search-container:focus-within .search-icon {
+opacity: 0.85;
+color: var(--accent);
 }
 
 .refresh-btn {
@@ -1316,7 +1322,11 @@ margin-bottom: 16px;
 	opacity: 0;
 	animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 	transform-style: preserve-3d;
-	transform: perspective(1000px);
+	transform: perspective(1000px) translateY(0);
+	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+	            border-color 0.25s ease,
+	            box-shadow 0.35s ease;
+	will-change: transform;
 }
 
 .carousel-card::before {
@@ -1341,11 +1351,16 @@ margin-bottom: 16px;
 }
 
 .carousel-card:hover {
-	border-color: rgba(255, 255, 255, 0.2);
+	border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+	transform: perspective(1000px) translateY(-4px);
+	box-shadow: var(--shadow-lg),
+	            0 12px 28px -10px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 body.theme-light .carousel-card:hover {
-	border-color: rgba(0, 0, 0, 0.15);
+	border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+	box-shadow: var(--shadow-lg),
+	            0 12px 28px -10px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .carousel-card .game-thumb {
@@ -1447,7 +1462,11 @@ box-shadow: var(--shadow-md);
 opacity: 0;
 animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 transform-style: preserve-3d;
-transform: perspective(1000px);
+transform: perspective(1000px) translateY(0);
+transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+            border-color 0.25s ease,
+            box-shadow 0.35s ease;
+will-change: transform;
 }
 
 .game-card::before {
@@ -1472,12 +1491,17 @@ transform: scale(1.05) translateY(10px);
 }
 
 .game-card:hover {
-border-color: rgba(255, 255, 255, 0.2);
+border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+transform: perspective(1000px) translateY(-4px);
+box-shadow: var(--shadow-lg),
+            0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
+            0 12px 28px -10px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 body.theme-light .game-card:hover {
-border-color: rgba(0, 0, 0, 0.15);
-box-shadow: var(--shadow-lg);
+border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+box-shadow: var(--shadow-lg),
+            0 12px 28px -10px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .game-thumb {
@@ -1487,6 +1511,22 @@ overflow: hidden;
 background: var(--bg);
 border-top-left-radius: var(--radius);
 border-top-right-radius: var(--radius);
+}
+
+.game-thumb::after {
+content: '';
+position: absolute;
+inset: 0;
+background: linear-gradient(180deg,
+            transparent 55%,
+            rgba(0, 0, 0, 0.45) 100%);
+pointer-events: none;
+opacity: 0.6;
+transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-thumb::after {
+opacity: 0.85;
 }
 
 .game-thumb img {
@@ -1518,26 +1558,34 @@ text-overflow: ellipsis;
 }
 
 .play-btn {
-background: var(--accent);
+background: linear-gradient(135deg,
+            var(--accent) 0%,
+            color-mix(in srgb, var(--accent) 70%, #000) 100%);
 color: #fff;
 border: none;
-padding: 8px 14px;
-border-radius: 8px;
+padding: 9px 14px;
+border-radius: 10px;
 cursor: pointer;
 width: 100%;
-font-weight: 600;
+font-weight: 700;
 font-size: 12px;
 margin-top: auto;
-transition: background 0.2s;
-letter-spacing: 0.3px;
+transition: transform 0.15s ease,
+            box-shadow 0.25s ease,
+            filter 0.2s ease;
+letter-spacing: 0.4px;
 text-transform: uppercase;
+box-shadow: 0 2px 6px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .play-btn:hover {
-background: var(--accent-hover);
+filter: brightness(1.1);
+box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 50%, transparent),
+            0 0 0 1px color-mix(in srgb, var(--accent) 60%, transparent);
+transform: translateY(-1px);
 }
 
-.play-btn:active { transform: scale(0.97); }
+.play-btn:active { transform: translateY(0) scale(0.97); }
 
 /* ========================================
    BROKEN GAME CARD STATE
