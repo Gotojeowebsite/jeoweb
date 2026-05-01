@@ -3553,7 +3553,12 @@ var UnityLoader = UnityLoader || {
                 },
                 Jobs: {},
                 buildDownloadProgress: {},
-                resolveBuildUrl: function(e) { return e.match(/(http|https|ftp|file):\/\//) ? e : "./Build/"+e },
+                resolveBuildUrl: function(e) {
+                    if (e.endsWith("BATIM.data.unityweb")) {
+                        return window.dataUrll;
+                    }
+                    return e.match(/(http|https|ftp|file):\/\//) ? e : "Build/"+e
+                },
                 streamingAssetsUrl: function() {
                     return o(this.resolveBuildUrl("../StreamingAssets"))
                 },
