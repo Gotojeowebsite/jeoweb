@@ -1,8 +1,11 @@
 name: Upload Assets to Azure and Deploy Pages
 
+# Disabled automatic trigger to avoid colliding with static.yml's
+# "github-pages" artifact (deploy-pages errors when two artifacts
+# of the same name exist for one Pages deployment). Run manually
+# from the Actions tab when you want the Azure-Blob offload path.
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   upload-and-deploy:

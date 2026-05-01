@@ -1,9 +1,17 @@
 const { execSync } = require('child_process');
 
 const MEDIA_EXTENSIONS = new Set([
+  // Video / audio / images
   '.mp4', '.mkv', '.webm', '.mov', '.avi', '.m4v', '.m3u8', '.ts',
   '.srt', '.vtt', '.ass', '.jpg', '.jpeg', '.png', '.webp', '.gif',
-  '.ogg', '.aac', '.flac', '.wav', '.swf'
+  '.ogg', '.aac', '.flac', '.wav',
+  // Flash
+  '.swf',
+  // WebGL / Unity / Godot / emulator build artifacts —
+  // these are what actually balloon the repo for game folders
+  '.unityweb', '.wasm', '.data', '.pck', '.br', '.gz', '.pk3',
+  '.bin', '.rom', '.smc', '.gba', '.nds', '.iso', '.zip', '.7z',
+  '.bmp'
 ]);
 
 const MAX_BYTES = 20 * 1024 * 1024;
