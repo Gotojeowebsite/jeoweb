@@ -279,12 +279,12 @@
 			</div>
 		</section>
 
-		<!-- Wishlist Section -->
+		<!-- Play Later (formerly Wishlist) -->
 		<section id="wishlistSection" class="carousel-section hidden">
 			<div class="carousel-header">
 				<div class="carousel-title-group">
 					<span class="carousel-icon">🔖</span>
-					<h2 class="carousel-title">On Your Wishlist</h2>
+					<h2 class="carousel-title">Play Later</h2>
 					<span id="wishlistCount" class="carousel-count">0</span>
 				</div>
 			</div>
@@ -292,6 +292,23 @@
 				<button class="carousel-arrow carousel-arrow-left" data-target="wishlistTrack" aria-label="Scroll left">‹</button>
 				<div id="wishlistTrack" class="carousel-track"></div>
 				<button class="carousel-arrow carousel-arrow-right" data-target="wishlistTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Collections (Playlists) Section -->
+		<section id="collectionsSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">📚</span>
+					<h2 class="carousel-title">Your Collections</h2>
+					<span id="collectionsCount" class="carousel-count">0</span>
+				</div>
+				<button id="newCollectionBtn" class="carousel-action-btn" type="button">+ New collection</button>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="collectionsTrack" aria-label="Scroll left">‹</button>
+				<div id="collectionsTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="collectionsTrack" aria-label="Scroll right">›</button>
 			</div>
 		</section>
 
@@ -401,20 +418,9 @@
 
 				<section class="settings-tab-pane" data-tab="appearance" role="tabpanel" hidden>
 					<div class="settings-section">
-						<h3>🎨 Theme Presets</h3>
-						<p class="settings-help">Choose a pre-built aesthetic for Jeoweb.</p>
-						<div class="preset-grid">
-							<button class="theme-preset-btn preset-tile" data-preset="default" style="background:#0c0b14; color:#fff; border:1px solid #7c3aed;">Default</button>
-							<button class="theme-preset-btn preset-tile" data-preset="cyberpunk" style="background:#110022; color:#0ff; border:1px solid #f0f; text-shadow: 0 0 5px #0ff;">Cyberpunk</button>
-							<button class="theme-preset-btn preset-tile" data-preset="matrix" style="background:#000; color:#0f0; border:1px solid #0f0; font-family: monospace;">Matrix</button>
-							<button class="theme-preset-btn preset-tile" data-preset="crt" style="background: repeating-linear-gradient(0deg, #111, #111 2px, #222 2px, #222 4px); color: #fff; border:1px solid #fff; font-family: monospace;">Retro CRT</button>
-							<button class="theme-preset-btn preset-tile" data-preset="pastel" style="background:#fdf4ff; color:#9d174d; border:1px solid #f9a8d4;">Pastel</button>
-							<button class="theme-preset-btn preset-tile" data-preset="solar-light" style="background:#fdf6e3; color:#268bd2; border:1px solid #268bd2;">Solar Light</button>
-							<button class="theme-preset-btn preset-tile" data-preset="vaporwave" style="background:#1a0033; color:#ff77e9; border:1px solid #22d3ee; text-shadow: 0 0 6px #ff77e9;">Vaporwave</button>
-							<button class="theme-preset-btn preset-tile" data-preset="forest" style="background:#0f1a14; color:#3fa67a; border:1px solid #3fa67a;">Forest</button>
-							<button class="theme-preset-btn preset-tile" data-preset="y2k" style="background:linear-gradient(135deg,#dde6ff,#fff); color:#445; border:1px solid #7c87ff;">Y2K</button>
-							<button class="theme-preset-btn preset-tile" data-preset="holo" style="background:#06070b; color:#fff; border:1px solid transparent; background-image:linear-gradient(#06070b,#06070b),linear-gradient(135deg,#ff77e9,#22d3ee,#a3ff77); background-origin:border-box; background-clip:padding-box,border-box;">Holographic</button>
-						</div>
+						<h3>🎨 Look profiles</h3>
+						<p class="settings-help">Pick a complete vibe — colors, accent, surfaces, and mood — in one click.</p>
+						<div id="lookProfileGrid" class="look-profile-grid"></div>
 					</div>
 
 					<div class="settings-section">
@@ -556,6 +562,20 @@
 	})();
 	</script>
 
+	<!-- Collection View Modal -->
+	<div id="collectionModal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="collectionModalTitle">
+		<div class="modal-inner collection-modal-inner">
+			<div class="modal-toolbar">
+				<h2 id="collectionModalTitle" class="collection-modal-title">Collection</h2>
+				<span id="collectionModalCount" class="collection-modal-count"></span>
+				<button id="collectionRenameBtn" class="modal-tool-btn" type="button">✏️ Rename</button>
+				<button id="collectionDeleteBtn" class="modal-tool-btn" type="button">🗑 Delete</button>
+				<button id="collectionModalClose" class="modal-close-btn" aria-label="Close">✕</button>
+			</div>
+			<div id="collectionModalGrid" class="game-grid collection-modal-grid"></div>
+		</div>
+	</div>
+
 	<!-- Play Modal -->
 	<div id="playModal" class="modal hidden" aria-hidden="true">
 		<div class="modal-inner">
@@ -563,9 +583,15 @@
 				<button id="fullscreenBtn" class="modal-tool-btn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
 				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">➕ Request Game</a>
 				<a href="make-your-own.html" target="_blank" class="modal-tool-btn" style="text-decoration:none; color: var(--accent); border-color: var(--accent); background: rgba(124, 58, 237, 0.1);">🚀 Host Your Own</a>
+				<div id="playerRatingSlot" class="player-rating-slot" aria-label="Rate this game"></div>
 				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
 				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">🐛 Not working? Report it!</a>
-				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab">🔗 Open in new tab</button>
+				<div class="player-collection-wrap">
+					<button id="addToCollectionBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Add this game to a collection">📚 Add to…</button>
+					<div id="collectionsPopover" class="collections-popover hidden" role="menu" aria-hidden="true"></div>
+				</div>
+				<button id="shareGameBtn" class="modal-tool-btn" aria-label="Copy share link" title="Copy share link">🔗 Share</button>
+				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab">↗ New tab</button>
 				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
 			</div>
 			
@@ -584,6 +610,7 @@
 					<p id="rotatingTip" class="rotating-tip">Jeo is fetching your game...</p>
 					<div class="loading-actions" style="margin-top: 24px;">
 						<button id="shareWebsiteBtn" class="loading-btn share-btn">🔗 Share Website</button>
+						<button id="skipLoadingBtn" class="loading-btn skip-btn" type="button" title="Show the game now">▶ Show game now</button>
 					</div>
 				</div>
 			</div>
@@ -683,6 +710,11 @@
 
 			document.addEventListener('keydown', function(e){
 				if (e.key === 'Escape'){
+					const collectionModal = document.getElementById('collectionModal');
+					if (collectionModal && !collectionModal.classList.contains('hidden')){
+						const cClose = document.getElementById('collectionModalClose');
+						if (cClose) { cClose.click(); return; }
+					}
 					const modal = document.getElementById('playModal');
 					if (modal && !modal.classList.contains('hidden')){
 						const close = document.getElementById('closeModal');
@@ -696,6 +728,8 @@
 	<script src="account-system.js"></script>
 	<script src="save-manager.js"></script>
 	<script src="toast.js"></script>
+	<script src="ratings.js"></script>
+	<script src="playlists.js"></script>
 	<script src="achievements.js"></script>
 	<script src="confetti.js"></script>
 	<script src="sounds.js"></script>
@@ -748,7 +782,7 @@
 		}
 
 		async function downloadBackup(state) {
-			const pw = prompt('Enter a passphrase to encrypt your save (≥ 12 chars).\nUse this passphrase + the .jeo file to sign in on another device.');
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 5 chars).\nUse this passphrase + the .jeo file to sign in on another device.');
 			if (!pw) return false;
 			try {
 				const { blob, recoveryCodes } = await JeoAccount.exportBlob(pw);
@@ -768,7 +802,7 @@
 		}
 
 		async function copyBackup() {
-			const pw = prompt('Enter a passphrase to encrypt your save (≥ 12 chars).');
+			const pw = prompt('Enter a passphrase to encrypt your save (≥ 5 chars).');
 			if (!pw) return;
 			try {
 				const { blob, recoveryCodes } = await JeoAccount.exportBlob(pw);

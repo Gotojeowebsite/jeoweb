@@ -13,11 +13,25 @@
     { id: 'fav-ten',      label: 'Favorited 10 games',  icon: '⭐', test: (s) => s.favorites >= 10 },
     { id: 'wishlist-five',label: 'Wishlist of 5+ games',icon: '🔖', test: (s) => s.wishlist >= 5 },
     { id: 'night-owl',    label: 'Played past midnight',icon: '🌙', test: (s, e) => e?.type === 'play' && (new Date().getHours() < 5) },
+    { id: 'early-bird',   label: 'Played before 7 a.m.',icon: '🌅', test: (s, e) => e?.type === 'play' && (new Date().getHours() < 7 && new Date().getHours() >= 5) },
     { id: 'cloak-user',   label: 'Used the tab cloaker',icon: '🥷', test: (s, e) => e?.type === 'cloak' },
     { id: 'roulette',     label: 'Used Surprise Me 5×', icon: '🎲', test: (s) => s.surprises >= 5 },
     { id: 'marathon',     label: 'Played 50 different games', icon: '🏆', test: (s) => s.uniquePlays >= 50 },
+    { id: 'centurion',    label: 'Played 100 different games',icon: '💯', test: (s) => s.uniquePlays >= 100 },
     { id: 'cheat-code',   label: 'Konami code unlocked',icon: '🕹️', test: (s, e) => e?.type === 'konami' },
     { id: 'theme-explorer',label:'Tried 3 different theme presets', icon: '🎨', test: (s) => s.themesTried >= 3 },
+    /* Rating milestones */
+    { id: 'first-rating', label: 'Rated your first game',icon: '🌟', test: (s) => s.ratings >= 1 },
+    { id: 'critic',       label: 'Rated 25 games',       icon: '✍️', test: (s) => s.ratings >= 25 },
+    { id: 'taste-maker',  label: 'Rated 100 games',      icon: '🎖️', test: (s) => s.ratings >= 100 },
+    { id: 'five-star',    label: 'Gave a perfect 5 stars',icon: '⭐', test: (s, e) => e?.type === 'rate' && Number(e?.payload?.stars) === 5 },
+    /* Engagement milestones */
+    { id: 'genre-explorer',label:'Played games from 5 different categories', icon: '🗺️', test: (s) => s.categories >= 5 },
+    { id: 'connoisseur',  label: 'Played games from 10 different categories',icon: '🌐', test: (s) => s.categories >= 10 },
+    { id: 'flash-fan',    label: 'Survived 60s in a Flash game',           icon: '⚡', test: (s, e) => e?.type === 'session-end' && e?.payload?.type === 'flash' && (e?.payload?.dur || 0) >= 60000 },
+    { id: 'retro-vibes',  label: 'Played a retro (SNES/GBA) game',         icon: '👾', test: (s, e) => e?.type === 'play' && (e?.payload?.type === 'snes' || e?.payload?.type === 'gba') },
+    { id: 'sharer',       label: 'Copied a share link',                    icon: '🔗', test: (s, e) => e?.type === 'share' },
+    { id: 'binge',        label: 'Played 10 games in one day',             icon: '📅', test: (s) => s.dayPlays >= 10 },
   ];
 
   function loadState() {
@@ -45,6 +59,24 @@
     try {
       const wl = JSON.parse(localStorage.getItem('jeo:wishlist') || '[]');
       s.wishlist = wl.length;
+    } catch {}
+    try {
+      const ratings = JSON.parse(localStorage.getItem('jeo:ratings') || '{}');
+      s.ratings = Object.keys(ratings).length;
+    } catch {}
+    // Per-day play count: how many distinct plays today
+    try {
+      const log = JSON.parse(localStorage.getItem('jeo:playlog') || '[]');
+      const today = new Date(); today.setHours(0,0,0,0);
+      const cutoff = today.getTime();
+      s.dayPlays = log.filter(p => p && p.ts >= cutoff).length;
+    } catch {}
+    // Track set of unique categories (game types) played
+    try {
+      const set = new Set(s.categoriesList || []);
+      if (event?.type === 'play' && event?.payload?.type) set.add(event.payload.type);
+      s.categoriesList = [...set];
+      s.categories = set.size;
     } catch {}
     saveState(s);
 
@@ -86,6 +118,9 @@
     recompute({ type, payload });
   }
 
+  // Public alias: emit a custom event without state mutations beyond recompute.
+  function emit(type, payload) { recompute({ type, payload }); }
+
   function getAll() {
     const have = new Set(unlocked());
     return ACHIEVEMENTS.map(a => ({ ...a, unlocked: have.has(a.id) }));
@@ -122,5 +157,5 @@
     recompute();
   });
 
-  window.JeoAchievements = { onEvent, getAll, ACHIEVEMENTS };
+  window.JeoAchievements = { onEvent, emit, getAll, ACHIEVEMENTS };
 })();

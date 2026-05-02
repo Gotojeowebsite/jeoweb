@@ -14,7 +14,7 @@
  *   stay signed in without the passphrase ever touching disk.
  * - Origin-wide gameData snapshot kept for cross-device transfer (legacy);
  *   per-game save slots live in save-manager.js.
- * - Passphrase floor: 12 characters. Common-password rejection.
+ * - Passphrase floor: 5 characters. Common-password rejection.
  * - JeoAccount.deleteAccount() wipes IDB + jeo: localStorage + caches.
  */
 
@@ -26,7 +26,7 @@
   const AVATAR_MAX_BYTES = 256 * 1024;
   const AUTOSAVE_DEBOUNCE_MS = 5000;
   const CAPTURE_INTERVAL_MS = 60_000;
-  const PASSPHRASE_MIN = 12;
+  const PASSPHRASE_MIN = 5;
   const RECOVERY_CODE_COUNT = 8;
   const LIVE_KEY = 'JEO_ACCOUNT_LIVE';
   const IDB_NAME = 'jeo-account';
@@ -418,10 +418,34 @@
   const listeners = new Set();
   const emit = () => listeners.forEach(fn => { try { fn(_state, { locked: _locked }); } catch {} });
 
+  // Chromium's IndexedDB rejects single records over a multi-MB "cell size"
+  // limit. The bulk of an account is gameData (full localStorage + IDB
+  // dumps), which can blow past that. Persist by splitting the ciphertext
+  // across several IDB rows so we never write a row over CHUNK_BYTES.
+  // Format on disk:
+  //   key 'account' -> { iv, ct } (legacy single record)
+  //                  | { iv, chunked: true, n: N }
+  //   keys 'account.chunk.0' .. 'account.chunk.N-1' -> string slices of ct
+  // loadFromDevice handles both shapes; persistToDevice always writes
+  // chunked when the ciphertext won't fit in one row.
+  const CHUNK_BYTES = 1024 * 1024; // 1 MB per IDB row — safe across browsers
+
   async function loadFromDevice() {
     try {
-      const wrapped = await idbGet('account');
-      if (!wrapped) return null;
+      const head = await idbGet('account');
+      if (!head) return null;
+      let wrapped;
+      if (head.chunked) {
+        const parts = [];
+        for (let i = 0; i < head.n; i++) {
+          const part = await idbGet(`account.chunk.${i}`);
+          if (typeof part !== 'string') throw new Error(`account chunk ${i} missing`);
+          parts.push(part);
+        }
+        wrapped = { iv: head.iv, ct: parts.join('') };
+      } else {
+        wrapped = head;
+      }
       _state = migrate(await deviceDecrypt(wrapped));
       writeLiveLocalCopy();
       startCaptureLoop();
@@ -433,7 +457,30 @@
   async function persistToDevice() {
     if (!_state) return;
     const wrapped = await deviceEncrypt(_state);
-    await idbPut('account', wrapped);
+
+    // Find out how many chunks the previous write left behind so we can
+    // delete stragglers when this save is smaller.
+    let prevN = 0;
+    try {
+      const prev = await idbGet('account');
+      if (prev && prev.chunked) prevN = prev.n | 0;
+    } catch {}
+
+    if (wrapped.ct.length <= CHUNK_BYTES) {
+      // Small enough for a single record — legacy shape.
+      await idbPut('account', wrapped);
+      for (let i = 0; i < prevN; i++) { try { await idbDel(`account.chunk.${i}`); } catch {} }
+      return;
+    }
+
+    const n = Math.ceil(wrapped.ct.length / CHUNK_BYTES);
+    for (let i = 0; i < n; i++) {
+      const slice = wrapped.ct.slice(i * CHUNK_BYTES, (i + 1) * CHUNK_BYTES);
+      await idbPut(`account.chunk.${i}`, slice);
+    }
+    await idbPut('account', { iv: wrapped.iv, chunked: true, n });
+    // Clean up extra chunks left over from a previous, larger save.
+    for (let i = n; i < prevN; i++) { try { await idbDel(`account.chunk.${i}`); } catch {} }
   }
 
   function writeLiveLocalCopy() {
@@ -714,12 +761,24 @@
     return (Date.now() - t) / 86_400_000;
   }
 
+  // Delete the 'account' head plus any chunk records left from a chunked
+  // save. Safe to call when no chunks exist.
+  async function wipeAccountRecords() {
+    let n = 0;
+    try {
+      const head = await idbGet('account');
+      if (head && head.chunked) n = head.n | 0;
+    } catch {}
+    try { await idbDel('account'); } catch {}
+    for (let i = 0; i < n; i++) { try { await idbDel(`account.chunk.${i}`); } catch {} }
+  }
+
   async function signOut({ forgetDevice = true } = {}) {
     stopCaptureLoop();
     _state = null;
     _locked = false;
     if (forgetDevice) {
-      await idbDel('account');
+      await wipeAccountRecords();
       await idbDel('deviceKey');
     }
     try { localStorage.removeItem(LIVE_KEY); } catch {}
@@ -732,7 +791,7 @@
     _state = null;
     _locked = false;
     try {
-      await idbDel('account');
+      await wipeAccountRecords();
       await idbDel('deviceKey');
       await idbDel('attempts');
     } catch {}

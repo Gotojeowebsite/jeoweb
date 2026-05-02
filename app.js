@@ -14,6 +14,7 @@ class App {
 		this.statusFreshness = { generatedAt: null, source: '' };
 
 		this.initElements();
+		this.initRatingsSync();
 		this.loadTheme();
 		this.loadAccent();
 		this.loadBackground();
@@ -172,6 +173,8 @@ class App {
 	}
 
 	async bootstrap() {
+		// Show skeletons immediately so the user sees structure during the async fetches.
+		this.renderSkeletons();
 		await this.loadNewlyAdded();
 		await this.reloadGames();
 		this.checkTutorial();
@@ -204,27 +207,32 @@ class App {
 			return { ...game, status: mergedStatus };
 		});
 		console.log('Games loaded:', this.games.length);
+		if (this.games.length === 0 && !this._degradedNotified) {
+			this._degradedNotified = true;
+			if (window.JeoToast) window.JeoToast.error(
+				'Catalog failed to load. Check your connection and try refreshing.',
+				{ ttl: 0, action: { label: 'Reload', onClick: () => window.location.reload() } }
+			);
+		}
 		this.updateCounter();
 		this.renderCarousels();
 		this.renderGames();
 		this.renderStatusFreshness();
 		this.hideLoading();
+		// Resolve any pending deep-link request now that the catalog is ready.
+		if (typeof this.resolvePendingDeepLink === 'function') this.resolvePendingDeepLink();
 	}
 
 	renderSkeletons() {
-		if (this.gameGrid) {
-			this.gameGrid.innerHTML = '';
-			for(let i=0; i<12; i++) {
-				this.gameGrid.innerHTML += `
-				<div class="skeleton-card">
-					<div class="skeleton-thumb"></div>
-					<div class="skeleton-content">
-						<div class="skeleton-title"></div>
-						<div class="skeleton-btn"></div>
-					</div>
-				</div>`;
-			}
-		}
+		if (!this.gameGrid) return;
+		const cell = '<div class="skeleton-card"><div class="skeleton-thumb"></div>'
+			+ '<div class="skeleton-content"><div class="skeleton-title"></div>'
+			+ '<div class="skeleton-btn"></div></div></div>';
+		this.gameGrid.innerHTML = cell.repeat(12);
+		// Stagger fade-in for premium feel
+		Array.from(this.gameGrid.children).forEach((el, i) => {
+			el.style.animationDelay = (i * 0.04) + 's';
+		});
 	}
 
 	async resolveGames() {
@@ -543,6 +551,10 @@ class App {
 					const dataUrl = ev.target.result;
 					try { localStorage.setItem('site-bg-image', dataUrl); } catch(err) {
 						console.warn('Image too large for localStorage, applying without saving');
+						if (window.JeoToast) window.JeoToast.warning(
+							'Image too large to save (max ~5MB). Applied for this session only.',
+							{ ttl: 6000 }
+						);
 					}
 					this.applyBgImage(dataUrl);
 				};
@@ -618,6 +630,16 @@ class App {
 		this.closeModal.addEventListener('click', () => this.closePlayer());
 		this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
 		this.openNewTabBtn.addEventListener('click', () => this.openGameInNewTab());
+
+		// Share button + deep-link routing
+		const shareGameBtn = document.getElementById('shareGameBtn');
+		if (shareGameBtn) shareGameBtn.addEventListener('click', () => this.copyShareLink());
+		const skipLoadingBtn = document.getElementById('skipLoadingBtn');
+		if (skipLoadingBtn) skipLoadingBtn.addEventListener('click', () => this.skipLoadingOverlay());
+		this.initDeepLinks();
+		this.bindCollectionUI();
+		// Re-render the collections row whenever playlists change
+		if (window.JeoPlaylists) window.JeoPlaylists.onChange(() => this.renderCollections());
 
 		// Save sidebar wiring
 		const sbToggle = document.getElementById('saveSidebarToggle');
@@ -782,11 +804,12 @@ class App {
 						if (data.cloak) localStorage.setItem('jeo-cloak', JSON.stringify(data.cloak));
 						if (data.panicConfig) localStorage.setItem('jeo-panic', JSON.stringify(data.panicConfig));
 						
-						alert('Profile imported successfully! The page will now reload.');
-						window.location.reload();
+						if (window.JeoToast) window.JeoToast.success('Profile imported. Reloading…');
+						setTimeout(() => window.location.reload(), 600);
 					} catch (err) {
-						alert('Invalid profile file.');
 						console.error(err);
+						if (window.JeoToast) window.JeoToast.error('Invalid profile file — could not import.');
+						else alert('Invalid profile file.');
 					}
 				};
 				reader.readAsText(file);
@@ -849,43 +872,99 @@ class App {
 			}
 		});
 
-		// Theme Presets Logic
+		// Theme / Look Profiles
+		// Each preset defines mood, theme, background base color, accent, and an
+		// optional `surface` (mid-tone for cards) and `grad` (accent gradient).
 		const PRESETS = {
-			default:      { theme: 'dark',  bg: '#0c0b14', accent: '#7c3aed' },
-			cyberpunk:    { theme: 'dark',  bg: '#110022', accent: '#ff00ff' },
-			matrix:       { theme: 'dark',  bg: '#000000', accent: '#00ff00' },
-			crt:          { theme: 'dark',  bg: '#111111', accent: '#ffffff' },
-			pastel:       { theme: 'light', bg: '#fdf4ff', accent: '#f9a8d4' },
-			'solar-light':{ theme: 'light', bg: '#fdf6e3', accent: '#268bd2' },
-			vaporwave:    { theme: 'dark',  bg: '#1a0033', accent: '#ff77e9' },
-			forest:       { theme: 'dark',  bg: '#0f1a14', accent: '#3fa67a' },
-			y2k:          { theme: 'light', bg: '#dde6ff', accent: '#7c87ff' },
-			holo:         { theme: 'dark',  bg: '#06070b', accent: '#a3ff77', grad: 'linear-gradient(135deg,#ff77e9,#22d3ee,#a3ff77)' },
+			default:    { label: 'Default',     icon: '🟣', theme: 'dark',  bg: '#0c0b14', accent: '#7c3aed' },
+			midnight:   { label: 'Midnight',    icon: '🌌', theme: 'dark',  bg: '#070a18', accent: '#3b82f6' },
+			aurora:     { label: 'Aurora',      icon: '🌠', theme: 'dark',  bg: '#0a1422', accent: '#10b981', grad: 'linear-gradient(135deg,#10b981,#22d3ee,#a78bfa)' },
+			sunset:     { label: 'Sunset',      icon: '🌇', theme: 'dark',  bg: '#170a0e', accent: '#f97316', grad: 'linear-gradient(135deg,#f97316,#ec4899)' },
+			ocean:      { label: 'Ocean',       icon: '🌊', theme: 'dark',  bg: '#06121c', accent: '#0ea5e9' },
+			forest:     { label: 'Forest',      icon: '🌲', theme: 'dark',  bg: '#0f1a14', accent: '#3fa67a' },
+			carbon:     { label: 'Carbon',      icon: '⚫', theme: 'dark',  bg: '#0a0a0a', accent: '#e5e7eb' },
+			mono:       { label: 'Mono',        icon: '◾', theme: 'dark',  bg: '#101010', accent: '#a3a3a3' },
+			cyberpunk:  { label: 'Cyberpunk',   icon: '🤖', theme: 'dark',  bg: '#110022', accent: '#ff00ff', grad: 'linear-gradient(135deg,#ff00ff,#22d3ee)' },
+			vaporwave:  { label: 'Vaporwave',   icon: '🌴', theme: 'dark',  bg: '#1a0033', accent: '#ff77e9', grad: 'linear-gradient(135deg,#ff77e9,#22d3ee)' },
+			matrix:     { label: 'Matrix',      icon: '💚', theme: 'dark',  bg: '#000000', accent: '#00ff00' },
+			crt:        { label: 'Retro CRT',   icon: '📺', theme: 'dark',  bg: '#111111', accent: '#facc15' },
+			holo:       { label: 'Holographic', icon: '🪩', theme: 'dark',  bg: '#06070b', accent: '#a3ff77', grad: 'linear-gradient(135deg,#ff77e9,#22d3ee,#a3ff77)' },
+			rose:       { label: 'Rose',        icon: '🌹', theme: 'dark',  bg: '#170a10', accent: '#f43f5e' },
+			pastel:     { label: 'Pastel',      icon: '🍡', theme: 'light', bg: '#fdf4ff', accent: '#ec4899' },
+			'solar-light':{ label: 'Solar',     icon: '☀️', theme: 'light', bg: '#fdf6e3', accent: '#268bd2' },
+			y2k:        { label: 'Y2K',         icon: '💿', theme: 'light', bg: '#dde6ff', accent: '#7c87ff', grad: 'linear-gradient(135deg,#7c87ff,#ec4899)' },
+			mint:       { label: 'Mint',        icon: '🌿', theme: 'light', bg: '#ecfdf5', accent: '#14b8a6' },
+			sakura:     { label: 'Sakura',      icon: '🌸', theme: 'light', bg: '#fff1f2', accent: '#e11d48' },
+			bubblegum:  { label: 'Bubblegum',   icon: '🍬', theme: 'light', bg: '#fef2ff', accent: '#a855f7', grad: 'linear-gradient(135deg,#a855f7,#22d3ee)' },
 		};
-		document.querySelectorAll('.theme-preset-btn').forEach(btn => {
-			btn.addEventListener('click', () => {
-				const preset = btn.dataset.preset;
-				const cfg = PRESETS[preset];
-				if (!cfg) return;
-				document.body.className = cfg.theme === 'light' ? 'theme-light' : 'theme-dark';
-				this.setBgColor(cfg.bg, true);
-				this.setAccent(cfg.accent, true);
-				if (cfg.grad) document.documentElement.style.setProperty('--accent-grad', cfg.grad);
-				else document.documentElement.style.removeProperty('--accent-grad');
-				localStorage.setItem('site-theme', cfg.theme);
-				localStorage.setItem('site-preset', preset);
-				if (cfg.grad) localStorage.setItem('site-accent-grad', cfg.grad);
-				else localStorage.removeItem('site-accent-grad');
-				this.removeBgImage();
-				localStorage.removeItem('site-bg-image');
-				if (this.themeToggle) this.themeToggle.textContent = cfg.theme === 'light' ? '☀️' : '🌙';
-				const bgInput = document.getElementById('bgColorInput');
-				const accentInput = document.getElementById('accentColorInput');
-				if (bgInput) bgInput.value = cfg.bg;
-				if (accentInput) accentInput.value = cfg.accent;
-				if (window.JeoToast) window.JeoToast.info(`Applied "${preset}" theme`);
+		this._lookPresets = PRESETS;
+
+		const applyPreset = (preset) => {
+			const cfg = PRESETS[preset];
+			if (!cfg) return;
+			document.body.className = cfg.theme === 'light' ? 'theme-light' : 'theme-dark';
+			this.setBgColor(cfg.bg, true);
+			this.setAccent(cfg.accent, true);
+			if (cfg.grad) document.documentElement.style.setProperty('--accent-grad', cfg.grad);
+			else document.documentElement.style.removeProperty('--accent-grad');
+			localStorage.setItem('site-theme', cfg.theme);
+			localStorage.setItem('site-preset', preset);
+			if (cfg.grad) localStorage.setItem('site-accent-grad', cfg.grad);
+			else localStorage.removeItem('site-accent-grad');
+			this.removeBgImage();
+			localStorage.removeItem('site-bg-image');
+			if (this.themeToggle) this.themeToggle.textContent = cfg.theme === 'light' ? '☀️' : '🌙';
+			const bgInput = document.getElementById('bgColorInput');
+			const accentInput = document.getElementById('accentColorInput');
+			if (bgInput) bgInput.value = cfg.bg;
+			if (accentInput) accentInput.value = cfg.accent;
+			if (window.JeoAchievements) {
+				try { window.JeoAchievements.onEvent('theme-tried', { preset }); } catch (e) {}
+			}
+			this.markActiveLookProfile(preset);
+			if (window.JeoToast) window.JeoToast.info(`Applied “${cfg.label}”`);
+		};
+
+		// Render the look-profile grid into #lookProfileGrid (replaces inline buttons)
+		this.renderLookProfileGrid = () => {
+			const grid = document.getElementById('lookProfileGrid');
+			if (!grid) return;
+			grid.innerHTML = '';
+			const active = localStorage.getItem('site-preset') || 'default';
+			for (const [id, cfg] of Object.entries(PRESETS)) {
+				const tile = document.createElement('button');
+				tile.type = 'button';
+				tile.className = 'look-profile-tile';
+				if (id === active) tile.classList.add('active');
+				tile.dataset.preset = id;
+				tile.setAttribute('aria-label', cfg.label);
+				const accentDisplay = cfg.grad || cfg.accent;
+				const surface = cfg.theme === 'light' ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.06)';
+				const fg = cfg.theme === 'light' ? '#1d1d1f' : '#fff';
+				tile.innerHTML =
+					'<div class="lp-preview" style="background:' + cfg.bg + ';color:' + fg + '">' +
+						'<div class="lp-preview-top">' +
+							'<span class="lp-dot" style="background:' + accentDisplay + '"></span>' +
+							'<span class="lp-dot" style="background:' + surface + ';border:1px solid ' + (cfg.theme === 'light' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.15)') + '"></span>' +
+						'</div>' +
+						'<div class="lp-preview-bar" style="background:' + accentDisplay + '"></div>' +
+						'<div class="lp-preview-card" style="background:' + surface + ';border-color:' + (cfg.theme === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.1)') + '"></div>' +
+					'</div>' +
+					'<div class="lp-meta"><span class="lp-icon">' + cfg.icon + '</span><span class="lp-name">' + cfg.label + '</span></div>';
+				tile.addEventListener('click', () => applyPreset(id));
+				grid.appendChild(tile);
+			}
+		};
+
+		this.markActiveLookProfile = (preset) => {
+			const grid = document.getElementById('lookProfileGrid');
+			if (!grid) return;
+			grid.querySelectorAll('.look-profile-tile').forEach(t => {
+				t.classList.toggle('active', t.dataset.preset === preset);
 			});
-		});
+		};
+
+		this.renderLookProfileGrid();
 
 		// Animation Toggles Logic
 		const animHoverToggle = document.getElementById('animHoverToggle');
@@ -1056,36 +1135,109 @@ class App {
 		});
 	}
 
+	/* Levenshtein edit distance with an early-exit cap for performance. */
+	editDistance(a, b, cap) {
+		if (a === b) return 0;
+		const al = a.length, bl = b.length;
+		if (Math.abs(al - bl) > cap) return cap + 1;
+		if (al === 0) return bl;
+		if (bl === 0) return al;
+		let prev = new Array(bl + 1);
+		let curr = new Array(bl + 1);
+		for (let j = 0; j <= bl; j++) prev[j] = j;
+		for (let i = 1; i <= al; i++) {
+			curr[0] = i;
+			let rowMin = curr[0];
+			const ac = a.charCodeAt(i - 1);
+			for (let j = 1; j <= bl; j++) {
+				const cost = ac === b.charCodeAt(j - 1) ? 0 : 1;
+				curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+				if (curr[j] < rowMin) rowMin = curr[j];
+			}
+			if (rowMin > cap) return cap + 1;
+			[prev, curr] = [curr, prev];
+		}
+		return prev[bl];
+	}
+
+	/* Returns 0 = no match, larger = better. Combines exact / prefix / fuzzy heuristics. */
+	scoreGameMatch(g, q, terms, rawQ) {
+		const name = g.name.toLowerCase();
+		const rawName = name.replace(/[^a-z0-9]/g, '');
+		const spaced = name.replace(/[-_]/g, ' ');
+		let score = 0;
+
+		// Exact / substring matches (existing behavior, weighted)
+		if (rawQ && rawName === rawQ) score += 1000;
+		else if (rawQ && rawName.startsWith(rawQ)) score += 500;
+		else if (rawQ && rawName.includes(rawQ)) score += 200;
+
+		// Multi-term out-of-order match
+		if (terms.length > 1) {
+			const allHit = terms.every(t => spaced.includes(t) || rawName.includes(t.replace(/[^a-z0-9]/g, '')));
+			if (allHit) score += 150;
+		}
+
+		// Per-term contribution (prefix / contains)
+		for (const t of terms) {
+			if (!t) continue;
+			const rt = t.replace(/[^a-z0-9]/g, '');
+			if (rt && rawName.startsWith(rt)) score += 80;
+			else if (spaced.split(' ').some(w => w.startsWith(t))) score += 60;
+			else if (rt && rawName.includes(rt)) score += 30;
+		}
+
+		// Fuzzy: tolerate typos. Cap distance based on query length.
+		// Only useful when no strong substring match was found.
+		if (score < 200 && rawQ.length >= 3) {
+			const cap = rawQ.length <= 4 ? 1 : (rawQ.length <= 7 ? 2 : 3);
+			const distFull = this.editDistance(rawQ, rawName, cap);
+			if (distFull <= cap) {
+				score += 120 - distFull * 30;
+			} else {
+				// Try per-word distance against each token of the name (handles "tetras" → "tetris" inside "tetris-blitz")
+				const words = spaced.split(' ').filter(Boolean);
+				let best = cap + 1;
+				for (const w of words) {
+					if (Math.abs(w.length - rawQ.length) > cap) continue;
+					const d = this.editDistance(rawQ, w, cap);
+					if (d < best) best = d;
+					if (best === 0) break;
+				}
+				if (best <= cap) score += 80 - best * 25;
+			}
+		}
+
+		return score > 0 ? score : 0;
+	}
+
 	renderGames() {
 		const q = (this.searchInput.value || '').toLowerCase().trim();
 		const terms = q.split(/\s+/).filter(Boolean);
 		const rawQ = q.replace(/[^a-z0-9]/g, '');
 
 		this.gameGrid.innerHTML = '';
-		const filtered = this.games.filter(g => {
-			if (!this.showFlash && g.type === 'flash') return false;
-			if (!this.showRetro && g.type === 'snes') return false;
-			if (this.hideMaintenance && this.isUnderMaintenance(g)) return false;
+		const scored = [];
+		for (const g of this.games) {
+			if (!this.showFlash && g.type === 'flash') continue;
+			if (!this.showRetro && g.type === 'snes') continue;
+			if (this.hideMaintenance && this.isUnderMaintenance(g)) continue;
 			if (this.activeTag) {
 				const tags = g.tags || [];
-				if (!tags.includes(this.activeTag)) return false;
+				if (!tags.includes(this.activeTag)) continue;
 			}
 
-			if (q) {
-				const rawName = g.name.toLowerCase().replace(/[^a-z0-9]/g, '');
-				const spacedName = g.name.toLowerCase().replace(/[-_]/g, ' ');
-				
-				// 1. Direct match on alphanumeric string (handles "subwaysurfers" == "subway-surfers")
-				const exactMatch = rawName.includes(rawQ);
-				
-				// 2. Out of order / spaced matching (handles "surfers subway" == "subway-surfers")
-				const outOfOrderMatch = terms.length > 0 && terms.every(term => spacedName.includes(term) || rawName.includes(term.replace(/[^a-z0-9]/g, '')));
-				
-				if (!exactMatch && !outOfOrderMatch) return false;
+			if (!q) {
+				scored.push({ g, score: 0 });
+				continue;
 			}
-			return true;
-		});
-		filtered.sort((a, b) => a.name.localeCompare(b.name));
+			const score = this.scoreGameMatch(g, q, terms, rawQ);
+			if (score > 0) scored.push({ g, score });
+		}
+		// When searching: rank by score (desc), tiebreak alpha. Otherwise: pure alpha.
+		if (q) scored.sort((a, b) => b.score - a.score || a.g.name.localeCompare(b.g.name));
+		else scored.sort((a, b) => a.g.name.localeCompare(b.g.name));
+		const filtered = scored.map(s => s.g);
 		// Announce result count to screen readers
 		const live = document.getElementById('searchResultsLive');
 		if (live) {
@@ -1122,14 +1274,16 @@ class App {
 			const retroBadge = g.type === 'snes' ? '<span class="retro-badge">🎮 Retro</span>' : '';
 			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
 			const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
-			const badgeHtml = flashBadge + retroBadge + requestedBadge + maintenanceBadge;
+			const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
+			const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
+			const badgeHtml = flashBadge + retroBadge + requestedBadge + maintenanceBadge + ratingBadge;
 			const playLabel = isMaintenance ? '⚠ Play at Risk' : '▶ Play';
 			const card = document.createElement('div');
 			card.className = 'game-card' + (isMaintenance ? ' under-maintenance' : '');
 			card.style.setProperty('--card-img', `url('${imgSrc}')`);
 			card.dataset.slug = g.name;
 			const isWish = this.isWishlisted(g.name);
-			const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Wishlist" title="Wishlist">' + (isWish ? '🔖' : '📑') + '</button>';
+			const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
 			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + wishBtn + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">' + playLabel + '</button></div></div>';
 			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
@@ -1183,6 +1337,7 @@ class App {
 
 	trackRecentPlay(game) {
 		const name = game.name;
+		this._lastPlayType = game && game.type;
 		this.recentlyPlayed = this.recentlyPlayed.filter(n => n !== name);
 		this.recentlyPlayed.unshift(name);
 		if (this.recentlyPlayed.length > this.MAX_RECENT) {
@@ -1208,7 +1363,7 @@ class App {
 		} catch {}
 		// Fire achievements check (if available)
 		if (window.JeoAchievements) {
-			try { window.JeoAchievements.onEvent('play', { slug: name }); } catch {}
+			try { window.JeoAchievements.onEvent('play', { slug: name, type: this._lastPlayType }); } catch {}
 		}
 		this.renderCarousels();
 	}
@@ -1232,6 +1387,7 @@ class App {
 		this.renderFavorites();
 		this.renderTrending();
 		this.renderWishlist();
+		this.renderCollections();
 		this.renderRecent();
 		this.renderNewlyAdded();
 		this.renderRequestedBtn();
@@ -1388,8 +1544,30 @@ class App {
 		this.setWishlist(list);
 		this.renderCarousels();
 		this.renderGames();
-		if (window.JeoToast) window.JeoToast.info(i >= 0 ? `Removed from wishlist` : `Added to wishlist`);
+		if (window.JeoToast) window.JeoToast.info(i >= 0 ? 'Removed from Play Later' : 'Saved for later');
 		if (window.JeoAchievements) window.JeoAchievements.onEvent('wishlist', { count: list.length });
+	}
+
+	/* Renders a one-card empty state inside a carousel track. Returns true if shown. */
+	renderCarouselEmptyState(track, opts) {
+		track.innerHTML = '';
+		if (localStorage.getItem(opts.dismissKey) === '1') return false;
+		const card = document.createElement('div');
+		card.className = 'carousel-empty';
+		card.innerHTML = `
+			<div class="carousel-empty-icon" aria-hidden="true">${opts.icon}</div>
+			<div class="carousel-empty-body">
+				<div class="carousel-empty-title">${opts.title}</div>
+				<div class="carousel-empty-hint">${opts.hint}</div>
+			</div>
+			<button class="carousel-empty-dismiss" aria-label="Dismiss">✕</button>
+		`;
+		card.querySelector('.carousel-empty-dismiss').addEventListener('click', () => {
+			localStorage.setItem(opts.dismissKey, '1');
+			this.renderCarousels();
+		});
+		track.appendChild(card);
+		return true;
 	}
 
 	renderWishlist() {
@@ -1400,11 +1578,263 @@ class App {
 		const list = this.getWishlist()
 			.map(name => this.games.find(g => g.name === name))
 			.filter(Boolean);
-		if (list.length === 0) { sec.classList.add('hidden'); return; }
+		if (list.length === 0) {
+			const shown = this.renderCarouselEmptyState(track, {
+				dismissKey: 'jeo:emptyDismissed:wishlist',
+				icon: '🔖',
+				title: 'Save games for later',
+				hint: 'Tap the bookmark on any game to add it to Play Later.',
+			});
+			if (!shown) { sec.classList.add('hidden'); return; }
+			sec.classList.remove('hidden');
+			if (count) count.textContent = '0';
+			return;
+		}
 		sec.classList.remove('hidden');
 		if (count) count.textContent = list.length;
 		track.innerHTML = '';
 		list.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
+	}
+
+	/* =============== COLLECTIONS / PLAYLISTS =============== */
+	renderCollections() {
+		const sec = document.getElementById('collectionsSection');
+		const track = document.getElementById('collectionsTrack');
+		const count = document.getElementById('collectionsCount');
+		if (!sec || !track || !window.JeoPlaylists) return;
+		const all = window.JeoPlaylists.list();
+		if (!all.length) { sec.classList.add('hidden'); return; }
+		sec.classList.remove('hidden');
+		if (count) count.textContent = all.length;
+		track.innerHTML = '';
+		for (const pl of all) {
+			track.appendChild(this.createCollectionCard(pl));
+		}
+	}
+
+	createCollectionCard(pl) {
+		const card = document.createElement('div');
+		card.className = 'collection-card';
+		card.dataset.id = pl.id;
+		card.setAttribute('role', 'button');
+		card.setAttribute('tabindex', '0');
+		card.setAttribute('aria-label', pl.name + ', ' + pl.slugs.length + ' games');
+
+		const thumbs = document.createElement('div');
+		thumbs.className = 'collection-card-thumbs';
+		const sample = pl.slugs.slice(0, 4)
+			.map(s => this.games.find(g => g.name === s))
+			.filter(Boolean);
+		if (!sample.length) {
+			thumbs.classList.add('empty');
+			thumbs.textContent = '📚';
+		} else {
+			for (let i = 0; i < 4; i++) {
+				const cell = document.createElement('div');
+				const game = sample[i % sample.length];
+				if (game) cell.style.backgroundImage = `url('${game.image || this.fallbackImage}')`;
+				thumbs.appendChild(cell);
+			}
+		}
+		card.appendChild(thumbs);
+
+		const meta = document.createElement('div');
+		meta.className = 'collection-card-meta';
+		const name = document.createElement('div');
+		name.className = 'collection-card-name';
+		name.textContent = pl.name;
+		const cnt = document.createElement('div');
+		cnt.className = 'collection-card-count';
+		cnt.textContent = pl.slugs.length + ' game' + (pl.slugs.length === 1 ? '' : 's');
+		meta.appendChild(name);
+		meta.appendChild(cnt);
+		card.appendChild(meta);
+
+		const open = () => this.openCollectionModal(pl.id);
+		card.addEventListener('click', open);
+		card.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+		});
+		return card;
+	}
+
+	openCollectionModal(id) {
+		if (!window.JeoPlaylists) return;
+		const pl = window.JeoPlaylists.get(id);
+		if (!pl) return;
+		const modal = document.getElementById('collectionModal');
+		const title = document.getElementById('collectionModalTitle');
+		const count = document.getElementById('collectionModalCount');
+		const grid = document.getElementById('collectionModalGrid');
+		if (!modal || !grid) return;
+		title.textContent = pl.name;
+		count.textContent = pl.slugs.length + ' game' + (pl.slugs.length === 1 ? '' : 's');
+		grid.innerHTML = '';
+		const games = pl.slugs.map(s => this.games.find(g => g.name === s)).filter(Boolean);
+		if (!games.length) {
+			grid.innerHTML = '<div class="empty-state-illustrated"><h3>This collection is empty</h3><p>Open a game and use “📚 Add to…” in the player toolbar.</p></div>';
+		} else {
+			games.forEach(g => grid.appendChild(this.createCarouselCard(g, 0)));
+		}
+		modal.classList.remove('hidden');
+		modal.setAttribute('aria-hidden', 'false');
+		this._activeCollectionId = pl.id;
+		document.body.style.overflow = 'hidden';
+	}
+
+	closeCollectionModal() {
+		const modal = document.getElementById('collectionModal');
+		if (!modal) return;
+		modal.classList.add('hidden');
+		modal.setAttribute('aria-hidden', 'true');
+		this._activeCollectionId = null;
+		// Only un-freeze body if play modal is also closed
+		if (this.playModal && this.playModal.classList.contains('hidden')) {
+			document.body.style.overflow = '';
+		}
+	}
+
+	bindCollectionUI() {
+		const newBtn = document.getElementById('newCollectionBtn');
+		if (newBtn) newBtn.addEventListener('click', () => this.promptNewCollection());
+
+		const addBtn = document.getElementById('addToCollectionBtn');
+		const popover = document.getElementById('collectionsPopover');
+		if (addBtn && popover) {
+			addBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				const isOpen = !popover.classList.contains('hidden');
+				if (isOpen) this.closeCollectionPopover();
+				else this.openCollectionPopover();
+			});
+			document.addEventListener('click', (e) => {
+				if (popover.classList.contains('hidden')) return;
+				if (e.target.closest('#collectionsPopover')) return;
+				if (e.target.closest('#addToCollectionBtn')) return;
+				this.closeCollectionPopover();
+			});
+		}
+
+		const close = document.getElementById('collectionModalClose');
+		if (close) close.addEventListener('click', () => this.closeCollectionModal());
+		const renameBtn = document.getElementById('collectionRenameBtn');
+		if (renameBtn) renameBtn.addEventListener('click', () => {
+			if (!this._activeCollectionId) return;
+			const pl = window.JeoPlaylists.get(this._activeCollectionId);
+			if (!pl) return;
+			const next = window.prompt('Rename collection:', pl.name);
+			if (!next || !next.trim()) return;
+			window.JeoPlaylists.rename(pl.id, next.trim());
+			this.openCollectionModal(pl.id);
+			this.renderCollections();
+		});
+		const deleteBtn = document.getElementById('collectionDeleteBtn');
+		if (deleteBtn) deleteBtn.addEventListener('click', () => {
+			if (!this._activeCollectionId) return;
+			if (!window.confirm('Delete this collection? Games inside it will not be removed from your library.')) return;
+			window.JeoPlaylists.remove(this._activeCollectionId);
+			this.closeCollectionModal();
+			this.renderCollections();
+			if (window.JeoToast) window.JeoToast.info('Collection deleted.');
+		});
+	}
+
+	promptNewCollection(slugToAdd) {
+		const name = window.prompt('Name your new collection:', '');
+		if (!name || !name.trim()) return;
+		const pl = window.JeoPlaylists.create(name.trim());
+		if (!pl) return;
+		if (slugToAdd) window.JeoPlaylists.addGame(pl.id, slugToAdd);
+		this.renderCollections();
+		if (window.JeoToast) {
+			window.JeoToast.success(slugToAdd
+				? `Created “${pl.name}” and added this game.`
+				: `Created “${pl.name}”.`);
+		}
+		return pl;
+	}
+
+	openCollectionPopover() {
+		const popover = document.getElementById('collectionsPopover');
+		const addBtn = document.getElementById('addToCollectionBtn');
+		if (!popover || !window.JeoPlaylists) return;
+		const slug = this.currentGameSlug;
+		if (!slug) {
+			if (window.JeoToast) window.JeoToast.warning('No game open.');
+			return;
+		}
+		this.renderCollectionPopover(slug);
+		popover.classList.remove('hidden');
+		popover.setAttribute('aria-hidden', 'false');
+		if (addBtn) addBtn.setAttribute('aria-expanded', 'true');
+	}
+
+	closeCollectionPopover() {
+		const popover = document.getElementById('collectionsPopover');
+		const addBtn = document.getElementById('addToCollectionBtn');
+		if (!popover) return;
+		popover.classList.add('hidden');
+		popover.setAttribute('aria-hidden', 'true');
+		if (addBtn) addBtn.setAttribute('aria-expanded', 'false');
+	}
+
+	renderCollectionPopover(slug) {
+		const popover = document.getElementById('collectionsPopover');
+		if (!popover) return;
+		popover.innerHTML = '';
+		const all = window.JeoPlaylists.list();
+		if (!all.length) {
+			const empty = document.createElement('div');
+			empty.className = 'collections-popover-empty';
+			empty.textContent = 'No collections yet — create one below.';
+			popover.appendChild(empty);
+		} else {
+			for (const pl of all) {
+				const row = document.createElement('button');
+				row.type = 'button';
+				row.className = 'collections-popover-row';
+				const isIn = pl.slugs.includes(slug);
+				if (isIn) row.classList.add('in');
+				row.innerHTML = `<span class="check">${isIn ? '✓' : ''}</span><span>${this.escapeAttr(pl.name)}</span><span style="margin-left:auto;color:var(--muted);font-size:11px">${pl.slugs.length}</span>`;
+				row.addEventListener('click', () => {
+					if (isIn) {
+						window.JeoPlaylists.removeGame(pl.id, slug);
+						if (window.JeoToast) window.JeoToast.info(`Removed from “${pl.name}”.`);
+					} else {
+						window.JeoPlaylists.addGame(pl.id, slug);
+						if (window.JeoToast) window.JeoToast.success(`Added to “${pl.name}”.`);
+					}
+					this.renderCollectionPopover(slug);
+					this.renderCollections();
+				});
+				popover.appendChild(row);
+			}
+		}
+		const divider = document.createElement('div');
+		divider.className = 'collections-popover-divider';
+		popover.appendChild(divider);
+
+		const newRow = document.createElement('div');
+		newRow.className = 'collections-popover-new';
+		newRow.innerHTML = '<input type="text" maxlength="60" placeholder="New collection name…" /><button type="button">Add</button>';
+		const input = newRow.querySelector('input');
+		const btn = newRow.querySelector('button');
+		const submit = () => {
+			const name = (input.value || '').trim();
+			if (!name) return;
+			const pl = window.JeoPlaylists.create(name);
+			if (pl) {
+				window.JeoPlaylists.addGame(pl.id, slug);
+				if (window.JeoToast) window.JeoToast.success(`Created “${pl.name}” and added this game.`);
+				input.value = '';
+				this.renderCollectionPopover(slug);
+				this.renderCollections();
+			}
+		};
+		btn.addEventListener('click', submit);
+		input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
+		popover.appendChild(newRow);
+		setTimeout(() => input.focus(), 50);
 	}
 
 	renderFavorites() {
@@ -1413,7 +1843,15 @@ class App {
 			.filter(Boolean);
 
 		if (favGames.length === 0) {
-			this.favoritesSection.classList.add('hidden');
+			const shown = this.renderCarouselEmptyState(this.favoritesTrack, {
+				dismissKey: 'jeo:emptyDismissed:favorites',
+				icon: '❤️',
+				title: 'Favorite games appear here',
+				hint: 'Tap the ♡ on any game card to pin it to this row.',
+			});
+			if (!shown) { this.favoritesSection.classList.add('hidden'); return; }
+			this.favoritesSection.classList.remove('hidden');
+			this.favCount.textContent = '0';
 			return;
 		}
 		this.favoritesSection.classList.remove('hidden');
@@ -1492,11 +1930,13 @@ class App {
 		const isFav = this.isFavorite(g.name);
 		const isMaintenance = this.isUnderMaintenance(g);
 		const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
+		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
+		const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
 		const card = document.createElement('div');
 		card.className = 'carousel-card' + (isMaintenance ? ' under-maintenance' : '');
 		card.style.setProperty('--card-img', `url('${imgSrc}')`);
 		card.dataset.slug = g.name;
-		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
+		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + ratingBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {
 			if (e.target.closest('.heart-btn')) return;
@@ -1538,6 +1978,10 @@ class App {
 		this.currentGameSlug = this.deriveSlugFromUrl(target);
 		this.currentGameName = game ? game.name : this.currentGameSlug;
 		this.currentSessionStart = Date.now();
+		// Reflect current game in URL so the page can be shared / bookmarked.
+		this.setShareHash(game ? game.name : this.currentGameSlug);
+		// Mount the rating widget for this game in the player toolbar
+		this.mountRatingWidget(game ? game.name : this.currentGameSlug);
 		if (window.JeoSaves && this.currentGameSlug) {
 			try { window.JeoSaves.bindGame(this.currentGameSlug); } catch {}
 			this.refreshSaveSidebar();
@@ -1554,12 +1998,18 @@ class App {
 
 		if (loadingOverlay) {
 			loadingOverlay.classList.remove('hidden');
+			loadingOverlay.classList.remove('show-skip');
 		}
 
 		// Progress Tracking Initialization
 		this.currentLoadingGame = game;
 		this.loadedBytes.clear();
 		this.totalGameSize = game ? (game.size || 0) : 0;
+		// Clear any leftover timers from a previous open
+		if (this._loadingTimers) this._loadingTimers.forEach(clearTimeout);
+		if (this._loadingIntervals) this._loadingIntervals.forEach(clearInterval);
+		this._loadingTimers = [];
+		this._loadingIntervals = [];
 
 		// Tips rotation
 		const tips = [
@@ -1580,7 +2030,7 @@ class App {
 				tipInterval = setInterval(() => {
 					// Don't rotate tips if we are showing real progress
 					if (this.loadedBytes.size > 0 && this.totalGameSize > 0) return;
-					
+
 					tipIndex = (tipIndex + 1) % tips.length;
 					rotatingTip.style.opacity = 0;
 					setTimeout(() => {
@@ -1588,6 +2038,7 @@ class App {
 						rotatingTip.style.opacity = 1;
 					}, 300);
 				}, 3000);
+				this._loadingIntervals.push(tipInterval);
 			}
 		};
 		startTips();
@@ -1615,6 +2066,7 @@ class App {
 				if (progressBar) progressBar.style.width = `${progress}%`;
 			}
 		}, 500);
+		this._loadingIntervals.push(progressInterval);
 
 		let iframeLoaded = false;
 		let minTimeElapsed = false;
@@ -1622,7 +2074,7 @@ class App {
 
 		this.hideOverlayFn = () => {
 			// Requirements to hide:
-			// 1. Min time (2s) passed
+			// 1. Min time (1.2s) passed
 			// 2. Iframe loaded
 			// 3. IF it's a complex game (has size > 1MB), wait for GAME_READY OR 90% progress
 			const isLargeGame = this.totalGameSize > 1024 * 1024;
@@ -1634,18 +2086,26 @@ class App {
 				if (progressBar) progressBar.style.width = '100%';
 				setTimeout(() => {
 					loadingOverlay.classList.add('hidden');
+					loadingOverlay.classList.remove('show-skip');
 					this.gameFrame.classList.remove('offscreen-iframe');
 					this.gameFrame.focus();
 					this.hideOverlayFn = null;
-				}, 400); 
+				}, 400);
 			}
 		};
 
-		// Enforce a minimum 2 second display time
-		setTimeout(() => {
+		// Enforce a minimum 1.2 second display time (snappier than 2s)
+		this._loadingTimers.push(setTimeout(() => {
 			minTimeElapsed = true;
 			if (this.hideOverlayFn) this.hideOverlayFn();
-		}, 2000);
+		}, 1200));
+
+		// Reveal a manual "Show game" skip button after 4s for impatient users
+		this._loadingTimers.push(setTimeout(() => {
+			if (loadingOverlay && !loadingOverlay.classList.contains('hidden')) {
+				loadingOverlay.classList.add('show-skip');
+			}
+		}, 4000));
 
 		// Hide overlay after iframe loads
 		this.gameFrame.onload = () => {
@@ -1654,12 +2114,25 @@ class App {
 		};
 
 		// Ultimate fallback
-		setTimeout(() => {
+		this._loadingTimers.push(setTimeout(() => {
 			if (this.hideOverlayFn) {
 				this.gameReadyReceived = true; // Force it
 				this.hideOverlayFn();
 			}
-		}, 15000);
+		}, 15000));
+	}
+
+	skipLoadingOverlay() {
+		// User-initiated bypass: force-hide the overlay even if iframe hasn't fired onload yet.
+		const loadingOverlay = document.getElementById('gameLoadingOverlay');
+		if (!loadingOverlay) return;
+		if (this._loadingIntervals) this._loadingIntervals.forEach(clearInterval);
+		this._loadingIntervals = [];
+		loadingOverlay.classList.add('hidden');
+		loadingOverlay.classList.remove('show-skip');
+		this.gameFrame.classList.remove('offscreen-iframe');
+		this.gameFrame.focus();
+		this.hideOverlayFn = null;
 	}
 
 	toggleFullscreen() {
@@ -1677,7 +2150,126 @@ class App {
 		}
 	}
 
+	initRatingsSync() {
+		if (!window.JeoRatings) return;
+		window.JeoRatings.onChange((slug, stars) => this.updateRatingBadge(slug, stars));
+	}
+
+	updateRatingBadge(slug, stars) {
+		const cards = document.querySelectorAll('.game-card[data-slug], .carousel-card[data-slug]');
+		cards.forEach(card => {
+			if (card.dataset.slug !== slug) return;
+			const thumb = card.querySelector('.game-thumb');
+			if (!thumb) return;
+			let badge = thumb.querySelector('.rating-badge');
+			if (stars > 0) {
+				if (!badge) {
+					badge = document.createElement('span');
+					badge.className = 'rating-badge';
+					thumb.appendChild(badge);
+				}
+				badge.textContent = '★ ' + stars;
+			} else if (badge) {
+				badge.remove();
+			}
+		});
+	}
+
+	mountRatingWidget(slug) {
+		const slot = document.getElementById('playerRatingSlot');
+		if (!slot) return;
+		slot.innerHTML = '';
+		if (!slug || !window.JeoRatings) return;
+		const widget = window.JeoRatings.buildWidget(slug, { size: 18, interactive: true });
+		slot.appendChild(widget);
+	}
+
+	/* =============== DEEP LINKS =============== */
+	initDeepLinks() {
+		this._suppressHashChange = false;
+		window.addEventListener('hashchange', () => {
+			if (this._suppressHashChange) { this._suppressHashChange = false; return; }
+			this.resolvePendingDeepLink();
+		});
+		// First resolution happens after the catalog loads (called from reloadGames).
+	}
+
+	parseGameSlugFromHash() {
+		const h = String(window.location.hash || '').replace(/^#/, '');
+		if (!h) return null;
+		const parts = h.split('&').map(p => p.trim()).filter(Boolean);
+		for (const p of parts) {
+			const eq = p.indexOf('=');
+			if (eq < 0) continue;
+			const k = decodeURIComponent(p.slice(0, eq));
+			const v = decodeURIComponent(p.slice(eq + 1));
+			if (k === 'game' && v) return v;
+		}
+		return null;
+	}
+
+	resolvePendingDeepLink() {
+		const slug = this.parseGameSlugFromHash();
+		if (!slug || !Array.isArray(this.games) || !this.games.length) return;
+		// If the player is already showing this slug, do nothing.
+		if (this.currentGameSlug === slug && this.playModal && !this.playModal.classList.contains('hidden')) return;
+		const target = slug.toLowerCase();
+		const game = this.games.find(g => String(g.name).toLowerCase() === target);
+		if (!game) {
+			if (window.JeoToast) window.JeoToast.warning(`No game named "${slug}" — clearing link.`);
+			this.setShareHash(null);
+			return;
+		}
+		this.playGame(game);
+	}
+
+	setShareHash(slug) {
+		const target = slug ? '#game=' + encodeURIComponent(slug) : '';
+		const cur = window.location.hash || '';
+		if (cur === target) return;
+		this._suppressHashChange = true;
+		try {
+			const base = window.location.pathname + window.location.search;
+			history.replaceState(null, '', target ? base + target : base);
+		} catch (e) { /* fall through */ }
+	}
+
+	copyShareLink() {
+		if (!this.currentGameSlug) return;
+		const url = window.location.origin + window.location.pathname + '#game=' + encodeURIComponent(this.currentGameSlug);
+		const done = () => {
+			if (window.JeoToast) window.JeoToast.success('Link copied to clipboard.');
+			if (window.JeoAchievements) { try { window.JeoAchievements.emit('share', { slug: this.currentGameSlug }); } catch {} }
+		};
+		const fail = (e) => {
+			console.warn('clipboard copy failed', e);
+			if (window.JeoToast) window.JeoToast.warning('Could not copy. Link: ' + url, { ttl: 8000 });
+		};
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(url).then(done).catch(fail);
+		} else {
+			try {
+				const ta = document.createElement('textarea');
+				ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+				document.body.appendChild(ta); ta.select();
+				document.execCommand('copy');
+				ta.remove();
+				done();
+			} catch (e) { fail(e); }
+		}
+	}
+
 	closePlayer() {
+		// Clear any in-flight loading timers/intervals so they don't fire after close.
+		if (this._loadingTimers) this._loadingTimers.forEach(clearTimeout);
+		if (this._loadingIntervals) this._loadingIntervals.forEach(clearInterval);
+		this._loadingTimers = [];
+		this._loadingIntervals = [];
+		const _overlay = document.getElementById('gameLoadingOverlay');
+		if (_overlay) { _overlay.classList.add('hidden'); _overlay.classList.remove('show-skip'); }
+		this.hideOverlayFn = null;
+		this.closeCollectionPopover();
+
 		if (window.JeoSaves) {
 			try { window.JeoSaves.unbindGame(); } catch {}
 		}
@@ -1692,6 +2284,9 @@ class App {
 					localStorage.setItem('jeo:sessions', JSON.stringify(log));
 				} catch {}
 			}
+			if (window.JeoAchievements) {
+				try { window.JeoAchievements.emit('session-end', { slug: this.currentGameSlug, dur, type: this._lastPlayType }); } catch {}
+			}
 		}
 		this.currentSessionStart = null;
 		const sb = document.getElementById('saveSidebar');
@@ -1702,6 +2297,7 @@ class App {
 		document.body.style.overflow = '';
 		this.gameFrame.classList.remove('offscreen-iframe');
 		this.currentGameSlug = null;
+		this.setShareHash(null);
 	}
 
 	deriveSlugFromUrl(url) {
@@ -1770,7 +2366,11 @@ class App {
 			this.refreshSaveSidebar();
 		} catch (e) {
 			console.error('save action failed', e);
-			alert('Save action failed: ' + (e.message || e));
+			const msg = 'Save action failed: ' + (e.message || e);
+			if (window.JeoToast) window.JeoToast.error(msg, {
+				action: { label: 'Retry', onClick: () => this.handleSaveAction(id, action) }
+			});
+			else alert(msg);
 		}
 	}
 
@@ -1784,8 +2384,14 @@ class App {
 		try {
 			await window.JeoSaves.saveNow({ slug: this.currentGameSlug, kind: 'manual', label: label.trim() });
 			this.refreshSaveSidebar();
+			if (window.JeoToast) window.JeoToast.success(label ? `Saved “${label}”` : 'Saved.');
 		} catch (e) {
-			alert('Save failed: ' + (e.message || e));
+			console.error('saveNow failed', e);
+			const msg = 'Save failed: ' + (e.message || e);
+			if (window.JeoToast) window.JeoToast.error(msg, {
+				action: { label: 'Retry', onClick: () => this.saveNowFromSidebar(withLabel) }
+			});
+			else alert(msg);
 		}
 	}
 

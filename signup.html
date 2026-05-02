@@ -34,14 +34,14 @@
 
       <label for="pw">Passphrase</label>
       <div class="pw-row">
-        <input type="password" id="pw" autocomplete="new-password" minlength="12">
+        <input type="password" id="pw" autocomplete="new-password" minlength="5">
         <button type="button" class="eye" id="eye" aria-label="Show passphrase" data-tooltip="Show / hide">👁</button>
       </div>
       <div class="strength"><div id="strbar"></div></div>
-      <div class="meta" id="strmeta">At least 12 characters. Pick something memorable but unique.</div>
+      <div class="meta" id="strmeta">At least 5 characters. Pick something memorable but unique.</div>
 
       <label for="pw2">Confirm passphrase</label>
-      <input type="password" id="pw2" autocomplete="new-password" minlength="12">
+      <input type="password" id="pw2" autocomplete="new-password" minlength="5">
       <div class="field-msg" id="pw2Msg"></div>
 
       <label class="check"><input type="checkbox" id="agree"> <span>I understand: my data lives on this device. If I lose my passphrase <strong>and</strong> all 8 recovery codes, no one can recover the data.</span></label>
@@ -182,7 +182,7 @@
     const colors = ['#444', '#ef4444', '#f59e0b', '#facc15', '#84cc16', '#22c55e'];
     $('strbar').style.width = `${q.score * 20}%`;
     $('strbar').style.background = colors[q.score];
-    if (!pw) $('strmeta').textContent = 'At least 12 characters.';
+    if (!pw) $('strmeta').textContent = 'At least 5 characters.';
     else if (q.reason) $('strmeta').textContent = q.reason;
     else $('strmeta').textContent = `${q.label} — would take ${q.crackTime} to crack offline (${q.bits} bits)`;
   }

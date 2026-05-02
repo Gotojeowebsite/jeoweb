@@ -127,6 +127,43 @@ function isBrokenGame(htmlPath) {
 	return false;
 }
 
+// Keyword → tag dictionary used for auto-tagging by slug.
+// Order matters loosely (more specific first). Tags should be short, lowercase,
+// hyphen-free single words where possible so they fit in chips.
+const TAG_KEYWORDS = [
+	{ tag: 'racing',    words: ['race','racing','drift','kart','rally','speed','car-','-car','drive','driver','traffic','moto','bike'] },
+	{ tag: 'shooter',   words: ['fps','shoot','shooter','gun','sniper','war','strike','combat','battlefield','crossfire','warfare'] },
+	{ tag: 'puzzle',    words: ['puzzle','sudoku','mahjong','match','jigsaw','logic','sokoban','tetris','2048','solitaire','crossword'] },
+	{ tag: 'platformer',words: ['mario','sonic','platform','jump','jumper','run','runner','geometry','dash','climb','parkour'] },
+	{ tag: 'sports',    words: ['football','soccer','basketball','golf','tennis','baseball','hockey','volley','sport','bowling','pool','cricket','boxing','wrestling','fight','mma'] },
+	{ tag: 'arcade',    words: ['arcade','breakout','asteroids','snake','pinball','pacman','pac-man','classic','retro','flappy'] },
+	{ tag: 'horror',    words: ['scary','horror','fnaf','freddy','haunted','ghost','zombie','undead','slender','granny','nightmare','poppy','huggy'] },
+	{ tag: 'multiplayer',words:['multi','multiplayer','-vs-','duel','battle','royale','online','party','versus','arena','clash'] },
+	{ tag: 'strategy',  words: ['chess','checkers','strategy','tower','defense','tactics','td-','rts','kingdom','empire','civ-'] },
+	{ tag: 'rpg',       words: ['rpg','dungeon','quest','adventure','fantasy','wizard','dragon','hero','kingdom','final-fantasy','pokemon','zelda'] },
+	{ tag: 'simulation',words: ['sim','simulator','tycoon','city','farm','idle','clicker','factory','manage'] },
+	{ tag: 'minecraft', words: ['minecraft','mine-','craft-','blockcraft'] },
+	{ tag: 'io',        words: ['-io','.io'] },
+	{ tag: 'stickman',  words: ['stick','stickman','stickfight'] },
+	{ tag: 'survival',  words: ['survival','survive','craft','hunt'] },
+	{ tag: 'casual',    words: ['casual','cute','color','draw','paint','dress','makeup','baby','kid'] },
+];
+
+// Returns an array of inferred tags for a given slug + type.
+function inferTags(slug, type) {
+	const out = new Set();
+	const haystack = '-' + String(slug || '').toLowerCase() + '-';
+	for (const { tag, words } of TAG_KEYWORDS) {
+		for (const w of words) {
+			if (haystack.includes(w)) { out.add(tag); break; }
+		}
+	}
+	// Always tag platform from type so users can filter by .swf vs WebGL vs retro
+	if (type === 'flash') out.add('flash');
+	if (type === 'snes' || type === 'gba') out.add('retro');
+	return [...out];
+}
+
 // Parse <!--TAG foo--> and <!--GENRE bar--> markers
 function parseTagsAndGenre(htmlPath) {
 	try {
@@ -208,7 +245,19 @@ function scan() {
 		};
 		if (requested) entry.requested = true;
 		if (broken) entry.status = 'broken';
-		if (tags && tags.length) entry.tags = tags;
+		// Merge marker-tags (curated, from HTML) with auto-tags (from slug + type).
+		// Curated tags win — they're listed first so order-dependent UIs prefer them.
+		const auto = inferTags(it.name, type);
+		const merged = [];
+		const seen = new Set();
+		for (const t of (tags || []).concat(auto)) {
+			if (!t) continue;
+			const k = String(t).toLowerCase();
+			if (seen.has(k)) continue;
+			seen.add(k);
+			merged.push(k);
+		}
+		if (merged.length) entry.tags = merged;
 		if (genre) entry.genre = genre;
 		results.push(entry);
 	}
