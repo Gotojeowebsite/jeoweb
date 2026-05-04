@@ -11,7 +11,8 @@ class App {
 		// Hide-maintenance defaults ON the first visit so users don't land on broken games.
 		this.hideMaintenance = localStorage.getItem('jeo-hide-maintenance') !== 'false';
 		this.offlineBlockedNames = new Set();
-		this.statusFreshness = { generatedAt: null, source: '' };
+		this.statusFreshness = { generatedAt: null, source: '', maxAgeDays: 7, isStale: false, unknownCount: 0 };
+		this.gameHealth = new Map();
 
 		this.initElements();
 		this.initRatingsSync();
@@ -196,15 +197,31 @@ class App {
 		this.renderSkeletons();
 		const allItems = await this.resolveGames();
 		this.offlineBlockedNames = new Set();
-		const maintenanceStatusByName = await this.resolveMaintenanceStatusMap();
-		const scanStatusByName = maintenanceStatusByName.size ? new Map() : await this.resolveScanStatusMap();
+		// Verdict pipeline: prefer the new game_health.json (single source of truth,
+		// freshness-gated, quorum-based). Fall back to legacy files only if it's
+		// missing entirely so old deploys keep working.
+		const healthByName = await this.resolveGameHealth();
+		let legacyMaintenance = new Map();
+		let legacyScan = new Map();
+		if (!healthByName.size) {
+			legacyMaintenance = await this.resolveMaintenanceStatusMap();
+			legacyScan = legacyMaintenance.size ? new Map() : await this.resolveScanStatusMap();
+		}
 		this.games = allItems.map((game) => {
 			const currentStatus = this.normalizeScanStatus(game.status);
-			const maintenanceStatus = maintenanceStatusByName.get(game.name) || '';
-			const scannedStatus = scanStatusByName.get(game.name) || '';
-			const mergedStatus = maintenanceStatus || scannedStatus || currentStatus;
-			if (!mergedStatus) return game;
-			return { ...game, status: mergedStatus };
+			const health = healthByName.get(game.name);
+			let resolvedStatus = '';
+			let healthMeta = null;
+			if (health) {
+				resolvedStatus = this.normalizeScanStatus(health.status);
+				healthMeta = health;
+			} else {
+				const maintenanceStatus = legacyMaintenance.get(game.name) || '';
+				const scannedStatus = legacyScan.get(game.name) || '';
+				resolvedStatus = maintenanceStatus || scannedStatus || currentStatus;
+			}
+			if (!resolvedStatus && !healthMeta) return game;
+			return { ...game, status: resolvedStatus, health: healthMeta };
 		});
 		console.log('Games loaded:', this.games.length);
 		if (this.games.length === 0 && !this._degradedNotified) {
@@ -229,9 +246,9 @@ class App {
 			+ '<div class="skeleton-content"><div class="skeleton-title"></div>'
 			+ '<div class="skeleton-btn"></div></div></div>';
 		this.gameGrid.innerHTML = cell.repeat(12);
-		// Stagger fade-in for premium feel
+		// Stagger fade-in only for the first row or two; long cascades feel laggy.
 		Array.from(this.gameGrid.children).forEach((el, i) => {
-			el.style.animationDelay = (i * 0.04) + 's';
+			if (i < 12) el.style.animationDelay = (i * 0.04) + 's';
 		});
 	}
 
@@ -259,9 +276,10 @@ class App {
 
 	normalizeScanStatus(status) {
 		const raw = String(status || '').toLowerCase();
-		if (raw === 'broken' || raw === 'under_maintenance' || raw === 'under-maintenance') {
-			return 'under_maintenance';
-		}
+		if (raw === 'broken') return 'broken';
+		if (raw === 'under_maintenance' || raw === 'under-maintenance') return 'under_maintenance';
+		if (raw === 'unknown' || raw === 'unverified') return 'unverified';
+		if (raw === 'healthy' || raw === 'ok') return '';
 		return '';
 	}
 
@@ -269,8 +287,78 @@ class App {
 		return String(name || '').trim().toLowerCase();
 	}
 
+	// True for both "broken" and "under_maintenance" — both should be hidden when
+	// hideMaintenance is on, and both warrant a "play at your own risk" prompt.
 	isUnderMaintenance(game) {
-		return this.normalizeScanStatus(game && game.status) === 'under_maintenance';
+		const s = this.normalizeScanStatus(game && game.status);
+		return s === 'broken' || s === 'under_maintenance';
+	}
+
+	isUnverified(game) {
+		return this.normalizeScanStatus(game && game.status) === 'unverified';
+	}
+
+	gameStatusKind(game) {
+		// 'broken' | 'maintenance' | 'unverified' | ''
+		const s = this.normalizeScanStatus(game && game.status);
+		if (s === 'broken') return 'broken';
+		if (s === 'under_maintenance') return 'maintenance';
+		if (s === 'unverified') return 'unverified';
+		return '';
+	}
+
+	async resolveGameHealth() {
+		// Reads game_health.json (schema 2). Verdicts are accepted only when the
+		// file is fresh; if it's older than max_age_days, we fall back to "unverified"
+		// so the UI shows a banner instead of silently trusting stale data.
+		const byName = new Map();
+		try {
+			const response = await fetch('game_health.json', { cache: 'no-store' });
+			if (!response.ok) return byName;
+			const data = await response.json();
+			if (!data || typeof data !== 'object' || data.schema !== 2) return byName;
+			const generatedAt = Number(data.generated_at) || 0;
+			const maxAgeDays = Number(data.max_age_days) || 7;
+			const ageMs = Date.now() - generatedAt * 1000;
+			const isStale = generatedAt > 0 && ageMs > maxAgeDays * 86400 * 1000;
+			this.statusFreshness = {
+				generatedAt,
+				source: 'game_health.json',
+				maxAgeDays,
+				isStale,
+				unknownCount: (data.counts && Number(data.counts.unknown)) || 0,
+			};
+			const games = data.games && typeof data.games === 'object' ? data.games : {};
+			for (const [name, entry] of Object.entries(games)) {
+				if (!name || !entry || typeof entry !== 'object') continue;
+				const verdictRaw = String(entry.verdict || '').toLowerCase();
+				const confidence = String(entry.confidence || 'low').toLowerCase();
+				let status;
+				if (isStale) {
+					// Stale data: degrade everything to "unverified" except hard overrides.
+					if (entry.source === 'override' && verdictRaw === 'broken') status = 'broken';
+					else if (entry.source === 'override' && verdictRaw === 'healthy') status = '';
+					else status = 'unknown';
+				} else if (verdictRaw === 'broken') {
+					status = entry.source === 'override' ? 'under_maintenance' : 'broken';
+				} else if (verdictRaw === 'healthy') {
+					status = '';
+				} else {
+					status = 'unknown';
+				}
+				byName.set(name, {
+					status,
+					verdict: verdictRaw,
+					confidence,
+					source: String(entry.source || ''),
+					reason: String(entry.reason || ''),
+				});
+			}
+			this.gameHealth = byName;
+		} catch (e) {
+			console.warn('Could not load game_health.json', e);
+		}
+		return byName;
 	}
 
 	async resolveScanStatusMap() {
@@ -355,8 +443,15 @@ class App {
 	renderStatusFreshness() {
 		const el = document.getElementById('statusFreshness');
 		if (!el) return;
-		const ts = this.statusFreshness && this.statusFreshness.generatedAt;
-		if (!ts) { el.textContent = ''; return; }
+		const fresh = this.statusFreshness || {};
+		const ts = fresh.generatedAt;
+		if (!ts) {
+			// No verdict file at all — be honest about it instead of going silent.
+			el.textContent = '🛈 status: unverified';
+			el.setAttribute('data-age-days', '999');
+			el.title = 'No game_health.json available — game status is not verified.';
+			return;
+		}
 		const ageMs = Date.now() - ts * 1000;
 		const hours = Math.floor(ageMs / 3600000);
 		const days = Math.floor(hours / 24);
@@ -365,8 +460,12 @@ class App {
 		else if (hours < 1) label = Math.floor(ageMs / 60000) + ' min ago';
 		else if (days < 1) label = hours + ' h ago';
 		else label = days + ' d ago';
-		el.textContent = '🛈 status: ' + label;
+		const stalePrefix = fresh.isStale ? ' (stale)' : '';
+		el.textContent = '🛈 status: ' + label + stalePrefix;
 		el.setAttribute('data-age-days', String(days));
+		el.title = fresh.isStale
+			? `Verdicts are older than ${fresh.maxAgeDays} days. Showing games as unverified until a fresh scan runs.`
+			: `Verdicts generated ${label}.`;
 	}
 
 	initElements() {
@@ -1247,6 +1346,12 @@ class App {
 		}
 		if (filtered.length === 0) {
 			const safeQ = (q || '').replace(/[<>"']/g, '');
+			const tagBtn = this.activeTag
+				? `<button class="secondary" id="emptyClearTag">Clear tag "${this.escapeAttr(this.activeTag)}"</button>`
+				: '';
+			const maintBtn = this.hideMaintenance
+				? '<button class="secondary" id="emptyShowMaintenance">Show maintenance games</button>'
+				: '';
 			this.gameGrid.innerHTML = `
 				<div class="empty-state-illustrated">
 					<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1258,40 +1363,95 @@ class App {
 						<path d="M24 12 L40 12 M28 8 L36 8" />
 					</svg>
 					<h3>No games found</h3>
-					<p>${safeQ ? `Nothing matches "<strong>${safeQ}</strong>".` : 'Try a different search.'}</p>
+					<p>${safeQ ? `Nothing matches "<strong>${safeQ}</strong>".` : 'Try a different search or clear the active filters.'}</p>
 					<div class="empty-actions">
 						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener">📩 Request "${safeQ || 'a game'}"</a>
 						<button class="secondary" onclick="document.getElementById('searchInput').value='';document.getElementById('searchInput').dispatchEvent(new Event('input'))">Clear search</button>
+						${tagBtn}
+						${maintBtn}
 					</div>
 				</div>`;
+			const clearTagBtn = document.getElementById('emptyClearTag');
+			if (clearTagBtn) clearTagBtn.addEventListener('click', () => { this.activeTag = null; this.renderGames(); this.renderTagChips(); });
+			const showMaintBtn = document.getElementById('emptyShowMaintenance');
+			if (showMaintBtn) showMaintBtn.addEventListener('click', () => {
+				this.hideMaintenance = false;
+				localStorage.setItem('jeo-hide-maintenance', 'false');
+				this.renderGames();
+			});
 			return;
 		}
+		const frag = document.createDocumentFragment();
 		filtered.forEach((g, i) => {
-			const imgSrc = g.image || this.fallbackImage;
-			const isFav = this.isFavorite(g.name);
-			const isMaintenance = this.isUnderMaintenance(g);
-			const flashBadge = g.type === 'flash' ? '<span class="flash-badge">⚡ Flash</span>' : '';
-			const retroBadge = g.type === 'snes' ? '<span class="retro-badge">🎮 Retro</span>' : '';
-			const requestedBadge = g.requested ? '<span class="requested-badge">📩 Requested</span>' : '';
-			const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
-			const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
-			const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
-			const badgeHtml = flashBadge + retroBadge + requestedBadge + maintenanceBadge + ratingBadge;
-			const playLabel = isMaintenance ? '⚠ Play at Risk' : '▶ Play';
-			const card = document.createElement('div');
-			card.className = 'game-card' + (isMaintenance ? ' under-maintenance' : '');
-			card.style.setProperty('--card-img', `url('${imgSrc}')`);
-			card.dataset.slug = g.name;
-			const isWish = this.isWishlisted(g.name);
-			const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
-			card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + wishBtn + badgeHtml + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div><div class="card-actions"><button class="play-btn">' + playLabel + '</button></div></div>';
-			card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
-			card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
-			card.querySelector('.wish-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleWishlist(g); });
-			card.addEventListener('dblclick', () => { this.playGame(g); });
-			card.style.animationDelay = `${i * 0.03}s`;
-			this.gameGrid.appendChild(card);
+			const card = this.buildGameCard(g, i);
+			frag.appendChild(card);
 		});
+		this.gameGrid.appendChild(frag);
+	}
+
+	buildGameCard(g, i) {
+		const imgSrc = g.image || this.fallbackImage;
+		const isFav = this.isFavorite(g.name);
+		const statusKind = this.gameStatusKind(g); // 'broken' | 'maintenance' | 'unverified' | ''
+		const isFail = statusKind === 'broken' || statusKind === 'maintenance';
+		const isWish = this.isWishlisted(g.name);
+		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
+		const safeName = this.escapeAttr(g.name);
+		const safeImg = this.escapeAttr(imgSrc);
+		const safeFallback = this.escapeAttr(this.fallbackImage);
+
+		// Build the badge list with a hard cap so the cover isn't half-buried.
+		// Order: status badge first (most important), then type, then meta.
+		const badges = [];
+		if (statusKind === 'broken') badges.push('<span class="status-badge status-broken" title="Confirmed broken">✕ Broken</span>');
+		else if (statusKind === 'maintenance') badges.push('<span class="status-badge status-maintenance" title="Marked under maintenance">⚠ Maintenance</span>');
+		else if (statusKind === 'unverified') badges.push('<span class="status-badge status-unverified" title="Not recently verified">? Unverified</span>');
+		if (g.type === 'flash') badges.push('<span class="flash-badge">⚡ Flash</span>');
+		if (g.type === 'snes') badges.push('<span class="retro-badge">🎮 Retro</span>');
+		if (g.requested) badges.push('<span class="requested-badge">📩 Requested</span>');
+		if (rating) badges.push('<span class="rating-badge">★ ' + rating + '</span>');
+		const MAX_VISIBLE_BADGES = 2;
+		let badgeHtml = badges.slice(0, MAX_VISIBLE_BADGES).join('');
+		if (badges.length > MAX_VISIBLE_BADGES) {
+			badgeHtml += '<span class="badge-more" title="' + (badges.length - MAX_VISIBLE_BADGES) + ' more">+' + (badges.length - MAX_VISIBLE_BADGES) + '</span>';
+		}
+
+		let playLabel;
+		if (statusKind === 'broken') playLabel = '✕ Likely Broken';
+		else if (statusKind === 'maintenance') playLabel = '⚠ Play at Risk';
+		else if (statusKind === 'unverified') playLabel = '▶ Play (Unverified)';
+		else playLabel = '▶ Play';
+
+		const card = document.createElement('div');
+		const stateClass = statusKind ? ' card-status-' + statusKind : '';
+		card.className = 'game-card' + (isFail ? ' under-maintenance' : '') + stateClass;
+		card.style.setProperty('--card-img', "url('" + imgSrc.replace(/'/g, "\\'") + "')");
+		card.dataset.slug = g.name;
+
+		const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + safeName + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
+		const heartBtn = '<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>';
+		// width/height supplied so the browser can reserve box & avoid CLS;
+		// CSS still scales image to fill via object-fit. onerror swaps to the
+		// shared fallback once if the cover is missing or broken.
+		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy"'
+			+ ' onload="this.classList.add(\'loaded\')"'
+			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
+
+		card.innerHTML =
+			'<div class="game-thumb">' + img + heartBtn + wishBtn + badgeHtml + '</div>' +
+			'<div class="game-card-content">' +
+				'<div class="game-card-title">' + safeName + '</div>' +
+				'<div class="card-actions"><button class="play-btn">' + playLabel + '</button></div>' +
+			'</div>';
+
+		card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
+		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
+		card.querySelector('.wish-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleWishlist(g); });
+		card.addEventListener('dblclick', () => { this.playGame(g); });
+		// Cap stagger to the first 24 cards — past that it produces a long
+		// cascade for filtered results with no visible benefit.
+		if (i < 24) card.style.animationDelay = (i * 0.03) + 's';
+		return card;
 	}
 
 	/* =============== FAVORITES SYSTEM =============== */
@@ -1369,14 +1529,62 @@ class App {
 	}
 
 	playGame(game) {
-		if (this.isUnderMaintenance(game)) {
-			const proceed = window.confirm(
-				game.name + ' is currently under maintenance and may not work correctly.\n\nYou can still play at your own risk.\n\nContinue?'
-			);
-			if (!proceed) return;
+		const kind = this.gameStatusKind(game);
+		if (kind === 'broken' || kind === 'maintenance') {
+			const isBroken = kind === 'broken';
+			const title = isBroken ? 'This game is broken' : 'This game is under maintenance';
+			const body = isBroken
+				? game.name + ' failed verification (missing assets or runtime errors). It probably won\'t load. Open anyway?'
+				: game.name + ' is marked under maintenance. It may not work correctly. Continue?';
+			this.showRiskPrompt(title, body, () => {
+				this.trackRecentPlay(game);
+				this.openPlayer(game.url, game);
+			});
+			return;
 		}
 		this.trackRecentPlay(game);
 		this.openPlayer(game.url, game);
+	}
+
+	// Lightweight in-page confirm. Falls back to native confirm if the toast
+	// system isn't loaded for some reason.
+	showRiskPrompt(title, body, onConfirm) {
+		// Native fallback for the worst case (script load failure).
+		if (typeof document === 'undefined') { if (window.confirm(body)) onConfirm(); return; }
+		// Reuse one DOM node so repeated prompts don't pile up.
+		let host = document.getElementById('jeoRiskPrompt');
+		if (!host) {
+			host = document.createElement('div');
+			host.id = 'jeoRiskPrompt';
+			host.className = 'jeo-risk-overlay';
+			host.setAttribute('role', 'dialog');
+			host.setAttribute('aria-modal', 'true');
+			document.body.appendChild(host);
+		}
+		host.innerHTML =
+			'<div class="jeo-risk-card">' +
+				'<div class="jeo-risk-title"></div>' +
+				'<div class="jeo-risk-body"></div>' +
+				'<div class="jeo-risk-actions">' +
+					'<button class="jeo-risk-cancel" type="button">Cancel</button>' +
+					'<button class="jeo-risk-confirm" type="button">Play anyway</button>' +
+				'</div>' +
+			'</div>';
+		host.querySelector('.jeo-risk-title').textContent = title;
+		host.querySelector('.jeo-risk-body').textContent = body;
+		host.classList.add('open');
+		const close = () => { host.classList.remove('open'); document.removeEventListener('keydown', onKey); };
+		const onKey = (e) => {
+			if (e.key === 'Escape') { close(); }
+			else if (e.key === 'Enter') { close(); onConfirm(); }
+		};
+		document.addEventListener('keydown', onKey);
+		host.querySelector('.jeo-risk-cancel').onclick = close;
+		host.querySelector('.jeo-risk-confirm').onclick = () => { close(); onConfirm(); };
+		// Click outside the card cancels.
+		host.onclick = (e) => { if (e.target === host) close(); };
+		// Focus the confirm button for keyboard users.
+		setTimeout(() => host.querySelector('.jeo-risk-confirm')?.focus(), 0);
 	}
 
 	/* =============== CAROUSEL RENDERING =============== */
@@ -1928,39 +2136,58 @@ class App {
 	createCarouselCard(g, index = 0) {
 		const imgSrc = g.image || this.fallbackImage;
 		const isFav = this.isFavorite(g.name);
-		const isMaintenance = this.isUnderMaintenance(g);
-		const maintenanceBadge = isMaintenance ? '<span class="maintenance-badge">⚠ Under Maintenance</span>' : '';
+		const statusKind = this.gameStatusKind(g);
+		const isFail = statusKind === 'broken' || statusKind === 'maintenance';
+		const safeName = this.escapeAttr(g.name);
+		const safeImg = this.escapeAttr(imgSrc);
+		const safeFallback = this.escapeAttr(this.fallbackImage);
+
+		let statusBadge = '';
+		if (statusKind === 'broken') statusBadge = '<span class="status-badge status-broken" title="Confirmed broken">✕ Broken</span>';
+		else if (statusKind === 'maintenance') statusBadge = '<span class="status-badge status-maintenance" title="Marked under maintenance">⚠ Maintenance</span>';
+		else if (statusKind === 'unverified') statusBadge = '<span class="status-badge status-unverified" title="Not recently verified">? Unverified</span>';
 		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
 		const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
+
 		const card = document.createElement('div');
-		card.className = 'carousel-card' + (isMaintenance ? ' under-maintenance' : '');
-		card.style.setProperty('--card-img', `url('${imgSrc}')`);
+		const stateClass = statusKind ? ' card-status-' + statusKind : '';
+		card.className = 'carousel-card' + (isFail ? ' under-maintenance' : '') + stateClass;
+		card.style.setProperty('--card-img', "url('" + imgSrc.replace(/'/g, "\\'") + "')");
 		card.dataset.slug = g.name;
-		card.innerHTML = '<div class="game-thumb"><img src="' + imgSrc + '" alt="' + g.name + '" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + this.fallbackImage + '\';" /><button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + this.escapeAttr(g.name) + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' + maintenanceBadge + ratingBadge + '</div><div class="game-card-content"><div class="game-card-title">' + g.name + '</div></div>';
+		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="240" height="150" loading="lazy"'
+			+ ' onload="this.classList.add(\'loaded\')"'
+			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
+		card.innerHTML =
+			'<div class="game-thumb">' + img +
+				'<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' +
+				statusBadge + ratingBadge +
+			'</div>' +
+			'<div class="game-card-content"><div class="game-card-title">' + safeName + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.addEventListener('click', (e) => {
 			if (e.target.closest('.heart-btn')) return;
 			this.playGame(g);
 		});
-		card.style.animationDelay = `${index * 0.05}s`;
+		if (index < 16) card.style.animationDelay = (index * 0.05) + 's';
 		return card;
 	}
 
 	bindCarouselArrows() {
-		document.querySelectorAll('.carousel-arrow').forEach(btn => {
-			const newBtn = btn.cloneNode(true);
-			btn.parentNode.replaceChild(newBtn, btn);
-			newBtn.addEventListener('click', () => {
-				const trackId = newBtn.dataset.target;
-				const track = document.getElementById(trackId);
-				if (!track) return;
-				const scrollAmt = track.clientWidth * 0.7;
-				if (newBtn.classList.contains('carousel-arrow-left')) {
-					track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
-				} else {
-					track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
-				}
-			});
+		// Single delegated listener — avoids the clone-node leak this used to do.
+		if (this._carouselArrowsBound) return;
+		this._carouselArrowsBound = true;
+		document.addEventListener('click', (e) => {
+			const btn = e.target.closest('.carousel-arrow');
+			if (!btn) return;
+			const trackId = btn.dataset.target;
+			const track = trackId && document.getElementById(trackId);
+			if (!track) return;
+			const scrollAmt = track.clientWidth * 0.7;
+			if (btn.classList.contains('carousel-arrow-left')) {
+				track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+			} else {
+				track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+			}
 		});
 	}
 

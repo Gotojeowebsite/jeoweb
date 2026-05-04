@@ -68,8 +68,21 @@
   });
 
   // ---------- base64 helpers ----------
-  const b64enc = (bytes) => btoa(String.fromCharCode(...bytes));
-  const b64dec = (s) => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const BASE64_CHUNK_SIZE = 0x8000;
+  const b64enc = (bytes) => {
+    const view = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+    let binary = '';
+    for (let i = 0; i < view.length; i += BASE64_CHUNK_SIZE) {
+      binary += String.fromCharCode.apply(null, view.subarray(i, i + BASE64_CHUNK_SIZE));
+    }
+    return btoa(binary);
+  };
+  const b64dec = (s) => {
+    const binary = atob(s);
+    const out = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) out[i] = binary.charCodeAt(i);
+    return out;
+  };
   const utf8enc = (s) => new TextEncoder().encode(s);
   const utf8dec = (b) => new TextDecoder().decode(b);
 

@@ -3936,3 +3936,190 @@ body.theme-light .rating-badge {
 }
 .tag-chip.active .tag-count { background: rgba(255,255,255,0.25); }
 
+
+/* ========================================
+   STATUS PIPELINE — broken / maintenance / unverified
+   Verdicts come from game_health.json. Distinct colors so
+   "definitely broken" doesn't read the same as "we're aware
+   and looking at it" or "we haven't re-tested this".
+   ======================================== */
+
+.status-badge {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #fff;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	padding: 3px 8px;
+	border-radius: 6px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	z-index: 6;
+	border: 1px solid transparent;
+}
+.status-badge.status-broken {
+	background: rgba(220, 38, 38, 0.55);
+	border-color: rgba(220, 38, 38, 0.7);
+	box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+.status-badge.status-maintenance {
+	background: rgba(245, 158, 11, 0.55);
+	border-color: rgba(245, 158, 11, 0.7);
+	box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+.status-badge.status-unverified {
+	background: rgba(120, 120, 130, 0.55);
+	border-color: rgba(160, 160, 180, 0.55);
+	color: #f0f0f4;
+}
+
+/* "+N" overflow chip for when there are more badges than we want to show. */
+.badge-more {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	transform: translateY(28px);
+	font-size: 10px;
+	font-weight: 700;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	padding: 2px 6px;
+	border-radius: 6px;
+	z-index: 5;
+}
+
+/* Distinguish broken vs maintenance overlay color (was a single red wash). */
+.game-card.card-status-broken::after,
+.carousel-card.card-status-broken::after {
+	content: 'Broken';
+	background: rgba(220, 38, 38, 0.85);
+}
+.game-card.card-status-maintenance::after,
+.carousel-card.card-status-maintenance::after {
+	content: 'Maintenance';
+	background: rgba(245, 158, 11, 0.9);
+}
+.game-card.card-status-unverified::after,
+.carousel-card.card-status-unverified::after {
+	content: '';
+	display: none;
+}
+.game-card.card-status-unverified .game-thumb img,
+.carousel-card.card-status-unverified .game-thumb img {
+	filter: none;
+}
+.game-card.card-status-unverified .game-card-content,
+.carousel-card.card-status-unverified .game-card-content {
+	filter: none;
+	opacity: 1;
+}
+
+/* Aspect-ratio reservation for thumbs to kill cumulative layout shift. */
+.game-thumb {
+	aspect-ratio: 16 / 10;
+}
+.game-thumb img,
+.carousel-card .game-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Status freshness pill — make stale verdicts loud instead of silent. */
+.status-freshness[data-age-days="999"],
+.status-freshness[data-age-days="7"],
+.status-freshness[data-age-days="8"],
+.status-freshness[data-age-days="9"] {
+	color: #ef4444;
+	border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ========================================
+   RISK PROMPT — replaces window.confirm()
+   ======================================== */
+.jeo-risk-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 10000;
+	padding: 24px;
+}
+.jeo-risk-overlay.open { display: flex; }
+.jeo-risk-card {
+	width: min(420px, 100%);
+	background: var(--bg-surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	padding: 22px;
+	color: var(--text);
+	box-shadow: var(--shadow-lg);
+	animation: riskPop 0.18s ease-out;
+}
+@keyframes riskPop {
+	from { transform: translateY(8px) scale(0.97); opacity: 0; }
+	to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+.jeo-risk-title {
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.jeo-risk-body {
+	font-size: 14px;
+	line-height: 1.45;
+	color: var(--muted);
+	margin-bottom: 18px;
+}
+.jeo-risk-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
+.jeo-risk-actions button {
+	border: 1px solid var(--border);
+	background: var(--card-bg);
+	color: var(--text);
+	font: inherit;
+	font-weight: 600;
+	padding: 8px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.jeo-risk-actions .jeo-risk-confirm {
+	background: linear-gradient(135deg, #f59e0b, #ef4444);
+	color: #fff;
+	border-color: transparent;
+}
+.jeo-risk-actions button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ========================================
+   HEADER OVERFLOW (mobile/tablet)
+   The text-link header is too crowded under ~960px.
+   Hide secondary nav links and rely on the footer / menu instead.
+   ======================================== */
+@media (max-width: 960px) {
+	.header-nav-link { display: none; }
+	.header-nav-link.feedback-link { display: none; }
+}
+
+/* Stronger focus ring for custom card buttons. */
+.heart-btn:focus-visible,
+.wish-btn:focus-visible,
+.tag-chip:focus-visible,
+.play-btn:focus-visible,
+.cloaker-preset:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
