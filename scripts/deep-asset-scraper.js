@@ -133,7 +133,14 @@ async function downloadGame(portalUrl, gameSlug) {
         console.log(`\n✅ Deep scrape complete for [${gameSlug}].`);
         console.log(`📦 Total unblockable assets captured: ${downloadedAssets.size}`);
     } else {
-        console.log('❌ Could not penetrate portal. No valid game iframe found.');
+        // 1games.io and similar portals load the game directly into the page
+        // (Unity WebGL embedded inline) instead of using an <iframe>. In that
+        // case, just wait longer so the large .data / .wasm assets finish
+        // streaming — they're easily 30+ MB and the 8-second initial wait is
+        // not enough.
+        console.log('No iframe detected — assuming inline game; waiting 30s for asset stream…');
+        await new Promise(r => setTimeout(r, 30000));
+        console.log(`⏬ Inline-mode capture complete. Total assets: ${downloadedAssets.size}`);
     }
 
     await browser.close();

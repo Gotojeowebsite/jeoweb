@@ -1,0 +1,6672 @@
+{
+  "schema": 2,
+  "generated_at": 1777899745,
+  "max_age_days": 7,
+  "generators": {
+    "static_at": 1777899745,
+    "headless_at": 1777576521,
+    "smoke_at": null
+  },
+  "counts": {
+    "total": 602,
+    "healthy": 448,
+    "broken": 100,
+    "unknown": 54,
+    "high_confidence": 120,
+    "low_confidence": 482,
+    "conflicts": 1
+  },
+  "games": {
+    "1": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "2048": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "0v0": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "1on1SoccerBigHeads": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "1on1soccer": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "1v1space": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "2006-fifa-world-cup-germany-2006": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "2k-sports-major-league-baseball-2k7": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "3dtanks": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "9007199254740992": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "99-nights-in-the-forest": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Captain-America-and-the-Advengers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Captain-Commando": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Chromo-Trigger": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Clock-Tower": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "CrazyCattle3D": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "DOOMORI": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "DogeMiner": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Dogeminer2": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Doom": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Doom2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Ducklife4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Five Nights at Epstein": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Granny": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "HexGL": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Minecraft-1.20v": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Minecraft-Server": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "Rocket League": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "The-heist": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "a-dance-of-fire-and-ice": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "abobosbigadventure": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "achievementunlocked": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "achievementunlocked2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "achievementunlocked3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "actionturnip": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "adaran": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "addict-fishing": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "adrenaline": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "adrenalinechallenge": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "adventure-capitalist": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "amazing-rope-police": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "americanracing1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "americanracing2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "among-us": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "amongus": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "amusepark": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "angelunder": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "angry-bird": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "angry-sharks": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "animal-craft": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "animal-stacking": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ant-city": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "aqua-park": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "aquapark-slides": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "arcade-tennis": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "arkandianrevenant": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "armyofages": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "asmallworldcup": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "astray": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "astrosurvivor": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "avalanche": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "avatar-the-last-airbender": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "avatar-the-last-airbender-the-burning-earth": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "awesomecars": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "awesomeplanes": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backrooms": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backrooms-2d": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backyard-baseball": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backyard-basketball": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backyard-football": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backyard-hockey": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "backyard-skateboarding": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bacon-may-die": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bad-ice-cream": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bad-ice-cream-2": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bad-ice-cream-3": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "balatro": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "balldodge": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ballistic-chickens": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bankrob2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "basket-random": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "basketball-stars": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bat-smash": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "batman-rise-of-sin-tzu": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "batman-vengeance": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "battleforgondor": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "battlepanic": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "beat-up-pc": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bendy": {
+      "verdict": "broken",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_fail",
+      "signals": {
+        "static": "warn",
+        "headless": "fail",
+        "smoke": null
+      }
+    },
+    "bigredbutton": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "blackknight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "block-breaker": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloons-player-pack2": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloons-player-pack3": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloons-player-pack4": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloons-player-pack5": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloonstd": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloonstd2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloonstd3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloonstd4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloonstd5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bloxors": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "blumgiracers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "blumgislime": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bobtherobber1": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bobtherobber5": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bomberman": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bomberman-max-2-blue-advance": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bomberman-tournament": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "boombot2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "booty-rider": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "boulder-dash-ex": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "boxhead2play": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "boxing-fever": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "boxing-random": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "brain-lines": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "brawl": {
+      "verdict": "healthy",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_healthy",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "brawl-simulator-3d": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "breakingthebank": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bridge-race": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bruce-lee-return-of-the-legend": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "btd3": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "btd5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "btts": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bubble-shooter": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bubbletanks2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bulletbill": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "bullettimefighting": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "burger-and-frights": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "burritobison": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "burritobisonrevenge": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cactusmccoy": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cactusmccoy2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "call-of-duty-zombies": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "camper-strike": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cannon-basketball-4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cannonbasketball2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "canyondefense": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "capybara-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "car-chaos": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cartoon-network-block-party": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cartoon-network-speedway": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "casper": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cat-and-granny": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cat-in-the-hat-the": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "catwoman": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cell-machine": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "championarcher": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chase-run": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chess": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chessmaster": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chibiknight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chicken-jockey-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chicken-little": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chicken-shoot": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chicken-shoot-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chill-guy-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "chrome-dino": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "circlo": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "city-brawl": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "clash-royale": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "clickerheroes": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cluster-rush": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "computerbashing": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "connect3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cookie": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cookie-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "core-ball": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cowboy-safari": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "craftmine": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crazy-cow-3d": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "creativekillchamber": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crossword-puzzles": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crossy-road": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crossy-road-space": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crossyroad": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crushthecastle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "crushthecastle2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "csgo-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ctr": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ctr-holiday": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ctr-tr": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cubefield": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cupcake2048": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "cyclomaniacs2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dancing-beat": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dbz-legend-of-kakarot-gba": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "deadly-decent": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "deal-or-no-deal": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "death-run-3d": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "deer-adventures": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "defend-the-tank": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dexter-s-laboratory-chess-challenge": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dexter-s-laboratory-deesaster-strikes": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dig-to-china": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "diggy": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dog-fight-sim": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "doge2048": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "donkey-kong-country": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "donkeykong": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dontshootthepuppy": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "doodle-jump": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "doodledefender": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "doublewires": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "drag-racers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-advanced-adventure": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-z-hyper-dimension": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-z-super-butouden-3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-z-super-saiya-densetsu": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-z-team-training-v9-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-ball-z-the-legacy-of-goku-i-ii": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dragon-vs-bricks": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "draw-the-hill": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dreadhead-parkout": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "drift-boss": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "drift-king": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "drive-mad": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "duckLife5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ducklife1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ducklife2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ducklife3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "duke-nukem-2": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "dumbwaystodie": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "earntodie": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "earntodie2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "earntodiesuperwheel": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "earthbound": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "edge-surf": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "edgenotfound": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "eel-slap": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "eggycar": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "el-imigranter": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "elasticman": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "electricman": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "electricman2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "elephantquest": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "endlesswar3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "epicbattlefantasy3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "epiccomboredux": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "escape-car": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "escapingtheprison": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "evil-glitch": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "exitpath": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "exo": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "factoryballs": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "factoryballs2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "factoryballs3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "factoryballs4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fairsquares": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fake-cup-head": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fake-virus": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fancypantsadventure": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fancypantsadventure2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fancypantsadventure3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fifa-soccer-06": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fifa-soccer-07": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fifa-soccer-2003": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fifa-soccer-2004": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fifa-soccer-2005": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fighter-aircraft-pilot": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "final-fantasy-iii": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "final-fantasy-iii-es": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "final-fight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "final-fight-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "final-fight-3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fire-boy1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fire-boy2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fire-boy3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fire-boy4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fireboywatergirlforesttemple": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fishing.io": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flappy-2048": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flappy-bird": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flappybird": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flashback-the-quest-for-identity": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flashflightsimulator": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flashtetris": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "flower-shop": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fortzone": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fracuum": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "freerider2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "frogger": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "froggys-battle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "front-mission": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "fruitninja": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "frying-nemo": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "game-inside": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "geodash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "geodashlite": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "geojump": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "geometrydash": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "geoneondash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "georgeandtheprinter": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "getaway-shootout": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "getoff-mylawn": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "getontop": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "gimme-the-airpod": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "giveuprobot": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "giveuprobot2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "glass-city": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "goal-in-one": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "golf-orbit": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "google-snake": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "greyhound-ty": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "grindcraft": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "gunspin": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hackertype": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hallow-knight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hanger": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hanger2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hangman": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "happywheels": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "harvest-moon": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "harvest-simulator": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hba": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "helicopter": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hero-simulator": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hexempire": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hextris": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "highway": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "highway-traffic": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo6": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hobo7": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "hole.io": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "houseofwolves": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "idle-ants": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "idle-breakout": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "idle-shark": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "idledices": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ihatovo-monogatari": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "illusion-of-gaia": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "impossiblequiz": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "incredibox": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "index": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "indiana-jones-greatest-adventures": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "interactivebuddy": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "international-superstar-soccer-deluxe": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "jacksmith": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "jelly-truck": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "jellytruck": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "johnnyupgrade": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "judge-dredd": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "jumpix2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "just-one-boss": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "kirby-super-star": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "kittencannon": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "knightmaretower": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "learn2fly2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "learn2fly3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "learntofly": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "legend-of-the-mystical-ninja-the": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "legend-of-zelda-the-a-link-to-the-past": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "legend-of-zelda-the-a-link-to-the-past-four-swords": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "legend-of-zelda-the-the-minish-cap": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ltf-idle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "magnetface": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "mariocombat": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "marioracingtournament": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "matrixrampage": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "meatboy": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "megamanprojectx": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "meme2048": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "metroid-fusion": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "metroid-zero-mission": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "metroidelements": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "minecraft-classic": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "minesweeper": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "miniputt": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "mirrorsedge": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "missiles": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "moneymovers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "moneymovers3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "mortal-kombat-ii": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "motherload": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "motox3m": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "motox3m-pool": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "motox3m-spooky": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "motox3m-winter": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "multitask": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "mutilateadoll2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "my": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "myangel": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "n-gon": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nanotube": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nba-jam-tournament-edition": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "need-for-speed-carbon-own-the-city": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "need-for-speed-most-wanted": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "need-for-speed-porsche-unleashed": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "need-for-speed-underground": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "need-for-speed-underground-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "newgroundsrumble": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ngame": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nitromemustdie": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ns-shaft": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nucleus": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nv2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "nyancatlostinspace": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "obby-but-you-are-in-a-bike": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "offroaders": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "om-bounce": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "onemanarmy2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "out-of-this-world": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "outofthisworld": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pacman": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pandemic": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pandemic2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "papalouie": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "papalouie2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "papalouie3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "papaspizzaria": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "paperio2": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "papery-planes": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "particle-clicker": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "picosschool": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "picosschool2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pilotwings": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pirates": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pizza-tower": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-advanced-version-v3-0": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-adventure-blue-chapter-b1-1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-adventure-gold-chapter-v1-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-adventure-green-chapter-b3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-adventure-red-chapter-beta-15-expansion-fix-patch-c-gba": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-adventure-yellow-chapter": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-emerald-version": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-firered-version": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-leafgreen-version": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-ruby-version": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-sapphire-version": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "pokemon-water-blue": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "polarjump": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "polybranch": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "poom": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "portal2d": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "portalflash": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "precision-client": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "promo": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "protektor": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "push-the-square": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "push-your-luck": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "quadrobarreldefence": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "qubeythecube": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "qwop": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "race-survival-arena-king": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "radical-dreamers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "raftwars": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "raftwars2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ragdoll-archers": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ragdoll-hit": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "retro-bowl": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "retro-bowl-college": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddleschool1": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddleschool2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddleschool3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddleschool4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddleschool5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddletransfer": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "riddletransfer2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "rolly-vortex": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "rooftop-snipers": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "route-digger": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "run2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "run3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sand-game": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sans-fight": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "scripts": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "secret-of-evermore": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "secret-of-mana": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sentryknight": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "shadowrun": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "shellshockers": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "shoppingcarthero3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "shuttledeck": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "siftheads": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "siftheads2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "siftheads3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "siftheads4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "siftheads5": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "slice-master": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "slope": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sm64": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "smash-karts": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "smokingbarrels": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "snek-io": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sniperassassin4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "snow-rider-3d": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "snowbattle": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "solar-smash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "soldier-legend": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "solitaire": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sort-the-court": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "soul-blazer": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "soundboard": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sparta-hoppers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sportsheadsfootball": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sportsheadsracing": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sportsheadstennis": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sprinter": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stack": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stack-bump-3d": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "star-fox": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "star-fox-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "steal-a-brainrot": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "steal-a-brainrot-2player": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stealingthediamond": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stickman-hook": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stickrpg": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stickrun2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stickwar": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "stormthehouse2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "street-fighter-ii-the-world-warrior": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "street-fighter-ii-turbo": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "strikeforceheroes2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "subway-surfers": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "subwaysurfers": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sugarsugar": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sugarsugar2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "sugarsugar3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-castlevania-iv": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-double-dragon": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-ghouls-n-ghosts": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-liquid-soccer": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-mario-kart": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-mario-rpg-legend-of-the-seven-stars": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-mario-world": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-metroid": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-punch-out": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "super-tennis": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "superd": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "superfighters": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "superfowlist": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "superhot": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "supermario63": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "supermarioflash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "supermarioflash2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "supersmashflash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "swerve": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "swordsandsandals2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tacticalassasin2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tacticalassassin": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tales-of-phantasia": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tank-trouble-2": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tanks": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tanuki-sunset": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "teenage-mutant-ninja-turtles-iv-turtles-in-time": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "temple-run-2": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "templerun2": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "override",
+      "reason": "force_maintenance",
+      "override_reason": "unspecified",
+      "signals": {
+        "static": null,
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "terranigma": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "the-final-earth": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thebattle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thebindingofisaac": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thegame": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "theheist": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "theimpossiblequiz2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "there-is-no-game": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thingthingarena": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thisistheonlylevel": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "thorns-and-ballons": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "top-gear-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tosstheturtle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "truckloader4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tube-jumpers": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tunnel-rush": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "tv-static": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "twerk-race-3d": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultima-runes-of-virtue-ii": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultima-vi-the-false-prophet": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultima-vii-the-black-gate": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultimateflashsonic": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultimatetactics": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "ultrakill": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "unrealflash": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "veloce": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "vex3": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "vex4": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "vex5": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "vex6": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "warfare1917": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "warfare1944": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "warp": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "webretro-local": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "where-in-the-world-is-carmen-sandiego": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "wild-guns": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "wolf3d": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "wordle": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "worlds-hardest-game": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "worlds-hardest-game-2": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "worms": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "xenos": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "xtremecliffdiving": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "yearofthesnake": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "you-are-bezos": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "yuriusshouseofspooks": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "zelda-sacred-paradox": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "zombiealienparasites": {
+      "verdict": "healthy",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "single_pass",
+      "signals": {
+        "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    "zzruffle": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    }
+  }
+}

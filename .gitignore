@@ -6,4 +6,12 @@ pipeline_artifacts/
 
 .venv/
 
-.venv/
+# Auto-fix bot transient state — backups + per-attempt debug logs
+.quarantine/
+.daily-fix-last.log
+
+# Claude Code scheduled-task lockfile (per-machine)
+.claude/scheduled_tasks.lock
+
+# Per-user slug alias customizations (ship only the example)
+slug_aliases.json

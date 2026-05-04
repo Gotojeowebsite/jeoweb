@@ -1,0 +1,28 @@
+{
+	"_comment": "Manual overrides for the verdict pipeline. Two shapes are supported.",
+
+	"_legacy_shape_example": {
+		"force_healthy": ["slug-a", "slug-b"],
+		"force_maintenance": ["slug-c"]
+	},
+
+	"_structured_shape_example": {
+		"force_healthy": [
+			{
+				"slug": "slug-a",
+				"reason": "third-party leaderboard API is down; game still plays fine",
+				"expires_at": 1900000000
+			}
+		],
+		"force_maintenance": [
+			{
+				"slug": "slug-c",
+				"reason": "removed pending DMCA review",
+				"expires_at": 0
+			}
+		]
+	},
+
+	"force_healthy": [],
+	"force_maintenance": []
+}

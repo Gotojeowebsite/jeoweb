@@ -17,6 +17,111 @@
     "applies_to": ["webgl", "flash"]
   },
   {
+    "name": "3kh0-assets-raw",
+    "type": "pattern",
+    "url_template": "https://raw.githubusercontent.com/3kh0/3kh0-assets/main/{slug}/index.html",
+    "priority": 12,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "nicm42-assets-raw",
+    "type": "pattern",
+    "url_template": "https://raw.githubusercontent.com/nicm42/3kh0-Assets/main/{slug}/index.html",
+    "priority": 13,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "ayush-assets-raw",
+    "type": "pattern",
+    "url_template": "https://raw.githubusercontent.com/AyushSehrawat/GameAssets/main/{slug}/index.html",
+    "priority": 14,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "ayush-games-raw",
+    "type": "pattern",
+    "url_template": "https://raw.githubusercontent.com/AyushSehrawat/games/main/{slug}/index.html",
+    "priority": 14,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "interstellar-assets-raw",
+    "type": "pattern",
+    "url_template": "https://raw.githubusercontent.com/interstellarnetwork/interstellar-assets/main/{slug}/index.html",
+    "priority": 14,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "classroom-6x",
+    "type": "pattern",
+    "url_template": "https://classroom-6x.github.io/{slug}/index.html",
+    "priority": 15,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "geometry-dash-gh",
+    "type": "pattern",
+    "url_template": "https://geometry-dash.github.io/{slug}/index.html",
+    "priority": 16,
+    "applies_to": ["webgl", "flash"]
+  },
+  {
+    "name": "bitlifeonline",
+    "type": "pattern",
+    "url_template": "https://bitlifeonline.github.io/{slug}/",
+    "priority": 17,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "topvaz-github",
+    "type": "pattern",
+    "url_template": "https://topvaz.github.io/{slug}/",
+    "priority": 18,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "slope-game-gh",
+    "type": "pattern",
+    "url_template": "https://slope-game.github.io/{slug}/",
+    "priority": 19,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "ubg98",
+    "type": "pattern",
+    "url_template": "https://ubg98.github.io/{slug}/",
+    "priority": 25,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "ubg100",
+    "type": "pattern",
+    "url_template": "https://ubg100.github.io/{slug}/",
+    "priority": 26,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "ubg44",
+    "type": "pattern",
+    "url_template": "https://ubg44.github.io/{slug}/",
+    "priority": 27,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "6x-games",
+    "type": "pattern",
+    "url_template": "https://6x-games.github.io/{slug}/",
+    "priority": 28,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "titans-gh",
+    "type": "pattern",
+    "url_template": "https://titans-gh.github.io/{slug}/",
+    "priority": 29,
+    "applies_to": ["webgl"]
+  },
+  {
     "name": "wanted5games-cdn-files",
     "type": "pattern",
     "url_template": "https://cdn.wanted5games.com/files/{slug}/index.html",
@@ -54,14 +159,6 @@
     "url_template": "https://cdn.htmlgames.com/games/{slug}/index.html",
     "priority": 40,
     "health_probe_url": "https://cdn.htmlgames.com/",
-    "applies_to": ["webgl", "flash"]
-  },
-  {
-    "name": "ubg77-gh-pages",
-    "type": "pattern",
-    "url_template": "https://ubg77.github.io/{slug}/index.html",
-    "priority": 50,
-    "health_probe_url": "https://ubg77.github.io/",
     "applies_to": ["webgl", "flash"]
   },
   {
@@ -104,5 +201,26 @@
     "priority": 91,
     "health_probe_url": "https://game-cdn.poki.com/",
     "applies_to": ["webgl"]
+  },
+  {
+    "name": "vseigru-raw",
+    "type": "pattern",
+    "url_template": "https://vseigru.net/games/{slug}/index.html",
+    "priority": 95,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "crazygames-proxy",
+    "type": "pattern",
+    "url_template": "https://games.crazygames.com/{slug}/index.html",
+    "priority": 96,
+    "applies_to": ["webgl"]
+  },
+  {
+    "name": "flash-archive",
+    "type": "pattern",
+    "url_template": "https://flash-archive.com/play/{slug}",
+    "priority": 100,
+    "applies_to": ["flash"]
   }
 ]

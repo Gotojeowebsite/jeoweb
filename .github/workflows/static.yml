@@ -32,7 +32,13 @@ jobs:
           
       - name: Generate games list
         run: node scan.js
-        
+
+      - name: Static health scan
+        run: node scripts/static-health-scan.js
+
+      - name: Build game_health.json
+        run: node scripts/build-game-health.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         

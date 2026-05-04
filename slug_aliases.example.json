@@ -1,0 +1,7 @@
+{
+	"_comment": "Map jeoweb folder names to source-portal slugs. Each value is an array of alternate slugs to try in addition to the jeoweb slug itself. Helps when a portal calls 'Five Nights at Epstein' something like 'fnaepstein'.",
+
+	"DOOMORI": ["doomori-html5", "doom-ori"],
+	"Five Nights at Epstein": ["fnaepstein", "fnae", "five-nights-at-epstein"],
+	"Dogeminer2": ["doge-miner-2", "dogeminer-2"]
+}

@@ -143,7 +143,9 @@ NOISE_CONSOLE_PATTERNS = (
 NONCRITICAL_RUNTIME_PATTERNS = (
     "unable to decode audio data",
     "failed to load audio",
-    "abort({}) at error",
+    # NOTE: removed "abort({}) at error" — that's the actual fatal Emscripten
+    # abort marker, not a noncritical advisory. Keeping it here used to mask
+    # genuinely broken WebGL/Unity games.
     "webgl unsupported in this browser",
     "consolelog is not defined",
     "script is not defined",
@@ -154,6 +156,20 @@ NONCRITICAL_RUNTIME_PATTERNS = (
     "fiddnxlr",
     "gamemaker_init is not defined",
 )
+
+# Symptoms of a broken game build (string interpolation that produced a
+# literal "undefined" or "null" in a URL). Always treat as critical.
+BROKEN_URL_PATTERNS = (
+    re.compile(r"/undefined(?:/|\.)", re.IGNORECASE),
+    re.compile(r"/null(?:/|\.)", re.IGNORECASE),
+)
+
+
+def is_obviously_broken_url(url: str) -> bool:
+    for pattern in BROKEN_URL_PATTERNS:
+        if pattern.search(url):
+            return True
+    return False
 
 ADVISORY_WARNING_CODES = {
     "EXTERNAL_OPTIONAL",
@@ -635,6 +651,8 @@ def order_warnings_for_output(warnings: List[Issue]) -> List[Issue]:
 
 
 def probe_page(page) -> Dict[str, object]:
+    # Includes a coarse "canvas pixel hash" so the supervisor can detect a
+    # canvas that exists but never actually rendered (loading-bar-then-stall).
     return page.evaluate(
         """
         () => {
@@ -646,6 +664,31 @@ def probe_page(page) -> Dict[str, object]:
             const unityProgress = document.querySelector('#unity-progress-bar-full')?.style?.width || '';
             const hasRuffleGlobal = typeof window.RufflePlayer !== 'undefined';
             const hasRetroGlobal = typeof window.EJS_player !== 'undefined';
+            // Sample the first canvas at low resolution to detect "stuck black
+            // square" — a canvas with surface but no rendering.
+            let canvasHash = '';
+            let canvasNonzeroPixels = 0;
+            try {
+                const c = document.querySelector('canvas, #unity-canvas, #game canvas');
+                if (c && c.width && c.height) {
+                    const w = Math.min(c.width, 16);
+                    const h = Math.min(c.height, 16);
+                    const off = document.createElement('canvas');
+                    off.width = w; off.height = h;
+                    const ctx = off.getContext('2d');
+                    if (ctx) {
+                        ctx.drawImage(c, 0, 0, w, h);
+                        const data = ctx.getImageData(0, 0, w, h).data;
+                        let sum = 0;
+                        for (let i = 0; i < data.length; i += 4) {
+                            const v = data[i] + data[i+1] + data[i+2];
+                            if (v > 0) canvasNonzeroPixels += 1;
+                            sum = (sum * 31 + v) | 0;
+                        }
+                        canvasHash = String(sum);
+                    }
+                }
+            } catch (e) { /* tainted canvas etc. — leave blank */ }
             return {
                 readyState: document.readyState,
                 surfaceCount: surfaces,
@@ -653,11 +696,30 @@ def probe_page(page) -> Dict[str, object]:
                 unityLoadingBar,
                 unityProgress,
                 hasRuffleGlobal,
-                hasRetroGlobal
+                hasRetroGlobal,
+                canvasHash,
+                canvasNonzeroPixels,
             };
         }
         """
     )
+
+
+def _parse_unity_progress(value: object) -> float:
+    """Returns Unity loading bar percent in [0, 100], or -1 if not parsable."""
+    if not value:
+        return -1.0
+    text = str(value).strip()
+    if not text:
+        return -1.0
+    try:
+        if text.endswith("%"):
+            return float(text[:-1])
+        if text.endswith("px"):
+            return -1.0  # px-based; can't compare without parent width
+        return float(text)
+    except ValueError:
+        return -1.0
 
 
 def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
@@ -732,6 +794,13 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
             return
 
         if is_local_request(url, config.port):
+            # A request URL containing literal "undefined" or "null" is a
+            # smoking-gun bug in the game itself (string interpolation produced
+            # garbage). Promote unconditionally so it can never be filtered out.
+            if is_obviously_broken_url(url):
+                add_issue("critical", "BROKEN_URL_LITERAL", f"Local URL contains literal undefined/null: {url}", url)
+                return
+
             if should_ignore_local_404(path):
                 add_issue("warning", "LOCAL_IGNORED_MISSING", "Ignored optional local asset missing", url)
                 return
@@ -775,6 +844,17 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 saw_emulator_core_load = True
 
             if response.status < 400:
+                return
+
+            # Same broken-URL guard as on_request_failed: literal "undefined"
+            # or "null" in the path means the game's own JS produced garbage.
+            if is_obviously_broken_url(url):
+                add_issue(
+                    "critical",
+                    "BROKEN_URL_LITERAL",
+                    f"Local URL contains literal undefined/null (HTTP {response.status}): {url}",
+                    url,
+                )
                 return
 
             if response.status == 501 and path.endswith("index.html"):
@@ -849,10 +929,18 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
 
     game_url = build_game_url(config, target)
 
+    probe_first: Dict[str, object] = {}
     try:
         page.goto(game_url, wait_until="domcontentloaded", timeout=config.timeout_ms)
         page.wait_for_timeout(int(config.wait_seconds * 1000))
+        probe_first = probe_page(page)
+        # Smoke / liveness: take a second snapshot a few seconds later. If the
+        # canvas hash hasn't changed at all between the two, the game probably
+        # isn't actually running — it just rendered a static loading screen.
+        page.wait_for_timeout(3500)
         probe = probe_page(page)
+        probe["canvasHashFirst"] = probe_first.get("canvasHash", "")
+        probe["canvasNonzeroPixelsFirst"] = probe_first.get("canvasNonzeroPixels", 0)
     except PlaywrightTimeoutError as exc:
         add_issue("critical", "NAV_TIMEOUT", f"Navigation timeout: {exc}", game_url)
     except PlaywrightError as exc:
@@ -865,6 +953,42 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     has_surface = bool(probe.get("surfaceCount", 0))
 
     expects_surface = should_require_surface(target, probe)
+
+    # Smoke / liveness check: if the game DOES have a surface but the canvas
+    # never rendered any pixels and never changed between the two probes,
+    # the game effectively didn't start. This catches "Unity loading bar
+    # completes then everything hangs" and "Ruffle loaded the SWF but
+    # rendered black".
+    canvas_hash = str(probe.get("canvasHash", "") or "")
+    canvas_hash_first = str(probe.get("canvasHashFirst", "") or "")
+    canvas_pixels = int(probe.get("canvasNonzeroPixels", 0) or 0)
+    canvas_pixels_first = int(probe.get("canvasNonzeroPixelsFirst", 0) or 0)
+    canvas_unchanged = bool(canvas_hash) and canvas_hash == canvas_hash_first
+    canvas_dark = canvas_pixels == 0 and canvas_pixels_first == 0
+
+    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not critical_issues:
+        add_issue(
+            "critical",
+            "CANVAS_NEVER_RENDERED",
+            "Game canvas exists but rendered no pixels and did not change between probes",
+            game_url,
+        )
+
+    # Unity-specific: if the loading bar appeared and progress never reached
+    # ~95% by the second probe, the build is stuck loading.
+    unity_progress_pct = _parse_unity_progress(probe.get("unityProgress"))
+    if (
+        bool(probe.get("unityLoadingBar"))
+        and unity_progress_pct >= 0
+        and unity_progress_pct < 95.0
+        and not critical_issues
+    ):
+        add_issue(
+            "critical",
+            "UNITY_LOADING_STUCK",
+            f"Unity loading bar stuck at {unity_progress_pct:.0f}%",
+            game_url,
+        )
 
     # Escalate to broken if startup is blocked by runtime/external failures and no expected game surface appears.
     if expects_surface and not has_surface and not critical_issues:

@@ -1608,29 +1608,60 @@ def download_game_snapshot(
 
 
 def load_maintenance_overrides(path: Path) -> Dict[str, Set[str]]:
-    if not path.exists():
-        return {
-            "force_healthy": set(),
-            "force_maintenance": set(),
+    """
+    Returns the active force_healthy/force_maintenance slug sets.
+
+    Accepts two on-disk shapes:
+
+      Legacy:
+        { "force_healthy": ["slug-a", "slug-b"], "force_maintenance": [...] }
+
+      Structured (preferred):
+        {
+          "force_healthy": [
+            { "slug": "slug-a", "reason": "third-party API down", "expires_at": 1900000000 }
+          ],
+          "force_maintenance": [...]
         }
+
+    For the structured form, entries with expires_at <= now are dropped (and not
+    treated as active). The structured form is what the JS verdict combiner
+    audits against to produce override_conflicts.json.
+    """
+    empty = {"force_healthy": set(), "force_maintenance": set()}
+    if not path.exists():
+        return empty
 
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
-        return {
-            "force_healthy": set(),
-            "force_maintenance": set(),
-        }
+        return empty
+
+    now = int(time.time())
 
     def extract_set(key: str) -> Set[str]:
         raw = payload.get(key, []) if isinstance(payload, dict) else []
         if not isinstance(raw, list):
             return set()
-        out = set()
+        out: Set[str] = set()
         for item in raw:
-            name = str(item or "").strip()
-            if name:
-                out.add(name)
+            if isinstance(item, str):
+                name = item.strip()
+                if name:
+                    out.add(name)
+                continue
+            if isinstance(item, dict):
+                slug = str(item.get("slug") or "").strip()
+                if not slug:
+                    continue
+                expires_at = 0
+                try:
+                    expires_at = int(item.get("expires_at") or 0)
+                except Exception:
+                    expires_at = 0
+                if expires_at > 0 and expires_at < now:
+                    continue
+                out.add(slug)
         return out
 
     return {
@@ -1693,6 +1724,9 @@ def classify_maintenance_status(
         "SCAN_WORKER_ERROR",
         "INIT_RUNTIME_ERROR",
         "INIT_BLOCKED_EXTERNAL",
+        "BROKEN_URL_LITERAL",
+        "CANVAS_NEVER_RENDERED",
+        "UNITY_LOADING_STUCK",
     }
     external_only_codes = {
         "EXTERNAL_DEPENDENCY",
@@ -1739,15 +1773,12 @@ def classify_maintenance_status(
         }
 
     if final_status == "broken":
-        # Smart heal: if the local folder is self-contained (has an HTML entry
-        # plus a recognized primary asset) and there's no specific issue,
-        # treat as healthy rather than false-flagging maintenance.
-        if local_folder_looks_playable(game):
-            return {
-                "status": "healthy",
-                "reason": "auto_heal_local_assets_present",
-                "lead_issue": lead_issue,
-            }
+        # Previously this branch had a "smart heal" that promoted the game back
+        # to healthy when the folder *looked* playable on disk. That produced
+        # false positives constantly: a folder with HTML + .data passed the
+        # check even when the runtime crashed at boot. The scanner is the
+        # source of truth for behavior; the disk check can't tell us anything
+        # about whether the game actually works. Always trust "broken".
         return {
             "status": "under_maintenance",
             "reason": "broken_without_issue_details",
@@ -1755,33 +1786,6 @@ def classify_maintenance_status(
         }
 
     return {"status": "healthy", "reason": "default_healthy"}
-
-
-def local_folder_looks_playable(game: str) -> bool:
-    """Cheap, side-effect-free check: does Assets/<game>/ contain enough to play?"""
-    folder = Path(__file__).resolve().parent / "Assets" / game
-    if not folder.is_dir():
-        return False
-    has_html = any(folder.glob("*.html")) or (folder / "index.html").exists()
-    if not has_html:
-        return False
-    primary_globs = (
-        "*.swf", "*.wasm", "*.data", "*.unityweb", "*.pck",
-        "**/*.swf", "**/*.wasm", "**/*.data", "**/*.unityweb", "**/*.pck",
-    )
-    for pattern in primary_globs:
-        for hit in folder.glob(pattern):
-            if hit.is_file() and hit.stat().st_size > 1024:
-                return True
-    # Retro emulator games are playable as long as the HTML wires EmulatorJS.
-    try:
-        for html in folder.glob("*.html"):
-            text = html.read_text(encoding="utf-8", errors="ignore")
-            if "EJS_pathtodata" in text or "emulatorjs" in text.lower():
-                return True
-    except Exception:
-        pass
-    return False
 
 
 def write_maintenance_status(cfg: Config, per_game: Dict[str, Dict[str, object]], logger: JsonLogger) -> Dict[str, object]:
