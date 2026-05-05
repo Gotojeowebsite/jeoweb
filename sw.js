@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jeoweb-pwa-cache-v3';
+const CACHE_NAME = 'jeoweb-pwa-cache-v4';
 
 const STATIC_ASSETS = [
     '/',
@@ -98,11 +98,40 @@ self.addEventListener('activate', (event) => {
     );
 });
 
+// The migration banner script injected into every HTML navigation response.
+const MIGRATION_SCRIPT = '<script src="/migration-banner.js"><\/script>';
+
+/** Inject the migration banner script just before </body> (or at the end). */
+async function injectMigrationBanner(response) {
+    const ct = response.headers.get('content-type') || '';
+    if (!ct.includes('text/html')) return response;
+    const text = await response.text();
+    // Skip if already present (main index.html has an explicit <script> tag).
+    if (text.includes('migration-banner')) return new Response(text, { status: response.status, statusText: response.statusText, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+    const injected = text.replace(/<\/body>/i, MIGRATION_SCRIPT + '</body>');
+    const finalText = injected !== text ? injected : text + MIGRATION_SCRIPT;
+    return new Response(finalText, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
+}
+
 self.addEventListener('fetch', (event) => {
     const req = event.request;
     if (req.method !== 'GET' || !req.url.startsWith('http')) return;
 
     const url = req.url;
+
+    // HTML document navigations: inject migration banner then serve normally.
+    if (req.destination === 'document') {
+        event.respondWith(
+            fetch(req)
+                .then(res => res.ok ? injectMigrationBanner(res) : res)
+                .catch(() => caches.match(req))
+        );
+        return;
+    }
 
     // Game assets and large binaries: network-first, no caching.
     if (GAME_PATH.test(url) || NO_CACHE_EXT.test(url)) {
