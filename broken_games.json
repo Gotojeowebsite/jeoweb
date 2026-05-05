@@ -4,11 +4,11 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 15.176,
+    "elapsed_seconds": 12.342,
     "critical_issues": [
       {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Critical local HTTP 404",
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8081/Assets/bendy/undefined/pages/home.html",
         "severity": "critical",
         "url": "http://localhost:8081/Assets/bendy/undefined/pages/home.html"
       }
@@ -58,7 +58,53 @@
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
-      "hasRetroGlobal": false
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasHashFirst": "-15738317",
+      "canvasNonzeroPixelsFirst": 251
+    }
+  },
+  {
+    "name": "brawl-simulator-3d",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 14.539,
+    "critical_issues": [
+      {
+        "code": "CANVAS_NEVER_RENDERED",
+        "message": "Game canvas exists but rendered no pixels and did not change between probes",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/brawl-simulator-3d/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "No product with ID found: noAds\n",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Failed - Game Ready",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "unityLoadingBar": true,
+      "unityProgress": "100%",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0
     }
   }
 ]
