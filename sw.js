@@ -106,14 +106,19 @@ async function injectMigrationBanner(response) {
     const ct = response.headers.get('content-type') || '';
     if (!ct.includes('text/html')) return response;
     const text = await response.text();
-    // Skip if already present (main index.html has an explicit <script> tag).
-    if (text.includes('migration-banner')) return new Response(text, { status: response.status, statusText: response.statusText, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+    // Skip if the exact script tag or banner element is already present.
+    if (text.includes('migration-banner.js') || text.includes('id="jeo-migration-banner"')) {
+        return new Response(text, { status: response.status, statusText: response.statusText, headers: new Headers(response.headers) });
+    }
     const injected = text.replace(/<\/body>/i, MIGRATION_SCRIPT + '</body>');
     const finalText = injected !== text ? injected : text + MIGRATION_SCRIPT;
+    // Preserve all original response headers; only override Content-Type to ensure correct charset.
+    const headers = new Headers(response.headers);
+    headers.set('Content-Type', 'text/html; charset=utf-8');
     return new Response(finalText, {
         status: response.status,
         statusText: response.statusText,
-        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+        headers
     });
 }
 

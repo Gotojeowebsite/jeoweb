@@ -14,6 +14,7 @@
 
     var NEW_SITE = 'https://jeoweb.app';
     var REDIRECT_DELAY = 15; // seconds before auto-redirect
+    var BANNER_HEIGHT = 48;  // px — banner height used for body padding offset
 
     /* ── Styles ─────────────────────────────────────────────────── */
     var css = [
@@ -71,7 +72,7 @@
             document.body.insertBefore(banner, document.body.firstChild);
             // Nudge body down so the banner doesn't overlap page content.
             var cur = parseInt(document.body.style.paddingTop, 10) || 0;
-            document.body.style.paddingTop = (cur + 48) + 'px';
+            document.body.style.paddingTop = (cur + BANNER_HEIGHT) + 'px';
         }
         attachListeners();
         startCountdown();
@@ -81,6 +82,19 @@
         mount();
     } else {
         document.addEventListener('DOMContentLoaded', mount);
+    }
+
+    /* ── Redirect helper ────────────────────────────────────────── */
+    function redirectToNewSite() {
+        try {
+            window.top.location.href = NEW_SITE;
+        } catch (e) {
+            console.warn(
+                '[migration-banner] cross-origin top access blocked, redirecting current window instead:',
+                e
+            );
+            window.location.href = NEW_SITE;
+        }
     }
 
     /* ── Countdown & redirect ───────────────────────────────────── */
@@ -94,7 +108,7 @@
             if (el) el.textContent = remaining;
             if (remaining <= 0) {
                 clearInterval(timer);
-                try { window.top.location.href = NEW_SITE; } catch (e) { window.location.href = NEW_SITE; }
+                redirectToNewSite();
             }
         }, 1000);
     }
@@ -105,7 +119,7 @@
         if (goBtn) {
             goBtn.addEventListener('click', function () {
                 clearInterval(timer);
-                try { window.top.location.href = NEW_SITE; } catch (e) { window.location.href = NEW_SITE; }
+                redirectToNewSite();
             });
         }
 
@@ -118,7 +132,7 @@
                     b.remove();
                     // Undo the padding we added.
                     var cur = parseInt(document.body.style.paddingTop, 10) || 0;
-                    document.body.style.paddingTop = Math.max(0, cur - 48) + 'px';
+                    document.body.style.paddingTop = Math.max(0, cur - BANNER_HEIGHT) + 'px';
                 }
             });
         }
