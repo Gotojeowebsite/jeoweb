@@ -1,11 +1,18 @@
 {
   "games_list": "games_list.json",
   "assets_dir": "Assets",
-  "total_games": 574,
+  "total_games": 577,
   "repaired_or_repairable": 0,
-  "unresolved": 0,
+  "unresolved": 1,
   "missing_slug": 0,
-  "applied": false,
+  "applied": true,
   "fixes": [],
-  "unresolved_items": []
+  "unresolved_items": [
+    {
+      "name": "1",
+      "reason": "no_image_found_in_assets_folder",
+      "current_image": "Assets/1/logo.svg",
+      "slug": "1"
+    }
+  ]
 }

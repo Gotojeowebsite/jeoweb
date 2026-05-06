@@ -133,6 +133,14 @@ def derive_title(url: str) -> str:
     if query_title:
         return query_title
 
+    # Ethanyo /misc/play/<slug>.html support
+    if "ethanyo." in url.lower():
+        split = urlsplit(url)
+        path = split.path.strip("/")
+        if path.startswith("misc/play/") and path.endswith(".html"):
+            slug_part = path.split("/")[-1].replace(".html", "")
+            return slug_part.replace("-", " ").replace("_", " ").title()
+
     split = urlsplit(url)
     path = split.path.strip("/")
     if path:
@@ -151,6 +159,13 @@ def derive_slug(url: str, provided: Optional[str]) -> str:
     query_slug = _extract_query_label(url, ("link", "slug", "id"))
     if query_slug:
         return slugify(query_slug)
+
+    # Ethanyo /misc/play/<slug>.html support
+    if "ethanyo." in url.lower():
+        split = urlsplit(url)
+        path = split.path.strip("/")
+        if path.startswith("misc/play/") and path.endswith(".html"):
+            return slugify(path.split("/")[-1].replace(".html", ""))
 
     query_title = _extract_query_label(url, ("title", "name", "game"))
     if query_title:
@@ -316,6 +331,59 @@ def upsert_games_list(
     games_list_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+async def import_ethanyo(
+    repo_root: Path,
+    url: str,
+    slug: str,
+) -> Dict[str, object]:
+    """Helper to run the specialized node ethanyo-downloader script."""
+    print(f"  -> using specialized ethanyo-downloader.js for slug={slug}")
+    
+    # Create a temporary input file for the node script
+    tmp_input = repo_root / f"tmp_ethanyo_{slug}.txt"
+    tmp_input.write_text(url, encoding="utf-8")
+    
+    try:
+        import subprocess
+        # Run node scripts/ethanyo-downloader.js <tmp_input>
+        # We use check_call to ensure it succeeds.
+        proc = subprocess.run(
+            ["node", "scripts/ethanyo-downloader.js", str(tmp_input)],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True
+        )
+        if proc.returncode != 0:
+            print(f"    ERROR: ethanyo-downloader failed:\n{proc.stderr}")
+            raise ImportErrorWithReason(f"Specialized downloader failed with code {proc.returncode}")
+        
+        print("    " + proc.stdout.strip().replace("\n", "\n    "))
+        
+        # The node script updates games_list.json itself and creates Assets/<slug>/index.html
+        # We just need to return a summary compatible with import_one's expectations.
+        slug_dir = repo_root / "Assets" / slug
+        manifest_path = slug_dir / "ethanyo_manifest.json"
+        
+        if not manifest_path.exists():
+             raise ImportErrorWithReason(f"ethanyo-downloader finished but {manifest_path} was not created")
+             
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        
+        return {
+            "slug": slug,
+            "url": url,
+            "launcher": f"Assets/{slug}/index.html",
+            "entry_file": f"Assets/{slug}/index.html",
+            "cover": f"Assets/{slug}/logo.webp", # Standard name used by the node script
+            "manifest": str(manifest_path.relative_to(repo_root)),
+            "captured_assets": manifest.get("assetsDownloaded", 0),
+            "failed_requests": manifest.get("failedCount", 0),
+            "timestamp": int(time.time()),
+        }
+    finally:
+        if tmp_input.exists():
+            tmp_input.unlink()
+
 async def import_one(
     repo_root: Path,
     assets_dir: Path,
@@ -334,6 +402,10 @@ async def import_one(
 
     slug = derive_slug(url, slug_input or args.slug)
     title = derive_title(url)
+
+    if "ethanyo." in url.lower():
+        return await import_ethanyo(repo_root, url, slug)
+
     slug_dir = assets_dir / slug
     archive_dir = slug_dir / "_archived_site"
 

@@ -103,10 +103,12 @@ class Downloader {
   // ---------- per-game pipeline ----------
 
   async processGame(job) {
+    const urlObj = new URL(job.sourceUrl);
+    const origin = urlObj.origin;
     console.log(`\n>> ${job.sourceUrl}`);
 
     const wrapperHtml = await fetchText(job.sourceUrl);
-    const meta = parseWrapper(wrapperHtml, job.sourceUrl);
+    const meta = parseWrapper(wrapperHtml, job.sourceUrl, origin);
     if (!meta.slug) throw new Error('could not resolve game slug from wrapper');
     if (meta.isFlashViewer) {
       throw new Error('flash viewer URL — use npm run flash:import instead');
@@ -115,12 +117,12 @@ class Downloader {
     job.slug = meta.slug;
     job.title = meta.title || meta.slug;
     job.author = meta.author || job.author;
-    job.gameEntryUrl = absolute(meta.entryPath, ORIGIN);
+    job.gameEntryUrl = absolute(meta.entryPath, origin);
     job.coverUrl = meta.coverUrl;
     job.gameDir = path.join(this.assetsRoot, meta.slug);
 
     // Initial remote root is the ethanyo /misc/<slug>/ prefix
-    const ethanyoPrefix = `${ORIGIN}/misc/${meta.slug}/`;
+    const ethanyoPrefix = `${origin}/misc/${meta.slug}/`;
     job.remoteRoots.push({ prefix: ethanyoPrefix, localDir: job.gameDir });
 
     console.log(`   title=${job.title} slug=${job.slug}`);
@@ -377,7 +379,8 @@ function isJunkText(s) {
   return t.length === 0;
 }
 
-function parseWrapper(html, wrapperUrl) {
+function parseWrapper(html, wrapperUrl, origin) {
+  if (!origin) origin = ORIGIN;
   // iframe src is the canonical pointer to the real game folder
   let entryPath = null;
   const iframeMatch = html.match(/<iframe[^>]*\bsrc=["']([^"']+)["']/i);
@@ -386,7 +389,7 @@ function parseWrapper(html, wrapperUrl) {
   let coverUrl = null;
   const coverMatch = html.match(/<img[^>]*class=["'][^"']*gameicon[^"']*["'][^>]*src=["']([^"']+)["']/i)
     || html.match(/<img[^>]*src=["']([^"']+)["'][^>]*class=["'][^"']*gameicon/i);
-  if (coverMatch && coverMatch[1] !== '#') coverUrl = absolute(coverMatch[1], ORIGIN);
+  if (coverMatch && coverMatch[1] !== '#') coverUrl = absolute(coverMatch[1], origin);
 
   const titleMatch = html.match(/class=["']titletext["'][^>]*>([^<]*)</i);
   let title = titleMatch ? titleMatch[1].trim() : null;
@@ -407,7 +410,7 @@ function parseWrapper(html, wrapperUrl) {
     if (!entryPath || entryPath === '/l' || entryPath === '#' || entryPath === '') {
       entryPath = `/misc/${linkParam}/index.html`;
     }
-    if (!coverUrl) coverUrl = absolute(`/misc/${linkParam}/img.webp`, ORIGIN);
+    if (!coverUrl) coverUrl = absolute(`/misc/${linkParam}/img.webp`, origin);
   }
 
   // Strip query/fragment from entryPath before normalizing.
@@ -924,10 +927,11 @@ function fetchBuffer(url, redirects = 0, extraHeaders) {
     let u;
     try { u = new URL(url); } catch (e) { return reject(e); }
     const client = u.protocol === 'https:' ? https : http;
+    const urlObj = new URL(url);
     const headers = {
       'User-Agent': UA,
       Accept: '*/*',
-      Referer: ORIGIN + '/',
+      Referer: urlObj.origin + '/',
       'Accept-Encoding': 'identity',
       ...(extraHeaders || {})
     };

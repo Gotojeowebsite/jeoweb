@@ -12,13 +12,13 @@ function script(text) {
 const newScript = document.createElement("script");
 newScript.setAttribute(
   "src",
-  "https://www.googletagmanager.com/gtag/js?id=G-N0LG27M8L8"
+  "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
 );
 const inlinegascript = document.createElement("script");
 inlinegascript.innerHTML = `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-N0LG27M8L8');`;
+      gtag('config', 'G-DQM8XXB9GC');`;
 document.head.append(newScript, inlinegascript);
 script("Injected script 1/3");
 

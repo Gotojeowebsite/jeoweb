@@ -40,6 +40,7 @@
 		gtag('js', new Date());
 		gtag('config', 'G-DQM8XXB9GC');
 	</script>
+	<script src="analytics.js"></script>
 	<link rel="stylesheet" href="styles/account-and-reset.css">
 </head>
 
@@ -680,13 +681,17 @@
 			}
 
 			window.addEventListener('error', function(e){
+				const msg = e.error?.message || e.message;
 				console.error(e.error || e.message);
-				showOverlay('Error: ' + (e.error?.message || e.message));
+				showOverlay('Error: ' + msg);
+				if (window.JeoAnalytics) window.JeoAnalytics.trackError(msg, 'window_error');
 			});
 
 			window.addEventListener('unhandledrejection', function(e){
+				const msg = e.reason?.message || String(e.reason);
 				console.error('Unhandled rejection', e.reason);
-				showOverlay('Unhandled rejection: ' + (e.reason?.message || String(e.reason)));
+				showOverlay('Unhandled rejection: ' + msg);
+				if (window.JeoAnalytics) window.JeoAnalytics.trackError(msg, 'promise_rejection');
 			});
 
 			function loadScript(src){

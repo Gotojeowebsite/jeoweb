@@ -551,11 +551,13 @@ class App {
 			document.body.classList.add('theme-dark');
 			localStorage.setItem('site-theme', 'dark');
 			if (this.themeToggle) this.themeToggle.textContent = '🌙';
+			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('dark');
 		} else {
 			document.body.classList.remove('theme-dark');
 			document.body.classList.add('theme-light');
 			localStorage.setItem('site-theme', 'light');
 			if (this.themeToggle) this.themeToggle.textContent = '☀️';
+			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('light');
 		}
 	}
 
@@ -605,6 +607,7 @@ class App {
 
 		if (save) {
 			localStorage.setItem('site-accent', color);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('accent', color);
 		}
 	}
 
@@ -648,8 +651,12 @@ class App {
 				const reader = new FileReader();
 				reader.onload = (ev) => {
 					const dataUrl = ev.target.result;
-					try { localStorage.setItem('site-bg-image', dataUrl); } catch(err) {
+					try { 
+						localStorage.setItem('site-bg-image', dataUrl);
+						if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_image', 'user_upload');
+					} catch(err) {
 						console.warn('Image too large for localStorage, applying without saving');
+						if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_image', 'too_large');
 						if (window.JeoToast) window.JeoToast.warning(
 							'Image too large to save (max ~5MB). Applied for this session only.',
 							{ ttl: 6000 }
@@ -675,7 +682,10 @@ class App {
 		const cardL = '#' + [r,g,b].map(c => Math.min(255, c + 18).toString(16).padStart(2,'0')).join('');
 		document.documentElement.style.setProperty('--bg-surface', lighter);
 		document.documentElement.style.setProperty('--card-bg', cardL);
-		if (save) localStorage.setItem('site-bg-color', color);
+		if (save) {
+			localStorage.setItem('site-bg-color', color);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_color', color);
+		}
 	}
 
 	applyBgImage(dataUrl) {
@@ -722,7 +732,10 @@ class App {
 		let _searchTimer = null;
 		this.searchInput.addEventListener('input', () => {
 			if (_searchTimer) clearTimeout(_searchTimer);
-			_searchTimer = setTimeout(() => this.renderGames(), 140);
+			_searchTimer = setTimeout(() => {
+				this.renderGames();
+				if (window.JeoAnalytics) window.JeoAnalytics.trackSearch(this.searchInput.value);
+			}, 140);
 		});
 		this.refreshBtn.addEventListener('click', () => this.refreshGames());
 		this.themeToggle.addEventListener('click', () => this.toggleTheme());
@@ -1465,12 +1478,14 @@ class App {
 		const idx = this.favorites.indexOf(name);
 		if (idx > -1) {
 			this.favorites.splice(idx, 1);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackFavorite(name, false);
 			if (btn) {
 				btn.classList.remove('hearted');
 				btn.textContent = '♡';
 			}
 		} else {
 			this.favorites.push(name);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackFavorite(name, true);
 			if (btn) {
 				btn.classList.add('hearted');
 				btn.textContent = '♥';
@@ -1543,6 +1558,7 @@ class App {
 			return;
 		}
 		this.trackRecentPlay(game);
+		if (window.JeoAnalytics) window.JeoAnalytics.trackGameStart(game.name, game.type);
 		this.openPlayer(game.url, game);
 	}
 
@@ -2510,6 +2526,7 @@ class App {
 					while (log.length > 500) log.shift();
 					localStorage.setItem('jeo:sessions', JSON.stringify(log));
 				} catch {}
+				if (window.JeoAnalytics) window.JeoAnalytics.trackGamePlayTime(this.currentGameName, dur / 1000);
 			}
 			if (window.JeoAchievements) {
 				try { window.JeoAchievements.emit('session-end', { slug: this.currentGameSlug, dur, type: this._lastPlayType }); } catch {}
@@ -2641,6 +2658,7 @@ class App {
 				const icon = btn.dataset.icon;
 				this.applyCloak(title, icon, true);
 				this.highlightActivePreset(title, icon);
+				if (window.JeoAnalytics) window.JeoAnalytics.trackCloakerChange(title);
 				// Populate custom inputs
 				const ti = document.getElementById('cloakerTitle');
 				const ii = document.getElementById('cloakerIcon');
@@ -2658,6 +2676,7 @@ class App {
 				if (title || icon) {
 					this.applyCloak(title || document.title, icon || '', true);
 					this.highlightActivePreset(null, null);
+					if (window.JeoAnalytics) window.JeoAnalytics.trackCloakerChange('custom');
 				}
 			});
 		}
