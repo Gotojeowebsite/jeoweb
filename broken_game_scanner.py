@@ -653,11 +653,16 @@ def order_warnings_for_output(warnings: List[Issue]) -> List[Issue]:
 def probe_page(page) -> Dict[str, object]:
     # Includes a coarse "canvas pixel hash" so the supervisor can detect a
     # canvas that exists but never actually rendered (loading-bar-then-stall).
+    #
+    # WebGL canvases default to preserveDrawingBuffer:false, so drawImage()
+    # samples come back black even when the game is rendering. We detect that
+    # case and fall back to a frame-tick counter (requestAnimationFrame +
+    # WebGL drawingBufferWidth) to confirm the game is alive.
     return page.evaluate(
         """
-        () => {
+        async () => {
             const surfaces = document.querySelectorAll(
-                'canvas, iframe, embed, object, ruffle-player, ruffle-embed, #unity-canvas, #game canvas, #player'
+                'canvas, iframe, embed, object, ruffle-player, ruffle-embed, ruffle-object, #unity-canvas, #game canvas, #player'
             ).length;
             const bodyTextLength = (document.body?.innerText || '').trim().length;
             const unityLoadingBar = !!document.querySelector('#unity-loading-bar');
@@ -668,9 +673,18 @@ def probe_page(page) -> Dict[str, object]:
             // square" — a canvas with surface but no rendering.
             let canvasHash = '';
             let canvasNonzeroPixels = 0;
+            let canvasIsWebGL = false;
+            let canvasRAFTicks = 0;
+            const c = document.querySelector('canvas, #unity-canvas, #game canvas');
             try {
-                const c = document.querySelector('canvas, #unity-canvas, #game canvas');
                 if (c && c.width && c.height) {
+                    // Detect WebGL backing without forcing context creation.
+                    let gl = null;
+                    try { gl = c.getContext('webgl2', { preserveDrawingBuffer: false }) ||
+                                c.getContext('webgl',  { preserveDrawingBuffer: false }) ||
+                                c.getContext('experimental-webgl', { preserveDrawingBuffer: false }); } catch(_) {}
+                    canvasIsWebGL = !!gl;
+
                     const w = Math.min(c.width, 16);
                     const h = Math.min(c.height, 16);
                     const off = document.createElement('canvas');
@@ -689,6 +703,20 @@ def probe_page(page) -> Dict[str, object]:
                     }
                 }
             } catch (e) { /* tainted canvas etc. — leave blank */ }
+            // Fallback liveness for WebGL canvases (where drawImage can't see
+            // the back buffer): count rAF callbacks for ~500ms.
+            if (canvasIsWebGL && canvasNonzeroPixels === 0) {
+                await new Promise(resolve => {
+                    const start = performance.now();
+                    const tick = () => {
+                        canvasRAFTicks += 1;
+                        if (performance.now() - start < 500) requestAnimationFrame(tick);
+                        else resolve();
+                    };
+                    requestAnimationFrame(tick);
+                    setTimeout(resolve, 1500); // hard cap if rAF stalls
+                });
+            }
             return {
                 readyState: document.readyState,
                 surfaceCount: surfaces,
@@ -699,6 +727,8 @@ def probe_page(page) -> Dict[str, object]:
                 hasRetroGlobal,
                 canvasHash,
                 canvasNonzeroPixels,
+                canvasIsWebGL,
+                canvasRAFTicks,
             };
         }
         """
@@ -965,8 +995,14 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     canvas_pixels_first = int(probe.get("canvasNonzeroPixelsFirst", 0) or 0)
     canvas_unchanged = bool(canvas_hash) and canvas_hash == canvas_hash_first
     canvas_dark = canvas_pixels == 0 and canvas_pixels_first == 0
+    # WebGL canvases with preserveDrawingBuffer:false return black via
+    # drawImage even when actively rendering. Use rAF ticks as the liveness
+    # signal for those — if the page is animating, the game is alive.
+    canvas_is_webgl = bool(probe.get("canvasIsWebGL"))
+    raf_ticks = int(probe.get("canvasRAFTicks", 0) or 0)
+    webgl_alive = canvas_is_webgl and raf_ticks >= 3
 
-    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not critical_issues:
+    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not webgl_alive and not critical_issues:
         add_issue(
             "critical",
             "CANVAS_NEVER_RENDERED",
