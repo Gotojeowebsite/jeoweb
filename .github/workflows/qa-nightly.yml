@@ -19,12 +19,16 @@ on:
         required: false
         default: 'false'
   push:
-    # Manual one-shot trigger: push a tag like qa-run-2026-05-10-001 to fire
-    # this workflow without using the Actions UI. Tags only — no branch push
-    # triggers (which would re-fire when peter-evans/create-pull-request opens
-    # PRs back to this branch).
+    # Manual one-shot trigger. Push to either:
+    #   * a tag matching qa-run-*  (preferred — never recurses)
+    #   * the recovery-engine branch claude/game-qa-offline-system-Vz4SS
+    #     (lets the engine be exercised end-to-end before merging to main).
+    # The PR opened by this workflow targets a fresh qa/nightly-<id> branch,
+    # not this one, so no re-fire when it lands.
     tags:
       - 'qa-run-*'
+    branches:
+      - 'claude/game-qa-offline-system-Vz4SS'
 
 permissions:
   contents: write
