@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "slug": "block-breaker",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438524,
+  "files": [
+    {
+      "path": "css/app.css.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "css/vendor.min.css.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "fonts/Jersey10.woff2",
+      "size": 20460,
+      "required": false
+    },
+    {
+      "path": "images/48px.svg",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "images/email_grey600_24dp.png",
+      "size": 219,
+      "required": false
+    },
+    {
+      "path": "images/fb_32x32.png",
+      "size": 846,
+      "required": false
+    },
+    {
+      "path": "images/fullscreen_off_icon.png",
+      "size": 95,
+      "required": false
+    },
+    {
+      "path": "images/fullscreen_on_icon.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/game_over_background.png",
+      "size": 214,
+      "required": false
+    },
+    {
+      "path": "images/muted_icon.png",
+      "size": 118,
+      "required": false
+    },
+    {
+      "path": "images/replay_button.png",
+      "size": 164,
+      "required": false
+    },
+    {
+      "path": "images/share_button_ios.png.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "images/share_button.png",
+      "size": 188,
+      "required": false
+    },
+    {
+      "path": "images/unmuted_icon.png",
+      "size": 102,
+      "required": false
+    },
+    {
+      "path": "images/whatsapp_solid_bg_36x36.png",
+      "size": 419,
+      "required": false
+    },
+    {
+      "path": "images/x_32x32.png",
+      "size": 446,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 51967,
+      "required": true
+    },
+    {
+      "path": "js/m_game.js",
+      "size": 133663,
+      "required": true
+    },
+    {
+      "path": "js/m_other.js",
+      "size": 109302,
+      "required": true
+    },
+    {
+      "path": "js/m_page.js",
+      "size": 1699581,
+      "required": true
+    },
+    {
+      "path": "js/m_share.js",
+      "size": 350755,
+      "required": true
+    },
+    {
+      "path": "js/m_start.js",
+      "size": 429111,
+      "required": true
+    },
+    {
+      "path": "js/m_storage.js",
+      "size": 466124,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 192989,
+      "required": false
+    },
+    {
+      "path": "sound/ball_audio.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "sound/block_audio.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "sound/music_audio.1.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "sound/powerup_audio.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "sound/projectile_audio.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "styles/main.css",
+      "size": 45652,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "cda-push-dev.sandbox.googleapis.com",
+    "content-push.googleapis.com",
+    "lensfrontend-pa.clients6.google.com",
+    "push.clients6.google.com",
+    "ssl.gstatic.com"
+  ],
+  "external_critical": [
+    "lensfrontend-pa.clients6.google.com",
+    "push.clients6.google.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

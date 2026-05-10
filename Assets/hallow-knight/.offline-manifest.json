@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "slug": "hallow-knight",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438547,
+  "files": [
+    {
+      "path": "_external_mirror/construct-arcade.com/56169/63500/index.html",
+      "size": 2244,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/css/v1757/articleviewer.css",
+      "size": 18913,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/css/v1757/refresh/arcadeembed.css",
+      "size": 6253,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/css/v1757/refresh/arcadepopup.css",
+      "size": 4129,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/embed.png",
+      "size": 325,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/facebook.png",
+      "size": 977,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/linkedin.png",
+      "size": 1204,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/pinterest.png",
+      "size": 2661,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/reddit.png",
+      "size": 1441,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/twitter.png",
+      "size": 1290,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/icons/share/vk.png",
+      "size": 1682,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/playgame/a1.png",
+      "size": 102364,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/playgame/fullscreen.svg",
+      "size": 228,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/playgame/instructions.svg",
+      "size": 393,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/arcade/playgame/share.svg",
+      "size": 509,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/arcade/icons/share/vk_v100.png",
+      "size": 2117,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/arcade/icons/share/vk_v64.png",
+      "size": 757,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo_v26.png",
+      "size": 1017,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo_v39.png",
+      "size": 1430,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo_v55.png",
+      "size": 1990,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo_v65.png",
+      "size": 2680,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo_v80.png",
+      "size": 2801,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo-lettering_v130.png",
+      "size": 1252,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo-lettering_v170.png",
+      "size": 1633,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo-lettering_v210.png",
+      "size": 3463,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo-lettering_v260.png",
+      "size": 2530,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/images/v1757/r/global/construct-3-logo-lettering_v85.png",
+      "size": 834,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/js/v1757/arcade/arcadeembed.js",
+      "size": 26548,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/construct-static.com/js/v1757/oauth/oauth.js",
+      "size": 6485,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/construct-static.com/uploads/228744/054f9d57-8c0d-4dc6-9e3e-9c2a2455976f/c/875184351/asset_7.png",
+      "size": 101298,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/uploads/228968/12e84fbb-6658-4e43-a4fa-bd1c42024395/c/2095390095_16/loading_image.png",
+      "size": 278,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/construct-static.com/uploads/228968/12e84fbb-6658-4e43-a4fa-bd1c42024395/c/2095390095_32/loading_image.png",
+      "size": 667,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/games.construct.net/56169/63500/embed.html",
+      "size": 18594,
+      "required": false
+    },
+    {
+      "path": "data.json",
+      "size": 795184,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "icons/icon-128.png",
+      "size": 2209,
+      "required": false
+    },
+    {
+      "path": "images/jelly_fish-sheet0.png",
+      "size": 189682,
+      "required": false
+    },
+    {
+      "path": "images/knight_hp-sheet0.png",
+      "size": 301366,
+      "required": false
+    },
+    {
+      "path": "images/knight_hp-sheet1.png",
+      "size": 206523,
+      "required": false
+    },
+    {
+      "path": "images/knight_hp-sheet2.png",
+      "size": 305676,
+      "required": false
+    },
+    {
+      "path": "images/knight_hp-sheet3.png",
+      "size": 84888,
+      "required": false
+    },
+    {
+      "path": "images/knight-sheet0.png",
+      "size": 54519,
+      "required": false
+    },
+    {
+      "path": "images/knight-sheet1.png",
+      "size": 60388,
+      "required": false
+    },
+    {
+      "path": "images/knight-sheet2.png",
+      "size": 30437,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 638790,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 301773,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 78083,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 10308,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet4.png",
+      "size": 109,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.png",
+      "size": 1169844,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.png",
+      "size": 897119,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.png",
+      "size": 2381953,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet3.png",
+      "size": 211477,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet4.png",
+      "size": 123749,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet5.png",
+      "size": 4496,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet6.png",
+      "size": 2954,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet0.png",
+      "size": 329268,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet1.png",
+      "size": 512877,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet2.png",
+      "size": 186494,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet3.png",
+      "size": 11734,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet4.png",
+      "size": 27901,
+      "required": false
+    },
+    {
+      "path": "images/shared-2-sheet5.png",
+      "size": 10821,
+      "required": false
+    },
+    {
+      "path": "images/waterfall-sheet0.png",
+      "size": 256742,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 6537,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 242001,
+      "required": false
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1593649,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3892,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3020,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 133850,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 303,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2435,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 1310,
+      "required": true
+    },
+    {
+      "path": "workermain.js",
+      "size": 3617,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

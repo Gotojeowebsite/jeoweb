@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "slug": "99-nights-in-the-forest",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438513,
+  "files": [
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/gamepush.js",
+      "size": 631251,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/reward.png",
+      "size": 1532,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/trophy.svg",
+      "size": 4910,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/s3.eponesh.com/files/gs/sdk/gamepush.js",
+      "size": 631251,
+      "required": true
+    },
+    {
+      "path": "Build/9853637125e801e9aae48e78dbbdcfca.loader.js",
+      "size": 114374,
+      "required": true
+    },
+    {
+      "path": "Build/b7d6bc1f837333019fd6451f0fa512cc.framework.js.unityweb",
+      "size": 88254,
+      "required": true
+    },
+    {
+      "path": "Build/f00ffff66cdf5fc7aefcebfb4cf68295.wasm.unityweb",
+      "size": 7437484,
+      "required": true
+    },
+    {
+      "path": "Build/f5bdd69b357037b329f7152caa5330df.data.unityweb",
+      "size": 10868565,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "gamepush.js",
+      "size": 686935,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 18283,
+      "required": false
+    },
+    {
+      "path": "manifest.webmanifest",
+      "size": 203,
+      "required": false
+    },
+    {
+      "path": "TemplateData/gp_bundle/gamepush.js",
+      "size": 686947,
+      "required": true
+    },
+    {
+      "path": "TemplateData/gp_bundle/platforms/platform.gp.8b53d72a18d3f03fa838.js",
+      "size": 10056,
+      "required": true
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 823,
+      "required": false
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "size": 3042,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

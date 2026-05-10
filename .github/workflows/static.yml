@@ -39,6 +39,32 @@ jobs:
       - name: Build game_health.json
         run: node scripts/build-game-health.js
 
+      - name: Build offline manifests
+        run: node scripts/build-offline-manifest.js --all
+
+      - name: Verify offline manifests (gate)
+        # Fails the deploy if any required asset is missing or a new
+        # external runtime dep snuck in. New games must be self-contained.
+        run: node scripts/verify-offline-manifest.js --missing-manifest-ok
+
+      - name: Guard against broken-count regressions
+        # Compare current broken count to the baseline checked into the
+        # repo; fail the deploy if it regressed beyond the baseline.
+        run: |
+          node -e "
+            const fs = require('fs');
+            const h = JSON.parse(fs.readFileSync('game_health.json','utf-8'));
+            const cur = (h.counts && h.counts.broken) || 0;
+            let base = { broken_at_main: cur };
+            try { base = JSON.parse(fs.readFileSync('qa_baseline.json','utf-8')); } catch {}
+            const max = Number(base.broken_at_main) || 0;
+            console.log('broken: current=' + cur + ' baseline=' + max);
+            if (cur > max) {
+              console.error('::error::Broken count regressed from ' + max + ' to ' + cur + '. Refusing to deploy. Run the recovery engine or curate maintenance_overrides.json.');
+              process.exit(1);
+            }
+          "
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         

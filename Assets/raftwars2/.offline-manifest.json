@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "raftwars2",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438556,
+  "files": [
+    {
+      "path": "index.html",
+      "size": 973,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 13804,
+      "required": false
+    },
+    {
+      "path": "raftwars2.swf",
+      "size": 4018510,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

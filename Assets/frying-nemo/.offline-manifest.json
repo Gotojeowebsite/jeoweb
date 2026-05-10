@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "slug": "frying-nemo",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438542,
+  "files": [
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 157155,
+      "required": true
+    },
+    {
+      "path": "Build/Web7.data.unityweb",
+      "size": 6184890,
+      "required": true
+    },
+    {
+      "path": "Build/Web7.json",
+      "size": 443,
+      "required": false
+    },
+    {
+      "path": "Build/Web7.wasm.code.unityweb",
+      "size": 5179190,
+      "required": true
+    },
+    {
+      "path": "Build/Web7.wasm.framework.unityweb",
+      "size": 117794,
+      "required": true
+    },
+    {
+      "path": "icon.png",
+      "size": 2790,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2259,
+      "required": true
+    },
+    {
+      "path": "splash.png",
+      "size": 129848,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

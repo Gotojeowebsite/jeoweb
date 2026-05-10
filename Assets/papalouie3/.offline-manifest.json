@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "papalouie3",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438554,
+  "files": [
+    {
+      "path": "index.html",
+      "size": 974,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 117978,
+      "required": false
+    },
+    {
+      "path": "papalouie3.swf",
+      "size": 12106193,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

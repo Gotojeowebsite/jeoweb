@@ -1,0 +1,588 @@
+{
+  "schema": 1,
+  "slug": "minecraft-classic",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438550,
+  "files": [
+    {
+      "path": "assets/css/style.css",
+      "size": 7223,
+      "required": true
+    },
+    {
+      "path": "assets/fonts/minecraftfont.ttf",
+      "size": 10700,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/minecraftfont.woff",
+      "size": 4100,
+      "required": false
+    },
+    {
+      "path": "assets/js/app.js",
+      "size": 3078053,
+      "required": true
+    },
+    {
+      "path": "assets/js/RandomLevelWorker.js",
+      "size": 26213,
+      "required": true
+    },
+    {
+      "path": "assets/sounds/calm1.mp3",
+      "size": 2085033,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/calm2.mp3",
+      "size": 1613366,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/calm3.mp3",
+      "size": 1838855,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/grass1.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/grass2.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/grass3.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/grass4.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/gravel1.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/gravel2.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/gravel3.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/gravel4.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/stone1.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/stone2.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/stone3.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/stone4.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wood1.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wood2.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wood3.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wood4.mp3",
+      "size": 4641,
+      "required": false
+    },
+    {
+      "path": "assets/textures/background.jpg",
+      "size": 146639,
+      "required": false
+    },
+    {
+      "path": "assets/textures/bedrock.png",
+      "size": 389,
+      "required": false
+    },
+    {
+      "path": "assets/textures/brown_mushroom.png",
+      "size": 372,
+      "required": false
+    },
+    {
+      "path": "assets/textures/bush.png",
+      "size": 429,
+      "required": false
+    },
+    {
+      "path": "assets/textures/button_over.png",
+      "size": 2463,
+      "required": false
+    },
+    {
+      "path": "assets/textures/button.png",
+      "size": 2026,
+      "required": false
+    },
+    {
+      "path": "assets/textures/clouds.png",
+      "size": 5093,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color0.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color1.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color10.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color11.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color12.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color13.png",
+      "size": 483,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color14.png",
+      "size": 495,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color15.png",
+      "size": 511,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color2.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color3.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color4.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color5.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color6.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color7.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color8.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/color9.png",
+      "size": 657,
+      "required": false
+    },
+    {
+      "path": "assets/textures/crosshair.png",
+      "size": 326,
+      "required": false
+    },
+    {
+      "path": "assets/textures/dirt.png",
+      "size": 425,
+      "required": false
+    },
+    {
+      "path": "assets/textures/glass.png",
+      "size": 396,
+      "required": false
+    },
+    {
+      "path": "assets/textures/gold.png",
+      "size": 400,
+      "required": false
+    },
+    {
+      "path": "assets/textures/grass_dirt.png",
+      "size": 562,
+      "required": false
+    },
+    {
+      "path": "assets/textures/grass.png",
+      "size": 794,
+      "required": false
+    },
+    {
+      "path": "assets/textures/gravel.png",
+      "size": 1170,
+      "required": false
+    },
+    {
+      "path": "assets/textures/hotbar_bg.png",
+      "size": 2172,
+      "required": false
+    },
+    {
+      "path": "assets/textures/hotbar_selection.png",
+      "size": 749,
+      "required": false
+    },
+    {
+      "path": "assets/textures/lava.png",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "assets/textures/leaves_opaque.png",
+      "size": 723,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/11.png",
+      "size": 2088,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/12.png",
+      "size": 2354,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/13.png",
+      "size": 1373,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/14.png",
+      "size": 1403,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/15.png",
+      "size": 233,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/16.png",
+      "size": 176,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/2.png",
+      "size": 698,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/21.png",
+      "size": 606,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/22.png",
+      "size": 1538,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/23.png",
+      "size": 546,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/24.png",
+      "size": 1329,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/25.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/26.png",
+      "size": 1329,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/27.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/28.png",
+      "size": 1329,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/29.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/3.png",
+      "size": 726,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/30.png",
+      "size": 1329,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/31.png",
+      "size": 1387,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/32.png",
+      "size": 1363,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/33.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/34.png",
+      "size": 1357,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/35.png",
+      "size": 1329,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/36.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/37.png",
+      "size": 1052,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/38.png",
+      "size": 1087,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/39.png",
+      "size": 1113,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/4.png",
+      "size": 734,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/5.png",
+      "size": 267,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/6.png",
+      "size": 258,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/8.png",
+      "size": 415,
+      "required": false
+    },
+    {
+      "path": "assets/textures/previews/9.png",
+      "size": 1101,
+      "required": false
+    },
+    {
+      "path": "assets/textures/red_flower.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "assets/textures/red_mushroom.png",
+      "size": 388,
+      "required": false
+    },
+    {
+      "path": "assets/textures/rock_bronze.png",
+      "size": 435,
+      "required": false
+    },
+    {
+      "path": "assets/textures/rock_coal.png",
+      "size": 409,
+      "required": false
+    },
+    {
+      "path": "assets/textures/rock_gold.png",
+      "size": 432,
+      "required": false
+    },
+    {
+      "path": "assets/textures/rock.png",
+      "size": 540,
+      "required": false
+    },
+    {
+      "path": "assets/textures/sand.png",
+      "size": 930,
+      "required": false
+    },
+    {
+      "path": "assets/textures/sponge.png",
+      "size": 736,
+      "required": false
+    },
+    {
+      "path": "assets/textures/stevearm.png",
+      "size": 489,
+      "required": false
+    },
+    {
+      "path": "assets/textures/stevehead.png",
+      "size": 790,
+      "required": false
+    },
+    {
+      "path": "assets/textures/steveleg.png",
+      "size": 409,
+      "required": false
+    },
+    {
+      "path": "assets/textures/stevetorso.png",
+      "size": 562,
+      "required": false
+    },
+    {
+      "path": "assets/textures/stone.png",
+      "size": 387,
+      "required": false
+    },
+    {
+      "path": "assets/textures/tree_side.png",
+      "size": 658,
+      "required": false
+    },
+    {
+      "path": "assets/textures/tree_top.png",
+      "size": 626,
+      "required": false
+    },
+    {
+      "path": "assets/textures/water.png",
+      "size": 394,
+      "required": false
+    },
+    {
+      "path": "assets/textures/wood.png",
+      "size": 420,
+      "required": false
+    },
+    {
+      "path": "assets/textures/yellow_flower.png",
+      "size": 385,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3173,
+      "required": true
+    },
+    {
+      "path": "pack.png",
+      "size": 20188,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "browsehappy.com"
+  ],
+  "external_critical": [
+    "browsehappy.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

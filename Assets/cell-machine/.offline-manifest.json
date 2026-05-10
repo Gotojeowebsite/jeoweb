@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "slug": "cell-machine",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438528,
+  "files": [
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 159307,
+      "required": true
+    },
+    {
+      "path": "Build/webv0_1_1.data.unityweb",
+      "size": 4234228,
+      "required": true
+    },
+    {
+      "path": "Build/webv0_1_1.json",
+      "size": 588,
+      "required": false
+    },
+    {
+      "path": "Build/webv0_1_1.wasm.code.unityweb",
+      "size": 5670817,
+      "required": true
+    },
+    {
+      "path": "Build/webv0_1_1.wasm.framework.unityweb",
+      "size": 87153,
+      "required": true
+    },
+    {
+      "path": "img/icon.png",
+      "size": 520,
+      "required": false
+    },
+    {
+      "path": "img/te9nDu.png",
+      "size": 325773,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 903,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1269,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressEmpty.Dark.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressFull.Dark.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressLogo.Dark.png",
+      "size": 2343,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1995,
+      "required": true
+    },
+    {
+      "path": "TemplateData/UnityProgress.js",
+      "size": 1258,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

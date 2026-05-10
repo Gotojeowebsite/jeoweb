@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "slug": "bankrob2",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438521,
+  "files": [
+    {
+      "path": "BankRobbery2.framework.js.unityweb",
+      "size": 68768,
+      "required": true
+    },
+    {
+      "path": "BankRobbery2.loader.js",
+      "size": 114404,
+      "required": true
+    },
+    {
+      "path": "BankRobbery2.wasm.unityweb",
+      "size": 6029732,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 7476,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 12824,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 24766,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 12824,
+      "required": false
+    },
+    {
+      "path": "style.css",
+      "size": 1682,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

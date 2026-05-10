@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "slug": "ragdoll-hit",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438556,
+  "files": [
+    {
+      "path": "_external_mirror/img.poki.com/cdn-cgi/image/quality_78_width_40_height_40_fit_cover_g_0.5x0.5_f_auto/3c892779be9dabb3589586c83ad3eeed.png",
+      "size": 2298,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/img.poki.com/cdn-cgi/image/quality_80_width_100_height_100_fit_cover_g_0.5x0.5_f_auto/a398cd4e645b76810031bd97f8697414.png",
+      "size": 4033,
+      "required": false
+    },
+    {
+      "path": "Build/3276aa7c11496bcc48eb6908f112f0c3.js.unityweb",
+      "size": 365286,
+      "required": true
+    },
+    {
+      "path": "Build/959bf1c60308f1c34bf072f43c3c17d4.data.unityweb",
+      "size": 13459814,
+      "required": true
+    },
+    {
+      "path": "Build/f23c0f3f40a28f1adce731399dde22aa.wasm.unityweb",
+      "size": 25480332,
+      "required": true
+    },
+    {
+      "path": "Build/v84.loader.js",
+      "size": 114199,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1695,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 4058,
+      "required": false
+    },
+    {
+      "path": "master-loader.js",
+      "size": 1192,
+      "required": true
+    },
+    {
+      "path": "MobileDetect.js",
+      "size": 39586,
+      "required": true
+    },
+    {
+      "path": "poki-sdk.js",
+      "size": 3212,
+      "required": true
+    },
+    {
+      "path": "screenshots/1-small.jpg",
+      "size": 1379,
+      "required": false
+    },
+    {
+      "path": "screenshots/1.jpg",
+      "size": 11126,
+      "required": false
+    },
+    {
+      "path": "unity-2020.js",
+      "size": 32052,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

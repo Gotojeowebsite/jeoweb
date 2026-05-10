@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "slug": "incredibox",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438549,
+  "files": [
+    {
+      "path": "css/style.min.css",
+      "size": 121249,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "font/raleway-bold-webfont.woff2",
+      "size": 53176,
+      "required": false
+    },
+    {
+      "path": "font/raleway-medium-webfont.woff2",
+      "size": 51392,
+      "required": false
+    },
+    {
+      "path": "font/raleway-regular-webfont.woff2",
+      "size": 51808,
+      "required": false
+    },
+    {
+      "path": "img/bt-bonus.svg",
+      "size": 11668,
+      "required": false
+    },
+    {
+      "path": "img/game-ombre.svg",
+      "size": 409,
+      "required": false
+    },
+    {
+      "path": "img/info-didac1.png",
+      "size": 8387,
+      "required": false
+    },
+    {
+      "path": "img/info-didac2.png",
+      "size": 8926,
+      "required": false
+    },
+    {
+      "path": "img/info-didac3.png",
+      "size": 9076,
+      "required": false
+    },
+    {
+      "path": "img/info-didac4.png",
+      "size": 8499,
+      "required": false
+    },
+    {
+      "path": "img/info-didac5.png",
+      "size": 6950,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 112637,
+      "required": true
+    },
+    {
+      "path": "js/libs/analytics.js",
+      "size": 44470,
+      "required": true
+    },
+    {
+      "path": "js/libs/EasePack.min.js",
+      "size": 5093,
+      "required": true
+    },
+    {
+      "path": "js/libs/jquery.js",
+      "size": 85656,
+      "required": true
+    },
+    {
+      "path": "js/libs/Raf.js",
+      "size": 1072,
+      "required": true
+    },
+    {
+      "path": "js/libs/ScrollToPlugin.min.js",
+      "size": 2285,
+      "required": true
+    },
+    {
+      "path": "js/libs/TweenMax.min.js",
+      "size": 95455,
+      "required": true
+    },
+    {
+      "path": "js/main.min.js",
+      "size": 284129,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 17733,
+      "required": false
+    },
+    {
+      "path": "rocket-loader.min.js",
+      "size": 12332,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "apps.apple.com",
+    "play.google.com",
+    "store.steampowered.com",
+    "www.amazon.fr",
+    "www.microsoft.com"
+  ],
+  "external_critical": [
+    "apps.apple.com",
+    "play.google.com",
+    "store.steampowered.com",
+    "www.amazon.fr",
+    "www.microsoft.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

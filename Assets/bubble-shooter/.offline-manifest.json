@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "slug": "bubble-shooter",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438527,
+  "files": [
+    {
+      "path": "_external_mirror/connect.facebook.net/en_US/sdk.js",
+      "size": 12466,
+      "required": true
+    },
+    {
+      "path": "android-chrome-192x192.png",
+      "size": 45856,
+      "required": false
+    },
+    {
+      "path": "android-chrome-512x512.png",
+      "size": 264831,
+      "required": false
+    },
+    {
+      "path": "apple-touch-icon.png",
+      "size": 41270,
+      "required": false
+    },
+    {
+      "path": "assets/CONFIG.json",
+      "size": 371,
+      "required": false
+    },
+    {
+      "path": "assets/images/back-fill.png",
+      "size": 1146,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/back.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/explosion_3.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/explosion_6.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/gameOverBubblePop.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/loose.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/menu.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/pop.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/positive_win_game.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/shoot.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sticking.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/win.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "favicon-16x16.png",
+      "size": 1443,
+      "required": false
+    },
+    {
+      "path": "favicon-32x32.png",
+      "size": 2823,
+      "required": false
+    },
+    {
+      "path": "game.js",
+      "size": 1281841,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 2740,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 20563,
+      "required": false
+    },
+    {
+      "path": "manifest.json",
+      "size": 403,
+      "required": true
+    },
+    {
+      "path": "safari-pinned-tab.svg",
+      "size": 7788,
+      "required": false
+    },
+    {
+      "path": "src/config/external/default.json",
+      "size": 4,
+      "required": false
+    },
+    {
+      "path": "src/index.js",
+      "size": 583,
+      "required": true
+    },
+    {
+      "path": "src/main.js",
+      "size": 3226,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "connect.facebook.net"
+  ],
+  "external_critical": [
+    "connect.facebook.net"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

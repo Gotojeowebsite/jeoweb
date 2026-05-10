@@ -1,0 +1,496 @@
+{
+  "schema": 1,
+  "slug": "google-snake",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438546,
+  "files": [
+    {
+      "path": "assets/apple_00.png",
+      "size": 1006,
+      "required": false
+    },
+    {
+      "path": "assets/apple_01.png",
+      "size": 1642,
+      "required": false
+    },
+    {
+      "path": "assets/apple_02.png",
+      "size": 2092,
+      "required": false
+    },
+    {
+      "path": "assets/apple_03.png",
+      "size": 1553,
+      "required": false
+    },
+    {
+      "path": "assets/apple_04.png",
+      "size": 943,
+      "required": false
+    },
+    {
+      "path": "assets/apple_05.png",
+      "size": 1619,
+      "required": false
+    },
+    {
+      "path": "assets/apple_06.png",
+      "size": 1314,
+      "required": false
+    },
+    {
+      "path": "assets/apple_07.png",
+      "size": 1828,
+      "required": false
+    },
+    {
+      "path": "assets/apple_08.png",
+      "size": 1420,
+      "required": false
+    },
+    {
+      "path": "assets/apple_09.png",
+      "size": 1865,
+      "required": false
+    },
+    {
+      "path": "assets/apple_10.png",
+      "size": 2420,
+      "required": false
+    },
+    {
+      "path": "assets/apple_11.png",
+      "size": 1157,
+      "required": false
+    },
+    {
+      "path": "assets/apple_12.png",
+      "size": 1611,
+      "required": false
+    },
+    {
+      "path": "assets/apple_13.png",
+      "size": 1200,
+      "required": false
+    },
+    {
+      "path": "assets/apple_14.png",
+      "size": 1897,
+      "required": false
+    },
+    {
+      "path": "assets/apple_15.png",
+      "size": 925,
+      "required": false
+    },
+    {
+      "path": "assets/apple_16.png",
+      "size": 1182,
+      "required": false
+    },
+    {
+      "path": "assets/apple_17.png",
+      "size": 2072,
+      "required": false
+    },
+    {
+      "path": "assets/apple_18.png",
+      "size": 1402,
+      "required": false
+    },
+    {
+      "path": "assets/apple_19.png",
+      "size": 2175,
+      "required": false
+    },
+    {
+      "path": "assets/apple_20.png",
+      "size": 1241,
+      "required": false
+    },
+    {
+      "path": "assets/apple_21.png",
+      "size": 1543,
+      "required": false
+    },
+    {
+      "path": "assets/blink.png",
+      "size": 683,
+      "required": false
+    },
+    {
+      "path": "assets/box.png",
+      "size": 1435,
+      "required": false
+    },
+    {
+      "path": "assets/color_00.png",
+      "size": 1242,
+      "required": false
+    },
+    {
+      "path": "assets/color_01.png",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "assets/color_02.png",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "assets/color_03.png",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "assets/color_04.png",
+      "size": 1238,
+      "required": false
+    },
+    {
+      "path": "assets/color_05.png",
+      "size": 1238,
+      "required": false
+    },
+    {
+      "path": "assets/color_06.png",
+      "size": 1235,
+      "required": false
+    },
+    {
+      "path": "assets/color_07.png",
+      "size": 1238,
+      "required": false
+    },
+    {
+      "path": "assets/color_08.png",
+      "size": 1203,
+      "required": false
+    },
+    {
+      "path": "assets/color_09.png",
+      "size": 1178,
+      "required": false
+    },
+    {
+      "path": "assets/color_10.png",
+      "size": 2766,
+      "required": false
+    },
+    {
+      "path": "assets/color_11.png",
+      "size": 2522,
+      "required": false
+    },
+    {
+      "path": "assets/color_12.png",
+      "size": 2373,
+      "required": false
+    },
+    {
+      "path": "assets/color_13.png",
+      "size": 2422,
+      "required": false
+    },
+    {
+      "path": "assets/color_14.png",
+      "size": 2398,
+      "required": false
+    },
+    {
+      "path": "assets/color_15.png",
+      "size": 2375,
+      "required": false
+    },
+    {
+      "path": "assets/color_16.png",
+      "size": 2384,
+      "required": false
+    },
+    {
+      "path": "assets/color_17.png",
+      "size": 2427,
+      "required": false
+    },
+    {
+      "path": "assets/color_18.png",
+      "size": 972,
+      "required": false
+    },
+    {
+      "path": "assets/count_00.png",
+      "size": 815,
+      "required": false
+    },
+    {
+      "path": "assets/count_01.png",
+      "size": 951,
+      "required": false
+    },
+    {
+      "path": "assets/count_02.png",
+      "size": 1405,
+      "required": false
+    },
+    {
+      "path": "assets/css.css",
+      "size": 2013,
+      "required": true
+    },
+    {
+      "path": "assets/default_end.png",
+      "size": 4317,
+      "required": false
+    },
+    {
+      "path": "assets/die.png",
+      "size": 6977,
+      "required": false
+    },
+    {
+      "path": "assets/eat.png",
+      "size": 2952,
+      "required": false
+    },
+    {
+      "path": "assets/effect.png",
+      "size": 6328,
+      "required": false
+    },
+    {
+      "path": "assets/end_empty.png",
+      "size": 708,
+      "required": false
+    },
+    {
+      "path": "assets/gm_arrow_back_white_24dp.png",
+      "size": 164,
+      "required": false
+    },
+    {
+      "path": "assets/gm_ifl_white_24dp.png",
+      "size": 287,
+      "required": false
+    },
+    {
+      "path": "assets/gm_play_arrow_white_24dp.png",
+      "size": 328,
+      "required": false
+    },
+    {
+      "path": "assets/gm_settings_white_24dp.png",
+      "size": 829,
+      "required": false
+    },
+    {
+      "path": "assets/gradient_end.png",
+      "size": 578,
+      "required": false
+    },
+    {
+      "path": "assets/key_types_dark.png",
+      "size": 2107,
+      "required": false
+    },
+    {
+      "path": "assets/key_types.png",
+      "size": 3195,
+      "required": false
+    },
+    {
+      "path": "assets/keys.svg",
+      "size": 1265,
+      "required": false
+    },
+    {
+      "path": "assets/m_aa.js",
+      "size": 194362,
+      "required": true
+    },
+    {
+      "path": "assets/m_aLUfP.js",
+      "size": 179791,
+      "required": true
+    },
+    {
+      "path": "assets/m_jsa.js",
+      "size": 556911,
+      "required": true
+    },
+    {
+      "path": "assets/not_interested_white_24dp.png",
+      "size": 655,
+      "required": false
+    },
+    {
+      "path": "assets/rainbow_end.png",
+      "size": 7514,
+      "required": false
+    },
+    {
+      "path": "assets/random.png",
+      "size": 1005,
+      "required": false
+    },
+    {
+      "path": "assets/size_00.png",
+      "size": 323,
+      "required": false
+    },
+    {
+      "path": "assets/size_01.png",
+      "size": 285,
+      "required": false
+    },
+    {
+      "path": "assets/size_02.png",
+      "size": 342,
+      "required": false
+    },
+    {
+      "path": "assets/speed_00.png",
+      "size": 1947,
+      "required": false
+    },
+    {
+      "path": "assets/speed_01.png",
+      "size": 1749,
+      "required": false
+    },
+    {
+      "path": "assets/speed_02.png",
+      "size": 1814,
+      "required": false
+    },
+    {
+      "path": "assets/stack/end_audio.bin",
+      "size": 24783,
+      "required": true
+    },
+    {
+      "path": "assets/stack/game_audio.4.bin",
+      "size": 62272,
+      "required": true
+    },
+    {
+      "path": "assets/tongue.png",
+      "size": 676,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_00.png",
+      "size": 658,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_01.png",
+      "size": 405,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_02.png",
+      "size": 4298,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_03.png",
+      "size": 5459,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_04.png",
+      "size": 3950,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_05.png",
+      "size": 6187,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_06.png",
+      "size": 1939,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_07.png",
+      "size": 1591,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_08.png",
+      "size": 838,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_09.png",
+      "size": 608,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_10.png",
+      "size": 2356,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_11.png",
+      "size": 1921,
+      "required": false
+    },
+    {
+      "path": "assets/trophy_12.png",
+      "size": 933,
+      "required": false
+    },
+    {
+      "path": "assets/volume_up_white_24dp.png",
+      "size": 455,
+      "required": false
+    },
+    {
+      "path": "img/snake.png",
+      "size": 9346,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 52386,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1269,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "fonts.gstatic.com"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

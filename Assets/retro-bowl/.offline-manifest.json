@@ -1,0 +1,929 @@
+{
+  "schema": 1,
+  "slug": "retro-bowl",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438557,
+  "files": [
+    {
+      "path": "_external_mirror/badges.greenkeeper.io/imaya/zlib.js.svg",
+      "size": 1220,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.com/fluidicon.png",
+      "size": 33270,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.com/imaya/zlib.js",
+      "size": 408556,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/1097-b805267515cb2087.js",
+      "size": 16917,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/11714-a5229713ec29c1ea.js",
+      "size": 11589,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/13284-8b9feeae4ba8bcad.js",
+      "size": 9865,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/13333-5998f5eddb353d65.js",
+      "size": 13078,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/15272-00d6ef52b0f88c77.js",
+      "size": 9661,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/17348-787e0b6b008adb94.js",
+      "size": 13772,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/17894-e0128f369d75471b.js",
+      "size": 13142,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/18222-498ac30c45b2263a.js",
+      "size": 54941,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/19262-313c6e4aa6bc1abc.js",
+      "size": 14790,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/19930-d7474e22a5e73a83.js",
+      "size": 10911,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/22895-381c5e0210588619.js",
+      "size": 9869,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2498-7a413c8209222158.js",
+      "size": 9107,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26497-2607b26f886ae364.js",
+      "size": 96130,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26533-4df1172b25427069.js",
+      "size": 74986,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26881-52ac2633a69e46a0.js",
+      "size": 7078,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/28839-734cb6d8a7150172.js",
+      "size": 19836,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2887-47ac9a4b8862e6bf.js",
+      "size": 4925,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2966-f6796bfd155feae1.js",
+      "size": 20266,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/31721-17b28a26ab4c2e02.js",
+      "size": 17002,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/32769-329cba91f224b6ee.js",
+      "size": 6532,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/33073-19b499126dc11486.js",
+      "size": 9607,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/33684-93c00536afad2a9e.js",
+      "size": 8329,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34140-bd56b738d77cb446.js",
+      "size": 9404,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34618-6f230fa18381d661.js",
+      "size": 13881,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34646-bea6b9a63337cd73.js",
+      "size": 16915,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/3624-56a093387522b27f.js",
+      "size": 26629,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/36505-d881e4fdaa1f52d2.js",
+      "size": 3990,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/36600-918d1f0ebb5e0ce3.js",
+      "size": 33228,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/37869-a873e81f0fcb98e2.js",
+      "size": 32153,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/39130-334926c8365e947c.js",
+      "size": 157686,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/41013-7a6deee6d6ff15eb.js",
+      "size": 17171,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/41110-bf1fbe4fd0f79f3c.js",
+      "size": 7173,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/4244-d5dcb589fae0ecbf.js",
+      "size": 11440,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/42771-4ebf93dd4d342b28.js",
+      "size": 14511,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/42890-dc8a427d0e01e2ea.js",
+      "size": 16169,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/43947-18e23171752897a9.js",
+      "size": 7963,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46148-0e40187c0246d203.js",
+      "size": 14098,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46287-cd100bdce32a28f3.js",
+      "size": 36686,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46740-6606b1026a237412.js",
+      "size": 12298,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46752-46c707717fcbe6a9.js",
+      "size": 69801,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/49029-32f138b26aa15ad8.js",
+      "size": 11933,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/49135-78a4188b2e814f1c.js",
+      "size": 30601,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/4929-bfb9b2911e3b2557.js",
+      "size": 17227,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/50110-4385e3caef0c7e52.js",
+      "size": 13597,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/51210-3abb7238871a5b29.js",
+      "size": 14052,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/5289-a885c73579e79932.js",
+      "size": 15899,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/58889-5fa21a6f16a85112.js",
+      "size": 13540,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/59852-5847c42877228dae.js",
+      "size": 38827,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/60481-1a8127058c27e9af.js",
+      "size": 8221,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/61025-07acdbf2975da96b.js",
+      "size": 29681,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/61110-93cf7706e5dc8bfa.js",
+      "size": 9977,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/63991-125a5c660965e63e.js",
+      "size": 7313,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/64247-7de91c52a8aca0eb.js",
+      "size": 25295,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/64462-aace35a668bb9e54.js",
+      "size": 140579,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/66231-e5fbc544a569ca6a.js",
+      "size": 16950,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/68751-fe5cb40b5547c377.js",
+      "size": 11881,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/70206-3ba10f6524cc3c66.js",
+      "size": 14139,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/7053-fe40037405b8998b.js",
+      "size": 8763,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/7463-f34e26efc84a7578.js",
+      "size": 22452,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/75674-3bc5efc3b40f0f87.js",
+      "size": 8225,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/79039-2565b539a6ebc09b.js",
+      "size": 16419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/79087-52380608de8b0939.js",
+      "size": 10569,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/85146-fea216c19b0c7dee.js",
+      "size": 14756,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/85924-e131bec5f99667e1.js",
+      "size": 13471,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/86735-f3e914a229b8e278.js",
+      "size": 10376,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/87376-40a11a08536e6be2.js",
+      "size": 40189,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/89627-fbbd31c43d83e10c.js",
+      "size": 10745,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/90765-1fddbe80cb9767ad.js",
+      "size": 46163,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/93226-11f1af91fa00da16.js",
+      "size": 12195,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/93716-c0d708c7899c4298.js",
+      "size": 42423,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/96232-69d46a31854353d4.js",
+      "size": 9639,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/96755-8619cf5f811a4353.js",
+      "size": 9556,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/99328-5e06da57c4622e21.js",
+      "size": 7196,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/appearance-settings.35f40c3a620f34f6.module.css",
+      "size": 5899,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/behaviors-d72208d523482ecc.js",
+      "size": 214214,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-2d31826944fd3be8.css",
+      "size": 32359,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-menu-34c67a8e6616ccae.js",
+      "size": 5791,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-view-5111b642414924d3.js",
+      "size": 508919,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-view.ea72cf068f5f1a4c.module.css",
+      "size": 104911,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/codespaces-2f877186c025b44c.js",
+      "size": 19032,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_colorblind_high_contrast-2dc46b4919fae81e.css",
+      "size": 77009,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_colorblind-0c6ca283d4d35cea.css",
+      "size": 76123,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_dimmed_high_contrast-206b6b93f856629b.css",
+      "size": 77451,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_dimmed-f3aa862f2ac7ead2.css",
+      "size": 76299,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_high_contrast-96d7b2bab5a6ae4e.css",
+      "size": 77291,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_tritanopia_high_contrast-eb5bb84e91d6d553.css",
+      "size": 77041,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_tritanopia-271332ec9362e8d3.css",
+      "size": 76079,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark-fc6eec18532c3ae0.css",
+      "size": 76607,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/element-registry-04246c6cfcc7dcba.js",
+      "size": 80084,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/environment-51c0968cf21c176d.js",
+      "size": 20174,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/fetch-utilities-78a4114cfa572239.js",
+      "size": 7347,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/github-c94ab8d1f22049a8.css",
+      "size": 156676,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/github-elements-459d4cd7a0f718d7.js",
+      "size": 30666,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/global-c9ae636e7affabfe.css",
+      "size": 299778,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/high-contrast-cookie-26d6bae49dfd2c29.js",
+      "size": 1298,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/keyboard-shortcuts-dialog.226020b781ed6407.module.css",
+      "size": 331,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_colorblind_high_contrast-dfa0c9e22ba6ba2b.css",
+      "size": 77167,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_colorblind-4dd12c5689d6b012.css",
+      "size": 76387,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_high_contrast-51c0c6e0c085cc0f.css",
+      "size": 77397,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_tritanopia_high_contrast-9c32304a2a8ac631.css",
+      "size": 77159,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_tritanopia-9fd9c8859395d1a8.css",
+      "size": 76403,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light-0c8222dcd7a4f9b7.css",
+      "size": 76775,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/marketing-navigation.0d7de310f74771c9.module.css",
+      "size": 10717,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-global-206312e9c9776c21.js",
+      "size": 10985,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-subscriptions-menu-1d4d7207cf52d7b4.js",
+      "size": 6708,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-subscriptions-menu.fef45f3faabe9e46.module.css",
+      "size": 2939,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/octicons-react-a181826f33dcd4d8.js",
+      "size": 431057,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg",
+      "size": 998,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-0fcd9af82350aeda.css",
+      "size": 412867,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-primitives-10bf9dd67e3d70bd.css",
+      "size": 10084,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-react-9ca437122824b26a.js",
+      "size": 645717,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-react-css.5f6ed1f0fb5be97e.module.css",
+      "size": 295261,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-core-e2e4dc7ec809e513.js",
+      "size": 187909,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-core.bd894c565a04e39a.module.css",
+      "size": 446,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-lib-a4cf89fce9a1300a.js",
+      "size": 382362,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/repositories-886af5ff36e66fc1.js",
+      "size": 43523,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/repository-6ec84ae2261fecf8.css",
+      "size": 31098,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/runtime-helpers-3bb6f7d6b7a2f531.js",
+      "size": 2746,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/sessions-376c4ed1ca5aceda.js",
+      "size": 15540,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/wp-runtime-d43299552bfccc72.js",
+      "size": 47671,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/favicons/favicon.png",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/favicons/favicon.svg",
+      "size": 959,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/travis-ci.org/imaya/zlib.js",
+      "size": 59646,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/travis-ci.org/imaya/zlib.js.png",
+      "size": 1261,
+      "required": false
+    },
+    {
+      "path": "html5game/Achievements.txt",
+      "size": 3217,
+      "required": false
+    },
+    {
+      "path": "html5game/Charities.txt",
+      "size": 308,
+      "required": false
+    },
+    {
+      "path": "html5game/code.css",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "html5game/code.txt",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "html5game/coee.c",
+      "size": 3038935,
+      "required": false
+    },
+    {
+      "path": "html5game/Colleges.txt",
+      "size": 1130,
+      "required": false
+    },
+    {
+      "path": "html5game/LanguageUS.txt",
+      "size": 62326,
+      "required": false
+    },
+    {
+      "path": "html5game/Names_F0.txt",
+      "size": 5573,
+      "required": false
+    },
+    {
+      "path": "html5game/Names_F1.txt",
+      "size": 8993,
+      "required": false
+    },
+    {
+      "path": "html5game/Names_L.txt",
+      "size": 14671,
+      "required": false
+    },
+    {
+      "path": "html5game/PlayerRecords.txt",
+      "size": 1850,
+      "required": false
+    },
+    {
+      "path": "html5game/RetroBowl_texture_0.png",
+      "size": 767313,
+      "required": false
+    },
+    {
+      "path": "html5game/RetroBowl_texture_1.png",
+      "size": 21741,
+      "required": false
+    },
+    {
+      "path": "html5game/RetroBowl.js",
+      "size": 2364196,
+      "required": true
+    },
+    {
+      "path": "html5game/RetroBowlHOF.txt",
+      "size": 18,
+      "required": false
+    },
+    {
+      "path": "html5game/savedata.ini",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/savedata2.ini",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/savedata3.ini",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/savedata4.ini",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/savedata5.ini",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/Schedule17.txt",
+      "size": 52684,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_audible.ogg",
+      "size": 8477,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_audience_dis.ogg",
+      "size": 65027,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_audience_fg.ogg",
+      "size": 104466,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_beep.ogg",
+      "size": 5915,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_beep2.ogg",
+      "size": 8293,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_bounce.ogg",
+      "size": 6648,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_click.ogg",
+      "size": 4775,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_kick.ogg",
+      "size": 6328,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_oof1.ogg",
+      "size": 6708,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_oof2.ogg",
+      "size": 10616,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_oof3.ogg",
+      "size": 7674,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_post.ogg",
+      "size": 7429,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_purchase.ogg",
+      "size": 14328,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_tackle.ogg",
+      "size": 7862,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_throw.ogg",
+      "size": 6141,
+      "required": false
+    },
+    {
+      "path": "html5game/snd_timeout.ogg",
+      "size": 6547,
+      "required": false
+    },
+    {
+      "path": "html5game/splash.png",
+      "size": 820,
+      "required": false
+    },
+    {
+      "path": "html5game/Teams.txt",
+      "size": 2445,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_custom_1.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_custom_2.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_custom_3.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_custom_4.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_custom_5.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "html5game/uniforms_default.txt",
+      "size": 9629,
+      "required": false
+    },
+    {
+      "path": "html5game/uph_poki.js",
+      "size": 2074,
+      "required": true
+    },
+    {
+      "path": "img/icon.jpg",
+      "size": 9014,
+      "required": false
+    },
+    {
+      "path": "img/splash.png",
+      "size": 583,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4657,
+      "required": true
+    },
+    {
+      "path": "js/main_unpacked.js",
+      "size": 1575969,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 1575967,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com",
+    "js.stripe.com"
+  ],
+  "external_critical": [
+    "js.stripe.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "csgo-clicker",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438534,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js",
+      "size": 85589,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/i.imgur.com/BzuCWzL.png",
+      "size": 15038,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/i.imgur.com/Pw82Pa6.png",
+      "size": 2212,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/i.imgur.com/zoKOaEY.png",
+      "size": 2938,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
+      "size": 27466,
+      "required": true
+    },
+    {
+      "path": "css/stylesheet.css",
+      "size": 22535,
+      "required": true
+    },
+    {
+      "path": "images/case1.png",
+      "size": 59755,
+      "required": false
+    },
+    {
+      "path": "images/sunburst-blue.png",
+      "size": 144715,
+      "required": false
+    },
+    {
+      "path": "images/sunburst.png",
+      "size": 105861,
+      "required": false
+    },
+    {
+      "path": "images/vanguard.png",
+      "size": 70177,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 11200,
+      "required": true
+    },
+    {
+      "path": "js/script.js",
+      "size": 107336,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "discord.gg",
+    "fonts.googleapis.com",
+    "github.com",
+    "i.imgur.com",
+    "steamcommunity-a.akamaihd.net",
+    "steamcommunity.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "discord.gg",
+    "github.com",
+    "i.imgur.com",
+    "steamcommunity-a.akamaihd.net",
+    "steamcommunity.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

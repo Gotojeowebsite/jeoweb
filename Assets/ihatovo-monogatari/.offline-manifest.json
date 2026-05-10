@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "ihatovo-monogatari",
+  "engine": "emulatorjs",
+  "entry": "index.html",
+  "generated_at": 1778438549,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/snes9x-legacy-wasm.data",
+      "size": 1092437,
+      "required": true
+    },
+    {
+      "path": "Ihatovo Monogatari (English v2.0).zip",
+      "size": 712629,
+      "required": false
+    },
+    {
+      "path": "Ihatovo Monogatari (Spanish v1).zip",
+      "size": 723691,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1096,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 14408,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "slug": "highway-traffic",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438548,
+  "files": [
+    {
+      "path": "_external_mirror/unblocked-games.s3.amazonaws.com/highway-traffic.html",
+      "size": 57343,
+      "required": true
+    },
+    {
+      "path": "Build/game.data.unityweb",
+      "size": 24542592,
+      "required": true
+    },
+    {
+      "path": "Build/game.json",
+      "size": 509,
+      "required": false
+    },
+    {
+      "path": "Build/game.wasm.code.unityweb",
+      "size": 5160932,
+      "required": true
+    },
+    {
+      "path": "Build/game.wasm.framework.unityweb",
+      "size": 85545,
+      "required": true
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 159412,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 6331,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 63930,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressEmpty.Dark.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressEmpty.Light.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressFull.Dark.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressFull.Light.png",
+      "size": 142,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressLogo.Dark.png",
+      "size": 2343,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressLogo.Light.png",
+      "size": 2259,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1668,
+      "required": true
+    },
+    {
+      "path": "TemplateData/UnityProgress.js",
+      "size": 1212,
+      "required": true
+    },
+    {
+      "path": "TemplateData/webgl-logo.png",
+      "size": 3587,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

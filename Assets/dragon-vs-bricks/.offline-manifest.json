@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "slug": "dragon-vs-bricks",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438536,
+  "files": [
+    {
+      "path": "files/game.css",
+      "size": 2042,
+      "required": true
+    },
+    {
+      "path": "files/loadbar.png",
+      "size": 360,
+      "required": false
+    },
+    {
+      "path": "files/loadbarback.png",
+      "size": 376,
+      "required": false
+    },
+    {
+      "path": "files/SnakeIceWeb_texture_0.png",
+      "size": 376472,
+      "required": false
+    },
+    {
+      "path": "files/SnakeIceWeb_texture_1.png",
+      "size": 49992,
+      "required": false
+    },
+    {
+      "path": "files/SnakeIceWeb.js",
+      "size": 2050893,
+      "required": true
+    },
+    {
+      "path": "files/snd_click.ogg",
+      "size": 5961,
+      "required": false
+    },
+    {
+      "path": "files/snd_dam.ogg",
+      "size": 5474,
+      "required": false
+    },
+    {
+      "path": "files/snd_die.ogg",
+      "size": 16689,
+      "required": false
+    },
+    {
+      "path": "files/snd_enemy1.ogg",
+      "size": 5122,
+      "required": false
+    },
+    {
+      "path": "files/snd_enemy2.ogg",
+      "size": 4928,
+      "required": false
+    },
+    {
+      "path": "files/snd_explo1.ogg",
+      "size": 20917,
+      "required": false
+    },
+    {
+      "path": "files/snd_explo2.ogg",
+      "size": 5257,
+      "required": false
+    },
+    {
+      "path": "files/snd_explo3.ogg",
+      "size": 5370,
+      "required": false
+    },
+    {
+      "path": "files/snd_explosion1.ogg",
+      "size": 4257,
+      "required": false
+    },
+    {
+      "path": "files/snd_gamover.ogg",
+      "size": 13851,
+      "required": false
+    },
+    {
+      "path": "files/snd_gem1.ogg",
+      "size": 6387,
+      "required": false
+    },
+    {
+      "path": "files/snd_gem2.ogg",
+      "size": 7520,
+      "required": false
+    },
+    {
+      "path": "files/snd_gem3.ogg",
+      "size": 6029,
+      "required": false
+    },
+    {
+      "path": "files/snd_gift.ogg",
+      "size": 10609,
+      "required": false
+    },
+    {
+      "path": "files/snd_heart.ogg",
+      "size": 7471,
+      "required": false
+    },
+    {
+      "path": "files/snd_hit.ogg",
+      "size": 4398,
+      "required": false
+    },
+    {
+      "path": "files/snd_hit1.ogg",
+      "size": 7105,
+      "required": false
+    },
+    {
+      "path": "files/snd_hit2.ogg",
+      "size": 13362,
+      "required": false
+    },
+    {
+      "path": "files/snd_hit3.ogg",
+      "size": 10791,
+      "required": false
+    },
+    {
+      "path": "files/snd_item_buy.ogg",
+      "size": 15364,
+      "required": false
+    },
+    {
+      "path": "files/snd_item_gems.ogg",
+      "size": 14687,
+      "required": false
+    },
+    {
+      "path": "files/snd_move1.ogg",
+      "size": 10440,
+      "required": false
+    },
+    {
+      "path": "files/snd_move2.ogg",
+      "size": 10440,
+      "required": false
+    },
+    {
+      "path": "files/snd_pickup.ogg",
+      "size": 4712,
+      "required": false
+    },
+    {
+      "path": "files/snd_powclone.ogg",
+      "size": 33576,
+      "required": false
+    },
+    {
+      "path": "files/snd_powfire.ogg",
+      "size": 23512,
+      "required": false
+    },
+    {
+      "path": "files/snd_powfreeze.ogg",
+      "size": 12613,
+      "required": false
+    },
+    {
+      "path": "files/snd_powsize.ogg",
+      "size": 16656,
+      "required": false
+    },
+    {
+      "path": "files/snd_quest.ogg",
+      "size": 16274,
+      "required": false
+    },
+    {
+      "path": "files/snd_respawn.ogg",
+      "size": 18479,
+      "required": false
+    },
+    {
+      "path": "files/snd_spd.ogg",
+      "size": 29693,
+      "required": false
+    },
+    {
+      "path": "files/snd_super.ogg",
+      "size": 20190,
+      "required": false
+    },
+    {
+      "path": "files/snd_token.ogg",
+      "size": 14236,
+      "required": false
+    },
+    {
+      "path": "files/snd_word.ogg",
+      "size": 12840,
+      "required": false
+    },
+    {
+      "path": "files/splash.jpg",
+      "size": 55906,
+      "required": false
+    },
+    {
+      "path": "files/tph_sgext.js",
+      "size": 20198,
+      "required": true
+    },
+    {
+      "path": "files/uph_exPatchDeviceVibrate.js",
+      "size": 411,
+      "required": true
+    },
+    {
+      "path": "icon.jpg",
+      "size": 20902,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1954,
+      "required": true
+    },
+    {
+      "path": "splash.png",
+      "size": 19357,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "ad.leadboltmobile.net",
+    "connect.facebook.net"
+  ],
+  "external_critical": [
+    "ad.leadboltmobile.net",
+    "connect.facebook.net"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

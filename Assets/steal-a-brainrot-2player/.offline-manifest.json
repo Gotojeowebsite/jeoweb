@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "slug": "steal-a-brainrot-2player",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438565,
+  "files": [
+    {
+      "path": "_external_mirror/unblocked-games.s3.amazonaws.com/steal-brainrot-duel.html",
+      "size": 57410,
+      "required": true
+    },
+    {
+      "path": "Build/Build.jpg",
+      "size": 40389,
+      "required": false
+    },
+    {
+      "path": "Build/Steal_Brainrot_FreezeNovaV3.data.unityweb",
+      "size": 20685265,
+      "required": true
+    },
+    {
+      "path": "Build/Steal_Brainrot_FreezeNovaV3.framework.js.unityweb",
+      "size": 70310,
+      "required": true
+    },
+    {
+      "path": "Build/Steal_Brainrot_FreezeNovaV3.loader.js",
+      "size": 114412,
+      "required": true
+    },
+    {
+      "path": "Build/Steal_Brainrot_FreezeNovaV3.wasm.unityweb",
+      "size": 6550276,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 13284,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 7355,
+      "required": false
+    },
+    {
+      "path": "pre.html",
+      "size": 4694,
+      "required": false
+    },
+    {
+      "path": "TemplateData/logo.png",
+      "size": 233985,
+      "required": false
+    },
+    {
+      "path": "TemplateData/Orientation/orientation.png",
+      "size": 16164,
+      "required": false
+    },
+    {
+      "path": "TemplateData/Orientation/template.json",
+      "size": 527,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "schema": 1,
+  "slug": "boxing-random",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438526,
+  "files": [
+    {
+      "path": ".config/configstore/update-notifier-npm.json",
+      "size": 56,
+      "required": false
+    },
+    {
+      "path": ".replit",
+      "size": 5366,
+      "required": false
+    },
+    {
+      "path": "box2d.wasm",
+      "size": 246906,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm.js",
+      "size": 341644,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 486561,
+      "required": true
+    },
+    {
+      "path": "images/armskin-sheet0.png",
+      "size": 456,
+      "required": false
+    },
+    {
+      "path": "images/bombtimer-sheet0.png",
+      "size": 650,
+      "required": false
+    },
+    {
+      "path": "images/buildingtile-sheet0.png",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "images/buildingtile2-sheet0.png",
+      "size": 2012,
+      "required": false
+    },
+    {
+      "path": "images/buildingtile3-sheet0.png",
+      "size": 1953,
+      "required": false
+    },
+    {
+      "path": "images/cloudtile-sheet0.png",
+      "size": 775,
+      "required": false
+    },
+    {
+      "path": "images/fencetile-sheet0.png",
+      "size": 388,
+      "required": false
+    },
+    {
+      "path": "images/game_bg-sheet0.png",
+      "size": 282,
+      "required": false
+    },
+    {
+      "path": "images/grasslinetile-sheet0.png",
+      "size": 1604,
+      "required": false
+    },
+    {
+      "path": "images/grasstile-sheet0.png",
+      "size": 512,
+      "required": false
+    },
+    {
+      "path": "images/grasstile2-sheet0.png",
+      "size": 585,
+      "required": false
+    },
+    {
+      "path": "images/groundtile-sheet0.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "images/groundtileindoor-sheet0.png",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "images/groundtileplaj-sheet0.png",
+      "size": 253,
+      "required": false
+    },
+    {
+      "path": "images/groundtilesnow-sheet0.png",
+      "size": 79,
+      "required": false
+    },
+    {
+      "path": "images/hair-sheet0.png",
+      "size": 442,
+      "required": false
+    },
+    {
+      "path": "images/hair-sheet1.png",
+      "size": 488,
+      "required": false
+    },
+    {
+      "path": "images/indoorbgtile-sheet0.png",
+      "size": 691,
+      "required": false
+    },
+    {
+      "path": "images/indoorbgtile2-sheet0.png",
+      "size": 205,
+      "required": false
+    },
+    {
+      "path": "images/indoorbgtile3-sheet0.png",
+      "size": 139,
+      "required": false
+    },
+    {
+      "path": "images/rightshoe-sheet0.png",
+      "size": 663,
+      "required": false
+    },
+    {
+      "path": "images/rightshort-sheet0.png",
+      "size": 609,
+      "required": false
+    },
+    {
+      "path": "images/seatile-sheet0.png",
+      "size": 141,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 15688,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 12579,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 2736,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 152,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.png",
+      "size": 12047,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.png",
+      "size": 3537,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.png",
+      "size": 563,
+      "required": false
+    },
+    {
+      "path": "images/smoketile-sheet0.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "images/snowtile-sheet0.png",
+      "size": 1760,
+      "required": false
+    },
+    {
+      "path": "images/startile-sheet0.png",
+      "size": 267,
+      "required": false
+    },
+    {
+      "path": "images/titlebg-sheet0.png",
+      "size": 76,
+      "required": false
+    },
+    {
+      "path": "images/titlechars-sheet0.png",
+      "size": 1081,
+      "required": false
+    },
+    {
+      "path": "images/tshirt-sheet0.png",
+      "size": 422,
+      "required": false
+    },
+    {
+      "path": "img.jpeg",
+      "size": 9849,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1202,
+      "required": true
+    },
+    {
+      "path": "main.min.js",
+      "size": 791888,
+      "required": true
+    },
+    {
+      "path": "media/bonebreak.webm",
+      "size": 9580,
+      "required": false
+    },
+    {
+      "path": "media/boxhit.webm",
+      "size": 5367,
+      "required": false
+    },
+    {
+      "path": "media/buttonx.webm",
+      "size": 1594,
+      "required": false
+    },
+    {
+      "path": "media/counter,.webm",
+      "size": 9720,
+      "required": false
+    },
+    {
+      "path": "media/goasoc.webm",
+      "size": 20224,
+      "required": false
+    },
+    {
+      "path": "media/intro-button.webm",
+      "size": 12499,
+      "required": false
+    },
+    {
+      "path": "media/intro-sound.webm",
+      "size": 38492,
+      "required": false
+    },
+    {
+      "path": "media/menu.webm",
+      "size": 41953,
+      "required": false
+    },
+    {
+      "path": "media/metal.webm",
+      "size": 3958,
+      "required": false
+    },
+    {
+      "path": "media/music.webm",
+      "size": 367346,
+      "required": false
+    },
+    {
+      "path": "media/pain.webm",
+      "size": 4360,
+      "required": false
+    },
+    {
+      "path": "media/pof.webm",
+      "size": 3632,
+      "required": false
+    },
+    {
+      "path": "media/press.webm",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "media/punch.webm",
+      "size": 5979,
+      "required": false
+    },
+    {
+      "path": "media/refsoc.webm",
+      "size": 17492,
+      "required": false
+    },
+    {
+      "path": "media/roket.webm",
+      "size": 7947,
+      "required": false
+    },
+    {
+      "path": "media/spring.webm",
+      "size": 9440,
+      "required": false
+    },
+    {
+      "path": "media/start.webm",
+      "size": 21451,
+      "required": false
+    },
+    {
+      "path": "media/win.webm",
+      "size": 29710,
+      "required": false
+    },
+    {
+      "path": "media/woosh.webm",
+      "size": 1873,
+      "required": false
+    },
+    {
+      "path": "media/wrong.webm",
+      "size": 5314,
+      "required": false
+    },
+    {
+      "path": "offline.json",
+      "size": 2045,
+      "required": false
+    },
+    {
+      "path": "replit.nix",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1398291,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 4469,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3649,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 116560,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 726,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 353,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2532,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 597,
+      "required": true
+    },
+    {
+      "path": "sw.js",
+      "size": 6890,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a",
+    "b",
+    "game.api.gamedistribution.com",
+    "html5.api.gamedistribution.com",
+    "img.gamedistribution.com",
+    "play.google.com",
+    "static.gamedistribution.com",
+    "www.google.com",
+    "www.mozilla.org",
+    "xn--e1aybc"
+  ],
+  "external_critical": [
+    "a",
+    "b",
+    "game.api.gamedistribution.com",
+    "html5.api.gamedistribution.com",
+    "img.gamedistribution.com",
+    "play.google.com",
+    "static.gamedistribution.com",
+    "www.google.com",
+    "www.mozilla.org",
+    "xn--e1aybc"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

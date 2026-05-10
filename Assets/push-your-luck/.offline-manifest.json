@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "slug": "push-your-luck",
+  "engine": "phaser",
+  "entry": "index.html",
+  "generated_at": 1778438556,
+  "files": [
+    {
+      "path": "assets/animation/animace.xml",
+      "size": 349721,
+      "required": false
+    },
+    {
+      "path": "assets/animation/poof.xml",
+      "size": 8283,
+      "required": false
+    },
+    {
+      "path": "assets/animation/taptospin.xml",
+      "size": 10361,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/Bg.png",
+      "size": 119182,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/Sprites.json",
+      "size": 251637,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/Sprites.png",
+      "size": 1607643,
+      "required": false
+    },
+    {
+      "path": "assets/background/Bg.jpg",
+      "size": 58153,
+      "required": false
+    },
+    {
+      "path": "assets/config.json",
+      "size": 1184,
+      "required": true
+    },
+    {
+      "path": "assets/favicon.ico",
+      "size": 15086,
+      "required": false
+    },
+    {
+      "path": "assets/font/Font_26.xml",
+      "size": 11597,
+      "required": false
+    },
+    {
+      "path": "assets/font/Font_40.xml",
+      "size": 11658,
+      "required": false
+    },
+    {
+      "path": "assets/font/FontButtonsBg.xml",
+      "size": 11736,
+      "required": false
+    },
+    {
+      "path": "assets/font/FontButtonsGlow.xml",
+      "size": 11857,
+      "required": false
+    },
+    {
+      "path": "assets/font/FontSmall.xml",
+      "size": 11665,
+      "required": false
+    },
+    {
+      "path": "assets/font/NumsBank.xml",
+      "size": 3052,
+      "required": false
+    },
+    {
+      "path": "assets/font/NumsBankGlow.xml",
+      "size": 3104,
+      "required": false
+    },
+    {
+      "path": "assets/font/NumsPlayers.xml",
+      "size": 3054,
+      "required": false
+    },
+    {
+      "path": "assets/font/NumsPlayersRed.xml",
+      "size": 3061,
+      "required": false
+    },
+    {
+      "path": "assets/font/SlantBig.xml",
+      "size": 11816,
+      "required": false
+    },
+    {
+      "path": "assets/font/SlantPure.xml",
+      "size": 11710,
+      "required": false
+    },
+    {
+      "path": "assets/font/SlantSmall.xml",
+      "size": 11752,
+      "required": false
+    },
+    {
+      "path": "assets/font/Ticker.xml",
+      "size": 11769,
+      "required": false
+    },
+    {
+      "path": "assets/font/ToolTip.xml",
+      "size": 11484,
+      "required": false
+    },
+    {
+      "path": "assets/img/push.png",
+      "size": 172326,
+      "required": false
+    },
+    {
+      "path": "assets/orientation.jpg",
+      "size": 5690,
+      "required": false
+    },
+    {
+      "path": "assets/sound/Loop.ogg",
+      "size": 298300,
+      "required": false
+    },
+    {
+      "path": "assets/sound/Result.ogg",
+      "size": 44736,
+      "required": false
+    },
+    {
+      "path": "assets/sound/Sfx.ogg",
+      "size": 266878,
+      "required": false
+    },
+    {
+      "path": "assets/text/text.json",
+      "size": 10117,
+      "required": false
+    },
+    {
+      "path": "css/app.css",
+      "size": 444,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1381,
+      "required": true
+    },
+    {
+      "path": "js/phaser.min.js",
+      "size": 837260,
+      "required": true
+    },
+    {
+      "path": "js/pushyourluck.js",
+      "size": 441173,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

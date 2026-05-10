@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "slug": "balatro",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438521,
+  "files": [
+    {
+      "path": "consolewrapper.js",
+      "size": 2457,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 2755,
+      "required": false
+    },
+    {
+      "path": "game.data",
+      "size": 10642513,
+      "required": true
+    },
+    {
+      "path": "game.js",
+      "size": 11567,
+      "required": true
+    },
+    {
+      "path": "img.webp",
+      "size": 16516,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5191,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 16516,
+      "required": false
+    },
+    {
+      "path": "love.js",
+      "size": 507398,
+      "required": true
+    },
+    {
+      "path": "love.wasm",
+      "size": 4720726,
+      "required": true
+    },
+    {
+      "path": "theme/love.css",
+      "size": 998,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

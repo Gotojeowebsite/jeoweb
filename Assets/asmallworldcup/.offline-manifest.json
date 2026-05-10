@@ -1,0 +1,401 @@
+{
+  "schema": 1,
+  "slug": "asmallworldcup",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438520,
+  "files": [
+    {
+      "path": ",",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "c2runtime.js",
+      "size": 743934,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 144249,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 7905,
+      "required": false
+    },
+    {
+      "path": "icon-256.png",
+      "size": 98759,
+      "required": false
+    },
+    {
+      "path": "images/ball-sheet0.png",
+      "size": 593,
+      "required": false
+    },
+    {
+      "path": "images/borders.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/charger-sheet0.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "images/finaletxt.png",
+      "size": 2539,
+      "required": false
+    },
+    {
+      "path": "images/goal-sheet0.png",
+      "size": 88951,
+      "required": false
+    },
+    {
+      "path": "images/goalblocker0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/goaldetector0-sheet0.png",
+      "size": 200,
+      "required": false
+    },
+    {
+      "path": "images/hand-sheet0.png",
+      "size": 67995,
+      "required": false
+    },
+    {
+      "path": "images/ombra-sheet0.png",
+      "size": 932,
+      "required": false
+    },
+    {
+      "path": "images/pl_brsx-sheet0.png",
+      "size": 99,
+      "required": false
+    },
+    {
+      "path": "images/pl_capelli_pin-sheet0.png",
+      "size": 146,
+      "required": false
+    },
+    {
+      "path": "images/pl_collider_0-sheet0.png",
+      "size": 282,
+      "required": false
+    },
+    {
+      "path": "images/pl_collider_1-sheet0.png",
+      "size": 282,
+      "required": false
+    },
+    {
+      "path": "images/pl_corpo-sheet0.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "images/pl_gmsx-sheet0.png",
+      "size": 111,
+      "required": false
+    },
+    {
+      "path": "images/pl_testa-sheet0.png",
+      "size": 161,
+      "required": false
+    },
+    {
+      "path": "images/porta0-sheet0.png",
+      "size": 180,
+      "required": false
+    },
+    {
+      "path": "images/porta1-sheet0.png",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "images/rgtrademark-sheet0.png",
+      "size": 1145,
+      "required": false
+    },
+    {
+      "path": "images/rujogameslogo-sheet0.png",
+      "size": 461,
+      "required": false
+    },
+    {
+      "path": "images/sample-sheet0.png",
+      "size": 181437,
+      "required": false
+    },
+    {
+      "path": "images/scanlines.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "images/score0.png",
+      "size": 994,
+      "required": false
+    },
+    {
+      "path": "images/scuritore.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/selecao_back-sheet0.png",
+      "size": 48499,
+      "required": false
+    },
+    {
+      "path": "images/selecao_block-sheet0.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "images/selecao_block-sheet1.png",
+      "size": 198,
+      "required": false
+    },
+    {
+      "path": "images/selecao_block-sheet2.png",
+      "size": 166,
+      "required": false
+    },
+    {
+      "path": "images/selecao_flag-sheet0.png",
+      "size": 4128,
+      "required": false
+    },
+    {
+      "path": "images/selecao_font.png",
+      "size": 380,
+      "required": false
+    },
+    {
+      "path": "images/selecao_selector-sheet0.png",
+      "size": 163,
+      "required": false
+    },
+    {
+      "path": "images/selecao_selector-sheet1.png",
+      "size": 167,
+      "required": false
+    },
+    {
+      "path": "images/selecao_selector-sheet2.png",
+      "size": 143,
+      "required": false
+    },
+    {
+      "path": "images/selecao_timer-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/sf_3x5_a.png",
+      "size": 387,
+      "required": false
+    },
+    {
+      "path": "images/sf_8x8_a.png",
+      "size": 1202,
+      "required": false
+    },
+    {
+      "path": "images/smallcup-sheet0.png",
+      "size": 8908,
+      "required": false
+    },
+    {
+      "path": "images/stadiumbackground-sheet0.png",
+      "size": 1623180,
+      "required": false
+    },
+    {
+      "path": "images/stadiumbackground-sheet1.png",
+      "size": 1708838,
+      "required": false
+    },
+    {
+      "path": "images/stadiumbackground-sheet2.png",
+      "size": 962476,
+      "required": false
+    },
+    {
+      "path": "images/storelink-sheet0.png",
+      "size": 55184,
+      "required": false
+    },
+    {
+      "path": "images/tempo.png",
+      "size": 381,
+      "required": false
+    },
+    {
+      "path": "images/tit-sheet0.png",
+      "size": 328969,
+      "required": false
+    },
+    {
+      "path": "images/title_playbtn-sheet0.png",
+      "size": 459,
+      "required": false
+    },
+    {
+      "path": "images/toucher-sheet0.png",
+      "size": 952,
+      "required": false
+    },
+    {
+      "path": "images/widescreenpattern.png",
+      "size": 3244,
+      "required": false
+    },
+    {
+      "path": "images/win-sheet0.png",
+      "size": 227411,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 25716,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5084,
+      "required": true
+    },
+    {
+      "path": "jquery-2.1.1.min.js",
+      "size": 84248,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 25716,
+      "required": false
+    },
+    {
+      "path": "media/171697__nenadsimic__menu-selection-click.ogg",
+      "size": 5062,
+      "required": false
+    },
+    {
+      "path": "media/applauseend.ogg",
+      "size": 163619,
+      "required": false
+    },
+    {
+      "path": "media/backgroundmilan.ogg",
+      "size": 303741,
+      "required": false
+    },
+    {
+      "path": "media/body_hit.ogg",
+      "size": 10179,
+      "required": false
+    },
+    {
+      "path": "media/drum-roll.ogg",
+      "size": 48580,
+      "required": false
+    },
+    {
+      "path": "media/fischio_end.ogg",
+      "size": 35853,
+      "required": false
+    },
+    {
+      "path": "media/fischio_start.ogg",
+      "size": 7522,
+      "required": false
+    },
+    {
+      "path": "media/goal_uaaah.ogg",
+      "size": 71990,
+      "required": false
+    },
+    {
+      "path": "media/myself_loop.ogg",
+      "size": 72591,
+      "required": false
+    },
+    {
+      "path": "media/net-sound.ogg",
+      "size": 11633,
+      "required": false
+    },
+    {
+      "path": "media/realballhit.ogg",
+      "size": 6389,
+      "required": false
+    },
+    {
+      "path": "media/song_menu_drum.ogg",
+      "size": 175965,
+      "required": false
+    },
+    {
+      "path": "media/thud1.ogg",
+      "size": 23407,
+      "required": false
+    },
+    {
+      "path": "offlineClient.js",
+      "size": 1434,
+      "required": true
+    },
+    {
+      "path": "sw.js",
+      "size": 159,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

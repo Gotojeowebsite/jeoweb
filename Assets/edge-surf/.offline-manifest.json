@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "slug": "edge-surf",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438537,
+  "files": [
+    {
+      "path": "browserconfig.xml",
+      "size": 341,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2608,
+      "required": true
+    },
+    {
+      "path": "manifest.json",
+      "size": 1429,
+      "required": true
+    },
+    {
+      "path": "README.md",
+      "size": 2545,
+      "required": false
+    },
+    {
+      "path": "resources/css/interface.css",
+      "size": 7807,
+      "required": true
+    },
+    {
+      "path": "resources/icons/android-icon-144x144.png",
+      "size": 10572,
+      "required": false
+    },
+    {
+      "path": "resources/icons/android-icon-192x192.png",
+      "size": 13883,
+      "required": false
+    },
+    {
+      "path": "resources/icons/android-icon-36x36.png",
+      "size": 2092,
+      "required": false
+    },
+    {
+      "path": "resources/icons/android-icon-48x48.png",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "resources/icons/android-icon-72x72.png",
+      "size": 4517,
+      "required": false
+    },
+    {
+      "path": "resources/icons/android-icon-96x96.png",
+      "size": 6359,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-114x114.png",
+      "size": 7880,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-120x120.png",
+      "size": 8440,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-144x144.png",
+      "size": 10572,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-152x152.png",
+      "size": 11253,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-180x180.png",
+      "size": 14038,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-57x57.png",
+      "size": 3502,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-60x60.png",
+      "size": 3638,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-72x72.png",
+      "size": 4517,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-76x76.png",
+      "size": 4787,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon-precomposed.png",
+      "size": 14457,
+      "required": false
+    },
+    {
+      "path": "resources/icons/apple-icon.png",
+      "size": 14457,
+      "required": false
+    },
+    {
+      "path": "resources/icons/favicon.png",
+      "size": 27198,
+      "required": false
+    },
+    {
+      "path": "resources/icons/favicon.svg",
+      "size": 7210,
+      "required": false
+    },
+    {
+      "path": "resources/icons/ms-icon-144x144.png",
+      "size": 10572,
+      "required": false
+    },
+    {
+      "path": "resources/icons/ms-icon-150x150.png",
+      "size": 11136,
+      "required": false
+    },
+    {
+      "path": "resources/icons/ms-icon-310x310.png",
+      "size": 30928,
+      "required": false
+    },
+    {
+      "path": "resources/icons/ms-icon-70x70.png",
+      "size": 4353,
+      "required": false
+    },
+    {
+      "path": "resources/js/assert.js",
+      "size": 2608,
+      "required": true
+    },
+    {
+      "path": "resources/js/base-error-reporting.js",
+      "size": 535,
+      "required": true
+    },
+    {
+      "path": "resources/js/cr.js",
+      "size": 16993,
+      "required": true
+    },
+    {
+      "path": "resources/js/lib_common.chunk.js",
+      "size": 926898,
+      "required": true
+    },
+    {
+      "path": "resources/js/lib_react.chunk.js",
+      "size": 244568,
+      "required": true
+    },
+    {
+      "path": "resources/js/load_time_data.js",
+      "size": 7422,
+      "required": true
+    },
+    {
+      "path": "resources/js/parse_html_subset.js",
+      "size": 7332,
+      "required": true
+    },
+    {
+      "path": "resources/js/promise_resolver.js",
+      "size": 1922,
+      "required": true
+    },
+    {
+      "path": "resources/js/strings.js",
+      "size": 3244,
+      "required": true
+    },
+    {
+      "path": "resources/js/surf-error-reporting.js",
+      "size": 204,
+      "required": true
+    },
+    {
+      "path": "resources/js/surf.bundle.js",
+      "size": 450088,
+      "required": true
+    },
+    {
+      "path": "resources/js/util.js",
+      "size": 10869,
+      "required": true
+    },
+    {
+      "path": "resources/ski/bg.png",
+      "size": 3424,
+      "required": false
+    },
+    {
+      "path": "resources/ski/objects.png",
+      "size": 90040,
+      "required": false
+    },
+    {
+      "path": "resources/ski/player.png",
+      "size": 32695,
+      "required": false
+    },
+    {
+      "path": "resources/surf/bg.png",
+      "size": 2390,
+      "required": false
+    },
+    {
+      "path": "resources/surf/objects.png",
+      "size": 99585,
+      "required": false
+    },
+    {
+      "path": "resources/surf/player.png",
+      "size": 20938,
+      "required": false
+    },
+    {
+      "path": "splash.png",
+      "size": 258164,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

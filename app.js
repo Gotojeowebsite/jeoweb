@@ -52,6 +52,18 @@ class App {
 		});
 	}
 
+	formatVerifiedAgo(ts) {
+		if (!ts || typeof ts !== 'number') return '';
+		const ageSec = Math.floor(Date.now() / 1000) - ts;
+		if (ageSec < 0) return 'just now';
+		if (ageSec < 90) return 'just now';
+		if (ageSec < 3600) return Math.round(ageSec / 60) + 'm ago';
+		if (ageSec < 86400) return Math.round(ageSec / 3600) + 'h ago';
+		const d = Math.round(ageSec / 86400);
+		if (d <= 60) return d + 'd ago';
+		return Math.round(d / 30) + 'mo ago';
+	}
+
 	handleProgressUpdate(data) {
 		if (!this.currentLoadingGame) return;
 		
@@ -314,13 +326,23 @@ class App {
 		const byName = new Map();
 		try {
 			const response = await fetch('game_health.json', { cache: 'no-store' });
-			if (!response.ok) return byName;
+			if (!response.ok) {
+				console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
+				return byName;
+			}
 			const data = await response.json();
-			if (!data || typeof data !== 'object' || data.schema !== 2) return byName;
+			if (!data || typeof data !== 'object' || data.schema !== 2) {
+				console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
+				return byName;
+			}
 			const generatedAt = Number(data.generated_at) || 0;
 			const maxAgeDays = Number(data.max_age_days) || 7;
 			const ageMs = Date.now() - generatedAt * 1000;
 			const isStale = generatedAt > 0 && ageMs > maxAgeDays * 86400 * 1000;
+			if (isStale) {
+				const ageDays = Math.round(ageMs / 86400000);
+				console.warn(`[health] game_health.json is stale (${ageDays}d old, max=${maxAgeDays}d). Verdicts degrade to "unverified".`);
+			}
 			this.statusFreshness = {
 				generatedAt,
 				source: 'game_health.json',
@@ -1443,6 +1465,11 @@ class App {
 
 		const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + safeName + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
 		const heartBtn = '<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>';
+		const verifiedAt = (this.statusFreshness && this.statusFreshness.generatedAt) || 0;
+		const verifiedAgoText = (!isFail && verifiedAt) ? this.formatVerifiedAgo(verifiedAt) : '';
+		const verifiedAgo = verifiedAgoText
+			? '<span class="verified-ago" title="Last verified by the QA pipeline">✓ Verified ' + verifiedAgoText + '</span>'
+			: '';
 		// width/height supplied so the browser can reserve box & avoid CLS;
 		// CSS still scales image to fill via object-fit. onerror swaps to the
 		// shared fallback once if the cover is missing or broken.
@@ -1454,6 +1481,7 @@ class App {
 			'<div class="game-thumb">' + img + heartBtn + wishBtn + badgeHtml + '</div>' +
 			'<div class="game-card-content">' +
 				'<div class="game-card-title">' + safeName + '</div>' +
+				(verifiedAgo ? '<div class="game-card-meta">' + verifiedAgo + '</div>' : '') +
 				'<div class="card-actions"><button class="play-btn">' + playLabel + '</button></div>' +
 			'</div>';
 

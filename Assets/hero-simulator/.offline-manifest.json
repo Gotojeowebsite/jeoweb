@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "slug": "hero-simulator",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438547,
+  "files": [
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest/api/http.html",
+      "size": 611789,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/stuk.github.io/jszip/documentation/howto/read_zip.html",
+      "size": 26569,
+      "required": false
+    },
+    {
+      "path": "1e765c460e8ac7ef9823.wasm",
+      "size": 13487277,
+      "required": true
+    },
+    {
+      "path": "c5c02c4e65c1c4423a97.wasm",
+      "size": 6593880,
+      "required": true
+    },
+    {
+      "path": "clickerheroes.swf",
+      "size": 16293348,
+      "required": true
+    },
+    {
+      "path": "hero sim.jpeg",
+      "size": 16037,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 947,
+      "required": true
+    },
+    {
+      "path": "ruffle.js",
+      "size": 387511,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com",
+    "unpkg.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

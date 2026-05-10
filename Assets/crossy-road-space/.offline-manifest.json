@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "slug": "crossy-road-space",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438534,
+  "files": [
+    {
+      "path": "_external_mirror/ubg235.com/js/ubg235_server_v1_0.js",
+      "size": 4445,
+      "required": true
+    },
+    {
+      "path": "app-store-interstitial.css",
+      "size": 4149,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 801,
+      "required": true
+    },
+    {
+      "path": "js/analytics_ubg_v1_4.js",
+      "size": 745,
+      "required": true
+    },
+    {
+      "path": "js/ubg235_client_v1_1.js",
+      "size": 589,
+      "required": true
+    },
+    {
+      "path": "js/v2/poki-sdk.js",
+      "size": 3082,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpeg",
+      "size": 4947,
+      "required": false
+    },
+    {
+      "path": "scripts/asset-loader.min.f.js",
+      "size": 67718,
+      "required": true
+    },
+    {
+      "path": "scripts/asset-loader.min.js",
+      "size": 27833,
+      "required": true
+    },
+    {
+      "path": "scripts/bootstrap.min.f.js",
+      "size": 130779,
+      "required": true
+    },
+    {
+      "path": "scripts/extra.min.js",
+      "size": 22961,
+      "required": true
+    },
+    {
+      "path": "sprites/tiled-bg.png",
+      "size": 4475,
+      "required": false
+    },
+    {
+      "path": "style.css",
+      "size": 760,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.googletagmanager.com"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

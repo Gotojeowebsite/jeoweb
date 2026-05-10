@@ -1,0 +1,196 @@
+name: QA Nightly (scan + auto-recover)
+
+on:
+  schedule:
+    # 04:00 UTC nightly.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      max_recoveries:
+        description: 'Maximum number of broken games the recovery engine should attempt this run (default: 60)'
+        required: false
+        default: '60'
+      workers:
+        description: 'Recovery workers in parallel (default 3)'
+        required: false
+        default: '3'
+      skip_recovery:
+        description: 'Skip the recovery engine (scan only)'
+        required: false
+        default: 'false'
+  push:
+    # Manual one-shot trigger. Push to either:
+    #   * a tag matching qa-run-*  (preferred — never recurses)
+    #   * the recovery-engine branch claude/game-qa-offline-system-Vz4SS
+    #     (lets the engine be exercised end-to-end before merging to main).
+    # The PR opened by this workflow targets a fresh qa/nightly-<id> branch,
+    # not this one, so no re-fire when it lands.
+    tags:
+      - 'qa-run-*'
+    branches:
+      - 'claude/game-qa-offline-system-Vz4SS'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: qa-nightly
+  cancel-in-progress: false
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        # No explicit ref so the workflow runs against whatever triggered it:
+        #   - cron / workflow_dispatch defaults: default branch (main)
+        #   - push of qa-run-* tag: the tagged commit (use this to test the
+        #     pipeline before merging the recovery-engine branch into main)
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node deps
+        run: npm ci || npm install
+
+      - name: Install Playwright (chromium only)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Refresh games_list.json
+        run: node scan.js
+
+      - name: Static health scan
+        run: node scripts/static-health-scan.js
+
+      - name: Build current game_health.json
+        run: node scripts/build-game-health.js
+
+      - name: Build offline manifests for current catalog
+        run: node scripts/build-offline-manifest.js --all
+
+      - name: Headless Playwright scan
+        timeout-minutes: 120
+        run: |
+          python3 broken_game_scanner.py \
+            --parallel-workers 4 \
+            --resume --state-file scan_state.json \
+            --sync-markers \
+            --hard-timeout-seconds 90 \
+            --wait-seconds 6
+
+      - name: Rebuild game_health.json after scan
+        run: node scripts/build-game-health.js
+
+      - name: Run aggressive recovery engine
+        if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        env:
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MAX_REC="${{ github.event.inputs.max_recoveries }}"
+          WORKERS="${{ github.event.inputs.workers }}"
+          : "${MAX_REC:=60}"
+          : "${WORKERS:=3}"
+          echo "running recovery: max=$MAX_REC workers=$WORKERS"
+          node scripts/recover-all-broken.js --workers "$WORKERS" --max "$MAX_REC" --time-budget 90m || true
+
+      - name: Re-scan slugs touched by recovery
+        if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        run: |
+          REPORT=$(ls -t reports/recovery_summary_*.json 2>/dev/null | head -1)
+          if [ -z "$REPORT" ]; then
+            echo "no recovery summary, skipping rescan"
+            exit 0
+          fi
+          python3 broken_game_scanner.py --only-from "$REPORT" --sync-markers \
+            --hard-timeout-seconds 90 --wait-seconds 6 || true
+
+      - name: Localize externals + auto-inject Poki shim
+        run: node scripts/localize-all-games.js --apply
+
+      - name: Rebuild offline manifests
+        run: node scripts/build-offline-manifest.js --all
+
+      - name: Final game_health rebuild
+        run: |
+          node scan.js
+          node scripts/static-health-scan.js
+          node scripts/build-game-health.js
+
+      - name: Refresh qa_baseline.json
+        run: |
+          node -e "
+            const fs=require('fs');
+            const h=JSON.parse(fs.readFileSync('game_health.json','utf-8'));
+            const broken=(h.counts && h.counts.broken) || 0;
+            fs.writeFileSync('qa_baseline.json', JSON.stringify({
+              broken_at_main: broken,
+              generated_at: Math.floor(Date.now()/1000),
+              source: 'qa-nightly'
+            }, null, 2));
+            console.log('baseline broken='+broken);
+          "
+
+      - name: Open PR with results
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: qa/nightly-${{ github.run_id }}
+          base: main
+          commit-message: |
+            qa: nightly scan + recovery (run ${{ github.run_id }})
+          title: "[qa] Nightly: scan + auto-recover (run ${{ github.run_id }})"
+          body: |
+            Automated nightly QA pass.
+
+            See the artifacts and `reports/recovery_summary_*.json` for details.
+
+            Files updated:
+            - `games_list.json`, `recently_added.json`
+            - `scan_results.json`, `broken_games.*`, `static_health.json`, `game_health.json`
+            - any newly-recovered `Assets/<slug>/`
+            - `Assets/<slug>/.offline-manifest.json` files
+            - `qa_baseline.json`
+          add-paths: |
+            Assets/**
+            games_list.json
+            recently_added.json
+            scan_results.json
+            broken_games.json
+            broken_games.txt
+            checked_games.txt
+            working_games.txt
+            needs_review_games.txt
+            static_health.json
+            game_health.json
+            qa_baseline.json
+            reports/**
+          delete-branch: true
+
+      - name: Upload pipeline reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-nightly-reports-${{ github.run_id }}
+          path: |
+            reports/**
+            scan_results.json
+            game_health.json
+            static_health.json
+            broken_games.json
+            recovery_summary_*.json
+          if-no-files-found: ignore

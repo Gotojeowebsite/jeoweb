@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "slug": "gimme-the-airpod",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438546,
+  "files": [
+    {
+      "path": "Build.json",
+      "size": 545,
+      "required": false
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 159236,
+      "required": true
+    },
+    {
+      "path": "img/airpod.png",
+      "size": 1442,
+      "required": false
+    },
+    {
+      "path": "img/logo.png",
+      "size": 220429,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 689,
+      "required": true
+    },
+    {
+      "path": "unity/Build.data.unityweb",
+      "size": 5272260,
+      "required": true
+    },
+    {
+      "path": "unity/Build.wasm.code.unityweb",
+      "size": 4125685,
+      "required": true
+    },
+    {
+      "path": "unity/Build.wasm.framework.unityweb",
+      "size": 80994,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

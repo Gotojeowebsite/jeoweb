@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "slug": "missiles",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438551,
+  "files": [
+    {
+      "path": "index.html",
+      "size": 24283,
+      "required": true
+    },
+    {
+      "path": "lib/2D.js",
+      "size": 100180,
+      "required": true
+    },
+    {
+      "path": "lib/Path.js",
+      "size": 13646,
+      "required": true
+    },
+    {
+      "path": "miss.png",
+      "size": 6460,
+      "required": false
+    },
+    {
+      "path": "src/banner.js",
+      "size": 2315,
+      "required": true
+    },
+    {
+      "path": "src/barrier.js",
+      "size": 5954,
+      "required": true
+    },
+    {
+      "path": "src/barrierQueue.js",
+      "size": 3181,
+      "required": true
+    },
+    {
+      "path": "src/base.js",
+      "size": 594,
+      "required": true
+    },
+    {
+      "path": "src/fog.js",
+      "size": 1765,
+      "required": true
+    },
+    {
+      "path": "src/game.js",
+      "size": 11128,
+      "required": true
+    },
+    {
+      "path": "src/hud.js",
+      "size": 8667,
+      "required": true
+    },
+    {
+      "path": "src/main.js",
+      "size": 1885,
+      "required": true
+    },
+    {
+      "path": "src/missile.js",
+      "size": 4070,
+      "required": true
+    },
+    {
+      "path": "src/unti.js",
+      "size": 726,
+      "required": true
+    },
+    {
+      "path": "src/util.js",
+      "size": 726,
+      "required": true
+    },
+    {
+      "path": "src/wall.js",
+      "size": 2877,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

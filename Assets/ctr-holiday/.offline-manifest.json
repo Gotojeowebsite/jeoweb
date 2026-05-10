@@ -1,0 +1,893 @@
+{
+  "schema": 1,
+  "slug": "ctr-holiday",
+  "engine": "flash",
+  "entry": "index.html",
+  "generated_at": 1778438534,
+  "files": [
+    {
+      "path": "_external_mirror/schillmania.com/projects/soundmanager2/license.txt",
+      "size": 1567,
+      "required": false
+    },
+    {
+      "path": "audio/bouncer.mp3",
+      "size": 6023,
+      "required": false
+    },
+    {
+      "path": "audio/bubble_break.mp3",
+      "size": 4364,
+      "required": false
+    },
+    {
+      "path": "audio/bubble.mp3",
+      "size": 5500,
+      "required": false
+    },
+    {
+      "path": "audio/button.mp3",
+      "size": 4352,
+      "required": false
+    },
+    {
+      "path": "audio/buzz.mp3",
+      "size": 23920,
+      "required": false
+    },
+    {
+      "path": "audio/candy_break.mp3",
+      "size": 9865,
+      "required": false
+    },
+    {
+      "path": "audio/candy_link.mp3",
+      "size": 6862,
+      "required": false
+    },
+    {
+      "path": "audio/electric.mp3",
+      "size": 34718,
+      "required": false
+    },
+    {
+      "path": "audio/game_music.mp3",
+      "size": 1365404,
+      "required": false
+    },
+    {
+      "path": "audio/game_music3.mp3",
+      "size": 1244499,
+      "required": false
+    },
+    {
+      "path": "audio/gravity_off.mp3",
+      "size": 7334,
+      "required": false
+    },
+    {
+      "path": "audio/gravity_on.mp3",
+      "size": 7307,
+      "required": false
+    },
+    {
+      "path": "audio/menu_music.mp3",
+      "size": 1188084,
+      "required": false
+    },
+    {
+      "path": "audio/monster_chewing.mp3",
+      "size": 26593,
+      "required": false
+    },
+    {
+      "path": "audio/monster_close.mp3",
+      "size": 5148,
+      "required": false
+    },
+    {
+      "path": "audio/monster_open.mp3",
+      "size": 7334,
+      "required": false
+    },
+    {
+      "path": "audio/monster_sad.mp3",
+      "size": 8898,
+      "required": false
+    },
+    {
+      "path": "audio/pump_1.mp3",
+      "size": 5759,
+      "required": false
+    },
+    {
+      "path": "audio/pump_2.mp3",
+      "size": 6438,
+      "required": false
+    },
+    {
+      "path": "audio/pump_3.mp3",
+      "size": 6907,
+      "required": false
+    },
+    {
+      "path": "audio/pump_4.mp3",
+      "size": 6621,
+      "required": false
+    },
+    {
+      "path": "audio/ring.mp3",
+      "size": 12383,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_1.mp3",
+      "size": 5513,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_2.mp3",
+      "size": 5459,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_3.mp3",
+      "size": 6242,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_4.mp3",
+      "size": 6529,
+      "required": false
+    },
+    {
+      "path": "audio/rope_get.mp3",
+      "size": 4616,
+      "required": false
+    },
+    {
+      "path": "audio/scratch_in.mp3",
+      "size": 4881,
+      "required": false
+    },
+    {
+      "path": "audio/scratch_out.mp3",
+      "size": 4988,
+      "required": false
+    },
+    {
+      "path": "audio/spider_activate.mp3",
+      "size": 5932,
+      "required": false
+    },
+    {
+      "path": "audio/spider_fall.mp3",
+      "size": 8743,
+      "required": false
+    },
+    {
+      "path": "audio/spider_win.mp3",
+      "size": 12681,
+      "required": false
+    },
+    {
+      "path": "audio/spike_rotate_in.mp3",
+      "size": 14999,
+      "required": false
+    },
+    {
+      "path": "audio/spike_rotate_out.mp3",
+      "size": 13513,
+      "required": false
+    },
+    {
+      "path": "audio/star_1.mp3",
+      "size": 10375,
+      "required": false
+    },
+    {
+      "path": "audio/star_2.mp3",
+      "size": 10741,
+      "required": false
+    },
+    {
+      "path": "audio/star_3.mp3",
+      "size": 11810,
+      "required": false
+    },
+    {
+      "path": "audio/tap.mp3",
+      "size": 5571,
+      "required": false
+    },
+    {
+      "path": "audio/teleport.mp3",
+      "size": 5083,
+      "required": false
+    },
+    {
+      "path": "audio/wheel.mp3",
+      "size": 3776,
+      "required": false
+    },
+    {
+      "path": "audio/win.mp3",
+      "size": 18874,
+      "required": false
+    },
+    {
+      "path": "css/ctr.css",
+      "size": 21713,
+      "required": true
+    },
+    {
+      "path": "css/nojavascript.css",
+      "size": 499,
+      "required": true
+    },
+    {
+      "path": "css/nosupport.css",
+      "size": 710,
+      "required": false
+    },
+    {
+      "path": "cursors/cursor.cur",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "cursors/cursor.png",
+      "size": 2197,
+      "required": false
+    },
+    {
+      "path": "cursors/cursorActive.cur",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "cursors/cursorActive.png",
+      "size": 2344,
+      "required": false
+    },
+    {
+      "path": "cursors/handcursor.cur",
+      "size": 4022,
+      "required": false
+    },
+    {
+      "path": "cursors/handcursor.png",
+      "size": 2634,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 35894,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.eot",
+      "size": 77320,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.svg",
+      "size": 128513,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.ttf",
+      "size": 77080,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.woff",
+      "size": 37664,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont2.woff",
+      "size": 36119,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.eot",
+      "size": 31000,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.svg",
+      "size": 57761,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.ttf",
+      "size": 30816,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.woff",
+      "size": 22112,
+      "required": false
+    },
+    {
+      "path": "Holiday_Gift.webp",
+      "size": 15118,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_01_p1.jpg",
+      "size": 103179,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_01_p2.jpg",
+      "size": 83098,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/big_font.png",
+      "size": 205020,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations.png",
+      "size": 640001,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations2.png",
+      "size": 547279,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations3.png",
+      "size": 79500,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_supports.png",
+      "size": 220645,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/font_numbers_big.png",
+      "size": 4858,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/hud_star.png",
+      "size": 13574,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bee_hd.png",
+      "size": 12065,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bouncer_01.png",
+      "size": 25665,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bouncer_02.png",
+      "size": 35206,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_attached.png",
+      "size": 14245,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_flight.png",
+      "size": 95942,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_pop.png",
+      "size": 29755,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_candy_01.png",
+      "size": 187515,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_drawing_hidden.png",
+      "size": 10755,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_electrodes.png",
+      "size": 46142,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hat.png",
+      "size": 49497,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_01.png",
+      "size": 3179,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_02.png",
+      "size": 3205,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_auto.png",
+      "size": 5392,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_movable.png",
+      "size": 11872,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_regulated.png",
+      "size": 24370,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_pollen_hd.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_pump.png",
+      "size": 45074,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_01.png",
+      "size": 5139,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_02.png",
+      "size": 7033,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_03.png",
+      "size": 9333,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_04.png",
+      "size": 10866,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_button.png",
+      "size": 12196,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spider.png",
+      "size": 24225,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_01.png",
+      "size": 4776,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_02.png",
+      "size": 7257,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_03.png",
+      "size": 9686,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_04.png",
+      "size": 12116,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_star_disappear.png",
+      "size": 187154,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_star_idle.png",
+      "size": 168205,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_vinil.png",
+      "size": 63096,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/small_font.png",
+      "size": 34689,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/tutorial_signs.png",
+      "size": 13599,
+      "required": false
+    },
+    {
+      "path": "images/1024/save.png",
+      "size": 42267,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/bBtn_bgd.png",
+      "size": 21839,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_lock.png",
+      "size": 49600,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_nav_menu.png",
+      "size": 14556,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_omnom.png",
+      "size": 11744,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box1_bgd.png",
+      "size": 179313,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/boxcutter.png",
+      "size": 72234,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/boxmore_bgd.png",
+      "size": 16646,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/buttonsprite.png",
+      "size": 46705,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing-bg.png",
+      "size": 99494,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fb.png",
+      "size": 5546,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fBtn_bgd.png",
+      "size": 37332,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/flags.png",
+      "size": 22714,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fun-omnom.png",
+      "size": 11976,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/gamecomplete_border.png",
+      "size": 74957,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/gamecomplete.jpg",
+      "size": 143846,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/lBtn_bgd.png",
+      "size": 40900,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/level_bgd_small.png",
+      "size": 14825,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/level_bgd.png",
+      "size": 25121,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg1.jpg",
+      "size": 71963,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape_left.png",
+      "size": 6586,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape_right.png",
+      "size": 6382,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape.png",
+      "size": 10213,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/mBtn_bgd.png",
+      "size": 33886,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_br.png",
+      "size": 8659,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_en.png",
+      "size": 11245,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_es.png",
+      "size": 8456,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_fr.png",
+      "size": 9650,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_gr.png",
+      "size": 9816,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_it.png",
+      "size": 8265,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_nl.png",
+      "size": 8107,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_ru.png",
+      "size": 9334,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu-options.png",
+      "size": 62306,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menubg.jpg",
+      "size": 110717,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/options_stars_bgd_small.png",
+      "size": 15302,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/options_stars_bgd.png",
+      "size": 27067,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/perfect_mark.png",
+      "size": 9776,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/ph_logo.png",
+      "size": 81305,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/pin-omnom.png",
+      "size": 6405,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupinner-slow.jpg",
+      "size": 39221,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupinner.jpg",
+      "size": 34946,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupouter.png",
+      "size": 92453,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/result_line.png",
+      "size": 1443,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/sBtn_bgd.png",
+      "size": 27304,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/shadow.png",
+      "size": 82321,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/star_result_small.png",
+      "size": 2983,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/star_result.png",
+      "size": 11837,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/startbg.jpg",
+      "size": 171331,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/taperoll.png",
+      "size": 25929,
+      "required": false
+    },
+    {
+      "path": "images/page/404.png",
+      "size": 60987,
+      "required": false
+    },
+    {
+      "path": "images/page/error.png",
+      "size": 63058,
+      "required": false
+    },
+    {
+      "path": "images/page/game_bg.png",
+      "size": 2450,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-bg.jpg",
+      "size": 117377,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-bubble.png",
+      "size": 53492,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-logo.png",
+      "size": 7078,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-numbers.png",
+      "size": 2976,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-smallbubble.png",
+      "size": 19936,
+      "required": false
+    },
+    {
+      "path": "images/page/snap-logo.png",
+      "size": 44599,
+      "required": false
+    },
+    {
+      "path": "images/page/tilebg.jpg",
+      "size": 64197,
+      "required": false
+    },
+    {
+      "path": "images/page/upgrade-js.png",
+      "size": 68936,
+      "required": false
+    },
+    {
+      "path": "images/page/upgrade-mobile.png",
+      "size": 61454,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 9051,
+      "required": true
+    },
+    {
+      "path": "scripts/ctr.js",
+      "size": 286075,
+      "required": true
+    },
+    {
+      "path": "scripts/libraries.js",
+      "size": 122777,
+      "required": true
+    },
+    {
+      "path": "scripts/sm2.js",
+      "size": 34020,
+      "required": true
+    },
+    {
+      "path": "sm2/soundmanager2_flash9.swf",
+      "size": 8696,
+      "required": true
+    },
+    {
+      "path": "sm2/soundmanager2.swf",
+      "size": 2934,
+      "required": true
+    },
+    {
+      "path": "video/outro_1024.mp4",
+      "size": 1914376,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "windows.microsoft.com"
+  ],
+  "external_critical": [
+    "windows.microsoft.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

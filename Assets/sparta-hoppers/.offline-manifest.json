@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "slug": "sparta-hoppers",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438562,
+  "files": [
+    {
+      "path": "_external_mirror/ats.rlcdn.com/ats.js",
+      "size": 112204,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/alfie_v4.63f1ab6d6b9d5807dc0c94ef3fe0b851.js",
+      "size": 79849,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/alfie_v5.c2cfb63e352676d3870fc7a1c5d2bd0b.js",
+      "size": 82402,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/assets/img/disqus-social-icon-dark.a621bea3e02c9fa04fd3965a3d6f424d.svg",
+      "size": 1029,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/assets/img/disqus-social-icon-light.5a4245eaed6988115d6bd53f20074f71.svg",
+      "size": 1029,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/assets/img/loader-bg.a5b321d890ffdd553322adc8decaf4ed.png",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/assets/img/noavatar92.b5e491fa31234c53d6aaf029f9b0c34e.png",
+      "size": 452,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/embed/lounge.load.f338a40e74ab31fa665bdf3aad3caa23.js",
+      "size": 958,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/recommendations/assets/img/disqus-social-icon-dark.a621bea3e02c9fa04fd3965a3d6f424d.svg",
+      "size": 1029,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/recommendations/assets/img/disqus-social-icon-light.5a4245eaed6988115d6bd53f20074f71.svg",
+      "size": 1029,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/recommendations/assets/img/loader-bg.a5b321d890ffdd553322adc8decaf4ed.png",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/recommendations/assets/img/noavatar92.b5e491fa31234c53d6aaf029f9b0c34e.png",
+      "size": 452,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.disquscdn.com/next/recommendations/recommendations.load.45554d902ab02648a7057e67e203eac6.js",
+      "size": 923,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/d-code.liadm.com/did-0049.min.js",
+      "size": 139915,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/freezenova.disqus.com/embed.js",
+      "size": 88397,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/freezenova.disqus.com/recommendations.js",
+      "size": 69548,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/launchpad-wrapper.privacymanager.io/876583a8-81cb-4d63-9d57-50a52a0bd20a/launchpad-liveramp.js",
+      "size": 12560,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/live.rezync.com/pixel.gif",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/minnit.chat/js/embed.js",
+      "size": 14332,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/unblocked-games.s3.amazonaws.com/index.html",
+      "size": 225499,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/unblocked-games.s3.amazonaws.com/spartahoppers.html",
+      "size": 55022,
+      "required": true
+    },
+    {
+      "path": "appmanifest.json",
+      "size": 769,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "icons/icon-128.png",
+      "size": 22267,
+      "required": false
+    },
+    {
+      "path": "icons/icon-256.png",
+      "size": 28930,
+      "required": false
+    },
+    {
+      "path": "icons/icon-512.png",
+      "size": 30345,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3339,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 23141,
+      "required": false
+    },
+    {
+      "path": "pre.html",
+      "size": 4694,
+      "required": false
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 123429,
+      "required": true
+    },
+    {
+      "path": "scripts/modernjscheck.js",
+      "size": 160,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 564,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 270,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2131,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 1902,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a",
+    "b",
+    "c.disquscdn.com",
+    "cdn.viglink.com",
+    "launchpad.privacymanager.io",
+    "pippio.com",
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org",
+    "xn--e1aybc"
+  ],
+  "external_critical": [
+    "a",
+    "b",
+    "c.disquscdn.com",
+    "cdn.viglink.com",
+    "launchpad.privacymanager.io",
+    "pippio.com",
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org",
+    "xn--e1aybc"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

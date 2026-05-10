@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "slug": "steal-a-brainrot",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438565,
+  "files": [
+    {
+      "path": "dev.js",
+      "size": 166403,
+      "required": true
+    },
+    {
+      "path": "devsabd.js",
+      "size": 18942630,
+      "required": true
+    },
+    {
+      "path": "devsabf.js",
+      "size": 72325,
+      "required": true
+    },
+    {
+      "path": "devsabw.js",
+      "size": 7597006,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 14385,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 8014,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org",
+    "lh4.googleusercontent.com",
+    "sites.google.com"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org",
+    "lh4.googleusercontent.com",
+    "sites.google.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

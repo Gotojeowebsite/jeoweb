@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "slug": "thorns-and-ballons",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438570,
+  "files": [
+    {
+      "path": "_external_mirror/afg.wgplayer.com/default_afg_image_400_q70.webp",
+      "size": 39964,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/afg.wgplayer.com/wgplayer.com/js/RkQDh8KWt62VoH09FPNYqA/2357995679/wgAds.js",
+      "size": 782664,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/afg.wgplayer.com/wgplayer.com/wgAds.iframe.conf.js",
+      "size": 10575,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/afv.wgplayer.com/hls.js",
+      "size": 609466,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/api.gamemonetize.com/sdk.js",
+      "size": 434300,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/bridge.playgama.com/v1/stable/playgama-bridge.js",
+      "size": 202110,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn-app.sberdevices.ru/shared-static/0.0.0/polyfills/cookie-ls-polyfill.min.js",
+      "size": 2537,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.cookielaw.org/scripttemplates/otSDKStub.js",
+      "size": 26578,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.y8.com/api/sdk.js",
+      "size": 331967,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.y8.com/Xd/name.html",
+      "size": 2670,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.y8.com/Xd/xd_handler.html",
+      "size": 11193,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn1.kongregate.com/javascripts/kongregate_api.js",
+      "size": 69407,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/connect.mail.ru/js/loader.js",
+      "size": 8870,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/dev.apollodata.com/core/fragments.html",
+      "size": 539715,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/developers.arkadium.com/cdn/sdk/games-list/list.json",
+      "size": 209,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/developers.arkadium.com/cdn/sdk/sdk-config/config.json",
+      "size": 2192,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/developers.arkadium.com/cdn/sdk/v2/sdk.js",
+      "size": 242181,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/gamepush.js",
+      "size": 628431,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/reward.png",
+      "size": 1532,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/trophy.svg",
+      "size": 4910,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/images.crazygames.com/userportal/avatars/1.png",
+      "size": 59318,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/images.crazygames.com/userportal/avatars/2.png",
+      "size": 60806,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/images.crazygames.com/userportal/avatars/3.png",
+      "size": 57036,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/images.crazygames.com/userportal/avatars/4.png",
+      "size": 30801,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474252,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/outstream.js",
+      "size": 438269,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/integration.gamepix.com/sdk/v3/gamepix.sdk.js",
+      "size": 142213,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/login.arkadium.com/arenax-connect/azure.facebook.next.index.html",
+      "size": 6283,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/login.arkadium.com/arenax-connect/azure.google.next.index.html",
+      "size": 3414,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/mc.yandex.ru/metrika/tag.js",
+      "size": 261612,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json",
+      "size": 409,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/s3.eponesh.com/files/gs/sdk/gamepush.js",
+      "size": 628583,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/sdk.crazygames.com/crazygames-sdk-v3.js",
+      "size": 91674,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/st.wgplayer.com/afg_bkg.jpg",
+      "size": 73708,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/st.wgplayer.com/fps.js",
+      "size": 29942,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/st.wgplayer.com/vignette.min.js",
+      "size": 11934,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/st.wgplayer.com/wgFlashCheck.swf",
+      "size": 629,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/telegram.org/js/telegram-web-app.js",
+      "size": 116341,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/unpkg.com/_salutejs/client_1.32.3/umd/assistant.production.min.js",
+      "size": 12853,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/wgplayer.com/afg/playground/images/icons/play.svg",
+      "size": 654,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/wgplayer.com/afg/playground/images/logo-square.svg",
+      "size": 2405,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/www.apollographql.com/llms.txt",
+      "size": 135433,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/www.google.com/recaptcha/api.js",
+      "size": 1582,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yandex.ru/ads/system/ap-loader.js",
+      "size": 179674,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yandex.ru/ads/system/context.js",
+      "size": 394423,
+      "required": true
+    },
+    {
+      "path": "Build/TAB_new.data.unityweb",
+      "size": 7328218,
+      "required": true
+    },
+    {
+      "path": "Build/TAB_new.framework.js.unityweb",
+      "size": 87660,
+      "required": true
+    },
+    {
+      "path": "Build/TAB_new.loader.js",
+      "size": 114374,
+      "required": true
+    },
+    {
+      "path": "Build/TAB_new.wasm.unityweb",
+      "size": 5957527,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 6486,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 103945,
+      "required": false
+    },
+    {
+      "path": "TemplateData/Bootstrap/bootstrap.bundle.min.js",
+      "size": 80422,
+      "required": true
+    },
+    {
+      "path": "TemplateData/Bootstrap/bootstrap.min.css",
+      "size": 232915,
+      "required": true
+    },
+    {
+      "path": "TemplateData/Bootstrap/style.css",
+      "size": 1539,
+      "required": true
+    },
+    {
+      "path": "TemplateData/gp_bundle/gamepush.js",
+      "size": 628770,
+      "required": true
+    },
+    {
+      "path": "TemplateData/gp_bundle/platforms/platform.gp.bb4f1f1d820cf471343b.js",
+      "size": 10080,
+      "required": true
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 2078,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "dev.wgplayer.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "imasdk.googleapis.com",
+    "mc.yandex.",
+    "pagead2.googlesyndication.com",
+    "securepubads.g.doubleclick.net",
+    "t.me",
+    "www.gstatic.com",
+    "www.salidzini.lv"
+  ],
+  "external_critical": [
+    "dev.wgplayer.com",
+    "mc.yandex.",
+    "t.me",
+    "www.salidzini.lv"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

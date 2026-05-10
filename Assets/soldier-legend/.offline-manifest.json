@@ -1,0 +1,1419 @@
+{
+  "schema": 1,
+  "slug": "soldier-legend",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438561,
+  "files": [
+    {
+      "path": "data.js",
+      "size": 1132868,
+      "required": true
+    },
+    {
+      "path": "images/ach_des_bg-sheet0.png",
+      "size": 1699,
+      "required": false
+    },
+    {
+      "path": "images/aircraft_base-sheet0.png",
+      "size": 1603,
+      "required": false
+    },
+    {
+      "path": "images/aircraft_gun-sheet0.png",
+      "size": 3380,
+      "required": false
+    },
+    {
+      "path": "images/aircraft_gun-sheet1.png",
+      "size": 1073,
+      "required": false
+    },
+    {
+      "path": "images/ak47-sheet0.png",
+      "size": 3567,
+      "required": false
+    },
+    {
+      "path": "images/ak47-sheet1.png",
+      "size": 4083,
+      "required": false
+    },
+    {
+      "path": "images/alien-sheet0.png",
+      "size": 3473,
+      "required": false
+    },
+    {
+      "path": "images/alien-sheet1.png",
+      "size": 3444,
+      "required": false
+    },
+    {
+      "path": "images/alien-sheet2.png",
+      "size": 3040,
+      "required": false
+    },
+    {
+      "path": "images/alien2-sheet0.png",
+      "size": 3884,
+      "required": false
+    },
+    {
+      "path": "images/alien2-sheet1.png",
+      "size": 3794,
+      "required": false
+    },
+    {
+      "path": "images/alien3-sheet0.png",
+      "size": 22392,
+      "required": false
+    },
+    {
+      "path": "images/alien3-sheet1.png",
+      "size": 10590,
+      "required": false
+    },
+    {
+      "path": "images/alien4-sheet0.png",
+      "size": 32545,
+      "required": false
+    },
+    {
+      "path": "images/alien5_bullet-sheet0.png",
+      "size": 1507,
+      "required": false
+    },
+    {
+      "path": "images/alien5-sheet0.png",
+      "size": 13990,
+      "required": false
+    },
+    {
+      "path": "images/alien5-sheet1.png",
+      "size": 13550,
+      "required": false
+    },
+    {
+      "path": "images/alien5-sheet2.png",
+      "size": 7481,
+      "required": false
+    },
+    {
+      "path": "images/alien6-sheet0.png",
+      "size": 4441,
+      "required": false
+    },
+    {
+      "path": "images/alien6-sheet1.png",
+      "size": 854,
+      "required": false
+    },
+    {
+      "path": "images/alien7-sheet0.png",
+      "size": 40311,
+      "required": false
+    },
+    {
+      "path": "images/alien8-sheet0.png",
+      "size": 7892,
+      "required": false
+    },
+    {
+      "path": "images/bala1-sheet0.png",
+      "size": 621,
+      "required": false
+    },
+    {
+      "path": "images/barra_fabrica.png",
+      "size": 207,
+      "required": false
+    },
+    {
+      "path": "images/barra_preloader.png",
+      "size": 228,
+      "required": false
+    },
+    {
+      "path": "images/barramana.png",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "images/barravida.png",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "images/bazooka-sheet0.png",
+      "size": 7842,
+      "required": false
+    },
+    {
+      "path": "images/bazooka-sheet1.png",
+      "size": 1182,
+      "required": false
+    },
+    {
+      "path": "images/bgach-sheet0.png",
+      "size": 9056,
+      "required": false
+    },
+    {
+      "path": "images/bgbarra-sheet0.png",
+      "size": 319,
+      "required": false
+    },
+    {
+      "path": "images/bgbarrafabrica-sheet0.png",
+      "size": 303,
+      "required": false
+    },
+    {
+      "path": "images/bgbtnshop-sheet0.png",
+      "size": 1583,
+      "required": false
+    },
+    {
+      "path": "images/bgcredits-sheet0.png",
+      "size": 23583,
+      "required": false
+    },
+    {
+      "path": "images/bgpausa-sheet0.png",
+      "size": 8749,
+      "required": false
+    },
+    {
+      "path": "images/bgpreloader-sheet0.png",
+      "size": 5727,
+      "required": false
+    },
+    {
+      "path": "images/bgshopcoins-sheet0.png",
+      "size": 1651,
+      "required": false
+    },
+    {
+      "path": "images/bgshoptitulo-sheet0.png",
+      "size": 2333,
+      "required": false
+    },
+    {
+      "path": "images/bgtaptoplay-sheet0.png",
+      "size": 1207,
+      "required": false
+    },
+    {
+      "path": "images/bgtitulo-sheet0.png",
+      "size": 1456,
+      "required": false
+    },
+    {
+      "path": "images/bgui_atras-sheet0.png",
+      "size": 3524,
+      "required": false
+    },
+    {
+      "path": "images/bguidatos-sheet0.png",
+      "size": 6129,
+      "required": false
+    },
+    {
+      "path": "images/bguilevelwave-sheet0.png",
+      "size": 1140,
+      "required": false
+    },
+    {
+      "path": "images/bomba-sheet0.png",
+      "size": 1182,
+      "required": false
+    },
+    {
+      "path": "images/boss_bullet-sheet0.png",
+      "size": 557,
+      "required": false
+    },
+    {
+      "path": "images/boss-sheet0.png",
+      "size": 133943,
+      "required": false
+    },
+    {
+      "path": "images/btnach-sheet0.png",
+      "size": 1820,
+      "required": false
+    },
+    {
+      "path": "images/btnach-sheet1.png",
+      "size": 2013,
+      "required": false
+    },
+    {
+      "path": "images/btnback-sheet0.png",
+      "size": 2347,
+      "required": false
+    },
+    {
+      "path": "images/btnback-sheet1.png",
+      "size": 2544,
+      "required": false
+    },
+    {
+      "path": "images/btnbackshop-sheet0.png",
+      "size": 1263,
+      "required": false
+    },
+    {
+      "path": "images/btnbackshop-sheet1.png",
+      "size": 1314,
+      "required": false
+    },
+    {
+      "path": "images/btnbombas-sheet0.png",
+      "size": 4456,
+      "required": false
+    },
+    {
+      "path": "images/btnbuyweapons-sheet0.png",
+      "size": 4740,
+      "required": false
+    },
+    {
+      "path": "images/btnbuyweapons-sheet1.png",
+      "size": 1549,
+      "required": false
+    },
+    {
+      "path": "images/btncont-sheet0.png",
+      "size": 1588,
+      "required": false
+    },
+    {
+      "path": "images/btncont-sheet1.png",
+      "size": 1666,
+      "required": false
+    },
+    {
+      "path": "images/btncredits-sheet0.png",
+      "size": 1630,
+      "required": false
+    },
+    {
+      "path": "images/btncredits-sheet1.png",
+      "size": 1901,
+      "required": false
+    },
+    {
+      "path": "images/btndinamita-sheet0.png",
+      "size": 2140,
+      "required": false
+    },
+    {
+      "path": "images/btngutling-sheet0.png",
+      "size": 4883,
+      "required": false
+    },
+    {
+      "path": "images/btnlike-sheet0.png",
+      "size": 3033,
+      "required": false
+    },
+    {
+      "path": "images/btnmenu-sheet0.png",
+      "size": 1342,
+      "required": false
+    },
+    {
+      "path": "images/btnmenu-sheet1.png",
+      "size": 1423,
+      "required": false
+    },
+    {
+      "path": "images/btnmore1-sheet0.png",
+      "size": 1673,
+      "required": false
+    },
+    {
+      "path": "images/btnmore1-sheet1.png",
+      "size": 1694,
+      "required": false
+    },
+    {
+      "path": "images/btnmoregames-sheet0.png",
+      "size": 1664,
+      "required": false
+    },
+    {
+      "path": "images/btnmoregames-sheet1.png",
+      "size": 1895,
+      "required": false
+    },
+    {
+      "path": "images/btnmoveright-sheet0.png",
+      "size": 1135,
+      "required": false
+    },
+    {
+      "path": "images/btnmoveright-sheet1.png",
+      "size": 1165,
+      "required": false
+    },
+    {
+      "path": "images/btnnextlevel-sheet0.png",
+      "size": 5314,
+      "required": false
+    },
+    {
+      "path": "images/btnparlante-sheet0.png",
+      "size": 8446,
+      "required": false
+    },
+    {
+      "path": "images/btnpausa-sheet0.png",
+      "size": 2272,
+      "required": false
+    },
+    {
+      "path": "images/btnpausa-sheet1.png",
+      "size": 2470,
+      "required": false
+    },
+    {
+      "path": "images/btnpowerups-sheet0.png",
+      "size": 4804,
+      "required": false
+    },
+    {
+      "path": "images/btnreload-sheet0.png",
+      "size": 1944,
+      "required": false
+    },
+    {
+      "path": "images/btnreload-sheet1.png",
+      "size": 2154,
+      "required": false
+    },
+    {
+      "path": "images/btnshop-sheet0.png",
+      "size": 3043,
+      "required": false
+    },
+    {
+      "path": "images/btnshop1-sheet0.png",
+      "size": 8623,
+      "required": false
+    },
+    {
+      "path": "images/btntowers-sheet0.png",
+      "size": 2360,
+      "required": false
+    },
+    {
+      "path": "images/btntowers-sheet1.png",
+      "size": 1785,
+      "required": false
+    },
+    {
+      "path": "images/btntryagain-sheet0.png",
+      "size": 2335,
+      "required": false
+    },
+    {
+      "path": "images/btntryagain-sheet1.png",
+      "size": 2402,
+      "required": false
+    },
+    {
+      "path": "images/btnuiload.png",
+      "size": 405,
+      "required": false
+    },
+    {
+      "path": "images/btnweaponsshop-sheet0.png",
+      "size": 5570,
+      "required": false
+    },
+    {
+      "path": "images/camera-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/cartucho-sheet0.png",
+      "size": 404,
+      "required": false
+    },
+    {
+      "path": "images/cerebro-sheet0.png",
+      "size": 424,
+      "required": false
+    },
+    {
+      "path": "images/cielo-sheet0.png",
+      "size": 1817,
+      "required": false
+    },
+    {
+      "path": "images/coin-sheet0.png",
+      "size": 756,
+      "required": false
+    },
+    {
+      "path": "images/coin-sheet1.png",
+      "size": 606,
+      "required": false
+    },
+    {
+      "path": "images/coinsparticleshop.png",
+      "size": 606,
+      "required": false
+    },
+    {
+      "path": "images/creador_r-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/crear_alien-sheet0.png",
+      "size": 16564,
+      "required": false
+    },
+    {
+      "path": "images/crear_boss-sheet0.png",
+      "size": 6960,
+      "required": false
+    },
+    {
+      "path": "images/crear_nave-sheet0.png",
+      "size": 13774,
+      "required": false
+    },
+    {
+      "path": "images/effectsaltocaida-sheet0.png",
+      "size": 423,
+      "required": false
+    },
+    {
+      "path": "images/emiter_blanco-sheet0.png",
+      "size": 3436,
+      "required": false
+    },
+    {
+      "path": "images/emiter-sheet0.png",
+      "size": 1722,
+      "required": false
+    },
+    {
+      "path": "images/emiter-sheet1.png",
+      "size": 1988,
+      "required": false
+    },
+    {
+      "path": "images/emiter-sheet2.png",
+      "size": 1547,
+      "required": false
+    },
+    {
+      "path": "images/end_wave-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/explosion-sheet0.png",
+      "size": 77315,
+      "required": false
+    },
+    {
+      "path": "images/explosion2-sheet0.png",
+      "size": 115250,
+      "required": false
+    },
+    {
+      "path": "images/fabrica_robots_puerta-sheet0.png",
+      "size": 1296,
+      "required": false
+    },
+    {
+      "path": "images/fabrica_robots-sheet0.png",
+      "size": 10082,
+      "required": false
+    },
+    {
+      "path": "images/fade_red-sheet0.png",
+      "size": 35074,
+      "required": false
+    },
+    {
+      "path": "images/fade_white-sheet0.png",
+      "size": 28462,
+      "required": false
+    },
+    {
+      "path": "images/flash_white-sheet0.png",
+      "size": 106,
+      "required": false
+    },
+    {
+      "path": "images/fragexplo-sheet0.png",
+      "size": 1363,
+      "required": false
+    },
+    {
+      "path": "images/gamemanager-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/granada_launcher-sheet0.png",
+      "size": 2793,
+      "required": false
+    },
+    {
+      "path": "images/granada_launcher-sheet1.png",
+      "size": 3503,
+      "required": false
+    },
+    {
+      "path": "images/granada_launcher-sheet2.png",
+      "size": 2536,
+      "required": false
+    },
+    {
+      "path": "images/granada-sheet0.png",
+      "size": 453,
+      "required": false
+    },
+    {
+      "path": "images/gun1-sheet0.png",
+      "size": 5317,
+      "required": false
+    },
+    {
+      "path": "images/gutling_base-sheet0.png",
+      "size": 406,
+      "required": false
+    },
+    {
+      "path": "images/gutling-sheet0.png",
+      "size": 5639,
+      "required": false
+    },
+    {
+      "path": "images/gutling-sheet1.png",
+      "size": 2354,
+      "required": false
+    },
+    {
+      "path": "images/guttling_shot-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/hueso-sheet0.png",
+      "size": 357,
+      "required": false
+    },
+    {
+      "path": "images/humo.png",
+      "size": 184,
+      "required": false
+    },
+    {
+      "path": "images/humobazuka.png",
+      "size": 184,
+      "required": false
+    },
+    {
+      "path": "images/icon_ach-sheet0.png",
+      "size": 16270,
+      "required": false
+    },
+    {
+      "path": "images/icon_ach-sheet1.png",
+      "size": 2516,
+      "required": false
+    },
+    {
+      "path": "images/laser_gun_bullet-sheet0.png",
+      "size": 1470,
+      "required": false
+    },
+    {
+      "path": "images/laser_gun-sheet0.png",
+      "size": 3989,
+      "required": false
+    },
+    {
+      "path": "images/laser_gun-sheet1.png",
+      "size": 4576,
+      "required": false
+    },
+    {
+      "path": "images/laser_gun-sheet2.png",
+      "size": 3712,
+      "required": false
+    },
+    {
+      "path": "images/logo_grande-sheet0.png",
+      "size": 55744,
+      "required": false
+    },
+    {
+      "path": "images/logo.jpg",
+      "size": 8795,
+      "required": false
+    },
+    {
+      "path": "images/machine_gun-sheet0.png",
+      "size": 5057,
+      "required": false
+    },
+    {
+      "path": "images/machine_gun-sheet1.png",
+      "size": 2242,
+      "required": false
+    },
+    {
+      "path": "images/mascara_suelo-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/mina_dead_zone-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/mina-sheet0.png",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "images/mira-sheet0.png",
+      "size": 1141,
+      "required": false
+    },
+    {
+      "path": "images/montania_atras-sheet0.png",
+      "size": 2410,
+      "required": false
+    },
+    {
+      "path": "images/montanias_adelante-sheet0.png",
+      "size": 2331,
+      "required": false
+    },
+    {
+      "path": "images/nave1_bullet-sheet0.png",
+      "size": 1504,
+      "required": false
+    },
+    {
+      "path": "images/nave1_partes-sheet0.png",
+      "size": 3891,
+      "required": false
+    },
+    {
+      "path": "images/nave1_shadow-sheet0.png",
+      "size": 233,
+      "required": false
+    },
+    {
+      "path": "images/nave1-sheet0.png",
+      "size": 15565,
+      "required": false
+    },
+    {
+      "path": "images/nave2_bullet-sheet0.png",
+      "size": 4458,
+      "required": false
+    },
+    {
+      "path": "images/nave2_partes-sheet0.png",
+      "size": 5786,
+      "required": false
+    },
+    {
+      "path": "images/nave2-sheet0.png",
+      "size": 13715,
+      "required": false
+    },
+    {
+      "path": "images/nave2-sheet1.png",
+      "size": 13778,
+      "required": false
+    },
+    {
+      "path": "images/nave2-sheet2.png",
+      "size": 769,
+      "required": false
+    },
+    {
+      "path": "images/nave3_bullet-sheet0.png",
+      "size": 1990,
+      "required": false
+    },
+    {
+      "path": "images/nave3_gun-sheet0.png",
+      "size": 9454,
+      "required": false
+    },
+    {
+      "path": "images/nave3_gun-sheet1.png",
+      "size": 1097,
+      "required": false
+    },
+    {
+      "path": "images/nave3_partes-sheet0.png",
+      "size": 1202,
+      "required": false
+    },
+    {
+      "path": "images/nave3_partes-sheet1.png",
+      "size": 1196,
+      "required": false
+    },
+    {
+      "path": "images/nave3-sheet0.png",
+      "size": 13865,
+      "required": false
+    },
+    {
+      "path": "images/nave4_partes-sheet0.png",
+      "size": 2588,
+      "required": false
+    },
+    {
+      "path": "images/nave4_partes-sheet1.png",
+      "size": 2651,
+      "required": false
+    },
+    {
+      "path": "images/nave4_rayo-sheet0.png",
+      "size": 13106,
+      "required": false
+    },
+    {
+      "path": "images/nave4-sheet0.png",
+      "size": 33904,
+      "required": false
+    },
+    {
+      "path": "images/nube1-sheet0.png",
+      "size": 1077,
+      "required": false
+    },
+    {
+      "path": "images/nube2-sheet0.png",
+      "size": 769,
+      "required": false
+    },
+    {
+      "path": "images/player_sombra-sheet0.png",
+      "size": 188,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.png",
+      "size": 25284,
+      "required": false
+    },
+    {
+      "path": "images/rayos_mana-sheet0.png",
+      "size": 4346,
+      "required": false
+    },
+    {
+      "path": "images/rayos_mana-sheet1.png",
+      "size": 4406,
+      "required": false
+    },
+    {
+      "path": "images/rayos_mana-sheet2.png",
+      "size": 4455,
+      "required": false
+    },
+    {
+      "path": "images/requiremoonshine_24_white.png",
+      "size": 2569,
+      "required": false
+    },
+    {
+      "path": "images/robot1_gun-sheet0.png",
+      "size": 3611,
+      "required": false
+    },
+    {
+      "path": "images/robot1_gun-sheet1.png",
+      "size": 1575,
+      "required": false
+    },
+    {
+      "path": "images/robot1-sheet0.png",
+      "size": 3631,
+      "required": false
+    },
+    {
+      "path": "images/rocket-sheet0.png",
+      "size": 518,
+      "required": false
+    },
+    {
+      "path": "images/sanapad-sheet0.png",
+      "size": 1037,
+      "required": false
+    },
+    {
+      "path": "images/sanastick-sheet0.png",
+      "size": 565,
+      "required": false
+    },
+    {
+      "path": "images/shop_items_power-sheet0.png",
+      "size": 17739,
+      "required": false
+    },
+    {
+      "path": "images/shop_items_tower-sheet0.png",
+      "size": 28650,
+      "required": false
+    },
+    {
+      "path": "images/shop_items-sheet0.png",
+      "size": 45453,
+      "required": false
+    },
+    {
+      "path": "images/shop-sheet0.png",
+      "size": 31068,
+      "required": false
+    },
+    {
+      "path": "images/shotgun-sheet0.png",
+      "size": 2657,
+      "required": false
+    },
+    {
+      "path": "images/shotgun-sheet1.png",
+      "size": 3161,
+      "required": false
+    },
+    {
+      "path": "images/shotgun-sheet2.png",
+      "size": 2587,
+      "required": false
+    },
+    {
+      "path": "images/splash.jpeg",
+      "size": 8960,
+      "required": false
+    },
+    {
+      "path": "images/suelo_adelante-sheet0.png",
+      "size": 3344,
+      "required": false
+    },
+    {
+      "path": "images/suelo-sheet0.png",
+      "size": 39124,
+      "required": false
+    },
+    {
+      "path": "images/tap_to_play-sheet0.png",
+      "size": 692,
+      "required": false
+    },
+    {
+      "path": "images/titulo_down-sheet0.png",
+      "size": 2880,
+      "required": false
+    },
+    {
+      "path": "images/titulo_up-sheet0.png",
+      "size": 3127,
+      "required": false
+    },
+    {
+      "path": "images/touchpad-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/tower_block-sheet0.png",
+      "size": 3236,
+      "required": false
+    },
+    {
+      "path": "images/tower_mana-sheet0.png",
+      "size": 8854,
+      "required": false
+    },
+    {
+      "path": "images/txtclearmenu-sheet0.png",
+      "size": 1799,
+      "required": false
+    },
+    {
+      "path": "images/txtcoin.png",
+      "size": 4038,
+      "required": false
+    },
+    {
+      "path": "images/txtdamage.png",
+      "size": 4038,
+      "required": false
+    },
+    {
+      "path": "images/txtfailedmenu-sheet0.png",
+      "size": 2119,
+      "required": false
+    },
+    {
+      "path": "images/txtlevel.png",
+      "size": 7574,
+      "required": false
+    },
+    {
+      "path": "images/txtlevelmenu-sheet0.png",
+      "size": 1504,
+      "required": false
+    },
+    {
+      "path": "images/txtmana.png",
+      "size": 4038,
+      "required": false
+    },
+    {
+      "path": "images/txtplayerdamage.png",
+      "size": 4038,
+      "required": false
+    },
+    {
+      "path": "images/txtprecioweapons.png",
+      "size": 6507,
+      "required": false
+    },
+    {
+      "path": "images/txtshopcoins.png",
+      "size": 8170,
+      "required": false
+    },
+    {
+      "path": "images/txtwave.png",
+      "size": 4796,
+      "required": false
+    },
+    {
+      "path": "images/ui_bgach-sheet0.png",
+      "size": 4695,
+      "required": false
+    },
+    {
+      "path": "images/ui_cartuchos-sheet0.png",
+      "size": 557,
+      "required": false
+    },
+    {
+      "path": "images/ui_reloading-sheet0.png",
+      "size": 2150,
+      "required": false
+    },
+    {
+      "path": "images/uzi-sheet0.png",
+      "size": 2284,
+      "required": false
+    },
+    {
+      "path": "images/uzi-sheet1.png",
+      "size": 2819,
+      "required": false
+    },
+    {
+      "path": "images/uzi-sheet2.png",
+      "size": 2572,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1843,
+      "required": true
+    },
+    {
+      "path": "js/c2runtime.js",
+      "size": 851430,
+      "required": true
+    },
+    {
+      "path": "js/jquery-2.1.1.min.js",
+      "size": 84244,
+      "required": true
+    },
+    {
+      "path": "media/ach.ogg",
+      "size": 8353,
+      "required": false
+    },
+    {
+      "path": "media/bazuka.ogg",
+      "size": 12934,
+      "required": false
+    },
+    {
+      "path": "media/blood1.ogg",
+      "size": 6055,
+      "required": false
+    },
+    {
+      "path": "media/blood2.ogg",
+      "size": 5643,
+      "required": false
+    },
+    {
+      "path": "media/blood3.ogg",
+      "size": 5888,
+      "required": false
+    },
+    {
+      "path": "media/blood4.ogg",
+      "size": 18654,
+      "required": false
+    },
+    {
+      "path": "media/btnclick.ogg",
+      "size": 5625,
+      "required": false
+    },
+    {
+      "path": "media/btnclick1.ogg",
+      "size": 6542,
+      "required": false
+    },
+    {
+      "path": "media/btnpowerup.ogg",
+      "size": 7852,
+      "required": false
+    },
+    {
+      "path": "media/buy.ogg",
+      "size": 11061,
+      "required": false
+    },
+    {
+      "path": "media/casquillo1.ogg",
+      "size": 9255,
+      "required": false
+    },
+    {
+      "path": "media/casquillo2.ogg",
+      "size": 10863,
+      "required": false
+    },
+    {
+      "path": "media/casquillo3.ogg",
+      "size": 9713,
+      "required": false
+    },
+    {
+      "path": "media/coin1.ogg",
+      "size": 7949,
+      "required": false
+    },
+    {
+      "path": "media/coin2.ogg",
+      "size": 8585,
+      "required": false
+    },
+    {
+      "path": "media/coin3.ogg",
+      "size": 6831,
+      "required": false
+    },
+    {
+      "path": "media/crearpozo.ogg",
+      "size": 9084,
+      "required": false
+    },
+    {
+      "path": "media/explo_suelo.ogg",
+      "size": 14899,
+      "required": false
+    },
+    {
+      "path": "media/explosion.ogg",
+      "size": 24066,
+      "required": false
+    },
+    {
+      "path": "media/explosion1.ogg",
+      "size": 24579,
+      "required": false
+    },
+    {
+      "path": "media/fireshotgun.ogg",
+      "size": 11736,
+      "required": false
+    },
+    {
+      "path": "media/fireuzi.ogg",
+      "size": 13027,
+      "required": false
+    },
+    {
+      "path": "media/gameover.ogg",
+      "size": 44713,
+      "required": false
+    },
+    {
+      "path": "media/ganar.ogg",
+      "size": 47920,
+      "required": false
+    },
+    {
+      "path": "media/grenade_launcher.ogg",
+      "size": 9052,
+      "required": false
+    },
+    {
+      "path": "media/grito.ogg",
+      "size": 8315,
+      "required": false
+    },
+    {
+      "path": "media/grito1.ogg",
+      "size": 7571,
+      "required": false
+    },
+    {
+      "path": "media/grito2.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/impacto_enemie1.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/impacto_enemie2.ogg",
+      "size": 7260,
+      "required": false
+    },
+    {
+      "path": "media/impacto_nave1.ogg",
+      "size": 8710,
+      "required": false
+    },
+    {
+      "path": "media/impacto_nave2.ogg",
+      "size": 7260,
+      "required": false
+    },
+    {
+      "path": "media/impacto_nave3.ogg",
+      "size": 8370,
+      "required": false
+    },
+    {
+      "path": "media/locked.ogg",
+      "size": 6822,
+      "required": false
+    },
+    {
+      "path": "media/man_hit.ogg",
+      "size": 10327,
+      "required": false
+    },
+    {
+      "path": "media/misil.ogg",
+      "size": 18499,
+      "required": false
+    },
+    {
+      "path": "media/misiles_caen.ogg",
+      "size": 19536,
+      "required": false
+    },
+    {
+      "path": "media/muerte1.ogg",
+      "size": 11971,
+      "required": false
+    },
+    {
+      "path": "media/muerte2.ogg",
+      "size": 17827,
+      "required": false
+    },
+    {
+      "path": "media/muerte3.ogg",
+      "size": 10439,
+      "required": false
+    },
+    {
+      "path": "media/muerte4.ogg",
+      "size": 9029,
+      "required": false
+    },
+    {
+      "path": "media/muerte5.ogg",
+      "size": 8549,
+      "required": false
+    },
+    {
+      "path": "media/music_game.ogg",
+      "size": 733692,
+      "required": false
+    },
+    {
+      "path": "media/music_menu.ogg",
+      "size": 127975,
+      "required": false
+    },
+    {
+      "path": "media/nave1_soltar.ogg",
+      "size": 7208,
+      "required": false
+    },
+    {
+      "path": "media/puerta.ogg",
+      "size": 15052,
+      "required": false
+    },
+    {
+      "path": "media/rayo.ogg",
+      "size": 14527,
+      "required": false
+    },
+    {
+      "path": "media/reload.ogg",
+      "size": 6455,
+      "required": false
+    },
+    {
+      "path": "media/robot_fire.ogg",
+      "size": 11325,
+      "required": false
+    },
+    {
+      "path": "media/shoot_gun_1a.ogg",
+      "size": 17431,
+      "required": false
+    },
+    {
+      "path": "media/shoot_gun_1b.ogg",
+      "size": 17188,
+      "required": false
+    },
+    {
+      "path": "media/shoot1.ogg",
+      "size": 9653,
+      "required": false
+    },
+    {
+      "path": "media/shoot2.ogg",
+      "size": 9623,
+      "required": false
+    },
+    {
+      "path": "media/shoot3.ogg",
+      "size": 7342,
+      "required": false
+    },
+    {
+      "path": "media/shootu1.ogg",
+      "size": 12051,
+      "required": false
+    },
+    {
+      "path": "media/shootu2.ogg",
+      "size": 11854,
+      "required": false
+    },
+    {
+      "path": "media/shootu3.ogg",
+      "size": 13438,
+      "required": false
+    },
+    {
+      "path": "media/shot1.ogg",
+      "size": 8847,
+      "required": false
+    },
+    {
+      "path": "media/shot2.ogg",
+      "size": 11242,
+      "required": false
+    },
+    {
+      "path": "media/shot3.ogg",
+      "size": 9046,
+      "required": false
+    },
+    {
+      "path": "media/show_bg_submenu.ogg",
+      "size": 6930,
+      "required": false
+    },
+    {
+      "path": "media/show_button.ogg",
+      "size": 7048,
+      "required": false
+    },
+    {
+      "path": "media/show_submenu.ogg",
+      "size": 9825,
+      "required": false
+    },
+    {
+      "path": "media/suelo1.ogg",
+      "size": 8792,
+      "required": false
+    },
+    {
+      "path": "media/suelo2.ogg",
+      "size": 8621,
+      "required": false
+    },
+    {
+      "path": "media/titulo.ogg",
+      "size": 11338,
+      "required": false
+    },
+    {
+      "path": "media/wave.ogg",
+      "size": 22720,
+      "required": false
+    },
+    {
+      "path": "media/win.ogg",
+      "size": 37818,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}
