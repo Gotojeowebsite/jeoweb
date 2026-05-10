@@ -42,8 +42,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: main
+        # No explicit ref so the workflow runs against whatever triggered it:
+        #   - cron / workflow_dispatch defaults: default branch (main)
+        #   - push of qa-run-* tag: the tagged commit (use this to test the
+        #     pipeline before merging the recovery-engine branch into main)
 
       - name: Setup Node
         uses: actions/setup-node@v4
