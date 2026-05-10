@@ -13,11 +13,8 @@ class App {
 		this.offlineBlockedNames = new Set();
 		this.statusFreshness = { generatedAt: null, source: '', maxAgeDays: 7, isStale: false, unknownCount: 0 };
 		this.gameHealth = new Map();
-		this.offlineCachedSlugs = new Set();
-		this.offlineProgress = new Map(); // slug -> { done, total }
 
 		this.initElements();
-		this.initOfflineCacheBridge();
 		this.initRatingsSync();
 		this.loadTheme();
 		this.loadAccent();
@@ -41,28 +38,8 @@ class App {
 
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.addEventListener('message', (event) => {
-				const d = event.data || {};
-				if (d.type === 'PROGRESS_UPDATE') {
-					this.handleProgressUpdate(d);
-				} else if (d.type === 'OFFLINE_CACHE_PROGRESS') {
-					this.offlineProgress.set(d.slug, { done: d.done, total: d.total, bytes: d.bytes || 0 });
-					this.updateOfflineButtonProgress(d.slug);
-				} else if (d.type === 'OFFLINE_CACHE_DONE') {
-					this.offlineProgress.delete(d.slug);
-					if (d.cached > 0) this.offlineCachedSlugs.add(d.slug);
-					this.persistOfflineCachedSet();
-					this.updateOfflineButtonProgress(d.slug);
-				} else if (d.type === 'OFFLINE_CACHE_FAILED') {
-					this.offlineProgress.delete(d.slug);
-					this.updateOfflineButtonProgress(d.slug);
-					console.warn('[offline] cache failed for ' + d.slug + ': ' + d.error);
-				} else if (d.type === 'OFFLINE_UNCACHE_DONE') {
-					this.offlineCachedSlugs.delete(d.slug);
-					this.persistOfflineCachedSet();
-					this.updateOfflineButtonProgress(d.slug);
-				} else if (d.type === 'OFFLINE_LIST') {
-					this.offlineCachedSlugs = new Set((d.games || []).map(x => x.slug));
-					this.persistOfflineCachedSet();
+				if (event.data.type === 'PROGRESS_UPDATE') {
+					this.handleProgressUpdate(event.data);
 				}
 			});
 		}
@@ -71,76 +48,6 @@ class App {
 			if (event.data.type === 'GAME_READY') {
 				this.gameReadyReceived = true;
 				if (this.hideOverlayFn) this.hideOverlayFn();
-			}
-		});
-	}
-
-	initOfflineCacheBridge() {
-		// Restore the locally-known set of offline-cached slugs so we can
-		// render the badge before the SW responds with the authoritative list.
-		try {
-			const raw = localStorage.getItem('jeo-offline-cached') || '[]';
-			const arr = JSON.parse(raw);
-			if (Array.isArray(arr)) this.offlineCachedSlugs = new Set(arr.filter(x => typeof x === 'string'));
-		} catch {}
-		if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-			try { navigator.serviceWorker.controller.postMessage({ type: 'LIST_OFFLINE_GAMES' }); } catch {}
-		} else if ('serviceWorker' in navigator) {
-			// SW may not be controlling yet — try once after it claims.
-			navigator.serviceWorker.ready.then(() => {
-				if (navigator.serviceWorker.controller) {
-					try { navigator.serviceWorker.controller.postMessage({ type: 'LIST_OFFLINE_GAMES' }); } catch {}
-				}
-			}).catch(() => {});
-		}
-	}
-
-	persistOfflineCachedSet() {
-		try {
-			localStorage.setItem('jeo-offline-cached', JSON.stringify([...this.offlineCachedSlugs]));
-		} catch {}
-	}
-
-	requestOfflineCache(slug) {
-		if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) {
-			console.warn('Service worker not active; cannot pre-cache.');
-			return;
-		}
-		this.offlineProgress.set(slug, { done: 0, total: 0 });
-		this.updateOfflineButtonProgress(slug);
-		try {
-			navigator.serviceWorker.controller.postMessage({ type: 'CACHE_GAME_FOR_OFFLINE', slug });
-		} catch (e) { console.warn(e); }
-	}
-
-	requestOfflineUncache(slug) {
-		if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) return;
-		try { navigator.serviceWorker.controller.postMessage({ type: 'UNCACHE_GAME', slug }); } catch {}
-	}
-
-	updateOfflineButtonProgress(slug) {
-		const escSlug = this.escapeAttr(slug);
-		document.querySelectorAll('.offline-btn[data-game="' + escSlug + '"]').forEach(btn => {
-			const prog = this.offlineProgress.get(slug);
-			const isCached = this.offlineCachedSlugs.has(slug);
-			if (prog) {
-				const pct = prog.total > 0 ? Math.round((prog.done / prog.total) * 100) : 0;
-				btn.textContent = '⬇ ' + pct + '%';
-				btn.classList.add('offline-loading');
-				btn.classList.remove('offline-cached');
-				btn.title = 'Caching ' + prog.done + '/' + prog.total + ' files…';
-				btn.disabled = true;
-			} else if (isCached) {
-				btn.textContent = '✓';
-				btn.classList.remove('offline-loading');
-				btn.classList.add('offline-cached');
-				btn.title = 'Available offline. Click to remove.';
-				btn.disabled = false;
-			} else {
-				btn.textContent = '⬇';
-				btn.classList.remove('offline-loading', 'offline-cached');
-				btn.title = 'Download for offline play';
-				btn.disabled = false;
 			}
 		});
 	}
@@ -1558,11 +1465,6 @@ class App {
 
 		const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + safeName + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
 		const heartBtn = '<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>';
-		const isCached = this.offlineCachedSlugs.has(g.name);
-		const showOfflineBtn = !isFail; // don't offer download on broken/maintenance cards
-		const offlineBtn = showOfflineBtn
-			? '<button class="offline-btn' + (isCached ? ' offline-cached' : '') + '" data-game="' + safeName + '" aria-label="Download for offline play" title="' + (isCached ? 'Available offline. Click to remove.' : 'Download for offline play') + '">' + (isCached ? '✓' : '⬇') + '</button>'
-			: '';
 		const verifiedAt = (this.statusFreshness && this.statusFreshness.generatedAt) || 0;
 		const verifiedAgoText = (!isFail && verifiedAt) ? this.formatVerifiedAgo(verifiedAt) : '';
 		const verifiedAgo = verifiedAgoText
@@ -1576,7 +1478,7 @@ class App {
 			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
 
 		card.innerHTML =
-			'<div class="game-thumb">' + img + heartBtn + wishBtn + offlineBtn + badgeHtml + '</div>' +
+			'<div class="game-thumb">' + img + heartBtn + wishBtn + badgeHtml + '</div>' +
 			'<div class="game-card-content">' +
 				'<div class="game-card-title">' + safeName + '</div>' +
 				(verifiedAgo ? '<div class="game-card-meta">' + verifiedAgo + '</div>' : '') +
@@ -1586,15 +1488,6 @@ class App {
 		card.querySelector('.play-btn').addEventListener('click', (e) => { e.stopPropagation(); this.playGame(g); });
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.querySelector('.wish-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleWishlist(g); });
-		const offBtnEl = card.querySelector('.offline-btn');
-		if (offBtnEl) {
-			offBtnEl.addEventListener('click', (e) => {
-				e.stopPropagation();
-				const slug = g.name;
-				if (this.offlineCachedSlugs.has(slug)) this.requestOfflineUncache(slug);
-				else this.requestOfflineCache(slug);
-			});
-		}
 		card.addEventListener('dblclick', () => { this.playGame(g); });
 		// Cap stagger to the first 24 cards — past that it produces a long
 		// cascade for filtered results with no visible benefit.

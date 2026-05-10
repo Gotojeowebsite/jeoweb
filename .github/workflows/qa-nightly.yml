@@ -18,6 +18,13 @@ on:
         description: 'Skip the recovery engine (scan only)'
         required: false
         default: 'false'
+  push:
+    # Manual one-shot trigger: push a tag like qa-run-2026-05-10-001 to fire
+    # this workflow without using the Actions UI. Tags only — no branch push
+    # triggers (which would re-fire when peter-evans/create-pull-request opens
+    # PRs back to this branch).
+    tags:
+      - 'qa-run-*'
 
 permissions:
   contents: write

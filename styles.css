@@ -4125,62 +4125,8 @@ body.theme-light .rating-badge {
 }
 
 /* ========================================
-   OFFLINE DOWNLOAD BUTTON + VERIFIED-AGO BADGE
+   VERIFIED-AGO BADGE
    ======================================== */
-.offline-btn {
-	position: absolute;
-	top: 8px;
-	right: 80px;
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	border: 0;
-	background: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(6px);
-	color: #fff;
-	font-size: 14px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	opacity: 0;
-	transition: opacity .2s ease, transform .15s ease, background .2s ease;
-	z-index: 5;
-	line-height: 1;
-	padding: 0;
-}
-
-.game-card:hover .offline-btn,
-.carousel-card:hover .offline-btn,
-.offline-btn.offline-cached,
-.offline-btn.offline-loading {
-	opacity: 1;
-}
-
-.offline-btn:hover {
-	transform: scale(1.1);
-	background: var(--accent, #7c3aed);
-}
-
-.offline-btn.offline-cached {
-	background: rgba(34, 197, 94, 0.85);
-	color: #fff;
-}
-
-.offline-btn.offline-loading {
-	background: rgba(59, 130, 246, 0.85);
-	font-size: 10px;
-	width: auto;
-	min-width: 36px;
-	padding: 0 6px;
-	border-radius: 12px;
-	cursor: default;
-}
-
-.offline-btn:disabled {
-	cursor: default;
-}
-
 .verified-ago {
 	display: inline-block;
 	font-size: 11px;

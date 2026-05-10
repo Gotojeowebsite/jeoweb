@@ -172,15 +172,10 @@ After adding, renaming, or changing a game folder, run `node scan.js` (or restar
 
 ### Service worker (`sw.js`)
 
-Cache name: `jeoweb-pwa-cache-v4`. Per-game offline caches use the prefix `jeoweb-game-<slug>`.
+Cache name: `jeoweb-pwa-cache-v4`.
 - Static assets: stale-while-revalidate.
-- `/Assets/` routes: **per-slug cache first**, then network. If the user has clicked "Download for offline" on a card, the SW pre-cached every required file from that game's `.offline-manifest.json` into `jeoweb-game-<slug>`, and subsequent fetches hit cache. Otherwise it falls back to network and tries any matching cache as a last-ditch offline fallback.
+- `/Assets/` routes: network-first, no caching of large binaries.
 - Streams download byte counts back to the frontend (progress bar), throttled to 100 ms.
-
-**Frontend messages**
-- `{ type: 'CACHE_GAME_FOR_OFFLINE', slug }` — pre-fetch every required file from the manifest into `jeoweb-game-<slug>`. SW posts back `OFFLINE_CACHE_PROGRESS`/`OFFLINE_CACHE_DONE`/`OFFLINE_CACHE_FAILED`.
-- `{ type: 'UNCACHE_GAME', slug }` — evict a per-game cache.
-- `{ type: 'LIST_OFFLINE_GAMES' }` — get a `{games:[{slug,files,bytes}]}` reply.
 
 ### Offline manifest (`.offline-manifest.json`)
 
