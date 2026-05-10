@@ -1,18 +1,6 @@
 {
-  "generated_at": 1777899745,
-  "count": 1,
-  "conflicts": [
-    {
-      "slug": "balatro",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "fail",
-        "headless": null,
-        "smoke": null
-      },
-      "note": "override hides a failing signal — verify before keeping"
-    }
-  ],
+  "generated_at": 1778438624,
+  "count": 0,
+  "conflicts": [],
   "expired_overrides": []
 }

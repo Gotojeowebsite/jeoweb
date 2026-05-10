@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "slug": "papery-planes",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438555,
+  "files": [
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2.0/static/hand_fingers_isolated.svg",
+      "size": 3057,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/shadow_new_3.svg",
+      "size": 241,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_1.svg",
+      "size": 704,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_2.svg",
+      "size": 1068,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_3.svg",
+      "size": 1641,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_4.svg",
+      "size": 1749,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_5.svg",
+      "size": 1795,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_6.svg",
+      "size": 1172,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_7.svg",
+      "size": 848,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/purl.eligrey.com/github/classList.js/blob/master/classList.js",
+      "size": 394084,
+      "required": true
+    },
+    {
+      "path": "fonts/torus-bold-webfont.woff",
+      "size": 28720,
+      "required": true
+    },
+    {
+      "path": "fonts/torus-bold-webfont.woff2",
+      "size": 23064,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 965,
+      "required": true
+    },
+    {
+      "path": "master-loader.js",
+      "size": 1377,
+      "required": true
+    },
+    {
+      "path": "poki-sdk-core.js",
+      "size": 238888,
+      "required": true
+    },
+    {
+      "path": "poki-sdk.js",
+      "size": 5595,
+      "required": true
+    },
+    {
+      "path": "ppw.json",
+      "size": 505,
+      "required": false
+    },
+    {
+      "path": "screenshots/1-small.jpg",
+      "size": 4351,
+      "required": false
+    },
+    {
+      "path": "screenshots/1.jpg",
+      "size": 87321,
+      "required": false
+    },
+    {
+      "path": "splash.jpg",
+      "size": 4439,
+      "required": false
+    },
+    {
+      "path": "thumb.png",
+      "size": 6354,
+      "required": false
+    },
+    {
+      "path": "unity.js",
+      "size": 31281,
+      "required": true
+    },
+    {
+      "path": "unity/ppw.data.unityweb",
+      "size": 12545865,
+      "required": true
+    },
+    {
+      "path": "unity/ppw.wasm.code.unityweb",
+      "size": 20975416,
+      "required": true
+    },
+    {
+      "path": "unity/ppw.wasm.framework.unityweb",
+      "size": 533236,
+      "required": true
+    },
+    {
+      "path": "UnityLoader.2019.1.js",
+      "size": 159509,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "archiveprogram.github.com",
+    "avatars.githubusercontent.com",
+    "docs.github.com",
+    "game-cdn.poki.com",
+    "github-cloud.s3.amazonaws.com",
+    "github.blog",
+    "github.com",
+    "github.community",
+    "github.githubassets.com",
+    "maintainers.github.com",
+    "securitylab.github.com",
+    "skills.github.com",
+    "stars.github.com",
+    "support.github.com",
+    "user-images.githubusercontent.com",
+    "www.githubstatus.com"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "archiveprogram.github.com",
+    "avatars.githubusercontent.com",
+    "docs.github.com",
+    "game-cdn.poki.com",
+    "github-cloud.s3.amazonaws.com",
+    "github.blog",
+    "github.com",
+    "github.community",
+    "github.githubassets.com",
+    "maintainers.github.com",
+    "securitylab.github.com",
+    "skills.github.com",
+    "stars.github.com",
+    "support.github.com",
+    "user-images.githubusercontent.com",
+    "www.githubstatus.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

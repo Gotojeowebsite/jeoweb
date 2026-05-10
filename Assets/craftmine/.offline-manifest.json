@@ -1,0 +1,571 @@
+{
+  "schema": 1,
+  "slug": "craftmine",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438532,
+  "files": [
+    {
+      "path": "c2runtime.js",
+      "size": 858049,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 264298,
+      "required": true
+    },
+    {
+      "path": "ga_init.js",
+      "size": 324,
+      "required": true
+    },
+    {
+      "path": "images/animal-sheet0.png",
+      "size": 6907,
+      "required": false
+    },
+    {
+      "path": "images/animal-sheet1.png",
+      "size": 1302,
+      "required": false
+    },
+    {
+      "path": "images/bg_cover-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/bg_cover-sheet1.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/bg_cover-sheet2.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/bg-sheet0.png",
+      "size": 33693,
+      "required": false
+    },
+    {
+      "path": "images/bg-sheet1.png",
+      "size": 24867,
+      "required": false
+    },
+    {
+      "path": "images/block-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/breakanimation-sheet0.png",
+      "size": 465,
+      "required": false
+    },
+    {
+      "path": "images/breakanimation-sheet1.png",
+      "size": 1025,
+      "required": false
+    },
+    {
+      "path": "images/breakanimation-sheet2.png",
+      "size": 1073,
+      "required": false
+    },
+    {
+      "path": "images/btncloserecipes-sheet0.png",
+      "size": 385,
+      "required": false
+    },
+    {
+      "path": "images/btncraftingguide-sheet0.png",
+      "size": 2747,
+      "required": false
+    },
+    {
+      "path": "images/btnnewgame-sheet0.png",
+      "size": 25833,
+      "required": false
+    },
+    {
+      "path": "images/btnsound-sheet0.png",
+      "size": 1030,
+      "required": false
+    },
+    {
+      "path": "images/btnsound-sheet1.png",
+      "size": 544,
+      "required": false
+    },
+    {
+      "path": "images/bush-sheet0.png",
+      "size": 7148,
+      "required": false
+    },
+    {
+      "path": "images/camera-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/campfire_warmth-sheet0.png",
+      "size": 610,
+      "required": false
+    },
+    {
+      "path": "images/campfire-sheet0.png",
+      "size": 2773,
+      "required": false
+    },
+    {
+      "path": "images/campfire-sheet1.png",
+      "size": 1214,
+      "required": false
+    },
+    {
+      "path": "images/campfiremenu-sheet0.png",
+      "size": 2706,
+      "required": false
+    },
+    {
+      "path": "images/characterselector-sheet0.png",
+      "size": 535,
+      "required": false
+    },
+    {
+      "path": "images/chatbg-sheet0.png",
+      "size": 1080,
+      "required": false
+    },
+    {
+      "path": "images/chatinstruction-sheet0.png",
+      "size": 1291,
+      "required": false
+    },
+    {
+      "path": "images/craftable-sheet0.png",
+      "size": 28144,
+      "required": false
+    },
+    {
+      "path": "images/craftinganim-sheet0.png",
+      "size": 7476,
+      "required": false
+    },
+    {
+      "path": "images/craftinganim-sheet1.png",
+      "size": 8636,
+      "required": false
+    },
+    {
+      "path": "images/craftinganim-sheet2.png",
+      "size": 4658,
+      "required": false
+    },
+    {
+      "path": "images/craftingtable-sheet0.png",
+      "size": 630,
+      "required": false
+    },
+    {
+      "path": "images/craftmine.png",
+      "size": 154113,
+      "required": false
+    },
+    {
+      "path": "images/cursor-sheet0.png",
+      "size": 169,
+      "required": false
+    },
+    {
+      "path": "images/dustbin-sheet0.png",
+      "size": 2151,
+      "required": false
+    },
+    {
+      "path": "images/gameoverbg-sheet0.png",
+      "size": 18037,
+      "required": false
+    },
+    {
+      "path": "images/healthbar-sheet0.png",
+      "size": 69691,
+      "required": false
+    },
+    {
+      "path": "images/healthloosefx-sheet0.png",
+      "size": 1491,
+      "required": false
+    },
+    {
+      "path": "images/healthloosefx-sheet1.png",
+      "size": 677,
+      "required": false
+    },
+    {
+      "path": "images/helmet-sheet0.png",
+      "size": 577,
+      "required": false
+    },
+    {
+      "path": "images/helmet-sheet1.png",
+      "size": 577,
+      "required": false
+    },
+    {
+      "path": "images/helmet-sheet2.png",
+      "size": 2192,
+      "required": false
+    },
+    {
+      "path": "images/hungerbar-sheet0.png",
+      "size": 47668,
+      "required": false
+    },
+    {
+      "path": "images/instructions-sheet0.png",
+      "size": 91577,
+      "required": false
+    },
+    {
+      "path": "images/inventory-sheet0.png",
+      "size": 1445,
+      "required": false
+    },
+    {
+      "path": "images/inventoryitems-sheet0.png",
+      "size": 36030,
+      "required": false
+    },
+    {
+      "path": "images/inventoryitems-sheet1.png",
+      "size": 7696,
+      "required": false
+    },
+    {
+      "path": "images/ladder-sheet0.png",
+      "size": 1069,
+      "required": false
+    },
+    {
+      "path": "images/leaderboardsbg-sheet0.png",
+      "size": 917,
+      "required": false
+    },
+    {
+      "path": "images/loader.png",
+      "size": 219,
+      "required": false
+    },
+    {
+      "path": "images/loaderbg-sheet0.png",
+      "size": 42687,
+      "required": false
+    },
+    {
+      "path": "images/menubtnbg-sheet0.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "images/namebg-sheet0.png",
+      "size": 2893,
+      "required": false
+    },
+    {
+      "path": "images/nottherighttool-sheet0.png",
+      "size": 2041,
+      "required": false
+    },
+    {
+      "path": "images/oxygenbar-sheet0.png",
+      "size": 80818,
+      "required": false
+    },
+    {
+      "path": "images/pickaxe-sheet0.png",
+      "size": 2655,
+      "required": false
+    },
+    {
+      "path": "images/player_collider-sheet0.png",
+      "size": 461,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.png",
+      "size": 24136,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet1.png",
+      "size": 24129,
+      "required": false
+    },
+    {
+      "path": "images/range-sheet0.png",
+      "size": 469,
+      "required": false
+    },
+    {
+      "path": "images/recipesbg-sheet0.png",
+      "size": 31616,
+      "required": false
+    },
+    {
+      "path": "images/recipesbg-sheet1.png",
+      "size": 26349,
+      "required": false
+    },
+    {
+      "path": "images/recipesinfo-sheet0.png",
+      "size": 87271,
+      "required": false
+    },
+    {
+      "path": "images/recipesinfo-sheet1.png",
+      "size": 54329,
+      "required": false
+    },
+    {
+      "path": "images/recipespagesensor-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/select_hand-sheet0.png",
+      "size": 275,
+      "required": false
+    },
+    {
+      "path": "images/select_head-sheet0.png",
+      "size": 275,
+      "required": false
+    },
+    {
+      "path": "images/selector-sheet0.png",
+      "size": 235,
+      "required": false
+    },
+    {
+      "path": "images/spawmer-sheet0.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "images/spinner-sheet0.png",
+      "size": 2432,
+      "required": false
+    },
+    {
+      "path": "images/sprite-sheet0.png",
+      "size": 3772,
+      "required": false
+    },
+    {
+      "path": "images/sprite2-sheet0.png",
+      "size": 439,
+      "required": false
+    },
+    {
+      "path": "images/sprite3-sheet0.png",
+      "size": 1924,
+      "required": false
+    },
+    {
+      "path": "images/sprite4-sheet0.png",
+      "size": 17167,
+      "required": false
+    },
+    {
+      "path": "images/sprite4-sheet0.png.png",
+      "size": 17167,
+      "required": false
+    },
+    {
+      "path": "images/sword-sheet0.png",
+      "size": 11059,
+      "required": false
+    },
+    {
+      "path": "images/temperaturebar-sheet0.png",
+      "size": 51593,
+      "required": false
+    },
+    {
+      "path": "images/temperaturebar-sheet1.png",
+      "size": 12143,
+      "required": false
+    },
+    {
+      "path": "images/thirstbar-sheet0.png",
+      "size": 45614,
+      "required": false
+    },
+    {
+      "path": "images/thirstbar-sheet1.png",
+      "size": 4218,
+      "required": false
+    },
+    {
+      "path": "images/tilemap.png",
+      "size": 11903,
+      "required": false
+    },
+    {
+      "path": "images/tileregenerator_checker-sheet0.png",
+      "size": 130,
+      "required": false
+    },
+    {
+      "path": "images/tileregenerator-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "images/tilesbg.png",
+      "size": 511,
+      "required": false
+    },
+    {
+      "path": "images/title-sheet0.png",
+      "size": 10074,
+      "required": false
+    },
+    {
+      "path": "images/touch_btnjump-sheet0.png",
+      "size": 428,
+      "required": false
+    },
+    {
+      "path": "images/touch_btnleft-sheet0.png",
+      "size": 415,
+      "required": false
+    },
+    {
+      "path": "images/touch_btnright-sheet0.png",
+      "size": 410,
+      "required": false
+    },
+    {
+      "path": "images/trees-sheet0.png",
+      "size": 20397,
+      "required": false
+    },
+    {
+      "path": "images/txt_inventory.png",
+      "size": 3739,
+      "required": false
+    },
+    {
+      "path": "images/txt.png",
+      "size": 2765,
+      "required": false
+    },
+    {
+      "path": "images/txt2.png",
+      "size": 2810,
+      "required": false
+    },
+    {
+      "path": "images/underwatersensor-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/wall-sheet0.png",
+      "size": 2344,
+      "required": false
+    },
+    {
+      "path": "images/wall-sheet1.png",
+      "size": 619,
+      "required": false
+    },
+    {
+      "path": "images/water-sheet0.png",
+      "size": 252,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5525,
+      "required": true
+    },
+    {
+      "path": "jquery-3.4.1.min.js",
+      "size": 88144,
+      "required": true
+    },
+    {
+      "path": "media/bg.ogg",
+      "size": 500979,
+      "required": false
+    },
+    {
+      "path": "media/button.ogg",
+      "size": 5950,
+      "required": false
+    },
+    {
+      "path": "media/hit.ogg",
+      "size": 7584,
+      "required": false
+    },
+    {
+      "path": "media/run.ogg",
+      "size": 13855,
+      "required": false
+    },
+    {
+      "path": "media/swing.ogg",
+      "size": 6066,
+      "required": false
+    },
+    {
+      "path": "Photon-Javascript_SDK.min.js",
+      "size": 73257,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

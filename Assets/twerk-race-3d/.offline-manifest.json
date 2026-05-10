@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "slug": "twerk-race-3d",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438571,
+  "files": [
+    {
+      "path": "_external_mirror/mc.yandex.ru/metrika/tag.js",
+      "size": 261616,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/storage.yandexcloud.net/docs-external/styles/katex/0.16.9/katex.min.css",
+      "size": 23196,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yandex.ru/dev/games/doc/dg/sdk/sdk-player.html",
+      "size": 339428,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/assets/iframe/runtime.d133a7bc.html",
+      "size": 7224,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/c281d310ccf6fd13.svg",
+      "size": 15403,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/common.9f4f6214.css",
+      "size": 197400,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/common.9f4f6214.js",
+      "size": 359,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/common.9f4f6214.rtl.css",
+      "size": 197416,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/init.1b738913.js",
+      "size": 34215,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/page-constructor.9570abf0.js",
+      "size": 628,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/runtime.da29cdbc.js",
+      "size": 5475,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/uxfb.html",
+      "size": 902,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/vendor.a32f3a5a.css",
+      "size": 937766,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/vendor.a32f3a5a.js",
+      "size": 7652493,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/vendor.a32f3a5a.rtl.css",
+      "size": 937965,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/VY0YrggZZ7_R_Htpo_8j0/pages/_app.js",
+      "size": 118929,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/VY0YrggZZ7_R_Htpo_8j0/pages/_doc.js",
+      "size": 66783,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/VY0YrggZZ7_R_Htpo_8j0/pages/_error.js",
+      "size": 55825,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/VY0YrggZZ7_R_Htpo_8j0/pages/_search.js",
+      "size": 83606,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/cloud/docs-viewer-external/static/freeze/ru/VY0YrggZZ7_R_Htpo_8j0/pages/_subscription-info.js",
+      "size": 63721,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/distribution/stardust/neuroexpert-widget/production/neuroexpert-widget.js",
+      "size": 45642,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/en/files/games_console_black.svg",
+      "size": 22004,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/en/files/games_console_mobile.svg",
+      "size": 10043,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/en/files/games_console_white.svg",
+      "size": 22004,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/ru/files/console_ru_black.png",
+      "size": 11702,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/ru/files/console_ru_white.png",
+      "size": 11384,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/ru/files/games_console_black.svg",
+      "size": 20012,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/ru/files/games_console_mobile.svg",
+      "size": 10129,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/doc-binary/src/dev/games/ru/files/games_console_white.svg",
+      "size": 20012,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/games-static/favicons-console/logo.svg",
+      "size": 23930,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/games-static/static-data/images/bonuses/default-bonus-image.png",
+      "size": 468,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/yastatic.net/s3/games-static/static-data/images/payments/default-product-image.png",
+      "size": 468,
+      "required": false
+    },
+    {
+      "path": "background.jpg",
+      "size": 14829,
+      "required": false
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 24411,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 9630,
+      "required": false
+    },
+    {
+      "path": "logo.png",
+      "size": 137638,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1682,
+      "required": true
+    },
+    {
+      "path": "yandex-sdk.js",
+      "size": 150610,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "js-eu1.hsforms.net",
+    "mc.yandex.",
+    "unpkg.com",
+    "yandex.ru",
+    "yastatic.net"
+  ],
+  "external_critical": [
+    "js-eu1.hsforms.net",
+    "mc.yandex.",
+    "yandex.ru",
+    "yastatic.net"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

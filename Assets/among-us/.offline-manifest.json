@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "slug": "among-us",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438518,
+  "files": [
+    {
+      "path": "data.json",
+      "size": 413001,
+      "required": false
+    },
+    {
+      "path": "fonts/in your face, joffrey!.ttf",
+      "size": 49032,
+      "required": true
+    },
+    {
+      "path": "fonts/varela-regular.ttf",
+      "size": 182000,
+      "required": true
+    },
+    {
+      "path": "images/crewmate1-sheet0.png",
+      "size": 28091,
+      "required": false
+    },
+    {
+      "path": "images/crewmate3-sheet0.png",
+      "size": 5780,
+      "required": false
+    },
+    {
+      "path": "images/crewmate5-sheet0.png",
+      "size": 6018,
+      "required": false
+    },
+    {
+      "path": "images/hats-sheet0.png",
+      "size": 18865,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.png",
+      "size": 341892,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet1.png",
+      "size": 11163,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 1388295,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 233736,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 73662,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 493,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.png",
+      "size": 1048576,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.png",
+      "size": 1081922,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.png",
+      "size": 204921,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet3.png",
+      "size": 152722,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet4.png",
+      "size": 11428,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground-sheet0.png",
+      "size": 3721,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground2-sheet0.png",
+      "size": 592,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground3-sheet0.png",
+      "size": 3812,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground4-sheet0.png",
+      "size": 803,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "media/alarm_sabotage.webm",
+      "size": 16445,
+      "required": false
+    },
+    {
+      "path": "media/amb_hallways.webm",
+      "size": 118459,
+      "required": false
+    },
+    {
+      "path": "media/among us - ost - main theme song [hq] (128  kbps) (abdwap2.com).mp3",
+      "size": 5875390,
+      "required": false
+    },
+    {
+      "path": "media/eject_text.webm",
+      "size": 2294,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal01.webm",
+      "size": 5217,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal02.webm",
+      "size": 4907,
+      "required": false
+    },
+    {
+      "path": "media/impostor_kill.mp3",
+      "size": 12119,
+      "required": false
+    },
+    {
+      "path": "media/report_bobdyfound.webm",
+      "size": 48941,
+      "required": false
+    },
+    {
+      "path": "media/ui_hover.webm",
+      "size": 986,
+      "required": false
+    },
+    {
+      "path": "media/ui_select.webm",
+      "size": 5127,
+      "required": false
+    },
+    {
+      "path": "media/victory_crew.webm",
+      "size": 124644,
+      "required": false
+    },
+    {
+      "path": "media/victory_impostor.webm",
+      "size": 139840,
+      "required": false
+    },
+    {
+      "path": "pathfind.js",
+      "size": 4292,
+      "required": true
+    },
+    {
+      "path": "penumbra.png",
+      "size": 9505,
+      "required": false
+    },
+    {
+      "path": "red.png",
+      "size": 14621,
+      "required": false
+    },
+    {
+      "path": "redblackset.js",
+      "size": 9563,
+      "required": true
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1379053,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3249,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 2439,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 101900,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 565,
+      "required": true
+    },
+    {
+      "path": "scripts/project/scriptsInEvents.js",
+      "size": 111,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 271,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 1857,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 694,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

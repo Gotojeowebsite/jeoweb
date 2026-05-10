@@ -41,6 +41,40 @@ const LOG_PATH = path.join(ROOT, 'auto_fix_bot.jsonl');
 const SUMMARY_PATH = path.join(ROOT, 'auto_fix_bot_summary.json');
 const SCRAPER = path.join(__dirname, 'deep-asset-scraper.js');
 const CATALOG_PATH = path.join(ROOT, 'games_list.json');
+const LOCK_PATH = path.join(ROOT, '.auto_fix_and_recover.lock');
+
+// Shared lock file with auto_fix_and_recover_games.py — same JSON shape so
+// neither writer can clobber the other's state. Format: {pid,started_at,cwd}.
+function pidAlive(pid) {
+	if (!pid || pid <= 0) return false;
+	try { process.kill(pid, 0); return true; } catch (e) { return e.code === 'EPERM'; }
+}
+
+function acquireLock(force) {
+	if (fs.existsSync(LOCK_PATH) && !force) {
+		let payload = {};
+		try { payload = JSON.parse(fs.readFileSync(LOCK_PATH, 'utf-8')); } catch {}
+		const otherPid = Number(payload.pid) || 0;
+		if (otherPid && otherPid !== process.pid && pidAlive(otherPid)) {
+			throw new Error(`Another auto-fix run is active (pid=${otherPid}). Stop it or pass --force-lock.`);
+		}
+	}
+	fs.writeFileSync(LOCK_PATH, JSON.stringify({
+		pid: process.pid,
+		started_at: Math.floor(Date.now() / 1000),
+		cwd: ROOT,
+		owner: 'auto-fix-bot.js',
+	}, null, 2));
+}
+
+function releaseLock() {
+	if (!fs.existsSync(LOCK_PATH)) return;
+	let payload = {};
+	try { payload = JSON.parse(fs.readFileSync(LOCK_PATH, 'utf-8')); } catch {}
+	if (!payload.pid || Number(payload.pid) === process.pid) {
+		try { fs.unlinkSync(LOCK_PATH); } catch {}
+	}
+}
 
 const DEFAULT_HEADERS = {
 	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
@@ -95,6 +129,7 @@ function parseArgs(argv) {
 		else if (a === '--max-viable') args.maxViable = Number(argv[++i]) || args.maxViable;
 		else if (a === '--search-budget-ms') args.searchBudgetMs = Number(argv[++i]) || args.searchBudgetMs;
 		else if (a === '--game-budget-ms') args.gameBudgetMs = Number(argv[++i]) || args.gameBudgetMs;
+		else if (a === '--force-lock') args.forceLock = true;
 	}
 	return args;
 }
@@ -967,9 +1002,20 @@ async function copyDir(src, dst) {
 
 async function main() {
 	const args = parseArgs(process.argv);
+	try {
+		acquireLock(args.forceLock);
+	} catch (err) {
+		console.error(String(err && err.message || err));
+		process.exit(2);
+	}
+	process.on('exit', releaseLock);
+	process.on('SIGINT', () => { releaseLock(); process.exit(130); });
+	process.on('SIGTERM', () => { releaseLock(); process.exit(143); });
+
 	const sources = loadSources();
 	if (!sources.length) {
 		console.error('No usable patterns in recovery_sources.json.');
+		releaseLock();
 		process.exit(2);
 	}
 	args._aliases = loadAliases();
@@ -977,6 +1023,7 @@ async function main() {
 	console.log(`auto-fix-bot: ${broken.length} broken games to attempt (sources=${sources.length} aliases=${args._aliases.size} dry_run=${args.dryRun})`);
 	if (!broken.length) {
 		console.log('Nothing to do.');
+		releaseLock();
 		process.exit(0);
 	}
 	const results = [];
@@ -1015,6 +1062,7 @@ async function main() {
 	// Tear down keep-alive sockets so node exits promptly even if some search
 	// backend left a connection idle.
 	try { https.globalAgent.destroy(); http.globalAgent.destroy(); } catch {}
+	releaseLock();
 	process.exit(0);
 }
 

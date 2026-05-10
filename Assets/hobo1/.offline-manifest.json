@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "slug": "hobo1",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438548,
+  "files": [
+    {
+      "path": "0c471207f508b9d9524b.wasm",
+      "size": 14208896,
+      "required": true
+    },
+    {
+      "path": "37070fb7a4f0c501ddc9.wasm",
+      "size": 14447437,
+      "required": true
+    },
+    {
+      "path": "core.ruffle.e1d4a881cfb2a409dfc6.js",
+      "size": 64996,
+      "required": true
+    },
+    {
+      "path": "core.ruffle.e1d4a881cfb2a409dfc6.js.map",
+      "size": 238871,
+      "required": false
+    },
+    {
+      "path": "core.ruffle.e83b1d16dc2d61092e10.js",
+      "size": 62323,
+      "required": true
+    },
+    {
+      "path": "core.ruffle.e83b1d16dc2d61092e10.js.map",
+      "size": 222937,
+      "required": false
+    },
+    {
+      "path": "game.swf",
+      "size": 4967978,
+      "required": true
+    },
+    {
+      "path": "hobo.jpeg",
+      "size": 9818,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 970,
+      "required": true
+    },
+    {
+      "path": "package.json",
+      "size": 396,
+      "required": false
+    },
+    {
+      "path": "ruffle.js",
+      "size": 395062,
+      "required": true
+    },
+    {
+      "path": "ruffle.js.map",
+      "size": 760927,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "slug": "flappy-2048",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438541,
+  "files": [
+    {
+      "path": ".jshintrc",
+      "size": 335,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3106,
+      "required": true
+    },
+    {
+      "path": "js/animframe_polyfill.js",
+      "size": 872,
+      "required": true
+    },
+    {
+      "path": "js/application.js",
+      "size": 195,
+      "required": true
+    },
+    {
+      "path": "js/game_manager.js",
+      "size": 7719,
+      "required": true
+    },
+    {
+      "path": "js/grid.js",
+      "size": 1810,
+      "required": true
+    },
+    {
+      "path": "js/html_actuator.js",
+      "size": 5876,
+      "required": true
+    },
+    {
+      "path": "js/keyboard_input_manager.js",
+      "size": 1328,
+      "required": true
+    },
+    {
+      "path": "js/local_score_manager.js",
+      "size": 997,
+      "required": true
+    },
+    {
+      "path": "js/tile.js",
+      "size": 455,
+      "required": true
+    },
+    {
+      "path": "meta/apple-touch-icon.png",
+      "size": 5808,
+      "required": false
+    },
+    {
+      "path": "style/fonts/clear-sans.css",
+      "size": 1078,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.eot",
+      "size": 23821,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.svg",
+      "size": 79206,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.woff",
+      "size": 27120,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.eot",
+      "size": 25570,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.svg",
+      "size": 96271,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.woff",
+      "size": 28700,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.eot",
+      "size": 23490,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.svg",
+      "size": 82674,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.woff",
+      "size": 26764,
+      "required": false
+    },
+    {
+      "path": "style/main.css",
+      "size": 18547,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

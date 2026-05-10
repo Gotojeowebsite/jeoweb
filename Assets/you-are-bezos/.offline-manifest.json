@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "slug": "you-are-bezos",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438574,
+  "files": [
+    {
+      "path": "_external_mirror/static.itch.io/htmlgame.js",
+      "size": 635,
+      "required": true
+    },
+    {
+      "path": "img/banner.png",
+      "size": 52979,
+      "required": false
+    },
+    {
+      "path": "img/icon.png",
+      "size": 1528,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 994386,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1270,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

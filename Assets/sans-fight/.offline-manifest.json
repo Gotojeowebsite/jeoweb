@@ -1,0 +1,431 @@
+{
+  "schema": 1,
+  "slug": "sans-fight",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438559,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 586,
+      "required": true
+    },
+    {
+      "path": "c2runtime.js",
+      "size": 219941,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 206789,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "icon-128.png",
+      "size": 1634,
+      "required": false
+    },
+    {
+      "path": "icon-16.png",
+      "size": 711,
+      "required": false
+    },
+    {
+      "path": "icon-256.png",
+      "size": 3935,
+      "required": false
+    },
+    {
+      "path": "icon-32.png",
+      "size": 398,
+      "required": false
+    },
+    {
+      "path": "images/battlefont.png",
+      "size": 351,
+      "required": false
+    },
+    {
+      "path": "images/boneh.png",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "images/bonestabh.png",
+      "size": 131,
+      "required": false
+    },
+    {
+      "path": "images/bonestabv.png",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "images/bonestabwarn.png",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "images/bonev.png",
+      "size": 130,
+      "required": false
+    },
+    {
+      "path": "images/combatzone.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/combatzoneborder.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/combatzoneclipper.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/combatzoneunclipper.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/damagefont.png",
+      "size": 1594,
+      "required": false
+    },
+    {
+      "path": "images/defaultfont.png",
+      "size": 782,
+      "required": false
+    },
+    {
+      "path": "images/gasterblaster-sheet0.png",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "images/gasterblaster-sheet1.png",
+      "size": 457,
+      "required": false
+    },
+    {
+      "path": "images/heartshard-sheet0.png",
+      "size": 125,
+      "required": false
+    },
+    {
+      "path": "images/heartshard-sheet1.png",
+      "size": 123,
+      "required": false
+    },
+    {
+      "path": "images/heartshard-sheet2.png",
+      "size": 128,
+      "required": false
+    },
+    {
+      "path": "images/hp-sheet0.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "images/hpbackground.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/hpbar.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/kr-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/krbar.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/menubonebottom-sheet0.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "images/menuitem-sheet0.png",
+      "size": 530,
+      "required": false
+    },
+    {
+      "path": "images/platform1.png",
+      "size": 114,
+      "required": false
+    },
+    {
+      "path": "images/platform2.png",
+      "size": 114,
+      "required": false
+    },
+    {
+      "path": "images/playerheart-sheet0.png",
+      "size": 141,
+      "required": false
+    },
+    {
+      "path": "images/playerheart-sheet1.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "images/sansbody-sheet0.png",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "images/sansbody-sheet1.png",
+      "size": 446,
+      "required": false
+    },
+    {
+      "path": "images/sansfont.png",
+      "size": 1141,
+      "required": false
+    },
+    {
+      "path": "images/sanshead-sheet0.png",
+      "size": 537,
+      "required": false
+    },
+    {
+      "path": "images/sanslegs-sheet0.png",
+      "size": 343,
+      "required": false
+    },
+    {
+      "path": "images/sanssweat-sheet0.png",
+      "size": 189,
+      "required": false
+    },
+    {
+      "path": "images/sanstorso-sheet0.png",
+      "size": 521,
+      "required": false
+    },
+    {
+      "path": "images/speechbubble-sheet0.png",
+      "size": 612,
+      "required": false
+    },
+    {
+      "path": "images/strike-sheet0.png",
+      "size": 249,
+      "required": false
+    },
+    {
+      "path": "images/target-sheet0.png",
+      "size": 1871,
+      "required": false
+    },
+    {
+      "path": "images/targetchoice-sheet0.png",
+      "size": 388,
+      "required": false
+    },
+    {
+      "path": "images/uiact-sheet0.png",
+      "size": 339,
+      "required": false
+    },
+    {
+      "path": "images/uifight-sheet0.png",
+      "size": 394,
+      "required": false
+    },
+    {
+      "path": "images/uiitem-sheet0.png",
+      "size": 398,
+      "required": false
+    },
+    {
+      "path": "images/uimercy-sheet0.png",
+      "size": 463,
+      "required": false
+    },
+    {
+      "path": "images/vpad-sheet0.png",
+      "size": 1473,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5162,
+      "required": true
+    },
+    {
+      "path": "jquery-2.1.1.min.js",
+      "size": 84248,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "loading-logo.png",
+      "size": 398,
+      "required": false
+    },
+    {
+      "path": "logo.png",
+      "size": 1906,
+      "required": false
+    },
+    {
+      "path": "media/battletext.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/bonestab.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/ding.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/flash.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/gasterblast.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/gasterblast2.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/gasterblaster.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/heartshatter.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/heartsplit.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/menucursor.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/menuselect.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/playerdamaged.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/playerfight.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/playerheal.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/sansspeak.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/slam.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/warning.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sw.js",
+      "size": 294,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schema": 1,
+  "slug": "doge2048",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438536,
+  "files": [
+    {
+      "path": "doge1.jpeg",
+      "size": 5139,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 1286,
+      "required": false
+    },
+    {
+      "path": "img/144/background-lo-res.png",
+      "size": 160344,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-derp-114.gif",
+      "size": 12268,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-fat-114.gif",
+      "size": 24838,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-gradient-114.gif",
+      "size": 44896,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-hat-114.gif",
+      "size": 14289,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-peepers-114.gif",
+      "size": 37859,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-prizza-114.gif",
+      "size": 71163,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-rainbow-114.gif",
+      "size": 17051,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-shake-114.gif",
+      "size": 41464,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-shake-space-114.gif",
+      "size": 93451,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-sunglasses-114.gif",
+      "size": 9256,
+      "required": false
+    },
+    {
+      "path": "img/144/doge-wink-114.gif",
+      "size": 8277,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-derp-212.gif",
+      "size": 31368,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-fat-212.gif",
+      "size": 68729,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-gradient-212.gif",
+      "size": 118506,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-hat-212.gif",
+      "size": 36304,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-peepers-212.gif",
+      "size": 113897,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-prizza-212.gif",
+      "size": 224185,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-rainbow-212.gif",
+      "size": 38755,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-shake-212.gif",
+      "size": 106518,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-shake-space-212.gif",
+      "size": 272717,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-sunglasses-212.gif",
+      "size": 22308,
+      "required": false
+    },
+    {
+      "path": "img/212/doge-wink-212.gif",
+      "size": 19715,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3931,
+      "required": true
+    },
+    {
+      "path": "js/animframe_polyfill.js",
+      "size": 872,
+      "required": true
+    },
+    {
+      "path": "js/application.js",
+      "size": 1259,
+      "required": true
+    },
+    {
+      "path": "js/game_manager.js",
+      "size": 6750,
+      "required": true
+    },
+    {
+      "path": "js/grid.js",
+      "size": 1810,
+      "required": true
+    },
+    {
+      "path": "js/html_actuator.js",
+      "size": 5781,
+      "required": true
+    },
+    {
+      "path": "js/keyboard_input_manager.js",
+      "size": 3364,
+      "required": true
+    },
+    {
+      "path": "js/local_score_manager.js",
+      "size": 995,
+      "required": true
+    },
+    {
+      "path": "js/tile.js",
+      "size": 455,
+      "required": true
+    },
+    {
+      "path": "meta/apple-touch-icon.png",
+      "size": 27646,
+      "required": false
+    },
+    {
+      "path": "style/fonts/comic_sans.woff",
+      "size": 31620,
+      "required": false
+    },
+    {
+      "path": "style/fonts/comic-sans.css",
+      "size": 242,
+      "required": false
+    },
+    {
+      "path": "style/main.css",
+      "size": 27392,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "asherv.com",
+    "gabrielecirulli.com",
+    "itunes.apple.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "asherv.com",
+    "gabrielecirulli.com",
+    "itunes.apple.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

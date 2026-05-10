@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "slug": "getaway-shootout",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438545,
+  "files": [
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 158244,
+      "required": true
+    },
+    {
+      "path": "GetawayShootout.json",
+      "size": 519,
+      "required": false
+    },
+    {
+      "path": "img/images.jpg",
+      "size": 8272,
+      "required": false
+    },
+    {
+      "path": "img/index.jpg",
+      "size": 8396,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 771,
+      "required": true
+    },
+    {
+      "path": "unity/GetawayShootout.asm.code.unityweb",
+      "size": 4693200,
+      "required": true
+    },
+    {
+      "path": "unity/GetawayShootout.asm.framework.unityweb",
+      "size": 90564,
+      "required": true
+    },
+    {
+      "path": "unity/GetawayShootout.asm.memory.unityweb",
+      "size": 381177,
+      "required": true
+    },
+    {
+      "path": "unity/GetawayShootout.data.unityweb",
+      "size": 8370536,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

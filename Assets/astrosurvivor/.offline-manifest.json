@@ -1,0 +1,687 @@
+{
+  "schema": 1,
+  "slug": "astrosurvivor",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438520,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 727,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm",
+      "size": 246906,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm.js",
+      "size": 282532,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 403434,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 8373,
+      "required": false
+    },
+    {
+      "path": "fonts/Rounds Black.otf",
+      "size": 28508,
+      "required": false
+    },
+    {
+      "path": "icons/icon-256.png",
+      "size": 5416,
+      "required": false
+    },
+    {
+      "path": "icons/icon-512.png",
+      "size": 10523,
+      "required": false
+    },
+    {
+      "path": "images/drone-sheet0.webp",
+      "size": 2046,
+      "required": false
+    },
+    {
+      "path": "images/edgezone-sheet0.webp",
+      "size": 130,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet0.webp",
+      "size": 2258,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet1.webp",
+      "size": 1400,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet2.webp",
+      "size": 164,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet3.webp",
+      "size": 502,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet4.webp",
+      "size": 176,
+      "required": false
+    },
+    {
+      "path": "images/enemy_eye-sheet5.webp",
+      "size": 302,
+      "required": false
+    },
+    {
+      "path": "images/enemy-sheet0.webp",
+      "size": 1138,
+      "required": false
+    },
+    {
+      "path": "images/enemy-sheet1.webp",
+      "size": 1140,
+      "required": false
+    },
+    {
+      "path": "images/enemy-sheet2.webp",
+      "size": 1412,
+      "required": false
+    },
+    {
+      "path": "images/enemy-sheet3.webp",
+      "size": 1374,
+      "required": false
+    },
+    {
+      "path": "images/environment-sheet0.webp",
+      "size": 2322,
+      "required": false
+    },
+    {
+      "path": "images/environment-sheet1.webp",
+      "size": 918,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet0.webp",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet1.webp",
+      "size": 1760,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet2.webp",
+      "size": 1074,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet3.webp",
+      "size": 244,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet4.webp",
+      "size": 228,
+      "required": false
+    },
+    {
+      "path": "images/grid-sheet0.webp",
+      "size": 62,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.webp",
+      "size": 2412,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet1.webp",
+      "size": 340,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.webp",
+      "size": 1990,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.webp",
+      "size": 3240,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.webp",
+      "size": 410,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.webp",
+      "size": 9748,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet4.webp",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet5.webp",
+      "size": 90,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet6.webp",
+      "size": 38,
+      "required": false
+    },
+    {
+      "path": "images/ui_-sheet0.webp",
+      "size": 428,
+      "required": false
+    },
+    {
+      "path": "images/ui_-sheet1.webp",
+      "size": 4408,
+      "required": false
+    },
+    {
+      "path": "images/ui_-sheet2.webp",
+      "size": 292,
+      "required": false
+    },
+    {
+      "path": "images/ui_buttons-sheet0.webp",
+      "size": 9856,
+      "required": false
+    },
+    {
+      "path": "images/ui_upgrades-sheet0.webp",
+      "size": 6098,
+      "required": false
+    },
+    {
+      "path": "images/ui_upgrades-sheet1.webp",
+      "size": 6590,
+      "required": false
+    },
+    {
+      "path": "images/ui_upgrades-sheet2.webp",
+      "size": 666,
+      "required": false
+    },
+    {
+      "path": "images/ui_upgrades-sheet3.webp",
+      "size": 874,
+      "required": false
+    },
+    {
+      "path": "images/ui_upgrades-sheet4.webp",
+      "size": 232,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 32946,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2671,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 32946,
+      "required": false
+    },
+    {
+      "path": "media/118513__thefsoundman__punch-02.webm",
+      "size": 9397,
+      "required": false
+    },
+    {
+      "path": "media/146725__leszek_szary__laser.webm",
+      "size": 1775,
+      "required": false
+    },
+    {
+      "path": "media/146730__leszek_szary__shoot.webm",
+      "size": 7260,
+      "required": false
+    },
+    {
+      "path": "media/172206__leszek_szary__teleport (1).webm",
+      "size": 9339,
+      "required": false
+    },
+    {
+      "path": "media/172206__leszek_szary__teleport.webm",
+      "size": 9339,
+      "required": false
+    },
+    {
+      "path": "media/235264__godowan__bubble1_10db.webm",
+      "size": 6635,
+      "required": false
+    },
+    {
+      "path": "media/237716__hydranos__beeph.webm",
+      "size": 13415,
+      "required": false
+    },
+    {
+      "path": "media/333387__jayfrosting__applause-1.webm",
+      "size": 69777,
+      "required": false
+    },
+    {
+      "path": "media/395500__plasterbrain__ufo-flies-away.webm",
+      "size": 21535,
+      "required": false
+    },
+    {
+      "path": "media/420995__cogfirestudios__coin.webm",
+      "size": 22296,
+      "required": false
+    },
+    {
+      "path": "media/420996__cogfirestudios__coin-2.webm",
+      "size": 21207,
+      "required": false
+    },
+    {
+      "path": "media/421002__eponn__correct.webm",
+      "size": 12615,
+      "required": false
+    },
+    {
+      "path": "media/455251__matrixxx__retro-underwater-shot.webm",
+      "size": 12895,
+      "required": false
+    },
+    {
+      "path": "media/506545__matrixxx__pop-02.webm",
+      "size": 2060,
+      "required": false
+    },
+    {
+      "path": "media/506546__matrixxx__pop-01 (1).webm",
+      "size": 2390,
+      "required": false
+    },
+    {
+      "path": "media/506546__matrixxx__pop-01.webm",
+      "size": 2390,
+      "required": false
+    },
+    {
+      "path": "media/515801__matrixxx__retro-pirate-cannon-shot (1).webm",
+      "size": 11556,
+      "required": false
+    },
+    {
+      "path": "media/515801__matrixxx__retro-pirate-cannon-shot.webm",
+      "size": 11556,
+      "required": false
+    },
+    {
+      "path": "media/523205__matrixxx__retro-laser-gun-shot.webm",
+      "size": 6754,
+      "required": false
+    },
+    {
+      "path": "media/528865__eponn__beep-1.webm",
+      "size": 10422,
+      "required": false
+    },
+    {
+      "path": "media/560766__bricklover__breaking-glass-1.webm",
+      "size": 8645,
+      "required": false
+    },
+    {
+      "path": "media/560768__bricklover__breaking-glass-3.webm",
+      "size": 9401,
+      "required": false
+    },
+    {
+      "path": "media/564887__karisigurd4__explosion_hit.webm",
+      "size": 19761,
+      "required": false
+    },
+    {
+      "path": "media/568170__merrick079__sword-sound-1.webm",
+      "size": 13554,
+      "required": false
+    },
+    {
+      "path": "media/608431__plasterbrain__shiny-coin-pickup.webm",
+      "size": 22804,
+      "required": false
+    },
+    {
+      "path": "media/703886__matrixxx__item-02.webm",
+      "size": 11313,
+      "required": false
+    },
+    {
+      "path": "media/703887__matrixxx__retro-bubble-shot-02.webm",
+      "size": 5875,
+      "required": false
+    },
+    {
+      "path": "media/75328__oddworld__oddworld_explosionecho.webm",
+      "size": 16574,
+      "required": false
+    },
+    {
+      "path": "media/89603__joeliomartini__thwop_cut.webm",
+      "size": 6019,
+      "required": false
+    },
+    {
+      "path": "media/94778__taylorsyounggmailcom__punch_1-2_cut.webm",
+      "size": 5320,
+      "required": false
+    },
+    {
+      "path": "media/boom (1).webm",
+      "size": 20597,
+      "required": false
+    },
+    {
+      "path": "media/boom.webm",
+      "size": 20597,
+      "required": false
+    },
+    {
+      "path": "media/click3.webm",
+      "size": 2348,
+      "required": false
+    },
+    {
+      "path": "media/drop_001.webm",
+      "size": 2623,
+      "required": false
+    },
+    {
+      "path": "media/drop_002.webm",
+      "size": 3356,
+      "required": false
+    },
+    {
+      "path": "media/drop_003.webm",
+      "size": 3471,
+      "required": false
+    },
+    {
+      "path": "media/drop_004.webm",
+      "size": 4576,
+      "required": false
+    },
+    {
+      "path": "media/fart.webm",
+      "size": 7617,
+      "required": false
+    },
+    {
+      "path": "media/forceField_000.webm",
+      "size": 15224,
+      "required": false
+    },
+    {
+      "path": "media/gem.webm",
+      "size": 4782,
+      "required": false
+    },
+    {
+      "path": "media/heal.webm",
+      "size": 29412,
+      "required": false
+    },
+    {
+      "path": "media/heal2.webm",
+      "size": 21573,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_000.webm",
+      "size": 3077,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_001.webm",
+      "size": 2619,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_002.webm",
+      "size": 3080,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_003.webm",
+      "size": 2800,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_004.webm",
+      "size": 2866,
+      "required": false
+    },
+    {
+      "path": "media/impactGlass_light_000.webm",
+      "size": 4062,
+      "required": false
+    },
+    {
+      "path": "media/impactGlass_light_001.webm",
+      "size": 4144,
+      "required": false
+    },
+    {
+      "path": "media/impactGlass_light_002.webm",
+      "size": 4217,
+      "required": false
+    },
+    {
+      "path": "media/impactGlass_light_003.webm",
+      "size": 3980,
+      "required": false
+    },
+    {
+      "path": "media/impactGlass_light_004.webm",
+      "size": 3759,
+      "required": false
+    },
+    {
+      "path": "media/impactMetal_heavy_000.webm",
+      "size": 4210,
+      "required": false
+    },
+    {
+      "path": "media/impactMetal_heavy_001.webm",
+      "size": 6392,
+      "required": false
+    },
+    {
+      "path": "media/impactMetal_heavy_002.webm",
+      "size": 3125,
+      "required": false
+    },
+    {
+      "path": "media/impactMetal_heavy_003.webm",
+      "size": 4311,
+      "required": false
+    },
+    {
+      "path": "media/impactMetal_heavy_004.webm",
+      "size": 3408,
+      "required": false
+    },
+    {
+      "path": "media/impactMining_000.webm",
+      "size": 17140,
+      "required": false
+    },
+    {
+      "path": "media/impactMining_001.webm",
+      "size": 16245,
+      "required": false
+    },
+    {
+      "path": "media/impactMining_002.webm",
+      "size": 14531,
+      "required": false
+    },
+    {
+      "path": "media/impactMining_003.webm",
+      "size": 17448,
+      "required": false
+    },
+    {
+      "path": "media/impactMining_004.webm",
+      "size": 14832,
+      "required": false
+    },
+    {
+      "path": "media/laserSmall_000.webm",
+      "size": 3353,
+      "required": false
+    },
+    {
+      "path": "media/laserSmall_004.webm",
+      "size": 5448,
+      "required": false
+    },
+    {
+      "path": "media/player_death.webm",
+      "size": 44759,
+      "required": false
+    },
+    {
+      "path": "media/shield1.webm",
+      "size": 13801,
+      "required": false
+    },
+    {
+      "path": "media/thrusterFire_000.webm",
+      "size": 83829,
+      "required": false
+    },
+    {
+      "path": "media/thrusterFire_001.webm",
+      "size": 82947,
+      "required": false
+    },
+    {
+      "path": "media/thrusterFire_003.webm",
+      "size": 63799,
+      "required": false
+    },
+    {
+      "path": "noise.wasm",
+      "size": 38171,
+      "required": true
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1909881,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3932,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3020,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 159126,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "scripts/project/scriptsInEvents.js",
+      "size": 670,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 303,
+      "required": true
+    },
+    {
+      "path": "scripts/scriptsInEvents.js",
+      "size": 670,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2436,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 1756,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

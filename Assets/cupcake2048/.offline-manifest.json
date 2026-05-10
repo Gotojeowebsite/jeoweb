@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "slug": "cupcake2048",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438535,
+  "files": [
+    {
+      "path": "_external_mirror/platform.twitter.com/widgets.js",
+      "size": 93065,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 92854,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 92854,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4859,
+      "required": true
+    },
+    {
+      "path": "js/animframe_polyfill.js",
+      "size": 872,
+      "required": true
+    },
+    {
+      "path": "js/application.js",
+      "size": 197,
+      "required": true
+    },
+    {
+      "path": "js/bind_polyfill.js",
+      "size": 220,
+      "required": true
+    },
+    {
+      "path": "js/classlist_polyfill.js",
+      "size": 1794,
+      "required": true
+    },
+    {
+      "path": "js/game_manager.js",
+      "size": 10374,
+      "required": true
+    },
+    {
+      "path": "js/grid.js",
+      "size": 2526,
+      "required": true
+    },
+    {
+      "path": "js/html_actuator.js",
+      "size": 5814,
+      "required": true
+    },
+    {
+      "path": "js/keyboard_input_manager.js",
+      "size": 4160,
+      "required": true
+    },
+    {
+      "path": "js/l10n.js",
+      "size": 5977,
+      "required": true
+    },
+    {
+      "path": "js/local_storage_manager.js",
+      "size": 1923,
+      "required": true
+    },
+    {
+      "path": "js/localization.js",
+      "size": 5129,
+      "required": true
+    },
+    {
+      "path": "js/tile.js",
+      "size": 594,
+      "required": true
+    },
+    {
+      "path": "meta/apple-touch-icon.png",
+      "size": 1679,
+      "required": false
+    },
+    {
+      "path": "Rakefile",
+      "size": 300,
+      "required": false
+    },
+    {
+      "path": "style/fonts/clear-sans.css",
+      "size": 1078,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.eot",
+      "size": 23821,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.svg",
+      "size": 75849,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Bold-webfont.woff",
+      "size": 27120,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.eot",
+      "size": 25570,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.svg",
+      "size": 92775,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Light-webfont.woff",
+      "size": 28700,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.eot",
+      "size": 23490,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.svg",
+      "size": 79178,
+      "required": false
+    },
+    {
+      "path": "style/fonts/ClearSans-Regular-webfont.woff",
+      "size": 26764,
+      "required": false
+    },
+    {
+      "path": "style/helpers.scss",
+      "size": 1655,
+      "required": false
+    },
+    {
+      "path": "style/img/1024.jpg",
+      "size": 43242,
+      "required": false
+    },
+    {
+      "path": "style/img/128.jpg",
+      "size": 36138,
+      "required": false
+    },
+    {
+      "path": "style/img/16.jpg",
+      "size": 30251,
+      "required": false
+    },
+    {
+      "path": "style/img/2.jpg",
+      "size": 38590,
+      "required": false
+    },
+    {
+      "path": "style/img/2048.jpg",
+      "size": 40172,
+      "required": false
+    },
+    {
+      "path": "style/img/256.jpg",
+      "size": 30230,
+      "required": false
+    },
+    {
+      "path": "style/img/32.jpg",
+      "size": 31715,
+      "required": false
+    },
+    {
+      "path": "style/img/4.jpg",
+      "size": 36174,
+      "required": false
+    },
+    {
+      "path": "style/img/4096.jpg",
+      "size": 43938,
+      "required": false
+    },
+    {
+      "path": "style/img/512.jpg",
+      "size": 42057,
+      "required": false
+    },
+    {
+      "path": "style/img/64.jpg",
+      "size": 33461,
+      "required": false
+    },
+    {
+      "path": "style/img/8.jpg",
+      "size": 42541,
+      "required": false
+    },
+    {
+      "path": "style/img/8192.jpg",
+      "size": 37378,
+      "required": false
+    },
+    {
+      "path": "style/img/bg.jpg",
+      "size": 28475,
+      "required": false
+    },
+    {
+      "path": "style/main.css",
+      "size": 23390,
+      "required": true
+    },
+    {
+      "path": "style/main.css.map",
+      "size": 15804,
+      "required": false
+    },
+    {
+      "path": "style/main.scss",
+      "size": 13460,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "github.com",
+    "www.georgetowncupcake.com"
+  ],
+  "external_critical": [
+    "github.com",
+    "www.georgetowncupcake.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

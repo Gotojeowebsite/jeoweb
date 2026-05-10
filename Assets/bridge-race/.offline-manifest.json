@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "slug": "bridge-race",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438526,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/bubbls/youtube-playables_main/ytgame.js",
+      "size": 55132,
+      "required": true
+    },
+    {
+      "path": "Build/BridgeRace.data.unityweb",
+      "size": 7687877,
+      "required": true
+    },
+    {
+      "path": "Build/BridgeRace.framework.js.unityweb",
+      "size": 75458,
+      "required": true
+    },
+    {
+      "path": "Build/BridgeRace.loader.js",
+      "size": 106780,
+      "required": true
+    },
+    {
+      "path": "Build/BridgeRace.wasm.unityweb",
+      "size": 7225360,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 9190,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 22942,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1663,
+      "required": true
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "size": 3042,
+      "required": false
+    },
+    {
+      "path": "unarchiver.min.js",
+      "size": 4396,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

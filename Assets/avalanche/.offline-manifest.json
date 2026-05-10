@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "slug": "avalanche",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438520,
+  "files": [
+    {
+      "path": "avalanche.png",
+      "size": 10364,
+      "required": false
+    },
+    {
+      "path": "avalanche.swf",
+      "size": 527415,
+      "required": true
+    },
+    {
+      "path": "c5c02c4e65c1c4423a97.wasm",
+      "size": 6593880,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 921,
+      "required": true
+    },
+    {
+      "path": "ruffle.js",
+      "size": 83706,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

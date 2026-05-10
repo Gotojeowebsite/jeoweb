@@ -1,0 +1,1618 @@
+{
+  "schema": 1,
+  "slug": "vex4",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438572,
+  "files": [
+    {
+      "path": "_external_mirror/cdn1.kongregate.com/javascripts/kongregate_api.js",
+      "size": 69407,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ext.minijuegosgratis.com/external-host/main.js",
+      "size": 1563,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/lechuck.minijuegosgratis.com/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ssl.minijuegosgratis.com/lechuck/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "assets/atlas/atlas_gameplay.json",
+      "size": 12880,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_gameplay.png",
+      "size": 134302,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_portals.json",
+      "size": 6089,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_portals.png",
+      "size": 105990,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_transition.json",
+      "size": 752,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_transition.png",
+      "size": 49963,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_act_select.json",
+      "size": 3768,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_act_select.png",
+      "size": 42832,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_gameplay.json",
+      "size": 14496,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_gameplay.png",
+      "size": 153332,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_level_complete.json",
+      "size": 2581,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_level_complete.png",
+      "size": 46284,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_main_menu.json",
+      "size": 1569,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_main_menu.png",
+      "size": 74121,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_options.json",
+      "size": 1547,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_options.png",
+      "size": 20011,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_pause.json",
+      "size": 2572,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_pause.png",
+      "size": 48152,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_trophies.json",
+      "size": 18375,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/atlas_ui_trophies.png",
+      "size": 257027,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/checkpoint.json",
+      "size": 931,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/checkpoint.png",
+      "size": 2057,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/challenge.json",
+      "size": 15847,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/hubArrows.json",
+      "size": 504,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level01.json",
+      "size": 4389,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level01hard.json",
+      "size": 5246,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level02.json",
+      "size": 5543,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level02hard.json",
+      "size": 6797,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level03.json",
+      "size": 6268,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level03hard.json",
+      "size": 7815,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level04.json",
+      "size": 6497,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level04hard.json",
+      "size": 7019,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level05.json",
+      "size": 7101,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level05hard.json",
+      "size": 7950,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level06.json",
+      "size": 9146,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level06hard.json",
+      "size": 10400,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level07.json",
+      "size": 6696,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level07hard.json",
+      "size": 7668,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level08.json",
+      "size": 7143,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level08hard.json",
+      "size": 7829,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level09.json",
+      "size": 6194,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level09hard.json",
+      "size": 6691,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/level10.json",
+      "size": 13907,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/levelEdit.json",
+      "size": 3,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels/levelhub.json",
+      "size": 9421,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levelsConfig.json",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "assets/balance/localization.json",
+      "size": 5047,
+      "required": false
+    },
+    {
+      "path": "assets/balance/objectConfig.json",
+      "size": 176,
+      "required": false
+    },
+    {
+      "path": "assets/coco/transition.json",
+      "size": 3191,
+      "required": false
+    },
+    {
+      "path": "assets/coco/transition/transition_in.json",
+      "size": 3503,
+      "required": false
+    },
+    {
+      "path": "assets/coco/transition/transition_out.json",
+      "size": 3502,
+      "required": false
+    },
+    {
+      "path": "assets/coco/transition/transition_stand.json",
+      "size": 1565,
+      "required": false
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 1702,
+      "required": true
+    },
+    {
+      "path": "assets/css/milocha.css",
+      "size": 507,
+      "required": false
+    },
+    {
+      "path": "assets/filters/BlurX.js",
+      "size": 1810,
+      "required": true
+    },
+    {
+      "path": "assets/filters/BlurY.js",
+      "size": 1809,
+      "required": true
+    },
+    {
+      "path": "assets/filters/ColorMatrixFilter.js",
+      "size": 16205,
+      "required": true
+    },
+    {
+      "path": "assets/filters/Gray.js",
+      "size": 1244,
+      "required": true
+    },
+    {
+      "path": "assets/fonts/grobred32.fnt",
+      "size": 10796,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/grobred32.png",
+      "size": 13880,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/milocha/milocha.ttf",
+      "size": 40896,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/milocha/milocha.woff",
+      "size": 22248,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-1.png",
+      "size": 2063,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-10.png",
+      "size": 3982,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-2.png",
+      "size": 4124,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-3.png",
+      "size": 2047,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-4.png",
+      "size": 2657,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-5.png",
+      "size": 3159,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-6.png",
+      "size": 3278,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-7.png",
+      "size": 2022,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-8.png",
+      "size": 2056,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-9.png",
+      "size": 2352,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-challenge.png",
+      "size": 2063,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/arrow-animation.png",
+      "size": 42592,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/arrow-static.png",
+      "size": 957,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/basic-block-colors.png",
+      "size": 8082,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/block-basic.png",
+      "size": 876,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/blocked-wall.png",
+      "size": 450521,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/bounce-block.png",
+      "size": 1229,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/cable.png",
+      "size": 650,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/elevator_down.png",
+      "size": 693,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/elevator_up.png",
+      "size": 686,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/explosive-block.png",
+      "size": 3454,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/falling-block.png",
+      "size": 1048,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/glass-block.png",
+      "size": 1885,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/horizontal-block.png",
+      "size": 1136,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/ice-block.png",
+      "size": 1362,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block-down.png",
+      "size": 1862,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block-up.png",
+      "size": 1896,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block.png",
+      "size": 1335,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/left-slope.png",
+      "size": 5185,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/lock-block.png",
+      "size": 2160,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/push-block.png",
+      "size": 3137,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/slope-colors.png",
+      "size": 5176,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/solar-block.png",
+      "size": 7056,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/spark-block.png",
+      "size": 5574,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/speed-block.png",
+      "size": 939,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/swimming-pool.png",
+      "size": 1103,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/vertical-down-block.png",
+      "size": 1123,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/vertical-up-block.png",
+      "size": 1282,
+      "required": false
+    },
+    {
+      "path": "assets/images/breathe-block.png",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "assets/images/btnBothPressed.png",
+      "size": 16151,
+      "required": false
+    },
+    {
+      "path": "assets/images/btnLeftPressed.png",
+      "size": 11520,
+      "required": false
+    },
+    {
+      "path": "assets/images/btnNonePressed.png",
+      "size": 3939,
+      "required": false
+    },
+    {
+      "path": "assets/images/btnRightPressed.png",
+      "size": 9799,
+      "required": false
+    },
+    {
+      "path": "assets/images/circle-button.png",
+      "size": 4620,
+      "required": false
+    },
+    {
+      "path": "assets/images/cpromo-icon.png",
+      "size": 37934,
+      "required": false
+    },
+    {
+      "path": "assets/images/crouch-button.png",
+      "size": 3720,
+      "required": false
+    },
+    {
+      "path": "assets/images/crouchPressed.png",
+      "size": 18510,
+      "required": false
+    },
+    {
+      "path": "assets/images/dark-overlay.png",
+      "size": 830209,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/breathe-blaster.png",
+      "size": 2558,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/cannon-base.png",
+      "size": 10480,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/cannon-tube.png",
+      "size": 1915,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/checkpoint-swimming.png",
+      "size": 2015,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/checkpoint-text.png",
+      "size": 2154,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/finish-portal.png",
+      "size": 187521,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/hazard-strips.png",
+      "size": 1274,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/key.png",
+      "size": 822,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/light-switch.png",
+      "size": 352,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/pole-red-section.png",
+      "size": 2679,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/pole.png",
+      "size": 222,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/portal.png",
+      "size": 4792,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/star.png",
+      "size": 2323,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/timed-key.png",
+      "size": 809,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wind-blaster.png",
+      "size": 1496,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wind-fan.png",
+      "size": 1303,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wire.png",
+      "size": 183,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/zipline-pole.png",
+      "size": 288,
+      "required": false
+    },
+    {
+      "path": "assets/images/jump-button.png",
+      "size": 2954,
+      "required": false
+    },
+    {
+      "path": "assets/images/jumpPressed.png",
+      "size": 16750,
+      "required": false
+    },
+    {
+      "path": "assets/images/L_R-circle-button.png",
+      "size": 2503,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/buzzsaw-on-stick.png",
+      "size": 2705,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/buzzsaw.png",
+      "size": 11549,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/classic-laser.png",
+      "size": 3850,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/falling-spike.png",
+      "size": 385,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/laser-bullet.png",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/quadrant.png",
+      "size": 9076,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/reaper.png",
+      "size": 24728,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-dispenser.png",
+      "size": 18933,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-horizontal.png",
+      "size": 1471,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-spawner.png",
+      "size": 384,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spark.png",
+      "size": 1374,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike.png",
+      "size": 384,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike10x.png",
+      "size": 1197,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike30x.png",
+      "size": 1602,
+      "required": false
+    },
+    {
+      "path": "assets/images/parallaxBackground.png",
+      "size": 93264,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-arm.png",
+      "size": 162,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-body.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-head.png",
+      "size": 161,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-leg.png",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-crouch.json",
+      "size": 3369,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-crouch.png",
+      "size": 1602,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-fall-floor.json",
+      "size": 1498,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-fall-floor.png",
+      "size": 3260,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-fall.png",
+      "size": 5072,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-hang.png",
+      "size": 870,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-back-flip.png",
+      "size": 4977,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-down.json",
+      "size": 2309,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-down.png",
+      "size": 4660,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-front-flip.png",
+      "size": 4514,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump.json",
+      "size": 2071,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump.png",
+      "size": 3960,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-kick.png",
+      "size": 5927,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-pulley.png",
+      "size": 6892,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-push.png",
+      "size": 5121,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-run.json",
+      "size": 4118,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-run.png",
+      "size": 7605,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-scale.png",
+      "size": 1163,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-slide.png",
+      "size": 3780,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-spawn.png",
+      "size": 11285,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-stand.png",
+      "size": 364,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-stop-swim.json",
+      "size": 7512,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-stop-swim.png",
+      "size": 11663,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swim-bottom.png",
+      "size": 2762,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swim-top.json",
+      "size": 5395,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swim-top.png",
+      "size": 8716,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swing.png",
+      "size": 10002,
+      "required": false
+    },
+    {
+      "path": "assets/images/press-down.png",
+      "size": 1879,
+      "required": false
+    },
+    {
+      "path": "assets/images/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/act-down-arrow.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/enter-level-text.png",
+      "size": 3214,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/readme.md",
+      "size": 12,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-1.png",
+      "size": 3618,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-10.png",
+      "size": 4016,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-11.png",
+      "size": 4369,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-12.png",
+      "size": 5174,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-13-mobile.png",
+      "size": 3651,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-13.png",
+      "size": 4518,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-14.png",
+      "size": 4444,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-15.png",
+      "size": 710,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-16.png",
+      "size": 923,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-17.png",
+      "size": 859,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-18.png",
+      "size": 3885,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-19.png",
+      "size": 4646,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-2.png",
+      "size": 3464,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-20.png",
+      "size": 11867,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-21.png",
+      "size": 5748,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-22.png",
+      "size": 4771,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-23.png",
+      "size": 6010,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-24.png",
+      "size": 6515,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-25.png",
+      "size": 6017,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-26.png",
+      "size": 5317,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-27.png",
+      "size": 5340,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-28.png",
+      "size": 5512,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-29.png",
+      "size": 8989,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-30.png",
+      "size": 4558,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-31.png",
+      "size": 6095,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-32.png",
+      "size": 2899,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-33.png",
+      "size": 9153,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-34.png",
+      "size": 5487,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-35.png",
+      "size": 7035,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-36.png",
+      "size": 6216,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-37.png",
+      "size": 6227,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-38.png",
+      "size": 7146,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-39.png",
+      "size": 19424,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-4.png",
+      "size": 1301,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-40.png",
+      "size": 6319,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-41.png",
+      "size": 6629,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-42.png",
+      "size": 8041,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-43.png",
+      "size": 2846,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-44.png",
+      "size": 4022,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-45.png",
+      "size": 3121,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-5.png",
+      "size": 892,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-6.png",
+      "size": 4890,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-7.png",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-8.png",
+      "size": 3577,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/achievement-unlocked.ogg",
+      "size": 9641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/block-destroy.ogg",
+      "size": 19300,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/bounce1.ogg",
+      "size": 9331,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/button-click.ogg",
+      "size": 5323,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannon-enter.ogg",
+      "size": 20738,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannon-fire.ogg",
+      "size": 23930,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connect-hang.ogg",
+      "size": 9583,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connect.ogg",
+      "size": 7542,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/death2.ogg",
+      "size": 8935,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/ding.ogg",
+      "size": 9945,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/downgrade.ogg",
+      "size": 14933,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/electricity.ogg",
+      "size": 20666,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/fall.ogg",
+      "size": 11467,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/falling-block.ogg",
+      "size": 8382,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep.ogg",
+      "size": 6596,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/glass-smash.ogg",
+      "size": 13155,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/kick-block.ogg",
+      "size": 13236,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/land.ogg",
+      "size": 6437,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/laser-fire.ogg",
+      "size": 13844,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/menu-song.ogg",
+      "size": 647391,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/pole-swing.ogg",
+      "size": 8305,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/pole-woosh.ogg",
+      "size": 8542,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/slide.ogg",
+      "size": 22901,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/splash1.ogg",
+      "size": 19664,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/star-pickup.ogg",
+      "size": 15940,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-1.ogg",
+      "size": 333103,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-10.ogg",
+      "size": 482367,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-11.ogg",
+      "size": 458499,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-12.ogg",
+      "size": 561330,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-13.ogg",
+      "size": 460705,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-14.ogg",
+      "size": 465615,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-2.ogg",
+      "size": 479536,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-3.ogg",
+      "size": 386487,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-4.ogg",
+      "size": 447464,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-5.ogg",
+      "size": 442254,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-6.ogg",
+      "size": 358297,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-7.ogg",
+      "size": 422070,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-8.ogg",
+      "size": 452328,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-9.ogg",
+      "size": 434116,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wall-slide.ogg",
+      "size": 19337,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/zipline-full.ogg",
+      "size": 74868,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_act_select.json",
+      "size": 21533,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_gameplay.json",
+      "size": 22549,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_level_complete.json",
+      "size": 3260,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_main_menu.json",
+      "size": 4282,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_options.json",
+      "size": 5053,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_pause.json",
+      "size": 6337,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui_trophies.json",
+      "size": 26451,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/bubble-burst.png",
+      "size": 53306,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/fun-game-play-mahjong.png",
+      "size": 51385,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/heroes-of-myths.png",
+      "size": 66453,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/jelly-madness-2.png",
+      "size": 62286,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/jewel-burst.png",
+      "size": 54938,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/super-stack.png",
+      "size": 41781,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/twisted-city.png",
+      "size": 59213,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/branding_logo_kizi_small.png",
+      "size": 3783,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/close_btn.png",
+      "size": 443,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_button.png",
+      "size": 4787,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_logo.png",
+      "size": 32955,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_twist.png",
+      "size": 25600,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/contracted.json",
+      "size": 783,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/domains.json",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/games.json",
+      "size": 3111,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/internal.json",
+      "size": 1216,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/sitelock.json",
+      "size": 1133,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/special.json",
+      "size": 1102,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.atlas",
+      "size": 1836,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.json",
+      "size": 19261,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.png",
+      "size": 72000,
+      "required": false
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-ads@2.2/build/phaser-ads.min.js",
+      "size": 25403,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-cachebuster@2.0/build/phaser-cachebuster.min.js",
+      "size": 970,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-input@2.0/build/phaser-input.min.js",
+      "size": 16015,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-nineslice@2.0/build/phaser-nineslice.min.js",
+      "size": 3300,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-spine@3.0/build/phaser-spine.min.js",
+      "size": 55794,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-super-storage@1.0/build/phaser-super-storage.min.js",
+      "size": 10718,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/splash@3.5/build/splash.min.js",
+      "size": 145174,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1141,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 625,
+      "required": true
+    },
+    {
+      "path": "vex-4.jpg",
+      "size": 13609,
+      "required": false
+    },
+    {
+      "path": "vex-4.min.js",
+      "size": 1882147,
+      "required": true
+    },
+    {
+      "path": "vex4.png",
+      "size": 50495,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "htmi.api.gamedistribution.com"
+  ],
+  "external_critical": [
+    "htmi.api.gamedistribution.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

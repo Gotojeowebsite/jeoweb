@@ -1,0 +1,2480 @@
+{
+  "schema": 1,
+  "slug": "subway-surfers",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438566,
+  "files": [
+    {
+      "path": "_external_mirror/5lgx5w5cgs9pyyu8u.ay.delivery/client-v2.js",
+      "size": 112653,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/ads/banner_300x250.png",
+      "size": 67,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/ads/prebid.js",
+      "size": 30,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/ay/client-v2_324f82adc79c55fde98682ac9b2880ac51d67196.js",
+      "size": 113091,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/ay/s2s-client-v1_9a9065349dbe08b307debcb569a1f2d1106a77eb.js",
+      "size": 13101,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/cdn-cgi/image/f_auto_quality_78/brand-assets/bg-beyblade-left.png",
+      "size": 206990,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/cdn-cgi/image/f_auto_quality_78/brand-assets/bg-beyblade-right.png",
+      "size": 248910,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/cdn-cgi/image/f_auto_quality_78/images/bg-playtest-left.png",
+      "size": 73798,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/cdn-cgi/image/f_auto_quality_78/images/bg-playtest-right.png",
+      "size": 67297,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/flags/global.svg",
+      "size": 1498,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/android-chrome-192x192.png",
+      "size": 4501,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/android-chrome-512x512.png",
+      "size": 11955,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/fav-512.png",
+      "size": 7371,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/instagram.svg",
+      "size": 524,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/playground/ui-icons-announcement.svg",
+      "size": 491,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/playground/ui-icons-fire.svg",
+      "size": 1146,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/playground/ui-icons-replay.svg",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/tiktok.svg",
+      "size": 839,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/icons/youtube.svg",
+      "size": 436,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/bg-diamante-large-top.svg",
+      "size": 4369,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/bg-diamante-lowpo.svg",
+      "size": 7748,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/bg-diamante.svg",
+      "size": 6312,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/bg-floating-diamonds.svg",
+      "size": 10285,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/bg-footer-diamante.svg",
+      "size": 1873,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/mystery-tile-v2.svg",
+      "size": 3343,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/images/screenshot-frame.png",
+      "size": 8859,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/img/favicon.svg",
+      "size": 757,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/img/placeholder_gradient.png",
+      "size": 62638,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/playtest/playtest-icon.svg",
+      "size": 697,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/prebid/prebid_1770653039.js",
+      "size": 413738,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/sdk/error-icons-v2.svg",
+      "size": 1047,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/sdk/hourglass-icons-v2.svg",
+      "size": 2029,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/sdk/oops-icon.svg",
+      "size": 840,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/sdk/sparkle-10-frame-128x.png",
+      "size": 1278,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki-cdn.com/t2.js",
+      "size": 37798,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki.com/ads/vast-client-2.js",
+      "size": 51875,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/horror-back.svg",
+      "size": 8383,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/horror-front.svg",
+      "size": 6675,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/horror-mid01.svg",
+      "size": 10479,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/horror-mid02.svg",
+      "size": 286,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/horror-moon.svg",
+      "size": 3222,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/eastereggs/xmas-background-v4.svg",
+      "size": 21169,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/icons/fav-512.png",
+      "size": 7371,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/acdn.adnxs.com/video/outstream/ANOutstreamVideo.js",
+      "size": 852999,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ads.pubmatic.com/AdServer/js/user_sync.html",
+      "size": 21521,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.amazon-adsystem.com/aax2/apstag.js",
+      "size": 362479,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.aps.amazon-adsystem.com/tqsmartpixel.js",
+      "size": 3568,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.toolbox.aps.amazon-adsystem.com/toolbox.js",
+      "size": 359529,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/prebid/currency-file_1/latest.json",
+      "size": 1551,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/prebid.js_9.50.0/dist/debugging-standalone.js",
+      "size": 106699,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn3.richaudience.com/prebidVideo/player.js",
+      "size": 5676,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/client.aps.amazon-adsystem.com/publisher-custom_formats.js",
+      "size": 95086,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/client.aps.amazon-adsystem.com/video-player.js",
+      "size": 504719,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cmp.inmobi.com/choice/E_PXTAq4C0D1u/poki.com/choice.js",
+      "size": 7084,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cmp.inmobi.com/choice/ZjkDq8H1qkQmt/poki.com/choice.js",
+      "size": 5933,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cmp.inmobi.com/custom-translations/E_PXTAq4C0D1u/d65029fe-57b8-4462-8036-45c69c76747e/__language_.json",
+      "size": 3,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cmp.inmobi.com/custom-translations/ZjkDq8H1qkQmt/a1d6587a-a257-452f-a9df-afe33092ebb0/__language_.json",
+      "size": 3,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/console.ay.delivery/debug-console.js",
+      "size": 1153651,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "size": 4500,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/hb.360yield.com/prebid-universal-creative/load-cookie.html",
+      "size": 2803,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/car.js",
+      "size": 12495,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474210,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/js-sec.indexww.com/um/ixmatch.html",
+      "size": 2920,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/prebid-outstream.yieldmo.com/bundle.js",
+      "size": 232007,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/prebid.media.net/video/bundle.js",
+      "size": 316273,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/s0.2mdn.net/instream/video/client.js",
+      "size": 44701,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/sb.scorecardresearch.com/cs/20061681/beacon.js",
+      "size": 21373,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/sc-static.net/scevent.min.js",
+      "size": 58518,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/video-outstream.rubiconproject.com/apex-2.2.1.js",
+      "size": 28216,
+      "required": true
+    },
+    {
+      "path": "5dd312fa-015f-11ea-ad56-9cb6d0d995f7",
+      "size": 24355,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/guard-catch.ogg",
+      "size": 14024,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/guard-proximity.ogg",
+      "size": 41280,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/guard-start.ogg",
+      "size": 17485,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-death-hitcam.ogg",
+      "size": 5503,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-death.ogg",
+      "size": 7214,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-dodge.ogg",
+      "size": 4417,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-foot-l.ogg",
+      "size": 3645,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-foot-r.ogg",
+      "size": 3652,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-hoverboard-crash.ogg",
+      "size": 7523,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-jump.ogg",
+      "size": 5621,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-revive.ogg",
+      "size": 16186,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-roll.ogg",
+      "size": 4913,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/hero-stumble.ogg",
+      "size": 5208,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-basic/unlock.ogg",
+      "size": 31859,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-idle/gui-coin.ogg",
+      "size": 5586,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-idle/gui-tap.ogg",
+      "size": 3929,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-idle/mission-notification.ogg",
+      "size": 13703,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-idle/open-prize.ogg",
+      "size": 31085,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/audio-idle/ui-button.ogg",
+      "size": 4926,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-bigkahuna-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-bigkahuna.gb",
+      "size": 6376,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-bouncer-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-bouncer.gb",
+      "size": 6128,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-daredevil-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-daredevil.gb",
+      "size": 12896,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-greatwhite-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-greatwhite.gb",
+      "size": 19424,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-hotrod-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-hotrod.gb",
+      "size": 18604,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-hoverboard-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-hoverboard.gb",
+      "size": 6344,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-lowrider-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-lowrider.gb",
+      "size": 8316,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-lumberjack-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-lumberjack.gb",
+      "size": 21476,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-monster-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-monster.gb",
+      "size": 18400,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-scoot-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-scoot.gb",
+      "size": 7976,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-skullfire-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-skullfire.gb",
+      "size": 25420,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-starboard-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-starboard.gb",
+      "size": 14936,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-sunset-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-sunset.gb",
+      "size": 27248,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-superhero-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-superhero.gb",
+      "size": 15752,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-teleporter-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-teleporter.gb",
+      "size": 5076,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-windglider-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/boards/board-windglider.gb",
+      "size": 9720,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/characters-basic/jake-game.gb",
+      "size": 2826444,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/characters-idle/jake-idle.gb",
+      "size": 263496,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/characters-idle/jake-tex-1.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/characters-idle/jake-tex-2.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/characters-idle/jake-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/awards.json",
+      "size": 1890,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/chunks-basic.json",
+      "size": 35004,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/chunks-full.json",
+      "size": 1289575,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/chunks-idle.json",
+      "size": 1303,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/lang-en.json",
+      "size": 10392,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/data/lang-pt-br.json",
+      "size": 10895,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/font/lilita-one.woff2",
+      "size": 20104,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/font/stencilia.woff2",
+      "size": 22040,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/font/titan-one.woff2",
+      "size": 18360,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/character_shadow.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/default-particle.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/effects-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/enemies.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/fountain.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/halo.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/jetpack-smoke.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/model-dog-catch.gb",
+      "size": 125944,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/model-dog-movement.gb",
+      "size": 82316,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/model-guard-catch.gb",
+      "size": 164340,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/model-guard-movement.gb",
+      "size": 156724,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/reflection.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/shadow.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/smoke.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/spark.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-basic/spray-splash.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-full/mineCart1.gb",
+      "size": 8528,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-full/mineCart2.gb",
+      "size": 8452,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-full/props-extra.gb",
+      "size": 77672,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-full/props.gb",
+      "size": 621068,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-idle/mystery-box.gb",
+      "size": 6516,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-idle/props-start.gb",
+      "size": 38280,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-idle/props-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/game-idle/trains-tex.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/preload/splash.png",
+      "size": 30684,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/preload/splash.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/ui/ui.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/assets/ui/ui.webp.json",
+      "size": 27945,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/audio-basic/theme.ogg",
+      "size": 591111,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-basic/environment-basic.gb",
+      "size": 203640,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-basic/trains-basic.gb",
+      "size": 11624,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-full/trains-full.gb",
+      "size": 102160,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-idle/environment-idle.gb",
+      "size": 71304,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-idle/environment-tex@2x.webp",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-idle/train-start.png",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/game-idle/trains-idle.gb",
+      "size": 59116,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/bundles/rome/manifest.json",
+      "size": 3361,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/index.html",
+      "size": 3304,
+      "required": false
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/js/boot.js",
+      "size": 3041,
+      "required": true
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/js/dependencies.bundle.js",
+      "size": 1695954,
+      "required": true
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/js/index.js",
+      "size": 1162516,
+      "required": true
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/js/loading.js",
+      "size": 2748,
+      "required": true
+    },
+    {
+      "path": "93f0a8aa-9a9c-4448-b720-5bd4c4de3798/js/workers/worker.616dde51248bd0b4ac82.js",
+      "size": 119163,
+      "required": true
+    },
+    {
+      "path": "assets/client~273~18565a523857c63c0c3b.js",
+      "size": 1808,
+      "required": true
+    },
+    {
+      "path": "assets/client~273~762b3f0d9cf9bc61544f.js",
+      "size": 1808,
+      "required": true
+    },
+    {
+      "path": "assets/client~3107~3abb1defe8420b1b10ed.js",
+      "size": 18279,
+      "required": true
+    },
+    {
+      "path": "assets/client~3107~b0990985c3495033a30c.js",
+      "size": 18279,
+      "required": true
+    },
+    {
+      "path": "assets/client~4368~c0ac2359a8bcaf75da81.js",
+      "size": 2364,
+      "required": true
+    },
+    {
+      "path": "assets/client~4368~f713d6cadd9ea266d3fe.js",
+      "size": 2364,
+      "required": true
+    },
+    {
+      "path": "assets/client~5677~2e04fe41fe1ba18f49cd.js",
+      "size": 4415,
+      "required": true
+    },
+    {
+      "path": "assets/client~5677~5c2422de304f8ec8fb25.js",
+      "size": 4415,
+      "required": true
+    },
+    {
+      "path": "assets/client~5835~3c1d8a21fe9013ec39c0.js",
+      "size": 14148,
+      "required": true
+    },
+    {
+      "path": "assets/client~5835~b561496002b5d703f04a.js",
+      "size": 14148,
+      "required": true
+    },
+    {
+      "path": "assets/client~7016~17bc5c12c4490f3f8fa9.css",
+      "size": 1335,
+      "required": false
+    },
+    {
+      "path": "assets/client~7016~7a74e63eb8a8ceba565a.js",
+      "size": 7512,
+      "required": true
+    },
+    {
+      "path": "assets/client~7016~7c421d4f231a3aef523b.js",
+      "size": 7512,
+      "required": true
+    },
+    {
+      "path": "assets/client~7700~04e50607e588c7a5f74f.js",
+      "size": 4892,
+      "required": true
+    },
+    {
+      "path": "assets/client~7700~cb7938e9e1256f798b08.js",
+      "size": 4892,
+      "required": true
+    },
+    {
+      "path": "assets/client~9220~2ebddcd2d4ba85af40c0.js",
+      "size": 11328,
+      "required": true
+    },
+    {
+      "path": "assets/client~9220~debecf37aba54db89185.js",
+      "size": 11303,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Breadcrumbs~6df62110c9c918c47b3d.css",
+      "size": 721,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Breadcrumbs~b0a2322935c139e29500.js",
+      "size": 1487,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Breadcrumbs~ec9dfa7d834ba3202e3f.js",
+      "size": 1487,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-CategoryTile~139fc0e53c36a2444207.css",
+      "size": 1280,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-CategoryTile~d2673fd9afe64a85667c.js",
+      "size": 2065,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-CategoryTile~e917df87395552ea5520.js",
+      "size": 2065,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Description~7fe5135f4a42189bfe44.js",
+      "size": 6198,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Description~b1371351ee87b7966105.js",
+      "size": 6198,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Description~cd86c41916ae7cd24a14.css",
+      "size": 2967,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Flag~0fb23801faf7d07129cc.js",
+      "size": 2692,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Flag~b621a4a0de9d966ff00a.js",
+      "size": 2692,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Flag~dfabc0664443138c48fe.css",
+      "size": 145,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Footer~05e70defafd0814be4c1.js",
+      "size": 12383,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Footer~581fe0b4ba7415fd7040.css",
+      "size": 8251,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Footer~98c5c671034a957251ee.js",
+      "size": 12383,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-FullscreenButton~b68f7ba66af957751d69.js",
+      "size": 1668,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-FullscreenButton~e323cc0e6d13ed46bad4.js",
+      "size": 1668,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-GameBarButton~06707f73c1d84bdc1bbb.js",
+      "size": 3080,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-GameBarButton~61ae564128606826bdda.css",
+      "size": 3632,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-GameBarButton~c8e591026032419c2289.js",
+      "size": 3080,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-GameContentTile~6e2b626219e911448fd4.css",
+      "size": 569,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-GameContentTile~d20ffd1ca46613504228.js",
+      "size": 1776,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-GameContentTile~fa3d0d265b186e911525.js",
+      "size": 1776,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-GamePlayer~d3d218b70755ee8f0bad.css",
+      "size": 4626,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Logo~05ce603cd6886aebd800.js",
+      "size": 1595,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Logo~b02be8f14f0892129810.css",
+      "size": 260,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Logo~c5a83155a11c981b382d.js",
+      "size": 1595,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-modals-ModalStack-tsx~52a980a92293349f18ba.js",
+      "size": 50696,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-modals-ModalStack-tsx~fc5d09a1bf413b14165d.js",
+      "size": 50696,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavButtonProfile~375754f4a5800e1a916c.css",
+      "size": 1086,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-NavButtonProfile~71dde392667a3befb591.js",
+      "size": 3736,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavButtonProfile~f26d6343ff7e088c1c1a.js",
+      "size": 3736,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavButtons~4081e01e7e6cf9e55bbc.css",
+      "size": 2050,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-NavButtons~6d5cdf55ff8c69b8001b.js",
+      "size": 2119,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavButtons~829e6a49c31323e88e5e.js",
+      "size": 2119,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavigationAwareLazyHydrate~6fcb144491f7dc17b830.js",
+      "size": 1083,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-NavigationAwareLazyHydrate~e5da323d9e09e23a9f83.js",
+      "size": 1083,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-PageBackground~4c9877ad605fdbb0d965.js",
+      "size": 4027,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-PageBackground~61323aa3d325e14e0cd7.css",
+      "size": 2392,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-PageBackground~747294f8b40cb84bf204.js",
+      "size": 4027,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-PageGame~9d26135b5adb36ceca24.js",
+      "size": 18091,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-PageGame~e78eb4c1eefecd6a5746.js",
+      "size": 18091,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-PageGame~edb87386bc296c7c2f8a.css",
+      "size": 2177,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Pill~4d45b3f15b081ee2e114.js",
+      "size": 2755,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Pill~65017a4f217071728154.css",
+      "size": 12623,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Pill~98a4f3fae4fe1bdbdc60.js",
+      "size": 2755,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-ReportBugButton~458a9a3fe1648e996c2c.js",
+      "size": 1435,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-ReportBugButton~909eaff9bfb23f619be1.js",
+      "size": 1435,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-RoundedButton~4c10a9ba372fba4ba6e2.js",
+      "size": 1266,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-RoundedButton~6dcf81d33a0271520556.js",
+      "size": 1266,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-RoundedButton~c302ec04487a13e2a185.css",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-SiteSelector~29d690faf8b4ae3ded45.css",
+      "size": 3397,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-SiteSelector~605d7cfc68c6f2781e9c.js",
+      "size": 6341,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-SiteSelector~e05fb32c53e26ba29b45.js",
+      "size": 6341,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-SocialLinks~8edd6998ed4c37097dd8.js",
+      "size": 1414,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-SocialLinks~a1b47fd534449e069863.js",
+      "size": 1414,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-SocialLinks~ad8c08ed020b8c30348b.css",
+      "size": 950,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Tags~49a8aefee7bac227c9ee.css",
+      "size": 479,
+      "required": false
+    },
+    {
+      "path": "assets/client~app-components-Tags~5632e9e46ec92346c814.js",
+      "size": 1225,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Tags~a2180bcba415fbb8cf56.js",
+      "size": 1225,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-TooltipConsumer~69b4b40aece9425241c1.js",
+      "size": 1754,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-TooltipConsumer~e1b5fb465d1994b801e9.js",
+      "size": 1754,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Voting~2b5972a28240542039c4.js",
+      "size": 2369,
+      "required": true
+    },
+    {
+      "path": "assets/client~app-components-Voting~454103b95a2684df577d.js",
+      "size": 2369,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-046e8326~4aa61194b1e3d380ec8e.js",
+      "size": 15408,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-046e8326~d8305f744b6a8fd846de.js",
+      "size": 15408,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-096186f5~1d52d26dcc597c05713e.js",
+      "size": 11670,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-096186f5~4ded3857dae8398fff95.js",
+      "size": 11670,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-423f78fa~d002b8d7edd712957036.js",
+      "size": 11858,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-423f78fa~f8ac9b439337aec0a510.js",
+      "size": 11858,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-5958331f~4340e8b64cc9d942c8ac.js",
+      "size": 12008,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-5958331f~4e9d02a2fcbd51832bf2.js",
+      "size": 12008,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-5a4af39f~5bc532fc72d02dd76270.js",
+      "size": 11633,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-5a4af39f~8fbad19046a394008371.js",
+      "size": 11633,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-668fa7ff~a8889bddfeb2d90846cb.js",
+      "size": 12533,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-668fa7ff~f03c47dbf33aad9f0dbf.js",
+      "size": 12533,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-69036df1~5e9407c0c2817b61595e.js",
+      "size": 24089,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-69036df1~827bea3b654a1932fde0.js",
+      "size": 24089,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-85c77674~0580cc33dd5f0d00ac13.js",
+      "size": 71108,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-85c77674~c2bee9cf10aa54ae9054.js",
+      "size": 71108,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-a4fc0d9e~314a34b43c217d5251d1.js",
+      "size": 12075,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-a4fc0d9e~ca0c45beb1b1efd30ab8.js",
+      "size": 12075,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-d6657317~4b2e1ebe873b7f0abfcc.js",
+      "size": 16039,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-d6657317~7bbb0b3d7082ed219a53.js",
+      "size": 16039,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-e96e9bea~4f2a367b2b77e894cfff.css",
+      "size": 62446,
+      "required": false
+    },
+    {
+      "path": "assets/client~main-e96e9bea~9fa17cafd22653227615.js",
+      "size": 26019,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-e96e9bea~bbaead46b78031020ff1.js",
+      "size": 26019,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-e9d155aa~3f73acb19df9ee89f4d8.js",
+      "size": 7636,
+      "required": true
+    },
+    {
+      "path": "assets/client~main-e9d155aa~5f36faabed77fccdb14c.js",
+      "size": 7636,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendor-ory-0eae3874~cc465629f79125b630d5.js",
+      "size": 7844,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendor-ory-0eae3874~e5834dc9c31f75d22cb7.js",
+      "size": 7844,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendor-ory-6caadb54~7c13bef8e622de6fd710.js",
+      "size": 31070,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendor-ory-6caadb54~fa3d14c8d584a03ede9b.js",
+      "size": 31070,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-038a2d78~23e9a7dada9b52d19b48.js",
+      "size": 5356,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-038a2d78~41b0a8f311dc6ac4388b.js",
+      "size": 5356,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-05532fc0~0ef5f0eba1355685539a.js",
+      "size": 34386,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-05532fc0~ec3bbd742ca93339c628.js",
+      "size": 34386,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-0b1fb840~aa3a6a4cb758224f9e75.js",
+      "size": 7262,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-0b1fb840~f5593cab8a8fc2852993.js",
+      "size": 7262,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-13a414ac~01bf83834339e6cc2dbb.js",
+      "size": 11556,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-13a414ac~ec674bedad0838e02021.js",
+      "size": 11556,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-148698f8~3107fa0ff235a934cbca.js",
+      "size": 8759,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-148698f8~dad7f4842a2e22ef3e6a.js",
+      "size": 8759,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-221ea48c~15a93454fa33bc23a4d8.js",
+      "size": 5079,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-221ea48c~1ebb40395af7bc9b88ea.js",
+      "size": 5079,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-229eafb5~4d8d695650e38a16fc60.js",
+      "size": 13117,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-229eafb5~980729e0a5eded6bf775.js",
+      "size": 13117,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-29543f88~211cb3a5a6852adb4cfd.js",
+      "size": 14852,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-29543f88~7395d6b2f169b68a0221.js",
+      "size": 14852,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-2a46b080~0aa864fe66b0dc316923.js",
+      "size": 3266,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-2a46b080~52b8385fcc4bf50a29ef.js",
+      "size": 3266,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-32ced529~3e38ae858fcce23cdd58.js",
+      "size": 8053,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-32ced529~eba6ef7f89fe18576051.js",
+      "size": 8053,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-343e46a0~31bf0a4be6aef94829e1.js",
+      "size": 7536,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-343e46a0~8d02b53970489912fd5a.js",
+      "size": 7536,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-375fd71e~76c364c03d25fed5f1ab.js",
+      "size": 12747,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-375fd71e~d03752f0a0514de60385.js",
+      "size": 12747,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-4093f53f~1c81c6a771856bbc1a4c.js",
+      "size": 14839,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-4093f53f~3f14a677410e6fb1fb91.js",
+      "size": 14839,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-46a1a5fe~33542275fb67f3d863af.js",
+      "size": 5931,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-46a1a5fe~7189278ff765b38418da.js",
+      "size": 5931,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-5178c671~3074ff3ce13f5b6cd191.js",
+      "size": 9278,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-5178c671~3630bb0b838831e4fb0f.js",
+      "size": 9278,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-59e705dd~51ebb31809409bdcae62.js",
+      "size": 14360,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-59e705dd~ab0d2cf0766a9134b89a.js",
+      "size": 14360,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-5b69c406~2425f4fb954d2fcd1807.js",
+      "size": 14314,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-5b69c406~36499c61a4dd965344b5.js",
+      "size": 14314,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-669c86db~7c7b78bd13cc66b97ab2.js",
+      "size": 16344,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-669c86db~f26b13e30808f4bb3f4d.js",
+      "size": 16344,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-761c4b13~2786ab0e4ddd750729bb.js",
+      "size": 3569,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-761c4b13~4f1b4a4cf9db7b0a5e10.js",
+      "size": 3569,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-7fc2cac8~744dda4c61d11c183031.js",
+      "size": 13051,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-7fc2cac8~83b5214c8858a7e3ae41.js",
+      "size": 13051,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-930bdb04~884692205f7410a22a29.js",
+      "size": 4051,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-930bdb04~f7496bc7098da13ad772.js",
+      "size": 4051,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-9686a255~249a44c1b057a78dcd02.js",
+      "size": 8001,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-9686a255~f92d53bce4d38fbe6ebc.js",
+      "size": 8001,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-9cf24ff9~2cd3e45c01f49a1cbcc9.js",
+      "size": 5139,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-9cf24ff9~58b6a944bcdb9105912b.js",
+      "size": 5139,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-a515f33f~55b34537988d2e190646.js",
+      "size": 9861,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-a515f33f~5ca14fabbf1a5583356e.js",
+      "size": 9861,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-ab7d6713~6d99fe84f6578506c226.js",
+      "size": 8975,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-ab7d6713~9ccef85acb88584f49ee.js",
+      "size": 8975,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-b48beae3~9476ad4669e74a7158f1.js",
+      "size": 35836,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-b48beae3~bd853c423fab34ed4646.js",
+      "size": 35836,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-b9100f55~e2c99abf40674a104372.js",
+      "size": 5700,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-b9100f55~fc87cb576a3cdb4f9839.js",
+      "size": 5700,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-baaf2ba8~138d9e018c2c7b7842ec.js",
+      "size": 8437,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-baaf2ba8~ddcec88e75995cf9a87b.js",
+      "size": 8437,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-bc0ce29f~105d7cef61967de3ebd0.js",
+      "size": 7994,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-bc0ce29f~d72ef27fe9edd04d0556.js",
+      "size": 7994,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c092ac97~1a84184d9e5fb14f3cd0.js",
+      "size": 11393,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c092ac97~74d984f33fac22b4224a.js",
+      "size": 11393,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c933d4bb~10db7e63b0e8829a515f.js",
+      "size": 12469,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c933d4bb~62898b21088745c9ede1.js",
+      "size": 12469,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c9b35b07~514ce34fecbd96aead08.js",
+      "size": 10069,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-c9b35b07~c301f02b8c0ec0deeb61.js",
+      "size": 10069,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-cdd60c62~60d53e7293f2f396ed91.js",
+      "size": 7261,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-cdd60c62~e8c147e2c1abc907f3ef.js",
+      "size": 7261,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-d2eb5610~56a2600e212c3c49453b.js",
+      "size": 4783,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-d2eb5610~b35c1db3234cbb3727d4.js",
+      "size": 4783,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-d9548477~6fb4673636a9f0ab6d16.js",
+      "size": 7487,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-d9548477~94db072765fb2616d98c.js",
+      "size": 7487,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-df67cafc~103475be2f66162fc61c.js",
+      "size": 2076,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-df67cafc~9c699218929ee1741093.js",
+      "size": 2076,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-e768d1d9~11ae347411436f1b6ea6.js",
+      "size": 12239,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-e768d1d9~389167d7a149afd25a5b.js",
+      "size": 12239,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-f82e0cd2~b80fbd786b1d2bcd7995.js",
+      "size": 16946,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-f82e0cd2~e9c213556d8435045324.js",
+      "size": 16946,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-fcb262f0~3afcf1a35a835b6f13c7.js",
+      "size": 14181,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-fcb262f0~43aacd690249df1a8528.js",
+      "size": 14181,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-ffa6b765~025faf37f3cf1638178a.js",
+      "size": 13286,
+      "required": true
+    },
+    {
+      "path": "assets/client~vendors-ffa6b765~879491ed660bdc26754a.js",
+      "size": 13286,
+      "required": true
+    },
+    {
+      "path": "Build/Bus%20Subway%20-%20Runner9-28-5.asm.code.unityweb",
+      "size": 5246902,
+      "required": true
+    },
+    {
+      "path": "Build/Bus%20Subway%20-%20Runner9-28-5.asm.framework.unityweb",
+      "size": 89484,
+      "required": true
+    },
+    {
+      "path": "Build/Bus%20Subway%20-%20Runner9-28-5.asm.memory.unityweb",
+      "size": 368791,
+      "required": true
+    },
+    {
+      "path": "Build/Bus%20Subway%20-%20Runner9-28-5.json",
+      "size": 339,
+      "required": false
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 149420,
+      "required": true
+    },
+    {
+      "path": "cdn-cgi/image/f=auto,quality=78/brand-assets/subway-surfers-l.png",
+      "size": 81217,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/f=auto,quality=78/brand-assets/subway-surfers-r.png",
+      "size": 66141,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=40,height=40,fit=cover,f=auto/9e89c8fe71f2e1179437b6b6d7e3a5a1/subway-surfers.png",
+      "size": 1281,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/02018885c1521dd2830683a0ecc86440/watermelon-drop.png",
+      "size": 2915,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/05f5dc64fe2c2118b0a0a25f44a54ec9/i-am-hall-security.png",
+      "size": 2326,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/0c3d1446c6992c2b88a9498de054688b/level-devil.png",
+      "size": 1158,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/0cd0c8bc4dc15c069dba7ccfb6809f6d/friday-night-funkin.png",
+      "size": 3988,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/1daa52ab00ee04b28b68db8d54b2eb1e/rabbit-samurai.png",
+      "size": 3649,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/2094926076b7aa8264cace220ce5decc/tunnel-rush.png",
+      "size": 3526,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/260f3251a55c78a27fd15b9e4d675f88/vectaria-io.png",
+      "size": 3030,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/27c5799dc627a0f1f8253780b1362b49.webp",
+      "size": 3134,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/291aaf2dcf5c1322558a9c038b3c5251/blocky-blast-puzzle.png",
+      "size": 2191,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/2c6d5a46cdbceada277c870ce1c389ee/moto-x3m.jpg",
+      "size": 4442,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/373740bfb89dd3e6c1fb96674148e806/who-is.png",
+      "size": 3795,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/3a8fb4353fcb063927888e6eb225c70c/funny.png",
+      "size": 2867,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/3ef233cfb9ca304e6614a2a2705cc7aa/skill.png",
+      "size": 3555,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/408a013eb6bfe4e91a28c7fdd8e42745/super-treadmill.png",
+      "size": 2638,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/4170ac84f60a3ba3827d4014530fe5ad/stickman-maze-run.png",
+      "size": 2439,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/424bbeb97e7687ce63fba810118db58c/running.png",
+      "size": 2555,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/49cd11d149a763c01cc6cc117fe57a00/temple-run.png",
+      "size": 4196,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/4a42b82e783fff8b8dac68b094a21192/obby.png",
+      "size": 3640,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/505695b9-1b21-47fd-a8e1-93345afb57de/master-chess.png",
+      "size": 1836,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/537038967786477ba9b483cdb525f814/angry-gran-run.jpg",
+      "size": 3414,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/54527475059924c17a4153d8dd98ab9f/vortellas-dress-up.png",
+      "size": 3068,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/5f983c03072b3e1997e214130a98a199/dreadhead-parkour.png",
+      "size": 2406,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/649f916152c6defac7c09dbaf29f74e9/happy-glass.jfif",
+      "size": 2298,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/64f6163d6918e93386f57b2a729fd6c0/sugar-sugar-html5.png",
+      "size": 1619,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/650c30540036f907df04798e2a13c4be/harvest-simulator.png",
+      "size": 4552,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/733d8a72cf5e8b260c2bd91bb2b68c84/alien-raid-monster-evolution.png",
+      "size": 2725,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/743089b5c6b4dda8bd05d920ab00a0b3/slice-master.png",
+      "size": 2724,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/76fc1b000203faf71b77a75b10022142/crossy-road.png",
+      "size": 1331,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/78e805e22013d76c4bb0f55e9ae0435a/fashion-legends.jfif",
+      "size": 2944,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/7f53593c-4090-4cc5-a934-6a5e599d8eaa/g-switch-3.png",
+      "size": 2710,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/86a2e7c75d67b042e569c75dc24a8c82/two-player.png",
+      "size": 2348,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/92ee01bd30e4ad4fa7b991637374ef48/girls.png",
+      "size": 2961,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/93142510b4eb8a5b81fc264e31c00b88/monkey-mart.png",
+      "size": 3057,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/9534101c96cd395b3c4ffcf4e3bcd8d9/anycolor.png",
+      "size": 3035,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/98df7c61542c2bb2c3566a755a459aa8/mobile.png",
+      "size": 3655,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/9942d88858390c286e899225170510f2/cool-games.png",
+      "size": 2595,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984/stickman-hook.png",
+      "size": 1769,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/9b739087f9938fb143a2519252addbb8/red-ball-4.png",
+      "size": 2210,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/9ed4bc217ce6575d89ff7592fe0d1d1f/beauty-salon.png",
+      "size": 2774,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/a0929e5428c5af2666c9eeb3a0441d4c/we-become-what-we-behold.png",
+      "size": 1565,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/a0d86b7b137adb01f887936c1fba4e9d/rhino-rush-stampede.png",
+      "size": 3848,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/a2ba07cb8f47f6875093ccca54db7c5b/little-tricky-prankster.png",
+      "size": 3501,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/ac20fb107e2f7776948c458d2c0125b3/tycoon.png",
+      "size": 5044,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/b06a1c1742bc1efdf9b61cbacd1313a1.png",
+      "size": 1407,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/b5c8b617f65be7cc4d56dd3657590ae7/temple-run-2.png",
+      "size": 4790,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/b6484d13f66e7f27de06ac5a583e3498/neon-challenge-legends.png",
+      "size": 3404,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/b6cbf50f539ae0330a2840e501b91a28/iron-snout.png",
+      "size": 2682,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/b87616bb88c0e3cb4c150c59fdc767fa/hill-climb-racing-lite.png",
+      "size": 2803,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/baccf9660bfb476fe2c8ae9f5a2ec4d2/murder.png",
+      "size": 3418,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/bc1a52163e8721b39385eaf9f889e293/karate-fighter.jfif",
+      "size": 3255,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/c02dcbba0cc309d178806541248df443/ping-pong-go.png",
+      "size": 3026,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/c28f48b638119ef6c4adaa4f50a65162/stickman-parkour-3.png",
+      "size": 3738,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/c4dc286c30b8fbde45a0b5d4fe6f2146/fruit-ninja.png",
+      "size": 2690,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/c7d21e8c3962488f12ef86e2521b6697/stickman-dragon-fight.png",
+      "size": 3855,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/cf4817609650111002246cb338151d0f/boy.png",
+      "size": 3222,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/d115380307564d68096317ffd29cbcf9/stunt-bike-extreme.png",
+      "size": 2876,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/dbeed680d60390311668adf28c260882/emoji-builder.png",
+      "size": 2943,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/e327f46027899af3e9573ef51450bb54/sushi-party-io.png",
+      "size": 2966,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/e612cf6c7083881ffae58f633bcbc304/count-control-legends.png",
+      "size": 2044,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/eb9c768c76d345217ede669db03771c2/popular.png",
+      "size": 3010,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/ec15abd72b846d7a64a0f9936e2350a4/longcat.png",
+      "size": 879,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/ed3adaca348ed9bf21694505317d402b/plonky.png",
+      "size": 2003,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/ef8ca0983390aef78a06a1df3d12e1f6/magic-battleground.png",
+      "size": 1810,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/ef999c8420c11a5243237168e8128d5d/scary-teacher-3d.png",
+      "size": 1866,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/f05f818f1d2c0fed54c97098e47fc4a8/athletics-hero.png",
+      "size": 4272,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/f262d83ee394fcf98b378674e1430bfd/brain-test-tricky-puzzles.png",
+      "size": 4159,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/f39e22538799cae88cf1a630492c2e7b/my-perfect-hotel.png",
+      "size": 2717,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/f61cc7b269d9fb5439cc56aabff691b7.jfif",
+      "size": 2496,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/f8d92382082517a1acb0a3e51b99516c.png",
+      "size": 1795,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/fcf88a4f-9ec6-4a11-b83c-2df11d730590/rodeo-stampede-savannah.png",
+      "size": 3443,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/fe7c19da32800855dfb8f039adfe353b/papas-freezeria.png",
+      "size": 4048,
+      "required": false
+    },
+    {
+      "path": "cdn-cgi/image/q=78,scq=50,width=94,height=94,fit=cover,f=auto/fff3f853e4852b047d97cc3217ef44af/prankster-3d.png",
+      "size": 2382,
+      "required": false
+    },
+    {
+      "path": "en/g/subway-surfers",
+      "size": 369317,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "fg.png",
+      "size": 6248,
+      "required": false
+    },
+    {
+      "path": "fonts/proxima-nova-bold-latin.woff2",
+      "size": 13780,
+      "required": false
+    },
+    {
+      "path": "fonts/proxima-nova-regular-latin.woff2",
+      "size": 13476,
+      "required": false
+    },
+    {
+      "path": "fonts/torus-bold-latin.woff2",
+      "size": 16480,
+      "required": false
+    },
+    {
+      "path": "fullscreen.png",
+      "size": 3024,
+      "required": false
+    },
+    {
+      "path": "gameinfo/@sdk",
+      "size": 214,
+      "required": false
+    },
+    {
+      "path": "icons/android-chrome-192x192.png",
+      "size": 4501,
+      "required": false
+    },
+    {
+      "path": "icons/instagram.svg",
+      "size": 524,
+      "required": false
+    },
+    {
+      "path": "icons/playground/ui-icons-fire.svg",
+      "size": 1146,
+      "required": false
+    },
+    {
+      "path": "icons/tiktok.svg",
+      "size": 839,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-chevron-down.svg",
+      "size": 289,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-flag.svg",
+      "size": 289,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-fullscreen.svg",
+      "size": 470,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-star-filled.svg",
+      "size": 413,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-thumbs-down.svg",
+      "size": 1659,
+      "required": false
+    },
+    {
+      "path": "icons/ui-masks/ui-icons-thumbs-up.svg",
+      "size": 1659,
+      "required": false
+    },
+    {
+      "path": "icons/ui/fav.svg",
+      "size": 695,
+      "required": false
+    },
+    {
+      "path": "icons/ui/poki.svg",
+      "size": 885,
+      "required": false
+    },
+    {
+      "path": "icons/ui/ui-icons-search.svg",
+      "size": 292,
+      "required": false
+    },
+    {
+      "path": "icons/ui/ui-icons-user.svg",
+      "size": 649,
+      "required": false
+    },
+    {
+      "path": "icons/youtube.svg",
+      "size": 436,
+      "required": false
+    },
+    {
+      "path": "image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ/73v/+BiOh/AAA=",
+      "size": 38,
+      "required": false
+    },
+    {
+      "path": "images/bg-diamante.svg",
+      "size": 6312,
+      "required": false
+    },
+    {
+      "path": "img.jpg",
+      "size": 114908,
+      "required": false
+    },
+    {
+      "path": "img/favicon.ico",
+      "size": 15086,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 185,
+      "required": true
+    },
+    {
+      "path": "manifest.json",
+      "size": 402,
+      "required": false
+    },
+    {
+      "path": "scripts/176dc43f6b86ae45de75dc083510c6a778b55733/poki-sdk-hoist-176dc43f6b86ae45de75dc083510c6a778b55733.js",
+      "size": 149451,
+      "required": true
+    },
+    {
+      "path": "scripts/176dc43f6b86ae45de75dc083510c6a778b55733/poki-sdk-playground-176dc43f6b86ae45de75dc083510c6a778b55733.js",
+      "size": 248558,
+      "required": true
+    },
+    {
+      "path": "scripts/3a2be277f2600b776d954fa5f8c0891730d7ee8e/poki-sdk-hoist-3a2be277f2600b776d954fa5f8c0891730d7ee8e.js",
+      "size": 149451,
+      "required": true
+    },
+    {
+      "path": "scripts/3a2be277f2600b776d954fa5f8c0891730d7ee8e/poki-sdk-playground-3a2be277f2600b776d954fa5f8c0891730d7ee8e.js",
+      "size": 248534,
+      "required": true
+    },
+    {
+      "path": "scripts/v2/poki-sdk.js",
+      "size": 4404,
+      "required": true
+    },
+    {
+      "path": "sdk/error-icons-v2.svg",
+      "size": 1047,
+      "required": false
+    },
+    {
+      "path": "sdk/hourglass-icons-v2.svg",
+      "size": 2029,
+      "required": false
+    },
+    {
+      "path": "sitelogo143x22.png",
+      "size": 2609,
+      "required": false
+    },
+    {
+      "path": "t2.js",
+      "size": 37592,
+      "required": true
+    },
+    {
+      "path": "v0/mystery-game",
+      "size": 3333,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "a.poki-cdn.com",
+    "bat.bing.com",
+    "mystery-game-tile.poki.io",
+    "securepubads.g.doubleclick.net",
+    "t.poki.io"
+  ],
+  "external_critical": [
+    "a.poki-cdn.com",
+    "bat.bing.com",
+    "mystery-game-tile.poki.io",
+    "t.poki.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

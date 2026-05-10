@@ -1,0 +1,704 @@
+{
+  "schema": 1,
+  "slug": "defend-the-tank",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438535,
+  "files": [
+    {
+      "path": "branding/logo.png",
+      "size": 26360,
+      "required": false
+    },
+    {
+      "path": "game.css",
+      "size": 6462,
+      "required": true
+    },
+    {
+      "path": "game.js",
+      "size": 535425,
+      "required": true
+    },
+    {
+      "path": "images/brand.webp",
+      "size": 10690,
+      "required": false
+    },
+    {
+      "path": "images/game.jpg",
+      "size": 22682,
+      "required": false
+    },
+    {
+      "path": "images/logo.jpg",
+      "size": 19536,
+      "required": false
+    },
+    {
+      "path": "images/splash.jpg",
+      "size": 61985,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1062,
+      "required": true
+    },
+    {
+      "path": "landscape.jpg",
+      "size": 67380,
+      "required": false
+    },
+    {
+      "path": "media/audio/add.txt",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "media/audio/bgm.ogg",
+      "size": 188260,
+      "required": false
+    },
+    {
+      "path": "media/audio/bosscannon.ogg",
+      "size": 22641,
+      "required": false
+    },
+    {
+      "path": "media/audio/cannon.ogg",
+      "size": 28500,
+      "required": false
+    },
+    {
+      "path": "media/audio/click.ogg",
+      "size": 5733,
+      "required": false
+    },
+    {
+      "path": "media/audio/coins.ogg",
+      "size": 25552,
+      "required": false
+    },
+    {
+      "path": "media/audio/death.ogg",
+      "size": 11578,
+      "required": false
+    },
+    {
+      "path": "media/audio/hit.ogg",
+      "size": 6341,
+      "required": false
+    },
+    {
+      "path": "media/audio/laser_beam.ogg",
+      "size": 20136,
+      "required": false
+    },
+    {
+      "path": "media/audio/machinegun.ogg",
+      "size": 5038,
+      "required": false
+    },
+    {
+      "path": "media/audio/opening/kittyopening.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/audio/opening/static.ogg",
+      "size": 5632,
+      "required": false
+    },
+    {
+      "path": "media/audio/play/static.ogg",
+      "size": 5632,
+      "required": false
+    },
+    {
+      "path": "media/audio/projectileshoot.ogg",
+      "size": 10336,
+      "required": false
+    },
+    {
+      "path": "media/audio/reload.ogg",
+      "size": 8821,
+      "required": false
+    },
+    {
+      "path": "media/audio/repair.ogg",
+      "size": 14365,
+      "required": false
+    },
+    {
+      "path": "media/audio/screenshake.ogg",
+      "size": 69982,
+      "required": false
+    },
+    {
+      "path": "media/audio/shot.ogg",
+      "size": 8201,
+      "required": false
+    },
+    {
+      "path": "media/audio/shotgun.ogg",
+      "size": 9950,
+      "required": false
+    },
+    {
+      "path": "media/audio/softexplosion.ogg",
+      "size": 11717,
+      "required": false
+    },
+    {
+      "path": "media/audio/tankshoot.ogg",
+      "size": 17158,
+      "required": false
+    },
+    {
+      "path": "media/font/buchanan.ttf",
+      "size": 28124,
+      "required": true
+    },
+    {
+      "path": "media/graphics/game/bg/building.png",
+      "size": 28782,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bg/far_building.png",
+      "size": 7706,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bg/ground.png",
+      "size": 43698,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bg/sky.jpg",
+      "size": 1078,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/bomb.png",
+      "size": 4218,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/bullet.png",
+      "size": 320,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/bulletpig.png",
+      "size": 360,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/bulletpighead.png",
+      "size": 1800,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/fireball.png",
+      "size": 5948,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/laser.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/bullets/rocket.png",
+      "size": 862,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/effects/bullethit.png",
+      "size": 8066,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/effects/fire.png",
+      "size": 16654,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/effects/smoke.png",
+      "size": 5190,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/effects/smokered.png",
+      "size": 5730,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/effects/smokewhite.png",
+      "size": 4960,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/seat-red.png",
+      "size": 4079,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/seat.png",
+      "size": 4118,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank1/fire.png",
+      "size": 172034,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank1/idle.png",
+      "size": 112486,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank2/fire.png",
+      "size": 219346,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank2/idle.png",
+      "size": 161325,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank3/fire.png",
+      "size": 244778,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/tank/tank3/idle.png",
+      "size": 154187,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/back.png",
+      "size": 13034,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/bigcoin.png",
+      "size": 6232,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/bottombarback.png",
+      "size": 11874,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/bottombarfront.png",
+      "size": 35574,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/finger.png",
+      "size": 6140,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/flag.png",
+      "size": 3462,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/guide1.png",
+      "size": 17816,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/home.png",
+      "size": 13632,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/howtoplay.jpg",
+      "size": 109746,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/howtoplay.png",
+      "size": 18264,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/icons/fireball.png",
+      "size": 5948,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/icons/laser.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/icons/rocket.png",
+      "size": 862,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/ajax-loader.gif",
+      "size": 3208,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/buchanan.ttf",
+      "size": 28124,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/coin.png",
+      "size": 4250,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/editbg.png",
+      "size": 155042,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/editteam.png",
+      "size": 9553,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/frame-big.png",
+      "size": 7743,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/frame-small.png",
+      "size": 6596,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/howtoplay.png",
+      "size": 10009,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/loading-bar.png",
+      "size": 1805,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/loading-text.png",
+      "size": 8049,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/loading.png",
+      "size": 2465,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/lock.png",
+      "size": 18430,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/mainbg.jpg",
+      "size": 114332,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/medal.png",
+      "size": 17844,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/menubg.jpg",
+      "size": 27326,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/menubg2.png",
+      "size": 175446,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/moregames.png",
+      "size": 17091,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/ok.png",
+      "size": 9443,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/play.png",
+      "size": 12710,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/portrait.jpg",
+      "size": 120989,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/tankstats.png",
+      "size": 27568,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/unitselect.png",
+      "size": 3353,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/mainmenu/upgrade.png",
+      "size": 8934,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/menubg.jpg",
+      "size": 27326,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/menubg2.png",
+      "size": 175446,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/muteoff.png",
+      "size": 954,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/muteon.png",
+      "size": 682,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/pause.png",
+      "size": 856,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/pausetitle.png",
+      "size": 10882,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/replay.png",
+      "size": 14700,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/resultstitle.png",
+      "size": 10906,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/rocket.png",
+      "size": 862,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/target.png",
+      "size": 1252,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/ui/topbar.png",
+      "size": 11696,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/cow-boss/fire.png",
+      "size": 88268,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/cow-boss/idle.png",
+      "size": 58350,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/cow/fire-run.png",
+      "size": 34402,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/monkey-boss/fire.png",
+      "size": 86910,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/monkey-boss/idle.png",
+      "size": 70104,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/monkey/fire-run.png",
+      "size": 26878,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/pig-boss/fire.png",
+      "size": 253188,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/pig-boss/idle.png",
+      "size": 78952,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/pig/fire-run.png",
+      "size": 19478,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/foe/plane/idle.png",
+      "size": 19284,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/cat/drag.png",
+      "size": 7488,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/cat/fire-high.png",
+      "size": 23384,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/cat/fire-low.png",
+      "size": 22228,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/cat/fire.png",
+      "size": 21226,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/cat/idle.png",
+      "size": 24934,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/panda/drag.png",
+      "size": 8220,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/panda/fire.png",
+      "size": 24546,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/panda/idle.png",
+      "size": 26596,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/repair/drag.png",
+      "size": 7302,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/repair/fire.png",
+      "size": 22528,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/repair/idle.png",
+      "size": 31411,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/wolf/drag.png",
+      "size": 8080,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/wolf/fire.png",
+      "size": 21192,
+      "required": false
+    },
+    {
+      "path": "media/graphics/game/unit/friend/wolf/idle.png",
+      "size": 27091,
+      "required": false
+    },
+    {
+      "path": "media/graphics/loading/ajax-loader.gif",
+      "size": 3208,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/kitty.png",
+      "size": 59936,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/kittytitle.png",
+      "size": 5288,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/loading-bar.png",
+      "size": 1805,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/loading-text.png",
+      "size": 8049,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/loading.png",
+      "size": 2465,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/portrait.jpg",
+      "size": 120989,
+      "required": false
+    },
+    {
+      "path": "portrait-start.jpg",
+      "size": 124362,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "slug": "blumgislime",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438525,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 230,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm",
+      "size": 246906,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm.js",
+      "size": 282532,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 19081964,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 7704,
+      "required": false
+    },
+    {
+      "path": "file.css",
+      "size": 210,
+      "required": true
+    },
+    {
+      "path": "fonts/Rounds Black.otf",
+      "size": 28508,
+      "required": false
+    },
+    {
+      "path": "images/airpusher-sheet0.png",
+      "size": 233,
+      "required": false
+    },
+    {
+      "path": "images/bghome-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/bgtuto-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/colcenter-sheet0.png",
+      "size": 91,
+      "required": false
+    },
+    {
+      "path": "images/colcenter2-sheet0.png",
+      "size": 88,
+      "required": false
+    },
+    {
+      "path": "images/colcenterice-sheet0.png",
+      "size": 119,
+      "required": false
+    },
+    {
+      "path": "images/colsquare-sheet0.png",
+      "size": 82,
+      "required": false
+    },
+    {
+      "path": "images/fadedark-sheet0.png",
+      "size": 102,
+      "required": false
+    },
+    {
+      "path": "images/fadedark2-sheet0.png",
+      "size": 102,
+      "required": false
+    },
+    {
+      "path": "images/finalcrown-sheet0.png",
+      "size": 82,
+      "required": false
+    },
+    {
+      "path": "images/finishtrigger-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/flash-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/ground-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/palmtreetrunk-sheet0.png",
+      "size": 310,
+      "required": false
+    },
+    {
+      "path": "images/parentobject-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/plaincolorbottom-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 38767,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 57404,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 7338,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 22832,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet4.png",
+      "size": 415,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet5.png",
+      "size": 130,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.png",
+      "size": 2996,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.png",
+      "size": 259,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.png",
+      "size": 82,
+      "required": false
+    },
+    {
+      "path": "images/squarepattern-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground2-sheet0.png",
+      "size": 89,
+      "required": false
+    },
+    {
+      "path": "images/triggercam-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/ui_loadbar_tilbg-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/ui_simplepanel_tilbg-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/uibg-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/watergraphs-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/winlight-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "images/winlight2-sheet0.png",
+      "size": 80,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 24828,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1528,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 24828,
+      "required": false
+    },
+    {
+      "path": "manifest.json",
+      "size": 230,
+      "required": false
+    },
+    {
+      "path": "media/Ball.webm",
+      "size": 6177,
+      "required": false
+    },
+    {
+      "path": "media/BlumgiBlobz.webm",
+      "size": 1623609,
+      "required": false
+    },
+    {
+      "path": "media/BombExplosionCut.webm",
+      "size": 11558,
+      "required": false
+    },
+    {
+      "path": "media/bounce.webm",
+      "size": 9484,
+      "required": false
+    },
+    {
+      "path": "media/montee.webm",
+      "size": 42307,
+      "required": false
+    },
+    {
+      "path": "media/propeller.webm",
+      "size": 21681,
+      "required": false
+    },
+    {
+      "path": "media/Sound3.webm",
+      "size": 25440,
+      "required": false
+    },
+    {
+      "path": "media/Success 7.webm",
+      "size": 19610,
+      "required": false
+    },
+    {
+      "path": "media/Water.webm",
+      "size": 28543,
+      "required": false
+    },
+    {
+      "path": "media/Woosh.webm",
+      "size": 1898,
+      "required": false
+    },
+    {
+      "path": "patch/cdn/jquery/jquery.3.1.1.min.js",
+      "size": 86709,
+      "required": true
+    },
+    {
+      "path": "patch/cdn/phaser-ce/BlurX.js",
+      "size": 1810,
+      "required": true
+    },
+    {
+      "path": "patch/cdn/phaser-ce/BlurY.js",
+      "size": 1809,
+      "required": true
+    },
+    {
+      "path": "patch/cdn/webfont/webfont.1.5.18.js",
+      "size": 16587,
+      "required": true
+    },
+    {
+      "path": "patch/cdn/webfont/webfont.1.6.26.js",
+      "size": 13188,
+      "required": true
+    },
+    {
+      "path": "patch/fonts/torus-bold-webfont.woff",
+      "size": 28720,
+      "required": true
+    },
+    {
+      "path": "patch/fonts/torus-bold-webfont.woff2",
+      "size": 23064,
+      "required": true
+    },
+    {
+      "path": "patch/images/null.png",
+      "size": 12513,
+      "required": false
+    },
+    {
+      "path": "patch/js/null.js",
+      "size": 35,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-master-loader.js",
+      "size": 1445,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-sdk-v2.2-core.js",
+      "size": 252395,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-sdk-v2.js",
+      "size": 5132,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-sdk.js",
+      "size": 4743,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-unity-2020.js",
+      "size": 32002,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-unity-loader.js",
+      "size": 159252,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-unity-o.js",
+      "size": 31140,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-unity.js",
+      "size": 49487,
+      "required": true
+    },
+    {
+      "path": "patch/js/poki-utils.js",
+      "size": 1821,
+      "required": true
+    },
+    {
+      "path": "patch/js/UnityLoader.2019.2.js",
+      "size": 159248,
+      "required": true
+    },
+    {
+      "path": "patch/js/UnityLoader.js",
+      "size": 159252,
+      "required": true
+    },
+    {
+      "path": "patch/json/geo.json",
+      "size": 32,
+      "required": false
+    },
+    {
+      "path": "patch/json/gl-narenjo.json",
+      "size": 1828048,
+      "required": false
+    },
+    {
+      "path": "patch/json/null.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "patch/json/settings.json",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "patch/json/tracking.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "patch/phaser/nineslice-v0.5.0.min.js",
+      "size": 12980,
+      "required": true
+    },
+    {
+      "path": "patch/phaser/phaser-3.52.0.js",
+      "size": 6602181,
+      "required": true
+    },
+    {
+      "path": "patch/png/null.png",
+      "size": 8360,
+      "required": false
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1313006,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3788,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3127,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 112665,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 303,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2435,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 1036,
+      "required": true
+    },
+    {
+      "path": "sw.js",
+      "size": 54,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "lonesock.net",
+    "play.google.com",
+    "t.poki.io",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "lonesock.net",
+    "play.google.com",
+    "t.poki.io",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

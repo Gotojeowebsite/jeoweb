@@ -1,0 +1,2339 @@
+{
+  "schema": 1,
+  "slug": "ctr",
+  "engine": "flash",
+  "entry": "index.html",
+  "generated_at": 1778438534,
+  "files": [
+    {
+      "path": "_external_mirror/github.com/fluidicon.png",
+      "size": 33270,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.com/jaubourg/ajaxHooks/blob/master/src/xdr.js",
+      "size": 258766,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/jaubourg/ajaxHooks/raw/refs/heads/master/src/xdr.js",
+      "size": 1096,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/1097-b805267515cb2087.js",
+      "size": 16917,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/11714-a5229713ec29c1ea.js",
+      "size": 11589,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/13333-5998f5eddb353d65.js",
+      "size": 13078,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/15272-00d6ef52b0f88c77.js",
+      "size": 9661,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/17348-787e0b6b008adb94.js",
+      "size": 13772,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/17894-e0128f369d75471b.js",
+      "size": 13142,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/18222-498ac30c45b2263a.js",
+      "size": 54941,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/22895-381c5e0210588619.js",
+      "size": 9869,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2498-7a413c8209222158.js",
+      "size": 9107,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26497-2607b26f886ae364.js",
+      "size": 96130,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26533-4df1172b25427069.js",
+      "size": 74986,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/26881-52ac2633a69e46a0.js",
+      "size": 7078,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/28839-734cb6d8a7150172.js",
+      "size": 19836,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2887-47ac9a4b8862e6bf.js",
+      "size": 4925,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/2966-f6796bfd155feae1.js",
+      "size": 20266,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/31721-17b28a26ab4c2e02.js",
+      "size": 17002,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/32769-329cba91f224b6ee.js",
+      "size": 6532,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/33073-19b499126dc11486.js",
+      "size": 9607,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/33684-93c00536afad2a9e.js",
+      "size": 8329,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34140-bd56b738d77cb446.js",
+      "size": 9404,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34618-6f230fa18381d661.js",
+      "size": 13881,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/34646-bea6b9a63337cd73.js",
+      "size": 16915,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/3624-56a093387522b27f.js",
+      "size": 26629,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/36505-d881e4fdaa1f52d2.js",
+      "size": 3990,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/36600-918d1f0ebb5e0ce3.js",
+      "size": 33228,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/37869-a873e81f0fcb98e2.js",
+      "size": 32153,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/39130-334926c8365e947c.js",
+      "size": 157686,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/41013-7a6deee6d6ff15eb.js",
+      "size": 17171,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/41110-bf1fbe4fd0f79f3c.js",
+      "size": 7173,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/4244-d5dcb589fae0ecbf.js",
+      "size": 11440,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/42771-4ebf93dd4d342b28.js",
+      "size": 14511,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/43947-18e23171752897a9.js",
+      "size": 7963,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46148-0e40187c0246d203.js",
+      "size": 14098,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46287-cd100bdce32a28f3.js",
+      "size": 36686,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46740-6606b1026a237412.js",
+      "size": 12298,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/46752-46c707717fcbe6a9.js",
+      "size": 69801,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/49029-32f138b26aa15ad8.js",
+      "size": 11933,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/49135-78a4188b2e814f1c.js",
+      "size": 30601,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/4929-bfb9b2911e3b2557.js",
+      "size": 17227,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/50110-4385e3caef0c7e52.js",
+      "size": 13597,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/51210-3abb7238871a5b29.js",
+      "size": 14052,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/5289-a885c73579e79932.js",
+      "size": 15899,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/58889-5fa21a6f16a85112.js",
+      "size": 13540,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/59852-5847c42877228dae.js",
+      "size": 38827,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/60481-1a8127058c27e9af.js",
+      "size": 8221,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/61025-07acdbf2975da96b.js",
+      "size": 29681,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/61110-93cf7706e5dc8bfa.js",
+      "size": 9977,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/63991-125a5c660965e63e.js",
+      "size": 7313,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/64247-7de91c52a8aca0eb.js",
+      "size": 25295,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/64462-aace35a668bb9e54.js",
+      "size": 140579,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/66231-e5fbc544a569ca6a.js",
+      "size": 16950,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/68751-fe5cb40b5547c377.js",
+      "size": 11881,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/7053-fe40037405b8998b.js",
+      "size": 8763,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/7463-f34e26efc84a7578.js",
+      "size": 22452,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/75674-3bc5efc3b40f0f87.js",
+      "size": 8225,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/79039-2565b539a6ebc09b.js",
+      "size": 16419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/79087-52380608de8b0939.js",
+      "size": 10569,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/85146-fea216c19b0c7dee.js",
+      "size": 14756,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/85924-e131bec5f99667e1.js",
+      "size": 13471,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/86735-f3e914a229b8e278.js",
+      "size": 10376,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/87376-40a11a08536e6be2.js",
+      "size": 40189,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/89627-fbbd31c43d83e10c.js",
+      "size": 10745,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/90765-1fddbe80cb9767ad.js",
+      "size": 46163,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/93226-11f1af91fa00da16.js",
+      "size": 12195,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/93716-c0d708c7899c4298.js",
+      "size": 42423,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/96232-69d46a31854353d4.js",
+      "size": 9639,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/96755-8619cf5f811a4353.js",
+      "size": 9556,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/99328-5e06da57c4622e21.js",
+      "size": 7196,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/appearance-settings.35f40c3a620f34f6.module.css",
+      "size": 5899,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/behaviors-d72208d523482ecc.js",
+      "size": 214214,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-2d31826944fd3be8.css",
+      "size": 32359,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-menu-34c67a8e6616ccae.js",
+      "size": 5791,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-view-5111b642414924d3.js",
+      "size": 508919,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/code-view.ea72cf068f5f1a4c.module.css",
+      "size": 104911,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_colorblind_high_contrast-2dc46b4919fae81e.css",
+      "size": 77009,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_colorblind-0c6ca283d4d35cea.css",
+      "size": 76123,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_dimmed_high_contrast-206b6b93f856629b.css",
+      "size": 77451,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_dimmed-f3aa862f2ac7ead2.css",
+      "size": 76299,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_high_contrast-96d7b2bab5a6ae4e.css",
+      "size": 77291,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_tritanopia_high_contrast-eb5bb84e91d6d553.css",
+      "size": 77041,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark_tritanopia-271332ec9362e8d3.css",
+      "size": 76079,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/dark-fc6eec18532c3ae0.css",
+      "size": 76607,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/element-registry-04246c6cfcc7dcba.js",
+      "size": 80084,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/environment-51c0968cf21c176d.js",
+      "size": 20174,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/fetch-utilities-78a4114cfa572239.js",
+      "size": 7347,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/github-c94ab8d1f22049a8.css",
+      "size": 156676,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/github-elements-459d4cd7a0f718d7.js",
+      "size": 30666,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/global-c9ae636e7affabfe.css",
+      "size": 299778,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/high-contrast-cookie-26d6bae49dfd2c29.js",
+      "size": 1298,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/keyboard-shortcuts-dialog.226020b781ed6407.module.css",
+      "size": 331,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_colorblind_high_contrast-dfa0c9e22ba6ba2b.css",
+      "size": 77167,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_colorblind-4dd12c5689d6b012.css",
+      "size": 76387,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_high_contrast-51c0c6e0c085cc0f.css",
+      "size": 77397,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_tritanopia_high_contrast-9c32304a2a8ac631.css",
+      "size": 77159,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light_tritanopia-9fd9c8859395d1a8.css",
+      "size": 76403,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/light-0c8222dcd7a4f9b7.css",
+      "size": 76775,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/marketing-navigation.0d7de310f74771c9.module.css",
+      "size": 10717,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-global-206312e9c9776c21.js",
+      "size": 10985,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-subscriptions-menu-1d4d7207cf52d7b4.js",
+      "size": 6708,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/notifications-subscriptions-menu.fef45f3faabe9e46.module.css",
+      "size": 2939,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/octicons-react-a181826f33dcd4d8.js",
+      "size": 431057,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg",
+      "size": 998,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-0fcd9af82350aeda.css",
+      "size": 412867,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-primitives-10bf9dd67e3d70bd.css",
+      "size": 10084,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-react-9ca437122824b26a.js",
+      "size": 645717,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/primer-react-css.5f6ed1f0fb5be97e.module.css",
+      "size": 295261,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-core-e2e4dc7ec809e513.js",
+      "size": 187909,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-core.bd894c565a04e39a.module.css",
+      "size": 446,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/react-lib-a4cf89fce9a1300a.js",
+      "size": 382362,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/repository-6ec84ae2261fecf8.css",
+      "size": 31098,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/runtime-helpers-3bb6f7d6b7a2f531.js",
+      "size": 2746,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/sessions-376c4ed1ca5aceda.js",
+      "size": 15540,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/assets/wp-runtime-d43299552bfccc72.js",
+      "size": 47671,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/favicons/favicon.png",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.githubassets.com/favicons/favicon.svg",
+      "size": 959,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/schillmania.com/projects/soundmanager2/license.txt",
+      "size": 1567,
+      "required": false
+    },
+    {
+      "path": "audio/bouncer.mp3",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "audio/bubble_break.mp3",
+      "size": 2142,
+      "required": false
+    },
+    {
+      "path": "audio/bubble.mp3",
+      "size": 3006,
+      "required": false
+    },
+    {
+      "path": "audio/button.mp3",
+      "size": 2142,
+      "required": false
+    },
+    {
+      "path": "audio/buzz.mp3",
+      "size": 9630,
+      "required": false
+    },
+    {
+      "path": "audio/candy_break.mp3",
+      "size": 6462,
+      "required": false
+    },
+    {
+      "path": "audio/candy_link.mp3",
+      "size": 4446,
+      "required": false
+    },
+    {
+      "path": "audio/electric.mp3",
+      "size": 22302,
+      "required": false
+    },
+    {
+      "path": "audio/game_music.mp3",
+      "size": 769083,
+      "required": false
+    },
+    {
+      "path": "audio/game_music2.mp3",
+      "size": 1189855,
+      "required": false
+    },
+    {
+      "path": "audio/game_music3.mp3",
+      "size": 649855,
+      "required": false
+    },
+    {
+      "path": "audio/gravity_off.mp3",
+      "size": 5022,
+      "required": false
+    },
+    {
+      "path": "audio/gravity_on.mp3",
+      "size": 5310,
+      "required": false
+    },
+    {
+      "path": "audio/menu_music.mp3",
+      "size": 721279,
+      "required": false
+    },
+    {
+      "path": "audio/monster_chewing.mp3",
+      "size": 22878,
+      "required": false
+    },
+    {
+      "path": "audio/monster_close.mp3",
+      "size": 3006,
+      "required": false
+    },
+    {
+      "path": "audio/monster_open.mp3",
+      "size": 4734,
+      "required": false
+    },
+    {
+      "path": "audio/monster_sad.mp3",
+      "size": 6174,
+      "required": false
+    },
+    {
+      "path": "audio/pump_1.mp3",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "audio/pump_2.mp3",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "audio/pump_3.mp3",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "audio/pump_4.mp3",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "audio/ring.mp3",
+      "size": 11358,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_1.mp3",
+      "size": 2430,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_2.mp3",
+      "size": 3006,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_3.mp3",
+      "size": 4158,
+      "required": false
+    },
+    {
+      "path": "audio/rope_bleak_4.mp3",
+      "size": 4158,
+      "required": false
+    },
+    {
+      "path": "audio/rope_get.mp3",
+      "size": 2142,
+      "required": false
+    },
+    {
+      "path": "audio/scratch_in.mp3",
+      "size": 2718,
+      "required": false
+    },
+    {
+      "path": "audio/scratch_out.mp3",
+      "size": 2430,
+      "required": false
+    },
+    {
+      "path": "audio/spider_activate.mp3",
+      "size": 4446,
+      "required": false
+    },
+    {
+      "path": "audio/spider_fall.mp3",
+      "size": 5598,
+      "required": false
+    },
+    {
+      "path": "audio/spider_win.mp3",
+      "size": 7902,
+      "required": false
+    },
+    {
+      "path": "audio/spike_rotate_in.mp3",
+      "size": 4734,
+      "required": false
+    },
+    {
+      "path": "audio/spike_rotate_out.mp3",
+      "size": 4158,
+      "required": false
+    },
+    {
+      "path": "audio/star_1.mp3",
+      "size": 7902,
+      "required": false
+    },
+    {
+      "path": "audio/star_2.mp3",
+      "size": 8478,
+      "required": false
+    },
+    {
+      "path": "audio/star_3.mp3",
+      "size": 9630,
+      "required": false
+    },
+    {
+      "path": "audio/tap.mp3",
+      "size": 3582,
+      "required": false
+    },
+    {
+      "path": "audio/teleport.mp3",
+      "size": 1278,
+      "required": false
+    },
+    {
+      "path": "audio/wheel.mp3",
+      "size": 1277,
+      "required": false
+    },
+    {
+      "path": "audio/win.mp3",
+      "size": 16830,
+      "required": false
+    },
+    {
+      "path": "css/ctr.css",
+      "size": 21713,
+      "required": true
+    },
+    {
+      "path": "css/nojavascript.css",
+      "size": 499,
+      "required": true
+    },
+    {
+      "path": "css/nosupport.css",
+      "size": 710,
+      "required": false
+    },
+    {
+      "path": "cursors/cursor.cur",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "cursors/cursor.png",
+      "size": 2197,
+      "required": false
+    },
+    {
+      "path": "cursors/cursorActive.cur",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "cursors/cursorActive.png",
+      "size": 2344,
+      "required": false
+    },
+    {
+      "path": "cursors/handcursor.cur",
+      "size": 4022,
+      "required": false
+    },
+    {
+      "path": "cursors/handcursor.png",
+      "size": 2634,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.eot",
+      "size": 77320,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.svg",
+      "size": 128513,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.ttf",
+      "size": 77080,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont.woff",
+      "size": 37664,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-new/gooddog_new-webfont2.woff",
+      "size": 36119,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.eot",
+      "size": 31000,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.svg",
+      "size": 57761,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.ttf",
+      "size": 30816,
+      "required": false
+    },
+    {
+      "path": "fonts/gooddog-plain/GoodDog-webfont.woff",
+      "size": 22112,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_01_p1.jpg",
+      "size": 59625,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_01_p2.jpg",
+      "size": 83098,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_02_p1.jpg",
+      "size": 64331,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_02_p2.jpg",
+      "size": 86628,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_03_p1.jpg",
+      "size": 139833,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_03_p2.jpg",
+      "size": 122695,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_04_p1.jpg",
+      "size": 52937,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_04_p2.jpg",
+      "size": 98944,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_05_p1.jpg",
+      "size": 177375,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_05_p2.jpg",
+      "size": 172196,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_06_p1.jpg",
+      "size": 75429,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_06_p2.jpg",
+      "size": 128761,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_07_p1.jpg",
+      "size": 129621,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_07_p2.jpg",
+      "size": 89489,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_08_p1.png",
+      "size": 657554,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_08_p2.png",
+      "size": 467031,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_09_p1.jpg",
+      "size": 94806,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_09_p2.jpg",
+      "size": 71961,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_10_p1.jpg",
+      "size": 155326,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_10_p2.jpg",
+      "size": 114236,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_11_p1.jpg",
+      "size": 152875,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/bgr_11_p2.jpg",
+      "size": 106539,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/big_font.png",
+      "size": 205020,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations.png",
+      "size": 640001,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations2.png",
+      "size": 547279,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_animations3.png",
+      "size": 79500,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/char_supports.png",
+      "size": 217749,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/font_numbers_big.png",
+      "size": 4858,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/hud_star.png",
+      "size": 13574,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bee_hd.png",
+      "size": 12065,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bouncer_01.png",
+      "size": 25665,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bouncer_02.png",
+      "size": 35206,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_attached.png",
+      "size": 14245,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_flight.png",
+      "size": 95942,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_bubble_pop.png",
+      "size": 29755,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_candy_01.png",
+      "size": 187515,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_drawing_hidden.png",
+      "size": 10755,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_electrodes.png",
+      "size": 46142,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hat.png",
+      "size": 57813,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_01.png",
+      "size": 3179,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_02.png",
+      "size": 3205,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_auto.png",
+      "size": 5392,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_movable.png",
+      "size": 11872,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_hook_regulated.png",
+      "size": 24370,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_pollen_hd.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_pump.png",
+      "size": 45074,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_01.png",
+      "size": 5139,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_02.png",
+      "size": 7033,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_03.png",
+      "size": 9333,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_04.png",
+      "size": 10866,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_rotatable_spikes_button.png",
+      "size": 12196,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spider.png",
+      "size": 24225,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_01.png",
+      "size": 4776,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_02.png",
+      "size": 7257,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_03.png",
+      "size": 9686,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_spikes_04.png",
+      "size": 12116,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_star_disappear.png",
+      "size": 187154,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_star_idle.png",
+      "size": 168205,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/obj_vinil.png",
+      "size": 63096,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/small_font.png",
+      "size": 34689,
+      "required": false
+    },
+    {
+      "path": "images/1024/game/tutorial_signs.png",
+      "size": 13599,
+      "required": false
+    },
+    {
+      "path": "images/1024/save.png",
+      "size": 42267,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/bBtn_bgd.png",
+      "size": 21839,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_lock.png",
+      "size": 49600,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_nav_menu.png",
+      "size": 14556,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box_omnom.png",
+      "size": 11744,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box1_bgd.png",
+      "size": 179313,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box10_bgd.png",
+      "size": 154298,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box11_bgd.png",
+      "size": 163599,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box2_bgd.png",
+      "size": 149604,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box3_bgd.png",
+      "size": 156432,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box4_bgd.png",
+      "size": 189139,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box5_bgd.png",
+      "size": 188488,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box6_bgd.png",
+      "size": 207768,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box7_bgd.png",
+      "size": 139348,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box8_bgd.png",
+      "size": 155651,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/box9_bgd.png",
+      "size": 167503,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/boxcutter.png",
+      "size": 72234,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/boxmore_bgd.png",
+      "size": 16646,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/buttonsprite.png",
+      "size": 46705,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_1.jpg",
+      "size": 301082,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_10.jpg",
+      "size": 334520,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_11.jpg",
+      "size": 329048,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_12.jpg",
+      "size": 378952,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_13.jpg",
+      "size": 301800,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_14.jpg",
+      "size": 315993,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_15.jpg",
+      "size": 332042,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_16.jpg",
+      "size": 78790,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_2.jpg",
+      "size": 292667,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_3.jpg",
+      "size": 334468,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_4.jpg",
+      "size": 316601,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_5.jpg",
+      "size": 288319,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_6.jpg",
+      "size": 350531,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_7.jpg",
+      "size": 306877,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_8.jpg",
+      "size": 332117,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing_9.jpg",
+      "size": 341452,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing-bg.png",
+      "size": 99494,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing1.jpg",
+      "size": 28067,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing10.jpg",
+      "size": 32945,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing11.jpg",
+      "size": 29567,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing12.jpg",
+      "size": 38253,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing13.jpg",
+      "size": 30628,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing14.jpg",
+      "size": 35307,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing15.jpg",
+      "size": 36032,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing16.jpg",
+      "size": 26343,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing2.jpg",
+      "size": 22588,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing3.jpg",
+      "size": 28534,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing4.jpg",
+      "size": 31772,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing5.jpg",
+      "size": 27661,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing6.jpg",
+      "size": 36868,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing7.jpg",
+      "size": 29320,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing8.jpg",
+      "size": 31721,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/drawing9.jpg",
+      "size": 34115,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fb.png",
+      "size": 5546,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fBtn_bgd.png",
+      "size": 37332,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/flags.png",
+      "size": 22714,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/fun-omnom.png",
+      "size": 11976,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/gamecomplete_border.png",
+      "size": 74957,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/gamecomplete.jpg",
+      "size": 143846,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/lBtn_bgd.png",
+      "size": 40900,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/level_bgd_small.png",
+      "size": 14825,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/level_bgd.png",
+      "size": 25121,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg1.jpg",
+      "size": 66492,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg10.jpg",
+      "size": 96626,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg11.jpg",
+      "size": 88838,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg2.jpg",
+      "size": 61671,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg3.jpg",
+      "size": 87698,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg4.jpg",
+      "size": 60038,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg5.jpg",
+      "size": 131740,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg6.jpg",
+      "size": 73366,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg7.jpg",
+      "size": 78116,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg8.jpg",
+      "size": 90569,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/levelbg9.jpg",
+      "size": 65313,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape_left.png",
+      "size": 6586,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape_right.png",
+      "size": 6382,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/leveltape.png",
+      "size": 10213,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/mBtn_bgd.png",
+      "size": 33886,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_br.png",
+      "size": 8659,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_en.png",
+      "size": 11245,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_es.png",
+      "size": 8456,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_fr.png",
+      "size": 9650,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_gr.png",
+      "size": 9816,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_it.png",
+      "size": 8265,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_ja.png",
+      "size": 6396,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_ko.png",
+      "size": 7107,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_nl.png",
+      "size": 8107,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_ru.png",
+      "size": 9334,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu_result_zh.png",
+      "size": 7102,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menu-options.png",
+      "size": 62306,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/menubg.jpg",
+      "size": 110717,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/options_stars_bgd_small.png",
+      "size": 15302,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/options_stars_bgd.png",
+      "size": 27067,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/perfect_mark.png",
+      "size": 9776,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/ph_logo.png",
+      "size": 48239,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/pin-omnom.png",
+      "size": 6405,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupinner-slow.jpg",
+      "size": 39221,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupinner.jpg",
+      "size": 34946,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/popupouter.png",
+      "size": 92453,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/result_line.png",
+      "size": 1443,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/sBtn_bgd.png",
+      "size": 27304,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/shadow.png",
+      "size": 82321,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/star_result_small.png",
+      "size": 2983,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/star_result.png",
+      "size": 11837,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/startbg.jpg",
+      "size": 158015,
+      "required": false
+    },
+    {
+      "path": "images/1024/ui/taperoll.png",
+      "size": 25929,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/bBtn_bgd.png",
+      "size": 14287,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box_lock.png",
+      "size": 30656,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box_nav_menu.png",
+      "size": 11007,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box_omnom.png",
+      "size": 9306,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box1_bgd.png",
+      "size": 92103,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box10_bgd.png",
+      "size": 139915,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box11_bgd.png",
+      "size": 133443,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box2_bgd.png",
+      "size": 80490,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box3_bgd.png",
+      "size": 122228,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box4_bgd.png",
+      "size": 94865,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box5_bgd.png",
+      "size": 151356,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box6_bgd.png",
+      "size": 103011,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box7_bgd.png",
+      "size": 121294,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box8_bgd.png",
+      "size": 127810,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/box9_bgd.png",
+      "size": 129507,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/boxcutter.png",
+      "size": 48227,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/boxmore_bgd.png",
+      "size": 11511,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/buttonsprite.png",
+      "size": 23565,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing-bg.png",
+      "size": 61299,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing1.jpg",
+      "size": 16322,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing10.jpg",
+      "size": 19064,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing11.jpg",
+      "size": 17011,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing12.jpg",
+      "size": 21470,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing13.jpg",
+      "size": 18016,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing14.jpg",
+      "size": 20675,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing15.jpg",
+      "size": 20660,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing16.jpg",
+      "size": 19801,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing2.jpg",
+      "size": 16184,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing3.jpg",
+      "size": 21478,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing4.jpg",
+      "size": 18627,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing5.jpg",
+      "size": 16293,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing6.jpg",
+      "size": 21001,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing7.jpg",
+      "size": 16687,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing8.jpg",
+      "size": 18148,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/drawing9.jpg",
+      "size": 19699,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/fb.png",
+      "size": 5135,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/fBtn_bgd.png",
+      "size": 24616,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/flags.png",
+      "size": 7463,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/fun-omnom.png",
+      "size": 9028,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/gamecomplete_border.png",
+      "size": 47833,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/gamecomplete.jpg",
+      "size": 105596,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/lBtn_bgd.png",
+      "size": 28609,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/level_bgd_small.png",
+      "size": 9656,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/level_bgd.png",
+      "size": 17511,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg1.jpg",
+      "size": 40548,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg10.jpg",
+      "size": 46305,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg11.jpg",
+      "size": 38679,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg2.jpg",
+      "size": 39793,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg3.jpg",
+      "size": 39711,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg4.jpg",
+      "size": 39396,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg5.jpg",
+      "size": 57899,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg6.jpg",
+      "size": 43614,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg7.jpg",
+      "size": 33160,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg8.jpg",
+      "size": 37508,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/levelbg9.jpg",
+      "size": 25538,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/leveltape_left.png",
+      "size": 3426,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/leveltape_right.png",
+      "size": 3338,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/leveltape.png",
+      "size": 5892,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/mBtn_bgd.png",
+      "size": 22293,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menu_result_en.png",
+      "size": 9728,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menu_result_fr.png",
+      "size": 9445,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menu_result_gr.png",
+      "size": 9863,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menu_result_ru.png",
+      "size": 9780,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menu-options.png",
+      "size": 43002,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/menubg.jpg",
+      "size": 67311,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/options_stars_bgd_small.png",
+      "size": 10223,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/options_stars_bgd.png",
+      "size": 18905,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/perfect_mark.png",
+      "size": 6393,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/ph_logo.png",
+      "size": 39007,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/popupinner-slow.jpg",
+      "size": 23752,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/popupinner.jpg",
+      "size": 24520,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/popupouter.png",
+      "size": 58811,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/result_line.png",
+      "size": 2099,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/sBtn_bgd.png",
+      "size": 17654,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/shadow.png",
+      "size": 47154,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/star_result_small.png",
+      "size": 2372,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/star_result.png",
+      "size": 9046,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/startbg.jpg",
+      "size": 102869,
+      "required": false
+    },
+    {
+      "path": "images/768/ui/taperoll.png",
+      "size": 15716,
+      "required": false
+    },
+    {
+      "path": "images/favicon.ico",
+      "size": 35894,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/ie9msg.png",
+      "size": 7497,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/ielogo.png",
+      "size": 9913,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-chair.png",
+      "size": 36491,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-chairshadow.png",
+      "size": 6283,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-cursor.png",
+      "size": 6462,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-ieprompt.png",
+      "size": 52503,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-omnom.png",
+      "size": 6405,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-prompt.png",
+      "size": 14067,
+      "required": false
+    },
+    {
+      "path": "images/ie/1024/pin-taskbar.png",
+      "size": 28859,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/ie9msg.png",
+      "size": 8646,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/ielogo.png",
+      "size": 10851,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-chair.png",
+      "size": 19358,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-chairshadow.png",
+      "size": 4218,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-cursor.png",
+      "size": 4420,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-ieprompt.png",
+      "size": 37629,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-omnom.png",
+      "size": 7943,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-prompt.png",
+      "size": 24387,
+      "required": false
+    },
+    {
+      "path": "images/ie/768/pin-taskbar.png",
+      "size": 21221,
+      "required": false
+    },
+    {
+      "path": "images/page/404.png",
+      "size": 60987,
+      "required": false
+    },
+    {
+      "path": "images/page/error.png",
+      "size": 63058,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-bg.jpg",
+      "size": 117377,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-bubble.png",
+      "size": 53492,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-logo.png",
+      "size": 7078,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-numbers.png",
+      "size": 2976,
+      "required": false
+    },
+    {
+      "path": "images/page/loader-smallbubble.png",
+      "size": 19936,
+      "required": false
+    },
+    {
+      "path": "images/page/tilebg.jpg",
+      "size": 64197,
+      "required": false
+    },
+    {
+      "path": "images/page/upgrade-js.png",
+      "size": 68936,
+      "required": false
+    },
+    {
+      "path": "images/page/upgrade-mobile.png",
+      "size": 61454,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 8777,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 283201,
+      "required": false
+    },
+    {
+      "path": "scripts/ctr.js",
+      "size": 489892,
+      "required": true
+    },
+    {
+      "path": "scripts/libraries.js",
+      "size": 122789,
+      "required": true
+    },
+    {
+      "path": "scripts/sm2.js",
+      "size": 34020,
+      "required": true
+    },
+    {
+      "path": "sm2/soundmanager2_flash9.swf",
+      "size": 8696,
+      "required": true
+    },
+    {
+      "path": "sm2/soundmanager2.swf",
+      "size": 2934,
+      "required": true
+    },
+    {
+      "path": "video/intro_1024.mp4",
+      "size": 1162595,
+      "required": false
+    },
+    {
+      "path": "video/outro_1024.mp4",
+      "size": 1914376,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

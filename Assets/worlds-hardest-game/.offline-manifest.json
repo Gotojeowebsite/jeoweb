@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "slug": "worlds-hardest-game",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438574,
+  "files": [
+    {
+      "path": "css/style.css",
+      "size": 91,
+      "required": true
+    },
+    {
+      "path": "images/main_menu_level_select.png",
+      "size": 201908,
+      "required": false
+    },
+    {
+      "path": "images/main_menu_load_game.png",
+      "size": 202382,
+      "required": false
+    },
+    {
+      "path": "images/main_menu_play_game.png",
+      "size": 205468,
+      "required": false
+    },
+    {
+      "path": "images/main_menu.png",
+      "size": 203265,
+      "required": false
+    },
+    {
+      "path": "images/splash.jpg",
+      "size": 17078,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3660,
+      "required": true
+    },
+    {
+      "path": "js/bars.js",
+      "size": 9497,
+      "required": true
+    },
+    {
+      "path": "js/border.js",
+      "size": 191,
+      "required": true
+    },
+    {
+      "path": "js/buttons.js",
+      "size": 14741,
+      "required": true
+    },
+    {
+      "path": "js/canvas.js",
+      "size": 354,
+      "required": true
+    },
+    {
+      "path": "js/checkpoint.js",
+      "size": 2714,
+      "required": true
+    },
+    {
+      "path": "js/coins.js",
+      "size": 19220,
+      "required": true
+    },
+    {
+      "path": "js/colors.js",
+      "size": 2133,
+      "required": true
+    },
+    {
+      "path": "js/enemy.js",
+      "size": 86256,
+      "required": true
+    },
+    {
+      "path": "js/finish.js",
+      "size": 3939,
+      "required": true
+    },
+    {
+      "path": "js/hotkeys.js",
+      "size": 2009,
+      "required": true
+    },
+    {
+      "path": "js/ingame_menu.js",
+      "size": 10756,
+      "required": true
+    },
+    {
+      "path": "js/instructions.js",
+      "size": 2938,
+      "required": true
+    },
+    {
+      "path": "js/intermission.js",
+      "size": 4018,
+      "required": true
+    },
+    {
+      "path": "js/jquery.hotkeys.js",
+      "size": 3795,
+      "required": true
+    },
+    {
+      "path": "js/jquery.min.js",
+      "size": 78600,
+      "required": true
+    },
+    {
+      "path": "js/key_status.js",
+      "size": 495,
+      "required": true
+    },
+    {
+      "path": "js/level_select.js",
+      "size": 6856,
+      "required": true
+    },
+    {
+      "path": "js/main_menu.js",
+      "size": 3851,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 3763,
+      "required": true
+    },
+    {
+      "path": "js/mobile_controls.js",
+      "size": 18372,
+      "required": true
+    },
+    {
+      "path": "js/mouse.js",
+      "size": 760,
+      "required": true
+    },
+    {
+      "path": "js/player.js",
+      "size": 38095,
+      "required": true
+    },
+    {
+      "path": "js/preloader.js",
+      "size": 6699,
+      "required": true
+    },
+    {
+      "path": "js/sounds.js",
+      "size": 449,
+      "required": true
+    },
+    {
+      "path": "js/timer.js",
+      "size": 294,
+      "required": true
+    },
+    {
+      "path": "js/vars.js",
+      "size": 9448,
+      "required": true
+    },
+    {
+      "path": "js/walls.js",
+      "size": 44680,
+      "required": true
+    },
+    {
+      "path": "sounds/hi",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "sounds/music.mp3",
+      "size": 4942284,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_bounce0.mp3",
+      "size": 13485,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_bounce1.mp3",
+      "size": 12333,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_checkpoint.mp3",
+      "size": 3117,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_click.mp3",
+      "size": 2349,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_coin.mp3",
+      "size": 3885,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_die.mp3",
+      "size": 6189,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_intermission.mp3",
+      "size": 23469,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_win.mp3",
+      "size": 16173,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "www.google.com"
+  ],
+  "external_critical": [
+    "www.google.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

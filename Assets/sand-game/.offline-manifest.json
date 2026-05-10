@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "slug": "sand-game",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438558,
+  "files": [
+    {
+      "path": "assets/favicon.ico",
+      "size": 15630,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 15630,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4272,
+      "required": true
+    },
+    {
+      "path": "sand-game.PNG",
+      "size": 1206044,
+      "required": false
+    },
+    {
+      "path": "sand.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "scripts/canvasConfig.js",
+      "size": 189,
+      "required": true
+    },
+    {
+      "path": "scripts/cursor.js",
+      "size": 8304,
+      "required": true
+    },
+    {
+      "path": "scripts/elements.js",
+      "size": 22280,
+      "required": true
+    },
+    {
+      "path": "scripts/game.js",
+      "size": 3346,
+      "required": true
+    },
+    {
+      "path": "scripts/menu.js",
+      "size": 5245,
+      "required": true
+    },
+    {
+      "path": "scripts/particles.js",
+      "size": 13576,
+      "required": true
+    },
+    {
+      "path": "scripts/spigots.js",
+      "size": 1021,
+      "required": true
+    },
+    {
+      "path": "scripts/util.js",
+      "size": 1330,
+      "required": true
+    },
+    {
+      "path": "styles.css",
+      "size": 1978,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

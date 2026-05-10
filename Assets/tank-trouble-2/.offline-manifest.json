@@ -1,0 +1,638 @@
+{
+  "schema": 1,
+  "slug": "tank-trouble-2",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438568,
+  "files": [
+    {
+      "path": "_external_mirror/apis.google.com/js/client.js",
+      "size": 14539,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/account_menu_v2-vflm2lWl_.css",
+      "size": 3367,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/components/title_bubble-vflNHwZeu.css",
+      "size": 1892,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/dig-components/index.web-vfltJ6f-C.css",
+      "size": 661,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/dig-fonts/index.metaserver-vflTQCDDt.css",
+      "size": 6731,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/dig-illustrations/index.web-vflB2icJ2.css",
+      "size": 640,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/maestro_appshell_styles-vflfNNLV5.css",
+      "size": 3031,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/maestro_layout-vfluaMGaL.css",
+      "size": 15624,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/maestro-nav/maestro-portal-vflK8MYmu.css",
+      "size": 24879,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/react/overlay-vflNXoFem.css",
+      "size": 194,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/css/snackbar-vfl8BcUDV.css",
+      "size": 909,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/images/favicon.ico",
+      "size": 4286,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/metaserver/static/js/alameda_bundle/alameda_bundle_chrome_gte102_lt132_en-vfl8YT-vS.js",
+      "size": 61129,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cfl.dropboxstatic.com/static/typescript/component_libraries/dig-experimental/src/index.web-vflMgkV3K.css",
+      "size": 9382,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/www.dropbox.com/s/t7xljiawjzah9l6/stylesheet.css",
+      "size": 99307,
+      "required": false
+    },
+    {
+      "path": "appmanifest.json",
+      "size": 524,
+      "required": true
+    },
+    {
+      "path": "css/animate.min.css",
+      "size": 53485,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 1188795,
+      "required": true
+    },
+    {
+      "path": "icon-128.png",
+      "size": 9504,
+      "required": false
+    },
+    {
+      "path": "icon-16.png",
+      "size": 588,
+      "required": false
+    },
+    {
+      "path": "icon-256.png",
+      "size": 24748,
+      "required": false
+    },
+    {
+      "path": "icon-32.png",
+      "size": 1499,
+      "required": false
+    },
+    {
+      "path": "images/backgroundfadded-sheet0.png",
+      "size": 16544,
+      "required": false
+    },
+    {
+      "path": "images/backgroundnormal-sheet0.png",
+      "size": 21718,
+      "required": false
+    },
+    {
+      "path": "images/bluedot-sheet0.png",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "images/bluefire-sheet0.png",
+      "size": 759,
+      "required": false
+    },
+    {
+      "path": "images/blueline-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/bluetoucharea-sheet0.png",
+      "size": 1565,
+      "required": false
+    },
+    {
+      "path": "images/border-sheet0.png",
+      "size": 102,
+      "required": false
+    },
+    {
+      "path": "images/bounce1-sheet0.png",
+      "size": 147,
+      "required": false
+    },
+    {
+      "path": "images/bounce2-sheet0.png",
+      "size": 147,
+      "required": false
+    },
+    {
+      "path": "images/bounce3-sheet0.png",
+      "size": 131,
+      "required": false
+    },
+    {
+      "path": "images/bp1-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/bulletlarge-sheet0.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "images/bulletmed-sheet0.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/bulletsmall-sheet0.png",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "images/cb_p1_fire-sheet0.png",
+      "size": 1287,
+      "required": false
+    },
+    {
+      "path": "images/cb_p1-sheet0.png",
+      "size": 2778,
+      "required": false
+    },
+    {
+      "path": "images/cb_p2_fire-sheet0.png",
+      "size": 857,
+      "required": false
+    },
+    {
+      "path": "images/cb_p2-sheet0.png",
+      "size": 2780,
+      "required": false
+    },
+    {
+      "path": "images/cb_p3_fire-sheet0.png",
+      "size": 1310,
+      "required": false
+    },
+    {
+      "path": "images/cb_p3-sheet0.png",
+      "size": 2791,
+      "required": false
+    },
+    {
+      "path": "images/cb_p4_fire-sheet0.png",
+      "size": 1305,
+      "required": false
+    },
+    {
+      "path": "images/cb_p4-sheet0.png",
+      "size": 2784,
+      "required": false
+    },
+    {
+      "path": "images/deathray-sheet0.png",
+      "size": 404,
+      "required": false
+    },
+    {
+      "path": "images/externalkeyboard-sheet0.png",
+      "size": 346,
+      "required": false
+    },
+    {
+      "path": "images/fragment-sheet0.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "images/fragment-sheet1.png",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "images/fragment-sheet2.png",
+      "size": 121,
+      "required": false
+    },
+    {
+      "path": "images/fragparticle-sheet0.png",
+      "size": 154,
+      "required": false
+    },
+    {
+      "path": "images/greendot-sheet0.png",
+      "size": 1102,
+      "required": false
+    },
+    {
+      "path": "images/greenfire-sheet0.png",
+      "size": 2287,
+      "required": false
+    },
+    {
+      "path": "images/greenline-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/greentoucharea-sheet0.png",
+      "size": 4746,
+      "required": false
+    },
+    {
+      "path": "images/hitcheck-sheet0.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/homingmissile-sheet0.png",
+      "size": 3649,
+      "required": false
+    },
+    {
+      "path": "images/line-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/login_facebook-sheet0.png",
+      "size": 266,
+      "required": false
+    },
+    {
+      "path": "images/login_github-sheet0.png",
+      "size": 609,
+      "required": false
+    },
+    {
+      "path": "images/login_google-sheet0.png",
+      "size": 376,
+      "required": false
+    },
+    {
+      "path": "images/login_twitter-sheet0.png",
+      "size": 353,
+      "required": false
+    },
+    {
+      "path": "images/los-sheet0.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/losv2-sheet0.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/losv3-sheet0.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/mazeeditmini.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "images/mazeeditor.png",
+      "size": 186,
+      "required": false
+    },
+    {
+      "path": "images/mine-sheet0.png",
+      "size": 2461,
+      "required": false
+    },
+    {
+      "path": "images/mute-sheet0.png",
+      "size": 36939,
+      "required": false
+    },
+    {
+      "path": "images/offline-sheet0.png",
+      "size": 688,
+      "required": false
+    },
+    {
+      "path": "images/orangedot-sheet0.png",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "images/orangefire-sheet0.png",
+      "size": 759,
+      "required": false
+    },
+    {
+      "path": "images/orangeline-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/orangetoucharea-sheet0.png",
+      "size": 1565,
+      "required": false
+    },
+    {
+      "path": "images/particleslarge.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "images/particlesmed.png",
+      "size": 131,
+      "required": false
+    },
+    {
+      "path": "images/particlessmall-sheet0.png",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "images/pauseicon-sheet0.png",
+      "size": 1035,
+      "required": false
+    },
+    {
+      "path": "images/pausemobile-sheet0.png",
+      "size": 725,
+      "required": false
+    },
+    {
+      "path": "images/pausescreen-sheet0.png",
+      "size": 1739,
+      "required": false
+    },
+    {
+      "path": "images/player01-sheet0.png",
+      "size": 33349,
+      "required": false
+    },
+    {
+      "path": "images/popup-sheet0.png",
+      "size": 584,
+      "required": false
+    },
+    {
+      "path": "images/powerup-sheet0.png",
+      "size": 1207,
+      "required": false
+    },
+    {
+      "path": "images/powerup-sheet1.png",
+      "size": 1132,
+      "required": false
+    },
+    {
+      "path": "images/powerup-sheet2.png",
+      "size": 644,
+      "required": false
+    },
+    {
+      "path": "images/rcmissile-sheet0.png",
+      "size": 3881,
+      "required": false
+    },
+    {
+      "path": "images/reddot-sheet0.png",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "images/redfire-sheet0.png",
+      "size": 759,
+      "required": false
+    },
+    {
+      "path": "images/redline-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/redtoucharea-sheet0.png",
+      "size": 1565,
+      "required": false
+    },
+    {
+      "path": "images/screen-sheet0.png",
+      "size": 122,
+      "required": false
+    },
+    {
+      "path": "images/signedin-sheet0.png",
+      "size": 160,
+      "required": false
+    },
+    {
+      "path": "images/sprite-sheet0.png",
+      "size": 352,
+      "required": false
+    },
+    {
+      "path": "images/start-sheet0.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "images/tankleft-sheet0.png",
+      "size": 366044,
+      "required": false
+    },
+    {
+      "path": "images/tankright-sheet0.png",
+      "size": 365535,
+      "required": false
+    },
+    {
+      "path": "images/target-sheet0.png",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "images/tilemap.png",
+      "size": 199,
+      "required": false
+    },
+    {
+      "path": "images/turretp1-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/turretp2-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/wallv2-sheet0.png",
+      "size": 1161,
+      "required": false
+    },
+    {
+      "path": "images/wblinep1-sheet0.png",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "images/wblinep3-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/xboxcontrollerlefttrigger-sheet0.png",
+      "size": 16465,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4559,
+      "required": true
+    },
+    {
+      "path": "ItCameFr0mMars.txt",
+      "size": 40,
+      "required": false
+    },
+    {
+      "path": "js/c2runtime.js",
+      "size": 1133155,
+      "required": true
+    },
+    {
+      "path": "js/eb14e23ad0e87289c77974272595d71e7b61790f.js",
+      "size": 659978,
+      "required": true
+    },
+    {
+      "path": "loading-logo.png",
+      "size": 29391,
+      "required": false
+    },
+    {
+      "path": "media/bullet.ogg",
+      "size": 9076,
+      "required": false
+    },
+    {
+      "path": "media/death ray sound2.ogg",
+      "size": 56400,
+      "required": false
+    },
+    {
+      "path": "media/exploded tank sound.ogg",
+      "size": 31580,
+      "required": false
+    },
+    {
+      "path": "media/hardcore bullet sound.ogg",
+      "size": 15273,
+      "required": false
+    },
+    {
+      "path": "media/homing%20missle.ogg",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "media/kill point added.ogg",
+      "size": 11690,
+      "required": false
+    },
+    {
+      "path": "media/mouse_over2.ogg",
+      "size": 4786,
+      "required": false
+    },
+    {
+      "path": "media/rc missle atomic.ogg",
+      "size": 30696,
+      "required": false
+    },
+    {
+      "path": "offline.appcache",
+      "size": 2997,
+      "required": false
+    },
+    {
+      "path": "pathfind.js",
+      "size": 13157,
+      "required": true
+    },
+    {
+      "path": "tank.jpeg",
+      "size": 7953,
+      "required": false
+    },
+    {
+      "path": "waker.js",
+      "size": 583,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

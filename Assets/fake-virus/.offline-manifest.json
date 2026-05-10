@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "slug": "fake-virus",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438539,
+  "files": [
+    {
+      "path": "_external_mirror/a.pub.network/core/pubfig/cls.css",
+      "size": 2096,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.pub.network/pranx-com/pubfig.min.js",
+      "size": 68227,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/code.jquery.com/jquery-latest.min.js",
+      "size": 95786,
+      "required": true
+    },
+    {
+      "path": "background.jpg",
+      "size": 40379,
+      "required": false
+    },
+    {
+      "path": "cursor.gif",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "extra/email_decode.js",
+      "size": 1238,
+      "required": true
+    },
+    {
+      "path": "fake-hacked-computer.png",
+      "size": 4434,
+      "required": false
+    },
+    {
+      "path": "fake-virus-prank.png",
+      "size": 21866,
+      "required": false
+    },
+    {
+      "path": "fake-virus.png",
+      "size": 14254,
+      "required": false
+    },
+    {
+      "path": "files-encrypted-prank.png",
+      "size": 8141,
+      "required": false
+    },
+    {
+      "path": "icon.png",
+      "size": 10025,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 7066,
+      "required": true
+    },
+    {
+      "path": "pay-with-kidneys.png",
+      "size": 8521,
+      "required": false
+    },
+    {
+      "path": "script.js",
+      "size": 691,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 7219,
+      "required": true
+    },
+    {
+      "path": "support.png",
+      "size": 10018,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

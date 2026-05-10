@@ -1,0 +1,385 @@
+{
+  "schema": 1,
+  "slug": "hangman",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438547,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/data.json",
+      "size": 4008,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/datax.json",
+      "size": 6909,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/dataxx.json",
+      "size": 163,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/dataxxx.json",
+      "size": 257,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/ga.js",
+      "size": 1864,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/gamemonetize-logo.png",
+      "size": 14477,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/sdk.js",
+      "size": 247788,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_3d515a804faf825a6eb5d4f83d5f8d513152c45a/data.js",
+      "size": 104855,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim1-sheet0.png",
+      "size": 551,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim2-sheet0.png",
+      "size": 1647,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim3-sheet0.png",
+      "size": 289,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim4-sheet0.png",
+      "size": 2559,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim4-sheet1.png",
+      "size": 3430,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim5-sheet0.png",
+      "size": 2556,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim5-sheet1.png",
+      "size": 3165,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim6-sheet0.png",
+      "size": 2080,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim6-sheet1.png",
+      "size": 3042,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim7-sheet0.png",
+      "size": 2052,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/anim7-sheet1.png",
+      "size": 2752,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/answer_frame-sheet0.png",
+      "size": 5771,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/answer_frame-sheet1.png",
+      "size": 2641,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/bg-sheet0.png",
+      "size": 236765,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/btn_play-sheet0.png",
+      "size": 3276,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_help-sheet0.png",
+      "size": 9094,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_home-sheet0.png",
+      "size": 17491,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_more-sheet0.png",
+      "size": 6067,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_more2-sheet0.png",
+      "size": 6106,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_next-sheet0.png",
+      "size": 1549,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_next-sheet1.png",
+      "size": 9907,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_pause-sheet0.png",
+      "size": 11994,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_play-sheet0.png",
+      "size": 12441,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_restart-sheet0.png",
+      "size": 8158,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_sound-sheet0.png",
+      "size": 8573,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button_sound-sheet1.png",
+      "size": 8867,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/button-sheet0.png",
+      "size": 6075,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/buttonfullscreen-sheet0.png",
+      "size": 10351,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/buttonfullscreen-sheet1.png",
+      "size": 8883,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/complited-sheet0.png",
+      "size": 40524,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/complited-sheet1.png",
+      "size": 37855,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/destored-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/exit_pause-sheet0.png",
+      "size": 7906,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/gallow-sheet0.png",
+      "size": 8402,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/gameplay_diamond-sheet0.png",
+      "size": 3048,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/general_logo_blue-sheet0.png",
+      "size": 21431,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/gg-sheet0.png",
+      "size": 8343,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/gg-sheet1.png",
+      "size": 19508,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/help_money-sheet0.png",
+      "size": 1388,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/key_button-sheet0.png",
+      "size": 107,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/line-sheet0.png",
+      "size": 259,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/logo_fun-sheet0.png",
+      "size": 34810,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/main_menu_cup-sheet0.png",
+      "size": 8184,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/no_frame-sheet0.png",
+      "size": 494,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/paused_fon-sheet0.png",
+      "size": 49596,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/ramka-sheet0.png",
+      "size": 1091,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/spritefont.png",
+      "size": 18572,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/spritefont2.png",
+      "size": 36621,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/text_help-sheet0.png",
+      "size": 6524,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/images/yes_frame-sheet0.png",
+      "size": 2692,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/loading-logo.png",
+      "size": 7659,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/yrgen73/hman_a756680eefd0986c291b2a1864355bf9a4fd6d93/wordbase.xml",
+      "size": 2693,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474252,
+      "required": true
+    },
+    {
+      "path": "hang man.png",
+      "size": 3691,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 71454,
+      "required": true
+    },
+    {
+      "path": "js/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js",
+      "size": 1363,
+      "required": true
+    },
+    {
+      "path": "js/hm.js",
+      "size": 417225,
+      "required": true
+    },
+    {
+      "path": "js/jquery.min.js",
+      "size": 88607,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "gamemonetize.com",
+    "imasdk.googleapis.com",
+    "jeowebsite.github.io",
+    "lh4.googleusercontent.com",
+    "pagead2.googlesyndication.com",
+    "securepubads.g.doubleclick.net",
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "gamemonetize.com",
+    "jeowebsite.github.io",
+    "lh4.googleusercontent.com",
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

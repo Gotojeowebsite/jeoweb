@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "slug": "push-the-square",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778438556,
+  "files": [
+    {
+      "path": "Build/NewWebGL.data",
+      "size": 12266800,
+      "required": true
+    },
+    {
+      "path": "Build/NewWebGL.framework.js",
+      "size": 470337,
+      "required": true
+    },
+    {
+      "path": "Build/NewWebGL.loader.js",
+      "size": 15270,
+      "required": true
+    },
+    {
+      "path": "Build/NewWebGL.wasm",
+      "size": 17005597,
+      "required": true
+    },
+    {
+      "path": "img/icon.png",
+      "size": 1444,
+      "required": false
+    },
+    {
+      "path": "img/splash.png",
+      "size": 6546,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2535,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1272,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen-button.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1108,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "slug": "tanuki-sunset",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438568,
+  "files": [
+    {
+      "path": "img/cover.png",
+      "size": 60459,
+      "required": false
+    },
+    {
+      "path": "img/logo.png",
+      "size": 158090,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 609,
+      "required": true
+    },
+    {
+      "path": "tanuki.json",
+      "size": 484,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "w8.snokido.com"
+  ],
+  "external_critical": [
+    "w8.snokido.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -179,10 +179,46 @@ Purpose: Quality Assurance script that iterates over games_list.json, tests if g
 Run:
   node scripts/qa-tester.js
 
-File: scripts/remediation.js
-Purpose: Self-healing script that reads "broken" games, tracks missing 404 assets, spoof-fetches them from the original host, and repairs the game.
+File: scripts/recover-game.js
+Purpose: Canonical single-game recovery. Searches the open web for a working copy of the named game across many search backends (DuckDuckGo, Brave, Bing, GitHub Code Search, Wayback), scores candidate URLs against a hand-editable domain reputation list, scrapes the top candidates with header-spoofing Puppeteer into a sandbox folder, validates with the offline manifest verifier and the Playwright scanner, then atomically swaps the live game folder when a candidate passes. Failures bump a per-slug cooldown.
 Run:
-  node scripts/remediation.js
+  node scripts/recover-game.js <slug>
+  node scripts/recover-game.js <slug> --url <portal-url>
+  node scripts/recover-game.js <slug> --verbose
+  node scripts/recover-game.js <slug> --ignore-cooldown
+
+File: scripts/recover-all-broken.js
+Purpose: Batch driver for recover-game.js. Reads game_health.json, filters out cooldown'd slugs, runs the recovery pipeline across all currently-broken games in parallel workers, writes reports/recovery_summary_<date>.json.
+Run:
+  node scripts/recover-all-broken.js --workers 3 --time-budget 90m
+
+File: scripts/build-offline-manifest.js
+Purpose: Builds Assets/<slug>/.offline-manifest.json for one game or the whole catalog. Used as the gate for "is this game self-contained?".
+Run:
+  node scripts/build-offline-manifest.js --all
+  node scripts/build-offline-manifest.js --slug snake
+
+File: scripts/verify-offline-manifest.js
+Purpose: CI gate. Exits non-zero if any game has a required file missing or a new external runtime dep that isn't on the allowlist. Wired into static.yml so broken games can't deploy.
+Run:
+  node scripts/verify-offline-manifest.js
+  node scripts/verify-offline-manifest.js --candidate Assets/.recovery/snake-2026...
+
+File: scripts/localize-all-games.js
+Purpose: Sweep the catalog and (1) auto-inject /poki-offline-shim.js into HTML that references PokiSDK, (2) stub out script tags pointing at known runtime hosts (poki/gamemonetize/kongregate). Rebuilds the manifest for each game touched.
+Run:
+  node scripts/localize-all-games.js          # dry run
+  node scripts/localize-all-games.js --apply
+
+NOTE: scripts/remediation.js was DELETED — it wrote the invalid status value "operational" directly into games_list.json, conflicting with the canonical game_health.json chain. Use scripts/recover-game.js instead.
+
+LEGACY (kept in tree, no longer canonical):
+  scripts/auto-fix-bot.js
+  auto_fix_and_recover_games.py
+These are the original 7-strategy in-place patch loop. They still work for
+manual debugging but are not the canonical repair path; the recovery engine
+above is. They share .auto_fix_and_recover.lock so they can't run alongside
+each other or the new engine.
 
 File: scripts/detect-broken-games.js
 Purpose: Highly advanced testing script that launches games locally in a headless browser. Simulates human clicks and monitors WebGL context/memory to detect games that crash silently or get stuck on loading screens, marking them as "broken" in the catalog.

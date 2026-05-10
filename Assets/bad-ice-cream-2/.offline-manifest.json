@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "slug": "bad-ice-cream-2",
+  "engine": "flash",
+  "entry": "index.html",
+  "generated_at": 1778438521,
+  "files": [
+    {
+      "path": "assets/badicecream_splash.jpg",
+      "size": 26649,
+      "required": false
+    },
+    {
+      "path": "assets/BadIceCream2_sdk.swf",
+      "size": 3206157,
+      "required": true
+    },
+    {
+      "path": "assets/builtins/avmplus.abc",
+      "size": 520,
+      "required": false
+    },
+    {
+      "path": "assets/builtins/builtin.abc",
+      "size": 21973,
+      "required": false
+    },
+    {
+      "path": "assets/builtins/playerglobal.abcs",
+      "size": 183917,
+      "required": false
+    },
+    {
+      "path": "assets/builtins/playerglobal.json",
+      "size": 51650,
+      "required": false
+    },
+    {
+      "path": "assets/NitromeAPI.pkg",
+      "size": 26422,
+      "required": false
+    },
+    {
+      "path": "bad-ice-cream-2.png",
+      "size": 96879,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4318,
+      "required": true
+    },
+    {
+      "path": "js/BadIceCream.js",
+      "size": 2612722,
+      "required": true
+    },
+    {
+      "path": "js/loader.js",
+      "size": 8152,
+      "required": true
+    },
+    {
+      "path": "js/virtualJoystickSkinMod.js",
+      "size": 12341,
+      "required": true
+    },
+    {
+      "path": "lng.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "poki.js",
+      "size": 239482,
+      "required": true
+    },
+    {
+      "path": "preloader/nitromePreloader.js",
+      "size": 47535,
+      "required": true
+    },
+    {
+      "path": "skin/poki-nitrome_border.png",
+      "size": 24647,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "localhost"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "localhost"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

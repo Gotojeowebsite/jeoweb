@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "slug": "cannon-basketball-4",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438528,
+  "files": [
+    {
+      "path": "assets/audio/ball_in_basket.ogg",
+      "size": 13055,
+      "required": false
+    },
+    {
+      "path": "assets/audio/button.ogg",
+      "size": 9893,
+      "required": false
+    },
+    {
+      "path": "assets/audio/gear.ogg",
+      "size": 16997,
+      "required": false
+    },
+    {
+      "path": "assets/audio/shot.ogg",
+      "size": 14087,
+      "required": false
+    },
+    {
+      "path": "assets/audio/spring.ogg",
+      "size": 30578,
+      "required": false
+    },
+    {
+      "path": "assets/audio/star.ogg",
+      "size": 18042,
+      "required": false
+    },
+    {
+      "path": "assets/audio/switcher.ogg",
+      "size": 8506,
+      "required": false
+    },
+    {
+      "path": "assets/audio/teleport.ogg",
+      "size": 7792,
+      "required": false
+    },
+    {
+      "path": "assets/audio/theme.ogg",
+      "size": 2643811,
+      "required": false
+    },
+    {
+      "path": "assets/audio/win.ogg",
+      "size": 16528,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/Airstrip.ttf",
+      "size": 25956,
+      "required": false
+    },
+    {
+      "path": "assets/images/atlasGame.json",
+      "size": 99911,
+      "required": false
+    },
+    {
+      "path": "assets/images/atlasGame.png",
+      "size": 901905,
+      "required": false
+    },
+    {
+      "path": "assets/images/atlasUI.json",
+      "size": 17537,
+      "required": false
+    },
+    {
+      "path": "assets/images/bg_1.png",
+      "size": 171208,
+      "required": false
+    },
+    {
+      "path": "assets/images/bg_2.png",
+      "size": 169205,
+      "required": false
+    },
+    {
+      "path": "assets/images/bg_menu.png",
+      "size": 191628,
+      "required": false
+    },
+    {
+      "path": "assets/images/splash.png",
+      "size": 54185,
+      "required": false
+    },
+    {
+      "path": "assets/images/tile.png",
+      "size": 1300,
+      "required": false
+    },
+    {
+      "path": "atlasUI.png",
+      "size": 416107,
+      "required": false
+    },
+    {
+      "path": "css/styles.css",
+      "size": 563,
+      "required": true
+    },
+    {
+      "path": "img/splash.png",
+      "size": 64476,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 786,
+      "required": true
+    },
+    {
+      "path": "js/index.js",
+      "size": 325020,
+      "required": true
+    },
+    {
+      "path": "js/vendor/Box2D.js",
+      "size": 233251,
+      "required": true
+    },
+    {
+      "path": "js/vendor/pixi-sound.js",
+      "size": 27664,
+      "required": true
+    },
+    {
+      "path": "js/vendor/pixi.js",
+      "size": 400476,
+      "required": true
+    },
+    {
+      "path": "js/vendor/TweenMax.js",
+      "size": 93661,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

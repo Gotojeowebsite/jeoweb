@@ -1,0 +1,1556 @@
+{
+  "schema": 1,
+  "slug": "there-is-no-game",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778438569,
+  "files": [
+    {
+      "path": "data.js",
+      "size": 306199,
+      "required": true
+    },
+    {
+      "path": "images/2022_02_24_0hv_Kleki.png",
+      "size": 114614,
+      "required": false
+    },
+    {
+      "path": "images/animal-sheet0.png",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "images/arka_rightarrow-sheet0.png",
+      "size": 173,
+      "required": false
+    },
+    {
+      "path": "images/arkaball-sheet0.png",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "images/arkaball-sheet1.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/arkaball02-sheet0.png",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "images/arkabrick-sheet0.png",
+      "size": 118,
+      "required": false
+    },
+    {
+      "path": "images/arkamovezoneleft-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/arkawall-sheet0.png",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "images/audio2-sheet0.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "images/cadresupportsub-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/carreblancfond-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/ciel-sheet0.png",
+      "size": 460,
+      "required": false
+    },
+    {
+      "path": "images/cup-sheet0.png",
+      "size": 201,
+      "required": false
+    },
+    {
+      "path": "images/cup-sheet1.png",
+      "size": 213,
+      "required": false
+    },
+    {
+      "path": "images/cupsparkles-sheet0.png",
+      "size": 136,
+      "required": false
+    },
+    {
+      "path": "images/doodle.png",
+      "size": 36154,
+      "required": false
+    },
+    {
+      "path": "images/dragzone-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/dummy_camera-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/dummyscreenright-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/fadein-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/fadeinwhite-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/feuillefx.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/flag_en-sheet0.png",
+      "size": 225,
+      "required": false
+    },
+    {
+      "path": "images/flag_en-sheet1.png",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "images/fondnoirtitre-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/fondtxtfollow-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "images/fxlayerobj-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/gameareaball-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/glitchscreen-sheet0.png",
+      "size": 344,
+      "required": false
+    },
+    {
+      "path": "images/goat-sheet0.png",
+      "size": 238,
+      "required": false
+    },
+    {
+      "path": "images/goat-sheet1.png",
+      "size": 238,
+      "required": false
+    },
+    {
+      "path": "images/goat-sheet2.png",
+      "size": 238,
+      "required": false
+    },
+    {
+      "path": "images/goatbloc-sheet0.png",
+      "size": 153,
+      "required": false
+    },
+    {
+      "path": "images/goatbloc02b-sheet0.png",
+      "size": 166,
+      "required": false
+    },
+    {
+      "path": "images/goatbloc2-sheet0.png",
+      "size": 151,
+      "required": false
+    },
+    {
+      "path": "images/goatblocfond-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "images/goatcageback-sheet0.png",
+      "size": 121,
+      "required": false
+    },
+    {
+      "path": "images/goatcagefront-sheet0.png",
+      "size": 210,
+      "required": false
+    },
+    {
+      "path": "images/goatchain-sheet0.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "images/goatdoor-sheet0.png",
+      "size": 194,
+      "required": false
+    },
+    {
+      "path": "images/groundtitle-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/impactletterfx.png",
+      "size": 91,
+      "required": false
+    },
+    {
+      "path": "images/impactwoodenboxfx.png",
+      "size": 128,
+      "required": false
+    },
+    {
+      "path": "images/key-sheet0.png",
+      "size": 174,
+      "required": false
+    },
+    {
+      "path": "images/keyfake-sheet0.png",
+      "size": 177,
+      "required": false
+    },
+    {
+      "path": "images/letter_e01-sheet0.png",
+      "size": 133,
+      "required": false
+    },
+    {
+      "path": "images/letter_g-sheet0.png",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "images/letter_g2-sheet0.png",
+      "size": 108,
+      "required": false
+    },
+    {
+      "path": "images/letter_g3-sheet0.png",
+      "size": 107,
+      "required": false
+    },
+    {
+      "path": "images/letter_h-sheet0.png",
+      "size": 108,
+      "required": false
+    },
+    {
+      "path": "images/letter_i-sheet0.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "images/letter_n-sheet0.png",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "images/letter_o-sheet0.png",
+      "size": 192,
+      "required": false
+    },
+    {
+      "path": "images/letter_r-sheet0.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "images/letter_s-sheet0.png",
+      "size": 109,
+      "required": false
+    },
+    {
+      "path": "images/letter_t-sheet0.png",
+      "size": 128,
+      "required": false
+    },
+    {
+      "path": "images/loading-logo.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "images/metalplate-sheet0.png",
+      "size": 240,
+      "required": false
+    },
+    {
+      "path": "images/metalplate-sheet1.png",
+      "size": 472,
+      "required": false
+    },
+    {
+      "path": "images/mousepointersprite-sheet0.png",
+      "size": 174,
+      "required": false
+    },
+    {
+      "path": "images/mousepointersprite-sheet1.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/mousepointersprite-sheet2.png",
+      "size": 116,
+      "required": false
+    },
+    {
+      "path": "images/no-sheet0.png",
+      "size": 236,
+      "required": false
+    },
+    {
+      "path": "images/no-sheet1.png",
+      "size": 139,
+      "required": false
+    },
+    {
+      "path": "images/noix-sheet0.png",
+      "size": 253,
+      "required": false
+    },
+    {
+      "path": "images/panellettersback-sheet0.png",
+      "size": 465,
+      "required": false
+    },
+    {
+      "path": "images/panellettersfront-sheet0.png",
+      "size": 226,
+      "required": false
+    },
+    {
+      "path": "images/panellettersslot-sheet0.png",
+      "size": 147,
+      "required": false
+    },
+    {
+      "path": "images/previewtitlenewgrounds-sheet0.png",
+      "size": 3095,
+      "required": false
+    },
+    {
+      "path": "images/raquette-sheet0.png",
+      "size": 140,
+      "required": false
+    },
+    {
+      "path": "images/respawn-sheet0.png",
+      "size": 100,
+      "required": false
+    },
+    {
+      "path": "images/splash.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/squithink-sheet0.png",
+      "size": 338,
+      "required": false
+    },
+    {
+      "path": "images/switchsound-sheet0.png",
+      "size": 425,
+      "required": false
+    },
+    {
+      "path": "images/tree-sheet0.png",
+      "size": 2145,
+      "required": false
+    },
+    {
+      "path": "images/tree-sheet1.png",
+      "size": 692,
+      "required": false
+    },
+    {
+      "path": "images/treetop-sheet0.png",
+      "size": 874,
+      "required": false
+    },
+    {
+      "path": "images/txt_notagameby.png",
+      "size": 844,
+      "required": false
+    },
+    {
+      "path": "images/txt_score.png",
+      "size": 964,
+      "required": false
+    },
+    {
+      "path": "images/txt_subtitles.png",
+      "size": 844,
+      "required": false
+    },
+    {
+      "path": "images/txt_title.png",
+      "size": 1047,
+      "required": false
+    },
+    {
+      "path": "images/vis-sheet0.png",
+      "size": 173,
+      "required": false
+    },
+    {
+      "path": "images/waiticon-sheet0.png",
+      "size": 136,
+      "required": false
+    },
+    {
+      "path": "images/waterfall-sheet0.png",
+      "size": 145,
+      "required": false
+    },
+    {
+      "path": "images/waterfall-sheet1.png",
+      "size": 142,
+      "required": false
+    },
+    {
+      "path": "images/waterfall-sheet2.png",
+      "size": 141,
+      "required": false
+    },
+    {
+      "path": "images/waterplat-sheet0.png",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "images/waterplouf.png",
+      "size": 91,
+      "required": false
+    },
+    {
+      "path": "images/woodplate-sheet0.png",
+      "size": 264,
+      "required": false
+    },
+    {
+      "path": "images/yes-sheet0.png",
+      "size": 287,
+      "required": false
+    },
+    {
+      "path": "images/yes-sheet1.png",
+      "size": 154,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1744,
+      "required": true
+    },
+    {
+      "path": "js/c2runtime.js",
+      "size": 810451,
+      "required": true
+    },
+    {
+      "path": "js/c2webappstart.js",
+      "size": 787,
+      "required": true
+    },
+    {
+      "path": "js/jquery-2.1.1.min.js",
+      "size": 84244,
+      "required": true
+    },
+    {
+      "path": "loading-logo.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "logo.png",
+      "size": 5149,
+      "required": false
+    },
+    {
+      "path": "media/ambiancebird.ogg",
+      "size": 200268,
+      "required": false
+    },
+    {
+      "path": "media/arrowpop.ogg",
+      "size": 19211,
+      "required": false
+    },
+    {
+      "path": "media/ballexplode.ogg",
+      "size": 14981,
+      "required": false
+    },
+    {
+      "path": "media/bell.ogg",
+      "size": 16059,
+      "required": false
+    },
+    {
+      "path": "media/bipbreakout.ogg",
+      "size": 5879,
+      "required": false
+    },
+    {
+      "path": "media/boom.ogg",
+      "size": 31462,
+      "required": false
+    },
+    {
+      "path": "media/bounce.ogg",
+      "size": 7199,
+      "required": false
+    },
+    {
+      "path": "media/break.ogg",
+      "size": 12494,
+      "required": false
+    },
+    {
+      "path": "media/breakoutintro.ogg",
+      "size": 27736,
+      "required": false
+    },
+    {
+      "path": "media/breath01.ogg",
+      "size": 30731,
+      "required": false
+    },
+    {
+      "path": "media/breath02.ogg",
+      "size": 17814,
+      "required": false
+    },
+    {
+      "path": "media/breath03.ogg",
+      "size": 19982,
+      "required": false
+    },
+    {
+      "path": "media/brickexplo.ogg",
+      "size": 6639,
+      "required": false
+    },
+    {
+      "path": "media/brickmove.ogg",
+      "size": 4795,
+      "required": false
+    },
+    {
+      "path": "media/brickmove01.ogg",
+      "size": 19663,
+      "required": false
+    },
+    {
+      "path": "media/brickmove02.ogg",
+      "size": 23064,
+      "required": false
+    },
+    {
+      "path": "media/brickmove03.ogg",
+      "size": 16827,
+      "required": false
+    },
+    {
+      "path": "media/brickmove04.ogg",
+      "size": 24889,
+      "required": false
+    },
+    {
+      "path": "media/brickmove05.ogg",
+      "size": 24320,
+      "required": false
+    },
+    {
+      "path": "media/brickmove06.ogg",
+      "size": 32770,
+      "required": false
+    },
+    {
+      "path": "media/brickmove07.ogg",
+      "size": 21710,
+      "required": false
+    },
+    {
+      "path": "media/bubble.ogg",
+      "size": 5769,
+      "required": false
+    },
+    {
+      "path": "media/chaines.ogg",
+      "size": 22515,
+      "required": false
+    },
+    {
+      "path": "media/contamination01.ogg",
+      "size": 12872,
+      "required": false
+    },
+    {
+      "path": "media/contamination02.ogg",
+      "size": 13100,
+      "required": false
+    },
+    {
+      "path": "media/contamination03.ogg",
+      "size": 11645,
+      "required": false
+    },
+    {
+      "path": "media/contamination04.ogg",
+      "size": 17688,
+      "required": false
+    },
+    {
+      "path": "media/contamination05.ogg",
+      "size": 21936,
+      "required": false
+    },
+    {
+      "path": "media/contamination06.ogg",
+      "size": 23271,
+      "required": false
+    },
+    {
+      "path": "media/contamination07.ogg",
+      "size": 19889,
+      "required": false
+    },
+    {
+      "path": "media/contamination08.ogg",
+      "size": 38973,
+      "required": false
+    },
+    {
+      "path": "media/contamination09.ogg",
+      "size": 28177,
+      "required": false
+    },
+    {
+      "path": "media/contamination10.ogg",
+      "size": 38877,
+      "required": false
+    },
+    {
+      "path": "media/contamination11.ogg",
+      "size": 21367,
+      "required": false
+    },
+    {
+      "path": "media/contamination12.ogg",
+      "size": 27531,
+      "required": false
+    },
+    {
+      "path": "media/contamination13.ogg",
+      "size": 37468,
+      "required": false
+    },
+    {
+      "path": "media/contamination14.ogg",
+      "size": 19768,
+      "required": false
+    },
+    {
+      "path": "media/contamination15.ogg",
+      "size": 11916,
+      "required": false
+    },
+    {
+      "path": "media/contamination16.ogg",
+      "size": 32278,
+      "required": false
+    },
+    {
+      "path": "media/contamination17.ogg",
+      "size": 28676,
+      "required": false
+    },
+    {
+      "path": "media/contamination18.ogg",
+      "size": 41194,
+      "required": false
+    },
+    {
+      "path": "media/contamination19.ogg",
+      "size": 16442,
+      "required": false
+    },
+    {
+      "path": "media/contamination20.ogg",
+      "size": 33509,
+      "required": false
+    },
+    {
+      "path": "media/contamination21.ogg",
+      "size": 27087,
+      "required": false
+    },
+    {
+      "path": "media/contamination22.ogg",
+      "size": 47776,
+      "required": false
+    },
+    {
+      "path": "media/contamination23.ogg",
+      "size": 9471,
+      "required": false
+    },
+    {
+      "path": "media/devisse.ogg",
+      "size": 15425,
+      "required": false
+    },
+    {
+      "path": "media/devisse01.ogg",
+      "size": 34160,
+      "required": false
+    },
+    {
+      "path": "media/drag.ogg",
+      "size": 4727,
+      "required": false
+    },
+    {
+      "path": "media/dropbounce.ogg",
+      "size": 8296,
+      "required": false
+    },
+    {
+      "path": "media/endmusic.ogg",
+      "size": 398063,
+      "required": false
+    },
+    {
+      "path": "media/fontaine.ogg",
+      "size": 37064,
+      "required": false
+    },
+    {
+      "path": "media/friend01.ogg",
+      "size": 8539,
+      "required": false
+    },
+    {
+      "path": "media/friend02.ogg",
+      "size": 12655,
+      "required": false
+    },
+    {
+      "path": "media/friend03.ogg",
+      "size": 11814,
+      "required": false
+    },
+    {
+      "path": "media/friend04.ogg",
+      "size": 27268,
+      "required": false
+    },
+    {
+      "path": "media/friend05.ogg",
+      "size": 32436,
+      "required": false
+    },
+    {
+      "path": "media/friend06.ogg",
+      "size": 15559,
+      "required": false
+    },
+    {
+      "path": "media/friend07.ogg",
+      "size": 28678,
+      "required": false
+    },
+    {
+      "path": "media/friend08.ogg",
+      "size": 24129,
+      "required": false
+    },
+    {
+      "path": "media/friendmusic.ogg",
+      "size": 274720,
+      "required": false
+    },
+    {
+      "path": "media/friendno00.ogg",
+      "size": 6093,
+      "required": false
+    },
+    {
+      "path": "media/friendno01.ogg",
+      "size": 12345,
+      "required": false
+    },
+    {
+      "path": "media/friendyes01.ogg",
+      "size": 12876,
+      "required": false
+    },
+    {
+      "path": "media/friendyes02.ogg",
+      "size": 18165,
+      "required": false
+    },
+    {
+      "path": "media/friendyes03.ogg",
+      "size": 22410,
+      "required": false
+    },
+    {
+      "path": "media/friendyes04.ogg",
+      "size": 24451,
+      "required": false
+    },
+    {
+      "path": "media/friendyes05.ogg",
+      "size": 25557,
+      "required": false
+    },
+    {
+      "path": "media/friendyes06.ogg",
+      "size": 8769,
+      "required": false
+    },
+    {
+      "path": "media/friendyes07.ogg",
+      "size": 21112,
+      "required": false
+    },
+    {
+      "path": "media/friendyes08.ogg",
+      "size": 32041,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok01.ogg",
+      "size": 15730,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok02.ogg",
+      "size": 12495,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok03.ogg",
+      "size": 16885,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok04.ogg",
+      "size": 23711,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok05.ogg",
+      "size": 21176,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok06.ogg",
+      "size": 19607,
+      "required": false
+    },
+    {
+      "path": "media/gamelettersok07.ogg",
+      "size": 9660,
+      "required": false
+    },
+    {
+      "path": "media/glitch.ogg",
+      "size": 8301,
+      "required": false
+    },
+    {
+      "path": "media/glitchfinambiance.ogg",
+      "size": 110382,
+      "required": false
+    },
+    {
+      "path": "media/glitchzik.ogg",
+      "size": 435668,
+      "required": false
+    },
+    {
+      "path": "media/goat01.ogg",
+      "size": 11226,
+      "required": false
+    },
+    {
+      "path": "media/goat02.ogg",
+      "size": 10421,
+      "required": false
+    },
+    {
+      "path": "media/goatfound01.ogg",
+      "size": 10255,
+      "required": false
+    },
+    {
+      "path": "media/goatfound02.ogg",
+      "size": 20685,
+      "required": false
+    },
+    {
+      "path": "media/goatfound03.ogg",
+      "size": 15486,
+      "required": false
+    },
+    {
+      "path": "media/goatfree01.ogg",
+      "size": 30214,
+      "required": false
+    },
+    {
+      "path": "media/goatfree02.ogg",
+      "size": 15870,
+      "required": false
+    },
+    {
+      "path": "media/goatfree03.ogg",
+      "size": 18317,
+      "required": false
+    },
+    {
+      "path": "media/goatfree04.ogg",
+      "size": 17266,
+      "required": false
+    },
+    {
+      "path": "media/goatfree05.ogg",
+      "size": 25811,
+      "required": false
+    },
+    {
+      "path": "media/goatfreedrown.ogg",
+      "size": 22321,
+      "required": false
+    },
+    {
+      "path": "media/intro01.ogg",
+      "size": 13266,
+      "required": false
+    },
+    {
+      "path": "media/intro02.ogg",
+      "size": 30325,
+      "required": false
+    },
+    {
+      "path": "media/intro03.ogg",
+      "size": 24516,
+      "required": false
+    },
+    {
+      "path": "media/intro04.ogg",
+      "size": 34628,
+      "required": false
+    },
+    {
+      "path": "media/intro05.ogg",
+      "size": 42681,
+      "required": false
+    },
+    {
+      "path": "media/intro05b.ogg",
+      "size": 29488,
+      "required": false
+    },
+    {
+      "path": "media/intro06.ogg",
+      "size": 34638,
+      "required": false
+    },
+    {
+      "path": "media/intro07.ogg",
+      "size": 21475,
+      "required": false
+    },
+    {
+      "path": "media/intro08.ogg",
+      "size": 27711,
+      "required": false
+    },
+    {
+      "path": "media/intro09.ogg",
+      "size": 34754,
+      "required": false
+    },
+    {
+      "path": "media/intro10.ogg",
+      "size": 24068,
+      "required": false
+    },
+    {
+      "path": "media/intro11.ogg",
+      "size": 29780,
+      "required": false
+    },
+    {
+      "path": "media/intro12.ogg",
+      "size": 18380,
+      "required": false
+    },
+    {
+      "path": "media/intro13.ogg",
+      "size": 11383,
+      "required": false
+    },
+    {
+      "path": "media/intro14.ogg",
+      "size": 31882,
+      "required": false
+    },
+    {
+      "path": "media/intro15.ogg",
+      "size": 23961,
+      "required": false
+    },
+    {
+      "path": "media/intro16.ogg",
+      "size": 24562,
+      "required": false
+    },
+    {
+      "path": "media/introglitch.ogg",
+      "size": 330699,
+      "required": false
+    },
+    {
+      "path": "media/keyfree01.ogg",
+      "size": 13061,
+      "required": false
+    },
+    {
+      "path": "media/keyfree02.ogg",
+      "size": 32865,
+      "required": false
+    },
+    {
+      "path": "media/keyfree03.ogg",
+      "size": 15752,
+      "required": false
+    },
+    {
+      "path": "media/keyfree04.ogg",
+      "size": 20650,
+      "required": false
+    },
+    {
+      "path": "media/keystolen01.ogg",
+      "size": 15741,
+      "required": false
+    },
+    {
+      "path": "media/keystolen02.ogg",
+      "size": 20679,
+      "required": false
+    },
+    {
+      "path": "media/keystolen03.ogg",
+      "size": 13368,
+      "required": false
+    },
+    {
+      "path": "media/keystolen04.ogg",
+      "size": 29503,
+      "required": false
+    },
+    {
+      "path": "media/keystolen05.ogg",
+      "size": 21052,
+      "required": false
+    },
+    {
+      "path": "media/keystolen06.ogg",
+      "size": 26162,
+      "required": false
+    },
+    {
+      "path": "media/keystolen07.ogg",
+      "size": 41272,
+      "required": false
+    },
+    {
+      "path": "media/keystolen08.ogg",
+      "size": 20612,
+      "required": false
+    },
+    {
+      "path": "media/keystolen09.ogg",
+      "size": 10764,
+      "required": false
+    },
+    {
+      "path": "media/keystolen10.ogg",
+      "size": 21716,
+      "required": false
+    },
+    {
+      "path": "media/keystolen11.ogg",
+      "size": 24892,
+      "required": false
+    },
+    {
+      "path": "media/keystolen12.ogg",
+      "size": 38681,
+      "required": false
+    },
+    {
+      "path": "media/keystolen13.ogg",
+      "size": 13357,
+      "required": false
+    },
+    {
+      "path": "media/keystolen14.ogg",
+      "size": 11868,
+      "required": false
+    },
+    {
+      "path": "media/keystolen15.ogg",
+      "size": 29836,
+      "required": false
+    },
+    {
+      "path": "media/keystolen16.ogg",
+      "size": 30380,
+      "required": false
+    },
+    {
+      "path": "media/keystolen17.ogg",
+      "size": 22040,
+      "required": false
+    },
+    {
+      "path": "media/keystolen18.ogg",
+      "size": 13975,
+      "required": false
+    },
+    {
+      "path": "media/keystolen19.ogg",
+      "size": 28568,
+      "required": false
+    },
+    {
+      "path": "media/keystolen20.ogg",
+      "size": 27481,
+      "required": false
+    },
+    {
+      "path": "media/keystolen21.ogg",
+      "size": 25421,
+      "required": false
+    },
+    {
+      "path": "media/keystolen22.ogg",
+      "size": 13232,
+      "required": false
+    },
+    {
+      "path": "media/letter01.ogg",
+      "size": 11594,
+      "required": false
+    },
+    {
+      "path": "media/letter02.ogg",
+      "size": 24510,
+      "required": false
+    },
+    {
+      "path": "media/letter03.ogg",
+      "size": 28286,
+      "required": false
+    },
+    {
+      "path": "media/letter04.ogg",
+      "size": 24278,
+      "required": false
+    },
+    {
+      "path": "media/letter05.ogg",
+      "size": 43868,
+      "required": false
+    },
+    {
+      "path": "media/letter06.ogg",
+      "size": 19165,
+      "required": false
+    },
+    {
+      "path": "media/letter07.ogg",
+      "size": 18331,
+      "required": false
+    },
+    {
+      "path": "media/letter08.ogg",
+      "size": 20574,
+      "required": false
+    },
+    {
+      "path": "media/lettersnap.ogg",
+      "size": 5544,
+      "required": false
+    },
+    {
+      "path": "media/mange.ogg",
+      "size": 19328,
+      "required": false
+    },
+    {
+      "path": "media/menupop.ogg",
+      "size": 4834,
+      "required": false
+    },
+    {
+      "path": "media/metalhit.ogg",
+      "size": 6470,
+      "required": false
+    },
+    {
+      "path": "media/musicstart.ogg",
+      "size": 271462,
+      "required": false
+    },
+    {
+      "path": "media/opencage.ogg",
+      "size": 10928,
+      "required": false
+    },
+    {
+      "path": "media/panelopen01.ogg",
+      "size": 8636,
+      "required": false
+    },
+    {
+      "path": "media/panelopen02.ogg",
+      "size": 10509,
+      "required": false
+    },
+    {
+      "path": "media/panelopen03.ogg",
+      "size": 13092,
+      "required": false
+    },
+    {
+      "path": "media/panelopen04.ogg",
+      "size": 22110,
+      "required": false
+    },
+    {
+      "path": "media/plaqueoff.ogg",
+      "size": 8388,
+      "required": false
+    },
+    {
+      "path": "media/platepop.ogg",
+      "size": 12907,
+      "required": false
+    },
+    {
+      "path": "media/raclement.ogg",
+      "size": 11925,
+      "required": false
+    },
+    {
+      "path": "media/remplir.ogg",
+      "size": 15640,
+      "required": false
+    },
+    {
+      "path": "media/secondball01.ogg",
+      "size": 13128,
+      "required": false
+    },
+    {
+      "path": "media/secondball02.ogg",
+      "size": 16945,
+      "required": false
+    },
+    {
+      "path": "media/secondball03.ogg",
+      "size": 25344,
+      "required": false
+    },
+    {
+      "path": "media/secondball04.ogg",
+      "size": 18399,
+      "required": false
+    },
+    {
+      "path": "media/speechless01.ogg",
+      "size": 34726,
+      "required": false
+    },
+    {
+      "path": "media/speechless02.ogg",
+      "size": 21882,
+      "required": false
+    },
+    {
+      "path": "media/speechless03.ogg",
+      "size": 24162,
+      "required": false
+    },
+    {
+      "path": "media/squareexplode.ogg",
+      "size": 5996,
+      "required": false
+    },
+    {
+      "path": "media/squirrel01.ogg",
+      "size": 7494,
+      "required": false
+    },
+    {
+      "path": "media/swapscreen.ogg",
+      "size": 12989,
+      "required": false
+    },
+    {
+      "path": "media/titrebroken01.ogg",
+      "size": 26688,
+      "required": false
+    },
+    {
+      "path": "media/titrebroken02.ogg",
+      "size": 16755,
+      "required": false
+    },
+    {
+      "path": "media/titrebroken03.ogg",
+      "size": 26343,
+      "required": false
+    },
+    {
+      "path": "media/treeappears01.ogg",
+      "size": 20817,
+      "required": false
+    },
+    {
+      "path": "media/treeappears02.ogg",
+      "size": 21587,
+      "required": false
+    },
+    {
+      "path": "media/treeappears03.ogg",
+      "size": 27620,
+      "required": false
+    },
+    {
+      "path": "media/treepop.ogg",
+      "size": 17977,
+      "required": false
+    },
+    {
+      "path": "media/vinyl.ogg",
+      "size": 8475,
+      "required": false
+    },
+    {
+      "path": "media/volume01.ogg",
+      "size": 26842,
+      "required": false
+    },
+    {
+      "path": "media/volume02.ogg",
+      "size": 46373,
+      "required": false
+    },
+    {
+      "path": "media/volume03.ogg",
+      "size": 11393,
+      "required": false
+    },
+    {
+      "path": "media/volume04.ogg",
+      "size": 19888,
+      "required": false
+    },
+    {
+      "path": "media/volume05.ogg",
+      "size": 33362,
+      "required": false
+    },
+    {
+      "path": "media/volume06.ogg",
+      "size": 22953,
+      "required": false
+    },
+    {
+      "path": "media/volume07.ogg",
+      "size": 28845,
+      "required": false
+    },
+    {
+      "path": "media/volume08.ogg",
+      "size": 16383,
+      "required": false
+    },
+    {
+      "path": "media/volume09.ogg",
+      "size": 26981,
+      "required": false
+    },
+    {
+      "path": "media/volume10.ogg",
+      "size": 15952,
+      "required": false
+    },
+    {
+      "path": "media/volume11.ogg",
+      "size": 41261,
+      "required": false
+    },
+    {
+      "path": "media/volume12.ogg",
+      "size": 17632,
+      "required": false
+    },
+    {
+      "path": "media/volume13.ogg",
+      "size": 27105,
+      "required": false
+    },
+    {
+      "path": "media/volume14.ogg",
+      "size": 49728,
+      "required": false
+    },
+    {
+      "path": "media/volume15.ogg",
+      "size": 23932,
+      "required": false
+    },
+    {
+      "path": "media/watersplash.ogg",
+      "size": 19324,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed01.ogg",
+      "size": 18156,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed02.ogg",
+      "size": 23371,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed03.ogg",
+      "size": 18012,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed04.ogg",
+      "size": 15488,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed05.ogg",
+      "size": 33719,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed06.ogg",
+      "size": 12834,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed07.ogg",
+      "size": 14926,
+      "required": false
+    },
+    {
+      "path": "media/woodboxdestroyed08.ogg",
+      "size": 34608,
+      "required": false
+    },
+    {
+      "path": "media/woodenbreak.ogg",
+      "size": 20036,
+      "required": false
+    },
+    {
+      "path": "media/woodenhit.ogg",
+      "size": 5032,
+      "required": false
+    },
+    {
+      "path": "strings.en.xml",
+      "size": 11719,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "platform.twitter.com",
+    "www.apple.com",
+    "www.google.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "platform.twitter.com",
+    "www.apple.com",
+    "www.google.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

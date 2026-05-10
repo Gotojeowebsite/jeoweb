@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "slug": "booty-rider",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778438525,
+  "files": [
+    {
+      "path": "booty riuder.jpeg",
+      "size": 11209,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 971,
+      "required": true
+    },
+    {
+      "path": "rider.swf",
+      "size": 6337384,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

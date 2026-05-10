@@ -72,19 +72,43 @@ bash ./import-snes-batch.sh# Drop .smc files in repo root first
 ### Repair / QA
 
 ```bash
-npm run fix:bot            # scripts/auto-fix-bot.js — Node.js repair daemon
-npm run fix:bot:dry        # Dry-run (no changes written)
-npm run game:heal <slug>   # Mark game healthy via scripts/maintenance-toggle.js
-npm run game:break <slug>  # Mark game broken
-npm run game:maintenance:list  # List all maintenance-flagged games
-npm run game:offline:audit # Audit offline readiness
-npm run game:offline:fix   # Apply offline fixes
-npm run game:fix-recents   # Fix broken entries in recently-played list
-python3 broken_game_scanner.py   # Canonical scanner → scan_results.json
-python3 auto_fix_and_recover_games.py  # Supervisor → maintenance_status.json
-node scripts/deep-asset-scraper.js <URL> <slug>  # Puppeteer deep downloader
-pwsh ./chaos-batch-runner.ps1  # Chaos Monkey archival pipeline
+# === Canonical detection ===
+python3 broken_game_scanner.py     # Playwright in-browser scanner → scan_results.json
+npm run health:refresh             # scan.js + static-health-scan + build-game-health
+node scripts/build-game-health.js  # Merge signals → game_health.json (canonical verdict)
+
+# === Canonical repair: NEW aggressive open-web search-and-replace ===
+npm run recover -- <slug>          # find a working copy on the web, validate, swap in
+npm run recover -- <slug> --url <portal-url>  # manual URL — skip search
+npm run recover:all                # batch: fix every broken slug in game_health.json
+npm run recover:all -- --workers 3 --time-budget 90m
+
+# === Offline manifest gate ===
+npm run offline:manifest           # build Assets/<slug>/.offline-manifest.json for every game
+npm run offline:verify             # CI gate: fail if any required file is missing
+npm run offline:localize           # auto-inject Poki shim + stub external runtime refs
+
+# === Maintenance overrides ===
+npm run game:heal <slug>           # mark healthy in maintenance_overrides.json
+npm run game:break <slug>          # mark broken in maintenance_overrides.json
+npm run game:maintenance:list      # list all flagged games
+
+# === Diagnostics / cover gen ===
+npm run game:fix-recents           # fix broken entries in recently-played list
+npm run game:offline:audit         # diagnostic only — doesn't mutate
+
+# === Legacy (kept for manual debugging — NOT the canonical repair path) ===
+npm run fix:bot                    # legacy: 7-strategy in-place patch (deleted scripts/remediation.js was previously here)
+python3 auto_fix_and_recover_games.py  # legacy: 7-strategy supervisor → maintenance_status.json
+node scripts/deep-asset-scraper.js <URL> <slug>  # legacy: header-spoof scraper (now reused inside recover-game.js)
+pwsh ./chaos-batch-runner.ps1      # legacy: Chaos Monkey archival pipeline
 ```
+
+**The new aggressive recovery engine is the canonical repair path.** When a game is broken, `recover-game.js` searches DuckDuckGo / Brave / Bing / GitHub Code Search / Wayback for working copies on the open web, scrapes the top-scoring candidates with header-spoofing Puppeteer into `Assets/.recovery/<slug>-<ts>/`, validates with the manifest verifier and the Playwright scanner, then **atomically swaps** the broken folder out (preserving the original under `Assets/.quarantine/`) — the live `Assets/<slug>/` is only modified after a fully validated working copy exists. Failures bump a per-slug cooldown in `reports/recovery_cooldown.json` (1d → 3d → 7d → 14d → 30d backoff).
+
+The legacy `auto_fix_and_recover_games.py` + `auto-fix-bot.js` patch the existing folder in place, which leaves games in a worse half-broken state when patching fails partway through. They share `.auto_fix_and_recover.lock` with each other but the new engine doesn't use the lock since it never mutates the live folder until the swap.
+
+To add new portals the recovery engine should trust, edit `scripts/recovery/domain-reputation.json` (hand-editable; higher = more preferred).
 
 ### Cover images
 
@@ -148,12 +172,19 @@ After adding, renaming, or changing a game folder, run `node scan.js` (or restar
 
 ### Service worker (`sw.js`)
 
-Cache name: `jeoweb-pwa-cache-v3`.
-- Static assets: cache-first.
-- `/Assets/` routes: network-first (always fresh).
-- Never cached (streamed directly): `.unityweb`, `.wasm`, `.data`, `.pck`, `.mem`, `.symbols`, `.nes`, `.smc`, `.gba`, `.bin`, `.iso`, `.zip`, `.7z`, `.rar`
+Cache name: `jeoweb-pwa-cache-v4`. Per-game offline caches use the prefix `jeoweb-game-<slug>`.
+- Static assets: stale-while-revalidate.
+- `/Assets/` routes: **per-slug cache first**, then network. If the user has clicked "Download for offline" on a card, the SW pre-cached every required file from that game's `.offline-manifest.json` into `jeoweb-game-<slug>`, and subsequent fetches hit cache. Otherwise it falls back to network and tries any matching cache as a last-ditch offline fallback.
+- Streams download byte counts back to the frontend (progress bar), throttled to 100 ms.
 
-Streams download byte counts back to the frontend (progress bar), throttled to 100 ms.
+**Frontend messages**
+- `{ type: 'CACHE_GAME_FOR_OFFLINE', slug }` — pre-fetch every required file from the manifest into `jeoweb-game-<slug>`. SW posts back `OFFLINE_CACHE_PROGRESS`/`OFFLINE_CACHE_DONE`/`OFFLINE_CACHE_FAILED`.
+- `{ type: 'UNCACHE_GAME', slug }` — evict a per-game cache.
+- `{ type: 'LIST_OFFLINE_GAMES' }` — get a `{games:[{slug,files,bytes}]}` reply.
+
+### Offline manifest (`.offline-manifest.json`)
+
+Every `Assets/<slug>/` has a `.offline-manifest.json` (schema 1) generated by `node scripts/build-offline-manifest.js`. It lists every file in the folder, marks engine-critical and HTML-referenced files as `required: true`, and records the set of external hosts the game references (`external_hosts`, `external_critical`). The verifier (`scripts/verify-offline-manifest.js`) checks every required file exists at the recorded size and that no non-allowlisted external runtime dep snuck in. The CI in `.github/workflows/static.yml` runs the verifier and **fails the deploy** on any miss. Update the manifest with `node scripts/build-offline-manifest.js --slug <slug>` after any change to a game folder.
 
 ---
 
@@ -166,27 +197,37 @@ Normalize sources into `Assets/<slug>/`:
 - `import_game_from_url.py` — URL-based full importer
 - `scripts/grab-game.js`, `scripts/download-game.js`, `scripts/add-game.js`
 
-### Recovery / Chaos Monkey
+### Recovery engine (canonical — NEW)
 
-`verify_game.py` (quarantine + 404 logging) + `auto_play.py` (Playwright bot) → `missing_assets.txt`; patch scripts rehydrate assets.
+`scripts/recover-game.js` — primary single-game repair entry. Pipeline:
+1. Resolve slug → display name + type (from `games_list.json`) + verdict (from `game_health.json`).
+2. Discover candidate URLs via `scripts/recovery/search-engines.js` (DuckDuckGo HTML, Bing RSS, Brave Search API, GitHub Code Search, Wayback CDX). Skip search and use `--url <portal-url>` for a manual override.
+3. Score + rank with `scripts/recovery/atomic-swap.js#rankCandidates` against `scripts/recovery/domain-reputation.json`.
+4. For each top-ranked candidate, fail-fast: scrape into `Assets/.recovery/<slug>-<ts>/` with header-spoofing Puppeteer (`scripts/recovery/scrape-engines.js`, builds on `deep-asset-scraper.js`), validate via `verify-offline-manifest.js --candidate`, then `broken_game_scanner.py --root` for the gold-standard check.
+5. On first passing candidate: `moveToQuarantine(slug)` → `swapInCandidate(slug, candidateRoot)` → rebuild manifest → re-scan.
+6. On all-failure: bump `reports/recovery_cooldown.json` (1d → 3d → 7d → 14d → 30d backoff) and log to `reports/recovery_log.jsonl`.
 
-`pwsh ./chaos-batch-runner.ps1` — full Chaos Monkey pipeline (quarantine server + Playwright + patch).
+`scripts/recover-all-broken.js` — batch driver. Reads `game_health.json`, filters cooldown, fans out workers, writes `reports/recovery_summary_<date>.json`. Invoked nightly by `.github/workflows/qa-nightly.yml`.
 
-### Deep scrapers
+### Detection (canonical)
 
-`scripts/deep-asset-scraper.js` — Puppeteer-based; intercepts WebAssembly/Unity/Godot streams and spoofs headers for protected sources.
+`broken_game_scanner.py` — Playwright in-browser scanner with resume via `scan_state.json`. Outputs `scan_results.json`, `broken_games.json`, `broken_games.txt`. The `--root <path>` flag is used by the recovery engine to validate a candidate folder before swap; `--only-from <json>` reads slugs to scan from a recovery summary / health file.
 
-### QA / remediation
+`scripts/build-game-health.js` — merges static + headless + smoke signals + overrides into the canonical `game_health.json` (schema 2). This is the single source of truth the frontend reads.
 
-`broken_game_scanner.py` (canonical, multi-threaded scanner with resume via `scan_state.json`) → `scan_results.json`, `broken_games.json`.
+`scripts/static-health-scan.js` — fast deterministic offline-readiness pass; runs on every CI push.
 
-`auto_fix_and_recover_games.py` (supervisor) → `maintenance_status.json`. Uses `recovery_sources.json` providers; fast-fails on dead hosts after 3 consecutive failures per run (`dead_host_cache` in summary). Prevents concurrent runs via `.auto_fix_and_recover.lock`.
+### Legacy (kept in tree, no longer canonical)
 
-`scripts/auto-fix-bot.js` — Node.js repair daemon; dry-run with `--dry-run`.
+`auto_fix_and_recover_games.py` (7-strategy supervisor → `maintenance_status.json`) and `scripts/auto-fix-bot.js` (Node.js variant). These patch the existing folder in place. Both share `.auto_fix_and_recover.lock`. **The new recovery engine doesn't use them**; they remain for manual debugging.
 
-`scripts/remediation.js` — self-heal strategies.
+`verify_game.py` + `auto_play.py` + `pwsh ./chaos-batch-runner.ps1` — Chaos Monkey pipeline. Still useful for targeted hard cases.
 
-`triage_unresolved.py` — triages `scan_results.json` + supervisor summary into `reports/triage.json` with recommended strategy per game.
+`scripts/deep-asset-scraper.js` — still imported by `scripts/recovery/scrape-engines.js` for its header-spoof behavior, but no longer the canonical entry point.
+
+`scripts/remediation.js` — **deleted**. Wrote invalid status values; conflicted with the canonical chain.
+
+`triage_unresolved.py` — diagnostic only; emits `reports/triage.json`.
 
 ### Repair scripts
 
@@ -197,11 +238,22 @@ Normalize sources into `Assets/<slug>/`:
 ## Status authority & provider config
 
 **Status resolution order** (frontend, highest to lowest):
-1. `maintenance_status.json` (supervisor)
-2. `scan_results.json` (scanner)
-3. `games_list.json` `status` field (HTML markers via scan.js)
+1. `game_health.json` (canonical merged verdict — schema 2, written by `scripts/build-game-health.js`)
+2. `maintenance_status.json` (legacy supervisor output)
+3. `scan_results.json` (scanner)
+4. `games_list.json` `status` field (HTML markers via scan.js)
 
-**Only** `broken_game_scanner.py` and `auto_fix_and_recover_games.py` may write to `scan_results.json` and `maintenance_status.json`. `scripts/qa.js` and `scripts/qa-tester.js` are diagnostic-only — they write `reports/qa_diagnostics.json` and never mutate catalog files.
+If `game_health.json` is older than 7 days the frontend degrades verdicts to `"unverified"` and logs a console warning, so deploys can't silently serve stale data.
+
+**Writers (only these):**
+- `scripts/build-game-health.js` → `game_health.json`
+- `broken_game_scanner.py` → `scan_results.json`, `broken_games.*`
+- `auto_fix_and_recover_games.py` (legacy) → `maintenance_status.json`
+- `scripts/recover-game.js` → atomically swaps `Assets/<slug>/`; appends to `reports/recovery_log.jsonl` and `reports/recovery_cooldown.json`. Does **not** mutate the verdict files directly.
+
+`scripts/qa.js` and `scripts/qa-tester.js` are diagnostic-only — they write `reports/qa_diagnostics.json` and never mutate catalog files.
+
+Broken games are hidden from the default catalog view (`app.js` filters them out when `hideMaintenance=true`, which is on by default). Toggle "Show under-maintenance games" in settings to see them.
 
 **Provider config** (`recovery_sources.json`):
 ```json
@@ -263,15 +315,21 @@ These files are regenerable checkpoints written by pipeline scripts. Do not hand
 
 - `games_list.json`, `recently_added.json` — written by `scan.js`
 - `scan_results.json`, `broken_games.json`, `broken_games.txt` — written by `broken_game_scanner.py`
-- `maintenance_status.json` — written by `auto_fix_and_recover_games.py`
+- `maintenance_status.json` — written by `auto_fix_and_recover_games.py` (legacy)
 - `game_health.json`, `static_health.json` — written by health build scripts
-- `auto_fix_recovery_log.jsonl`, `auto_fix_bot.jsonl` — runtime logs
-- `auto_fix_bot_summary.json`, `auto_fix_recovery_summary.*.json` — run summaries
+- `qa_baseline.json` — broken-count baseline used by CI gate (refreshed by qa-nightly.yml)
+- `Assets/<slug>/.offline-manifest.json` — per-game manifest (written by `scripts/build-offline-manifest.js`)
+- `auto_fix_recovery_log.jsonl`, `auto_fix_bot.jsonl` — legacy runtime logs
+- `auto_fix_bot_summary.json`, `auto_fix_recovery_summary.*.json` — legacy run summaries
 - `scan_state.json` — scanner resume checkpoint
-- `reports/triage.json`, `reports/qa_diagnostics.json` — pipeline reports
-- `tmp_*.json`, `tmp_*.txt` — temporary intermediate states (safe to delete)
+- `reports/recovery_log.jsonl`, `reports/recovery_cooldown.json` — new recovery engine state
+- `reports/recovery_summary_*.json` — per-run recovery summaries
+- `reports/localize_summary.json` — last localize-all-games run
+- `reports/triage.json`, `reports/qa_diagnostics.json` — diagnostic pipeline reports
+- `Assets/.quarantine/<slug>-<ts>/` — pre-swap copy from the recovery engine (rollback target)
+- `Assets/.recovery/<slug>-<ts>/` — in-flight candidate (cleaned on failure)
 
-**Hand-edit allowed:** `maintenance_overrides.json`, `recovery_sources.json`, `slug_aliases.json`
+**Hand-edit allowed:** `maintenance_overrides.json`, `recovery_sources.json`, `slug_aliases.json`, `scripts/recovery/domain-reputation.json`
 
 ---
 

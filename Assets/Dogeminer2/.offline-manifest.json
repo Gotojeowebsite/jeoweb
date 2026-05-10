@@ -1,0 +1,474 @@
+{
+  "schema": 1,
+  "slug": "Dogeminer2",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778438514,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js",
+      "size": 12332,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/apis.google.com/js/client_platform.js",
+      "size": 64795,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/dogeminer.se/ctas/ctas.html",
+      "size": 8857,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/apple-touch-icon.png",
+      "size": 18371,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/browserconfig.xml",
+      "size": 268,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/favicon-16x16.png",
+      "size": 1281,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/favicon-32x32.png",
+      "size": 2190,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/favicon.ico",
+      "size": 15086,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/img/dogeminer2.png",
+      "size": 74647,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/manifest.json",
+      "size": 1078,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/og-image.jpg",
+      "size": 89876,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/disc_orig.png",
+      "size": 9704,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/fb_square.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/ptreon_blue.png",
+      "size": 5206,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/reddit_square.png",
+      "size": 6805,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/steam_group.png",
+      "size": 14639,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/play/img/twitter_square.png",
+      "size": 2332,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/dogeminer2.com/safari-pinned-tab.svg",
+      "size": 19964,
+      "required": false
+    },
+    {
+      "path": "1.fe6ad0b0922c8467de09.js",
+      "size": 4436,
+      "required": true
+    },
+    {
+      "path": "2.a2e1e3a074ebfcdc2f40.js",
+      "size": 3297,
+      "required": true
+    },
+    {
+      "path": "audiosprite_level1.1326cad1f7f621dfece439798e8daf20.webm",
+      "size": 1980683,
+      "required": false
+    },
+    {
+      "path": "audiosprite_level2.4171819b87da22540ed958df01ad16ee.webm",
+      "size": 1063076,
+      "required": false
+    },
+    {
+      "path": "audiosprite_level3.8aa12a4aff4af40e223cbcd5f5e1a85d.webm",
+      "size": 1378253,
+      "required": false
+    },
+    {
+      "path": "audiosprite_level4.9489d07696b4196923d19dabd0beece8.webm",
+      "size": 1681436,
+      "required": false
+    },
+    {
+      "path": "audiosprite_level5.db45aa6ce0c32e03a1015028adf5efe7.webm",
+      "size": 1593973,
+      "required": false
+    },
+    {
+      "path": "audiosprite_levelxmas1.320f0ba789291102f8a80615983a32e7.webm",
+      "size": 2056745,
+      "required": false
+    },
+    {
+      "path": "audiosprite_levelxmas2.beea84167c6d244554a1130af1d59c11.webm",
+      "size": 1790465,
+      "required": false
+    },
+    {
+      "path": "audiosprite_levelxmas3.eeec12013a69af09cc3946e345657727.webm",
+      "size": 2167570,
+      "required": false
+    },
+    {
+      "path": "audiosprite_levelxmas4.17d3aec05db4486bde244e370a48611f.webm",
+      "size": 2095689,
+      "required": false
+    },
+    {
+      "path": "audiosprite_levelxmas5.ea4d9ccd4b0759abd1ab29078b8ac249.webm",
+      "size": 1348050,
+      "required": false
+    },
+    {
+      "path": "audiosprite_main.03911ea10a63eb7f72b1a7514e10a2a2.webm",
+      "size": 700740,
+      "required": false
+    },
+    {
+      "path": "audiosprite_missions.67664f560e4d09dbf5e465a3800aa7d8.webm",
+      "size": 395412,
+      "required": false
+    },
+    {
+      "path": "dogeloader.svg",
+      "size": 13982,
+      "required": false
+    },
+    {
+      "path": "dogesans-numbers_0.png",
+      "size": 14555,
+      "required": false
+    },
+    {
+      "path": "dogesans-numbers.fnt",
+      "size": 9233,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-new.jpg",
+      "size": 41176,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg001.jpg",
+      "size": 78236,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg003.jpg",
+      "size": 72480,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg1.jpg",
+      "size": 84199,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg101.jpg",
+      "size": 103925,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg102.jpg",
+      "size": 39857,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg103.jpg",
+      "size": 47472,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg104.jpg",
+      "size": 28150,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg105.jpg",
+      "size": 46418,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg3.jpg",
+      "size": 31023,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg4.jpg",
+      "size": 39377,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg5.jpg",
+      "size": 48435,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg6.jpg",
+      "size": 68743,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg7.jpg",
+      "size": 47093,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg9.jpg",
+      "size": 48451,
+      "required": false
+    },
+    {
+      "path": "img/bg/bgjup01.jpg",
+      "size": 153686,
+      "required": false
+    },
+    {
+      "path": "img/bg/bgjup02.jpg",
+      "size": 224038,
+      "required": false
+    },
+    {
+      "path": "img/bg/bgjup03.jpg",
+      "size": 172899,
+      "required": false
+    },
+    {
+      "path": "img/bg/bgmoon01.jpg",
+      "size": 185663,
+      "required": false
+    },
+    {
+      "path": "img/bg/dogewow.jpg",
+      "size": 418877,
+      "required": false
+    },
+    {
+      "path": "img/bg/titan02.jpg",
+      "size": 339474,
+      "required": false
+    },
+    {
+      "path": "img/bg/titan03.jpg",
+      "size": 190407,
+      "required": false
+    },
+    {
+      "path": "img/bg/titan04.jpg",
+      "size": 228416,
+      "required": false
+    },
+    {
+      "path": "img/bg/titan05.jpg",
+      "size": 96233,
+      "required": false
+    },
+    {
+      "path": "img/bg/winter2.jpg",
+      "size": 262941,
+      "required": false
+    },
+    {
+      "path": "img/bg/winter3.jpg",
+      "size": 286057,
+      "required": false
+    },
+    {
+      "path": "img/bg/winter4.jpg",
+      "size": 282335,
+      "required": false
+    },
+    {
+      "path": "img/bg/winter5.jpg",
+      "size": 247856,
+      "required": false
+    },
+    {
+      "path": "img/bg/wintermoon.jpg",
+      "size": 353455,
+      "required": false
+    },
+    {
+      "path": "img/patreon_login.png",
+      "size": 26248,
+      "required": false
+    },
+    {
+      "path": "img/patreonicon_gray.png",
+      "size": 7816,
+      "required": false
+    },
+    {
+      "path": "img/sprites/generalkenobi.json",
+      "size": 57719,
+      "required": false
+    },
+    {
+      "path": "img/sprites/generalkenobi.png",
+      "size": 2036950,
+      "required": false
+    },
+    {
+      "path": "img/sprites/helpers.json",
+      "size": 81947,
+      "required": false
+    },
+    {
+      "path": "img/sprites/helpers.png",
+      "size": 2508183,
+      "required": false
+    },
+    {
+      "path": "img/sprites/itemsss.json",
+      "size": 18346,
+      "required": false
+    },
+    {
+      "path": "img/sprites/itemsss.png",
+      "size": 1507130,
+      "required": false
+    },
+    {
+      "path": "img/sprites/missions.json",
+      "size": 2283,
+      "required": false
+    },
+    {
+      "path": "img/sprites/missions.png",
+      "size": 138131,
+      "required": false
+    },
+    {
+      "path": "img/sprites/story.json",
+      "size": 3589,
+      "required": false
+    },
+    {
+      "path": "img/sprites/story.png",
+      "size": 466043,
+      "required": false
+    },
+    {
+      "path": "img/sprites/xmas.json",
+      "size": 2439,
+      "required": false
+    },
+    {
+      "path": "img/sprites/xmas.png",
+      "size": 139002,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 40240,
+      "required": true
+    },
+    {
+      "path": "play.8d0fc5ba8f0f0562d947.js",
+      "size": 1459188,
+      "required": true
+    },
+    {
+      "path": "thumb.jpg",
+      "size": 57197,
+      "required": false
+    },
+    {
+      "path": "video/moon_launch.mp4",
+      "size": 3660236,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "accounts.google.com",
+    "apis.google.com",
+    "blog.dogeminer2.com",
+    "content.googleapis.com",
+    "dogeminer.se",
+    "dogeminer2.com",
+    "fonts.googleapis.com",
+    "rawgit.com",
+    "steamcommunity.com",
+    "twitter.com",
+    "www.facebook.com",
+    "www.google.com",
+    "www.patreon.com",
+    "www.reddit.com",
+    "www.youtube.com"
+  ],
+  "external_critical": [
+    "accounts.google.com",
+    "apis.google.com",
+    "blog.dogeminer2.com",
+    "dogeminer.se",
+    "dogeminer2.com",
+    "rawgit.com",
+    "steamcommunity.com",
+    "twitter.com",
+    "www.facebook.com",
+    "www.google.com",
+    "www.patreon.com",
+    "www.reddit.com",
+    "www.youtube.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}
