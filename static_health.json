@@ -1,14 +1,40 @@
 {
   "schema": 1,
-  "generated_at": 1778438624,
+  "generated_at": 1778488249,
   "generator": "static-health-scan",
   "counts": {
     "pass": 447,
     "warn": 97,
-    "fail": 52,
-    "total": 596
+    "fail": 54,
+    "total": 598
   },
   "games": [
+    {
+      "slug": ".quarantine",
+      "verdict": "fail",
+      "engine": "unknown",
+      "issues": [
+        {
+          "code": "NO_HTML",
+          "message": "No HTML entry file found",
+          "severity": "critical"
+        }
+      ],
+      "refs_checked": 0
+    },
+    {
+      "slug": ".recovery",
+      "verdict": "fail",
+      "engine": "unknown",
+      "issues": [
+        {
+          "code": "NO_HTML",
+          "message": "No HTML entry file found",
+          "severity": "critical"
+        }
+      ],
+      "refs_checked": 0
+    },
     {
       "slug": "0v0",
       "verdict": "pass",
