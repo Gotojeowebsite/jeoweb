@@ -29,11 +29,54 @@ function loadPuppeteer() {
 	return puppeteerCache;
 }
 
-const DEFAULT_TIMEOUT = 90_000;
-const POST_LOAD_WAIT_MS = 20_000;
-const IFRAME_POST_LOAD_WAIT_MS = 25_000;
-const NO_IFRAME_INLINE_WAIT_MS = 25_000;
+const DEFAULT_TIMEOUT = 180_000;
+const POST_LOAD_WAIT_MS = 25_000;
+const IFRAME_POST_LOAD_WAIT_MS = 40_000;
+const NO_IFRAME_INLINE_WAIT_MS = 45_000;
 const MAX_BYTES_PER_FILE = 200 * 1024 * 1024;
+const CLICK_THROUGH_JS = `
+	() => {
+		const TEXT_HITS = ['accept all','accept','agree','got it','ok','okay','continue',
+			'click to play','click to start','tap to play','tap to start','press start',
+			'start','start game','play','play game','begin','enter','launch'];
+		let clicked = 0;
+		const visit = (root) => {
+			if (!root || clicked > 6) return;
+			let els = [];
+			try { els = root.querySelectorAll('button, a, div[role="button"], .play-button, .start-button'); } catch(_) {}
+			for (const el of els) {
+				if (clicked > 6) break;
+				try {
+					const text = (el.innerText || el.textContent || '').trim().toLowerCase();
+					if (!text || text.length > 50) continue;
+					if (!TEXT_HITS.some(t => text === t || text.startsWith(t + ' '))) continue;
+					const r = el.getBoundingClientRect();
+					if (r.width < 8 || r.height < 8) continue;
+					el.click(); clicked += 1;
+				} catch(_) {}
+			}
+			try {
+				const all = root.querySelectorAll ? root.querySelectorAll('*') : [];
+				for (const el of all) if (el.shadowRoot) visit(el.shadowRoot);
+			} catch(_) {}
+		};
+		visit(document);
+		try {
+			const c = document.querySelector('canvas, #unity-canvas, #game canvas');
+			if (c) {
+				const r = c.getBoundingClientRect();
+				if (r.width > 0 && r.height > 0) {
+					c.dispatchEvent(new MouseEvent('click', {
+						bubbles: true, cancelable: true,
+						clientX: r.left + r.width / 2,
+						clientY: r.top + r.height / 2,
+					}));
+				}
+			}
+		} catch(_) {}
+		return clicked;
+	}
+`;
 const SKIP_HOST_PATTERNS = [
 	/(?:^|\.)google-analytics\.com$/i,
 	/(?:^|\.)googletagmanager\.com$/i,
@@ -203,10 +246,17 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 			} catch (e) {
 				log(`iframe navigation timed out: ${e.message}`);
 			}
-			await new Promise(r => setTimeout(r, IFRAME_POST_LOAD_WAIT_MS));
+			// Half-wait → click-through → second half-wait. Lets us advance
+			// past a "Click to play" overlay so the audio context unlocks and
+			// the engine fetches the rest of its assets.
+			await new Promise(r => setTimeout(r, Math.floor(IFRAME_POST_LOAD_WAIT_MS / 2)));
+			try { await page.evaluate(CLICK_THROUGH_JS); } catch {}
+			await new Promise(r => setTimeout(r, Math.ceil(IFRAME_POST_LOAD_WAIT_MS / 2)));
 		} else {
 			log('no iframe — assuming inline');
-			await new Promise(r => setTimeout(r, NO_IFRAME_INLINE_WAIT_MS));
+			await new Promise(r => setTimeout(r, Math.floor(NO_IFRAME_INLINE_WAIT_MS / 2)));
+			try { await page.evaluate(CLICK_THROUGH_JS); } catch {}
+			await new Promise(r => setTimeout(r, Math.ceil(NO_IFRAME_INLINE_WAIT_MS / 2)));
 		}
 
 		// Capture the final document HTML directly to ensure we have an entry

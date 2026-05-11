@@ -7,15 +7,19 @@ on:
   workflow_dispatch:
     inputs:
       max_recoveries:
-        description: 'Maximum number of broken games the recovery engine should attempt this run (default: 60)'
+        description: 'Maximum number of broken games the recovery engine should attempt this run (0 = no limit)'
         required: false
-        default: '60'
+        default: '0'
       workers:
         description: 'Recovery workers in parallel (default 3)'
         required: false
         default: '3'
       skip_recovery:
         description: 'Skip the recovery engine (scan only)'
+        required: false
+        default: 'false'
+      skip_confirm_pass:
+        description: 'Skip the 2nd-pass confirm-broken scan (faster but less accurate)'
         required: false
         default: 'false'
   push:
@@ -42,7 +46,10 @@ concurrency:
 jobs:
   nightly:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # 2-pass scan + full-catalog recovery + final rescan = up to ~7h walltime,
+    # but the individual step timeouts cap each phase and the time-budget
+    # flags on the recovery and rescan steps box the actual cost.
+    timeout-minutes: 420
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -82,34 +89,78 @@ jobs:
       - name: Build offline manifests for current catalog
         run: node scripts/build-offline-manifest.js --all
 
-      - name: Headless Playwright scan
-        timeout-minutes: 120
+      - name: Headless Playwright scan (pass 1, full catalog)
+        timeout-minutes: 150
+        # Long per-game waits so Unity/EmulatorJS builds get a fair shake.
+        # See broken_game_scanner.py's compute_engine_extra_wait_ms — Unity
+        # gets up to 35s extra on top of --wait-seconds.
         run: |
+          rm -f scan_state.json || true
           python3 broken_game_scanner.py \
             --parallel-workers 4 \
-            --resume --state-file scan_state.json \
+            --state-file scan_state.json \
             --sync-markers \
-            --hard-timeout-seconds 90 \
-            --wait-seconds 6
+            --hard-timeout-seconds 240 \
+            --wait-seconds 15 \
+            --timeout-ms 45000
 
-      - name: Rebuild game_health.json after scan
+      - name: Build interim game_health.json (after pass 1)
         run: node scripts/build-game-health.js
+
+      - name: Pass 2 — re-scan everything flagged broken to confirm
+        # Many "broken" verdicts in pass 1 are transient flakes: a slow CDN,
+        # a worker crash, a Unity build that needed one more second. Re-scan
+        # only those slugs sequentially with the extra-long timeout so we
+        # don't bake a flake into the verdict.
+        if: ${{ github.event.inputs.skip_confirm_pass != 'true' }}
+        timeout-minutes: 90
+        run: |
+          BROKEN_COUNT=$(node -e "
+            const fs=require('fs');
+            const h=JSON.parse(fs.readFileSync('game_health.json','utf-8'));
+            const g=h.games||{}; let n=0;
+            for (const k in g) if (g[k].verdict==='broken' && g[k].source!=='override') n++;
+            console.log(n);
+          ")
+          echo "pass-1 reported $BROKEN_COUNT broken games — re-confirming them sequentially"
+          if [ "$BROKEN_COUNT" = "0" ]; then exit 0; fi
+          python3 broken_game_scanner.py \
+            --only-from game_health.json \
+            --parallel-workers 1 \
+            --state-file scan_confirm_state.json \
+            --sync-markers \
+            --hard-timeout-seconds 300 \
+            --wait-seconds 25 \
+            --timeout-ms 60000 \
+            --max-attempts 3
+          node scripts/build-game-health.js
 
       - name: Run aggressive recovery engine
         if: ${{ github.event.inputs.skip_recovery != 'true' }}
         env:
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        timeout-minutes: 180
         run: |
           MAX_REC="${{ github.event.inputs.max_recoveries }}"
           WORKERS="${{ github.event.inputs.workers }}"
-          : "${MAX_REC:=60}"
+          : "${MAX_REC:=0}"
           : "${WORKERS:=3}"
-          echo "running recovery: max=$MAX_REC workers=$WORKERS"
-          node scripts/recover-all-broken.js --workers "$WORKERS" --max "$MAX_REC" --time-budget 90m || true
+          MAX_FLAG=""
+          if [ "$MAX_REC" != "0" ] && [ -n "$MAX_REC" ]; then MAX_FLAG="--max $MAX_REC"; fi
+          echo "running recovery: max=${MAX_REC:-unlimited} workers=$WORKERS"
+          # --include-cooldowns forces all broken slugs to be attempted at
+          # least once, ignoring per-slug cooldowns. The user asked for
+          # "by any means necessary" — that means try every broken game
+          # every run.
+          node scripts/recover-all-broken.js \
+            --workers "$WORKERS" $MAX_FLAG \
+            --include-cooldowns \
+            --time-budget 150m || true
 
-      - name: Re-scan slugs touched by recovery
+      - name: Re-scan slugs touched by recovery (gold-standard verdict)
         if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        timeout-minutes: 60
         run: |
           REPORT=$(ls -t reports/recovery_summary_*.json 2>/dev/null | head -1)
           if [ -z "$REPORT" ]; then
@@ -117,7 +168,10 @@ jobs:
             exit 0
           fi
           python3 broken_game_scanner.py --only-from "$REPORT" --sync-markers \
-            --hard-timeout-seconds 90 --wait-seconds 6 || true
+            --parallel-workers 2 \
+            --hard-timeout-seconds 240 --wait-seconds 20 \
+            --timeout-ms 45000 \
+            --max-attempts 3 || true
 
       - name: Localize externals + auto-inject Poki shim
         run: node scripts/localize-all-games.js --apply
