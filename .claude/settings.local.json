@@ -13,7 +13,9 @@
       "Bash(git add *)",
       "Bash(grep -E \"\\\\.js$|\\\\.css$|\\\\.html$\")",
       "Bash(git ls-tree *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(rm -f .git/refs/remotes/origin/claude/game-qa-offline-system-Vz4SS.lock)",
+      "Bash(git fetch *)"
     ]
   }
 }
