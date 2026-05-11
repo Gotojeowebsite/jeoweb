@@ -4,19 +4,19 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 9.579,
+    "elapsed_seconds": 25.654,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+        "url": "http://localhost:8081/play/dogeloader.svg"
       },
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/dogeloader.svg"
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
       }
     ],
     "warnings": [
@@ -48,7 +48,7 @@
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 19,
+      "bodyTextLength": 18,
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
@@ -58,7 +58,8 @@
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
       "canvasHashFirst": "",
-      "canvasNonzeroPixelsFirst": 0
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
     }
   }
 ]

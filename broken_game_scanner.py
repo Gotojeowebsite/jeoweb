@@ -345,12 +345,12 @@ def parse_args() -> Config:
     parser.add_argument("--assets-dir", default="Assets", help="Assets root folder")
     parser.add_argument("--games-list", default="games_list.json", help="Catalog file used for game type hints")
     parser.add_argument("--port", type=int, default=8081, help="Temporary local server port")
-    parser.add_argument("--wait-seconds", type=float, default=8.0, help="Time to let each game bootstrap")
-    parser.add_argument("--timeout-ms", type=int, default=25000, help="Navigation timeout in milliseconds")
+    parser.add_argument("--wait-seconds", type=float, default=15.0, help="Time to let each game bootstrap (was 8, bumped for Unity/EJS thoroughness)")
+    parser.add_argument("--timeout-ms", type=int, default=45000, help="Navigation timeout in milliseconds (was 25000)")
     parser.add_argument(
         "--hard-timeout-seconds",
         type=float,
-        default=120.0,
+        default=240.0,
         help="Hard wall-clock timeout per game; timed-out games are marked broken and scan continues",
     )
     parser.add_argument("--batch-size", type=int, default=20, help="Games per browser context batch")
@@ -710,6 +710,125 @@ def order_warnings_for_output(warnings: List[Issue]) -> List[Issue]:
     return actionable + advisory
 
 
+def try_advance_game(page) -> None:
+    """Best-effort: dismiss obvious cookie banners and click any "Start" /
+    "Play" / canvas overlays. Silent on any error — many games don't need
+    this and the scan continues regardless.
+    """
+    try:
+        page.evaluate(
+            """
+            () => {
+                const TEXT_HITS = [
+                    'accept all', 'accept', 'agree', 'i agree', 'i accept',
+                    'got it', 'got it!', 'okay', 'ok', 'continue', 'consent',
+                    'i consent', 'allow all', 'allow', 'dismiss', 'close',
+                    'click to play', 'click to start', 'tap to play',
+                    'tap to start', 'tap to begin', 'press to play', 'press start',
+                    'start', 'start game', 'play', 'play game', 'begin',
+                    "let's go", 'lets go', 'go', 'launch', 'enter',
+                ];
+                const CLASS_HITS = [
+                    'play-button', 'start-button', 'btn-play', 'btn-start',
+                    'cookie-accept', 'consent-accept', 'cmp-accept-all', 'cmp-accept',
+                    'gdpr-accept', 'tcfui-accept', 'fc-cta-consent',
+                ];
+                let clicked = 0;
+                const visit = (root) => {
+                    if (!root || clicked > 8) return;
+                    const els = root.querySelectorAll
+                        ? root.querySelectorAll('button, a, div[role="button"], span[role="button"], [data-action], .play-button, .start-button')
+                        : [];
+                    for (const el of els) {
+                        if (clicked > 8) break;
+                        try {
+                            const text = (el.innerText || el.textContent || '').trim().toLowerCase();
+                            const cls = (el.className || '').toString().toLowerCase();
+                            const id = (el.id || '').toString().toLowerCase();
+                            const matchedText = text && text.length <= 50 && TEXT_HITS.some(t => text === t || text.startsWith(t + ' ') || text === t.replace(/!/g,''));
+                            const matchedClass = CLASS_HITS.some(c => cls.includes(c) || id.includes(c));
+                            if (!matchedText && !matchedClass) continue;
+                            const rect = el.getBoundingClientRect();
+                            if (rect.width < 8 || rect.height < 8) continue;
+                            const style = window.getComputedStyle(el);
+                            if (style.display === 'none' || style.visibility === 'hidden') continue;
+                            el.click();
+                            clicked += 1;
+                        } catch (e) { /* swallow */ }
+                    }
+                    // Recurse into open shadow roots and same-origin iframes.
+                    try {
+                        const all = root.querySelectorAll ? root.querySelectorAll('*') : [];
+                        for (const el of all) {
+                            if (el.shadowRoot) visit(el.shadowRoot);
+                        }
+                    } catch (e) {}
+                };
+                visit(document);
+                // Also try same-origin iframes.
+                try {
+                    for (const f of document.querySelectorAll('iframe')) {
+                        try { if (f.contentDocument) visit(f.contentDocument); } catch (_) {}
+                    }
+                } catch (e) {}
+                // Last resort: click on the main canvas to give it focus —
+                // some Unity games need a user gesture to unlock the audio
+                // context, which gates rendering until granted.
+                try {
+                    const c = document.querySelector('canvas, #unity-canvas, #game canvas');
+                    if (c) {
+                        const r = c.getBoundingClientRect();
+                        if (r.width > 0 && r.height > 0) {
+                            const evt = new MouseEvent('click', {
+                                bubbles: true, cancelable: true,
+                                clientX: r.left + r.width / 2,
+                                clientY: r.top + r.height / 2,
+                            });
+                            c.dispatchEvent(evt);
+                        }
+                    }
+                } catch (e) {}
+                return clicked;
+            }
+            """
+        )
+    except Exception:
+        # Page might have closed mid-eval or be cross-origin; either way,
+        # the scan should continue with whatever the probe sees.
+        pass
+
+
+def compute_engine_extra_wait_ms(probe_first: Dict[str, object], target: GameTarget) -> int:
+    """How many extra milliseconds to wait after the initial probe based on
+    the engine type. Returns 0 when the game already looks fully bootstrapped.
+    """
+    # Unity: large WebAssembly + .data download often takes 15-30s on cold load
+    # for medium-sized games; large ones can need 40-60s.
+    if bool(probe_first.get("unityLoadingBar")):
+        pct = _parse_unity_progress(probe_first.get("unityProgress"))
+        # Default: extra 20s. If loader is already past 90%, just 5s. If
+        # under 50%, give it a full 35s extra.
+        if pct >= 95.0:
+            return 0
+        if pct >= 90.0:
+            return 5000
+        if pct >= 50.0:
+            return 20000
+        return 35000
+
+    # EmulatorJS / retro: ROM fetch + core compile can take 10-15s.
+    if target.game_type in {"gba", "snes", "retro"} or probe_first.get("hasRetroGlobal"):
+        return 15000
+
+    # Ruffle / Flash: .swf parse can be slow for big files.
+    if probe_first.get("hasRuffleGlobal"):
+        return 10000
+
+    # Plain HTML5: usually ready by initial probe. Give it a small extra
+    # window to capture splash-screen transitions.
+    return 4000
+
+
 def probe_page(page) -> Dict[str, object]:
     # Includes a coarse "canvas pixel hash" so the supervisor can detect a
     # canvas that exists but never actually rendered (loading-bar-then-stall).
@@ -1024,6 +1143,24 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         page.goto(game_url, wait_until="domcontentloaded", timeout=config.timeout_ms)
         page.wait_for_timeout(int(config.wait_seconds * 1000))
         probe_first = probe_page(page)
+
+        # Try to advance past start screens / cookie banners / "Click to play"
+        # overlays. Many games render their splash screen and then sit idle
+        # until the user clicks something, so a pure passive scan would
+        # mark them broken even though they would play fine for a human.
+        try_advance_game(page)
+
+        # Adaptive bootstrap wait: Unity / EmulatorJS / Godot are heavy and
+        # often haven't finished loading by the default wait_seconds window.
+        # Keep waiting if we see signs of an in-progress engine bootstrap.
+        engine_extra_ms = compute_engine_extra_wait_ms(probe_first, target)
+        if engine_extra_ms > 0:
+            page.wait_for_timeout(engine_extra_ms)
+            # Second click-through after the engine extra-wait — many Unity
+            # builds show a "Tap to start audio" overlay after the loader
+            # finishes.
+            try_advance_game(page)
+
         # Smoke / liveness: take a second snapshot a few seconds later. If the
         # canvas hash hasn't changed at all between the two, the game probably
         # isn't actually running — it just rendered a static loading screen.
@@ -1031,6 +1168,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         probe = probe_page(page)
         probe["canvasHashFirst"] = probe_first.get("canvasHash", "")
         probe["canvasNonzeroPixelsFirst"] = probe_first.get("canvasNonzeroPixels", 0)
+        probe["engineExtraWaitMs"] = engine_extra_ms
     except PlaywrightTimeoutError as exc:
         add_issue("critical", "NAV_TIMEOUT", f"Navigation timeout: {exc}", game_url)
     except PlaywrightError as exc:

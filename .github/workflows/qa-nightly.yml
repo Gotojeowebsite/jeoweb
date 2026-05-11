@@ -7,15 +7,19 @@ on:
   workflow_dispatch:
     inputs:
       max_recoveries:
-        description: 'Maximum number of broken games the recovery engine should attempt this run (default: 60)'
+        description: 'Maximum number of broken games the recovery engine should attempt this run (0 = no limit)'
         required: false
-        default: '60'
+        default: '0'
       workers:
         description: 'Recovery workers in parallel (default 3)'
         required: false
         default: '3'
       skip_recovery:
         description: 'Skip the recovery engine (scan only)'
+        required: false
+        default: 'false'
+      skip_confirm_pass:
+        description: 'Skip the 2nd-pass confirm-broken scan (faster but less accurate)'
         required: false
         default: 'false'
   push:
@@ -34,6 +38,11 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
+  # actions:write is needed so the final step can dispatch static.yml via
+  # the workflow_dispatch API. Without it, the Pages deploy never fires
+  # when qa-nightly commits to main (push events authored by GITHUB_TOKEN
+  # are intentionally blocked from triggering other workflows by GitHub).
+  actions: write
 
 concurrency:
   group: qa-nightly
@@ -42,7 +51,14 @@ concurrency:
 jobs:
   nightly:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # GitHub-hosted runners enforce a 6h (360 min) job ceiling on the free
+    # tier; the per-step timeouts below sum to ~350 min to leave a buffer.
+    # Step caps (in order): setup 15 + pass1 110 + pass2 150 + recovery 130
+    # + pass3 rescan 45 + commit 10 = 460. The actual durations are bounded
+    # tighter by the --time-budget flags so we don't hit this ceiling in
+    # the common case — pass 2's longer cap is wallclock headroom, not
+    # expected runtime.
+    timeout-minutes: 360
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,9 +68,9 @@ jobs:
         #     pipeline before merging the recovery-engine branch into main)
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -82,34 +98,80 @@ jobs:
       - name: Build offline manifests for current catalog
         run: node scripts/build-offline-manifest.js --all
 
-      - name: Headless Playwright scan
-        timeout-minutes: 120
+      - name: Headless Playwright scan (pass 1, full catalog)
+        timeout-minutes: 110
+        # Pass 1 is fast triage. Pass 2 below is the thorough confirm pass
+        # that re-scans only the broken set with longer waits + retries.
+        # See broken_game_scanner.py's compute_engine_extra_wait_ms — Unity
+        # already gets up to 35s extra on top of --wait-seconds.
         run: |
+          rm -f scan_state.json || true
           python3 broken_game_scanner.py \
             --parallel-workers 4 \
-            --resume --state-file scan_state.json \
+            --state-file scan_state.json \
             --sync-markers \
-            --hard-timeout-seconds 90 \
-            --wait-seconds 6
+            --hard-timeout-seconds 180 \
+            --wait-seconds 12 \
+            --timeout-ms 45000
 
-      - name: Rebuild game_health.json after scan
+      - name: Build interim game_health.json (after pass 1)
         run: node scripts/build-game-health.js
+
+      - name: Pass 2 — re-scan everything flagged broken to confirm
+        # Many "broken" verdicts in pass 1 are transient flakes: a slow CDN,
+        # a worker crash, a Unity build that needed one more second. Re-scan
+        # only those slugs in parallel with longer per-game wait + retries so
+        # we don't bake a flake into the verdict, but don't run sequentially
+        # — with 100+ broken games even at 1 worker pass 2 blew its budget.
+        if: ${{ github.event.inputs.skip_confirm_pass != 'true' }}
+        timeout-minutes: 150
+        run: |
+          BROKEN_COUNT=$(node -e "
+            const fs=require('fs');
+            const h=JSON.parse(fs.readFileSync('game_health.json','utf-8'));
+            const g=h.games||{}; let n=0;
+            for (const k in g) if (g[k].verdict==='broken' && g[k].source!=='override') n++;
+            console.log(n);
+          ")
+          echo "pass-1 reported $BROKEN_COUNT broken games — re-confirming with parallel-workers 3"
+          if [ "$BROKEN_COUNT" = "0" ]; then exit 0; fi
+          python3 broken_game_scanner.py \
+            --only-from game_health.json \
+            --parallel-workers 3 \
+            --state-file scan_confirm_state.json \
+            --sync-markers \
+            --hard-timeout-seconds 180 \
+            --wait-seconds 22 \
+            --timeout-ms 60000 \
+            --max-attempts 2
+          node scripts/build-game-health.js
 
       - name: Run aggressive recovery engine
         if: ${{ github.event.inputs.skip_recovery != 'true' }}
         env:
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        timeout-minutes: 130
         run: |
           MAX_REC="${{ github.event.inputs.max_recoveries }}"
           WORKERS="${{ github.event.inputs.workers }}"
-          : "${MAX_REC:=60}"
+          : "${MAX_REC:=0}"
           : "${WORKERS:=3}"
-          echo "running recovery: max=$MAX_REC workers=$WORKERS"
-          node scripts/recover-all-broken.js --workers "$WORKERS" --max "$MAX_REC" --time-budget 90m || true
+          MAX_FLAG=""
+          if [ "$MAX_REC" != "0" ] && [ -n "$MAX_REC" ]; then MAX_FLAG="--max $MAX_REC"; fi
+          echo "running recovery: max=${MAX_REC:-unlimited} workers=$WORKERS"
+          # --include-cooldowns forces all broken slugs to be attempted at
+          # least once, ignoring per-slug cooldowns. The user asked for
+          # "by any means necessary" — that means try every broken game
+          # every run.
+          node scripts/recover-all-broken.js \
+            --workers "$WORKERS" $MAX_FLAG \
+            --include-cooldowns \
+            --time-budget 110m || true
 
-      - name: Re-scan slugs touched by recovery
+      - name: Re-scan slugs touched by recovery (gold-standard verdict)
         if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        timeout-minutes: 45
         run: |
           REPORT=$(ls -t reports/recovery_summary_*.json 2>/dev/null | head -1)
           if [ -z "$REPORT" ]; then
@@ -117,7 +179,10 @@ jobs:
             exit 0
           fi
           python3 broken_game_scanner.py --only-from "$REPORT" --sync-markers \
-            --hard-timeout-seconds 90 --wait-seconds 6 || true
+            --parallel-workers 3 \
+            --hard-timeout-seconds 180 --wait-seconds 18 \
+            --timeout-ms 45000 \
+            --max-attempts 2 || true
 
       - name: Localize externals + auto-inject Poki shim
         run: node scripts/localize-all-games.js --apply
@@ -150,8 +215,15 @@ jobs:
         # to whatever ref triggered the workflow. When triggered by a push to
         # claude/game-qa-offline-system-Vz4SS the changes show up on PR #8
         # automatically. For nightly cron / dispatch on main this commits to
-        # main. The "[skip ci]" tag in the message prevents the same workflow
-        # from re-firing on its own commit.
+        # main.
+        #
+        # NOTE: GitHub Actions does NOT re-trigger workflows on pushes
+        # authored by the built-in GITHUB_TOKEN. That means:
+        #   - qa-nightly won't recursively fire on its own commit (good)
+        #   - .github/workflows/static.yml (Pages deploy) ALSO won't fire on
+        #     it (bad — broke the deploy). That's why the next step
+        #     explicitly invokes static.yml via the workflow_dispatch API.
+        id: commit_push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -166,6 +238,7 @@ jobs:
             *)            BRANCH='main';;
           esac
           echo "target branch: $BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -184,10 +257,11 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit — recovery engine produced nothing new."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          git commit -m "qa: nightly scan + recovery (run ${{ github.run_id }}) [skip ci]" \
+          git commit -m "qa: nightly scan + recovery (run ${{ github.run_id }})" \
                      -m "Auto-generated by .github/workflows/qa-nightly.yml. See reports/recovery_summary_*.json and the workflow run artifacts for details."
 
           # Push to whichever branch triggered us; use the workflow's GITHUB_TOKEN
@@ -197,11 +271,44 @@ jobs:
           for attempt in 1 2 3 4; do
             if git push "$REMOTE_URL" "HEAD:$BRANCH"; then
               echo "Pushed to $BRANCH on attempt $attempt"
+              echo "committed=true" >> "$GITHUB_OUTPUT"
               break
             fi
             echo "Push failed (attempt $attempt); sleeping..."
             sleep $((attempt * 4))
           done
+
+      - name: Trigger Pages deploy (static.yml) on main
+        # GitHub blocks GITHUB_TOKEN pushes from firing other workflows, so the
+        # prior step's commit doesn't auto-trigger the Pages build. workflow_dispatch
+        # IS allowed for GITHUB_TOKEN (the only event type that is) — invoke it
+        # explicitly. Only fires when:
+        #   - we actually committed something this run, AND
+        #   - the commit landed on main (Pages only deploys from main).
+        if: |
+          steps.commit_push.outputs.committed == 'true'
+          && steps.commit_push.outputs.branch == 'main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "dispatching .github/workflows/static.yml on main..."
+          HTTP_STATUS=$(curl -sS -o /tmp/dispatch_resp.json -w '%{http_code}' \
+            -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/static.yml/dispatches" \
+            -d '{"ref":"main"}')
+          echo "HTTP $HTTP_STATUS"
+          cat /tmp/dispatch_resp.json || true
+          # 204 = success (workflow dispatched). Anything else: surface the body
+          # and fail the step so it's visible in the run log.
+          if [ "$HTTP_STATUS" != "204" ]; then
+            echo "::error::Failed to dispatch static.yml (HTTP $HTTP_STATUS)"
+            exit 1
+          fi
+          echo "Pages deploy successfully dispatched."
 
       - name: Upload pipeline reports
         if: always()

@@ -220,16 +220,57 @@ function buildQueries(name, type) {
 	const variants = new Set();
 	if (!name) return [];
 	const base = name.replace(/[_-]+/g, ' ').trim();
+	const quoted = `"${base}"`;
+
+	// Generic intent queries — most portals show up under these
 	variants.add(`${base} unblocked`);
-	variants.add(`${base} play online`);
+	variants.add(`${base} play online free`);
 	variants.add(`${base} html5 game`);
-	if (type === 'webgl' || !type) variants.add(`${base} webgl`);
-	if (type === 'flash') variants.add(`${base} swf flash`);
-	if (type === 'retro' || type === 'gba') variants.add(`${base} gba rom`);
-	if (type === 'snes') variants.add(`${base} snes rom`);
-	if (type === 'nes') variants.add(`${base} nes rom`);
-	variants.add(`"${base}" site:github.com`);
-	return Array.from(variants).slice(0, 6);
+	variants.add(`${base} browser game`);
+	variants.add(`${quoted} play free`);
+
+	// Portal-specific site: queries (high signal, cheap)
+	variants.add(`${quoted} site:3kh0.github.io`);
+	variants.add(`${quoted} site:kbhgames.com`);
+	variants.add(`${quoted} site:crazygames.com`);
+	variants.add(`${quoted} site:poki.com`);
+	variants.add(`${quoted} site:y8.com`);
+	variants.add(`${quoted} site:html5games.com`);
+
+	if (type === 'webgl' || !type) {
+		variants.add(`${base} webgl`);
+		variants.add(`${base} unity webgl play`);
+	}
+	if (type === 'flash') {
+		variants.add(`${base} swf flash`);
+		variants.add(`${quoted} site:flashpointarchive.org`);
+		variants.add(`${quoted} ruffle swf`);
+		variants.add(`${quoted} flash game archive`);
+	}
+	if (type === 'gba' || type === 'retro') {
+		variants.add(`${base} gba rom download`);
+		variants.add(`${quoted} site:vimm.net`);
+		variants.add(`${base} game boy advance rom`);
+	}
+	if (type === 'snes') {
+		variants.add(`${base} snes rom download`);
+		variants.add(`${quoted} site:vimm.net`);
+		variants.add(`${base} super nintendo rom`);
+	}
+	if (type === 'nes') {
+		variants.add(`${base} nes rom download`);
+		variants.add(`${base} nintendo entertainment system rom`);
+	}
+
+	// GitHub Code Search — often surfaces forks of HTML5 / unblocked-portal repos
+	variants.add(`${quoted} site:github.com`);
+	variants.add(`${quoted} site:github.io`);
+
+	// Archive.org — Flashpoint + old game pages
+	variants.add(`${quoted} site:archive.org`);
+
+	// Cap at 18 — DDG + Bing + Brave hit every variant in parallel.
+	return Array.from(variants).slice(0, 18);
 }
 
 async function discoverCandidates({ name, type } = {}, opts = {}) {

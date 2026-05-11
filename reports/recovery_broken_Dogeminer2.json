@@ -1,16 +1,16 @@
 [
   {
-    "name": "Dogeminer2-20260511-082033",
+    "name": "Dogeminer2-20260511-145250",
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 9.547,
+    "elapsed_seconds": 13.553,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:9670/Assets/Dogeminer2-20260511-082033/index.html"
+        "url": "http://localhost:9156/Assets/Dogeminer2-20260511-145250/index.html"
       }
     ],
     "warnings": [],
@@ -27,7 +27,8 @@
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
       "canvasHashFirst": "",
-      "canvasNonzeroPixelsFirst": 0
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
     }
   }
 ]

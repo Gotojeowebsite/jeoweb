@@ -51,7 +51,11 @@ const { buildForSlug, buildForArbitraryRoot } = require('./build-offline-manifes
 const { verifyFolder } = require('./verify-offline-manifest');
 const { processGame: localizeGame } = require('./localize-all-games');
 
-const COOLDOWN_BACKOFF_DAYS = [1, 3, 7, 14, 30];
+// Cooldown is now hours-based and short by default so transient flakes
+// (rate-limited search backend, slow CDN, single bad candidate) don't
+// lock a game out for a week. Values: 1h, 4h, 12h, 24h, 72h.
+// User can still --ignore-cooldown to force retry.
+const COOLDOWN_BACKOFF_SECONDS = [3600, 14400, 43200, 86400, 259200];
 
 function parseArgs(argv) {
 	const args = {
@@ -59,11 +63,11 @@ function parseArgs(argv) {
 		url: null,
 		verbose: false,
 		ignoreCooldown: false,
-		maxCandidates: 8,
+		maxCandidates: 15,
 		skipScanner: false,
 		dryRun: false,
-		perCandidateTimeoutMs: 90_000,
-		searchTimeoutMs: 8_000,
+		perCandidateTimeoutMs: 180_000,
+		searchTimeoutMs: 10_000,
 	};
 	for (let i = 2; i < argv.length; i++) {
 		const a = argv[i];
@@ -125,8 +129,8 @@ function isCooldownActive(slug) {
 function bumpCooldownOnFailure(slug, reason) {
 	const prev = getCooldown(slug) || { attempts: 0 };
 	const attempts = (Number(prev.attempts) || 0) + 1;
-	const days = COOLDOWN_BACKOFF_DAYS[Math.min(attempts - 1, COOLDOWN_BACKOFF_DAYS.length - 1)] || 30;
-	const nextEligible = Math.floor(Date.now() / 1000) + days * 86400;
+	const seconds = COOLDOWN_BACKOFF_SECONDS[Math.min(attempts - 1, COOLDOWN_BACKOFF_SECONDS.length - 1)] || 259200;
+	const nextEligible = Math.floor(Date.now() / 1000) + seconds;
 	updateCooldown(slug, {
 		attempts,
 		last_attempt: Math.floor(Date.now() / 1000),

@@ -1,72 +1,10 @@
 [
   {
-    "name": "Dogeminer2",
-    "type": "webgl",
-    "entry_file": "index.html",
-    "status": "broken",
-    "elapsed_seconds": 9.579,
-    "critical_issues": [
-      {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Critical local HTTP 404",
-        "severity": "critical",
-        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
-      },
-      {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Critical local HTTP 404",
-        "severity": "critical",
-        "url": "http://localhost:8081/play/dogeloader.svg"
-      }
-    ],
-    "warnings": [
-      {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Local HTTP 404",
-        "severity": "warning",
-        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.woff2"
-      },
-      {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Local HTTP 404",
-        "severity": "warning",
-        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.ttf"
-      },
-      {
-        "code": "EXTERNAL_DEPENDENCY",
-        "message": "External dependency requested for game runtime",
-        "severity": "warning",
-        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
-      },
-      {
-        "code": "EXTERNAL_CRITICAL_FAILED",
-        "message": "External runtime dependency failed",
-        "severity": "warning",
-        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
-      }
-    ],
-    "probe": {
-      "readyState": "complete",
-      "surfaceCount": 1,
-      "bodyTextLength": 19,
-      "unityLoadingBar": false,
-      "unityProgress": "",
-      "hasRuffleGlobal": false,
-      "hasRetroGlobal": false,
-      "canvasHash": "",
-      "canvasNonzeroPixels": 0,
-      "canvasIsWebGL": false,
-      "canvasRAFTicks": 0,
-      "canvasHashFirst": "",
-      "canvasNonzeroPixelsFirst": 0
-    }
-  },
-  {
     "name": "Five Nights at Epstein",
     "type": "webgl",
     "entry_file": "index.html",
     "status": "warning",
-    "elapsed_seconds": 11.246,
+    "elapsed_seconds": 23.971,
     "critical_issues": [],
     "warnings": [
       {
@@ -119,7 +57,71 @@
       "canvasIsWebGL": true,
       "canvasRAFTicks": 3,
       "canvasHashFirst": "0",
-      "canvasNonzeroPixelsFirst": 0
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 0
+    }
+  },
+  {
+    "name": "Dogeminer2",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 25.654,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/play/dogeloader.svg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.woff2"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.ttf"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 18,
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
     }
   }
 ]

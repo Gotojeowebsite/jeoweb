@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1778487548,
+  "updated_at": 1778510663,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": "1v1space-20260511-081825",
+      "name": "1v1space-20260511-144316",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 9.546,
+      "elapsed_seconds": 13.554,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9783/Assets/1v1space-20260511-081825/index.html"
+          "url": "http://localhost:9561/Assets/1v1space-20260511-144316/index.html"
         }
       ],
       "warnings": [],
@@ -32,7 +32,8 @@
         "canvasIsWebGL": false,
         "canvasRAFTicks": 0,
         "canvasHashFirst": "",
-        "canvasNonzeroPixelsFirst": 0
+        "canvasNonzeroPixelsFirst": 0,
+        "engineExtraWaitMs": 4000
       }
     }
   ]
