@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "slug": "DOOMORI",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": "Build/WEBGL Doomori Build.data.gz",
+      "size": 89846132,
+      "required": true
+    },
+    {
+      "path": "Build/WEBGL Doomori Build.framework.js.gz",
+      "size": 492894,
+      "required": false
+    },
+    {
+      "path": "Build/WEBGL Doomori Build.loader.js",
+      "size": 13403,
+      "required": true
+    },
+    {
+      "path": "Build/WEBGL Doomori Build.wasm.gz",
+      "size": 20409466,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 909,
+      "required": true
+    },
+    {
+      "path": "splash.png",
+      "size": 91694,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

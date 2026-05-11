@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "slug": "wordle",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "build/bundle.css",
+      "size": 10756,
+      "required": true
+    },
+    {
+      "path": "build/bundle.js",
+      "size": 190509,
+      "required": true
+    },
+    {
+      "path": "global.css",
+      "size": 2488,
+      "required": true
+    },
+    {
+      "path": "img/logo_144x144.png",
+      "size": 2313,
+      "required": false
+    },
+    {
+      "path": "img/logo_168x168.png",
+      "size": 2659,
+      "required": false
+    },
+    {
+      "path": "img/logo_192x192.png",
+      "size": 2835,
+      "required": false
+    },
+    {
+      "path": "img/logo_32x32.png",
+      "size": 705,
+      "required": false
+    },
+    {
+      "path": "img/logo_48x48.png",
+      "size": 918,
+      "required": false
+    },
+    {
+      "path": "img/logo_512x512.png",
+      "size": 8035,
+      "required": false
+    },
+    {
+      "path": "img/logo_72x72.png",
+      "size": 1275,
+      "required": false
+    },
+    {
+      "path": "img/logo_96x96.png",
+      "size": 1599,
+      "required": false
+    },
+    {
+      "path": "img/og_1200x630.png",
+      "size": 24270,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1390,
+      "required": true
+    },
+    {
+      "path": "manifest.json",
+      "size": 1353,
+      "required": true
+    },
+    {
+      "path": "sw.js",
+      "size": 1669,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com",
+    "www.powerlanguage.co.uk"
+  ],
+  "external_critical": [
+    "github.com",
+    "www.powerlanguage.co.uk"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

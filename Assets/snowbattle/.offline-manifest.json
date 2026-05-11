@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "snowbattle",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "Build/Snowbattle_io-new.data.unityweb",
+      "size": 11136540,
+      "required": true
+    },
+    {
+      "path": "Build/Snowbattle_io-new.json",
+      "size": 511,
+      "required": false
+    },
+    {
+      "path": "Build/Snowbattle_io-new.wasm.code.unityweb",
+      "size": 7217395,
+      "required": true
+    },
+    {
+      "path": "Build/Snowbattle_io-new.wasm.framework.unityweb",
+      "size": 100158,
+      "required": true
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 157151,
+      "required": true
+    },
+    {
+      "path": "img/logo.png",
+      "size": 90320,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3774,
+      "required": true
+    },
+    {
+      "path": "shared/gamebreak/gamebreak.js",
+      "size": 27,
+      "required": true
+    },
+    {
+      "path": "shared/lib.js",
+      "size": 2224,
+      "required": true
+    },
+    {
+      "path": "shared/style.css",
+      "size": 1088,
+      "required": true
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/y8-logo.png",
+      "size": 3113,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/gears.gif",
+      "size": 25509,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/style.css",
+      "size": 2901,
+      "required": true
+    },
+    {
+      "path": "TemplateData56/UnityProgress.js",
+      "size": 3713,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

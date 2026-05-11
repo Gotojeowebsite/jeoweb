@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "froggys-battle",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "banner.jpg",
+      "size": 211254,
+      "required": false
+    },
+    {
+      "path": "Build/FroggysBattleHTML.data",
+      "size": 13008519,
+      "required": true
+    },
+    {
+      "path": "Build/FroggysBattleHTML.framework.js",
+      "size": 446687,
+      "required": true
+    },
+    {
+      "path": "Build/FroggysBattleHTML.loader.js",
+      "size": 13461,
+      "required": true
+    },
+    {
+      "path": "Build/FroggysBattleHTML.wasm",
+      "size": 12671050,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 3563,
+      "required": true
+    },
+    {
+      "path": "long-banner.jpg",
+      "size": 55896,
+      "required": false
+    },
+    {
+      "path": "splash.png",
+      "size": 128464,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen-button.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1381,
+      "required": true
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "size": 1108,
+      "required": false
+    },
+    {
+      "path": "TemplateData/webgl-logo.png",
+      "size": 2031,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

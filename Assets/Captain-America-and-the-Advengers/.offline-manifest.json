@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "Captain-America-and-the-Advengers",
+  "engine": "emulatorjs",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/snes9x-legacy-wasm.data",
+      "size": 1092437,
+      "required": true
+    },
+    {
+      "path": "Captain America and the Avengers.7z",
+      "size": 738393,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1111,
+      "required": true
+    },
+    {
+      "path": "logo.gif",
+      "size": 6562,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "slug": "cubefield",
+  "engine": "flash",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/azerion.com/business/privacy.html",
+      "size": 1826186,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.gamedock.io/gamedock-web-tracker/4.0.4/script/gamedock-sdk.min.js",
+      "size": 8968,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ep3.adtrafficquality.google/ivt/worklet/caw.js",
+      "size": 3694,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ext.minijuegosgratis.com/external-host/main.js",
+      "size": 1563,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/car.js",
+      "size": 12496,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3_debug.js",
+      "size": 519038,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474210,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/lechuck.minijuegosgratis.com/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/s0.2mdn.net/instream/video/client.js",
+      "size": 44701,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ssl.minijuegosgratis.com/lechuck/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "analytics.js",
+      "size": 47248,
+      "required": true
+    },
+    {
+      "path": "api.js",
+      "size": 327632,
+      "required": true
+    },
+    {
+      "path": "assets/app.css",
+      "size": 2619,
+      "required": true
+    },
+    {
+      "path": "assets/icon.png",
+      "size": 9014,
+      "required": false
+    },
+    {
+      "path": "assets/splash.png",
+      "size": 114614,
+      "required": false
+    },
+    {
+      "path": "assets/textures.png",
+      "size": 45893,
+      "required": false
+    },
+    {
+      "path": "c5c02c4e65c1c4423a97.wasm",
+      "size": 6593880,
+      "required": true
+    },
+    {
+      "path": "cubefield.jpg",
+      "size": 7343,
+      "required": false
+    },
+    {
+      "path": "cubefield.min.js",
+      "size": 889391,
+      "required": true
+    },
+    {
+      "path": "CubeField.swf",
+      "size": 86681,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1182,
+      "required": true
+    },
+    {
+      "path": "ruffle.js",
+      "size": 83706,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 12,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com",
+    "game.api.gamedistribution.com",
+    "get.webgl.org",
+    "github.com",
+    "html5.api.gamedistribution.com",
+    "imasdk.googleapis.com",
+    "khronos.org",
+    "securepubads.g.doubleclick.net",
+    "static.gamedistribution.com"
+  ],
+  "external_critical": [
+    "game.api.gamedistribution.com",
+    "get.webgl.org",
+    "github.com",
+    "html5.api.gamedistribution.com",
+    "khronos.org",
+    "static.gamedistribution.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

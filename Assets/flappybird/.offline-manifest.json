@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "slug": "flappybird",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "1302586.json",
+      "size": 38864,
+      "required": false
+    },
+    {
+      "path": "config.json",
+      "size": 23571,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308034/1/sfx_wing.mp3",
+      "size": 3152,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308035/1/scoreboard.js",
+      "size": 2586,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308041/1/game.js",
+      "size": 4028,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308057/1/scroll.js",
+      "size": 1881,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308070/1/spritesheet.png",
+      "size": 5030,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308071/1/input.js",
+      "size": 1089,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308072/1/sfx_hit.mp3",
+      "size": 9448,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308073/1/sfx_die.mp3",
+      "size": 12791,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308074/1/sfx_point.mp3",
+      "size": 9344,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308075/1/sfx_swooshing.mp3",
+      "size": 13440,
+      "required": false
+    },
+    {
+      "path": "files/assets/64308078/1/bird.js",
+      "size": 4802,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308079/1/add-to-score.js",
+      "size": 558,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308080/1/camera-aspect.js",
+      "size": 581,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308082/1/sparkle.js",
+      "size": 794,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308083/1/score.js",
+      "size": 1291,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308085/1/disable-context-menu.js",
+      "size": 155,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308086/1/enable.js",
+      "size": 446,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308087/1/tween.js",
+      "size": 11268,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308088/1/tween.umd.js",
+      "size": 32203,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308091/1/button.js",
+      "size": 2031,
+      "required": true
+    },
+    {
+      "path": "files/assets/64308093/1/pipe-height.js",
+      "size": 1092,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 637,
+      "required": true
+    },
+    {
+      "path": "loading.js",
+      "size": 3162,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 2599,
+      "required": false
+    },
+    {
+      "path": "manifest.json",
+      "size": 422,
+      "required": true
+    },
+    {
+      "path": "modules.js",
+      "size": 2593,
+      "required": true
+    },
+    {
+      "path": "playcanvas-stable.min.js",
+      "size": 1373648,
+      "required": true
+    },
+    {
+      "path": "settings.js",
+      "size": 583,
+      "required": true
+    },
+    {
+      "path": "start.js",
+      "size": 8213,
+      "required": true
+    },
+    {
+      "path": "styles.css",
+      "size": 736,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "get.webgl.org"
+  ],
+  "external_critical": [
+    "get.webgl.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "schema": 1,
+  "slug": "grindcraft",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/images/fgs_btn_play.png",
+      "size": 4781,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/images/fgs_logo.png",
+      "size": 26544,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/contracted.json",
+      "size": 923,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/domains.json",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/games.json",
+      "size": 3111,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/internal.json",
+      "size": 1216,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/sitelock.json",
+      "size": 1133,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/json/special.json",
+      "size": 1102,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/sound/fgs_intro.ogg",
+      "size": 15618,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_1.atlas",
+      "size": 1759,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_1.json",
+      "size": 19023,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_2.atlas",
+      "size": 1886,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_2.json",
+      "size": 21998,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_3.atlas",
+      "size": 1993,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fbrq.io/orange-games-splash/assets/spine/fgs_monster_3.json",
+      "size": 20460,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474252,
+      "required": true
+    },
+    {
+      "path": "assets/audio/achieve1.ogg",
+      "size": 44412,
+      "required": false
+    },
+    {
+      "path": "assets/audio/achieve2.ogg",
+      "size": 40279,
+      "required": false
+    },
+    {
+      "path": "assets/audio/achieve3.ogg",
+      "size": 39148,
+      "required": false
+    },
+    {
+      "path": "assets/audio/achieve4.ogg",
+      "size": 101188,
+      "required": false
+    },
+    {
+      "path": "assets/audio/achieve5.ogg",
+      "size": 130138,
+      "required": false
+    },
+    {
+      "path": "assets/audio/achieve6.ogg",
+      "size": 101856,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt1.ogg",
+      "size": 15772,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt2.ogg",
+      "size": 16339,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt3.ogg",
+      "size": 16680,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt4.ogg",
+      "size": 15866,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt5.ogg",
+      "size": 16917,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dirt6.ogg",
+      "size": 15658,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand1.ogg",
+      "size": 13748,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand2.ogg",
+      "size": 13776,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand3.ogg",
+      "size": 13548,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand4.ogg",
+      "size": 14305,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand5.ogg",
+      "size": 14374,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hand6.ogg",
+      "size": 14271,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal1.ogg",
+      "size": 15490,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal2.ogg",
+      "size": 20955,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal3.ogg",
+      "size": 20277,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal4.ogg",
+      "size": 21834,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal5.ogg",
+      "size": 19733,
+      "required": false
+    },
+    {
+      "path": "assets/audio/metal6.ogg",
+      "size": 18625,
+      "required": false
+    },
+    {
+      "path": "assets/audio/track13.ogg",
+      "size": 1644486,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh1.ogg",
+      "size": 6587,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh2.ogg",
+      "size": 9164,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh3.ogg",
+      "size": 9091,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh4.ogg",
+      "size": 7233,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh5.ogg",
+      "size": 6631,
+      "required": false
+    },
+    {
+      "path": "assets/audio/whoosh6.ogg",
+      "size": 7171,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood1.ogg",
+      "size": 13368,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood2.ogg",
+      "size": 13421,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood3.ogg",
+      "size": 13195,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood4.ogg",
+      "size": 13560,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood5.ogg",
+      "size": 13844,
+      "required": false
+    },
+    {
+      "path": "assets/audio/wood6.ogg",
+      "size": 13247,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft12323232 (1).fnt",
+      "size": 10576,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft12323232.fnt",
+      "size": 10576,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft12323232.png",
+      "size": 2382,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft12fioletovy.fnt",
+      "size": 10582,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft12fioletovy.png",
+      "size": 2401,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft25stroke_shadow_white.fnt",
+      "size": 10843,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraft25stroke_shadow_white.png",
+      "size": 27315,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke12white (1).fnt",
+      "size": 10677,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke12white.fnt",
+      "size": 10677,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke12white.png",
+      "size": 4357,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke12zheltyi.fnt",
+      "size": 10681,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke12zheltyi.png",
+      "size": 4375,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke25white.fnt",
+      "size": 10794,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke25white.png",
+      "size": 7522,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke25zheltyi.fnt",
+      "size": 10798,
+      "required": false
+    },
+    {
+      "path": "assets/font/grincraftstroke25zheltyi.png",
+      "size": 7534,
+      "required": false
+    },
+    {
+      "path": "assets/font/grindcraft.fnt",
+      "size": 10869,
+      "required": false
+    },
+    {
+      "path": "assets/font/grindcraft.png",
+      "size": 6665,
+      "required": false
+    },
+    {
+      "path": "assets/grindcraft2x.png",
+      "size": 616273,
+      "required": false
+    },
+    {
+      "path": "assets/grindcraft2x.xml",
+      "size": 26192,
+      "required": false
+    },
+    {
+      "path": "assets/img/image 262.png",
+      "size": 395632,
+      "required": false
+    },
+    {
+      "path": "assets/json/contracted.json",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "assets/json/domains.json",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "assets/json/games.json",
+      "size": 3639,
+      "required": false
+    },
+    {
+      "path": "assets/json/sitelock.json",
+      "size": 172,
+      "required": false
+    },
+    {
+      "path": "assets/json/special.json",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "grindcraft.min.js",
+      "size": 1589362,
+      "required": true
+    },
+    {
+      "path": "img/pick-nobg.png",
+      "size": 8446,
+      "required": false
+    },
+    {
+      "path": "img/pick.png",
+      "size": 6039,
+      "required": false
+    },
+    {
+      "path": "img/splash.png",
+      "size": 30604,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1380,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 12,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "imasdk.googleapis.com",
+    "securepubads.g.doubleclick.net"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

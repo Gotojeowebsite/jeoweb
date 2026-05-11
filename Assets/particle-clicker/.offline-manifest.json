@@ -1,0 +1,538 @@
+{
+  "schema": 1,
+  "slug": "particle-clicker",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js",
+      "size": 112121,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+      "size": 84245,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js",
+      "size": 35601,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css",
+      "size": 21984,
+      "required": false
+    },
+    {
+      "path": "assets/favicon.png",
+      "size": 10160,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/b.png",
+      "size": 728,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/b@2x.png",
+      "size": 1156,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/BBbar.png",
+      "size": 1193,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/BBbar@2x.png",
+      "size": 1909,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/CPV.png",
+      "size": 1163,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/CPV@2x.png",
+      "size": 1897,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Dstar_s.png",
+      "size": 915,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Dstar_s@2x.png",
+      "size": 1525,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/gluons.png",
+      "size": 1856,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/gluons@2x.png",
+      "size": 4131,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/H.png",
+      "size": 776,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/H@2x.png",
+      "size": 1141,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Jpsi.png",
+      "size": 850,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Jpsi@2x.png",
+      "size": 1378,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/t.png",
+      "size": 668,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/t@2x.png",
+      "size": 992,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/tau.png",
+      "size": 698,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/tau@2x.png",
+      "size": 1053,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/unknown.png",
+      "size": 621,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/unknown@2x.png",
+      "size": 976,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/weak.png",
+      "size": 1035,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/weak@2x.png",
+      "size": 1917,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Xi_b.png",
+      "size": 1347,
+      "required": false
+    },
+    {
+      "path": "assets/icons/png/Xi_b@2x.png",
+      "size": 2336,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/b.svg",
+      "size": 1086,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/BBbar.svg",
+      "size": 1535,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/CPV.svg",
+      "size": 1927,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/Dstar_s.svg",
+      "size": 2169,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/gluons.svg",
+      "size": 8074,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/H.svg",
+      "size": 1087,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/Jpsi.svg",
+      "size": 1400,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/t.svg",
+      "size": 1086,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/tau.svg",
+      "size": 1087,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/unknown.svg",
+      "size": 1088,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/weak.svg",
+      "size": 3059,
+      "required": false
+    },
+    {
+      "path": "assets/icons/svg/Xi_b.svg",
+      "size": 3702,
+      "required": false
+    },
+    {
+      "path": "assets/info/b.png",
+      "size": 24997,
+      "required": false
+    },
+    {
+      "path": "assets/info/cpv.png",
+      "size": 24481,
+      "required": false
+    },
+    {
+      "path": "assets/info/jpsi.png",
+      "size": 12927,
+      "required": false
+    },
+    {
+      "path": "assets/info/t.png",
+      "size": 26129,
+      "required": false
+    },
+    {
+      "path": "assets/info/tau.png",
+      "size": 6532,
+      "required": false
+    },
+    {
+      "path": "assets/info/w.png",
+      "size": 7457,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/icon-72.png",
+      "size": 18074,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/icon-72@2x.png",
+      "size": 44639,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/icon.png",
+      "size": 14280,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/icon@2x.png",
+      "size": 32103,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/original.png",
+      "size": 63607,
+      "required": false
+    },
+    {
+      "path": "assets/pc32.png",
+      "size": 3876,
+      "required": false
+    },
+    {
+      "path": "assets/pc32@2x.png",
+      "size": 8069,
+      "required": false
+    },
+    {
+      "path": "assets/pc32sw.png",
+      "size": 2310,
+      "required": false
+    },
+    {
+      "path": "assets/pc32sw@2x.png",
+      "size": 4094,
+      "required": false
+    },
+    {
+      "path": "bootstrap-config.json",
+      "size": 17946,
+      "required": false
+    },
+    {
+      "path": "css/bootstrap.min.css",
+      "size": 337335,
+      "required": true
+    },
+    {
+      "path": "css/style.css",
+      "size": 35094,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "fonts/glyphicons-halflings-regular.eot",
+      "size": 20335,
+      "required": false
+    },
+    {
+      "path": "fonts/glyphicons-halflings-regular.svg",
+      "size": 61006,
+      "required": false
+    },
+    {
+      "path": "fonts/glyphicons-halflings-regular.ttf",
+      "size": 41280,
+      "required": false
+    },
+    {
+      "path": "fonts/glyphicons-halflings-regular.woff",
+      "size": 23320,
+      "required": false
+    },
+    {
+      "path": "html/b.html",
+      "size": 1980,
+      "required": false
+    },
+    {
+      "path": "html/BBbar.html",
+      "size": 1450,
+      "required": false
+    },
+    {
+      "path": "html/CPV.html",
+      "size": 4424,
+      "required": false
+    },
+    {
+      "path": "html/detector.html",
+      "size": 3058,
+      "required": false
+    },
+    {
+      "path": "html/Dstar_s.html",
+      "size": 826,
+      "required": false
+    },
+    {
+      "path": "html/gluons.html",
+      "size": 1717,
+      "required": false
+    },
+    {
+      "path": "html/H.html",
+      "size": 4083,
+      "required": false
+    },
+    {
+      "path": "html/Jpsi.html",
+      "size": 2105,
+      "required": false
+    },
+    {
+      "path": "html/tau.html",
+      "size": 1941,
+      "required": false
+    },
+    {
+      "path": "html/top.html",
+      "size": 1305,
+      "required": false
+    },
+    {
+      "path": "html/weak.html",
+      "size": 1854,
+      "required": false
+    },
+    {
+      "path": "html/Xi_b.html",
+      "size": 998,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 17830,
+      "required": true
+    },
+    {
+      "path": "js/analytics.js",
+      "size": 1240,
+      "required": true
+    },
+    {
+      "path": "js/app.js",
+      "size": 2952,
+      "required": true
+    },
+    {
+      "path": "js/detector.js",
+      "size": 7541,
+      "required": true
+    },
+    {
+      "path": "js/event.js",
+      "size": 1657,
+      "required": true
+    },
+    {
+      "path": "js/external/canvas2svg.js",
+      "size": 15751,
+      "required": true
+    },
+    {
+      "path": "js/external/fastclick.js",
+      "size": 8249,
+      "required": true
+    },
+    {
+      "path": "js/external/jquery.cookie-1.4.1.min.js",
+      "size": 1297,
+      "required": true
+    },
+    {
+      "path": "js/external/retina.js",
+      "size": 2787,
+      "required": true
+    },
+    {
+      "path": "js/game.js",
+      "size": 1096,
+      "required": true
+    },
+    {
+      "path": "js/gameobjects.js",
+      "size": 3833,
+      "required": true
+    },
+    {
+      "path": "js/helpers.js",
+      "size": 969,
+      "required": true
+    },
+    {
+      "path": "js/histogram.js",
+      "size": 2632,
+      "required": true
+    },
+    {
+      "path": "js/storage.js",
+      "size": 434,
+      "required": true
+    },
+    {
+      "path": "js/ui.js",
+      "size": 4208,
+      "required": true
+    },
+    {
+      "path": "json/achievements.json",
+      "size": 26020,
+      "required": false
+    },
+    {
+      "path": "json/research.json",
+      "size": 3625,
+      "required": false
+    },
+    {
+      "path": "json/upgrades.json",
+      "size": 28387,
+      "required": false
+    },
+    {
+      "path": "json/workers.json",
+      "size": 1866,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "ajax.googleapis.com",
+    "angularjs.org",
+    "facebook.com",
+    "fortawesome.github.io",
+    "getbootstrap.com",
+    "github.com",
+    "home.web.cern.ch",
+    "imulus.github.io",
+    "jquery.com",
+    "maxcdn.bootstrapcdn.com",
+    "orteil.dashnet.org",
+    "plus.google.com",
+    "twitter.com",
+    "webfest.web.cern.ch"
+  ],
+  "external_critical": [
+    "angularjs.org",
+    "facebook.com",
+    "fortawesome.github.io",
+    "getbootstrap.com",
+    "github.com",
+    "home.web.cern.ch",
+    "imulus.github.io",
+    "jquery.com",
+    "maxcdn.bootstrapcdn.com",
+    "orteil.dashnet.org",
+    "plus.google.com",
+    "twitter.com",
+    "webfest.web.cern.ch"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

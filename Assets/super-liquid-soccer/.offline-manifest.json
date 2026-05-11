@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "slug": "super-liquid-soccer",
+  "engine": "godot",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "_external_mirror/a.poki.com/images/thumb_anim_2x.gif",
+      "size": 5793,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/prebid/prebid6.12.0.js",
+      "size": 430797,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/acdn.adnxs-simple.com/prebid/appnexus-mapping/mappings.json",
+      "size": 1632,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/acdn.adnxs.com/dmp/async_usersync.html",
+      "size": 53044,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/ads.pubmatic.com/AdServer/js/user_sync.html",
+      "size": 21521,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/c.amazon-adsystem.com/aax2/apstag.js",
+      "size": 362479,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.aps.amazon-adsystem.com/tqsmartpixel.js",
+      "size": 3568,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/c.toolbox.aps.amazon-adsystem.com/toolbox.js",
+      "size": 359529,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/prebid/currency-file_1/latest.json",
+      "size": 1551,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/cdn3.richaudience.com/prebidVideo/player.js",
+      "size": 5676,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/client.aps.amazon-adsystem.com/publisher-custom_formats.js",
+      "size": 95086,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/client.aps.amazon-adsystem.com/video-player.js",
+      "size": 504719,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/js-sec.indexww.com/htv/video-player.js",
+      "size": 117962,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/js-sec.indexww.com/um/ixmatch.html",
+      "size": 2920,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/script.4dex.io/localstore.js",
+      "size": 492,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/video-outstream.rubiconproject.com/apex-2.2.1.js",
+      "size": 28216,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.apple-touch-icon.png",
+      "size": 16651,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 9756,
+      "required": true
+    },
+    {
+      "path": "index.icon.png",
+      "size": 16651,
+      "required": false
+    },
+    {
+      "path": "index.js",
+      "size": 350562,
+      "required": true
+    },
+    {
+      "path": "index.manifest.json",
+      "size": 209,
+      "required": true
+    },
+    {
+      "path": "index.pck",
+      "size": 14088880,
+      "required": true
+    },
+    {
+      "path": "index.png",
+      "size": 16651,
+      "required": false
+    },
+    {
+      "path": "index.service.worker.js",
+      "size": 185,
+      "required": true
+    },
+    {
+      "path": "index.wasm",
+      "size": 13789463,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 6976,
+      "required": false
+    },
+    {
+      "path": "patch/poki-sdk-core-v2.263.0.js",
+      "size": 173469,
+      "required": true
+    },
+    {
+      "path": "patch/poki-sdk.js",
+      "size": 3218,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a",
+    "b",
+    "cdn3.richaudience.com",
+    "game-cdn.poki.com",
+    "js.spotx.tv",
+    "prod.tahoe-analytics.publishers.advertising.a2z.com",
+    "prod.us-east-1.cxm-bcn.publisher-services.amazon.dev",
+    "script.4dex.io",
+    "tk.amazon-adsystem.com",
+    "xn--e1aybc"
+  ],
+  "external_critical": [
+    "a",
+    "b",
+    "cdn3.richaudience.com",
+    "game-cdn.poki.com",
+    "js.spotx.tv",
+    "prod.tahoe-analytics.publishers.advertising.a2z.com",
+    "prod.us-east-1.cxm-bcn.publisher-services.amazon.dev",
+    "script.4dex.io",
+    "tk.amazon-adsystem.com",
+    "xn--e1aybc"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

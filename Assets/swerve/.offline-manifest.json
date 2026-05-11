@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "slug": "swerve",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "img/favicon.jpg",
+      "size": 10520,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1165,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "s3-eu-west-1.amazonaws.com"
+  ],
+  "external_critical": [
+    "s3-eu-west-1.amazonaws.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

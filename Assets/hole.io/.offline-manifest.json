@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "slug": "hole.io",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/gertdoro/Toolkit_80a659a20b7bb0f4e3141cc82c64286b22bb12cc/Tcl/Hole.json",
+      "size": 462,
+      "required": false
+    },
+    {
+      "path": "css/style.css",
+      "size": 1749,
+      "required": true
+    },
+    {
+      "path": "hole.io.jpeg",
+      "size": 4580,
+      "required": false
+    },
+    {
+      "path": "images/fullscreen.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "images/progressEmpty.Dark.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/progressEmpty.Light.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "images/progressFull.Dark.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "images/progressFull.Light.png",
+      "size": 142,
+      "required": false
+    },
+    {
+      "path": "images/progressLogo.Dark.png",
+      "size": 2343,
+      "required": false
+    },
+    {
+      "path": "images/progressLogo.Light.png",
+      "size": 2259,
+      "required": false
+    },
+    {
+      "path": "images/webgl-logo.png",
+      "size": 3587,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 67415,
+      "required": true
+    },
+    {
+      "path": "js/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js",
+      "size": 1363,
+      "required": true
+    },
+    {
+      "path": "js/holeUnityLoader.js",
+      "size": 155906,
+      "required": true
+    },
+    {
+      "path": "js/UnityProgress.js",
+      "size": 1186,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "jeowebsite.github.io",
+    "lh4.googleusercontent.com"
+  ],
+  "external_critical": [
+    "jeowebsite.github.io",
+    "lh4.googleusercontent.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "schema": 1,
+  "slug": "cookie-clicker",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "base64.js",
+      "size": 3003,
+      "required": true
+    },
+    {
+      "path": "img/bunnies.png",
+      "size": 23224,
+      "required": false
+    },
+    {
+      "path": "img/contract.png",
+      "size": 4939,
+      "required": false
+    },
+    {
+      "path": "img/discord.png",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "img/dragon.png",
+      "size": 5391,
+      "required": false
+    },
+    {
+      "path": "img/favicon.ico",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "img/frostedReindeer.png",
+      "size": 9957,
+      "required": false
+    },
+    {
+      "path": "img/goldCookie.png",
+      "size": 4099,
+      "required": false
+    },
+    {
+      "path": "img/hearts.png",
+      "size": 23508,
+      "required": false
+    },
+    {
+      "path": "img/heraldFlag.png",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "img/icons.png",
+      "size": 137421,
+      "required": false
+    },
+    {
+      "path": "img/money.png",
+      "size": 280,
+      "required": false
+    },
+    {
+      "path": "img/santa.png",
+      "size": 9479,
+      "required": false
+    },
+    {
+      "path": "img/spookyCookie.png",
+      "size": 4436,
+      "required": false
+    },
+    {
+      "path": "img/weeHoodie.png",
+      "size": 2651,
+      "required": false
+    },
+    {
+      "path": "img/wrathContract.png",
+      "size": 5231,
+      "required": false
+    },
+    {
+      "path": "img/wrathCookie.png",
+      "size": 4894,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 16074,
+      "required": true
+    },
+    {
+      "path": "main.js",
+      "size": 924121,
+      "required": true
+    },
+    {
+      "path": "showads.js",
+      "size": 253,
+      "required": true
+    },
+    {
+      "path": "snd/buy1.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/buy2.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/buy3.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/buy4.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/buyHeavenly.mp3",
+      "size": 9344,
+      "required": false
+    },
+    {
+      "path": "snd/charging.mp3",
+      "size": 34409,
+      "required": false
+    },
+    {
+      "path": "snd/chime.mp3",
+      "size": 30563,
+      "required": false
+    },
+    {
+      "path": "snd/choir.mp3",
+      "size": 32384,
+      "required": false
+    },
+    {
+      "path": "snd/click1.mp3",
+      "size": 2551,
+      "required": false
+    },
+    {
+      "path": "snd/click2.mp3",
+      "size": 2551,
+      "required": false
+    },
+    {
+      "path": "snd/click3.mp3",
+      "size": 2551,
+      "required": false
+    },
+    {
+      "path": "snd/click4.mp3",
+      "size": 2551,
+      "required": false
+    },
+    {
+      "path": "snd/clickb1.mp3",
+      "size": 1088,
+      "required": false
+    },
+    {
+      "path": "snd/clickb2.mp3",
+      "size": 1088,
+      "required": false
+    },
+    {
+      "path": "snd/clickb3.mp3",
+      "size": 1088,
+      "required": false
+    },
+    {
+      "path": "snd/clickb4.mp3",
+      "size": 1088,
+      "required": false
+    },
+    {
+      "path": "snd/clickOff.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/clickOn.mp3",
+      "size": 2688,
+      "required": false
+    },
+    {
+      "path": "snd/cymbalRev.mp3",
+      "size": 25728,
+      "required": false
+    },
+    {
+      "path": "snd/fortune.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "snd/jingle.mp3",
+      "size": 27420,
+      "required": false
+    },
+    {
+      "path": "snd/jingleClick.mp3",
+      "size": 12164,
+      "required": false
+    },
+    {
+      "path": "snd/levelPrestige.mp3",
+      "size": 7296,
+      "required": false
+    },
+    {
+      "path": "snd/pop1.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/pop2.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/pop3.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/pop4.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "snd/press.mp3",
+      "size": 3712,
+      "required": false
+    },
+    {
+      "path": "snd/sell1.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/sell2.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/sell3.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/sell4.mp3",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "snd/shimmerClick.mp3",
+      "size": 11119,
+      "required": false
+    },
+    {
+      "path": "snd/spellFail.mp3",
+      "size": 10030,
+      "required": false
+    },
+    {
+      "path": "snd/squish1.mp3",
+      "size": 7808,
+      "required": false
+    },
+    {
+      "path": "snd/squish2.mp3",
+      "size": 7296,
+      "required": false
+    },
+    {
+      "path": "snd/squish3.mp3",
+      "size": 8320,
+      "required": false
+    },
+    {
+      "path": "snd/squish4.mp3",
+      "size": 5760,
+      "required": false
+    },
+    {
+      "path": "snd/thud.mp3",
+      "size": 19072,
+      "required": false
+    },
+    {
+      "path": "snd/tick.mp3",
+      "size": 2688,
+      "required": false
+    },
+    {
+      "path": "snd/upgrade.mp3",
+      "size": 4387,
+      "required": false
+    },
+    {
+      "path": "style.css",
+      "size": 60140,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "candybox2.net",
+    "cookieclicker.wikia.com",
+    "dashnet.org",
+    "db.duckmath.org",
+    "discordapp.com",
+    "en.wikipedia.org",
+    "fonts.googleapis.com",
+    "forum.dashnet.org",
+    "github.com",
+    "orteil.dashnet.org",
+    "orteil42.tumblr.com",
+    "play.google.com",
+    "twitter.com",
+    "www.aq.com",
+    "www.patreon.com",
+    "www.paypalobjects.com",
+    "www.redbubble.com",
+    "www.reddit.com"
+  ],
+  "external_critical": [
+    "candybox2.net",
+    "cookieclicker.wikia.com",
+    "dashnet.org",
+    "db.duckmath.org",
+    "discordapp.com",
+    "en.wikipedia.org",
+    "forum.dashnet.org",
+    "github.com",
+    "orteil.dashnet.org",
+    "orteil42.tumblr.com",
+    "play.google.com",
+    "twitter.com",
+    "www.aq.com",
+    "www.patreon.com",
+    "www.paypalobjects.com",
+    "www.redbubble.com",
+    "www.reddit.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

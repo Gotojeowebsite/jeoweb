@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "slug": "route-digger",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "_archived_site/archive_manifest.json",
+      "size": 6834,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/box2d.wasm",
+      "size": 273952,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/box2d.wasm.js",
+      "size": 282532,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/data.json",
+      "size": 6595146,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-128.png",
+      "size": 6841,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-16.png",
+      "size": 963,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-256.png",
+      "size": 14469,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-32.png",
+      "size": 1824,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-512.png",
+      "size": 32927,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/icon-64.png",
+      "size": 3492,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/icons/loading-logo.png",
+      "size": 3492,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/backgroundsky-sheet0.png",
+      "size": 315,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/fade-sheet0.png",
+      "size": 305,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/fadeloss-sheet0.png",
+      "size": 305,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/shared-0-sheet0.png",
+      "size": 96705,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/shared-0-sheet1.png",
+      "size": 258796,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/shared-0-sheet2.png",
+      "size": 164514,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/shared-0-sheet3.png",
+      "size": 960,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/tiledbackground-sheet0.png",
+      "size": 74279,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/images/tiledbackgroundback-sheet0.png",
+      "size": 315,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/index.html",
+      "size": 1416,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/back_004.webm",
+      "size": 4668,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/click_003.webm",
+      "size": 1894,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/cloth_03.webm",
+      "size": 32267,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/confirmation_002.webm",
+      "size": 14744,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/drop_004.webm",
+      "size": 7033,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/error_004.webm",
+      "size": 4119,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/error_007.webm",
+      "size": 6270,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/glass_001.webm",
+      "size": 7528,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/select_001.webm",
+      "size": 2955,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/select_004.webm",
+      "size": 11219,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/media/switch_002.webm",
+      "size": 5785,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/offline.json",
+      "size": 1018,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/c3runtime.js",
+      "size": 1420842,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/dispatchworker.js",
+      "size": 3788,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/jobworker.js",
+      "size": 3127,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/main.js",
+      "size": 118984,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/opus.wasm.js",
+      "size": 68172,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/opus.wasm.wasm",
+      "size": 137844,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/register-sw.js",
+      "size": 303,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/scripts/supportcheck.js",
+      "size": 2311,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/style.css",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/sw.js",
+      "size": 6095,
+      "required": true
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/touchsheet.css.css",
+      "size": 151,
+      "required": false
+    },
+    {
+      "path": "_archived_site/geometryspot.help/infinity2/Route-Digger/touchsheet.css.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 236978,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 503,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

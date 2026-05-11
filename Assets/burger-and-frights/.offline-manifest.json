@@ -1,0 +1,498 @@
+{
+  "schema": 1,
+  "slug": "burger-and-frights",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "css/index.css",
+      "size": 2081,
+      "required": true
+    },
+    {
+      "path": "icon.png",
+      "size": 16193,
+      "required": false
+    },
+    {
+      "path": "images/belong.png",
+      "size": 65112,
+      "required": false
+    },
+    {
+      "path": "images/blood_splatter_black.png",
+      "size": 10723,
+      "required": false
+    },
+    {
+      "path": "images/blood_splatter_red.png",
+      "size": 12547,
+      "required": false
+    },
+    {
+      "path": "images/controls.png",
+      "size": 161843,
+      "required": false
+    },
+    {
+      "path": "images/enough.png",
+      "size": 48286,
+      "required": false
+    },
+    {
+      "path": "images/game_over.png",
+      "size": 22547,
+      "required": false
+    },
+    {
+      "path": "images/loop_1.png",
+      "size": 67901,
+      "required": false
+    },
+    {
+      "path": "images/loop_2.png",
+      "size": 89494,
+      "required": false
+    },
+    {
+      "path": "images/loop_3.png",
+      "size": 48025,
+      "required": false
+    },
+    {
+      "path": "images/loop_4.png",
+      "size": 173775,
+      "required": false
+    },
+    {
+      "path": "images/loop_5.png",
+      "size": 67318,
+      "required": false
+    },
+    {
+      "path": "images/outro.png",
+      "size": 30843,
+      "required": false
+    },
+    {
+      "path": "images/spiral.png",
+      "size": 30648,
+      "required": false
+    },
+    {
+      "path": "images/stop.png",
+      "size": 12966,
+      "required": false
+    },
+    {
+      "path": "images/title.png",
+      "size": 61508,
+      "required": false
+    },
+    {
+      "path": "images/vignette.png",
+      "size": 44940,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 10759,
+      "required": true
+    },
+    {
+      "path": "js/entities/arms.class.js",
+      "size": 4243,
+      "required": true
+    },
+    {
+      "path": "js/entities/car.class.js",
+      "size": 15402,
+      "required": true
+    },
+    {
+      "path": "js/entities/director.class.js",
+      "size": 31587,
+      "required": true
+    },
+    {
+      "path": "js/entities/environment.class.js",
+      "size": 5377,
+      "required": true
+    },
+    {
+      "path": "js/entities/ghost.class.js",
+      "size": 19403,
+      "required": true
+    },
+    {
+      "path": "js/entities/manyfaces.class.js",
+      "size": 5358,
+      "required": true
+    },
+    {
+      "path": "js/entities/overlay.class.js",
+      "size": 13145,
+      "required": true
+    },
+    {
+      "path": "js/entities/player.class.js",
+      "size": 34708,
+      "required": true
+    },
+    {
+      "path": "js/entities/road.class.js",
+      "size": 27341,
+      "required": true
+    },
+    {
+      "path": "js/entities/scarecrow.class.js",
+      "size": 2216,
+      "required": true
+    },
+    {
+      "path": "js/entities/spirits.class.js",
+      "size": 8676,
+      "required": true
+    },
+    {
+      "path": "js/entities/train.class.js",
+      "size": 5293,
+      "required": true
+    },
+    {
+      "path": "js/entities/tuoni.class.js",
+      "size": 2681,
+      "required": true
+    },
+    {
+      "path": "js/framework/audiosystem.class.js",
+      "size": 7685,
+      "required": true
+    },
+    {
+      "path": "js/framework/entity.class.js",
+      "size": 1343,
+      "required": true
+    },
+    {
+      "path": "js/framework/imagemanager.class.js",
+      "size": 1889,
+      "required": true
+    },
+    {
+      "path": "js/framework/input.class.js",
+      "size": 5291,
+      "required": true
+    },
+    {
+      "path": "js/framework/modelmanager.class.js",
+      "size": 1471,
+      "required": true
+    },
+    {
+      "path": "js/framework/scene.class.js",
+      "size": 1740,
+      "required": true
+    },
+    {
+      "path": "js/framework/three.js/animator.class.js",
+      "size": 2932,
+      "required": true
+    },
+    {
+      "path": "js/framework/three.js/brightnessmaterial.js",
+      "size": 1524,
+      "required": true
+    },
+    {
+      "path": "js/framework/time.class.js",
+      "size": 1366,
+      "required": true
+    },
+    {
+      "path": "js/game/app.class.js",
+      "size": 3498,
+      "required": true
+    },
+    {
+      "path": "js/game/context.class.js",
+      "size": 215,
+      "required": true
+    },
+    {
+      "path": "js/game/utility.class.js",
+      "size": 1752,
+      "required": true
+    },
+    {
+      "path": "js/lib/three.js/GLTFLoader.js",
+      "size": 99947,
+      "required": true
+    },
+    {
+      "path": "js/lib/three.js/SkeletonUtils.js",
+      "size": 11748,
+      "required": true
+    },
+    {
+      "path": "js/lib/three.js/three.module.js",
+      "size": 1159415,
+      "required": true
+    },
+    {
+      "path": "js/resources/config.js",
+      "size": 579,
+      "required": true
+    },
+    {
+      "path": "js/resources/resources.js",
+      "size": 5876,
+      "required": true
+    },
+    {
+      "path": "js/scenes/ingame.class.js",
+      "size": 1189,
+      "required": true
+    },
+    {
+      "path": "models/characters.glb",
+      "size": 9572192,
+      "required": false
+    },
+    {
+      "path": "models/props.glb",
+      "size": 6622056,
+      "required": false
+    },
+    {
+      "path": "name.png",
+      "size": 61508,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__bridge.wav",
+      "size": 1389600,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__car_chase.mp3",
+      "size": 1643816,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__creepy_violin.wav",
+      "size": 847304,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__forest_after_hunt.mp3",
+      "size": 1372285,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__forest.mp3",
+      "size": 920087,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__ghost_hunt.mp3",
+      "size": 457446,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__giant_chase.mp3",
+      "size": 289025,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__small_tunnel.wav",
+      "size": 1155352,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__tunnel.mp3",
+      "size": 3615347,
+      "required": false
+    },
+    {
+      "path": "sounds/ambiance__tuonela.mp3",
+      "size": 786892,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__bike_bell.wav",
+      "size": 268112,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__bike_chain.wav",
+      "size": 492860,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__bike_crash.wav",
+      "size": 353940,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__bike_stun.wav",
+      "size": 83160,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__car_drive_by.mp3",
+      "size": 58302,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__car_reveal.wav",
+      "size": 1447584,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__clonk.wav",
+      "size": 39496,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__game_over_scream.wav",
+      "size": 346412,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__game_over_splatter.wav",
+      "size": 1072556,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__game_over_stinger (1).wav",
+      "size": 636948,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__game_over_stinger.wav",
+      "size": 636948,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__ghost_catch.wav",
+      "size": 393270,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__ghost_laugh.wav",
+      "size": 617188,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__ghost_reveal.wav",
+      "size": 1364896,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__giant_step.wav",
+      "size": 113720,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__road_loop.wav",
+      "size": 323120,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__step.wav",
+      "size": 32784,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__stinger_1.wav",
+      "size": 471868,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__stinger_2.wav",
+      "size": 903472,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__train.wav",
+      "size": 1220408,
+      "required": false
+    },
+    {
+      "path": "sounds/effect__trap_chain.wav",
+      "size": 154892,
+      "required": false
+    },
+    {
+      "path": "sounds/music__intro (1).mp3",
+      "size": 736735,
+      "required": false
+    },
+    {
+      "path": "sounds/music__intro.mp3",
+      "size": 736735,
+      "required": false
+    },
+    {
+      "path": "sounds/music__outro.wav",
+      "size": 2259112,
+      "required": false
+    },
+    {
+      "path": "splash.png",
+      "size": 107111,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "ambientcg.com",
+    "blendswap.com",
+    "creativecommons.org",
+    "donitz.itch.io",
+    "freesound.org",
+    "opengameart.org",
+    "sketchfab.com",
+    "threejs.org",
+    "www.cgbookcase.com",
+    "www.makehumancommunity.org",
+    "wwwtyro.github.io"
+  ],
+  "external_critical": [
+    "ambientcg.com",
+    "blendswap.com",
+    "creativecommons.org",
+    "donitz.itch.io",
+    "freesound.org",
+    "opengameart.org",
+    "sketchfab.com",
+    "threejs.org",
+    "www.cgbookcase.com",
+    "www.makehumancommunity.org",
+    "wwwtyro.github.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

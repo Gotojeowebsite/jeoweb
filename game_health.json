@@ -1,29 +1,29 @@
 {
   "schema": 2,
-  "generated_at": 1777899745,
+  "generated_at": 1778488249,
   "max_age_days": 7,
   "generators": {
-    "static_at": 1777899745,
-    "headless_at": 1777576521,
+    "static_at": 1778488249,
+    "headless_at": 1778488239,
     "smoke_at": null
   },
   "counts": {
-    "total": 602,
-    "healthy": 448,
-    "broken": 100,
-    "unknown": 54,
-    "high_confidence": 120,
-    "low_confidence": 482,
-    "conflicts": 1
+    "total": 604,
+    "healthy": 447,
+    "broken": 62,
+    "unknown": 95,
+    "high_confidence": 83,
+    "low_confidence": 521,
+    "conflicts": 0
   },
   "games": {
     "1": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "healthy",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "single_pass",
       "signals": {
-        "static": "fail",
+        "static": "pass",
         "headless": null,
         "smoke": null
       }
@@ -35,6 +35,28 @@
       "reason": "single_pass",
       "signals": {
         "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    ".quarantine": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    ".recovery": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -210,12 +232,12 @@
       }
     },
     "DogeMiner": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -227,7 +249,7 @@
       "reason": "static_fail",
       "signals": {
         "static": "fail",
-        "headless": null,
+        "headless": "fail",
         "smoke": null
       }
     },
@@ -271,17 +293,17 @@
       "reason": "static_fail",
       "signals": {
         "static": "fail",
-        "headless": null,
+        "headless": "warn",
         "smoke": null
       }
     },
     "Granny": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -309,12 +331,12 @@
       }
     },
     "Minecraft-Server": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -651,12 +673,12 @@
       }
     },
     "asmallworldcup": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -752,12 +774,12 @@
       }
     },
     "backrooms-2d": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -876,7 +898,7 @@
       "reason": "force_healthy",
       "override_reason": "unspecified",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -1004,13 +1026,13 @@
       }
     },
     "bendy": {
-      "verdict": "broken",
+      "verdict": "unknown",
       "confidence": "low",
       "source": "signals",
-      "reason": "single_fail",
+      "reason": "only_warn",
       "signals": {
         "static": "warn",
-        "headless": "fail",
+        "headless": null,
         "smoke": null
       }
     },
@@ -1405,12 +1427,12 @@
       }
     },
     "bubble-shooter": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -1449,12 +1471,12 @@
       }
     },
     "burger-and-frights": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -1901,12 +1923,12 @@
       }
     },
     "craftmine": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2001,12 +2023,12 @@
       }
     },
     "csgo-clicker": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2056,12 +2078,12 @@
       }
     },
     "cupcake2048": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2176,6 +2198,17 @@
         "smoke": null
       }
     },
+    "dig-out-of-prison": {
+      "verdict": "unknown",
+      "confidence": "low",
+      "source": "signals",
+      "reason": "only_warn",
+      "signals": {
+        "static": "warn",
+        "headless": null,
+        "smoke": null
+      }
+    },
     "dig-to-china": {
       "verdict": "healthy",
       "confidence": "low",
@@ -2210,12 +2243,12 @@
       }
     },
     "doge2048": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2254,12 +2287,12 @@
       }
     },
     "doodle-jump": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2573,12 +2606,12 @@
       }
     },
     "eggycar": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2595,12 +2628,12 @@
       }
     },
     "elasticman": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -2727,12 +2760,12 @@
       }
     },
     "factoryballs": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -3035,12 +3068,12 @@
       }
     },
     "flappy-bird": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -3553,12 +3586,12 @@
       }
     },
     "hextris": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -3696,34 +3729,23 @@
       }
     },
     "idle-breakout": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
     },
     "idle-shark": {
-      "verdict": "broken",
-      "confidence": "high",
-      "source": "signals",
-      "reason": "static_fail",
-      "signals": {
-        "static": "fail",
-        "headless": null,
-        "smoke": null
-      }
-    },
-    "idledices": {
-      "verdict": "healthy",
+      "verdict": "unknown",
       "confidence": "low",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "only_warn",
       "signals": {
-        "static": "pass",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -3884,12 +3906,12 @@
       }
     },
     "just-one-boss": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -4082,12 +4104,12 @@
       }
     },
     "meme2048": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -4126,23 +4148,23 @@
       }
     },
     "minecraft-classic": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
     },
     "minesweeper": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -4621,12 +4643,12 @@
       }
     },
     "paperio2": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -4643,12 +4665,12 @@
       }
     },
     "particle-clicker": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -4852,12 +4874,12 @@
       }
     },
     "polybranch": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5028,12 +5050,12 @@
       }
     },
     "ragdoll-archers": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5149,12 +5171,12 @@
       }
     },
     "rolly-vortex": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5204,23 +5226,23 @@
       }
     },
     "sand-game": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
     },
     "sans-fight": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5281,12 +5303,12 @@
       }
     },
     "shellshockers": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5424,12 +5446,12 @@
       }
     },
     "snek-io": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5523,12 +5545,12 @@
       }
     },
     "soundboard": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6008,12 +6030,12 @@
       }
     },
     "swerve": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6063,12 +6085,12 @@
       }
     },
     "tank-trouble-2": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6085,12 +6107,12 @@
       }
     },
     "tanuki-sunset": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6207,12 +6229,12 @@
       }
     },
     "there-is-no-game": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6306,12 +6328,12 @@
       }
     },
     "tv-static": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6493,12 +6515,12 @@
       }
     },
     "webretro-local": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -6548,12 +6570,12 @@
       }
     },
     "worlds-hardest-game": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }

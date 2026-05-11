@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "evil-glitch",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "b.js",
+      "size": 32900,
+      "required": true
+    },
+    {
+      "path": "evil.png",
+      "size": 42497,
+      "required": false
+    },
+    {
+      "path": "icon.jpeg",
+      "size": 7060,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1317,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,14 +1,40 @@
 {
   "schema": 1,
-  "generated_at": 1777899745,
+  "generated_at": 1778488249,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 448,
-    "warn": 99,
-    "fail": 49,
-    "total": 596
+    "pass": 447,
+    "warn": 97,
+    "fail": 54,
+    "total": 598
   },
   "games": [
+    {
+      "slug": ".quarantine",
+      "verdict": "fail",
+      "engine": "unknown",
+      "issues": [
+        {
+          "code": "NO_HTML",
+          "message": "No HTML entry file found",
+          "severity": "critical"
+        }
+      ],
+      "refs_checked": 0
+    },
+    {
+      "slug": ".recovery",
+      "verdict": "fail",
+      "engine": "unknown",
+      "issues": [
+        {
+          "code": "NO_HTML",
+          "message": "No HTML entry file found",
+          "severity": "critical"
+        }
+      ],
+      "refs_checked": 0
+    },
     {
       "slug": "0v0",
       "verdict": "pass",
@@ -23,49 +49,13 @@
     },
     {
       "slug": "1",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: git.io",
-          "severity": "warning",
-          "ref": "http://git.io/2048",
-          "host": "git.io"
-        },
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: gabrielecirulli.com",
-          "severity": "warning",
-          "ref": "http://gabrielecirulli.com",
-          "host": "gabrielecirulli.com"
-        },
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: itunes.apple.com",
-          "severity": "warning",
-          "ref": "https://itunes.apple.com/us/app/1024!/id823499224",
-          "host": "itunes.apple.com"
-        },
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: asherv.com",
-          "severity": "warning",
-          "ref": "http://asherv.com/threes/",
-          "host": "asherv.com"
-        },
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: github.com",
-          "severity": "warning",
-          "ref": "https://github.com/7bp/1",
-          "host": "github.com"
-        }
-      ],
-      "refs_checked": 17,
-      "external_refs": 5,
-      "external_critical": 5,
+      "issues": [],
+      "refs_checked": 0,
+      "external_refs": 0,
+      "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 0
     },
@@ -102,23 +92,16 @@
     },
     {
       "slug": "1v1space",
-      "verdict": "warn",
-      "engine": "html5",
-      "entry_file": "index.html",
+      "verdict": "fail",
+      "engine": "unknown",
       "issues": [
         {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: flowlab.io",
-          "severity": "warning",
-          "ref": "https://flowlab.io/game/embed/1225623",
-          "host": "flowlab.io"
+          "code": "NO_HTML",
+          "message": "No HTML entry file found",
+          "severity": "critical"
         }
       ],
-      "refs_checked": 3,
-      "external_refs": 1,
-      "external_critical": 1,
-      "critical_misses": 0,
-      "warning_misses": 0
+      "refs_checked": 0
     },
     {
       "slug": "2006-fifa-world-cup-germany-2006",
@@ -747,15 +730,27 @@
     },
     {
       "slug": "backrooms-2d",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "unity",
       "entry_file": "index.html",
-      "issues": [],
-      "refs_checked": 2,
+      "issues": [
+        {
+          "code": "UNITY_MISSING_DATA",
+          "message": "Unity build is missing the .data/.unityweb payload",
+          "severity": "critical"
+        },
+        {
+          "code": "MISSING_FILE",
+          "message": "Local file missing: blob",
+          "severity": "warning",
+          "ref": "blob"
+        }
+      ],
+      "refs_checked": 3,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "backyard-baseball",
@@ -2329,22 +2324,35 @@
     },
     {
       "slug": "cookie-clicker",
-      "verdict": "warn",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: db.duckmath.org",
+          "severity": "warning",
+          "ref": "https://db.duckmath.org/html/cookie_clicker/img/favicon.ico",
+          "host": "db.duckmath.org"
+        },
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: excanvas.compiled.js",
+          "severity": "critical",
+          "ref": "excanvas.compiled.js"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
           "message": "Game depends on external host: orteil.dashnet.org",
           "severity": "warning",
-          "ref": "//orteil.dashnet.org",
+          "ref": "http://orteil.dashnet.org",
           "host": "orteil.dashnet.org"
         },
         {
           "code": "EXTERNAL_RUNTIME_DEP",
           "message": "Game depends on external host: dashnet.org",
           "severity": "warning",
-          "ref": "//dashnet.org",
+          "ref": "http://dashnet.org",
           "host": "dashnet.org"
         },
         {
@@ -2360,6 +2368,13 @@
           "severity": "warning",
           "ref": "https://orteil42.tumblr.com",
           "host": "orteil42.tumblr.com"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: forum.dashnet.org",
+          "severity": "warning",
+          "ref": "http://forum.dashnet.org",
+          "host": "forum.dashnet.org"
         },
         {
           "code": "EXTERNAL_RUNTIME_DEP",
@@ -2391,23 +2406,24 @@
         },
         {
           "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: store.steampowered.com",
+          "message": "Game depends on external host: www.paypalobjects.com",
           "severity": "warning",
-          "ref": "https://store.steampowered.com/app/1454400/Cookie_Clicker/",
-          "host": "store.steampowered.com"
+          "ref": "https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif",
+          "host": "www.paypalobjects.com"
         },
         {
-          "code": "MISSING_FILE",
-          "message": "Local file missing: beta",
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.aq.com",
           "severity": "warning",
-          "ref": "beta"
+          "ref": "http://www.aq.com/landing/cookie/",
+          "host": "www.aq.com"
         }
       ],
-      "refs_checked": 28,
-      "external_refs": 14,
-      "external_critical": 9,
-      "critical_misses": 0,
-      "warning_misses": 1
+      "refs_checked": 35,
+      "external_refs": 34,
+      "external_critical": 12,
+      "critical_misses": 1,
+      "warning_misses": 0
     },
     {
       "slug": "core-ball",
@@ -2550,7 +2566,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 5,
+      "refs_checked": 6,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -2562,7 +2578,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 7,
+      "refs_checked": 8,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -3495,6 +3511,33 @@
       "warning_misses": 0
     },
     {
+      "slug": "dig-out-of-prison",
+      "verdict": "warn",
+      "engine": "unity",
+      "entry_file": "index.html",
+      "issues": [
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.crazygames.com",
+          "severity": "warning",
+          "ref": "https://www.crazygames.com/game/dig-out-of-prison",
+          "host": "www.crazygames.com"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: builds.crazygames.com",
+          "severity": "warning",
+          "ref": "https://builds.crazygames.com",
+          "host": "builds.crazygames.com"
+        }
+      ],
+      "refs_checked": 3,
+      "external_refs": 3,
+      "external_critical": 2,
+      "critical_misses": 0,
+      "warning_misses": 0
+    },
+    {
       "slug": "dig-to-china",
       "verdict": "pass",
       "engine": "ruffle",
@@ -4260,7 +4303,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 6,
+      "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -6020,7 +6063,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 1,
+      "refs_checked": 2,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -6695,18 +6738,6 @@
       "refs_checked": 36,
       "external_refs": 3,
       "external_critical": 1,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "idledices",
-      "verdict": "pass",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [],
-      "refs_checked": 1,
-      "external_refs": 0,
-      "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 0
     },
@@ -8767,7 +8798,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 2,
+      "refs_checked": 3,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -9893,8 +9924,8 @@
           "host": "unblocked-games.s3.amazonaws.com"
         }
       ],
-      "refs_checked": 4,
-      "external_refs": 2,
+      "refs_checked": 5,
+      "external_refs": 3,
       "external_critical": 1,
       "critical_misses": 0,
       "warning_misses": 0

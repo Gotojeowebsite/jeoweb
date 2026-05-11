@@ -1,0 +1,290 @@
+{
+  "schema": 1,
+  "slug": "flappy-bird",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "assets/bird.png",
+      "size": 266,
+      "required": false
+    },
+    {
+      "path": "assets/ceiling.png",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_0.png",
+      "size": 121,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_1.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_2.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_3.png",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_4.png",
+      "size": 128,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_5.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_6.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_7.png",
+      "size": 128,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_8.png",
+      "size": 123,
+      "required": false
+    },
+    {
+      "path": "assets/font_big_9.png",
+      "size": 125,
+      "required": false
+    },
+    {
+      "path": "assets/font_big.psd",
+      "size": 35884,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_0.png",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_1.png",
+      "size": 89,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_2.png",
+      "size": 82,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_3.png",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_4.png",
+      "size": 97,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_5.png",
+      "size": 82,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_6.png",
+      "size": 81,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_7.png",
+      "size": 91,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_8.png",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "assets/font_small_9.png",
+      "size": 81,
+      "required": false
+    },
+    {
+      "path": "assets/font_small.psd",
+      "size": 27956,
+      "required": false
+    },
+    {
+      "path": "assets/land.png",
+      "size": 229,
+      "required": false
+    },
+    {
+      "path": "assets/medal_bronze.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "assets/medal_gold.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "assets/medal_platinum.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "assets/medal_silver.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "assets/pipe-down.png",
+      "size": 420,
+      "required": false
+    },
+    {
+      "path": "assets/pipe-up.png",
+      "size": 383,
+      "required": false
+    },
+    {
+      "path": "assets/pipe.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "assets/replay.png",
+      "size": 532,
+      "required": false
+    },
+    {
+      "path": "assets/scoreboard.png",
+      "size": 1736,
+      "required": false
+    },
+    {
+      "path": "assets/sky.png",
+      "size": 4006,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx_die.ogg",
+      "size": 18942,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx_hit.ogg",
+      "size": 15670,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx_point.ogg",
+      "size": 13235,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx_swooshing.ogg",
+      "size": 13697,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx_wing.ogg",
+      "size": 7728,
+      "required": false
+    },
+    {
+      "path": "assets/splash.png",
+      "size": 1456,
+      "required": false
+    },
+    {
+      "path": "assets/thumb.png",
+      "size": 9234,
+      "required": false
+    },
+    {
+      "path": "css/main.css",
+      "size": 6876,
+      "required": true
+    },
+    {
+      "path": "css/reset.css",
+      "size": 1208,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 2649,
+      "required": true
+    },
+    {
+      "path": "js/buzz.min.js",
+      "size": 9586,
+      "required": true
+    },
+    {
+      "path": "js/jquery.min.js",
+      "size": 93106,
+      "required": true
+    },
+    {
+      "path": "js/jquery.transit.min.js",
+      "size": 7507,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 12183,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1268,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "www.dotgears.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "www.dotgears.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

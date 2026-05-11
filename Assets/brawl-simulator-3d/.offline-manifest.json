@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "slug": "brawl-simulator-3d",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "_archived_site/archive_manifest.json",
+      "size": 7013,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.data.part1",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.data.part2",
+      "size": 18439120,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.framework.js",
+      "size": 619427,
+      "required": true
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.loader.js",
+      "size": 26982,
+      "required": true
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.wasm.part1",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.wasm.part2",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.wasm.part3",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Build/brawl.wasm.part4",
+      "size": 4861812,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/Images/logo.png",
+      "size": 28875,
+      "required": false
+    },
+    {
+      "path": "_archived_site/cdn.jsdelivr.net/gh/genizy/google-class_main/brawl-3d/style.css",
+      "size": 2452,
+      "required": true
+    },
+    {
+      "path": "_archived_site/ethanyo.freetls.fastly.net/misc/brawl/index.html",
+      "size": 46148,
+      "required": false
+    },
+    {
+      "path": "_archived_site/mc.yandex.com/metrika/advert__q_3cc80ac22d.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archived_site/mc.yandex.com/sync_cookie_image_decide__q_8fca477f49.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archived_site/mc.yandex.com/sync_cookie_image_decide_secondary__q_ff11edd3b9.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archived_site/mc.yandex.com/watch/105567293/1__q_2174950a0b.json",
+      "size": 704,
+      "required": false
+    },
+    {
+      "path": "_archived_site/mc.yandex.ru/metrika/tag.js",
+      "size": 264021,
+      "required": true
+    },
+    {
+      "path": "_archived_site/static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516.js",
+      "size": 31169,
+      "required": true
+    },
+    {
+      "path": "beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516",
+      "size": 31169,
+      "required": false
+    },
+    {
+      "path": "debug-load.png",
+      "size": 206521,
+      "required": false
+    },
+    {
+      "path": "debug-offline-after-patch.png",
+      "size": 204792,
+      "required": false
+    },
+    {
+      "path": "DOWNLOAD_COMPLETE.md",
+      "size": 5484,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 5430,
+      "required": false
+    },
+    {
+      "path": "gh/genizy/google-class@main/brawl-3d/Build/brawl.framework.js",
+      "size": 620817,
+      "required": true
+    },
+    {
+      "path": "gh/genizy/google-class@main/brawl-3d/Build/brawl.loader.js",
+      "size": 26982,
+      "required": true
+    },
+    {
+      "path": "gh/genizy/google-class@main/brawl-3d/Build/brawl.wasm.part4",
+      "size": 4861812,
+      "required": false
+    },
+    {
+      "path": "gh/genizy/google-class@main/brawl-3d/Images/logo.png",
+      "size": 28875,
+      "required": false
+    },
+    {
+      "path": "gh/genizy/google-class@main/brawl-3d/style.css",
+      "size": 2452,
+      "required": false
+    },
+    {
+      "path": "import_manifest.json",
+      "size": 549,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 25681,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 28875,
+      "required": false
+    },
+    {
+      "path": "metrika/advert.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "metrika/tag.js",
+      "size": 262337,
+      "required": true
+    },
+    {
+      "path": "misc/brawl/index.html",
+      "size": 44732,
+      "required": false
+    },
+    {
+      "path": "screenshot.png",
+      "size": 537663,
+      "required": false
+    },
+    {
+      "path": "sync_cookie_image_decide",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "watch/105567293/1",
+      "size": 748,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org",
+    "mc.yandex.",
+    "mc.yandex.ru"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org",
+    "mc.yandex.",
+    "mc.yandex.ru"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

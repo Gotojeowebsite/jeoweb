@@ -118,7 +118,7 @@ function Platform() {
   this.cwidth = 105;
   this.cheight = 31;
   
-  // G-98DP5VKS42
+  // G-DQM8XXB9GC
   
   //Function to draw it
   this.draw = function() {

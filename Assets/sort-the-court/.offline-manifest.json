@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "sort-the-court",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "img/icon.png",
+      "size": 2932,
+      "required": false
+    },
+    {
+      "path": "img/splash.png",
+      "size": 818906,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1601,
+      "required": true
+    },
+    {
+      "path": "Release/UnityLoader.js",
+      "size": 35336,
+      "required": true
+    },
+    {
+      "path": "Release/WebGL.datagz",
+      "size": 1206906,
+      "required": false
+    },
+    {
+      "path": "Release/WebGL.jsgz",
+      "size": 1206811,
+      "required": false
+    },
+    {
+      "path": "Release/WebGL.memgz",
+      "size": 424981,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 16716,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullbar.png",
+      "size": 2792,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen.png",
+      "size": 15668,
+      "required": false
+    },
+    {
+      "path": "TemplateData/loadingbar.png",
+      "size": 2844,
+      "required": false
+    },
+    {
+      "path": "TemplateData/logo.png",
+      "size": 6284,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progresslogo.png",
+      "size": 5041,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1507,
+      "required": true
+    },
+    {
+      "path": "TemplateData/UnityProgress.js",
+      "size": 3454,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

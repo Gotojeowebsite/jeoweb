@@ -1,0 +1,1146 @@
+{
+  "schema": 1,
+  "slug": "idle-shark",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+      "size": 84245,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js",
+      "size": 14358,
+      "required": true
+    },
+    {
+      "path": "cache.manifest",
+      "size": 402,
+      "required": false
+    },
+    {
+      "path": "css/abandoned.css",
+      "size": 121476,
+      "required": true
+    },
+    {
+      "path": "css/chaotic.css",
+      "size": 121476,
+      "required": true
+    },
+    {
+      "path": "css/frigid.css",
+      "size": 121379,
+      "required": true
+    },
+    {
+      "path": "css/haven.css",
+      "size": 121379,
+      "required": true
+    },
+    {
+      "path": "css/shrouded.css",
+      "size": 121476,
+      "required": true
+    },
+    {
+      "path": "css/style.css",
+      "size": 122564,
+      "required": true
+    },
+    {
+      "path": "css/tempestuous.css",
+      "size": 121379,
+      "required": true
+    },
+    {
+      "path": "css/violent.css",
+      "size": 121371,
+      "required": true
+    },
+    {
+      "path": "data/raweventspritedata.json",
+      "size": 8186,
+      "required": false
+    },
+    {
+      "path": "data/rawspritedata.json",
+      "size": 15978,
+      "required": false
+    },
+    {
+      "path": "data/sharkeventsprites.tps",
+      "size": 7364,
+      "required": false
+    },
+    {
+      "path": "data/sharksprites.tps",
+      "size": 7341,
+      "required": false
+    },
+    {
+      "path": "data/sprites.js",
+      "size": 16630,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-gate.png",
+      "size": 59305,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-grotto.png",
+      "size": 37082,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-homesea.png",
+      "size": 54078,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-lab.png",
+      "size": 48595,
+      "required": false
+    },
+    {
+      "path": "img/bg/bg-recycler.png",
+      "size": 31774,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-1.png",
+      "size": 17322,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-10.png",
+      "size": 44154,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-11.png",
+      "size": 13648,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-12.png",
+      "size": 15729,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-13.png",
+      "size": 27333,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-14.png",
+      "size": 36897,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-15.png",
+      "size": 54251,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-16.png",
+      "size": 105499,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-17.png",
+      "size": 73671,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-18.png",
+      "size": 54690,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-19.png",
+      "size": 30256,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-2.png",
+      "size": 39708,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-20.png",
+      "size": 69176,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-21.png",
+      "size": 39857,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-22.png",
+      "size": 39092,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-23.png",
+      "size": 27117,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-24.png",
+      "size": 64913,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-25.png",
+      "size": 21968,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-26.png",
+      "size": 36361,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-27.png",
+      "size": 37708,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-28.png",
+      "size": 34704,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-29.png",
+      "size": 29822,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-3.png",
+      "size": 41709,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-30.png",
+      "size": 22165,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-31.png",
+      "size": 38445,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-32.png",
+      "size": 37390,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-33.png",
+      "size": 39129,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-34.png",
+      "size": 39557,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-35.png",
+      "size": 37941,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-36.png",
+      "size": 21772,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-4.png",
+      "size": 49707,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-5.png",
+      "size": 22790,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-6.png",
+      "size": 31987,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-7.png",
+      "size": 23562,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-8.png",
+      "size": 35285,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-9.png",
+      "size": 43329,
+      "required": false
+    },
+    {
+      "path": "img/events/home/homesea-missing.png",
+      "size": 29951,
+      "required": false
+    },
+    {
+      "path": "img/events/home/README.md",
+      "size": 9,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/homesea-missing.png",
+      "size": 29951,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/README.md",
+      "size": 30,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-gate-closed.png",
+      "size": 40422,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-gate-one-slot.png",
+      "size": 70407,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-gate-open.png",
+      "size": 73063,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-grotto.png",
+      "size": 12936,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-lab-done.png",
+      "size": 67465,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-lab.png",
+      "size": 46888,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-recycler.png",
+      "size": 20825,
+      "required": false
+    },
+    {
+      "path": "img/events/misc/scene-reflection.png",
+      "size": 73116,
+      "required": false
+    },
+    {
+      "path": "img/fanarts/CookieShark.png",
+      "size": 298739,
+      "required": false
+    },
+    {
+      "path": "img/fanarts/LaserRay.png",
+      "size": 113277,
+      "required": false
+    },
+    {
+      "path": "img/fanarts/README.md",
+      "size": 48,
+      "required": false
+    },
+    {
+      "path": "img/fanarts/SharkScience.png",
+      "size": 9635,
+      "required": false
+    },
+    {
+      "path": "img/favicon.png",
+      "size": 249,
+      "required": false
+    },
+    {
+      "path": "img/raw/abandoned.png",
+      "size": 11916,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/catchFish.png",
+      "size": 1338,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/forgeSpronge.png",
+      "size": 939,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/fuseDelphinium.png",
+      "size": 673,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getAutoTransmuter.png",
+      "size": 791,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getBerrier.png",
+      "size": 720,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getBiologist.png",
+      "size": 793,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getBrood.png",
+      "size": 884,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getChorus.png",
+      "size": 752,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getClam.png",
+      "size": 612,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getCrab.png",
+      "size": 738,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getCrystalMiner.png",
+      "size": 830,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getDiver.png",
+      "size": 621,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getDolphin.png",
+      "size": 532,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getFishMachine.png",
+      "size": 747,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getHarvester.png",
+      "size": 727,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getJellyfish.png",
+      "size": 1014,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getLaser.png",
+      "size": 844,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getLobster.png",
+      "size": 638,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getMaker.png",
+      "size": 734,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getManta.png",
+      "size": 651,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getNurse.png",
+      "size": 808,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getPhilosopher.png",
+      "size": 628,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getPlanter.png",
+      "size": 1007,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getQueen.png",
+      "size": 762,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getSandDigger.png",
+      "size": 2538,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getScientist.png",
+      "size": 1512,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getSeaApple.png",
+      "size": 874,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getShark.png",
+      "size": 598,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getShrimp.png",
+      "size": 1800,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getTreasurer.png",
+      "size": 635,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getWhale.png",
+      "size": 586,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/getWorker.png",
+      "size": 696,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/jellyfishToScience.png",
+      "size": 897,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/pearlConversion.png",
+      "size": 911,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/prySponge.png",
+      "size": 829,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/README.md",
+      "size": 13,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/seaApplesToScience.png",
+      "size": 938,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/smeltCoralglass.png",
+      "size": 1578,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/spongeToScience.png",
+      "size": 982,
+      "required": false
+    },
+    {
+      "path": "img/raw/actions/transmuteSharkonium.png",
+      "size": 673,
+      "required": false
+    },
+    {
+      "path": "img/raw/chaotic.png",
+      "size": 12177,
+      "required": false
+    },
+    {
+      "path": "img/raw/frigid.png",
+      "size": 9562,
+      "required": false
+    },
+    {
+      "path": "img/raw/general/missing-action.png",
+      "size": 564,
+      "required": false
+    },
+    {
+      "path": "img/raw/general/missing-artifact.png",
+      "size": 4998,
+      "required": false
+    },
+    {
+      "path": "img/raw/general/missing-technology.png",
+      "size": 619,
+      "required": false
+    },
+    {
+      "path": "img/raw/general/README.md",
+      "size": 17,
+      "required": false
+    },
+    {
+      "path": "img/raw/haven.png",
+      "size": 12823,
+      "required": false
+    },
+    {
+      "path": "img/raw/marine.png",
+      "size": 13382,
+      "required": false
+    },
+    {
+      "path": "img/raw/missing.png",
+      "size": 3752,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/abandoned.png",
+      "size": 11916,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/chaotic.png",
+      "size": 12177,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/frigid.png",
+      "size": 9562,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/haven.png",
+      "size": 12823,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/marine.png",
+      "size": 13382,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/missing.png",
+      "size": 3752,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/README.md",
+      "size": 16,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/shrouded.png",
+      "size": 8226,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/tempestuous.png",
+      "size": 7594,
+      "required": false
+    },
+    {
+      "path": "img/raw/planets/violent.png",
+      "size": 12322,
+      "required": false
+    },
+    {
+      "path": "img/raw/shrouded.png",
+      "size": 8226,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/automation.png",
+      "size": 619,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/biology.png",
+      "size": 595,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/crabBiology.png",
+      "size": 850,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/crystalBite.png",
+      "size": 661,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/crystalContainer.png",
+      "size": 775,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/crystalSpade.png",
+      "size": 621,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/engineering.png",
+      "size": 652,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/exploration.png",
+      "size": 613,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/farExploration.png",
+      "size": 612,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/gateDiscovery.png",
+      "size": 714,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/kelpHorticulture.png",
+      "size": 677,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/laserRays.png",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/missing.png",
+      "size": 3752,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/rayBiology.png",
+      "size": 590,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/README.md",
+      "size": 29,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/recyclerDiscovery.png",
+      "size": 1319,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/seabedGeology.png",
+      "size": 610,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/statsDiscovery.png",
+      "size": 606,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/sunObservation.png",
+      "size": 600,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/thermalVents.png",
+      "size": 705,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/transmutation.png",
+      "size": 1022,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/underwaterChemistry.png",
+      "size": 917,
+      "required": false
+    },
+    {
+      "path": "img/raw/technologies/xenobiology.png",
+      "size": 605,
+      "required": false
+    },
+    {
+      "path": "img/raw/tempestuous.png",
+      "size": 7594,
+      "required": false
+    },
+    {
+      "path": "img/raw/violent.png",
+      "size": 12322,
+      "required": false
+    },
+    {
+      "path": "img/recyclerbg.png",
+      "size": 5951,
+      "required": false
+    },
+    {
+      "path": "img/recyclerbg.psd",
+      "size": 120859,
+      "required": false
+    },
+    {
+      "path": "img/sharkeventsprites.png",
+      "size": 1749541,
+      "required": false
+    },
+    {
+      "path": "img/sharkgame.png",
+      "size": 18164,
+      "required": false
+    },
+    {
+      "path": "img/sharklogo.png",
+      "size": 71431,
+      "required": false
+    },
+    {
+      "path": "img/sharksprites.png",
+      "size": 322037,
+      "required": false
+    },
+    {
+      "path": "img/src/bg-gate.psd",
+      "size": 450002,
+      "required": false
+    },
+    {
+      "path": "img/src/bg-grotto.psd",
+      "size": 354583,
+      "required": false
+    },
+    {
+      "path": "img/src/bg-homesea.psd",
+      "size": 507127,
+      "required": false
+    },
+    {
+      "path": "img/src/bg-lab.psd",
+      "size": 404935,
+      "required": false
+    },
+    {
+      "path": "img/src/bg-recycler.psd",
+      "size": 471628,
+      "required": false
+    },
+    {
+      "path": "img/src/palette.png",
+      "size": 124822,
+      "required": false
+    },
+    {
+      "path": "img/src/purchaseicons3.png",
+      "size": 618,
+      "required": false
+    },
+    {
+      "path": "img/src/README.md",
+      "size": 26,
+      "required": false
+    },
+    {
+      "path": "img/src/recyclerbg.psd",
+      "size": 120859,
+      "required": false
+    },
+    {
+      "path": "img/src/wiki.png",
+      "size": 555,
+      "required": false
+    },
+    {
+      "path": "img/src/xenobiology.png",
+      "size": 605,
+      "required": false
+    },
+    {
+      "path": "img/wiki.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "img/wiki.png",
+      "size": 555,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5084,
+      "required": true
+    },
+    {
+      "path": "js/ai/aitest.js",
+      "size": 1404,
+      "required": true
+    },
+    {
+      "path": "js/data/artifacts.js",
+      "size": 9092,
+      "required": true
+    },
+    {
+      "path": "js/data/homeactions.js",
+      "size": 58885,
+      "required": true
+    },
+    {
+      "path": "js/data/resourcetable.js",
+      "size": 12056,
+      "required": true
+    },
+    {
+      "path": "js/data/sprites.js",
+      "size": 16694,
+      "required": true
+    },
+    {
+      "path": "js/data/upgrades.js",
+      "size": 29429,
+      "required": true
+    },
+    {
+      "path": "js/data/worldtypes.js",
+      "size": 6149,
+      "required": true
+    },
+    {
+      "path": "js/fallback/jquery.min.js",
+      "size": 84241,
+      "required": true
+    },
+    {
+      "path": "js/fallback/underscore-min.js",
+      "size": 14162,
+      "required": true
+    },
+    {
+      "path": "js/gateway.js",
+      "size": 15615,
+      "required": true
+    },
+    {
+      "path": "js/jquery.min.js",
+      "size": 84241,
+      "required": true
+    },
+    {
+      "path": "js/lib/base64-ascii85.js",
+      "size": 2994,
+      "required": true
+    },
+    {
+      "path": "js/lib/pako.js",
+      "size": 43705,
+      "required": true
+    },
+    {
+      "path": "js/log.js",
+      "size": 1281,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 23751,
+      "required": true
+    },
+    {
+      "path": "js/reference/jquery-2.1.1.js",
+      "size": 84936,
+      "required": true
+    },
+    {
+      "path": "js/reference/underscore.js",
+      "size": 14465,
+      "required": true
+    },
+    {
+      "path": "js/resources.js",
+      "size": 7687,
+      "required": true
+    },
+    {
+      "path": "js/save.js",
+      "size": 11399,
+      "required": true
+    },
+    {
+      "path": "js/settings.js",
+      "size": 2583,
+      "required": true
+    },
+    {
+      "path": "js/tabs/gate.js",
+      "size": 3274,
+      "required": true
+    },
+    {
+      "path": "js/tabs/home.js",
+      "size": 12533,
+      "required": true
+    },
+    {
+      "path": "js/tabs/lab.js",
+      "size": 4414,
+      "required": true
+    },
+    {
+      "path": "js/tabs/recycler.js",
+      "size": 4828,
+      "required": true
+    },
+    {
+      "path": "js/tabs/reflection.js",
+      "size": 1674,
+      "required": true
+    },
+    {
+      "path": "js/tabs/stats.js",
+      "size": 7198,
+      "required": true
+    },
+    {
+      "path": "js/util.js",
+      "size": 420,
+      "required": true
+    },
+    {
+      "path": "js/world.js",
+      "size": 2836,
+      "required": true
+    },
+    {
+      "path": "less/abandoned.less",
+      "size": 114,
+      "required": false
+    },
+    {
+      "path": "less/chaotic.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/frigid.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/haven.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/marine.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/shrouded.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/style.less",
+      "size": 20132,
+      "required": false
+    },
+    {
+      "path": "less/tempestuous.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "less/violent.less",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "logo.svg",
+      "size": 1267,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cirri.al",
+    "ie7-js.googlecode.com",
+    "placehold.it",
+    "www.sharktrust.org"
+  ],
+  "external_critical": [
+    "cirri.al",
+    "ie7-js.googlecode.com",
+    "placehold.it",
+    "www.sharktrust.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

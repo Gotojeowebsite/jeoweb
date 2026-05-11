@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "slug": "stack",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "featured-stack.jpg",
+      "size": 27502,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 22601,
+      "required": true
+    },
+    {
+      "path": "main.js",
+      "size": 4087,
+      "required": true
+    },
+    {
+      "path": "stack.png",
+      "size": 140847,
+      "required": false
+    },
+    {
+      "path": "three.min.js",
+      "size": 504437,
+      "required": true
+    },
+    {
+      "path": "TweenMax.min.js",
+      "size": 107961,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

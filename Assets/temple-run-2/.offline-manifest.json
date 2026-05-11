@@ -1,0 +1,834 @@
+{
+  "schema": 1,
+  "slug": "temple-run-2",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "079dea52d8f43464bedd59bc35cc7999.jpg",
+      "size": 93839,
+      "required": false
+    },
+    {
+      "path": "2.bundle.js",
+      "size": 3264,
+      "required": true
+    },
+    {
+      "path": "379241e29c75c9e274f9190a2e0874bb.jpg",
+      "size": 7107,
+      "required": false
+    },
+    {
+      "path": "4720d910d9d723ec173e17ce10f31bfb.jpg",
+      "size": 22184,
+      "required": false
+    },
+    {
+      "path": "52d79153235ad2a88f8b1ff2ffdbe067.jpg",
+      "size": 105811,
+      "required": false
+    },
+    {
+      "path": "6bbd8797ffdaf4e4c44b49e4732c9bf1.webp",
+      "size": 452462,
+      "required": false
+    },
+    {
+      "path": "72bdc992cae069c7b8720c3106e5d3c8.webp",
+      "size": 715892,
+      "required": false
+    },
+    {
+      "path": "859534eabad5724a69cd5381dc82428f.webp",
+      "size": 6072,
+      "required": false
+    },
+    {
+      "path": "ac268c48131d7ef2e42100beed84990f.webp",
+      "size": 396754,
+      "required": false
+    },
+    {
+      "path": "appmanifest.json",
+      "size": 1243,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/babylonjs.materials.js",
+      "size": 430445,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/babylonjs.serializers.min.js",
+      "size": 87005,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/basis_transcoder.js",
+      "size": 58706,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/basis_transcoder.wasm",
+      "size": 217809,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/draco_decoder_gltf.wasm",
+      "size": 194983,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/draco_wasm_wrapper_gltf.js",
+      "size": 53603,
+      "required": true
+    },
+    {
+      "path": "assets/babylonjs/gltf_validator.js",
+      "size": 358624,
+      "required": true
+    },
+    {
+      "path": "assets/characters/demon_monkey/demon_monkey_chaser.glb",
+      "size": 393880,
+      "required": false
+    },
+    {
+      "path": "assets/characters/guy_dangerous/guy_dangerous.glb",
+      "size": 929540,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Arctic_Forest_junction_a_Turn_Left_Skullmonkey.glb",
+      "size": 564152,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Arctic_Forest_junction_a_Turn_Right_Skullmonkey.glb",
+      "size": 564156,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Arctic_Forest_junction_b_Turn_Left_Skullmonkey.glb",
+      "size": 505568,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Arctic_Forest_junction_b_Turn_Right_Skullmonkey.glb",
+      "size": 505572,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Scarlett_Fox_Arctic.glb",
+      "size": 1393360,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/Scarlett_Fox_Skin_Arctic.jpg",
+      "size": 166779,
+      "required": false
+    },
+    {
+      "path": "assets/characters/scarlett_fox/skull_sled_a_prefab.glb",
+      "size": 20924,
+      "required": false
+    },
+    {
+      "path": "assets/effects/effects_additive.jpg",
+      "size": 48256,
+      "required": false
+    },
+    {
+      "path": "assets/effects/effects_transparent_Arctic.webp",
+      "size": 43394,
+      "required": false
+    },
+    {
+      "path": "assets/effects/effects_transparent.webp",
+      "size": 79392,
+      "required": false
+    },
+    {
+      "path": "assets/effects/power_up_fx_mesh.glb",
+      "size": 91100,
+      "required": false
+    },
+    {
+      "path": "assets/environments/Arctic_Skybox.glb",
+      "size": 10968,
+      "required": false
+    },
+    {
+      "path": "assets/environments/Machu_Skybox.glb",
+      "size": 244128,
+      "required": false
+    },
+    {
+      "path": "assets/objects/chest/chest.glb",
+      "size": 109468,
+      "required": false
+    },
+    {
+      "path": "assets/objects/chest/chest.jpg",
+      "size": 20464,
+      "required": false
+    },
+    {
+      "path": "assets/objects/coins/coin_default.jpg",
+      "size": 6814,
+      "required": false
+    },
+    {
+      "path": "assets/objects/coins/default_coin_gold.glb",
+      "size": 3820,
+      "required": false
+    },
+    {
+      "path": "assets/objects/pickups/pickupBoost.glb",
+      "size": 4756,
+      "required": false
+    },
+    {
+      "path": "assets/objects/pickups/PickUps01.jpg",
+      "size": 55439,
+      "required": false
+    },
+    {
+      "path": "assets/objects/pickups/pickupShield.glb",
+      "size": 4744,
+      "required": false
+    },
+    {
+      "path": "assets/objects/pickups/pickupVacuum.glb",
+      "size": 4776,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/music/Game.mp3",
+      "size": 936069,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/music/Game.ogg",
+      "size": 786111,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/music/NightMusic.mp3",
+      "size": 341724,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/music/NightMusic.ogg",
+      "size": 264247,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx/sfx.mp3",
+      "size": 899607,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx/sfx.ogg",
+      "size": 272156,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx/track_sfx.mp3",
+      "size": 504288,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/sfx/track_sfx.ogg",
+      "size": 135778,
+      "required": false
+    },
+    {
+      "path": "assets/textures/Arctic_Flags01.jpg",
+      "size": 12901,
+      "required": false
+    },
+    {
+      "path": "assets/textures/Arrow.jpg",
+      "size": 42319,
+      "required": false
+    },
+    {
+      "path": "assets/textures/Atlas_Opaque_Arctic_B.jpg",
+      "size": 236988,
+      "required": false
+    },
+    {
+      "path": "assets/textures/Atlas_Opaque_Arctic_Gloss_B.png",
+      "size": 40134,
+      "required": false
+    },
+    {
+      "path": "assets/textures/beige_bg.jpg",
+      "size": 7107,
+      "required": false
+    },
+    {
+      "path": "assets/textures/BlobShadow.webp",
+      "size": 7260,
+      "required": false
+    },
+    {
+      "path": "assets/textures/foliage_transparent.webp",
+      "size": 129918,
+      "required": false
+    },
+    {
+      "path": "assets/textures/machu_lightmaps.jpg",
+      "size": 303960,
+      "required": false
+    },
+    {
+      "path": "assets/textures/machu_master_a.jpg",
+      "size": 249403,
+      "required": false
+    },
+    {
+      "path": "assets/textures/pan_water_b.webp",
+      "size": 391860,
+      "required": false
+    },
+    {
+      "path": "assets/textures/Sky_Arctic01.jpg",
+      "size": 49215,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Base/base_pack_1.glb",
+      "size": 284164,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Base/base_pack_2.glb",
+      "size": 1021788,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Base/base_pack.glb",
+      "size": 1306144,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_entrance_a.glb",
+      "size": 65220,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_exit_a.glb",
+      "size": 60224,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_hill_a.glb",
+      "size": 149208,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_jump_over_a.glb",
+      "size": 75112,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_jump_over_b.glb",
+      "size": 66140,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_junction_a.glb",
+      "size": 76196,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_junction_b.glb",
+      "size": 75848,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_river_a.glb",
+      "size": 25376,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_slide_under_a.glb",
+      "size": 48008,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_straight_a.glb",
+      "size": 55588,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_straight_b.glb",
+      "size": 51404,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_stumble_a.glb",
+      "size": 24724,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_stumble_b.glb",
+      "size": 24688,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_turn_left_a.glb",
+      "size": 95524,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Forest/forest_turn_right_a.glb",
+      "size": 97024,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_cart_a_prefab.glb",
+      "size": 19792,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_curve_a.glb",
+      "size": 124272,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_curve_b.glb",
+      "size": 120900,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_curve_c.glb",
+      "size": 47324,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_curve_d.glb",
+      "size": 55456,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_duck_a.glb",
+      "size": 21068,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_duck_b.glb",
+      "size": 101392,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_entrance_a.glb",
+      "size": 94148,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_exit_a.glb",
+      "size": 58700,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_junction_a.glb",
+      "size": 85768,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_junction_b.glb",
+      "size": 83600,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_junction_c.glb",
+      "size": 82564,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_left_a.glb",
+      "size": 20080,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_left_b.glb",
+      "size": 18216,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_left_end_a.glb",
+      "size": 23372,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_left_start_a.glb",
+      "size": 19316,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_right_a.glb",
+      "size": 20104,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_right_b.glb",
+      "size": 19132,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_right_end_a.glb",
+      "size": 23180,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_ledge_right_start_a.glb",
+      "size": 16992,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_straight_a.glb",
+      "size": 34100,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/MineCart/mine_straight_b.glb",
+      "size": 30200,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_end_a.glb",
+      "size": 26028,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_jump_or_slide_a.glb",
+      "size": 22612,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_jump_over_a.glb",
+      "size": 104720,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_jump_over_b.glb",
+      "size": 104116,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_junction_a.glb",
+      "size": 25704,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_start_a.glb",
+      "size": 24048,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_straight_a.glb",
+      "size": 6148,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_straight_b.glb",
+      "size": 7280,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_straight_c.glb",
+      "size": 6164,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_straight_d.glb",
+      "size": 8228,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_straight_e.glb",
+      "size": 8232,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_stumble_a.glb",
+      "size": 47492,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_turn_left_a.glb",
+      "size": 35688,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/Narrows/narrow_turn_right_a.glb",
+      "size": 35740,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_curve_45_a.glb",
+      "size": 16432,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_curve_45_b.glb",
+      "size": 16364,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_curve_90_a.glb",
+      "size": 28144,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_curve_90_b.glb",
+      "size": 28152,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_b.glb",
+      "size": 21036,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_blocked_center.glb",
+      "size": 22820,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_blocked_left.glb",
+      "size": 21620,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_blocked_right.glb",
+      "size": 25956,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_center_blocked_sides.glb",
+      "size": 21840,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_left_tilt_right.glb",
+      "size": 20948,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_duck_right_tilt_left.glb",
+      "size": 20640,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_end_a.glb",
+      "size": 61948,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_junction_a.glb",
+      "size": 43828,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_start_a.glb",
+      "size": 48244,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_straight_a.glb",
+      "size": 19080,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_straight_b.glb",
+      "size": 16764,
+      "required": false
+    },
+    {
+      "path": "assets/tracks/Machu/WaterSlide/waterslide_straight_c.glb",
+      "size": 20580,
+      "required": false
+    },
+    {
+      "path": "bundle.js",
+      "size": 11718602,
+      "required": true
+    },
+    {
+      "path": "c3a474ec7869a10db304b9734dc161a8.webp",
+      "size": 36710,
+      "required": false
+    },
+    {
+      "path": "c3cf9d3b00dfee96270d5a3986dff067.webp",
+      "size": 5536,
+      "required": false
+    },
+    {
+      "path": "cd718180b9204d15f661250c7741c545.webp",
+      "size": 9552,
+      "required": false
+    },
+    {
+      "path": "d4a3141421fd427168cf625156fee2ab.webp",
+      "size": 4914,
+      "required": false
+    },
+    {
+      "path": "e27e9516fb177e6a09bedd53cf084336.webp",
+      "size": 3294,
+      "required": false
+    },
+    {
+      "path": "e93fa90f989e4a13e0cdcbd0f1d1e33e.webp",
+      "size": 28454,
+      "required": false
+    },
+    {
+      "path": "ecb75761cc5768501b9345d4417c76f7.png",
+      "size": 78720,
+      "required": false
+    },
+    {
+      "path": "f36d52fb2504971b038c976792cda83a.webp",
+      "size": 67582,
+      "required": false
+    },
+    {
+      "path": "f56ee7e8556446da578df0b7c3ffceaf.webp",
+      "size": 371556,
+      "required": false
+    },
+    {
+      "path": "fonts/temple-run-small-caps.eot",
+      "size": 227050,
+      "required": true
+    },
+    {
+      "path": "fonts/temple-run-small-caps.svg",
+      "size": 458160,
+      "required": false
+    },
+    {
+      "path": "fonts/temple-run-small-caps.ttf",
+      "size": 226820,
+      "required": true
+    },
+    {
+      "path": "fonts/temple-run-small-caps.woff",
+      "size": 79104,
+      "required": true
+    },
+    {
+      "path": "fonts/temple-run-small-caps.woff2",
+      "size": 46168,
+      "required": true
+    },
+    {
+      "path": "global.css",
+      "size": 2956,
+      "required": true
+    },
+    {
+      "path": "img/8af4bae83f5fcaaaaab43456110222da.png",
+      "size": 129161,
+      "required": false
+    },
+    {
+      "path": "img/alt.png",
+      "size": 101917,
+      "required": false
+    },
+    {
+      "path": "img/cover.png",
+      "size": 129955,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-128x128.png",
+      "size": 46275,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-144x144.png",
+      "size": 58221,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-152x152.png",
+      "size": 64358,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-192x192.png",
+      "size": 100360,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-384x384.png",
+      "size": 372287,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-512x512.png",
+      "size": 640297,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-72x72.png",
+      "size": 15207,
+      "required": false
+    },
+    {
+      "path": "img/icons/icon-96x96.png",
+      "size": 26638,
+      "required": false
+    },
+    {
+      "path": "img/og-icon.png",
+      "size": 819646,
+      "required": false
+    },
+    {
+      "path": "img/temple-run-2-256.png",
+      "size": 33084,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1220,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

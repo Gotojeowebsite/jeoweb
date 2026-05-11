@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "slug": "fighter-aircraft-pilot",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/pub-2d868f15a1824cc8a2ec51069ed41c6f.r2.dev/Fighter_Aircraft_Pilot.data.unityweb",
+      "size": 33180294,
+      "required": true
+    },
+    {
+      "path": "Build/Fighter Aircraft Pilot.data.unityweb",
+      "size": 33180294,
+      "required": true
+    },
+    {
+      "path": "Build/Fighter Aircraft Pilot.json",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "Build/Fighter Aircraft Pilot.wasm.code.unityweb",
+      "size": 5176655,
+      "required": true
+    },
+    {
+      "path": "Build/Fighter Aircraft Pilot.wasm.framework.unityweb",
+      "size": 93925,
+      "required": true
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 158595,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 3588,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 15553,
+      "required": false
+    },
+    {
+      "path": "shared/gamebreak/gamebreak.js",
+      "size": 28,
+      "required": true
+    },
+    {
+      "path": "shared/lib.js",
+      "size": 2946,
+      "required": true
+    },
+    {
+      "path": "shared/style.css",
+      "size": 1020,
+      "required": true
+    },
+    {
+      "path": "TemplateData/y8-logo.png",
+      "size": 3113,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/gears.gif",
+      "size": 25509,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/style.css",
+      "size": 3279,
+      "required": true
+    },
+    {
+      "path": "TemplateData56/UnityProgress.js",
+      "size": 4698,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,6213 @@
+{
+  "schema": 1,
+  "slug": "shellshockers",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "_data/housePromo.json",
+      "size": 32270,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lnwok2sd1.png",
+      "size": 11847,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lnwp4x6k2.png",
+      "size": 55122,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lnwp5dei7.png",
+      "size": 134072,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lo68fpva1.png",
+      "size": 66480,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpbk84rc0.svg",
+      "size": 67022,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpblq0kt0.svg",
+      "size": 67022,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpbls8we0.svg",
+      "size": 67022,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpbm4uxp0.svg",
+      "size": 67022,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpbpf9d91.gif",
+      "size": 37396,
+      "required": false
+    },
+    {
+      "path": "_data/img/art/lpbseir81.jpg",
+      "size": 23205,
+      "required": false
+    },
+    {
+      "path": "_data/img/newsItems/news_lj60yv4x0.png",
+      "size": 32749,
+      "required": false
+    },
+    {
+      "path": "_data/img/newsItems/news_lk1du1541.jpeg",
+      "size": 398654,
+      "required": false
+    },
+    {
+      "path": "_data/img/newsItems/news_lk1dugl72.jpg",
+      "size": 75174,
+      "required": false
+    },
+    {
+      "path": "_data/img/newsItems/news_lp76xkys3.png",
+      "size": 678987,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1009437675.png",
+      "size": 128820,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1097971597.jpeg",
+      "size": 18748,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1139167609.png",
+      "size": 78615,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1200246982.png",
+      "size": 151731,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1201647979.png",
+      "size": 90687,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1222796275.png",
+      "size": 3422,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1266243305.png",
+      "size": 5276,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1268461610.png",
+      "size": 126674,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1324690918.png",
+      "size": 137842,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1389062663.png",
+      "size": 6558,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1409830854.png",
+      "size": 77877,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1421005859.png",
+      "size": 126012,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1430329441.png",
+      "size": 98810,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1432306753.png",
+      "size": 5461,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/1433109734.png",
+      "size": 6589,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/212195701.png",
+      "size": 137111,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/214660288.png",
+      "size": 77639,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/275538139.png",
+      "size": 23724,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/44508774.png",
+      "size": 83549,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/512818134.png",
+      "size": 166118,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/543430362.jpeg",
+      "size": 27812,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/546695849.png",
+      "size": 149700,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/572879472.png",
+      "size": 29951,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/629387009.png",
+      "size": 138648,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/636982052.png",
+      "size": 86001,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/642905155.jpeg",
+      "size": 23795,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/733869459.png",
+      "size": 61202,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/746775526.png",
+      "size": 105230,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/767123477.png",
+      "size": 49443,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/820145804.png",
+      "size": 127610,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/843889925.png",
+      "size": 98275,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/849759104.png",
+      "size": 77048,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/886482782.png",
+      "size": 101681,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/888419541.png",
+      "size": 84571,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/902634090.png",
+      "size": 162854,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/918068539.png",
+      "size": 152512,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/942756641.png",
+      "size": 144283,
+      "required": false
+    },
+    {
+      "path": "_data/img/twitchAvatars/947021915.png",
+      "size": 29344,
+      "required": false
+    },
+    {
+      "path": "_data/shellNews.json",
+      "size": 659,
+      "required": false
+    },
+    {
+      "path": "_data/shellYouTube.json",
+      "size": 56071,
+      "required": false
+    },
+    {
+      "path": "_data/ssNews.json",
+      "size": 131509,
+      "required": false
+    },
+    {
+      "path": "_data/twitchBlackList.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_data/twitchStreams.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_headers",
+      "size": 66,
+      "required": false
+    },
+    {
+      "path": "admin.html",
+      "size": 13439,
+      "required": false
+    },
+    {
+      "path": "admin.js",
+      "size": 167894,
+      "required": true
+    },
+    {
+      "path": "app/build.json",
+      "size": 53,
+      "required": false
+    },
+    {
+      "path": "app/checker.js",
+      "size": 18920,
+      "required": true
+    },
+    {
+      "path": "app/scripts/build.sh",
+      "size": 4272,
+      "required": false
+    },
+    {
+      "path": "app/scripts/cdnSearchReplace.js",
+      "size": 3492,
+      "required": true
+    },
+    {
+      "path": "app/scripts/makeShell.sh",
+      "size": 1875,
+      "required": false
+    },
+    {
+      "path": "app/scripts/purge.py",
+      "size": 1026,
+      "required": false
+    },
+    {
+      "path": "app/scripts/README.md",
+      "size": 944,
+      "required": false
+    },
+    {
+      "path": "app/scripts/sync.py",
+      "size": 8923,
+      "required": false
+    },
+    {
+      "path": "app/scripts/update-build.py",
+      "size": 3107,
+      "required": false
+    },
+    {
+      "path": "app/scripts/update-proxy-list.sh",
+      "size": 4532,
+      "required": false
+    },
+    {
+      "path": "apple-app-site-association",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "brb.db.html",
+      "size": 2022,
+      "required": false
+    },
+    {
+      "path": "brb.extended.html",
+      "size": 1450,
+      "required": false
+    },
+    {
+      "path": "brb.normal.html",
+      "size": 3513,
+      "required": false
+    },
+    {
+      "path": "changelog/oldChangelog.json",
+      "size": 110519,
+      "required": true
+    },
+    {
+      "path": "composer.json",
+      "size": 300,
+      "required": false
+    },
+    {
+      "path": "composer.lock",
+      "size": 19156,
+      "required": false
+    },
+    {
+      "path": "draco/draco_decoder.js",
+      "size": 720212,
+      "required": true
+    },
+    {
+      "path": "draco/draco_decoder.wasm",
+      "size": 285948,
+      "required": true
+    },
+    {
+      "path": "faq.html",
+      "size": 7252,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 1383,
+      "required": false
+    },
+    {
+      "path": "favicon192.png",
+      "size": 15352,
+      "required": false
+    },
+    {
+      "path": "favicon512.png",
+      "size": 41384,
+      "required": false
+    },
+    {
+      "path": "functions/_shared/wsProxy.js",
+      "size": 10735,
+      "required": true
+    },
+    {
+      "path": "functions/game.js",
+      "size": 147,
+      "required": true
+    },
+    {
+      "path": "functions/game/[code].js",
+      "size": 238,
+      "required": true
+    },
+    {
+      "path": "functions/matchmaker.js",
+      "size": 150,
+      "required": true
+    },
+    {
+      "path": "functions/matchmaker.js.backup",
+      "size": 4673,
+      "required": false
+    },
+    {
+      "path": "functions/services.js",
+      "size": 153,
+      "required": true
+    },
+    {
+      "path": "functions/services.js.backup",
+      "size": 4691,
+      "required": false
+    },
+    {
+      "path": "functions/test-ip.js",
+      "size": 477,
+      "required": true
+    },
+    {
+      "path": "googlee5c5b40924606225.html",
+      "size": 53,
+      "required": false
+    },
+    {
+      "path": "grenadePreview.html",
+      "size": 20660,
+      "required": false
+    },
+    {
+      "path": "iframe.html",
+      "size": 265,
+      "required": false
+    },
+    {
+      "path": "img/attention_indicator.webp",
+      "size": 948,
+      "required": false
+    },
+    {
+      "path": "img/blue-wizard-logo-tiny-min.webp",
+      "size": 10018,
+      "required": false
+    },
+    {
+      "path": "img/blueWizard_logo_borg.webp",
+      "size": 5168,
+      "required": false
+    },
+    {
+      "path": "img/blueWizard_logo.webp",
+      "size": 34470,
+      "required": false
+    },
+    {
+      "path": "img/BlueWizard-Logo-min.webp",
+      "size": 299324,
+      "required": false
+    },
+    {
+      "path": "img/challenges/cluck9mm.svg",
+      "size": 3255,
+      "required": false
+    },
+    {
+      "path": "img/challenges/collect.svg",
+      "size": 2217,
+      "required": false
+    },
+    {
+      "path": "img/challenges/crackshot.svg",
+      "size": 4384,
+      "required": false
+    },
+    {
+      "path": "img/challenges/cts.svg",
+      "size": 2616,
+      "required": false
+    },
+    {
+      "path": "img/challenges/damage.svg",
+      "size": 18866,
+      "required": false
+    },
+    {
+      "path": "img/challenges/deaths.svg",
+      "size": 2053,
+      "required": false
+    },
+    {
+      "path": "img/challenges/distance.svg",
+      "size": 2136,
+      "required": false
+    },
+    {
+      "path": "img/challenges/eggk47.svg",
+      "size": 4128,
+      "required": false
+    },
+    {
+      "path": "img/challenges/freeranger.svg",
+      "size": 5951,
+      "required": false
+    },
+    {
+      "path": "img/challenges/grenade.svg",
+      "size": 3829,
+      "required": false
+    },
+    {
+      "path": "img/challenges/jump.svg",
+      "size": 4032,
+      "required": false
+    },
+    {
+      "path": "img/challenges/kill_streak.svg",
+      "size": 4784,
+      "required": false
+    },
+    {
+      "path": "img/challenges/kills-kills.svg",
+      "size": 9891,
+      "required": false
+    },
+    {
+      "path": "img/challenges/kills-shot.svg",
+      "size": 7746,
+      "required": false
+    },
+    {
+      "path": "img/challenges/kotc.svg",
+      "size": 5129,
+      "required": false
+    },
+    {
+      "path": "img/challenges/melee.svg",
+      "size": 3786,
+      "required": false
+    },
+    {
+      "path": "img/challenges/rpegg.svg",
+      "size": 5117,
+      "required": false
+    },
+    {
+      "path": "img/challenges/scrambler.svg",
+      "size": 3210,
+      "required": false
+    },
+    {
+      "path": "img/challenges/timed.svg",
+      "size": 5964,
+      "required": false
+    },
+    {
+      "path": "img/challenges/trihard.svg",
+      "size": 5839,
+      "required": false
+    },
+    {
+      "path": "img/challenges/whipper.svg",
+      "size": 5041,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/alt/cyborg/chick_eggBurst_borg.svg",
+      "size": 239963,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/alt/cyborg/chickLoop_idle.svg.svg",
+      "size": 36342,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/alt/cyborg/chickLoop_sleep.svg",
+      "size": 31115,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/alt/cyborg/chickLoop_speak.svg",
+      "size": 29601,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/chickLoop_daily_limit.svg",
+      "size": 31820,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/chickLoop_idle.svg",
+      "size": 29917,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/chickLoop_sleep.svg",
+      "size": 133497,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/chickLoop_speak.svg",
+      "size": 23898,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/chw-loot-btn.webp",
+      "size": 27450,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/goldenNugget_fill.webp",
+      "size": 3466,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/goldenNugget_static.webp",
+      "size": 6666,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/goldenNuggetGIFWIP.gif",
+      "size": 156927,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/speechBubble_static2_tail1.svg",
+      "size": 309,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/speechBubble_static2.svg",
+      "size": 384,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/ssAd_chicknWinner800x600-min.webp",
+      "size": 82062,
+      "required": false
+    },
+    {
+      "path": "img/chicken-nugget/starburst.webp",
+      "size": 11438,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_circle.svg",
+      "size": 152,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_cross.svg",
+      "size": 196,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_dpaddown.svg",
+      "size": 569,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_dpadleft.svg",
+      "size": 569,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_dpadright.svg",
+      "size": 568,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_dpadup.svg",
+      "size": 567,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_square.svg",
+      "size": 173,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_stickleft.svg",
+      "size": 398,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_stickright.svg",
+      "size": 398,
+      "required": false
+    },
+    {
+      "path": "img/controller/button_triangle.svg",
+      "size": 158,
+      "required": false
+    },
+    {
+      "path": "img/crazy-games-logo.png",
+      "size": 13526,
+      "required": false
+    },
+    {
+      "path": "img/dropdown_shadow_language.webp",
+      "size": 1020,
+      "required": false
+    },
+    {
+      "path": "img/dropdown_shadow.webp",
+      "size": 602,
+      "required": false
+    },
+    {
+      "path": "img/egg_pack_giant.webp",
+      "size": 8754,
+      "required": false
+    },
+    {
+      "path": "img/egg_pack_large.webp",
+      "size": 12102,
+      "required": false
+    },
+    {
+      "path": "img/egg_pack_medium.webp",
+      "size": 9078,
+      "required": false
+    },
+    {
+      "path": "img/egg_pack_small.webp",
+      "size": 7546,
+      "required": false
+    },
+    {
+      "path": "img/egg_shop_banner.webp",
+      "size": 926,
+      "required": false
+    },
+    {
+      "path": "img/egg-org/eggOrg_timeTravel_splash800x600-min.webp",
+      "size": 113714,
+      "required": false
+    },
+    {
+      "path": "img/egg-org/logo_EggOrg.svg",
+      "size": 1682,
+      "required": false
+    },
+    {
+      "path": "img/egg-shop-banner-left.webp",
+      "size": 334,
+      "required": false
+    },
+    {
+      "path": "img/egg-shop-banner-mid.webp",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "img/egg-shop-banner-right.webp",
+      "size": 566,
+      "required": false
+    },
+    {
+      "path": "img/egg.svg",
+      "size": 316,
+      "required": false
+    },
+    {
+      "path": "img/eggPose01.webp",
+      "size": 10666,
+      "required": false
+    },
+    {
+      "path": "img/eggPose05.webp",
+      "size": 8514,
+      "required": false
+    },
+    {
+      "path": "img/eggstra-value-pack.webp",
+      "size": 16060,
+      "required": false
+    },
+    {
+      "path": "img/events/2XEggWeekend_cominSoon.webp",
+      "size": 8298,
+      "required": false
+    },
+    {
+      "path": "img/events/2XEggWeekend_onNow.webp",
+      "size": 8806,
+      "required": false
+    },
+    {
+      "path": "img/events/ad_wrestleBrosCTA_250x300.webp",
+      "size": 21576,
+      "required": false
+    },
+    {
+      "path": "img/events/bad-egg-300x250.webp",
+      "size": 11642,
+      "required": false
+    },
+    {
+      "path": "img/events/bad-egg-promo-house-ad.webp",
+      "size": 15802,
+      "required": false
+    },
+    {
+      "path": "img/events/bad-egg-wishlist-300x250.webp",
+      "size": 10634,
+      "required": false
+    },
+    {
+      "path": "img/events/badEgg_PabloRifle_300x250.webp",
+      "size": 18352,
+      "required": false
+    },
+    {
+      "path": "img/events/basket-bros-house-ad.webp",
+      "size": 26186,
+      "required": false
+    },
+    {
+      "path": "img/events/shell_survey.webp",
+      "size": 14770,
+      "required": false
+    },
+    {
+      "path": "img/events/shellshockers_doubleEgg01.webp",
+      "size": 4532,
+      "required": false
+    },
+    {
+      "path": "img/events/shellshockers_doubleEgg02.webp",
+      "size": 4360,
+      "required": false
+    },
+    {
+      "path": "img/events/shellShockersAd_EggPacks300x250-min.webp",
+      "size": 18552,
+      "required": false
+    },
+    {
+      "path": "img/events/small-house-ad-chw-min.webp",
+      "size": 18768,
+      "required": false
+    },
+    {
+      "path": "img/events/ssAd_chicknWinner300x250.webp",
+      "size": 17052,
+      "required": false
+    },
+    {
+      "path": "img/events/twitch-drops-btn-link-now.webp",
+      "size": 5904,
+      "required": false
+    },
+    {
+      "path": "img/events/twitch-drops-btn-linked.webp",
+      "size": 5638,
+      "required": false
+    },
+    {
+      "path": "img/events/twitch-drops-button.webp",
+      "size": 5048,
+      "required": false
+    },
+    {
+      "path": "img/events/vip-club-find-out-more.webp",
+      "size": 14984,
+      "required": false
+    },
+    {
+      "path": "img/free-games-io.webp",
+      "size": 4532,
+      "required": false
+    },
+    {
+      "path": "img/free-games-io2.webp",
+      "size": 9718,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/blue-glow.png",
+      "size": 13828,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/egg-org-blue.png",
+      "size": 6905,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/egg-org-red.png",
+      "size": 6839,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/eggsassins_glamOFF.png",
+      "size": 79725,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/eggsassins_glamON.png",
+      "size": 105894,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/faction-egg-assasins.png",
+      "size": 5162,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/faction-egg-masters.png",
+      "size": 4542,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/hero-vs-monster-bar.webp",
+      "size": 50244,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/hero-vs-monster-pointer.svg",
+      "size": 66181,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/ico_crossbones.svg",
+      "size": 953,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/masters_glamOFF.png",
+      "size": 65546,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/masters_glamON.png",
+      "size": 84930,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/meter_marker.png",
+      "size": 6089,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/red-glow.png",
+      "size": 13159,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/shadows-meter.png",
+      "size": 122584,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/shell_E&E_evil_popup.webp",
+      "size": 7864,
+      "required": false
+    },
+    {
+      "path": "img/gauge-bar/shell_E&E_good_popup.webp",
+      "size": 9634,
+      "required": false
+    },
+    {
+      "path": "img/grenadeIcon.webp",
+      "size": 3920,
+      "required": false
+    },
+    {
+      "path": "img/grenadeIconDark.webp",
+      "size": 1254,
+      "required": false
+    },
+    {
+      "path": "img/hardBoiled.svg",
+      "size": 452,
+      "required": false
+    },
+    {
+      "path": "img/hardBoiledEmpty.webp",
+      "size": 1990,
+      "required": false
+    },
+    {
+      "path": "img/hardBoiledFilled.webp",
+      "size": 1840,
+      "required": false
+    },
+    {
+      "path": "img/hardBoiledShield.webp",
+      "size": 36784,
+      "required": false
+    },
+    {
+      "path": "img/hitIndicator.svg",
+      "size": 252,
+      "required": false
+    },
+    {
+      "path": "img/ico_ammo.webp",
+      "size": 1638,
+      "required": false
+    },
+    {
+      "path": "img/ico_arrowLeft.webp",
+      "size": 664,
+      "required": false
+    },
+    {
+      "path": "img/ico_arrowLeftSheet.webp",
+      "size": 810,
+      "required": false
+    },
+    {
+      "path": "img/ico_arrowRight.webp",
+      "size": 658,
+      "required": false
+    },
+    {
+      "path": "img/ico_arrowRightSheet.webp",
+      "size": 806,
+      "required": false
+    },
+    {
+      "path": "img/ico_cart.webp",
+      "size": 996,
+      "required": false
+    },
+    {
+      "path": "img/ico_closeButton_states.webp",
+      "size": 1206,
+      "required": false
+    },
+    {
+      "path": "img/ico_crown.webp",
+      "size": 460,
+      "required": false
+    },
+    {
+      "path": "img/ico_eggBreaker.webp",
+      "size": 13266,
+      "required": false
+    },
+    {
+      "path": "img/ico_eggColour_normal.webp",
+      "size": 426,
+      "required": false
+    },
+    {
+      "path": "img/ico_eggColour_selected.webp",
+      "size": 700,
+      "required": false
+    },
+    {
+      "path": "img/ico_gamepad.svg",
+      "size": 2060,
+      "required": false
+    },
+    {
+      "path": "img/ico_goldenEgg.svg",
+      "size": 1694,
+      "required": false
+    },
+    {
+      "path": "img/ico_goldenEgg.webp",
+      "size": 768,
+      "required": false
+    },
+    {
+      "path": "img/ico_grenade.svg",
+      "size": 954,
+      "required": false
+    },
+    {
+      "path": "img/ico_grenade.webp",
+      "size": 686,
+      "required": false
+    },
+    {
+      "path": "img/ico_grenadeEmpty.webp",
+      "size": 2188,
+      "required": false
+    },
+    {
+      "path": "img/ico_hat_faded.webp",
+      "size": 1144,
+      "required": false
+    },
+    {
+      "path": "img/ico_hat.webp",
+      "size": 1204,
+      "required": false
+    },
+    {
+      "path": "img/ico_keyboard.svg",
+      "size": 1441,
+      "required": false
+    },
+    {
+      "path": "img/ico_loadingEgg.webp",
+      "size": 1378,
+      "required": false
+    },
+    {
+      "path": "img/ico_monitor.svg",
+      "size": 598,
+      "required": false
+    },
+    {
+      "path": "img/ico_mouse.svg",
+      "size": 723,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_fullscreen.webp",
+      "size": 508,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_help.webp",
+      "size": 520,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_leaderboards.webp",
+      "size": 714,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_settings.webp",
+      "size": 816,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_share.webp",
+      "size": 474,
+      "required": false
+    },
+    {
+      "path": "img/ico_nav_shop.webp",
+      "size": 656,
+      "required": false
+    },
+    {
+      "path": "img/ico_news.webp",
+      "size": 1574,
+      "required": false
+    },
+    {
+      "path": "img/ico_nugget_rev1.webp",
+      "size": 5914,
+      "required": false
+    },
+    {
+      "path": "img/ico_nugget.webp",
+      "size": 5914,
+      "required": false
+    },
+    {
+      "path": "img/ico_play.webp",
+      "size": 458,
+      "required": false
+    },
+    {
+      "path": "img/ico_playArrow.webp",
+      "size": 1982,
+      "required": false
+    },
+    {
+      "path": "img/ico_privacy.svg",
+      "size": 1275,
+      "required": false
+    },
+    {
+      "path": "img/ico_social_discord.webp",
+      "size": 986,
+      "required": false
+    },
+    {
+      "path": "img/ico_social_facebook.webp",
+      "size": 630,
+      "required": false
+    },
+    {
+      "path": "img/ico_social_newsletter.webp",
+      "size": 542,
+      "required": false
+    },
+    {
+      "path": "img/ico_social_notification.webp",
+      "size": 1194,
+      "required": false
+    },
+    {
+      "path": "img/ico_social_twitter.webp",
+      "size": 854,
+      "required": false
+    },
+    {
+      "path": "img/ico_speaker.svg",
+      "size": 1403,
+      "required": false
+    },
+    {
+      "path": "img/ico_specialItem.webp",
+      "size": 486,
+      "required": false
+    },
+    {
+      "path": "img/ico_stamp_faded.webp",
+      "size": 2008,
+      "required": false
+    },
+    {
+      "path": "img/ico_stamp.webp",
+      "size": 2088,
+      "required": false
+    },
+    {
+      "path": "img/ico_streak.webp",
+      "size": 1226,
+      "required": false
+    },
+    {
+      "path": "img/ico_twitch.webp",
+      "size": 430,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_assaultRifle.webp",
+      "size": 736,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_aug.webp",
+      "size": 920,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_boltAction.webp",
+      "size": 738,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_rocketLauncher.webp",
+      "size": 774,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_shotgun.webp",
+      "size": 566,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_SMG.webp",
+      "size": 742,
+      "required": false
+    },
+    {
+      "path": "img/ico_weapon_sniper.webp",
+      "size": 834,
+      "required": false
+    },
+    {
+      "path": "img/ico_weaponPrimary_faded.webp",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "img/ico_weaponPrimary.webp",
+      "size": 2008,
+      "required": false
+    },
+    {
+      "path": "img/ico_weaponSecondary_faded.webp",
+      "size": 1330,
+      "required": false
+    },
+    {
+      "path": "img/ico_weaponSecondary.webp",
+      "size": 1380,
+      "required": false
+    },
+    {
+      "path": "img/ico_youtube.webp",
+      "size": 338,
+      "required": false
+    },
+    {
+      "path": "img/icon-btn-apple.webp",
+      "size": 6954,
+      "required": false
+    },
+    {
+      "path": "img/icon-btn-google-play.webp",
+      "size": 6698,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-000.webp",
+      "size": 1268,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-001.webp",
+      "size": 1516,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-002.webp",
+      "size": 1710,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-003.webp",
+      "size": 1934,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-004.webp",
+      "size": 2176,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-005.webp",
+      "size": 2484,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/egg-default-006.webp",
+      "size": 5984,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/rewardreveal-default-000.webp",
+      "size": 16814,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/shadows-default-000.webp",
+      "size": 778,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg00.svg",
+      "size": 2006,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg01.svg",
+      "size": 2006,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg02.svg",
+      "size": 4138,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg03.svg",
+      "size": 4138,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg04.svg",
+      "size": 8526,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg05.svg",
+      "size": 8526,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg06.svg",
+      "size": 214031,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/Egg07.svg",
+      "size": 48659,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/original/Egg06.svg",
+      "size": 54748,
+      "required": false
+    },
+    {
+      "path": "img/incentivized-mini-game/svg/original/Egg07.svg",
+      "size": 30311,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_grenade.svg",
+      "size": 620,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_hat.svg",
+      "size": 364,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_melee.svg",
+      "size": 843,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_specialItem.svg",
+      "size": 427,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_stamp.svg",
+      "size": 572,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_weaponPrimary.svg",
+      "size": 1174,
+      "required": false
+    },
+    {
+      "path": "img/inventory-icons/ico_weaponSecondary.svg",
+      "size": 1468,
+      "required": false
+    },
+    {
+      "path": "img/io-games-space.webp",
+      "size": 4532,
+      "required": false
+    },
+    {
+      "path": "img/iogames-space-logo.webp",
+      "size": 4584,
+      "required": false
+    },
+    {
+      "path": "img/kotc/crown.svg",
+      "size": 874,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-arrow.svg",
+      "size": 2203,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-bg-popup.webp",
+      "size": 22522,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-crown-indicator.svg",
+      "size": 2402,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-crown.svg",
+      "size": 759,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-crowns.webp",
+      "size": 5220,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-how-to-play-arrow.webp",
+      "size": 1882,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-logo.webp",
+      "size": 12786,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-rooster.svg",
+      "size": 37251,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-screenshot-one.webp",
+      "size": 19070,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-screenshot-two.webp",
+      "size": 26864,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-wordmark.svg",
+      "size": 43010,
+      "required": false
+    },
+    {
+      "path": "img/kotc/kotc-wordmark.webp",
+      "size": 12592,
+      "required": false
+    },
+    {
+      "path": "img/kotc/new-game-mode-king-of-coop.webp",
+      "size": 34774,
+      "required": false
+    },
+    {
+      "path": "img/loadIcon_eggWhite.webp",
+      "size": 2052,
+      "required": false
+    },
+    {
+      "path": "img/loadIcon_Yolk.webp",
+      "size": 1686,
+      "required": false
+    },
+    {
+      "path": "img/logo.svg",
+      "size": 12224,
+      "required": false
+    },
+    {
+      "path": "img/logo.webp",
+      "size": 34554,
+      "required": false
+    },
+    {
+      "path": "img/main-nav-bg-w-shadow.svg",
+      "size": 462,
+      "required": false
+    },
+    {
+      "path": "img/main-nav-bg.svg",
+      "size": 502,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/bricks.webp",
+      "size": 628,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/crosshair.webp",
+      "size": 306,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/eyeDropper.webp",
+      "size": 598,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/mapEdit.webp",
+      "size": 246,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/paintRoller.webp",
+      "size": 712,
+      "required": false
+    },
+    {
+      "path": "img/mapEditor/wand.webp",
+      "size": 402,
+      "required": false
+    },
+    {
+      "path": "img/needle.webp",
+      "size": 2526,
+      "required": false
+    },
+    {
+      "path": "img/nugget_shadow.webp",
+      "size": 6510,
+      "required": false
+    },
+    {
+      "path": "img/particles.webp",
+      "size": 495978,
+      "required": false
+    },
+    {
+      "path": "img/particles.webp-autosave.kra",
+      "size": 1062222,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/ico_shelfieStars.svg",
+      "size": 870,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/aqueduct.webp",
+      "size": 48822,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/backstage.webp",
+      "size": 76846,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/backstageeggsmas.webp",
+      "size": 84424,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/bedrock.webp",
+      "size": 68922,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/castle.webp",
+      "size": 97678,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/castletwo.webp",
+      "size": 71292,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/catacombs.webp",
+      "size": 147582,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/chickenitzaeggsmas.webp",
+      "size": 123686,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/dirt.webp",
+      "size": 103470,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/downfall.webp",
+      "size": 81408,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/enchanted.webp",
+      "size": 67290,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/exposure.webp",
+      "size": 85866,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/jinx.webp",
+      "size": 51646,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/mansion.webp",
+      "size": 69880,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/outerreacheggsmas.webp",
+      "size": 123586,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/quarry.webp",
+      "size": 72566,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/quarters.webp",
+      "size": 102430,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/raceway.webp",
+      "size": 110434,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/rats2.webp",
+      "size": 92296,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/scales.webp",
+      "size": 133010,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/skyscratcher.webp",
+      "size": 120580,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/spacefactory.webp",
+      "size": 131378,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/teggtris.webp",
+      "size": 99734,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/timetwist.webp",
+      "size": 60538,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/twotowers.webp",
+      "size": 47880,
+      "required": false
+    },
+    {
+      "path": "img/photo-booth/maps/wimble.webp",
+      "size": 105172,
+      "required": false
+    },
+    {
+      "path": "img/previewImage_shellShockers.webp",
+      "size": 56622,
+      "required": false
+    },
+    {
+      "path": "img/pricetag_left.webp",
+      "size": 448,
+      "required": false
+    },
+    {
+      "path": "img/pricetag_loop.webp",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "img/pricetag_right.webp",
+      "size": 288,
+      "required": false
+    },
+    {
+      "path": "img/priceTag.webp",
+      "size": 800,
+      "required": false
+    },
+    {
+      "path": "img/rickroll.gif",
+      "size": 225181,
+      "required": false
+    },
+    {
+      "path": "img/scope.webp",
+      "size": 5342,
+      "required": false
+    },
+    {
+      "path": "img/shellShockers_loadingTipEgg.webp",
+      "size": 14364,
+      "required": false
+    },
+    {
+      "path": "img/shellshockers_logo_200m.svg",
+      "size": 31494,
+      "required": false
+    },
+    {
+      "path": "img/shellshockers_logo_xmas.svg",
+      "size": 67022,
+      "required": false
+    },
+    {
+      "path": "img/shellshockers-unite-lg.webp",
+      "size": 44646,
+      "required": false
+    },
+    {
+      "path": "img/shop_tile_background.webp",
+      "size": 3376,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_nx.webp",
+      "size": 6598,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_ny.webp",
+      "size": 540,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_nz.webp",
+      "size": 5344,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_px.webp",
+      "size": 6668,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_py.webp",
+      "size": 2916,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/default/skybox_pz.webp",
+      "size": 5264,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_nx.webp",
+      "size": 20810,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_ny.webp",
+      "size": 22264,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_nz.webp",
+      "size": 17702,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_px.webp",
+      "size": 23924,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_py.webp",
+      "size": 20826,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/moonbase/skybox_pz.webp",
+      "size": 15192,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_nx.webp",
+      "size": 4888,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_ny.webp",
+      "size": 5026,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_nz.webp",
+      "size": 5576,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_px.webp",
+      "size": 5690,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_py.webp",
+      "size": 5038,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/night/skybox_pz.webp",
+      "size": 5120,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_nx.webp",
+      "size": 3588,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_ny.webp",
+      "size": 2276,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_nz.webp",
+      "size": 3772,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_px.webp",
+      "size": 3616,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_py.webp",
+      "size": 7906,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes-webp/whimsical/skybox_pz.webp",
+      "size": 3584,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_nx.jpg",
+      "size": 54179,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_ny.jpg",
+      "size": 4519,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_nz.jpg",
+      "size": 47833,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_px.jpg",
+      "size": 53293,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_py.jpg",
+      "size": 21084,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/default/skybox_pz.jpg",
+      "size": 29492,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_nx.jpg",
+      "size": 97754,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_ny.jpg",
+      "size": 101587,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_nz.jpg",
+      "size": 82388,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_px.jpg",
+      "size": 101161,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_py.jpg",
+      "size": 83508,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/moonbase/skybox_pz.jpg",
+      "size": 73738,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_nx.jpg",
+      "size": 35830,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_ny.jpg",
+      "size": 35943,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_nz.jpg",
+      "size": 36175,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_px.jpg",
+      "size": 36612,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_py.jpg",
+      "size": 35132,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/night/skybox_pz.jpg",
+      "size": 35279,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_nx.jpg",
+      "size": 50716,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_ny.jpg",
+      "size": 35061,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_nz.jpg",
+      "size": 50300,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_px.jpg",
+      "size": 49693,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_py.jpg",
+      "size": 84104,
+      "required": false
+    },
+    {
+      "path": "img/skyboxes/whimsical/skybox_pz.jpg",
+      "size": 51140,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-discord.webp",
+      "size": 5732,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-facebook.webp",
+      "size": 6718,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-instagram.webp",
+      "size": 6968,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-new-yolker.webp",
+      "size": 7348,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-steam.webp",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-tiktok.webp",
+      "size": 7454,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-twitch.webp",
+      "size": 6708,
+      "required": false
+    },
+    {
+      "path": "img/social-media/footer-social-media-bubble-twitter.webp",
+      "size": 6452,
+      "required": false
+    },
+    {
+      "path": "img/spacer.gif",
+      "size": 55,
+      "required": false
+    },
+    {
+      "path": "img/spatulaIcon.webp",
+      "size": 10030,
+      "required": false
+    },
+    {
+      "path": "img/speechtail.webp",
+      "size": 288,
+      "required": false
+    },
+    {
+      "path": "img/stamp_default.webp",
+      "size": 2564,
+      "required": false
+    },
+    {
+      "path": "img/stamps.png",
+      "size": 7314357,
+      "required": false
+    },
+    {
+      "path": "img/stamps.webp",
+      "size": 4877478,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/black-fryday-home-screen-ad.webp",
+      "size": 42518,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/egg_pack_large.webp",
+      "size": 21052,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/egg_pack_medium.webp",
+      "size": 20422,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/egg_pack_small.webp",
+      "size": 18620,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/past/egg_pack_giant copy.webp",
+      "size": 19088,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/past/egg_pack_giant.webp",
+      "size": 14250,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/past/egg_pack_large.webp",
+      "size": 20478,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/past/egg_pack_medium.webp",
+      "size": 15668,
+      "required": false
+    },
+    {
+      "path": "img/store-black-friday/past/egg_pack_small.webp",
+      "size": 14508,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_arach.webp",
+      "size": 29616,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_badbunny.webp",
+      "size": 42440,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_borg.webp",
+      "size": 23360,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_cat.webp",
+      "size": 11098,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_catch.webp",
+      "size": 21570,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_cupid.webp",
+      "size": 38474,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_demon.webp",
+      "size": 42642,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_dove.webp",
+      "size": 28218,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_farmer.webp",
+      "size": 37872,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_five.webp",
+      "size": 20720,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_gamer.webp",
+      "size": 15350,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_goodw.webp",
+      "size": 20342,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_hack.webp",
+      "size": 75356,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_jones.webp",
+      "size": 24162,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_kill.webp",
+      "size": 26742,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_mayan.webp",
+      "size": 25442,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_mega.webp",
+      "size": 39930,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_min.webp",
+      "size": 21550,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_mistle.webp",
+      "size": 49182,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_plant.webp",
+      "size": 23738,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_pres.webp",
+      "size": 22402,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_rd.webp",
+      "size": 21048,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_ridge.webp",
+      "size": 24226,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_santa.webp",
+      "size": 20682,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_sc2.webp",
+      "size": 20046,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_tactic.webp",
+      "size": 22656,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_toilet.webp",
+      "size": 24788,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_toxic.webp",
+      "size": 14344,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_xeno.webp",
+      "size": 19440,
+      "required": false
+    },
+    {
+      "path": "img/store/bundles/bun_zorg.webp",
+      "size": 23908,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_9mm_turkey.webp",
+      "size": 10090,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gauge_boom.webp",
+      "size": 13576,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gre_banana.webp",
+      "size": 11298,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gre_crab.webp",
+      "size": 18948,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gre_frosty.webp",
+      "size": 3234,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gre_mayan.webp",
+      "size": 10944,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_gre_polaroid.webp",
+      "size": 21550,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_gear.webp",
+      "size": 26092,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_hot.webp",
+      "size": 59278,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_kartbros.webp",
+      "size": 20720,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_pilgrim.webp",
+      "size": 23476,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_pixair.webp",
+      "size": 18336,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_raccoon.webp",
+      "size": 16378,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_saturn.webp",
+      "size": 15494,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_shell.webp",
+      "size": 25910,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_spud.webp",
+      "size": 34290,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_sumo.webp",
+      "size": 1402,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_sunvis.webp",
+      "size": 8876,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_hat_wooly.webp",
+      "size": 21314,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_m24_irish.webp",
+      "size": 15976,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_melee_ban.webp",
+      "size": 16236,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_melee_bclaw.webp",
+      "size": 11344,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_melee_bus.webp",
+      "size": 21194,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_melee_crack.webp",
+      "size": 7314,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_melee_retro.webp",
+      "size": 21386,
+      "required": false
+    },
+    {
+      "path": "img/store/items/item_smg_cyborg.webp",
+      "size": 20372,
+      "required": false
+    },
+    {
+      "path": "img/store/passes/pass_welcome_bg.png",
+      "size": 89973,
+      "required": false
+    },
+    {
+      "path": "img/store/passes/pass_welcome_title.png",
+      "size": 8439,
+      "required": false
+    },
+    {
+      "path": "img/store/passes/pass_welcome.png",
+      "size": 42808,
+      "required": false
+    },
+    {
+      "path": "img/store/PremiumTag.webp",
+      "size": 2696,
+      "required": false
+    },
+    {
+      "path": "img/store/UI_paymentOptions.webp",
+      "size": 5684,
+      "required": false
+    },
+    {
+      "path": "img/store/VIPTag.webp",
+      "size": 2546,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico_spatula.svg",
+      "size": 880,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico_stampArrow.svg",
+      "size": 474,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico_watchAd.svg",
+      "size": 589,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-backToGame.svg",
+      "size": 248,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-checkmark.svg",
+      "size": 644,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-costDollar.svg",
+      "size": 1411,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-costEgg.svg",
+      "size": 193,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-disabled.svg",
+      "size": 571,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-egg-w-outline.svg",
+      "size": 464,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-fullscreen.svg",
+      "size": 594,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-goldenEgg-callout.svg",
+      "size": 1449,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-goldenEgg.svg",
+      "size": 917,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-grenade.svg",
+      "size": 602,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-hat.svg",
+      "size": 364,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-map-size-large.svg",
+      "size": 870,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-map-size-med.svg",
+      "size": 1108,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-map-size-small.svg",
+      "size": 1684,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-melee.svg",
+      "size": 843,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-nav-equipment.svg",
+      "size": 392,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-nav-friends.svg",
+      "size": 1239,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-nav-home.svg",
+      "size": 485,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-nav-profile.svg",
+      "size": 423,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-nav-shop.svg",
+      "size": 495,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-primary.svg",
+      "size": 1174,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-private-game-config.svg",
+      "size": 478,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-secondary.svg",
+      "size": 1468,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-settings.svg",
+      "size": 1657,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-shell-streak-restock.svg",
+      "size": 4081,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-specialItem.svg",
+      "size": 427,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-stamp.svg",
+      "size": 572,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-star.svg",
+      "size": 442,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-vip.svg",
+      "size": 3733,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-crackshot.svg",
+      "size": 1079,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-ranger.svg",
+      "size": 1030,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-rpegg.svg",
+      "size": 1132,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-scrambler.svg",
+      "size": 843,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-soldier.svg",
+      "size": 987,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-trihard.svg",
+      "size": 803,
+      "required": false
+    },
+    {
+      "path": "img/svg-icons/ico-weapon-whipper.svg",
+      "size": 1098,
+      "required": false
+    },
+    {
+      "path": "img/svg/egg-w-outline-icon.svg",
+      "size": 464,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_backToGame.svg",
+      "size": 266,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_checkmark.svg",
+      "size": 644,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_costDollar.svg",
+      "size": 1429,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_costEgg.svg",
+      "size": 229,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_fullscreen.svg",
+      "size": 612,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_goldenEgg_callout.svg",
+      "size": 1449,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_goldenEgg.svg",
+      "size": 917,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_map-size-large.svg",
+      "size": 915,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_map-size-med.svg",
+      "size": 1153,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_map-size-small.svg",
+      "size": 1729,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_settings.svg",
+      "size": 1675,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_star_gold.svg",
+      "size": 2025,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico_star.svg",
+      "size": 460,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-arrow-colorPicker.svg",
+      "size": 713,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-nav-equipment.svg",
+      "size": 392,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-nav-friends.svg",
+      "size": 1284,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-nav-home.svg",
+      "size": 485,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-nav-profile.svg",
+      "size": 423,
+      "required": false
+    },
+    {
+      "path": "img/svg/ico-nav-shop.svg",
+      "size": 495,
+      "required": false
+    },
+    {
+      "path": "img/svg/vip-icon.svg",
+      "size": 3733,
+      "required": false
+    },
+    {
+      "path": "img/tutorial/ss_tutorial_EggTarget.webp",
+      "size": 3974,
+      "required": false
+    },
+    {
+      "path": "img/tutorial/ss_tutorial_Keyboard.webp",
+      "size": 6830,
+      "required": false
+    },
+    {
+      "path": "img/tutorial/ss_tutorial_Mouse.webp",
+      "size": 3244,
+      "required": false
+    },
+    {
+      "path": "img/tutorial/ss_tutorial_Star.webp",
+      "size": 494,
+      "required": false
+    },
+    {
+      "path": "img/ui_eggbreaker.svg",
+      "size": 495,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-call-to-action.webp",
+      "size": 26458,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-background.webp",
+      "size": 69894,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-bullet-point-star.webp",
+      "size": 728,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-emblem.webp",
+      "size": 30990,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-item-1-month-membership-bg.webp",
+      "size": 2100,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-item-12-month-membership-bg.webp",
+      "size": 3022,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/backup-sept-2021/vip-club-popup-item-3-month-membership-bg.webp",
+      "size": 1708,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/very-important-poultry.webp",
+      "size": 6146,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-banner.webp",
+      "size": 894,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-call-to-action.webp",
+      "size": 21066,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-emblem-sm.webp",
+      "size": 3788,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-give-stuff-popup-background.webp",
+      "size": 35130,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-background.webp",
+      "size": 56874,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-banner.webp",
+      "size": 810,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-bg.webp",
+      "size": 69894,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-bullet-point-star.webp",
+      "size": 598,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-emblem.webp",
+      "size": 10040,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-item-1-month-membership-bg.webp",
+      "size": 720,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-item-12-month-membership-bg.webp",
+      "size": 772,
+      "required": false
+    },
+    {
+      "path": "img/vip-club/vip-club-popup-item-3-month-membership-bg.webp",
+      "size": 630,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_crackshot.svg",
+      "size": 1179,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_ranger.svg",
+      "size": 1130,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_rpegg.svg",
+      "size": 1232,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_scrambler.svg",
+      "size": 943,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_soldier.svg",
+      "size": 1087,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_triHard.svg",
+      "size": 863,
+      "required": false
+    },
+    {
+      "path": "img/weapon-icons/ico_weapon_whipper.svg",
+      "size": 1198,
+      "required": false
+    },
+    {
+      "path": "img/welcome-pass-popup.webp",
+      "size": 49270,
+      "required": false
+    },
+    {
+      "path": "includes/body/sprite.svg",
+      "size": 35650,
+      "required": false
+    },
+    {
+      "path": "includes/body/sprite.symbol.html",
+      "size": 57564,
+      "required": false
+    },
+    {
+      "path": "includes/Chart.min.js",
+      "size": 173077,
+      "required": true
+    },
+    {
+      "path": "includes/inc_vueData.js",
+      "size": 32331,
+      "required": true
+    },
+    {
+      "path": "includes/PopupInstructions.txt",
+      "size": 1298,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 710696,
+      "required": true
+    },
+    {
+      "path": "IP-COUNTRY.BIN",
+      "size": 3996356,
+      "required": true
+    },
+    {
+      "path": "js/!enums.js",
+      "size": 4664,
+      "required": true
+    },
+    {
+      "path": "js/adDefines.js",
+      "size": 1372,
+      "required": true
+    },
+    {
+      "path": "js/admin.js",
+      "size": 151087,
+      "required": true
+    },
+    {
+      "path": "js/adminImpersonate.js",
+      "size": 573,
+      "required": true
+    },
+    {
+      "path": "js/ads.js",
+      "size": 41,
+      "required": true
+    },
+    {
+      "path": "js/asc-ad-video/adblockDetector.js",
+      "size": 3463,
+      "required": true
+    },
+    {
+      "path": "js/asc-ad-video/asc.video.outsteam.min.js",
+      "size": 248009,
+      "required": true
+    },
+    {
+      "path": "js/clientComm.js",
+      "size": 3813,
+      "required": true
+    },
+    {
+      "path": "js/giWorker.js",
+      "size": 4177853,
+      "required": true
+    },
+    {
+      "path": "js/localStorage.js",
+      "size": 767,
+      "required": true
+    },
+    {
+      "path": "js/mapEdit.js",
+      "size": 5418599,
+      "required": true
+    },
+    {
+      "path": "js/poki/pokicon.js",
+      "size": 1552,
+      "required": true
+    },
+    {
+      "path": "js/prebid/prebid.js",
+      "size": 601399,
+      "required": true
+    },
+    {
+      "path": "js/prebid/prebidcon.js",
+      "size": 9353,
+      "required": true
+    },
+    {
+      "path": "js/prebid/prebidcon.unmin.js",
+      "size": 17481,
+      "required": true
+    },
+    {
+      "path": "js/screenShot.js",
+      "size": 198689,
+      "required": true
+    },
+    {
+      "path": "js/shellColors.js",
+      "size": 348,
+      "required": true
+    },
+    {
+      "path": "js/shellshock.js",
+      "size": 3758105,
+      "required": true
+    },
+    {
+      "path": "js/tools.js",
+      "size": 3733,
+      "required": true
+    },
+    {
+      "path": "js/vue/vue.min.2.6.10.js",
+      "size": 93675,
+      "required": true
+    },
+    {
+      "path": "js/vue/vue2.6.10.js",
+      "size": 341462,
+      "required": true
+    },
+    {
+      "path": "js/vue/vue2.7.16.js",
+      "size": 434842,
+      "required": true
+    },
+    {
+      "path": "js/wasm_loader_686aaa21cc1ea070e62050ee42a9f2c3.wasm",
+      "size": 66698,
+      "required": true
+    },
+    {
+      "path": "js/wasm_loader_bg.js",
+      "size": 1528,
+      "required": true
+    },
+    {
+      "path": "js/wasm_loader_bg.wasm.d.ts",
+      "size": 1117,
+      "required": false
+    },
+    {
+      "path": "js/wasm_loader_fc553dbc7b3c8d7c83071902fc7b0b15.wasm",
+      "size": 63119,
+      "required": true
+    },
+    {
+      "path": "js/wasm_loader.d.ts",
+      "size": 2559,
+      "required": false
+    },
+    {
+      "path": "js/wasm_loader.js",
+      "size": 19352,
+      "required": true
+    },
+    {
+      "path": "language/de.json",
+      "size": 120844,
+      "required": false
+    },
+    {
+      "path": "language/en.json",
+      "size": 108900,
+      "required": false
+    },
+    {
+      "path": "language/es.json",
+      "size": 119307,
+      "required": false
+    },
+    {
+      "path": "language/fr.json",
+      "size": 120908,
+      "required": false
+    },
+    {
+      "path": "language/ko.json",
+      "size": 122946,
+      "required": false
+    },
+    {
+      "path": "language/missing_keys.log",
+      "size": 104361,
+      "required": false
+    },
+    {
+      "path": "language/nl.json",
+      "size": 115521,
+      "required": false
+    },
+    {
+      "path": "language/pt.json",
+      "size": 116942,
+      "required": false
+    },
+    {
+      "path": "language/ru.json",
+      "size": 158506,
+      "required": false
+    },
+    {
+      "path": "language/zh.json",
+      "size": 109595,
+      "required": false
+    },
+    {
+      "path": "lib/fuse.min.js",
+      "size": 23539,
+      "required": true
+    },
+    {
+      "path": "manifest.json",
+      "size": 464,
+      "required": false
+    },
+    {
+      "path": "maps/abduction.json",
+      "size": 20108,
+      "required": false
+    },
+    {
+      "path": "maps/abduction.lightmap",
+      "size": 170178,
+      "required": false
+    },
+    {
+      "path": "maps/abduction.png",
+      "size": 143896,
+      "required": false
+    },
+    {
+      "path": "maps/aqueduct.json",
+      "size": 50578,
+      "required": false
+    },
+    {
+      "path": "maps/aqueduct.lightmap",
+      "size": 455382,
+      "required": false
+    },
+    {
+      "path": "maps/aqueduct.png",
+      "size": 122466,
+      "required": false
+    },
+    {
+      "path": "maps/aqueductC.json",
+      "size": 69666,
+      "required": false
+    },
+    {
+      "path": "maps/aqueductC.lightmap",
+      "size": 627993,
+      "required": false
+    },
+    {
+      "path": "maps/aqueductC.png",
+      "size": 125928,
+      "required": false
+    },
+    {
+      "path": "maps/backstage.json",
+      "size": 42602,
+      "required": false
+    },
+    {
+      "path": "maps/backstage.lightmap",
+      "size": 300066,
+      "required": false
+    },
+    {
+      "path": "maps/backstage.png",
+      "size": 113493,
+      "required": false
+    },
+    {
+      "path": "maps/backstageC.json",
+      "size": 61655,
+      "required": false
+    },
+    {
+      "path": "maps/backstageC.lightmap",
+      "size": 444009,
+      "required": false
+    },
+    {
+      "path": "maps/backstageC.png",
+      "size": 149010,
+      "required": false
+    },
+    {
+      "path": "maps/bastion.json",
+      "size": 29725,
+      "required": false
+    },
+    {
+      "path": "maps/bastion.lightmap",
+      "size": 1203042,
+      "required": false
+    },
+    {
+      "path": "maps/bastion.png",
+      "size": 130574,
+      "required": false
+    },
+    {
+      "path": "maps/bastionC.json",
+      "size": 37313,
+      "required": false
+    },
+    {
+      "path": "maps/bastionC.lightmap",
+      "size": 1238955,
+      "required": false
+    },
+    {
+      "path": "maps/bastionC.png",
+      "size": 117616,
+      "required": false
+    },
+    {
+      "path": "maps/bedrock.json",
+      "size": 32718,
+      "required": false
+    },
+    {
+      "path": "maps/bedrock.lightmap",
+      "size": 232923,
+      "required": false
+    },
+    {
+      "path": "maps/bedrock.png",
+      "size": 101462,
+      "required": false
+    },
+    {
+      "path": "maps/biohazard.json",
+      "size": 26984,
+      "required": false
+    },
+    {
+      "path": "maps/biohazard.lightmap",
+      "size": 637407,
+      "required": false
+    },
+    {
+      "path": "maps/biohazard.png",
+      "size": 100897,
+      "required": false
+    },
+    {
+      "path": "maps/blender.json",
+      "size": 22769,
+      "required": false
+    },
+    {
+      "path": "maps/blender.lightmap",
+      "size": 566823,
+      "required": false
+    },
+    {
+      "path": "maps/blender.png",
+      "size": 105296,
+      "required": false
+    },
+    {
+      "path": "maps/blue.json",
+      "size": 22183,
+      "required": false
+    },
+    {
+      "path": "maps/blue.lightmap",
+      "size": 226389,
+      "required": false
+    },
+    {
+      "path": "maps/blue.png",
+      "size": 100678,
+      "required": false
+    },
+    {
+      "path": "maps/blueh.json",
+      "size": 25170,
+      "required": false
+    },
+    {
+      "path": "maps/blueh.lightmap",
+      "size": 284178,
+      "required": false
+    },
+    {
+      "path": "maps/blueh.png",
+      "size": 123612,
+      "required": false
+    },
+    {
+      "path": "maps/bridge.json",
+      "size": 15375,
+      "required": false
+    },
+    {
+      "path": "maps/bridge.lightmap",
+      "size": 667575,
+      "required": false
+    },
+    {
+      "path": "maps/bridge.png",
+      "size": 125672,
+      "required": false
+    },
+    {
+      "path": "maps/canyon.json",
+      "size": 32056,
+      "required": false
+    },
+    {
+      "path": "maps/canyon.lightmap",
+      "size": 392577,
+      "required": false
+    },
+    {
+      "path": "maps/canyon.png",
+      "size": 108637,
+      "required": false
+    },
+    {
+      "path": "maps/canyonh.json",
+      "size": 33119,
+      "required": false
+    },
+    {
+      "path": "maps/canyonh.lightmap",
+      "size": 403065,
+      "required": false
+    },
+    {
+      "path": "maps/canyonh.png",
+      "size": 101065,
+      "required": false
+    },
+    {
+      "path": "maps/cash.json",
+      "size": 60610,
+      "required": false
+    },
+    {
+      "path": "maps/cash.lightmap",
+      "size": 715332,
+      "required": false
+    },
+    {
+      "path": "maps/cash.png",
+      "size": 117485,
+      "required": false
+    },
+    {
+      "path": "maps/cashC.json",
+      "size": 69668,
+      "required": false
+    },
+    {
+      "path": "maps/cashC.lightmap",
+      "size": 841227,
+      "required": false
+    },
+    {
+      "path": "maps/cashC.png",
+      "size": 125934,
+      "required": false
+    },
+    {
+      "path": "maps/castle.json",
+      "size": 28608,
+      "required": false
+    },
+    {
+      "path": "maps/castle.lightmap",
+      "size": 1155300,
+      "required": false
+    },
+    {
+      "path": "maps/castle.png",
+      "size": 119099,
+      "required": false
+    },
+    {
+      "path": "maps/castleArena.json",
+      "size": 21334,
+      "required": false
+    },
+    {
+      "path": "maps/castleArena.lightmap",
+      "size": 751143,
+      "required": false
+    },
+    {
+      "path": "maps/castleArena.png",
+      "size": 123711,
+      "required": false
+    },
+    {
+      "path": "maps/catacombs.json",
+      "size": 42831,
+      "required": false
+    },
+    {
+      "path": "maps/catacombs.lightmap",
+      "size": 2439018,
+      "required": false
+    },
+    {
+      "path": "maps/catacombs.png",
+      "size": 150127,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItza.json",
+      "size": 46601,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItza.lightmap",
+      "size": 839925,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItza.png",
+      "size": 126932,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzablack.json",
+      "size": 56982,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzablack.lightmap",
+      "size": 891800,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzablack.png",
+      "size": 130603,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzaC.json",
+      "size": 59538,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzaC.lightmap",
+      "size": 982706,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzaC.png",
+      "size": 124473,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzagreen.json",
+      "size": 56851,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzagreen.lightmap",
+      "size": 892856,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzagreen.png",
+      "size": 146461,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzanregray.json",
+      "size": 56946,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzanregray.lightmap",
+      "size": 892946,
+      "required": false
+    },
+    {
+      "path": "maps/chickenItzanregray.png",
+      "size": 141735,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgrounds.json",
+      "size": 19583,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgrounds.lightmap",
+      "size": 285675,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgrounds.png",
+      "size": 112506,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsc.json",
+      "size": 20794,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsc.lightmap",
+      "size": 320985,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsc.png",
+      "size": 111116,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsh.json",
+      "size": 19907,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsh.lightmap",
+      "size": 312015,
+      "required": false
+    },
+    {
+      "path": "maps/cluckgroundsh.png",
+      "size": 124631,
+      "required": false
+    },
+    {
+      "path": "maps/cobalt.json",
+      "size": 29578,
+      "required": false
+    },
+    {
+      "path": "maps/cobalt.lightmap",
+      "size": 468687,
+      "required": false
+    },
+    {
+      "path": "maps/cobalt.png",
+      "size": 109294,
+      "required": false
+    },
+    {
+      "path": "maps/courtyard.json",
+      "size": 31258,
+      "required": false
+    },
+    {
+      "path": "maps/courtyard.lightmap",
+      "size": 1310217,
+      "required": false
+    },
+    {
+      "path": "maps/courtyard.png",
+      "size": 177624,
+      "required": false
+    },
+    {
+      "path": "maps/creak.json",
+      "size": 28836,
+      "required": false
+    },
+    {
+      "path": "maps/creak.lightmap",
+      "size": 491979,
+      "required": false
+    },
+    {
+      "path": "maps/creak.png",
+      "size": 124308,
+      "required": false
+    },
+    {
+      "path": "maps/crossed.json",
+      "size": 42974,
+      "required": false
+    },
+    {
+      "path": "maps/crossed.lightmap",
+      "size": 376599,
+      "required": false
+    },
+    {
+      "path": "maps/crossed.png",
+      "size": 82934,
+      "required": false
+    },
+    {
+      "path": "maps/crossedh.json",
+      "size": 46387,
+      "required": false
+    },
+    {
+      "path": "maps/crossedh.lightmap",
+      "size": 456366,
+      "required": false
+    },
+    {
+      "path": "maps/crossedh.png",
+      "size": 97075,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnest.json",
+      "size": 22184,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnest.lightmap",
+      "size": 571548,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnest.png",
+      "size": 122718,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnesth.json",
+      "size": 32429,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnesth.lightmap",
+      "size": 745587,
+      "required": false
+    },
+    {
+      "path": "maps/crowsnesth.png",
+      "size": 115057,
+      "required": false
+    },
+    {
+      "path": "maps/deathpit.json",
+      "size": 25504,
+      "required": false
+    },
+    {
+      "path": "maps/deathpit.lightmap",
+      "size": 962361,
+      "required": false
+    },
+    {
+      "path": "maps/deathpit.png",
+      "size": 167419,
+      "required": false
+    },
+    {
+      "path": "maps/dirt .json",
+      "size": 54675,
+      "required": false
+    },
+    {
+      "path": "maps/dirt.json",
+      "size": 54675,
+      "required": false
+    },
+    {
+      "path": "maps/dirt.lightmap",
+      "size": 2535039,
+      "required": false
+    },
+    {
+      "path": "maps/dirt.png",
+      "size": 132679,
+      "required": false
+    },
+    {
+      "path": "maps/dirt2.json",
+      "size": 56246,
+      "required": false
+    },
+    {
+      "path": "maps/dirt2.lightmap",
+      "size": 2957556,
+      "required": false
+    },
+    {
+      "path": "maps/dirt2.png",
+      "size": 138701,
+      "required": false
+    },
+    {
+      "path": "maps/dirtbase.json",
+      "size": 19014,
+      "required": false
+    },
+    {
+      "path": "maps/dirtbase.lightmap",
+      "size": 895743,
+      "required": false
+    },
+    {
+      "path": "maps/dirtbase.png",
+      "size": 130549,
+      "required": false
+    },
+    {
+      "path": "maps/dirtc.json",
+      "size": 60197,
+      "required": false
+    },
+    {
+      "path": "maps/dirtc.lightmap",
+      "size": 2791191,
+      "required": false
+    },
+    {
+      "path": "maps/dirtc.png",
+      "size": 144032,
+      "required": false
+    },
+    {
+      "path": "maps/downfall.json",
+      "size": 13635,
+      "required": false
+    },
+    {
+      "path": "maps/downfall.lightmap",
+      "size": 317367,
+      "required": false
+    },
+    {
+      "path": "maps/downfall.png",
+      "size": 120930,
+      "required": false
+    },
+    {
+      "path": "maps/dronefactory.json",
+      "size": 27033,
+      "required": false
+    },
+    {
+      "path": "maps/dronefactory.lightmap",
+      "size": 191898,
+      "required": false
+    },
+    {
+      "path": "maps/dronefactory.png",
+      "size": 101445,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramid.json",
+      "size": 15556,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramid.lightmap",
+      "size": 465798,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramid.png",
+      "size": 173920,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramidLG.json",
+      "size": 19188,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramidLG.lightmap",
+      "size": 516078,
+      "required": false
+    },
+    {
+      "path": "maps/duelPyramidLG.png",
+      "size": 167157,
+      "required": false
+    },
+    {
+      "path": "maps/easyparkour.json",
+      "size": 42373,
+      "required": false
+    },
+    {
+      "path": "maps/easyparkour.lightmap",
+      "size": 598410,
+      "required": false
+    },
+    {
+      "path": "maps/easyparkour.png",
+      "size": 144329,
+      "required": false
+    },
+    {
+      "path": "maps/eggcrates.json",
+      "size": 10415,
+      "required": false
+    },
+    {
+      "path": "maps/eggcrates.lightmap",
+      "size": 196911,
+      "required": false
+    },
+    {
+      "path": "maps/eggcrates.png",
+      "size": 96653,
+      "required": false
+    },
+    {
+      "path": "maps/eggorgtower.json",
+      "size": 26692,
+      "required": false
+    },
+    {
+      "path": "maps/eggorgtower.lightmap",
+      "size": 188574,
+      "required": false
+    },
+    {
+      "path": "maps/eggorgtower.png",
+      "size": 119665,
+      "required": false
+    },
+    {
+      "path": "maps/enchanted.json",
+      "size": 40792,
+      "required": false
+    },
+    {
+      "path": "maps/enchanted.lightmap",
+      "size": 1171077,
+      "required": false
+    },
+    {
+      "path": "maps/enchanted.png",
+      "size": 96825,
+      "required": false
+    },
+    {
+      "path": "maps/exposure.json",
+      "size": 39351,
+      "required": false
+    },
+    {
+      "path": "maps/exposure.lightmap",
+      "size": 455679,
+      "required": false
+    },
+    {
+      "path": "maps/exposure.png",
+      "size": 123732,
+      "required": false
+    },
+    {
+      "path": "maps/exposureC.json",
+      "size": 57712,
+      "required": false
+    },
+    {
+      "path": "maps/exposureC.lightmap",
+      "size": 613353,
+      "required": false
+    },
+    {
+      "path": "maps/exposureC.png",
+      "size": 121392,
+      "required": false
+    },
+    {
+      "path": "maps/facility.json",
+      "size": 27247,
+      "required": false
+    },
+    {
+      "path": "maps/facility.lightmap",
+      "size": 413706,
+      "required": false
+    },
+    {
+      "path": "maps/facility.png",
+      "size": 95184,
+      "required": false
+    },
+    {
+      "path": "maps/facilityc.json",
+      "size": 32096,
+      "required": false
+    },
+    {
+      "path": "maps/facilityc.lightmap",
+      "size": 485310,
+      "required": false
+    },
+    {
+      "path": "maps/facilityc.png",
+      "size": 99912,
+      "required": false
+    },
+    {
+      "path": "maps/feedlot.json",
+      "size": 29618,
+      "required": false
+    },
+    {
+      "path": "maps/feedlot.lightmap",
+      "size": 649041,
+      "required": false
+    },
+    {
+      "path": "maps/feedlot.png",
+      "size": 112669,
+      "required": false
+    },
+    {
+      "path": "maps/feedlotc.json",
+      "size": 32687,
+      "required": false
+    },
+    {
+      "path": "maps/feedlotc.lightmap",
+      "size": 688077,
+      "required": false
+    },
+    {
+      "path": "maps/feedlotc.png",
+      "size": 108550,
+      "required": false
+    },
+    {
+      "path": "maps/field.json",
+      "size": 18216,
+      "required": false
+    },
+    {
+      "path": "maps/field.lightmap",
+      "size": 327483,
+      "required": false
+    },
+    {
+      "path": "maps/field.png",
+      "size": 110945,
+      "required": false
+    },
+    {
+      "path": "maps/flux.json",
+      "size": 16229,
+      "required": false
+    },
+    {
+      "path": "maps/flux.lightmap",
+      "size": 837795,
+      "required": false
+    },
+    {
+      "path": "maps/flux.png",
+      "size": 175258,
+      "required": false
+    },
+    {
+      "path": "maps/fortFlip.json",
+      "size": 51759,
+      "required": false
+    },
+    {
+      "path": "maps/fortFlip.lightmap",
+      "size": 532911,
+      "required": false
+    },
+    {
+      "path": "maps/fortFlip.png",
+      "size": 93910,
+      "required": false
+    },
+    {
+      "path": "maps/foundation.json",
+      "size": 18990,
+      "required": false
+    },
+    {
+      "path": "maps/foundation.lightmap",
+      "size": 915585,
+      "required": false
+    },
+    {
+      "path": "maps/foundation.png",
+      "size": 153524,
+      "required": false
+    },
+    {
+      "path": "maps/fourQuarters.json",
+      "size": 24492,
+      "required": false
+    },
+    {
+      "path": "maps/fourQuarters.lightmap",
+      "size": 1008933,
+      "required": false
+    },
+    {
+      "path": "maps/fourQuarters.png",
+      "size": 138921,
+      "required": false
+    },
+    {
+      "path": "maps/gravelstomp.json",
+      "size": 21505,
+      "required": false
+    },
+    {
+      "path": "maps/gravelstomp.lightmap",
+      "size": 402396,
+      "required": false
+    },
+    {
+      "path": "maps/gravelstomp.png",
+      "size": 146988,
+      "required": false
+    },
+    {
+      "path": "maps/greenhouse.json",
+      "size": 57047,
+      "required": false
+    },
+    {
+      "path": "maps/greenhouse.lightmap",
+      "size": 1179855,
+      "required": false
+    },
+    {
+      "path": "maps/greenhouse.png",
+      "size": 113246,
+      "required": false
+    },
+    {
+      "path": "maps/growler.json",
+      "size": 23261,
+      "required": false
+    },
+    {
+      "path": "maps/growler.lightmap",
+      "size": 748389,
+      "required": false
+    },
+    {
+      "path": "maps/growler.png",
+      "size": 130692,
+      "required": false
+    },
+    {
+      "path": "maps/growlerc.json",
+      "size": 33671,
+      "required": false
+    },
+    {
+      "path": "maps/growlerc.lightmap",
+      "size": 829383,
+      "required": false
+    },
+    {
+      "path": "maps/growlerc.png",
+      "size": 114859,
+      "required": false
+    },
+    {
+      "path": "maps/haunted.json",
+      "size": 26629,
+      "required": false
+    },
+    {
+      "path": "maps/haunted.lightmap",
+      "size": 915120,
+      "required": false
+    },
+    {
+      "path": "maps/haunted.png",
+      "size": 131551,
+      "required": false
+    },
+    {
+      "path": "maps/helix.json",
+      "size": 25286,
+      "required": false
+    },
+    {
+      "path": "maps/helix.lightmap",
+      "size": 467139,
+      "required": false
+    },
+    {
+      "path": "maps/helix.png",
+      "size": 79386,
+      "required": false
+    },
+    {
+      "path": "maps/hydro.json",
+      "size": 56917,
+      "required": false
+    },
+    {
+      "path": "maps/hydro.lightmap",
+      "size": 835068,
+      "required": false
+    },
+    {
+      "path": "maps/hydro.png",
+      "size": 132500,
+      "required": false
+    },
+    {
+      "path": "maps/icebox.json",
+      "size": 22870,
+      "required": false
+    },
+    {
+      "path": "maps/icebox.lightmap",
+      "size": 518226,
+      "required": false
+    },
+    {
+      "path": "maps/icebox.png",
+      "size": 161564,
+      "required": false
+    },
+    {
+      "path": "maps/indigo.json",
+      "size": 26121,
+      "required": false
+    },
+    {
+      "path": "maps/indigo.lightmap",
+      "size": 439194,
+      "required": false
+    },
+    {
+      "path": "maps/indigo.png",
+      "size": 117649,
+      "required": false
+    },
+    {
+      "path": "maps/inmates.json",
+      "size": 63684,
+      "required": false
+    },
+    {
+      "path": "maps/inmates.lightmap",
+      "size": 2242797,
+      "required": false
+    },
+    {
+      "path": "maps/inmates.png",
+      "size": 178715,
+      "required": false
+    },
+    {
+      "path": "maps/jailbreak.json",
+      "size": 30973,
+      "required": false
+    },
+    {
+      "path": "maps/jailbreak.lightmap",
+      "size": 551577,
+      "required": false
+    },
+    {
+      "path": "maps/jailbreak.png",
+      "size": 107972,
+      "required": false
+    },
+    {
+      "path": "maps/jinx.json",
+      "size": 50702,
+      "required": false
+    },
+    {
+      "path": "maps/jinx.lightmap",
+      "size": 1713729,
+      "required": false
+    },
+    {
+      "path": "maps/jinx.png",
+      "size": 126026,
+      "required": false
+    },
+    {
+      "path": "maps/junction.json",
+      "size": 32569,
+      "required": false
+    },
+    {
+      "path": "maps/junction.lightmap",
+      "size": 854019,
+      "required": false
+    },
+    {
+      "path": "maps/junction.png",
+      "size": 101661,
+      "required": false
+    },
+    {
+      "path": "maps/karts.json",
+      "size": 51082,
+      "required": false
+    },
+    {
+      "path": "maps/karts.lightmap",
+      "size": 1120269,
+      "required": false
+    },
+    {
+      "path": "maps/karts.png",
+      "size": 131320,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourt.json",
+      "size": 28717,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourt.lightmap",
+      "size": 928239,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourt.png",
+      "size": 114333,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourtc.json",
+      "size": 41263,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourtc.lightmap",
+      "size": 1032389,
+      "required": false
+    },
+    {
+      "path": "maps/kingsCourtc.png",
+      "size": 138259,
+      "required": false
+    },
+    {
+      "path": "maps/lunarmodule.json",
+      "size": 43741,
+      "required": false
+    },
+    {
+      "path": "maps/lunarmodule.lightmap",
+      "size": 1941072,
+      "required": false
+    },
+    {
+      "path": "maps/lunarmodule.png",
+      "size": 136477,
+      "required": false
+    },
+    {
+      "path": "maps/mansion.json",
+      "size": 45819,
+      "required": false
+    },
+    {
+      "path": "maps/mansion.lightmap",
+      "size": 1376409,
+      "required": false
+    },
+    {
+      "path": "maps/mansion.png",
+      "size": 127065,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunner.json",
+      "size": 38761,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunner.lightmap",
+      "size": 1451139,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunner.png",
+      "size": 121851,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunnerc.json",
+      "size": 40043,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunnerc.lightmap",
+      "size": 1501257,
+      "required": false
+    },
+    {
+      "path": "maps/mazerunnerc.png",
+      "size": 134298,
+      "required": false
+    },
+    {
+      "path": "maps/metamorph.json",
+      "size": 21878,
+      "required": false
+    },
+    {
+      "path": "maps/metamorph.lightmap",
+      "size": 394341,
+      "required": false
+    },
+    {
+      "path": "maps/metamorph.png",
+      "size": 123695,
+      "required": false
+    },
+    {
+      "path": "maps/metamorphosis.json",
+      "size": 22838,
+      "required": false
+    },
+    {
+      "path": "maps/metamorphosis.lightmap",
+      "size": 405996,
+      "required": false
+    },
+    {
+      "path": "maps/metamorphosis.png",
+      "size": 131144,
+      "required": false
+    },
+    {
+      "path": "maps/moonbase.json",
+      "size": 32159,
+      "required": false
+    },
+    {
+      "path": "maps/moonbase.lightmap",
+      "size": 1617129,
+      "required": false
+    },
+    {
+      "path": "maps/moonbase.png",
+      "size": 121479,
+      "required": false
+    },
+    {
+      "path": "maps/moonbasec.json",
+      "size": 35213,
+      "required": false
+    },
+    {
+      "path": "maps/moonbasec.lightmap",
+      "size": 1691955,
+      "required": false
+    },
+    {
+      "path": "maps/moonbasec.png",
+      "size": 134180,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulch.json",
+      "size": 27587,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulch.lightmap",
+      "size": 362469,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulch.png",
+      "size": 107414,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulchc.json",
+      "size": 30931,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulchc.lightmap",
+      "size": 426588,
+      "required": false
+    },
+    {
+      "path": "maps/mudGulchc.png",
+      "size": 117524,
+      "required": false
+    },
+    {
+      "path": "maps/newocclusiontest.json",
+      "size": 21685,
+      "required": false
+    },
+    {
+      "path": "maps/newocclusiontest.lightmap",
+      "size": 351525,
+      "required": false
+    },
+    {
+      "path": "maps/newocclusiontest.png",
+      "size": 101447,
+      "required": false
+    },
+    {
+      "path": "maps/nextdoor.json",
+      "size": 54898,
+      "required": false
+    },
+    {
+      "path": "maps/nextdoor.lightmap",
+      "size": 853299,
+      "required": false
+    },
+    {
+      "path": "maps/nextdoor.png",
+      "size": 114816,
+      "required": false
+    },
+    {
+      "path": "maps/orbital.json",
+      "size": 21417,
+      "required": false
+    },
+    {
+      "path": "maps/orbital.lightmap",
+      "size": 888450,
+      "required": false
+    },
+    {
+      "path": "maps/orbital.png",
+      "size": 197323,
+      "required": false
+    },
+    {
+      "path": "maps/outer.json",
+      "size": 23127,
+      "required": false
+    },
+    {
+      "path": "maps/outer.lightmap",
+      "size": 370929,
+      "required": false
+    },
+    {
+      "path": "maps/outer.png",
+      "size": 137494,
+      "required": false
+    },
+    {
+      "path": "maps/outerC.json",
+      "size": 28657,
+      "required": false
+    },
+    {
+      "path": "maps/outerC.lightmap",
+      "size": 461223,
+      "required": false
+    },
+    {
+      "path": "maps/outerC.png",
+      "size": 147125,
+      "required": false
+    },
+    {
+      "path": "maps/outerreach.json",
+      "size": 33035,
+      "required": false
+    },
+    {
+      "path": "maps/outerreach.lightmap",
+      "size": 429969,
+      "required": false
+    },
+    {
+      "path": "maps/outerreach.png",
+      "size": 153931,
+      "required": false
+    },
+    {
+      "path": "maps/overcooked.json",
+      "size": 26144,
+      "required": false
+    },
+    {
+      "path": "maps/overcooked.lightmap",
+      "size": 1008498,
+      "required": false
+    },
+    {
+      "path": "maps/overcooked.png",
+      "size": 94435,
+      "required": false
+    },
+    {
+      "path": "maps/palaceSiege.json",
+      "size": 35584,
+      "required": false
+    },
+    {
+      "path": "maps/palaceSiege.lightmap",
+      "size": 1933791,
+      "required": false
+    },
+    {
+      "path": "maps/palaceSiege.png",
+      "size": 141285,
+      "required": false
+    },
+    {
+      "path": "maps/parkour_tower.json",
+      "size": 38313,
+      "required": false
+    },
+    {
+      "path": "maps/parkour_tower.lightmap",
+      "size": 689334,
+      "required": false
+    },
+    {
+      "path": "maps/parkour_tower.png",
+      "size": 116314,
+      "required": false
+    },
+    {
+      "path": "maps/parkour1.json",
+      "size": 40871,
+      "required": false
+    },
+    {
+      "path": "maps/parkour1.lightmap",
+      "size": 581529,
+      "required": false
+    },
+    {
+      "path": "maps/parkour1.png",
+      "size": 98051,
+      "required": false
+    },
+    {
+      "path": "maps/parkour2.json",
+      "size": 32392,
+      "required": false
+    },
+    {
+      "path": "maps/parkour2.lightmap",
+      "size": 693165,
+      "required": false
+    },
+    {
+      "path": "maps/parkour2.png",
+      "size": 86610,
+      "required": false
+    },
+    {
+      "path": "maps/parkour3.json",
+      "size": 15827,
+      "required": false
+    },
+    {
+      "path": "maps/parkour3.lightmap",
+      "size": 627246,
+      "required": false
+    },
+    {
+      "path": "maps/parkour3.png",
+      "size": 131474,
+      "required": false
+    },
+    {
+      "path": "maps/quarry.json",
+      "size": 46396,
+      "required": false
+    },
+    {
+      "path": "maps/quarry.lightmap",
+      "size": 406485,
+      "required": false
+    },
+    {
+      "path": "maps/quarry.png",
+      "size": 105474,
+      "required": false
+    },
+    {
+      "path": "maps/quarryh.json",
+      "size": 42716,
+      "required": false
+    },
+    {
+      "path": "maps/quarryh.lightmap",
+      "size": 398493,
+      "required": false
+    },
+    {
+      "path": "maps/quarryh.png",
+      "size": 93867,
+      "required": false
+    },
+    {
+      "path": "maps/queenscourt.json",
+      "size": 27963,
+      "required": false
+    },
+    {
+      "path": "maps/queenscourt.lightmap",
+      "size": 852390,
+      "required": false
+    },
+    {
+      "path": "maps/queenscourt.png",
+      "size": 109314,
+      "required": false
+    },
+    {
+      "path": "maps/raceway.json",
+      "size": 37847,
+      "required": false
+    },
+    {
+      "path": "maps/raceway.lightmap",
+      "size": 1004352,
+      "required": false
+    },
+    {
+      "path": "maps/raceway.png",
+      "size": 100030,
+      "required": false
+    },
+    {
+      "path": "maps/rameses.json",
+      "size": 40049,
+      "required": false
+    },
+    {
+      "path": "maps/rameses.lightmap",
+      "size": 2186550,
+      "required": false
+    },
+    {
+      "path": "maps/rameses.png",
+      "size": 149611,
+      "required": false
+    },
+    {
+      "path": "maps/rats.json",
+      "size": 89967,
+      "required": false
+    },
+    {
+      "path": "maps/rats.lightmap",
+      "size": 664734,
+      "required": false
+    },
+    {
+      "path": "maps/rats.png",
+      "size": 100102,
+      "required": false
+    },
+    {
+      "path": "maps/ratsc.json",
+      "size": 118077,
+      "required": false
+    },
+    {
+      "path": "maps/ratsc.lightmap",
+      "size": 745989,
+      "required": false
+    },
+    {
+      "path": "maps/ratsc.png",
+      "size": 127317,
+      "required": false
+    },
+    {
+      "path": "maps/relic.json",
+      "size": 18584,
+      "required": false
+    },
+    {
+      "path": "maps/relic.lightmap",
+      "size": 773031,
+      "required": false
+    },
+    {
+      "path": "maps/relic.png",
+      "size": 131500,
+      "required": false
+    },
+    {
+      "path": "maps/rivals.json",
+      "size": 13732,
+      "required": false
+    },
+    {
+      "path": "maps/rivals.lightmap",
+      "size": 774456,
+      "required": false
+    },
+    {
+      "path": "maps/rivals.png",
+      "size": 134544,
+      "required": false
+    },
+    {
+      "path": "maps/road.json",
+      "size": 28731,
+      "required": false
+    },
+    {
+      "path": "maps/road.lightmap",
+      "size": 1516878,
+      "required": false
+    },
+    {
+      "path": "maps/road.png",
+      "size": 142829,
+      "required": false
+    },
+    {
+      "path": "maps/roadh.json",
+      "size": 30783,
+      "required": false
+    },
+    {
+      "path": "maps/roadh.lightmap",
+      "size": 1426269,
+      "required": false
+    },
+    {
+      "path": "maps/roadh.png",
+      "size": 129589,
+      "required": false
+    },
+    {
+      "path": "maps/ruins.json",
+      "size": 56243,
+      "required": false
+    },
+    {
+      "path": "maps/ruins.lightmap",
+      "size": 332310,
+      "required": false
+    },
+    {
+      "path": "maps/ruins.png",
+      "size": 111664,
+      "required": false
+    },
+    {
+      "path": "maps/ruinsc.json",
+      "size": 60330,
+      "required": false
+    },
+    {
+      "path": "maps/ruinsc.lightmap",
+      "size": 441543,
+      "required": false
+    },
+    {
+      "path": "maps/ruinsc.png",
+      "size": 102507,
+      "required": false
+    },
+    {
+      "path": "maps/sanctuary.json",
+      "size": 47106,
+      "required": false
+    },
+    {
+      "path": "maps/sanctuary.lightmap",
+      "size": 1805625,
+      "required": false
+    },
+    {
+      "path": "maps/sanctuary.png",
+      "size": 148478,
+      "required": false
+    },
+    {
+      "path": "maps/scales.json",
+      "size": 21875,
+      "required": false
+    },
+    {
+      "path": "maps/scales.lightmap",
+      "size": 1030755,
+      "required": false
+    },
+    {
+      "path": "maps/scales.png",
+      "size": 137743,
+      "required": false
+    },
+    {
+      "path": "maps/scalesc.json",
+      "size": 25390,
+      "required": false
+    },
+    {
+      "path": "maps/scalesc.lightmap",
+      "size": 1148733,
+      "required": false
+    },
+    {
+      "path": "maps/scalesc.png",
+      "size": 163862,
+      "required": false
+    },
+    {
+      "path": "maps/shadyglen.json",
+      "size": 28144,
+      "required": false
+    },
+    {
+      "path": "maps/shadyglen.lightmap",
+      "size": 458922,
+      "required": false
+    },
+    {
+      "path": "maps/shadyglen.png",
+      "size": 105001,
+      "required": false
+    },
+    {
+      "path": "maps/shellville.json",
+      "size": 25151,
+      "required": false
+    },
+    {
+      "path": "maps/shellville.lightmap",
+      "size": 1539387,
+      "required": false
+    },
+    {
+      "path": "maps/shellville.png",
+      "size": 124533,
+      "required": false
+    },
+    {
+      "path": "maps/shipyard.json",
+      "size": 30653,
+      "required": false
+    },
+    {
+      "path": "maps/shipyard.lightmap",
+      "size": 412533,
+      "required": false
+    },
+    {
+      "path": "maps/shipyard.png",
+      "size": 96018,
+      "required": false
+    },
+    {
+      "path": "maps/shroomtest.json",
+      "size": 8146,
+      "required": false
+    },
+    {
+      "path": "maps/shroomtest.lightmap",
+      "size": 58533,
+      "required": false
+    },
+    {
+      "path": "maps/shroomtest.png",
+      "size": 79177,
+      "required": false
+    },
+    {
+      "path": "maps/skyScratcher.json",
+      "size": 27506,
+      "required": false
+    },
+    {
+      "path": "maps/skyScratcher.lightmap",
+      "size": 876039,
+      "required": false
+    },
+    {
+      "path": "maps/skyScratcher.png",
+      "size": 155713,
+      "required": false
+    },
+    {
+      "path": "maps/spacearena.json",
+      "size": 33951,
+      "required": false
+    },
+    {
+      "path": "maps/spacearena.lightmap",
+      "size": 1525002,
+      "required": false
+    },
+    {
+      "path": "maps/spacearena.png",
+      "size": 164958,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactory.json",
+      "size": 27683,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactory.lightmap",
+      "size": 997287,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactory.png",
+      "size": 129023,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactoryc.json",
+      "size": 34408,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactoryc.lightmap",
+      "size": 1079100,
+      "required": false
+    },
+    {
+      "path": "maps/spaceFactoryc.png",
+      "size": 161763,
+      "required": false
+    },
+    {
+      "path": "maps/sparta.json",
+      "size": 41366,
+      "required": false
+    },
+    {
+      "path": "maps/sparta.lightmap",
+      "size": 2369586,
+      "required": false
+    },
+    {
+      "path": "maps/sparta.png",
+      "size": 121705,
+      "required": false
+    },
+    {
+      "path": "maps/spellbound.json",
+      "size": 32567,
+      "required": false
+    },
+    {
+      "path": "maps/spellbound.lightmap",
+      "size": 873957,
+      "required": false
+    },
+    {
+      "path": "maps/spellbound.png",
+      "size": 120824,
+      "required": false
+    },
+    {
+      "path": "maps/stage.json",
+      "size": 45266,
+      "required": false
+    },
+    {
+      "path": "maps/stage.lightmap",
+      "size": 1156212,
+      "required": false
+    },
+    {
+      "path": "maps/stage.png",
+      "size": 98388,
+      "required": false
+    },
+    {
+      "path": "maps/stage2.json",
+      "size": 45328,
+      "required": false
+    },
+    {
+      "path": "maps/stage2.lightmap",
+      "size": 1156212,
+      "required": false
+    },
+    {
+      "path": "maps/stage2.png",
+      "size": 126302,
+      "required": false
+    },
+    {
+      "path": "maps/starship.json",
+      "size": 28521,
+      "required": false
+    },
+    {
+      "path": "maps/starship.lightmap",
+      "size": 1120686,
+      "required": false
+    },
+    {
+      "path": "maps/starship.png",
+      "size": 149647,
+      "required": false
+    },
+    {
+      "path": "maps/staxarena.json",
+      "size": 10961,
+      "required": false
+    },
+    {
+      "path": "maps/staxarena.lightmap",
+      "size": 202713,
+      "required": false
+    },
+    {
+      "path": "maps/staxarena.png",
+      "size": 117345,
+      "required": false
+    },
+    {
+      "path": "maps/stronghold.json",
+      "size": 25413,
+      "required": false
+    },
+    {
+      "path": "maps/stronghold.lightmap",
+      "size": 418596,
+      "required": false
+    },
+    {
+      "path": "maps/stronghold.png",
+      "size": 115061,
+      "required": false
+    },
+    {
+      "path": "maps/teggtris.json",
+      "size": 43773,
+      "required": false
+    },
+    {
+      "path": "maps/teggtris.lightmap",
+      "size": 543342,
+      "required": false
+    },
+    {
+      "path": "maps/teggtris.png",
+      "size": 130220,
+      "required": false
+    },
+    {
+      "path": "maps/temple.json",
+      "size": 25486,
+      "required": false
+    },
+    {
+      "path": "maps/temple.lightmap",
+      "size": 400011,
+      "required": false
+    },
+    {
+      "path": "maps/temple.png",
+      "size": 117127,
+      "required": false
+    },
+    {
+      "path": "maps/timetwist.json",
+      "size": 69245,
+      "required": false
+    },
+    {
+      "path": "maps/timetwist.lightmap",
+      "size": 1370754,
+      "required": false
+    },
+    {
+      "path": "maps/timetwist.png",
+      "size": 115713,
+      "required": false
+    },
+    {
+      "path": "maps/trainyard.json",
+      "size": 42162,
+      "required": false
+    },
+    {
+      "path": "maps/trainyard.lightmap",
+      "size": 644013,
+      "required": false
+    },
+    {
+      "path": "maps/trainyard.png",
+      "size": 94000,
+      "required": false
+    },
+    {
+      "path": "maps/treefort.json",
+      "size": 9151,
+      "required": false
+    },
+    {
+      "path": "maps/treefort.lightmap",
+      "size": 188052,
+      "required": false
+    },
+    {
+      "path": "maps/treefort.png",
+      "size": 79845,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowers.json",
+      "size": 31318,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowers.lightmap",
+      "size": 241779,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowers.png",
+      "size": 105262,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowersh.json",
+      "size": 36180,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowersh.lightmap",
+      "size": 322293,
+      "required": false
+    },
+    {
+      "path": "maps/twoTowersh.png",
+      "size": 111118,
+      "required": false
+    },
+    {
+      "path": "maps/uncovered.json",
+      "size": 19076,
+      "required": false
+    },
+    {
+      "path": "maps/uncovered.lightmap",
+      "size": 636672,
+      "required": false
+    },
+    {
+      "path": "maps/uncovered.png",
+      "size": 138905,
+      "required": false
+    },
+    {
+      "path": "maps/vert.json",
+      "size": 31136,
+      "required": false
+    },
+    {
+      "path": "maps/vert.lightmap",
+      "size": 237954,
+      "required": false
+    },
+    {
+      "path": "maps/vert.png",
+      "size": 110075,
+      "required": false
+    },
+    {
+      "path": "maps/wimble.json",
+      "size": 37780,
+      "required": false
+    },
+    {
+      "path": "maps/wimble.lightmap",
+      "size": 648651,
+      "required": false
+    },
+    {
+      "path": "maps/wimble.png",
+      "size": 124521,
+      "required": false
+    },
+    {
+      "path": "maps/wonderland.json",
+      "size": 94545,
+      "required": false
+    },
+    {
+      "path": "maps/wonderland.lightmap",
+      "size": 2280615,
+      "required": false
+    },
+    {
+      "path": "maps/wonderland.png",
+      "size": 139040,
+      "required": false
+    },
+    {
+      "path": "maps/wreckage.json",
+      "size": 41234,
+      "required": false
+    },
+    {
+      "path": "maps/wreckage.lightmap",
+      "size": 1901403,
+      "required": false
+    },
+    {
+      "path": "maps/wreckage.png",
+      "size": 128589,
+      "required": false
+    },
+    {
+      "path": "maps/yolkido.json",
+      "size": 30597,
+      "required": false
+    },
+    {
+      "path": "maps/yolkido.lightmap",
+      "size": 724718,
+      "required": false
+    },
+    {
+      "path": "maps/yolkido.png",
+      "size": 156262,
+      "required": false
+    },
+    {
+      "path": "maps/zoomies.json",
+      "size": 42112,
+      "required": false
+    },
+    {
+      "path": "maps/zoomies.lightmap",
+      "size": 1253385,
+      "required": false
+    },
+    {
+      "path": "maps/zoomies.png",
+      "size": 118719,
+      "required": false
+    },
+    {
+      "path": "mobile/blueWizard_logo.png",
+      "size": 16642,
+      "required": false
+    },
+    {
+      "path": "mobile/boxArt_f13.jpg",
+      "size": 79880,
+      "required": false
+    },
+    {
+      "path": "mobile/boxArt_slayaway.jpg",
+      "size": 89610,
+      "required": false
+    },
+    {
+      "path": "mobile/boxArt_slayaway.png",
+      "size": 88854,
+      "required": false
+    },
+    {
+      "path": "mobile/favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "mobile/favicon.png",
+      "size": 1383,
+      "required": false
+    },
+    {
+      "path": "mobile/SC2_Boxart_130x191.jpg",
+      "size": 38173,
+      "required": false
+    },
+    {
+      "path": "mobile/shell-shockers-box-art.jpg",
+      "size": 50437,
+      "required": false
+    },
+    {
+      "path": "mobile/shellshockers_logo.png",
+      "size": 121929,
+      "required": false
+    },
+    {
+      "path": "mobile/slayaway-camp-2-min.jpg",
+      "size": 56014,
+      "required": false
+    },
+    {
+      "path": "mobile/style.css",
+      "size": 4570,
+      "required": false
+    },
+    {
+      "path": "models/egg.glb",
+      "size": 35208,
+      "required": false
+    },
+    {
+      "path": "models/full/egg.glb",
+      "size": 2403300,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_aug.glb",
+      "size": 807748,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_cluck9mm.glb",
+      "size": 767720,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_csg1.glb",
+      "size": 824668,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_dozenGauge.glb",
+      "size": 1015848,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_eggk47.glb",
+      "size": 852684,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_m24.glb",
+      "size": 891064,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_rpegg.glb",
+      "size": 824552,
+      "required": false
+    },
+    {
+      "path": "models/full/gun_smg.glb",
+      "size": 843468,
+      "required": false
+    },
+    {
+      "path": "models/full/items.glb",
+      "size": 7376,
+      "required": false
+    },
+    {
+      "path": "models/full/melee.glb",
+      "size": 450704,
+      "required": false
+    },
+    {
+      "path": "models/full/munitions.glb",
+      "size": 448940,
+      "required": false
+    },
+    {
+      "path": "models/full/muzzleFlash.glb",
+      "size": 2556,
+      "required": false
+    },
+    {
+      "path": "models/full/reticle.glb",
+      "size": 1396,
+      "required": false
+    },
+    {
+      "path": "models/gun_aug.glb",
+      "size": 134532,
+      "required": false
+    },
+    {
+      "path": "models/gun_cluck9mm.glb",
+      "size": 110544,
+      "required": false
+    },
+    {
+      "path": "models/gun_csg1.glb",
+      "size": 134068,
+      "required": false
+    },
+    {
+      "path": "models/gun_dozenGauge.glb",
+      "size": 92924,
+      "required": false
+    },
+    {
+      "path": "models/gun_eggk47.glb",
+      "size": 118756,
+      "required": false
+    },
+    {
+      "path": "models/gun_m24.glb",
+      "size": 84208,
+      "required": false
+    },
+    {
+      "path": "models/gun_rpegg.glb",
+      "size": 88332,
+      "required": false
+    },
+    {
+      "path": "models/gun_smg.glb",
+      "size": 121864,
+      "required": false
+    },
+    {
+      "path": "models/items.glb",
+      "size": 7376,
+      "required": false
+    },
+    {
+      "path": "models/map.glb",
+      "size": 6773756,
+      "required": false
+    },
+    {
+      "path": "models/melee.glb",
+      "size": 36168,
+      "required": false
+    },
+    {
+      "path": "models/munitions.glb",
+      "size": 6600,
+      "required": false
+    },
+    {
+      "path": "models/muzzleFlash.glb",
+      "size": 2556,
+      "required": false
+    },
+    {
+      "path": "models/reticle.glb",
+      "size": 1396,
+      "required": false
+    },
+    {
+      "path": "musicTest.html",
+      "size": 2281,
+      "required": false
+    },
+    {
+      "path": "OneSignalSDKUpdaterWorker.js",
+      "size": 71,
+      "required": true
+    },
+    {
+      "path": "OneSignalSDKWorker.js",
+      "size": 71,
+      "required": true
+    },
+    {
+      "path": "portals/assets/css/style.css",
+      "size": 4602,
+      "required": false
+    },
+    {
+      "path": "portals/assets/img/blueWizard_logo.png",
+      "size": 16642,
+      "required": false
+    },
+    {
+      "path": "portals/assets/img/boxArt_f13.jpg",
+      "size": 79880,
+      "required": false
+    },
+    {
+      "path": "portals/assets/img/boxArt_slayaway.jpg",
+      "size": 89610,
+      "required": false
+    },
+    {
+      "path": "portals/assets/img/shellshockers_logo.png",
+      "size": 121929,
+      "required": false
+    },
+    {
+      "path": "portals/favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "portals/favicon.png",
+      "size": 1383,
+      "required": false
+    },
+    {
+      "path": "privacy.html",
+      "size": 14529,
+      "required": false
+    },
+    {
+      "path": "readme.md",
+      "size": 13335,
+      "required": false
+    },
+    {
+      "path": "redirect.html",
+      "size": 1123,
+      "required": false
+    },
+    {
+      "path": "robots.txt",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "root_domains.json",
+      "size": 1863,
+      "required": false
+    },
+    {
+      "path": "root_domains.txt",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "service-worker.js",
+      "size": 805,
+      "required": true
+    },
+    {
+      "path": "servicesTester.html",
+      "size": 4196,
+      "required": false
+    },
+    {
+      "path": "shellshock_io-display.html",
+      "size": 803,
+      "required": false
+    },
+    {
+      "path": "shellshock_io-player.html",
+      "size": 1323,
+      "required": false
+    },
+    {
+      "path": "sidebyside.html",
+      "size": 639,
+      "required": false
+    },
+    {
+      "path": "sound/sounds.json",
+      "size": 27990,
+      "required": false
+    },
+    {
+      "path": "sound/sounds.mp3",
+      "size": 8784710,
+      "required": false
+    },
+    {
+      "path": "sound/sounds.ogg",
+      "size": 3744054,
+      "required": false
+    },
+    {
+      "path": "sound/sounds.webm",
+      "size": 3945018,
+      "required": false
+    },
+    {
+      "path": "src.OLD/gameplayTips.js",
+      "size": 1678,
+      "required": true
+    },
+    {
+      "path": "src.OLD/observer.js",
+      "size": 2116,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 4867,
+      "required": false
+    },
+    {
+      "path": "styles/all.css",
+      "size": 191385,
+      "required": false
+    },
+    {
+      "path": "styles/asc.video.outstream.min.css",
+      "size": 51618,
+      "required": false
+    },
+    {
+      "path": "styles/forms.css",
+      "size": 14066,
+      "required": false
+    },
+    {
+      "path": "styles/game.css",
+      "size": 41833,
+      "required": false
+    },
+    {
+      "path": "styles/input.scss",
+      "size": 67,
+      "required": false
+    },
+    {
+      "path": "styles/scss/_form.scss",
+      "size": 244,
+      "required": false
+    },
+    {
+      "path": "styles/scss/_game.scss",
+      "size": 3497,
+      "required": false
+    },
+    {
+      "path": "styles/scss/_style.scss",
+      "size": 9040,
+      "required": false
+    },
+    {
+      "path": "styles/scss/_transitions.scss",
+      "size": 5071,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_buttons.scss",
+      "size": 5248,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_checkboxes.scss",
+      "size": 1558,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_fields.scss",
+      "size": 2171,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_radio-buttons.scss",
+      "size": 1115,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_range-slider.scss",
+      "size": 2170,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/form/_tabs.scss",
+      "size": 1724,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_challenges.scss",
+      "size": 396,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_chat.scss",
+      "size": 1263,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_cts.scss",
+      "size": 553,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_display-ad.scss",
+      "size": 3849,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_game-canvas.scss",
+      "size": 507,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_hud.scss",
+      "size": 6593,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_kotc.scss",
+      "size": 5780,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_messages.scss",
+      "size": 4202,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_pause-screen.scss",
+      "size": 7689,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_player-list.scss",
+      "size": 2875,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_poki.scss",
+      "size": 511,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_scope.scss",
+      "size": 3458,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_server-map.scss",
+      "size": 356,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/game/_teams.scss",
+      "size": 1296,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_account.scss",
+      "size": 2792,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_announcement.scss",
+      "size": 306,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_challenges.scss",
+      "size": 2994,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_chickn-winner.scss",
+      "size": 7824,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_custom-popups.scss",
+      "size": 131,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_equip.scss",
+      "size": 14246,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_faq.scss",
+      "size": 672,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_firebase-signin.scss",
+      "size": 785,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_footer.scss",
+      "size": 2646,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_freegames.scss",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_give_stuff_popup.scss",
+      "size": 3932,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_hero-vs-mosnters.scss",
+      "size": 6844,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_home-screen.scss",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_house-ads.scss",
+      "size": 1653,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_kotc-popup.scss",
+      "size": 3077,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_loading.scss",
+      "size": 2275,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_main-menu.scss",
+      "size": 4873,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_media-tabs.scss",
+      "size": 4105,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_music_widget.scss",
+      "size": 3589,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_notifications.scss",
+      "size": 3689,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_option-box-component.scss",
+      "size": 1398,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_overlay.scss",
+      "size": 467,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_panels.scss",
+      "size": 1064,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_photobooth.scss",
+      "size": 1726,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_play_component.scss",
+      "size": 2351,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_popup-default.scss",
+      "size": 1871,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_private-game-popup.scss",
+      "size": 2477,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_profile.scss",
+      "size": 1064,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_pwa.scss",
+      "size": 484,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_select.scss",
+      "size": 1085,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_server.scss",
+      "size": 895,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_settings-popup.scss",
+      "size": 1331,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_store.scss",
+      "size": 9620,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_tooltip.scss",
+      "size": 2140,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_tutorial.scss",
+      "size": 2049,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_utilities.scss",
+      "size": 27265,
+      "required": false
+    },
+    {
+      "path": "styles/scss/includes/styles/_vip.scss",
+      "size": 11053,
+      "required": false
+    },
+    {
+      "path": "styles/style.css",
+      "size": 131402,
+      "required": false
+    },
+    {
+      "path": "styles/style.min.css",
+      "size": 150763,
+      "required": true
+    },
+    {
+      "path": "styles/style.min.css.map",
+      "size": 41587,
+      "required": false
+    },
+    {
+      "path": "styles/transitions.css",
+      "size": 4709,
+      "required": false
+    },
+    {
+      "path": "temp.html",
+      "size": 1550,
+      "required": false
+    },
+    {
+      "path": "testad.html",
+      "size": 72215,
+      "required": false
+    },
+    {
+      "path": "testAIP.html",
+      "size": 2385,
+      "required": false
+    },
+    {
+      "path": "testFirebaseAnon.html",
+      "size": 6161,
+      "required": false
+    },
+    {
+      "path": "twitch/css/third-party-apps.css",
+      "size": 8745,
+      "required": false
+    },
+    {
+      "path": "twitch/drop-data.json",
+      "size": 2164,
+      "required": true
+    },
+    {
+      "path": "twitch/img/4mysteryhat.png",
+      "size": 7099,
+      "required": false
+    },
+    {
+      "path": "twitch/img/4mysterystamp.png",
+      "size": 8006,
+      "required": false
+    },
+    {
+      "path": "twitch/img/4questionmark.png",
+      "size": 6431,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7db.png",
+      "size": 13544,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7grin.png",
+      "size": 17921,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7hq.png",
+      "size": 12081,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7owl.png",
+      "size": 14154,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7plan.png",
+      "size": 10217,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7r.png",
+      "size": 11135,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7sad.png",
+      "size": 19402,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7w.png",
+      "size": 10849,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7wiz.png",
+      "size": 18606,
+      "required": false
+    },
+    {
+      "path": "twitch/img/7z.png",
+      "size": 13303,
+      "required": false
+    },
+    {
+      "path": "twitch/img/twitch-drops-bg.jpg",
+      "size": 304396,
+      "required": false
+    },
+    {
+      "path": "twitch/img/twitch-drops-parachute.svg",
+      "size": 2781,
+      "required": false
+    },
+    {
+      "path": "twitch/img/twitch-drops-promo.png",
+      "size": 459183,
+      "required": false
+    },
+    {
+      "path": "twitch/js/third-party-apps.js",
+      "size": 22580,
+      "required": true
+    },
+    {
+      "path": "unblocked/js/scripts.js",
+      "size": 771,
+      "required": true
+    },
+    {
+      "path": "unblocked/json/proxy-list.json",
+      "size": 1695,
+      "required": false
+    },
+    {
+      "path": "unblocked/styles/style.css",
+      "size": 468,
+      "required": false
+    },
+    {
+      "path": "version.txt",
+      "size": 16,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "api.adinplay.com",
+    "cdnjs.cloudflare.com",
+    "fonts.googleapis.com",
+    "freegames.io",
+    "hardwaretester.com",
+    "publisher.xsolla.com",
+    "shell-shockers.myshopify.com",
+    "shellshock.io",
+    "www.bluewizard.com",
+    "www.facebook.com",
+    "www.googletagmanager.com",
+    "www.gstatic.com",
+    "www.shellshock.io"
+  ],
+  "external_critical": [
+    "api.adinplay.com",
+    "freegames.io",
+    "hardwaretester.com",
+    "publisher.xsolla.com",
+    "shell-shockers.myshopify.com",
+    "shellshock.io",
+    "www.bluewizard.com",
+    "www.facebook.com",
+    "www.shellshock.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

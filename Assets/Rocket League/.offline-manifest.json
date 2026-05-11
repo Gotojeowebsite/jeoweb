@@ -1,0 +1,189 @@
+{
+  "schema": 1,
+  "slug": "Rocket League",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "_external_mirror/a.poki.com/prebid/prebid3.19.0.js",
+      "size": 267133,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/acdn.adnxs.com/ib/static/usersync/v3/async_usersync.html",
+      "size": 995,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/acdn.adnxs.com/prebid/appnexus-mapping/mappings.json",
+      "size": 1632,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/ads.pubmatic.com/AdServer/js/showad.js",
+      "size": 46025,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/prebid/currency-file_1/latest.json",
+      "size": 1551,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/eus.rubiconproject.com/usync.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/fastlane.rubiconproject.com/a/api/fastlane.json",
+      "size": 218,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2.0/static/hand_fingers_isolated.svg",
+      "size": 3057,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/shadow_new_3.svg",
+      "size": 241,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_1.svg",
+      "size": 704,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_2.svg",
+      "size": 1068,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_3.svg",
+      "size": 1641,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_4.svg",
+      "size": 1749,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_5.svg",
+      "size": 1795,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_6.svg",
+      "size": 1172,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/static/spinner/Sparkle_7.svg",
+      "size": 848,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/loaders/v2/unity/static/UnityLoader.2019.2.js",
+      "size": 159248,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/js-sec.indexww.com/um/ixmatch.html",
+      "size": 2920,
+      "required": false
+    },
+    {
+      "path": "build.json",
+      "size": 464,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1248,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1270,
+      "required": false
+    },
+    {
+      "path": "master-loader.js",
+      "size": 1968,
+      "required": true
+    },
+    {
+      "path": "poki-offline-stub.js",
+      "size": 995,
+      "required": true
+    },
+    {
+      "path": "poki.js",
+      "size": 147781,
+      "required": true
+    },
+    {
+      "path": "RSD 1.1.0rc4.data.unityweb",
+      "size": 29723236,
+      "required": true
+    },
+    {
+      "path": "RSD 1.1.0rc4.wasm.code.unityweb",
+      "size": 26620102,
+      "required": true
+    },
+    {
+      "path": "RSD 1.1.0rc4.wasm.framework.unityweb",
+      "size": 831445,
+      "required": true
+    },
+    {
+      "path": "unity.js",
+      "size": 31155,
+      "required": true
+    },
+    {
+      "path": "UnityLoader.js",
+      "size": 159449,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "gum.criteo.com",
+    "js.spotx.tv"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "gum.criteo.com",
+    "js.spotx.tv"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

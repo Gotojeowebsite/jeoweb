@@ -1,94 +1,107 @@
 [
   {
-    "name": "bendy",
+    "name": "Dogeminer2",
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 12.342,
+    "elapsed_seconds": 9.579,
     "critical_issues": [
       {
-        "code": "BROKEN_URL_LITERAL",
-        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8081/Assets/bendy/undefined/pages/home.html",
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/Assets/bendy/undefined/pages/home.html"
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/play/dogeloader.svg"
       }
     ],
     "warnings": [
       {
-        "code": "EXTERNAL_DEPENDENCY",
-        "message": "External dependency requested for game runtime",
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
         "severity": "warning",
-        "url": "https://api.gamejolt.com/api/game/v1_2/scores/tables?game_id=231092&format=json&signature=5cc2d78e9dfd323e995ad971383be02c"
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.woff2"
       },
       {
-        "code": "EXTERNAL_CRITICAL_FAILED",
-        "message": "External runtime dependency failed",
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
         "severity": "warning",
-        "url": "https://api.gamejolt.com/api/game/v1_2/scores/tables?game_id=231092&format=json&signature=5cc2d78e9dfd323e995ad971383be02c"
-      },
-      {
-        "code": "EXTERNAL_DEPENDENCY",
-        "message": "External dependency requested for game runtime",
-        "severity": "warning",
-        "url": "https://config.uca.cloud.unity3d.com/"
-      },
-      {
-        "code": "EXTERNAL_CRITICAL_FAILED",
-        "message": "External runtime dependency failed",
-        "severity": "warning",
-        "url": "https://config.uca.cloud.unity3d.com/"
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.ttf"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://cdp.cloud.unity3d.com/v1/events"
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
       },
       {
         "code": "EXTERNAL_CRITICAL_FAILED",
         "message": "External runtime dependency failed",
         "severity": "warning",
-        "url": "https://cdp.cloud.unity3d.com/v1/events"
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
       }
     ],
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 0,
+      "bodyTextLength": 19,
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
       "hasRetroGlobal": false,
-      "canvasHash": "0",
+      "canvasHash": "",
       "canvasNonzeroPixels": 0,
-      "canvasHashFirst": "-15738317",
-      "canvasNonzeroPixelsFirst": 251
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0
     }
   },
   {
-    "name": "brawl-simulator-3d",
+    "name": "Five Nights at Epstein",
     "type": "webgl",
     "entry_file": "index.html",
-    "status": "broken",
-    "elapsed_seconds": 14.539,
-    "critical_issues": [
-      {
-        "code": "CANVAS_NEVER_RENDERED",
-        "message": "Game canvas exists but rendered no pixels and did not change between probes",
-        "severity": "critical",
-        "url": "http://localhost:8081/Assets/brawl-simulator-3d/index.html"
-      }
-    ],
+    "status": "warning",
+    "elapsed_seconds": 11.246,
+    "critical_issues": [],
     "warnings": [
       {
         "code": "CONSOLE_ERROR",
-        "message": "No product with ID found: noAds\n",
+        "message": "wasm streaming compile failed: TypeError: Failed to execute 'compile' on 'WebAssembly': Incorrect response MIME type. Expected 'application/wasm'.",
         "severity": "warning",
         "url": ""
       },
       {
         "code": "CONSOLE_ERROR",
-        "message": "Failed - Game Ready",
+        "message": "falling back to ArrayBuffer instantiation",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Material 'LiberationSans SDF Material' with Shader 'NPA/NPA Text Fix' doesn't have a float or range property '_TextureWidth'\n",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Material 'LiberationSans SDF Material' with Shader 'NPA/NPA Text Fix' doesn't have a float or range property '_TextureHeight'\n",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Material 'LiberationSans SDF Material' with Shader 'NPA/NPA Text Fix' doesn't have a float or range property '_WeightNormal'\n",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Material 'LiberationSans SDF Material' with Shader 'NPA/NPA Text Fix' doesn't have a float or range property '_WeightBold'\n",
         "severity": "warning",
         "url": ""
       }
@@ -103,6 +116,8 @@
       "hasRetroGlobal": false,
       "canvasHash": "0",
       "canvasNonzeroPixels": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 3,
       "canvasHashFirst": "0",
       "canvasNonzeroPixelsFirst": 0
     }

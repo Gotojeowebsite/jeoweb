@@ -1,0 +1,946 @@
+{
+  "schema": 1,
+  "slug": "idle-breakout",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_snapshot_mirror/freezenova.disqus.com/embed.js",
+      "size": 88492,
+      "required": true
+    },
+    {
+      "path": "_snapshot_mirror/freezenova.disqus.com/recommendations.js",
+      "size": 69578,
+      "required": true
+    },
+    {
+      "path": "_snapshot_mirror/minnit.chat/js/embed.js",
+      "size": 14332,
+      "required": true
+    },
+    {
+      "path": "_snapshot_mirror/unblocked-games.s3.amazonaws.com/games/2024/more/idle-breakout/index.html",
+      "size": 3055,
+      "required": true
+    },
+    {
+      "path": "_snapshot_mirror/unblocked-games.s3.amazonaws.com/index.html",
+      "size": 225558,
+      "required": true
+    },
+    {
+      "path": "2-player/index.html",
+      "size": 77641,
+      "required": true
+    },
+    {
+      "path": "2d/index.html",
+      "size": 95963,
+      "required": true
+    },
+    {
+      "path": "3d/index.html",
+      "size": 96383,
+      "required": true
+    },
+    {
+      "path": "a-small-world-cup.html",
+      "size": 50887,
+      "required": true
+    },
+    {
+      "path": "about.html",
+      "size": 30921,
+      "required": true
+    },
+    {
+      "path": "action/index.html",
+      "size": 96209,
+      "required": true
+    },
+    {
+      "path": "adventure/index.html",
+      "size": 69991,
+      "required": true
+    },
+    {
+      "path": "age-of-battle.html",
+      "size": 52397,
+      "required": true
+    },
+    {
+      "path": "arcade/index.html",
+      "size": 94660,
+      "required": true
+    },
+    {
+      "path": "assets/css/style.css",
+      "size": 263637,
+      "required": true
+    },
+    {
+      "path": "assets/images/icons/arrow-left.svg",
+      "size": 261,
+      "required": false
+    },
+    {
+      "path": "assets/images/icons/arrow-right.svg",
+      "size": 263,
+      "required": false
+    },
+    {
+      "path": "assets/img/bg_og.webp",
+      "size": 9038,
+      "required": false
+    },
+    {
+      "path": "assets/js/infinite-scroll.pkgd.min.js",
+      "size": 22539,
+      "required": true
+    },
+    {
+      "path": "assets/js/scripts.min.js",
+      "size": 11405,
+      "required": true
+    },
+    {
+      "path": "assets/scripts/index.js",
+      "size": 5985,
+      "required": true
+    },
+    {
+      "path": "assets/styles/main.css",
+      "size": 4671,
+      "required": true
+    },
+    {
+      "path": "assets/svg/svg-map.svg",
+      "size": 8973,
+      "required": false
+    },
+    {
+      "path": "base-defense.html",
+      "size": 55996,
+      "required": true
+    },
+    {
+      "path": "basket-random-pro.html",
+      "size": 59806,
+      "required": true
+    },
+    {
+      "path": "basketball-king.html",
+      "size": 53083,
+      "required": true
+    },
+    {
+      "path": "bffs-summer-aesthetic.html",
+      "size": 52534,
+      "required": true
+    },
+    {
+      "path": "brainrot-clicker.html",
+      "size": 59791,
+      "required": true
+    },
+    {
+      "path": "car/index.html",
+      "size": 173269,
+      "required": true
+    },
+    {
+      "path": "chat.html",
+      "size": 31061,
+      "required": true
+    },
+    {
+      "path": "clash-of-aliens.html",
+      "size": 47113,
+      "required": true
+    },
+    {
+      "path": "clash-of-armour.html",
+      "size": 54669,
+      "required": true
+    },
+    {
+      "path": "clash-of-skulls.html",
+      "size": 50590,
+      "required": true
+    },
+    {
+      "path": "clash-of-tanks.html",
+      "size": 47804,
+      "required": true
+    },
+    {
+      "path": "clicker/index.html",
+      "size": 54486,
+      "required": true
+    },
+    {
+      "path": "color-tunnel.html",
+      "size": 58807,
+      "required": true
+    },
+    {
+      "path": "contact.html",
+      "size": 29886,
+      "required": true
+    },
+    {
+      "path": "cookie-clicker-pro.html",
+      "size": 59126,
+      "required": true
+    },
+    {
+      "path": "cool-brainrot-clicker.html",
+      "size": 59880,
+      "required": true
+    },
+    {
+      "path": "cool-cookie-clicker.html",
+      "size": 57342,
+      "required": true
+    },
+    {
+      "path": "crazy/index.html",
+      "size": 95524,
+      "required": true
+    },
+    {
+      "path": "crown-defense.html",
+      "size": 61220,
+      "required": true
+    },
+    {
+      "path": "dark-forest-idle.html",
+      "size": 55795,
+      "required": true
+    },
+    {
+      "path": "davo.html",
+      "size": 56404,
+      "required": true
+    },
+    {
+      "path": "dino-chaos-idle.html",
+      "size": 47979,
+      "required": true
+    },
+    {
+      "path": "drift/index.html",
+      "size": 62183,
+      "required": true
+    },
+    {
+      "path": "driving/index.html",
+      "size": 95046,
+      "required": true
+    },
+    {
+      "path": "egg-clicker.html",
+      "size": 59452,
+      "required": true
+    },
+    {
+      "path": "elastic-man.html",
+      "size": 45295,
+      "required": true
+    },
+    {
+      "path": "extreme-run-3d.html",
+      "size": 54218,
+      "required": true
+    },
+    {
+      "path": "freezenova.disqus.com/count.js",
+      "size": 1517,
+      "required": true
+    },
+    {
+      "path": "game-developers.html",
+      "size": 23580,
+      "required": true
+    },
+    {
+      "path": "geometry-vector.html",
+      "size": 57592,
+      "required": true
+    },
+    {
+      "path": "geometry-vibes-monster.html",
+      "size": 58826,
+      "required": true
+    },
+    {
+      "path": "geometry-vibes.html",
+      "size": 61134,
+      "required": true
+    },
+    {
+      "path": "girl/index.html",
+      "size": 48677,
+      "required": true
+    },
+    {
+      "path": "global-guesser.html",
+      "size": 46716,
+      "required": true
+    },
+    {
+      "path": "hill-climber.html",
+      "size": 53804,
+      "required": true
+    },
+    {
+      "path": "html5/index.html",
+      "size": 98487,
+      "required": true
+    },
+    {
+      "path": "hyper-soccer.html",
+      "size": 59468,
+      "required": true
+    },
+    {
+      "path": "idle-breakout.html",
+      "size": 59227,
+      "required": false
+    },
+    {
+      "path": "idle-dev-startup.html",
+      "size": 53951,
+      "required": true
+    },
+    {
+      "path": "idle-restaurant.html",
+      "size": 54651,
+      "required": true
+    },
+    {
+      "path": "idle-startup-tycoon.html",
+      "size": 51145,
+      "required": true
+    },
+    {
+      "path": "idle/index.html",
+      "size": 55056,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 58904,
+      "required": true
+    },
+    {
+      "path": "interactive-buddy.html",
+      "size": 52185,
+      "required": true
+    },
+    {
+      "path": "io-games/index.html",
+      "size": 140886,
+      "required": true
+    },
+    {
+      "path": "italian-brainrot-baby-clicker.html",
+      "size": 59632,
+      "required": true
+    },
+    {
+      "path": "jungle-mart.html",
+      "size": 55113,
+      "required": true
+    },
+    {
+      "path": "kids/index.html",
+      "size": 70499,
+      "required": true
+    },
+    {
+      "path": "kings-io.html",
+      "size": 52213,
+      "required": true
+    },
+    {
+      "path": "mafia-wars.html",
+      "size": 53038,
+      "required": true
+    },
+    {
+      "path": "media/plugins/staticSearch/flexsearch.bundle.js",
+      "size": 16471,
+      "required": true
+    },
+    {
+      "path": "media/plugins/staticSearch/static.search.min.css",
+      "size": 7761,
+      "required": true
+    },
+    {
+      "path": "media/plugins/staticSearch/static.search.min.js",
+      "size": 11605,
+      "required": true
+    },
+    {
+      "path": "media/posts/376/idle-startup-tycoon512.jpg",
+      "size": 108145,
+      "required": false
+    },
+    {
+      "path": "media/posts/404/idle-restaurant-512.jpg",
+      "size": 75816,
+      "required": false
+    },
+    {
+      "path": "media/posts/427/idle-dev-startup.jpg",
+      "size": 56871,
+      "required": false
+    },
+    {
+      "path": "media/posts/435/dino-chaos-idle.jpg",
+      "size": 77482,
+      "required": false
+    },
+    {
+      "path": "media/posts/496/idle-breakout.webp",
+      "size": 19552,
+      "required": false
+    },
+    {
+      "path": "media/posts/526/responsive/egg-clicker-xs.webp",
+      "size": 33960,
+      "required": false
+    },
+    {
+      "path": "media/posts/530/responsive/poop-clicker-game-xs.jpg",
+      "size": 33135,
+      "required": false
+    },
+    {
+      "path": "media/posts/553/responsive/interactive-buddy-game-xs.webp",
+      "size": 13112,
+      "required": false
+    },
+    {
+      "path": "media/posts/578/responsive/freezenova-clicker-xs.webp",
+      "size": 12900,
+      "required": false
+    },
+    {
+      "path": "media/posts/582/responsive/nova-craft-512-xs.webp",
+      "size": 13228,
+      "required": false
+    },
+    {
+      "path": "media/posts/586/responsive/dark-forest-idle-512-xs.webp",
+      "size": 10230,
+      "required": false
+    },
+    {
+      "path": "media/posts/592/responsive/a-small-world-cup-512-xs.webp",
+      "size": 7148,
+      "required": false
+    },
+    {
+      "path": "media/posts/617/responsive/soccer-random-pro-xs.webp",
+      "size": 16184,
+      "required": false
+    },
+    {
+      "path": "media/posts/621/responsive/basketball-king-xs.webp",
+      "size": 18900,
+      "required": false
+    },
+    {
+      "path": "media/posts/635/responsive/snake-game-xs.webp",
+      "size": 11568,
+      "required": false
+    },
+    {
+      "path": "media/posts/637/responsive/sprunki-game-xs.webp",
+      "size": 15380,
+      "required": false
+    },
+    {
+      "path": "media/posts/641/responsive/watermelon-game-512-xs.webp",
+      "size": 15582,
+      "required": false
+    },
+    {
+      "path": "media/posts/648/responsive/monster-survivors-xs.webp",
+      "size": 8300,
+      "required": false
+    },
+    {
+      "path": "media/posts/655/responsive/kings-io-xs.webp",
+      "size": 16330,
+      "required": false
+    },
+    {
+      "path": "media/posts/656/responsive/spartahoppers-xs.webp",
+      "size": 15820,
+      "required": false
+    },
+    {
+      "path": "media/posts/664/responsive/basket-random-pro-xs.webp",
+      "size": 23152,
+      "required": false
+    },
+    {
+      "path": "media/posts/668/responsive/cookie-clicker-pro-xs.webp",
+      "size": 11662,
+      "required": false
+    },
+    {
+      "path": "media/posts/669/responsive/global-guesser-game-xs.webp",
+      "size": 13674,
+      "required": false
+    },
+    {
+      "path": "media/posts/680/responsive/snow-rider-game-xs.webp",
+      "size": 16206,
+      "required": false
+    },
+    {
+      "path": "media/posts/681/responsive/watermelon-suika-game-xs.webp",
+      "size": 13374,
+      "required": false
+    },
+    {
+      "path": "media/posts/684/responsive/extreme-run-3d-xs.webp",
+      "size": 12402,
+      "required": false
+    },
+    {
+      "path": "media/posts/689/responsive/hyper-soccer-xs.webp",
+      "size": 12428,
+      "required": false
+    },
+    {
+      "path": "media/posts/690/responsive/cool-cookie-clicker-xs.webp",
+      "size": 13608,
+      "required": false
+    },
+    {
+      "path": "media/posts/692/responsive/veggie-survivors-freezenova-xs.webp",
+      "size": 23606,
+      "required": false
+    },
+    {
+      "path": "media/posts/695/responsive/tunnel-road-freezenova-xs.webp",
+      "size": 18976,
+      "required": false
+    },
+    {
+      "path": "media/posts/698/responsive/base-defense-game-xs.webp",
+      "size": 13596,
+      "required": false
+    },
+    {
+      "path": "media/posts/699/responsive/summer-rider-3d-xs.webp",
+      "size": 17426,
+      "required": false
+    },
+    {
+      "path": "media/posts/700/responsive/brainrot-clicker-game-xs.webp",
+      "size": 13152,
+      "required": false
+    },
+    {
+      "path": "media/posts/702/responsive/clash-of-armour-game-xs.webp",
+      "size": 12834,
+      "required": false
+    },
+    {
+      "path": "media/posts/703/responsive/elastic-man-xs.webp",
+      "size": 6682,
+      "required": false
+    },
+    {
+      "path": "media/posts/705/responsive/mafia-wars-game-xs.webp",
+      "size": 14736,
+      "required": false
+    },
+    {
+      "path": "media/posts/706/responsive/pirate-defense-game-xs.webp",
+      "size": 15102,
+      "required": false
+    },
+    {
+      "path": "media/posts/707/responsive/geometry-vibes-game-xs.webp",
+      "size": 14974,
+      "required": false
+    },
+    {
+      "path": "media/posts/709/responsive/hill-climber-game-xs.webp",
+      "size": 14630,
+      "required": false
+    },
+    {
+      "path": "media/posts/711/responsive/color-tunnel-game-xs.webp",
+      "size": 9604,
+      "required": false
+    },
+    {
+      "path": "media/posts/712/responsive/paw-clicker-game-xs.webp",
+      "size": 12770,
+      "required": false
+    },
+    {
+      "path": "media/posts/713/responsive/clash-of-skulls-games-xs.webp",
+      "size": 12994,
+      "required": false
+    },
+    {
+      "path": "media/posts/714/responsive/snow-rush-3d-xs.webp",
+      "size": 13090,
+      "required": false
+    },
+    {
+      "path": "media/posts/715/responsive/clash-of-tanks-game-xs.webp",
+      "size": 18672,
+      "required": false
+    },
+    {
+      "path": "media/posts/716/responsive/bffs-summer-aesthetic-freezenova-xs.webp",
+      "size": 14214,
+      "required": false
+    },
+    {
+      "path": "media/posts/717/responsive/crown-defense-game-xs.webp",
+      "size": 14246,
+      "required": false
+    },
+    {
+      "path": "media/posts/718/responsive/speed-run-3d-xs.webp",
+      "size": 10636,
+      "required": false
+    },
+    {
+      "path": "media/posts/720/responsive/cool-brainrot-clicker-game-xs.webp",
+      "size": 17542,
+      "required": false
+    },
+    {
+      "path": "media/posts/724/responsive/davo-game-xs.webp",
+      "size": 13984,
+      "required": false
+    },
+    {
+      "path": "media/posts/728/responsive/rocket-hero-clicker-xs.webp",
+      "size": 14714,
+      "required": false
+    },
+    {
+      "path": "media/posts/731/responsive/geometry-vibes-monster-game-xs.webp",
+      "size": 7524,
+      "required": false
+    },
+    {
+      "path": "media/posts/732/responsive/italian-brainrot-baby-clicker-game-xs.webp",
+      "size": 13154,
+      "required": false
+    },
+    {
+      "path": "media/posts/738/responsive/Clash-of-Aliens-xs.webp",
+      "size": 39122,
+      "required": false
+    },
+    {
+      "path": "media/posts/740/responsive/run-3-freezenova-xs.webp",
+      "size": 12756,
+      "required": false
+    },
+    {
+      "path": "media/posts/744/responsive/age-of-battle-game-xs.webp",
+      "size": 13814,
+      "required": false
+    },
+    {
+      "path": "media/posts/746/responsive/snow-rider-game-xs.webp",
+      "size": 16206,
+      "required": false
+    },
+    {
+      "path": "media/posts/750/responsive/riddle-school-unblocked-xs.webp",
+      "size": 9938,
+      "required": false
+    },
+    {
+      "path": "media/posts/757/responsive/jungle-mart-unblocked-xs.webp",
+      "size": 19776,
+      "required": false
+    },
+    {
+      "path": "media/posts/758/responsive/geometry-vector-unblocked-xs.webp",
+      "size": 20340,
+      "required": false
+    },
+    {
+      "path": "media/posts/759/responsive/snaker-io-unblocked-xs.webp",
+      "size": 24138,
+      "required": false
+    },
+    {
+      "path": "media/posts/760/responsive/velocity-rush-unblocked-xs.webp",
+      "size": 20132,
+      "required": false
+    },
+    {
+      "path": "media/website/favicon-1.ico",
+      "size": 9662,
+      "required": false
+    },
+    {
+      "path": "media/website/unblocked-games-freezenova-logo.webp",
+      "size": 27500,
+      "required": false
+    },
+    {
+      "path": "minecraft/index.html",
+      "size": 49882,
+      "required": true
+    },
+    {
+      "path": "mobile/index.html",
+      "size": 95395,
+      "required": true
+    },
+    {
+      "path": "monster-survivors.html",
+      "size": 53725,
+      "required": true
+    },
+    {
+      "path": "multiplayer/index.html",
+      "size": 81880,
+      "required": true
+    },
+    {
+      "path": "new-games.html",
+      "size": 70462,
+      "required": true
+    },
+    {
+      "path": "nova-clicker.html",
+      "size": 54986,
+      "required": true
+    },
+    {
+      "path": "nova-craft.html",
+      "size": 54567,
+      "required": true
+    },
+    {
+      "path": "nova-idle-clicker.html",
+      "size": 51352,
+      "required": true
+    },
+    {
+      "path": "paw-clicker.html",
+      "size": 58456,
+      "required": true
+    },
+    {
+      "path": "pirate-defense.html",
+      "size": 53188,
+      "required": true
+    },
+    {
+      "path": "pixel/index.html",
+      "size": 56242,
+      "required": true
+    },
+    {
+      "path": "poop-clicker.html",
+      "size": 59176,
+      "required": true
+    },
+    {
+      "path": "premium/index.html",
+      "size": 77676,
+      "required": true
+    },
+    {
+      "path": "privacy-policy.html",
+      "size": 38406,
+      "required": true
+    },
+    {
+      "path": "puzzle/index.html",
+      "size": 73384,
+      "required": true
+    },
+    {
+      "path": "racing/index.html",
+      "size": 91448,
+      "required": true
+    },
+    {
+      "path": "recently-played-games.html",
+      "size": 32180,
+      "required": true
+    },
+    {
+      "path": "riddle-school.html",
+      "size": 57349,
+      "required": true
+    },
+    {
+      "path": "rocket-hero-clicker.html",
+      "size": 49897,
+      "required": true
+    },
+    {
+      "path": "run-3.html",
+      "size": 56289,
+      "required": true
+    },
+    {
+      "path": "shooting/index.html",
+      "size": 105339,
+      "required": true
+    },
+    {
+      "path": "simulator/index.html",
+      "size": 95123,
+      "required": true
+    },
+    {
+      "path": "snake.html",
+      "size": 59390,
+      "required": true
+    },
+    {
+      "path": "snaker-io.html",
+      "size": 55348,
+      "required": true
+    },
+    {
+      "path": "sniper/index.html",
+      "size": 36961,
+      "required": true
+    },
+    {
+      "path": "snow-rider-2026.html",
+      "size": 55071,
+      "required": true
+    },
+    {
+      "path": "snow-rider-3d.html",
+      "size": 58113,
+      "required": true
+    },
+    {
+      "path": "snow-rush-3d.html",
+      "size": 59611,
+      "required": true
+    },
+    {
+      "path": "soccer-random-pro.html",
+      "size": 52869,
+      "required": true
+    },
+    {
+      "path": "spartahoppers.html",
+      "size": 55091,
+      "required": true
+    },
+    {
+      "path": "speed-run-3d.html",
+      "size": 58408,
+      "required": true
+    },
+    {
+      "path": "sports/index.html",
+      "size": 61595,
+      "required": true
+    },
+    {
+      "path": "sprunki.html",
+      "size": 44884,
+      "required": true
+    },
+    {
+      "path": "strategy/index.html",
+      "size": 62025,
+      "required": true
+    },
+    {
+      "path": "summer-rider-3d.html",
+      "size": 61011,
+      "required": true
+    },
+    {
+      "path": "tunnel-road.html",
+      "size": 60248,
+      "required": true
+    },
+    {
+      "path": "unblocked/index.html",
+      "size": 169978,
+      "required": true
+    },
+    {
+      "path": "veggie-survivors.html",
+      "size": 50243,
+      "required": true
+    },
+    {
+      "path": "velocity-rush.html",
+      "size": 57245,
+      "required": true
+    },
+    {
+      "path": "watermelon-game.html",
+      "size": 57925,
+      "required": true
+    },
+    {
+      "path": "watermelon-suika.html",
+      "size": 56167,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "c.disquscdn.com",
+    "disqus.com",
+    "freezenova.blog",
+    "unblocked-games.s3.amazonaws.com",
+    "www.youtube.com"
+  ],
+  "external_critical": [
+    "c.disquscdn.com",
+    "disqus.com",
+    "freezenova.blog",
+    "unblocked-games.s3.amazonaws.com",
+    "www.youtube.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

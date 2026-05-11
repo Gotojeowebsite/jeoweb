@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "slug": "hextris",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/eightmedia.github.io/hammer.js",
+      "size": 188,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/hextris.io/a.js",
+      "size": 3397,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 99678,
+      "required": false
+    },
+    {
+      "path": "images/android.png",
+      "size": 9614,
+      "required": false
+    },
+    {
+      "path": "images/appstore.svg",
+      "size": 12224,
+      "required": false
+    },
+    {
+      "path": "images/btn_help.svg",
+      "size": 3174,
+      "required": false
+    },
+    {
+      "path": "images/btn_pause.svg",
+      "size": 1179,
+      "required": false
+    },
+    {
+      "path": "images/btn_restart.svg",
+      "size": 1579,
+      "required": false
+    },
+    {
+      "path": "images/hextris-logo.png",
+      "size": 102880,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 12485,
+      "required": true
+    },
+    {
+      "path": "js/Block.js",
+      "size": 5951,
+      "required": true
+    },
+    {
+      "path": "js/checking.js",
+      "size": 2894,
+      "required": true
+    },
+    {
+      "path": "js/comboTimer.js",
+      "size": 2230,
+      "required": true
+    },
+    {
+      "path": "js/Hex.js",
+      "size": 4999,
+      "required": true
+    },
+    {
+      "path": "js/initialization.js",
+      "size": 6897,
+      "required": true
+    },
+    {
+      "path": "js/input.js",
+      "size": 4951,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 9904,
+      "required": true
+    },
+    {
+      "path": "js/math.js",
+      "size": 318,
+      "required": true
+    },
+    {
+      "path": "js/render.js",
+      "size": 3525,
+      "required": true
+    },
+    {
+      "path": "js/save-state.js",
+      "size": 1343,
+      "required": true
+    },
+    {
+      "path": "js/Text.js",
+      "size": 600,
+      "required": true
+    },
+    {
+      "path": "js/update.js",
+      "size": 1840,
+      "required": true
+    },
+    {
+      "path": "js/view.js",
+      "size": 7424,
+      "required": true
+    },
+    {
+      "path": "js/wavegen.js",
+      "size": 5391,
+      "required": true
+    },
+    {
+      "path": "style/fa/css/font-awesome.min.css",
+      "size": 20738,
+      "required": true
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.eot",
+      "size": 72449,
+      "required": false
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.svg",
+      "size": 253487,
+      "required": false
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.ttf",
+      "size": 141564,
+      "required": false
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfont.woff",
+      "size": 83760,
+      "required": false
+    },
+    {
+      "path": "style/fa/fonts/fontawesome-webfontd41d.eot",
+      "size": 72449,
+      "required": false
+    },
+    {
+      "path": "style/fonts/Exo2-ExtraLight.otf",
+      "size": 64996,
+      "required": false
+    },
+    {
+      "path": "style/fonts/Exo2-Regular.otf",
+      "size": 65552,
+      "required": false
+    },
+    {
+      "path": "style/fonts/Exo2-SemiBold.otf",
+      "size": 68732,
+      "required": false
+    },
+    {
+      "path": "style/rrssb.css",
+      "size": 10978,
+      "required": true
+    },
+    {
+      "path": "style/style.css",
+      "size": 7972,
+      "required": true
+    },
+    {
+      "path": "vendor/hammer.min.js",
+      "size": 13723,
+      "required": true
+    },
+    {
+      "path": "vendor/jquery.js",
+      "size": 92593,
+      "required": true
+    },
+    {
+      "path": "vendor/js.cookie.js",
+      "size": 3242,
+      "required": true
+    },
+    {
+      "path": "vendor/jsonfn.min.js",
+      "size": 809,
+      "required": true
+    },
+    {
+      "path": "vendor/keypress.min.js",
+      "size": 9985,
+      "required": true
+    },
+    {
+      "path": "vendor/rrssb.min.js",
+      "size": 4972,
+      "required": true
+    },
+    {
+      "path": "vendor/sweet-alert.min.js",
+      "size": 10424,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com",
+    "github.com",
+    "hextris.github.io",
+    "itunes.apple.com",
+    "loganengstrom.com",
+    "play.google.com",
+    "twitter.com",
+    "vk.com",
+    "www.facebook.com"
+  ],
+  "external_critical": [
+    "github.com",
+    "hextris.github.io",
+    "itunes.apple.com",
+    "loganengstrom.com",
+    "play.google.com",
+    "twitter.com",
+    "vk.com",
+    "www.facebook.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

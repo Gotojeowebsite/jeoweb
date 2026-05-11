@@ -1,0 +1,1662 @@
+{
+  "schema": 1,
+  "slug": "webretro-local",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/BinBashBanana/webretro_latest/assets/info.json",
+      "size": 1492,
+      "required": false
+    },
+    {
+      "path": "assets/bar.png",
+      "size": 1727,
+      "required": false
+    },
+    {
+      "path": "assets/base.css",
+      "size": 9878,
+      "required": true
+    },
+    {
+      "path": "assets/base.js",
+      "size": 54483,
+      "required": true
+    },
+    {
+      "path": "assets/charToCodeMap.js",
+      "size": 4899,
+      "required": true
+    },
+    {
+      "path": "assets/controller_layout.png",
+      "size": 294469,
+      "required": false
+    },
+    {
+      "path": "assets/controller_layout.xcf",
+      "size": 892184,
+      "required": false
+    },
+    {
+      "path": "assets/css/styles.css",
+      "size": 16487,
+      "required": false
+    },
+    {
+      "path": "assets/dropbox.png",
+      "size": 9126,
+      "required": false
+    },
+    {
+      "path": "assets/googledrive.png",
+      "size": 16998,
+      "required": false
+    },
+    {
+      "path": "assets/icon102.png",
+      "size": 2548,
+      "required": false
+    },
+    {
+      "path": "assets/icon204.png",
+      "size": 3069,
+      "required": false
+    },
+    {
+      "path": "assets/info.json",
+      "size": 1098,
+      "required": false
+    },
+    {
+      "path": "assets/jswindow.css",
+      "size": 1186,
+      "required": true
+    },
+    {
+      "path": "assets/jswindow.js",
+      "size": 5647,
+      "required": true
+    },
+    {
+      "path": "assets/md5.min.js",
+      "size": 3735,
+      "required": true
+    },
+    {
+      "path": "assets/onedrive.png",
+      "size": 7701,
+      "required": false
+    },
+    {
+      "path": "assets/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "assets/terminal.svg",
+      "size": 7531,
+      "required": false
+    },
+    {
+      "path": "assets/zip-2.2.26.min.js",
+      "size": 86363,
+      "required": true
+    },
+    {
+      "path": "bundle/assets/menu_widgets/msg_queue_icon_outline.png",
+      "size": 7000,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/menu_widgets/msg_queue_icon_rect.png",
+      "size": 1028,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/menu_widgets/msg_queue_icon.png",
+      "size": 1353,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/menu_widgets/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/bold.ttf",
+      "size": 2691456,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/cursor_border.png",
+      "size": 242,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/dark/check.png",
+      "size": 1134,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/dark/cursor_noborder.png",
+      "size": 498,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/dark/cursor_static.png",
+      "size": 778,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/dark/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/dark/switch.png",
+      "size": 642,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/gruvbox_dark/check.png",
+      "size": 1134,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/gruvbox_dark/cursor_noborder.png",
+      "size": 498,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/gruvbox_dark/cursor_static.png",
+      "size": 1062,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/gruvbox_dark/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/gruvbox_dark/switch.png",
+      "size": 642,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/light/check.png",
+      "size": 1131,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/light/cursor_noborder.png",
+      "size": 474,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/light/cursor_static.png",
+      "size": 778,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/light/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/light/switch.png",
+      "size": 741,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/nord/check.png",
+      "size": 1134,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/nord/cursor_noborder.png",
+      "size": 113,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/nord/cursor_static.png",
+      "size": 1009,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/nord/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/nord/switch.png",
+      "size": 642,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/retroarch.png",
+      "size": 1077,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/add.png",
+      "size": 1086,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/favorites.png",
+      "size": 621,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/history.png",
+      "size": 984,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/image.png",
+      "size": 393,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/music.png",
+      "size": 466,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/netplay.png",
+      "size": 897,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/retroarch.png",
+      "size": 747,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/settings.png",
+      "size": 1085,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/png/sidebar/video.png",
+      "size": 279,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/ozone/regular.ttf",
+      "size": 2569576,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/achievement-list.png",
+      "size": 2342,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/add-favorite.png",
+      "size": 2414,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/add.png",
+      "size": 4552,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/arrow.png",
+      "size": 421,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-20.png",
+      "size": 824,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-40.png",
+      "size": 831,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-60.png",
+      "size": 830,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-80.png",
+      "size": 831,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-charging.png",
+      "size": 1034,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/battery-full.png",
+      "size": 823,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/bluetooth.png",
+      "size": 2733,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/clock.png",
+      "size": 1510,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/close.png",
+      "size": 1058,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-cheat-options.png",
+      "size": 2490,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-disk-options.png",
+      "size": 2752,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-infos.png",
+      "size": 2850,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-input-remapping-options.png",
+      "size": 2944,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-options.png",
+      "size": 3242,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core-shader-options.png",
+      "size": 2434,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/core.png",
+      "size": 2722,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/cursor.png",
+      "size": 3642,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/database.png",
+      "size": 1682,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/dialog-slice.png",
+      "size": 839,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/disc.png",
+      "size": 2770,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/favorites-content.png",
+      "size": 2414,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/favorites.png",
+      "size": 4040,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/file.png",
+      "size": 739,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/folder.png",
+      "size": 1211,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/history.png",
+      "size": 5646,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/image.png",
+      "size": 1332,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_ADC.png",
+      "size": 1006,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_BIND_ALL.png",
+      "size": 1833,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_BTN-D.png",
+      "size": 2727,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_BTN-L.png",
+      "size": 2600,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_BTN-R.png",
+      "size": 2626,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_BTN-U.png",
+      "size": 2653,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_DPAD-D.png",
+      "size": 899,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_DPAD-L.png",
+      "size": 854,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_DPAD-R.png",
+      "size": 906,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_DPAD-U.png",
+      "size": 861,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_LB.png",
+      "size": 2877,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_LGUN.png",
+      "size": 2530,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_LT.png",
+      "size": 2923,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_MOUSE.png",
+      "size": 1862,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_RB.png",
+      "size": 2701,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_RT.png",
+      "size": 2917,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_SELECT.png",
+      "size": 981,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_START.png",
+      "size": 955,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_STCK-D.png",
+      "size": 2597,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_STCK-L.png",
+      "size": 2393,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_STCK-P.png",
+      "size": 1050,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_STCK-R.png",
+      "size": 2478,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_STCK-U.png",
+      "size": 2510,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/input_TURBO.png",
+      "size": 1246,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/key-hover.png",
+      "size": 1409,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/key.png",
+      "size": 1368,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/Libretro - Pad.png",
+      "size": 2944,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/loadstate.png",
+      "size": 1466,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_achievements.png",
+      "size": 2342,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_add.png",
+      "size": 553,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_apply_cog.png",
+      "size": 2898,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_apply_toggle.png",
+      "size": 3706,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_audio.png",
+      "size": 1647,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_brightness.png",
+      "size": 2119,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_check.png",
+      "size": 1895,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_drivers.png",
+      "size": 2770,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_exit.png",
+      "size": 1058,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_frameskip.png",
+      "size": 1766,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_help.png",
+      "size": 3410,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_info.png",
+      "size": 2850,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_latency.png",
+      "size": 3521,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_log.png",
+      "size": 1192,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_mixer.png",
+      "size": 845,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_network.png",
+      "size": 2941,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_notifications.png",
+      "size": 854,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_osd.png",
+      "size": 1367,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_overlay.png",
+      "size": 1352,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_override.png",
+      "size": 1083,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_pause.png",
+      "size": 521,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_playlist.png",
+      "size": 1101,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_power.png",
+      "size": 1357,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_privacy.png",
+      "size": 2719,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_quickmenu.png",
+      "size": 2005,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_record.png",
+      "size": 2544,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_rewind.png",
+      "size": 1771,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_saving.png",
+      "size": 1462,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_shutdown.png",
+      "size": 2956,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_stream.png",
+      "size": 3738,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_ui.png",
+      "size": 1196,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_updater.png",
+      "size": 4063,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_user.png",
+      "size": 2220,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/menu_video.png",
+      "size": 913,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/movie.png",
+      "size": 913,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/music.png",
+      "size": 1625,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/musics.png",
+      "size": 3674,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/off.png",
+      "size": 2438,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/on.png",
+      "size": 2188,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/pointer.png",
+      "size": 3754,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/reload.png",
+      "size": 3096,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/rename.png",
+      "size": 2436,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/resume.png",
+      "size": 1515,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/retroarch.png",
+      "size": 4068,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/run.png",
+      "size": 1444,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/savestate.png",
+      "size": 1462,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/screenshot.png",
+      "size": 2463,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/setting.png",
+      "size": 3163,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/settings.png",
+      "size": 4831,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/subsetting.png",
+      "size": 2417,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/undo.png",
+      "size": 2739,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/wifi.png",
+      "size": 2941,
+      "required": false
+    },
+    {
+      "path": "bundle/assets/xmb/monochrome/png/zip.png",
+      "size": 572,
+      "required": false
+    },
+    {
+      "path": "bundle/indexedfiles-v2.txt",
+      "size": 9830,
+      "required": false
+    },
+    {
+      "path": "bundle/indexedfiles.txt",
+      "size": 5399,
+      "required": false
+    },
+    {
+      "path": "bundle/indexer.py",
+      "size": 402,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/retroarch.glslp",
+      "size": 313,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/aa-shader-4.0-level2.glslp",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/aa-shader-4.0.glslp",
+      "size": 184,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/advanced-aa.glslp",
+      "size": 169,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/fxaa.glslp",
+      "size": 63,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/reverse-aa.glslp",
+      "size": 104,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/aa-shader-4.0-level2/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/aa-shader-4.0.glsl",
+      "size": 4122,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/advanced-aa.glsl",
+      "size": 4937,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/ewa_curvature.glsl",
+      "size": 7773,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/fxaa.glsl",
+      "size": 10914,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/reverse-aa-post3x/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/reverse-aa-post3x/reverse-aa-post3x-pass0.glsl",
+      "size": 6609,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/reverse-aa-post3x/reverse-aa-post3x-pass1.glsl",
+      "size": 6608,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/anti-aliasing/shaders/reverse-aa.glsl",
+      "size": 4820,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/bilinear.glslp",
+      "size": 56,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/bicubic.glslp",
+      "size": 66,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/cubic-gamma-correct.glslp",
+      "size": 197,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/cubic.glslp",
+      "size": 65,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/shaders/bicubic.glsl",
+      "size": 5044,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/shaders/cubic-gamma-correct.glsl",
+      "size": 3339,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/shaders/cubic.glsl",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/shaders/linearize.glsl",
+      "size": 1890,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/cubic/shaders/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/aann.glslp",
+      "size": 62,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/bandlimit-pixel.glslp",
+      "size": 193,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/controlled_sharpness.glslp",
+      "size": 78,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/pixellate.glslp",
+      "size": 68,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/quilez.glslp",
+      "size": 64,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/aann.glsl",
+      "size": 7029,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/bandlimit-pixel.glsl",
+      "size": 7333,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/ControlledSharpness.glsl",
+      "size": 2636,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/pixellate.glsl",
+      "size": 4942,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/quilez.glsl",
+      "size": 2437,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/sharp-bilinear-scanlines.glsl",
+      "size": 4437,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/sharp-bilinear-simple.glsl",
+      "size": 3247,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/sharp-bilinear.glsl",
+      "size": 3286,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/smootheststep.glsl",
+      "size": 2814,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/shaders/smuberstep.glsl",
+      "size": 2457,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/sharp-bilinear-2x-prescale.glslp",
+      "size": 138,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/sharp-bilinear-scanlines.glslp",
+      "size": 83,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/sharp-bilinear-simple.glslp",
+      "size": 79,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/sharp-bilinear.glslp",
+      "size": 72,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/smootheststep.glslp",
+      "size": 71,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/interpolation/smuberstep.glslp",
+      "size": 69,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/linear/linearize.glsl",
+      "size": 2067,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/linear/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/nearest.glslp",
+      "size": 57,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/scalehq/2xScaleHQ.glslp",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/scalehq/4xScaleHQ.glslp",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/scalehq/shaders/2xScaleHQ.glsl",
+      "size": 4912,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/scalehq/shaders/4xScaleHQ.glsl",
+      "size": 5399,
+      "required": false
+    },
+    {
+      "path": "bundle/shaders/shaders_glsl/scalehq/shaders/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "embed/embed-example.html",
+      "size": 555,
+      "required": false
+    },
+    {
+      "path": "embed/embed.js",
+      "size": 705,
+      "required": true
+    },
+    {
+      "path": "embed/roms/2048.nes",
+      "size": 16400,
+      "required": false
+    },
+    {
+      "path": "embed/roms/LICENSE.txt",
+      "size": 258,
+      "required": false
+    },
+    {
+      "path": "embed/roms/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "genesis_plus_gx_libretro.js",
+      "size": 203672,
+      "required": true
+    },
+    {
+      "path": "genesis_plus_gx_libretro.wasm",
+      "size": 4092905,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 8013,
+      "required": true
+    },
+    {
+      "path": "info/cookiepolicy.html",
+      "size": 4292,
+      "required": false
+    },
+    {
+      "path": "info/index.html",
+      "size": 801,
+      "required": false
+    },
+    {
+      "path": "info/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "info/privacy.html",
+      "size": 4766,
+      "required": false
+    },
+    {
+      "path": "info/tos.html",
+      "size": 3842,
+      "required": false
+    },
+    {
+      "path": "LICENSE",
+      "size": 1070,
+      "required": false
+    },
+    {
+      "path": "logo.svg",
+      "size": 1271,
+      "required": false
+    },
+    {
+      "path": "mgba_libretro.js",
+      "size": 206166,
+      "required": true
+    },
+    {
+      "path": "mgba_libretro.wasm",
+      "size": 2595799,
+      "required": true
+    },
+    {
+      "path": "mupen64plus_next_libretro.js",
+      "size": 218838,
+      "required": true
+    },
+    {
+      "path": "mupen64plus_next_libretro.wasm",
+      "size": 5736402,
+      "required": true
+    },
+    {
+      "path": "nestopia_libretro.js",
+      "size": 205852,
+      "required": true
+    },
+    {
+      "path": "nestopia_libretro.wasm",
+      "size": 3730635,
+      "required": true
+    },
+    {
+      "path": "readme.md",
+      "size": 3208,
+      "required": false
+    },
+    {
+      "path": "roms.html",
+      "size": 6087,
+      "required": false
+    },
+    {
+      "path": "roms/CrashBandicootTheHugeAdventure.gba",
+      "size": 1207346,
+      "required": false
+    },
+    {
+      "path": "roms/diagonal.smc",
+      "size": 1206711,
+      "required": false
+    },
+    {
+      "path": "roms/earthbound.sfc",
+      "size": 3145728,
+      "required": false
+    },
+    {
+      "path": "roms/ebhalloween.smc",
+      "size": 1206780,
+      "required": false
+    },
+    {
+      "path": "roms/finalfantasy.nes",
+      "size": 262160,
+      "required": false
+    },
+    {
+      "path": "roms/kirbo.smc",
+      "size": 1206454,
+      "required": false
+    },
+    {
+      "path": "roms/linktothepast.smc",
+      "size": 1206490,
+      "required": false
+    },
+    {
+      "path": "roms/mario-tennis-power-tour.gba",
+      "size": 1207203,
+      "required": false
+    },
+    {
+      "path": "roms/mario.nes",
+      "size": 40976,
+      "required": false
+    },
+    {
+      "path": "roms/metroid.sfc",
+      "size": 3145728,
+      "required": false
+    },
+    {
+      "path": "roms/mother.nes",
+      "size": 524304,
+      "required": false
+    },
+    {
+      "path": "roms/odyssey.smc",
+      "size": 1206409,
+      "required": false
+    },
+    {
+      "path": "roms/smk.smc",
+      "size": 1206080,
+      "required": false
+    },
+    {
+      "path": "roms/smrpg.smc",
+      "size": 1206616,
+      "required": false
+    },
+    {
+      "path": "roms/sonic-advance.gba",
+      "size": 1206523,
+      "required": false
+    },
+    {
+      "path": "roms/supermario.gbc",
+      "size": 1048576,
+      "required": false
+    },
+    {
+      "path": "roms/superstar-saga.gba",
+      "size": 1206951,
+      "required": false
+    },
+    {
+      "path": "roms/warioland4.gba",
+      "size": 1206886,
+      "required": false
+    },
+    {
+      "path": "roms/world.smc",
+      "size": 1206335,
+      "required": false
+    },
+    {
+      "path": "romshift.js",
+      "size": 822,
+      "required": true
+    },
+    {
+      "path": "snes9x_libretro.js",
+      "size": 203898,
+      "required": true
+    },
+    {
+      "path": "snes9x_libretro.wasm",
+      "size": 4216530,
+      "required": true
+    },
+    {
+      "path": "source/overrides/cores/Genesis-Plus-GX/Makefile.libretro",
+      "size": 25834,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/Genesis-Plus-GX/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/Genesis-Plus-GX/readme.txt",
+      "size": 84,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/custom/dependencies/libzlib/gzguts.h",
+      "size": 6642,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/custom/dependencies/libzlib/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/custom/mupen64plus-next_common.h",
+      "size": 4200,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/GLideN64/src/Graphics/OpenGLContext/ThreadedOpenGl/atomicops.h",
+      "size": 19498,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/GLideN64/src/Graphics/OpenGLContext/ThreadedOpenGl/opengl_Wrapper.cpp",
+      "size": 51833,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/libretro-common/libco/emscripten_fiber.c",
+      "size": 1411,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/libretro-common/libco/libco.c",
+      "size": 964,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/libretro/libretro.c",
+      "size": 55802,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/Makefile",
+      "size": 15608,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/mupen64plus-core/src/device/r4300/idec.h",
+      "size": 3267,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/mupen64plus-core/src/main/workqueue.h",
+      "size": 2287,
+      "required": false
+    },
+    {
+      "path": "source/overrides/cores/mupen64plus-libretro-nx/readme.txt",
+      "size": 142,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/command.h",
+      "size": 7265,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/emscripten/library_rwebcam.js",
+      "size": 6495,
+      "required": true
+    },
+    {
+      "path": "source/overrides/RetroArch/frontend/drivers/platform_emscripten.c",
+      "size": 9028,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/Makefile.emscripten",
+      "size": 3581,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/menu/drivers/materialui.c",
+      "size": 390137,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/menu/drivers/ozone/ozone.c",
+      "size": 145121,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/menu/drivers/xmb.c",
+      "size": 239771,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/retroarch.c",
+      "size": 1269807,
+      "required": false
+    },
+    {
+      "path": "source/overrides/RetroArch/tasks/task_save.c",
+      "size": 49031,
+      "required": false
+    },
+    {
+      "path": "source/readme.txt",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "thumb/earthbound.jpg",
+      "size": 36158,
+      "required": false
+    },
+    {
+      "path": "thumb/finalfantasy.webp",
+      "size": 62980,
+      "required": false
+    },
+    {
+      "path": "thumb/Flint_sprite.png",
+      "size": 1019,
+      "required": false
+    },
+    {
+      "path": "thumb/kirbo.jpg",
+      "size": 279679,
+      "required": false
+    },
+    {
+      "path": "thumb/linktothepast.jpg",
+      "size": 351808,
+      "required": false
+    },
+    {
+      "path": "thumb/mario.jpg",
+      "size": 82924,
+      "required": false
+    },
+    {
+      "path": "thumb/mother.jpg",
+      "size": 6858,
+      "required": false
+    },
+    {
+      "path": "thumb/mother3.png",
+      "size": 653445,
+      "required": false
+    },
+    {
+      "path": "thumb/richard.gif",
+      "size": 236664,
+      "required": false
+    },
+    {
+      "path": "thumb/smk.jpg",
+      "size": 122231,
+      "required": false
+    },
+    {
+      "path": "thumb/smrpg.webp",
+      "size": 107326,
+      "required": false
+    },
+    {
+      "path": "thumb/sonic-advance.jpg",
+      "size": 47251,
+      "required": false
+    },
+    {
+      "path": "thumb/super-mario-world.jpg",
+      "size": 27747,
+      "required": false
+    },
+    {
+      "path": "thumb/supermetroid.jpg",
+      "size": 66546,
+      "required": false
+    },
+    {
+      "path": "thumb/superstar-saga.jpg",
+      "size": 231541,
+      "required": false
+    },
+    {
+      "path": "thumb/warioland4.png",
+      "size": 339291,
+      "required": false
+    },
+    {
+      "path": "uauth/demo.html",
+      "size": 1693,
+      "required": false
+    },
+    {
+      "path": "uauth/drive.html",
+      "size": 3538,
+      "required": false
+    },
+    {
+      "path": "uauth/index.html",
+      "size": 2705,
+      "required": false
+    },
+    {
+      "path": "uauth/isolatedpicker.html",
+      "size": 4015,
+      "required": false
+    },
+    {
+      "path": "uauth/placeholder",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "uauth/popuppicker.html",
+      "size": 3005,
+      "required": false
+    },
+    {
+      "path": "uauth/receiver.html",
+      "size": 390,
+      "required": false
+    },
+    {
+      "path": "uauth/tokens.js",
+      "size": 411,
+      "required": true
+    },
+    {
+      "path": "uauth/uauth.js",
+      "size": 861,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "emscripten.org",
+    "fonts.googleapis.com",
+    "github.com",
+    "unpkg.com"
+  ],
+  "external_critical": [
+    "emscripten.org",
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

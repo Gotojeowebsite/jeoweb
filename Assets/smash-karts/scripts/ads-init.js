@@ -64,12 +64,12 @@ if(isPlaywireEnabled())
         dataLayer.push(arguments);
     };
     gtag('js', new Date());
-    gtag('config', 'G-F2WLE0BJLM', { 'send_page_view': false, 'cookie_flags': 'samesite=none;secure' });
+    gtag('config', 'G-DQM8XXB9GC', { 'send_page_view': false, 'cookie_flags': 'samesite=none;secure' });
     gtag(
         'event',
         'ramp_js',
         {
-            'send_to': 'G-F2WLE0BJLM',
+            'send_to': 'G-DQM8XXB9GC',
             'pageview_id': window._pwGA4PageviewId
         }
     );

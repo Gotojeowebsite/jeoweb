@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "slug": "smash-karts",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "_external_mirror/smashkarts.io/privacy/privacy.html",
+      "size": 43959,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/smashkarts.io/privacy/privacyAdinplay.html",
+      "size": 44749,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/smashkarts.io/privacy/privacyPW.html",
+      "size": 46449,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html",
+      "size": 129838,
+      "required": false
+    },
+    {
+      "path": "Build/550673fe170b6ae0e0973d8b766bf88c.framework.js.br",
+      "size": 493987,
+      "required": false
+    },
+    {
+      "path": "Build/76f034cff49013ce85bd6945ebf32347.loader.js",
+      "size": 20437,
+      "required": true
+    },
+    {
+      "path": "Build/c19b54fc4d4d40f42a81488cd8477af5.wasm.br",
+      "size": 54127937,
+      "required": true
+    },
+    {
+      "path": "Build/ef411f9202ce85260af7a3275b825aa8.data.br",
+      "size": 32326926,
+      "required": true
+    },
+    {
+      "path": "css/main.css",
+      "size": 5757,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "images/favicon.png",
+      "size": 7749,
+      "required": false
+    },
+    {
+      "path": "images/menuBGTile.png",
+      "size": 236,
+      "required": false
+    },
+    {
+      "path": "images/overlay.png",
+      "size": 5142,
+      "required": false
+    },
+    {
+      "path": "images/r.png",
+      "size": 9011,
+      "required": false
+    },
+    {
+      "path": "images/smashkarts.png",
+      "size": 71761,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 12703,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 59566,
+      "required": false
+    },
+    {
+      "path": "scripts/ads-common-logic.js",
+      "size": 11446,
+      "required": true
+    },
+    {
+      "path": "scripts/ads-init.js",
+      "size": 6091,
+      "required": true
+    },
+    {
+      "path": "scripts/ads-injector.js",
+      "size": 1853,
+      "required": true
+    },
+    {
+      "path": "scripts/ads-positioning-logic.js",
+      "size": 5005,
+      "required": true
+    },
+    {
+      "path": "scripts/auth.js",
+      "size": 15533,
+      "required": true
+    },
+    {
+      "path": "scripts/cc.js",
+      "size": 1388,
+      "required": true
+    },
+    {
+      "path": "scripts/constants.js",
+      "size": 2281,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 6280,
+      "required": true
+    },
+    {
+      "path": "scripts/shop.js",
+      "size": 2357,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "api.adinplay.com",
+    "bugzilla.mozilla.org",
+    "cdn.intergient.com",
+    "px.moatads.com",
+    "smashkarts.io"
+  ],
+  "external_critical": [
+    "api.adinplay.com",
+    "bugzilla.mozilla.org",
+    "cdn.intergient.com",
+    "px.moatads.com",
+    "smashkarts.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

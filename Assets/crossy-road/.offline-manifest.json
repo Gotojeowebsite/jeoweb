@@ -1,0 +1,962 @@
+{
+  "schema": 1,
+  "slug": "crossy-road",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "app-store-interstitial.css",
+      "size": 4149,
+      "required": true
+    },
+    {
+      "path": "audio/asteroid1.mp3",
+      "size": 24347,
+      "required": false
+    },
+    {
+      "path": "audio/asteroid2.mp3",
+      "size": 21108,
+      "required": false
+    },
+    {
+      "path": "audio/asteroid3.mp3",
+      "size": 37285,
+      "required": false
+    },
+    {
+      "path": "audio/asteroidfield.mp3",
+      "size": 82165,
+      "required": false
+    },
+    {
+      "path": "audio/AsteroidHit.mp3",
+      "size": 37116,
+      "required": false
+    },
+    {
+      "path": "audio/astronaut/spacebreath1.mp3",
+      "size": 16262,
+      "required": false
+    },
+    {
+      "path": "audio/astronaut/spacebreath2.mp3",
+      "size": 15790,
+      "required": false
+    },
+    {
+      "path": "audio/astronaut/spacescream1.mp3",
+      "size": 15374,
+      "required": false
+    },
+    {
+      "path": "audio/astronaut/spacescream2.mp3",
+      "size": 9271,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Awesome_3.mp3",
+      "size": 13395,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Bingo_1.mp3",
+      "size": 11930,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Grea_Job_1.mp3",
+      "size": 11723,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Interesting_1.mp3",
+      "size": 12347,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_On_My_Way_2.mp3",
+      "size": 15894,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Right_3.mp3",
+      "size": 8698,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Roger_2.mp3",
+      "size": 13235,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_That_Was_Fun_2.mp3",
+      "size": 12609,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_What_2.mp3",
+      "size": 6768,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_What_Are_You_Looking_For_4.mp3",
+      "size": 17823,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Will_This_Work_3.mp3",
+      "size": 13962,
+      "required": false
+    },
+    {
+      "path": "audio/astronomer/Astronomer_Yay_1.mp3",
+      "size": 11041,
+      "required": false
+    },
+    {
+      "path": "audio/bannerhit3-g.mp3",
+      "size": 5699,
+      "required": false
+    },
+    {
+      "path": "audio/car-horn.mp3",
+      "size": 5127,
+      "required": false
+    },
+    {
+      "path": "audio/car1.mp3",
+      "size": 40359,
+      "required": false
+    },
+    {
+      "path": "audio/car2.mp3",
+      "size": 26247,
+      "required": false
+    },
+    {
+      "path": "audio/car3.mp3",
+      "size": 26295,
+      "required": false
+    },
+    {
+      "path": "audio/carhit.mp3",
+      "size": 8932,
+      "required": false
+    },
+    {
+      "path": "audio/carsquish.mp3",
+      "size": 11337,
+      "required": false
+    },
+    {
+      "path": "audio/carsquish3.mp3",
+      "size": 9982,
+      "required": false
+    },
+    {
+      "path": "audio/cat/cat1.mp3",
+      "size": 7665,
+      "required": false
+    },
+    {
+      "path": "audio/cat/cat2.mp3",
+      "size": 10169,
+      "required": false
+    },
+    {
+      "path": "audio/cat/cat3.mp3",
+      "size": 11081,
+      "required": false
+    },
+    {
+      "path": "audio/cat/cat4.mp3",
+      "size": 13484,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck1.mp3",
+      "size": 2972,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck10.mp3",
+      "size": 2802,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck11.mp3",
+      "size": 3618,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck12.mp3",
+      "size": 3210,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck2.mp3",
+      "size": 3665,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck3.mp3",
+      "size": 3329,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck4.mp3",
+      "size": 2849,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck5.mp3",
+      "size": 2849,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck6.mp3",
+      "size": 3329,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck7.mp3",
+      "size": 3617,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck8.mp3",
+      "size": 2945,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/buck9.mp3",
+      "size": 3137,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/chickendeath.mp3",
+      "size": 6168,
+      "required": false
+    },
+    {
+      "path": "audio/chicken/chickendeath2.mp3",
+      "size": 5689,
+      "required": false
+    },
+    {
+      "path": "audio/default_death1.mp3",
+      "size": 10675,
+      "required": false
+    },
+    {
+      "path": "audio/default_death2.mp3",
+      "size": 15162,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/bird_warning.mp3",
+      "size": 8777,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/crocodile_bite.mp3",
+      "size": 24659,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/dilophosaurus/dilophosaurus_hiss_1.mp3",
+      "size": 15882,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/dilophosaurus/dilophosaurus_hiss_2.mp3",
+      "size": 14210,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/dilophosaurus/dilophosaurus_hiss_3.mp3",
+      "size": 8777,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/heavy_foot_leaves.mp3",
+      "size": 10449,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/parasaurolophus/lasers_1.mp3",
+      "size": 16718,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/stampede.mp3",
+      "size": 23823,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/trex/car_speed_off.mp3",
+      "size": 22151,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/trex/growl_1.mp3",
+      "size": 31764,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/trex/growl_2.mp3",
+      "size": 27167,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/trex/growl_3.mp3",
+      "size": 25913,
+      "required": false
+    },
+    {
+      "path": "audio/dinosaurs/trex/short_skid.mp3",
+      "size": 7105,
+      "required": false
+    },
+    {
+      "path": "audio/dirt1.mp3",
+      "size": 4629,
+      "required": false
+    },
+    {
+      "path": "audio/dirt2.mp3",
+      "size": 4055,
+      "required": false
+    },
+    {
+      "path": "audio/dirt3.mp3",
+      "size": 4160,
+      "required": false
+    },
+    {
+      "path": "audio/eaglehit.mp3",
+      "size": 7582,
+      "required": false
+    },
+    {
+      "path": "audio/get-coin-79.mp3",
+      "size": 18080,
+      "required": false
+    },
+    {
+      "path": "audio/gift/booktap.mp3",
+      "size": 4503,
+      "required": false
+    },
+    {
+      "path": "audio/gift/Earn-Points.mp3",
+      "size": 24803,
+      "required": false
+    },
+    {
+      "path": "audio/gift/emptying-the-piggy-bank-2.mp3",
+      "size": 22831,
+      "required": false
+    },
+    {
+      "path": "audio/gift/openbox.mp3",
+      "size": 99188,
+      "required": false
+    },
+    {
+      "path": "audio/hawk-screech-02.mp3",
+      "size": 41094,
+      "required": false
+    },
+    {
+      "path": "audio/hop2.mp3",
+      "size": 2621,
+      "required": false
+    },
+    {
+      "path": "audio/JungleAmbience.mp3",
+      "size": 478981,
+      "required": false
+    },
+    {
+      "path": "audio/LeaveScreen_On_Asteroid.mp3",
+      "size": 28308,
+      "required": false
+    },
+    {
+      "path": "audio/lilysplash.mp3",
+      "size": 5184,
+      "required": false
+    },
+    {
+      "path": "audio/logjump.mp3",
+      "size": 7772,
+      "required": false
+    },
+    {
+      "path": "audio/logjump2.mp3",
+      "size": 9981,
+      "required": false
+    },
+    {
+      "path": "audio/logjump3.mp3",
+      "size": 11349,
+      "required": false
+    },
+    {
+      "path": "audio/logjump4.mp3",
+      "size": 12621,
+      "required": false
+    },
+    {
+      "path": "audio/mallard/quack1.mp3",
+      "size": 2817,
+      "required": false
+    },
+    {
+      "path": "audio/mallard/quack2.mp3",
+      "size": 2947,
+      "required": false
+    },
+    {
+      "path": "audio/mallard/quack3.mp3",
+      "size": 3000,
+      "required": false
+    },
+    {
+      "path": "audio/mallard/quack4.mp3",
+      "size": 3078,
+      "required": false
+    },
+    {
+      "path": "audio/mallard/quack5.mp3",
+      "size": 6415,
+      "required": false
+    },
+    {
+      "path": "audio/pop-1.mp3",
+      "size": 10332,
+      "required": false
+    },
+    {
+      "path": "audio/pop-2.mp3",
+      "size": 9629,
+      "required": false
+    },
+    {
+      "path": "audio/pop-3.mp3",
+      "size": 11558,
+      "required": false
+    },
+    {
+      "path": "audio/pop-4.mp3",
+      "size": 8557,
+      "required": false
+    },
+    {
+      "path": "audio/pop-5.mp3",
+      "size": 9000,
+      "required": false
+    },
+    {
+      "path": "audio/pop-6.mp3",
+      "size": 8765,
+      "required": false
+    },
+    {
+      "path": "audio/pop-7.mp3",
+      "size": 9419,
+      "required": false
+    },
+    {
+      "path": "audio/pop-8.mp3",
+      "size": 7987,
+      "required": false
+    },
+    {
+      "path": "audio/pop-9.mp3",
+      "size": 7181,
+      "required": false
+    },
+    {
+      "path": "audio/prize/casinomachine.mp3",
+      "size": 63200,
+      "required": false
+    },
+    {
+      "path": "audio/prize/clickball.mp3",
+      "size": 12062,
+      "required": false
+    },
+    {
+      "path": "audio/prize/coininsert3.mp3",
+      "size": 21148,
+      "required": false
+    },
+    {
+      "path": "audio/prize/counting-of-money-short.mp3",
+      "size": 62720,
+      "required": false
+    },
+    {
+      "path": "audio/prize/insert-coin.mp3",
+      "size": 26689,
+      "required": false
+    },
+    {
+      "path": "audio/prize/Inserting-Coin-Into-Machine-v1.mp3",
+      "size": 31980,
+      "required": false
+    },
+    {
+      "path": "audio/prize/Inserting-Coin-Into-Machine-v2.mp3",
+      "size": 30152,
+      "required": false
+    },
+    {
+      "path": "audio/prize/Inserting-Coin-Into-Machine-v3.mp3",
+      "size": 34332,
+      "required": false
+    },
+    {
+      "path": "audio/prize/Inserting-Coin-Into-Machine-v4.mp3",
+      "size": 37147,
+      "required": false
+    },
+    {
+      "path": "audio/prize/play-slots-machine.mp3",
+      "size": 68199,
+      "required": false
+    },
+    {
+      "path": "audio/prize/Prize-Wheel.mp3",
+      "size": 48681,
+      "required": false
+    },
+    {
+      "path": "audio/prize/prizewinner.mp3",
+      "size": 99293,
+      "required": false
+    },
+    {
+      "path": "audio/prize/SlotMachineInsert.mp3",
+      "size": 19068,
+      "required": false
+    },
+    {
+      "path": "audio/prize/UnlockPlain.mp3",
+      "size": 24695,
+      "required": false
+    },
+    {
+      "path": "audio/rapidsdeath3.mp3",
+      "size": 39205,
+      "required": false
+    },
+    {
+      "path": "audio/rapidsdeath9.mp3",
+      "size": 51527,
+      "required": false
+    },
+    {
+      "path": "audio/river.mp3",
+      "size": 53397,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-1.mp3",
+      "size": 17164,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-2.mp3",
+      "size": 18363,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-3.mp3",
+      "size": 17319,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-4.mp3",
+      "size": 16534,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-short-2.mp3",
+      "size": 6582,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robot-hop-short.mp3",
+      "size": 8821,
+      "required": false
+    },
+    {
+      "path": "audio/robot/robotexplode.mp3",
+      "size": 36403,
+      "required": false
+    },
+    {
+      "path": "audio/rover/RobotCrush1.mp3",
+      "size": 10268,
+      "required": false
+    },
+    {
+      "path": "audio/rover/RoverHop1.mp3",
+      "size": 10370,
+      "required": false
+    },
+    {
+      "path": "audio/rover/RoverHop2.mp3",
+      "size": 9041,
+      "required": false
+    },
+    {
+      "path": "audio/Shield_button_leave.mp3",
+      "size": 17697,
+      "required": false
+    },
+    {
+      "path": "audio/Shield_button_press.mp3",
+      "size": 17620,
+      "required": false
+    },
+    {
+      "path": "audio/space_chicken/spacechickendeath1.mp3",
+      "size": 6664,
+      "required": false
+    },
+    {
+      "path": "audio/space_chicken/spacechickendeath2.mp3",
+      "size": 4839,
+      "required": false
+    },
+    {
+      "path": "audio/spaceambience1.mp3",
+      "size": 39581,
+      "required": false
+    },
+    {
+      "path": "audio/spacedog/dogspacebark1.mp3",
+      "size": 2520,
+      "required": false
+    },
+    {
+      "path": "audio/spacedog/dogspacebark2.mp3",
+      "size": 4826,
+      "required": false
+    },
+    {
+      "path": "audio/spacedog/dogspacebark3.mp3",
+      "size": 2520,
+      "required": false
+    },
+    {
+      "path": "audio/spacedog/dogspacebark4.mp3",
+      "size": 5256,
+      "required": false
+    },
+    {
+      "path": "audio/train-alarm.mp3",
+      "size": 25182,
+      "required": false
+    },
+    {
+      "path": "audio/train-pass-no-horn.mp3",
+      "size": 29613,
+      "required": false
+    },
+    {
+      "path": "audio/train-pass-shorter.mp3",
+      "size": 28828,
+      "required": false
+    },
+    {
+      "path": "audio/trainsplat.mp3",
+      "size": 17153,
+      "required": false
+    },
+    {
+      "path": "audio/UFO_Pickup.mp3",
+      "size": 32589,
+      "required": false
+    },
+    {
+      "path": "audio/watersplash.mp3",
+      "size": 30855,
+      "required": false
+    },
+    {
+      "path": "audio/watersplashlow.mp3",
+      "size": 30675,
+      "required": false
+    },
+    {
+      "path": "crossyroad.png",
+      "size": 10526,
+      "required": false
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 8622,
+      "required": false
+    },
+    {
+      "path": "fonts/8-bit-wonder-yellow.png",
+      "size": 703,
+      "required": false
+    },
+    {
+      "path": "fonts/8-bit-wonder.json",
+      "size": 2176,
+      "required": false
+    },
+    {
+      "path": "fonts/8-bit-wonder.png",
+      "size": 704,
+      "required": false
+    },
+    {
+      "path": "fonts/8bitwonder.css",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "fonts/editundobrk-regular-webfont.woff2",
+      "size": 12060,
+      "required": false
+    },
+    {
+      "path": "fonts/editundobrk-top-numbers.json",
+      "size": 3292,
+      "required": false
+    },
+    {
+      "path": "fonts/EditUndoBrk.css",
+      "size": 309,
+      "required": false
+    },
+    {
+      "path": "img.jpeg",
+      "size": 4335,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 666,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 10526,
+      "required": false
+    },
+    {
+      "path": "models/common-world.json",
+      "size": 354012,
+      "required": false
+    },
+    {
+      "path": "models/space-char.json",
+      "size": 850503,
+      "required": false
+    },
+    {
+      "path": "models/space-world.json",
+      "size": 791225,
+      "required": false
+    },
+    {
+      "path": "plain-audio/splashintro.mp4",
+      "size": 41884,
+      "required": false
+    },
+    {
+      "path": "poki-sdk-core-v2.234.2.js",
+      "size": 214551,
+      "required": true
+    },
+    {
+      "path": "poki-sdk.js",
+      "size": 2454,
+      "required": true
+    },
+    {
+      "path": "scripts/asset-loader.min.js",
+      "size": 27833,
+      "required": true
+    },
+    {
+      "path": "scripts/bootstrap.min.js",
+      "size": 137640,
+      "required": true
+    },
+    {
+      "path": "scripts/extra.min.js",
+      "size": 22961,
+      "required": true
+    },
+    {
+      "path": "scripts/game.min.js",
+      "size": 624807,
+      "required": true
+    },
+    {
+      "path": "scripts/three.min.js",
+      "size": 551614,
+      "required": true
+    },
+    {
+      "path": "scripts/tween.min.js",
+      "size": 5876,
+      "required": true
+    },
+    {
+      "path": "sprites/chicken.png",
+      "size": 2205,
+      "required": false
+    },
+    {
+      "path": "sprites/crossy-road-logo.png",
+      "size": 9204,
+      "required": false
+    },
+    {
+      "path": "sprites/hipster-1.png",
+      "size": 255,
+      "required": false
+    },
+    {
+      "path": "sprites/hipster-2.png",
+      "size": 267,
+      "required": false
+    },
+    {
+      "path": "sprites/hipster-3.png",
+      "size": 274,
+      "required": false
+    },
+    {
+      "path": "sprites/hipster-whale.png",
+      "size": 14647,
+      "required": false
+    },
+    {
+      "path": "sprites/interface.json",
+      "size": 16522,
+      "required": false
+    },
+    {
+      "path": "sprites/interface.png",
+      "size": 15901,
+      "required": false
+    },
+    {
+      "path": "sprites/particles.png",
+      "size": 237,
+      "required": false
+    },
+    {
+      "path": "sprites/pause.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "sprites/poki-icon.png",
+      "size": 7353,
+      "required": false
+    },
+    {
+      "path": "sprites/poki-logo.png",
+      "size": 6488,
+      "required": false
+    },
+    {
+      "path": "sprites/SpaceStarfieldGasClouds.png",
+      "size": 4386,
+      "required": false
+    },
+    {
+      "path": "sprites/SpaceStarfieldRGB.png",
+      "size": 4949,
+      "required": false
+    },
+    {
+      "path": "sprites/tiled-bg.png",
+      "size": 4475,
+      "required": false
+    },
+    {
+      "path": "sprites/trex.png",
+      "size": 3995,
+      "required": false
+    },
+    {
+      "path": "sprites/upsell-app-store.png",
+      "size": 2493,
+      "required": false
+    },
+    {
+      "path": "sprites/upsell-google-play.png",
+      "size": 2477,
+      "required": false
+    },
+    {
+      "path": "sprites/whale-1.png",
+      "size": 279,
+      "required": false
+    },
+    {
+      "path": "sprites/whale-2.png",
+      "size": 289,
+      "required": false
+    },
+    {
+      "path": "sprites/whale-3.png",
+      "size": 285,
+      "required": false
+    },
+    {
+      "path": "style.css",
+      "size": 760,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

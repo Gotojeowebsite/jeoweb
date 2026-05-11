@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "slug": "death-run-3d",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "Build/death_run_wasm_v1.data.unityweb",
+      "size": 2086282,
+      "required": true
+    },
+    {
+      "path": "Build/death_run_wasm_v1.json",
+      "size": 467,
+      "required": false
+    },
+    {
+      "path": "Build/death_run_wasm_v1.wasm.code.unityweb",
+      "size": 3880474,
+      "required": true
+    },
+    {
+      "path": "Build/death_run_wasm_v1.wasm.framework.unityweb",
+      "size": 140825,
+      "required": true
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 150046,
+      "required": true
+    },
+    {
+      "path": "img/death.png",
+      "size": 64107,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3098,
+      "required": true
+    },
+    {
+      "path": "shared/gamebreak/gamebreak.js",
+      "size": 27,
+      "required": true
+    },
+    {
+      "path": "shared/lib.js",
+      "size": 2224,
+      "required": true
+    },
+    {
+      "path": "shared/style.css",
+      "size": 798,
+      "required": true
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/y8-logo.png",
+      "size": 3113,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/gears.gif",
+      "size": 25509,
+      "required": false
+    },
+    {
+      "path": "TemplateData56/style.css",
+      "size": 2901,
+      "required": true
+    },
+    {
+      "path": "TemplateData56/UnityProgress.js",
+      "size": 3713,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

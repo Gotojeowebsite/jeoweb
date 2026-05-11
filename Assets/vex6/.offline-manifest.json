@@ -1,0 +1,520 @@
+{
+  "schema": 1,
+  "slug": "vex6",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "_external_mirror/3kh0.github.io/projects/vex6/assets/js/html5.js",
+      "size": 401169,
+      "required": true
+    },
+    {
+      "path": "assets/atlases/gameplay.json",
+      "size": 78994,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/gameplay.png",
+      "size": 1020145,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/localizationFlags.json",
+      "size": 1217,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/localizationFlags.png",
+      "size": 6568,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/skinsThumbnails.json",
+      "size": 13869,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/skinsThumbnails.png",
+      "size": 2025151,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/ui.json",
+      "size": 22975,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/ui.png",
+      "size": 606949,
+      "required": false
+    },
+    {
+      "path": "assets/balance/configuration.json",
+      "size": 449,
+      "required": false
+    },
+    {
+      "path": "assets/balance/fontStyling.json",
+      "size": 9286,
+      "required": false
+    },
+    {
+      "path": "assets/balance/levels.json",
+      "size": 300317,
+      "required": false
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 487,
+      "required": true
+    },
+    {
+      "path": "assets/css/theboldfont.css",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/theboldfont.ttf",
+      "size": 42968,
+      "required": false
+    },
+    {
+      "path": "assets/icon.jpeg",
+      "size": 96601,
+      "required": false
+    },
+    {
+      "path": "assets/icon.png",
+      "size": 24422,
+      "required": false
+    },
+    {
+      "path": "assets/images/background.png",
+      "size": 74165,
+      "required": false
+    },
+    {
+      "path": "assets/images/logo.png",
+      "size": 261888,
+      "required": false
+    },
+    {
+      "path": "assets/js/html5.js",
+      "size": 401169,
+      "required": true
+    },
+    {
+      "path": "assets/js/v2",
+      "size": 323538,
+      "required": false
+    },
+    {
+      "path": "assets/json/contracted.json",
+      "size": 24,
+      "required": false
+    },
+    {
+      "path": "assets/json/domains.json",
+      "size": 8364,
+      "required": false
+    },
+    {
+      "path": "assets/json/internal.json",
+      "size": 26,
+      "required": false
+    },
+    {
+      "path": "assets/json/sitelock.json",
+      "size": 48,
+      "required": false
+    },
+    {
+      "path": "assets/json/special.json",
+      "size": 28,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_de.json",
+      "size": 7692,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_en.json",
+      "size": 6929,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_es.json",
+      "size": 7577,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_fr.json",
+      "size": 7988,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_it.json",
+      "size": 7554,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_nl.json",
+      "size": 7375,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_no.json",
+      "size": 6892,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_pt.json",
+      "size": 7401,
+      "required": false
+    },
+    {
+      "path": "assets/locales/locale_ru.json",
+      "size": 10591,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/achievementUnlocked.ogg",
+      "size": 21025,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/blockDestroy.ogg",
+      "size": 15704,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/bounce1.ogg",
+      "size": 14444,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/buttonClick.ogg",
+      "size": 6389,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannonEnter.ogg",
+      "size": 20521,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannonFire.ogg",
+      "size": 19068,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connect.ogg",
+      "size": 7542,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connectHang.ogg",
+      "size": 9583,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/death1.ogg",
+      "size": 11973,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/death2.ogg",
+      "size": 11958,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/ding.ogg",
+      "size": 15113,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/downgrade.ogg",
+      "size": 19159,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/electricity.ogg",
+      "size": 21833,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/explosion.ogg",
+      "size": 35591,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/fall.ogg",
+      "size": 20911,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/fallingBlock.ogg",
+      "size": 13007,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep1.ogg",
+      "size": 5397,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep2.ogg",
+      "size": 5504,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep3.ogg",
+      "size": 5509,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep4.ogg",
+      "size": 5435,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep5.ogg",
+      "size": 5433,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep6.ogg",
+      "size": 5853,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/glassSmash.ogg",
+      "size": 23224,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/kickBlock.ogg",
+      "size": 18561,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/kite.ogg",
+      "size": 38262,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/land.ogg",
+      "size": 7880,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/laserFire.ogg",
+      "size": 16462,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/menuSong.ogg",
+      "size": 512998,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/poleSwing.ogg",
+      "size": 9177,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/poleWoosh.ogg",
+      "size": 12603,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/slide.ogg",
+      "size": 22489,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/slot_random.ogg",
+      "size": 10301,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/slot_unlock.ogg",
+      "size": 14506,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/splash1.ogg",
+      "size": 23330,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/starPickup.ogg",
+      "size": 17264,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/torch.ogg",
+      "size": 16011,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong1.ogg",
+      "size": 573858,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong10.ogg",
+      "size": 524524,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong11.ogg",
+      "size": 615886,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong12.ogg",
+      "size": 543912,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong13.ogg",
+      "size": 719126,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong14.ogg",
+      "size": 523293,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong2.ogg",
+      "size": 564040,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong3.ogg",
+      "size": 606117,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong4.ogg",
+      "size": 523986,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong5.ogg",
+      "size": 597611,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong6.ogg",
+      "size": 535329,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong7.ogg",
+      "size": 658049,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong8.ogg",
+      "size": 553524,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vexSong9.ogg",
+      "size": 641112,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wallSlide.ogg",
+      "size": 20207,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/ziplineFull.ogg",
+      "size": 58740,
+      "required": false
+    },
+    {
+      "path": "assets/spine/player.atlas",
+      "size": 57473,
+      "required": false
+    },
+    {
+      "path": "assets/spine/player.json",
+      "size": 135034,
+      "required": false
+    },
+    {
+      "path": "assets/spine/player.png",
+      "size": 152787,
+      "required": false
+    },
+    {
+      "path": "assets/spritesheet/basicBlockColors.png",
+      "size": 8378,
+      "required": false
+    },
+    {
+      "path": "assets/spritesheet/dark-overlay.png",
+      "size": 830209,
+      "required": false
+    },
+    {
+      "path": "assets/spritesheet/finish-portal.png",
+      "size": 187521,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1857,
+      "required": true
+    },
+    {
+      "path": "vex6.min.js",
+      "size": 8731720,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "game.api.gamedistribution.com",
+    "html5.api.gamedistribution.com",
+    "img.gamedistribution.com",
+    "storage.googleapis.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "game.api.gamedistribution.com",
+    "html5.api.gamedistribution.com",
+    "img.gamedistribution.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

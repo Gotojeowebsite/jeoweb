@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "slug": "glass-city",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "banner.png",
+      "size": 455457,
+      "required": false
+    },
+    {
+      "path": "Build/Glass City Alpha V1.asm.code.unityweb",
+      "size": 4676074,
+      "required": true
+    },
+    {
+      "path": "Build/Glass City Alpha V1.asm.framework.unityweb",
+      "size": 90322,
+      "required": true
+    },
+    {
+      "path": "Build/Glass City Alpha V1.asm.memory.unityweb",
+      "size": 363928,
+      "required": true
+    },
+    {
+      "path": "Build/Glass City Alpha V1.data.unityweb",
+      "size": 11962032,
+      "required": true
+    },
+    {
+      "path": "Build/Glass City Alpha V1.json",
+      "size": 418,
+      "required": false
+    },
+    {
+      "path": "Build/UnityLoader.js",
+      "size": 150601,
+      "required": true
+    },
+    {
+      "path": "icon.png",
+      "size": 2543,
+      "required": false
+    },
+    {
+      "path": "image.png",
+      "size": 63284,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1003,
+      "required": true
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 13275,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressEmpty.Dark.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressFull.Dark.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progressLogo.Dark.png",
+      "size": 1683,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1669,
+      "required": true
+    },
+    {
+      "path": "TemplateData/UnityProgress.js",
+      "size": 1186,
+      "required": true
+    },
+    {
+      "path": "TemplateData/webgl-logo.png",
+      "size": 2374,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

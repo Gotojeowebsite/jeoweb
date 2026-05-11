@@ -1,0 +1,7770 @@
+{
+  "schema": 1,
+  "slug": "obby-but-you-are-in-a-bike",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "__loading__.js",
+      "size": 440757,
+      "required": true
+    },
+    {
+      "path": "__modules__.js",
+      "size": 1733,
+      "required": true
+    },
+    {
+      "path": "__settings__.js",
+      "size": 2249,
+      "required": true
+    },
+    {
+      "path": "__start__.js",
+      "size": 12272,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/a.poki.com/houseads/duo_survival_3.xml",
+      "size": 1139,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/houseads/like_a_king.xml",
+      "size": 1133,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/houseads/merge_cyber_racers.xml",
+      "size": 1147,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/houseads/subway_surfers.xml",
+      "size": 1139,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/houseads/tower_crush_compressed.xml",
+      "size": 1133,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/a.poki.com/images/thumb_anim_2x.gif",
+      "size": 5793,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "size": 4500,
+      "required": true
+    },
+    {
+      "path": "1856469.json",
+      "size": 65820,
+      "required": false
+    },
+    {
+      "path": "1869105.json",
+      "size": 2767953,
+      "required": false
+    },
+    {
+      "path": "1869537.json",
+      "size": 1698953,
+      "required": false
+    },
+    {
+      "path": "1904473.json",
+      "size": 1751721,
+      "required": false
+    },
+    {
+      "path": "1967521.json",
+      "size": 1372940,
+      "required": false
+    },
+    {
+      "path": "config.json",
+      "size": 1875877,
+      "required": false
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "files/assets/151973583/1/rifficfreebold.ttf.png",
+      "size": 75233,
+      "required": false
+    },
+    {
+      "path": "files/assets/151975454/1/flatLight05.png",
+      "size": 1111,
+      "required": false
+    },
+    {
+      "path": "files/assets/151975456/1/touch-joystick.js",
+      "size": 10250,
+      "required": true
+    },
+    {
+      "path": "files/assets/151975458/1/touch-button.js",
+      "size": 3067,
+      "required": true
+    },
+    {
+      "path": "files/assets/151975461/1/flatLight09.png",
+      "size": 935,
+      "required": false
+    },
+    {
+      "path": "files/assets/151975465/1/flatLight49.png",
+      "size": 910,
+      "required": false
+    },
+    {
+      "path": "files/assets/151975466/1/touch-joypad-library.js",
+      "size": 1784,
+      "required": true
+    },
+    {
+      "path": "files/assets/151982233/1/skybox_front2.jpg",
+      "size": 41549,
+      "required": false
+    },
+    {
+      "path": "files/assets/151982579/1/MenuController.js",
+      "size": 9175,
+      "required": true
+    },
+    {
+      "path": "files/assets/151982883/1/FlameAnimation.js",
+      "size": 772,
+      "required": true
+    },
+    {
+      "path": "files/assets/151982950/1/Motion.js",
+      "size": 6383,
+      "required": true
+    },
+    {
+      "path": "files/assets/151990875/1/circle.png",
+      "size": 3180,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990878/1/confetti.png",
+      "size": 6222,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990885/1/screenBlood.png",
+      "size": 2023,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990896/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990898/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990908/1/goldcoin.png",
+      "size": 13026,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990910/1/prog-bar-ylw.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990911/1/progressBar.png",
+      "size": 1298,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990914/1/panel-dark-darker-5rad.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990917/1/b1.png",
+      "size": 22604,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990918/1/b0.png",
+      "size": 23802,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990919/1/b4.png",
+      "size": 28598,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990920/1/b6.png",
+      "size": 26652,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990921/1/b2.png",
+      "size": 22619,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990922/1/b3.png",
+      "size": 27565,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990923/1/b5.png",
+      "size": 33350,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990924/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990925/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990926/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990927/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990929/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990931/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990933/1/btn-dark-red.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990935/1/X20256.png",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990936/1/rewardedButton.png",
+      "size": 4084,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990938/1/radialsun.png",
+      "size": 4087,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990942/1/whiteButton.png",
+      "size": 205,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990945/1/whiteButton.png",
+      "size": 205,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990948/1/jetpack.png",
+      "size": 3071,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990949/1/coil.png",
+      "size": 3854,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990950/1/circleIcon.png",
+      "size": 5092,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990951/1/totem.png",
+      "size": 2873,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990954/1/color_palet.png",
+      "size": 120997,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990961/1/nub.png",
+      "size": 23623,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990963/1/LPC_ColorVar1_Tex.png",
+      "size": 3190,
+      "required": false
+    },
+    {
+      "path": "files/assets/151990968/1/atlas_texture.png",
+      "size": 134939,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991269/1/sphere.glb",
+      "size": 2576,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991270/1/bicycle.glb",
+      "size": 883888,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991315/1/flag.glb",
+      "size": 10524,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991325/1/Coin.glb",
+      "size": 17100,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991609/1/stage_51.glb",
+      "size": 39528,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991610/1/stage_33_dead_.glb",
+      "size": 66276,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991613/1/stage_31_dead_2.glb",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991616/1/stage_17_dead_2.glb",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991618/1/stage_60.glb",
+      "size": 31156,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991619/1/stage_46_dead_4.glb",
+      "size": 1956,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991621/1/stage_49_dead.glb",
+      "size": 19524,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991624/1/stage_34_dead_1.glb",
+      "size": 1948,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991669/1/stage_28_dead_1.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991671/1/stage_28_dead_2.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991723/1/stage_31_dead_3.glb",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991725/1/stage_33_dead_3.glb",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991729/1/stage_47.glb",
+      "size": 149800,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991731/1/stage_4_dead.glb",
+      "size": 41632,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991732/1/stage_44.glb",
+      "size": 51516,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991734/1/stage_37.glb",
+      "size": 49388,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991737/1/stage_33_dead_6.glb",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991738/1/stage_61_dead_1.glb",
+      "size": 2788,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991776/1/stage_40_dead_1.glb",
+      "size": 19564,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991779/1/stage_26_dead.glb",
+      "size": 78528,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991780/1/stage_23_dead_1.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991802/1/stage_19.glb",
+      "size": 36844,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991804/1/stage_23_dead_2.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991807/1/stage_19_dead_1.glb",
+      "size": 17088,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991808/1/stage_41_dead_2.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991809/1/stage_39.glb",
+      "size": 72772,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991814/1/stage_57_dead_3.glb",
+      "size": 2428,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991815/1/stage_15.glb",
+      "size": 14092,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991825/1/stage_64_dead_1.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991842/1/stage_74_dead_3.glb",
+      "size": 1972,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991844/1/stage_6.glb",
+      "size": 18032,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991851/1/stage_41_dead_1.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991854/1/stage_9.glb",
+      "size": 36844,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991857/1/stage_62.glb",
+      "size": 32544,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991868/1/stage_41_dead_3.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991869/1/stage_17.glb",
+      "size": 19972,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991872/1/stage_54_dead.glb",
+      "size": 3612,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991877/1/stage_46_dead_2.glb",
+      "size": 1956,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991893/1/stage_17_dead_3.glb",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991895/1/stage_31.glb",
+      "size": 31224,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991897/1/stage_64_dead_4.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991898/1/stage_48_dead.glb",
+      "size": 19520,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991900/1/stage_25_dead_1.glb",
+      "size": 5448,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991915/1/stage_4.glb",
+      "size": 15028,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991917/1/stage_39_dead_1.glb",
+      "size": 19520,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991918/1/stage_56_dead_1.glb",
+      "size": 3300,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991937/1/stage_0_dead.glb",
+      "size": 4744,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991940/1/stage_12.glb",
+      "size": 39788,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991941/1/stage_8.glb",
+      "size": 36664,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991943/1/stage_75.glb",
+      "size": 16752,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991945/1/stage_41.glb",
+      "size": 15028,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991957/1/stage_34_dead_2.glb",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991960/1/stage_35_dead_1.glb",
+      "size": 5456,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991962/1/stage_18.glb",
+      "size": 164676,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991976/1/stage_66.glb",
+      "size": 11644,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991978/1/stage_46_dead_3.glb",
+      "size": 1956,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991981/1/stage_70_dead.glb",
+      "size": 23204,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991982/1/stage_69_dead_1.glb",
+      "size": 104332,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991983/1/stage_80.glb",
+      "size": 52536,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991984/1/stage_55.glb",
+      "size": 26048,
+      "required": false
+    },
+    {
+      "path": "files/assets/151991998/1/stage_61.glb",
+      "size": 13580,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992001/1/stage_17_dead_4.glb",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992003/1/stage_36_dead_1.glb",
+      "size": 26936,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992011/1/stage_13.glb",
+      "size": 171704,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992013/1/stage_56.glb",
+      "size": 126812,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992019/1/stage_24.glb",
+      "size": 24124,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992026/1/stage_34.glb",
+      "size": 183300,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992030/1/stage_64.glb",
+      "size": 76136,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992031/1/stage_26.glb",
+      "size": 13324,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992033/1/stage_33_dead_5.glb",
+      "size": 3232,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992045/1/stage_46.glb",
+      "size": 45192,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992046/1/stage_21.glb",
+      "size": 23832,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992051/1/stage_64_dead_5.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992053/1/stage_57_dead_1.glb",
+      "size": 2432,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992056/1/stage_29.glb",
+      "size": 27724,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992067/1/stage_3.glb",
+      "size": 22356,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992070/1/stage_97_dead_3.glb",
+      "size": 3272,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992071/1/stage_63.glb",
+      "size": 26504,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992083/1/stage_7.glb",
+      "size": 26104,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992084/1/stage_46_dead_1.glb",
+      "size": 1956,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992087/1/stage_49.glb",
+      "size": 48388,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992089/1/stage_77.glb",
+      "size": 35016,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992092/1/stage_89_dead_1.glb",
+      "size": 3268,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992094/1/stage_23.glb",
+      "size": 24016,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992103/1/stage_59.glb",
+      "size": 55984,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992109/1/stage_31_dead_1.glb",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992114/1/stage_57_dead_2.glb",
+      "size": 2432,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992117/1/stage_40.glb",
+      "size": 67892,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992125/1/stage_56_dead_2.glb",
+      "size": 3300,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992128/1/stage_64_dead_2.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992130/1/stage_51_dead_2.glb",
+      "size": 17320,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992131/1/stage_58.glb",
+      "size": 11640,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992139/1/stage_25.glb",
+      "size": 34296,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992140/1/stage_33_dead_2.glb",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992142/1/stage_75_dead_2.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992148/1/stage_92.glb",
+      "size": 73172,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992149/1/stage_38.glb",
+      "size": 36836,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992153/1/stage_14.glb",
+      "size": 27428,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992157/1/stage_52.glb",
+      "size": 92456,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992160/1/stage_64_dead_7.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992170/1/stage_44_dead_1.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992173/1/stage_45_dead_1.glb",
+      "size": 2408,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992174/1/stage_94_dead_1.glb",
+      "size": 3588,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992177/1/stage_33_dead_4.glb",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992179/1/stage_64_dead_6.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992190/1/stage_51_dead_1.glb",
+      "size": 17320,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992191/1/stage_20.glb",
+      "size": 64192,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992195/1/stage_17_dead_1.glb",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992197/1/stage_48.glb",
+      "size": 19700,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992200/1/stage_36.glb",
+      "size": 51836,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992201/1/stage_15_dead.glb",
+      "size": 19528,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992206/1/stage_57.glb",
+      "size": 38592,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992217/1/stage_10.glb",
+      "size": 59468,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992226/1/stage_79_dead_1.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992229/1/stage_19_dead_2.glb",
+      "size": 17088,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992232/1/stage_53_dead.glb",
+      "size": 6140,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992233/1/stage_56_dead_3.glb",
+      "size": 3300,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992236/1/stage_25_dead_2.glb",
+      "size": 5448,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992238/1/stage_45.glb",
+      "size": 70544,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992247/1/stage_22.glb",
+      "size": 50452,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992249/1/stage_38_dead_1.glb",
+      "size": 29796,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992256/1/stage_43.glb",
+      "size": 148728,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992259/1/stage_45_dead_2.glb",
+      "size": 2408,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992261/1/stage_33_dead_1.glb",
+      "size": 3232,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992267/1/stage_97.glb",
+      "size": 29956,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992268/1/stage_27.glb",
+      "size": 21416,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992269/1/stage_30_dead.glb",
+      "size": 49012,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992272/1/stage_35.glb",
+      "size": 192596,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992275/1/stage_32.glb",
+      "size": 23688,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992287/1/stage_30.glb",
+      "size": 45708,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992292/1/stage_50.glb",
+      "size": 51244,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992296/1/stage_28.glb",
+      "size": 15920,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992297/1/stage_93.glb",
+      "size": 23908,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992299/1/stage_54.glb",
+      "size": 43288,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992301/1/stage_64_dead_3.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992304/1/stage_17_dead_5.glb",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992306/1/stage_94.glb",
+      "size": 24600,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992317/1/stage_89_dead_2.glb",
+      "size": 3268,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992319/1/stage_5.glb",
+      "size": 22356,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992327/1/stage_53.glb",
+      "size": 40216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992330/1/stage_72.glb",
+      "size": 66216,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992331/1/stage_83_dead_2.glb",
+      "size": 1948,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992332/1/stage_11.glb",
+      "size": 55932,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992335/1/stage_47_dead_1.glb",
+      "size": 6112,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992337/1/stage_42.glb",
+      "size": 37372,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992352/1/stage_1_dead_1.glb",
+      "size": 2748,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992356/1/stage_58_dead_1.glb",
+      "size": 3616,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992358/1/stage_91_dead.glb",
+      "size": 5276,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992367/1/stage_86.glb",
+      "size": 208532,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992369/1/stage_97_dead_1.glb",
+      "size": 3272,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992370/1/stage_69.glb",
+      "size": 17752,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992371/1/stage_35_dead_2.glb",
+      "size": 3268,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992372/1/stage_71_daed.glb",
+      "size": 19532,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992377/1/stage_83.glb",
+      "size": 46652,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992386/1/stage_85.glb",
+      "size": 41156,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992388/1/stage_68.glb",
+      "size": 60764,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992397/1/stage_81.glb",
+      "size": 24936,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992400/1/stage_65.glb",
+      "size": 28860,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992406/1/stage_78.glb",
+      "size": 20928,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992408/1/stage_76.glb",
+      "size": 23912,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992409/1/stage_67.glb",
+      "size": 31244,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992412/1/stage_79_dead_4.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992415/1/stage_64_dead_8.glb",
+      "size": 3248,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992427/1/stage_88.glb",
+      "size": 18432,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992428/1/stage_74_dead_2.glb",
+      "size": 1972,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992432/1/stage_74_dead_1.glb",
+      "size": 1972,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992434/1/stage_89.glb",
+      "size": 11616,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992441/1/stage_84.glb",
+      "size": 45408,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992444/1/stage_71.glb",
+      "size": 13348,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992450/1/stage_75_dead_1.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992452/1/stage_79.glb",
+      "size": 35672,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992456/1/stage_70.glb",
+      "size": 15400,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992457/1/stage_79_dead_2.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992459/1/stage_16.glb",
+      "size": 96328,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992460/1/stage_83_dead_3.glb",
+      "size": 1948,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992467/1/stage_74.glb",
+      "size": 20160,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992470/1/stage_73.glb",
+      "size": 16072,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992481/1/stage_87.glb",
+      "size": 26104,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992483/1/stage_79_dead_3.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992486/1/stage_82.glb",
+      "size": 43332,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992488/1/stage_74_dead_4.glb",
+      "size": 1972,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992495/1/stage_98_dead_1.glb",
+      "size": 5288,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992499/1/stage_98.glb",
+      "size": 24288,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992506/1/stage_99.glb",
+      "size": 37036,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992508/1/stage_96_dead.glb",
+      "size": 23204,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992510/1/stage_68_dead_1.glb",
+      "size": 51336,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992512/1/stage_90_dead.glb",
+      "size": 4444,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992521/1/stage_95.glb",
+      "size": 16072,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992523/1/stage_83_dead_1.glb",
+      "size": 1948,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992530/1/stage_0.glb",
+      "size": 55860,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992531/1/stage_97_dead_2.glb",
+      "size": 3272,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992533/1/stage_91.glb",
+      "size": 40580,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992536/1/stage_2.glb",
+      "size": 21840,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992546/1/stage_96.glb",
+      "size": 19992,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992548/1/stage_87_dead_1.glb",
+      "size": 5272,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992550/1/stage_1.glb",
+      "size": 15596,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992556/1/stage_90.glb",
+      "size": 59468,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992565/1/noobhand.glb",
+      "size": 38964,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992575/1/Fiorella.glb",
+      "size": 115488,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992580/1/Fiorella.json",
+      "size": 4329,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992584/1/Spring.glb",
+      "size": 24204,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992589/1/Jetpack.glb",
+      "size": 23772,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992594/1/Totem.glb",
+      "size": 23932,
+      "required": false
+    },
+    {
+      "path": "files/assets/151992952/1/PlayerController.js",
+      "size": 25762,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992953/1/CameraController.js",
+      "size": 5458,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992955/1/Stage.js",
+      "size": 2229,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992956/1/MobileCameraController.js",
+      "size": 6224,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992957/1/NetworkManager.js",
+      "size": 38808,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992958/1/Helpers.js",
+      "size": 1198,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992959/1/DeadObject.js",
+      "size": 725,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992965/1/BikeData.js",
+      "size": 1664,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992967/1/rotator.js",
+      "size": 637,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992968/1/Coin.js",
+      "size": 1568,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992971/1/BuyBike.js",
+      "size": 3491,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992974/1/OtherPlayerController.js",
+      "size": 4119,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992988/1/MarketItem.js",
+      "size": 4255,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992989/1/WarningTextController.js",
+      "size": 1901,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992990/1/RewardedButtonAnimation.js",
+      "size": 3410,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992991/1/ResetProgressController.js",
+      "size": 1676,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992992/1/PopupController.js",
+      "size": 4894,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992993/1/resetStageController.js",
+      "size": 1430,
+      "required": true
+    },
+    {
+      "path": "files/assets/151992994/1/RewardedPopupController.js",
+      "size": 7162,
+      "required": true
+    },
+    {
+      "path": "files/assets/151993091/1/dustTexture.png",
+      "size": 83,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993092/1/seperated.glb",
+      "size": 30872,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993107/1/DeadPlayer.json",
+      "size": 11852,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993128/1/flag.json",
+      "size": 1656,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993141/1/bicycle_01.json",
+      "size": 3104,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993142/1/bicycle_02.json",
+      "size": 3081,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993146/1/bicycle_04.json",
+      "size": 3193,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993148/1/bicycle_07.json",
+      "size": 2361,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993155/1/bicycle_06.json",
+      "size": 2439,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993157/1/bicycle_03.json",
+      "size": 3168,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993158/1/bicycle_05.json",
+      "size": 2500,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993167/1/Totem.json",
+      "size": 4300,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993171/1/Jetpack.json",
+      "size": 3229,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993172/1/JumpCoil.json",
+      "size": 3228,
+      "required": false
+    },
+    {
+      "path": "files/assets/151993173/1/bikeDrive.mp3",
+      "size": 21314,
+      "required": false
+    },
+    {
+      "path": "files/assets/152004330/1/carSound.mp3",
+      "size": 25076,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006660/1/motorSound.mp3",
+      "size": 25076,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006768/1/checkpoint.mp3",
+      "size": 16276,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006769/1/oof.mp3",
+      "size": 2673,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006771/1/collectCoin.mp3",
+      "size": 14349,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006917/1/chest.mp3",
+      "size": 37347,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006960/1/bought.mp3",
+      "size": 16084,
+      "required": false
+    },
+    {
+      "path": "files/assets/152006994/1/equip.mp3",
+      "size": 13373,
+      "required": false
+    },
+    {
+      "path": "files/assets/152007047/1/failed.mp3",
+      "size": 3695,
+      "required": false
+    },
+    {
+      "path": "files/assets/152011359/1/popup.mp3",
+      "size": 16381,
+      "required": false
+    },
+    {
+      "path": "files/assets/152011360/1/close.mp3",
+      "size": 6940,
+      "required": false
+    },
+    {
+      "path": "files/assets/152013260/1/jump.mp3",
+      "size": 11520,
+      "required": false
+    },
+    {
+      "path": "files/assets/152040705/1/lookAtCamera.js",
+      "size": 643,
+      "required": true
+    },
+    {
+      "path": "files/assets/152041286/1/OtherPlayer.json",
+      "size": 22574,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048458/1/clientWheelParent.js",
+      "size": 824,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048462/1/co-car-data.json",
+      "size": 1865,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048464/1/1.png",
+      "size": 3190,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048465/1/clientWheelChild.js",
+      "size": 1016,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048466/1/Texture.png",
+      "size": 149310,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048468/1/rifficfreebold.ttf.png",
+      "size": 75233,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048475/1/vehicle.js",
+      "size": 8313,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048477/1/vehicle-graphics.js",
+      "size": 1304,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048478/1/co-save-system.js",
+      "size": 919,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048481/1/Coin.json",
+      "size": 988,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048484/1/flag.glb",
+      "size": 10524,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048485/1/co-network-manager.js",
+      "size": 11465,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048495/1/rotatePlatform.js",
+      "size": 1883,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048512/1/ui-input-field.js",
+      "size": 3426,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048513/1/ui-input-library.js",
+      "size": 8374,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048515/1/platformPos.js",
+      "size": 1646,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048519/1/teleportEvent.js",
+      "size": 839,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048688/1/platformDelayPos.js",
+      "size": 1209,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048691/1/level55-platform.js",
+      "size": 1375,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048697/1/Level_58.glb",
+      "size": 55644,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048706/1/uploads_files_834842_coin.glb",
+      "size": 11972,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048709/1/repeatPosition.js",
+      "size": 1082,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048710/1/progressBar.png",
+      "size": 1298,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048723/1/level34-ball.js",
+      "size": 859,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048724/1/progressBar.png",
+      "size": 1298,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048728/1/Freya.glb",
+      "size": 143352,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048734/1/Giulietta.glb",
+      "size": 117112,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048742/1/Carlotta.glb",
+      "size": 132860,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048750/1/Raiden.glb",
+      "size": 148688,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048759/1/Betsy.glb",
+      "size": 118556,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048767/1/Akira.glb",
+      "size": 125008,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048775/1/Emma.glb",
+      "size": 135268,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048783/1/Miyako.glb",
+      "size": 114512,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048791/1/Alessa.glb",
+      "size": 114876,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048795/1/rewardedButton22.png",
+      "size": 3560,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048796/1/2.png",
+      "size": 3184,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048800/1/3.png",
+      "size": 2326,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048801/1/1.json",
+      "size": 21467,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048802/1/3.json",
+      "size": 22029,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048804/1/7.json",
+      "size": 24371,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048805/1/8.json",
+      "size": 22077,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048806/1/1.json",
+      "size": 8828,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048807/1/4.json",
+      "size": 22074,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048808/1/9.json",
+      "size": 22689,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048809/1/2.json",
+      "size": 22016,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048810/1/9.json",
+      "size": 8828,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048811/1/5.json",
+      "size": 8819,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048812/1/7.json",
+      "size": 8830,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048813/1/6.json",
+      "size": 8820,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048814/1/4.json",
+      "size": 8774,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048815/1/8.json",
+      "size": 8826,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048816/1/confetti.png",
+      "size": 6222,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048817/1/dustTexture.png",
+      "size": 83,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048819/1/2.json",
+      "size": 8836,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048820/1/5.json",
+      "size": 21972,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048821/1/6.json",
+      "size": 22074,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048822/1/3.json",
+      "size": 8799,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048823/1/pz.jpg",
+      "size": 43159,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048824/1/nx.jpg",
+      "size": 42162,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048825/1/co-car-shop-data.js",
+      "size": 1234,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048826/1/px.jpg",
+      "size": 43102,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048827/1/py.jpg",
+      "size": 39056,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048828/1/nz.jpg",
+      "size": 42223,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048829/1/ny.jpg",
+      "size": 28999,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048840/1/radialsun.png",
+      "size": 26262,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048855/1/circle.png",
+      "size": 11382,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048863/1/co-car-buy-panel.js",
+      "size": 3262,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048866/1/co-shop-button.js",
+      "size": 8220,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048867/1/co-shop-screen.js",
+      "size": 2020,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048871/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048872/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048873/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048874/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048875/1/btn-dark-red.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048876/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048878/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048879/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048882/1/btn-dark-gry.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048883/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048884/1/btn-dark-red.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048885/1/btn-dark-gry.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048893/1/co-ui-manager.js",
+      "size": 11903,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048897/1/Totem.glb",
+      "size": 23932,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048902/1/Jetpack.glb",
+      "size": 23772,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048905/1/Rainbow-gradient-seamless.svg.png",
+      "size": 8889,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048906/1/image.png",
+      "size": 24687,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048913/1/co-take-skill-screen.js",
+      "size": 1634,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048914/1/co-buy-area.js",
+      "size": 2339,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048916/1/co-coin.js",
+      "size": 1164,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048921/1/co-death-area.js",
+      "size": 984,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048922/1/co-flag.js",
+      "size": 2510,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048923/1/co-game-manager.js",
+      "size": 2048,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048925/1/Dust.json",
+      "size": 1986,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048926/1/co-save-manager.js",
+      "size": 4005,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048928/1/co-death-screen.js",
+      "size": 2674,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048931/1/co-game-screen.js",
+      "size": 2740,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048932/1/co-elapsed-time-controller.js",
+      "size": 1188,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048934/1/co-player-speed-controller.js",
+      "size": 1149,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048936/1/co-exhaust.js",
+      "size": 1013,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048939/1/co-rotator.js",
+      "size": 559,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048940/1/co-look-at-camera.js",
+      "size": 1523,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048942/1/co-player-flag-founder.js",
+      "size": 420,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048943/1/co-player.js",
+      "size": 4385,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048944/1/co-camera-controller.js",
+      "size": 6805,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048946/1/co-mobile-camera-controller.js",
+      "size": 7168,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048947/1/Smoke.json",
+      "size": 2069,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048948/1/co-car-change-manager.js",
+      "size": 2830,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048951/1/sphere.glb",
+      "size": 2576,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048954/1/panel-dark-darker-5rad.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048955/1/panel-dark-darker-5rad.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048959/1/co-menu-screen.js",
+      "size": 2529,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048960/1/co-clear-data-screen.js",
+      "size": 663,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048961/1/co-discord-button.js",
+      "size": 938,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048962/1/co-create-room-failed-screen.js",
+      "size": 663,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048963/1/co-share-room-screen.js",
+      "size": 3757,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048964/1/co-join-room-failed-screen.js",
+      "size": 653,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048965/1/co-join-room-screen.js",
+      "size": 759,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048966/1/co-sound-controller.js",
+      "size": 1462,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048967/1/touch-joystick.js",
+      "size": 10357,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048968/1/touch-joypad-library.js",
+      "size": 1784,
+      "required": true
+    },
+    {
+      "path": "files/assets/152048970/1/bikeDrive.mp3",
+      "size": 21314,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048971/1/carSound.mp3",
+      "size": 25076,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048972/1/motorSound.mp3",
+      "size": 25076,
+      "required": false
+    },
+    {
+      "path": "files/assets/152048993/1/gamemodeSelected.mp3",
+      "size": 23084,
+      "required": false
+    },
+    {
+      "path": "files/assets/152049617/1/ammo.js",
+      "size": 1895438,
+      "required": true
+    },
+    {
+      "path": "files/assets/152049618/1/ammo.wasm.js",
+      "size": 391789,
+      "required": true
+    },
+    {
+      "path": "files/assets/152049619/1/ammo.wasm.wasm",
+      "size": 659433,
+      "required": true
+    },
+    {
+      "path": "files/assets/152049683/1/tween.js",
+      "size": 20646,
+      "required": true
+    },
+    {
+      "path": "files/assets/152057052/1/asdfsdfmesh_N00b1Mtl.001_BasssseColor_001df.png",
+      "size": 12959,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057054/1/nubnotchecker.png",
+      "size": 13678,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057055/1/nub.png",
+      "size": 23623,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057058/1/Character.glb",
+      "size": 40344,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057059/1/seperated.glb",
+      "size": 30872,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057073/1/saturated.png",
+      "size": 13050,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057075/1/Rainbow-gradient-seamless.svg.png",
+      "size": 8889,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057076/1/Character.json",
+      "size": 8651,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057079/1/nubOriginal.png",
+      "size": 12959,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057080/1/NinjaCostume.png",
+      "size": 20433,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057081/1/nubOriginalStatue102224x10224.png",
+      "size": 33818,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057085/1/Coin.glb",
+      "size": 17100,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057091/1/Yay.glb",
+      "size": 24204,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057092/1/AlienCostume.png",
+      "size": 10451,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057094/1/PirateCostume.png",
+      "size": 20879,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057097/1/seperated.json",
+      "size": 7267,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057099/1/Jetpack.glb",
+      "size": 23772,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057101/1/AngelCostume.png",
+      "size": 15026,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057108/1/DevilCostume.png",
+      "size": 15465,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057112/1/saturatedorange.png",
+      "size": 12787,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057123/1/Totem.glb",
+      "size": 23932,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057129/1/hali.glb",
+      "size": 16380,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057138/1/SpeedShoes_Right.glb",
+      "size": 27964,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057146/1/SpeedShoes_left.glb",
+      "size": 27964,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057152/1/Chest.glb",
+      "size": 95948,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057165/1/POSE.glb",
+      "size": 24096,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057184/1/POSE.json",
+      "size": 977,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057210/1/PlayerCharacter.json",
+      "size": 25067,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057218/1/Rainbow-gradient-seamless.svg.png",
+      "size": 8889,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057219/1/CheckPoint.glb",
+      "size": 20808,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057223/1/Levels003.glb",
+      "size": 12568,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057227/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057233/1/Levels004.glb",
+      "size": 19996,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057237/1/Levels005.glb",
+      "size": 2388,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057241/1/Levels006.glb",
+      "size": 5192,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057252/1/Levels007.glb",
+      "size": 13420,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057257/1/Levels002.glb",
+      "size": 6840,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057259/1/Levels008.glb",
+      "size": 39588,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057261/1/Levels001.glb",
+      "size": 27848,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057267/1/Levels009.glb",
+      "size": 47056,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057273/1/Levels011.glb",
+      "size": 24384,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057280/1/Levels012.glb",
+      "size": 103376,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057288/1/Levels013.glb",
+      "size": 11188,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057294/1/Levels014.glb",
+      "size": 8840,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057300/1/Levels015.glb",
+      "size": 5164,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057305/1/Levels016.glb",
+      "size": 15412,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057310/1/Levels017.glb",
+      "size": 71228,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057317/1/Levels018.glb",
+      "size": 16552,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057321/1/Levels019.glb",
+      "size": 6888,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057325/1/Levels020.glb",
+      "size": 13240,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057334/1/Levels021.glb",
+      "size": 11440,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057337/1/Levels022.glb",
+      "size": 10060,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057344/1/Levels023.glb",
+      "size": 30728,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057349/1/Levels024.glb",
+      "size": 17888,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057354/1/Levels025.glb",
+      "size": 21008,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057364/1/Levels026.glb",
+      "size": 19848,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057366/1/Levels027.glb",
+      "size": 14764,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057372/1/Levels028.glb",
+      "size": 5160,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057377/1/Levels029.glb",
+      "size": 64352,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057385/1/Levels030.glb",
+      "size": 15536,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057392/1/Levels031.glb",
+      "size": 143436,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057480/1/Levels034.glb",
+      "size": 10544,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057483/1/Levels033.glb",
+      "size": 7088,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057487/1/Levels032.glb",
+      "size": 15864,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057490/1/Levels035.glb",
+      "size": 8376,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057503/1/Levels036.glb",
+      "size": 7588,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057515/1/Levels038.glb",
+      "size": 27848,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057529/1/Levels040.glb",
+      "size": 29412,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057532/1/Levels037.glb",
+      "size": 34824,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057533/1/Levels039.glb",
+      "size": 11652,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057537/1/Levels041.glb",
+      "size": 28132,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057542/1/Levels042.glb",
+      "size": 12328,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057549/1/Levels043.glb",
+      "size": 47028,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057554/1/Levels044.glb",
+      "size": 14392,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057561/1/Levels045.glb",
+      "size": 49612,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057566/1/Levels046.glb",
+      "size": 8768,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057571/1/Levels047.glb",
+      "size": 10060,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057577/1/Levels048.glb",
+      "size": 7248,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057583/1/Levels049.glb",
+      "size": 19276,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057589/1/Levels050.glb",
+      "size": 7600,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057595/1/Levels051.glb",
+      "size": 7528,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057601/1/Levels052.glb",
+      "size": 52348,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057605/1/Levels053.glb",
+      "size": 6000,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057614/1/Levels054.glb",
+      "size": 22552,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057618/1/Levels055.glb",
+      "size": 35912,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057625/1/Levels056.glb",
+      "size": 15672,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057629/1/Levels057.glb",
+      "size": 35944,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057634/1/Levels058.glb",
+      "size": 17828,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057640/1/Levels059.glb",
+      "size": 16920,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057646/1/Levels060.glb",
+      "size": 28308,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057648/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057651/1/StatueNoob.glb",
+      "size": 23928,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057657/1/Levels061.glb",
+      "size": 110796,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057662/1/Levels062.glb",
+      "size": 9364,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057674/1/Levels065.glb",
+      "size": 5908,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057675/1/Levels064.glb",
+      "size": 35016,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057678/1/Levels063.glb",
+      "size": 11316,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057687/1/Levels066.glb",
+      "size": 11552,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057699/1/Levels068.glb",
+      "size": 17352,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057700/1/Levels067.glb",
+      "size": 31908,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057705/1/Levels069.glb",
+      "size": 7680,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057707/1/Levels070.glb",
+      "size": 12716,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057721/1/Levels071.glb",
+      "size": 20780,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057725/1/Levels072.glb",
+      "size": 35836,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057731/1/Levels073.glb",
+      "size": 9924,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057736/1/Levels074.glb",
+      "size": 84196,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057752/1/Levels076.glb",
+      "size": 44616,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057753/1/Levels077.glb",
+      "size": 28496,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057755/1/Levels075.glb",
+      "size": 44420,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057761/1/Levels078.glb",
+      "size": 7680,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057765/1/Levels079.glb",
+      "size": 12616,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057768/1/Levels080.glb",
+      "size": 43912,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057778/1/Levels081.glb",
+      "size": 51868,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057784/1/Levels082.glb",
+      "size": 17108,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057789/1/Levels083.glb",
+      "size": 6484,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057792/1/Levels084.glb",
+      "size": 21988,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057800/1/Levels085.glb",
+      "size": 6884,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057805/1/Levels086.glb",
+      "size": 19664,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057811/1/Levels087.glb",
+      "size": 4360,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057815/1/Levels088.glb",
+      "size": 15964,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057822/1/Levels089.glb",
+      "size": 11824,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057828/1/Levels090.glb",
+      "size": 56352,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057856/1/Levels010.glb",
+      "size": 77400,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057862/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057868/1/Levels091.glb",
+      "size": 29468,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057874/1/Levels093.glb",
+      "size": 40200,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057877/1/Levels094.glb",
+      "size": 34416,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057886/1/Levels095.glb",
+      "size": 10144,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057891/1/Levels096.glb",
+      "size": 21684,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057895/1/Levels097.glb",
+      "size": 6884,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057903/1/Levels098.glb",
+      "size": 12844,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057907/1/Levels092.glb",
+      "size": 11544,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057912/1/Levels099.glb",
+      "size": 17360,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057918/1/Levels100.glb",
+      "size": 98444,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057926/1/Hub.glb",
+      "size": 208176,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057930/1/skybox_right.png",
+      "size": 69726,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057931/1/skybox_back.png",
+      "size": 167583,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057932/1/skybox_front.png",
+      "size": 372231,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057934/1/skybox_left.png",
+      "size": 136917,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057935/1/skybox_top.png",
+      "size": 328029,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057937/1/skybox_bottom.png",
+      "size": 66120,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057939/1/circle.png",
+      "size": 3180,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057943/1/noobhand.glb",
+      "size": 38964,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057946/1/noobhand.json",
+      "size": 5221,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057949/1/base.png",
+      "size": 4143,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057950/1/Button.png",
+      "size": 637,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057954/1/base3.png",
+      "size": 4138,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057955/1/ad.png",
+      "size": 852,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057956/1/screenBlood.png",
+      "size": 2023,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057958/1/close.png",
+      "size": 3295,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057960/1/default.png",
+      "size": 22025,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057961/1/Base2.png",
+      "size": 3029,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057962/1/goldcoin.png",
+      "size": 13026,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057964/1/radialsun.png",
+      "size": 26262,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057965/1/circleIcon.png",
+      "size": 5092,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057966/1/image.png",
+      "size": 24687,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057970/1/MobileJump.png",
+      "size": 4107,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057971/1/MobileCarpet.png",
+      "size": 3772,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057972/1/confetti.png",
+      "size": 15070,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057973/1/dustTexture.png",
+      "size": 83,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057977/1/sphere.glb",
+      "size": 2576,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057979/1/sphere.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057980/1/confetti.png",
+      "size": 15070,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057981/1/goldbar.png",
+      "size": 7743,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057982/1/closeButton.png",
+      "size": 4469,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057984/1/background.png",
+      "size": 15462,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057985/1/background.png",
+      "size": 15462,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057986/1/discord.png",
+      "size": 1469,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057987/1/ninja.png",
+      "size": 2604,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057988/1/devil.png",
+      "size": 1735,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057989/1/pirate.png",
+      "size": 2713,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057990/1/angel.png",
+      "size": 2430,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057991/1/alien.png",
+      "size": 1559,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057992/1/default.png",
+      "size": 1750,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057993/1/obby.png",
+      "size": 24570,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057995/1/discordskin.png",
+      "size": 9849,
+      "required": false
+    },
+    {
+      "path": "files/assets/152057996/1/trash.png",
+      "size": 4695,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058001/1/portal.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058002/1/portal.glb",
+      "size": 50072,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058003/1/portal.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058004/1/panel-dark-darker-5rad.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058007/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058008/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058010/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058013/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058014/1/skybox_back.png",
+      "size": 167583,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058015/1/skybox_left.png",
+      "size": 136917,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058016/1/skybox_right.png",
+      "size": 69726,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058017/1/skybox_front.png",
+      "size": 372231,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058018/1/skybox_bottom.png",
+      "size": 66120,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058021/1/skybox_top.png",
+      "size": 328029,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058022/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058024/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058561/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058563/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058568/1/goldcoin.png",
+      "size": 13026,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058569/1/prog-bar-ylw.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058570/1/progressBar.png",
+      "size": 1298,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058576/1/panel-dark-darker-5rad.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058580/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058581/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058582/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058583/1/btn-dark-blu.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058585/1/btn-dark-grn.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058587/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058589/1/btn-dark-red.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058591/1/X20256.png",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058596/1/whiteButton.png",
+      "size": 205,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058597/1/whiteButton.png",
+      "size": 205,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058600/1/jetpack.png",
+      "size": 3071,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058601/1/coil.png",
+      "size": 3854,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058602/1/circleIcon.png",
+      "size": 5092,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058603/1/totem.png",
+      "size": 2873,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058604/1/rifficfree-bold.png",
+      "size": 75233,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058606/1/rewardedButton.png",
+      "size": 4084,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058642/1/speedboots.png",
+      "size": 10872,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058753/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058754/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058756/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058759/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058760/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058761/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058767/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058768/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058770/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058771/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058772/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058774/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058777/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058778/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058781/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058783/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058786/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152058787/1/CheckPoint.json",
+      "size": 904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152059040/1/co-warning-text-controller.js",
+      "size": 1874,
+      "required": true
+    },
+    {
+      "path": "files/assets/152059204/1/portal.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152059205/1/portal.glb",
+      "size": 50072,
+      "required": false
+    },
+    {
+      "path": "files/assets/152059416/1/Rainbow-gradient-seamless.svg.png",
+      "size": 8889,
+      "required": false
+    },
+    {
+      "path": "files/assets/152066507/1/loading.png",
+      "size": 952,
+      "required": false
+    },
+    {
+      "path": "files/assets/152067136/1/loadingScreen.js",
+      "size": 4,
+      "required": true
+    },
+    {
+      "path": "files/assets/152068550/1/menuMusic.mp3",
+      "size": 128596,
+      "required": false
+    },
+    {
+      "path": "files/assets/152069093/1/GameAnalytics.js",
+      "size": 90897,
+      "required": true
+    },
+    {
+      "path": "files/assets/152113897/1/jetpack.mp3",
+      "size": 9194,
+      "required": false
+    },
+    {
+      "path": "files/assets/152131294/1/RainbowObby_Chest.js",
+      "size": 822,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131296/1/RainbowObby_DisappearingBlock.js",
+      "size": 1472,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131301/1/RainbowObby_Checkpoint.js",
+      "size": 4442,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131305/1/RainbowObby_DeathOnTouch.js",
+      "size": 584,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131310/1/RainbowObby_Coin.js",
+      "size": 453,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131320/1/RainbowObby_DeadNoob.js",
+      "size": 731,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131324/1/RainbowObby_ConfettiStuff.js",
+      "size": 658,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131408/1/RewardedButtonAnimation.js",
+      "size": 3229,
+      "required": true
+    },
+    {
+      "path": "files/assets/152131409/1/rotator.js",
+      "size": 497,
+      "required": true
+    },
+    {
+      "path": "files/assets/152138067/1/footstep2.mp3",
+      "size": 10125,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138068/1/checkpoint.mp3",
+      "size": 16276,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138069/1/coin.mp3",
+      "size": 16299,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138070/1/oof.mp3",
+      "size": 2673,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138071/1/chest.mp3",
+      "size": 37347,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138072/1/footstep3.mp3",
+      "size": 11085,
+      "required": false
+    },
+    {
+      "path": "files/assets/152138073/1/footstep1.mp3",
+      "size": 10557,
+      "required": false
+    },
+    {
+      "path": "files/assets/152145874/1/music_zapsplat_win_city.mp3",
+      "size": 4898952,
+      "required": false
+    },
+    {
+      "path": "files/assets/152189758/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152189759/1/btn-dark-ylw.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152190273/1/X20256.png",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "files/assets/152190311/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152190312/1/btn-dark-ind.png",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "files/assets/152190314/1/btn-dark-red.png",
+      "size": 322,
+      "required": false
+    },
+    {
+      "path": "files/assets/152194194/1/jetpack.mp3",
+      "size": 9194,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200810/1/50.glb",
+      "size": 36148,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200817/1/14.glb",
+      "size": 36132,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200818/1/17.glb",
+      "size": 10988,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200820/1/20.glb",
+      "size": 16372,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200823/1/15.glb",
+      "size": 102648,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200853/1/27.glb",
+      "size": 11096,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200856/1/30.glb",
+      "size": 23904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200858/1/24.glb",
+      "size": 16196,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200860/1/29.glb",
+      "size": 30012,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200862/1/19.glb",
+      "size": 28604,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200868/1/25.glb",
+      "size": 85292,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200911/1/47.glb",
+      "size": 17660,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200917/1/43.glb",
+      "size": 15620,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200931/1/2.glb",
+      "size": 16784,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200932/1/4.glb",
+      "size": 157072,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200934/1/6.glb",
+      "size": 14564,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200935/1/3.glb",
+      "size": 13084,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200966/1/44.glb",
+      "size": 16632,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200968/1/34.glb",
+      "size": 27748,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200977/1/33.glb",
+      "size": 12668,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200990/1/12.glb",
+      "size": 15376,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200991/1/11.glb",
+      "size": 63008,
+      "required": false
+    },
+    {
+      "path": "files/assets/152200993/1/16.glb",
+      "size": 19340,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201000/1/13.glb",
+      "size": 10896,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201008/1/28.glb",
+      "size": 14576,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201010/1/21.glb",
+      "size": 21072,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201030/1/26.glb",
+      "size": 22740,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201031/1/42.glb",
+      "size": 12564,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201032/1/39.glb",
+      "size": 15860,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201035/1/38.glb",
+      "size": 14196,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201038/1/45.glb",
+      "size": 18604,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201040/1/32.glb",
+      "size": 42756,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201041/1/46.glb",
+      "size": 55976,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201042/1/40.glb",
+      "size": 20164,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201044/1/37.glb",
+      "size": 38404,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201046/1/48.glb",
+      "size": 32244,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201052/1/49.glb",
+      "size": 53176,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201074/1/19.glb",
+      "size": 28604,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201077/1/17.glb",
+      "size": 10988,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201103/1/25.glb",
+      "size": 85292,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201127/1/44.glb",
+      "size": 16632,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201134/1/34.glb",
+      "size": 27748,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201144/1/33.glb",
+      "size": 12668,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201158/1/12.glb",
+      "size": 15376,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201159/1/11.glb",
+      "size": 63008,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201160/1/16.glb",
+      "size": 19340,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201168/1/13.glb",
+      "size": 10896,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201179/1/28.glb",
+      "size": 14576,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201182/1/21.glb",
+      "size": 21072,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201195/1/26.glb",
+      "size": 22740,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201197/1/42.glb",
+      "size": 12564,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201200/1/39.glb",
+      "size": 15860,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201201/1/38.glb",
+      "size": 14196,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201206/1/45.glb",
+      "size": 18604,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201207/1/32.glb",
+      "size": 42756,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201209/1/46.glb",
+      "size": 55976,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201210/1/40.glb",
+      "size": 20164,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201211/1/37.glb",
+      "size": 38404,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201214/1/48.glb",
+      "size": 32244,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201220/1/49.glb",
+      "size": 53176,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201238/1/Statu.json",
+      "size": 943,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201241/1/Statu.glb",
+      "size": 23940,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201248/1/Spawn.json",
+      "size": 909,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201249/1/Spawn.glb",
+      "size": 208240,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201254/1/9.glb",
+      "size": 20660,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201259/1/8.glb",
+      "size": 14128,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201276/1/35.glb",
+      "size": 31096,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201278/1/22.glb",
+      "size": 142696,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201280/1/31.glb",
+      "size": 10204,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201281/1/5.glb",
+      "size": 15424,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201284/1/36.glb",
+      "size": 63900,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201285/1/41.glb",
+      "size": 33036,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201307/1/18.glb",
+      "size": 51036,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201314/1/10.glb",
+      "size": 11744,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201322/1/7.glb",
+      "size": 68972,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201328/1/1.glb",
+      "size": 26724,
+      "required": false
+    },
+    {
+      "path": "files/assets/152201338/1/23.glb",
+      "size": 28900,
+      "required": false
+    },
+    {
+      "path": "files/assets/152206769/1/Chest.glb",
+      "size": 95948,
+      "required": false
+    },
+    {
+      "path": "files/assets/152207488/1/DiscordChest.js",
+      "size": 1419,
+      "required": true
+    },
+    {
+      "path": "files/assets/152220888/1/music.mp3",
+      "size": 2959644,
+      "required": false
+    },
+    {
+      "path": "files/assets/152300648/1/RainbowObby_Portal.js",
+      "size": 843,
+      "required": true
+    },
+    {
+      "path": "files/assets/152330250/1/world3_statu.glb",
+      "size": 23904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330252/1/world3_spawn.glb",
+      "size": 209640,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330306/1/Level002.glb",
+      "size": 35884,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330309/1/Level001.glb",
+      "size": 8852,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330311/1/Level003.glb",
+      "size": 76636,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330316/1/Level004.glb",
+      "size": 19508,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330334/1/Level005.glb",
+      "size": 15580,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330335/1/Level006.glb",
+      "size": 9408,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330340/1/Level007.glb",
+      "size": 29432,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330353/1/Level008.glb",
+      "size": 25012,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330359/1/Level009.glb",
+      "size": 24452,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330365/1/Level010.glb",
+      "size": 14112,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330372/1/Level011.glb",
+      "size": 8380,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330379/1/Level012.glb",
+      "size": 38956,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330386/1/Level013.glb",
+      "size": 10988,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330393/1/Level014.glb",
+      "size": 7680,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330398/1/Level015.glb",
+      "size": 12044,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330406/1/Level016.glb",
+      "size": 9476,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330413/1/Level017.glb",
+      "size": 33612,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330420/1/Level018.glb",
+      "size": 14264,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330427/1/Level019.glb",
+      "size": 85480,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330434/1/Level020.glb",
+      "size": 10924,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330441/1/Level021.glb",
+      "size": 42000,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330447/1/Level022.glb",
+      "size": 130176,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330455/1/Level023.glb",
+      "size": 17228,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330462/1/Level024.glb",
+      "size": 26344,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330469/1/Level025.glb",
+      "size": 39784,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330473/1/Level026.glb",
+      "size": 19268,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330483/1/Level027.glb",
+      "size": 39616,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330491/1/Level028.glb",
+      "size": 6004,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330493/1/Level029.glb",
+      "size": 20236,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330503/1/Level030.glb",
+      "size": 9428,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330509/1/Level031.glb",
+      "size": 11120,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330517/1/Level032.glb",
+      "size": 53036,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330522/1/Level033.glb",
+      "size": 15100,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330526/1/Level034.glb",
+      "size": 8452,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330531/1/Level035.glb",
+      "size": 29356,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330540/1/Level036.glb",
+      "size": 144268,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330550/1/Level037.glb",
+      "size": 79756,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330560/1/Level038.glb",
+      "size": 15624,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330567/1/Level039.glb",
+      "size": 21096,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330572/1/Level040.glb",
+      "size": 34480,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330580/1/Level041.glb",
+      "size": 51564,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330586/1/Level042.glb",
+      "size": 10088,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330592/1/Level043.glb",
+      "size": 82304,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330600/1/Level044.glb",
+      "size": 56188,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330606/1/Level045.glb",
+      "size": 14044,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330614/1/Level046.glb",
+      "size": 74924,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330621/1/Level047.glb",
+      "size": 5852,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330628/1/Level048.glb",
+      "size": 5164,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330634/1/Level049.glb",
+      "size": 171844,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330641/1/statue.glb",
+      "size": 23904,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330643/1/statue.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330647/1/spawn.glb",
+      "size": 209640,
+      "required": false
+    },
+    {
+      "path": "files/assets/152330693/1/statue.json",
+      "size": 905,
+      "required": false
+    },
+    {
+      "path": "files/assets/152360243/1/co-clear-data-area.js",
+      "size": 742,
+      "required": true
+    },
+    {
+      "path": "files/assets/152542414/1/co-bike-game-area.js",
+      "size": 755,
+      "required": true
+    },
+    {
+      "path": "files/assets/152555184/1/backGroundScreen.js",
+      "size": 1194,
+      "required": true
+    },
+    {
+      "path": "files/assets/152558300/1/co-bike-obby-screen.js",
+      "size": 2838,
+      "required": true
+    },
+    {
+      "path": "files/assets/152570757/1/co-touch-button.js",
+      "size": 3118,
+      "required": true
+    },
+    {
+      "path": "files/assets/152589828/1/coin.mp3",
+      "size": 11532,
+      "required": false
+    },
+    {
+      "path": "files/assets/152589829/1/ui_click_2.mp3",
+      "size": 3060,
+      "required": false
+    },
+    {
+      "path": "files/assets/152589849/1/co-sound-manager.js",
+      "size": 1605,
+      "required": true
+    },
+    {
+      "path": "files/assets/152590229/1/co-sound-button.js",
+      "size": 455,
+      "required": true
+    },
+    {
+      "path": "files/assets/152590995/1/Player.json",
+      "size": 23218,
+      "required": false
+    },
+    {
+      "path": "files/assets/152594077/1/co-pop-up.js",
+      "size": 1180,
+      "required": true
+    },
+    {
+      "path": "files/assets/153181103/1/Hallowen.png",
+      "size": 85369,
+      "required": false
+    },
+    {
+      "path": "files/assets/153213448/1/vehicle-controls.js",
+      "size": 5608,
+      "required": true
+    },
+    {
+      "path": "files/assets/153213468/1/vehicle-wheel.js",
+      "size": 2261,
+      "required": true
+    },
+    {
+      "path": "files/assets/153823052/1/co-clear-level-area.js",
+      "size": 751,
+      "required": true
+    },
+    {
+      "path": "files/assets/153823217/1/co-clear-stage-screen.js",
+      "size": 677,
+      "required": true
+    },
+    {
+      "path": "files/assets/154857275/1/change-text.js",
+      "size": 529,
+      "required": true
+    },
+    {
+      "path": "files/assets/156122936/1/PortalController.js",
+      "size": 965,
+      "required": true
+    },
+    {
+      "path": "files/assets/156217317/1/3.png",
+      "size": 41197,
+      "required": false
+    },
+    {
+      "path": "files/assets/156217501/1/4.png",
+      "size": 26832,
+      "required": false
+    },
+    {
+      "path": "files/assets/156217502/1/2.png",
+      "size": 28799,
+      "required": false
+    },
+    {
+      "path": "files/assets/156217812/1/5.png",
+      "size": 27207,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227398/1/stage_107_dead.glb",
+      "size": 22296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227400/1/stage_101_dead.glb",
+      "size": 2756,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227401/1/stage_105_jump.001.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227403/1/stage_110_dead.008.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227404/1/stage_110.glb",
+      "size": 68000,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227408/1/stage_110_dead.009.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227410/1/stage_110_dead.001.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227414/1/stage_110_dead.glb",
+      "size": 6576,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227419/1/stage_110_dead.002.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227515/1/stage_110_dead.003.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227517/1/stage_104.glb",
+      "size": 34808,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227519/1/stage_101_dead.001.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227520/1/stage_105_jump.002.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227522/1/stage_102_jump.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227524/1/stage_109_dead.glb",
+      "size": 3848,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227525/1/stage_108.glb",
+      "size": 44024,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227529/1/stage_106.glb",
+      "size": 59360,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227531/1/stage_105_jump.glb",
+      "size": 16292,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227533/1/stage_102.glb",
+      "size": 15532,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227534/1/stage_103.glb",
+      "size": 69096,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227537/1/stage_105_jump.003.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227539/1/stage_109_dead.001.glb",
+      "size": 3852,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227542/1/stage_107.glb",
+      "size": 26232,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227544/1/stage_110_dead.004.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227546/1/stage_105.glb",
+      "size": 30528,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227547/1/stage_110_dead.006.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227550/1/stage_110_dead.005.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227551/1/stage_101_dead.002.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227553/1/stage_110_dead.007.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227555/1/stage_101.glb",
+      "size": 13324,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227559/1/stage_109.glb",
+      "size": 14212,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227817/1/stage_120_jump.003.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227820/1/stage_120_jump.006.glb",
+      "size": 16304,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227821/1/stage_111_dead.001.glb",
+      "size": 1916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227823/1/stage_120_jump.002.glb",
+      "size": 16304,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227824/1/stage_111.glb",
+      "size": 44400,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227827/1/stage_112.glb",
+      "size": 24044,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227828/1/stage_119_dead.002.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227916/1/stage_116_dead.glb",
+      "size": 2760,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227919/1/stage_120_jump.005.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227920/1/stage_115.glb",
+      "size": 53696,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227923/1/stage_118.glb",
+      "size": 31100,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227925/1/stage_120_jump.004.glb",
+      "size": 16304,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227927/1/stage_114.glb",
+      "size": 115672,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227928/1/stage_119_dead.004.glb",
+      "size": 1916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227931/1/stage_117_fly.glb",
+      "size": 23412,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227935/1/stage_117_fly.002.glb",
+      "size": 23416,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227937/1/stage_120_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227939/1/stage_119_dead.003.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227940/1/stage_120.glb",
+      "size": 105192,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227943/1/stage_113_fly.glb",
+      "size": 23348,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227944/1/stage_117.glb",
+      "size": 82336,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227946/1/stage_111_dead.glb",
+      "size": 10464,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227947/1/stage_116.glb",
+      "size": 16168,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227952/1/stage_112_dead.glb",
+      "size": 74832,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227953/1/stage_120_jump.007.glb",
+      "size": 16304,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227955/1/stage_117_fly.001.glb",
+      "size": 23420,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227956/1/stage_120_jump.001.glb",
+      "size": 16304,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227957/1/stage_113.glb",
+      "size": 58196,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227958/1/stage_119.glb",
+      "size": 12016,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227964/1/stage_111_dead.003.glb",
+      "size": 1916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227966/1/stage_113_fly.001.glb",
+      "size": 23352,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227968/1/stage_119_dead.001.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227985/1/stage_111_dead.002.glb",
+      "size": 1916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227989/1/stage_119_dead.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156227990/1/stage_111_dead.004.glb",
+      "size": 1916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228317/1/stage_129_dead.glb",
+      "size": 5540,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228336/1/stage_125.glb",
+      "size": 15144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228338/1/stage_122.glb",
+      "size": 13060,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228342/1/stage_121_dead.glb",
+      "size": 15868,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228344/1/stage_121.glb",
+      "size": 23372,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228345/1/stage_123_dead.004.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228351/1/stage_125_dead.002.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228352/1/stage_123_dead.008.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228355/1/stage_123_dead.001.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228356/1/stage_127.glb",
+      "size": 15696,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228359/1/stage_128.glb",
+      "size": 70872,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228360/1/stage_123_dead.003.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228361/1/stage_123.glb",
+      "size": 15656,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228362/1/stage_128_dead.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228387/1/stage_128_dead.001.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228388/1/stage_127_dead.001.glb",
+      "size": 3284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228389/1/stage_123_dead.007.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228395/1/stage_123_dead.002.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228396/1/stage_128_dead.005.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228399/1/stage_123_dead.006.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228400/1/stage_129.glb",
+      "size": 57504,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228404/1/stage_128_dead.003.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228406/1/stage_125_dead.001.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228410/1/stage_125_dead.glb",
+      "size": 17292,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228411/1/stage_122_fly.glb",
+      "size": 23348,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228413/1/stage_123_dead.005.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228414/1/stage_124_dead.glb",
+      "size": 4800,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228415/1/stage_128_dead.002.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228418/1/stage_128_dead.004.glb",
+      "size": 1912,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228421/1/stage_123_dead.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228422/1/stage_122_fly.001.glb",
+      "size": 23352,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228424/1/stage_126.glb",
+      "size": 79320,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228426/1/stage_129_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228428/1/stage_130.glb",
+      "size": 23692,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228429/1/stage_122_dead.glb",
+      "size": 18916,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228430/1/stage_127_dead.glb",
+      "size": 2748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228717/1/stage_139_dead.003.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228723/1/stage_131_dead.glb",
+      "size": 2420,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228724/1/stage_131_dead.001.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228725/1/stage_135_dead.glb",
+      "size": 5312,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228728/1/stage_140_daed.005.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228729/1/stage_137.glb",
+      "size": 19072,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228730/1/stage_134_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228731/1/stage_139_dead.004.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228732/1/stage_139_dead.001.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228733/1/stage_133.glb",
+      "size": 37208,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228797/1/stage_140.glb",
+      "size": 8364,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228798/1/stage_131_dead.002.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228800/1/stage_140_daed.001.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228803/1/stage_132.glb",
+      "size": 137492,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228806/1/stage_132_dead.glb",
+      "size": 10680,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228807/1/stage_140_daed.004.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228810/1/stage_136.glb",
+      "size": 39668,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228812/1/stage_132_dead.001.glb",
+      "size": 10876,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228816/1/stage_136_dead.glb",
+      "size": 4184,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228817/1/stage_133_dead.001.glb",
+      "size": 4776,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228818/1/stage_133_dead.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228820/1/stage_135.glb",
+      "size": 36292,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228822/1/stage_139_dead.007.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228824/1/stage_139_dead.005.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228825/1/stage_132_daed.glb",
+      "size": 10860,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228827/1/stage_139_dead.002.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228829/1/stage_140_daed.glb",
+      "size": 6576,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228833/1/stage_138.glb",
+      "size": 25836,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228835/1/stage_140_daed.002.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228837/1/stage_139_dead.006.glb",
+      "size": 2768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228838/1/stage_132_dead.002.glb",
+      "size": 10864,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228842/1/stage_134.glb",
+      "size": 50616,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228843/1/stage_139.glb",
+      "size": 8236,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228846/1/stage_137_dead.glb",
+      "size": 17292,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228849/1/stage_140_daed.003.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156228852/1/stage_139_dead.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229189/1/stage_144_dead.001.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229204/1/stage_143_dead.004.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229206/1/stage_143_fly.005.glb",
+      "size": 20748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229210/1/stage_147.glb",
+      "size": 9896,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229211/1/stage_143_dead.glb",
+      "size": 3140,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229213/1/stage_150_jump.002.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229215/1/stage_143_fly.glb",
+      "size": 23520,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229276/1/stage_142_dead.004.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229280/1/stage_144_dead.017.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229282/1/stage_146.glb",
+      "size": 11604,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229283/1/stage_144_dead.014.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229287/1/stage_150_jump.004.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229291/1/stage_145_fly.glb",
+      "size": 23520,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229292/1/stage_142_dead.002.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229294/1/stage_143_dead.002.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229296/1/stage_143_fly.001.glb",
+      "size": 20748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229297/1/stage_141_fly.001.glb",
+      "size": 20748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229301/1/stage_144_dead.012.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229302/1/stage_146_dead.glb",
+      "size": 17288,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229305/1/stage_147.001.glb",
+      "size": 3040,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229306/1/stage_144_dead.010.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229308/1/stage_143_dead.003.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229310/1/stage_144_dead.003.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229313/1/stage_144_dead.019.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229315/1/stage_144_dead.013.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229316/1/stage_150_jump.005.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229319/1/stage_144_dead.016.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229321/1/stage_150_jump.001.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229324/1/stage_150.glb",
+      "size": 61748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229325/1/stage_144_dead.glb",
+      "size": 6576,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229326/1/stage_141.glb",
+      "size": 81268,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229328/1/stage_141_fly.003.glb",
+      "size": 23524,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229330/1/stage_141_fly.002.glb",
+      "size": 23524,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229332/1/stage_144_dead.004.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229334/1/stage_143_fly.004.glb",
+      "size": 20748,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229335/1/stage_143_dead.001.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229346/1/stage_142_dead.glb",
+      "size": 3140,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229347/1/stage_150_jump.007.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229352/1/stage_144_dead.020.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229353/1/stage_141_fly.glb",
+      "size": 20744,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229355/1/stage_142_dead.003.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229357/1/stage_143_dead.005.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229360/1/stage_144_dead.007.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229362/1/stage_148.glb",
+      "size": 26240,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229363/1/stage_150_jump.006.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229364/1/stage_144_dead.002.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229369/1/stage_144_dead.018.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229370/1/stage_143_fly.003.glb",
+      "size": 23524,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229371/1/stage_144_dead.011.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229373/1/stage_142_dead.001.glb",
+      "size": 3144,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229375/1/stage_144_dead.008.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229376/1/stage_150_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229378/1/stage_145.glb",
+      "size": 37656,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229381/1/stage_149.glb",
+      "size": 31116,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229383/1/stage_142.glb",
+      "size": 13436,
+      "required": false
+    },
+    {
+      "path": "files/assets/156229384/1/stage_143.glb",
+      "size": 61364,
+      "required": false
+    },
+    {
+      "path": "files/assets/156230480/1/stage_150_jump.003.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156230501/1/stage_148_dead.glb",
+      "size": 13728,
+      "required": false
+    },
+    {
+      "path": "files/assets/156230556/1/stage_144_dead.015.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156235920/1/stage_159_daed.glb",
+      "size": 2760,
+      "required": false
+    },
+    {
+      "path": "files/assets/156235921/1/stage_160_dead.006.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156236016/1/stage_158_dead.glb",
+      "size": 45336,
+      "required": false
+    },
+    {
+      "path": "files/assets/156236024/1/stage_160_dead.002.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240782/1/stage_160_dead.001.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240785/1/stage_155_jump.glb",
+      "size": 16316,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240788/1/stage_159_daed.004.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240791/1/stage_160_dead.003.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240794/1/stage_159_daed.005.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240795/1/stage_160_dead.007.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240796/1/stage_160_dead.005.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240797/1/stage_160_dead.004.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240799/1/stage_159_daed.001.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240801/1/stage_156_dead.001.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240803/1/stage_160.glb",
+      "size": 29636,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240806/1/stage_155_fly.001.glb",
+      "size": 23416,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240807/1/stage_155_fly.glb",
+      "size": 23412,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240808/1/stage_160_dead.glb",
+      "size": 3028,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240831/1/stage_154.glb",
+      "size": 8240,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240832/1/stage_153_daed.002.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240838/1/stage_152_dead.glb",
+      "size": 70388,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240840/1/stage_159.glb",
+      "size": 8368,
+      "required": false
+    },
+    {
+      "path": "files/assets/156240842/1/stage_159_daed.003.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242605/1/stage_156_dead.003.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242607/1/stage_159_daed.002.glb",
+      "size": 2764,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242609/1/stage_154_dead.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242612/1/stage_154_dead.002.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242613/1/stage_156_dead.002.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242616/1/stage_151.glb",
+      "size": 23148,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242622/1/stage_154_dead.004.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242624/1/stage_154_dead.005.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242628/1/stage_155.glb",
+      "size": 63420,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242630/1/stage_153_daed.003.glb",
+      "size": 8676,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242634/1/stage_151_jump.glb",
+      "size": 16320,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242635/1/stage_152.glb",
+      "size": 89704,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242637/1/stage_158.glb",
+      "size": 13440,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242639/1/stage_154_dead.001.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242642/1/stage_154_dead.006.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242643/1/stage_153.glb",
+      "size": 8624,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242644/1/stage_157_daed.001.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242646/1/stage_156_dead.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242650/1/stage_154_dead.003.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242652/1/stage_157.glb",
+      "size": 29652,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242653/1/stage_153_daed.004.glb",
+      "size": 8416,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242654/1/stage_153_daed.glb",
+      "size": 8668,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242655/1/stage_157_daed.glb",
+      "size": 3276,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242656/1/stage_156.glb",
+      "size": 36920,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242659/1/stage_153_daed.001.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242949/1/stage_167.glb",
+      "size": 10284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242951/1/stage_168_move.005.glb",
+      "size": 8608,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242953/1/stage_166_dead.002.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242989/1/stage_166.glb",
+      "size": 39456,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242991/1/stage_169_jump.001.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242992/1/stage_165_fly.002.glb",
+      "size": 23224,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242994/1/stage_166_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242996/1/stage_168_move.003.glb",
+      "size": 8608,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242998/1/stage_161_dead.glb",
+      "size": 5392,
+      "required": false
+    },
+    {
+      "path": "files/assets/156242999/1/stage_161_dead.003.glb",
+      "size": 5396,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243001/1/stage_162_dead.002.glb",
+      "size": 10684,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243003/1/stage_165.glb",
+      "size": 113172,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243006/1/stage_166_dead.glb",
+      "size": 3276,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243010/1/stage_163.glb",
+      "size": 85928,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243013/1/stage_169_jump.004.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243014/1/stage_162_dead.003.glb",
+      "size": 10864,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243016/1/stage_170.glb",
+      "size": 127700,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243020/1/stage_161_dead.002.glb",
+      "size": 5396,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243023/1/stage_162_dead.004.glb",
+      "size": 10684,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243025/1/stage_169_jump.003.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243028/1/stage_162_dead.001.glb",
+      "size": 10864,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243032/1/stage_169_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243033/1/stage_167_rot.glb",
+      "size": 3028,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243034/1/stage_168_move.glb",
+      "size": 8604,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243038/1/stage_168_move.001.glb",
+      "size": 8608,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243040/1/stage_162_dead.glb",
+      "size": 10680,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243041/1/stage_169_jump.005.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243043/1/stage_166_dead.001.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243044/1/stage_164_dead.glb",
+      "size": 6672,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243046/1/stage_165_fly.001.glb",
+      "size": 23224,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243048/1/stage_168.glb",
+      "size": 25892,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243080/1/stage_169_jump.002.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243082/1/stage_169_jump.007.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243084/1/stage_168_dead.glb",
+      "size": 12128,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243086/1/stage_164.glb",
+      "size": 90928,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243089/1/stage_169.glb",
+      "size": 16424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243090/1/stage_168_move.002.glb",
+      "size": 8608,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243093/1/stage_167_rot.001.glb",
+      "size": 3032,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243096/1/stage_162_dead.006.glb",
+      "size": 10684,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243099/1/stage_161_dead.004.glb",
+      "size": 5396,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243100/1/stage_168_move.004.glb",
+      "size": 8608,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243101/1/stage_161.glb",
+      "size": 38212,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243102/1/stage_169_dead.glb",
+      "size": 1924,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243389/1/stage_169_jump.006.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243394/1/stage_163_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243397/1/stage_165_fly.glb",
+      "size": 23220,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243399/1/stage_161_dead.001.glb",
+      "size": 5396,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243401/1/stage_164_fly.glb",
+      "size": 22164,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243402/1/stage_162.glb",
+      "size": 15016,
+      "required": false
+    },
+    {
+      "path": "files/assets/156243404/1/stage_162_dead.005.glb",
+      "size": 10864,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245739/1/stage_180.glb",
+      "size": 16028,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245741/1/stage_180_dead.glb",
+      "size": 58488,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245775/1/stage_179_fly.004.glb",
+      "size": 27356,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245777/1/stage_180_rot.glb",
+      "size": 20676,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245780/1/stage_179_fly.001.glb",
+      "size": 27356,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245781/1/stage_172.glb",
+      "size": 38800,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245782/1/stage_179_fly.glb",
+      "size": 27352,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245784/1/stage_172_fly.glb",
+      "size": 23472,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245826/1/stage_171.glb",
+      "size": 53848,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245828/1/stage_175.glb",
+      "size": 24356,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245831/1/stage_176.glb",
+      "size": 18840,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245858/1/stage_176_dead.002.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245861/1/stage_171_dead.002.glb",
+      "size": 3312,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245863/1/stage_177_move.007.glb",
+      "size": 7104,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245865/1/stage_177_move.004.glb",
+      "size": 7100,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245867/1/stage_176_dead.003.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245869/1/stage_177_move.002.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245874/1/stage_178_dead.001.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245875/1/stage_177_move.001.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245876/1/stage_177.glb",
+      "size": 20836,
+      "required": false
+    },
+    {
+      "path": "files/assets/156245877/1/stage_174_dead.002.glb",
+      "size": 5452,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246211/1/stage_179.glb",
+      "size": 115300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246214/1/stage_171_dead.001.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246215/1/stage_173_dead.glb",
+      "size": 15828,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246218/1/stage_172_dead.glb",
+      "size": 15868,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246221/1/stage_177_move.006.glb",
+      "size": 7100,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246222/1/stage_176_dead.glb",
+      "size": 1900,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246223/1/stage_174_dead.glb",
+      "size": 5448,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246224/1/stage_178_dead.002.glb",
+      "size": 3280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246226/1/stage_178.glb",
+      "size": 52664,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246227/1/stage_179_fly.003.glb",
+      "size": 27356,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246229/1/stage_175_jump.glb",
+      "size": 16316,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246232/1/stage_176_dead.001.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246237/1/stage_176_rot.003.glb",
+      "size": 8284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246238/1/stage_179_fly.002.glb",
+      "size": 27356,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246240/1/stage_173.glb",
+      "size": 37048,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246242/1/stage_177_move.003.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246244/1/stage_176_rot.001.glb",
+      "size": 8284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246246/1/stage_176_rot.glb",
+      "size": 8280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246248/1/stage_174_dead.001.glb",
+      "size": 5452,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246250/1/stage_175_dead.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246251/1/stage_176_rot.002.glb",
+      "size": 8284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246252/1/stage_177_move.005.glb",
+      "size": 7100,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246255/1/stage_178_dead.glb",
+      "size": 11152,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246257/1/stage_171_dead.glb",
+      "size": 3276,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246289/1/stage_174.glb",
+      "size": 52600,
+      "required": false
+    },
+    {
+      "path": "files/assets/156246292/1/stage_177_move.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247409/1/stage_188_move.glb",
+      "size": 8380,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247439/1/stage_185_jump.001.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247440/1/stage_184_dead.glb",
+      "size": 1900,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247468/1/stage_188_move.004.glb",
+      "size": 8192,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247471/1/stage_185_jump.005.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247473/1/stage_188_dead.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247477/1/stage_184_dead.002.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247478/1/stage_182_dead.glb",
+      "size": 8840,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247479/1/stage_185_dead.glb",
+      "size": 1904,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247482/1/stage_188_move.005.glb",
+      "size": 8192,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247484/1/stage_188_move.003.glb",
+      "size": 8192,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247487/1/stage_187_dead.glb",
+      "size": 9468,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247488/1/stage_185_jump.003.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247490/1/stage_185_dead.002.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247491/1/stage_182_jump.003.glb",
+      "size": 16324,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247492/1/stage_189.glb",
+      "size": 44484,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247494/1/stage_185_jump.002.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247497/1/stage_182_jump.001.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247498/1/stage_182.glb",
+      "size": 38416,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247500/1/stage_185_jump.004.glb",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247504/1/stage_184_dead.001.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247505/1/stage_185.glb",
+      "size": 105768,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247506/1/stage_188_move.001.glb",
+      "size": 8384,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247524/1/stage_190.glb",
+      "size": 13956,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247526/1/stage_181.glb",
+      "size": 44184,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247528/1/stage_185_dead.001.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247529/1/stage_189_dead.glb",
+      "size": 18276,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247531/1/stage_183.glb",
+      "size": 34884,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247532/1/stage_188_move.002.glb",
+      "size": 8384,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247537/1/stage_183_dead.glb",
+      "size": 12832,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247538/1/stage_184_dead.003.glb",
+      "size": 1908,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247543/1/stage_188.glb",
+      "size": 153316,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247545/1/stage_186.glb",
+      "size": 20484,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247547/1/stage_184_rot.003.glb",
+      "size": 8280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247548/1/stage_184_rot.glb",
+      "size": 8280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247551/1/stage_187.glb",
+      "size": 28436,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247552/1/stage_184.glb",
+      "size": 8628,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247553/1/stage_185_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247557/1/stage_184_rot.001.glb",
+      "size": 8284,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247561/1/stage_182_jump.002.glb",
+      "size": 16324,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247567/1/stage_181_dead.glb",
+      "size": 34256,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247568/1/stage_184_rot.002.glb",
+      "size": 8280,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247572/1/stage_182_jump.glb",
+      "size": 16320,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247574/1/stage_186_dead.glb",
+      "size": 45344,
+      "required": false
+    },
+    {
+      "path": "files/assets/156247576/1/stage_190_dead.glb",
+      "size": 6116,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248675/1/stage_200_dead.glb",
+      "size": 44128,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248681/1/stage_195_dead.022.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248683/1/stage_195_dead.033.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248686/1/stage_196_dead.glb",
+      "size": 122856,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248687/1/stage_191_move.glb",
+      "size": 2760,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248768/1/stage_196.glb",
+      "size": 30060,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248769/1/stage_199_dead.001.glb",
+      "size": 3156,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248772/1/stage_198_dead.glb",
+      "size": 74828,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248773/1/stage_195_dead.034.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248774/1/stage_197_daed.glb",
+      "size": 2420,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248775/1/stage_197_daed.002.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248807/1/stage_195_dead.019.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248809/1/stage_195_dead.006.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248810/1/stage_195_dead.011.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248838/1/stage_197_daed.001.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248841/1/stage_195_dead.029.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248842/1/stage_194_dead.001.glb",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248846/1/stage_195_dead.005.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248849/1/stage_195_dead.004.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248852/1/stage_195_dead.031.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248853/1/stage_195_dead.012.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248855/1/stage_195_dead.020.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248858/1/stage_195_dead.017.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248859/1/stage_192_dead.glb",
+      "size": 6948,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248861/1/stage_195_dead.036.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248863/1/stage_193_dead.glb",
+      "size": 35808,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248865/1/stage_195_dead.032.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248866/1/stage_195_dead.016.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248869/1/stage_195_dead.027.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248871/1/stage_194_dead.glb",
+      "size": 1948,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248874/1/stage_195_dead.030.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248875/1/stage_195_dead.026.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248876/1/stage_198.glb",
+      "size": 13572,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248877/1/stage_194.glb",
+      "size": 22276,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248879/1/stage_195_dead.014.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248880/1/stage_200.glb",
+      "size": 14704,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248882/1/stage_195_dead.018.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248884/1/stage_193.glb",
+      "size": 45792,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248886/1/stage_199.glb",
+      "size": 20900,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248891/1/stage_195_dead.025.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248893/1/stage_195_dead.003.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248896/1/stage_199_dead.glb",
+      "size": 3152,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248898/1/stage_197_daed.003.glb",
+      "size": 2424,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248900/1/stage_195_dead.015.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248902/1/stage_195_dead.glb",
+      "size": 6584,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248904/1/stage_191.glb",
+      "size": 10040,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248908/1/stage_195_dead.035.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248912/1/stage_195_dead.008.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248913/1/stage_195_dead.010.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248914/1/stage_195_dead.009.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248921/1/stage_finish.glb",
+      "size": 38004,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248929/1/stage_200_jump.glb",
+      "size": 16296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248932/1/stage_195_dead.038.glb",
+      "size": 17296,
+      "required": false
+    },
+    {
+      "path": "files/assets/156248935/1/stage_195_dead.002.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156539539/1/atlastexture_2.png",
+      "size": 97250,
+      "required": false
+    },
+    {
+      "path": "files/assets/156611423/1/JumpPlatform.js",
+      "size": 888,
+      "required": true
+    },
+    {
+      "path": "files/assets/156614958/1/stage_144_dead.005.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156614996/1/stage_144_dead.006.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156615056/1/stage_144.glb",
+      "size": 65112,
+      "required": false
+    },
+    {
+      "path": "files/assets/156615064/1/stage_144_dead.009.glb",
+      "size": 6580,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622204/1/stage_195.glb",
+      "size": 117496,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622212/1/stage_195_dead.001.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622260/1/stage_195_dead.013.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622273/1/stage_195_dead.021.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622281/1/stage_195_dead.023.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156622287/1/stage_195_dead.024.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156624497/1/stage_195_dead.028.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156624503/1/stage_195_dead.007.glb",
+      "size": 6588,
+      "required": false
+    },
+    {
+      "path": "files/assets/156624558/1/stage_197.glb",
+      "size": 17108,
+      "required": false
+    },
+    {
+      "path": "files/assets/156700319/1/WindArea.js",
+      "size": 774,
+      "required": true
+    },
+    {
+      "path": "files/assets/156758818/1/RedBallPhysic.js",
+      "size": 1279,
+      "required": true
+    },
+    {
+      "path": "files/assets/156870870/1/ElapsedTime.js",
+      "size": 1199,
+      "required": true
+    },
+    {
+      "path": "files/assets/158114886/1/stage1-100.glb",
+      "size": 6540600,
+      "required": false
+    },
+    {
+      "path": "files/assets/158115141/1/stage1-100.json",
+      "size": 173448,
+      "required": false
+    },
+    {
+      "path": "files/assets/158115277/1/hyper_atlas.png",
+      "size": 504266,
+      "required": false
+    },
+    {
+      "path": "files/assets/158115512/1/Stage.json",
+      "size": 3577,
+      "required": false
+    },
+    {
+      "path": "files/assets/158123361/1/BallObby_Stage.js",
+      "size": 3744,
+      "required": true
+    },
+    {
+      "path": "files/assets/158130106/1/BallObby_PlayerController.js",
+      "size": 23714,
+      "required": true
+    },
+    {
+      "path": "files/assets/158139337/1/noobhead.glb",
+      "size": 9868,
+      "required": false
+    },
+    {
+      "path": "files/assets/158220263/1/BallObby_Coin.js",
+      "size": 1578,
+      "required": true
+    },
+    {
+      "path": "files/assets/158220268/1/BallObby_MarketItem.js",
+      "size": 5741,
+      "required": true
+    },
+    {
+      "path": "files/assets/158229318/1/BallObby_NetworkManager.js",
+      "size": 35025,
+      "required": true
+    },
+    {
+      "path": "files/assets/158230495/1/OtherPlayer.json",
+      "size": 5620,
+      "required": false
+    },
+    {
+      "path": "files/assets/158230824/1/BallObbyHelpers.js",
+      "size": 1198,
+      "required": true
+    },
+    {
+      "path": "files/assets/158237033/1/BallObby_Button.js",
+      "size": 461,
+      "required": true
+    },
+    {
+      "path": "files/assets/158237062/1/BallObby_UIManager.js",
+      "size": 1506,
+      "required": true
+    },
+    {
+      "path": "files/assets/158382836/1/BallObby_PopupController.js",
+      "size": 4902,
+      "required": true
+    },
+    {
+      "path": "files/assets/158382889/1/BallObby_ResetProgressController.js",
+      "size": 1696,
+      "required": true
+    },
+    {
+      "path": "files/assets/158382898/1/BallObby_CameraController.js",
+      "size": 5360,
+      "required": true
+    },
+    {
+      "path": "files/assets/158382899/1/BallObby_MobileCameraController.js",
+      "size": 6579,
+      "required": true
+    },
+    {
+      "path": "files/assets/158383053/1/BallObby_ElapsedTime.js",
+      "size": 1291,
+      "required": true
+    },
+    {
+      "path": "files/assets/158409326/1/BallObby_JumpPlatform.js",
+      "size": 944,
+      "required": true
+    },
+    {
+      "path": "files/assets/158411772/1/BallObby_DeadObject.js",
+      "size": 712,
+      "required": true
+    },
+    {
+      "path": "files/assets/158413359/1/BallObby_RedBall.js",
+      "size": 1284,
+      "required": true
+    },
+    {
+      "path": "files/assets/158696184/1/nub2.png",
+      "size": 29502,
+      "required": false
+    },
+    {
+      "path": "files/assets/158707718/1/zar.png",
+      "size": 22272,
+      "required": false
+    },
+    {
+      "path": "files/assets/158721278/1/nub4.png",
+      "size": 33000,
+      "required": false
+    },
+    {
+      "path": "files/assets/158723006/1/nub5.png",
+      "size": 26736,
+      "required": false
+    },
+    {
+      "path": "files/assets/158723870/1/nub6.png",
+      "size": 26289,
+      "required": false
+    },
+    {
+      "path": "files/assets/158724610/1/nub8.png",
+      "size": 21181,
+      "required": false
+    },
+    {
+      "path": "files/assets/158724693/1/nub9.png",
+      "size": 21432,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921331/1/skin8.png",
+      "size": 12082,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921332/1/skin9.png",
+      "size": 12555,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921333/1/skin3.png",
+      "size": 15303,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921334/1/skin1.png",
+      "size": 15801,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921335/1/skin5.png",
+      "size": 15031,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921336/1/skin0.png",
+      "size": 11191,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921338/1/skin4.png",
+      "size": 13669,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921339/1/skin6.png",
+      "size": 8397,
+      "required": false
+    },
+    {
+      "path": "files/assets/158921340/1/skin2.png",
+      "size": 12572,
+      "required": false
+    },
+    {
+      "path": "files/assets/158995533/1/BallObby_ResetStageController.js",
+      "size": 1727,
+      "required": true
+    },
+    {
+      "path": "files/assets/159255520/1/BallObby_OtherPlayerController.js",
+      "size": 1493,
+      "required": true
+    },
+    {
+      "path": "files/assets/159290083/1/ballmusic.mp3",
+      "size": 2113643,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713193/1/char.glb",
+      "size": 32992,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713277/1/Idle.glb",
+      "size": 24140,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713278/1/Air.glb",
+      "size": 21824,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713280/1/Jump.glb",
+      "size": 20708,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713281/1/Ladder.glb",
+      "size": 21200,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713283/1/Run.glb",
+      "size": 21256,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713449/1/LOMobileCameraController.js",
+      "size": 9484,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713450/1/LOCameraController.js",
+      "size": 8531,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713469/1/LO-PlayerController.js",
+      "size": 18279,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713534/1/LO-NetworkManager.js",
+      "size": 12302,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713545/1/Helpers.js",
+      "size": 756,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713570/1/bunny.png",
+      "size": 1276,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713571/1/skin_stevic.png",
+      "size": 16032,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713572/1/skin_businessman.png",
+      "size": 6890,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713574/1/skin_cowboy.png",
+      "size": 15924,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713577/1/skin_default.png",
+      "size": 13804,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713579/1/skin_clown.png",
+      "size": 13786,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713581/1/skin_saian.png",
+      "size": 11088,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713693/1/ArmatureClimbIdle.glb",
+      "size": 4124,
+      "required": false
+    },
+    {
+      "path": "files/assets/163713895/1/LO-Ladder-Controller.js",
+      "size": 5715,
+      "required": true
+    },
+    {
+      "path": "files/assets/163713999/1/ladder.glb",
+      "size": 8500,
+      "required": false
+    },
+    {
+      "path": "files/assets/163715716/1/LO-Ladder.js",
+      "size": 7595,
+      "required": true
+    },
+    {
+      "path": "files/assets/164045659/1/rigidbody-extensions.js",
+      "size": 1060,
+      "required": true
+    },
+    {
+      "path": "files/assets/164246487/1/salesman.png",
+      "size": 12170,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246511/1/texture3_revise1.png",
+      "size": 7386,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246512/1/texture4.png",
+      "size": 5654,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246524/1/texture1.png",
+      "size": 60574,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246587/1/texture2.png",
+      "size": 62884,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246590/1/ladder2.glb",
+      "size": 484948,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246595/1/texture3_revise1.png",
+      "size": 84987,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246596/1/ladder2.json",
+      "size": 1606,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246599/1/ladder3.glb",
+      "size": 850788,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246609/1/texture4.png",
+      "size": 59658,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246611/1/ladder3.json",
+      "size": 4396,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246615/1/ladder4.glb",
+      "size": 765092,
+      "required": false
+    },
+    {
+      "path": "files/assets/164246622/1/ladder4.json",
+      "size": 4367,
+      "required": false
+    },
+    {
+      "path": "files/assets/164269825/1/LO-OptimizerManager.js",
+      "size": 1680,
+      "required": true
+    },
+    {
+      "path": "files/assets/164288637/1/RiverObby_PlayerController.js",
+      "size": 24737,
+      "required": true
+    },
+    {
+      "path": "files/assets/164288778/1/DeadPlayer.json",
+      "size": 12157,
+      "required": false
+    },
+    {
+      "path": "files/assets/164288791/1/RiverObby_DeadPlayerController.js",
+      "size": 814,
+      "required": true
+    },
+    {
+      "path": "files/assets/164288923/1/footstep1.mp3",
+      "size": 9194,
+      "required": false
+    },
+    {
+      "path": "files/assets/164288924/1/footstep2.mp3",
+      "size": 9194,
+      "required": false
+    },
+    {
+      "path": "files/assets/164288925/1/footstep0.mp3",
+      "size": 9194,
+      "required": false
+    },
+    {
+      "path": "files/assets/164288926/1/jump.mp3",
+      "size": 6268,
+      "required": false
+    },
+    {
+      "path": "files/assets/164289263/1/RiverObby_MobileCameraController.js",
+      "size": 8252,
+      "required": true
+    },
+    {
+      "path": "files/assets/164289264/1/RiverObby_CameraController.js",
+      "size": 6369,
+      "required": true
+    },
+    {
+      "path": "files/assets/164289346/1/RiverObby_NetworkManager.js",
+      "size": 16509,
+      "required": true
+    },
+    {
+      "path": "files/assets/164289407/1/screenBlood.png",
+      "size": 2023,
+      "required": false
+    },
+    {
+      "path": "files/assets/164289553/1/RiverObby_Helpers.js",
+      "size": 1094,
+      "required": true
+    },
+    {
+      "path": "files/assets/164472127/1/boat.glb",
+      "size": 16908,
+      "required": false
+    },
+    {
+      "path": "files/assets/164472131/1/boat.json",
+      "size": 2258,
+      "required": false
+    },
+    {
+      "path": "files/assets/164472266/1/ColorPalette.png",
+      "size": 4122,
+      "required": false
+    },
+    {
+      "path": "files/assets/164481415/1/face_0.png",
+      "size": 3976,
+      "required": false
+    },
+    {
+      "path": "files/assets/164628240/1/circle.png",
+      "size": 3180,
+      "required": false
+    },
+    {
+      "path": "files/assets/164628891/1/circle.png",
+      "size": 3180,
+      "required": false
+    },
+    {
+      "path": "files/assets/164631840/1/RiverObby_WaveEffect.js",
+      "size": 1503,
+      "required": true
+    },
+    {
+      "path": "files/assets/164706824/1/dalga_lowcontrast.png",
+      "size": 5354,
+      "required": false
+    },
+    {
+      "path": "files/assets/164706893/1/RiverObby_ScrollingTexture.js",
+      "size": 1376,
+      "required": true
+    },
+    {
+      "path": "files/assets/164797930/1/LO-UIManager.js",
+      "size": 8949,
+      "required": true
+    },
+    {
+      "path": "files/assets/164798076/1/RewardedButton.png",
+      "size": 3822,
+      "required": false
+    },
+    {
+      "path": "files/assets/164799069/1/LO-RewardedPowerUp.js",
+      "size": 1246,
+      "required": true
+    },
+    {
+      "path": "files/assets/164998005/1/raycast.js",
+      "size": 2536,
+      "required": true
+    },
+    {
+      "path": "files/assets/165107236/1/RiverObby_DeadObject.js",
+      "size": 617,
+      "required": true
+    },
+    {
+      "path": "files/assets/165139748/1/RiverObby_PlayerInventoryController.js",
+      "size": 562,
+      "required": true
+    },
+    {
+      "path": "files/assets/165142711/1/star.png",
+      "size": 626,
+      "required": false
+    },
+    {
+      "path": "files/assets/165142840/1/RiverObby_Rotator.js",
+      "size": 543,
+      "required": true
+    },
+    {
+      "path": "files/assets/165142850/1/RiverObby_LookAtCamera.js",
+      "size": 543,
+      "required": true
+    },
+    {
+      "path": "files/assets/165147486/1/RiverObby_SpeedArea.js",
+      "size": 1051,
+      "required": true
+    },
+    {
+      "path": "files/assets/165192968/1/RiverObby_Checkpoint.js",
+      "size": 1665,
+      "required": true
+    },
+    {
+      "path": "files/assets/165201815/1/RiverObby_Coin.js",
+      "size": 1448,
+      "required": true
+    },
+    {
+      "path": "files/assets/165201905/1/LO-OtherPlayerController.js",
+      "size": 445,
+      "required": true
+    },
+    {
+      "path": "files/assets/165220377/1/LO-CloseButton.js",
+      "size": 456,
+      "required": true
+    },
+    {
+      "path": "files/assets/165235628/1/boatIcon.png",
+      "size": 8516,
+      "required": false
+    },
+    {
+      "path": "files/assets/165328777/1/RiverObby_MarketController.js",
+      "size": 2253,
+      "required": true
+    },
+    {
+      "path": "files/assets/165416847/1/LO-Coin.js",
+      "size": 1439,
+      "required": true
+    },
+    {
+      "path": "files/assets/165512687/1/LO-MarketController.js",
+      "size": 7844,
+      "required": true
+    },
+    {
+      "path": "files/assets/165813596/1/LO-MarketButton.js",
+      "size": 1852,
+      "required": true
+    },
+    {
+      "path": "files/assets/165830063/1/face_0.png",
+      "size": 3976,
+      "required": false
+    },
+    {
+      "path": "files/assets/165830064/1/face_0.png",
+      "size": 3976,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241993/1/ladder_ice.jpg",
+      "size": 18796,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241994/1/ladder_night.jpg",
+      "size": 20308,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241995/1/ladder_default.jpg",
+      "size": 17373,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241996/1/ladder_rainbow.jpg",
+      "size": 17972,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241997/1/ladder_gold.jpg",
+      "size": 19711,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241998/1/texture0.jpg",
+      "size": 12043,
+      "required": false
+    },
+    {
+      "path": "files/assets/166241999/1/ladder_diamond.jpg",
+      "size": 18710,
+      "required": false
+    },
+    {
+      "path": "files/assets/166242000/1/ladder_pink.jpg",
+      "size": 17015,
+      "required": false
+    },
+    {
+      "path": "files/assets/166242001/1/ladder_honeycomb.jpg",
+      "size": 41651,
+      "required": false
+    },
+    {
+      "path": "files/assets/166242002/1/ladder_lava.jpg",
+      "size": 60225,
+      "required": false
+    },
+    {
+      "path": "files/assets/166242011/1/ladder.glb",
+      "size": 17716,
+      "required": false
+    },
+    {
+      "path": "files/assets/166432361/1/LO-Teleferik.js",
+      "size": 1456,
+      "required": true
+    },
+    {
+      "path": "files/assets/166440410/1/Lo-StageTrigger.js",
+      "size": 1736,
+      "required": true
+    },
+    {
+      "path": "files/assets/166639865/1/LO-Teleport.js",
+      "size": 789,
+      "required": true
+    },
+    {
+      "path": "files/assets/166868918/1/river_1-60_environment.glb",
+      "size": 8410504,
+      "required": false
+    },
+    {
+      "path": "files/assets/166868936/1/river_1-60_environment.json",
+      "size": 13435,
+      "required": false
+    },
+    {
+      "path": "files/assets/166891379/1/river_level_1-10.glb",
+      "size": 1376588,
+      "required": false
+    },
+    {
+      "path": "files/assets/166891390/1/river_level_1-10.json",
+      "size": 6994,
+      "required": false
+    },
+    {
+      "path": "files/assets/166918668/1/LO-PowerUp.js",
+      "size": 5910,
+      "required": true
+    },
+    {
+      "path": "files/assets/167050432/1/giraffe.glb",
+      "size": 74532,
+      "required": false
+    },
+    {
+      "path": "files/assets/167073290/1/LO-InventoryController.js",
+      "size": 840,
+      "required": true
+    },
+    {
+      "path": "files/assets/167082484/1/balloon.glb",
+      "size": 6528,
+      "required": false
+    },
+    {
+      "path": "files/assets/167082557/1/ColorPalette.png",
+      "size": 4122,
+      "required": false
+    },
+    {
+      "path": "files/assets/167086138/1/ballon.png",
+      "size": 9333,
+      "required": false
+    },
+    {
+      "path": "files/assets/167097813/1/ladder.png",
+      "size": 22653,
+      "required": false
+    },
+    {
+      "path": "files/assets/167097878/1/LO-RewardedButtonAnimation.js",
+      "size": 3235,
+      "required": true
+    },
+    {
+      "path": "files/assets/167097921/1/longladder.png",
+      "size": 13041,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219589/1/skin1.png",
+      "size": 7326,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219590/1/skin2_1.png",
+      "size": 11703,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219591/1/skin3_5.png",
+      "size": 6090,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219592/1/skin3_2.png",
+      "size": 6770,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219593/1/skin0.png",
+      "size": 7820,
+      "required": false
+    },
+    {
+      "path": "files/assets/167219594/1/skin3_4.png",
+      "size": 6030,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220077/1/ladder3.png",
+      "size": 20019,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220078/1/ladder4.png",
+      "size": 30690,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220079/1/ladder1.png",
+      "size": 27720,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220080/1/ladder5.png",
+      "size": 20772,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220081/1/ladder2.png",
+      "size": 19105,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220090/1/ladder6.png",
+      "size": 37965,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220098/1/ladder7.png",
+      "size": 22549,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220100/1/skin3_3.png",
+      "size": 4680,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220251/1/ladder8.png",
+      "size": 19757,
+      "required": false
+    },
+    {
+      "path": "files/assets/167220256/1/ladder91.png",
+      "size": 15691,
+      "required": false
+    },
+    {
+      "path": "files/assets/167359801/1/river_level_11-15.glb",
+      "size": 1155492,
+      "required": false
+    },
+    {
+      "path": "files/assets/167359878/1/river_level_11-15.json",
+      "size": 51538,
+      "required": false
+    },
+    {
+      "path": "files/assets/167359967/1/river_level_16-20.glb",
+      "size": 1761648,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360086/1/river_level_16-20.json",
+      "size": 82311,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360089/1/river_level_31-40.glb",
+      "size": 1590372,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360259/1/river_level_31-40.json",
+      "size": 114424,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360277/1/river_level_41-50.glb",
+      "size": 2168604,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360466/1/river_level_41-50.json",
+      "size": 153662,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360546/1/river_level_50-60.glb",
+      "size": 1633548,
+      "required": false
+    },
+    {
+      "path": "files/assets/167360704/1/river_level_50-60.json",
+      "size": 132997,
+      "required": false
+    },
+    {
+      "path": "files/assets/167625950/1/river_level_20-30.glb",
+      "size": 1404372,
+      "required": false
+    },
+    {
+      "path": "files/assets/167626101/1/river_level_20-30.json",
+      "size": 104083,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004611/1/skybox_left_nx.png",
+      "size": 30944,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004612/1/skybox_left_nz.png",
+      "size": 44652,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004613/1/skybox_left_py.png",
+      "size": 29521,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004614/1/skybox_left_ny.png",
+      "size": 51409,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004615/1/skybox_left_pz.png",
+      "size": 40993,
+      "required": false
+    },
+    {
+      "path": "files/assets/168004616/1/skybox_left_px.png",
+      "size": 35471,
+      "required": false
+    },
+    {
+      "path": "files/assets/171258627/1/Classic-CharacterController.js",
+      "size": 27094,
+      "required": true
+    },
+    {
+      "path": "files/assets/171258637/1/Classic-CameraController.js",
+      "size": 9270,
+      "required": true
+    },
+    {
+      "path": "files/assets/171258639/1/Classic-MobileCamera.js",
+      "size": 8641,
+      "required": true
+    },
+    {
+      "path": "files/assets/171259107/1/ClassicNetworkManager.js",
+      "size": 15448,
+      "required": true
+    },
+    {
+      "path": "files/assets/171259468/1/Helpers.js",
+      "size": 853,
+      "required": true
+    },
+    {
+      "path": "files/assets/171266020/1/Classic-Death.js",
+      "size": 483,
+      "required": true
+    },
+    {
+      "path": "files/assets/171267603/1/Classic-ApplyForce.js",
+      "size": 279,
+      "required": true
+    },
+    {
+      "path": "files/assets/171267803/1/Classic-CheckPoint.js",
+      "size": 1346,
+      "required": true
+    },
+    {
+      "path": "files/assets/171268298/1/Classic-Coin.js",
+      "size": 1636,
+      "required": true
+    },
+    {
+      "path": "files/assets/171480953/1/TriggeredFakeGravity.js",
+      "size": 1006,
+      "required": true
+    },
+    {
+      "path": "files/assets/171505156/1/ClassicUIManager.js",
+      "size": 11577,
+      "required": true
+    },
+    {
+      "path": "files/assets/171511136/1/ClassicButton.js",
+      "size": 605,
+      "required": true
+    },
+    {
+      "path": "files/assets/171540005/1/ClassicPortal.js",
+      "size": 829,
+      "required": true
+    },
+    {
+      "path": "files/assets/171541243/1/Classic-Powerup-Controller.js",
+      "size": 8176,
+      "required": true
+    },
+    {
+      "path": "files/assets/171542452/1/ClassicRewarded.js",
+      "size": 654,
+      "required": true
+    },
+    {
+      "path": "files/assets/171546761/1/Classic-ReMateraial.js",
+      "size": 256,
+      "required": true
+    },
+    {
+      "path": "files/assets/171550766/1/Classic-SoundManager.js",
+      "size": 552,
+      "required": true
+    },
+    {
+      "path": "files/assets/171550828/1/Classic-Chest.js",
+      "size": 506,
+      "required": true
+    },
+    {
+      "path": "files/assets/171551327/1/Classic-Timer.js",
+      "size": 1372,
+      "required": true
+    },
+    {
+      "path": "files/assets/171551472/1/PokiSdkManager.js",
+      "size": 740,
+      "required": true
+    },
+    {
+      "path": "files/assets/171552267/1/Classic-RemotePlayer.js",
+      "size": 5066,
+      "required": true
+    },
+    {
+      "path": "files/assets/171669663/1/LookAtCam.js",
+      "size": 580,
+      "required": true
+    },
+    {
+      "path": "files/assets/171682621/1/Classic-OptimizeManager.js",
+      "size": 1863,
+      "required": true
+    },
+    {
+      "path": "files/assets/171810889/1/colyseus.js",
+      "size": 238572,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1695,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.jpg",
+      "size": 13159,
+      "required": false
+    },
+    {
+      "path": "playcanvas-stable.min.js",
+      "size": 1760318,
+      "required": true
+    },
+    {
+      "path": "poki-sdk.js",
+      "size": 4288,
+      "required": true
+    },
+    {
+      "path": "poki-v2.js",
+      "size": 225059,
+      "required": true
+    },
+    {
+      "path": "styles.css",
+      "size": 736,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_critical": [
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

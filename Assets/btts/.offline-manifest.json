@@ -1,0 +1,834 @@
+{
+  "schema": 1,
+  "slug": "btts",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 524,
+      "required": true
+    },
+    {
+      "path": "bro.scml",
+      "size": 31157,
+      "required": false
+    },
+    {
+      "path": "bro.scon",
+      "size": 57048,
+      "required": false
+    },
+    {
+      "path": "c2runtime.js",
+      "size": 860407,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 274310,
+      "required": true
+    },
+    {
+      "path": "download.gif",
+      "size": 219425,
+      "required": false
+    },
+    {
+      "path": "icon-114.png",
+      "size": 808,
+      "required": false
+    },
+    {
+      "path": "icon-128.png",
+      "size": 938,
+      "required": false
+    },
+    {
+      "path": "icon-16.png",
+      "size": 291,
+      "required": false
+    },
+    {
+      "path": "icon-256.png",
+      "size": 1604,
+      "required": false
+    },
+    {
+      "path": "icon-32.png",
+      "size": 416,
+      "required": false
+    },
+    {
+      "path": "icon.png",
+      "size": 2354,
+      "required": false
+    },
+    {
+      "path": "images.png",
+      "size": 3274,
+      "required": false
+    },
+    {
+      "path": "images/bigimg-sheet0.png",
+      "size": 3925,
+      "required": false
+    },
+    {
+      "path": "images/bigsquareimg-sheet0.png",
+      "size": 798,
+      "required": false
+    },
+    {
+      "path": "images/blockcrush-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/blockcrushboss-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/blood.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/blueportalexit-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/blueportalparticles.png",
+      "size": 267,
+      "required": false
+    },
+    {
+      "path": "images/bossburnerthrowstack-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/bouncer-sheet0.png",
+      "size": 356,
+      "required": false
+    },
+    {
+      "path": "images/bouncer-sheet1.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/bro_entity_000_bro_arm_000-sheet0.png",
+      "size": 122,
+      "required": false
+    },
+    {
+      "path": "images/bro_entity_000_bro_body-sheet0.png",
+      "size": 136,
+      "required": false
+    },
+    {
+      "path": "images/bro_entity_000_bro_fist_000-sheet0.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "images/bro_entity_000_bro_shoulder_000-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/bullet-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/bumper-sheet0.png",
+      "size": 167,
+      "required": false
+    },
+    {
+      "path": "images/camera-sheet0.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "images/checkpoint_top-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/cloud-sheet0.png",
+      "size": 278,
+      "required": false
+    },
+    {
+      "path": "images/congratulations-sheet0.png",
+      "size": 707,
+      "required": false
+    },
+    {
+      "path": "images/dash-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/door_boss-sheet0.png",
+      "size": 127,
+      "required": false
+    },
+    {
+      "path": "images/door_regular-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "images/enemyai-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/eologo-sheet0.png",
+      "size": 2638,
+      "required": false
+    },
+    {
+      "path": "images/eopresents-sheet0.png",
+      "size": 3560,
+      "required": false
+    },
+    {
+      "path": "images/explosionpart.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/fire_particles.png",
+      "size": 131,
+      "required": false
+    },
+    {
+      "path": "images/glass-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/glassparticles.png",
+      "size": 153,
+      "required": false
+    },
+    {
+      "path": "images/greenlight-sheet0.png",
+      "size": 96850,
+      "required": false
+    },
+    {
+      "path": "images/helpmeimg-sheet0.png",
+      "size": 431,
+      "required": false
+    },
+    {
+      "path": "images/jumpthru-sheet0.png",
+      "size": 133,
+      "required": false
+    },
+    {
+      "path": "images/lava-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/lavaparticles.png",
+      "size": 653,
+      "required": false
+    },
+    {
+      "path": "images/los-sheet0.png",
+      "size": 279,
+      "required": false
+    },
+    {
+      "path": "images/menuicon-sheet0.png",
+      "size": 98,
+      "required": false
+    },
+    {
+      "path": "images/orangeportalentrance-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/orangeportalparticles.png",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "images/particles.png",
+      "size": 152,
+      "required": false
+    },
+    {
+      "path": "images/particles2.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/pineappleimg-sheet0.png",
+      "size": 18683,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/respawn-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/respawnparticles.png",
+      "size": 138,
+      "required": false
+    },
+    {
+      "path": "images/rparticles.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/saw1-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/saw2-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "images/sawsaw-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/screen-sheet0.png",
+      "size": 2549,
+      "required": false
+    },
+    {
+      "path": "images/screen-sheet1.png",
+      "size": 2549,
+      "required": false
+    },
+    {
+      "path": "images/screen-sheet2.png",
+      "size": 2549,
+      "required": false
+    },
+    {
+      "path": "images/shifting_block-sheet0.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/slider-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/splash_particles.png",
+      "size": 138,
+      "required": false
+    },
+    {
+      "path": "images/sprite-sheet0.png",
+      "size": 1331,
+      "required": false
+    },
+    {
+      "path": "images/sprite2-sheet0.png",
+      "size": 305,
+      "required": false
+    },
+    {
+      "path": "images/sprite3-sheet0.png",
+      "size": 1369,
+      "required": false
+    },
+    {
+      "path": "images/sprite3-sheet1.png",
+      "size": 568,
+      "required": false
+    },
+    {
+      "path": "images/sprite4-sheet0.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "images/sprite6-sheet0.png",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "images/sprite7-sheet0.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "images/spritebox-sheet0.png",
+      "size": 186,
+      "required": false
+    },
+    {
+      "path": "images/spritefont.png",
+      "size": 1427,
+      "required": false
+    },
+    {
+      "path": "images/switch_boss-sheet0.png",
+      "size": 211,
+      "required": false
+    },
+    {
+      "path": "images/switch-sheet0.png",
+      "size": 253,
+      "required": false
+    },
+    {
+      "path": "images/switch-sheet1.png",
+      "size": 253,
+      "required": false
+    },
+    {
+      "path": "images/tempboss-sheet0.png",
+      "size": 1094,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground2.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "images/title-sheet0.png",
+      "size": 948,
+      "required": false
+    },
+    {
+      "path": "images/tminteract.png",
+      "size": 712,
+      "required": false
+    },
+    {
+      "path": "images/tmstructural.png",
+      "size": 346,
+      "required": false
+    },
+    {
+      "path": "images/turret-sheet0.png",
+      "size": 136,
+      "required": false
+    },
+    {
+      "path": "images/turret-sheet1.png",
+      "size": 136,
+      "required": false
+    },
+    {
+      "path": "images/water-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "images/waterparticles.png",
+      "size": 164,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2804,
+      "required": true
+    },
+    {
+      "path": "jquery-2.1.1.min.js",
+      "size": 84244,
+      "required": true
+    },
+    {
+      "path": "loading-logo.png",
+      "size": 526,
+      "required": false
+    },
+    {
+      "path": "media/bigblockfall.m4a",
+      "size": 10860,
+      "required": false
+    },
+    {
+      "path": "media/bigblockfall.ogg",
+      "size": 18809,
+      "required": false
+    },
+    {
+      "path": "media/blockremove.m4a",
+      "size": 2630,
+      "required": false
+    },
+    {
+      "path": "media/blockremove.ogg",
+      "size": 5723,
+      "required": false
+    },
+    {
+      "path": "media/bounceecho.m4a",
+      "size": 16333,
+      "required": false
+    },
+    {
+      "path": "media/bounceecho.ogg",
+      "size": 15777,
+      "required": false
+    },
+    {
+      "path": "media/bulletfire.m4a",
+      "size": 3348,
+      "required": false
+    },
+    {
+      "path": "media/bulletfire.ogg",
+      "size": 8649,
+      "required": false
+    },
+    {
+      "path": "media/bullethit.m4a",
+      "size": 3475,
+      "required": false
+    },
+    {
+      "path": "media/bullethit.ogg",
+      "size": 8021,
+      "required": false
+    },
+    {
+      "path": "media/bumper.m4a",
+      "size": 14290,
+      "required": false
+    },
+    {
+      "path": "media/bumper.ogg",
+      "size": 17891,
+      "required": false
+    },
+    {
+      "path": "media/checkpoint.m4a",
+      "size": 16978,
+      "required": false
+    },
+    {
+      "path": "media/checkpoint.ogg",
+      "size": 20724,
+      "required": false
+    },
+    {
+      "path": "media/collisionsmall.m4a",
+      "size": 2842,
+      "required": false
+    },
+    {
+      "path": "media/collisionsmall.ogg",
+      "size": 7383,
+      "required": false
+    },
+    {
+      "path": "media/dash.m4a",
+      "size": 3289,
+      "required": false
+    },
+    {
+      "path": "media/dash.ogg",
+      "size": 6706,
+      "required": false
+    },
+    {
+      "path": "media/death.m4a",
+      "size": 38081,
+      "required": false
+    },
+    {
+      "path": "media/death.ogg",
+      "size": 35318,
+      "required": false
+    },
+    {
+      "path": "media/dooropen.m4a",
+      "size": 27733,
+      "required": false
+    },
+    {
+      "path": "media/dooropen.ogg",
+      "size": 32030,
+      "required": false
+    },
+    {
+      "path": "media/explosion.m4a",
+      "size": 33886,
+      "required": false
+    },
+    {
+      "path": "media/explosion.ogg",
+      "size": 46451,
+      "required": false
+    },
+    {
+      "path": "media/glassbreak.m4a",
+      "size": 8935,
+      "required": false
+    },
+    {
+      "path": "media/glassbreak.ogg",
+      "size": 10408,
+      "required": false
+    },
+    {
+      "path": "media/glasscrack.m4a",
+      "size": 5897,
+      "required": false
+    },
+    {
+      "path": "media/glasscrack.ogg",
+      "size": 9706,
+      "required": false
+    },
+    {
+      "path": "media/jump.m4a",
+      "size": 18585,
+      "required": false
+    },
+    {
+      "path": "media/jump.ogg",
+      "size": 11634,
+      "required": false
+    },
+    {
+      "path": "media/jumpthing_fallsound.m4a",
+      "size": 74391,
+      "required": false
+    },
+    {
+      "path": "media/jumpthing_fallsound.ogg",
+      "size": 80336,
+      "required": false
+    },
+    {
+      "path": "media/jumpthing.m4a",
+      "size": 1334133,
+      "required": false
+    },
+    {
+      "path": "media/jumpthing.ogg",
+      "size": 1438022,
+      "required": false
+    },
+    {
+      "path": "media/jumpthingmenu.m4a",
+      "size": 471047,
+      "required": false
+    },
+    {
+      "path": "media/jumpthingmenu.ogg",
+      "size": 445468,
+      "required": false
+    },
+    {
+      "path": "media/lavadrown.m4a",
+      "size": 30740,
+      "required": false
+    },
+    {
+      "path": "media/lavadrown.ogg",
+      "size": 42251,
+      "required": false
+    },
+    {
+      "path": "media/lavaflow.ogg",
+      "size": 74798,
+      "required": false
+    },
+    {
+      "path": "media/portal.m4a",
+      "size": 26865,
+      "required": false
+    },
+    {
+      "path": "media/portal.ogg",
+      "size": 32523,
+      "required": false
+    },
+    {
+      "path": "media/rreset.m4a",
+      "size": 9050,
+      "required": false
+    },
+    {
+      "path": "media/rreset.ogg",
+      "size": 15341,
+      "required": false
+    },
+    {
+      "path": "media/saw.m4a",
+      "size": 5674,
+      "required": false
+    },
+    {
+      "path": "media/saw.ogg",
+      "size": 11293,
+      "required": false
+    },
+    {
+      "path": "media/skidstop.m4a",
+      "size": 7641,
+      "required": false
+    },
+    {
+      "path": "media/skidstop.ogg",
+      "size": 12038,
+      "required": false
+    },
+    {
+      "path": "media/smallsquare.m4a",
+      "size": 4188,
+      "required": false
+    },
+    {
+      "path": "media/smallsquare.ogg",
+      "size": 7386,
+      "required": false
+    },
+    {
+      "path": "media/splash.m4a",
+      "size": 9623,
+      "required": false
+    },
+    {
+      "path": "media/splash.ogg",
+      "size": 14088,
+      "required": false
+    },
+    {
+      "path": "media/swim.m4a",
+      "size": 5474,
+      "required": false
+    },
+    {
+      "path": "media/swim.ogg",
+      "size": 9313,
+      "required": false
+    },
+    {
+      "path": "media/tsjump.m4a",
+      "size": 16785,
+      "required": false
+    },
+    {
+      "path": "media/tsjump.ogg",
+      "size": 14690,
+      "required": false
+    },
+    {
+      "path": "media/turretexplode.m4a",
+      "size": 10865,
+      "required": false
+    },
+    {
+      "path": "media/turretexplode.ogg",
+      "size": 17630,
+      "required": false
+    },
+    {
+      "path": "media/turretlook.m4a",
+      "size": 17616,
+      "required": false
+    },
+    {
+      "path": "media/turretlook.ogg",
+      "size": 21337,
+      "required": false
+    },
+    {
+      "path": "media/vatorup.m4a",
+      "size": 23902,
+      "required": false
+    },
+    {
+      "path": "media/vatorup.ogg",
+      "size": 25085,
+      "required": false
+    },
+    {
+      "path": "media/walljump.m4a",
+      "size": 36771,
+      "required": false
+    },
+    {
+      "path": "media/walljump.ogg",
+      "size": 16551,
+      "required": false
+    },
+    {
+      "path": "offline.appcache",
+      "size": 3565,
+      "required": false
+    },
+    {
+      "path": "offline.js",
+      "size": 4635,
+      "required": true
+    },
+    {
+      "path": "splash.png",
+      "size": 10323,
+      "required": false
+    },
+    {
+      "path": "sw.js",
+      "size": 11736,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

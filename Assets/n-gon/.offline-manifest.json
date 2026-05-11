@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "slug": "n-gon",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "bot.png",
+      "size": 2336,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 318,
+      "required": false
+    },
+    {
+      "path": "img/controls.png",
+      "size": 22378,
+      "required": false
+    },
+    {
+      "path": "img/n-gonbot.png",
+      "size": 21042,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 37783,
+      "required": true
+    },
+    {
+      "path": "js/bullet.js",
+      "size": 132213,
+      "required": true
+    },
+    {
+      "path": "js/engine.js",
+      "size": 5402,
+      "required": true
+    },
+    {
+      "path": "js/index.js",
+      "size": 36647,
+      "required": true
+    },
+    {
+      "path": "js/level.js",
+      "size": 222433,
+      "required": true
+    },
+    {
+      "path": "js/lore.js",
+      "size": 15782,
+      "required": true
+    },
+    {
+      "path": "js/mob.js",
+      "size": 25828,
+      "required": true
+    },
+    {
+      "path": "js/player.js",
+      "size": 70175,
+      "required": true
+    },
+    {
+      "path": "js/powerup.js",
+      "size": 30117,
+      "required": true
+    },
+    {
+      "path": "js/simulation.js",
+      "size": 23775,
+      "required": true
+    },
+    {
+      "path": "js/spawn.js",
+      "size": 116345,
+      "required": true
+    },
+    {
+      "path": "js/tech.js",
+      "size": 205838,
+      "required": true
+    },
+    {
+      "path": "js/visibility.js",
+      "size": 402,
+      "required": true
+    },
+    {
+      "path": "lib/decomp.min.js",
+      "size": 5543,
+      "required": true
+    },
+    {
+      "path": "lib/matter.min.js",
+      "size": 79715,
+      "required": true
+    },
+    {
+      "path": "lib/randomColor.min.js",
+      "size": 3743,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 9685,
+      "required": true
+    },
+    {
+      "path": "todo.txt",
+      "size": 26205,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "discord.gg",
+    "en.wikipedia.org",
+    "github.com",
+    "unpkg.com"
+  ],
+  "external_critical": [
+    "discord.gg",
+    "en.wikipedia.org",
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

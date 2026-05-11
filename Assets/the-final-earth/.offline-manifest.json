@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "slug": "the-final-earth",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "html5game/fixer.js",
+      "size": 1680,
+      "required": true
+    },
+    {
+      "path": "html5game/ld_texture_0.png",
+      "size": 150661,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF10.png",
+      "size": 4907,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF11.png",
+      "size": 4760,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF12.png",
+      "size": 5589,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF13.png",
+      "size": 4814,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF14.png",
+      "size": 5036,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF15.png",
+      "size": 4517,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF2.png",
+      "size": 2939,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF3.png",
+      "size": 3414,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF4.png",
+      "size": 3015,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF5.png",
+      "size": 3120,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF6.png",
+      "size": 4157,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF7.png",
+      "size": 4420,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF8.png",
+      "size": 5278,
+      "required": false
+    },
+    {
+      "path": "html5game/particles/IDR_GIF9.png",
+      "size": 3984,
+      "required": false
+    },
+    {
+      "path": "html5game/pd.js",
+      "size": 1719663,
+      "required": true
+    },
+    {
+      "path": "images.png",
+      "size": 2787,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3549,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "connect.facebook.net"
+  ],
+  "external_critical": [
+    "connect.facebook.net"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

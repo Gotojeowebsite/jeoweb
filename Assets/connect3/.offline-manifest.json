@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "slug": "connect3",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "connect3.js",
+      "size": 6821,
+      "required": true
+    },
+    {
+      "path": "connect3.png",
+      "size": 18686,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 144576,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 436,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 3506,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

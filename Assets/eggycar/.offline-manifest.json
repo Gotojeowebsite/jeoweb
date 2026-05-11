@@ -1,0 +1,674 @@
+{
+  "schema": 1,
+  "slug": "eggycar",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.gamedock.io/gamedock-web-tracker/4.3.0/script/gamedock-sdk.min.js",
+      "size": 9185,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ep3.adtrafficquality.google/ivt/worklet/caw.js",
+      "size": 3694,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ext.minijuegosgratis.com/external-host/main.js",
+      "size": 1563,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/car.js",
+      "size": 12496,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3_debug.js",
+      "size": 519038,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474210,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/lechuck.minijuegosgratis.com/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/raw.githack.com/Jeowebsite/Jeowebsite.github.io/main/eggycar/index.html",
+      "size": 5435,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/s0.2mdn.net/instream/video/client.js",
+      "size": 44701,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ssl.minijuegosgratis.com/lechuck/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "@source.txt",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "404.html",
+      "size": 1752,
+      "required": false
+    },
+    {
+      "path": "ahrefs_585f4691b0e399a160cb6e0c016b4fcd7b0c55de8ae4d7dc4c83d5d0761520b3",
+      "size": 89,
+      "required": false
+    },
+    {
+      "path": "appmanifest.json",
+      "size": 512,
+      "required": true
+    },
+    {
+      "path": "c2runtime.js",
+      "size": 1016434,
+      "required": true
+    },
+    {
+      "path": "changaone_regular.ttf",
+      "size": 22736,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 211145,
+      "required": true
+    },
+    {
+      "path": "del",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "egg-car/index.html",
+      "size": 780,
+      "required": false
+    },
+    {
+      "path": "eggy-car.png",
+      "size": 57196,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 25214,
+      "required": false
+    },
+    {
+      "path": "icon-256.png",
+      "size": 66837,
+      "required": false
+    },
+    {
+      "path": "images/a_coin-sheet0.png",
+      "size": 33669,
+      "required": false
+    },
+    {
+      "path": "images/a_dial_needle-sheet0.png",
+      "size": 539,
+      "required": false
+    },
+    {
+      "path": "images/a_dial-sheet0.png",
+      "size": 11905,
+      "required": false
+    },
+    {
+      "path": "images/a_dial-sheet1.png",
+      "size": 12024,
+      "required": false
+    },
+    {
+      "path": "images/a_egg_crack-sheet0.png",
+      "size": 4800,
+      "required": false
+    },
+    {
+      "path": "images/a_egg_crack-sheet1.png",
+      "size": 4684,
+      "required": false
+    },
+    {
+      "path": "images/a_egg_outline-sheet0.png",
+      "size": 2404,
+      "required": false
+    },
+    {
+      "path": "images/a_egg-sheet0.png",
+      "size": 5602,
+      "required": false
+    },
+    {
+      "path": "images/a_focus-sheet0.png",
+      "size": 22245,
+      "required": false
+    },
+    {
+      "path": "images/a_loading_bar.png",
+      "size": 2548,
+      "required": false
+    },
+    {
+      "path": "images/a_loading_frame-sheet0.png",
+      "size": 6095,
+      "required": false
+    },
+    {
+      "path": "images/a_logo_tyre-sheet0.png",
+      "size": 1722,
+      "required": false
+    },
+    {
+      "path": "images/a_logo-sheet0.png",
+      "size": 48331,
+      "required": false
+    },
+    {
+      "path": "images/a_power_up-sheet0.png",
+      "size": 6158,
+      "required": false
+    },
+    {
+      "path": "images/a_power_up-sheet1.png",
+      "size": 7647,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet0.png",
+      "size": 210395,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet1.png",
+      "size": 251838,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet2.png",
+      "size": 266220,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet3.png",
+      "size": 208604,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet4.png",
+      "size": 281708,
+      "required": false
+    },
+    {
+      "path": "images/a_track-sheet5.png",
+      "size": 133012,
+      "required": false
+    },
+    {
+      "path": "images/bg_parrallax_back-sheet0.png",
+      "size": 224312,
+      "required": false
+    },
+    {
+      "path": "images/bg_parrallax_front-sheet0.png",
+      "size": 140034,
+      "required": false
+    },
+    {
+      "path": "images/blockage-sheet0.png",
+      "size": 10289,
+      "required": false
+    },
+    {
+      "path": "images/btn_car_selection-sheet0.png",
+      "size": 17438,
+      "required": false
+    },
+    {
+      "path": "images/btn_challenge-sheet0.png",
+      "size": 13442,
+      "required": false
+    },
+    {
+      "path": "images/btn_close-sheet0.png",
+      "size": 7081,
+      "required": false
+    },
+    {
+      "path": "images/btn_continue-sheet0.png",
+      "size": 20366,
+      "required": false
+    },
+    {
+      "path": "images/btn_invite-sheet0.png",
+      "size": 8525,
+      "required": false
+    },
+    {
+      "path": "images/btn_leaderboard-sheet0.png",
+      "size": 8194,
+      "required": false
+    },
+    {
+      "path": "images/btn_music-sheet0.png",
+      "size": 22013,
+      "required": false
+    },
+    {
+      "path": "images/btn_play-sheet0.png",
+      "size": 16401,
+      "required": false
+    },
+    {
+      "path": "images/btn_sound-sheet0.png",
+      "size": 21501,
+      "required": false
+    },
+    {
+      "path": "images/car_0_tyre-sheet0.png",
+      "size": 1651,
+      "required": false
+    },
+    {
+      "path": "images/car_0_tyre-sheet1.png",
+      "size": 1196,
+      "required": false
+    },
+    {
+      "path": "images/car_0-sheet0.png",
+      "size": 15299,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_button-sheet0.png",
+      "size": 8190,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_button-sheet1.png",
+      "size": 5315,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_card-sheet0.png",
+      "size": 39904,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_card-sheet1.png",
+      "size": 42504,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_card-sheet2.png",
+      "size": 8627,
+      "required": false
+    },
+    {
+      "path": "images/car_sel_frame-sheet0.png",
+      "size": 119642,
+      "required": false
+    },
+    {
+      "path": "images/challenge_pic-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "images/dotted_line.png",
+      "size": 112,
+      "required": false
+    },
+    {
+      "path": "images/egg_freeze_vfx-sheet0.png",
+      "size": 9114,
+      "required": false
+    },
+    {
+      "path": "images/ground_detector-sheet0.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/hud_paddle-sheet0.png",
+      "size": 12985,
+      "required": false
+    },
+    {
+      "path": "images/hud_paddle-sheet1.png",
+      "size": 9734,
+      "required": false
+    },
+    {
+      "path": "images/icon_coin-sheet0.png",
+      "size": 7088,
+      "required": false
+    },
+    {
+      "path": "images/icon_trophy-sheet0.png",
+      "size": 4043,
+      "required": false
+    },
+    {
+      "path": "images/particles.png",
+      "size": 512,
+      "required": false
+    },
+    {
+      "path": "images/particles2.png",
+      "size": 1071,
+      "required": false
+    },
+    {
+      "path": "images/particles3.png",
+      "size": 1071,
+      "required": false
+    },
+    {
+      "path": "images/particles4.png",
+      "size": 1696,
+      "required": false
+    },
+    {
+      "path": "images/power_up_bar_frame-sheet0.png",
+      "size": 305,
+      "required": false
+    },
+    {
+      "path": "images/power_up_bar.png",
+      "size": 421,
+      "required": false
+    },
+    {
+      "path": "images/shaft-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "images/sprite2-sheet0.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/sprite2-sheet1.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "images/sprite3-sheet0.png",
+      "size": 23069,
+      "required": false
+    },
+    {
+      "path": "images/spritefont.png",
+      "size": 29972,
+      "required": false
+    },
+    {
+      "path": "images/tuto-sheet0.png",
+      "size": 233649,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5454,
+      "required": true
+    },
+    {
+      "path": "jquery-2.1.1.min.js",
+      "size": 84245,
+      "required": true
+    },
+    {
+      "path": "js/fullscreen.js",
+      "size": 979,
+      "required": true
+    },
+    {
+      "path": "js/main.min.js",
+      "size": 608659,
+      "required": true
+    },
+    {
+      "path": "js/null.js",
+      "size": 11,
+      "required": true
+    },
+    {
+      "path": "json/config.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "json/null.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "json/ping.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "media/bg music.m4a",
+      "size": 2275437,
+      "required": false
+    },
+    {
+      "path": "media/bg music.ogg",
+      "size": 1787218,
+      "required": false
+    },
+    {
+      "path": "media/challenge_won.m4a",
+      "size": 11327,
+      "required": false
+    },
+    {
+      "path": "media/challenge_won.ogg",
+      "size": 12738,
+      "required": false
+    },
+    {
+      "path": "media/chat_msg.m4a",
+      "size": 9070,
+      "required": false
+    },
+    {
+      "path": "media/chat_msg.ogg",
+      "size": 8952,
+      "required": false
+    },
+    {
+      "path": "media/click_0.m4a",
+      "size": 1723,
+      "required": false
+    },
+    {
+      "path": "media/click_0.ogg",
+      "size": 5031,
+      "required": false
+    },
+    {
+      "path": "media/coin_add.m4a",
+      "size": 2284,
+      "required": false
+    },
+    {
+      "path": "media/coin_add.ogg",
+      "size": 6074,
+      "required": false
+    },
+    {
+      "path": "media/coin_hit.m4a",
+      "size": 2818,
+      "required": false
+    },
+    {
+      "path": "media/coin_hit.ogg",
+      "size": 6192,
+      "required": false
+    },
+    {
+      "path": "media/coin.m4a",
+      "size": 8622,
+      "required": false
+    },
+    {
+      "path": "media/coin.ogg",
+      "size": 10150,
+      "required": false
+    },
+    {
+      "path": "media/egg_broken.m4a",
+      "size": 13166,
+      "required": false
+    },
+    {
+      "path": "media/egg_broken.ogg",
+      "size": 14652,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_0.m4a",
+      "size": 4575,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_0.ogg",
+      "size": 7215,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_1.m4a",
+      "size": 3972,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_1.ogg",
+      "size": 6730,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_2.m4a",
+      "size": 4686,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_2.ogg",
+      "size": 7300,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_3.m4a",
+      "size": 3871,
+      "required": false
+    },
+    {
+      "path": "media/egg_hit_3.ogg",
+      "size": 6907,
+      "required": false
+    },
+    {
+      "path": "media/game_over.m4a",
+      "size": 25652,
+      "required": false
+    },
+    {
+      "path": "media/game_over.ogg",
+      "size": 26302,
+      "required": false
+    },
+    {
+      "path": "media/ice.m4a",
+      "size": 24961,
+      "required": false
+    },
+    {
+      "path": "media/ice.ogg",
+      "size": 34608,
+      "required": false
+    },
+    {
+      "path": "media/not_ready.m4a",
+      "size": 15164,
+      "required": false
+    },
+    {
+      "path": "media/not_ready.ogg",
+      "size": 15384,
+      "required": false
+    },
+    {
+      "path": "media/unlock.m4a",
+      "size": 42092,
+      "required": false
+    },
+    {
+      "path": "media/unlock.ogg",
+      "size": 36815,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "game.api.gamedistribution.com",
+    "imasdk.googleapis.com",
+    "img.gamedistribution.com",
+    "securepubads.g.doubleclick.net",
+    "www.apple.com",
+    "www.games235.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "game.api.gamedistribution.com",
+    "img.gamedistribution.com",
+    "www.apple.com",
+    "www.games235.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

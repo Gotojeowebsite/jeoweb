@@ -1,0 +1,4150 @@
+{
+  "schema": 1,
+  "slug": "geojump",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_archive/a.amxrtb.com/js/cframe.js",
+      "size": 11204,
+      "required": true
+    },
+    {
+      "path": "_archive/a.usbrowserspeed.com/cs__q_37b3842fed.json",
+      "size": 57,
+      "required": false
+    },
+    {
+      "path": "_archive/aax-eu.amazon-adsystem.com/s/dcm__q_281a741c6e.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/aax-eu.amazon-adsystem.com/s/dcm__q_872fcdd84a.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/ad.360yield.com/user_sync__q_6d9637a028.html",
+      "size": 265,
+      "required": false
+    },
+    {
+      "path": "_archive/ads.betweendigital.com/match__q_8a47006129.png",
+      "size": 68,
+      "required": false
+    },
+    {
+      "path": "_archive/ads.pubmatic.com/AdServer/js/user_sync__q_3e15230a62.html",
+      "size": 22264,
+      "required": false
+    },
+    {
+      "path": "_archive/ads.pubmatic.com/AdServer/js/user_sync__q_db2c93ae60.html",
+      "size": 22264,
+      "required": false
+    },
+    {
+      "path": "_archive/alocdn.com/c/vn3d8u2u/a/xtarget/p__q_40eee5ded1.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_archive/analytics.google.com/g/collect__q_f67bbdbffc.txt",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/location-privacy-info.json",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/sites/c4ad9121-32eb-487a-95b3-b8cfbc1fc0a3/custom-translations__q_70537f6e7d.json",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/sites/c4ad9121-32eb-487a-95b3-b8cfbc1fc0a3/page__q_e03a5f400a.json",
+      "size": 13,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/sites/c4ad9121-32eb-487a-95b3-b8cfbc1fc0a3/subscribe-widgets/U3Vic2NyaWJlV2lkZ2V0OmFkMTljOWQ5LWVjZDMtNGNmOC1hOWJjLWZhNzUwZDE4ZWUyMg____q_70537f6e7d.json",
+      "size": 614,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/sites/U2l0ZTpjNGFkOTEyMS0zMmViLTQ4N2EtOTViMy1iOGNmYmMxZmMwYTM_/config.json",
+      "size": 4599,
+      "required": false
+    },
+    {
+      "path": "_archive/api.grow.me/versions.json",
+      "size": 31,
+      "required": false
+    },
+    {
+      "path": "_archive/api.id5-sync.com/analytics/719/id5-api-js.json",
+      "size": 1504,
+      "required": false
+    },
+    {
+      "path": "_archive/api.receptivity.io/v1/internal/public/static/connector/2-152-0-production-endpoint-v1/rxEngine__q_3d7ecbcc3e.wasm",
+      "size": 531282,
+      "required": true
+    },
+    {
+      "path": "_archive/api.receptivity.io/v1/prebid/1Pw320cuJVXnYuFXFZ0eoE11G/connector/rxConnector__q_df37c30359.js",
+      "size": 23780,
+      "required": true
+    },
+    {
+      "path": "_archive/api.receptivity.io/v1/prebid/1Pw320cuJVXnYuFXFZ0eoE11G/connector/rxConnector.js",
+      "size": 326,
+      "required": true
+    },
+    {
+      "path": "_archive/api.rlcdn.com/api/identity/envelope__q_23a8c496a0.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/api.soccerai.pro/view.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/app.eu.securiti.ai/core/v1/utils/geo/location.json",
+      "size": 890,
+      "required": false
+    },
+    {
+      "path": "_archive/app.eu.securiti.ai/privaci/v1/consent/cookie/singleupload.json",
+      "size": 67,
+      "required": false
+    },
+    {
+      "path": "_archive/app.grow.me/iframe-login__q_fc96ea8ca9.html",
+      "size": 4340,
+      "required": false
+    },
+    {
+      "path": "_archive/app.securiti.ai/core/v1/utils/geo/location.json",
+      "size": 890,
+      "required": false
+    },
+    {
+      "path": "_archive/assets.adobedtm.com/a8fcb2c3628f/12cd4ce03d7e/954cc48f9751/RC0ed4bc69ab2d46969573c313666b9029-source.min.js",
+      "size": 456,
+      "required": true
+    },
+    {
+      "path": "_archive/assets.adobedtm.com/a8fcb2c3628f/12cd4ce03d7e/launch-56233f7508bc.min.js",
+      "size": 272123,
+      "required": true
+    },
+    {
+      "path": "_archive/bttrack.com/pixel/cookiesyncredir__q_281412bf01.html",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/c.amazon-adsystem.com/bao-csm/aps-comm/aps_csm.js",
+      "size": 6482,
+      "required": true
+    },
+    {
+      "path": "_archive/c.ltmsphrcl.net/id__q_3aa765b171.json",
+      "size": 75,
+      "required": false
+    },
+    {
+      "path": "_archive/capi.connatix.com/us/pixel__q_a0093f0da6.txt",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn-gusw1-xch.media.net/AdExchange/bidderNotifier__q_8b4625a983.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn-gusw1-xch.media.net/AdExchange/bidderNotifier__q_e0a114c5ef.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/auto_blocking/c3001264-2465-4c40-a23d-05543a15c547/d9c7d7c5-9492-4062-bc49-6c2120bcf117.js",
+      "size": 32033,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie_banner/c3001264-2465-4c40-a23d-05543a15c547/d9c7d7c5-9492-4062-bc49-6c2120bcf117/config_active.json",
+      "size": 340,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie_banner/c3001264-2465-4c40-a23d-05543a15c547/d9c7d7c5-9492-4062-bc49-6c2120bcf117/en.json",
+      "size": 286653,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie-consent-1.99.0.css",
+      "size": 46747,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie-consent-sdk-1.99.0.js",
+      "size": 361579,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie-consent-sdk.js",
+      "size": 13871,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn-prod.eu.securiti.ai/consent/cookie-consent.css",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn.id5-sync.com/api/1.0/id5-api.js",
+      "size": 120304,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn.id5-sync.com/api/1.0/id5PrebidModule.js",
+      "size": 102362,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn.jsdelivr.net/gh/Vrkids2009/snowrider3d_6b7c2b9167b592528b221428414e63f06c4640b9/snow-rider-3d.png",
+      "size": 153945,
+      "required": false
+    },
+    {
+      "path": "_archive/cdn.opecloud.com/ope-dmplite.js",
+      "size": 77971,
+      "required": true
+    },
+    {
+      "path": "_archive/cdn.prod.uidapi.com/uid2-sdk-4.0.1.js",
+      "size": 34880,
+      "required": true
+    },
+    {
+      "path": "_archive/ce.lijit.com/merge__q_9bb885c501.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/ced-ns.sascdn.com/diff/js/modules/cmp.js",
+      "size": 24137,
+      "required": true
+    },
+    {
+      "path": "_archive/choices-or.trustarc.com/cap__q_713a74310b.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/choices.trustarc.com/get__q_f23b071c69.png",
+      "size": 739,
+      "required": false
+    },
+    {
+      "path": "_archive/client.aps.amazon-adsystem.com/publisher.js",
+      "size": 362487,
+      "required": true
+    },
+    {
+      "path": "_archive/cm.adform.net/cookie__q_c6e6513faa.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/config.aps.amazon-adsystem.com/configs/fc983fef-a09b-46c9-b3c8-44d705e51b5d.js",
+      "size": 2947,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-rtb.minutemedia-prebid.com/sync-iframe__q_f0fbb23122.html",
+      "size": 4648,
+      "required": false
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_2552df3b43.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_264aa4654d.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_271e7c9bdd.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_2a71c72bf0.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_2c12d294e9.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_2dc0c08a93.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_3665dadac2.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_4a54f37338.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_5609bff41a.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_5bef37ed0a.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_5d8a9a1f63.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_5d8a9a1f63.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_5e8d3be3c4.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_6d10c6d1f9.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_8077e8cd86.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_87a721cd2d.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_914dcbcd21.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_9246adba82.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_d47966258d.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/cs__q_fb476d4edd.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs-server-s2s.yellowblue.io/sync-iframe__q_3d85bafc22.html",
+      "size": 3830,
+      "required": false
+    },
+    {
+      "path": "_archive/cs.emxdgt.com/umcheck__q_3f652466ae.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/cs.media.net/cksync__q_e65b78cb09.php",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/cs.media.net/cst__q_a7ed43432b.json",
+      "size": 14,
+      "required": false
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_004f99d9d6.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_1ba517da4d.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_2b4fbdadd9.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_57870fd595.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_613d1b161c.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_689113fcd4.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_82f4ec8533.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_85de15fb91.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_94ab4ca8f3.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_c11c0ca301.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_d3c5920f74.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_d663f5a63e.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_da285f5a46.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_e05983cc23.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_f8033f8721.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_f97853158d.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.minutemedia-prebid.com/cs__q_fdc43f1475.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.seedtag.com/cs__q_4806de2507.html",
+      "size": 7850,
+      "required": false
+    },
+    {
+      "path": "_archive/cs.yellowblue.io/cs__q_4c5a11d707.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.yellowblue.io/cs__q_931af34c96.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.yellowblue.io/cs__q_b07428247e.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/cs.yellowblue.io/cs__q_dd0354aa93.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_1d348d0dec.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_32c2a87acc.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_5c59e5507a.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_62ec9080f4.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_a77765762a.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_cac022f318.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_e26a588439.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_e5fd58e3bf.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_ed6f2a3405.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_f0a0ed46d6.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csi.gstatic.com/csi__q_f5271fb368.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/csync.smartadserver.com/rtb/csync/CookieSync__q_31af2ff251.html",
+      "size": 435,
+      "required": false
+    },
+    {
+      "path": "_archive/csync.smartadserver.com/rtb/csync/CookieSync.min.js",
+      "size": 75330,
+      "required": true
+    },
+    {
+      "path": "_archive/csync.smartadserver.com/rtb/csync/TemplatePool.min.js",
+      "size": 320095,
+      "required": true
+    },
+    {
+      "path": "_archive/dt.adsafeprotected.com/dt__q_7fd04bda03.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/dt.adsafeprotected.com/dt__q_e5c712780e.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/ecom.mss.hertz.io/marketing/preferences/hertz.json",
+      "size": 55,
+      "required": false
+    },
+    {
+      "path": "_archive/ecom.mss.hertz.io/shared/hertz-tracking/index.json",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/ecom.mss.hertz.io/shared/overlay/US/enUS__q_54ce5f9966.js",
+      "size": 241764,
+      "required": true
+    },
+    {
+      "path": "_archive/enduser.adsrvr.org/enduser/vast/index__q_82af5a7b22.xml",
+      "size": 38183,
+      "required": false
+    },
+    {
+      "path": "_archive/enduser.adsrvr.org/enduser/video/index__q_7476990f47.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/enduser.adsrvr.org/enduser/video/index__q_d56765ecbb.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/enduser.adsrvr.org/enduser/video/index__q_fd93bd160e.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/ep1.adtrafficquality.google/bg/AspzwG3jxGh5JgUK98UmI0vuQbUZCMb9wkOIeT3hvJk.js",
+      "size": 58105,
+      "required": true
+    },
+    {
+      "path": "_archive/ep1.adtrafficquality.google/pagead/gen_204__q_170d5a875c.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/ep2.adtrafficquality.google/sodar/Klz6NWr5.html",
+      "size": 36294,
+      "required": false
+    },
+    {
+      "path": "_archive/ep2.adtrafficquality.google/sodar/VFc2VJAc.js",
+      "size": 43763,
+      "required": true
+    },
+    {
+      "path": "_archive/eu-us-cdn.consentmanager.net/delivery/customdata/bV8xLndfMTM0MzQ5LnJfLmxfZW4uZF80NDUxNy54XzY2LnYucC50XzQ0NTE3Lnh0XzI1NzY.js",
+      "size": 180505,
+      "required": true
+    },
+    {
+      "path": "_archive/eu-us-cdn.consentmanager.net/delivery/js/cmp_final.min__q_b8ea2112eb.js",
+      "size": 459617,
+      "required": true
+    },
+    {
+      "path": "_archive/eu-us.consentmanager.net/delivery/cmp__q_b970b8e01c.php",
+      "size": 5226,
+      "required": false
+    },
+    {
+      "path": "_archive/eu-us.consentmanager.net/delivery/info/index__q_07775484b8.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/eus.rubiconproject.com/usync__q_3ef0964884.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "_archive/eus.rubiconproject.com/usync__q_46ffb0ff35.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "_archive/eus.rubiconproject.com/usync__q_bb5d5808f4.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "_archive/eus.rubiconproject.com/usync__q_fd8a005493.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "_archive/eus.rubiconproject.com/usync.js.html",
+      "size": 46161,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.adsbymediavine.com/usersync/redirect__q_6970876a78.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/bidRequest/index__q_53838d5ca0.json",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/ias/check__q_53838d5ca0.json",
+      "size": 53,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/usersync.min__q_53838d5ca0.js",
+      "size": 16191,
+      "required": true
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/usersync/redirect__q_b49a7b4fd5.html",
+      "size": 174,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/usersync/sync__q_4ff80b1da2.html",
+      "size": 2550,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.journeymv.com/usersync/sync__q_5fc929aef3.html",
+      "size": 1706,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.mediavine.com/usersync/sync__q_b90646a519.html",
+      "size": 2510,
+      "required": false
+    },
+    {
+      "path": "_archive/exchange.pubnation.com/usersync/sync__q_f4cfecdfea.html",
+      "size": 1371,
+      "required": false
+    },
+    {
+      "path": "_archive/fastlane.rubiconproject.com/a/api/fastlane__q_7aede33d60.json",
+      "size": 13795,
+      "required": false
+    },
+    {
+      "path": "_archive/faves.grow.me/app.9.42.0.js",
+      "size": 228024,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/Close-az8Abv0a.js",
+      "size": 442,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/CmpNotConsentedModal-DN9ZMT8H.js",
+      "size": 2026,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/index-BTz_vV4U.js",
+      "size": 125812,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/index-CNm5SWIU.js",
+      "size": 7982,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/index-oYuogiWa.js",
+      "size": 94,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/initializeApp-Dgjh4yn8.js",
+      "size": 896585,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/locales/en/translation.json",
+      "size": 14001,
+      "required": false
+    },
+    {
+      "path": "_archive/faves.grow.me/locales/en/untranslated.json",
+      "size": 19,
+      "required": false
+    },
+    {
+      "path": "_archive/faves.grow.me/LockedPrintButtonModal-BPBX4NxI.js",
+      "size": 20710,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/main.js",
+      "size": 7107,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/uid2SdkLoader-B_zmg2gY.js",
+      "size": 1354,
+      "required": true
+    },
+    {
+      "path": "_archive/faves.grow.me/useViewedRecentlyPageIds-BqhV5oNJ.js",
+      "size": 539,
+      "required": true
+    },
+    {
+      "path": "_archive/fonts.googleapis.com/css__q_5bd2a33884.css",
+      "size": 2371,
+      "required": false
+    },
+    {
+      "path": "_archive/fw.adsafeprotected.com/rjss/st/2688792/91646689/skeleton__q_8e49c29275.js",
+      "size": 328267,
+      "required": true
+    },
+    {
+      "path": "_archive/games.mathpapers.org/1/meta/og_image.png",
+      "size": 15554,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/10-minutes-till-dawn/splash.png",
+      "size": 19346,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/100ng/100ng.jpg",
+      "size": 186357,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/1v1lol-unblocked/uploads/2024/12/1v1-lol-classrooom6x-unblocked-thumbnail.jpg",
+      "size": 112641,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/1v1space/splash.png",
+      "size": 21115,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/2048-multitask/splash.png",
+      "size": 49042,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/2048/2048.png",
+      "size": 7693,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/9007199254740992/meta/apple-touch-icon.png",
+      "size": 2711,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/99balls/99-balls-evo.jpg",
+      "size": 16765,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/a-dance-of-fire-and-ice/splash.png",
+      "size": 377061,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/achievementunlocked/achievementunlocked.png",
+      "size": 5714,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/adarkroom/splash.png",
+      "size": 133583,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/adrenalinechallenge/adrenalinechallenge.jpg",
+      "size": 42226,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/adventure-drivers/splash.png",
+      "size": 88116,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ages-of-conflict/splash.jpg",
+      "size": 21506,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/alienhominid/alienhominid.jpg",
+      "size": 111160,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/align-4/board.png",
+      "size": 65222,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/amazing-rope-police/splash.jpeg",
+      "size": 26041,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/amidst-the-clouds/Clouds/splash.png",
+      "size": 4829,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/among-us/red.png",
+      "size": 14621,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/angelunder/TemplateData/babusgames-logo.png",
+      "size": 14720,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/angry-sharks/assets/img/splash.png",
+      "size": 544082,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/aquapark-slides/splash.png",
+      "size": 279711,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/astray/ball.png",
+      "size": 94780,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/avalanche/avalanche.png",
+      "size": 10364,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/awesometanks2/images/menu/help/keyboard_moving.png",
+      "size": 23511,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/backrooms-2d/splash.png",
+      "size": 9186,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/backrooms/img/splash.jpg",
+      "size": 328493,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/backrooms2d/BF18A6F3-4A1B-4AF7-B383-B9A359A1DBDF.jpeg",
+      "size": 9952,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bacon-may-die/splash.png",
+      "size": 82271,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bad-ice-cream-2/bad-ice-cream-2.png",
+      "size": 96879,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bad-ice-cream-3/bad-ice-cream-3.png",
+      "size": 152035,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bad-ice-cream/bad-ice-cream.png",
+      "size": 109661,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/baldis-basics/splash.png",
+      "size": 101401,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/balldodge/1D9A05FA-1D29-40D3-8DA3-F9A30AD7470E.jpeg",
+      "size": 69654,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ballistic-chickens/sprites/trampoline.png",
+      "size": 39879,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/basket-random/splash.jpeg",
+      "size": 47263,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/basketball-stars/assets/images/basketball-stars.png",
+      "size": 81801,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/basketbros-io/favicon.png",
+      "size": 2971,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/battleforgondor/battleforgondor.JPG",
+      "size": 9495,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bigredbutton/bigredbutton.png",
+      "size": 102884,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bitlife/splash.png",
+      "size": 69322,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/blacholesquare/icon.png",
+      "size": 128573,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/blackknight/blackknight.png",
+      "size": 308015,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/blockpost/screenshots/1.jpg",
+      "size": 39399,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bloonstd/bloonstd.jpg",
+      "size": 12181,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bloonstd2/bloonstd2.png",
+      "size": 509948,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bloxors/block.png",
+      "size": 38243,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bobtherobber2/splash.jpeg",
+      "size": 350256,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bonkio/image.png",
+      "size": 111098,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/boxhead2play/boxhead2play.jpg",
+      "size": 17765,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/breakingthebank/breakingthebank.png",
+      "size": 338233,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/btd4/lib/bloontowerdefense4/1203.jpg",
+      "size": 5078,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/btd5/BT5_Deluxe_logo.png",
+      "size": 194240,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/btts/images/splash_particles.png",
+      "size": 138,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/burger-and-frights/splash.png",
+      "size": 107111,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/bus_20and_20subway/img.jpg",
+      "size": 114908,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cannon-basketball-4/assets/images/splash.png",
+      "size": 54185,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/canyondefense/canyondefense.png",
+      "size": 859017,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cars-simulator/splash.png",
+      "size": 252586,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cell-machine/img/te9nDu.png",
+      "size": 272203,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/champion-island/splash.png",
+      "size": 138703,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/championarcher/championarcher.png",
+      "size": 32640,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/checkers/image.png",
+      "size": 141615,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/chill-radio/img/background.gif",
+      "size": 11891141,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/chrome-dino/icons/icon-32.png",
+      "size": 232,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/circlo/img/download.png",
+      "size": 48862,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cluster-rush/splash.png",
+      "size": 232151,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/CMM_20Client/EC4B216C-B637-41A3-A3D9-79D4048DD7A3.jpeg",
+      "size": 66954,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/connect3/favicon.png",
+      "size": 144576,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cookie-clicker/cookie1.jpeg",
+      "size": 6609,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/core-ball/image/WB_logo.png",
+      "size": 1361,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/craftmine/images/pickaxe-sheet0.png",
+      "size": 2655,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/creativekillchamber/creativekillchamber.jpg",
+      "size": 7265,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/crossyroad/crossyroad.png",
+      "size": 10526,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/csgo-clicker/images/case1.png",
+      "size": 59755,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ctr-holiday/Holiday_Gift.webp",
+      "size": 15118,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ctr-tr/fb.png",
+      "size": 31533,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cubefield/assets/unnamed.png",
+      "size": 22029,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/cupcake2048/style/img/bg.jpg",
+      "size": 28475,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/dante/splash.png",
+      "size": 188596,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/deal-or-no-deal/index.jpg",
+      "size": 11270,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/death-run-3d/img/death.png",
+      "size": 63691,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/deepest-sword/splash.jpg",
+      "size": 45000,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/defend-the-tank/branding/logo.png",
+      "size": 26360,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/doctor-acorn2/images/splashlogo-sheet0.png",
+      "size": 299607,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/dodge/CEB64188-C91B-4FEE-95C1-3ACF6A8CA009.jpeg",
+      "size": 28926,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/doge2048/img/212/doge-gradient-212.gif",
+      "size": 118506,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/DogeMiner/img/bg/bg2.jpg",
+      "size": 279478,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/Dogeminer2/img/sprites/story.png",
+      "size": 466043,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/doodle-jump/doodle.png",
+      "size": 31901,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/doom/0B894474-D070-4E9C-B1C1-6908E344DA28.jpeg",
+      "size": 1047013,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/DOOMORI/splash.png",
+      "size": 91694,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/dragon-vs-bricks/splash.png",
+      "size": 19357,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/draw-the-hill/icons/icon-512.png",
+      "size": 191826,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/drift-boss/media/graphics/splash/mobile/cover-start.jpg",
+      "size": 21806,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/drift-hunters/drift-hunters.png",
+      "size": 377894,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/drive-mad/webapp/cover.jpg",
+      "size": 10642,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ducklife3/duck.png",
+      "size": 49679,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ducklife4/splash.jpg",
+      "size": 56885,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/duke-nukem-2/splash.jpg",
+      "size": 39228,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/dumbwaystodie/image.png",
+      "size": 471048,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/earntodie/loading.png",
+      "size": 721468,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/edge-surf/splash.png",
+      "size": 258164,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/edgenotfound/edge.png",
+      "size": 30636,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/eel-slap/images/eelslap_site_panorama4.jpg",
+      "size": 286623,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/eggycar/images/car_sel_card-sheet0.png",
+      "size": 39904,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/elasticman/elasticman.jpg",
+      "size": 26635,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/endlesswar3/endlesswar3.png",
+      "size": 43825,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/escapingtheprison/escapingtheprison.jpg",
+      "size": 15832,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/evil-glitch/icon.jpeg",
+      "size": 7060,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/evolution/splash.png",
+      "size": 82984,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/exo/img/small.jpg",
+      "size": 4540,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/factoryballs/images/splash.png",
+      "size": 81676,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fairsquares/index.icon.png",
+      "size": 3305,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fake-virus/icon.png",
+      "size": 10025,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fancypantsadventures/fancypantsadventure.png",
+      "size": 286479,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fantasy-dash/DF24D85A-B7B5-4CF0-8194-DB6CD89C6975.jpeg",
+      "size": 46854,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fireboywatergirlforesttemple/cdn.fbrq/_azerion/splash/assets/images/branding_logo_kizi.png",
+      "size": 24862,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/flappy_20plane/E3A4179E-B8E4-4358-BDAD-45AA7637D4D7.jpeg",
+      "size": 90126,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/flappy-2048/meta/apple-touch-icon.png",
+      "size": 2711,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/flappy-bird/assets/splash.png",
+      "size": 1456,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/flashtetris/flashtetris.png",
+      "size": 516497,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fleeingthecomplex/a.png",
+      "size": 32231,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/flippy-fish/cwzPGJ.png",
+      "size": 1910,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fnaw/splash.png",
+      "size": 429820,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fridaynightfunkin/assets/week3/images/philly/sky.png",
+      "size": 438577,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/froggys-battle/splash.png",
+      "size": 128464,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/fruitninja/assets/splash/splash_20screen.png",
+      "size": 1377284,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/frying-nemo/splash.png",
+      "size": 129848,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/game-inside/img/display.png",
+      "size": 376397,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/generic-fishing-game/splash.png",
+      "size": 21520,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/geodash/geoscratchicon.png",
+      "size": 183784,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/geodashlite/image/loading.png",
+      "size": 135324,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/geojump/loading3860.png",
+      "size": 680892,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/geoneondash/icon-256.png",
+      "size": 98347,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/georgeandtheprinter/img/SnDTEn.png",
+      "size": 243664,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/getaway-shootout/img/images.jpg",
+      "size": 8272,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/gimme-the-airpod/img/airpod.png",
+      "size": 1003,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/glass-city/banner.png",
+      "size": 455457,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/go-ball/game.jpg",
+      "size": 4927,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/goodnight/img/cutscene-dreamer-mouth.gif",
+      "size": 261,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/google-feud/splash.png",
+      "size": 19267,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/google-snake/assets/size_01.png",
+      "size": 285,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/gravity-soccer/splash.png",
+      "size": 301250,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/greybox/ico.png",
+      "size": 741879,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/grindcraft/img/splash.png",
+      "size": 19950,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hackertype/logo192.png",
+      "size": 175995,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/handshakes/splash.jpg",
+      "size": 778,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/happy-hop/splash.png",
+      "size": 124888,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/happywheels/b.png",
+      "size": 30880,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hardware-tycoon/icon-256.png",
+      "size": 38399,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hba/hoverbotarena.JPG",
+      "size": 10845,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/helicopter/helicopter.png",
+      "size": 32952,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hexempire/hexempire.jpg",
+      "size": 34301,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/HexGL/icon_128.png",
+      "size": 19903,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hextris/images/hextris-logo.png",
+      "size": 102385,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/highrisehop/assets/gfx/logo.png",
+      "size": 16302,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hill-climb-racing/splash.jpeg",
+      "size": 13693,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/hungry-lamu/splash.png",
+      "size": 111469,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/iceagebaby/thumb.png",
+      "size": 80930,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/iceagebaby2/pinky.jpg",
+      "size": 170324,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/idle-breakout/assets/Coding_BreakOut1_texture_0.png",
+      "size": 107452,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/idle-shark/img/sharkgame.png",
+      "size": 18164,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/idledices/images/icon32.png",
+      "size": 1074,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/impossiblequiz/impossiblequiz.png",
+      "size": 126143,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/interactivebuddy/interactivebuddy.jpg",
+      "size": 2797,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/iron_20dash/9FF39FCC-64B1-491C-97FC-A34357F9583A.jpeg",
+      "size": 29483,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/JavaScript-Snake/snake.jpg",
+      "size": 94454,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/jetpack-joyride/splash.jpg",
+      "size": 106893,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/just-fall/splash.jpg",
+      "size": 230434,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/just-one-boss/pv1Gr5.png",
+      "size": 1874,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/kirkaio/C0DADB28-2750-4DF9-9499-4BB61119877D.jpeg",
+      "size": 13447,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/kitchen-gun-game/splash.png",
+      "size": 95862,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/kittencannon/kittencannon.png",
+      "size": 59305,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/knife-master/icons/icon-512.png",
+      "size": 21640,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/krunker/img/logo_1.png",
+      "size": 53837,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/learntofly/learntofly.png",
+      "size": 32648,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/learntofly2/learn-to-fly-2.jpg",
+      "size": 14329,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/legacyflashgames/rogers/R_house/tellstory/speedydelivery/color-package-6.gif",
+      "size": 2824,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/level13/img/ui-level-ground-dark.png",
+      "size": 6064,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/linerider/6954B825-C61C-41E0-BFD9-7EA4FC6D0FE1.jpeg",
+      "size": 540110,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ltf-idle/thumbnail.jpg",
+      "size": 16792,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ltf3/logo.png",
+      "size": 154806,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/madalin-stunt-cars-2/img/logo.jpg",
+      "size": 10495,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/madalin-stunt-cars-3/img/index.jpg",
+      "size": 8872,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/mario/Theme/Mario.gif",
+      "size": 381,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/marvinspectrum/marvinspectrum.png",
+      "size": 40252,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/matrixrampage/matrixrampage.jpg",
+      "size": 5927,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/meme2048/img/tron_guy.jpg",
+      "size": 12530,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/merge-round-racers/splash.png",
+      "size": 442460,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/mindustry/splash.png",
+      "size": 25091,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/mineblocks/splash.png",
+      "size": 119141,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/minecraft-15/splash.jpeg",
+      "size": 51609,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/minesweeper/img/minesweeper.png",
+      "size": 101814,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/miniputt/miniputt.png",
+      "size": 51284,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/missiles/miss.png",
+      "size": 6460,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/MonkeyMart/bg_loading.png",
+      "size": 155377,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/monster-tracks/thumb.jpg",
+      "size": 21762,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/motox3m-pool/splash.jpg",
+      "size": 13438,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/motox3m-spooky/splash.jpeg",
+      "size": 13060,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/motox3m-winter/assets/atlases/x1/garage.png",
+      "size": 1027985,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/motox3m/splash.jpg",
+      "size": 115469,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/motox3m2/assets/images/x1/bikes_texture.png",
+      "size": 48101,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/my-rusty-submarine/splash.png",
+      "size": 208864,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/n-gon/img/n-gonbot.png",
+      "size": 21042,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ninja/square.png",
+      "size": 532,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ninjavsevilcorp/splash.png",
+      "size": 173730,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/noob-steve-parkour/512x384.jpg",
+      "size": 194946,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ns-shaft/bg.png",
+      "size": 2561,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/nsresurgence/neon.png",
+      "size": 38632,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/OfflineParadise/assets/icon.jpeg",
+      "size": 40361,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/om-bounce/assets/icon.jpeg",
+      "size": 105668,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/osu_/fonts/venera_0.png",
+      "size": 25895,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/overwatch/98FBAD0A-F63A-46B5-81E7-0D3074D23365.jpeg",
+      "size": 14792,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ovo/ovo.png",
+      "size": 9658,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/pandemic2/pandemic2.png",
+      "size": 166844,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/papasburgeria/splash.jpg",
+      "size": 262940,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/papaspizzaria/papaspizzaria.jpg",
+      "size": 36328,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/paperio2/images/icon192.png",
+      "size": 32324,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/papery-planes/splash.jpg",
+      "size": 4439,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/particle-clicker/assets/icons/png/gluons_2x.png",
+      "size": 4131,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/piclient/B969467B-2495-4872-A739-B6ECA873FF5A.jpeg",
+      "size": 66954,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/pigeon-ascent/index.png",
+      "size": 5968,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/pixel-gun-survival/Build/Shooting.jpg",
+      "size": 15690,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/planetlife/images/backgrounds/BG_AncientPlanet.png",
+      "size": 2581,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/plants_20vs_20zombies_201/image_proxy.png",
+      "size": 93201,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/polybranch/img/pic2.png",
+      "size": 56286,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/poom/img/start.png",
+      "size": 479,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/popcat-classic/splash.png",
+      "size": 269001,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/portalflash/portaltheflashversion.jpg",
+      "size": 5188,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/precision-client/logo.png",
+      "size": 23799,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/protektor/splash.jpg",
+      "size": 7812,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/push-the-square/img/splash.png",
+      "size": 5201,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/push-your-luck/assets/atlas/Bg.png",
+      "size": 75519,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/rabbit-samurai/images/smokesplash.png",
+      "size": 3945,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/rabbit-samurai2/images/smokesplash.png",
+      "size": 5480,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/resent-client/splash.jpg",
+      "size": 1754,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/retro-bowl/img/icon.jpg",
+      "size": 9014,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddleschool/riddleschool.png",
+      "size": 48707,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddleschool2/riddleschool2.png",
+      "size": 97364,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddleschool3/riddleschool3.png",
+      "size": 113008,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddleschool4/riddleschool4.png",
+      "size": 57865,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddleschool5/riddleschool5.png",
+      "size": 33204,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddletransfer/riddletransfer.png",
+      "size": 113413,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/riddletransfer2/riddletransfer2.png",
+      "size": 76612,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/robuxclicker/1517CE7D-1708-489E-9C51-E52887A13855.jpeg",
+      "size": 24953,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/Rocket-League/splash.png",
+      "size": 533507,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/rolling-forests/icon.png",
+      "size": 69335,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/rolly-vortex/icon-256.png",
+      "size": 26450,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/rooftop-snipers/img/thumb.png",
+      "size": 8689,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ruffle/splash.png",
+      "size": 58883,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/Run_202/run-2-logo.jpg",
+      "size": 11334,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/run_203/image_proxy.jpg",
+      "size": 54969,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/run/run.png",
+      "size": 2032,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/runner/loading3860.png",
+      "size": 1097813,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sandboxels/icons/favicon-32x32.png",
+      "size": 929,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/santy-is-home/splash.png",
+      "size": 79974,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/scooperia/scoop.png",
+      "size": 61560,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/scrapmetal/img/splash.png",
+      "size": 309886,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/scratcharia/splash.png",
+      "size": 91939,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/ShapeShootout/Icon.png",
+      "size": 25355,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/shellshockers/img/favicon.png",
+      "size": 298741,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/shogunshowdown/19C0D9BB-86C1-4A65-B374-638BD25EE0FC.png",
+      "size": 47789,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/shotinthedark/shot.png",
+      "size": 27895,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/shuttledeck/splash.png",
+      "size": 18799,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sky-car-stunt/Template/logo.png",
+      "size": 167770,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sleepingbeauty/splash.png",
+      "size": 95644,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/slime-rush-td/splash.png",
+      "size": 284558,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/slitherio/7EDEF379-07A2-4604-B552-C0A3DB2D70BE.jpeg",
+      "size": 18251,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/slope-2/slope-2-logo.png",
+      "size": 233198,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/slope-ball/files/splash.jpg",
+      "size": 37150,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/slope/slope4.jpeg",
+      "size": 14163,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sm64/logo.png",
+      "size": 47606,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/smashkarts/images/icon-512.png",
+      "size": 286892,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/smokingbarrels/smokingbarrels.jpg",
+      "size": 6773,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/snowbattle/img/logo.png",
+      "size": 90038,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/soccer-random/splash.png",
+      "size": 219882,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/soccer-skills/splash.png",
+      "size": 217840,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/soldier-legend/images/splash.jpeg",
+      "size": 8960,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/solitaire/img/hover.jpg",
+      "size": 10543,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sort-the-court/img/splash.png",
+      "size": 611176,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/soundboard/img/eye.png",
+      "size": 4518,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/space-company/Icons/moonIcon.png",
+      "size": 3557,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/spacegarden/spl.png",
+      "size": 81393,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/spelunky/assets/icon.png",
+      "size": 1423,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/spinningrat/assets/rat/rat.jpg",
+      "size": 84691,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stack-bump-3d/TemplateData56/gears.gif",
+      "size": 8215,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stack/stack.png",
+      "size": 124845,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/station-141/Build/WebGL.jpg",
+      "size": 67882,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stationmeltdown/image.png",
+      "size": 210640,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stealingthediamond/stealingthediamond.jpg",
+      "size": 34102,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stick-duel-battle/512x512.jpg",
+      "size": 51919,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stick-merge/splash.png",
+      "size": 218919,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stickman-boost/base/img1.jpg",
+      "size": 4110,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stickman-golf/splash.png",
+      "size": 22590,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stickman-hook/unnamed.jpg",
+      "size": 554123,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stickwar/stickwar.jpg",
+      "size": 45378,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/stormthehouse2/stormthehouse2.jpg",
+      "size": 55796,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/subway-surfers-ny/assets/preload/splash_mip.png",
+      "size": 31303,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/subway-surfers/img/splash.jpg",
+      "size": 7641940,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/superautopets/TemplateData/Loading_20Icon.png",
+      "size": 14440,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/superfowlist/fowlist.png",
+      "size": 1083,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/superhot/hot.jpg",
+      "size": 118581,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/supermarioconstruct/media/icons/icon-32.png",
+      "size": 1462,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/sushi-unroll/favicon.png",
+      "size": 42656,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/swerve/img/favicon.jpg",
+      "size": 10520,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/synesthesia/index.splash.png",
+      "size": 175666,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tactical-weapon-pack-2/pack.jpg",
+      "size": 10936,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tacticalassasin2/tacticalassassin2.png",
+      "size": 90072,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tank-trouble-2/icon-256.png",
+      "size": 24748,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tanuki-sunset/img/cover.png",
+      "size": 56045,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/temple-run-2/079dea52d8f43464bedd59bc35cc7999.jpg",
+      "size": 93839,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/the-final-earth-2/site-specific/coolmath/coolmath-splash.png",
+      "size": 36557,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/the-final-earth/images.png",
+      "size": 2787,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/the-hotel/splash.png",
+      "size": 13104,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/thebattle/thebattle.png",
+      "size": 24331,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/theheist/theheist.jpg",
+      "size": 42442,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/there-is-no-game/images/splash.png",
+      "size": 94,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/thisistheonlylevel/thisistheonlylevel.png",
+      "size": 2386,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/throwrocks/card.png",
+      "size": 196087,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tiny-fishing/tiny-fishing.png",
+      "size": 140952,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tiny-islands/splash.png",
+      "size": 50743,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tosstheturtle/tosstheturtle.png",
+      "size": 282325,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/townscaper/img/cover.jpg",
+      "size": 50791,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/Trimps/imgs/reddit_logo.png",
+      "size": 6984,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tube-jumpers/img/shark.jpg",
+      "size": 4585,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tunnel-rush/img/tunnel.jpg",
+      "size": 55601,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/tv-static/static.png",
+      "size": 1290658,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/twitch-tetris/media/buttons/restart.png",
+      "size": 1357,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/unfairmario/sus.jpg",
+      "size": 33550,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/veloce/qN6zkD.png",
+      "size": 7890,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex2/BC5ADE2D-5F7A-4352-A7FD-579517F823E4.jpeg",
+      "size": 106732,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex3/cdn.fbrq/_orange-games/splash/assets/icons/fun-game-play-mahjong.png",
+      "size": 51385,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex4/cdn.fbrq/_orange-games/splash/assets/icons/fun-game-play-mahjong.png",
+      "size": 51385,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex5/assets/atlas/atlas_ui_gameplay.png",
+      "size": 281721,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex6/assets/icon.jpeg",
+      "size": 96597,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/vex7/assets/icon.png",
+      "size": 211223,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/volley-random/splash.png",
+      "size": 81122,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/wallsmash/thumb.png",
+      "size": 14092,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/waterworks/square.png",
+      "size": 180070,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/weavesilk/img/silk_text.png",
+      "size": 25288,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/webretro/assets/icons/icont256.png",
+      "size": 3006,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/wolf2d/icons/_icon-512_.png",
+      "size": 21640,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/wolf3d/art/walls-shaded/64/w_95.png",
+      "size": 2321,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/wordle/img/logo_48x48.png",
+      "size": 716,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/worlds-hardest-game-2/the-worlds-hardest-game-2.jpg",
+      "size": 8041,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/worlds-hardest-game/images/splash.jpg",
+      "size": 16687,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/x-trial-racing/splash.png",
+      "size": 505900,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/xx142-b2exe/splash.png",
+      "size": 339513,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/yohoho/yohoho.png",
+      "size": 325278,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/yoshifabrication/icons/icon-512.png",
+      "size": 129445,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/you-are-bezos/img/banner.png",
+      "size": 34382,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/zigzag/4EEE71BF-A06E-478D-B1E0-F67600291BDC.jpeg",
+      "size": 145368,
+      "required": false
+    },
+    {
+      "path": "_archive/games.mathpapers.org/zombs-royale/zomb.png",
+      "size": 194642,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/2023/05/100Dreadhead.webp",
+      "size": 2566,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/2023/06/100GSpin.webp",
+      "size": 2838,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/2024/04/RouteDigger100-1.webp",
+      "size": 2156,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/2024/04/SpillIt100-1.webp",
+      "size": 1080,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100BottleFlip-q76mdzjcjsff7izroymln2juarq6fyhbbuz6wgmrjc.webp",
+      "size": 906,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100CallOfOps-q76me0h6qmgpj4yejh187kbaw5ljnnl1nzmodqldd4.webp",
+      "size": 4062,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Dune-q76me647vmofgsq7mjgzmiw2ggtqxu7forjl9ed0bs.webp",
+      "size": 2132,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100FNAF1-q76me8xqg4safmm462ovc06g8mfukximp5i1p88tt4.webp",
+      "size": 2374,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100FNAF2-q76me8xqg4safmm462ovc06g8mfukximp5i1p88tt4.webp",
+      "size": 2588,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Fortnite-q76me9vkmytkr8kr0l3hwhxwu0b7smmd1a5j6i7fmw.webp",
+      "size": 724,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100FunnyS2-1-qelokbeu01dl7gffgk0r4u1s5nyrtjhyqxusgte9k8.webp",
+      "size": 3220,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100GettingOverIt-q76mebr90mw5egi0plwr1hgu0s1y80ttpjgi524nag.webp",
+      "size": 2712,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100GrandShiftAutp-q76mecp37gxfq2gnk4bdlz8am5xbfpxk1o3zmc3948.webp",
+      "size": 3926,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Holeio-q76medmxeayq1ofaemq06gzr7jsonf1adsrh3m1uy0.webp",
+      "size": 1966,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Paper1-q76mej9yjb6fzc73hp5rlfkirv0vxlnoekodz9thwo.webp",
+      "size": 1952,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100PixelCombatOG-q76mek7sq57qay5qc7ke5xbzd8w95areqpbvgjs3qg.webp",
+      "size": 3616,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Roblox-q76mel5mwz90mk4d6pz0qf3fymrmczv52tzcxtqpk8.webp",
+      "size": 1694,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Snowball-1-qe1gmz96ok8uh55685kjwnrvf6qmuk4huk7iegb7xk.webp",
+      "size": 1752,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100SpacebarClicker-1-qf8541o077nx7rtsrj5tglmdzno8f1600to55f2qco.webp",
+      "size": 718,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Time-qdqeeqpcp88rdeidpecpydy75agub50o6grkz0ub5s.webp",
+      "size": 3126,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100Time3-1-qds0hw7ee9nbobt8x5dronxo6l7c3nzjn0ouyk7y7c.webp",
+      "size": 4198,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100TombOfTheMask-1-qfdr9hk5g9xli8xrm8vb55w116398i3rwtcg6gqo6g.webp",
+      "size": 2008,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/100WorldCup-q76mesocfnjb7ftfyt81ad74ppqk2kozrv78s1fk6g.webp",
+      "size": 4004,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/HappyGlass100-1-qlryskekwfall2j4sawytc2ul5u2pdyy38qyqco4cg.webp",
+      "size": 2564,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/Hoops100-1-qj7tpy8z9sgn5hqocimbb64ozb1c9bgmq2wt2hv208.webp",
+      "size": 2876,
+      "required": false
+    },
+    {
+      "path": "_archive/geometryspot.com/wp-content/uploads/elementor/thumbs/IC100-1-ql5ccxfb5pozaxrcykehy0lk7gd26a9xmtc78h542w.webp",
+      "size": 1784,
+      "required": false
+    },
+    {
+      "path": "_archive/google-bidout-d.openx.net/w/1.0/pd__q_d1e2081466.html",
+      "size": 556,
+      "required": false
+    },
+    {
+      "path": "_archive/gum.criteo.com/sid/json__q_308345b24d.json",
+      "size": 599,
+      "required": false
+    },
+    {
+      "path": "_archive/gum.criteo.com/sid/json__q_ac79e3cb6b.json",
+      "size": 485,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg-nv.media.net/log__q_bddd2f1a7d.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg-nv.media.net/log__q_fc60498821.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/clog__q_619c9c39f1.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/clog__q_c125410188.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_0cf7adf2f9.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_3f93dae62c.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_49ce302888.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_83557f50ea.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_cdb520dde8.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hblg.media.net/log__q_d860254dab.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/hbopenbid.pubmatic.com/translator__q_f9df3d7767.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/hbx.media.net/checksync.php__q_7052cdfa42.html",
+      "size": 39486,
+      "required": false
+    },
+    {
+      "path": "_archive/htlb.casalemedia.com/openrtb/pbjs__q_47018be5fe.json",
+      "size": 58,
+      "required": false
+    },
+    {
+      "path": "_archive/htlb.casalemedia.com/openrtb/pbjs__q_552b794145.json",
+      "size": 58,
+      "required": false
+    },
+    {
+      "path": "_archive/i6.liadm.com/s/60909__q_c9efb183b4.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/id.a-mx.com/sync__q_9d7620d675.json",
+      "size": 99,
+      "required": false
+    },
+    {
+      "path": "_archive/id.rlcdn.com/709996.gif",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/id.rtb.mx/rum__q_62264b1f1f.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/id5-sync.com/api/config/prebid.json",
+      "size": 195,
+      "required": false
+    },
+    {
+      "path": "_archive/id5-sync.com/bounce.txt",
+      "size": 30,
+      "required": false
+    },
+    {
+      "path": "_archive/id5-sync.com/c/719/846/0/9__q_47617cd06a.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/id5-sync.com/gm/v3.json",
+      "size": 2491,
+      "required": false
+    },
+    {
+      "path": "_archive/idsync.rlcdn.com/396846__q_14957ea661.gif",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/image8.pubmatic.com/AdServer/ImgSync__q_d00b1ee6e7.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/image8.pubmatic.com/AdServer/ImgSync__q_f67020a9b7.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/images.hertz.com/misc/overlay/hertz-modal-icon-close.png",
+      "size": 1554,
+      "required": false
+    },
+    {
+      "path": "_archive/imasdk.googleapis.com/js/core/bridge3.756.1_en.html",
+      "size": 932460,
+      "required": false
+    },
+    {
+      "path": "_archive/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474346,
+      "required": true
+    },
+    {
+      "path": "_archive/imp-dev.journeymv.com/record/v2__q_1c6a5be229.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/imp-dev.journeymv.com/record/v2__q_76d58560a1.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/imp-dev.journeymv.com/record/v2__q_d89f110cba.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/imp-dev.journeymv.com/sk__q_b41dfa63b8.bin",
+      "size": 96,
+      "required": true
+    },
+    {
+      "path": "_archive/impressions.onelink.me/Bzbf__q_fe436cfe72.txt",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_archive/jadserve.postrelease.com/suid/102050__q_31a9c690b6.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/jsconfig.adsafeprotected.com/jsconfig/jload/931762__q_3dd4ce660b.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/jsconfig.adsafeprotected.com/jsconfig/rjss/st/2688792/91646689/skeleton__q_10bf735046.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/keywords.journeymv.com/keyword__q_539832a546.json",
+      "size": 18,
+      "required": false
+    },
+    {
+      "path": "_archive/lb.eu-1-id5-sync.com/lb/v1.json",
+      "size": 45,
+      "required": false
+    },
+    {
+      "path": "_archive/lbs.eu-1-id5-sync.com/lbs/v1.json",
+      "size": 54,
+      "required": false
+    },
+    {
+      "path": "_archive/lexicon.33across.com/v1/envelope__q_3aa113bbe8.json",
+      "size": 112,
+      "required": false
+    },
+    {
+      "path": "_archive/lexicon.33across.com/v1/envelope__q_e5409e4263.json",
+      "size": 1252,
+      "required": false
+    },
+    {
+      "path": "_archive/match.adsrvr.org/track/rid__q_58ba260547.json",
+      "size": 109,
+      "required": false
+    },
+    {
+      "path": "_archive/match.deepintent.com/usersync/154.gif",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/mathpapers.org/activities.html",
+      "size": 2900,
+      "required": false
+    },
+    {
+      "path": "_archive/mathpapers.org/assets/images/logo.png",
+      "size": 52675,
+      "required": false
+    },
+    {
+      "path": "_archive/mathpapers.org/static/css/main.f204a079.css",
+      "size": 18035,
+      "required": false
+    },
+    {
+      "path": "_archive/mathpapers.org/static/js/main.87c19cdf.js",
+      "size": 1456389,
+      "required": true
+    },
+    {
+      "path": "_archive/measureadv.com/userIframe__q_0231ca473e.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/metrics.rapidedge.io/gamera__q_391e2a064b.js",
+      "size": 87535,
+      "required": true
+    },
+    {
+      "path": "_archive/ms-cookie-sync.presage.io/user-sync__q_e8a8ce555c.html",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/config__q_aad5d4bd84.json",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/config__q_c84400bac0.json",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/config__q_cdbf868300.json",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/identify__q_5862cba0a8.json",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/profile__q_914824287b.json",
+      "size": 327,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/v2/targeting__q_63241d2a92.json",
+      "size": 280,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/v2/targeting__q_7f11ff1eea.json",
+      "size": 308,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/v2/targeting__q_dad49670da.json",
+      "size": 305,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/witness__q_0ef5d9c902.json",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/witness__q_339ae87bea.json",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "_archive/na.edge.optable.co/witness__q_914824287b.json",
+      "size": 135,
+      "required": false
+    },
+    {
+      "path": "_archive/oa.openxcdn.net/esp.js",
+      "size": 24615,
+      "required": true
+    },
+    {
+      "path": "_archive/oajs.openx.net/esp__q_6a8c85a929.json",
+      "size": 85,
+      "required": false
+    },
+    {
+      "path": "_archive/onetag-sys.com/usync/index__q_0a093c83f9.html",
+      "size": 2504,
+      "required": false
+    },
+    {
+      "path": "_archive/onetag-sys.com/usync/index__q_4e4b6bc204.html",
+      "size": 2564,
+      "required": false
+    },
+    {
+      "path": "_archive/onetag-sys.com/usync/index__q_a85e1a8971.html",
+      "size": 2504,
+      "required": false
+    },
+    {
+      "path": "_archive/onetag-sys.com/usync/index__q_ed7b5b0b95.html",
+      "size": 2504,
+      "required": false
+    },
+    {
+      "path": "_archive/pandg.tapad.com/tag__q_30288c07a3.html",
+      "size": 1372,
+      "required": false
+    },
+    {
+      "path": "_archive/pdmp.dcapi.dmp.3lift.com/ingest/event__q_092696acfb.txt",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_archive/pdmp.dcapi.dmp.3lift.com/web/visit__q_092696acfb.txt",
+      "size": 4,
+      "required": false
+    },
+    {
+      "path": "_archive/pdmp.papi-public.us-west-2.dmp.3lift.com/v1/targeting__q_f8715c857e.json",
+      "size": 234,
+      "required": false
+    },
+    {
+      "path": "_archive/pghub.io/js/pandg-sdk.js",
+      "size": 17484,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel-sync.sitescout.com/dmp/pixelSync__q_5f5d056fd5.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel-sync.sitescout.com/dmp/pixelSync__q_e2a1bdb137.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel.adsafeprotected.com/db2/video/2688792/91646688/skeleton__q_e291172ffd.js",
+      "size": 40,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel.adsafeprotected.com/fwjsvid/st/2688792/91646688/skeleton__q_a2e9eea864.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel.adsafeprotected.com/jload__q_8b039d488d.js",
+      "size": 328267,
+      "required": true
+    },
+    {
+      "path": "_archive/pixel.rubiconproject.com/tap__q_3077744b44.php",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.rubiconproject.com/tap__q_60e0c67f2a.php",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.rubiconproject.com/tap__q_c6e083861f.php",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.rubiconproject.com/tap__q_cac8145931.php",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.tapad.com/idsync/ex/receive__q_05ecc62132.png",
+      "size": 95,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.tapad.com/idsync/ex/receive__q_7184e49f48.png",
+      "size": 95,
+      "required": false
+    },
+    {
+      "path": "_archive/pixel.tapad.com/idsync/ex/receive/check__q_0efd34be8c.png",
+      "size": 95,
+      "required": false
+    },
+    {
+      "path": "_archive/player.aniview.com/ssync/ssync__q_718c5ed460.html",
+      "size": 15374,
+      "required": false
+    },
+    {
+      "path": "_archive/prebid-server.rubiconproject.com/openrtb2/auction.json",
+      "size": 186,
+      "required": false
+    },
+    {
+      "path": "_archive/prebid.a-mo.net/cchain/0__q_b5b8a2faa6.html",
+      "size": 1931,
+      "required": false
+    },
+    {
+      "path": "_archive/px.ads.linkedin.com/db_sync__q_65a0a24390.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/px.ads.linkedin.com/setuid__q_4fecc048a3.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/qsearch-a.akamaihd.net/log__q_9157ae7747.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/qsearch-a.akamaihd.net/log__q_9ba2513bc9.gif",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/r1---sn-aj2im9-5j.c.2mdn.net/videoplayback/id/e4c7686f418b7383/itag/342/source/web_video_ads/xpc/EgVovf3BOg_3D_3D/ctier/L/acao/yes/ip/0.0.0.0/ipbits/0/expire/3910866156/sparams/acao_ctier_expire_id_ip_ipbits_itag_met_mh_mip_mm_mn_ms_mv_mvi_pl_rms_source_xpc/signature/26042F7F2A578F108157B7BE53DE04513FF7DF4B.782F70238A745DD08C8230A58AD1C50BC10176EC/key/cms1/cms_redirect/yes/met/1776093576_/mh/zH/mip/20.163.40.129/mm/42/mn/sn-aj2im9-5j/ms/onc/mt/1776093159/mv/m/mvi/1/pl/16/rms/onc_onc/file/file.mp4",
+      "size": 1111471,
+      "required": false
+    },
+    {
+      "path": "_archive/reports.intentiq.com/report__q_3aacdf818a.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/reports.intentiq.com/report__q_e51180960b.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/rtb-csync.smartadserver.com/redir/index__q_0f595b629d.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb-csync.smartadserver.com/redir/index__q_12181597ff.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb-csync.smartadserver.com/redir/index__q_98bd9660c5.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb-csync.smartadserver.com/redir/index__q_b0f2c6521d.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.adentifi.com/CookieSyncBeachfront__q_9397c8152b.txt",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.gumgum.com/usync/16112__q_9698115536.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.mfadsrvr.com/sync__q_5f93c3bb04.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.mfadsrvr.com/sync__q_b983cf10b3.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.openx.net/sync/dds__q_755b2437b6.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/rtb.openx.net/sync/dds__q_b45818ee23.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/s.ad.smaato.net/c/index__q_9dcd03e193.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.amazon-adsystem.com/dcm__q_7dc933834b.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/s.amazon-adsystem.com/dcm__q_af879a4878.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/s.amazon-adsystem.com/ecm3__q_c7ef139979.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/adform__q_d60cea2ef5.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/appnexus__q_e601825b7b.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/beachfront__q_362ae6f88a.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/beeswax__q_242eca915e.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/Bidswitch__q_7328af1829.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/improvedigital__q_0f6e48f044.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/loopme__q_8cd4501555.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/nexxen__q_47f642d1e0.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/openx__q_72368615d0.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/opera__q_47b08a6542.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/outbrain__q_06ea46e67a.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/prebid__q_c9344a32a0.html",
+      "size": 424,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/rtbhouse__q_d0e9f0a154.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/Rubicon__q_e449379089.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/sharethrough__q_c4fccd1580.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/smart__q_c06c1be620.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/sovrn__q_a833efd0a3.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/stackadapt__q_26dfe3636a.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/ttd__q_5651f96482.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/cookiesync/viant__q_ebdadf7978.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/s.seedtag.com/cs/st/s__q_f70381646c.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/s0.2mdn.net/dot.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/s0.2mdn.net/instream/video/client.js",
+      "size": 44701,
+      "required": true
+    },
+    {
+      "path": "_archive/s0.2mdn.net/simgad/12255064857245278572.jpg",
+      "size": 17137,
+      "required": false
+    },
+    {
+      "path": "_archive/sb.scorecardresearch.com/b__q_be37987575.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sb.scorecardresearch.com/internal-cs/27053452/beacon.js",
+      "size": 21373,
+      "required": true
+    },
+    {
+      "path": "_archive/schema-cf.bc0a.com/corejs/be-schema-v4.js",
+      "size": 44794,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/amazon/v1/adjustments__q_787dfb160a.json",
+      "size": 13,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/creativeBlocks.html",
+      "size": 1687,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/flooring/countryLookup.json",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/launcher/settings__q_54aa38004a.json",
+      "size": 13025,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/sync/check.html",
+      "size": 359,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/1596/6392494a2bea8b7ebdac.min.js",
+      "size": 31947,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/2445/a23e9e0de04e1bfd7154.min.js",
+      "size": 18821,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/2899/6fd19e1ba8418e54d354.min.js",
+      "size": 17743,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3.44.3__cgroup3.44.9-magniteAdapter/base.min.js",
+      "size": 11303,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3.44.3__cgroup3.44.9-magniteAdapter/ext.min.js",
+      "size": 7621,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3.44.3__cgroup3.44.9-magniteAdapter/host.min.js",
+      "size": 20361,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3.44.3__cgroup3.44.9-magniteAdapter/safeframe.html",
+      "size": 899,
+      "required": false
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3.44.3__cgroup3.44.9-magniteAdapter/wrapper.min__q_013bbb5d2a.js",
+      "size": 277056,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3006/982dcde54b0455fa631c.min.js",
+      "size": 32063,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3318/fa6cd5e582c41b54b01c.min.js",
+      "size": 9385,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/3688/cfd6427c7a16a00c51b2.min.js",
+      "size": 105233,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/4490/6444536aba734b8a5c94.min.js",
+      "size": 11016,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/6973/da16ca0b9ede5eab8259.min.js",
+      "size": 61370,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/7704/47c9d86cdd3cd5cfe9d2.min.js",
+      "size": 90305,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/8628/e918fb49d8c8866d2131.min.js",
+      "size": 252245,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/9784/8ba87de8a9d7a318158b.min.js",
+      "size": 10395,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/afterScroll/b6a2afd45d3603343cc5.min.js",
+      "size": 100439,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/cmp/e8484401c62373a45398.min.js",
+      "size": 28108,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/iiq/970e21bdcb2733b4945e.min.js",
+      "size": 703,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/optable/f02eb7cc324e84beef4a.min.js",
+      "size": 53286,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/prebid/b562e9210da7be16f704.min.js",
+      "size": 18402,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.journeymv.com/tags/retention/7ca346dca3ccbbeb4330.min.js",
+      "size": 1055,
+      "required": true
+    },
+    {
+      "path": "_archive/scripts.scriptwrapper.com/tags/c4ad9121-32eb-487a-95b3-b8cfbc1fc0a3.js",
+      "size": 62965,
+      "required": true
+    },
+    {
+      "path": "_archive/some.growplow.events/com.snowplowanalytics.snowplow/tp2.txt",
+      "size": 2,
+      "required": false
+    },
+    {
+      "path": "_archive/ssbsync.smartadserver.com/api/sync__q_415af9132a.html",
+      "size": 1045,
+      "required": false
+    },
+    {
+      "path": "_archive/ssp-sync.criteo.com/user-sync/match__q_dc5aef5c6f.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/ssp-sync.criteo.com/user-sync/redirect__q_a6b3d707ce.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/static.adsafeprotected.com/ias/v1/vpaid.2026.03.17-14.05-76cd18c.js",
+      "size": 198189,
+      "required": true
+    },
+    {
+      "path": "_archive/static.adsafeprotected.com/skeleton__q_8109b904a9.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/storejs.s3.us-west-2.amazonaws.com/a/JKRHX5WD/recb_JKRHX5WD_2025_03_26.js",
+      "size": 30640,
+      "required": true
+    },
+    {
+      "path": "_archive/sync-tm.everesttech.net/ct/upi/pid/ny75r2x0__q_ae25186bfd.png",
+      "size": 85,
+      "required": false
+    },
+    {
+      "path": "_archive/sync-tm.everesttech.net/ct/upi/pid/ny75r2x0__q_f346d50d05.png",
+      "size": 85,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_0f1afb28c9.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_0f2f2a5146.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_129066ab51.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_2072e278f5.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_2087576ee4.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_3e93da69c1.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_5c3be21371.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_7845b4eb84.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_852caa9d82.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_c9078c8782.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_d5b552f569.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_f29a3b5618.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.aniview.com/cookiesyncendpoint__q_f911dbe76e.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.bfmio.com/sync__q_16d66ec8c8.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.bfmio.com/sync__q_e369c60571.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.bfmio.com/sync__q_f0c3a34c41.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/sync.bfmio.com/syncb__q_3ad92251d1.html",
+      "size": 1005,
+      "required": false
+    },
+    {
+      "path": "_archive/sync.intentiq.com/profiles_engine/ProfilesEngineServlet__q_c037ced81c.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/t9hzeqd2vl.execute-api.us-west-1.amazonaws.com/profiles_engine/ProfilesEngineServlet__q_1d10b4dce5.html",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "_archive/tlx.3lift.com/header/auction__q_2556fa0ccd.json",
+      "size": 19,
+      "required": false
+    },
+    {
+      "path": "_archive/tlx.3lift.com/header/auction__q_4d79b8ebd6.json",
+      "size": 19,
+      "required": false
+    },
+    {
+      "path": "_archive/token.rubiconproject.com/esync__q_023045ad4c.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/token.rubiconproject.com/khaos__q_c5513e4cde.json",
+      "size": 7,
+      "required": false
+    },
+    {
+      "path": "_archive/token.rubiconproject.com/khaos.json",
+      "size": 7,
+      "required": false
+    },
+    {
+      "path": "_archive/tr.blismedia.com/v1/api/sync/openx__q_3af924d128.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/track.activemetering.com/pixel/v1/all/pixel__q_311d248caa.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/transparency.peer-39.com/api/init-6845t8qo4yd8s4f4if8a__q_b9d0ee2939.js",
+      "size": 17882,
+      "required": true
+    },
+    {
+      "path": "_archive/transparency.peer-39.com/api/v/6845t8qo4yd8s4f4if8a__q_b9d0ee2939.bin",
+      "size": 17,
+      "required": true
+    },
+    {
+      "path": "_archive/transparency.peer-39.com/api/x.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/u.openx.net/w/1.0/cm__q_96ad04d06f.html",
+      "size": 1096,
+      "required": false
+    },
+    {
+      "path": "_archive/u.openx.net/w/1.0/cm__q_bd8ccc735c.html",
+      "size": 784,
+      "required": false
+    },
+    {
+      "path": "_archive/u.openx.net/w/1.0/cm__q_ecafae8e04.html",
+      "size": 816,
+      "required": false
+    },
+    {
+      "path": "_archive/unified.adsafeprotected.com/pixel__q_ce7286f716.png",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/unified.adsafeprotected.com/pixel__q_d8270729bb.png",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "_archive/unified.adsafeprotected.com/v2/2688792/91646688__q_8c3962eea4.xml",
+      "size": 25646,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_308ffde224.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_7282faae91.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_808a9ede05.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_8145301b14.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_a26ae5374c.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_b53e80076c.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_c99a279fe4.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_f2b52dedc9.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_fde5c727f4.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/us-u.openx.net/w/1.0/sd__q_fe398926dd.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/user-sync.fwmrm.net/ad/u__q_6643eaaf0e.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/user-sync.fwmrm.net/ad/u__q_dfa42d5ab1.html",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "_archive/uss.xplosion.de/usersync__q_9d5c082aaf.gif",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "_archive/usw-ca2.adsrvr.org/bid/feedback/journey__q_f31526953a.gif",
+      "size": 807,
+      "required": false
+    },
+    {
+      "path": "_archive/ut.pubmatic.com/geo__q_398ca1f00b.json",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "_archive/ut.pubmatic.com/geo__q_aeefea8f2b.json",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "_archive/visitor.omnitagjs.com/visitor/isync__q_89f54dd6b9.html",
+      "size": 54,
+      "required": false
+    },
+    {
+      "path": "_archive/warp.media.net/rtb/resources/release-20251026-237-adperformance.js",
+      "size": 22674,
+      "required": true
+    },
+    {
+      "path": "_archive/web.ads.aps.amazon-adsystem.com/e/pb/bid.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/www.googletagservices.com/activeview/js/current/rx_omid_video.js",
+      "size": 162324,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/_Incapsula_Resource__q_75461b80f0.js",
+      "size": 82916,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/_Incapsula_Resource__q_d79537d1ef.txt",
+      "size": 1,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/A-thou-doe-prospeeceiud-accome-Hauen-heeleepell-__q_6e2992a577.json",
+      "size": 750,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/A-thou-doe-prospeeceiud-accome-Hauen-heeleepell-.js",
+      "size": 845523,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/ecom/libs/US/enUS__q_605e933633.js",
+      "size": 263282,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-base.lc-9df6d9fd0632870de59febf389280692-lc.min.js",
+      "size": 41332,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-base.lc-dcacf54b3f3fc61a60790ceaa148bcae-lc.min.css",
+      "size": 170478,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react.lc-8b6b27b906e993eeac1b444bf54a489c-lc.min.js",
+      "size": 7194,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/129.6f0fcc32.chunk.js",
+      "size": 7665,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/174.08cea3d7.chunk.js",
+      "size": 1168,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/243.d224a677.chunk.js",
+      "size": 328294,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/450.e0559eb1.chunk.js",
+      "size": 281585,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/636.bb7ab52c.chunk.js",
+      "size": 151361,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/826.799151bc.chunk.js",
+      "size": 544744,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/849.eecfb745.chunk.js",
+      "size": 123532,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/889.0027a94d.chunk.js",
+      "size": 7178,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/etc.clientlibs/vulcan-aem/clientlibs/clientlib-react/resources/static/js/966.e4eb1f7c.chunk.js",
+      "size": 24404,
+      "required": true
+    },
+    {
+      "path": "_archive/www.hertz.com/fonts/open-sans-v44-latin_latin-ext-600.woff2",
+      "size": 25320,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/fonts/open-sans-v44-latin_latin-ext-700.woff2",
+      "size": 24672,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/fonts/open-sans-v44-latin_latin-ext-italic.woff2",
+      "size": 26176,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/fonts/open-sans-v44-latin_latin-ext-regular.woff2",
+      "size": 25432,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/us.model.json.html",
+      "size": 932,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/us/en/deals-and-offers/us-offers/save-up-to-25-now__q_65563c548b.html",
+      "size": 73965,
+      "required": false
+    },
+    {
+      "path": "_archive/www.hertz.com/us/en/errors/500.model.json.html",
+      "size": 932,
+      "required": false
+    },
+    {
+      "path": "_archive/www.storygize.net/ccm/ab07fd15-2039-48b6-b2a2-4c9d1869ba93.bin",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "_archive/x.bidswitch.net/sync__q_38adfd282d.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/x.bidswitch.net/sync__q_627b5cd3de.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archive/x.bidswitch.net/sync__q_b95707b527.gif",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/Build/Geo_GD.data.unityweb",
+      "size": 13494190,
+      "required": true
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/Build/Geo_GD.json",
+      "size": 507,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/Build/Geo_GD.wasm.code.unityweb",
+      "size": 4255990,
+      "required": true
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/Build/Geo_GD.wasm.framework.unityweb",
+      "size": 80443,
+      "required": true
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/Build/UnityLoader.js",
+      "size": 159510,
+      "required": true
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/index.html",
+      "size": 3093,
+      "required": true
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/loading__q_1d365e2dc4.png",
+      "size": 680892,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/loading.png",
+      "size": 680892,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/1bringmeback.mp3",
+      "size": 710378,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/button_Click.mp3",
+      "size": 2157,
+      "required": false
+    },
+    {
+      "path": "_archived_site/html5.gamedistribution.com/rvvASMiM/9b634d67ddd6407c95effd409b947a76/StreamingAssets/Audios/die_Audio.mp3",
+      "size": 6669,
+      "required": false
+    },
+    {
+      "path": "_game_local/archive_manifest.json",
+      "size": 822,
+      "required": false
+    },
+    {
+      "path": "_game_local/games.mathpapers.us/geojump/_maintenance.html",
+      "size": 1302,
+      "required": false
+    },
+    {
+      "path": "_game_local/games.mathpapers.us/geojump/Build/Geo_GD.json.html",
+      "size": 27150,
+      "required": false
+    },
+    {
+      "path": "_game_local/games.mathpapers.us/geojump/Build/UnityLoader.js",
+      "size": 159510,
+      "required": true
+    },
+    {
+      "path": "_game_local/games.mathpapers.us/geojump/index0021.html",
+      "size": 288505,
+      "required": false
+    },
+    {
+      "path": "_game_local/games.mathpapers.us/geojump/loading3860__q_1d365e2dc4.png",
+      "size": 680892,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 236978,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1604,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "api.hertz.io",
+    "cdn-prod.eu.securiti.ai",
+    "cdn.eu.amplitude.com",
+    "ecom.mss.hertz.io",
+    "email.mss.hertz.io",
+    "storejs.s3.us-west-2.amazonaws.com",
+    "unpkg.com",
+    "www.dollar.com",
+    "www.hertz.com",
+    "www.thrifty.com"
+  ],
+  "external_critical": [
+    "api.hertz.io",
+    "cdn-prod.eu.securiti.ai",
+    "cdn.eu.amplitude.com",
+    "ecom.mss.hertz.io",
+    "email.mss.hertz.io",
+    "storejs.s3.us-west-2.amazonaws.com",
+    "www.dollar.com",
+    "www.hertz.com",
+    "www.thrifty.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

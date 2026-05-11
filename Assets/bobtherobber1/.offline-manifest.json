@@ -1,0 +1,306 @@
+{
+  "schema": 1,
+  "slug": "bobtherobber1",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "_external_mirror/acscdn.com/script/aclib.js",
+      "size": 167081,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/gh/StarRepo444/ClassroomPlayV2_c28ef0cfdccbbfc61a42d9954f14af3115c7398a/games/flash/swf/bob-the-robber.swf",
+      "size": 9208317,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_ruffle-rs/ruffle_0.1.0-nightly.2023.11.10/ruffle.js",
+      "size": 387530,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/fluidicon.png",
+      "size": 33270,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/5182a7ece0b71feeb9157f7aa348a15d53e32058/lib/_http_agent.js",
+      "size": 504206,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/5182a7ece0b71feeb9157f7aa348a15d53e32058/lib/_http_server.js",
+      "size": 748571,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/5182a7ece0b71feeb9157f7aa348a15d53e32058/lib/http.js",
+      "size": 280925,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/5182a7ece0b71feeb9157f7aa348a15d53e32058/lib/https.js",
+      "size": 431982,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/5182a7ece0b71feeb9157f7aa348a15d53e32058/lib/net.js",
+      "size": 962955,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/main/lib/http.js",
+      "size": 379938,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/v11.15.0_0/lib/_http_agent.js",
+      "size": 501700,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/v11.15.0_0/lib/http.js",
+      "size": 280572,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/v11.15.0_0/lib/https.js",
+      "size": 439062,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/v11.15.0_0/lib/net.js",
+      "size": 962262,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/blob/v12.22.12/lib/http.js",
+      "size": 281679,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/github.com/nodejs/node/raw/refs/heads/main/lib/http.js",
+      "size": 8274,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/nodejs.org/api/http.html",
+      "size": 611362,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/dist/index.json",
+      "size": 320652,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v0.10.x/api/http.html",
+      "size": 53083,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v0.12.x/api/http.html",
+      "size": 62775,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v10.x/api/http.html",
+      "size": 126751,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v11.x/api/http.html",
+      "size": 126725,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v12.x/api/http.html",
+      "size": 164214,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v13.x/api/http.html",
+      "size": 148322,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v14.x/api/http.html",
+      "size": 218120,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v15.x/api/http.html",
+      "size": 208196,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v16.x/api/http.html",
+      "size": 263157,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v17.x/api/http.html",
+      "size": 250036,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v18.x/api/http.html",
+      "size": 308307,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v19.x/api/http.html",
+      "size": 282274,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v20.x/api/http.html",
+      "size": 319164,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v21.x/api/http.html",
+      "size": 311620,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v22.x/api/http.html",
+      "size": 340131,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v23.x/api/http.html",
+      "size": 322172,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v24.x/api/http.html",
+      "size": 348736,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v25.x/api/http.html",
+      "size": 611322,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v4.x/api/http.html",
+      "size": 79225,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v5.x/api/http.html",
+      "size": 70694,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v6.x/api/http.html",
+      "size": 106207,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v7.x/api/http.html",
+      "size": 105191,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v8.x/api/http.html",
+      "size": 119249,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest-v9.x/api/http.html",
+      "size": 116652,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/docs/latest/api/http.html",
+      "size": 611345,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/nodejs.org/favicon.ico",
+      "size": 1130,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/stuk.github.io/jszip/documentation/howto/read_zip.html",
+      "size": 26569,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/www.rfc-editor.org/rfc/rfc8187.txt",
+      "size": 28118,
+      "required": false
+    },
+    {
+      "path": "btr.jpg",
+      "size": 56829,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 68120,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "archiveprogram.github.com",
+    "avatars.githubusercontent.com",
+    "docs.github.com",
+    "github-cloud.s3.amazonaws.com",
+    "github.blog",
+    "github.com",
+    "github.community",
+    "github.githubassets.com",
+    "maintainers.github.com",
+    "securitylab.github.com",
+    "skills.github.com",
+    "stars.github.com",
+    "support.github.com",
+    "user-images.githubusercontent.com",
+    "www.githubstatus.com"
+  ],
+  "external_critical": [
+    "archiveprogram.github.com",
+    "avatars.githubusercontent.com",
+    "docs.github.com",
+    "github-cloud.s3.amazonaws.com",
+    "github.blog",
+    "github.com",
+    "github.community",
+    "github.githubassets.com",
+    "maintainers.github.com",
+    "securitylab.github.com",
+    "skills.github.com",
+    "stars.github.com",
+    "support.github.com",
+    "user-images.githubusercontent.com",
+    "www.githubstatus.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

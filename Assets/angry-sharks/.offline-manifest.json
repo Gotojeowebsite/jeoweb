@@ -1,0 +1,344 @@
+{
+  "schema": 1,
+  "slug": "angry-sharks",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "assets/audio/bite1.ogg",
+      "size": 8130,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bite2.ogg",
+      "size": 15128,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bite3.ogg",
+      "size": 7977,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bite4.ogg",
+      "size": 7966,
+      "required": false
+    },
+    {
+      "path": "assets/audio/boss_fight_loop.ogg",
+      "size": 469754,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bubble1.ogg",
+      "size": 5458,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bubble2.ogg",
+      "size": 5813,
+      "required": false
+    },
+    {
+      "path": "assets/audio/bubble3.ogg",
+      "size": 7837,
+      "required": false
+    },
+    {
+      "path": "assets/audio/checkpoint.ogg",
+      "size": 11196,
+      "required": false
+    },
+    {
+      "path": "assets/audio/dopad_heavy.ogg",
+      "size": 11792,
+      "required": false
+    },
+    {
+      "path": "assets/audio/explosion1.ogg",
+      "size": 18090,
+      "required": false
+    },
+    {
+      "path": "assets/audio/explosion2.ogg",
+      "size": 16354,
+      "required": false
+    },
+    {
+      "path": "assets/audio/explosion3.ogg",
+      "size": 46983,
+      "required": false
+    },
+    {
+      "path": "assets/audio/gunshot.ogg",
+      "size": 11799,
+      "required": false
+    },
+    {
+      "path": "assets/audio/healing_fish.ogg",
+      "size": 11539,
+      "required": false
+    },
+    {
+      "path": "assets/audio/menu_hudba.ogg",
+      "size": 713921,
+      "required": false
+    },
+    {
+      "path": "assets/audio/motor_lod_loop.ogg",
+      "size": 236141,
+      "required": false
+    },
+    {
+      "path": "assets/audio/nafukovacia_ryba.ogg",
+      "size": 11694,
+      "required": false
+    },
+    {
+      "path": "assets/audio/ostep.ogg",
+      "size": 13809,
+      "required": false
+    },
+    {
+      "path": "assets/audio/ostep2.ogg",
+      "size": 25547,
+      "required": false
+    },
+    {
+      "path": "assets/audio/poskodenie_zraloka.ogg",
+      "size": 12585,
+      "required": false
+    },
+    {
+      "path": "assets/audio/result_okno.ogg",
+      "size": 36421,
+      "required": false
+    },
+    {
+      "path": "assets/audio/swoosh1.ogg",
+      "size": 9216,
+      "required": false
+    },
+    {
+      "path": "assets/audio/swoosh2.ogg",
+      "size": 10697,
+      "required": false
+    },
+    {
+      "path": "assets/audio/swoosh3.ogg",
+      "size": 7520,
+      "required": false
+    },
+    {
+      "path": "assets/audio/UI_click.ogg",
+      "size": 5678,
+      "required": false
+    },
+    {
+      "path": "assets/audio/underwater_ambience.ogg",
+      "size": 301615,
+      "required": false
+    },
+    {
+      "path": "assets/dat/m.isr",
+      "size": 4666,
+      "required": false
+    },
+    {
+      "path": "assets/favicon/icon-36x36.png",
+      "size": 4698,
+      "required": false
+    },
+    {
+      "path": "assets/favicon/icon-512x512.png",
+      "size": 270698,
+      "required": false
+    },
+    {
+      "path": "assets/fnt/Movavi Grotesque Black.ttf",
+      "size": 176892,
+      "required": false
+    },
+    {
+      "path": "assets/img/bg.png",
+      "size": 100434,
+      "required": false
+    },
+    {
+      "path": "assets/img/blank.png",
+      "size": 87,
+      "required": false
+    },
+    {
+      "path": "assets/img/loading.png",
+      "size": 3433,
+      "required": false
+    },
+    {
+      "path": "assets/img/rotate_screen.png",
+      "size": 1848,
+      "required": false
+    },
+    {
+      "path": "assets/img/shark/sharkmenu.atlas",
+      "size": 811,
+      "required": false
+    },
+    {
+      "path": "assets/img/shark/sharkmenu.json",
+      "size": 6315,
+      "required": false
+    },
+    {
+      "path": "assets/img/shark/sharkmenu.png",
+      "size": 96641,
+      "required": false
+    },
+    {
+      "path": "assets/img/splash.png",
+      "size": 544082,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites.json",
+      "size": 7766,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites2.json",
+      "size": 6576,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites3.json",
+      "size": 506,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites4.json",
+      "size": 6985,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites5.json",
+      "size": 8909,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites6.json",
+      "size": 10470,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites7.json",
+      "size": 15516,
+      "required": false
+    },
+    {
+      "path": "assets/img/sprites8.json",
+      "size": 7478,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet.png",
+      "size": 776214,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet2.png",
+      "size": 926919,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet3.png",
+      "size": 470399,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet4.png",
+      "size": 644666,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet5.png",
+      "size": 733487,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet6.png",
+      "size": 905845,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet7.png",
+      "size": 887889,
+      "required": false
+    },
+    {
+      "path": "assets/img/spritesheet8.png",
+      "size": 1161939,
+      "required": false
+    },
+    {
+      "path": "assets/img/void.png",
+      "size": 84,
+      "required": false
+    },
+    {
+      "path": "assets/img/water0.png",
+      "size": 45730,
+      "required": false
+    },
+    {
+      "path": "assets/img/water2.png",
+      "size": 15578,
+      "required": false
+    },
+    {
+      "path": "css/game.css",
+      "size": 713,
+      "required": true
+    },
+    {
+      "path": "css/normalize.css",
+      "size": 9594,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 2168,
+      "required": true
+    },
+    {
+      "path": "js/game.js",
+      "size": 1058373,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

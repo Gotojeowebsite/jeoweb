@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "slug": "superhot",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "hot.jpg",
+      "size": 120191,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 971,
+      "required": true
+    },
+    {
+      "path": "styles.css",
+      "size": 34,
+      "required": true
+    },
+    {
+      "path": "UnityLoader.js",
+      "size": 36687,
+      "required": true
+    },
+    {
+      "path": "webgl.datagz",
+      "size": 20243444,
+      "required": false
+    },
+    {
+      "path": "webgl.jsgz",
+      "size": 23442714,
+      "required": false
+    },
+    {
+      "path": "webgl.memgz",
+      "size": 1690796,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

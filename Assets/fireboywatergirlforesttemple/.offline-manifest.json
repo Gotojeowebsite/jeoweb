@@ -1,0 +1,709 @@
+{
+  "schema": 1,
+  "slug": "fireboywatergirlforesttemple",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/dojo/1.4/dojo/dojo.xd.js",
+      "size": 101963,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/dojo/1.4/dojox/highlight/resources/highlight.css",
+      "size": 764,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",
+      "size": 78601,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.fbrq.io/_azerion/splash/assets/scripts/newgroundsio.min.js",
+      "size": 58388,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_azerion/phaser_2.6/build/phaser.min.js",
+      "size": 790815,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_azerion/phaser-cachebuster_2.0/build/phaser-cachebuster.min.js",
+      "size": 965,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_azerion/phaser-spine_3.0/build/phaser-spine.min.js",
+      "size": 55808,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_azerion/splash_3.6/build/splash.min.js",
+      "size": 114724,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.raygun.io/raygun4js/raygun.min.js",
+      "size": 72766,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn1.kongregate.com/javascripts/kongregate_api.js",
+      "size": 69407,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ext.minijuegosgratis.com/external-host/main.js",
+      "size": 1563,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/car.js",
+      "size": 12495,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3_debug.js",
+      "size": 519038,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "size": 474210,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/lechuck.minijuegosgratis.com/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/api.html",
+      "size": 85596,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/download.html",
+      "size": 37849,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/errors.html",
+      "size": 22743,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/release/2.3.7/comments/require.js",
+      "size": 86578,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/release/2.3.7/minified/require.js",
+      "size": 17589,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/release/2.3.7/r.js",
+      "size": 1189212,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/requirejs.org/docs/whyamd.html",
+      "size": 28949,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/s0.2mdn.net/instream/video/client.js",
+      "size": 44701,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ssl.minijuegosgratis.com/lechuck/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "assets/atlasses/CharAssets.json",
+      "size": 49823,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/CharAssets.png",
+      "size": 732103,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/GroundAssets.json",
+      "size": 67889,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/GroundAssets.png",
+      "size": 94956,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MechAssets.json",
+      "size": 33616,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MechAssets.png",
+      "size": 483809,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MenuAssets.json",
+      "size": 12756,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MenuAssets.png",
+      "size": 199995,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MenuBackgrounds.json",
+      "size": 1192,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/MenuBackgrounds.png",
+      "size": 51516,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/PopupAssets.json",
+      "size": 23232,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/PopupAssets.png",
+      "size": 340229,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/PreloaderAssets.json",
+      "size": 776,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/PreloaderAssets.png",
+      "size": 33756,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/Temples/forest/TempleAssets.json",
+      "size": 12337,
+      "required": false
+    },
+    {
+      "path": "assets/atlasses/Temples/forest/TempleAssets.png",
+      "size": 287591,
+      "required": false
+    },
+    {
+      "path": "assets/audio/CharToggle1.mp3",
+      "size": 10971,
+      "required": false
+    },
+    {
+      "path": "assets/audio/CharToggle2.mp3",
+      "size": 10971,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Clock.mp3",
+      "size": 183901,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Death.mp3",
+      "size": 15673,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Diamond.mp3",
+      "size": 8776,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Door.mp3",
+      "size": 28800,
+      "required": false
+    },
+    {
+      "path": "assets/audio/EndDiamond.mp3",
+      "size": 33436,
+      "required": false
+    },
+    {
+      "path": "assets/audio/EndFail.mp3",
+      "size": 9403,
+      "required": false
+    },
+    {
+      "path": "assets/audio/EndPass.mp3",
+      "size": 9403,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Freeze.mp3",
+      "size": 22588,
+      "required": false
+    },
+    {
+      "path": "assets/audio/IceSteps_fb.mp3",
+      "size": 3744,
+      "required": false
+    },
+    {
+      "path": "assets/audio/IceSteps_wg.mp3",
+      "size": 3640,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Jump_fb.mp3",
+      "size": 5224,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Jump_wg.mp3",
+      "size": 9360,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusic_dark.mp3",
+      "size": 481698,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusic_speed.mp3",
+      "size": 109824,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusic.mp3",
+      "size": 1315960,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusicFinish_speed.mp3",
+      "size": 70530,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusicFinish.mp3",
+      "size": 167617,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LevelMusicOver.mp3",
+      "size": 163438,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Lever.mp3",
+      "size": 13061,
+      "required": false
+    },
+    {
+      "path": "assets/audio/LightPusher.mp3",
+      "size": 14209,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Melt.mp3",
+      "size": 81933,
+      "required": false
+    },
+    {
+      "path": "assets/audio/MenuMusic.mp3",
+      "size": 153390,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Platform.mp3",
+      "size": 28224,
+      "required": false
+    },
+    {
+      "path": "assets/audio/PortalClose.mp3",
+      "size": 12538,
+      "required": false
+    },
+    {
+      "path": "assets/audio/PortalLoop.mp3",
+      "size": 49318,
+      "required": false
+    },
+    {
+      "path": "assets/audio/PortalOpen.mp3",
+      "size": 36049,
+      "required": false
+    },
+    {
+      "path": "assets/audio/PortalTransport.mp3",
+      "size": 14209,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Pusher.mp3",
+      "size": 15673,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Slider.mp3",
+      "size": 5224,
+      "required": false
+    },
+    {
+      "path": "assets/audio/WaterSteps.mp3",
+      "size": 11701,
+      "required": false
+    },
+    {
+      "path": "assets/audio/Wind.mp3",
+      "size": 42048,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/fbwg_font_cyrillic.fnt",
+      "size": 11493,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/fbwg_font_cyrillic.png",
+      "size": 177017,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/font.fnt",
+      "size": 28418,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/font.png",
+      "size": 405225,
+      "required": false
+    },
+    {
+      "path": "assets/images/Beam.png",
+      "size": 64607,
+      "required": false
+    },
+    {
+      "path": "assets/images/branding/branding_logo_kizi.png",
+      "size": 24862,
+      "required": false
+    },
+    {
+      "path": "assets/images/GameNameForest.png",
+      "size": 109049,
+      "required": false
+    },
+    {
+      "path": "assets/images/stores/android.png",
+      "size": 37311,
+      "required": false
+    },
+    {
+      "path": "assets/images/stores/ios.png",
+      "size": 38748,
+      "required": false
+    },
+    {
+      "path": "assets/images/stores/microsoft.png",
+      "size": 31254,
+      "required": false
+    },
+    {
+      "path": "assets/images/stores/steam.png",
+      "size": 31317,
+      "required": false
+    },
+    {
+      "path": "assets/images/TempleHallForest.jpg",
+      "size": 426676,
+      "required": false
+    },
+    {
+      "path": "assets/images/TOASTER-MINI-new.png",
+      "size": 16635,
+      "required": false
+    },
+    {
+      "path": "assets/tilemaps/tilesets/Chars.json",
+      "size": 1590,
+      "required": false
+    },
+    {
+      "path": "assets/tilemaps/tilesets/Ground.json",
+      "size": 2600,
+      "required": false
+    },
+    {
+      "path": "assets/tilemaps/tilesets/LargeObjects.json",
+      "size": 1026,
+      "required": false
+    },
+    {
+      "path": "assets/tilemaps/tilesets/Objects.json",
+      "size": 2401,
+      "required": false
+    },
+    {
+      "path": "bower_components/requirejs/require.js",
+      "size": 86277,
+      "required": true
+    },
+    {
+      "path": "cdn.fbrq/@azerion/splash/assets/images/branding_logo_kizi.png",
+      "size": 24862,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_02.json",
+      "size": 6491,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_03.json",
+      "size": 6224,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_04.json",
+      "size": 5731,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_05.json",
+      "size": 6145,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_06.json",
+      "size": 5068,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_07.json",
+      "size": 5721,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_08.json",
+      "size": 5959,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_09.json",
+      "size": 5450,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_10.json",
+      "size": 5425,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_11.json",
+      "size": 4615,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_12.json",
+      "size": 6150,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_13.json",
+      "size": 6149,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_14.json",
+      "size": 5579,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_15.json",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_16.json",
+      "size": 5443,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_17.json",
+      "size": 6163,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_18.json",
+      "size": 6017,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_19.json",
+      "size": 6956,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_20.json",
+      "size": 6900,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_21.json",
+      "size": 5989,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_22.json",
+      "size": 7210,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_23.json",
+      "size": 4540,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_24.json",
+      "size": 5877,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_25.json",
+      "size": 6099,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_26.json",
+      "size": 7362,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_27.json",
+      "size": 5470,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_28.json",
+      "size": 6855,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_29.json",
+      "size": 5209,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_30.json",
+      "size": 5925,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_31.json",
+      "size": 6059,
+      "required": false
+    },
+    {
+      "path": "data/forest/levels/forest_32.json",
+      "size": 4468,
+      "required": false
+    },
+    {
+      "path": "data/forest/temple.json",
+      "size": 5247,
+      "required": false
+    },
+    {
+      "path": "data/tutorials/levels/forest_01.json",
+      "size": 23602,
+      "required": false
+    },
+    {
+      "path": "fireboy-and-watergirl-forest-temple.min.js",
+      "size": 2243486,
+      "required": true
+    },
+    {
+      "path": "game.json",
+      "size": 123,
+      "required": false
+    },
+    {
+      "path": "icon-60x60.png",
+      "size": 7809,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2263,
+      "required": true
+    },
+    {
+      "path": "logo.jpeg",
+      "size": 208986,
+      "required": false
+    },
+    {
+      "path": "main.min.js",
+      "size": 466457,
+      "required": true
+    },
+    {
+      "path": "manifest.json",
+      "size": 380,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 475,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "cdn.raygun.io",
+    "docs.google.com",
+    "game.api.gamedistribution.com",
+    "imasdk.googleapis.com",
+    "securepubads.g.doubleclick.net"
+  ],
+  "external_critical": [
+    "cdn.raygun.io",
+    "docs.google.com",
+    "game.api.gamedistribution.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

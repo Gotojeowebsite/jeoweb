@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "2k-sports-major-league-baseball-2k7",
+  "engine": "emulatorjs",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/mgba-legacy-wasm.data",
+      "size": 1054993,
+      "required": true
+    },
+    {
+      "path": "2K Sports - Major League Baseball 2K7 (USA).zip",
+      "size": 1732836,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1121,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 79303,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "slug": "polybranch",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "Arrow_keys.ai",
+      "size": 414200,
+      "required": false
+    },
+    {
+      "path": "Arrow_keys.png",
+      "size": 7242,
+      "required": false
+    },
+    {
+      "path": "css/styles.css",
+      "size": 2575,
+      "required": true
+    },
+    {
+      "path": "img/pic1.png",
+      "size": 15576,
+      "required": false
+    },
+    {
+      "path": "img/pic2.png",
+      "size": 56286,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5310,
+      "required": true
+    },
+    {
+      "path": "js/libs/jquery-1.8.3.min.js",
+      "size": 93636,
+      "required": true
+    },
+    {
+      "path": "js/libs/processing-1.4.1.min.js",
+      "size": 231856,
+      "required": true
+    },
+    {
+      "path": "js/libs/processing.js",
+      "size": 441878,
+      "required": true
+    },
+    {
+      "path": "js/script.js",
+      "size": 3758,
+      "required": true
+    },
+    {
+      "path": "polybranch.pjs",
+      "size": 26718,
+      "required": false
+    },
+    {
+      "path": "sound/_bell0.mp3",
+      "size": 34816,
+      "required": false
+    },
+    {
+      "path": "sound/_bell0.ogg",
+      "size": 22493,
+      "required": false
+    },
+    {
+      "path": "sound/_bell1.mp3",
+      "size": 34816,
+      "required": false
+    },
+    {
+      "path": "sound/_bell1.ogg",
+      "size": 22155,
+      "required": false
+    },
+    {
+      "path": "sound/_bell2.mp3",
+      "size": 34816,
+      "required": false
+    },
+    {
+      "path": "sound/_bell2.ogg",
+      "size": 20852,
+      "required": false
+    },
+    {
+      "path": "sound/_bell3.mp3",
+      "size": 34816,
+      "required": false
+    },
+    {
+      "path": "sound/_bell3.ogg",
+      "size": 21161,
+      "required": false
+    },
+    {
+      "path": "sound/_bell4.mp3",
+      "size": 34816,
+      "required": false
+    },
+    {
+      "path": "sound/_bell4.ogg",
+      "size": 20916,
+      "required": false
+    },
+    {
+      "path": "sound/end.mp3",
+      "size": 64909,
+      "required": false
+    },
+    {
+      "path": "sound/end.ogg",
+      "size": 45334,
+      "required": false
+    },
+    {
+      "path": "svg/level10.svg",
+      "size": 6636,
+      "required": false
+    },
+    {
+      "path": "svg/level11.svg",
+      "size": 6050,
+      "required": false
+    },
+    {
+      "path": "svg/level12.svg",
+      "size": 6943,
+      "required": false
+    },
+    {
+      "path": "svg/level2.svg",
+      "size": 6316,
+      "required": false
+    },
+    {
+      "path": "svg/level3.svg",
+      "size": 7108,
+      "required": false
+    },
+    {
+      "path": "svg/level4.svg",
+      "size": 5500,
+      "required": false
+    },
+    {
+      "path": "svg/level5.svg",
+      "size": 6131,
+      "required": false
+    },
+    {
+      "path": "svg/level6.svg",
+      "size": 6787,
+      "required": false
+    },
+    {
+      "path": "svg/level7.svg",
+      "size": 5659,
+      "required": false
+    },
+    {
+      "path": "svg/level8.svg",
+      "size": 7127,
+      "required": false
+    },
+    {
+      "path": "svg/level9.svg",
+      "size": 6754,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "fonts.googleapis.com",
+    "jquery.com",
+    "processingjs.org"
+  ],
+  "external_critical": [
+    "jquery.com",
+    "processingjs.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

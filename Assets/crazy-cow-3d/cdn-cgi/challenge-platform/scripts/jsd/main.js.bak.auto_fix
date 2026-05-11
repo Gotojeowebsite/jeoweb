@@ -1,1 +1,0 @@
-No Content: https://crazycattle3d.io/cdn-cgi/challenge-platform/scripts/jsd/main.js

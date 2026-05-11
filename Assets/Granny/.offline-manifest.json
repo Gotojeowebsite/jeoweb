@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "slug": "Granny",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": "cache/data/image/game/granny-f180x180.jpg",
+      "size": 11661,
+      "required": false
+    },
+    {
+      "path": "data/image/game/granny.jpg",
+      "size": 67922,
+      "required": false
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 5329,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.gif",
+      "size": 208033,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "game.azgame.io"
+  ],
+  "external_critical": [
+    "game.azgame.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "slug": "bloxors",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "block.png",
+      "size": 47862,
+      "required": false
+    },
+    {
+      "path": "bloxors.swf",
+      "size": 2207385,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 38391,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1730,
+      "required": true
+    },
+    {
+      "path": "ruffle/199487888125ef0c9fe4.wasm",
+      "size": 6571054,
+      "required": true
+    },
+    {
+      "path": "ruffle/ruffle.js",
+      "size": 83706,
+      "required": true
+    },
+    {
+      "path": "ruffle/ruffle.js.map",
+      "size": 293833,
+      "required": false
+    },
+    {
+      "path": "title.png",
+      "size": 22377,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

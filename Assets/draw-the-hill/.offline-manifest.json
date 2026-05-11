@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "slug": "draw-the-hill",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 723,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm",
+      "size": 246906,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm.js",
+      "size": 281951,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 305339,
+      "required": true
+    },
+    {
+      "path": "dibujo.svg",
+      "size": 8626,
+      "required": false
+    },
+    {
+      "path": "drawthehull.jpeg",
+      "size": 12565,
+      "required": false
+    },
+    {
+      "path": "fonts/diamond girl.ttf",
+      "size": 41752,
+      "required": false
+    },
+    {
+      "path": "icons/icon-512.png",
+      "size": 191826,
+      "required": false
+    },
+    {
+      "path": "images/coin_-sheet0.png",
+      "size": 37257,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 525526,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 21228,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 771,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 98,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground-sheet0.png",
+      "size": 70045,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground2-sheet0.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2218,
+      "required": true
+    },
+    {
+      "path": "offline.json",
+      "size": 992,
+      "required": false
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1014895,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 5165,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3123,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 75683,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 876,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 302,
+      "required": true
+    },
+    {
+      "path": "scripts/rocket-loader.min.js",
+      "size": 12331,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2306,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 570,
+      "required": true
+    },
+    {
+      "path": "workermain.js",
+      "size": 3208,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

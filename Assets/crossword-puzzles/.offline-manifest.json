@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "slug": "crossword-puzzles",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 849,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 7890,
+      "required": false
+    },
+    {
+      "path": "main.min.js",
+      "size": 4562805,
+      "required": true
+    },
+    {
+      "path": "sounds/button_click.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/button_rollover.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/check_ok.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/check_wrong.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/reveal.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/solved.mp3",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sounds/typing.mp3",
+      "size": 0,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "a",
+    "arenacloud.cdn.arkadiumhosted.com",
+    "b",
+    "www.googletagmanager.com",
+    "xn--e1aybc"
+  ],
+  "external_critical": [
+    "a",
+    "arenacloud.cdn.arkadiumhosted.com",
+    "b",
+    "xn--e1aybc"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

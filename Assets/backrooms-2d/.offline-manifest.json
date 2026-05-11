@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "slug": "backrooms-2d",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "Build/2-4-23.data.part1",
+      "size": 16777216,
+      "required": false
+    },
+    {
+      "path": "Build/2-4-23.data.part2",
+      "size": 16777216,
+      "required": false
+    },
+    {
+      "path": "Build/2-4-23.data.part3",
+      "size": 16777216,
+      "required": false
+    },
+    {
+      "path": "Build/2-4-23.data.part4",
+      "size": 10623214,
+      "required": false
+    },
+    {
+      "path": "Build/2-4-23.framework.js",
+      "size": 402332,
+      "required": true
+    },
+    {
+      "path": "Build/2-4-23.jpg",
+      "size": 298,
+      "required": false
+    },
+    {
+      "path": "Build/2-4-23.loader.js",
+      "size": 18894,
+      "required": true
+    },
+    {
+      "path": "Build/2-4-23.wasm",
+      "size": 28608731,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 6019,
+      "required": true
+    },
+    {
+      "path": "splash.png",
+      "size": 9186,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 2305,
+      "required": false
+    },
+    {
+      "path": "TemplateData/fullscreen-button.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1395,
+      "required": true
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "size": 3042,
+      "required": false
+    },
+    {
+      "path": "TemplateData/webgl-logo.png",
+      "size": 2947,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

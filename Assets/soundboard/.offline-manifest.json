@@ -1,0 +1,543 @@
+{
+  "schema": 1,
+  "slug": "soundboard",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488246,
+  "files": [
+    {
+      "path": "css/styles.css",
+      "size": 1577,
+      "required": true
+    },
+    {
+      "path": "img/better_eye.jpeg",
+      "size": 7417,
+      "required": false
+    },
+    {
+      "path": "img/button-pressed.png",
+      "size": 4446,
+      "required": false
+    },
+    {
+      "path": "img/button-shadow.png",
+      "size": 1148,
+      "required": false
+    },
+    {
+      "path": "img/button.png",
+      "size": 4492,
+      "required": false
+    },
+    {
+      "path": "img/eye.png",
+      "size": 4518,
+      "required": false
+    },
+    {
+      "path": "img/mlg-favicon.png",
+      "size": 60946,
+      "required": false
+    },
+    {
+      "path": "img/mlg.png",
+      "size": 18508,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 66537,
+      "required": true
+    },
+    {
+      "path": "sounds/9+10=21.mp3",
+      "size": 70635,
+      "required": false
+    },
+    {
+      "path": "sounds/airhorn.mp3",
+      "size": 28368,
+      "required": false
+    },
+    {
+      "path": "sounds/android-notif.mp3",
+      "size": 35144,
+      "required": false
+    },
+    {
+      "path": "sounds/anime-wow.mp3",
+      "size": 67449,
+      "required": false
+    },
+    {
+      "path": "sounds/AUUGHHH.mp3",
+      "size": 161054,
+      "required": false
+    },
+    {
+      "path": "sounds/bababooey.mp3",
+      "size": 14368,
+      "required": false
+    },
+    {
+      "path": "sounds/badumtss.mp3",
+      "size": 30094,
+      "required": false
+    },
+    {
+      "path": "sounds/bazinga.mp3",
+      "size": 13791,
+      "required": false
+    },
+    {
+      "path": "sounds/ben-yes.mp3",
+      "size": 10866,
+      "required": false
+    },
+    {
+      "path": "sounds/bonk.mp3",
+      "size": 6234,
+      "required": false
+    },
+    {
+      "path": "sounds/bruh.mp3",
+      "size": 27683,
+      "required": false
+    },
+    {
+      "path": "sounds/bye-have-a-great-time.mp3",
+      "size": 30929,
+      "required": false
+    },
+    {
+      "path": "sounds/Censor-Beep-Sound-Effect.mp3",
+      "size": 41515,
+      "required": false
+    },
+    {
+      "path": "sounds/coc-intro.mp3",
+      "size": 74396,
+      "required": false
+    },
+    {
+      "path": "sounds/coffin-dance.mp3",
+      "size": 216920,
+      "required": false
+    },
+    {
+      "path": "sounds/cr-intro.mp3",
+      "size": 64783,
+      "required": false
+    },
+    {
+      "path": "sounds/crona-time.mp3",
+      "size": 48483,
+      "required": false
+    },
+    {
+      "path": "sounds/cut-g.mp3",
+      "size": 64084,
+      "required": false
+    },
+    {
+      "path": "sounds/dababy-lets-go.mp3",
+      "size": 109228,
+      "required": false
+    },
+    {
+      "path": "sounds/damage.mp3",
+      "size": 53751,
+      "required": false
+    },
+    {
+      "path": "sounds/deez-nutz.mp3",
+      "size": 25452,
+      "required": false
+    },
+    {
+      "path": "sounds/discord-notification.mp3",
+      "size": 8448,
+      "required": false
+    },
+    {
+      "path": "sounds/DUN_DUN.mp3",
+      "size": 22656,
+      "required": false
+    },
+    {
+      "path": "sounds/earape-base.mp3",
+      "size": 55744,
+      "required": false
+    },
+    {
+      "path": "sounds/emotional-damage.mp3",
+      "size": 46393,
+      "required": false
+    },
+    {
+      "path": "sounds/fart-with-reverb.mp3",
+      "size": 93807,
+      "required": false
+    },
+    {
+      "path": "sounds/fart.mp3",
+      "size": 8085,
+      "required": false
+    },
+    {
+      "path": "sounds/fbi-open-up.mp3",
+      "size": 29257,
+      "required": false
+    },
+    {
+      "path": "sounds/five-nights-at-freddys-full-scream.mp3",
+      "size": 26749,
+      "required": false
+    },
+    {
+      "path": "sounds/fn-default-bb.mp3",
+      "size": 165649,
+      "required": false
+    },
+    {
+      "path": "sounds/full-table-broken.mp3",
+      "size": 134582,
+      "required": false
+    },
+    {
+      "path": "sounds/gas-gas-gas.mp3",
+      "size": 130820,
+      "required": false
+    },
+    {
+      "path": "sounds/goofy-yell.mp3",
+      "size": 38034,
+      "required": false
+    },
+    {
+      "path": "sounds/gta5-wasted.mp3",
+      "size": 124585,
+      "required": false
+    },
+    {
+      "path": "sounds/guess-who-back.mp3",
+      "size": 72306,
+      "required": false
+    },
+    {
+      "path": "sounds/hello-there.mp3",
+      "size": 23856,
+      "required": false
+    },
+    {
+      "path": "sounds/hey-ya.mp3",
+      "size": 73978,
+      "required": false
+    },
+    {
+      "path": "sounds/hit-marker.mp3",
+      "size": 1253,
+      "required": false
+    },
+    {
+      "path": "sounds/hiyah.mp3",
+      "size": 81642,
+      "required": false
+    },
+    {
+      "path": "sounds/hog-rider.mp3",
+      "size": 27585,
+      "required": false
+    },
+    {
+      "path": "sounds/i_love_refrigerators.mp3",
+      "size": 28421,
+      "required": false
+    },
+    {
+      "path": "sounds/i-will-send-you-to-jesus.mp3",
+      "size": 25913,
+      "required": false
+    },
+    {
+      "path": "sounds/imposter.mp3",
+      "size": 59768,
+      "required": false
+    },
+    {
+      "path": "sounds/inception.mp3",
+      "size": 48612,
+      "required": false
+    },
+    {
+      "path": "sounds/john-cena-intro.mp3",
+      "size": 114258,
+      "required": false
+    },
+    {
+      "path": "sounds/lebron-james.mp3",
+      "size": 45696,
+      "required": false
+    },
+    {
+      "path": "sounds/mario.mp3",
+      "size": 36362,
+      "required": false
+    },
+    {
+      "path": "sounds/mc-anvil.mp3",
+      "size": 11702,
+      "required": false
+    },
+    {
+      "path": "sounds/morgan-smell.mp3",
+      "size": 24659,
+      "required": false
+    },
+    {
+      "path": "sounds/nestle-crunch.mp3",
+      "size": 72724,
+      "required": false
+    },
+    {
+      "path": "sounds/nice.mp3",
+      "size": 41480,
+      "required": false
+    },
+    {
+      "path": "sounds/nomnomnomnom.mp3",
+      "size": 47228,
+      "required": false
+    },
+    {
+      "path": "sounds/nope.mp3",
+      "size": 7104,
+      "required": false
+    },
+    {
+      "path": "sounds/nut.mp3",
+      "size": 7523,
+      "required": false
+    },
+    {
+      "path": "sounds/oh-baby-a-triple.mp3",
+      "size": 42213,
+      "required": false
+    },
+    {
+      "path": "sounds/ohno-table-broken.mp3",
+      "size": 60186,
+      "required": false
+    },
+    {
+      "path": "sounds/oof.mp3",
+      "size": 9856,
+      "required": false
+    },
+    {
+      "path": "sounds/radio-beep.mp3",
+      "size": 16300,
+      "required": false
+    },
+    {
+      "path": "sounds/rick-roll.mp3",
+      "size": 151927,
+      "required": false
+    },
+    {
+      "path": "sounds/roblox-num-num.mp3",
+      "size": 12120,
+      "required": false
+    },
+    {
+      "path": "sounds/run.mp3",
+      "size": 164675,
+      "required": false
+    },
+    {
+      "path": "sounds/sad_song.mp3",
+      "size": 105743,
+      "required": false
+    },
+    {
+      "path": "sounds/sad-violin.mp3",
+      "size": 72306,
+      "required": false
+    },
+    {
+      "path": "sounds/sans.mp3",
+      "size": 2089,
+      "required": false
+    },
+    {
+      "path": "sounds/sheep.mp3",
+      "size": 109291,
+      "required": false
+    },
+    {
+      "path": "sounds/sicko.mp3",
+      "size": 39117,
+      "required": false
+    },
+    {
+      "path": "sounds/sike.mp3",
+      "size": 4179,
+      "required": false
+    },
+    {
+      "path": "sounds/skull-trumpet.mp3",
+      "size": 4597,
+      "required": false
+    },
+    {
+      "path": "sounds/sloppy-fart.mp3",
+      "size": 62693,
+      "required": false
+    },
+    {
+      "path": "sounds/soviet.mp3",
+      "size": 495699,
+      "required": false
+    },
+    {
+      "path": "sounds/spongebob-dolphin.mp3",
+      "size": 19384,
+      "required": false
+    },
+    {
+      "path": "sounds/sprite-cranberry.mp3",
+      "size": 17554,
+      "required": false
+    },
+    {
+      "path": "sounds/stop-the-cap.mp3",
+      "size": 12538,
+      "required": false
+    },
+    {
+      "path": "sounds/taco-bell.mp3",
+      "size": 62738,
+      "required": false
+    },
+    {
+      "path": "sounds/talking-ben-ho-ho-ho.mp3",
+      "size": 20897,
+      "required": false
+    },
+    {
+      "path": "sounds/to-be-continued.mp3",
+      "size": 159660,
+      "required": false
+    },
+    {
+      "path": "sounds/trololo.mp3",
+      "size": 159659,
+      "required": false
+    },
+    {
+      "path": "sounds/turtles.mp3",
+      "size": 35108,
+      "required": false
+    },
+    {
+      "path": "sounds/vine-boom.mp3",
+      "size": 35570,
+      "required": false
+    },
+    {
+      "path": "sounds/what-the-dog-doin.mp3",
+      "size": 21035,
+      "required": false
+    },
+    {
+      "path": "sounds/who-touch-my.mp3",
+      "size": 38870,
+      "required": false
+    },
+    {
+      "path": "sounds/why-are-you-running.mp3",
+      "size": 12956,
+      "required": false
+    },
+    {
+      "path": "sounds/wii-sports-aww.mp3",
+      "size": 25077,
+      "required": false
+    },
+    {
+      "path": "sounds/WinError.mp3",
+      "size": 15846,
+      "required": false
+    },
+    {
+      "path": "sounds/winxpshutdown.mp3",
+      "size": 54252,
+      "required": false
+    },
+    {
+      "path": "sounds/woody-woodpecker-laugh.mp3",
+      "size": 31635,
+      "required": false
+    },
+    {
+      "path": "sounds/wrong.mp3",
+      "size": 5851,
+      "required": false
+    },
+    {
+      "path": "sounds/x-games-mode.mp3",
+      "size": 21315,
+      "required": false
+    },
+    {
+      "path": "sounds/yeah.mp3",
+      "size": 89025,
+      "required": false
+    },
+    {
+      "path": "sounds/yeet.mp3",
+      "size": 28805,
+      "required": false
+    },
+    {
+      "path": "sounds/yoda-laugh.mp3",
+      "size": 21314,
+      "required": false
+    },
+    {
+      "path": "sounds/yummy.mp3",
+      "size": 66603,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "forms.gle"
+  ],
+  "external_critical": [
+    "forms.gle"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

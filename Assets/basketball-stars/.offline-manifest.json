@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "slug": "basketball-stars",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "assets/atlases/x1/ach.json",
+      "size": 3077,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/ach.png",
+      "size": 268367,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/gameplay.json",
+      "size": 11634,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/gameplay.png",
+      "size": 638364,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/interface.json",
+      "size": 10199,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/interface.png",
+      "size": 576324,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/preloader.json",
+      "size": 1703,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/preloader.png",
+      "size": 1500651,
+      "required": false
+    },
+    {
+      "path": "assets/basketball_legends_2019.min.js",
+      "size": 1147322,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/bluebird.min.js",
+      "size": 76607,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/dragonBones.min.js",
+      "size": 189354,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/easeljs-0.8.2.combined.js",
+      "size": 457756,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/jquery-3.1.1.min.js",
+      "size": 86708,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/nape-debug-draw.min.js",
+      "size": 42622,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/nape.min.js",
+      "size": 1775999,
+      "required": true
+    },
+    {
+      "path": "assets/css/AllerDisplay.css",
+      "size": 366,
+      "required": false
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 1945,
+      "required": true
+    },
+    {
+      "path": "assets/css/CfCrackBold.css",
+      "size": 370,
+      "required": false
+    },
+    {
+      "path": "assets/css/impact.css",
+      "size": 297,
+      "required": false
+    },
+    {
+      "path": "assets/css/impact2.css",
+      "size": 302,
+      "required": false
+    },
+    {
+      "path": "assets/css/impact3.css",
+      "size": 302,
+      "required": false
+    },
+    {
+      "path": "assets/data/Players.json",
+      "size": 16361,
+      "required": false
+    },
+    {
+      "path": "assets/data/sk.json",
+      "size": 31705,
+      "required": false
+    },
+    {
+      "path": "assets/data/sk2.json",
+      "size": 196128,
+      "required": false
+    },
+    {
+      "path": "assets/data/sk3.json",
+      "size": 25984,
+      "required": false
+    },
+    {
+      "path": "assets/data/texture.json",
+      "size": 5325,
+      "required": false
+    },
+    {
+      "path": "assets/data/texture2.json",
+      "size": 6761,
+      "required": false
+    },
+    {
+      "path": "assets/data/texture3.json",
+      "size": 696,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/AllerDisplay/AllerDisplay.woff",
+      "size": 13996,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CfCrackBold/cfcrackandbold.woff",
+      "size": 14184,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/Impact/impact.woff",
+      "size": 71900,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/Impact2/impact.woff",
+      "size": 68564,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/Impact3/impact.woff",
+      "size": 10396,
+      "required": false
+    },
+    {
+      "path": "assets/images/basketball-stars.png",
+      "size": 81801,
+      "required": false
+    },
+    {
+      "path": "assets/images/rotate.png",
+      "size": 4167,
+      "required": false
+    },
+    {
+      "path": "assets/images/x1/data.png",
+      "size": 713012,
+      "required": false
+    },
+    {
+      "path": "assets/images/x1/data2.png",
+      "size": 259893,
+      "required": false
+    },
+    {
+      "path": "assets/images/x1/data3.png",
+      "size": 22910,
+      "required": false
+    },
+    {
+      "path": "assets/main.min.js",
+      "size": 82106,
+      "required": true
+    },
+    {
+      "path": "assets/sound/1_M_Win.ogg",
+      "size": 79194,
+      "required": false
+    },
+    {
+      "path": "assets/sound/10_B_Ring.ogg",
+      "size": 13730,
+      "required": false
+    },
+    {
+      "path": "assets/sound/11_P_MegaStart.ogg",
+      "size": 20178,
+      "required": false
+    },
+    {
+      "path": "assets/sound/12_M_Lost.ogg",
+      "size": 43770,
+      "required": false
+    },
+    {
+      "path": "assets/sound/13_P_Shield.ogg",
+      "size": 17988,
+      "required": false
+    },
+    {
+      "path": "assets/sound/14_P_FloorStand.ogg",
+      "size": 6582,
+      "required": false
+    },
+    {
+      "path": "assets/sound/15_P_FloorRun.ogg",
+      "size": 7170,
+      "required": false
+    },
+    {
+      "path": "assets/sound/16_B_Bounce.ogg",
+      "size": 7451,
+      "required": false
+    },
+    {
+      "path": "assets/sound/17_P_Dash.ogg",
+      "size": 16542,
+      "required": false
+    },
+    {
+      "path": "assets/sound/18_P_SuperDash.ogg",
+      "size": 17680,
+      "required": false
+    },
+    {
+      "path": "assets/sound/19_M_Countdown.ogg",
+      "size": 11033,
+      "required": false
+    },
+    {
+      "path": "assets/sound/2_M_Whistle.ogg",
+      "size": 7319,
+      "required": false
+    },
+    {
+      "path": "assets/sound/20_ButtonSnd.ogg",
+      "size": 4637,
+      "required": false
+    },
+    {
+      "path": "assets/sound/21_B_NET.ogg",
+      "size": 6851,
+      "required": false
+    },
+    {
+      "path": "assets/sound/22_B_Brick.ogg",
+      "size": 54979,
+      "required": false
+    },
+    {
+      "path": "assets/sound/23_B_Basket.ogg",
+      "size": 7179,
+      "required": false
+    },
+    {
+      "path": "assets/sound/24_TrackSnd.ogg",
+      "size": 2671894,
+      "required": false
+    },
+    {
+      "path": "assets/sound/3_M_Tribune.ogg",
+      "size": 442943,
+      "required": false
+    },
+    {
+      "path": "assets/sound/4_P_Teleport.ogg",
+      "size": 7738,
+      "required": false
+    },
+    {
+      "path": "assets/sound/5_P_Swoosh.ogg",
+      "size": 6493,
+      "required": false
+    },
+    {
+      "path": "assets/sound/6_P_Energy.ogg",
+      "size": 20380,
+      "required": false
+    },
+    {
+      "path": "assets/sound/7_P_Stunned.ogg",
+      "size": 9958,
+      "required": false
+    },
+    {
+      "path": "assets/sound/8_B_Steel.ogg",
+      "size": 14495,
+      "required": false
+    },
+    {
+      "path": "assets/sound/9_M_Buzzer.ogg",
+      "size": 28514,
+      "required": false
+    },
+    {
+      "path": "basketstars.webp",
+      "size": 13479,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3083,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "ana.tunnl.com",
+    "createjs.com",
+    "developer.mozilla.org",
+    "docs.google.com",
+    "game.api.gamedistribution.com",
+    "github.com",
+    "imasdk.googleapis.com",
+    "server-with-cors-support.com",
+    "tweenjs.com",
+    "www.codeandweb.com",
+    "www.whatwg.org"
+  ],
+  "external_critical": [
+    "ana.tunnl.com",
+    "createjs.com",
+    "developer.mozilla.org",
+    "docs.google.com",
+    "game.api.gamedistribution.com",
+    "github.com",
+    "server-with-cors-support.com",
+    "tweenjs.com",
+    "www.codeandweb.com",
+    "www.whatwg.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

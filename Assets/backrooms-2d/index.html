@@ -1,3 +1,4 @@
+<!--GAME BROKEN-->
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -102,21 +103,44 @@
       canvas.style.background = "url('" + buildUrl + "/2-4-23.jpg') center / cover";
       loadingBar.style.display = "block";
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
+      // The original 58 MB Build/2-4-23.data is split into part1..part4
+      // because GitHub Pages does not serve Git LFS content and the
+      // pre-commit hook rejects non-LFS files >20 MB. Fetch the parts,
+      // concatenate into a Blob, and hand a Blob URL to Unity as dataUrl.
+      function loadSplitData(baseUrl, parts) {
+        return Promise.all(
+          Array.from({ length: parts }, (_, i) =>
+            fetch(baseUrl + ".part" + (i + 1)).then((r) => {
+              if (!r.ok) throw new Error("HTTP " + r.status + " on " + r.url);
+              return r.arrayBuffer();
+            })
+          )
+        ).then((buffers) => {
+          const blob = new Blob(buffers, { type: "application/octet-stream" });
+          return URL.createObjectURL(blob);
         });
-      };
-      document.body.appendChild(script);
+      }
+
+      loadSplitData(config.dataUrl, 4).then((blobUrl) => {
+        config.dataUrl = blobUrl;
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+          }).then((unityInstance) => {
+            loadingBar.style.display = "none";
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }).catch((message) => {
+            alert(message);
+          });
+        };
+        document.body.appendChild(script);
+      }).catch((err) => {
+        unityShowBanner("Failed to load game data: " + err.message, "error");
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,1698 @@
+{
+  "schema": 1,
+  "slug": "vex3",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.fbrq.io/orange-games-splash/assets/scripts/newgroundsio.min.js",
+      "size": 58388,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn1.kongregate.com/javascripts/kongregate_api.js",
+      "size": 69407,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ext.minijuegosgratis.com/external-host/main.js",
+      "size": 1563,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/lechuck.minijuegosgratis.com/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/ssl.minijuegosgratis.com/lechuck/js/latest.js",
+      "size": 84419,
+      "required": true
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 1570,
+      "required": true
+    },
+    {
+      "path": "assets/filters/BlurX.js",
+      "size": 1810,
+      "required": true
+    },
+    {
+      "path": "assets/filters/BlurY.js",
+      "size": 1809,
+      "required": true
+    },
+    {
+      "path": "assets/filters/ColorMatrixFilter.js",
+      "size": 16205,
+      "required": true
+    },
+    {
+      "path": "assets/filters/Gray.js",
+      "size": 1244,
+      "required": true
+    },
+    {
+      "path": "assets/images/act-check.png",
+      "size": 431,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/achievement-progress-bar.png",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-1.png",
+      "size": 2063,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-10.png",
+      "size": 3982,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-2.png",
+      "size": 4124,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-3.png",
+      "size": 2047,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-4.png",
+      "size": 2058,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-5.png",
+      "size": 2388,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-6.png",
+      "size": 2577,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-7.png",
+      "size": 2022,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-8.png",
+      "size": 2056,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/act-block-9.png",
+      "size": 2352,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/arrow-animation.png",
+      "size": 42592,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/arrow-static.png",
+      "size": 957,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/basic-block-colors.png",
+      "size": 8082,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/block-basic.png",
+      "size": 876,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/blocked-wall.png",
+      "size": 450521,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/bounce-block.png",
+      "size": 1229,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/explosive-block.png",
+      "size": 4616,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/falling-block.png",
+      "size": 1048,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/glass-block.png",
+      "size": 1885,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/horizontal-block.png",
+      "size": 1136,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/ice-block.png",
+      "size": 1362,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block-down.png",
+      "size": 1862,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block-up.png",
+      "size": 1896,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/invis-block.png",
+      "size": 1335,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/left-slope.png",
+      "size": 5185,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/lock-block.png",
+      "size": 881,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/push-block.png",
+      "size": 4770,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/slope-colors.png",
+      "size": 5176,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/solar-block.png",
+      "size": 4638,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/spark-block.png",
+      "size": 5440,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/speed-block.png",
+      "size": 939,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/swimming-pool.png",
+      "size": 1103,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/vertical-down-block.png",
+      "size": 1123,
+      "required": false
+    },
+    {
+      "path": "assets/images/blocks/vertical-up-block.png",
+      "size": 1282,
+      "required": false
+    },
+    {
+      "path": "assets/images/breathe-block.png",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/achievement-progress-bar.png",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act1-achievement.png",
+      "size": 1011,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act10-achievement.png",
+      "size": 933,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act2-achievement.png",
+      "size": 1081,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act3-achievement.png",
+      "size": 1089,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act4-achievement.png",
+      "size": 1044,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act5-achievement.png",
+      "size": 1084,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act6-achievement.png",
+      "size": 1049,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act7-achievement.png",
+      "size": 1047,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act8-achievement.png",
+      "size": 1135,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/act9-achievement.png",
+      "size": 1068,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome1-achievement.png",
+      "size": 2958,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome2-achievement.png",
+      "size": 3617,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome3-achievement.png",
+      "size": 1403,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome4-achievement.png",
+      "size": 3872,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome5-achievement.png",
+      "size": 1251,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome6-achievement.png",
+      "size": 2683,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/awesome7-achievement.png",
+      "size": 1499,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge1-achievement.png",
+      "size": 2751,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge2-achievement.png",
+      "size": 2751,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge3-achievement.png",
+      "size": 2233,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge4-achievement.png",
+      "size": 2830,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge5-achievement.png",
+      "size": 2951,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge6-achievement.png",
+      "size": 3015,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge7-achievement.png",
+      "size": 2328,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge8-achievement.png",
+      "size": 3052,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/challenge9-achievement.png",
+      "size": 3163,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/complete1-achievement.png",
+      "size": 3907,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/complete2-achievement.png",
+      "size": 3872,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/complete3-achievement.png",
+      "size": 6367,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/complete4-achievement.png",
+      "size": 6058,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star1-achievement.png",
+      "size": 4203,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star10-achievement.png",
+      "size": 4112,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star2-achievement.png",
+      "size": 3984,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star3-achievement.png",
+      "size": 3977,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star4-achievement.png",
+      "size": 4520,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star5-achievement.png",
+      "size": 4514,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star6-achievement.png",
+      "size": 4587,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star7-achievement.png",
+      "size": 4157,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star8-achievement.png",
+      "size": 4023,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/achievements/star9-achievement.png",
+      "size": 3993,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act-select-logo.png",
+      "size": 289,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act1-button.png",
+      "size": 2087,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act10-button.png",
+      "size": 2546,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act2-button.png",
+      "size": 2228,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act3-button.png",
+      "size": 2143,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act4-button.png",
+      "size": 2204,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act5-button.png",
+      "size": 2230,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act6-button.png",
+      "size": 1903,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act7-button.png",
+      "size": 2159,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act8-button.png",
+      "size": 2027,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/act9-button.png",
+      "size": 2188,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/awesome-stuff-button.png",
+      "size": 15544,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/back-button.png",
+      "size": 1569,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/bottom-label-bg.png",
+      "size": 519,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/challenge-acts-button.png",
+      "size": 9119,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/clear-all-button.png",
+      "size": 2353,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/close-button.png",
+      "size": 1006,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/completion-button.png",
+      "size": 9227,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-achievement.png",
+      "size": 10368,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-leaderboard.png",
+      "size": 8688,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-more-games.png",
+      "size": 6797,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-options.png",
+      "size": 8532,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-play-game.png",
+      "size": 8970,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/menu-trophy.png",
+      "size": 8508,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mainmenu/vex4.png",
+      "size": 27886,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/mute-button.png",
+      "size": 929,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/options-logo.png",
+      "size": 614,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/options-noclear.png",
+      "size": 9545,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/pause-button.png",
+      "size": 284,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/quality-button.png",
+      "size": 244,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/quit-logo.png",
+      "size": 508,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/reset-logo.png",
+      "size": 586,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/slide-drag.png",
+      "size": 86,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/slider.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/stage-button-bg.png",
+      "size": 595,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/standard-acts-button.png",
+      "size": 5098,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/tick_white_box.png",
+      "size": 3018,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/tick-button.png",
+      "size": 1063,
+      "required": false
+    },
+    {
+      "path": "assets/images/buttons/trophy-logo.png",
+      "size": 478,
+      "required": false
+    },
+    {
+      "path": "assets/images/circle-button.png",
+      "size": 4620,
+      "required": false
+    },
+    {
+      "path": "assets/images/crouch-button.png",
+      "size": 3720,
+      "required": false
+    },
+    {
+      "path": "assets/images/dark-overlay.png",
+      "size": 830209,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/grob24.fnt",
+      "size": 10743,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/grob24.png",
+      "size": 9419,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/grobred32.fnt",
+      "size": 10796,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/grobred32.png",
+      "size": 13880,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/menu-options.png",
+      "size": 8532,
+      "required": false
+    },
+    {
+      "path": "assets/images/fonts/menu-play-game.png",
+      "size": 8970,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/game-top-bg.png",
+      "size": 2723,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/level-name-bg.png",
+      "size": 953,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/rank-time-bg.png",
+      "size": 2475,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/rank-time-static-text.png",
+      "size": 9800,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/simple-transition.png",
+      "size": 4311,
+      "required": false
+    },
+    {
+      "path": "assets/images/gui/timer-bg.png",
+      "size": 1525,
+      "required": false
+    },
+    {
+      "path": "assets/images/hell_xl.png",
+      "size": 1872,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/breathe-blaster.png",
+      "size": 2558,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/cannon-base.png",
+      "size": 5900,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/cannon-tube.png",
+      "size": 781,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/checkpoint-swimming.png",
+      "size": 2015,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/checkpoint-text.png",
+      "size": 2154,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/checkpoint.png",
+      "size": 1103,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/finish-portal.png",
+      "size": 187521,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/hazard-strips.png",
+      "size": 1274,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/key.png",
+      "size": 822,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/light-switch.png",
+      "size": 364,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/pole-red-section.png",
+      "size": 812,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/pole.png",
+      "size": 222,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/star.png",
+      "size": 2323,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/timed-key.png",
+      "size": 809,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wind-blaster.png",
+      "size": 1496,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wind-fan.png",
+      "size": 1303,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/wire.png",
+      "size": 183,
+      "required": false
+    },
+    {
+      "path": "assets/images/items/zipline-pole.png",
+      "size": 288,
+      "required": false
+    },
+    {
+      "path": "assets/images/jump-button.png",
+      "size": 2954,
+      "required": false
+    },
+    {
+      "path": "assets/images/L_R-circle-button.png",
+      "size": 2503,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/buzzsaw-on-stick.png",
+      "size": 2705,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/buzzsaw.png",
+      "size": 6535,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/classic-laser.png",
+      "size": 4667,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/falling-spike.png",
+      "size": 385,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/laser-bullet.png",
+      "size": 129,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/quadrant.png",
+      "size": 3763,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/reaper.png",
+      "size": 6104,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-dispenser.png",
+      "size": 18933,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-horizontal.png",
+      "size": 1471,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/shurikan-spawner.png",
+      "size": 384,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spark.png",
+      "size": 1374,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike.png",
+      "size": 384,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike10x.png",
+      "size": 1197,
+      "required": false
+    },
+    {
+      "path": "assets/images/obstacles/spike30x.png",
+      "size": 1602,
+      "required": false
+    },
+    {
+      "path": "assets/images/parallaxBackground.png",
+      "size": 93264,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-arm.png",
+      "size": 162,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-body.png",
+      "size": 120,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-head.png",
+      "size": 161,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/parts/player-leg.png",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-crouch.png",
+      "size": 3232,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-fall.png",
+      "size": 5072,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-hang.png",
+      "size": 2933,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-back-flip.png",
+      "size": 4977,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-down.png",
+      "size": 3125,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump-front-flip.png",
+      "size": 4514,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-jump.png",
+      "size": 1431,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-kick.png",
+      "size": 5927,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-pulley.png",
+      "size": 6892,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-push.png",
+      "size": 5121,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-run.png",
+      "size": 4748,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-scale.png",
+      "size": 1163,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-slide.png",
+      "size": 3780,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-spawn.png",
+      "size": 11285,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-stand.png",
+      "size": 364,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swim-bottom.png",
+      "size": 2762,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swim-top.png",
+      "size": 1076,
+      "required": false
+    },
+    {
+      "path": "assets/images/player/player-swing.png",
+      "size": 10002,
+      "required": false
+    },
+    {
+      "path": "assets/images/press-down-hard.png",
+      "size": 1883,
+      "required": false
+    },
+    {
+      "path": "assets/images/press-down-normal.png",
+      "size": 2143,
+      "required": false
+    },
+    {
+      "path": "assets/images/press-down.png",
+      "size": 1879,
+      "required": false
+    },
+    {
+      "path": "assets/images/space-button.png",
+      "size": 841,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/act-down-arrow.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/challenge-icon.png",
+      "size": 3847,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/click_hell_text.png",
+      "size": 4448,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/completed-icon.png",
+      "size": 2895,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/completed-text.png",
+      "size": 3251,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/enter-level-text.png",
+      "size": 3214,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/fastest-time-text.png",
+      "size": 1881,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/hell-text.png",
+      "size": 3055,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/act-block/star-icon.png",
+      "size": 2904,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/hell_white_normal.png",
+      "size": 1785,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/bronze-text.png",
+      "size": 5490,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/clear-text.png",
+      "size": 6131,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/gold-text.png",
+      "size": 4257,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/none-text.png",
+      "size": 4066,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/perfect-text.png",
+      "size": 5744,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/ranks/silver-text.png",
+      "size": 5240,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-1.png",
+      "size": 3618,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-10.png",
+      "size": 4016,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-11.png",
+      "size": 4369,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-12.png",
+      "size": 5174,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-13-mobile.png",
+      "size": 3651,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-13.png",
+      "size": 4518,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-14.png",
+      "size": 4444,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-15.png",
+      "size": 710,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-16.png",
+      "size": 923,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-17.png",
+      "size": 859,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-18.png",
+      "size": 3885,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-19.png",
+      "size": 4646,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-2.png",
+      "size": 3464,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-20.png",
+      "size": 11879,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-21.png",
+      "size": 4974,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-22.png",
+      "size": 4771,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-23.png",
+      "size": 6010,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-24.png",
+      "size": 6515,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-25.png",
+      "size": 6017,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-26.png",
+      "size": 5317,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-27.png",
+      "size": 5340,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-28.png",
+      "size": 5512,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-29.png",
+      "size": 8989,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-30.png",
+      "size": 4558,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-31.png",
+      "size": 6095,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-32.png",
+      "size": 2899,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-33.png",
+      "size": 6727,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-34.png",
+      "size": 5487,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-35.png",
+      "size": 7035,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-36.png",
+      "size": 6216,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-37.png",
+      "size": 6227,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-38.png",
+      "size": 7146,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-39.png",
+      "size": 4314,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-4.png",
+      "size": 1301,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-40.png",
+      "size": 6319,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-41.png",
+      "size": 6836,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-42.png",
+      "size": 8041,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-43.png",
+      "size": 2846,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-44.png",
+      "size": 4022,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-5.png",
+      "size": 892,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-6.png",
+      "size": 4890,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-7.png",
+      "size": 3216,
+      "required": false
+    },
+    {
+      "path": "assets/images/text/text-fade-8.png",
+      "size": 3577,
+      "required": false
+    },
+    {
+      "path": "assets/images/vex-logo.png",
+      "size": 27120,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/achievement-unlocked.png",
+      "size": 3191,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/achievements-window.png",
+      "size": 10591,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/achievements/achievement-progress-bar.png",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/act-select-small.png",
+      "size": 3578,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/act-select-window.png",
+      "size": 12061,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/options-window.png",
+      "size": 43234,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/pause-window-small.png",
+      "size": 10956,
+      "required": false
+    },
+    {
+      "path": "assets/images/windows/stuck-window.png",
+      "size": 7131,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/achievement-unlocked.ogg",
+      "size": 9641,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/block-destroy.ogg",
+      "size": 19300,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/bounce1.ogg",
+      "size": 9331,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/button-click.ogg",
+      "size": 5323,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannon-enter.ogg",
+      "size": 20738,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/cannon-fire.ogg",
+      "size": 23930,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connect-hang.ogg",
+      "size": 9583,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/connect.ogg",
+      "size": 7542,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/death2.ogg",
+      "size": 8935,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/ding.ogg",
+      "size": 9945,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/downgrade.ogg",
+      "size": 14933,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/electricity.ogg",
+      "size": 20666,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/fall.ogg",
+      "size": 11467,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/falling-block.ogg",
+      "size": 8382,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/footstep.ogg",
+      "size": 6596,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/glass-smash.ogg",
+      "size": 13155,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/kick-block.ogg",
+      "size": 13236,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/land.ogg",
+      "size": 6437,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/laser-fire.ogg",
+      "size": 13844,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/menu-song.ogg",
+      "size": 647391,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/pole-swing.ogg",
+      "size": 8305,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/pole-woosh.ogg",
+      "size": 8542,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/slide.ogg",
+      "size": 22901,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/splash1.ogg",
+      "size": 19664,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/star-pickup.ogg",
+      "size": 15940,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-1.ogg",
+      "size": 318014,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-2.ogg",
+      "size": 667436,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-3.ogg",
+      "size": 324955,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/vex-song-4.ogg",
+      "size": 594112,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/wall-slide.ogg",
+      "size": 19337,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/zipline-full.ogg",
+      "size": 74868,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/bubble-burst.png",
+      "size": 53306,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/fun-game-play-mahjong.png",
+      "size": 51385,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/heroes-of-myths.png",
+      "size": 66453,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/jelly-madness-2.png",
+      "size": 62286,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/jewel-burst.png",
+      "size": 54938,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/super-stack.png",
+      "size": 41781,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/icons/twisted-city.png",
+      "size": 59213,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/branding_logo_kizi_small.png",
+      "size": 3783,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/close_btn.png",
+      "size": 443,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_button.png",
+      "size": 4787,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_logo.png",
+      "size": 32955,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/images/kizi_twist.png",
+      "size": 25600,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/contracted.json",
+      "size": 783,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/domains.json",
+      "size": 8092,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/games.json",
+      "size": 3112,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/internal.json",
+      "size": 1216,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/sitelock.json",
+      "size": 1133,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/jsonnope/special.json",
+      "size": 1102,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.atlas",
+      "size": 1836,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.json",
+      "size": 19261,
+      "required": false
+    },
+    {
+      "path": "cdn.fbrq/@orange-games/splash/assets/spine/kizi_skeleton.png",
+      "size": 72000,
+      "required": false
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-cachebuster@2.0/build/phaser-cachebuster.min.js",
+      "size": 969,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-spine@3.0/build/phaser-spine.min.js",
+      "size": 55793,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/phaser-super-storage@1.0/build/phaser-super-storage.min.js",
+      "size": 10717,
+      "required": true
+    },
+    {
+      "path": "cdn.jsdelivr.net/npm/@orange-games/splash@3.5/build/splash.min.js",
+      "size": 145186,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1206,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 365,
+      "required": true
+    },
+    {
+      "path": "vex-3.min.js",
+      "size": 1680701,
+      "required": true
+    },
+    {
+      "path": "vex3.png",
+      "size": 49637,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "htmi5.api.gamedistribution.com"
+  ],
+  "external_critical": [
+    "htmi5.api.gamedistribution.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

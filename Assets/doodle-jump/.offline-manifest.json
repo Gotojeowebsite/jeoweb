@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "slug": "doodle-jump",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "doodle.png",
+      "size": 36154,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1043,
+      "required": true
+    },
+    {
+      "path": "main.js",
+      "size": 14146,
+      "required": true
+    },
+    {
+      "path": "sprites.png",
+      "size": 62493,
+      "required": false
+    },
+    {
+      "path": "style.css",
+      "size": 1760,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "fonts.googleapis.com",
+    "i.imgur.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "i.imgur.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

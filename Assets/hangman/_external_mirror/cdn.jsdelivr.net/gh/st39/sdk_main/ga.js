@@ -9,7 +9,7 @@
     m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 (function () {
-    ga('create', 'UA-74658229-1', 'auto');
+    ga('create', 'G-DQM8XXB9GC', 'auto');
     ga('send', 'pageview', {
       'dimension1':  window.document.referrer
     });

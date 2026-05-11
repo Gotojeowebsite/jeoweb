@@ -52,6 +52,18 @@ class App {
 		});
 	}
 
+	formatVerifiedAgo(ts) {
+		if (!ts || typeof ts !== 'number') return '';
+		const ageSec = Math.floor(Date.now() / 1000) - ts;
+		if (ageSec < 0) return 'just now';
+		if (ageSec < 90) return 'just now';
+		if (ageSec < 3600) return Math.round(ageSec / 60) + 'm ago';
+		if (ageSec < 86400) return Math.round(ageSec / 3600) + 'h ago';
+		const d = Math.round(ageSec / 86400);
+		if (d <= 60) return d + 'd ago';
+		return Math.round(d / 30) + 'mo ago';
+	}
+
 	handleProgressUpdate(data) {
 		if (!this.currentLoadingGame) return;
 		
@@ -314,13 +326,23 @@ class App {
 		const byName = new Map();
 		try {
 			const response = await fetch('game_health.json', { cache: 'no-store' });
-			if (!response.ok) return byName;
+			if (!response.ok) {
+				console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
+				return byName;
+			}
 			const data = await response.json();
-			if (!data || typeof data !== 'object' || data.schema !== 2) return byName;
+			if (!data || typeof data !== 'object' || data.schema !== 2) {
+				console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
+				return byName;
+			}
 			const generatedAt = Number(data.generated_at) || 0;
 			const maxAgeDays = Number(data.max_age_days) || 7;
 			const ageMs = Date.now() - generatedAt * 1000;
 			const isStale = generatedAt > 0 && ageMs > maxAgeDays * 86400 * 1000;
+			if (isStale) {
+				const ageDays = Math.round(ageMs / 86400000);
+				console.warn(`[health] game_health.json is stale (${ageDays}d old, max=${maxAgeDays}d). Verdicts degrade to "unverified".`);
+			}
 			this.statusFreshness = {
 				generatedAt,
 				source: 'game_health.json',
@@ -551,11 +573,13 @@ class App {
 			document.body.classList.add('theme-dark');
 			localStorage.setItem('site-theme', 'dark');
 			if (this.themeToggle) this.themeToggle.textContent = '🌙';
+			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('dark');
 		} else {
 			document.body.classList.remove('theme-dark');
 			document.body.classList.add('theme-light');
 			localStorage.setItem('site-theme', 'light');
 			if (this.themeToggle) this.themeToggle.textContent = '☀️';
+			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('light');
 		}
 	}
 
@@ -605,6 +629,7 @@ class App {
 
 		if (save) {
 			localStorage.setItem('site-accent', color);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('accent', color);
 		}
 	}
 
@@ -648,8 +673,12 @@ class App {
 				const reader = new FileReader();
 				reader.onload = (ev) => {
 					const dataUrl = ev.target.result;
-					try { localStorage.setItem('site-bg-image', dataUrl); } catch(err) {
+					try { 
+						localStorage.setItem('site-bg-image', dataUrl);
+						if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_image', 'user_upload');
+					} catch(err) {
 						console.warn('Image too large for localStorage, applying without saving');
+						if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_image', 'too_large');
 						if (window.JeoToast) window.JeoToast.warning(
 							'Image too large to save (max ~5MB). Applied for this session only.',
 							{ ttl: 6000 }
@@ -675,7 +704,10 @@ class App {
 		const cardL = '#' + [r,g,b].map(c => Math.min(255, c + 18).toString(16).padStart(2,'0')).join('');
 		document.documentElement.style.setProperty('--bg-surface', lighter);
 		document.documentElement.style.setProperty('--card-bg', cardL);
-		if (save) localStorage.setItem('site-bg-color', color);
+		if (save) {
+			localStorage.setItem('site-bg-color', color);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackCustomization('bg_color', color);
+		}
 	}
 
 	applyBgImage(dataUrl) {
@@ -722,7 +754,10 @@ class App {
 		let _searchTimer = null;
 		this.searchInput.addEventListener('input', () => {
 			if (_searchTimer) clearTimeout(_searchTimer);
-			_searchTimer = setTimeout(() => this.renderGames(), 140);
+			_searchTimer = setTimeout(() => {
+				this.renderGames();
+				if (window.JeoAnalytics) window.JeoAnalytics.trackSearch(this.searchInput.value);
+			}, 140);
 		});
 		this.refreshBtn.addEventListener('click', () => this.refreshGames());
 		this.themeToggle.addEventListener('click', () => this.toggleTheme());
@@ -1430,6 +1465,11 @@ class App {
 
 		const wishBtn = '<button class="wish-btn' + (isWish ? ' wished' : '') + '" data-game="' + safeName + '" aria-label="Save for later" title="Save for later">' + (isWish ? '🔖' : '📑') + '</button>';
 		const heartBtn = '<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>';
+		const verifiedAt = (this.statusFreshness && this.statusFreshness.generatedAt) || 0;
+		const verifiedAgoText = (!isFail && verifiedAt) ? this.formatVerifiedAgo(verifiedAt) : '';
+		const verifiedAgo = verifiedAgoText
+			? '<span class="verified-ago" title="Last verified by the QA pipeline">✓ Verified ' + verifiedAgoText + '</span>'
+			: '';
 		// width/height supplied so the browser can reserve box & avoid CLS;
 		// CSS still scales image to fill via object-fit. onerror swaps to the
 		// shared fallback once if the cover is missing or broken.
@@ -1441,6 +1481,7 @@ class App {
 			'<div class="game-thumb">' + img + heartBtn + wishBtn + badgeHtml + '</div>' +
 			'<div class="game-card-content">' +
 				'<div class="game-card-title">' + safeName + '</div>' +
+				(verifiedAgo ? '<div class="game-card-meta">' + verifiedAgo + '</div>' : '') +
 				'<div class="card-actions"><button class="play-btn">' + playLabel + '</button></div>' +
 			'</div>';
 
@@ -1465,12 +1506,14 @@ class App {
 		const idx = this.favorites.indexOf(name);
 		if (idx > -1) {
 			this.favorites.splice(idx, 1);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackFavorite(name, false);
 			if (btn) {
 				btn.classList.remove('hearted');
 				btn.textContent = '♡';
 			}
 		} else {
 			this.favorites.push(name);
+			if (window.JeoAnalytics) window.JeoAnalytics.trackFavorite(name, true);
 			if (btn) {
 				btn.classList.add('hearted');
 				btn.textContent = '♥';
@@ -1543,6 +1586,7 @@ class App {
 			return;
 		}
 		this.trackRecentPlay(game);
+		if (window.JeoAnalytics) window.JeoAnalytics.trackGameStart(game.name, game.type);
 		this.openPlayer(game.url, game);
 	}
 
@@ -2510,6 +2554,7 @@ class App {
 					while (log.length > 500) log.shift();
 					localStorage.setItem('jeo:sessions', JSON.stringify(log));
 				} catch {}
+				if (window.JeoAnalytics) window.JeoAnalytics.trackGamePlayTime(this.currentGameName, dur / 1000);
 			}
 			if (window.JeoAchievements) {
 				try { window.JeoAchievements.emit('session-end', { slug: this.currentGameSlug, dur, type: this._lastPlayType }); } catch {}
@@ -2641,6 +2686,7 @@ class App {
 				const icon = btn.dataset.icon;
 				this.applyCloak(title, icon, true);
 				this.highlightActivePreset(title, icon);
+				if (window.JeoAnalytics) window.JeoAnalytics.trackCloakerChange(title);
 				// Populate custom inputs
 				const ti = document.getElementById('cloakerTitle');
 				const ii = document.getElementById('cloakerIcon');
@@ -2658,6 +2704,7 @@ class App {
 				if (title || icon) {
 					this.applyCloak(title || document.title, icon || '', true);
 					this.highlightActivePreset(null, null);
+					if (window.JeoAnalytics) window.JeoAnalytics.trackCloakerChange('custom');
 				}
 			});
 		}

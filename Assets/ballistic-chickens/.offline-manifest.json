@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "slug": "ballistic-chickens",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "_external_mirror/unpkg.com/kaboom_2001.0.0-alpha.21/dist/kaboom.js",
+      "size": 168103,
+      "required": true
+    },
+    {
+      "path": "code/achieve.js",
+      "size": 4071,
+      "required": true
+    },
+    {
+      "path": "code/game.js",
+      "size": 21830,
+      "required": true
+    },
+    {
+      "path": "code/help.js",
+      "size": 1557,
+      "required": true
+    },
+    {
+      "path": "code/menu.js",
+      "size": 2976,
+      "required": true
+    },
+    {
+      "path": "code/shop.js",
+      "size": 7411,
+      "required": true
+    },
+    {
+      "path": "code/start.js",
+      "size": 2352,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 6886,
+      "required": true
+    },
+    {
+      "path": "fonts/burned.ttf",
+      "size": 605220,
+      "required": false
+    },
+    {
+      "path": "fonts/manrope.ttf",
+      "size": 96412,
+      "required": false
+    },
+    {
+      "path": "fonts/rubik.ttf",
+      "size": 124176,
+      "required": false
+    },
+    {
+      "path": "fonts/ubuntu.ttf",
+      "size": 362552,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 677,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 29158,
+      "required": false
+    },
+    {
+      "path": "sprites/cannon.png",
+      "size": 87940,
+      "required": false
+    },
+    {
+      "path": "sprites/chicken.png",
+      "size": 45894,
+      "required": false
+    },
+    {
+      "path": "sprites/collectables.png",
+      "size": 357034,
+      "required": false
+    },
+    {
+      "path": "sprites/gameExtras.png",
+      "size": 262791,
+      "required": false
+    },
+    {
+      "path": "sprites/ground.png",
+      "size": 14925,
+      "required": false
+    },
+    {
+      "path": "sprites/logo.png",
+      "size": 35189,
+      "required": false
+    },
+    {
+      "path": "sprites/outline.png",
+      "size": 7126,
+      "required": false
+    },
+    {
+      "path": "sprites/rocket.png",
+      "size": 21982,
+      "required": false
+    },
+    {
+      "path": "sprites/shopBuilder.png",
+      "size": 154664,
+      "required": false
+    },
+    {
+      "path": "sprites/trampoline.png",
+      "size": 39879,
+      "required": false
+    },
+    {
+      "path": "sprites/update1dot1.png",
+      "size": 598840,
+      "required": false
+    },
+    {
+      "path": "sprites/upgrades.png",
+      "size": 365208,
+      "required": false
+    },
+    {
+      "path": "stuff.md",
+      "size": 525,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

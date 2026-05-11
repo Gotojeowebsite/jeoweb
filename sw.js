@@ -28,7 +28,6 @@ async function fetchWithProgress(request) {
     if (!response.ok || !response.body) return response;
 
     const contentLength = response.headers.get('content-length');
-    // If no content-length, we can't show accurate progress, but we can still stream
     if (!contentLength) return response;
 
     const total = parseInt(contentLength, 10);
@@ -47,13 +46,13 @@ async function fetchWithProgress(request) {
                         break;
                     }
                     loaded += value.byteLength;
-                    
+
                     const now = Date.now();
                     if (now - lastProgressUpdate > PROGRESS_THROTTLE) {
                         lastProgressUpdate = now;
                         broadcastProgress(url, loaded, total, false);
                     }
-                    
+
                     controller.enqueue(value);
                 }
             } catch (err) {
@@ -160,4 +159,11 @@ self.addEventListener('fetch', (event) => {
             }
         })
     );
+});
+
+self.addEventListener('message', (event) => {
+    const data = event.data || {};
+    if (data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
 });

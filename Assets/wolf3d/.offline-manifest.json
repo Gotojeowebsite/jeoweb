@@ -1,0 +1,1674 @@
+{
+  "schema": 1,
+  "slug": "wolf3d",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "art/attack.png",
+      "size": 8967,
+      "required": false
+    },
+    {
+      "path": "art/bj.png",
+      "size": 6929,
+      "required": false
+    },
+    {
+      "path": "art/confirm_newgame.png",
+      "size": 2488,
+      "required": false
+    },
+    {
+      "path": "art/control_keys.png",
+      "size": 7852,
+      "required": false
+    },
+    {
+      "path": "art/gamebg.png",
+      "size": 1742,
+      "required": false
+    },
+    {
+      "path": "art/getpsyched.png",
+      "size": 3805,
+      "required": false
+    },
+    {
+      "path": "art/hudbg.png",
+      "size": 2148,
+      "required": false
+    },
+    {
+      "path": "art/hudkeys.png",
+      "size": 1330,
+      "required": false
+    },
+    {
+      "path": "art/hudnumbers.png",
+      "size": 1435,
+      "required": false
+    },
+    {
+      "path": "art/hudweapons.png",
+      "size": 1400,
+      "required": false
+    },
+    {
+      "path": "art/intermission_gameover.png",
+      "size": 1807,
+      "required": false
+    },
+    {
+      "path": "art/intermission_secret.png",
+      "size": 2812,
+      "required": false
+    },
+    {
+      "path": "art/intermission_victory.png",
+      "size": 7067,
+      "required": false
+    },
+    {
+      "path": "art/intermission.png",
+      "size": 4035,
+      "required": false
+    },
+    {
+      "path": "art/intermissionbj.png",
+      "size": 5097,
+      "required": false
+    },
+    {
+      "path": "art/intermissionfont.png",
+      "size": 1564,
+      "required": false
+    },
+    {
+      "path": "art/menubg_control.png",
+      "size": 3744,
+      "required": false
+    },
+    {
+      "path": "art/menubg_customize.png",
+      "size": 4737,
+      "required": false
+    },
+    {
+      "path": "art/menubg_episodes.png",
+      "size": 2295,
+      "required": false
+    },
+    {
+      "path": "art/menubg_levels.png",
+      "size": 2287,
+      "required": false
+    },
+    {
+      "path": "art/menubg_main.png",
+      "size": 4134,
+      "required": false
+    },
+    {
+      "path": "art/menubg_skill.png",
+      "size": 2047,
+      "required": false
+    },
+    {
+      "path": "art/menubg_sound.png",
+      "size": 2136,
+      "required": false
+    },
+    {
+      "path": "art/menuitems_episodes.png",
+      "size": 5658,
+      "required": false
+    },
+    {
+      "path": "art/menuitems_levels.png",
+      "size": 2693,
+      "required": false
+    },
+    {
+      "path": "art/menuitems.png",
+      "size": 5397,
+      "required": false
+    },
+    {
+      "path": "art/menulight.png",
+      "size": 1189,
+      "required": false
+    },
+    {
+      "path": "art/menuselector.png",
+      "size": 3700,
+      "required": false
+    },
+    {
+      "path": "art/paused.png",
+      "size": 1669,
+      "required": false
+    },
+    {
+      "path": "art/skillfaces.png",
+      "size": 3199,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/002_053.png",
+      "size": 26250,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/054_102.png",
+      "size": 62317,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/103_141.png",
+      "size": 17555,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/142_190.png",
+      "size": 31687,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/191_241.png",
+      "size": 20468,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/242_291.png",
+      "size": 28538,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/292_299.png",
+      "size": 3132,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/300_310.png",
+      "size": 13799,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/311_324.png",
+      "size": 12073,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/325_337.png",
+      "size": 7631,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/338_363.png",
+      "size": 23300,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/364_373.png",
+      "size": 11879,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/374_388.png",
+      "size": 3210,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/408_418.png",
+      "size": 15503,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/419_430.png",
+      "size": 15989,
+      "required": false
+    },
+    {
+      "path": "art/sprites/128/431_438.png",
+      "size": 6288,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/002_053.png",
+      "size": 17787,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/054_102.png",
+      "size": 19017,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/103_141.png",
+      "size": 28175,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/142_190.png",
+      "size": 51263,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/191_241.png",
+      "size": 32466,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/242_291.png",
+      "size": 42654,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/292_299.png",
+      "size": 3968,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/300_310.png",
+      "size": 21697,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/311_324.png",
+      "size": 18535,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/325_337.png",
+      "size": 11344,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/338_363.png",
+      "size": 38986,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/364_373.png",
+      "size": 17428,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/374_388.png",
+      "size": 4113,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/408_418.png",
+      "size": 24374,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/419_430.png",
+      "size": 25357,
+      "required": false
+    },
+    {
+      "path": "art/sprites/64/431_438.png",
+      "size": 8458,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-1.png",
+      "size": 8775,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-10.png",
+      "size": 10983,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-11.png",
+      "size": 11964,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-2.png",
+      "size": 15982,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-3.png",
+      "size": 11934,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-4.png",
+      "size": 12803,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-5.png",
+      "size": 8748,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-6.png",
+      "size": 10078,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-7.png",
+      "size": 8912,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-8.png",
+      "size": 10609,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/help-9.png",
+      "size": 10373,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/Thumbs.db",
+      "size": 40448,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/victory1-1.png",
+      "size": 13419,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/victory1-2.png",
+      "size": 11271,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/victory2-1.png",
+      "size": 13589,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/victory2-2.png",
+      "size": 8989,
+      "required": false
+    },
+    {
+      "path": "art/text-screens/victory3-1.png",
+      "size": 13472,
+      "required": false
+    },
+    {
+      "path": "art/Thumbs.db",
+      "size": 212480,
+      "required": false
+    },
+    {
+      "path": "art/title.png",
+      "size": 22904,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_1.png",
+      "size": 4877,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_101.png",
+      "size": 4120,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_103.png",
+      "size": 3700,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_105.png",
+      "size": 3450,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_107.png",
+      "size": 3323,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_109.png",
+      "size": 2588,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_11.png",
+      "size": 4862,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_13.png",
+      "size": 4306,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_15.png",
+      "size": 5143,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_17.png",
+      "size": 4981,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_19.png",
+      "size": 5433,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_21.png",
+      "size": 4278,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_23.png",
+      "size": 3114,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_25.png",
+      "size": 3555,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_27.png",
+      "size": 3858,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_29.png",
+      "size": 3685,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_3.png",
+      "size": 4178,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_31.png",
+      "size": 2860,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_33.png",
+      "size": 4964,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_35.png",
+      "size": 5582,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_37.png",
+      "size": 5750,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_39.png",
+      "size": 5250,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_41.png",
+      "size": 3088,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_43.png",
+      "size": 2440,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_45.png",
+      "size": 3994,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_47.png",
+      "size": 5773,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_49.png",
+      "size": 6121,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_5.png",
+      "size": 4325,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_51.png",
+      "size": 5739,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_53.png",
+      "size": 4275,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_55.png",
+      "size": 3923,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_57.png",
+      "size": 5539,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_59.png",
+      "size": 6716,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_61.png",
+      "size": 6067,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_63.png",
+      "size": 5984,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_65.png",
+      "size": 4388,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_67.png",
+      "size": 2576,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_69.png",
+      "size": 1838,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_7.png",
+      "size": 4973,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_71.png",
+      "size": 2432,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_73.png",
+      "size": 2058,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_75.png",
+      "size": 5425,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_77.png",
+      "size": 2208,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_79.png",
+      "size": 1933,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_81.png",
+      "size": 4675,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_83.png",
+      "size": 4649,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_85.png",
+      "size": 4458,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_87.png",
+      "size": 5132,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_89.png",
+      "size": 4954,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_9.png",
+      "size": 3936,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_91.png",
+      "size": 5597,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_93.png",
+      "size": 4835,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_95.png",
+      "size": 2819,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_97.png",
+      "size": 5981,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/128/w_99.png",
+      "size": 3615,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_1.png",
+      "size": 3929,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_101.png",
+      "size": 3409,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_103.png",
+      "size": 2962,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_105.png",
+      "size": 2853,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_107.png",
+      "size": 2660,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_109.png",
+      "size": 2121,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_11.png",
+      "size": 3820,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_13.png",
+      "size": 3473,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_15.png",
+      "size": 4240,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_17.png",
+      "size": 4133,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_19.png",
+      "size": 4383,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_21.png",
+      "size": 3427,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_23.png",
+      "size": 2515,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_25.png",
+      "size": 2855,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_27.png",
+      "size": 3200,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_29.png",
+      "size": 3061,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_3.png",
+      "size": 3405,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_3.png.1",
+      "size": 3405,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_31.png",
+      "size": 2394,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_33.png",
+      "size": 3991,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_35.png",
+      "size": 4535,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_37.png",
+      "size": 4688,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_39.png",
+      "size": 4095,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_41.png",
+      "size": 2466,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_43.png",
+      "size": 1985,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_45.png",
+      "size": 3277,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_47.png",
+      "size": 4555,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_49.png",
+      "size": 4953,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_5.png",
+      "size": 3414,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_51.png",
+      "size": 4602,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_53.png",
+      "size": 3460,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_55.png",
+      "size": 3185,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_57.png",
+      "size": 4416,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_59.png",
+      "size": 4799,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_61.png",
+      "size": 4763,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_63.png",
+      "size": 4735,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_65.png",
+      "size": 3633,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_67.png",
+      "size": 2095,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_69.png",
+      "size": 1533,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_7.png",
+      "size": 3992,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_71.png",
+      "size": 2049,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_73.png",
+      "size": 1650,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_75.png",
+      "size": 4380,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_77.png",
+      "size": 1757,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_79.png",
+      "size": 1649,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_81.png",
+      "size": 3866,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_83.png",
+      "size": 3753,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_85.png",
+      "size": 3509,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_87.png",
+      "size": 4132,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_89.png",
+      "size": 4025,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_9.png",
+      "size": 3175,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_91.png",
+      "size": 4506,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_93.png",
+      "size": 3832,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_95.png",
+      "size": 2366,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_97.png",
+      "size": 4608,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/w_99.png",
+      "size": 2821,
+      "required": false
+    },
+    {
+      "path": "art/walls-shaded/64/walls.png",
+      "size": 123935,
+      "required": false
+    },
+    {
+      "path": "art/wolf3d.png",
+      "size": 219012,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 9425,
+      "required": true
+    },
+    {
+      "path": "js/actorai.js",
+      "size": 18452,
+      "required": true
+    },
+    {
+      "path": "js/actors.js",
+      "size": 15202,
+      "required": true
+    },
+    {
+      "path": "js/actstat.js",
+      "size": 89277,
+      "required": true
+    },
+    {
+      "path": "js/ai.js",
+      "size": 38018,
+      "required": true
+    },
+    {
+      "path": "js/angle.js",
+      "size": 3077,
+      "required": true
+    },
+    {
+      "path": "js/areas.js",
+      "size": 3641,
+      "required": true
+    },
+    {
+      "path": "js/doors.js",
+      "size": 14037,
+      "required": true
+    },
+    {
+      "path": "js/episodes.js",
+      "size": 2138,
+      "required": true
+    },
+    {
+      "path": "js/file.js",
+      "size": 4877,
+      "required": true
+    },
+    {
+      "path": "js/game.js",
+      "size": 41560,
+      "required": true
+    },
+    {
+      "path": "js/input.js",
+      "size": 9099,
+      "required": true
+    },
+    {
+      "path": "js/jquery-1.7.1.min.js",
+      "size": 93868,
+      "required": true
+    },
+    {
+      "path": "js/level.js",
+      "size": 41364,
+      "required": true
+    },
+    {
+      "path": "js/load.js",
+      "size": 2632,
+      "required": true
+    },
+    {
+      "path": "js/maps.js",
+      "size": 96620,
+      "required": true
+    },
+    {
+      "path": "js/math.js",
+      "size": 10695,
+      "required": true
+    },
+    {
+      "path": "js/menu.js",
+      "size": 17334,
+      "required": true
+    },
+    {
+      "path": "js/modernizr.custom.js",
+      "size": 14732,
+      "required": true
+    },
+    {
+      "path": "js/player.js",
+      "size": 25429,
+      "required": true
+    },
+    {
+      "path": "js/powerups.js",
+      "size": 10230,
+      "required": true
+    },
+    {
+      "path": "js/pushwall.js",
+      "size": 3824,
+      "required": true
+    },
+    {
+      "path": "js/random.js",
+      "size": 1755,
+      "required": true
+    },
+    {
+      "path": "js/raycaster.js",
+      "size": 9283,
+      "required": true
+    },
+    {
+      "path": "js/renderer.js",
+      "size": 12447,
+      "required": true
+    },
+    {
+      "path": "js/requestAnimFrame.js",
+      "size": 1242,
+      "required": true
+    },
+    {
+      "path": "js/sound.js",
+      "size": 5480,
+      "required": true
+    },
+    {
+      "path": "js/sprites.js",
+      "size": 45257,
+      "required": true
+    },
+    {
+      "path": "js/weapon.js",
+      "size": 4639,
+      "required": true
+    },
+    {
+      "path": "js/wolf.js",
+      "size": 3709,
+      "required": true
+    },
+    {
+      "path": "lsfx/001.ogg",
+      "size": 10614,
+      "required": false
+    },
+    {
+      "path": "lsfx/003.ogg",
+      "size": 6699,
+      "required": false
+    },
+    {
+      "path": "lsfx/005.ogg",
+      "size": 4280,
+      "required": false
+    },
+    {
+      "path": "lsfx/008.ogg",
+      "size": 5950,
+      "required": false
+    },
+    {
+      "path": "lsfx/009.ogg",
+      "size": 7116,
+      "required": false
+    },
+    {
+      "path": "lsfx/012.ogg",
+      "size": 8778,
+      "required": false
+    },
+    {
+      "path": "lsfx/023.ogg",
+      "size": 6347,
+      "required": false
+    },
+    {
+      "path": "lsfx/028.ogg",
+      "size": 9884,
+      "required": false
+    },
+    {
+      "path": "lsfx/030.ogg",
+      "size": 9447,
+      "required": false
+    },
+    {
+      "path": "lsfx/031.ogg",
+      "size": 7892,
+      "required": false
+    },
+    {
+      "path": "lsfx/032.ogg",
+      "size": 5723,
+      "required": false
+    },
+    {
+      "path": "lsfx/033.ogg",
+      "size": 9867,
+      "required": false
+    },
+    {
+      "path": "lsfx/034.ogg",
+      "size": 9848,
+      "required": false
+    },
+    {
+      "path": "lsfx/035.ogg",
+      "size": 10587,
+      "required": false
+    },
+    {
+      "path": "lsfx/036.ogg",
+      "size": 12939,
+      "required": false
+    },
+    {
+      "path": "lsfx/037.ogg",
+      "size": 16345,
+      "required": false
+    },
+    {
+      "path": "lsfx/038.ogg",
+      "size": 21633,
+      "required": false
+    },
+    {
+      "path": "lsfx/039.ogg",
+      "size": 5580,
+      "required": false
+    },
+    {
+      "path": "lsfx/040.ogg",
+      "size": 7271,
+      "required": false
+    },
+    {
+      "path": "lsfx/044.ogg",
+      "size": 12709,
+      "required": false
+    },
+    {
+      "path": "lsfx/045.ogg",
+      "size": 13858,
+      "required": false
+    },
+    {
+      "path": "lsfx/061.ogg",
+      "size": 6983,
+      "required": false
+    },
+    {
+      "path": "lsfx/062.ogg",
+      "size": 16276,
+      "required": false
+    },
+    {
+      "path": "lsfx/064.ogg",
+      "size": 20937,
+      "required": false
+    },
+    {
+      "path": "lsfx/069.ogg",
+      "size": 10981,
+      "required": false
+    },
+    {
+      "path": "lsfx/076.ogg",
+      "size": 7815,
+      "required": false
+    },
+    {
+      "path": "lsfx/078.ogg",
+      "size": 9221,
+      "required": false
+    },
+    {
+      "path": "lsfx/080.ogg",
+      "size": 20969,
+      "required": false
+    },
+    {
+      "path": "lsfx/085.ogg",
+      "size": 6034,
+      "required": false
+    },
+    {
+      "path": "lsfx/086.ogg",
+      "size": 9876,
+      "required": false
+    },
+    {
+      "path": "music/CORNER.ogg",
+      "size": 251346,
+      "required": false
+    },
+    {
+      "path": "music/DUNGEON.ogg",
+      "size": 273352,
+      "required": false
+    },
+    {
+      "path": "music/ENDLEVEL.ogg",
+      "size": 87001,
+      "required": false
+    },
+    {
+      "path": "music/FUNKYOU.ogg",
+      "size": 229095,
+      "required": false
+    },
+    {
+      "path": "music/GETTHEM.ogg",
+      "size": 311289,
+      "required": false
+    },
+    {
+      "path": "music/GOINGAFT.ogg",
+      "size": 357691,
+      "required": false
+    },
+    {
+      "path": "music/HEADACHE.ogg",
+      "size": 247155,
+      "required": false
+    },
+    {
+      "path": "music/HITLWLTZ.ogg",
+      "size": 270087,
+      "required": false
+    },
+    {
+      "path": "music/INTROCW3.ogg",
+      "size": 338540,
+      "required": false
+    },
+    {
+      "path": "music/NAZI_NOR.ogg",
+      "size": 235748,
+      "required": false
+    },
+    {
+      "path": "music/NAZI_OMI.ogg",
+      "size": 237886,
+      "required": false
+    },
+    {
+      "path": "music/NAZI_RAP.ogg",
+      "size": 333966,
+      "required": false
+    },
+    {
+      "path": "music/PACMAN.ogg",
+      "size": 353496,
+      "required": false
+    },
+    {
+      "path": "music/POW.ogg",
+      "size": 267948,
+      "required": false
+    },
+    {
+      "path": "music/PREGNANT.ogg",
+      "size": 298643,
+      "required": false
+    },
+    {
+      "path": "music/ROSTER.ogg",
+      "size": 77410,
+      "required": false
+    },
+    {
+      "path": "music/SALUTE.ogg",
+      "size": 46666,
+      "required": false
+    },
+    {
+      "path": "music/SEARCHN.ogg",
+      "size": 267088,
+      "required": false
+    },
+    {
+      "path": "music/SUSPENSE.ogg",
+      "size": 461699,
+      "required": false
+    },
+    {
+      "path": "music/TWELFTH.ogg",
+      "size": 463340,
+      "required": false
+    },
+    {
+      "path": "music/ULTIMATE.ogg",
+      "size": 327474,
+      "required": false
+    },
+    {
+      "path": "music/URAHERO.ogg",
+      "size": 83549,
+      "required": false
+    },
+    {
+      "path": "music/VICMARCH.ogg",
+      "size": 266708,
+      "required": false
+    },
+    {
+      "path": "music/VICTORS.ogg",
+      "size": 269978,
+      "required": false
+    },
+    {
+      "path": "music/WARMARCH.ogg",
+      "size": 285631,
+      "required": false
+    },
+    {
+      "path": "music/WONDERIN.ogg",
+      "size": 287263,
+      "required": false
+    },
+    {
+      "path": "music/ZEROHOUR.ogg",
+      "size": 286075,
+      "required": false
+    },
+    {
+      "path": "sfx/001.ogg",
+      "size": 4369,
+      "required": false
+    },
+    {
+      "path": "sfx/002.ogg",
+      "size": 3760,
+      "required": false
+    },
+    {
+      "path": "sfx/007.ogg",
+      "size": 8083,
+      "required": false
+    },
+    {
+      "path": "sfx/010.ogg",
+      "size": 5559,
+      "required": false
+    },
+    {
+      "path": "sfx/011.ogg",
+      "size": 3641,
+      "required": false
+    },
+    {
+      "path": "sfx/012.ogg",
+      "size": 3734,
+      "required": false
+    },
+    {
+      "path": "sfx/013.ogg",
+      "size": 3876,
+      "required": false
+    },
+    {
+      "path": "sfx/015.ogg",
+      "size": 3820,
+      "required": false
+    },
+    {
+      "path": "sfx/017.ogg",
+      "size": 4233,
+      "required": false
+    },
+    {
+      "path": "sfx/019.ogg",
+      "size": 4039,
+      "required": false
+    },
+    {
+      "path": "sfx/022.ogg",
+      "size": 5429,
+      "required": false
+    },
+    {
+      "path": "sfx/024.ogg",
+      "size": 4210,
+      "required": false
+    },
+    {
+      "path": "sfx/025.ogg",
+      "size": 3530,
+      "required": false
+    },
+    {
+      "path": "sfx/026.ogg",
+      "size": 3613,
+      "required": false
+    },
+    {
+      "path": "sfx/027.ogg",
+      "size": 3269,
+      "required": false
+    },
+    {
+      "path": "sfx/034.ogg",
+      "size": 9201,
+      "required": false
+    },
+    {
+      "path": "sfx/035.ogg",
+      "size": 3442,
+      "required": false
+    },
+    {
+      "path": "sfx/037.ogg",
+      "size": 4305,
+      "required": false
+    },
+    {
+      "path": "sfx/040.ogg",
+      "size": 5489,
+      "required": false
+    },
+    {
+      "path": "sfx/044.ogg",
+      "size": 6158,
+      "required": false
+    },
+    {
+      "path": "sfx/046.ogg",
+      "size": 4145,
+      "required": false
+    },
+    {
+      "path": "sfx/049.ogg",
+      "size": 4946,
+      "required": false
+    },
+    {
+      "path": "sfx/052.ogg",
+      "size": 5233,
+      "required": false
+    },
+    {
+      "path": "sfx/054.ogg",
+      "size": 4166,
+      "required": false
+    },
+    {
+      "path": "sfx/061.ogg",
+      "size": 9529,
+      "required": false
+    },
+    {
+      "path": "sfx/065.ogg",
+      "size": 6073,
+      "required": false
+    },
+    {
+      "path": "sfx/069.ogg",
+      "size": 6764,
+      "required": false
+    },
+    {
+      "path": "sfx/071.ogg",
+      "size": 4121,
+      "required": false
+    },
+    {
+      "path": "sfx/074.ogg",
+      "size": 4623,
+      "required": false
+    },
+    {
+      "path": "sfx/076.ogg",
+      "size": 3996,
+      "required": false
+    },
+    {
+      "path": "sfx/078.ogg",
+      "size": 3961,
+      "required": false
+    },
+    {
+      "path": "sfx/080.ogg",
+      "size": 4343,
+      "required": false
+    },
+    {
+      "path": "sfx/082.ogg",
+      "size": 4589,
+      "required": false
+    },
+    {
+      "path": "sfx/084.ogg",
+      "size": 4595,
+      "required": false
+    },
+    {
+      "path": "sfx/086.ogg",
+      "size": 4698,
+      "required": false
+    },
+    {
+      "path": "sfx/088.ogg",
+      "size": 3754,
+      "required": false
+    },
+    {
+      "path": "sfx/091.ogg",
+      "size": 5344,
+      "required": false
+    },
+    {
+      "path": "sfx/096.ogg",
+      "size": 7333,
+      "required": false
+    },
+    {
+      "path": "sfx/102.ogg",
+      "size": 8949,
+      "required": false
+    },
+    {
+      "path": "sfx/103.ogg",
+      "size": 3557,
+      "required": false
+    },
+    {
+      "path": "sfx/105.ogg",
+      "size": 4265,
+      "required": false
+    },
+    {
+      "path": "sfx/107.ogg",
+      "size": 3973,
+      "required": false
+    },
+    {
+      "path": "sfx/109.ogg",
+      "size": 4353,
+      "required": false
+    },
+    {
+      "path": "sfx/112.ogg",
+      "size": 5024,
+      "required": false
+    },
+    {
+      "path": "sfx/115.ogg",
+      "size": 5590,
+      "required": false
+    },
+    {
+      "path": "sfx/119.ogg",
+      "size": 5824,
+      "required": false
+    },
+    {
+      "path": "styles.css",
+      "size": 16598,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

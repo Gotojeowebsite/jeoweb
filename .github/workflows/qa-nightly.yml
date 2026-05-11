@@ -1,0 +1,218 @@
+name: QA Nightly (scan + auto-recover)
+
+on:
+  schedule:
+    # 04:00 UTC nightly.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      max_recoveries:
+        description: 'Maximum number of broken games the recovery engine should attempt this run (default: 60)'
+        required: false
+        default: '60'
+      workers:
+        description: 'Recovery workers in parallel (default 3)'
+        required: false
+        default: '3'
+      skip_recovery:
+        description: 'Skip the recovery engine (scan only)'
+        required: false
+        default: 'false'
+  push:
+    # Manual one-shot trigger. Push to either:
+    #   * a tag matching qa-run-*  (preferred — never recurses)
+    #   * the recovery-engine branch claude/game-qa-offline-system-Vz4SS
+    #     (lets the engine be exercised end-to-end before merging to main).
+    # The PR opened by this workflow targets a fresh qa/nightly-<id> branch,
+    # not this one, so no re-fire when it lands.
+    tags:
+      - 'qa-run-*'
+    branches:
+      - 'claude/game-qa-offline-system-Vz4SS'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: qa-nightly
+  cancel-in-progress: false
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        # No explicit ref so the workflow runs against whatever triggered it:
+        #   - cron / workflow_dispatch defaults: default branch (main)
+        #   - push of qa-run-* tag: the tagged commit (use this to test the
+        #     pipeline before merging the recovery-engine branch into main)
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node deps
+        run: npm ci || npm install
+
+      - name: Install Playwright (chromium only)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Refresh games_list.json
+        run: node scan.js
+
+      - name: Static health scan
+        run: node scripts/static-health-scan.js
+
+      - name: Build current game_health.json
+        run: node scripts/build-game-health.js
+
+      - name: Build offline manifests for current catalog
+        run: node scripts/build-offline-manifest.js --all
+
+      - name: Headless Playwright scan
+        timeout-minutes: 120
+        run: |
+          python3 broken_game_scanner.py \
+            --parallel-workers 4 \
+            --resume --state-file scan_state.json \
+            --sync-markers \
+            --hard-timeout-seconds 90 \
+            --wait-seconds 6
+
+      - name: Rebuild game_health.json after scan
+        run: node scripts/build-game-health.js
+
+      - name: Run aggressive recovery engine
+        if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        env:
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MAX_REC="${{ github.event.inputs.max_recoveries }}"
+          WORKERS="${{ github.event.inputs.workers }}"
+          : "${MAX_REC:=60}"
+          : "${WORKERS:=3}"
+          echo "running recovery: max=$MAX_REC workers=$WORKERS"
+          node scripts/recover-all-broken.js --workers "$WORKERS" --max "$MAX_REC" --time-budget 90m || true
+
+      - name: Re-scan slugs touched by recovery
+        if: ${{ github.event.inputs.skip_recovery != 'true' }}
+        run: |
+          REPORT=$(ls -t reports/recovery_summary_*.json 2>/dev/null | head -1)
+          if [ -z "$REPORT" ]; then
+            echo "no recovery summary, skipping rescan"
+            exit 0
+          fi
+          python3 broken_game_scanner.py --only-from "$REPORT" --sync-markers \
+            --hard-timeout-seconds 90 --wait-seconds 6 || true
+
+      - name: Localize externals + auto-inject Poki shim
+        run: node scripts/localize-all-games.js --apply
+
+      - name: Rebuild offline manifests
+        run: node scripts/build-offline-manifest.js --all
+
+      - name: Final game_health rebuild
+        run: |
+          node scan.js
+          node scripts/static-health-scan.js
+          node scripts/build-game-health.js
+
+      - name: Refresh qa_baseline.json
+        run: |
+          node -e "
+            const fs=require('fs');
+            const h=JSON.parse(fs.readFileSync('game_health.json','utf-8'));
+            const broken=(h.counts && h.counts.broken) || 0;
+            fs.writeFileSync('qa_baseline.json', JSON.stringify({
+              broken_at_main: broken,
+              generated_at: Math.floor(Date.now()/1000),
+              source: 'qa-nightly'
+            }, null, 2));
+            console.log('baseline broken='+broken);
+          "
+
+      - name: Commit + push results to the source branch
+        # Pushes recovered games / refreshed scan + manifest output directly
+        # to whatever ref triggered the workflow. When triggered by a push to
+        # claude/game-qa-offline-system-Vz4SS the changes show up on PR #8
+        # automatically. For nightly cron / dispatch on main this commits to
+        # main. The "[skip ci]" tag in the message prevents the same workflow
+        # from re-firing on its own commit.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          # Figure out which branch we're on. github.ref is "refs/heads/<x>"
+          # for branch pushes / workflow_dispatch / schedule; for tag pushes it
+          # would be "refs/tags/<x>" and we should commit to main in that case.
+          REF='${{ github.ref }}'
+          case "$REF" in
+            refs/heads/*) BRANCH="${REF#refs/heads/}";;
+            refs/tags/*)  BRANCH='main';;
+            *)            BRANCH='main';;
+          esac
+          echo "target branch: $BRANCH"
+
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          # Stage the catalog + verdict + manifest output. Keep "git add -A"
+          # scoped to paths that the QA pipeline owns so we don't sweep in
+          # accidental working-tree changes from earlier steps.
+          git add -A \
+            Assets \
+            games_list.json recently_added.json \
+            scan_results.json broken_games.json broken_games.txt \
+            checked_games.txt working_games.txt needs_review_games.txt \
+            static_health.json game_health.json override_conflicts.json \
+            qa_baseline.json maintenance_status.json \
+            reports || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit — recovery engine produced nothing new."
+            exit 0
+          fi
+
+          git commit -m "qa: nightly scan + recovery (run ${{ github.run_id }}) [skip ci]" \
+                     -m "Auto-generated by .github/workflows/qa-nightly.yml. See reports/recovery_summary_*.json and the workflow run artifacts for details."
+
+          # Push to whichever branch triggered us; use the workflow's GITHUB_TOKEN
+          # which has contents:write permission via the workflow's permissions block.
+          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          # Retry on transient 5xx.
+          for attempt in 1 2 3 4; do
+            if git push "$REMOTE_URL" "HEAD:$BRANCH"; then
+              echo "Pushed to $BRANCH on attempt $attempt"
+              break
+            fi
+            echo "Push failed (attempt $attempt); sleeping..."
+            sleep $((attempt * 4))
+          done
+
+      - name: Upload pipeline reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-nightly-reports-${{ github.run_id }}
+          path: |
+            reports/**
+            scan_results.json
+            game_health.json
+            static_health.json
+            broken_games.json
+            recovery_summary_*.json
+          if-no-files-found: ignore

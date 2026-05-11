@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "slug": "factoryballs",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "factoryballsforever.js",
+      "size": 765729,
+      "required": true
+    },
+    {
+      "path": "images/factoryballsforever_atlas_.png",
+      "size": 5476323,
+      "required": false
+    },
+    {
+      "path": "images/favicon.ico",
+      "size": 25811,
+      "required": false
+    },
+    {
+      "path": "images/preloader.gif",
+      "size": 1630,
+      "required": false
+    },
+    {
+      "path": "images/splash.png",
+      "size": 83509,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3558,
+      "required": true
+    },
+    {
+      "path": "libs/1.0.0/createjs.min.js",
+      "size": 242057,
+      "required": true
+    },
+    {
+      "path": "sounds/fbSong.mp3",
+      "size": 2736096,
+      "required": false
+    },
+    {
+      "path": "sounds/sndapprove.mp3",
+      "size": 10484,
+      "required": false
+    },
+    {
+      "path": "sounds/sndboo.mp3",
+      "size": 31011,
+      "required": false
+    },
+    {
+      "path": "sounds/sndpaint.mp3",
+      "size": 2231,
+      "required": false
+    },
+    {
+      "path": "sounds/sndshovel.mp3",
+      "size": 5447,
+      "required": false
+    },
+    {
+      "path": "sounds/sndswitch.mp3",
+      "size": 2132,
+      "required": false
+    },
+    {
+      "path": "sounds/sndwater.mp3",
+      "size": 6019,
+      "required": false
+    },
+    {
+      "path": "sounds/sndzaad.mp3",
+      "size": 2612,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "raw.githubusercontent.com"
+  ],
+  "external_critical": [
+    "raw.githubusercontent.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

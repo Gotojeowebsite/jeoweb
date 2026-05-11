@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "slug": "paperio2",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "css/fonts.css",
+      "size": 1192,
+      "required": true
+    },
+    {
+      "path": "css/fonts/0FlJVP6Hrxmt7-fsUFhlFXNIlpcSwSrkQg-v_38.woff2",
+      "size": 22332,
+      "required": false
+    },
+    {
+      "path": "css/fonts/0FlJVP6Hrxmt7-fsUFhlFXNIlpcSwSrkQQ-v_38.woff2",
+      "size": 29420,
+      "required": false
+    },
+    {
+      "path": "css/fonts/0FlJVP6Hrxmt7-fsUFhlFXNIlpcSwSrkSA-v_38.woff2",
+      "size": 22332,
+      "required": false
+    },
+    {
+      "path": "css/fonts/0FlJVP6Hrxmt7-fsUFhlFXNIlpcSwSrkTA-v.woff2",
+      "size": 35208,
+      "required": false
+    },
+    {
+      "path": "css/style3.css",
+      "size": 7217,
+      "required": true
+    },
+    {
+      "path": "images/icon192.png",
+      "size": 32808,
+      "required": false
+    },
+    {
+      "path": "images/icon512.png",
+      "size": 144613,
+      "required": false
+    },
+    {
+      "path": "images/logo.png",
+      "size": 39823,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2419,
+      "required": true
+    },
+    {
+      "path": "js/app-new-gm.js",
+      "size": 417792,
+      "required": true
+    },
+    {
+      "path": "js/loader.js",
+      "size": 67054,
+      "required": true
+    },
+    {
+      "path": "js/sdk.js",
+      "size": 556333,
+      "required": true
+    },
+    {
+      "path": "js/window.js",
+      "size": 126,
+      "required": true
+    },
+    {
+      "path": "languages.json",
+      "size": 6121,
+      "required": false
+    },
+    {
+      "path": "manifest.json",
+      "size": 406,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io"
+  ],
+  "external_critical": [
+    "3kh0.github.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

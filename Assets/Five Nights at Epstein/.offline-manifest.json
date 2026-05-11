@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "slug": "Five Nights at Epstein",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": "Build/fnae.data.part1",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "Build/fnae.data.part2",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "Build/fnae.data.part3",
+      "size": 7213563,
+      "required": false
+    },
+    {
+      "path": "Build/fnae.framework.js",
+      "size": 717042,
+      "required": true
+    },
+    {
+      "path": "Build/fnae.loader.js",
+      "size": 48763,
+      "required": true
+    },
+    {
+      "path": "Build/fnae.wasm.part1",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "Build/fnae.wasm.part2",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "Build/fnae.wasm.part3",
+      "size": 11335108,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 10334,
+      "required": true
+    },
+    {
+      "path": "logo.jpeg",
+      "size": 15876,
+      "required": false
+    },
+    {
+      "path": "StreamingAssets/202512191935.webm.part1",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "StreamingAssets/202512191935.webm.part2",
+      "size": 20866662,
+      "required": false
+    },
+    {
+      "path": "StreamingAssets/202512191935.webm.part3",
+      "size": 19663685,
+      "required": false
+    },
+    {
+      "path": "TemplateData/favicon.ico",
+      "size": 2305,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "size": 96,
+      "required": false
+    },
+    {
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 1285,
+      "required": true
+    },
+    {
+      "path": "TemplateData/unity-logo-dark.png",
+      "size": 3042,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

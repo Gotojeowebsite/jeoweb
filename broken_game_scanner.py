@@ -398,10 +398,70 @@ def parse_args() -> Config:
         default="scan_state.json",
         help="Checkpoint state JSON used by --resume",
     )
+    parser.add_argument(
+        "--root",
+        default=None,
+        help=(
+            "Scan a single candidate folder (used by the recovery engine to "
+            "validate a downloaded copy before swapping it in). The folder's "
+            "basename is used as the game name and its parent as the assets "
+            "root. Implies --only <basename>."
+        ),
+    )
+    parser.add_argument(
+        "--only-from",
+        default=None,
+        help=(
+            "Read a list of game slugs from a JSON file's keys/results and "
+            "scan only those. Accepts game_health.json, scan_results.json, "
+            "or any recovery_summary_*.json."
+        ),
+    )
     args = parser.parse_args()
 
     root_dir = Path.cwd()
-    assets_dir = (root_dir / args.assets_dir).resolve()
+    only_set: Optional[Set[str]] = set(args.only) if args.only else None
+
+    if args.only_from:
+        slug_set: Set[str] = set()
+        try:
+            payload = json.loads(Path(args.only_from).read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"--only-from could not read {args.only_from}: {e}")
+            payload = None
+        if isinstance(payload, dict):
+            games = payload.get("games") if "games" in payload else payload
+            if isinstance(games, dict):
+                slug_set.update(str(k) for k in games.keys())
+            results = payload.get("results")
+            if isinstance(results, list):
+                for r in results:
+                    if isinstance(r, dict) and r.get("slug"):
+                        slug_set.add(str(r["slug"]))
+                    if isinstance(r, dict) and r.get("name"):
+                        slug_set.add(str(r["name"]))
+            failed = payload.get("failed")
+            if isinstance(failed, list):
+                for r in failed:
+                    if isinstance(r, dict) and r.get("slug"):
+                        slug_set.add(str(r["slug"]))
+        elif isinstance(payload, list):
+            for r in payload:
+                if isinstance(r, dict) and r.get("name"):
+                    slug_set.add(str(r["name"]))
+                if isinstance(r, dict) and r.get("slug"):
+                    slug_set.add(str(r["slug"]))
+        if slug_set:
+            only_set = (only_set or set()) | slug_set
+
+    if args.root:
+        cand_path = Path(args.root).resolve()
+        if not cand_path.is_dir():
+            raise FileNotFoundError(f"--root folder not found: {cand_path}")
+        assets_dir = cand_path.parent
+        only_set = {cand_path.name}
+    else:
+        assets_dir = (root_dir / args.assets_dir).resolve()
 
     return Config(
         root_dir=root_dir,
@@ -415,7 +475,7 @@ def parse_args() -> Config:
         max_attempts=max(args.max_attempts, 1),
         parallel_workers=max(args.parallel_workers, 1),
         max_games=args.max_games if args.max_games and args.max_games > 0 else None,
-        only_games=set(args.only) if args.only else None,
+        only_games=only_set,
         strict_external=args.strict_external,
         sync_markers=args.sync_markers,
         broken_log=(root_dir / args.broken_log).resolve(),
@@ -653,11 +713,16 @@ def order_warnings_for_output(warnings: List[Issue]) -> List[Issue]:
 def probe_page(page) -> Dict[str, object]:
     # Includes a coarse "canvas pixel hash" so the supervisor can detect a
     # canvas that exists but never actually rendered (loading-bar-then-stall).
+    #
+    # WebGL canvases default to preserveDrawingBuffer:false, so drawImage()
+    # samples come back black even when the game is rendering. We detect that
+    # case and fall back to a frame-tick counter (requestAnimationFrame +
+    # WebGL drawingBufferWidth) to confirm the game is alive.
     return page.evaluate(
         """
-        () => {
+        async () => {
             const surfaces = document.querySelectorAll(
-                'canvas, iframe, embed, object, ruffle-player, ruffle-embed, #unity-canvas, #game canvas, #player'
+                'canvas, iframe, embed, object, ruffle-player, ruffle-embed, ruffle-object, #unity-canvas, #game canvas, #player'
             ).length;
             const bodyTextLength = (document.body?.innerText || '').trim().length;
             const unityLoadingBar = !!document.querySelector('#unity-loading-bar');
@@ -668,9 +733,18 @@ def probe_page(page) -> Dict[str, object]:
             // square" — a canvas with surface but no rendering.
             let canvasHash = '';
             let canvasNonzeroPixels = 0;
+            let canvasIsWebGL = false;
+            let canvasRAFTicks = 0;
+            const c = document.querySelector('canvas, #unity-canvas, #game canvas');
             try {
-                const c = document.querySelector('canvas, #unity-canvas, #game canvas');
                 if (c && c.width && c.height) {
+                    // Detect WebGL backing without forcing context creation.
+                    let gl = null;
+                    try { gl = c.getContext('webgl2', { preserveDrawingBuffer: false }) ||
+                                c.getContext('webgl',  { preserveDrawingBuffer: false }) ||
+                                c.getContext('experimental-webgl', { preserveDrawingBuffer: false }); } catch(_) {}
+                    canvasIsWebGL = !!gl;
+
                     const w = Math.min(c.width, 16);
                     const h = Math.min(c.height, 16);
                     const off = document.createElement('canvas');
@@ -689,6 +763,20 @@ def probe_page(page) -> Dict[str, object]:
                     }
                 }
             } catch (e) { /* tainted canvas etc. — leave blank */ }
+            // Fallback liveness for WebGL canvases (where drawImage can't see
+            // the back buffer): count rAF callbacks for ~500ms.
+            if (canvasIsWebGL && canvasNonzeroPixels === 0) {
+                await new Promise(resolve => {
+                    const start = performance.now();
+                    const tick = () => {
+                        canvasRAFTicks += 1;
+                        if (performance.now() - start < 500) requestAnimationFrame(tick);
+                        else resolve();
+                    };
+                    requestAnimationFrame(tick);
+                    setTimeout(resolve, 1500); // hard cap if rAF stalls
+                });
+            }
             return {
                 readyState: document.readyState,
                 surfaceCount: surfaces,
@@ -699,6 +787,8 @@ def probe_page(page) -> Dict[str, object]:
                 hasRetroGlobal,
                 canvasHash,
                 canvasNonzeroPixels,
+                canvasIsWebGL,
+                canvasRAFTicks,
             };
         }
         """
@@ -965,8 +1055,14 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     canvas_pixels_first = int(probe.get("canvasNonzeroPixelsFirst", 0) or 0)
     canvas_unchanged = bool(canvas_hash) and canvas_hash == canvas_hash_first
     canvas_dark = canvas_pixels == 0 and canvas_pixels_first == 0
+    # WebGL canvases with preserveDrawingBuffer:false return black via
+    # drawImage even when actively rendering. Use rAF ticks as the liveness
+    # signal for those — if the page is animating, the game is alive.
+    canvas_is_webgl = bool(probe.get("canvasIsWebGL"))
+    raf_ticks = int(probe.get("canvasRAFTicks", 0) or 0)
+    webgl_alive = canvas_is_webgl and raf_ticks >= 3
 
-    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not critical_issues:
+    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not webgl_alive and not critical_issues:
         add_issue(
             "critical",
             "CANVAS_NEVER_RENDERED",

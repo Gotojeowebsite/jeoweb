@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "slug": "pokemon-adventure-blue-chapter-b1-1",
+  "engine": "emulatorjs",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/mgba-legacy-wasm.data",
+      "size": 1054993,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 1113,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 30656,
+      "required": false
+    },
+    {
+      "path": "Pokemon Adventure Blue Chapter b1.1.zip",
+      "size": 5292409,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

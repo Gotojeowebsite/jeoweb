@@ -1,0 +1,938 @@
+{
+  "schema": 1,
+  "slug": "om-bounce",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "assets/atlases/scenes.json",
+      "size": 14082,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/scenes.png",
+      "size": 956378,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/ui.json",
+      "size": 15397,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/ui.png",
+      "size": 867069,
+      "required": false
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 527,
+      "required": true
+    },
+    {
+      "path": "assets/fonts/CookieRunBlack.fnt",
+      "size": 15842,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CookieRunBlack.png",
+      "size": 30703,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CookieRunBlackCombo.fnt",
+      "size": 1617,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CookieRunBlackCombo.png",
+      "size": 7827,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CookieRunBlackStroke.fnt",
+      "size": 16006,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CookieRunBlackStroke.png",
+      "size": 23226,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/TjsNumbers.fnt",
+      "size": 1820,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/TjsNumbers.png",
+      "size": 2458,
+      "required": false
+    },
+    {
+      "path": "assets/icon.jpeg",
+      "size": 105672,
+      "required": false
+    },
+    {
+      "path": "assets/icon.png",
+      "size": 2974,
+      "required": false
+    },
+    {
+      "path": "assets/images/cloud_line.png",
+      "size": 130813,
+      "required": false
+    },
+    {
+      "path": "assets/images/gameplayBg_0.png",
+      "size": 1130859,
+      "required": false
+    },
+    {
+      "path": "assets/images/gameplayBg_1.png",
+      "size": 1109205,
+      "required": false
+    },
+    {
+      "path": "assets/images/gameplayBg_2.png",
+      "size": 1827296,
+      "required": false
+    },
+    {
+      "path": "assets/images/gameplayBg_3.png",
+      "size": 2226094,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectBg_0.png",
+      "size": 948604,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectBg_1.png",
+      "size": 501542,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectBg_2.png",
+      "size": 535771,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectBg_3.png",
+      "size": 602710,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectWheel_0.png",
+      "size": 451795,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectWheel_1.png",
+      "size": 643273,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectWheel_2.png",
+      "size": 879324,
+      "required": false
+    },
+    {
+      "path": "assets/images/levelSelectWheel_3.png",
+      "size": 427188,
+      "required": false
+    },
+    {
+      "path": "assets/images/logoAzerion.png",
+      "size": 98552,
+      "required": false
+    },
+    {
+      "path": "assets/images/logoZeptolab.png",
+      "size": 67504,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapBlue.png",
+      "size": 85408,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapBlueLocked.png",
+      "size": 59877,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapBoo.png",
+      "size": 127466,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapbook_table.png",
+      "size": 633013,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapbook.png",
+      "size": 896681,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapBooLocked.png",
+      "size": 80471,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapLick.png",
+      "size": 59267,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapLickLocked.png",
+      "size": 44508,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapToss.png",
+      "size": 113680,
+      "required": false
+    },
+    {
+      "path": "assets/images/scrapTossLocked.png",
+      "size": 71546,
+      "required": false
+    },
+    {
+      "path": "assets/images/Splash_desktop.png",
+      "size": 1234357,
+      "required": false
+    },
+    {
+      "path": "assets/images/transition_spiral.png",
+      "size": 87837,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/balance.json",
+      "size": 2551,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/levels.json",
+      "size": 44975,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_de.json",
+      "size": 4416,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_en.json",
+      "size": 4062,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_es.json",
+      "size": 4367,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_fr.json",
+      "size": 4457,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_it.json",
+      "size": 4489,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_nl.json",
+      "size": 4232,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_no.json",
+      "size": 4099,
+      "required": false
+    },
+    {
+      "path": "assets/jsons/locale_pt.json",
+      "size": 4163,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/addNewWave.ogg",
+      "size": 9024,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/bossApperaring.ogg",
+      "size": 13923,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/bossMove.ogg",
+      "size": 8830,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/buttonClick.ogg",
+      "size": 6686,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/changeChapter.ogg",
+      "size": 9927,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/collectBullet.ogg",
+      "size": 7639,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/collectCandy.ogg",
+      "size": 21069,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/collectItemsLevelEnd.ogg",
+      "size": 21954,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/crashCage.ogg",
+      "size": 14322,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/enemyDefeat.ogg",
+      "size": 4376,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/enemyHit.ogg",
+      "size": 6792,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/enemyHitX2.ogg",
+      "size": 10129,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/enemyMoveForward.ogg",
+      "size": 7325,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/healing.ogg",
+      "size": 39229,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicBoss.ogg",
+      "size": 712236,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicChapter_0.ogg",
+      "size": 739036,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicChapter_1.ogg",
+      "size": 668287,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicChapter_2.ogg",
+      "size": 682666,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicChapter_3.ogg",
+      "size": 618447,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/musicMenu.ogg",
+      "size": 685163,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomAiming.ogg",
+      "size": 5745,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomBounceEnd.ogg",
+      "size": 6163,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomBounceHit.ogg",
+      "size": 6940,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomBounceRoll.ogg",
+      "size": 5625,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomDefeat.ogg",
+      "size": 9480,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomHealed.ogg",
+      "size": 31702,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomHit.ogg",
+      "size": 8216,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomJumpNextLevel.ogg",
+      "size": 7494,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomLandLevel.ogg",
+      "size": 5745,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomLevelStart.ogg",
+      "size": 9674,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomShoot.ogg",
+      "size": 10143,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/omNomVictory.ogg",
+      "size": 11896,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/openLootbox.ogg",
+      "size": 53843,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/popupAppear.ogg",
+      "size": 9403,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/scrapBook.ogg",
+      "size": 16587,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/shopBuy.ogg",
+      "size": 16914,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/shopBuyEffect.ogg",
+      "size": 16573,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/skillOmNom.ogg",
+      "size": 8483,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/skillOmNomLoop.ogg",
+      "size": 41445,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/skillOut.ogg",
+      "size": 16587,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/skillQuake.ogg",
+      "size": 15775,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/skillX2.ogg",
+      "size": 15812,
+      "required": false
+    },
+    {
+      "path": "assets/sounds/victory.ogg",
+      "size": 21065,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Blue.atlas",
+      "size": 2674,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Blue.json",
+      "size": 12443,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Blue.png",
+      "size": 158388,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Boo.atlas",
+      "size": 2555,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Boo.json",
+      "size": 11901,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Boo.png",
+      "size": 158165,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Bumblebee.atlas",
+      "size": 2837,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Bumblebee.json",
+      "size": 17005,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Bumblebee.png",
+      "size": 56362,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Blue.atlas",
+      "size": 2674,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Blue.json",
+      "size": 12443,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Blue.png",
+      "size": 158388,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Boo.atlas",
+      "size": 2555,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Boo.json",
+      "size": 11901,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Boo.png",
+      "size": 158165,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Lick.atlas",
+      "size": 2675,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Lick.json",
+      "size": 12176,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Lick.png",
+      "size": 169664,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Toss.atlas",
+      "size": 2573,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Toss.json",
+      "size": 9696,
+      "required": false
+    },
+    {
+      "path": "assets/spines/cage/Toss.png",
+      "size": 170724,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Ghost.atlas",
+      "size": 2350,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Ghost.json",
+      "size": 14340,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Ghost.png",
+      "size": 44073,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Grunt_spider.atlas",
+      "size": 2118,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Grunt_spider.json",
+      "size": 7476,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Grunt_spider.png",
+      "size": 36081,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Knight_spider.atlas",
+      "size": 2565,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Knight_spider.json",
+      "size": 24616,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Knight_spider.png",
+      "size": 49847,
+      "required": false
+    },
+    {
+      "path": "assets/spines/levelSelect/Om_Nom.atlas",
+      "size": 1501,
+      "required": false
+    },
+    {
+      "path": "assets/spines/levelSelect/Om_Nom.json",
+      "size": 25697,
+      "required": false
+    },
+    {
+      "path": "assets/spines/levelSelect/Om_Nom.png",
+      "size": 68614,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lick.atlas",
+      "size": 2675,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lick.json",
+      "size": 12176,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lick.png",
+      "size": 169664,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_normal.atlas",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_normal.json",
+      "size": 3493,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_normal.png",
+      "size": 40218,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_special.atlas",
+      "size": 1242,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_special.json",
+      "size": 3495,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Lootbox_special.png",
+      "size": 40324,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om Nom.atlas",
+      "size": 1528,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om Nom.json",
+      "size": 40354,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om Nom.png",
+      "size": 33802,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om_Nom.atlas",
+      "size": 1501,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om_Nom.json",
+      "size": 25697,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Om_Nom.png",
+      "size": 68614,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Pudding_monster.atlas",
+      "size": 2256,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Pudding_monster.json",
+      "size": 26755,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Pudding_monster.png",
+      "size": 71735,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Sequence.atlas",
+      "size": 2975,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Sequence.json",
+      "size": 7559,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Sequence.png",
+      "size": 88909,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_boss.atlas",
+      "size": 2942,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_boss.json",
+      "size": 269859,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_boss.png",
+      "size": 28764,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_friend.atlas",
+      "size": 2236,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_friend.json",
+      "size": 8747,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_friend.png",
+      "size": 39362,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_mag.atlas",
+      "size": 3081,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_mag.json",
+      "size": 17308,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider_mag.png",
+      "size": 65158,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider.atlas",
+      "size": 2156,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider.json",
+      "size": 7909,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spider.png",
+      "size": 42021,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spraycan.atlas",
+      "size": 2631,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spraycan.json",
+      "size": 13281,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Spraycan.png",
+      "size": 46221,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Toss.atlas",
+      "size": 2573,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Toss.json",
+      "size": 9696,
+      "required": false
+    },
+    {
+      "path": "assets/spines/Toss.png",
+      "size": 170724,
+      "required": false
+    },
+    {
+      "path": "assets/textures/aimConnect.png",
+      "size": 577,
+      "required": false
+    },
+    {
+      "path": "assets/textures/healingAura.png",
+      "size": 26679,
+      "required": false
+    },
+    {
+      "path": "assets/textures/healingPlus.png",
+      "size": 984,
+      "required": false
+    },
+    {
+      "path": "assets/textures/healingWheel.png",
+      "size": 32386,
+      "required": false
+    },
+    {
+      "path": "assets/textures/progressBackHP.png",
+      "size": 1711,
+      "required": false
+    },
+    {
+      "path": "assets/textures/progressHP.png",
+      "size": 427,
+      "required": false
+    },
+    {
+      "path": "assets/textures/projectile.png",
+      "size": 31361,
+      "required": false
+    },
+    {
+      "path": "assets/textures/projectileShadow.png",
+      "size": 14929,
+      "required": false
+    },
+    {
+      "path": "assets/textures/projectileX2.png",
+      "size": 28269,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3199,
+      "required": true
+    },
+    {
+      "path": "om_nom_bounce.min.js",
+      "size": 4242144,
+      "required": true
+    },
+    {
+      "path": "version.js",
+      "size": 25,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "download.gameanalytics.com",
+    "html5.api.gamedistribution.com",
+    "www.googletagmanager.com",
+    "yandex.ru"
+  ],
+  "external_critical": [
+    "download.gameanalytics.com",
+    "html5.api.gamedistribution.com",
+    "yandex.ru"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

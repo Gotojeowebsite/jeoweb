@@ -60858,7 +60858,7 @@ ig.module("plugins.yandex").requires("impact.input", "impact.game", "plugins.aud
             enabled: !0,
             hasInit: !1,
             gtag: {
-                id: "UA-119602304-2",
+                id: "G-DQM8XXB9GC",
                 url: "https://www.googletagmanager.com/gtag/js"
             }
         },

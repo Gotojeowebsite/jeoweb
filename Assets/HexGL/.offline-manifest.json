@@ -1,0 +1,1020 @@
+{
+  "schema": 1,
+  "slug": "HexGL",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488242,
+  "files": [
+    {
+      "path": ".htaccess",
+      "size": 191,
+      "required": false
+    },
+    {
+      "path": "audio/bg.ogg",
+      "size": 1546870,
+      "required": false
+    },
+    {
+      "path": "audio/boost.ogg",
+      "size": 30388,
+      "required": false
+    },
+    {
+      "path": "audio/crash.ogg",
+      "size": 12447,
+      "required": false
+    },
+    {
+      "path": "audio/destroyed.ogg",
+      "size": 145937,
+      "required": false
+    },
+    {
+      "path": "audio/LICENSE",
+      "size": 744,
+      "required": false
+    },
+    {
+      "path": "audio/wind.ogg",
+      "size": 402462,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/controllers/GamepadController.coffee",
+      "size": 1193,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/controllers/GamepadController.js",
+      "size": 1952,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/controllers/OrientationController.coffee",
+      "size": 1853,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/controllers/OrientationController.js",
+      "size": 3338,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/controllers/TouchController.coffee",
+      "size": 2601,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/controllers/TouchController.js",
+      "size": 4665,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/ImageData.coffee",
+      "size": 3181,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/ImageData.js",
+      "size": 4193,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/tests.html",
+      "size": 206,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/threejs/Particles.coffee",
+      "size": 4534,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/threejs/Particles.js",
+      "size": 6819,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/Timer.coffee",
+      "size": 2246,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/Timer.js",
+      "size": 3181,
+      "required": true
+    },
+    {
+      "path": "bkcore.coffee/Utils.coffee",
+      "size": 4807,
+      "required": false
+    },
+    {
+      "path": "bkcore.coffee/Utils.js",
+      "size": 6688,
+      "required": true
+    },
+    {
+      "path": "bkcore/Audio.js",
+      "size": 3166,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/CameraChase.js",
+      "size": 2270,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/Gameplay.js",
+      "size": 5742,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/HexGL.js",
+      "size": 12665,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/HUD.js",
+      "size": 7227,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/Ladder.js",
+      "size": 1376,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/RaceData.js",
+      "size": 2233,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/ShipControls.js",
+      "size": 21576,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/ShipEffects.js",
+      "size": 5235,
+      "required": true
+    },
+    {
+      "path": "bkcore/hexgl/tracks/Cityscape.js",
+      "size": 18010,
+      "required": true
+    },
+    {
+      "path": "bkcore/threejs/Loader.js",
+      "size": 5559,
+      "required": true
+    },
+    {
+      "path": "bkcore/threejs/Particles.js",
+      "size": 5167,
+      "required": true
+    },
+    {
+      "path": "bkcore/threejs/Preloader.js",
+      "size": 3599,
+      "required": true
+    },
+    {
+      "path": "bkcore/threejs/RenderManager.js",
+      "size": 3167,
+      "required": true
+    },
+    {
+      "path": "bkcore/threejs/Shaders.js",
+      "size": 25563,
+      "required": true
+    },
+    {
+      "path": "cache.appcache",
+      "size": 2250,
+      "required": false
+    },
+    {
+      "path": "css/BebasNeue-webfont.eot",
+      "size": 15438,
+      "required": false
+    },
+    {
+      "path": "css/BebasNeue-webfont.svg",
+      "size": 40456,
+      "required": false
+    },
+    {
+      "path": "css/BebasNeue-webfont.ttf",
+      "size": 41128,
+      "required": false
+    },
+    {
+      "path": "css/BebasNeue-webfont.woff",
+      "size": 18036,
+      "required": false
+    },
+    {
+      "path": "css/bg.jpg",
+      "size": 83997,
+      "required": false
+    },
+    {
+      "path": "css/fonts.css",
+      "size": 396,
+      "required": true
+    },
+    {
+      "path": "css/help-0.png",
+      "size": 31972,
+      "required": false
+    },
+    {
+      "path": "css/help-1.png",
+      "size": 33539,
+      "required": false
+    },
+    {
+      "path": "css/help-2.png",
+      "size": 40214,
+      "required": false
+    },
+    {
+      "path": "css/help-3.png",
+      "size": 39917,
+      "required": false
+    },
+    {
+      "path": "css/mobile-controls-1.jpg",
+      "size": 190883,
+      "required": false
+    },
+    {
+      "path": "css/mobile-controls-2.jpg",
+      "size": 204535,
+      "required": false
+    },
+    {
+      "path": "css/mobile-over.jpg",
+      "size": 178381,
+      "required": false
+    },
+    {
+      "path": "css/mobile.jpg",
+      "size": 251974,
+      "required": false
+    },
+    {
+      "path": "css/multi.css",
+      "size": 7149,
+      "required": true
+    },
+    {
+      "path": "css/title.png",
+      "size": 484372,
+      "required": false
+    },
+    {
+      "path": "css/touchcontroller.css",
+      "size": 432,
+      "required": false
+    },
+    {
+      "path": "favicon.png",
+      "size": 1459,
+      "required": false
+    },
+    {
+      "path": "geometries/bonus/base/base.js",
+      "size": 12141,
+      "required": true
+    },
+    {
+      "path": "geometries/booster/booster.js",
+      "size": 6427,
+      "required": true
+    },
+    {
+      "path": "geometries/ships/feisar/feisar.js",
+      "size": 139136,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/bonus/speed.js",
+      "size": 15257,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/scrapers1.js",
+      "size": 9864,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/scrapers2.js",
+      "size": 9689,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/start.js",
+      "size": 11515,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/startbanner.js",
+      "size": 1679,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/cityscape/track.js",
+      "size": 739195,
+      "required": true
+    },
+    {
+      "path": "geometries/tracks/edge/track.js",
+      "size": 387450,
+      "required": true
+    },
+    {
+      "path": "icon_128.png",
+      "size": 19903,
+      "required": false
+    },
+    {
+      "path": "icon_256.png",
+      "size": 52713,
+      "required": false
+    },
+    {
+      "path": "icon_32.png",
+      "size": 2699,
+      "required": false
+    },
+    {
+      "path": "icon_64.png",
+      "size": 6730,
+      "required": false
+    },
+    {
+      "path": "icon.png",
+      "size": 5537,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4169,
+      "required": true
+    },
+    {
+      "path": "launch.coffee",
+      "size": 2387,
+      "required": false
+    },
+    {
+      "path": "launch.js",
+      "size": 3070,
+      "required": true
+    },
+    {
+      "path": "libs/DAT.GUI.min.js",
+      "size": 20183,
+      "required": true
+    },
+    {
+      "path": "libs/Detector.js",
+      "size": 1907,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/ace.js",
+      "size": 277697,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/App.js",
+      "size": 4538,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/CanvasRenderer.js",
+      "size": 7842,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/class.js",
+      "size": 35829,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Diagram.js",
+      "size": 3057,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/editor.css",
+      "size": 249,
+      "required": false
+    },
+    {
+      "path": "libs/Editor_files/font.css",
+      "size": 737,
+      "required": false
+    },
+    {
+      "path": "libs/Editor_files/gamecore.js",
+      "size": 3217,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/hashlist.js",
+      "size": 1026,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Iterator.js",
+      "size": 1645,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/jhashtable.js",
+      "size": 14196,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/jquery-1.8.js",
+      "size": 93435,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/kinetic.js",
+      "size": 68851,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Links.js",
+      "size": 1155,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/main.css",
+      "size": 3820,
+      "required": false
+    },
+    {
+      "path": "libs/Editor_files/mode-json.js",
+      "size": 8311,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/ModuleList.js",
+      "size": 1199,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Node.js",
+      "size": 2406,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Parser.js",
+      "size": 2826,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/pooled.js",
+      "size": 15536,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Project.js",
+      "size": 2832,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/theme-monokai.js",
+      "size": 2681,
+      "required": true
+    },
+    {
+      "path": "libs/Editor_files/Timer.js",
+      "size": 3010,
+      "required": true
+    },
+    {
+      "path": "libs/Editor.html",
+      "size": 44088,
+      "required": false
+    },
+    {
+      "path": "libs/leap-0.4.1.min.js",
+      "size": 83438,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/BloomPass.js",
+      "size": 3214,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/DotScreenPass.js",
+      "size": 1206,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/EffectComposer.js",
+      "size": 3637,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/FilmPass.js",
+      "size": 1320,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/MaskPass.js",
+      "size": 1622,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/RenderPass.js",
+      "size": 1235,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/SavePass.js",
+      "size": 1201,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/ShaderPass.js",
+      "size": 1009,
+      "required": true
+    },
+    {
+      "path": "libs/postprocessing/TexturePass.js",
+      "size": 811,
+      "required": true
+    },
+    {
+      "path": "libs/ShaderExtras.js",
+      "size": 45027,
+      "required": true
+    },
+    {
+      "path": "libs/Stats.js",
+      "size": 2243,
+      "required": true
+    },
+    {
+      "path": "libs/Three.dev.js",
+      "size": 382352,
+      "required": true
+    },
+    {
+      "path": "libs/Three.r53.js",
+      "size": 392908,
+      "required": true
+    },
+    {
+      "path": "manifest.webapp",
+      "size": 393,
+      "required": false
+    },
+    {
+      "path": "package.webapp",
+      "size": 227,
+      "required": false
+    },
+    {
+      "path": "package.zip",
+      "size": 1205870,
+      "required": false
+    },
+    {
+      "path": "replays/cityscape-casual/bkcore.replay.json",
+      "size": 615416,
+      "required": false
+    },
+    {
+      "path": "textures.full/bonus/base/diffuse.jpg",
+      "size": 102448,
+      "required": false
+    },
+    {
+      "path": "textures.full/bonus/base/normal.jpg",
+      "size": 48284,
+      "required": false
+    },
+    {
+      "path": "textures.full/bonus/base/specular.jpg",
+      "size": 112338,
+      "required": false
+    },
+    {
+      "path": "textures.full/checker.png",
+      "size": 340,
+      "required": false
+    },
+    {
+      "path": "textures.full/hud/hex.jpg",
+      "size": 53410,
+      "required": false
+    },
+    {
+      "path": "textures.full/hud/hud-bg.png",
+      "size": 83435,
+      "required": false
+    },
+    {
+      "path": "textures.full/hud/hud-fg-shield.png",
+      "size": 30092,
+      "required": false
+    },
+    {
+      "path": "textures.full/hud/hud-fg-speed.png",
+      "size": 77277,
+      "required": false
+    },
+    {
+      "path": "textures.full/particles/cloud - Copie.png",
+      "size": 60512,
+      "required": false
+    },
+    {
+      "path": "textures.full/particles/cloud.png",
+      "size": 60512,
+      "required": false
+    },
+    {
+      "path": "textures.full/particles/damage.png",
+      "size": 25050,
+      "required": false
+    },
+    {
+      "path": "textures.full/particles/spark - Copie.png",
+      "size": 3472,
+      "required": false
+    },
+    {
+      "path": "textures.full/particles/spark.png",
+      "size": 2882,
+      "required": false
+    },
+    {
+      "path": "textures.full/ships/feisar/booster/booster.png",
+      "size": 428605,
+      "required": false
+    },
+    {
+      "path": "textures.full/ships/feisar/booster/boostersprite.jpg",
+      "size": 16055,
+      "required": false
+    },
+    {
+      "path": "textures.full/ships/feisar/diffuse.jpg",
+      "size": 294683,
+      "required": false
+    },
+    {
+      "path": "textures.full/ships/feisar/normal.jpg",
+      "size": 314506,
+      "required": false
+    },
+    {
+      "path": "textures.full/ships/feisar/specular.jpg",
+      "size": 335448,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/nx.jpg",
+      "size": 55756,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/ny.jpg",
+      "size": 52198,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/nz.jpg",
+      "size": 54574,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/px.jpg",
+      "size": 60050,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/py.jpg",
+      "size": 19634,
+      "required": false
+    },
+    {
+      "path": "textures.full/skybox/dawnclouds/pz.jpg",
+      "size": 58868,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/collision.png",
+      "size": 146459,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/diffuse.jpg",
+      "size": 394118,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/height.png",
+      "size": 209516,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/normal.jpg",
+      "size": 648304,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers1/diffuse.jpg",
+      "size": 87923,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers1/normal.jpg",
+      "size": 112111,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers1/specular.jpg",
+      "size": 315830,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers2/diffuse.jpg",
+      "size": 120659,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers2/normal.jpg",
+      "size": 59219,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/scrapers2/specular.jpg",
+      "size": 207975,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/specular.jpg",
+      "size": 444304,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/start/diffuse.jpg",
+      "size": 75560,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/start/normal.jpg",
+      "size": 111293,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/start/specular.jpg",
+      "size": 80452,
+      "required": false
+    },
+    {
+      "path": "textures.full/tracks/cityscape/start/start.jpg",
+      "size": 32273,
+      "required": false
+    },
+    {
+      "path": "textures/bonus/base/diffuse.jpg",
+      "size": 35098,
+      "required": false
+    },
+    {
+      "path": "textures/bonus/base/normal.jpg",
+      "size": 48284,
+      "required": false
+    },
+    {
+      "path": "textures/bonus/base/specular.jpg",
+      "size": 112338,
+      "required": false
+    },
+    {
+      "path": "textures/checker.png",
+      "size": 340,
+      "required": false
+    },
+    {
+      "path": "textures/hud/hex.jpg",
+      "size": 53410,
+      "required": false
+    },
+    {
+      "path": "textures/hud/hud-bg.png",
+      "size": 83435,
+      "required": false
+    },
+    {
+      "path": "textures/hud/hud-fg-shield.png",
+      "size": 30092,
+      "required": false
+    },
+    {
+      "path": "textures/hud/hud-fg-speed.png",
+      "size": 77277,
+      "required": false
+    },
+    {
+      "path": "textures/particles/cloud - Copie.png",
+      "size": 60512,
+      "required": false
+    },
+    {
+      "path": "textures/particles/cloud.png",
+      "size": 60512,
+      "required": false
+    },
+    {
+      "path": "textures/particles/damage.png",
+      "size": 25050,
+      "required": false
+    },
+    {
+      "path": "textures/particles/spark - Copie.png",
+      "size": 3472,
+      "required": false
+    },
+    {
+      "path": "textures/particles/spark.png",
+      "size": 2882,
+      "required": false
+    },
+    {
+      "path": "textures/ships/feisar/booster/booster.png",
+      "size": 81100,
+      "required": false
+    },
+    {
+      "path": "textures/ships/feisar/booster/boostersprite.jpg",
+      "size": 13234,
+      "required": false
+    },
+    {
+      "path": "textures/ships/feisar/diffuse.jpg",
+      "size": 115601,
+      "required": false
+    },
+    {
+      "path": "textures/ships/feisar/normal.jpg",
+      "size": 314506,
+      "required": false
+    },
+    {
+      "path": "textures/ships/feisar/specular.jpg",
+      "size": 335448,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/nx.jpg",
+      "size": 35046,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/ny.jpg",
+      "size": 34726,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/nz.jpg",
+      "size": 34537,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/px.jpg",
+      "size": 36766,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/py.jpg",
+      "size": 20815,
+      "required": false
+    },
+    {
+      "path": "textures/skybox/dawnclouds/pz.jpg",
+      "size": 36546,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/collision.png",
+      "size": 146459,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/diffuse.jpg",
+      "size": 63186,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/height.png",
+      "size": 209516,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/normal.jpg",
+      "size": 648304,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers1/diffuse.jpg",
+      "size": 60434,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers1/normal.jpg",
+      "size": 112111,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers1/specular.jpg",
+      "size": 315830,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers2/diffuse.jpg",
+      "size": 65749,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers2/normal.jpg",
+      "size": 59219,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/scrapers2/specular.jpg",
+      "size": 207975,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/specular.jpg",
+      "size": 444304,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/start/diffuse.jpg",
+      "size": 75560,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/start/normal.jpg",
+      "size": 111293,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/start/specular.jpg",
+      "size": 80452,
+      "required": false
+    },
+    {
+      "path": "textures/tracks/cityscape/start/start.jpg",
+      "size": 32273,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "get.webgl.org",
+    "khronos.org"
+  ],
+  "external_critical": [
+    "get.webgl.org",
+    "khronos.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

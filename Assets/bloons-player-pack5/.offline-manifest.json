@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "slug": "bloons-player-pack5",
+  "engine": "ruffle",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "1e765c460e8ac7ef9823.wasm",
+      "size": 13487277,
+      "required": true
+    },
+    {
+      "path": "bloonsplayerpack5.swf",
+      "size": 452063,
+      "required": true
+    },
+    {
+      "path": "c5c02c4e65c1c4423a97.wasm",
+      "size": 6593880,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 956,
+      "required": true
+    },
+    {
+      "path": "player 5.jpeg",
+      "size": 8329,
+      "required": false
+    },
+    {
+      "path": "ruffle.js",
+      "size": 83707,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "github.com",
+    "unpkg.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

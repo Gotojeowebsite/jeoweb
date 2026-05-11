@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "slug": "drive-mad",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "img.webp",
+      "size": 16552,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 3531,
+      "required": true
+    },
+    {
+      "path": "poki-sdk-core-v2.234.2.js",
+      "size": 204129,
+      "required": true
+    },
+    {
+      "path": "poki-sdk.js",
+      "size": 4232,
+      "required": true
+    },
+    {
+      "path": "webapp/baloo2.woff",
+      "size": 24072,
+      "required": false
+    },
+    {
+      "path": "webapp/cover.jpg",
+      "size": 16724,
+      "required": false
+    },
+    {
+      "path": "webapp/fancade.css",
+      "size": 6459,
+      "required": true
+    },
+    {
+      "path": "webapp/index.data",
+      "size": 1081914,
+      "required": true
+    },
+    {
+      "path": "webapp/index.js",
+      "size": 190472,
+      "required": true
+    },
+    {
+      "path": "webapp/index.wasm",
+      "size": 2243535,
+      "required": true
+    },
+    {
+      "path": "webapp/source_min.js",
+      "size": 26882,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_critical": [
+    "a.poki.com",
+    "game-cdn.poki.com",
+    "t.poki.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

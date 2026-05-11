@@ -1,0 +1,1639 @@
+{
+  "schema": 1,
+  "slug": "dig-out-of-prison",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "713263.gif",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "8326/i.js",
+      "size": 4392,
+      "required": true
+    },
+    {
+      "path": "ad/u",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "AdServer/PugMaster",
+      "size": 1594,
+      "required": false
+    },
+    {
+      "path": "api/config/prebid",
+      "size": 194,
+      "required": false
+    },
+    {
+      "path": "api/v1/pbhid",
+      "size": 227,
+      "required": false
+    },
+    {
+      "path": "assets/bounce/jquery-3.7.1.min.js",
+      "size": 87533,
+      "required": true
+    },
+    {
+      "path": "assets/bounce/local_storage_frame17.min.html",
+      "size": 2408,
+      "required": false
+    },
+    {
+      "path": "assets/smart-tag/versioned/main-v2_a8cb9255306dcf234ccb7ceb0a60d76f.br.js",
+      "size": 548684,
+      "required": true
+    },
+    {
+      "path": "assets/smart-tag/versioned/onsite-v2_1238d00d70e4de87443df9eb69ff1a61.br.js",
+      "size": 18108,
+      "required": true
+    },
+    {
+      "path": "assets/smart-tag/versioned/runtime_c81e76ee00d795b1eebf8d27949f8dc5.br.js",
+      "size": 908,
+      "required": true
+    },
+    {
+      "path": "assets/SVG/icons/appstore.svg",
+      "size": 699,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/bell.svg",
+      "size": 1348,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/close-nav.svg",
+      "size": 718,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/close.svg",
+      "size": 687,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/discord.svg",
+      "size": 2930,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/heart.svg",
+      "size": 1518,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/hot.svg",
+      "size": 1728,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/linkedin.svg",
+      "size": 1005,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/mail.svg",
+      "size": 782,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/originals6.svg",
+      "size": 4034,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/playstore.svg",
+      "size": 958,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/plus.svg",
+      "size": 658,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/search.svg",
+      "size": 738,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/share.svg",
+      "size": 1422,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/tiktok.svg",
+      "size": 1232,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/users.svg",
+      "size": 1667,
+      "required": false
+    },
+    {
+      "path": "assets/SVG/icons/youtube.svg",
+      "size": 1496,
+      "required": false
+    },
+    {
+      "path": "ats-modules/f335ec38-f1f6-423b-8091-fe87576411ae/ats.js",
+      "size": 127466,
+      "required": true
+    },
+    {
+      "path": "b-1d867af-304f7648.js",
+      "size": 79843,
+      "required": true
+    },
+    {
+      "path": "bg/epIMLYS1xC0Rhk3TQV8w_AGbugA1Qh4S_8aL8pBTvbw.js",
+      "size": 61601,
+      "required": true
+    },
+    {
+      "path": "bl-0d6ee0c-e23ed8f7.js",
+      "size": 374942,
+      "required": true
+    },
+    {
+      "path": "bloxdhop-io_16x9/20250829023851/bloxdhop-io_16x9-cover",
+      "size": 10580,
+      "required": false
+    },
+    {
+      "path": "booster",
+      "size": 2567,
+      "required": false
+    },
+    {
+      "path": "cache/8326/campaign-index-live-573febd746d17ebd7eebd6c07fcb253e.js",
+      "size": 70,
+      "required": true
+    },
+    {
+      "path": "cache/8326/website-b3c075814cee818ec98134862dd2e041.js",
+      "size": 4773,
+      "required": true
+    },
+    {
+      "path": "check/13431",
+      "size": 25,
+      "required": false
+    },
+    {
+      "path": "cm/sync",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "cookie",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "cookie_sync",
+      "size": 2961,
+      "required": false
+    },
+    {
+      "path": "count-masters-stickman-games_16x9/20260318145715/count-masters-stickman-games_16x9-cover",
+      "size": 6279,
+      "required": false
+    },
+    {
+      "path": "crazy-zoo-monkey_16x9/20251212071315/crazy-zoo-monkey_16x9-cover",
+      "size": 11176,
+      "required": false
+    },
+    {
+      "path": "crum",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "cs/usync",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "css",
+      "size": 11588,
+      "required": false
+    },
+    {
+      "path": "css2",
+      "size": 9105,
+      "required": false
+    },
+    {
+      "path": "cvx/client/direct/launcher",
+      "size": 190,
+      "required": false
+    },
+    {
+      "path": "dig-out-of-prison_16x9/20251229103900/dig-out-of-prison_16x9-cover",
+      "size": 2963,
+      "required": false
+    },
+    {
+      "path": "dig-out-of-prison/50/Build/6529111a7bc210fd4b0e5e9b7b7de456.loader.js",
+      "size": 26454,
+      "required": true
+    },
+    {
+      "path": "dig-out-of-prison/50/Build/74316103438b469864841eb099023290.framework.js.br",
+      "size": 375228,
+      "required": false
+    },
+    {
+      "path": "dig-out-of-prison/50/Build/8f2628f842ab3743cb74934c84aa0c5c.wasm.br",
+      "size": 40019483,
+      "required": true
+    },
+    {
+      "path": "dig-out-of-prison/50/Build/b6a11a5769b57ef475b5d3f311a674fc.data.br",
+      "size": 28914818,
+      "required": true
+    },
+    {
+      "path": "doodle-road_16x9/20240912101139/doodle-road_16x9-cover",
+      "size": 5349,
+      "required": false
+    },
+    {
+      "path": "en_US/dig-out-of-prison/dig-out-of-prison/50/Build/6529111a7bc210fd4b0e5e9b7b7de456.loader.js",
+      "size": 9397,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/dig-out-of-prison/50/Build/74316103438b469864841eb099023290.framework.js.br",
+      "size": 75057,
+      "required": false
+    },
+    {
+      "path": "en_US/dig-out-of-prison/dig-out-of-prison/50/Build/8f2628f842ab3743cb74934c84aa0c5c.wasm.br",
+      "size": 8963707,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/dig-out-of-prison/50/Build/b6a11a5769b57ef475b5d3f311a674fc.data.br",
+      "size": 11158345,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1.a75f9a8debbc8c7e4abb.js",
+      "size": 20091,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1000.a54cce4e025d951a4725.js",
+      "size": 30228,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1049.11389e621002cbc13e01.js",
+      "size": 39737,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1149.672e1e1cfe09ea12d428.js",
+      "size": 15794,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1381.cf55356c4db205f86804.js",
+      "size": 2155,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1720.a6a1de4fc2e3f68b709e.js",
+      "size": 27134,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1812.2047214a23e8d81fa119.js",
+      "size": 44119,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1817.67ab8f99735e67540837.js",
+      "size": 2102,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1860.28d10b33b08d0412447a.js",
+      "size": 2658,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/1922.17bd43230f337369145c.js",
+      "size": 44296,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2006.4ab82533b1bb10d8634a.js",
+      "size": 26783,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2050.6285c7a0584143ce1ce9.js",
+      "size": 17559,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2099.dcc28bcef4314e1756c1.js",
+      "size": 18532,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/259.d4b148f7af3c0f69e0f9.js",
+      "size": 1331,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2603.67b38bf4ab3947add485.js",
+      "size": 1801,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2670.a1a95838f9638abe9c46.js",
+      "size": 5545,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/2831.b50716cf6e55d000c79e.js",
+      "size": 19260,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/3469.1ae00a1e81021e7bbc46.js",
+      "size": 2624,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4115.16ecbf66848d00454152.js",
+      "size": 19274,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4159.8ab5df6321d93c004bc3.js",
+      "size": 21117,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/45.5195be2df58bb3bfc0f5.js",
+      "size": 53586,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4559.7edb1a40b70f01fbac7c.js",
+      "size": 9114,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4647.7e452f81a3255bc4fa83.js",
+      "size": 2186,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/491.b216ff739281fa5e62a2.js",
+      "size": 19888,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4913.36ee69ef84759cae3f4d.js",
+      "size": 18199,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/4957.fc07a532d15434e93f5a.js",
+      "size": 59392,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/529.9206116144620e99a51e.js",
+      "size": 10281,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/5369.62d20616977bd04a1908.js",
+      "size": 21368,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/5425.518e3e2ecd0e111a6a54.js",
+      "size": 4274,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/5741.e1f160f1de6186915aaa.js",
+      "size": 19699,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/5884.0cf1b8a11593f291491d.js",
+      "size": 4924,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/6016.1892daa8d372b222997c.js",
+      "size": 19066,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/6078.31a6c4d5a91d6d9756c4.js",
+      "size": 1931,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/6687.ac7cd19cc6460f768e89.js",
+      "size": 21623,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/6705.e2e93710ece25f401a25.js",
+      "size": 2027,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/6854.a3ce75a53ab765591967.js",
+      "size": 5044,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7257.f41ecc3e74d458764454.js",
+      "size": 5617,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7358.72d00a8e2cfc9b6c81d3.js",
+      "size": 29706,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7426.0a13edd03284d21ed64f.js",
+      "size": 45155,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7506.6ca8f1561c681f3d5875.js",
+      "size": 10680,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7517.32db39c392b05f9789b6.js",
+      "size": 19320,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7577.de6a1c0207767824ba33.js",
+      "size": 21984,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7641.2bac129a0d1860f6868d.js",
+      "size": 18806,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7727.f09a950d7696da3a89ef.js",
+      "size": 50345,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/7999.daa9c5f6f22f9c165434.js",
+      "size": 10746,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8000.53cf4683e5232358b25d.js",
+      "size": 13203,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8049.ab931623a41e500afb26.js",
+      "size": 1560,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8127.6b6e883627df39936396.js",
+      "size": 18918,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8180.23293d9fbd240e8a154a.js",
+      "size": 19506,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8291.095496774a1721c190b2.js",
+      "size": 11745,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8638.25a828fcbbd19ead5786.js",
+      "size": 2052,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8693.72a032b0489d4bf97c4d.js",
+      "size": 7875,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8772.29211ae0a0ef47f27de0.js",
+      "size": 22232,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8794.9390ba1fe5905f4548fb.js",
+      "size": 1582,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/8970.13d907c230146f294054.js",
+      "size": 25943,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9005.a864a51b36caef4112a3.js",
+      "size": 18673,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9021.41e6e775d7de9e93ddb1.js",
+      "size": 55050,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9343.22ff0e974ebaf1a9eb30.js",
+      "size": 3124,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9349.01de7b1fd2280b325f34.js",
+      "size": 4222,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9373.620666b921325e66227a.js",
+      "size": 18623,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9422.a3ee86f7358194c9b9f4.js",
+      "size": 7968,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/static/js/9930.876b8e5c88e61ecb60e6.js",
+      "size": 6269,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/gameframe/v1.356/bundle.js",
+      "size": 981437,
+      "required": true
+    },
+    {
+      "path": "en_US/dig-out-of-prison/index.html",
+      "size": 14401,
+      "required": false
+    },
+    {
+      "path": "encrypt",
+      "size": 393,
+      "required": false
+    },
+    {
+      "path": "encrypted-signals/encrypted-tag-g.js",
+      "size": 2729,
+      "required": true
+    },
+    {
+      "path": "escape-tsunami-for-brainrots-wfe_16x9/20260209084358/escape-tsunami-for-brainrots-wfe_16x9-cover",
+      "size": 10197,
+      "required": false
+    },
+    {
+      "path": "esp",
+      "size": 85,
+      "required": false
+    },
+    {
+      "path": "esp.js",
+      "size": 24615,
+      "required": true
+    },
+    {
+      "path": "f/AGSKWxX2Cm2nqqoDaYUBLBi7AfDPXqWXTS_Ki8HZ7yduGQSyKCoAILtKwDvXNsDbzvt7SUpCdbhCaBgP91lRvdic9dS0LPUgsCUPJ0ZqWSgmErkuOqj8soxJ4JpujkiaE9zPYIWmi0j2SQ==",
+      "size": 2208,
+      "required": false
+    },
+    {
+      "path": "f/AGSKWxX2W2t2AY1xwfs0miy-lURZY-nVaxTaq_XYjwO92LoH2EAQtvcXR5LBTk2hiGFJjhklKdBJsUQ1WNdKaKn4Dv2qAIBkWhJiSA0qqM87C4xf9JRp5IJYUUWgX6gROrkXzZ2rdVZBIQ==",
+      "size": 9692,
+      "required": false
+    },
+    {
+      "path": "fragen_16x9/20251022094210/fragen_16x9-cover",
+      "size": 7159,
+      "required": false
+    },
+    {
+      "path": "g/v2/377.json",
+      "size": 1025,
+      "required": false
+    },
+    {
+      "path": "game/dig-out-of-prison",
+      "size": 174116,
+      "required": false
+    },
+    {
+      "path": "gameframe/static/js/2050.6285c7a0584143ce1ce9.js",
+      "size": 17559,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/259.d4b148f7af3c0f69e0f9.js",
+      "size": 1331,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/2670.a1a95838f9638abe9c46.js",
+      "size": 5545,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/5425.518e3e2ecd0e111a6a54.js",
+      "size": 4274,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/5884.0cf1b8a11593f291491d.js",
+      "size": 4924,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/6854.a3ce75a53ab765591967.js",
+      "size": 5044,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/7257.f41ecc3e74d458764454.js",
+      "size": 5617,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/7426.0a13edd03284d21ed64f.js",
+      "size": 45155,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/7641.2bac129a0d1860f6868d.js",
+      "size": 18806,
+      "required": true
+    },
+    {
+      "path": "gameframe/static/js/8000.53cf4683e5232358b25d.js",
+      "size": 13203,
+      "required": true
+    },
+    {
+      "path": "gameframe/v1.356/bundle.js",
+      "size": 981459,
+      "required": true
+    },
+    {
+      "path": "gamepageRequest",
+      "size": 132404,
+      "required": false
+    },
+    {
+      "path": "geo",
+      "size": 22,
+      "required": false
+    },
+    {
+      "path": "getconfig/sodar",
+      "size": 18078,
+      "required": false
+    },
+    {
+      "path": "gsi/client",
+      "size": 264400,
+      "required": false
+    },
+    {
+      "path": "gsi/log",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "gsi/status",
+      "size": 72,
+      "required": false
+    },
+    {
+      "path": "gsi/style",
+      "size": 696,
+      "required": false
+    },
+    {
+      "path": "gtag/js",
+      "size": 216,
+      "required": false
+    },
+    {
+      "path": "header/auction",
+      "size": 19,
+      "required": false
+    },
+    {
+      "path": "i/22110840991",
+      "size": 222144,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Action.svg",
+      "size": 1002,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Adventure.svg",
+      "size": 1509,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Basketball.svg",
+      "size": 2850,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Bike.svg",
+      "size": 2089,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Car.svg",
+      "size": 4810,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Card.svg",
+      "size": 3518,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Casual.svg",
+      "size": 2249,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Home.svg",
+      "size": 1734,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Leaderboards.svg",
+      "size": 2833,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Multiplayer.svg",
+      "size": 2211,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/New.svg",
+      "size": 2358,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Originals.svg",
+      "size": 5479,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Recent.svg",
+      "size": 777,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Trending.svg",
+      "size": 1859,
+      "required": false
+    },
+    {
+      "path": "icon/mono-sidebar-icons-2/Updated.svg",
+      "size": 2264,
+      "required": false
+    },
+    {
+      "path": "id",
+      "size": 75,
+      "required": false
+    },
+    {
+      "path": "idex/prebid/84896",
+      "size": 402,
+      "required": false
+    },
+    {
+      "path": "ima.js",
+      "size": 17486,
+      "required": true
+    },
+    {
+      "path": "images/background2.jpg",
+      "size": 5956,
+      "required": false
+    },
+    {
+      "path": "images/icons/material/system/2x/settings_grey600_24dp.png",
+      "size": 604,
+      "required": false
+    },
+    {
+      "path": "images/logo/logo-text.svg",
+      "size": 9143,
+      "required": false
+    },
+    {
+      "path": "images/logo/logo-ziggy.svg",
+      "size": 3482,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 14402,
+      "required": true
+    },
+    {
+      "path": "ium",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "j",
+      "size": 13,
+      "required": false
+    },
+    {
+      "path": "js/cnvr-coreid/latest/coreid.min.js",
+      "size": 150794,
+      "required": true
+    },
+    {
+      "path": "js/cnvr-launcher/latest/launcher-stub.min.js",
+      "size": 1764,
+      "required": true
+    },
+    {
+      "path": "js/cnvr-launcher/latest/launcher.min.js",
+      "size": 75147,
+      "required": true
+    },
+    {
+      "path": "js/ld/publishertag.ids.js",
+      "size": 42624,
+      "required": true
+    },
+    {
+      "path": "js/pubcid/latest/pubcid.min.js",
+      "size": 68276,
+      "required": true
+    },
+    {
+      "path": "khaos.json",
+      "size": 7,
+      "required": false
+    },
+    {
+      "path": "lb/v1",
+      "size": 45,
+      "required": false
+    },
+    {
+      "path": "lt/c/16589/sync.min.js",
+      "size": 46160,
+      "required": true
+    },
+    {
+      "path": "manifest",
+      "size": 1198,
+      "required": false
+    },
+    {
+      "path": "metrics/gtag/js",
+      "size": 531621,
+      "required": false
+    },
+    {
+      "path": "mms/v2/get_site_data",
+      "size": 200,
+      "required": false
+    },
+    {
+      "path": "mx-offroad-master_16x9/20260220035406/mx-offroad-master_16x9-cover",
+      "size": 17928,
+      "required": false
+    },
+    {
+      "path": "mysidia/75fd4899df612854dd32efa3fd908152.js",
+      "size": 42094,
+      "required": true
+    },
+    {
+      "path": "op.js",
+      "size": 23284,
+      "required": true
+    },
+    {
+      "path": "openrtb/pbjs",
+      "size": 58,
+      "required": false
+    },
+    {
+      "path": "openrtb2/auction",
+      "size": 74,
+      "required": false
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/abg_lite_fy2021.js",
+      "size": 21372,
+      "required": true
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/client/load_preloaded_resource_fy2021.js",
+      "size": 1715,
+      "required": true
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/client/qs_click_protection_fy2021.js",
+      "size": 20965,
+      "required": true
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/client/window_focus_fy2021.js",
+      "size": 2749,
+      "required": true
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/elements/html/countdown_handler_fy2021.js",
+      "size": 22062,
+      "required": true
+    },
+    {
+      "path": "pagead/js/r20260430/r20110914/elements/html/interstitial_ad_frame_fy2021.js",
+      "size": 23380,
+      "required": true
+    },
+    {
+      "path": "pagead/managed/js/activeview/current/ufs_web_display.js",
+      "size": 243206,
+      "required": true
+    },
+    {
+      "path": "pagead/osd.js",
+      "size": 61,
+      "required": true
+    },
+    {
+      "path": "pagead/s/cookie_push_onload.html",
+      "size": 1438,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/1777882139/_buildManifest.js",
+      "size": 5082,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/1777882139/_ssgManifest.js",
+      "size": 77,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/11401.9cae742fe4a58f99.js",
+      "size": 8140,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/11703.eb38a6aa9f02610d.js",
+      "size": 26562,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/14812-89c1fac920a484e8.js",
+      "size": 18381,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/15739.502c893f5389721d.js",
+      "size": 26201,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/16289-58dc562ddd612c97.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/18713-3f4fea97cc2a2819.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/18920.f723fac4dfbd53db.js",
+      "size": 2555,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/19539-eec921f4082b6e5f.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/26305.bb7c51c08dd5fee7.js",
+      "size": 8815,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/27786.3987f7ba73f3c80d.js",
+      "size": 3557,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/28584.fac4a43e0eaf80d6.js",
+      "size": 1019,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/29397-4b9e8a282bb3bca1.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/3411-a97011876ca1a8a4.js",
+      "size": 44056,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/37622-f75e099c7101a589.js",
+      "size": 7572,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/42503.751b028fe71e515a.js",
+      "size": 1628,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/47465-73795c6c949ace3c.js",
+      "size": 13790,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/51284.488e3e8cf6fba9a4.js",
+      "size": 16778,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/52560.0791820dc78035b3.js",
+      "size": 5881,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/53678-9cfb1975e376bdd1.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/55237.539ab26827a86bd8.js",
+      "size": 8878,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/56711.c674b373053516ca.js",
+      "size": 12434,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/59277.018047e8720d26e3.js",
+      "size": 8005,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/60745-6db3a19a58da91b5.js",
+      "size": 33645,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/65670-1d3e65bebf76f73f.js",
+      "size": 5071,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/67303-d9e87596ad60e832.js",
+      "size": 38327,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/67662-a9277e6d8e769f58.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/71848-1e39ac2baf104cf8.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/79004-e2794e9b6edc179d.js",
+      "size": 29624,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/79582.9f702768a86db431.js",
+      "size": 25340,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/80557-de98db2ed5d5ce87.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/83962.1a9a75afecb1f165.js",
+      "size": 47772,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/91985-b849f0ffbb205e6f.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/93961.ab1b2b4579aa5054.js",
+      "size": 6267,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/99113.b21d8a45cedac832.js",
+      "size": 19354,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/99603.d7af079b2d27db31.js",
+      "size": 26826,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/a79de2ab-a234a00ef228b6d3.js",
+      "size": 125251,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/framework-eacf1bcea930fc6c.js",
+      "size": 183677,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/main-c8fd7f686e771efe.js",
+      "size": 121098,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/_app-6234da965fba914c.js",
+      "size": 1028769,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/c/[tag]/[[...page]]-d32cb9d3ab480181.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/game/[game]-ecb61f7882e7638e.js",
+      "size": 17079,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/hot/[[...page]]-2d8a7efe9cecb390.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/index-5dfa175c1db144e3.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/new/[[...page]]-cc4c72dd06a16ddf.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/t/[tag]/[[...page]]-2405024047001e15.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/pages/updated/[[...page]]-e35f420719d175c8.js",
+      "size": 0,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/chunks/webpack-3ec6fa664beac77a.js",
+      "size": 27724,
+      "required": true
+    },
+    {
+      "path": "portal-web/_next/static/css/1158651af91b5f62.css",
+      "size": 139885,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/13241402a8118074.css",
+      "size": 86045,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/1aebfab26f2aac65.css",
+      "size": 26686,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/1fd4ee70f5fcd403.css",
+      "size": 17268,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/2a0c13bf491f0f64.css",
+      "size": 7638,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/2ae4cf54789373ff.css",
+      "size": 8326,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/42a0e7b5a7a9e0d0.css",
+      "size": 15718,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/43c95ff43478c7f3.css",
+      "size": 17464,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/49e8cb5a127fbb98.css",
+      "size": 9990,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/75148dc022ff3bdf.css",
+      "size": 42878,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/80a503f7da4aee0a.css",
+      "size": 69148,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/82768eb5c22e8e9a.css",
+      "size": 15241,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/86801499da639cfa.css",
+      "size": 1388,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/94ba1f0f8a64f40a.css",
+      "size": 13717,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/9656f09c1b05439c.css",
+      "size": 77,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/bb218d6b04d68735.css",
+      "size": 38573,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/c9c557ce312ba7df.css",
+      "size": 11554,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/css/e119029953514b7a.css",
+      "size": 97004,
+      "required": false
+    },
+    {
+      "path": "portal-web/_next/static/media/ee40bb094c99a29a-s.p.woff2",
+      "size": 39152,
+      "required": false
+    },
+    {
+      "path": "prebid.js",
+      "size": 149,
+      "required": true
+    },
+    {
+      "path": "racing-limits_16x9/20250711091800/racing-limits_16x9-cover",
+      "size": 10543,
+      "required": false
+    },
+    {
+      "path": "rtb/prebid",
+      "size": 680,
+      "required": false
+    },
+    {
+      "path": "rum",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "s/nunito/v32/XRXV3I6Li01BKofINeaB.woff2",
+      "size": 39128,
+      "required": false
+    },
+    {
+      "path": "serving/cookie/match",
+      "size": 35,
+      "required": false
+    },
+    {
+      "path": "sid/json",
+      "size": 362,
+      "required": false
+    },
+    {
+      "path": "sodar/sodar2.js",
+      "size": 21535,
+      "required": true
+    },
+    {
+      "path": "space-waves_16x9/20260330040751/space-waves_16x9-cover",
+      "size": 8965,
+      "required": false
+    },
+    {
+      "path": "state/js",
+      "size": 710,
+      "required": false
+    },
+    {
+      "path": "sync-iframe",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "sync.html",
+      "size": 1153,
+      "required": false
+    },
+    {
+      "path": "sync/v1",
+      "size": 68,
+      "required": false
+    },
+    {
+      "path": "syncframe",
+      "size": 12662,
+      "required": false
+    },
+    {
+      "path": "tag/css/creatives-base-styles.a53944a2.min.css",
+      "size": 38020,
+      "required": false
+    },
+    {
+      "path": "thief-puzzle_16x9/20240919050737/thief-puzzle_16x9-cover",
+      "size": 7505,
+      "required": false
+    },
+    {
+      "path": "track.gif/pageview",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "track.gif/visit",
+      "size": 42,
+      "required": false
+    },
+    {
+      "path": "traffic-rider-vvq_16x9/20250526021507/traffic-rider-vvq_16x9-cover",
+      "size": 9253,
+      "required": false
+    },
+    {
+      "path": "ul_cb/user_sync",
+      "size": 270,
+      "required": false
+    },
+    {
+      "path": "um/ixmatch.html",
+      "size": 2920,
+      "required": false
+    },
+    {
+      "path": "unified/4.40.1/usnat.f12613136193900e32e2.bundle.js",
+      "size": 414024,
+      "required": true
+    },
+    {
+      "path": "unified/wrapperMessagingWithoutDetection.js",
+      "size": 140950,
+      "required": true
+    },
+    {
+      "path": "unity/unity2020/dig-out-of-prison.html",
+      "size": 11178,
+      "required": false
+    },
+    {
+      "path": "user-sync.html",
+      "size": 5459,
+      "required": false
+    },
+    {
+      "path": "user-sync/bidder-initiated",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "user-sync/iframe",
+      "size": 1960,
+      "required": false
+    },
+    {
+      "path": "user-sync/redirect",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "userBackIframe",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "userIframe",
+      "size": 2086,
+      "required": false
+    },
+    {
+      "path": "usersync/turn/7521556177003932849",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "usync.html",
+      "size": 269,
+      "required": false
+    },
+    {
+      "path": "usync.js",
+      "size": 46350,
+      "required": true
+    },
+    {
+      "path": "ut/v3/prebid",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "v1/envelope",
+      "size": 1424,
+      "required": false
+    },
+    {
+      "path": "v12.24/424.bundle.js",
+      "size": 48242,
+      "required": true
+    },
+    {
+      "path": "v12.24/rafvertizing-prebid.js",
+      "size": 940333,
+      "required": true
+    },
+    {
+      "path": "v12.24/rafvertizing.js",
+      "size": 226448,
+      "required": true
+    },
+    {
+      "path": "v4/en_US/configv3",
+      "size": 12539,
+      "required": false
+    },
+    {
+      "path": "v4/en_US/game/dig-out-of-prison/rating",
+      "size": 36,
+      "required": false
+    },
+    {
+      "path": "v4/en_US/unitsconfig",
+      "size": 3982,
+      "required": false
+    },
+    {
+      "path": "veck-io_16x9/20251204101357/veck-io_16x9-cover",
+      "size": 9312,
+      "required": false
+    },
+    {
+      "path": "vi_webp/ZunEpUZ28FA/hqdefault.webp",
+      "size": 9002,
+      "required": false
+    },
+    {
+      "path": "w/1.0/pd",
+      "size": 480,
+      "required": false
+    },
+    {
+      "path": "w/1.0/sd",
+      "size": 43,
+      "required": false
+    },
+    {
+      "path": "wrapper/v2/messages",
+      "size": 29639,
+      "required": false
+    },
+    {
+      "path": "wrapper/v2/meta-data",
+      "size": 306,
+      "required": false
+    },
+    {
+      "path": "wrapper/v2/pv-data",
+      "size": 195,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "builds.crazygames.com",
+    "cdn.privacy-mgmt.com",
+    "fonts.googleapis.com",
+    "google-bidout-d.openx.net",
+    "imgs.crazygames.com",
+    "oajs.openx.net",
+    "www.crazygames.com"
+  ],
+  "external_critical": [
+    "builds.crazygames.com",
+    "cdn.privacy-mgmt.com",
+    "google-bidout-d.openx.net",
+    "imgs.crazygames.com",
+    "oajs.openx.net",
+    "www.crazygames.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

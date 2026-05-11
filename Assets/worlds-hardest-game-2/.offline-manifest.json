@@ -1,0 +1,239 @@
+{
+  "schema": 1,
+  "slug": "worlds-hardest-game-2",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "css/style.css",
+      "size": 122,
+      "required": true
+    },
+    {
+      "path": "images/main_menu.png",
+      "size": 81148,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 4312,
+      "required": true
+    },
+    {
+      "path": "js/bars.js",
+      "size": 9742,
+      "required": true
+    },
+    {
+      "path": "js/border.js",
+      "size": 185,
+      "required": true
+    },
+    {
+      "path": "js/buttons.js",
+      "size": 18351,
+      "required": true
+    },
+    {
+      "path": "js/canvas.js",
+      "size": 346,
+      "required": true
+    },
+    {
+      "path": "js/checkpoint.js",
+      "size": 3920,
+      "required": true
+    },
+    {
+      "path": "js/coins.js",
+      "size": 13854,
+      "required": true
+    },
+    {
+      "path": "js/colors.js",
+      "size": 2159,
+      "required": true
+    },
+    {
+      "path": "js/doors.js",
+      "size": 5180,
+      "required": true
+    },
+    {
+      "path": "js/enemy.js",
+      "size": 118486,
+      "required": true
+    },
+    {
+      "path": "js/finish.js",
+      "size": 3939,
+      "required": true
+    },
+    {
+      "path": "js/hotkeys.js",
+      "size": 2009,
+      "required": true
+    },
+    {
+      "path": "js/ingame_menu.js",
+      "size": 10756,
+      "required": true
+    },
+    {
+      "path": "js/instructions.js",
+      "size": 2942,
+      "required": true
+    },
+    {
+      "path": "js/intermission.js",
+      "size": 4367,
+      "required": true
+    },
+    {
+      "path": "js/jquery.hotkeys.js",
+      "size": 2998,
+      "required": true
+    },
+    {
+      "path": "js/jquery.min.js",
+      "size": 78600,
+      "required": true
+    },
+    {
+      "path": "js/key_status.js",
+      "size": 430,
+      "required": true
+    },
+    {
+      "path": "js/keys.js",
+      "size": 8747,
+      "required": true
+    },
+    {
+      "path": "js/level_select.js",
+      "size": 6990,
+      "required": true
+    },
+    {
+      "path": "js/main_menu.js",
+      "size": 5466,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 3947,
+      "required": true
+    },
+    {
+      "path": "js/mobile_controls.js",
+      "size": 18373,
+      "required": true
+    },
+    {
+      "path": "js/mouse.js",
+      "size": 726,
+      "required": true
+    },
+    {
+      "path": "js/player.js",
+      "size": 35924,
+      "required": true
+    },
+    {
+      "path": "js/preloader.js",
+      "size": 6313,
+      "required": true
+    },
+    {
+      "path": "js/sounds.js",
+      "size": 449,
+      "required": true
+    },
+    {
+      "path": "js/timer.js",
+      "size": 294,
+      "required": true
+    },
+    {
+      "path": "js/vars.js",
+      "size": 9565,
+      "required": true
+    },
+    {
+      "path": "js/walls.js",
+      "size": 111551,
+      "required": true
+    },
+    {
+      "path": "sounds/sfx_bounce0.mp3",
+      "size": 13485,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_bounce1.mp3",
+      "size": 12333,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_checkpoint.mp3",
+      "size": 3117,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_click.mp3",
+      "size": 2349,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_coin.mp3",
+      "size": 3885,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_die.mp3",
+      "size": 6189,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_intermission.mp3",
+      "size": 23469,
+      "required": false
+    },
+    {
+      "path": "sounds/sfx_win.mp3",
+      "size": 16173,
+      "required": false
+    },
+    {
+      "path": "the-worlds-hardest-game-2.jpg",
+      "size": 9296,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "slug": "tunnel-rush",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488247,
+  "files": [
+    {
+      "path": "_external_mirror/3kh0.github.io/js/main.js",
+      "size": 8317,
+      "required": true
+    },
+    {
+      "path": "build.json",
+      "size": 546,
+      "required": false
+    },
+    {
+      "path": "img/tunnel.jpg",
+      "size": 55601,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1108,
+      "required": true
+    },
+    {
+      "path": "style/fullscreen.png",
+      "size": 345,
+      "required": false
+    },
+    {
+      "path": "style/progressEmpty.Dark.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "style/progressFull.Dark.png",
+      "size": 137,
+      "required": false
+    },
+    {
+      "path": "style/progressLogo.Dark.png",
+      "size": 1683,
+      "required": false
+    },
+    {
+      "path": "style/style.css",
+      "size": 1734,
+      "required": true
+    },
+    {
+      "path": "style/webgl-logo.png",
+      "size": 2374,
+      "required": false
+    },
+    {
+      "path": "tunnel_rush_v9data.unityweb",
+      "size": 8252151,
+      "required": true
+    },
+    {
+      "path": "tunnel_rush_v9wasmcode.unityweb",
+      "size": 3937078,
+      "required": true
+    },
+    {
+      "path": "tunnel_rush_v9wasmframework.unityweb",
+      "size": 711364,
+      "required": true
+    },
+    {
+      "path": "UnityLoader.js",
+      "size": 155955,
+      "required": true
+    },
+    {
+      "path": "UnityProgress.js",
+      "size": 1234,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "adfree-sz-games.github.io",
+    "cdn.jsdelivr.net"
+  ],
+  "external_critical": [
+    "adfree-sz-games.github.io"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

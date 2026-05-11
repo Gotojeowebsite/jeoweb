@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "slug": "fortzone",
+  "engine": "unity",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/gamepush.js",
+      "size": 628473,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/reward.png",
+      "size": 1532,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/gs.eponesh.com/sdk/static/icons/trophy.svg",
+      "size": 4910,
+      "required": false
+    },
+    {
+      "path": "_external_mirror/s3.eponesh.com/files/gs/sdk/gamepush.js",
+      "size": 628535,
+      "required": true
+    },
+    {
+      "path": "Build/FortzoneWebGL109.data.unityweb",
+      "size": 29254332,
+      "required": true
+    },
+    {
+      "path": "Build/FortzoneWebGL109.framework.js.unityweb",
+      "size": 87494,
+      "required": true
+    },
+    {
+      "path": "Build/FortzoneWebGL109.loader.js",
+      "size": 114169,
+      "required": true
+    },
+    {
+      "path": "Build/FortzoneWebGL109.wasm.unityweb",
+      "size": 8297621,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "size": 3926,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "logo.png",
+      "size": 25427,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 9298,
+      "required": false
+    },
+    {
+      "path": "pre.html",
+      "size": 1064,
+      "required": false
+    },
+    {
+      "path": "TemplateData/gp_bundle/gamepush.js",
+      "size": 628557,
+      "required": true
+    },
+    {
+      "path": "TemplateData/gp_bundle/platforms/platform.gp.bb4f1f1d820cf471343b.js",
+      "size": 10080,
+      "required": true
+    },
+    {
+      "path": "TemplateData/style.css",
+      "size": 2078,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_critical": [
+    "bugzilla.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

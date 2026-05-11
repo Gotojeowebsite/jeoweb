@@ -1,0 +1,236 @@
+{
+  "schema": 1,
+  "slug": "jelly-truck",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "css/fonts.css",
+      "size": 251,
+      "required": true
+    },
+    {
+      "path": "css/main.css",
+      "size": 1233,
+      "required": true
+    },
+    {
+      "path": "fonts/king_cool_kc.ttf",
+      "size": 84,
+      "required": false
+    },
+    {
+      "path": "fonts/king_cool_kc.woff",
+      "size": 11272,
+      "required": false
+    },
+    {
+      "path": "images/jt.png",
+      "size": 16814,
+      "required": false
+    },
+    {
+      "path": "images/launcher.png",
+      "size": 81,
+      "required": false
+    },
+    {
+      "path": "images/orientation.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 71587,
+      "required": true
+    },
+    {
+      "path": "js/AdvancedTiming.js",
+      "size": 18150,
+      "required": true
+    },
+    {
+      "path": "js/boot.js",
+      "size": 4225,
+      "required": true
+    },
+    {
+      "path": "js/box2d-plugin.min.js",
+      "size": 422566,
+      "required": true
+    },
+    {
+      "path": "js/common.js",
+      "size": 31166,
+      "required": true
+    },
+    {
+      "path": "js/demo.js",
+      "size": 505,
+      "required": true
+    },
+    {
+      "path": "js/game.js",
+      "size": 45733,
+      "required": true
+    },
+    {
+      "path": "js/Jelly.js",
+      "size": 31035,
+      "required": true
+    },
+    {
+      "path": "js/JellyPeace.js",
+      "size": 3739,
+      "required": true
+    },
+    {
+      "path": "js/level01.js",
+      "size": 12078,
+      "required": true
+    },
+    {
+      "path": "js/level02.js",
+      "size": 17591,
+      "required": true
+    },
+    {
+      "path": "js/level03.js",
+      "size": 21463,
+      "required": true
+    },
+    {
+      "path": "js/level04.js",
+      "size": 15690,
+      "required": true
+    },
+    {
+      "path": "js/level05.js",
+      "size": 18536,
+      "required": true
+    },
+    {
+      "path": "js/level06.js",
+      "size": 15785,
+      "required": true
+    },
+    {
+      "path": "js/level07.js",
+      "size": 19752,
+      "required": true
+    },
+    {
+      "path": "js/level08.js",
+      "size": 23310,
+      "required": true
+    },
+    {
+      "path": "js/level09.js",
+      "size": 14009,
+      "required": true
+    },
+    {
+      "path": "js/level10.js",
+      "size": 17783,
+      "required": true
+    },
+    {
+      "path": "js/level11.js",
+      "size": 11310,
+      "required": true
+    },
+    {
+      "path": "js/level12.js",
+      "size": 14447,
+      "required": true
+    },
+    {
+      "path": "js/level13.js",
+      "size": 14290,
+      "required": true
+    },
+    {
+      "path": "js/level14.js",
+      "size": 14753,
+      "required": true
+    },
+    {
+      "path": "js/level15.js",
+      "size": 26473,
+      "required": true
+    },
+    {
+      "path": "js/level16.js",
+      "size": 19149,
+      "required": true
+    },
+    {
+      "path": "js/level17.js",
+      "size": 15615,
+      "required": true
+    },
+    {
+      "path": "js/level18.js",
+      "size": 17904,
+      "required": true
+    },
+    {
+      "path": "js/level19.js",
+      "size": 14262,
+      "required": true
+    },
+    {
+      "path": "js/level20.js",
+      "size": 13109,
+      "required": true
+    },
+    {
+      "path": "js/load.js",
+      "size": 31152,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 495,
+      "required": true
+    },
+    {
+      "path": "js/menu.js",
+      "size": 23327,
+      "required": true
+    },
+    {
+      "path": "js/phaser.min.js",
+      "size": 787798,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "cdn.jsdelivr.net"
+  ],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

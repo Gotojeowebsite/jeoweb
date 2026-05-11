@@ -1,0 +1,524 @@
+{
+  "schema": 1,
+  "slug": "drift-boss",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "am5tvipl.bmp",
+      "size": 270454,
+      "required": false
+    },
+    {
+      "path": "branding/logo.png",
+      "size": 6124,
+      "required": false
+    },
+    {
+      "path": "branding/splash1.png",
+      "size": 15316,
+      "required": false
+    },
+    {
+      "path": "game.css",
+      "size": 6642,
+      "required": true
+    },
+    {
+      "path": "game.js",
+      "size": 4588800,
+      "required": true
+    },
+    {
+      "path": "img.jpeg",
+      "size": 7592,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 906,
+      "required": true
+    },
+    {
+      "path": "media/audio/bgm.mp3",
+      "size": 456535,
+      "required": false
+    },
+    {
+      "path": "media/audio/click.ogg",
+      "size": 14548,
+      "required": false
+    },
+    {
+      "path": "media/audio/coin.ogg",
+      "size": 17065,
+      "required": false
+    },
+    {
+      "path": "media/audio/crash.ogg",
+      "size": 17945,
+      "required": false
+    },
+    {
+      "path": "media/audio/engine-in.ogg",
+      "size": 11619,
+      "required": false
+    },
+    {
+      "path": "media/audio/engine-low.ogg",
+      "size": 17971,
+      "required": false
+    },
+    {
+      "path": "media/audio/engine-out.ogg",
+      "size": 11382,
+      "required": false
+    },
+    {
+      "path": "media/audio/engine.ogg",
+      "size": 38649,
+      "required": false
+    },
+    {
+      "path": "media/audio/opening/kittyopening.ogg",
+      "size": 11690,
+      "required": false
+    },
+    {
+      "path": "media/audio/opening/opening.ogg",
+      "size": 7867,
+      "required": false
+    },
+    {
+      "path": "media/audio/play/static.ogg",
+      "size": 5632,
+      "required": false
+    },
+    {
+      "path": "media/audio/reward.ogg",
+      "size": 23109,
+      "required": false
+    },
+    {
+      "path": "media/audio/skid1.ogg",
+      "size": 25909,
+      "required": false
+    },
+    {
+      "path": "media/audio/skid2.ogg",
+      "size": 26019,
+      "required": false
+    },
+    {
+      "path": "media/audio/skid3.ogg",
+      "size": 25905,
+      "required": false
+    },
+    {
+      "path": "media/graphics/font/mainfont.ttf",
+      "size": 39976,
+      "required": true
+    },
+    {
+      "path": "media/graphics/loading/ajax-loader.gif",
+      "size": 3208,
+      "required": false
+    },
+    {
+      "path": "media/graphics/misc/favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "media/graphics/misc/invisible.png",
+      "size": 156,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/kitty.png",
+      "size": 53084,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/kittytitle.png",
+      "size": 5669,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/m_icon.png",
+      "size": 32305,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/shield.png",
+      "size": 26778,
+      "required": false
+    },
+    {
+      "path": "media/graphics/opening/title.png",
+      "size": 40044,
+      "required": false
+    },
+    {
+      "path": "media/graphics/orientate/landscape.jpg",
+      "size": 30668,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/loading.png",
+      "size": 40216,
+      "required": false
+    },
+    {
+      "path": "media/graphics/splash/mobile/cover-start.jpg",
+      "size": 21806,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/bg-popup.png",
+      "size": 15910,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/booster-disable.png",
+      "size": 3805,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/booster-popup.png",
+      "size": 61865,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/booster-selected.png",
+      "size": 4226,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-booster-1.png",
+      "size": 7591,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-booster-2.png",
+      "size": 7519,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-booster-3.png",
+      "size": 8892,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-buy-booster.png",
+      "size": 8904,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-buy.png",
+      "size": 3098,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-continue.png",
+      "size": 3556,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-double.png",
+      "size": 8848,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-exit.png",
+      "size": 4456,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-home.png",
+      "size": 10164,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-maximize.png",
+      "size": 2997,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-minimize.png",
+      "size": 2986,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-more-games.png",
+      "size": 5273,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-pause.png",
+      "size": 2890,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-play.png",
+      "size": 8180,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-restart.png",
+      "size": 10332,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-reward-collect.png",
+      "size": 3685,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-reward.png",
+      "size": 11198,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-settings.png",
+      "size": 5666,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/button-start-drift.png",
+      "size": 4346,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/buy-disable.png",
+      "size": 3671,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/coin.png",
+      "size": 2719,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/dailyreward-popup.png",
+      "size": 82502,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/dot.png",
+      "size": 978,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/extra-life-splash.png",
+      "size": 8140,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/game-over.png",
+      "size": 9305,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/gameover-bg.png",
+      "size": 8005,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/hand.png",
+      "size": 4241,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-bgm.png",
+      "size": 1634,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-booster-1.png",
+      "size": 4903,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-booster-2.png",
+      "size": 4501,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-booster-3.png",
+      "size": 5697,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-check.png",
+      "size": 4068,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/icon-sfx.png",
+      "size": 1818,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/left.png",
+      "size": 2069,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/lock.png",
+      "size": 1442,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/reward-box.png",
+      "size": 4417,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/select-boosters.png",
+      "size": 8035,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/slider.png",
+      "size": 110,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/title.png",
+      "size": 16600,
+      "required": false
+    },
+    {
+      "path": "media/graphics/sprites/tutorial-bg.png",
+      "size": 16238,
+      "required": false
+    },
+    {
+      "path": "media/scenes/bg.png",
+      "size": 731,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_ambulance.png",
+      "size": 21306,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_box.png",
+      "size": 17382,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_firefighter.png",
+      "size": 22691,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_ice_cream_truck.png",
+      "size": 23013,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_pickup.png",
+      "size": 20878,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_police.png",
+      "size": 19370,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_standard.png",
+      "size": 22283,
+      "required": false
+    },
+    {
+      "path": "media/scenes/car_taxi.png",
+      "size": 20234,
+      "required": false
+    },
+    {
+      "path": "media/scenes/coin.png",
+      "size": 2782,
+      "required": false
+    },
+    {
+      "path": "media/scenes/confetti.png",
+      "size": 1426,
+      "required": false
+    },
+    {
+      "path": "media/scenes/game-scene.babylon",
+      "size": 1051765,
+      "required": false
+    },
+    {
+      "path": "media/scenes/pattern_0.png",
+      "size": 1337,
+      "required": false
+    },
+    {
+      "path": "media/scenes/pattern_1.png",
+      "size": 473,
+      "required": false
+    },
+    {
+      "path": "media/scenes/pattern_2.png",
+      "size": 640,
+      "required": false
+    },
+    {
+      "path": "media/scenes/pattern_3.png",
+      "size": 2191,
+      "required": false
+    },
+    {
+      "path": "media/scenes/pattern_4.png",
+      "size": 11388,
+      "required": false
+    },
+    {
+      "path": "media/scenes/smoke.png",
+      "size": 3979,
+      "required": false
+    },
+    {
+      "path": "media/scenes/start_line.png",
+      "size": 6349,
+      "required": false
+    },
+    {
+      "path": "media/scenes/trail.png",
+      "size": 485,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

@@ -1,0 +1,752 @@
+{
+  "schema": 1,
+  "slug": "blumgiracers",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1778488243,
+  "files": [
+    {
+      "path": "appmanifest.json",
+      "size": 203,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm",
+      "size": 246906,
+      "required": true
+    },
+    {
+      "path": "box2d.wasm.js",
+      "size": 282532,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 4706714,
+      "required": true
+    },
+    {
+      "path": "ethanyo_manifest.json",
+      "size": 7301,
+      "required": false
+    },
+    {
+      "path": "fonts/Rounds Black.otf",
+      "size": 28508,
+      "required": false
+    },
+    {
+      "path": "images/ball-sheet0.webp",
+      "size": 12432,
+      "required": false
+    },
+    {
+      "path": "images/box-sheet0.webp",
+      "size": 6228,
+      "required": false
+    },
+    {
+      "path": "images/car-sheet0.webp",
+      "size": 47532,
+      "required": false
+    },
+    {
+      "path": "images/car-sheet1.webp",
+      "size": 60034,
+      "required": false
+    },
+    {
+      "path": "images/car-sheet2.webp",
+      "size": 6808,
+      "required": false
+    },
+    {
+      "path": "images/car-sheet3.webp",
+      "size": 2864,
+      "required": false
+    },
+    {
+      "path": "images/car-sheet4.webp",
+      "size": 4742,
+      "required": false
+    },
+    {
+      "path": "images/carsprites-sheet0.webp",
+      "size": 84356,
+      "required": false
+    },
+    {
+      "path": "images/carsprites-sheet1.webp",
+      "size": 90140,
+      "required": false
+    },
+    {
+      "path": "images/carsprites-sheet2.webp",
+      "size": 11546,
+      "required": false
+    },
+    {
+      "path": "images/carsprites-sheet3.webp",
+      "size": 9670,
+      "required": false
+    },
+    {
+      "path": "images/carsprites-sheet4.webp",
+      "size": 8112,
+      "required": false
+    },
+    {
+      "path": "images/debugloicscreensize-sheet0.webp",
+      "size": 38,
+      "required": false
+    },
+    {
+      "path": "images/edgezone-sheet0.webp",
+      "size": 130,
+      "required": false
+    },
+    {
+      "path": "images/finishline-sheet0.webp",
+      "size": 68,
+      "required": false
+    },
+    {
+      "path": "images/flagline-sheet0.webp",
+      "size": 58,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet0.webp",
+      "size": 33534,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet1.webp",
+      "size": 3112,
+      "required": false
+    },
+    {
+      "path": "images/fx_-sheet2.webp",
+      "size": 308,
+      "required": false
+    },
+    {
+      "path": "images/gpe_airpusher-sheet0.webp",
+      "size": 332,
+      "required": false
+    },
+    {
+      "path": "images/gpe_gravity-sheet0.webp",
+      "size": 48,
+      "required": false
+    },
+    {
+      "path": "images/gpe_physics-sheet0.webp",
+      "size": 75146,
+      "required": false
+    },
+    {
+      "path": "images/gpe_physics-sheet1.webp",
+      "size": 9736,
+      "required": false
+    },
+    {
+      "path": "images/gpe_shadows-sheet0.webp",
+      "size": 18302,
+      "required": false
+    },
+    {
+      "path": "images/gpe_shadows-sheet1.webp",
+      "size": 1450,
+      "required": false
+    },
+    {
+      "path": "images/pattern0-sheet0.webp",
+      "size": 1432,
+      "required": false
+    },
+    {
+      "path": "images/pattern1-sheet0.webp",
+      "size": 2214,
+      "required": false
+    },
+    {
+      "path": "images/pattern10-sheet0.webp",
+      "size": 3222,
+      "required": false
+    },
+    {
+      "path": "images/pattern12-sheet0.webp",
+      "size": 2090,
+      "required": false
+    },
+    {
+      "path": "images/pattern13-sheet0.webp",
+      "size": 5270,
+      "required": false
+    },
+    {
+      "path": "images/pattern14-sheet0.webp",
+      "size": 1942,
+      "required": false
+    },
+    {
+      "path": "images/pattern15-sheet0.webp",
+      "size": 1580,
+      "required": false
+    },
+    {
+      "path": "images/pattern16-sheet0.webp",
+      "size": 594,
+      "required": false
+    },
+    {
+      "path": "images/pattern17-sheet0.webp",
+      "size": 1198,
+      "required": false
+    },
+    {
+      "path": "images/pattern18-sheet0.webp",
+      "size": 688,
+      "required": false
+    },
+    {
+      "path": "images/pattern19-sheet0.webp",
+      "size": 4166,
+      "required": false
+    },
+    {
+      "path": "images/pattern2-sheet0.webp",
+      "size": 124,
+      "required": false
+    },
+    {
+      "path": "images/pattern3-sheet0.webp",
+      "size": 276,
+      "required": false
+    },
+    {
+      "path": "images/pattern4-sheet0.webp",
+      "size": 338,
+      "required": false
+    },
+    {
+      "path": "images/pattern5-sheet0.webp",
+      "size": 262,
+      "required": false
+    },
+    {
+      "path": "images/pattern6-sheet0.webp",
+      "size": 540,
+      "required": false
+    },
+    {
+      "path": "images/pattern7-sheet0.webp",
+      "size": 1594,
+      "required": false
+    },
+    {
+      "path": "images/pattern8-sheet0.webp",
+      "size": 1664,
+      "required": false
+    },
+    {
+      "path": "images/pattern9-sheet0.webp",
+      "size": 7194,
+      "required": false
+    },
+    {
+      "path": "images/patterncrown-sheet0.webp",
+      "size": 616,
+      "required": false
+    },
+    {
+      "path": "images/platformbezier-sheet0.webp",
+      "size": 44,
+      "required": false
+    },
+    {
+      "path": "images/platformcurve-sheet0.webp",
+      "size": 44,
+      "required": false
+    },
+    {
+      "path": "images/propeller-sheet0.webp",
+      "size": 6340,
+      "required": false
+    },
+    {
+      "path": "images/propeller-sheet1.webp",
+      "size": 1362,
+      "required": false
+    },
+    {
+      "path": "images/propeller-sheet2.webp",
+      "size": 1424,
+      "required": false
+    },
+    {
+      "path": "images/propeller-sheet3.webp",
+      "size": 2832,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.webp",
+      "size": 1642,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.webp",
+      "size": 128270,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.webp",
+      "size": 78498,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.webp",
+      "size": 42228,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet4.webp",
+      "size": 3802,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet5.webp",
+      "size": 90,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet6.webp",
+      "size": 38,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.webp",
+      "size": 1552,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.webp",
+      "size": 11844,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.webp",
+      "size": 290,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet3.webp",
+      "size": 122,
+      "required": false
+    },
+    {
+      "path": "images/ui_buttons-sheet0.webp",
+      "size": 20326,
+      "required": false
+    },
+    {
+      "path": "images/ui_buttons-sheet1.webp",
+      "size": 10192,
+      "required": false
+    },
+    {
+      "path": "images/ui_carousel-sheet0.webp",
+      "size": 13014,
+      "required": false
+    },
+    {
+      "path": "images/ui_carousel-sheet1.webp",
+      "size": 7210,
+      "required": false
+    },
+    {
+      "path": "images/ui_carousel-sheet2.webp",
+      "size": 3502,
+      "required": false
+    },
+    {
+      "path": "images/wheelrtorque-sheet0.webp",
+      "size": 24174,
+      "required": false
+    },
+    {
+      "path": "images/wheelrtorque-sheet1.webp",
+      "size": 23502,
+      "required": false
+    },
+    {
+      "path": "images/wheelrtorque-sheet2.webp",
+      "size": 7988,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 9102,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 2360,
+      "required": true
+    },
+    {
+      "path": "logo.webp",
+      "size": 9102,
+      "required": false
+    },
+    {
+      "path": "MedalTimes.json",
+      "size": 15019,
+      "required": false
+    },
+    {
+      "path": "media/191718__adriann__drumroll.webm",
+      "size": 49022,
+      "required": false
+    },
+    {
+      "path": "media/19433__heigh-hoo__drumroll.webm",
+      "size": 70723,
+      "required": false
+    },
+    {
+      "path": "media/233557__waveplaysfx__sfx-car-screech_clipfix.webm",
+      "size": 15603,
+      "required": false
+    },
+    {
+      "path": "media/235264__godowan__bubble1_10db.webm",
+      "size": 6635,
+      "required": false
+    },
+    {
+      "path": "media/237422__plasterbrain__hover-1.webm",
+      "size": 2541,
+      "required": false
+    },
+    {
+      "path": "media/237716__hydranos__beeph.webm",
+      "size": 13415,
+      "required": false
+    },
+    {
+      "path": "media/321_pitch50.webm",
+      "size": 6973,
+      "required": false
+    },
+    {
+      "path": "media/321.webm",
+      "size": 6627,
+      "required": false
+    },
+    {
+      "path": "media/333387__jayfrosting__applause-1.webm",
+      "size": 50772,
+      "required": false
+    },
+    {
+      "path": "media/333404__jayfrosting__cheer-2.webm",
+      "size": 37762,
+      "required": false
+    },
+    {
+      "path": "media/401542__conarb13__pop-sound.webm",
+      "size": 4949,
+      "required": false
+    },
+    {
+      "path": "media/414208__jacksonacademyashmore__airhorn.webm",
+      "size": 16886,
+      "required": false
+    },
+    {
+      "path": "media/415125__laumark__balloon-pop.webm",
+      "size": 3359,
+      "required": false
+    },
+    {
+      "path": "media/421000__cogfirestudios__engine_start.webm",
+      "size": 13021,
+      "required": false
+    },
+    {
+      "path": "media/423990__amishrob__car-horn-beep-beep-two-beeps-honk-honk.webm",
+      "size": 10350,
+      "required": false
+    },
+    {
+      "path": "media/434878__mickthemicguy__car-honking.webm",
+      "size": 12635,
+      "required": false
+    },
+    {
+      "path": "media/528807__pfranzen__dj-airhorn-sound.webm",
+      "size": 19893,
+      "required": false
+    },
+    {
+      "path": "media/535592__xhale303__boom-impact-2.webm",
+      "size": 20597,
+      "required": false
+    },
+    {
+      "path": "media/564887__karisigurd4__explosion_hit.webm",
+      "size": 19761,
+      "required": false
+    },
+    {
+      "path": "media/579883__yfjesse__pentax-k1000-camera-shutter.webm",
+      "size": 6651,
+      "required": false
+    },
+    {
+      "path": "media/609207__helloijustwantsomesounds__blop-sound.webm",
+      "size": 4466,
+      "required": false
+    },
+    {
+      "path": "media/656005__mr333me__rev_cut.webm",
+      "size": 26467,
+      "required": false
+    },
+    {
+      "path": "media/662393__clubpegiunbint__honky.webm",
+      "size": 10693,
+      "required": false
+    },
+    {
+      "path": "media/670200__0alexis0__iphone-photo-trigger.webm",
+      "size": 4050,
+      "required": false
+    },
+    {
+      "path": "media/89603__joeliomartini__thwop_cut.webm",
+      "size": 6019,
+      "required": false
+    },
+    {
+      "path": "media/95609__3bagbrew__jaw_harp5.webm",
+      "size": 23770,
+      "required": false
+    },
+    {
+      "path": "media/95611__3bagbrew__jaw_harp7.webm",
+      "size": 15979,
+      "required": false
+    },
+    {
+      "path": "media/click1.webm",
+      "size": 3694,
+      "required": false
+    },
+    {
+      "path": "media/click3.webm",
+      "size": 1763,
+      "required": false
+    },
+    {
+      "path": "media/drop_001.webm",
+      "size": 2088,
+      "required": false
+    },
+    {
+      "path": "media/drop_002.webm",
+      "size": 2537,
+      "required": false
+    },
+    {
+      "path": "media/drop_003.webm",
+      "size": 2589,
+      "required": false
+    },
+    {
+      "path": "media/drop_004.webm",
+      "size": 3493,
+      "required": false
+    },
+    {
+      "path": "media/engine_drive.webm",
+      "size": 19759,
+      "required": false
+    },
+    {
+      "path": "media/engine_low.webm",
+      "size": 15786,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_000.webm",
+      "size": 2277,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_001.webm",
+      "size": 2032,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_002.webm",
+      "size": 2325,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_003.webm",
+      "size": 2132,
+      "required": false
+    },
+    {
+      "path": "media/impactGeneric_light_004.webm",
+      "size": 2216,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_heavy_000.webm",
+      "size": 4337,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_heavy_001.webm",
+      "size": 4583,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_heavy_002.webm",
+      "size": 4519,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_heavy_003.webm",
+      "size": 4371,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_heavy_004.webm",
+      "size": 4147,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_medium_000.webm",
+      "size": 1694,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_medium_001.webm",
+      "size": 2324,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_medium_002.webm",
+      "size": 2172,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_medium_003.webm",
+      "size": 2167,
+      "required": false
+    },
+    {
+      "path": "media/impactSoft_medium_004.webm",
+      "size": 2114,
+      "required": false
+    },
+    {
+      "path": "media/music.webm",
+      "size": 1031971,
+      "required": false
+    },
+    {
+      "path": "media/rotor-loop.webm",
+      "size": 10320,
+      "required": false
+    },
+    {
+      "path": "media/transition_in2.webm",
+      "size": 4985,
+      "required": false
+    },
+    {
+      "path": "scripts/c3runtime.js",
+      "size": 1957774,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3932,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3020,
+      "required": true
+    },
+    {
+      "path": "scripts/main.js",
+      "size": 159125,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "scripts/project/scriptsInEvents.js",
+      "size": 239,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 303,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2436,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 1756,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_critical": [
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

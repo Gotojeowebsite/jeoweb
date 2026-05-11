@@ -1,0 +1,494 @@
+{
+  "schema": 1,
+  "slug": "motox3m-winter",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_orange-games/phaser-cachebuster_2.0/build/phaser-cachebuster.min.js",
+      "size": 969,
+      "required": true
+    },
+    {
+      "path": "_external_mirror/cdn.jsdelivr.net/npm/_orange-games/phaser-super-storage_1.0/build/phaser-super-storage.min.js",
+      "size": 10717,
+      "required": true
+    },
+    {
+      "path": "assets/atlases/x1/cars_game.json",
+      "size": 7476,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/cars_game.png",
+      "size": 103124,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/garage.json",
+      "size": 8974,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/garage.png",
+      "size": 1052149,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/theme0.json",
+      "size": 35175,
+      "required": false
+    },
+    {
+      "path": "assets/atlases/x1/theme0.png",
+      "size": 1064935,
+      "required": false
+    },
+    {
+      "path": "assets/box2dweb/dragonBones.min.js",
+      "size": 189336,
+      "required": true
+    },
+    {
+      "path": "assets/box2dweb/nape.min.js",
+      "size": 1775999,
+      "required": true
+    },
+    {
+      "path": "assets/css/AllerDisplay.css",
+      "size": 457,
+      "required": false
+    },
+    {
+      "path": "assets/css/app.css",
+      "size": 1946,
+      "required": true
+    },
+    {
+      "path": "assets/css/CfCrackBold.css",
+      "size": 461,
+      "required": false
+    },
+    {
+      "path": "assets/css/impact.css",
+      "size": 396,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/AllerDisplay/AllerDisplay.woff",
+      "size": 13996,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/CfCrackBold/cfcrackandbold.woff",
+      "size": 57060,
+      "required": false
+    },
+    {
+      "path": "assets/fonts/Impact/impact.woff",
+      "size": 68564,
+      "required": false
+    },
+    {
+      "path": "assets/images/x1/bikes_texture.png",
+      "size": 35408,
+      "required": false
+    },
+    {
+      "path": "assets/images/x1/menu_texture.png",
+      "size": 195314,
+      "required": false
+    },
+    {
+      "path": "assets/levels/1.json",
+      "size": 949,
+      "required": false
+    },
+    {
+      "path": "assets/levels/bike.json",
+      "size": 1236,
+      "required": false
+    },
+    {
+      "path": "assets/levels/bikes_skeleton.json",
+      "size": 25118,
+      "required": false
+    },
+    {
+      "path": "assets/levels/bikes_texture.json",
+      "size": 1695,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map1.json",
+      "size": 53076,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map10.json",
+      "size": 26928,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map11.json",
+      "size": 54465,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map12.json",
+      "size": 25141,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map13.json",
+      "size": 15767,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map14.json",
+      "size": 46859,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map15.json",
+      "size": 26648,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map16.json",
+      "size": 26334,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map17.json",
+      "size": 20289,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map18.json",
+      "size": 16596,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map19.json",
+      "size": 39425,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map2.json",
+      "size": 55689,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map20.json",
+      "size": 24557,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map21.json",
+      "size": 10942,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map22.json",
+      "size": 18235,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map23.json",
+      "size": 17770,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map24.json",
+      "size": 13425,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map25.json",
+      "size": 45304,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map3.json",
+      "size": 31614,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map4.json",
+      "size": 40332,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map5.json",
+      "size": 41573,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map6.json",
+      "size": 27570,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map7.json",
+      "size": 21635,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map8.json",
+      "size": 44164,
+      "required": false
+    },
+    {
+      "path": "assets/levels/map9.json",
+      "size": 32798,
+      "required": false
+    },
+    {
+      "path": "assets/levels/menu_skeleton.json",
+      "size": 11732,
+      "required": false
+    },
+    {
+      "path": "assets/levels/menu_texture.json",
+      "size": 706,
+      "required": false
+    },
+    {
+      "path": "assets/levels/objects.json",
+      "size": 10029,
+      "required": false
+    },
+    {
+      "path": "assets/sound/accel01.ogg",
+      "size": 25207,
+      "required": false
+    },
+    {
+      "path": "assets/sound/accel02.ogg",
+      "size": 27577,
+      "required": false
+    },
+    {
+      "path": "assets/sound/accel03.ogg",
+      "size": 50567,
+      "required": false
+    },
+    {
+      "path": "assets/sound/accel04.ogg",
+      "size": 27140,
+      "required": false
+    },
+    {
+      "path": "assets/sound/barrel_hit0.ogg",
+      "size": 8330,
+      "required": false
+    },
+    {
+      "path": "assets/sound/barrel_hit1.ogg",
+      "size": 8257,
+      "required": false
+    },
+    {
+      "path": "assets/sound/boost.ogg",
+      "size": 35293,
+      "required": false
+    },
+    {
+      "path": "assets/sound/button.ogg",
+      "size": 5595,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_01.ogg",
+      "size": 7043,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_02.ogg",
+      "size": 8118,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_03.ogg",
+      "size": 9257,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_04.ogg",
+      "size": 7946,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_05.ogg",
+      "size": 7227,
+      "required": false
+    },
+    {
+      "path": "assets/sound/dead_06.ogg",
+      "size": 6628,
+      "required": false
+    },
+    {
+      "path": "assets/sound/driver_spikes.ogg",
+      "size": 8886,
+      "required": false
+    },
+    {
+      "path": "assets/sound/eng_loop.ogg",
+      "size": 21031,
+      "required": false
+    },
+    {
+      "path": "assets/sound/engine_finish.ogg",
+      "size": 27717,
+      "required": false
+    },
+    {
+      "path": "assets/sound/engine_start.ogg",
+      "size": 24643,
+      "required": false
+    },
+    {
+      "path": "assets/sound/explode1.ogg",
+      "size": 12850,
+      "required": false
+    },
+    {
+      "path": "assets/sound/explode2.ogg",
+      "size": 13146,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_01.ogg",
+      "size": 11133,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_02.ogg",
+      "size": 6736,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_03.ogg",
+      "size": 9613,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_04.ogg",
+      "size": 9991,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_05.ogg",
+      "size": 7716,
+      "required": false
+    },
+    {
+      "path": "assets/sound/flip_06.ogg",
+      "size": 9045,
+      "required": false
+    },
+    {
+      "path": "assets/sound/fly_01.ogg",
+      "size": 11471,
+      "required": false
+    },
+    {
+      "path": "assets/sound/fly_02.ogg",
+      "size": 14497,
+      "required": false
+    },
+    {
+      "path": "assets/sound/fly_03.ogg",
+      "size": 10266,
+      "required": false
+    },
+    {
+      "path": "assets/sound/game_track.ogg",
+      "size": 784968,
+      "required": false
+    },
+    {
+      "path": "assets/sound/glass_crash.ogg",
+      "size": 25670,
+      "required": false
+    },
+    {
+      "path": "assets/sound/landing.ogg",
+      "size": 4834,
+      "required": false
+    },
+    {
+      "path": "assets/sound/menu_track_1.ogg",
+      "size": 915974,
+      "required": false
+    },
+    {
+      "path": "assets/sound/motor.ogg",
+      "size": 39729,
+      "required": false
+    },
+    {
+      "path": "assets/sound/safepoint.ogg",
+      "size": 4895,
+      "required": false
+    },
+    {
+      "path": "assets/sound/stones.ogg",
+      "size": 15979,
+      "required": false
+    },
+    {
+      "path": "assets/sound/wendy.ogg",
+      "size": 22326,
+      "required": false
+    },
+    {
+      "path": "assets/sound/wood_hit0.ogg",
+      "size": 7077,
+      "required": false
+    },
+    {
+      "path": "download.jpeg",
+      "size": 14510,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 727,
+      "required": true
+    },
+    {
+      "path": "motox3m.min.js",
+      "size": 1089912,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

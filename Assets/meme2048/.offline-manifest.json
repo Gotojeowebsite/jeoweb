@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "slug": "meme2048",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488245,
+  "files": [
+    {
+      "path": "favicon.ico",
+      "size": 1150,
+      "required": false
+    },
+    {
+      "path": "img/advice_dog_background.jpg",
+      "size": 164233,
+      "required": false
+    },
+    {
+      "path": "img/ceiling_cat.png",
+      "size": 63313,
+      "required": false
+    },
+    {
+      "path": "img/dancing_baby.gif",
+      "size": 208101,
+      "required": false
+    },
+    {
+      "path": "img/dramatic_chipmunk.gif",
+      "size": 636985,
+      "required": false
+    },
+    {
+      "path": "img/hello_my_future_girlfriend.jpg",
+      "size": 19792,
+      "required": false
+    },
+    {
+      "path": "img/honey_badger.jpg",
+      "size": 45654,
+      "required": false
+    },
+    {
+      "path": "img/hot.gif",
+      "size": 19104,
+      "required": false
+    },
+    {
+      "path": "img/ie_logo.gif",
+      "size": 783,
+      "required": false
+    },
+    {
+      "path": "img/keyboard_cat.gif",
+      "size": 2030099,
+      "required": false
+    },
+    {
+      "path": "img/leave_britney_alone.jpg",
+      "size": 18683,
+      "required": false
+    },
+    {
+      "path": "img/ns_logo.gif",
+      "size": 1454,
+      "required": false
+    },
+    {
+      "path": "img/numa_numa.gif",
+      "size": 601207,
+      "required": false
+    },
+    {
+      "path": "img/peanut_butter_jelly_time.gif",
+      "size": 43698,
+      "required": false
+    },
+    {
+      "path": "img/rickroll.gif",
+      "size": 978212,
+      "required": false
+    },
+    {
+      "path": "img/star_wars_kid.gif",
+      "size": 294266,
+      "required": false
+    },
+    {
+      "path": "img/tron_guy.jpg",
+      "size": 12530,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 6547,
+      "required": true
+    },
+    {
+      "path": "js/animframe_polyfill.js",
+      "size": 542,
+      "required": true
+    },
+    {
+      "path": "js/application.js",
+      "size": 118,
+      "required": true
+    },
+    {
+      "path": "js/bind_polyfill.js",
+      "size": 135,
+      "required": true
+    },
+    {
+      "path": "js/classlist_polyfill.js",
+      "size": 909,
+      "required": true
+    },
+    {
+      "path": "js/game_manager.js",
+      "size": 3655,
+      "required": true
+    },
+    {
+      "path": "js/grid.js",
+      "size": 1473,
+      "required": true
+    },
+    {
+      "path": "js/html_actuator.js",
+      "size": 2436,
+      "required": true
+    },
+    {
+      "path": "js/keyboard_input_manager.js",
+      "size": 2142,
+      "required": true
+    },
+    {
+      "path": "js/local_storage_manager.js",
+      "size": 1146,
+      "required": true
+    },
+    {
+      "path": "js/tile.js",
+      "size": 344,
+      "required": true
+    },
+    {
+      "path": "logo.svg",
+      "size": 1264,
+      "required": false
+    },
+    {
+      "path": "meta/apple-touch-startup-image-640x1096.png",
+      "size": 129899,
+      "required": false
+    },
+    {
+      "path": "meta/apple-touch-startup-image-640x920.png",
+      "size": 129899,
+      "required": false
+    },
+    {
+      "path": "Rakefile",
+      "size": 300,
+      "required": false
+    },
+    {
+      "path": "style/helpers.scss",
+      "size": 1355,
+      "required": false
+    },
+    {
+      "path": "style/main.css",
+      "size": 14745,
+      "required": true
+    },
+    {
+      "path": "style/main.scss",
+      "size": 10606,
+      "required": false
+    }
+  ],
+  "external_hosts": [
+    "3kh0.github.io",
+    "asherv.com",
+    "gabrielecirulli.com",
+    "itunes.apple.com"
+  ],
+  "external_critical": [
+    "3kh0.github.io",
+    "asherv.com",
+    "gabrielecirulli.com",
+    "itunes.apple.com"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

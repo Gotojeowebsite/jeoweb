@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "slug": "eel-slap",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1778488244,
+  "files": [
+    {
+      "path": "_external_mirror/ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js",
+      "size": 93636,
+      "required": true
+    },
+    {
+      "path": "css/eelslap.css",
+      "size": 1994,
+      "required": true
+    },
+    {
+      "path": "css/normalize.css",
+      "size": 8993,
+      "required": true
+    },
+    {
+      "path": "eel-slap.png",
+      "size": 223411,
+      "required": false
+    },
+    {
+      "path": "favicon.ico",
+      "size": 1406,
+      "required": false
+    },
+    {
+      "path": "images/eelslap_site_panorama1.jpg",
+      "size": 296388,
+      "required": false
+    },
+    {
+      "path": "images/eelslap_site_panorama2.jpg",
+      "size": 301904,
+      "required": false
+    },
+    {
+      "path": "images/eelslap_site_panorama3.jpg",
+      "size": 314467,
+      "required": false
+    },
+    {
+      "path": "images/eelslap_site_panorama4.jpg",
+      "size": 286623,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 1192,
+      "required": true
+    },
+    {
+      "path": "js/eelslap.js",
+      "size": 3235,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}
