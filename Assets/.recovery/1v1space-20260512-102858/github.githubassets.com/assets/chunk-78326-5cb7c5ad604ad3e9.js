@@ -1,0 +1,2 @@
+"use strict";(globalThis.rspackChunk_github_ui_github_ui=globalThis.rspackChunk_github_ui_github_ui||[]).push([[78326],{79093(i,s,u){var n=u(31635),t=u(94571),e=u(43076);class h extends HTMLElement{showConsentManagement(){(0,e.Gp)()}}(0,n.Cg)([(0,t.p_)("cookie-consent-link")],h)}}]);
+//# sourceMappingURL=chunk-78326-5cb7c5ad604ad3e9-e7a3be9ddca20f4a.js.map
