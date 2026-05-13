@@ -169,10 +169,15 @@ function checkEngineRuntime(engine, folder) {
 		return null;
 	};
 	if (engine === 'unity') {
-		// Unity payloads are commonly served compressed with Cloudflare/Vercel/etc.,
-		// either as .data.gz / .wasm.gz / .data.br / .wasm.br or as .unityweb.
-		const data = walk((_, n) => /\.(data|unityweb)(\.(gz|br))?$/i.test(n));
-		const wasm = walk((_, n) => /\.(wasm|unityweb)(\.(gz|br))?$/i.test(n));
+		// Unity payloads can be served:
+		//   * raw .data / .wasm / .unityweb
+		//   * pre-compressed .data.gz / .wasm.gz / .data.br / .wasm.br / .unityweb.{gz,br}
+		//   * split into chunks: .data.part1 / .data.part2 / .wasm.part1.. (merged
+		//     at runtime via a mergedBlob loader — used by the chunked-push importer).
+		//     Without recognizing chunked form we false-broken-flag every chunked
+		//     Unity game even though it plays fine.
+		const data = walk((_, n) => /\.(data|unityweb)(\.(gz|br))?$|\.(data|unityweb)\.part\d+$/i.test(n));
+		const wasm = walk((_, n) => /\.(wasm|unityweb)(\.(gz|br))?$|\.(wasm|unityweb)\.part\d+$/i.test(n));
 		if (!data) return { code: 'UNITY_MISSING_DATA', message: 'Unity build is missing the .data/.unityweb payload' };
 		if (!wasm) return { code: 'UNITY_MISSING_WASM', message: 'Unity build is missing the .wasm/.unityweb runtime' };
 	}
@@ -207,6 +212,81 @@ function scanGame(slug) {
 	const htmlDir = path.dirname(html);
 	const text = readSafe(html);
 	const engine = detectEngine(text, folder);
+
+	// Empty / near-empty entry HTML. An empty index.html loads cleanly with no
+	// 404s and no errors, so naive ref-walking returns "pass" — but the user
+	// sees a blank page. Catch this explicitly. Threshold of 200 bytes is the
+	// minimum size that could plausibly bootstrap a game (<html><head><script
+	// src=...></script></head><body><canvas/></body></html> is ~150 bytes).
+	const sizeBytes = Buffer.byteLength(text || '', 'utf-8');
+	const stripped = (text || '').replace(/<!--[\s\S]*?-->/g, '').replace(/\s+/g, '');
+	if (sizeBytes === 0 || stripped.length < 80) {
+		issues.push({
+			code: 'EMPTY_ENTRY_HTML',
+			message: `Entry HTML is empty or near-empty (size=${sizeBytes} bytes, stripped=${stripped.length} chars)`,
+			severity: 'critical',
+		});
+	}
+
+	// Dead-page detection. If the HTML has none of: <canvas>, <iframe>, <embed>,
+	// <object>, <script>, <ruffle-*>, EJS markers, or an engine signature, the
+	// page can't be a working game. Catches placeholder index.html files like
+	// "<html><body>Coming soon</body></html>" or pages stripped of all engine
+	// includes.
+	//
+	// Exception: meta-refresh wrappers (e.g. harvest-simulator/index.html
+	// redirects to a UUID-named subfolder containing the real game). Follow
+	// the redirect target and check IT for engine markers instead.
+	if (sizeBytes > 0 && !issues.some(i => i.code === 'EMPTY_ENTRY_HTML')) {
+		let textToCheck = text || '';
+		const refreshMatch = (text || '').match(/<meta[^>]+http-equiv\s*=\s*["']refresh["'][^>]+content\s*=\s*["']?[^;"']*;\s*url\s*=\s*([^"'>\s]+)["']?/i);
+		if (refreshMatch) {
+			const targetRel = refreshMatch[1].trim();
+			if (targetRel) {
+				const targetCandidates = resolveLocal(htmlDir, folder, targetRel);
+				const targetPath = targetCandidates && targetCandidates.find(p => fs.existsSync(p));
+				if (targetPath) {
+					try { textToCheck = fs.readFileSync(targetPath, 'utf-8'); }
+					catch { /* keep textToCheck as the wrapper */ }
+				}
+			}
+		}
+		const hasEngineMarker = /<canvas|<iframe|<embed|<object|<script|ruffle-(player|embed|object)|ejs_pathtodata|ejs_player|unity|godot|phaser/i.test(textToCheck);
+		if (!hasEngineMarker) {
+			issues.push({
+				code: 'NO_ENGINE_MARKER',
+				message: 'Entry HTML (and meta-refresh target if any) has no canvas/iframe/script/engine markers — not a playable game page',
+				severity: 'critical',
+			});
+		}
+	}
+
+	// Rendered-error-page detection. Lots of broken-import games have an
+	// index.html that's actually a "page not found" or "loading failed" HTML
+	// page that renders fine but isn't a game. Scan the body text for clear
+	// error markers.
+	const bodyLower = (text || '').toLowerCase();
+	const ERROR_PHRASES = [
+		'page not found', '404 not found', 'failed to load', 'unable to load',
+		'this game is no longer available', 'game not available',
+		'connection error', 'could not connect', 'server error',
+		'access denied', 'forbidden', 'this content is no longer available',
+		'this game has been removed',
+	];
+	for (const phrase of ERROR_PHRASES) {
+		// Match outside of <script> blocks to avoid false-flagging an in-game
+		// "you died" / "game over" string.
+		const withoutScripts = bodyLower.replace(/<script[\s\S]*?<\/script>/gi, ' ');
+		if (withoutScripts.includes(phrase)) {
+			issues.push({
+				code: 'RENDERED_ERROR_PAGE',
+				message: `Entry HTML contains rendered error text: "${phrase}"`,
+				severity: 'critical',
+				phrase,
+			});
+			break;
+		}
+	}
 
 	// Check engine runtime presence.
 	const engineIssue = checkEngineRuntime(engine, folder);
