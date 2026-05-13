@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1778582350,
+  "updated_at": 1778669573,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": "Dogeminer2-20260512-103807",
+      "name": "Dogeminer2-20260513-105145",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.544,
+      "elapsed_seconds": 13.551,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9353/Assets/Dogeminer2-20260512-103807/index.html"
+          "url": "http://localhost:9777/Assets/Dogeminer2-20260513-105145/index.html"
         }
       ],
       "warnings": [],
