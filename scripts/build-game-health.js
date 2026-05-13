@@ -247,23 +247,38 @@ function main() {
 			};
 		} else if (overrides.healthy.has(slug)) {
 			const o = overrides.healthy.get(slug);
-			entry = {
-				verdict: 'healthy',
-				confidence: 'high',
-				source: 'override',
-				reason: 'force_healthy',
-				override_reason: o.reason,
-				signals: sig,
-			};
-			// Audit: if any signal says fail, record a conflict.
-			if (sig.static === 'fail' || sig.headless === 'fail' || sig.smoke === 'fail') {
+			const hasFailingSignal = sig.static === 'fail' || sig.headless === 'fail' || sig.smoke === 'fail';
+			if (hasFailingSignal) {
+				// Reality-wins rule: a force_healthy override on a game that's
+				// actually failing was wrong — users complained about landing
+				// on broken games (e.g. 0v0 with an empty entry HTML was
+				// healthy-overridden, scanner correctly saw it as fail, but
+				// the override hid that). Override loses; verdict is broken.
+				entry = {
+					verdict: 'broken',
+					confidence: 'high',
+					source: 'signals-override-conflict',
+					reason: 'force_healthy_overridden_by_failing_signal',
+					override_reason: o.reason,
+					signals: sig,
+				};
 				conflicts.push({
 					slug,
 					override: 'force_healthy',
 					override_reason: o.reason,
 					signals: sig,
-					note: 'override hides a failing signal — verify before keeping',
+					note: 'override demoted: signals say fail, so verdict was forced back to broken',
+					verdict_after_demotion: 'broken',
 				});
+			} else {
+				entry = {
+					verdict: 'healthy',
+					confidence: 'high',
+					source: 'override',
+					reason: 'force_healthy',
+					override_reason: o.reason,
+					signals: sig,
+				};
 			}
 		} else {
 			const combined = combineSignals(slug, sig);

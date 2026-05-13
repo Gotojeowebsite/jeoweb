@@ -1,29 +1,29 @@
 {
   "schema": 2,
-  "generated_at": 1778544032,
+  "generated_at": 1778683282,
   "max_age_days": 7,
   "generators": {
-    "static_at": 1778544032,
-    "headless_at": 1778544020,
+    "static_at": 1778683282,
+    "headless_at": 1778683008,
     "smoke_at": null
   },
   "counts": {
-    "total": 604,
-    "healthy": 447,
-    "broken": 62,
-    "unknown": 95,
-    "high_confidence": 83,
-    "low_confidence": 521,
+    "total": 603,
+    "healthy": 437,
+    "broken": 68,
+    "unknown": 98,
+    "high_confidence": 88,
+    "low_confidence": 515,
     "conflicts": 0
   },
   "games": {
     "1": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -35,17 +35,6 @@
       "reason": "single_pass",
       "signals": {
         "static": "pass",
-        "headless": null,
-        "smoke": null
-      }
-    },
-    ".quarantine": {
-      "verdict": "broken",
-      "confidence": "high",
-      "source": "signals",
-      "reason": "static_fail",
-      "signals": {
-        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -62,13 +51,12 @@
       }
     },
     "0v0": {
-      "verdict": "healthy",
+      "verdict": "broken",
       "confidence": "high",
-      "source": "override",
-      "reason": "force_healthy",
-      "override_reason": "unspecified",
+      "source": "signals",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -143,12 +131,12 @@
       }
     },
     "9007199254740992": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -160,7 +148,7 @@
       "reason": "force_maintenance",
       "override_reason": "unspecified",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -287,12 +275,12 @@
       }
     },
     "Five Nights at Epstein": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -485,12 +473,12 @@
       }
     },
     "amazing-rope-police": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -518,12 +506,12 @@
       }
     },
     "among-us": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -535,7 +523,7 @@
       "reason": "force_maintenance",
       "override_reason": "unspecified",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -552,23 +540,23 @@
       }
     },
     "angelunder": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
     },
     "angry-bird": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -618,23 +606,23 @@
       }
     },
     "aqua-park": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
     },
     "aquapark-slides": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -684,12 +672,12 @@
       }
     },
     "astray": {
-      "verdict": "healthy",
-      "confidence": "low",
+      "verdict": "broken",
+      "confidence": "high",
       "source": "signals",
-      "reason": "single_pass",
+      "reason": "static_fail",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -774,12 +762,12 @@
       }
     },
     "backrooms-2d": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -1350,12 +1338,12 @@
       }
     },
     "brawl-simulator-3d": {
-      "verdict": "broken",
-      "confidence": "high",
+      "verdict": "unknown",
+      "confidence": "low",
       "source": "signals",
-      "reason": "static_fail",
+      "reason": "only_warn",
       "signals": {
-        "static": "fail",
+        "static": "warn",
         "headless": null,
         "smoke": null
       }
@@ -5793,7 +5781,7 @@
       "reason": "force_maintenance",
       "override_reason": "unspecified",
       "signals": {
-        "static": "pass",
+        "static": "fail",
         "headless": null,
         "smoke": null
       }

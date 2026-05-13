@@ -1,27 +1,14 @@
 {
   "schema": 1,
-  "generated_at": 1778544032,
+  "generated_at": 1778683282,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 447,
-    "warn": 97,
-    "fail": 54,
-    "total": 598
+    "pass": 434,
+    "warn": 100,
+    "fail": 63,
+    "total": 597
   },
   "games": [
-    {
-      "slug": ".quarantine",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
-    },
     {
       "slug": ".recovery",
       "verdict": "fail",
@@ -37,10 +24,16 @@
     },
     {
       "slug": "0v0",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -49,10 +42,16 @@
     },
     {
       "slug": "1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -153,10 +152,16 @@
     },
     {
       "slug": "9007199254740992",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -165,10 +170,16 @@
     },
     {
       "slug": "99-nights-in-the-forest",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -322,10 +333,16 @@
     },
     {
       "slug": "amazing-rope-police",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -358,10 +375,16 @@
     },
     {
       "slug": "among-us",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -370,10 +393,16 @@
     },
     {
       "slug": "amongus",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "NO_ENGINE_MARKER",
+          "message": "Entry HTML (and meta-refresh target if any) has no canvas/iframe/script/engine markers — not a playable game page",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -394,10 +423,16 @@
     },
     {
       "slug": "angelunder",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -406,10 +441,16 @@
     },
     {
       "slug": "angry-bird",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -493,10 +534,16 @@
     },
     {
       "slug": "aqua-park",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -505,10 +552,16 @@
     },
     {
       "slug": "aquapark-slides",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -608,10 +661,16 @@
     },
     {
       "slug": "astray",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EMPTY_ENTRY_HTML",
+          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
@@ -730,15 +789,10 @@
     },
     {
       "slug": "backrooms-2d",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "unity",
       "entry_file": "index.html",
       "issues": [
-        {
-          "code": "UNITY_MISSING_DATA",
-          "message": "Unity build is missing the .data/.unityweb payload",
-          "severity": "critical"
-        },
         {
           "code": "MISSING_FILE",
           "message": "Local file missing: blob",
@@ -1449,15 +1503,10 @@
     },
     {
       "slug": "brawl-simulator-3d",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "unity",
       "entry_file": "index.html",
       "issues": [
-        {
-          "code": "UNITY_MISSING_DATA",
-          "message": "Unity build is missing the .data/.unityweb payload",
-          "severity": "critical"
-        },
         {
           "code": "MISSING_FILE",
           "message": "Local file missing: mergedBlob",
@@ -5608,15 +5657,10 @@
     },
     {
       "slug": "Five Nights at Epstein",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "unity",
       "entry_file": "index.html",
       "issues": [
-        {
-          "code": "UNITY_MISSING_DATA",
-          "message": "Unity build is missing the .data/.unityweb payload",
-          "severity": "critical"
-        },
         {
           "code": "MISSING_FILE",
           "message": "Local file missing: mergedBlob",
@@ -10529,10 +10573,16 @@
     },
     {
       "slug": "subwaysurfers",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "NO_ENGINE_MARKER",
+          "message": "Entry HTML (and meta-refresh target if any) has no canvas/iframe/script/engine markers — not a playable game page",
+          "severity": "critical"
+        }
+      ],
       "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,

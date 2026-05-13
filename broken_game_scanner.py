@@ -843,7 +843,13 @@ def probe_page(page) -> Dict[str, object]:
             const surfaces = document.querySelectorAll(
                 'canvas, iframe, embed, object, ruffle-player, ruffle-embed, ruffle-object, #unity-canvas, #game canvas, #player'
             ).length;
-            const bodyTextLength = (document.body?.innerText || '').trim().length;
+            const bodyText = (document.body?.innerText || '').trim();
+            const bodyTextLength = bodyText.length;
+            // Sample of the visible page text — used by Python side to look
+            // for rendered error strings like "Failed to load" / "404 not
+            // found" that mean the page loaded fine but isn't actually a
+            // playable game.
+            const bodyTextSample = bodyText.slice(0, 4096).toLowerCase();
             const unityLoadingBar = !!document.querySelector('#unity-loading-bar');
             const unityProgress = document.querySelector('#unity-progress-bar-full')?.style?.width || '';
             const hasRuffleGlobal = typeof window.RufflePlayer !== 'undefined';
@@ -900,6 +906,7 @@ def probe_page(page) -> Dict[str, object]:
                 readyState: document.readyState,
                 surfaceCount: surfaces,
                 bodyTextLength,
+                bodyTextSample,
                 unityLoadingBar,
                 unityProgress,
                 hasRuffleGlobal,
@@ -1169,6 +1176,37 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         probe["canvasHashFirst"] = probe_first.get("canvasHash", "")
         probe["canvasNonzeroPixelsFirst"] = probe_first.get("canvasNonzeroPixels", 0)
         probe["engineExtraWaitMs"] = engine_extra_ms
+
+        # Interactivity probe: send synthetic input (key + mouse) and take a
+        # third snapshot. If the game is genuinely playing, the canvas hash
+        # / rAF tick count should change after input. If everything stays
+        # identical, the page is "rendered but frozen" — common with games
+        # that load a splash screen and silently fail to start. Skipped when
+        # we already have critical issues so we don't waste time on a known
+        # broken game.
+        if not critical_issues:
+            try:
+                # Focus + canvas-click + arrow key + spacebar — covers most
+                # control schemes (WASD games respond to arrow keys via
+                # bindings, click-to-start games respond to the click).
+                page.mouse.move(640, 400)
+                page.mouse.down()
+                page.mouse.up()
+                page.keyboard.press("Space")
+                page.wait_for_timeout(800)
+                page.keyboard.press("ArrowRight")
+                page.wait_for_timeout(800)
+                page.keyboard.press("ArrowDown")
+                page.wait_for_timeout(1200)
+                probe_after_input = probe_page(page)
+                probe["canvasHashAfterInput"] = probe_after_input.get("canvasHash", "")
+                probe["canvasNonzeroPixelsAfterInput"] = probe_after_input.get("canvasNonzeroPixels", 0)
+                probe["canvasRAFTicksAfterInput"] = probe_after_input.get("canvasRAFTicks", 0)
+            except Exception:
+                # Best-effort — if input fails for any reason (page closed,
+                # iframe cross-origin, etc.) we just skip the interactivity
+                # check and rely on the two earlier probes.
+                pass
     except PlaywrightTimeoutError as exc:
         add_issue("critical", "NAV_TIMEOUT", f"Navigation timeout: {exc}", game_url)
     except PlaywrightError as exc:
@@ -1200,13 +1238,48 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     raf_ticks = int(probe.get("canvasRAFTicks", 0) or 0)
     webgl_alive = canvas_is_webgl and raf_ticks >= 3
 
-    if expects_surface and has_surface and canvas_unchanged and canvas_dark and not webgl_alive and not critical_issues:
+    # Interactivity probe results — set only if the interactivity probe ran.
+    canvas_hash_after_input = str(probe.get("canvasHashAfterInput", "") or "")
+    canvas_pixels_after_input = int(probe.get("canvasNonzeroPixelsAfterInput", 0) or 0)
+    raf_ticks_after_input = int(probe.get("canvasRAFTicksAfterInput", 0) or 0)
+    canvas_changed_after_input = bool(canvas_hash_after_input) and canvas_hash_after_input != canvas_hash
+    canvas_lit_after_input = canvas_pixels_after_input > canvas_pixels
+    canvas_animating_after_input = canvas_is_webgl and raf_ticks_after_input >= 3
+    interactivity_passed = canvas_changed_after_input or canvas_lit_after_input or canvas_animating_after_input
+    # Truly responsive if EITHER the passive probes show liveness OR the
+    # interactivity probe shows the game responded to input. Either is enough.
+    is_alive = (not (canvas_unchanged and canvas_dark)) or webgl_alive or interactivity_passed
+
+    if expects_surface and has_surface and not is_alive and not critical_issues:
         add_issue(
             "critical",
             "CANVAS_NEVER_RENDERED",
-            "Game canvas exists but rendered no pixels and did not change between probes",
+            "Game canvas exists but rendered no pixels, did not change between probes, and did not respond to input",
             game_url,
         )
+
+    # Rendered error-page detection. The page might load fine, render a canvas,
+    # but actually be a "Failed to load" / "404 Not Found" / "This game is no
+    # longer available" splash. Look for those phrases in the live body text.
+    body_sample = str(probe.get("bodyTextSample", "") or "")
+    if body_sample and not critical_issues:
+        RUNTIME_ERROR_PHRASES = (
+            "page not found", "404 not found", "failed to load",
+            "unable to load", "this game is no longer available",
+            "game not available", "connection error", "could not connect",
+            "access denied", "this content is no longer available",
+            "this game has been removed", "404 — file or directory not found",
+            "the requested url was not found",
+        )
+        for phrase in RUNTIME_ERROR_PHRASES:
+            if phrase in body_sample:
+                add_issue(
+                    "critical",
+                    "RENDERED_ERROR_PAGE_RUNTIME",
+                    f"Page renders error text: \"{phrase}\"",
+                    game_url,
+                )
+                break
 
     # Unity-specific: if the loading bar appeared and progress never reached
     # ~95% by the second probe, the build is stuck loading.
