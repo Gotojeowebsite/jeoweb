@@ -522,6 +522,12 @@ class App {
 		this.newlyAddedTrack = document.getElementById('newlyAddedTrack');
 		this.newlyAddedCount = document.getElementById('newlyAddedCount');
 		this.newlyAddedNames = [];
+
+		// Global "Trending Now" carousel + live presence badge (backend-powered)
+		this.globalTrendingSection = document.getElementById('globalTrendingSection');
+		this.globalTrendingTrack = document.getElementById('globalTrendingTrack');
+		this.globalTrendingCount = document.getElementById('globalTrendingCount');
+		this.playerPresence = document.getElementById('playerPresence');
 	}
 
 	hideLoading() {
@@ -1617,6 +1623,10 @@ class App {
 		if (window.JeoDailyChallenge) {
 			try { window.JeoDailyChallenge.notifyPlay(name); } catch {}
 		}
+		// Global play count (backend-powered, fire-and-forget, degrades to no-op)
+		if (window.JeoBackend) {
+			try { window.JeoBackend.recordPlay(name); } catch {}
+		}
 		this.renderCarousels();
 	}
 
@@ -1687,6 +1697,7 @@ class App {
 		this.renderContinuePlaying();
 		this.renderFavorites();
 		this.renderTrending();
+		this.renderGlobalTrending();
 		this.renderWishlist();
 		this.renderCollections();
 		this.renderRecent();
@@ -2231,6 +2242,58 @@ class App {
 		}
 	}
 
+	/* =============== GLOBAL TRENDING (backend-powered) =============== */
+	async renderGlobalTrending() {
+		const sec = this.globalTrendingSection;
+		const track = this.globalTrendingTrack;
+		if (!sec || !track) return;
+		if (!window.JeoBackend) { sec.classList.add('hidden'); return; }
+		// Cache the backend list for ~2 min so the many renderCarousels() calls
+		// (every favorite toggle, every play) don't each hit the network.
+		const now = Date.now();
+		if (!this._trendingCache || now - this._trendingCache.ts > 120000) {
+			this._trendingCache = { ts: now, entries: this._trendingCache ? this._trendingCache.entries : [] };
+			try {
+				const entries = await window.JeoBackend.getTrending({ window: '24h', limit: 20 });
+				this._trendingCache = { ts: Date.now(), entries: entries || [] };
+			} catch {
+				this._trendingCache = { ts: Date.now(), entries: [] };
+			}
+		}
+		// Map backend slugs onto the local catalog; respect the same filters
+		// the main grid uses so hidden/maintenance games don't leak in.
+		const games = [];
+		for (const e of this._trendingCache.entries) {
+			const g = this.games.find(x => x.name === e.slug);
+			if (!g) continue;
+			if (this.hideMaintenance && this.isUnderMaintenance(g)) continue;
+			if (!this.showFlash && g.type === 'flash') continue;
+			if (!this.showRetro && g.type === 'snes') continue;
+			games.push(g);
+		}
+		if (!games.length) { sec.classList.add('hidden'); return; }
+		sec.classList.remove('hidden');
+		if (this.globalTrendingCount) this.globalTrendingCount.textContent = games.length;
+		track.innerHTML = '';
+		games.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
+	}
+
+	// Snapshot of "X playing now" for the open game, shown in the player toolbar.
+	updatePresenceBadge(slug) {
+		const el = this.playerPresence;
+		if (!el) return;
+		el.classList.add('hidden');
+		el.textContent = '';
+		if (!slug || !window.JeoBackend) return;
+		window.JeoBackend.getPresence(slug).then((count) => {
+			if (this._presenceSlug !== slug) return; // a different game opened since
+			if (count && count > 0) {
+				el.textContent = '👥 ' + count + ' playing now';
+				el.classList.remove('hidden');
+			}
+		}).catch(() => {});
+	}
+
 	createCarouselCard(g, index = 0) {
 		const imgSrc = g.image || this.fallbackImage;
 		const isFav = this.isFavorite(g.name);
@@ -2310,6 +2373,14 @@ class App {
 		if (window.JeoSaves && this.currentGameSlug) {
 			try { window.JeoSaves.bindGame(this.currentGameSlug); } catch {}
 			this.refreshSaveSidebar();
+		}
+
+		// Live presence — heartbeat while playing, show "X playing now".
+		// Keyed on game.name to match recordPlay / trending slugs.
+		this._presenceSlug = game ? game.name : this.currentGameSlug;
+		this.updatePresenceBadge(this._presenceSlug);
+		if (window.JeoBackend && this._presenceSlug) {
+			try { window.JeoBackend.startPresence(this._presenceSlug); } catch {}
 		}
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
@@ -2615,6 +2686,10 @@ class App {
 			}
 		}
 		this.currentSessionStart = null;
+		// Stop the presence heartbeat + clear the "X playing now" badge.
+		if (window.JeoBackend) { try { window.JeoBackend.stopPresence(); } catch {} }
+		this._presenceSlug = null;
+		if (this.playerPresence) { this.playerPresence.classList.add('hidden'); this.playerPresence.textContent = ''; }
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';

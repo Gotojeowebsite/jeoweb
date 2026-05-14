@@ -4188,3 +4188,19 @@ body.theme-light .rating-badge {
 		padding: 5px 10px;
 	}
 }
+
+/* ===== Phase 3: live presence badge (global trending reuses .carousel-*) ===== */
+.player-presence {
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 11px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #16a34a, #22c55e);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.player-presence.hidden { display: none; }

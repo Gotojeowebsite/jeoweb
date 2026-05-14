@@ -8,6 +8,11 @@
 	<link rel="canonical" href="https://jeoweb.app/" />
 	<meta name="theme-color" content="#0c0b14" />
 
+	<!-- Optional serverless backend (see backend/README.md). Leave this
+	     placeholder until the Cloudflare Worker is deployed — the site
+	     degrades gracefully to fully static when it isn't configured. -->
+	<meta name="jeo-backend" content="REPLACE_WITH_YOUR_WORKER_URL" />
+
 	<!-- PWA: makes the site installable to the home screen. -->
 	<link rel="manifest" href="manifest.json" />
 	<link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -287,6 +292,22 @@
 			<div id="tagChipRow" class="tag-chip-row hidden" role="group" aria-label="Filter by tag"></div>
 			<button id="refreshGames" class="refresh-btn">↻ Refresh</button>
 			<span id="statusFreshness" class="status-freshness" title="Time since the last supervisor / scanner run"></span>
+		</section>
+
+		<!-- Global Trending Now (backend-powered; hidden unless the backend is up) -->
+		<section id="globalTrendingSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">🌍</span>
+					<h2 class="carousel-title">Trending Now</h2>
+					<span id="globalTrendingCount" class="carousel-count">0</span>
+				</div>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="globalTrendingTrack" aria-label="Scroll left">‹</button>
+				<div id="globalTrendingTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="globalTrendingTrack" aria-label="Scroll right">›</button>
+			</div>
 		</section>
 
 		<!-- Favorites Section -->
@@ -632,6 +653,7 @@
 				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">➕ Request Game</a>
 				<a href="make-your-own.html" target="_blank" class="modal-tool-btn" style="text-decoration:none; color: var(--accent); border-color: var(--accent); background: rgba(124, 58, 237, 0.1);">🚀 Host Your Own</a>
 				<div id="playerRatingSlot" class="player-rating-slot" aria-label="Rate this game"></div>
+				<span id="playerPresence" class="player-presence hidden" title="Players in this game right now"></span>
 				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
 				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">🐛 Not working? Report it!</a>
 				<div class="player-collection-wrap">
@@ -788,6 +810,7 @@
 	</script>
 	<script src="theme-manager.js"></script>
 	<script src="account-system.js"></script>
+	<script src="jeo-backend.js"></script>
 	<script src="save-manager.js"></script>
 	<script src="toast.js"></script>
 	<script src="ratings.js"></script>

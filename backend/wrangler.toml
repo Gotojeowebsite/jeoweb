@@ -1,0 +1,15 @@
+# Cloudflare Worker config for the Jeoweb backend.
+# This Worker is deployed INDEPENDENTLY of the static site — it is never part
+# of the GitHub Pages / Azure artifact. See backend/README.md for full steps.
+
+name = "jeoweb-backend"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# D1 (SQLite) database binding. Create the DB first with:
+#   wrangler d1 create jeoweb
+# then paste the printed database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "jeoweb"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
