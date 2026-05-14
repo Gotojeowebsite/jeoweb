@@ -660,6 +660,10 @@
 					<button id="addToCollectionBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Add this game to a collection">📚 Add to…</button>
 					<div id="collectionsPopover" class="collections-popover hidden" role="menu" aria-hidden="true"></div>
 				</div>
+				<div class="player-leaderboard-wrap">
+					<button id="leaderboardBtn" class="modal-tool-btn hidden" type="button" aria-haspopup="true" aria-expanded="false" title="Global leaderboard for this game">🏆 Scores</button>
+					<div id="leaderboardPopover" class="leaderboard-popover hidden" role="menu" aria-hidden="true"></div>
+				</div>
 				<button id="shareGameBtn" class="modal-tool-btn" aria-label="Copy share link" title="Copy share link">🔗 Share</button>
 				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab">↗ New tab</button>
 				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
@@ -825,6 +829,7 @@
 	<script src="command-palette.js"></script>
 	<script src="streaks.js"></script>
 	<script src="daily-challenge.js"></script>
+	<script src="leaderboard.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>
 	(function () {

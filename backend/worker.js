@@ -6,14 +6,18 @@
  * if this Worker is unreachable the site degrades to fully static, so nothing
  * here is load-bearing for core gameplay.
  *
- * Phase 3 routes (this file): global play counts, "trending now", live
- * presence ("X playing now"). Phases 4/5 add leaderboards + score submission
- * and shared profiles + web-push; their routes slot into the same dispatch.
+ * Routes:
+ *   Phase 3 — global play counts, "trending now", live presence.
+ *   Phase 4 — global per-game leaderboards + score submission.
  *
  * Storage: Cloudflare D1 (SQLite) — see schema.sql. We intentionally avoid KV
- * here: KV's free tier caps at ~1k writes/day, far too low for presence
- * heartbeats, whereas D1 allows ~100k/day. The trending response is cached
- * with the Cache API instead.
+ * (its free tier caps at ~1k writes/day, far too low for presence heartbeats);
+ * D1 allows ~100k/day. The trending response is Cache-API cached instead.
+ *
+ * Anti-abuse note: on a client-only-trust static site, scores CANNOT be made
+ * unforgeable. The protections here (rate limit, bounds, timestamp window,
+ * optional HMAC) only raise the cost of casual cheating — these are "for fun,
+ * mostly honest" leaderboards, not competitive-integrity ones.
  *
  * Deploy: see backend/README.md.
  */
@@ -31,6 +35,15 @@ const SLUG_RE = /^[a-z0-9._-]{1,100}$/i;
 const PID_RE = /^[a-z0-9-]{1,64}$/i;
 // A presence row counts as "live" for 3 minutes (heartbeat interval is 2 min).
 const PRESENCE_TTL_MS = 3 * 60 * 1000;
+// Score sanity bounds. 'score' kind: higher better. 'time' kind: ms survived.
+const MAX_SCORE = 1e12;
+const MAX_TIME_MS = 24 * 60 * 60 * 1000;
+// Reject score submissions whose client timestamp is too far off "now".
+const TS_PAST_MS = 5 * 60 * 1000;
+const TS_FUTURE_MS = 60 * 1000;
+// Per-player score-submit rate limit.
+const SCORE_RATE_MAX = 30;
+const SCORE_RATE_WINDOW_MS = 60 * 60 * 1000;
 
 function corsHeaders(origin) {
   const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
@@ -67,7 +80,52 @@ async function readBody(request) {
   }
 }
 
-// ---- route handlers --------------------------------------------------------
+// HMAC-SHA256 hex of `message` with `key`. Used as an anti-curl-spam speed
+// bump on score submission — see verifyScoreSig().
+async function hmacHex(key, message) {
+  const enc = new TextEncoder();
+  const cryptoKey = await crypto.subtle.importKey(
+    'raw', enc.encode(key), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', cryptoKey, enc.encode(message));
+  return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Constant-time-ish string compare.
+function safeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+// Sliding-ish window rate limiter backed by the rate_limits table.
+// Returns true if the call is allowed, false if the limit is exceeded.
+async function rateOk(env, key, max, windowMs) {
+  const now = Date.now();
+  try {
+    const row = await env.DB.prepare(
+      `SELECT count, reset_at FROM rate_limits WHERE rl_key = ?1`
+    ).bind(key).first();
+    if (!row || row.reset_at < now) {
+      await env.DB.prepare(
+        `INSERT INTO rate_limits (rl_key, count, reset_at) VALUES (?1, 1, ?2)
+         ON CONFLICT(rl_key) DO UPDATE SET count = 1, reset_at = ?2`
+      ).bind(key, now + windowMs).run();
+      return true;
+    }
+    if (row.count >= max) return false;
+    await env.DB.prepare(
+      `UPDATE rate_limits SET count = count + 1 WHERE rl_key = ?1`
+    ).bind(key).run();
+    return true;
+  } catch {
+    // If the limiter itself errors, fail open — don't block legitimate users.
+    return true;
+  }
+}
+
+// ---- Phase 3 routes: play / trending / presence ----------------------------
 
 async function handlePlay(request, env, origin) {
   const body = await readBody(request);
@@ -99,8 +157,6 @@ async function handleTrending(url, env, origin, ctx) {
   const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit'), 10) || 20, 1), 50);
   const window = url.searchParams.get('window') === 'all' ? 'all' : '24h';
 
-  // Cache the computed list for 60s — trending changes slowly and this route
-  // is read on every homepage load.
   const cacheKey = new Request(url.origin + '/api/trending?window=' + window + '&limit=' + limit);
   const cache = caches.default;
   const cached = await cache.match(cacheKey);
@@ -113,8 +169,7 @@ async function handleTrending(url, env, origin, ctx) {
   try {
     if (window === 'all') {
       rows = await env.DB.prepare(
-        `SELECT game_slug, total_plays AS p FROM play_counts
-         ORDER BY p DESC LIMIT ?1`
+        `SELECT game_slug, total_plays AS p FROM play_counts ORDER BY p DESC LIMIT ?1`
       ).bind(limit).all();
     } else {
       const since = todayUTC(-1); // today + yesterday
@@ -129,7 +184,6 @@ async function handleTrending(url, env, origin, ctx) {
 
   const games = (rows.results || []).map((r) => ({ slug: r.game_slug, plays: r.p }));
   const payload = { ok: true, window, games };
-  // Store in cache (60s TTL) without blocking the response.
   ctx.waitUntil(
     cache.put(
       cacheKey,
@@ -174,16 +228,112 @@ async function handlePresenceGet(url, env, origin) {
   }
 }
 
-// Opportunistic cleanup of stale presence rows — runs occasionally so the
-// table doesn't grow unbounded without needing a Cron trigger in Phase 3.
+// ---- Phase 4 routes: leaderboards + score submission -----------------------
+
+async function handleLeaderboard(url, env, origin) {
+  const game = String(url.searchParams.get('game') || '');
+  if (!SLUG_RE.test(game)) return json({ ok: false, entries: [] }, origin, 400);
+  const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit'), 10) || 20, 1), 100);
+  const kind = url.searchParams.get('kind') === 'time' ? 'time' : 'score';
+  // Both kinds rank higher = better. `kind` only drives client-side display
+  // ('time' = ms survived shown as a duration, 'score' = raw points).
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT pid, score, display_name, kind, updated_at
+       FROM scores WHERE game_slug = ?1
+       ORDER BY score DESC LIMIT ?2`
+    ).bind(game, limit).all();
+    const entries = (rows.results || []).map((r, i) => ({
+      rank: i + 1,
+      pid: r.pid,
+      score: r.score,
+      name: r.display_name || 'Player',
+      kind: r.kind || 'score',
+      updated_at: r.updated_at,
+    }));
+    return json({ ok: true, game, kind, entries }, origin);
+  } catch (e) {
+    return json({ ok: false, entries: [] }, origin, 500);
+  }
+}
+
+// Verifies the optional HMAC signature. If env.SCORE_SIGNING_KEY is unset the
+// check is skipped (convenient for an initial deploy); set it (and the matching
+// <meta name="jeo-score-key"> on the site) to require signed submissions.
+async function verifyScoreSig(env, body) {
+  const key = env.SCORE_SIGNING_KEY;
+  if (!key) return true; // signing not enabled
+  if (!body.sig || typeof body.sig !== 'string') return false;
+  const message = [body.game, body.score, body.pid, body.ts].join('\n');
+  const expected = await hmacHex(key, message);
+  return safeEqual(expected, body.sig);
+}
+
+async function handleScore(request, env, origin) {
+  const body = await readBody(request);
+  const game = String(body.game || '');
+  const pid = String(body.pid || '');
+  const kind = body.kind === 'time' ? 'time' : 'score';
+  const score = Number(body.score);
+  const ts = Number(body.ts);
+  let name = body.name == null ? '' : String(body.name).slice(0, 32).trim();
+
+  // --- input validation ---
+  if (!SLUG_RE.test(game) || !PID_RE.test(pid)) {
+    return json({ ok: false, error: 'bad input' }, origin, 400);
+  }
+  if (!Number.isFinite(score) || score < 0) {
+    return json({ ok: false, error: 'bad score' }, origin, 400);
+  }
+  const cap = kind === 'time' ? MAX_TIME_MS : MAX_SCORE;
+  if (score > cap) {
+    return json({ ok: false, error: 'score out of bounds' }, origin, 400);
+  }
+  // --- timestamp window (replay / clock-skew guard) ---
+  const now = Date.now();
+  if (!Number.isFinite(ts) || ts < now - TS_PAST_MS || ts > now + TS_FUTURE_MS) {
+    return json({ ok: false, error: 'stale timestamp' }, origin, 400);
+  }
+  // --- optional signature ---
+  if (!(await verifyScoreSig(env, body))) {
+    return json({ ok: false, error: 'bad signature' }, origin, 401);
+  }
+  // --- rate limit (per player) ---
+  if (!(await rateOk(env, 'score:' + pid, SCORE_RATE_MAX, SCORE_RATE_WINDOW_MS))) {
+    return json({ ok: false, error: 'rate limited' }, origin, 429);
+  }
+
+  const intScore = Math.round(score);
+  try {
+    // One row per (game, player) = their personal best (always the MAX, so a
+    // worse submission can't regress their standing, and they can't flood the
+    // board with rows). `kind` is stored only as a display hint.
+    await env.DB.prepare(
+      `INSERT INTO scores (game_slug, pid, score, display_name, kind, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6)
+       ON CONFLICT(game_slug, pid) DO UPDATE SET
+         score = MAX(scores.score, excluded.score),
+         display_name = excluded.display_name,
+         kind = excluded.kind,
+         updated_at = excluded.updated_at`
+    ).bind(game, pid, intScore, name || null, kind, now).run();
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+// Opportunistic cleanup of stale presence + rate-limit rows so the tables
+// don't grow unbounded without needing a Cron trigger.
 async function maybeCleanup(env, ctx) {
   if (Math.random() > 0.02) return; // ~2% of requests
-  ctx.waitUntil(
+  const now = Date.now();
+  ctx.waitUntil(Promise.all([
     env.DB.prepare(`DELETE FROM presence WHERE last_seen < ?1`)
-      .bind(Date.now() - PRESENCE_TTL_MS * 4)
-      .run()
-      .catch(() => {})
-  );
+      .bind(now - PRESENCE_TTL_MS * 4).run().catch(() => {}),
+    env.DB.prepare(`DELETE FROM rate_limits WHERE reset_at < ?1`)
+      .bind(now).run().catch(() => {}),
+  ]));
 }
 
 // ---- entrypoint ------------------------------------------------------------
@@ -202,7 +352,7 @@ export default {
 
     try {
       if (path === '/api/health') {
-        return json({ ok: true, phase: 3 }, origin);
+        return json({ ok: true, phase: 4 }, origin);
       }
       if (path === '/api/play' && request.method === 'POST') {
         return await handlePlay(request, env, origin);
@@ -215,6 +365,12 @@ export default {
       }
       if (path === '/api/presence' && request.method === 'GET') {
         return await handlePresenceGet(url, env, origin);
+      }
+      if (path === '/api/leaderboard' && request.method === 'GET') {
+        return await handleLeaderboard(url, env, origin);
+      }
+      if (path === '/api/score' && request.method === 'POST') {
+        return await handleScore(request, env, origin);
       }
       return json({ ok: false, error: 'not found' }, origin, 404);
     } catch (e) {

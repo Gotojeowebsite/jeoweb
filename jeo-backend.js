@@ -134,6 +134,81 @@
     );
   }
 
+  // ---- leaderboards + score submission (Phase 4) ---------------------------
+
+  // Display name for the board: the signed-in account name, else "Player".
+  function displayName() {
+    try {
+      if (window.JeoAccount && JeoAccount.getState) {
+        const st = JeoAccount.getState();
+        if (st && st.profile && st.profile.name) return String(st.profile.name).slice(0, 32);
+      }
+    } catch {}
+    return 'Player';
+  }
+
+  // Optional HMAC signing key (anti-curl-spam speed bump). Read from a
+  // <meta name="jeo-score-key"> tag; if absent, submissions go unsigned and
+  // the Worker accepts them (unless it has SCORE_SIGNING_KEY set, in which
+  // case set the meta tag to the same value).
+  function getScoreKey() {
+    const meta = document.querySelector('meta[name="jeo-score-key"]');
+    const v = meta && meta.content && meta.content.trim();
+    if (v && !/REPLACE|YOUR-/i.test(v)) return v;
+    return null;
+  }
+
+  async function hmacHex(key, message) {
+    const enc = new TextEncoder();
+    const cryptoKey = await crypto.subtle.importKey(
+      'raw', enc.encode(key), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+    );
+    const sig = await crypto.subtle.sign('HMAC', cryptoKey, enc.encode(message));
+    return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  // Resolves to an array of leaderboard entries — [] on any failure.
+  // opts: { kind: 'score'|'time', limit }
+  function getLeaderboard(slug, opts) {
+    if (!slug) return Promise.resolve([]);
+    opts = opts || {};
+    const kind = opts.kind === 'time' ? 'time' : 'score';
+    const limit = Math.min(Math.max(parseInt(opts.limit, 10) || 20, 1), 100);
+    const q = '/api/leaderboard?game=' + encodeURIComponent(slug) + '&kind=' + kind + '&limit=' + limit;
+    return guard(
+      () => fetchJson(q).then((d) => (d && Array.isArray(d.entries)) ? d.entries : []),
+      []
+    );
+  }
+
+  // Submits a score. Resolves to { ok, mine? } — { ok:false } on any failure,
+  // never throws. opts: { kind: 'score'|'time' }
+  async function submitScore(slug, score, opts) {
+    if (!slug || !BASE_URL || !Number.isFinite(Number(score))) return { ok: false };
+    opts = opts || {};
+    const kind = opts.kind === 'time' ? 'time' : 'score';
+    return guard(async () => {
+      const pid = getPlayerId();
+      const ts = Date.now();
+      const payload = {
+        game: slug,
+        score: Math.round(Number(score)),
+        pid: pid,
+        ts: ts,
+        kind: kind,
+        name: displayName(),
+      };
+      const key = getScoreKey();
+      if (key) {
+        try {
+          payload.sig = await hmacHex(key, [payload.game, payload.score, payload.pid, payload.ts].join('\n'));
+        } catch {}
+      }
+      const d = await postJson('/api/score', payload);
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
   // Dev/runtime override of the base URL (re-probes on next call).
   function config(opts) {
     if (opts && typeof opts.baseUrl === 'string') {
@@ -153,5 +228,7 @@
     startPresence,
     stopPresence,
     getPresence,
+    getLeaderboard,
+    submitScore,
   };
 })();

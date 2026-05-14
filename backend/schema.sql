@@ -28,5 +28,28 @@ CREATE TABLE IF NOT EXISTS presence (
 );
 CREATE INDEX IF NOT EXISTS idx_presence_seen ON presence(last_seen);
 
--- Phases 4 & 5 add: scores, players, push_subscriptions.
--- Those CREATE TABLE statements will be appended here when those phases land.
+-- Phase 4: global per-game leaderboards. One row per (game, player) = their
+-- personal best (always the MAX score). `kind` is only a display hint:
+--   'time'  = ms survived, shown as a duration ("longest run")
+--   'score' = raw points
+-- Both rank higher = better.
+CREATE TABLE IF NOT EXISTS scores (
+  game_slug    TEXT NOT NULL,
+  pid          TEXT NOT NULL,
+  score        INTEGER NOT NULL,
+  display_name TEXT,
+  kind         TEXT NOT NULL DEFAULT 'score',
+  updated_at   INTEGER NOT NULL,
+  PRIMARY KEY (game_slug, pid)
+);
+CREATE INDEX IF NOT EXISTS idx_scores_game ON scores(game_slug, score);
+
+-- Generic rate-limit buckets (per-player score submissions, etc.).
+CREATE TABLE IF NOT EXISTS rate_limits (
+  rl_key   TEXT PRIMARY KEY,
+  count    INTEGER NOT NULL DEFAULT 0,
+  reset_at INTEGER NOT NULL          -- epoch ms; row is reset once past this
+);
+
+-- Phase 5 adds: players, push_subscriptions.
+-- Those CREATE TABLE statements will be appended here when that phase lands.

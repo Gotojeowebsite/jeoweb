@@ -4204,3 +4204,79 @@ body.theme-light .rating-badge {
 	flex-shrink: 0;
 }
 .player-presence.hidden { display: none; }
+
+/* ===== Phase 4: leaderboard popover ===== */
+.player-leaderboard-wrap { position: relative; }
+.leaderboard-popover {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	min-width: 260px;
+	max-width: 340px;
+	background: var(--bg-surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	box-shadow: var(--shadow-lg);
+	padding: 10px;
+	z-index: 250;
+	max-height: 380px;
+	overflow-y: auto;
+}
+.leaderboard-popover.hidden { display: none; }
+.leaderboard-popover .lb-state {
+	padding: 18px 8px;
+	text-align: center;
+	color: var(--muted);
+	font-size: 13px;
+}
+.leaderboard-popover .lb-head {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--muted);
+	padding: 2px 6px 8px;
+}
+.leaderboard-popover .lb-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: lb;
+}
+.leaderboard-popover .lb-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 8px;
+	border-radius: 8px;
+	font-size: 13px;
+}
+.leaderboard-popover .lb-row:nth-child(odd) { background: rgba(255, 255, 255, 0.03); }
+.leaderboard-popover .lb-mine {
+	background: rgba(124, 58, 237, 0.16);
+	border: 1px solid var(--accent);
+}
+.leaderboard-popover .lb-rank {
+	flex-shrink: 0;
+	width: 30px;
+	font-weight: 700;
+	color: var(--muted);
+}
+.leaderboard-popover .lb-name {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--text);
+}
+.leaderboard-popover .lb-name em {
+	color: var(--accent);
+	font-style: normal;
+	font-weight: 600;
+}
+.leaderboard-popover .lb-score {
+	flex-shrink: 0;
+	font-weight: 800;
+	color: var(--accent);
+	font-variant-numeric: tabular-nums;
+}

@@ -164,6 +164,34 @@ function inferTags(slug, type) {
 	return [...out];
 }
 
+// Parse the <!--LEADERBOARD score--> / <!--LEADERBOARD time--> marker.
+// Opts a game into global leaderboards. Kind is a display hint: 'time' = ms
+// survived (auto-captured from session length), 'score' = raw points.
+function parseLeaderboard(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		const m = content.match(/<!--\s*LEADERBOARD\s+(score|time)\s*-->/i);
+		if (m) return m[1].toLowerCase();
+	} catch (e) {}
+	return null;
+}
+
+// Hand-editable opt-in list (leaderboard_games.json). Wins over the HTML
+// marker, and needs no edits to vendored game files.
+function loadLeaderboardOverrides() {
+	try {
+		const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'leaderboard_games.json'), 'utf-8'));
+		const map = {};
+		for (const [slug, kind] of Object.entries(raw)) {
+			if (slug === '_comment') continue;
+			if (kind === 'time' || kind === 'score') map[slug] = kind;
+		}
+		return map;
+	} catch (e) {
+		return {};
+	}
+}
+
 // Parse <!--TAG foo--> and <!--GENRE bar--> markers
 function parseTagsAndGenre(htmlPath) {
 	try {
@@ -324,6 +352,7 @@ function scan() {
 	}
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
+	const leaderboardOverrides = loadLeaderboardOverrides();
 	let flashCount = 0;
 	let retroCount = 0;
 	let webglCount = 0;
@@ -346,6 +375,7 @@ function scan() {
 		const requested = isRequestedGame(htmlFilePath);
 		const broken = isBrokenGame(htmlFilePath);
 		const { tags, genre } = parseTagsAndGenre(htmlFilePath);
+		const leaderboard = parseLeaderboard(htmlFilePath);
 
 		// Determine specific retro type (snes, gba, etc.)
 		let type = 'webgl';
@@ -391,6 +421,9 @@ function scan() {
 		}
 		if (merged.length) entry.tags = merged;
 		if (genre) entry.genre = genre;
+		// leaderboard_games.json override wins over the in-HTML marker.
+		const lb = leaderboardOverrides[it.name] || leaderboard;
+		if (lb) entry.leaderboard = lb;
 		results.push(entry);
 	}
 

@@ -45,9 +45,13 @@ class App {
 		}
 
 		window.addEventListener('message', (event) => {
-			if (event.data.type === 'GAME_READY') {
+			const data = event.data;
+			if (!data || typeof data !== 'object') return;
+			if (data.type === 'GAME_READY') {
 				this.gameReadyReceived = true;
 				if (this.hideOverlayFn) this.hideOverlayFn();
+			} else if (data.type === 'jeo-score') {
+				this.handleGameScoreMessage(event);
 			}
 		});
 	}
@@ -778,6 +782,7 @@ class App {
 		if (skipLoadingBtn) skipLoadingBtn.addEventListener('click', () => this.skipLoadingOverlay());
 		this.initDeepLinks();
 		this.bindCollectionUI();
+		this.bindLeaderboardUI();
 		// Re-render the collections row whenever playlists change
 		if (window.JeoPlaylists) window.JeoPlaylists.onChange(() => this.renderCollections());
 
@@ -2095,6 +2100,64 @@ class App {
 		if (addBtn) addBtn.setAttribute('aria-expanded', 'false');
 	}
 
+	/* =============== LEADERBOARD POPOVER (backend-powered) =============== */
+	bindLeaderboardUI() {
+		const btn = document.getElementById('leaderboardBtn');
+		const popover = document.getElementById('leaderboardPopover');
+		if (!btn || !popover) return;
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			if (popover.classList.contains('hidden')) this.openLeaderboardPopover();
+			else this.closeLeaderboardPopover();
+		});
+		document.addEventListener('click', (e) => {
+			if (popover.classList.contains('hidden')) return;
+			if (e.target.closest('#leaderboardPopover')) return;
+			if (e.target.closest('#leaderboardBtn')) return;
+			this.closeLeaderboardPopover();
+		});
+	}
+
+	openLeaderboardPopover() {
+		const popover = document.getElementById('leaderboardPopover');
+		const btn = document.getElementById('leaderboardBtn');
+		if (!popover) return;
+		const slug = this.currentGameName || this.currentGameSlug;
+		if (!slug) return;
+		popover.classList.remove('hidden');
+		popover.setAttribute('aria-hidden', 'false');
+		if (btn) btn.setAttribute('aria-expanded', 'true');
+		if (window.JeoLeaderboard) {
+			window.JeoLeaderboard.mount(popover, slug, { kind: this.currentGameLeaderboard || 'score' });
+		}
+	}
+
+	closeLeaderboardPopover() {
+		const popover = document.getElementById('leaderboardPopover');
+		const btn = document.getElementById('leaderboardBtn');
+		if (!popover) return;
+		popover.classList.add('hidden');
+		popover.setAttribute('aria-hidden', 'true');
+		if (btn) btn.setAttribute('aria-expanded', 'false');
+	}
+
+	// Handles a `{type:'jeo-score', score}` postMessage from a game iframe.
+	// Only games opted into a 'score'-kind leaderboard are accepted, and only
+	// from the iframe currently open.
+	handleGameScoreMessage(event) {
+		if (!this.gameFrame || event.source !== this.gameFrame.contentWindow) return;
+		if (this.currentGameLeaderboard !== 'score') return;
+		const score = Number(event.data && event.data.score);
+		if (!Number.isFinite(score) || score < 0) return;
+		const slug = this.currentGameName;
+		if (!slug || !window.JeoBackend) return;
+		window.JeoBackend.submitScore(slug, score, { kind: 'score' }).then((r) => {
+			if (r && r.ok && window.JeoToast) {
+				window.JeoToast.info('🏆 Score ' + score.toLocaleString() + ' submitted to the leaderboard.', { ttl: 4000 });
+			}
+		}).catch(() => {});
+	}
+
 	renderCollectionPopover(slug) {
 		const popover = document.getElementById('collectionsPopover');
 		if (!popover) return;
@@ -2382,6 +2445,12 @@ class App {
 		if (window.JeoBackend && this._presenceSlug) {
 			try { window.JeoBackend.startPresence(this._presenceSlug); } catch {}
 		}
+
+		// Leaderboard: only games opted into one show the "🏆 Scores" button.
+		this.currentGameLeaderboard = game ? (game.leaderboard || null) : null;
+		const lbBtn = document.getElementById('leaderboardBtn');
+		if (lbBtn) lbBtn.classList.toggle('hidden', !this.currentGameLeaderboard);
+		this.closeLeaderboardPopover();
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
 		const loadingGameTitle = document.getElementById('loadingGameTitle');
@@ -2680,6 +2749,15 @@ class App {
 					localStorage.setItem('jeo:sessions', JSON.stringify(log));
 				} catch {}
 				if (window.JeoAnalytics) window.JeoAnalytics.trackGamePlayTime(this.currentGameName, dur / 1000);
+				// 'time'-kind leaderboard games auto-submit the session length
+				// as the score ("longest run") — no game cooperation needed.
+				if (this.currentGameLeaderboard === 'time' && window.JeoBackend && this.currentGameName) {
+					window.JeoBackend.submitScore(this.currentGameName, dur, { kind: 'time' }).then((r) => {
+						if (r && r.ok && window.JeoToast && window.JeoLeaderboard) {
+							window.JeoToast.info('🏆 ' + window.JeoLeaderboard.fmtScore(dur, 'time') + ' run submitted to the leaderboard.', { ttl: 4000 });
+						}
+					}).catch(() => {});
+				}
 			}
 			if (window.JeoAchievements) {
 				try { window.JeoAchievements.emit('session-end', { slug: this.currentGameSlug, dur, type: this._lastPlayType }); } catch {}
@@ -2690,6 +2768,9 @@ class App {
 		if (window.JeoBackend) { try { window.JeoBackend.stopPresence(); } catch {} }
 		this._presenceSlug = null;
 		if (this.playerPresence) { this.playerPresence.classList.add('hidden'); this.playerPresence.textContent = ''; }
+		// Close + reset the leaderboard popover for the next game.
+		this.closeLeaderboardPopover();
+		this.currentGameLeaderboard = null;
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';
