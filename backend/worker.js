@@ -323,6 +323,175 @@ async function handleScore(request, env, origin) {
   }
 }
 
+// ---- Phase 5 routes: shared profiles + web-push reminders ------------------
+
+async function handleProfileGet(url, env, origin) {
+  const pid = String(url.searchParams.get('pid') || '');
+  if (!PID_RE.test(pid)) return json({ ok: false }, origin, 400);
+  try {
+    const row = await env.DB.prepare(
+      `SELECT pid, display_name, created_at FROM players WHERE pid = ?1`
+    ).bind(pid).first();
+    return json({ ok: true, profile: row
+      ? { pid: row.pid, name: row.display_name, created_at: row.created_at }
+      : null }, origin);
+  } catch {
+    return json({ ok: false }, origin, 500);
+  }
+}
+
+async function handleProfilePost(request, env, origin) {
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  if (!PID_RE.test(pid)) return json({ ok: false, error: 'bad pid' }, origin, 400);
+  const name = body.name == null ? '' : String(body.name).slice(0, 32).trim();
+  if (!(await rateOk(env, 'profile:' + pid, 20, 60 * 60 * 1000))) {
+    return json({ ok: false, error: 'rate limited' }, origin, 429);
+  }
+  const now = Date.now();
+  try {
+    await env.DB.prepare(
+      `INSERT INTO players (pid, display_name, created_at, updated_at)
+       VALUES (?1, ?2, ?3, ?3)
+       ON CONFLICT(pid) DO UPDATE SET display_name = excluded.display_name, updated_at = ?3`
+    ).bind(pid, name || null, now).run();
+    return json({ ok: true }, origin);
+  } catch {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+// --- base64url + VAPID helpers (for sending payload-less web push) ---
+function b64urlToBytes(s) {
+  s = s.replace(/-/g, '+').replace(/_/g, '/');
+  while (s.length % 4) s += '=';
+  const bin = atob(s);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+function bytesToB64url(bytes) {
+  let bin = '';
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+function strToB64url(str) {
+  return bytesToB64url(new TextEncoder().encode(str));
+}
+
+// Build a P-256 JWK from web-push-style base64url keys (public = 65-byte
+// uncompressed point, private = 32-byte scalar).
+function vapidJwk(publicB64url, privateB64url) {
+  const pub = b64urlToBytes(publicB64url);
+  return {
+    kty: 'EC', crv: 'P-256',
+    x: bytesToB64url(pub.slice(1, 33)),
+    y: bytesToB64url(pub.slice(33, 65)),
+    d: privateB64url,
+    ext: true,
+  };
+}
+
+// Sign a VAPID JWT (ES256) for a push endpoint's origin.
+async function vapidJwt(env, audience) {
+  const key = await crypto.subtle.importKey(
+    'jwk', vapidJwk(env.VAPID_PUBLIC_KEY, env.VAPID_PRIVATE_KEY),
+    { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign']
+  );
+  const header = strToB64url(JSON.stringify({ typ: 'JWT', alg: 'ES256' }));
+  const claims = strToB64url(JSON.stringify({
+    aud: audience,
+    exp: Math.floor(Date.now() / 1000) + 12 * 3600,
+    sub: env.VAPID_SUBJECT || 'mailto:admin@jeoweb.app',
+  }));
+  const input = header + '.' + claims;
+  // Web Crypto ECDSA returns the raw r||s signature JWT/ES256 expects.
+  const sig = await crypto.subtle.sign(
+    { name: 'ECDSA', hash: 'SHA-256' }, key, new TextEncoder().encode(input)
+  );
+  return input + '.' + bytesToB64url(new Uint8Array(sig));
+}
+
+// Send one payload-less web push (the SW supplies the notification text).
+// Returns the HTTP status, or 0 on a network error.
+async function sendPush(env, endpoint) {
+  try {
+    const jwt = await vapidJwt(env, new URL(endpoint).origin);
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'vapid t=' + jwt + ', k=' + env.VAPID_PUBLIC_KEY,
+        'TTL': '86400',
+      },
+    });
+    return res.status;
+  } catch {
+    return 0;
+  }
+}
+
+async function handlePushSubscribe(request, env, origin) {
+  if (!env.VAPID_PRIVATE_KEY) {
+    return json({ ok: false, error: 'push not configured' }, origin, 503);
+  }
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  const sub = body.subscription || {};
+  const endpoint = String(sub.endpoint || '');
+  if (!PID_RE.test(pid) || !/^https:\/\//.test(endpoint) || endpoint.length > 1000) {
+    return json({ ok: false, error: 'bad input' }, origin, 400);
+  }
+  const keys = sub.keys || {};
+  try {
+    await env.DB.prepare(
+      `INSERT INTO push_subscriptions (endpoint, pid, p256dh, auth, created_at, fail_count)
+       VALUES (?1, ?2, ?3, ?4, ?5, 0)
+       ON CONFLICT(endpoint) DO UPDATE SET
+         pid = excluded.pid, p256dh = excluded.p256dh,
+         auth = excluded.auth, fail_count = 0`
+    ).bind(endpoint, pid, keys.p256dh || null, keys.auth || null, Date.now()).run();
+    return json({ ok: true }, origin);
+  } catch {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+async function handlePushUnsubscribe(request, env, origin) {
+  const body = await readBody(request);
+  const endpoint = String(body.endpoint || '');
+  if (!/^https:\/\//.test(endpoint)) return json({ ok: false }, origin, 400);
+  try {
+    await env.DB.prepare(`DELETE FROM push_subscriptions WHERE endpoint = ?1`)
+      .bind(endpoint).run();
+    return json({ ok: true }, origin);
+  } catch {
+    return json({ ok: false }, origin, 500);
+  }
+}
+
+// Cron entrypoint — sends the daily reminder push to every subscriber and
+// prunes endpoints the push service reports as gone.
+async function runDailyPush(env) {
+  if (!env.VAPID_PRIVATE_KEY || !env.VAPID_PUBLIC_KEY) return;
+  let rows;
+  try {
+    rows = await env.DB.prepare(`SELECT endpoint FROM push_subscriptions LIMIT 5000`).all();
+  } catch {
+    return;
+  }
+  for (const r of (rows.results || [])) {
+    const status = await sendPush(env, r.endpoint);
+    if (status === 404 || status === 410) {
+      await env.DB.prepare(`DELETE FROM push_subscriptions WHERE endpoint = ?1`)
+        .bind(r.endpoint).run().catch(() => {});
+    } else if (status === 0 || status >= 500) {
+      await env.DB.prepare(
+        `UPDATE push_subscriptions SET fail_count = fail_count + 1 WHERE endpoint = ?1`
+      ).bind(r.endpoint).run().catch(() => {});
+    }
+  }
+}
+
 // Opportunistic cleanup of stale presence + rate-limit rows so the tables
 // don't grow unbounded without needing a Cron trigger.
 async function maybeCleanup(env, ctx) {
@@ -352,7 +521,7 @@ export default {
 
     try {
       if (path === '/api/health') {
-        return json({ ok: true, phase: 4 }, origin);
+        return json({ ok: true, phase: 5, push: !!env.VAPID_PRIVATE_KEY }, origin);
       }
       if (path === '/api/play' && request.method === 'POST') {
         return await handlePlay(request, env, origin);
@@ -372,9 +541,26 @@ export default {
       if (path === '/api/score' && request.method === 'POST') {
         return await handleScore(request, env, origin);
       }
+      if (path === '/api/profile' && request.method === 'GET') {
+        return await handleProfileGet(url, env, origin);
+      }
+      if (path === '/api/profile' && request.method === 'POST') {
+        return await handleProfilePost(request, env, origin);
+      }
+      if (path === '/api/push/subscribe' && request.method === 'POST') {
+        return await handlePushSubscribe(request, env, origin);
+      }
+      if (path === '/api/push/unsubscribe' && request.method === 'POST') {
+        return await handlePushUnsubscribe(request, env, origin);
+      }
       return json({ ok: false, error: 'not found' }, origin, 404);
     } catch (e) {
       return json({ ok: false, error: 'server' }, origin, 500);
     }
+  },
+
+  // Cron trigger (see wrangler.toml [triggers]) — daily reminder push.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(runDailyPush(env));
   },
 };

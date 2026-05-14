@@ -51,5 +51,22 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   reset_at INTEGER NOT NULL          -- epoch ms; row is reset once past this
 );
 
--- Phase 5 adds: players, push_subscriptions.
--- Those CREATE TABLE statements will be appended here when that phase lands.
+-- Phase 5: optional shared profile cards. One row per anonymous player.
+CREATE TABLE IF NOT EXISTS players (
+  pid          TEXT PRIMARY KEY,
+  display_name TEXT,
+  created_at   INTEGER NOT NULL,
+  updated_at   INTEGER NOT NULL
+);
+
+-- Phase 5: web-push subscriptions for opt-in daily reminders. One row per
+-- browser/device (keyed on the push endpoint). fail_count lets the Cron job
+-- prune endpoints that have gone dead (HTTP 404/410).
+CREATE TABLE IF NOT EXISTS push_subscriptions (
+  endpoint   TEXT PRIMARY KEY,
+  pid        TEXT NOT NULL,
+  p256dh     TEXT,
+  auth       TEXT,
+  created_at INTEGER NOT NULL,
+  fail_count INTEGER NOT NULL DEFAULT 0
+);

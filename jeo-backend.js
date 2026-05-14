@@ -209,6 +209,77 @@
     }, { ok: false });
   }
 
+  // ---- shared profiles + web-push (Phase 5) --------------------------------
+
+  // Resolves to a profile object or null.
+  function getProfile(pid) {
+    if (!pid) return Promise.resolve(null);
+    return guard(
+      () => fetchJson('/api/profile?pid=' + encodeURIComponent(pid))
+        .then((d) => (d && d.profile) || null),
+      null
+    );
+  }
+
+  // Resolves to { ok } — { ok:false } on any failure.
+  function saveProfile(name) {
+    return guard(async () => {
+      const d = await postJson('/api/profile', {
+        pid: getPlayerId(),
+        name: String(name || '').slice(0, 32),
+      });
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
+  // `subscription` is a PushSubscription.toJSON() object. Resolves to { ok }.
+  function pushSubscribe(subscription) {
+    return guard(async () => {
+      const d = await postJson('/api/push/subscribe', {
+        pid: getPlayerId(),
+        subscription: subscription,
+      });
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
+  function pushUnsubscribe(endpoint) {
+    return guard(async () => {
+      const d = await postJson('/api/push/unsubscribe', { endpoint: endpoint });
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
+  // Keep the anonymous player_id in sync with the signed-in account so
+  // leaderboards/streaks follow the user across devices (the id rides along
+  // in the encrypted .jeo blob). Account value wins if present; otherwise we
+  // seed it from this device. Pure-local — runs even with no backend.
+  function syncPlayerIdWithAccount() {
+    try {
+      if (!window.JeoAccount || !JeoAccount.getState) return;
+      const st = JeoAccount.getState();
+      if (!st) return;
+      const accId = st.settings && st.settings.backendPlayerId;
+      const localId = getPlayerId();
+      if (accId && typeof accId === 'string' && /^[a-z0-9-]{1,64}$/i.test(accId)) {
+        if (accId !== localId) {
+          try { localStorage.setItem('jeo:playerId', accId); } catch {}
+        }
+      } else if (JeoAccount.setSetting) {
+        try { JeoAccount.setSetting('backendPlayerId', localId); } catch {}
+      }
+    } catch {}
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    syncPlayerIdWithAccount();
+    try {
+      if (window.JeoAccount && JeoAccount.onChange) {
+        JeoAccount.onChange(() => syncPlayerIdWithAccount());
+      }
+    } catch {}
+  });
+
   // Dev/runtime override of the base URL (re-probes on next call).
   function config(opts) {
     if (opts && typeof opts.baseUrl === 'string') {
@@ -230,5 +301,9 @@
     getPresence,
     getLeaderboard,
     submitScore,
+    getProfile,
+    saveProfile,
+    pushSubscribe,
+    pushUnsubscribe,
   };
 })();

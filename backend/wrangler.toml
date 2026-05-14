@@ -13,3 +13,16 @@ compatibility_date = "2026-01-01"
 binding = "DB"
 database_name = "jeoweb"
 database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# Cron trigger for the Phase 5 daily reminder push. 16:00 UTC ≈ a late-
+# afternoon nudge in the Americas; adjust to suit your audience.
+[triggers]
+crons = ["0 16 * * *"]
+
+# --- Optional secrets (set with `wrangler secret put <NAME>`) ---
+# SCORE_SIGNING_KEY  — enables HMAC-verified score submission (Phase 4).
+#                      Set the same value in <meta name="jeo-score-key">.
+# VAPID_PUBLIC_KEY   — web-push VAPID keys for daily reminders (Phase 5).
+# VAPID_PRIVATE_KEY    Generate with:  npx web-push generate-vapid-keys
+#                      Put the public key in <meta name="jeo-vapid-key">.
+# VAPID_SUBJECT      — a mailto: or https: contact URL for VAPID (optional).

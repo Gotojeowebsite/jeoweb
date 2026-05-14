@@ -8,10 +8,15 @@
 	<link rel="canonical" href="https://jeoweb.app/" />
 	<meta name="theme-color" content="#0c0b14" />
 
-	<!-- Optional serverless backend (see backend/README.md). Leave this
-	     placeholder until the Cloudflare Worker is deployed — the site
-	     degrades gracefully to fully static when it isn't configured. -->
+	<!-- Optional serverless backend (see backend/README.md). Leave these
+	     placeholders until the Cloudflare Worker is deployed — the site
+	     degrades gracefully to fully static when they aren't configured.
+	     jeo-backend    = the deployed Worker URL
+	     jeo-score-key  = optional HMAC key for signed score submission
+	     jeo-vapid-key  = optional VAPID public key for daily-reminder push -->
 	<meta name="jeo-backend" content="REPLACE_WITH_YOUR_WORKER_URL" />
+	<meta name="jeo-score-key" content="REPLACE_WITH_YOUR_SCORE_KEY" />
+	<meta name="jeo-vapid-key" content="REPLACE_WITH_YOUR_VAPID_PUBLIC_KEY" />
 
 	<!-- PWA: makes the site installable to the home screen. -->
 	<link rel="manifest" href="manifest.json" />
@@ -483,6 +488,14 @@
 							<button id="savePanicBtn" class="cloaker-apply-btn">Save</button>
 						</div>
 					</div>
+					<div class="settings-section hidden" id="dailyRemindersRow">
+						<h3>🔔 Daily reminders</h3>
+						<p class="settings-help">Get a once-a-day nudge to play and keep your streak alive. Off by default — turn it on or off anytime.</p>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+							<span style="color:var(--text); font-size:14px;">Send me daily reminders</span>
+							<div class="toggle-switch"><input type="checkbox" id="dailyRemindersToggle" /><span class="toggle-slider"></span></div>
+						</label>
+					</div>
 				</section>
 
 				<section class="settings-tab-pane" data-tab="appearance" role="tabpanel" hidden>
@@ -830,6 +843,7 @@
 	<script src="streaks.js"></script>
 	<script src="daily-challenge.js"></script>
 	<script src="leaderboard.js"></script>
+	<script src="notifications.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>
 	(function () {

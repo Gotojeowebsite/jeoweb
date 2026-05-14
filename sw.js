@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jeoweb-pwa-cache-v5';
+const CACHE_NAME = 'jeoweb-pwa-cache-v6';
 
 // Core app shell — kept lean so install never fails on a missing file.
 // Everything else (CSS/JS modules) is picked up by the stale-while-revalidate
@@ -140,4 +140,41 @@ self.addEventListener('message', (event) => {
     if (data.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }
+});
+
+// ---- Web push (Phase 5) ----------------------------------------------------
+// Pushes are sent payload-less by the Worker Cron, so the notification text
+// lives here. If a payload ever is attached, it overrides the defaults.
+self.addEventListener('push', (event) => {
+    let title = 'Jeoweb';
+    let body = 'Your daily challenge is ready — and your streak is waiting! 🔥';
+    if (event.data) {
+        try {
+            const d = event.data.json();
+            if (d.title) title = d.title;
+            if (d.body) body = d.body;
+        } catch (e) { /* payload-less push — keep defaults */ }
+    }
+    event.waitUntil(
+        self.registration.showNotification(title, {
+            body: body,
+            icon: '/icon.svg',
+            badge: '/icon.svg',
+            tag: 'jeo-daily',
+            data: { url: '/' },
+        })
+    );
+});
+
+self.addEventListener('notificationclick', (event) => {
+    event.notification.close();
+    const url = (event.notification.data && event.notification.data.url) || '/';
+    event.waitUntil(
+        self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((list) => {
+            for (const c of list) {
+                if (c.url.includes(self.registration.scope) && 'focus' in c) return c.focus();
+            }
+            return self.clients.openWindow(url);
+        })
+    );
 });
