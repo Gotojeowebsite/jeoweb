@@ -1,18 +1,18 @@
 {
   "schema": 2,
-  "generated_at": 1778683282,
+  "generated_at": 1778756570,
   "max_age_days": 7,
   "generators": {
-    "static_at": 1778683282,
-    "headless_at": 1778683008,
+    "static_at": 1778756570,
+    "headless_at": 1778756559,
     "smoke_at": null
   },
   "counts": {
-    "total": 603,
+    "total": 604,
     "healthy": 437,
-    "broken": 68,
+    "broken": 69,
     "unknown": 98,
-    "high_confidence": 88,
+    "high_confidence": 89,
     "low_confidence": 515,
     "conflicts": 0
   },
@@ -24,7 +24,7 @@
       "reason": "static_fail",
       "signals": {
         "static": "fail",
-        "headless": null,
+        "headless": "pass",
         "smoke": null
       }
     },
@@ -35,6 +35,17 @@
       "reason": "single_pass",
       "signals": {
         "static": "pass",
+        "headless": null,
+        "smoke": null
+      }
+    },
+    ".quarantine": {
+      "verdict": "broken",
+      "confidence": "high",
+      "source": "signals",
+      "reason": "static_fail",
+      "signals": {
+        "static": "fail",
         "headless": null,
         "smoke": null
       }
@@ -57,7 +68,7 @@
       "reason": "static_fail",
       "signals": {
         "static": "fail",
-        "headless": null,
+        "headless": "pass",
         "smoke": null
       }
     },
@@ -237,7 +248,7 @@
       "reason": "static_fail",
       "signals": {
         "static": "fail",
-        "headless": "fail",
+        "headless": null,
         "smoke": null
       }
     },

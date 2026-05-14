@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1778542793,
+  "updated_at": 1778755279,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": ".recovery-20260511-233845",
+      "name": ".recovery-20260514-104011",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.552,
+      "elapsed_seconds": 13.556,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9591/Assets/.recovery-20260511-233845/index.html"
+          "url": "http://localhost:9424/Assets/.recovery-20260514-104011/index.html"
         }
       ],
       "warnings": [],
@@ -23,6 +23,7 @@
         "readyState": "complete",
         "surfaceCount": 0,
         "bodyTextLength": 119,
+        "bodyTextSample": "error response\n\nerror code: 404\n\nmessage: file not found.\n\nerror code explanation: 404 - nothing matches the given uri.",
         "unityLoadingBar": false,
         "unityProgress": "",
         "hasRuffleGlobal": false,
