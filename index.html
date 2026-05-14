@@ -3,7 +3,38 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-	<title>Jeo Unblocked Games</title>
+	<title>Jeo Unblocked Games — Play 500+ Free Games, No Downloads</title>
+	<meta name="description" content="Jeo is a free unblocked games site with 500+ browser, Flash, and retro games. No downloads, no sign-ups — just play instantly at school or anywhere." />
+	<link rel="canonical" href="https://jeoweb.app/" />
+	<meta name="theme-color" content="#0c0b14" />
+
+	<!-- PWA: makes the site installable to the home screen. -->
+	<link rel="manifest" href="manifest.json" />
+	<link rel="icon" href="icon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="icon.svg" />
+
+	<!-- Open Graph / Twitter: rich link previews when the site is shared. -->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Jeo Unblocked Games" />
+	<meta property="og:title" content="Jeo Unblocked Games — Play 500+ Free Games" />
+	<meta property="og:description" content="500+ browser, Flash, and retro games. No downloads, no sign-ups — just play instantly." />
+	<meta property="og:url" content="https://jeoweb.app/" />
+	<meta property="og:image" content="https://jeoweb.app/og-image.svg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Jeo Unblocked Games — Play 500+ Free Games" />
+	<meta name="twitter:description" content="500+ browser, Flash, and retro games. No downloads, no sign-ups — just play instantly." />
+	<meta name="twitter:image" content="https://jeoweb.app/og-image.svg" />
+
+	<!-- Structured data: helps search engines understand the site. -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Jeo Unblocked Games",
+		"url": "https://jeoweb.app/",
+		"description": "Free unblocked games portal with 500+ browser, Flash, and retro games. No downloads, no sign-ups."
+	}
+	</script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -729,6 +760,16 @@
 				} catch(e) { console.warn('Could not fetch last commit', e); }
 			})();
 
+			// Register the service worker for offline support + PWA installability.
+			// Wrapped so a registration failure never trips the global error overlay.
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function(){
+					navigator.serviceWorker.register('sw.js').catch(function(err){
+						console.warn('Service worker registration failed', err);
+					});
+				});
+			}
+
 			document.addEventListener('keydown', function(e){
 				if (e.key === 'Escape'){
 					const collectionModal = document.getElementById('collectionModal');
@@ -759,6 +800,8 @@
 	<script src="avatars.js"></script>
 	<script src="seasonal-themes.js"></script>
 	<script src="command-palette.js"></script>
+	<script src="streaks.js"></script>
+	<script src="daily-challenge.js"></script>
 	<script src="reset-progress.js"></script>
 	<script>
 	(function () {

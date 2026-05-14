@@ -1,15 +1,20 @@
-const CACHE_NAME = 'jeoweb-pwa-cache-v4';
+const CACHE_NAME = 'jeoweb-pwa-cache-v5';
 
+// Core app shell — kept lean so install never fails on a missing file.
+// Everything else (CSS/JS modules) is picked up by the stale-while-revalidate
+// handler on first fetch.
 const STATIC_ASSETS = [
     '/',
     '/index.html',
-    '/assets/css/style.css',
-    '/assets/js/modules/GameContainer.js',
-    '/assets/js/modules/InputManager.js',
-    '/assets/js/modules/StateManager.js',
-    '/assets/images/placeholder-missing.png',
+    '/styles.css',
+    '/app.js',
+    '/manifest.json',
+    '/icon.svg',
+    '/notavailable.svg',
     '/games_list.json'
 ];
+
+const IMAGE_FALLBACK = '/notavailable.svg';
 
 // Game asset extensions that should NEVER be cached. These are large binary
 // blobs (Unity, Godot, emulator BIOSes/ROMs, etc.) — caching them bloats
@@ -83,8 +88,11 @@ function broadcastProgress(url, loaded, total, isDone) {
 }
 
 self.addEventListener('install', (event) => {
+    // Tolerant precache: a single missing/404 asset must not abort the install.
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS))
+        caches.open(CACHE_NAME).then((cache) =>
+            Promise.allSettled(STATIC_ASSETS.map((url) => cache.add(url)))
+        )
     );
     self.skipWaiting();
 });
@@ -121,7 +129,7 @@ self.addEventListener('fetch', (event) => {
             return cached || networked;
         }).catch(() => {
             if (req.destination === 'image') {
-                return caches.match('/assets/images/placeholder-missing.png');
+                return caches.match(IMAGE_FALLBACK);
             }
         })
     );

@@ -1351,6 +1351,9 @@ class App {
 		const rawQ = q.replace(/[^a-z0-9]/g, '');
 
 		this.gameGrid.innerHTML = '';
+		// Tear down any in-flight incremental render from a previous call
+		// (search/filter changes re-run renderGames and must start fresh).
+		if (this._gridObserver) { this._gridObserver.disconnect(); this._gridObserver = null; }
 		const scored = [];
 		for (const g of this.games) {
 			if (!this.showFlash && g.type === 'flash') continue;
@@ -1416,12 +1419,51 @@ class App {
 			});
 			return;
 		}
+		// Incremental render: append one page of cards now, then render the rest
+		// in batches as the user scrolls. Rendering all 500+ cards (each with its
+		// own listeners) in a single pass janks the main thread on filter changes.
+		this._renderQueue = filtered;
+		this._renderIndex = 0;
+		if ('IntersectionObserver' in window) {
+			this._gridObserver = new IntersectionObserver((entries) => {
+				for (const e of entries) {
+					if (e.isIntersecting) { this._renderNextPage(); break; }
+				}
+			}, { rootMargin: '800px 0px' });
+			this._renderNextPage();
+		} else {
+			// No IntersectionObserver: fall back to rendering everything at once.
+			this._gridObserver = null;
+			while (this._renderIndex < this._renderQueue.length) this._renderNextPage();
+		}
+	}
+
+	// Renders the next page of cards from this._renderQueue and, if more remain,
+	// drops a sentinel the IntersectionObserver watches to trigger the next page.
+	_renderNextPage() {
+		const PAGE_SIZE = 60;
+		const queue = this._renderQueue || [];
+		const start = this._renderIndex || 0;
+		if (start >= queue.length) return;
+		const end = Math.min(start + PAGE_SIZE, queue.length);
 		const frag = document.createDocumentFragment();
-		filtered.forEach((g, i) => {
-			const card = this.buildGameCard(g, i);
-			frag.appendChild(card);
-		});
+		for (let i = start; i < end; i++) {
+			frag.appendChild(this.buildGameCard(queue[i], i));
+		}
+		const oldSentinel = this.gameGrid.querySelector('.grid-sentinel');
+		if (oldSentinel) oldSentinel.remove();
 		this.gameGrid.appendChild(frag);
+		this._renderIndex = end;
+		if (end < queue.length && this._gridObserver) {
+			const sentinel = document.createElement('div');
+			sentinel.className = 'grid-sentinel';
+			sentinel.setAttribute('aria-hidden', 'true');
+			this.gameGrid.appendChild(sentinel);
+			this._gridObserver.observe(sentinel);
+		} else if (this._gridObserver) {
+			this._gridObserver.disconnect();
+			this._gridObserver = null;
+		}
 	}
 
 	buildGameCard(g, i) {
@@ -1568,6 +1610,13 @@ class App {
 		if (window.JeoAchievements) {
 			try { window.JeoAchievements.onEvent('play', { slug: name, type: this._lastPlayType }); } catch {}
 		}
+		// Daily play streak + daily challenge (local-only habit loops)
+		if (window.JeoStreak) {
+			try { window.JeoStreak.recordActivity(); } catch {}
+		}
+		if (window.JeoDailyChallenge) {
+			try { window.JeoDailyChallenge.notifyPlay(name); } catch {}
+		}
 		this.renderCarousels();
 	}
 
@@ -1698,13 +1747,18 @@ class App {
 	renderSpotlight() {
 		const sec = document.getElementById('spotlightSection');
 		if (!sec) return;
-		// Honor dismissal for the day
 		const today = new Date().toISOString().slice(0, 10);
+		const game = this.pickGameOfTheDay();
+		// Today's spotlight game doubles as the daily challenge game — set this
+		// even when the spotlight is dismissed so the challenge still tracks.
+		if (window.JeoDailyChallenge) {
+			try { window.JeoDailyChallenge.setGame(game || null); } catch {}
+		}
+		// Honor dismissal for the day
 		if (localStorage.getItem('jeo:spotlight:dismissed') === today) {
 			sec.classList.add('hidden');
 			return;
 		}
-		const game = this.pickGameOfTheDay();
 		if (!game) { sec.classList.add('hidden'); return; }
 		const img = game.image || this.fallbackImage;
 		const bg = document.getElementById('spotlightBg');

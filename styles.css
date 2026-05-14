@@ -4141,3 +4141,50 @@ body.theme-light .rating-badge {
 	min-height: 14px;
 	line-height: 1.2;
 }
+
+/* ===== Phase 2: incremental grid, streak pill, daily challenge ===== */
+
+/* Sentinel the IntersectionObserver watches to render the next page of cards.
+   Spans the full grid row so it's reliably observable, but visually nothing. */
+.grid-sentinel {
+	grid-column: 1 / -1;
+	height: 1px;
+	pointer-events: none;
+}
+
+/* Daily play-streak pill, injected into the hero stats row by streaks.js. */
+.streak-stat .stat-number.streak-number {
+	background: linear-gradient(135deg, #f59e0b, #ef4444);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.streak-stat { cursor: default; }
+
+/* "Daily Challenge" ribbon on the Game-of-the-Day spotlight, by daily-challenge.js. */
+.daily-challenge-ribbon {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 3;
+	padding: 7px 14px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #7c3aed, #ec4899);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	white-space: nowrap;
+}
+.daily-challenge-ribbon.done {
+	background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+@media (max-width: 600px) {
+	.daily-challenge-ribbon {
+		top: 8px;
+		right: 8px;
+		font-size: 11px;
+		padding: 5px 10px;
+	}
+}

@@ -32,6 +32,11 @@
     { id: 'retro-vibes',  label: 'Played a retro (SNES/GBA) game',         icon: '👾', test: (s, e) => e?.type === 'play' && (e?.payload?.type === 'snes' || e?.payload?.type === 'gba') },
     { id: 'sharer',       label: 'Copied a share link',                    icon: '🔗', test: (s, e) => e?.type === 'share' },
     { id: 'binge',        label: 'Played 10 games in one day',             icon: '📅', test: (s) => s.dayPlays >= 10 },
+    /* Streak + daily-challenge milestones (events emitted by streaks.js / daily-challenge.js) */
+    { id: 'streak-3',     label: '3-day play streak',                      icon: '🔥', test: (s, e) => e?.type === 'streak' && (e?.payload?.days || 0) >= 3 },
+    { id: 'streak-7',     label: '7-day play streak',                      icon: '🔥', test: (s, e) => e?.type === 'streak' && (e?.payload?.days || 0) >= 7 },
+    { id: 'streak-30',    label: '30-day play streak',                     icon: '🏅', test: (s, e) => e?.type === 'streak' && (e?.payload?.days || 0) >= 30 },
+    { id: 'daily-done',   label: 'Completed a daily challenge',            icon: '🎯', test: (s, e) => e?.type === 'daily-done' },
   ];
 
   function loadState() {
