@@ -4280,3 +4280,76 @@ body.theme-light .rating-badge {
 	color: var(--accent);
 	font-variant-numeric: tabular-nums;
 }
+
+/* ===== Phase 6: visual polish ===== */
+
+/* Play-count badge on cards (backend-powered; sits in the badge row). */
+.play-count-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	padding: 3px 7px;
+	border-radius: 6px;
+	font-size: 11px;
+	font-weight: 700;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.62);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+/* Animated aurora behind the hero — CSS-only, disabled for reduced motion. */
+.hero {
+	position: relative;
+	isolation: isolate;
+}
+.hero::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	top: -40px;
+	width: 680px;
+	max-width: 120%;
+	height: 320px;
+	transform: translateX(-50%);
+	background:
+		radial-gradient(40% 60% at 30% 40%, rgba(168, 85, 247, 0.30), transparent 70%),
+		radial-gradient(40% 60% at 70% 50%, rgba(236, 72, 153, 0.26), transparent 70%),
+		radial-gradient(50% 50% at 50% 70%, rgba(34, 211, 238, 0.18), transparent 70%);
+	filter: blur(36px);
+	opacity: 0.9;
+	animation: heroAurora 16s ease-in-out infinite alternate;
+	pointer-events: none;
+}
+@keyframes heroAurora {
+	0%   { transform: translateX(-50%) scale(1) rotate(0deg); }
+	100% { transform: translateX(-50%) scale(1.15) rotate(8deg); }
+}
+
+/* Touch-friendly carousels: snap to cards, momentum scroll on iOS. */
+.carousel-track {
+	scroll-snap-type: x proximity;
+	-webkit-overflow-scrolling: touch;
+}
+.carousel-track > * {
+	scroll-snap-align: start;
+}
+
+/* Slightly richer hover "preview" zoom; extend it to carousel cards too. */
+.carousel-card .game-thumb img {
+	transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.game-card:hover .game-thumb img {
+	transform: scale(1.07);
+}
+.carousel-card:hover .game-thumb img {
+	transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero::before { animation: none; }
+	.game-card:hover .game-thumb img,
+	.carousel-card:hover .game-thumb img { transform: none; }
+}

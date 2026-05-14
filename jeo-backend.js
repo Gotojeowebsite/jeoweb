@@ -97,6 +97,16 @@
     guard(() => postJson('/api/play', { game: slug, pid: getPlayerId() }), null);
   }
 
+  // Resolves to a { slug: playCount } map for the whole catalog — {} on any
+  // failure. Used to decorate cards with a play-count badge.
+  function getAllCounts() {
+    return guard(
+      () => fetchJson('/api/counts')
+        .then((d) => (d && d.counts && typeof d.counts === 'object') ? d.counts : {}),
+      {}
+    );
+  }
+
   // Resolves to an array of { slug, plays } — [] on any failure.
   function getTrending(opts) {
     opts = opts || {};
@@ -296,6 +306,7 @@
     getPlayerId,
     recordPlay,
     getTrending,
+    getAllCounts,
     startPresence,
     stopPresence,
     getPresence,

@@ -153,6 +153,30 @@ async function handlePlay(request, env, origin) {
   }
 }
 
+// All-time play counts for the whole catalog, as { slug: count }. Used to
+// decorate grid/carousel cards with a "▶ N" badge. Cache-API cached 60s.
+async function handleCounts(url, env, origin, ctx) {
+  const cacheKey = new Request(url.origin + '/api/counts');
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return json(await cached.json(), origin);
+  let rows;
+  try {
+    rows = await env.DB.prepare(`SELECT game_slug, total_plays FROM play_counts`).all();
+  } catch (e) {
+    return json({ ok: false, counts: {} }, origin, 500);
+  }
+  const counts = {};
+  for (const r of (rows.results || [])) counts[r.game_slug] = r.total_plays;
+  const payload = { ok: true, counts };
+  ctx.waitUntil(
+    cache.put(cacheKey, new Response(JSON.stringify(payload), {
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' },
+    }))
+  );
+  return json(payload, origin);
+}
+
 async function handleTrending(url, env, origin, ctx) {
   const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit'), 10) || 20, 1), 50);
   const window = url.searchParams.get('window') === 'all' ? 'all' : '24h';
@@ -521,13 +545,16 @@ export default {
 
     try {
       if (path === '/api/health') {
-        return json({ ok: true, phase: 5, push: !!env.VAPID_PRIVATE_KEY }, origin);
+        return json({ ok: true, phase: 6, push: !!env.VAPID_PRIVATE_KEY }, origin);
       }
       if (path === '/api/play' && request.method === 'POST') {
         return await handlePlay(request, env, origin);
       }
       if (path === '/api/trending' && request.method === 'GET') {
         return await handleTrending(url, env, origin, ctx);
+      }
+      if (path === '/api/counts' && request.method === 'GET') {
+        return await handleCounts(url, env, origin, ctx);
       }
       if (path === '/api/presence' && request.method === 'POST') {
         return await handlePresencePost(request, env, origin);

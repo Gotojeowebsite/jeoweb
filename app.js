@@ -250,6 +250,7 @@ class App {
 		this.updateCounter();
 		this.renderCarousels();
 		this.renderGames();
+		this.loadPlayCounts();
 		this.renderStatusFreshness();
 		this.hideLoading();
 		// Resolve any pending deep-link request now that the catalog is ready.
@@ -1498,6 +1499,8 @@ class App {
 		if (g.type === 'snes') badges.push('<span class="retro-badge">🎮 Retro</span>');
 		if (g.requested) badges.push('<span class="requested-badge">📩 Requested</span>');
 		if (rating) badges.push('<span class="rating-badge">★ ' + rating + '</span>');
+		const plays = this._playCounts && this._playCounts[g.name];
+		if (plays) badges.push('<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>');
 		const MAX_VISIBLE_BADGES = 2;
 		let badgeHtml = badges.slice(0, MAX_VISIBLE_BADGES).join('');
 		if (badges.length > MAX_VISIBLE_BADGES) {
@@ -2341,6 +2344,31 @@ class App {
 		games.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
 	}
 
+	// Fetches all-time play counts once and re-renders so cards show a "▶ N"
+	// badge. Backend-powered; a no-op (and no badges) when the backend is down.
+	async loadPlayCounts() {
+		if (!window.JeoBackend) return;
+		try {
+			const counts = await window.JeoBackend.getAllCounts();
+			if (counts && Object.keys(counts).length) {
+				this._playCounts = counts;
+				this.renderGames();
+				this.renderCarousels();
+			}
+		} catch {}
+	}
+
+	// 1234 -> "1.2k", 1200000 -> "1.2m". Keeps the card badge compact.
+	formatPlayCount(n) {
+		n = Number(n) || 0;
+		if (n < 1000) return String(n);
+		if (n < 1000000) {
+			const k = n / 1000;
+			return (k < 10 ? k.toFixed(1).replace(/\.0$/, '') : String(Math.round(k))) + 'k';
+		}
+		return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'm';
+	}
+
 	// Snapshot of "X playing now" for the open game, shown in the player toolbar.
 	updatePresenceBadge(slug) {
 		const el = this.playerPresence;
@@ -2372,6 +2400,8 @@ class App {
 		else if (statusKind === 'unverified') statusBadge = '<span class="status-badge status-unverified" title="Not recently verified">? Unverified</span>';
 		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
 		const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
+		const plays = this._playCounts && this._playCounts[g.name];
+		const playBadge = plays ? '<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>' : '';
 
 		const card = document.createElement('div');
 		const stateClass = statusKind ? ' card-status-' + statusKind : '';
@@ -2384,7 +2414,7 @@ class App {
 		card.innerHTML =
 			'<div class="game-thumb">' + img +
 				'<button class="heart-btn' + (isFav ? ' hearted' : '') + '" data-game="' + safeName + '" aria-label="Favorite">' + (isFav ? '♥' : '♡') + '</button>' +
-				statusBadge + ratingBadge +
+				statusBadge + ratingBadge + playBadge +
 			'</div>' +
 			'<div class="game-card-content"><div class="game-card-title">' + safeName + '</div></div>';
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
