@@ -4141,3 +4141,215 @@ body.theme-light .rating-badge {
 	min-height: 14px;
 	line-height: 1.2;
 }
+
+/* ===== Phase 2: incremental grid, streak pill, daily challenge ===== */
+
+/* Sentinel the IntersectionObserver watches to render the next page of cards.
+   Spans the full grid row so it's reliably observable, but visually nothing. */
+.grid-sentinel {
+	grid-column: 1 / -1;
+	height: 1px;
+	pointer-events: none;
+}
+
+/* Daily play-streak pill, injected into the hero stats row by streaks.js. */
+.streak-stat .stat-number.streak-number {
+	background: linear-gradient(135deg, #f59e0b, #ef4444);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.streak-stat { cursor: default; }
+
+/* "Daily Challenge" ribbon on the Game-of-the-Day spotlight, by daily-challenge.js. */
+.daily-challenge-ribbon {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 3;
+	padding: 7px 14px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #7c3aed, #ec4899);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	white-space: nowrap;
+}
+.daily-challenge-ribbon.done {
+	background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+@media (max-width: 600px) {
+	.daily-challenge-ribbon {
+		top: 8px;
+		right: 8px;
+		font-size: 11px;
+		padding: 5px 10px;
+	}
+}
+
+/* ===== Phase 3: live presence badge (global trending reuses .carousel-*) ===== */
+.player-presence {
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 11px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #16a34a, #22c55e);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.player-presence.hidden { display: none; }
+
+/* ===== Phase 4: leaderboard popover ===== */
+.player-leaderboard-wrap { position: relative; }
+.leaderboard-popover {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	min-width: 260px;
+	max-width: 340px;
+	background: var(--bg-surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	box-shadow: var(--shadow-lg);
+	padding: 10px;
+	z-index: 250;
+	max-height: 380px;
+	overflow-y: auto;
+}
+.leaderboard-popover.hidden { display: none; }
+.leaderboard-popover .lb-state {
+	padding: 18px 8px;
+	text-align: center;
+	color: var(--muted);
+	font-size: 13px;
+}
+.leaderboard-popover .lb-head {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--muted);
+	padding: 2px 6px 8px;
+}
+.leaderboard-popover .lb-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	counter-reset: lb;
+}
+.leaderboard-popover .lb-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 8px;
+	border-radius: 8px;
+	font-size: 13px;
+}
+.leaderboard-popover .lb-row:nth-child(odd) { background: rgba(255, 255, 255, 0.03); }
+.leaderboard-popover .lb-mine {
+	background: rgba(124, 58, 237, 0.16);
+	border: 1px solid var(--accent);
+}
+.leaderboard-popover .lb-rank {
+	flex-shrink: 0;
+	width: 30px;
+	font-weight: 700;
+	color: var(--muted);
+}
+.leaderboard-popover .lb-name {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--text);
+}
+.leaderboard-popover .lb-name em {
+	color: var(--accent);
+	font-style: normal;
+	font-weight: 600;
+}
+.leaderboard-popover .lb-score {
+	flex-shrink: 0;
+	font-weight: 800;
+	color: var(--accent);
+	font-variant-numeric: tabular-nums;
+}
+
+/* ===== Phase 6: visual polish ===== */
+
+/* Play-count badge on cards (backend-powered; sits in the badge row). */
+.play-count-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	padding: 3px 7px;
+	border-radius: 6px;
+	font-size: 11px;
+	font-weight: 700;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.62);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+/* Animated aurora behind the hero — CSS-only, disabled for reduced motion. */
+.hero {
+	position: relative;
+	isolation: isolate;
+}
+.hero::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	top: -40px;
+	width: 680px;
+	max-width: 120%;
+	height: 320px;
+	transform: translateX(-50%);
+	background:
+		radial-gradient(40% 60% at 30% 40%, rgba(168, 85, 247, 0.30), transparent 70%),
+		radial-gradient(40% 60% at 70% 50%, rgba(236, 72, 153, 0.26), transparent 70%),
+		radial-gradient(50% 50% at 50% 70%, rgba(34, 211, 238, 0.18), transparent 70%);
+	filter: blur(36px);
+	opacity: 0.9;
+	animation: heroAurora 16s ease-in-out infinite alternate;
+	pointer-events: none;
+}
+@keyframes heroAurora {
+	0%   { transform: translateX(-50%) scale(1) rotate(0deg); }
+	100% { transform: translateX(-50%) scale(1.15) rotate(8deg); }
+}
+
+/* Touch-friendly carousels: snap to cards, momentum scroll on iOS. */
+.carousel-track {
+	scroll-snap-type: x proximity;
+	-webkit-overflow-scrolling: touch;
+}
+.carousel-track > * {
+	scroll-snap-align: start;
+}
+
+/* Slightly richer hover "preview" zoom; extend it to carousel cards too. */
+.carousel-card .game-thumb img {
+	transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.game-card:hover .game-thumb img {
+	transform: scale(1.07);
+}
+.carousel-card:hover .game-thumb img {
+	transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero::before { animation: none; }
+	.game-card:hover .game-thumb img,
+	.carousel-card:hover .game-thumb img { transform: none; }
+}

@@ -164,6 +164,34 @@ function inferTags(slug, type) {
 	return [...out];
 }
 
+// Parse the <!--LEADERBOARD score--> / <!--LEADERBOARD time--> marker.
+// Opts a game into global leaderboards. Kind is a display hint: 'time' = ms
+// survived (auto-captured from session length), 'score' = raw points.
+function parseLeaderboard(htmlPath) {
+	try {
+		const content = fs.readFileSync(htmlPath, 'utf-8');
+		const m = content.match(/<!--\s*LEADERBOARD\s+(score|time)\s*-->/i);
+		if (m) return m[1].toLowerCase();
+	} catch (e) {}
+	return null;
+}
+
+// Hand-editable opt-in list (leaderboard_games.json). Wins over the HTML
+// marker, and needs no edits to vendored game files.
+function loadLeaderboardOverrides() {
+	try {
+		const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'leaderboard_games.json'), 'utf-8'));
+		const map = {};
+		for (const [slug, kind] of Object.entries(raw)) {
+			if (slug === '_comment') continue;
+			if (kind === 'time' || kind === 'score') map[slug] = kind;
+		}
+		return map;
+	} catch (e) {
+		return {};
+	}
+}
+
 // Parse <!--TAG foo--> and <!--GENRE bar--> markers
 function parseTagsAndGenre(htmlPath) {
 	try {
@@ -183,6 +211,138 @@ function parseTagsAndGenre(htmlPath) {
 	return { tags: [], genre: null };
 }
 
+// ---- SEO: per-game share pages + sitemap -------------------------------
+// Crawlers and link unfurlers (Discord, iMessage, Twitter, Slack) read the raw
+// HTML response and do NOT run JS, so meta tags injected client-side are
+// invisible to them. We pre-generate one static HTML file per game at scan
+// time with real <meta> tags + JSON-LD; a human who lands on it is immediately
+// redirected to the SPA deep link (#game=<name>) which plays the actual game.
+
+const SITE_ORIGIN = 'https://jeoweb.app';
+const GAME_PAGES_DIR = path.join(ROOT, 'game');
+const SITEMAP_FILE = path.join(ROOT, 'sitemap.xml');
+// Extra hand-written top-level pages worth listing in the sitemap.
+const STATIC_PAGES = ['flash.html', 'retro.html', 'new.html', 'requested.html', 'links.html', 'make-your-own.html'];
+
+function escapeHtml(s) {
+	return String(s == null ? '' : s)
+		.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// Filesystem- and URL-safe filename for a game's share page. De-duplicates so
+// two games that normalize to the same slug can't clobber each other's file.
+function slugifyFileName(name, used) {
+	let base = String(name || 'game').toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
+	if (!base) base = 'game';
+	let slug = base;
+	let n = 2;
+	while (used.has(slug)) { slug = base + '-' + n; n++; }
+	used.add(slug);
+	return slug;
+}
+
+function gameDescription(entry) {
+	const typeLabel = entry.type === 'flash' ? 'A classic Flash game'
+		: (entry.type === 'snes' || entry.type === 'gba') ? 'A retro console game'
+		: 'A browser game';
+	const tagPart = entry.tags && entry.tags.length
+		? ' Tags: ' + entry.tags.slice(0, 3).join(', ') + '.' : '';
+	return `Play ${entry.name} free and unblocked on Jeo. ${typeLabel} you can play instantly — no downloads, no sign-ups.${tagPart}`;
+}
+
+function buildGamePage(entry, fileSlug) {
+	const name = entry.name;
+	const desc = gameDescription(entry);
+	const canonical = `${SITE_ORIGIN}/game/${fileSlug}.html`;
+	const image = `${SITE_ORIGIN}/${entry.image || 'og-image.svg'}`;
+	const deepLink = '/#game=' + encodeURIComponent(name);
+	const jsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'VideoGame',
+		name: name,
+		description: desc,
+		url: canonical,
+		image: image,
+		genre: entry.genre || (entry.tags && entry.tags[0]) || 'Browser Game',
+		applicationCategory: 'Game',
+		operatingSystem: 'Web Browser',
+		offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+	});
+	return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Play ${escapeHtml(name)} — Free Unblocked Game | Jeo</title>
+<meta name="description" content="${escapeHtml(desc)}" />
+<link rel="canonical" href="${escapeHtml(canonical)}" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#0c0b14" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Jeo Unblocked Games" />
+<meta property="og:title" content="Play ${escapeHtml(name)} — Free Unblocked Game" />
+<meta property="og:description" content="${escapeHtml(desc)}" />
+<meta property="og:url" content="${escapeHtml(canonical)}" />
+<meta property="og:image" content="${escapeHtml(image)}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Play ${escapeHtml(name)} — Free Unblocked Game" />
+<meta name="twitter:description" content="${escapeHtml(desc)}" />
+<meta name="twitter:image" content="${escapeHtml(image)}" />
+<script type="application/ld+json">${jsonLd}</script>
+<script>location.replace(${JSON.stringify(deepLink)});</script>
+<style>body{margin:0;background:#0c0b14;color:#e8e8ed;font-family:Poppins,Segoe UI,system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}a{color:#a855f7}</style>
+</head>
+<body>
+<div>
+<h1>${escapeHtml(name)}</h1>
+<p>${escapeHtml(desc)}</p>
+<p><a href="${escapeHtml(deepLink)}">▶ Play ${escapeHtml(name)} now</a></p>
+</div>
+</body>
+</html>
+`;
+}
+
+// Writes game/<slug>.html for every non-broken game. Returns [{loc, lastmod}].
+function writeGamePages(results) {
+	try {
+		if (!fs.existsSync(GAME_PAGES_DIR)) fs.mkdirSync(GAME_PAGES_DIR);
+	} catch (e) {
+		console.warn('Could not create game/ dir:', e.message);
+		return [];
+	}
+	// Drop stale pages so renamed/removed games don't linger in the sitemap.
+	try {
+		for (const f of fs.readdirSync(GAME_PAGES_DIR)) {
+			if (f.toLowerCase().endsWith('.html')) fs.unlinkSync(path.join(GAME_PAGES_DIR, f));
+		}
+	} catch (e) {}
+	const used = new Set();
+	const pages = [];
+	for (const entry of results) {
+		if (entry.status === 'broken') continue;
+		const fileSlug = slugifyFileName(entry.name, used);
+		fs.writeFileSync(path.join(GAME_PAGES_DIR, fileSlug + '.html'), buildGamePage(entry, fileSlug));
+		pages.push({ loc: `${SITE_ORIGIN}/game/${fileSlug}.html`, lastmod: entry.addedDate });
+	}
+	return pages;
+}
+
+function writeSitemap(gamePages) {
+	const today = new Date().toISOString().slice(0, 10);
+	const urls = [{ loc: SITE_ORIGIN + '/', lastmod: today }];
+	for (const p of STATIC_PAGES) urls.push({ loc: `${SITE_ORIGIN}/${p}`, lastmod: today });
+	for (const gp of gamePages) urls.push(gp);
+	const body = urls.map(u =>
+		`  <url>\n    <loc>${escapeHtml(u.loc)}</loc>\n    <lastmod>${escapeHtml(u.lastmod || today)}</lastmod>\n  </url>`
+	).join('\n');
+	fs.writeFileSync(SITEMAP_FILE,
+		`<?xml version="1.0" encoding="UTF-8"?>\n` +
+		`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`);
+	return urls.length;
+}
+
 function scan() {
 	const results = [];
 	if (!fs.existsSync(ASSETS_DIR)) {
@@ -192,6 +352,7 @@ function scan() {
 	}
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
+	const leaderboardOverrides = loadLeaderboardOverrides();
 	let flashCount = 0;
 	let retroCount = 0;
 	let webglCount = 0;
@@ -214,6 +375,7 @@ function scan() {
 		const requested = isRequestedGame(htmlFilePath);
 		const broken = isBrokenGame(htmlFilePath);
 		const { tags, genre } = parseTagsAndGenre(htmlFilePath);
+		const leaderboard = parseLeaderboard(htmlFilePath);
 
 		// Determine specific retro type (snes, gba, etc.)
 		let type = 'webgl';
@@ -259,6 +421,9 @@ function scan() {
 		}
 		if (merged.length) entry.tags = merged;
 		if (genre) entry.genre = genre;
+		// leaderboard_games.json override wins over the in-HTML marker.
+		const lb = leaderboardOverrides[it.name] || leaderboard;
+		if (lb) entry.leaderboard = lb;
 		results.push(entry);
 	}
 
@@ -279,6 +444,12 @@ function scan() {
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
 	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${retroCount} Retro, ${webglCount} WebGL)`);
 	console.log(`Wrote recently_added.json -> Updated with ${recentList.length} newest games.`);
+
+	// SEO: regenerate per-game share pages + the full sitemap.
+	const gamePages = writeGamePages(results);
+	const sitemapCount = writeSitemap(gamePages);
+	console.log(`Wrote game/ -> ${gamePages.length} per-game share pages.`);
+	console.log(`Wrote sitemap.xml -> ${sitemapCount} URLs.`);
 }
 
 scan();

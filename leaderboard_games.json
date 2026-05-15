@@ -1,0 +1,11 @@
+{
+  "_comment": "Hand-editable: opts games into global leaderboards. Value is the board kind — 'time' = ms survived, auto-captured from session length (great for endless/survival games); 'score' = raw points, captured via a postMessage({type:'jeo-score',score}) from the game. scan.js merges this into games_list.json; this file wins over any <!--LEADERBOARD--> marker in a game's HTML.",
+  "slope": "time",
+  "tunnel-rush": "time",
+  "run3": "time",
+  "cluster-rush": "time",
+  "death-run-3d": "time",
+  "CrazyCattle3D": "time",
+  "drive-mad": "time",
+  "subway-surfers": "time"
+}
