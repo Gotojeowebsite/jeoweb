@@ -278,6 +278,28 @@
     }, { ok: false });
   }
 
+  // Cloud save sync (Part 5C). save-manager.js encrypts the payload before
+  // calling these; the backend stores ciphertext only.
+  function pushCloudSave(game, slot, payload) {
+    return guard(async () => {
+      const d = await postJson('/api/save', { pid: getPlayerId(), game, slot, payload });
+      return { ok: !!(d && d.ok), error: d && d.error };
+    }, { ok: false });
+  }
+  function pullCloudSaves(game) {
+    return guard(
+      () => fetchJson('/api/saves?pid=' + encodeURIComponent(getPlayerId()) + '&game=' + encodeURIComponent(game))
+        .then((d) => (d && Array.isArray(d.saves)) ? d.saves : []),
+      []
+    );
+  }
+  function deleteCloudSave(game, slot) {
+    return guard(async () => {
+      const d = await postJson('/api/save/delete', { pid: getPlayerId(), game, slot });
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
   // Keep the anonymous player_id in sync with the signed-in account so
   // leaderboards/streaks follow the user across devices (the id rides along
   // in the encrypted .jeo blob). Account value wins if present; otherwise we
@@ -336,5 +358,8 @@
     saveProfile,
     pushSubscribe,
     pushUnsubscribe,
+    pushCloudSave,
+    pullCloudSaves,
+    deleteCloudSave,
   };
 })();

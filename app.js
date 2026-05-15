@@ -815,6 +815,14 @@ class App {
 		}
 		if (saveNowBtn) saveNowBtn.addEventListener('click', () => this.saveNowFromSidebar(false));
 		if (saveLabelBtn) saveLabelBtn.addEventListener('click', () => this.saveNowFromSidebar(true));
+		const cloudSyncBtn = document.getElementById('cloudSyncBtn');
+		if (cloudSyncBtn) {
+			// Only surface the cloud-sync button when the backend is reachable.
+			if (window.JeoBackend && window.JeoBackend.isConfigured && window.JeoBackend.isConfigured()) {
+				cloudSyncBtn.classList.remove('hidden');
+			}
+			cloudSyncBtn.addEventListener('click', () => this.runCloudSync());
+		}
 		if (sbList) {
 			sbList.addEventListener('click', (e) => {
 				const btn = e.target.closest('button[data-act]');
@@ -2530,6 +2538,40 @@ class App {
 	}
 	stopSaveStatusTicker() {
 		if (this._saveStatusTicker) { clearInterval(this._saveStatusTicker); this._saveStatusTicker = null; }
+	}
+
+	// "☁ Sync saves" — push local manuals up, pull cloud-only manuals down.
+	// Backend-gated; degrades to a warning toast when unreachable.
+	async runCloudSync() {
+		const slug = this.currentGameName || this.currentGameSlug;
+		const btn = document.getElementById('cloudSyncBtn');
+		if (!slug || !window.JeoSaves || !window.JeoSaves.cloudSync) {
+			if (window.JeoToast) window.JeoToast.warning('No game open.');
+			return;
+		}
+		if (btn) { btn.disabled = true; btn.textContent = '☁ Syncing…'; }
+		try {
+			const res = await window.JeoSaves.cloudSync(slug);
+			if (!res || !res.ok) {
+				if (window.JeoToast) window.JeoToast.warning(
+					res && res.reason === 'no-backend'
+						? 'Cloud sync is offline right now.'
+						: 'Sync failed. Try again later.'
+				);
+			} else {
+				const parts = [];
+				if (res.pushed) parts.push(res.pushed + ' uploaded');
+				if (res.pulled) parts.push(res.pulled + ' downloaded');
+				if (!parts.length) parts.push('already in sync');
+				if (window.JeoToast) window.JeoToast.success('☁ ' + parts.join(' · '));
+				this.refreshSaveSidebar();
+				this.updateSavesBadge(slug);
+			}
+		} catch (e) {
+			if (window.JeoToast) window.JeoToast.error('Sync error: ' + (e.message || e));
+		} finally {
+			if (btn) { btn.disabled = false; btn.textContent = '☁ Sync saves'; }
+		}
 	}
 
 	// Snapshot of "X playing now" for the open game, shown in the player toolbar.

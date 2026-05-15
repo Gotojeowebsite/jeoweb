@@ -80,3 +80,18 @@ CREATE TABLE IF NOT EXISTS push_subscriptions (
   created_at INTEGER NOT NULL,
   fail_count INTEGER NOT NULL DEFAULT 0
 );
+
+-- Optional cloud save sync. Payload is an opaque base64 string: the client
+-- AES-GCM-encrypts the save before sending, so the server only sees
+-- ciphertext (the key lives on the client + in the account .jeo blob).
+-- Slot label encodes kind + timestamp ("manual-1779394...") so different
+-- saves from different devices don't collide.
+CREATE TABLE IF NOT EXISTS saves (
+  pid          TEXT NOT NULL,
+  game_slug    TEXT NOT NULL,
+  slot_label   TEXT NOT NULL,
+  payload      TEXT NOT NULL,           -- base64(iv || ciphertext)
+  updated_at   INTEGER NOT NULL,
+  PRIMARY KEY (pid, game_slug, slot_label)
+);
+CREATE INDEX IF NOT EXISTS idx_saves_pid_game ON saves(pid, game_slug);

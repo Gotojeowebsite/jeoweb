@@ -556,6 +556,90 @@ async function handlePushUnsubscribe(request, env, origin) {
   }
 }
 
+// ---- Optional cloud save sync (Part 5C) ------------------------------------
+// Payloads are opaque (client-encrypted with AES-GCM). The server only stores
+// ciphertext keyed by (pid, game, slot). Slot label is the client's choice.
+
+const SAVE_MAX_BYTES = 350_000;   // ~256KB after base64 + envelope overhead
+const SAVE_MAX_SLOTS_PER_USER = 60;
+const SAVE_SLOT_RE = /^[a-z0-9._-]{1,40}$/i;
+
+async function handleSavePost(request, env, origin) {
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  const game = String(body.game || '');
+  const slot = String(body.slot || '');
+  const payload = String(body.payload || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game) || !SAVE_SLOT_RE.test(slot)) {
+    return json({ ok: false, error: 'bad input' }, origin, 400);
+  }
+  if (!payload || payload.length > SAVE_MAX_BYTES) {
+    return json({ ok: false, error: 'too large' }, origin, 413);
+  }
+  if (!(await rateOk(env, 'save:' + pid, 200, 60 * 60 * 1000))) {
+    return json({ ok: false, error: 'rate limited' }, origin, 429);
+  }
+  // Cap total slots per user; allow updates to existing slots through.
+  try {
+    const exists = await env.DB.prepare(
+      `SELECT 1 FROM saves WHERE pid = ?1 AND game_slug = ?2 AND slot_label = ?3`
+    ).bind(pid, game, slot).first();
+    if (!exists) {
+      const c = await env.DB.prepare(`SELECT COUNT(*) AS c FROM saves WHERE pid = ?1`)
+        .bind(pid).first();
+      if (c && c.c >= SAVE_MAX_SLOTS_PER_USER) {
+        return json({ ok: false, error: 'slot limit' }, origin, 413);
+      }
+    }
+    await env.DB.prepare(
+      `INSERT INTO saves (pid, game_slug, slot_label, payload, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5)
+       ON CONFLICT(pid, game_slug, slot_label) DO UPDATE SET
+         payload = excluded.payload, updated_at = excluded.updated_at`
+    ).bind(pid, game, slot, payload, Date.now()).run();
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+async function handleSavesGet(url, env, origin) {
+  const pid = String(url.searchParams.get('pid') || '');
+  const game = String(url.searchParams.get('game') || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game)) {
+    return json({ ok: false, saves: [] }, origin, 400);
+  }
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT slot_label, payload, updated_at FROM saves WHERE pid = ?1 AND game_slug = ?2`
+    ).bind(pid, game).all();
+    const saves = (rows.results || []).map((r) => ({
+      slot: r.slot_label, payload: r.payload, updated_at: r.updated_at,
+    }));
+    return json({ ok: true, saves }, origin);
+  } catch (e) {
+    return json({ ok: false, saves: [] }, origin, 500);
+  }
+}
+
+async function handleSaveDelete(request, env, origin) {
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  const game = String(body.game || '');
+  const slot = String(body.slot || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game) || !slot) {
+    return json({ ok: false }, origin, 400);
+  }
+  try {
+    await env.DB.prepare(
+      `DELETE FROM saves WHERE pid = ?1 AND game_slug = ?2 AND slot_label = ?3`
+    ).bind(pid, game, slot).run();
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false }, origin, 500);
+  }
+}
+
 // Cron entrypoint — sends the daily reminder push to every subscriber and
 // prunes endpoints the push service reports as gone.
 async function runDailyPush(env) {
@@ -648,6 +732,15 @@ export default {
       }
       if (path === '/api/push/unsubscribe' && request.method === 'POST') {
         return await handlePushUnsubscribe(request, env, origin);
+      }
+      if (path === '/api/save' && request.method === 'POST') {
+        return await handleSavePost(request, env, origin);
+      }
+      if (path === '/api/saves' && request.method === 'GET') {
+        return await handleSavesGet(url, env, origin);
+      }
+      if (path === '/api/save/delete' && request.method === 'POST') {
+        return await handleSaveDelete(request, env, origin);
       }
       return json({ ok: false, error: 'not found' }, origin, 404);
     } catch (e) {

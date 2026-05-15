@@ -371,11 +371,131 @@
   function getActiveSlug() { return _activeSlug; }
   function getLastAutoSaveAt() { return _lastAutoTs; }
 
+  // ---------- Optional cloud save sync (Part 5C) ----------
+  // AES-GCM with a per-player 256-bit key. The key lives in localStorage AND
+  // in the account .jeo blob's settings (if signed in), so it follows the
+  // user across devices. The server only ever sees ciphertext.
+  //
+  // Honest tradeoff: the key is on the device — not derived from the
+  // passphrase. If the device is compromised, so is the user's cloud saves.
+  // The .jeo backup is still the strongest privacy option.
+
+  const CLOUD_KEY_LS = 'jeo:cloudSaveKey';
+
+  function bytesToB64(bytes) {
+    let bin = '';
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+  function b64ToBytes(s) {
+    const bin = atob(s);
+    const out = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  let _cachedCloudKey = null;
+  async function getCloudKey() {
+    if (_cachedCloudKey) return _cachedCloudKey;
+    let raw = null;
+    // Account-blob value wins so the key rides along with the .jeo backup.
+    try {
+      const st = window.JeoAccount && window.JeoAccount.getState && window.JeoAccount.getState();
+      if (st && st.settings && typeof st.settings.cloudSaveKey === 'string') raw = st.settings.cloudSaveKey;
+    } catch {}
+    if (!raw) {
+      try { raw = localStorage.getItem(CLOUD_KEY_LS); } catch {}
+    }
+    if (!raw || raw.length < 40) {
+      const bytes = crypto.getRandomValues(new Uint8Array(32));
+      raw = bytesToB64(bytes);
+    }
+    // Mirror to both stores so they stay aligned.
+    try { localStorage.setItem(CLOUD_KEY_LS, raw); } catch {}
+    if (window.JeoAccount && window.JeoAccount.setSetting) {
+      try { window.JeoAccount.setSetting('cloudSaveKey', raw); } catch {}
+    }
+    _cachedCloudKey = await crypto.subtle.importKey(
+      'raw', b64ToBytes(raw), { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']
+    );
+    return _cachedCloudKey;
+  }
+
+  async function encryptForCloud(obj) {
+    const key = await getCloudKey();
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const plain = new TextEncoder().encode(JSON.stringify(obj));
+    const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, key, plain);
+    const all = new Uint8Array(iv.length + ct.byteLength);
+    all.set(iv, 0);
+    all.set(new Uint8Array(ct), iv.length);
+    return bytesToB64(all);
+  }
+
+  async function decryptFromCloud(b64) {
+    const key = await getCloudKey();
+    const all = b64ToBytes(b64);
+    const iv = all.slice(0, 12);
+    const ct = all.slice(12);
+    const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ct);
+    return JSON.parse(new TextDecoder().decode(dec));
+  }
+
+  // Push all of a game's MANUAL saves up + pull cloud-only manual saves down.
+  // Auto-saves stay device-local (they're noisy). Returns { ok, pushed, pulled }.
+  async function cloudSync(slug) {
+    if (!slug) return { ok: false, reason: 'no-slug' };
+    if (!window.JeoBackend || !window.JeoBackend.isConfigured || !window.JeoBackend.isConfigured()) {
+      return { ok: false, reason: 'no-backend' };
+    }
+    const local = await listForSlug(slug);
+    const localManual = local.filter((r) => r.kind === 'manual');
+    const cloud = await window.JeoBackend.pullCloudSaves(slug);
+    const cloudBySlot = new Map();
+    for (const c of (cloud || [])) cloudBySlot.set(c.slot, c);
+    const localBySlot = new Map();
+    for (const r of localManual) localBySlot.set('manual-' + r.ts, r);
+
+    let pushed = 0, pulled = 0, failed = 0;
+    // Push local manual saves the cloud doesn't already have.
+    for (const r of localManual) {
+      const slot = 'manual-' + r.ts;
+      if (cloudBySlot.has(slot)) continue;
+      try {
+        const payload = await encryptForCloud({
+          ls: r.ls || {}, idb: r.idb || {}, label: r.label || '',
+          ts: r.ts, version: r.version || 1,
+        });
+        const res = await window.JeoBackend.pushCloudSave(slug, slot, payload);
+        if (res && res.ok) pushed++; else failed++;
+      } catch (e) { failed++; }
+    }
+    // Pull cloud saves we don't have locally.
+    for (const c of (cloud || [])) {
+      if (localBySlot.has(c.slot)) continue;
+      try {
+        const data = await decryptFromCloud(c.payload);
+        if (!data) { failed++; continue; }
+        await putRecord({
+          slug, kind: 'manual',
+          label: data.label || 'Cloud save',
+          ts: Number(data.ts) || c.updated_at || Date.now(),
+          ls: data.ls || {}, idb: data.idb || {},
+          version: data.version || 1,
+        });
+        pulled++;
+      } catch (e) { failed++; }
+    }
+    if (pulled > 0) await pruneSlug(slug);
+    return { ok: true, pushed, pulled, failed };
+  }
+
   window.JeoSaves = {
     saveNow, listSaves, getSave, restoreSave, deleteSave, pinSave, clearSlug,
     exportSlugBlob, importSlugBlob,
     bindGame, unbindGame, getActiveSlug, getLastAutoSaveAt,
     getAutoInterval, setAutoInterval,
+    cloudSync,
     on: (e, fn) => _events.addEventListener(e, fn),
     off: (e, fn) => _events.removeEventListener(e, fn),
   };
