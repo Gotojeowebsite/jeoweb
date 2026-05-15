@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 28.416,
+    "elapsed_seconds": 28.376,
     "critical_issues": [],
     "warnings": [],
     "probe": {
@@ -33,7 +33,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 28.385,
+    "elapsed_seconds": 28.39,
     "critical_issues": [],
     "warnings": [],
     "probe": {
@@ -62,7 +62,7 @@
     "type": "webgl",
     "entry_file": ".recovery-20260512-101759/github.com/sstirling/heroin-stories/blob/cca4521cf665892e2e7cbeddac0516fb1870ad28/Extras.html",
     "status": "warning",
-    "elapsed_seconds": 28.533,
+    "elapsed_seconds": 28.507,
     "critical_issues": [],
     "warnings": [
       {
@@ -1317,7 +1317,7 @@
         "code": "EXTERNAL_NONCRITICAL",
         "message": "External non-critical request detected",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/global-10539fe0effdbc74.css"
+        "url": "https://github.githubassets.com/assets/global-5efd63e783ac04bb.css"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
@@ -1341,7 +1341,7 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/wp-runtime-fd113c9add1a6a8c.js"
+        "url": "https://github.githubassets.com/assets/wp-runtime-8af687487f5d1b74.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1431,25 +1431,25 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/67466-c0fee202b91ef9f5.js"
+        "url": "https://github.githubassets.com/assets/44156-e3af230368d84cf1.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/github-elements-e972ed270927645f.js"
+        "url": "https://github.githubassets.com/assets/github-elements-b02944871e808357.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/element-registry-5b594e3ccb7f20e1.js"
+        "url": "https://github.githubassets.com/assets/element-registry-d6dbd2e711aa760f.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/react-core-14dda90972ad8c8a.js"
+        "url": "https://github.githubassets.com/assets/react-core-c01f5e435698711a.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1545,7 +1545,7 @@
         "code": "EXTERNAL_NONCRITICAL",
         "message": "External non-critical request detected",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/react-core.ca966c2810117948.module.css"
+        "url": "https://github.githubassets.com/assets/react-core.c402e5a69d9965c5.module.css"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1581,7 +1581,7 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/primer-react-05bb3815415eb224.js"
+        "url": "https://github.githubassets.com/assets/primer-react-a18a8d02332796ba.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1617,13 +1617,37 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
+        "url": "https://github.githubassets.com/assets/62094-e242f8fc70856737.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/46903-bdd4e78e67c57b6e.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/84858-056f59e04711d8f2.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/59046-424129236550d83e.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
         "url": "https://github.githubassets.com/assets/70641-eacb6ec3494a5a37.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/46752-54fb311838eb3cd1.js"
+        "url": "https://github.githubassets.com/assets/46752-d5db05914f34e085.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1647,13 +1671,19 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/48761-be1eea28ea1a605e.js"
+        "url": "https://github.githubassets.com/assets/48761-abb045e1670ef47b.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
         "url": "https://github.githubassets.com/assets/26024-62f2bef6059afe1f.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/42934-9ba3d66713737357.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1683,7 +1713,7 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/63050-a61b1521ed922c30.js"
+        "url": "https://github.githubassets.com/assets/63050-25d06e9cfd1a7044.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
@@ -1695,37 +1725,37 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/98018-d52fd697c1847ae7.js"
+        "url": "https://github.githubassets.com/assets/98018-cb01af8adf971bfb.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/54838-c8acfebd65c93ffd.js"
+        "url": "https://github.githubassets.com/assets/54838-7fd902abbe84ee32.js"
       },
       {
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/landing-pages-bc9cfc759a04a7fc.js"
+        "url": "https://github.githubassets.com/assets/landing-pages-1ec100067fee4f42.js"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
         "message": "External non-critical request detected",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/primer-react-css.2cb3d645fb3528f5.module.css"
+        "url": "https://github.githubassets.com/assets/primer-react-css.330eaa2afd4e6bbe.module.css"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
         "message": "External non-critical request detected",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/98018.c4e00a5c3ff94a62.module.css"
+        "url": "https://github.githubassets.com/assets/98018.98ddc16e42fe92b1.module.css"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
         "message": "External non-critical request detected",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/landing-pages.42c6d54678cd2ea7.module.css"
+        "url": "https://github.githubassets.com/assets/landing-pages.6a141a88b741d95e.module.css"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
@@ -1743,7 +1773,7 @@
         "code": "EXTERNAL_DEPENDENCY",
         "message": "External dependency requested for game runtime",
         "severity": "warning",
-        "url": "https://github.githubassets.com/assets/sessions-427f90a1faa5429f.js"
+        "url": "https://github.githubassets.com/assets/sessions-b58137a2a631e162.js"
       },
       {
         "code": "EXTERNAL_NONCRITICAL",
@@ -1962,18 +1992,6 @@
         "url": "https://api.github.com/_private/browser/stats"
       },
       {
-        "code": "EXTERNAL_DEPENDENCY",
-        "message": "External dependency requested for game runtime",
-        "severity": "warning",
-        "url": "https://github.githubassets.com/assets/66353-a66441556d72c374.js"
-      },
-      {
-        "code": "EXTERNAL_DEPENDENCY",
-        "message": "External dependency requested for game runtime",
-        "severity": "warning",
-        "url": "https://github.githubassets.com/assets/chunk-27502-79ba0d7135837e79.js"
-      },
-      {
         "code": "EXTERNAL_HTTP_ERROR",
         "message": "External HTTP 503",
         "severity": "warning",
@@ -1984,6 +2002,18 @@
         "message": "Failed to load resource: the server responded with a status of 503 ()",
         "severity": "warning",
         "url": ""
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/66353-a66441556d72c374.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://github.githubassets.com/assets/chunk-27502-79ba0d7135837e79.js"
       }
     ],
     "probe": {
