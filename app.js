@@ -528,11 +528,13 @@ class App {
 		this.newlyAddedCount = document.getElementById('newlyAddedCount');
 		this.newlyAddedNames = [];
 
-		// Global "Trending Now" carousel + live presence badge (backend-powered)
+		// Global "Trending Now" carousel + live presence/playtime/saves chips
 		this.globalTrendingSection = document.getElementById('globalTrendingSection');
 		this.globalTrendingTrack = document.getElementById('globalTrendingTrack');
 		this.globalTrendingCount = document.getElementById('globalTrendingCount');
 		this.playerPresence = document.getElementById('playerPresence');
+		this.playerPlaytime = document.getElementById('playerPlaytime');
+		this.playerSavesBadge = document.getElementById('playerSavesBadge');
 	}
 
 	hideLoading() {
@@ -800,13 +802,15 @@ class App {
 				const willShow = sb.classList.contains('hidden');
 				sb.classList.toggle('hidden');
 				sb.setAttribute('aria-hidden', willShow ? 'false' : 'true');
-				if (willShow) this.refreshSaveSidebar();
+				if (willShow) { this.refreshSaveSidebar(); this.startSaveStatusTicker(); }
+				else this.stopSaveStatusTicker();
 			});
 		}
 		if (sbClose && sb) {
 			sbClose.addEventListener('click', () => {
 				sb.classList.add('hidden');
 				sb.setAttribute('aria-hidden', 'true');
+				this.stopSaveStatusTicker();
 			});
 		}
 		if (saveNowBtn) saveNowBtn.addEventListener('click', () => this.saveNowFromSidebar(false));
@@ -830,10 +834,31 @@ class App {
 				}
 			}
 		});
-		// Refresh status line when an autosave happens
+		// Refresh sidebar + saves chip when an autosave happens, plus an
+		// opt-in toast so users can *see* that auto-save is working.
 		if (window.JeoSaves && window.JeoSaves.on) {
 			window.JeoSaves.on('autosave', () => {
 				if (this.currentGameSlug && sb && !sb.classList.contains('hidden')) this.refreshSaveSidebar();
+				this.updateSavesBadge(this.currentGameName || this.currentGameSlug);
+				if (window.JeoToast && localStorage.getItem('jeo:autosaveToast') === 'true') {
+					window.JeoToast.info('💾 Saved', { ttl: 1800 });
+				}
+			});
+		}
+		// Saves preferences (Settings → General) — interval + autosave toast.
+		const intervalSel = document.getElementById('autosaveIntervalSel');
+		if (intervalSel && window.JeoSaves) {
+			intervalSel.value = String(window.JeoSaves.getAutoInterval());
+			intervalSel.addEventListener('change', () => {
+				window.JeoSaves.setAutoInterval(parseInt(intervalSel.value, 10));
+				if (window.JeoToast) window.JeoToast.info('Auto-save interval updated.');
+			});
+		}
+		const toastToggle = document.getElementById('autosaveToastToggle');
+		if (toastToggle) {
+			toastToggle.checked = localStorage.getItem('jeo:autosaveToast') === 'true';
+			toastToggle.addEventListener('change', () => {
+				localStorage.setItem('jeo:autosaveToast', String(toastToggle.checked));
 			});
 		}
 
@@ -1816,6 +1841,14 @@ class App {
 		const dismissBtn = document.getElementById('continueDismiss');
 		if (cover) cover.style.backgroundImage = `url('${game.image || this.fallbackImage}')`;
 		if (title) title.textContent = game.name;
+		// Continue band's eyebrow gets an inline playtime hint when there's history.
+		const eyebrow = sec.querySelector('.continue-eyebrow');
+		if (eyebrow) {
+			const ms = window.JeoPlaytime ? window.JeoPlaytime.getTotalMs(lastSlug) : 0;
+			eyebrow.textContent = ms > 60000
+				? '⏱ Continue playing · ' + window.JeoPlaytime.formatDuration(ms)
+				: '⏱ Continue playing';
+		}
 		if (playBtn) playBtn.onclick = () => this.playGame(game);
 		if (dismissBtn) dismissBtn.onclick = () => {
 			localStorage.removeItem('jeo:lastPlayed');
@@ -2418,6 +2451,59 @@ class App {
 		return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'm';
 	}
 
+	// "⏱ 2h 14m played · 8 sessions" in the player toolbar — only shown when
+	// there's at least a minute of recorded history for this game.
+	updatePlaytimeChip(slug) {
+		const el = this.playerPlaytime;
+		if (!el) return;
+		el.classList.add('hidden');
+		el.textContent = '';
+		if (!slug || !window.JeoPlaytime) return;
+		const ms = window.JeoPlaytime.getTotalMs(slug);
+		if (ms < 60000) return;
+		const n = window.JeoPlaytime.getSessionCount(slug);
+		el.textContent = '⏱ ' + window.JeoPlaytime.formatDuration(ms) +
+			' · ' + n + (n === 1 ? ' session' : ' sessions');
+		el.classList.remove('hidden');
+	}
+
+	// "💾 3" chip showing the number of saved snapshots for the open game.
+	async updateSavesBadge(slug) {
+		const el = this.playerSavesBadge;
+		if (!el) return;
+		el.classList.add('hidden');
+		el.textContent = '';
+		if (!slug || !window.JeoSaves) return;
+		try {
+			const saves = await window.JeoSaves.listSaves(slug);
+			if (saves && saves.length) {
+				el.textContent = '💾 ' + saves.length;
+				el.classList.remove('hidden');
+				el.title = saves.length + ' saved snapshot' + (saves.length === 1 ? '' : 's');
+			}
+		} catch {}
+	}
+
+	// Live "Saved Xs ago" refresh inside the save sidebar — runs only while
+	// the sidebar is open so it never wakes a backgrounded tab needlessly.
+	startSaveStatusTicker() {
+		this.stopSaveStatusTicker();
+		const sb = document.getElementById('saveSidebar');
+		const status = document.getElementById('saveSidebarStatus');
+		if (!sb || !status) return;
+		this._saveStatusTicker = setInterval(() => {
+			if (!sb || sb.classList.contains('hidden') || !window.JeoSaves) {
+				this.stopSaveStatusTicker();
+				return;
+			}
+			const last = window.JeoSaves.getLastAutoSaveAt();
+			status.textContent = last ? 'Auto-save: ' + this.formatRelTime(last) : 'Auto-save active';
+		}, 10000);
+	}
+	stopSaveStatusTicker() {
+		if (this._saveStatusTicker) { clearInterval(this._saveStatusTicker); this._saveStatusTicker = null; }
+	}
+
 	// Snapshot of "X playing now" for the open game, shown in the player toolbar.
 	updatePresenceBadge(slug) {
 		const el = this.playerPresence;
@@ -2530,6 +2616,10 @@ class App {
 		const lbBtn = document.getElementById('leaderboardBtn');
 		if (lbBtn) lbBtn.classList.toggle('hidden', !this.currentGameLeaderboard);
 		this.closeLeaderboardPopover();
+
+		// Per-game playtime + save-count chips (local, always available).
+		this.updatePlaytimeChip(this._presenceSlug);
+		this.updateSavesBadge(this._presenceSlug);
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
 		const loadingGameTitle = document.getElementById('loadingGameTitle');
@@ -2851,6 +2941,10 @@ class App {
 		this.closeLeaderboardPopover();
 		this.closeMoreMenu();
 		this.currentGameLeaderboard = null;
+		// Hide the per-game chips and stop the save-status ticker.
+		if (this.playerPlaytime) { this.playerPlaytime.classList.add('hidden'); this.playerPlaytime.textContent = ''; }
+		if (this.playerSavesBadge) { this.playerSavesBadge.classList.add('hidden'); this.playerSavesBadge.textContent = ''; }
+		this.stopSaveStatusTicker();
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';

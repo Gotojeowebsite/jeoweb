@@ -311,12 +311,35 @@
 
   // ---------- autosave loop while a game is open ----------
   // Caller (app.js) calls JeoSaves.bindGame(slug) when the modal opens, and
-  // JeoSaves.unbindGame() when it closes.
+  // JeoSaves.unbindGame() when it closes. Interval is user-configurable
+  // (Settings → Saves), bounded so a runaway tiny interval can't thrash IDB.
   let _activeSlug = null;
   let _autoTimer = null;
   let _lastAutoTs = 0;
-  const AUTO_INTERVAL_MS = 60_000;
+  const AUTO_INTERVAL_KEY = 'jeo:autosaveMs';
+  const AUTO_INTERVAL_DEFAULT = 60_000;
+  const AUTO_INTERVAL_MIN = 15_000;
+  const AUTO_INTERVAL_MAX = 600_000;
   const _events = new EventTarget();
+
+  function getAutoInterval() {
+    try {
+      const n = Number(localStorage.getItem(AUTO_INTERVAL_KEY));
+      if (Number.isFinite(n) && n >= AUTO_INTERVAL_MIN && n <= AUTO_INTERVAL_MAX) return n;
+    } catch {}
+    return AUTO_INTERVAL_DEFAULT;
+  }
+
+  function setAutoInterval(ms) {
+    const n = Math.max(AUTO_INTERVAL_MIN, Math.min(AUTO_INTERVAL_MAX, Math.floor(Number(ms) || 0)));
+    try { localStorage.setItem(AUTO_INTERVAL_KEY, String(n)); } catch {}
+    // Re-bind so the new interval applies immediately if a game is open.
+    if (_activeSlug) {
+      const slug = _activeSlug;
+      bindGame(slug);
+    }
+    return n;
+  }
 
   function bindGame(slug) {
     unbindGame();
@@ -324,13 +347,14 @@
     _activeSlug = slug;
     captureBaseline(slug);
     _lastAutoTs = Date.now();
+    const interval = getAutoInterval();
     _autoTimer = setInterval(async () => {
       try {
         const snap = await saveNow({ slug: _activeSlug, kind: 'auto', label: 'Auto-save' });
         _lastAutoTs = snap.ts;
         _events.dispatchEvent(new CustomEvent('autosave', { detail: snap }));
       } catch {}
-    }, AUTO_INTERVAL_MS);
+    }, interval);
   }
   function unbindGame() {
     if (_autoTimer) clearInterval(_autoTimer);
@@ -343,6 +367,7 @@
     saveNow, listSaves, getSave, restoreSave, deleteSave, pinSave, clearSlug,
     exportSlugBlob, importSlugBlob,
     bindGame, unbindGame, getActiveSlug, getLastAutoSaveAt,
+    getAutoInterval, setAutoInterval,
     on: (e, fn) => _events.addEventListener(e, fn),
     off: (e, fn) => _events.removeEventListener(e, fn),
   };

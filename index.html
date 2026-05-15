@@ -496,6 +496,23 @@
 							<div class="toggle-switch"><input type="checkbox" id="dailyRemindersToggle" /><span class="toggle-slider"></span></div>
 						</label>
 					</div>
+					<div class="settings-section">
+						<h3>💾 Game saves</h3>
+						<p class="settings-help">Auto-save runs in the background while you play. Manual saves live in the player sidebar (Ctrl/Cmd+S).</p>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border); margin-bottom:8px; gap:12px;">
+							<span style="color:var(--text); font-size:14px;">Auto-save interval</span>
+							<select id="autosaveIntervalSel" class="cloaker-input" style="width:auto; min-width:120px;">
+								<option value="30000">Every 30 seconds</option>
+								<option value="60000">Every 1 minute</option>
+								<option value="120000">Every 2 minutes</option>
+								<option value="300000">Every 5 minutes</option>
+							</select>
+						</label>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+							<span style="color:var(--text); font-size:14px;">Show a "💾 Saved" toast each auto-save</span>
+							<div class="toggle-switch"><input type="checkbox" id="autosaveToastToggle" /><span class="toggle-slider"></span></div>
+						</label>
+					</div>
 				</section>
 
 				<section class="settings-tab-pane" data-tab="appearance" role="tabpanel" hidden>
@@ -856,6 +873,7 @@
 	<script src="account-system.js"></script>
 	<script src="jeo-backend.js"></script>
 	<script src="save-manager.js"></script>
+	<script src="playtime.js"></script>
 	<script src="toast.js"></script>
 	<script src="ratings.js"></script>
 	<script src="playlists.js"></script>
