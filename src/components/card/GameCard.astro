@@ -1,0 +1,196 @@
+---
+import Icon from '../Icon.astro';
+import { gameSlug, gameTypeLabel, type Game } from '../../lib/catalog';
+
+interface Props {
+	game: Game;
+	priority?: boolean;
+	compact?: boolean;
+}
+const { game, priority = false, compact = false } = Astro.props;
+const slug = gameSlug(game);
+const typeIcon: 'zap' | 'gamepad' | 'sparkles' =
+	game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles';
+const isBroken = game.status === 'broken' || game.status === 'maintenance';
+---
+<a
+	class:list={['card', { 'card--compact': compact, 'card--broken': isBroken }]}
+	href={`/game/${slug}`}
+	data-slug={slug}
+	data-name={game.name}
+	data-type={game.type}
+>
+	<div class="card-cover">
+		{game.image ? (
+			<img
+				src={`/${game.image}`}
+				alt=""
+				loading={priority ? 'eager' : 'lazy'}
+				decoding={priority ? 'sync' : 'async'}
+				width="400"
+				height="225"
+			/>
+		) : (
+			<div class="card-cover-empty" aria-hidden="true">
+				<Icon name="gamepad" size={36} />
+			</div>
+		)}
+		<span class:list={['card-type', `card-type--${game.type}`]} title={gameTypeLabel(game.type)}>
+			<Icon name={typeIcon} size={12} />
+		</span>
+		<button
+			class="card-fav"
+			type="button"
+			aria-label={`Favorite ${game.name}`}
+			data-fav-toggle={slug}
+		>
+			<Icon name="heart" size={16} />
+		</button>
+		{isBroken && (
+			<div class="card-broken-ribbon">
+				<Icon name="shield" size={12} />
+				<span>{game.status === 'maintenance' ? 'Maintenance' : 'Broken'}</span>
+			</div>
+		)}
+	</div>
+	<div class="card-meta">
+		<div class="card-title">{game.name}</div>
+		{!compact && game.tags?.length ? (
+			<div class="card-sub">{game.tags.slice(0, 2).join(' · ')}</div>
+		) : null}
+	</div>
+</a>
+
+<style>
+	.card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		color: var(--fg-0);
+		text-decoration: none;
+		transition: transform var(--motion-fast) var(--ease-out-soft);
+		isolation: isolate;
+	}
+	.card:hover { color: var(--fg-0); transform: translateY(-2px); }
+
+	.card-cover {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		background: var(--bg-2);
+		border: 1px solid var(--line-0);
+		transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+	}
+	.card:hover .card-cover {
+		border-color: var(--line-2);
+		box-shadow: var(--shadow-2);
+	}
+	.card-cover img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform var(--motion-base) var(--ease-out-soft);
+	}
+	.card:hover .card-cover img { transform: scale(1.04); }
+
+	.card-cover-empty {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		color: var(--fg-3);
+	}
+
+	.card-type {
+		position: absolute;
+		top: var(--space-2);
+		left: var(--space-2);
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(10, 10, 12, 0.7);
+		backdrop-filter: blur(8px);
+		border-radius: var(--radius-sm);
+		color: var(--fg-0);
+	}
+	.card-type--flash { color: var(--semantic-flash); }
+	.card-type--retro { color: var(--semantic-retro); }
+	.card-type--webgl { color: var(--semantic-webgl); }
+
+	.card-fav {
+		position: absolute;
+		top: var(--space-2);
+		right: var(--space-2);
+		width: 28px;
+		height: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(10, 10, 12, 0.7);
+		backdrop-filter: blur(8px);
+		border-radius: var(--radius-sm);
+		color: var(--fg-1);
+		cursor: pointer;
+		opacity: 0;
+		transform: translateY(-2px);
+		transition: opacity var(--motion-fast), transform var(--motion-fast), color var(--motion-fast);
+	}
+	.card:hover .card-fav, .card-fav:focus-visible, .card-fav.is-active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.card-fav.is-active { color: var(--semantic-retro); }
+	.card-fav:hover { color: var(--semantic-retro); }
+
+	.card-broken-ribbon {
+		position: absolute;
+		left: 0; right: 0; bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-1);
+		padding: var(--space-1);
+		background: rgba(239, 68, 68, 0.85);
+		color: white;
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+	}
+
+	.card--broken .card-cover img { filter: grayscale(0.6) brightness(0.7); }
+
+	.card-meta {
+		padding: 0 var(--space-1);
+	}
+	.card-title {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--fg-0);
+		line-height: var(--leading-snug);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+	.card-sub {
+		margin-top: 2px;
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.card--compact .card-title { font-size: var(--text-xs); }
+
+	/* Touch parity — heart visible on touch devices. */
+	@media (hover: none) {
+		.card-fav { opacity: 1; transform: none; }
+	}
+</style>

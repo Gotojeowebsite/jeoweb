@@ -1,0 +1,153 @@
+---
+import Icon from '../Icon.astro';
+import { pickOfTheDay, getAllGames, gameSlug, gameTypeLabel, type Game } from '../../lib/catalog';
+
+interface Props {
+	game?: Game | null;
+}
+
+const game = Astro.props.game ?? pickOfTheDay(getAllGames().filter(g => g.image && !g.requested && g.status !== 'broken'));
+if (!game) {
+	// Empty catalog fallback — render a placeholder hero so the layout doesn't collapse.
+}
+const slug = game ? gameSlug(game) : '';
+---
+{game ? (
+	<section class="hero" aria-label="Game of the day">
+		<div class="hero-art" style={`background-image: url('/${game.image}');`}></div>
+		<div class="hero-gradient"></div>
+		<div class="hero-inner">
+			<div class="hero-eyebrow">
+				<span class="eyebrow-dot"></span>
+				Game of the day
+			</div>
+			<h1 class="hero-title">{game.name}</h1>
+			<p class="hero-sub">
+				<span class:list={['chip', `chip--${game.type}`]}>
+					<Icon name={game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles'} size={12} />
+					{gameTypeLabel(game.type)}
+				</span>
+				{game.tags?.slice(0, 3).map(t => <span class="hero-tag">{t}</span>)}
+			</p>
+			<div class="hero-actions">
+				<a class="btn btn--primary btn--lg" href={`/play/${slug}`}>
+					<Icon name="play" size={16} />
+					Play now
+				</a>
+				<a class="btn btn--secondary btn--lg" href={`/game/${slug}`}>
+					More info
+				</a>
+			</div>
+		</div>
+	</section>
+) : (
+	<section class="hero hero--empty">
+		<div class="hero-inner">
+			<h1 class="hero-title">Play 596+ unblocked games</h1>
+			<p class="hero-sub">Browser. Flash. Retro. No downloads, no signups.</p>
+		</div>
+	</section>
+)}
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 460px;
+		border-radius: var(--radius-2xl);
+		overflow: hidden;
+		isolation: isolate;
+		background: var(--bg-1);
+		border: 1px solid var(--line-0);
+	}
+	.hero-art {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+		background-position: center;
+		filter: saturate(1.05);
+		transform: scale(1.05);
+		z-index: 0;
+	}
+	.hero-gradient {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(80% 100% at 20% 50%, rgba(10, 10, 12, 0.9) 0%, rgba(10, 10, 12, 0.55) 40%, transparent 80%),
+			linear-gradient(to top, var(--bg-0) 0%, transparent 50%);
+		z-index: 1;
+	}
+	.hero-inner {
+		position: relative;
+		z-index: 2;
+		max-width: 600px;
+		padding: var(--space-9) var(--space-8);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		min-height: 460px;
+		justify-content: flex-end;
+	}
+	.hero-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+	}
+	.eyebrow-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--accent);
+		box-shadow: 0 0 0 4px var(--accent-soft);
+		animation: pulse 2.4s ease-in-out infinite;
+	}
+	@keyframes pulse {
+		0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
+		50%      { box-shadow: 0 0 0 8px transparent; }
+	}
+	@media (prefers-reduced-motion: reduce) { .eyebrow-dot { animation: none; } }
+
+	.hero-title {
+		font-size: var(--text-display);
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+	.hero-sub {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		color: var(--fg-1);
+		font-size: var(--text-body);
+	}
+	.hero-tag {
+		display: inline-flex;
+		align-items: center;
+		padding: 2px var(--space-2);
+		background: rgba(255, 255, 255, 0.06);
+		border-radius: var(--radius-pill);
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+	}
+	.hero-actions {
+		display: flex;
+		gap: var(--space-3);
+		margin-top: var(--space-2);
+		flex-wrap: wrap;
+	}
+
+	.hero--empty .hero-inner {
+		justify-content: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 720px) {
+		.hero { min-height: 380px; }
+		.hero-inner { padding: var(--space-6); min-height: 380px; }
+	}
+</style>

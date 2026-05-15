@@ -1,0 +1,99 @@
+---
+import Site from '../layouts/Site.astro';
+import Hero from '../components/discover/Hero.astro';
+import StatsStrip from '../components/discover/StatsStrip.astro';
+import FiltersBar from '../components/discover/FiltersBar.astro';
+import Rail from '../components/discover/Rail.astro';
+import GameGrid from '../components/discover/GameGrid.astro';
+import {
+	getAllGames,
+	getRecentlyAdded,
+	pickOfTheDay,
+	getCatalogStats,
+} from '../lib/catalog';
+
+const allGames = getAllGames();
+const playable = allGames.filter(g => g.status !== 'broken' && g.status !== 'maintenance');
+const recentlyAdded = getRecentlyAdded().slice(0, 16);
+const requested = allGames.filter(g => g.requested).slice(0, 16);
+const featured = pickOfTheDay(playable.filter(g => g.image));
+const stats = getCatalogStats();
+
+const TAG_BUCKETS: { title: string; tag: string }[] = [
+	{ title: 'Endless runners',  tag: 'arcade' },
+	{ title: 'Brain ticklers',   tag: 'puzzle' },
+	{ title: 'Trigger fingers',  tag: 'shooter' },
+	{ title: 'On the road',      tag: 'racing' },
+];
+
+function pickByTag(tag: string, limit = 16) {
+	return playable.filter(g => g.tags?.includes(tag) && g.image).slice(0, limit);
+}
+
+const jsonLd = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'Jeo',
+		alternateName: 'Jeo Unblocked Games',
+		url: 'https://jeoweb.app/',
+		description: 'Free unblocked browser, Flash, and retro games. No downloads, no signups.',
+		potentialAction: {
+			'@type': 'SearchAction',
+			target: { '@type': 'EntryPoint', urlTemplate: 'https://jeoweb.app/?q={search_term_string}' },
+			'query-input': 'required name=search_term_string',
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		name: 'Jeo',
+		url: 'https://jeoweb.app/',
+		logo: 'https://jeoweb.app/icon.svg',
+		sameAs: ['https://github.com/Gotojeowebsite/jeoweb'],
+	},
+];
+---
+<Site
+	title={`Jeo — Play ${stats.total}+ unblocked games`}
+	current="home"
+	jsonLd={jsonLd}
+>
+	<div class="content-wrap home">
+		<Hero game={featured} />
+
+		<div class="home-stats"><StatsStrip /></div>
+
+		<FiltersBar />
+
+		<Rail title="Newly added"  icon="sparkles"  games={recentlyAdded} viewAllHref="/new" />
+		{TAG_BUCKETS.map(b => {
+			const games = pickByTag(b.tag);
+			return games.length >= 6 ? <Rail title={b.title} icon="flame" games={games} /> : null;
+		})}
+		{requested.length >= 3 && (
+			<Rail title="Community requests" icon="clipboard" games={requested} viewAllHref="/requested" />
+		)}
+
+		<section class="all-games-section">
+			<div class="section-head">
+				<h2 class="section-title">
+					All games
+					<span class="count">{stats.total.toLocaleString()}</span>
+				</h2>
+				<a class="section-link" href="/?sort=az">Browse A → Z</a>
+			</div>
+			<GameGrid games={allGames} />
+		</section>
+	</div>
+</Site>
+
+<script>
+	import '../scripts/grid-runtime';
+</script>
+
+<style>
+	.home > * + * { margin-top: var(--space-7); }
+	.home-stats { max-width: var(--max-w-content); }
+	.all-games-section { margin-top: var(--space-10); }
+</style>

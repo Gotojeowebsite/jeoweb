@@ -1,5 +1,8 @@
 node_modules/
-package-lock.json
+
+# Astro build outputs and cache
+dist/
+.astro/
 
 # Versioned supervisor/scanner checkpoints — regenerable
 pipeline_artifacts/

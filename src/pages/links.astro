@@ -1,0 +1,24 @@
+---
+import Site from '../layouts/Site.astro';
+---
+<Site title="Links" current="links">
+	<div class="content-wrap prose">
+		<h1>Links</h1>
+		<p>Useful jumping-off points around the project and the wider unblocked-games web.</p>
+		<ul>
+			<li><a href="https://github.com/Gotojeowebsite/jeoweb">jeoweb on GitHub</a> — source, issues, PRs</li>
+			<li><a href="/make-your-own">Host your own copy</a> — fork this site in 5 minutes</li>
+			<li><a href="/status">Catalog status</a> — what's healthy, what's broken</li>
+			<li><a href="https://forms.gle/HgkCSEzaF5iULyfv8">Request a game</a></li>
+		</ul>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); }
+	.prose ul { list-style: disc; padding-left: 1.5em; margin-top: var(--space-3); }
+	.prose li { margin: var(--space-2) 0; color: var(--fg-1); }
+	.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+</style>

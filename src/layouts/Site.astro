@@ -1,0 +1,118 @@
+---
+import '../styles/tokens.css';
+import '../styles/reset.css';
+import '../styles/chrome.css';
+import TopBar from '../components/chrome/TopBar.astro';
+import Footer from '../components/chrome/Footer.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	ogImage?: string;
+	canonical?: string;
+	current?: Parameters<typeof TopBar>[0]['current'];
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+	bodyClass?: string;
+}
+
+const {
+	title,
+	description = 'Free unblocked games portal — 596+ browser, Flash, and retro games. No downloads, no signups, just play.',
+	ogImage = '/og-default.svg',
+	canonical,
+	current,
+	jsonLd,
+	bodyClass = '',
+} = Astro.props;
+
+const siteUrl = 'https://jeoweb.app';
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const fullTitle = title.includes('Jeo') ? title : `${title} · Jeo`;
+const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<title>{fullTitle}</title>
+	<meta name="description" content={description} />
+	<link rel="canonical" href={canonicalUrl} />
+
+	<meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+	<meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+	<meta name="color-scheme" content="dark light" />
+
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/icon.svg" />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Jeo" />
+	<meta property="og:title" content={fullTitle} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={canonicalUrl} />
+	<meta property="og:image" content={ogImageAbsolute} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={fullTitle} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={ogImageAbsolute} />
+
+	<!-- Theme bootstrap. Inline, pre-paint, no flash. -->
+	<script is:inline>
+		(function () {
+			try {
+				var stored = localStorage.getItem('jeo-theme');
+				if (stored === 'light' || stored === 'dark') {
+					document.documentElement.setAttribute('data-theme', stored);
+				} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+					document.documentElement.setAttribute('data-theme', 'light');
+				}
+				var accent = localStorage.getItem('jeo-accent');
+				if (accent && /^#[0-9a-f]{6}$/i.test(accent)) {
+					document.documentElement.style.setProperty('--accent', accent);
+				}
+			} catch (_) {}
+		})();
+	</script>
+
+	{ld.map(obj => (
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(obj)} />
+	))}
+</head>
+<body class={bodyClass}>
+	<a class="skip-link" href="#main">Skip to content</a>
+	<TopBar current={current} />
+	<main id="main">
+		<slot />
+	</main>
+	<Footer />
+
+	<script>
+		// Theme toggle — minimal client glue. The full settings live in the Settings sheet.
+		const toggle = document.getElementById('theme-toggle');
+		toggle?.addEventListener('click', () => {
+			const cur = document.documentElement.getAttribute('data-theme') ?? 'dark';
+			const next = cur === 'dark' ? 'light' : 'dark';
+			document.documentElement.setAttribute('data-theme', next);
+			try { localStorage.setItem('jeo-theme', next); } catch (_) {}
+		});
+
+		// ⌘K / Ctrl-K opens the search trigger — palette wires in Sprint 4.
+		document.addEventListener('keydown', (e) => {
+			const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
+			if (isCmdK) {
+				e.preventDefault();
+				const btn = document.getElementById('topbar-search') as HTMLButtonElement | null;
+				btn?.click();
+			}
+		});
+	</script>
+</body>
+</html>

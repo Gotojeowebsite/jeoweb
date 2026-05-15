@@ -1,0 +1,134 @@
+---
+import Icon from '../Icon.astro';
+import GameCard from '../card/GameCard.astro';
+import type { Game } from '../../lib/catalog';
+import type { IconName } from '../Icon.astro';
+
+interface Props {
+	title: string;
+	icon?: IconName;
+	games: Game[];
+	emptyHint?: string;
+	viewAllHref?: string;
+	id?: string;
+	maxItems?: number;
+}
+const { title, icon = 'flame', games, emptyHint, viewAllHref, id, maxItems = 24 } = Astro.props;
+const visible = games.slice(0, maxItems);
+const railId = id ?? `rail-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+if (visible.length < 3 && !emptyHint) {
+	// Don't render the rail if too sparse. Empty hint can override (e.g. "Sign in to see favorites").
+}
+---
+{(visible.length >= 3 || emptyHint) && (
+	<section class="rail" aria-label={title}>
+		<div class="rail-head">
+			<h2 class="section-title">
+				<Icon name={icon} size={20} />
+				{title}
+				{visible.length > 0 && <span class="count">{visible.length}</span>}
+			</h2>
+			<div class="rail-controls">
+				{viewAllHref && <a class="section-link" href={viewAllHref}>View all <Icon name="arrow-right" size={14} /></a>}
+				<div class="rail-arrows">
+					<button class="rail-arrow" data-target={railId} data-direction="-1" aria-label="Scroll left">
+						<Icon name="chevron-left" size={18} />
+					</button>
+					<button class="rail-arrow" data-target={railId} data-direction="1" aria-label="Scroll right">
+						<Icon name="chevron-right" size={18} />
+					</button>
+				</div>
+			</div>
+		</div>
+		{visible.length === 0 ? (
+			<div class="rail-empty">{emptyHint}</div>
+		) : (
+			<div class="rail-track" id={railId} tabindex="0">
+				{visible.map(g => (
+					<div class="rail-item"><GameCard game={g} /></div>
+				))}
+			</div>
+		)}
+	</section>
+)}
+
+<script>
+	document.querySelectorAll<HTMLButtonElement>('.rail-arrow').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const targetId = btn.dataset.target;
+			const dir = Number(btn.dataset.direction ?? 1);
+			if (!targetId) return;
+			const track = document.getElementById(targetId);
+			if (!track) return;
+			const step = track.clientWidth * 0.85;
+			track.scrollBy({ left: step * dir, behavior: 'smooth' });
+		});
+	});
+</script>
+
+<style>
+	.rail {
+		margin-bottom: var(--space-8);
+	}
+	.rail-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+	.rail-controls {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.rail-arrows {
+		display: flex;
+		gap: var(--space-1);
+	}
+	.rail-arrow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: var(--radius-md);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		color: var(--fg-1);
+		cursor: pointer;
+		transition: border-color var(--motion-fast), color var(--motion-fast);
+	}
+	.rail-arrow:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.rail-track {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: minmax(var(--rail-card-w), var(--rail-card-w));
+		gap: var(--space-4);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		padding-bottom: var(--space-2);
+		scrollbar-width: thin;
+		scrollbar-color: var(--line-2) transparent;
+	}
+	.rail-track::-webkit-scrollbar { height: 6px; }
+	.rail-track::-webkit-scrollbar-track { background: transparent; }
+	.rail-track::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+	.rail-item { scroll-snap-align: start; }
+
+	.rail-empty {
+		padding: var(--space-7) var(--space-5);
+		background: var(--bg-1);
+		border: 1px dashed var(--line-1);
+		border-radius: var(--radius-lg);
+		color: var(--fg-2);
+		text-align: center;
+	}
+
+	@media (max-width: 640px) {
+		.rail-track { grid-auto-columns: 160px; }
+	}
+</style>

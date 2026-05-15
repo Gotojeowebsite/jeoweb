@@ -1,0 +1,36 @@
+---
+import Site from '../layouts/Site.astro';
+import GameGrid from '../components/discover/GameGrid.astro';
+import FiltersBar from '../components/discover/FiltersBar.astro';
+import { getAllGames, getRecentlyAdded } from '../lib/catalog';
+
+const recent = getRecentlyAdded();
+const all = getAllGames();
+const byDate = recent.length
+	? recent
+	: [...all].sort((a, b) => (b.addedDate ?? '').localeCompare(a.addedDate ?? '')).slice(0, 60);
+---
+<Site
+	title="Newly added games"
+	description="The latest games added to Jeo — fresh imports, just dropped."
+	current="new"
+>
+	<div class="content-wrap">
+		<header class="page-header">
+			<h1>Newly added</h1>
+			<p>The most recent imports. New entries land here as soon as they pass the offline-manifest gate.</p>
+		</header>
+		<FiltersBar />
+		<GameGrid games={byDate} />
+	</div>
+</Site>
+
+<script>
+	import '../scripts/grid-runtime';
+</script>
+
+<style>
+	.page-header { margin: var(--space-5) 0 var(--space-7); }
+	.page-header h1 { font-size: var(--text-h1); letter-spacing: -0.04em; }
+	.page-header p { color: var(--fg-1); max-width: var(--max-w-prose); margin-top: var(--space-2); }
+</style>

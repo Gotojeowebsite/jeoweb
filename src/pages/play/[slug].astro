@@ -1,0 +1,181 @@
+---
+import Site from '../../layouts/Site.astro';
+import Icon from '../../components/Icon.astro';
+import { getAllGames, gameSlug, gameTypeLabel, type Game } from '../../lib/catalog';
+
+export async function getStaticPaths() {
+	const games = getAllGames();
+	return games.map(g => ({ params: { slug: gameSlug(g) }, props: { game: g } }));
+}
+
+interface Props { game: Game; }
+const { game } = Astro.props;
+const slug = gameSlug(game);
+const iframeSrc = '/' + game.url;
+---
+<Site
+	title={`Play ${game.name}`}
+	description={`Play ${game.name} free on Jeo`}
+	bodyClass="play-body"
+>
+	<div class="player">
+		<div class="player-top">
+			<a class="player-back" href={`/game/${slug}`}>
+				<Icon name="arrow-left" size={16} />
+				<span class="hide-narrow">Back</span>
+			</a>
+			<div class="player-title">
+				<span class:list={['chip', `chip--${game.type}`]}>
+					<Icon name={game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles'} size={12} />
+					{gameTypeLabel(game.type)}
+				</span>
+				<h1>{game.name}</h1>
+			</div>
+			<div class="player-actions">
+				<button class="topbar-icon-btn" id="player-fullscreen" aria-label="Fullscreen">
+					<Icon name="maximize" size={18} />
+				</button>
+				<button class="topbar-icon-btn" data-share-url={`https://jeoweb.app/game/${slug}`} aria-label="Share">
+					<Icon name="share" size={18} />
+				</button>
+				<a class="topbar-icon-btn" href={iframeSrc} target="_blank" rel="noopener" aria-label="Open in new tab">
+					<Icon name="external" size={18} />
+				</a>
+				<a class="btn btn--secondary btn--sm" href={`/game/${slug}`}>
+					<Icon name="x" size={14} />Exit
+				</a>
+			</div>
+		</div>
+		<div class="player-stage" id="player-stage">
+			<div class="player-loading" id="player-loading">
+				<div class="player-loading-inner">
+					<div class="skeleton" style="width:120px; height:18px; border-radius: 99px;"></div>
+					<p>Loading {game.name}…</p>
+				</div>
+			</div>
+			<iframe
+				id="player-frame"
+				src={iframeSrc}
+				title={game.name}
+				allow="autoplay; fullscreen; pointer-lock; gamepad; clipboard-read; clipboard-write"
+				sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-modals allow-pointer-lock allow-orientation-lock allow-presentation"
+			></iframe>
+		</div>
+	</div>
+
+	<script>
+		const stage = document.getElementById('player-stage');
+		const frame = document.getElementById('player-frame') as HTMLIFrameElement | null;
+		const loading = document.getElementById('player-loading');
+		const fsBtn = document.getElementById('player-fullscreen');
+
+		frame?.addEventListener('load', () => {
+			loading?.style.setProperty('opacity', '0');
+			window.setTimeout(() => loading?.style.setProperty('display', 'none'), 240);
+		});
+
+		fsBtn?.addEventListener('click', async () => {
+			if (!stage) return;
+			if (document.fullscreenElement) await document.exitFullscreen();
+			else await stage.requestFullscreen();
+		});
+
+		document.addEventListener('click', async e => {
+			const btn = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-share-url]');
+			if (!btn) return;
+			const url = btn.dataset.shareUrl!;
+			if (navigator.share) {
+				try { await navigator.share({ url, title: document.title }); } catch (_) {}
+			} else {
+				await navigator.clipboard?.writeText(url);
+			}
+		});
+	</script>
+</Site>
+
+<style is:global>
+	body.play-body { background: var(--bg-0); }
+	body.play-body .site-footer { display: none; }
+</style>
+
+<style>
+	.player {
+		display: flex;
+		flex-direction: column;
+		height: calc(100dvh - var(--header-h));
+	}
+	.player-top {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-2) var(--space-4);
+		background: var(--bg-1);
+		border-bottom: 1px solid var(--line-1);
+		flex-shrink: 0;
+	}
+	.player-back {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		border-radius: var(--radius-md);
+		transition: background var(--motion-fast);
+	}
+	.player-back:hover { background: var(--bg-2); color: var(--fg-0); }
+	.player-title {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		overflow: hidden;
+	}
+	.player-title h1 {
+		font-size: var(--text-body);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.player-actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+	.player-stage {
+		position: relative;
+		flex: 1;
+		background: #000;
+	}
+	.player-stage iframe {
+		width: 100%;
+		height: 100%;
+		border: 0;
+		display: block;
+	}
+	.player-loading {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bg-0);
+		transition: opacity var(--motion-base) var(--ease-out-soft);
+		z-index: 1;
+	}
+	.player-loading-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-4);
+		color: var(--fg-2);
+	}
+	.hide-narrow { display: inline; }
+	@media (max-width: 600px) {
+		.hide-narrow { display: none; }
+		.player-title h1 { font-size: var(--text-sm); }
+	}
+</style>

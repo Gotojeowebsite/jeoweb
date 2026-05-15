@@ -29,7 +29,17 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '22'
-          
+          cache: 'npm'
+
+      - name: Install dependencies
+        # `npm ci` if a lockfile is present, else fall back to `npm install`.
+        # Lockfile is committed as of the Astro rebuild; this fallback is for
+        # forks that strip it out.
+        run: |
+          if [ -f package-lock.json ]; then npm ci --no-audit --no-fund
+          else npm install --no-audit --no-fund
+          fi
+
       - name: Generate games list
         run: node scan.js
 
@@ -65,9 +75,16 @@ jobs:
             }
           "
 
+      # Sprint 0: Astro build runs in CI to catch regressions, but the output
+      # is NOT yet deployed — the legacy root files still ship from Pages.
+      # Cutover happens in Sprint 7 (swap upload path to `dist`).
+      - name: Build new site (Astro)
+        run: npx astro build
+        continue-on-error: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

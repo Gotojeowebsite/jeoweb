@@ -1,0 +1,33 @@
+---
+import Site from '../layouts/Site.astro';
+import FiltersBar from '../components/discover/FiltersBar.astro';
+import GameGrid from '../components/discover/GameGrid.astro';
+import { getAllGames, getCatalogStats } from '../lib/catalog';
+
+const games = getAllGames().filter(g => g.type === 'retro');
+const stats = getCatalogStats();
+---
+<Site
+	title={`${stats.retro} Retro games — emulated in your browser`}
+	description={`Play ${stats.retro} SNES, GBA, and other retro classics in the browser, powered by EmulatorJS.`}
+	current="retro"
+>
+	<div class="content-wrap">
+		<header class="page-header">
+			<h1>Retro games</h1>
+			<p>{stats.retro.toLocaleString()} cartridge classics emulated in the browser. SNES, GBA, NES — no downloads.</p>
+		</header>
+		<FiltersBar />
+		<GameGrid games={games} />
+	</div>
+</Site>
+
+<script>
+	import '../scripts/grid-runtime';
+</script>
+
+<style>
+	.page-header { margin: var(--space-5) 0 var(--space-7); }
+	.page-header h1 { font-size: var(--text-h1); letter-spacing: -0.04em; }
+	.page-header p { color: var(--fg-1); max-width: var(--max-w-prose); margin-top: var(--space-2); }
+</style>

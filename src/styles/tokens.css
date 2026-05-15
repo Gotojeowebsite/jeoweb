@@ -1,0 +1,181 @@
+/*
+ * Design tokens — single source of truth for color, type, space, radius, motion.
+ * Every component reads from these. Per-component magic numbers are a smell.
+ */
+
+:root {
+	color-scheme: dark light;
+
+	/* ───────────────────────── Color ramps ───────────────────────── */
+	/* Brand: a single hue ramp. Accent defaults to brand-500; user can override. */
+	--brand-50:  #f5edff;
+	--brand-100: #e7d5ff;
+	--brand-200: #d0aeff;
+	--brand-300: #b487ff;
+	--brand-400: #9762ff;
+	--brand-500: #7c3aed;
+	--brand-600: #6826d4;
+	--brand-700: #5419b0;
+	--brand-800: #41138a;
+	--brand-900: #2f0d63;
+
+	/* Semantic palette — keeps Flash/Retro/WebGL/Broken signals consistent. */
+	--semantic-flash:   #f5b54a;
+	--semantic-retro:   #ec4899;
+	--semantic-webgl:   #14b8a6;
+	--semantic-broken:  #ef4444;
+	--semantic-success: #22c55e;
+	--semantic-warn:    #f59e0b;
+	--semantic-danger:  #ef4444;
+	--semantic-info:    #38bdf8;
+
+	/* ───────────────────────── Type scale ───────────────────────── */
+	--font-display: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-text:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+	--text-display: clamp(2.5rem, 4vw + 1rem, 4rem);   /* hero */
+	--text-h1:      clamp(2rem, 2.5vw + 1rem, 2.75rem);
+	--text-h2:      clamp(1.375rem, 1vw + 0.875rem, 1.75rem);
+	--text-h3:      1.125rem;
+	--text-body:    0.9375rem;
+	--text-sm:      0.8125rem;
+	--text-xs:      0.75rem;
+
+	--leading-tight: 1.1;
+	--leading-snug:  1.25;
+	--leading-base:  1.5;
+	--leading-loose: 1.7;
+
+	--tracking-tight:  -0.02em;
+	--tracking-normal: 0;
+	--tracking-wide:   0.04em;
+
+	--weight-regular:  400;
+	--weight-medium:   500;
+	--weight-semibold: 600;
+	--weight-bold:     700;
+	--weight-display:  800;
+
+	/* ───────────────────────── Spacing scale ───────────────────────── */
+	--space-0:  0;
+	--space-1:  0.25rem;  /*  4 */
+	--space-2:  0.5rem;   /*  8 */
+	--space-3:  0.75rem;  /* 12 */
+	--space-4:  1rem;     /* 16 */
+	--space-5:  1.25rem;  /* 20 */
+	--space-6:  1.5rem;   /* 24 */
+	--space-7:  2rem;     /* 32 */
+	--space-8:  2.5rem;   /* 40 */
+	--space-9:  3rem;     /* 48 */
+	--space-10: 4rem;     /* 64 */
+	--space-11: 5rem;     /* 80 */
+	--space-12: 6rem;     /* 96 */
+
+	/* ───────────────────────── Radius scale ───────────────────────── */
+	--radius-xs:   4px;
+	--radius-sm:   6px;
+	--radius-md:   10px;
+	--radius-lg:   14px;
+	--radius-xl:   20px;
+	--radius-2xl:  28px;
+	--radius-pill: 999px;
+
+	/* ───────────────────────── Elevation ───────────────────────── */
+	--shadow-1: 0 1px 2px rgba(0, 0, 0, 0.30);
+	--shadow-2: 0 4px 12px rgba(0, 0, 0, 0.35);
+	--shadow-3: 0 12px 32px rgba(0, 0, 0, 0.45);
+	--shadow-4: 0 24px 64px rgba(0, 0, 0, 0.55);
+
+	--blur-glass-1: 8px;
+	--blur-glass-2: 16px;
+	--blur-glass-3: 24px;
+
+	/* ───────────────────────── Motion ───────────────────────── */
+	--motion-fast: 120ms;
+	--motion-base: 200ms;
+	--motion-slow: 360ms;
+	--motion-deliberate: 560ms;
+
+	--ease-out-soft:  cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-out-snap:  cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+	--ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	/* ───────────────────────── Layout ───────────────────────── */
+	--max-w-content:   1280px;
+	--max-w-prose:     680px;
+	--max-w-narrow:    480px;
+
+	--header-h: 64px;
+	--rail-card-w: 220px;
+
+	/* ───────────────────────── Z-stack ───────────────────────── */
+	--z-base:    1;
+	--z-sticky:  20;
+	--z-overlay: 40;
+	--z-modal:   60;
+	--z-toast:   80;
+	--z-tooltip: 100;
+}
+
+/* ─────────────────────── Theme: Dark (default) ─────────────────────── */
+:root,
+[data-theme='dark'] {
+	--bg-0: #0a0a0c;   /* page */
+	--bg-1: #121116;   /* card */
+	--bg-2: #1a1923;   /* popover */
+	--bg-3: #232233;   /* toast / elevated */
+
+	--fg-0: #f4f4f7;   /* primary text */
+	--fg-1: #c9c8d3;   /* secondary text */
+	--fg-2: #8e8d9d;   /* muted */
+	--fg-3: #5a596b;   /* disabled */
+
+	--line-0: rgba(255, 255, 255, 0.06);  /* hairline */
+	--line-1: rgba(255, 255, 255, 0.10);  /* divider */
+	--line-2: rgba(255, 255, 255, 0.18);  /* prominent */
+
+	--surface-glass: rgba(18, 17, 22, 0.65);
+	--surface-overlay: rgba(0, 0, 0, 0.55);
+
+	--accent: var(--brand-500);
+	--accent-soft: rgba(124, 58, 237, 0.18);
+	--accent-fg: #ffffff;
+
+	--focus-ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
+}
+
+/* ─────────────────────── Theme: Light ─────────────────────── */
+[data-theme='light'] {
+	--bg-0: #fafaf9;
+	--bg-1: #ffffff;
+	--bg-2: #f4f3f0;
+	--bg-3: #ece9e3;
+
+	--fg-0: #15141a;
+	--fg-1: #3d3c47;
+	--fg-2: #6e6d7a;
+	--fg-3: #a7a6b3;
+
+	--line-0: rgba(0, 0, 0, 0.06);
+	--line-1: rgba(0, 0, 0, 0.10);
+	--line-2: rgba(0, 0, 0, 0.18);
+
+	--surface-glass: rgba(255, 255, 255, 0.72);
+	--surface-overlay: rgba(255, 255, 255, 0.55);
+
+	--accent: var(--brand-600);
+	--accent-soft: rgba(104, 38, 212, 0.12);
+	--accent-fg: #ffffff;
+}
+
+/* ─────────────────────── Reduced motion ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--motion-fast: 1ms;
+		--motion-base: 1ms;
+		--motion-slow: 1ms;
+		--motion-deliberate: 1ms;
+	}
+}

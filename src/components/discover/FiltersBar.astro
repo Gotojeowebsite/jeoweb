@@ -1,0 +1,163 @@
+---
+import Icon from '../Icon.astro';
+---
+<div class="filters">
+	<label class="filter-search">
+		<Icon name="search" size={16} />
+		<input
+			type="search"
+			id="grid-search"
+			placeholder="Search games — try 'minecraft' or 'platformer'"
+			autocomplete="off"
+			spellcheck="false"
+		/>
+		<kbd class="kbd-inline">/</kbd>
+	</label>
+	<div class="filter-types" role="group" aria-label="Filter by type">
+		<button class="seg-btn is-active" data-type="all">All</button>
+		<button class="seg-btn" data-type="webgl">
+			<Icon name="sparkles" size={12} />WebGL
+		</button>
+		<button class="seg-btn" data-type="flash">
+			<Icon name="zap" size={12} />Flash
+		</button>
+		<button class="seg-btn" data-type="retro">
+			<Icon name="gamepad" size={12} />Retro
+		</button>
+	</div>
+	<div class="filter-meta">
+		<select class="filter-select" id="grid-sort" aria-label="Sort order">
+			<option value="added">Recently added</option>
+			<option value="az">A → Z</option>
+			<option value="za">Z → A</option>
+			<option value="random">Random</option>
+		</select>
+		<div class="density-toggle" role="group" aria-label="View density">
+			<button class="density-btn is-active" data-density="comfy" aria-label="Comfortable grid">Comfy</button>
+			<button class="density-btn" data-density="dense" aria-label="Dense grid">Dense</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.filters {
+		position: sticky;
+		top: var(--header-h);
+		z-index: var(--z-sticky);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-3);
+		background: color-mix(in oklab, var(--bg-0) 85%, transparent);
+		backdrop-filter: blur(var(--blur-glass-2));
+		-webkit-backdrop-filter: blur(var(--blur-glass-2));
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+		margin-bottom: var(--space-6);
+	}
+	.filter-search {
+		flex: 1;
+		min-width: 220px;
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-2);
+		transition: border-color var(--motion-fast);
+	}
+	.filter-search:focus-within {
+		border-color: var(--accent);
+		color: var(--fg-0);
+	}
+	.filter-search input {
+		flex: 1;
+		min-width: 0;
+		background: transparent;
+		border: 0;
+		outline: none;
+		color: var(--fg-0);
+		font-size: var(--text-sm);
+	}
+	.filter-search input::placeholder { color: var(--fg-2); }
+	.kbd-inline {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		padding: 1px var(--space-1);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xs);
+		color: var(--fg-2);
+	}
+
+	.filter-types {
+		display: inline-flex;
+		gap: 2px;
+		padding: 3px;
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+	}
+	.seg-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: var(--space-2) var(--space-3);
+		background: transparent;
+		border: 0;
+		border-radius: calc(var(--radius-md) - 3px);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.seg-btn:hover { color: var(--fg-0); }
+	.seg-btn.is-active {
+		background: var(--bg-2);
+		color: var(--fg-0);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.filter-meta {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.filter-select {
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		cursor: pointer;
+	}
+	.density-toggle {
+		display: inline-flex;
+		gap: 2px;
+		padding: 3px;
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+	}
+	.density-btn {
+		padding: var(--space-2) var(--space-3);
+		background: transparent;
+		border: 0;
+		border-radius: calc(var(--radius-md) - 3px);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.density-btn.is-active {
+		background: var(--bg-2);
+		color: var(--fg-0);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	}
+</style>

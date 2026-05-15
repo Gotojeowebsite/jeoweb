@@ -1,0 +1,36 @@
+---
+import Site from '../layouts/Site.astro';
+---
+<Site title="Host your own Jeo" current="host">
+	<div class="content-wrap prose">
+		<h1>Host your own copy of Jeo</h1>
+		<p>Jeo is open source. Fork the repo and you get the catalog, the scanner, the recovery pipeline, and the build.</p>
+		<ol>
+			<li>Fork <a href="https://github.com/Gotojeowebsite/jeoweb">Gotojeowebsite/jeoweb</a>.</li>
+			<li>Enable GitHub Pages on your fork (Settings → Pages → Source: GitHub Actions).</li>
+			<li>The build workflow auto-runs <code>npm run game:scan</code> and <code>npm run build</code>, then deploys.</li>
+			<li>Visit your fork's Pages URL. You're hosting Jeo.</li>
+		</ol>
+		<p>
+			Want to add your own games? Drop a folder into <code>Assets/&lt;slug&gt;/</code> with an HTML entry and a
+			cover image, then push. The scanner picks it up automatically.
+		</p>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); margin-bottom: var(--space-3); }
+	.prose ol { padding-left: 1.5em; margin: var(--space-3) 0; }
+	.prose li { color: var(--fg-1); margin: var(--space-2) 0; }
+	.prose code {
+		font-family: var(--font-mono);
+		font-size: 0.92em;
+		padding: 2px 6px;
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xs);
+	}
+	.prose a { color: var(--accent); text-decoration: underline; }
+</style>
