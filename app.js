@@ -784,6 +784,7 @@ class App {
 		this.initDeepLinks();
 		this.bindCollectionUI();
 		this.bindLeaderboardUI();
+		this.bindMoreMenu();
 		// Re-render the collections row whenever playlists change
 		if (window.JeoPlaylists) window.JeoPlaylists.onChange(() => this.renderCollections());
 
@@ -2144,6 +2145,43 @@ class App {
 		if (btn) btn.setAttribute('aria-expanded', 'false');
 	}
 
+	/* =============== "⋯ MORE" OVERFLOW MENU =============== */
+	bindMoreMenu() {
+		const btn = document.getElementById('moreBtn');
+		const popover = document.getElementById('morePopover');
+		if (!btn || !popover) return;
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const open = !popover.classList.contains('hidden');
+			if (open) this.closeMoreMenu();
+			else this.openMoreMenu();
+		});
+		document.addEventListener('click', (e) => {
+			if (popover.classList.contains('hidden')) return;
+			if (e.target.closest('#morePopover')) return;
+			if (e.target.closest('#moreBtn')) return;
+			this.closeMoreMenu();
+		});
+	}
+
+	openMoreMenu() {
+		const popover = document.getElementById('morePopover');
+		const btn = document.getElementById('moreBtn');
+		if (!popover) return;
+		popover.classList.remove('hidden');
+		popover.setAttribute('aria-hidden', 'false');
+		if (btn) btn.setAttribute('aria-expanded', 'true');
+	}
+
+	closeMoreMenu() {
+		const popover = document.getElementById('morePopover');
+		const btn = document.getElementById('moreBtn');
+		if (!popover) return;
+		popover.classList.add('hidden');
+		popover.setAttribute('aria-hidden', 'true');
+		if (btn) btn.setAttribute('aria-expanded', 'false');
+	}
+
 	// Handles a `{type:'jeo-score', score}` postMessage from a game iframe.
 	// Only games opted into a 'score'-kind leaderboard are accepted, and only
 	// from the iframe currently open.
@@ -2326,6 +2364,12 @@ class App {
 				this._trendingCache = { ts: Date.now(), entries: [] };
 			}
 		}
+		// Prime the play-count map from the trending response itself so cards
+		// show "▶ N" on first paint instead of waiting on /api/counts.
+		this._playCounts = this._playCounts || {};
+		for (const e of this._trendingCache.entries) {
+			if (e && e.plays != null) this._playCounts[e.slug] = e.plays;
+		}
 		// Map backend slugs onto the local catalog; respect the same filters
 		// the main grid uses so hidden/maintenance games don't leak in.
 		const games = [];
@@ -2341,7 +2385,12 @@ class App {
 		sec.classList.remove('hidden');
 		if (this.globalTrendingCount) this.globalTrendingCount.textContent = games.length;
 		track.innerHTML = '';
-		games.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
+		games.forEach((g, i) => {
+			const card = this.createCarouselCard(g, i);
+			// Rank chip — only the top 10 get one; first three are medal-styled.
+			if (i < 10) card.dataset.rank = String(i + 1);
+			track.appendChild(card);
+		});
 	}
 
 	// Fetches all-time play counts once and re-renders so cards show a "▶ N"
@@ -2800,6 +2849,7 @@ class App {
 		if (this.playerPresence) { this.playerPresence.classList.add('hidden'); this.playerPresence.textContent = ''; }
 		// Close + reset the leaderboard popover for the next game.
 		this.closeLeaderboardPopover();
+		this.closeMoreMenu();
 		this.currentGameLeaderboard = null;
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
