@@ -12,7 +12,7 @@ compatibility_date = "2026-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "jeoweb"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "82e422c5-eb26-4890-9662-815863f622e4"
 
 # Cron trigger for the Phase 5 daily reminder push. 16:00 UTC ≈ a late-
 # afternoon nudge in the Americas; adjust to suit your audience.
