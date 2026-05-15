@@ -51,6 +51,16 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   reset_at INTEGER NOT NULL          -- epoch ms; row is reset once past this
 );
 
+-- Global per-game ratings (one row per game+player = their current rating).
+CREATE TABLE IF NOT EXISTS ratings (
+  game_slug    TEXT NOT NULL,
+  pid          TEXT NOT NULL,
+  stars        INTEGER NOT NULL,         -- 1..5
+  updated_at   INTEGER NOT NULL,
+  PRIMARY KEY (game_slug, pid)
+);
+CREATE INDEX IF NOT EXISTS idx_ratings_game ON ratings(game_slug);
+
 -- Phase 5: optional shared profile cards. One row per anonymous player.
 CREATE TABLE IF NOT EXISTS players (
   pid          TEXT PRIMARY KEY,

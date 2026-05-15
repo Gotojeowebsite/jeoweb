@@ -34,6 +34,11 @@
 		if (window.JeoAchievements) {
 			try { window.JeoAchievements.onEvent('rate', { slug, stars, prev }); } catch (e) {}
 		}
+		// Mirror to the global leaderboard of ratings. Fire-and-forget;
+		// degrades to local-only when the backend isn't deployed.
+		if (window.JeoBackend && window.JeoBackend.submitRating) {
+			try { window.JeoBackend.submitRating(slug, stars); } catch (e) {}
+		}
 	}
 	function clear(slug) { set(slug, 0); }
 	function all() { return load(); }

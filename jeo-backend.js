@@ -107,6 +107,24 @@
     );
   }
 
+  // Submit a 1..5 star rating (0 = clear). Fire-and-forget; degrades to a
+  // no-op when the backend is unreachable.
+  function submitRating(slug, stars) {
+    if (!slug || !BASE_URL) return;
+    const n = parseInt(stars, 10);
+    if (!Number.isFinite(n) || n < 0 || n > 5) return;
+    guard(() => postJson('/api/rate', { game: slug, stars: n, pid: getPlayerId() }), null);
+  }
+
+  // Resolves to a { slug: { avg, count } } map — {} on any failure.
+  function getAllRatings() {
+    return guard(
+      () => fetchJson('/api/ratings')
+        .then((d) => (d && d.ratings && typeof d.ratings === 'object') ? d.ratings : {}),
+      {}
+    );
+  }
+
   // Resolves to an array of { slug, plays } — [] on any failure.
   function getTrending(opts) {
     opts = opts || {};
@@ -307,6 +325,8 @@
     recordPlay,
     getTrending,
     getAllCounts,
+    submitRating,
+    getAllRatings,
     startPresence,
     stopPresence,
     getPresence,

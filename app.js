@@ -1510,7 +1510,6 @@ class App {
 		const statusKind = this.gameStatusKind(g); // 'broken' | 'maintenance' | 'unverified' | ''
 		const isFail = statusKind === 'broken' || statusKind === 'maintenance';
 		const isWish = this.isWishlisted(g.name);
-		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
 		const safeName = this.escapeAttr(g.name);
 		const safeImg = this.escapeAttr(imgSrc);
 		const safeFallback = this.escapeAttr(this.fallbackImage);
@@ -1524,7 +1523,8 @@ class App {
 		if (g.type === 'flash') badges.push('<span class="flash-badge">⚡ Flash</span>');
 		if (g.type === 'snes') badges.push('<span class="retro-badge">🎮 Retro</span>');
 		if (g.requested) badges.push('<span class="requested-badge">📩 Requested</span>');
-		if (rating) badges.push('<span class="rating-badge">★ ' + rating + '</span>');
+		const ratingHtml = this.ratingBadgeHtml(g.name);
+		if (ratingHtml) badges.push(ratingHtml);
 		const plays = this._playCounts && this._playCounts[g.name];
 		if (plays) badges.push('<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>');
 		const MAX_VISIBLE_BADGES = 2;
@@ -2426,18 +2426,46 @@ class App {
 		});
 	}
 
-	// Fetches all-time play counts once and re-renders so cards show a "▶ N"
-	// badge. Backend-powered; a no-op (and no badges) when the backend is down.
+	// Fetches all-time play counts + global ratings once and re-renders so
+	// cards show a "▶ N" play count and a "★ 4.3 (1.2k)" global rating badge.
+	// Backend-powered; a silent no-op when the backend is down (cards keep
+	// showing the user's personal star as the fallback).
 	async loadPlayCounts() {
 		if (!window.JeoBackend) return;
+		let changed = false;
 		try {
 			const counts = await window.JeoBackend.getAllCounts();
 			if (counts && Object.keys(counts).length) {
 				this._playCounts = counts;
-				this.renderGames();
-				this.renderCarousels();
+				changed = true;
 			}
 		} catch {}
+		try {
+			const ratings = await window.JeoBackend.getAllRatings();
+			if (ratings && Object.keys(ratings).length) {
+				this._globalRatings = ratings;
+				changed = true;
+			}
+		} catch {}
+		if (changed) {
+			this.renderGames();
+			this.renderCarousels();
+		}
+	}
+
+	// Returns the HTML for a card's rating badge. Prefers the global average
+	// when available (the discovery signal); falls back to the user's personal
+	// star so the card isn't empty when the backend isn't deployed yet.
+	ratingBadgeHtml(slug) {
+		const g = this._globalRatings && this._globalRatings[slug];
+		if (g && g.count >= 1) {
+			const avg = Number(g.avg).toFixed(1);
+			const count = this.formatPlayCount ? this.formatPlayCount(g.count) : String(g.count);
+			return '<span class="rating-badge" title="' + g.count + ' ratings">★ ' + avg + ' <small>(' + count + ')</small></span>';
+		}
+		const personal = window.JeoRatings ? window.JeoRatings.get(slug) : 0;
+		if (personal) return '<span class="rating-badge" title="Your rating">★ ' + personal + '</span>';
+		return '';
 	}
 
 	// 1234 -> "1.2k", 1200000 -> "1.2m". Keeps the card badge compact.
@@ -2533,8 +2561,7 @@ class App {
 		if (statusKind === 'broken') statusBadge = '<span class="status-badge status-broken" title="Confirmed broken">✕ Broken</span>';
 		else if (statusKind === 'maintenance') statusBadge = '<span class="status-badge status-maintenance" title="Marked under maintenance">⚠ Maintenance</span>';
 		else if (statusKind === 'unverified') statusBadge = '<span class="status-badge status-unverified" title="Not recently verified">? Unverified</span>';
-		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
-		const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
+		const ratingBadge = this.ratingBadgeHtml(g.name);
 		const plays = this._playCounts && this._playCounts[g.name];
 		const playBadge = plays ? '<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>' : '';
 

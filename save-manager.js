@@ -166,6 +166,12 @@
     for (const name of interesting) {
       try { const data = await dumpDB(name); if (data) idb[name] = data; } catch {}
     }
+    // Reliability: skip auto-snapshots that have no diff to record. Otherwise
+    // the ring buffer fills up with empty saves and pushes useful ones out.
+    // Manual saves always go through — the user explicitly asked.
+    if (kind === 'auto' && Object.keys(ls).length === 0 && Object.keys(idb).length === 0) {
+      return null;
+    }
     return {
       slug, kind, label: label || (kind === 'manual' ? 'Manual save' : 'Auto-save'),
       ts: Date.now(), ls, idb, version: 1,
@@ -189,6 +195,7 @@
   async function saveNow({ slug, label = '', kind = 'manual' }) {
     if (!slug) throw new Error('save requires slug');
     const snap = await captureSnapshot({ slug, kind, label });
+    if (snap === null) return null; // empty auto-snapshot — nothing to record
     await putRecord(snap);
     await pruneSlug(slug);
     return snap;
@@ -351,6 +358,7 @@
     _autoTimer = setInterval(async () => {
       try {
         const snap = await saveNow({ slug: _activeSlug, kind: 'auto', label: 'Auto-save' });
+        if (!snap) return; // nothing changed since the last snapshot
         _lastAutoTs = snap.ts;
         _events.dispatchEvent(new CustomEvent('autosave', { detail: snap }));
       } catch {}
