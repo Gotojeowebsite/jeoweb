@@ -1668,6 +1668,15 @@ class App {
 		// Global play count (backend-powered, fire-and-forget, degrades to no-op)
 		if (window.JeoBackend) {
 			try { window.JeoBackend.recordPlay(name); } catch {}
+			// Refresh trending shortly after — gives the backend ~5s to commit
+			// the play and invalidate its cache, so the user actually sees
+			// their first play populate "Trending Now".
+			clearTimeout(this._trendingRefreshTimer);
+			this._trendingRefreshTimer = setTimeout(() => {
+				this._trendingCache = null; // bust client-side cache too
+				this.renderGlobalTrending();
+				this.loadPlayCounts();
+			}, 5000);
 		}
 		this.renderCarousels();
 	}
@@ -2855,7 +2864,25 @@ class App {
 
 	initRatingsSync() {
 		if (!window.JeoRatings) return;
-		window.JeoRatings.onChange((slug, stars) => this.updateRatingBadge(slug, stars));
+		window.JeoRatings.onChange((slug, stars) => {
+			this.updateRatingBadge(slug, stars);
+			// After the user rates, give the backend a moment to commit then
+			// refresh the global aggregate so card badges immediately reflect
+			// the new average without a full page reload.
+			if (window.JeoBackend) {
+				clearTimeout(this._ratingsRefreshTimer);
+				this._ratingsRefreshTimer = setTimeout(async () => {
+					try {
+						const ratings = await window.JeoBackend.getAllRatings();
+						if (ratings && Object.keys(ratings).length) {
+							this._globalRatings = ratings;
+							this.renderGames();
+							this.renderCarousels();
+						}
+					} catch {}
+				}, 1200);
+			}
+		});
 	}
 
 	updateRatingBadge(slug, stars) {

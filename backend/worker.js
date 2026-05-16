@@ -210,7 +210,7 @@ async function handleRatings(url, env, origin, ctx) {
   const payload = { ok: true, ratings };
   ctx.waitUntil(
     cache.put(cacheKey, new Response(JSON.stringify(payload), {
-      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' },
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=30' },
     }))
   );
   return json(payload, origin);
@@ -234,7 +234,7 @@ async function handleCounts(url, env, origin, ctx) {
   const payload = { ok: true, counts };
   ctx.waitUntil(
     cache.put(cacheKey, new Response(JSON.stringify(payload), {
-      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' },
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=30' },
     }))
   );
   return json(payload, origin);
@@ -264,6 +264,14 @@ async function handleTrending(url, env, origin, ctx) {
         `SELECT game_slug, SUM(plays) AS p FROM daily_counts
          WHERE day >= ?1 GROUP BY game_slug ORDER BY p DESC LIMIT ?2`
       ).bind(since, limit).all();
+      // Fall back to all-time when the 24h window has no plays yet (brand-new
+      // backend, or a quiet day). Better to show *something* than an empty
+      // carousel — the frontend hides the section either way if both are 0.
+      if (!rows.results || rows.results.length === 0) {
+        rows = await env.DB.prepare(
+          `SELECT game_slug, total_plays AS p FROM play_counts ORDER BY p DESC LIMIT ?1`
+        ).bind(limit).all();
+      }
     }
   } catch (e) {
     return json({ ok: false, games: [] }, origin, 500);
@@ -271,11 +279,12 @@ async function handleTrending(url, env, origin, ctx) {
 
   const games = (rows.results || []).map((r) => ({ slug: r.game_slug, plays: r.p }));
   const payload = { ok: true, window, games };
+  // Shorter cache (30s) so the first plays appear in trending quickly.
   ctx.waitUntil(
     cache.put(
       cacheKey,
       new Response(JSON.stringify(payload), {
-        headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' },
+        headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=30' },
       })
     )
   );
