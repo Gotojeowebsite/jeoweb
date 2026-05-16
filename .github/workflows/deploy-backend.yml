@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       # CREATE TABLE IF NOT EXISTS everywhere, so this is a safe no-op on
       # subsequent runs when the schema hasn't changed.
