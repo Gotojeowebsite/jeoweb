@@ -1,0 +1,161 @@
+---
+import Icon from '../Icon.astro';
+import { getCatalogStats } from '../../lib/catalog';
+
+const stats = getCatalogStats();
+const year = new Date().getFullYear();
+const cols = [
+	{
+		title: 'Catalog',
+		links: [
+			{ label: 'All games', href: '/' },
+			{ label: 'Flash', href: '/flash' },
+			{ label: 'Retro', href: '/retro' },
+			{ label: 'Newly added', href: '/new' },
+		],
+	},
+	{
+		title: 'Discover',
+		links: [
+			{ label: 'Surprise me', href: '/?action=surprise' },
+			{ label: 'Trending', href: '/#trending' },
+			{ label: 'Hand-picked', href: '/collections' },
+			{ label: 'Collections', href: '/collections' },
+		],
+	},
+	{
+		title: 'Community',
+		links: [
+			{ label: 'Request a game', href: 'https://forms.gle/HgkCSEzaF5iULyfv8' },
+			{ label: 'Report broken',  href: 'https://forms.gle/HgkCSEzaF5iULyfv8' },
+			{ label: 'Host your own',  href: '/make-your-own' },
+			{ label: 'Useful links',   href: '/links' },
+		],
+	},
+	{
+		title: 'Project',
+		links: [
+			{ label: 'GitHub', href: 'https://github.com/Gotojeowebsite/jeoweb' },
+			{ label: 'Changelog', href: '/changelog' },
+			{ label: 'Status', href: '/status' },
+			{ label: 'About', href: '/about' },
+		],
+	},
+	{
+		title: 'Legal',
+		links: [
+			{ label: 'Privacy', href: '/legal/privacy' },
+			{ label: 'Terms', href: '/legal/terms' },
+			{ label: 'Cookies', href: '/legal/cookies' },
+			{ label: 'DMCA', href: '/legal/dmca' },
+		],
+	},
+];
+---
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-cols">
+			{cols.map(col => (
+				<div class="footer-col">
+					<h4 class="footer-h">{col.title}</h4>
+					<ul>
+						{col.links.map(link => (
+							<li><a href={link.href}>{link.label}</a></li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+		<div class="footer-meta">
+			<div class="footer-meta-text">
+				<strong>jeo</strong> · {stats.total} games · self-hosted, no signup, MIT-licensed
+			</div>
+			<div class="footer-meta-actions">
+				<a class="footer-cta" href="https://github.com/Gotojeowebsite/jeoweb" rel="noopener">
+					<Icon name="external" size={14} />
+					<span>Star on GitHub</span>
+				</a>
+				<a class="footer-cta" href="/changelog">
+					<Icon name="refresh" size={14} />
+					<span>Changelog</span>
+				</a>
+			</div>
+		</div>
+		<div class="footer-rule">© {year} Jeo · Made for keeping the boredom out.</div>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		margin-top: var(--space-12);
+		padding: var(--space-10) var(--space-5) var(--space-7);
+		background: var(--bg-1);
+		border-top: 1px solid var(--line-1);
+	}
+	.footer-inner {
+		max-width: var(--max-w-content);
+		margin: 0 auto;
+	}
+	.footer-cols {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: var(--space-7);
+	}
+	.footer-h {
+		margin-bottom: var(--space-3);
+		font-family: var(--font-text);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		color: var(--fg-2);
+	}
+	.footer-col li {
+		margin: var(--space-2) 0;
+	}
+	.footer-col a {
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		transition: color var(--motion-fast);
+	}
+	.footer-col a:hover { color: var(--accent); }
+
+	.footer-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		justify-content: space-between;
+		align-items: center;
+		margin-top: var(--space-9);
+		padding-top: var(--space-6);
+		border-top: 1px solid var(--line-1);
+		color: var(--fg-2);
+		font-size: var(--text-sm);
+	}
+	.footer-meta strong { color: var(--fg-0); }
+	.footer-meta-actions { display: flex; gap: var(--space-3); }
+	.footer-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		transition: border-color var(--motion-fast), color var(--motion-fast);
+	}
+	.footer-cta:hover { border-color: var(--accent); color: var(--accent); }
+	.footer-rule {
+		margin-top: var(--space-6);
+		text-align: center;
+		color: var(--fg-3);
+		font-size: var(--text-xs);
+	}
+
+	@media (max-width: 760px) {
+		.footer-cols { grid-template-columns: repeat(2, 1fr); }
+	}
+</style>

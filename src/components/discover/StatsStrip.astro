@@ -1,0 +1,75 @@
+---
+import Icon from '../Icon.astro';
+import { getCatalogStats } from '../../lib/catalog';
+
+const stats = getCatalogStats();
+const items = [
+	{ value: stats.total,  label: 'Games',  icon: 'library'  as const },
+	{ value: stats.webgl,  label: 'WebGL',  icon: 'sparkles' as const, tone: 'webgl' },
+	{ value: stats.flash,  label: 'Flash',  icon: 'zap'      as const, tone: 'flash' },
+	{ value: stats.retro,  label: 'Retro',  icon: 'gamepad'  as const, tone: 'retro' },
+];
+---
+<div class="stats-strip" role="list">
+	{items.map(item => (
+		<div class:list={['stat', item.tone && `stat--${item.tone}`]} role="listitem">
+			<div class="stat-icon"><Icon name={item.icon} size={16} /></div>
+			<div class="stat-data">
+				<div class="stat-value">{item.value.toLocaleString()}</div>
+				<div class="stat-label">{item.label}</div>
+			</div>
+		</div>
+	))}
+</div>
+
+<style>
+	.stats-strip {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--space-3);
+		padding: var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-0);
+		border-radius: var(--radius-xl);
+	}
+	.stat {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-md);
+		transition: background var(--motion-fast);
+	}
+	.stat:hover { background: var(--bg-2); }
+	.stat-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: var(--radius-md);
+		background: var(--bg-2);
+		color: var(--fg-1);
+	}
+	.stat--webgl .stat-icon { background: rgba(20, 184, 166, 0.12); color: var(--semantic-webgl); }
+	.stat--flash .stat-icon { background: rgba(245, 181, 74, 0.12); color: var(--semantic-flash); }
+	.stat--retro .stat-icon { background: rgba(236, 72, 153, 0.12); color: var(--semantic-retro); }
+
+	.stat-value {
+		font-family: var(--font-display);
+		font-size: var(--text-h3);
+		font-weight: var(--weight-bold);
+		line-height: 1;
+	}
+	.stat-label {
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		margin-top: 2px;
+	}
+
+	@media (max-width: 640px) {
+		.stats-strip { grid-template-columns: repeat(2, 1fr); }
+	}
+</style>

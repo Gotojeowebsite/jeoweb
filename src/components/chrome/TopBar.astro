@@ -1,0 +1,174 @@
+---
+import Logo from './Logo.astro';
+import Icon from '../Icon.astro';
+
+type NavId = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
+
+interface Props {
+	/** Marks the active nav item for highlighting. */
+	current?: NavId;
+}
+const { current } = Astro.props;
+
+const nav: { id: NavId; href: string; label: string }[] = [
+	{ id: 'flash',     href: '/flash',         label: 'Flash' },
+	{ id: 'retro',     href: '/retro',         label: 'Retro' },
+	{ id: 'new',       href: '/new',           label: 'New' },
+	{ id: 'requested', href: '/requested',     label: 'Requested' },
+	{ id: 'host',      href: '/make-your-own', label: 'Host yours' },
+];
+---
+<header class="topbar">
+	<div class="topbar-inner">
+		<div class="topbar-left">
+			<Logo size={28} />
+			<nav class="topbar-nav" aria-label="Primary">
+				{nav.map(item => (
+					<a
+						href={item.href}
+						aria-current={current === item.id ? 'page' : undefined}
+						class:list={['topbar-link', { 'is-active': current === item.id }]}
+					>{item.label}</a>
+				))}
+			</nav>
+		</div>
+		<div class="topbar-right">
+			<button class="topbar-search-trigger" id="topbar-search" type="button" aria-label="Search games">
+				<Icon name="search" size={16} />
+				<span>Search…</span>
+				<kbd class="kbd">⌘K</kbd>
+			</button>
+			<button class="topbar-icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
+				<Icon name="moon" size={18} />
+			</button>
+			<button class="topbar-icon-btn" id="settings-trigger" type="button" aria-label="Settings">
+				<Icon name="settings" size={18} />
+			</button>
+			<a class="topbar-account" href="/login">
+				<Icon name="user" size={16} />
+				<span>Sign in</span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<style>
+	.topbar {
+		position: sticky;
+		top: 0;
+		z-index: var(--z-sticky);
+		background: color-mix(in oklab, var(--bg-0) 80%, transparent);
+		backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+		-webkit-backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+		border-bottom: 1px solid var(--line-0);
+	}
+	.topbar-inner {
+		max-width: var(--max-w-content);
+		margin: 0 auto;
+		height: var(--header-h);
+		padding: 0 var(--space-5);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-5);
+	}
+	.topbar-left, .topbar-right {
+		display: flex;
+		align-items: center;
+		gap: var(--space-5);
+	}
+	.topbar-nav {
+		display: flex;
+		gap: var(--space-1);
+	}
+	.topbar-link {
+		display: inline-flex;
+		align-items: center;
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.topbar-link:hover {
+		background: var(--bg-1);
+		color: var(--fg-0);
+	}
+	.topbar-link.is-active {
+		color: var(--fg-0);
+		background: var(--bg-1);
+	}
+
+	.topbar-search-trigger {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-2);
+		font-size: var(--text-sm);
+		min-width: 220px;
+		cursor: pointer;
+		transition: border-color var(--motion-fast), background var(--motion-fast);
+	}
+	.topbar-search-trigger:hover {
+		border-color: var(--line-2);
+		background: var(--bg-2);
+		color: var(--fg-1);
+	}
+	.topbar-search-trigger span { flex: 1; text-align: left; }
+
+	.kbd {
+		display: inline-flex;
+		align-items: center;
+		padding: 0 var(--space-2);
+		height: 18px;
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xs);
+		color: var(--fg-2);
+		font-family: var(--font-mono);
+		font-size: 11px;
+	}
+
+	.topbar-icon-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.topbar-icon-btn:hover {
+		background: var(--bg-1);
+		color: var(--fg-0);
+	}
+
+	.topbar-account {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-4);
+		background: var(--accent);
+		color: var(--accent-fg);
+		border-radius: var(--radius-md);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		transition: filter var(--motion-fast);
+	}
+	.topbar-account:hover { filter: brightness(1.1); color: var(--accent-fg); }
+
+	@media (max-width: 880px) {
+		.topbar-nav { display: none; }
+		.topbar-search-trigger span, .topbar-search-trigger .kbd { display: none; }
+		.topbar-search-trigger { min-width: 0; padding: var(--space-2); }
+		.topbar-account span { display: none; }
+		.topbar-account { padding: var(--space-2); }
+	}
+</style>

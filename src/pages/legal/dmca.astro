@@ -1,0 +1,24 @@
+---
+import Site from '../../layouts/Site.astro';
+---
+<Site title="DMCA">
+	<div class="content-wrap prose">
+		<h1>DMCA</h1>
+		<p>
+			If you're the rights holder of a game on Jeo and want it removed, email
+			<a href="mailto:dmca@jeoweb.app">dmca@jeoweb.app</a>
+			with proof of authority and the URL of the affected page. We process every valid notice within 72 hours.
+		</p>
+		<p>
+			You can also open a GitHub issue at
+			<a href="https://github.com/Gotojeowebsite/jeoweb/issues">Gotojeowebsite/jeoweb</a>.
+		</p>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); margin-bottom: var(--space-3); }
+	.prose a { color: var(--accent); text-decoration: underline; }
+</style>

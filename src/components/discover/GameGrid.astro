@@ -1,0 +1,69 @@
+---
+import GameCard from '../card/GameCard.astro';
+import type { Game } from '../../lib/catalog';
+
+interface Props {
+	games: Game[];
+	initial?: number;
+}
+const { games, initial = 60 } = Astro.props;
+const visible = games.slice(0, initial);
+const remaining = games.slice(initial);
+const total = games.length;
+---
+<div
+	class="grid-wrap"
+	data-grid
+	data-total={total}
+	data-rest={JSON.stringify(remaining.map(g => ({
+		name: g.name,
+		url: g.url,
+		image: g.image,
+		type: g.type,
+		tags: g.tags ?? [],
+		status: g.status ?? null,
+	})))}
+>
+	<div class="grid-meta">
+		<span id="grid-result-count" aria-live="polite">{total.toLocaleString()} games</span>
+	</div>
+	<div class="grid" id="grid" data-density="comfy">
+		{visible.map((g, i) => <GameCard game={g} priority={i < 12} />)}
+	</div>
+	<div class="grid-sentinel" id="grid-sentinel" aria-hidden="true"></div>
+	<div class="grid-empty" id="grid-empty" hidden>
+		<p>No games match your search.</p>
+	</div>
+</div>
+
+<style>
+	.grid-wrap { margin-top: var(--space-4); }
+	.grid-meta {
+		display: flex;
+		justify-content: space-between;
+		color: var(--fg-2);
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-3);
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: var(--space-5) var(--space-4);
+	}
+	.grid[data-density='dense'] {
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: var(--space-3) var(--space-3);
+	}
+	.grid-sentinel { height: 1px; }
+	.grid-empty {
+		padding: var(--space-9);
+		text-align: center;
+		color: var(--fg-2);
+		border: 1px dashed var(--line-1);
+		border-radius: var(--radius-xl);
+		margin-top: var(--space-5);
+	}
+	@media (max-width: 540px) {
+		.grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+	}
+</style>

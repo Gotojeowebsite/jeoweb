@@ -1,0 +1,77 @@
+---
+import Site from '../layouts/Site.astro';
+
+const faqs = [
+	{
+		q: 'Is Jeo free?',
+		a: 'Yes — completely. No paywalls, no premium tier, no signup wall. The catalog is open and stays open.',
+	},
+	{
+		q: 'Why do some games show "Maintenance"?',
+		a: 'Our scanner checks every game daily. If a game stops loading (broken asset, expired CDN), it goes into Maintenance while we repair it. The recovery engine searches the open web for working copies and swaps them in atomically.',
+	},
+	{
+		q: 'Can I request a game?',
+		a: 'Yes — the request form is linked from the top bar and the play screen. Most requests get added within a week if we can find a clean source.',
+	},
+	{
+		q: 'Will my saves carry across devices?',
+		a: 'If you create an account, yes — your encrypted profile blob can be exported as a .jeo file, copied to another device, or (opt-in) synced through our Cloudflare Worker without us ever seeing the plaintext.',
+	},
+	{
+		q: 'Is Jeo legal?',
+		a: 'Jeo hosts games whose authors have made them freely available, or browser-friendly preservation copies under fair-use precedents like the ones that protect the Internet Archive. We respond promptly to DMCA notices. See /legal/dmca.',
+	},
+	{
+		q: 'How do I install Jeo as an app?',
+		a: 'Visit Jeo in a modern browser. You should see an "Install" prompt — accept it. The app installs as a standalone PWA with offline support for the catalog and recently played games.',
+	},
+	{
+		q: 'Do you track me?',
+		a: 'We use analytics to understand what works and what doesn\'t. You can opt out fully in Settings → Privacy & Data. No tracking is required to play.',
+	},
+];
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map(f => ({
+		'@type': 'Question',
+		name: f.q,
+		acceptedAnswer: { '@type': 'Answer', text: f.a },
+	})),
+};
+---
+<Site title="FAQ" description="Frequently asked questions about Jeo." jsonLd={jsonLd}>
+	<div class="content-wrap prose">
+		<header class="page-header">
+			<h1>Frequently asked questions</h1>
+		</header>
+		<dl class="faq-list">
+			{faqs.map(f => (
+				<div class="faq-item">
+					<dt>{f.q}</dt>
+					<dd>{f.a}</dd>
+				</div>
+			))}
+		</dl>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); }
+	.page-header h1 { font-size: var(--text-h1); margin-bottom: var(--space-6); }
+	.faq-item {
+		padding: var(--space-5) 0;
+		border-bottom: 1px solid var(--line-1);
+	}
+	.faq-item dt {
+		font-size: var(--text-h3);
+		font-weight: var(--weight-semibold);
+		margin-bottom: var(--space-2);
+	}
+	.faq-item dd {
+		color: var(--fg-1);
+		margin: 0;
+	}
+</style>

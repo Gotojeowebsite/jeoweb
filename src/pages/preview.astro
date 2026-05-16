@@ -1,0 +1,153 @@
+---
+import Site from '../layouts/Site.astro';
+import Icon from '../components/Icon.astro';
+import { ICON_PATHS } from '../components/icons';
+
+/* Internal design-system showcase. Drop into / preview to visually verify
+ * tokens, components, and states all render correctly. Underscore-prefixed
+ * so it's a real route but signals "internal". Not linked from anywhere. */
+const iconNames = Object.keys(ICON_PATHS);
+---
+<Site title="Design system" description="Internal preview of design tokens and components.">
+	<div class="content-wrap preview">
+		<header class="preview-head">
+			<h1>Design system</h1>
+			<p>Showcase of tokens and components used across the site. If something looks broken here, it's broken everywhere.</p>
+		</header>
+
+		<section class="preview-section">
+			<h2>Color tokens</h2>
+			<div class="swatch-row">
+				<div class="swatch" style="background: var(--bg-0)"><span>bg-0</span></div>
+				<div class="swatch" style="background: var(--bg-1)"><span>bg-1</span></div>
+				<div class="swatch" style="background: var(--bg-2)"><span>bg-2</span></div>
+				<div class="swatch" style="background: var(--bg-3)"><span>bg-3</span></div>
+				<div class="swatch swatch-fg" style="background: var(--fg-0)"><span>fg-0</span></div>
+				<div class="swatch swatch-fg" style="background: var(--fg-1)"><span>fg-1</span></div>
+				<div class="swatch swatch-fg" style="background: var(--fg-2)"><span>fg-2</span></div>
+				<div class="swatch" style="background: var(--accent)"><span>accent</span></div>
+			</div>
+			<div class="swatch-row">
+				<div class="swatch" style="background: var(--brand-300)"><span>brand-300</span></div>
+				<div class="swatch" style="background: var(--brand-500)"><span>brand-500</span></div>
+				<div class="swatch" style="background: var(--brand-700)"><span>brand-700</span></div>
+				<div class="swatch" style="background: var(--semantic-flash)"><span>flash</span></div>
+				<div class="swatch" style="background: var(--semantic-retro)"><span>retro</span></div>
+				<div class="swatch" style="background: var(--semantic-webgl)"><span>webgl</span></div>
+				<div class="swatch" style="background: var(--semantic-broken)"><span>broken</span></div>
+				<div class="swatch" style="background: var(--semantic-success)"><span>success</span></div>
+			</div>
+		</section>
+
+		<section class="preview-section">
+			<h2>Type</h2>
+			<div class="type-stack">
+				<div style="font-size: var(--text-display); font-weight: var(--weight-display); letter-spacing: -0.04em; line-height: 1;">Display — Geist 800</div>
+				<div style="font-size: var(--text-h1); font-weight: var(--weight-bold); letter-spacing: -0.02em;">H1 — Geist 700</div>
+				<div style="font-size: var(--text-h2); font-weight: var(--weight-semibold);">H2 — Geist 600</div>
+				<div style="font-size: var(--text-h3); font-weight: var(--weight-semibold);">H3 — Inter 600</div>
+				<div>Body — Inter 400 — Jeo is a static-first preservation portal for browser games.</div>
+				<div style="font-size: var(--text-sm); color: var(--fg-2);">Small — Inter 400 14px muted</div>
+				<div style="font-family: var(--font-mono); font-size: var(--text-sm);">Mono — JetBrains Mono /game/balatro</div>
+			</div>
+		</section>
+
+		<section class="preview-section">
+			<h2>Buttons</h2>
+			<div class="control-row">
+				<button class="btn btn--primary"><Icon name="play" size={14} />Primary</button>
+				<button class="btn btn--secondary">Secondary</button>
+				<button class="btn btn--ghost">Ghost</button>
+				<button class="btn btn--primary btn--lg"><Icon name="play" size={16} />Primary large</button>
+				<button class="btn btn--secondary btn--sm">Small</button>
+			</div>
+		</section>
+
+		<section class="preview-section">
+			<h2>Chips & status</h2>
+			<div class="control-row">
+				<span class="chip">All</span>
+				<span class="chip is-active">Active</span>
+				<span class="chip chip--flash"><Icon name="zap" size={12} />Flash</span>
+				<span class="chip chip--retro"><Icon name="gamepad" size={12} />Retro</span>
+				<span class="chip chip--webgl"><Icon name="sparkles" size={12} />WebGL</span>
+				<span class="status status--ok">Verified 2d ago</span>
+				<span class="status status--warn">Maintenance</span>
+				<span class="status status--bad">Broken</span>
+				<span class="status status--info">Info</span>
+				<span class="status status--mute">Unverified</span>
+			</div>
+		</section>
+
+		<section class="preview-section">
+			<h2>Icons ({iconNames.length})</h2>
+			<div class="icon-grid">
+				{iconNames.map(n => (
+					<div class="icon-tile" title={n}>
+						<Icon name={n as any} size={20} />
+						<span>{n}</span>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="preview-section">
+			<h2>Skeleton</h2>
+			<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-4);">
+				<div class="skeleton" style="aspect-ratio: 16/9;"></div>
+				<div class="skeleton" style="aspect-ratio: 16/9;"></div>
+				<div class="skeleton" style="aspect-ratio: 16/9;"></div>
+			</div>
+		</section>
+	</div>
+</Site>
+
+<style>
+	.preview-head { padding: var(--space-7) 0 var(--space-5); }
+	.preview-head h1 { font-size: var(--text-h1); margin-bottom: var(--space-2); }
+	.preview-head p  { color: var(--fg-1); }
+	.preview-section { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--line-1); }
+	.preview-section h2 { font-size: var(--text-h2); margin-bottom: var(--space-4); }
+
+	.swatch-row {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+		gap: var(--space-3);
+		margin-bottom: var(--space-3);
+	}
+	.swatch {
+		aspect-ratio: 3/2;
+		border-radius: var(--radius-md);
+		border: 1px solid var(--line-1);
+		display: flex;
+		align-items: flex-end;
+		padding: var(--space-2);
+		color: var(--fg-0);
+		font-family: var(--font-mono);
+		font-size: 11px;
+	}
+	.swatch.swatch-fg { color: #000; }
+
+	.type-stack > * + * { margin-top: var(--space-3); }
+
+	.control-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+
+	.icon-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+		gap: var(--space-2);
+	}
+	.icon-tile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-family: var(--font-mono);
+		font-size: 11px;
+	}
+</style>

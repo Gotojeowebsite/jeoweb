@@ -1,0 +1,268 @@
+---
+import Site from '../../layouts/Site.astro';
+import Icon from '../../components/Icon.astro';
+import GameCard from '../../components/card/GameCard.astro';
+import {
+	getAllGames,
+	gameSlug,
+	gameTypeLabel,
+	getHealth,
+	type Game,
+} from '../../lib/catalog';
+
+export async function getStaticPaths() {
+	const games = getAllGames();
+	return games.map(g => ({ params: { slug: gameSlug(g) }, props: { game: g } }));
+}
+
+interface Props { game: Game; }
+const { game } = Astro.props;
+const slug = gameSlug(game);
+const health = getHealth();
+const verdict = health[slug];
+
+const all = getAllGames();
+function tagOverlap(a: string[], b: string[]) {
+	const setB = new Set(b);
+	return a.reduce((n, t) => n + (setB.has(t) ? 1 : 0), 0);
+}
+const similar = all
+	.filter(g => g.name !== game.name && g.type === game.type && g.image)
+	.map(g => ({ g, score: tagOverlap(g.tags ?? [], game.tags ?? []) }))
+	.sort((a, b) => b.score - a.score)
+	.slice(0, 8)
+	.map(x => x.g);
+
+const typeLabel = gameTypeLabel(game.type);
+const typeArticle = typeLabel === 'WebGL' ? 'a' : typeLabel === 'Flash' ? 'a classic' : 'a';
+const tagSentence = game.tags?.length
+	? `Tagged ${game.tags.slice(0, 4).join(', ')}.`
+	: '';
+const description = `Play ${game.name}, ${typeArticle} ${typeLabel} game, free on Jeo. ${tagSentence} No downloads, no sign-ups, plays right in your browser.`.replace(/\s+/g, ' ').trim();
+
+const jsonLd = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'VideoGame',
+		name: game.name,
+		url: `https://jeoweb.app/game/${slug}`,
+		image: game.image ? `https://jeoweb.app/${game.image}` : undefined,
+		description,
+		genre: game.genre ?? game.tags?.[0],
+		gamePlatform: ['Web Browser'],
+		applicationCategory: 'Game',
+		operatingSystem: 'Web Browser',
+		inLanguage: 'en',
+		datePublished: game.addedDate,
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Jeo',    item: 'https://jeoweb.app/' },
+			{ '@type': 'ListItem', position: 2, name: gameTypeLabel(game.type), item: `https://jeoweb.app/${game.type}` },
+			{ '@type': 'ListItem', position: 3, name: game.name },
+		],
+	},
+];
+
+const verdictUi: { tone: 'ok' | 'warn' | 'bad' | 'mute'; label: string } =
+	verdict?.verdict === 'healthy'
+		? { tone: 'ok',   label: `Verified ${timeAgo(verdict.lastChecked)}` }
+		: verdict?.verdict === 'broken'
+		? { tone: 'bad',  label: 'Currently broken' }
+		: verdict?.verdict === 'maintenance'
+		? { tone: 'warn', label: 'Under maintenance' }
+		: { tone: 'mute', label: 'Not verified recently' };
+
+function timeAgo(iso: string | undefined): string {
+	if (!iso) return 'recently';
+	const t = Date.parse(iso);
+	if (!t) return 'recently';
+	const days = Math.round((Date.now() - t) / 86400000);
+	if (days <= 0) return 'today';
+	if (days === 1) return '1 day ago';
+	if (days < 30) return `${days} days ago`;
+	const months = Math.round(days / 30);
+	return months === 1 ? '1 month ago' : `${months} months ago`;
+}
+---
+<Site
+	title={`${game.name}`}
+	description={description}
+	ogImage={game.image ? `/${game.image}` : '/og-default.svg'}
+	jsonLd={jsonLd}
+>
+	<div class="content-wrap detail">
+		<nav class="crumbs" aria-label="Breadcrumb">
+			<a href="/">All games</a>
+			<Icon name="chevron-right" size={12} />
+			<a href={`/${game.type}`}>{gameTypeLabel(game.type)}</a>
+			<Icon name="chevron-right" size={12} />
+			<span>{game.name}</span>
+		</nav>
+
+		<div class="detail-hero">
+			<div class="detail-cover">
+				{game.image
+					? <img src={`/${game.image}`} alt={`${game.name} cover`} width="800" height="450" loading="eager" />
+					: <div class="detail-cover-empty"><Icon name="gamepad" size={64} /></div>}
+			</div>
+			<div class="detail-meta">
+				<div class="detail-eyebrow">
+					<span class:list={['chip', `chip--${game.type}`]}>
+						<Icon name={game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles'} size={12} />
+						{gameTypeLabel(game.type)}
+					</span>
+					<span class:list={['status', `status--${verdictUi.tone}`]}>{verdictUi.label}</span>
+				</div>
+				<h1 class="detail-title">{game.name}</h1>
+				{game.tags?.length ? (
+					<div class="detail-tags">
+						{game.tags.map(t => <a class="chip" href={`/?tag=${encodeURIComponent(t)}`}>{t}</a>)}
+					</div>
+				) : null}
+				<div class="detail-actions">
+					<a class="btn btn--primary btn--lg" href={`/play/${slug}`}>
+						<Icon name="play" size={18} />Play now
+					</a>
+					<button class="btn btn--secondary" data-fav-toggle={slug}>
+						<Icon name="heart" size={16} />Favorite
+					</button>
+					<button class="btn btn--secondary" data-share-url={`https://jeoweb.app/game/${slug}`}>
+						<Icon name="share" size={16} />Share
+					</button>
+				</div>
+				<dl class="detail-facts">
+					<div><dt>Added</dt><dd>{new Date(game.addedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</dd></div>
+					<div><dt>Type</dt><dd>{gameTypeLabel(game.type)}</dd></div>
+					{game.genre && <div><dt>Genre</dt><dd>{game.genre}</dd></div>}
+				</dl>
+			</div>
+		</div>
+
+		<section class="detail-section detail-about">
+			<h2 class="section-title">About</h2>
+			<p>{description}</p>
+		</section>
+
+		{similar.length > 0 && (
+			<section class="detail-section">
+				<div class="section-head">
+					<h2 class="section-title"><Icon name="library" size={20} />Similar games</h2>
+				</div>
+				<div class="similar-grid">
+					{similar.map(g => <GameCard game={g} />)}
+				</div>
+			</section>
+		)}
+	</div>
+
+	<script>
+		document.addEventListener('click', async e => {
+			const btn = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-share-url]');
+			if (!btn) return;
+			const url = btn.dataset.shareUrl!;
+			if (navigator.share) {
+				try { await navigator.share({ url, title: document.title }); } catch (_) {}
+			} else {
+				await navigator.clipboard?.writeText(url);
+				btn.textContent = 'Copied!';
+				window.setTimeout(() => btn.textContent = 'Share', 1400);
+			}
+		});
+	</script>
+</Site>
+
+<style>
+	.crumbs {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		color: var(--fg-2);
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-5);
+	}
+	.crumbs a { color: var(--fg-1); transition: color var(--motion-fast); }
+	.crumbs a:hover { color: var(--accent); }
+
+	.detail-hero {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: var(--space-7);
+		align-items: start;
+	}
+	.detail-cover {
+		border-radius: var(--radius-2xl);
+		overflow: hidden;
+		background: var(--bg-1);
+		border: 1px solid var(--line-0);
+	}
+	.detail-cover img { width: 100%; height: auto; display: block; }
+	.detail-cover-empty {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 16/9;
+		color: var(--fg-3);
+	}
+	.detail-meta {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+	}
+	.detail-eyebrow {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+	.detail-title {
+		font-size: var(--text-h1);
+		letter-spacing: -0.04em;
+	}
+	.detail-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+	.detail-actions {
+		display: flex;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.detail-facts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-3);
+		margin-top: var(--space-3);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--line-1);
+	}
+	.detail-facts dt {
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		margin-bottom: var(--space-1);
+	}
+	.detail-facts dd {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--fg-0);
+		margin: 0;
+	}
+
+	.detail-section { margin-top: var(--space-9); }
+	.detail-about p { color: var(--fg-1); max-width: var(--max-w-prose); }
+
+	.similar-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: var(--space-4);
+	}
+
+	@media (max-width: 800px) {
+		.detail-hero { grid-template-columns: 1fr; }
+	}
+</style>

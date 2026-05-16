@@ -1,0 +1,20 @@
+---
+import Site from '../../layouts/Site.astro';
+---
+<Site title="Cookies">
+	<div class="content-wrap prose">
+		<h1>Cookies</h1>
+		<p>
+			Jeo uses browser storage (localStorage and cookies) for your favorites, settings, saves, theme,
+			and (if you've opted in) your encrypted account blob. We do not use cookies for cross-site tracking.
+			Third-party scripts (analytics, ad networks) may set their own cookies — these are opt-out under
+			Settings → Privacy &amp; Data.
+		</p>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); }
+</style>

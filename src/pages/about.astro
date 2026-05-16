@@ -1,0 +1,40 @@
+---
+import Site from '../layouts/Site.astro';
+import { getCatalogStats } from '../lib/catalog';
+const stats = getCatalogStats();
+---
+<Site title="About Jeo">
+	<div class="content-wrap prose">
+		<h1>About Jeo</h1>
+		<p>
+			Jeo is a free, static-first browser-games portal hosting {stats.total.toLocaleString()} titles
+			across WebGL, Flash (preserved via Ruffle), and retro cartridges (emulated in-browser with EmulatorJS).
+		</p>
+		<h2>Why</h2>
+		<p>
+			Free games on the open web are a vanishing resource. Old Flash sites die when CDNs rotate; preservation copies
+			get DMCA'd; portals stuff every page with intrusive ads. Jeo aims to be the opposite — clean, fast, no signup,
+			no paywalls, self-hosted, and open source.
+		</p>
+		<h2>How it works</h2>
+		<p>
+			The catalog is static JSON, scanned nightly. A multi-stage pipeline (broken-game-scanner.py, build-game-health,
+			the recovery engine) keeps the catalog honest. When a game breaks, the recovery engine searches the open web for a
+			working copy, scrapes it with header-spoofing Puppeteer, validates against an offline manifest, and swaps it in
+			atomically — the broken folder gets quarantined so nothing's ever half-broken.
+		</p>
+		<h2>The project</h2>
+		<p>
+			Source is on <a href="https://github.com/Gotojeowebsite/jeoweb">GitHub</a>, MIT-licensed. PRs, bug reports,
+			and game requests welcome.
+		</p>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); letter-spacing: -0.04em; margin-bottom: var(--space-5); }
+	.prose h2 { font-size: var(--text-h2); margin: var(--space-7) 0 var(--space-3); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); margin-bottom: var(--space-3); }
+	.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+</style>

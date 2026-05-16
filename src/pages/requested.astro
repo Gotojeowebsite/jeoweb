@@ -1,0 +1,36 @@
+---
+import Site from '../layouts/Site.astro';
+import GameGrid from '../components/discover/GameGrid.astro';
+import FiltersBar from '../components/discover/FiltersBar.astro';
+import { getAllGames } from '../lib/catalog';
+
+const requested = getAllGames().filter(g => g.requested);
+---
+<Site
+	title="Community-requested games"
+	description="Games the Jeo community asked for — sourced, imported, and online."
+	current="requested"
+>
+	<div class="content-wrap">
+		<header class="page-header">
+			<h1>Community requests</h1>
+			<p>
+				{requested.length.toLocaleString()} games you asked for, all live.
+				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" rel="noopener" target="_blank">Submit a request</a>.
+			</p>
+		</header>
+		<FiltersBar />
+		<GameGrid games={requested} />
+	</div>
+</Site>
+
+<script>
+	import '../scripts/grid-runtime';
+</script>
+
+<style>
+	.page-header { margin: var(--space-5) 0 var(--space-7); }
+	.page-header h1 { font-size: var(--text-h1); letter-spacing: -0.04em; }
+	.page-header p { color: var(--fg-1); max-width: var(--max-w-prose); margin-top: var(--space-2); }
+	.page-header a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+</style>

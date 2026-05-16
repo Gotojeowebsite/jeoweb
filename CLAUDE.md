@@ -131,9 +131,15 @@ npm run media:validate     # Validate media_catalog.json
 
 ## Architecture
 
-### Frontend
+### Frontend (in transition)
 
-Vanilla JS SPA: `index.html` + `app.js` (class `App`) + `assets/css/style.css`. No framework, no build step.
+Two trees coexist during the rebrand rollout (see `/root/.claude/plans/look-at-my-website-vivid-flamingo.md`):
+
+**Legacy (currently shipped):** Vanilla JS SPA — `index.html` + `app.js` (class `App`) + `styles.css`. No framework, no build step. This is what `https://jeoweb.app/` serves today.
+
+**New (Sprint 0+, in progress, not yet deployed):** Astro + Preact in `src/`. Builds to `dist/` via `npm run build`. Reads the same `games_list.json` / `game_health.json` / `recently_added.json` artifacts the legacy pipeline produces — `scan.js`, `broken_game_scanner.py`, `build-game-health.js`, the recovery engine are unchanged. Design tokens live in `src/styles/tokens.css`; new logo in `src/assets/brand/`; icon system in `src/components/icons.ts`. The `/dist` directory is gitignored. CI builds Astro on every push but the deploy artifact is still `.` (the root) until the Sprint 7 cutover.
+
+Quick scripts: `npm run dev` (Astro dev server), `npm run build` (full static build, 596 game pages + 11 chrome pages), `npm run typecheck` (`astro check`), `npm start` (legacy Node server, unchanged).
 
 Features: carousels, search, filters, favorites (localStorage), recently played, theme/accent/layout customization, tab cloaker, service worker (`sw.js`), and `poki-offline-shim.js` to neutralize Poki SDK calls.
 

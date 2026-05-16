@@ -1,0 +1,52 @@
+---
+interface Props {
+	size?: number;
+	withWordmark?: boolean;
+	href?: string;
+}
+const { size = 32, withWordmark = true, href = '/' } = Astro.props;
+---
+<a class="logo" href={href} aria-label="Jeo home">
+	<svg
+		class="logo-mark"
+		width={size}
+		height={size}
+		viewBox="0 0 32 32"
+		fill="none"
+		aria-hidden="true"
+	>
+		<defs>
+			<linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="var(--brand-300)" />
+				<stop offset="100%" stop-color="var(--semantic-retro)" />
+			</linearGradient>
+		</defs>
+		<path
+			fill="url(#logo-grad)"
+			d="M21.5 4.5c0-1.105.895-2 2-2s2 .895 2 2v17.25c0 4.142-3.358 7.5-7.5 7.5h-1A7.5 7.5 0 0 1 9.5 23.75c0-1.105.895-2 2-2s2 .895 2 2A3.5 3.5 0 0 0 17 25.25h1a3.5 3.5 0 0 0 3.5-3.5V4.5Z"
+		/>
+		<path
+			fill="url(#logo-grad)"
+			d="M5 11.75a1.5 1.5 0 0 1 2.245-1.302l7.5 4.25a1.5 1.5 0 0 1 0 2.604l-7.5 4.25A1.5 1.5 0 0 1 5 20.25v-8.5Z"
+		/>
+	</svg>
+	{withWordmark && <span class="logo-text">jeo</span>}
+</a>
+
+<style>
+	.logo {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		color: var(--fg-0);
+		text-decoration: none;
+		font-family: var(--font-display);
+		font-size: 1.375rem;
+		font-weight: var(--weight-display);
+		letter-spacing: -0.04em;
+	}
+	.logo:hover { color: var(--fg-0); }
+	.logo-mark { flex-shrink: 0; transition: transform var(--motion-fast) var(--ease-out-soft); }
+	.logo:hover .logo-mark { transform: rotate(-6deg); }
+	.logo-text { line-height: 1; }
+</style>

@@ -1,0 +1,8 @@
+/*
+ * Self-hosted variable fonts. Loaded once in Site.astro; subset to Latin only
+ * via fontsource imports below to keep payload small. JetBrains Mono is only
+ * pulled in when we render kbd/code (lazy-imported in those components).
+ */
+@import '@fontsource-variable/inter/index.css';
+@import '@fontsource-variable/geist/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';

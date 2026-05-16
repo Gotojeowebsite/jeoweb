@@ -1,0 +1,21 @@
+---
+import Site from '../../layouts/Site.astro';
+---
+<Site title="Terms">
+	<div class="content-wrap prose">
+		<h1>Terms</h1>
+		<p>
+			Jeo is a free, open-source preservation portal. By using it you agree to use it for personal,
+			non-commercial play. You may not scrape the catalog at volume, redistribute games for commercial gain,
+			or attempt to compromise the service. The catalog is provided "as is" — see the MIT license in the
+			<a href="https://github.com/Gotojeowebsite/jeoweb">repository</a>.
+		</p>
+	</div>
+</Site>
+
+<style>
+	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
+	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
+	.prose p { color: var(--fg-1); line-height: var(--leading-loose); }
+	.prose a { color: var(--accent); text-decoration: underline; }
+</style>
