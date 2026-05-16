@@ -98,10 +98,20 @@ Redeploy after editing.
 | `/api/play` | POST | Increment a game's global + daily play count |
 | `/api/trending` | GET | Top games (`window=24h` or `all`), 60s-cached |
 | `/api/presence` | POST/GET | Heartbeat / count of players in a game |
+| `/api/counts` | GET | Per-game all-time play counts (bulk, 60s cached) |
+| `/api/rate` | POST | Submit a 1..5 star rating (0 clears) |
+| `/api/ratings` | GET | Per-game aggregate `{slug: {avg, count}}` (bulk, 60s cached) |
 | `/api/leaderboard` | GET | Top scores for a game |
 | `/api/score` | POST | Submit a score (rate-limited, bounded, optionally HMAC-signed) |
 | `/api/profile` | GET/POST | Read / upsert a shared profile card |
 | `/api/push/subscribe` | POST | Register a web-push subscription |
 | `/api/push/unsubscribe` | POST | Remove a web-push subscription |
+| `/api/save` | POST | Upload one encrypted save slot (cloud save sync) |
+| `/api/saves` | GET | List cloud save slots for `?pid=&game=` |
+| `/api/save/delete` | POST | Delete one cloud save slot |
 
 A Cron trigger (`scheduled` handler) sends the daily reminder push.
+
+Cloud saves are end-to-end encrypted: the client AES-GCM-encrypts each save
+with a per-player key (stored in localStorage and in the .jeo account blob).
+The server only ever sees opaque ciphertext.

@@ -153,6 +153,69 @@ async function handlePlay(request, env, origin) {
   }
 }
 
+// Submit a 1..5 star rating for a game. One row per (game, pid) — re-rating
+// overwrites. Lightly rate-limited; raters typically rate a few games at most.
+async function handleRate(request, env, origin) {
+  const body = await readBody(request);
+  const game = String(body.game || '');
+  const pid = String(body.pid || '');
+  const stars = parseInt(body.stars, 10);
+  if (!SLUG_RE.test(game) || !PID_RE.test(pid)) {
+    return json({ ok: false, error: 'bad input' }, origin, 400);
+  }
+  // 0 clears the rating, 1..5 sets it.
+  if (!Number.isFinite(stars) || stars < 0 || stars > 5) {
+    return json({ ok: false, error: 'bad stars' }, origin, 400);
+  }
+  if (!(await rateOk(env, 'rate:' + pid, 60, 60 * 60 * 1000))) {
+    return json({ ok: false, error: 'rate limited' }, origin, 429);
+  }
+  const now = Date.now();
+  try {
+    if (stars === 0) {
+      await env.DB.prepare(`DELETE FROM ratings WHERE game_slug = ?1 AND pid = ?2`)
+        .bind(game, pid).run();
+    } else {
+      await env.DB.prepare(
+        `INSERT INTO ratings (game_slug, pid, stars, updated_at)
+         VALUES (?1, ?2, ?3, ?4)
+         ON CONFLICT(game_slug, pid) DO UPDATE SET stars = excluded.stars, updated_at = excluded.updated_at`
+      ).bind(game, pid, stars, now).run();
+    }
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+// Aggregate per-game ratings — { slug: { avg, count } } — for the whole
+// catalog. Used to decorate cards with "★ 4.3 (1.2k)". Cache-API cached 60s.
+async function handleRatings(url, env, origin, ctx) {
+  const cacheKey = new Request(url.origin + '/api/ratings');
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return json(await cached.json(), origin);
+  let rows;
+  try {
+    rows = await env.DB.prepare(
+      `SELECT game_slug, AVG(stars) AS avg, COUNT(*) AS c FROM ratings GROUP BY game_slug`
+    ).all();
+  } catch (e) {
+    return json({ ok: false, ratings: {} }, origin, 500);
+  }
+  const ratings = {};
+  for (const r of (rows.results || [])) {
+    ratings[r.game_slug] = { avg: Number(r.avg), count: r.c };
+  }
+  const payload = { ok: true, ratings };
+  ctx.waitUntil(
+    cache.put(cacheKey, new Response(JSON.stringify(payload), {
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' },
+    }))
+  );
+  return json(payload, origin);
+}
+
 // All-time play counts for the whole catalog, as { slug: count }. Used to
 // decorate grid/carousel cards with a "▶ N" badge. Cache-API cached 60s.
 async function handleCounts(url, env, origin, ctx) {
@@ -493,6 +556,90 @@ async function handlePushUnsubscribe(request, env, origin) {
   }
 }
 
+// ---- Optional cloud save sync (Part 5C) ------------------------------------
+// Payloads are opaque (client-encrypted with AES-GCM). The server only stores
+// ciphertext keyed by (pid, game, slot). Slot label is the client's choice.
+
+const SAVE_MAX_BYTES = 350_000;   // ~256KB after base64 + envelope overhead
+const SAVE_MAX_SLOTS_PER_USER = 60;
+const SAVE_SLOT_RE = /^[a-z0-9._-]{1,40}$/i;
+
+async function handleSavePost(request, env, origin) {
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  const game = String(body.game || '');
+  const slot = String(body.slot || '');
+  const payload = String(body.payload || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game) || !SAVE_SLOT_RE.test(slot)) {
+    return json({ ok: false, error: 'bad input' }, origin, 400);
+  }
+  if (!payload || payload.length > SAVE_MAX_BYTES) {
+    return json({ ok: false, error: 'too large' }, origin, 413);
+  }
+  if (!(await rateOk(env, 'save:' + pid, 200, 60 * 60 * 1000))) {
+    return json({ ok: false, error: 'rate limited' }, origin, 429);
+  }
+  // Cap total slots per user; allow updates to existing slots through.
+  try {
+    const exists = await env.DB.prepare(
+      `SELECT 1 FROM saves WHERE pid = ?1 AND game_slug = ?2 AND slot_label = ?3`
+    ).bind(pid, game, slot).first();
+    if (!exists) {
+      const c = await env.DB.prepare(`SELECT COUNT(*) AS c FROM saves WHERE pid = ?1`)
+        .bind(pid).first();
+      if (c && c.c >= SAVE_MAX_SLOTS_PER_USER) {
+        return json({ ok: false, error: 'slot limit' }, origin, 413);
+      }
+    }
+    await env.DB.prepare(
+      `INSERT INTO saves (pid, game_slug, slot_label, payload, updated_at)
+       VALUES (?1, ?2, ?3, ?4, ?5)
+       ON CONFLICT(pid, game_slug, slot_label) DO UPDATE SET
+         payload = excluded.payload, updated_at = excluded.updated_at`
+    ).bind(pid, game, slot, payload, Date.now()).run();
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false, error: 'db' }, origin, 500);
+  }
+}
+
+async function handleSavesGet(url, env, origin) {
+  const pid = String(url.searchParams.get('pid') || '');
+  const game = String(url.searchParams.get('game') || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game)) {
+    return json({ ok: false, saves: [] }, origin, 400);
+  }
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT slot_label, payload, updated_at FROM saves WHERE pid = ?1 AND game_slug = ?2`
+    ).bind(pid, game).all();
+    const saves = (rows.results || []).map((r) => ({
+      slot: r.slot_label, payload: r.payload, updated_at: r.updated_at,
+    }));
+    return json({ ok: true, saves }, origin);
+  } catch (e) {
+    return json({ ok: false, saves: [] }, origin, 500);
+  }
+}
+
+async function handleSaveDelete(request, env, origin) {
+  const body = await readBody(request);
+  const pid = String(body.pid || '');
+  const game = String(body.game || '');
+  const slot = String(body.slot || '');
+  if (!PID_RE.test(pid) || !SLUG_RE.test(game) || !slot) {
+    return json({ ok: false }, origin, 400);
+  }
+  try {
+    await env.DB.prepare(
+      `DELETE FROM saves WHERE pid = ?1 AND game_slug = ?2 AND slot_label = ?3`
+    ).bind(pid, game, slot).run();
+    return json({ ok: true }, origin);
+  } catch (e) {
+    return json({ ok: false }, origin, 500);
+  }
+}
+
 // Cron entrypoint — sends the daily reminder push to every subscriber and
 // prunes endpoints the push service reports as gone.
 async function runDailyPush(env) {
@@ -556,6 +703,12 @@ export default {
       if (path === '/api/counts' && request.method === 'GET') {
         return await handleCounts(url, env, origin, ctx);
       }
+      if (path === '/api/rate' && request.method === 'POST') {
+        return await handleRate(request, env, origin);
+      }
+      if (path === '/api/ratings' && request.method === 'GET') {
+        return await handleRatings(url, env, origin, ctx);
+      }
       if (path === '/api/presence' && request.method === 'POST') {
         return await handlePresencePost(request, env, origin);
       }
@@ -579,6 +732,15 @@ export default {
       }
       if (path === '/api/push/unsubscribe' && request.method === 'POST') {
         return await handlePushUnsubscribe(request, env, origin);
+      }
+      if (path === '/api/save' && request.method === 'POST') {
+        return await handleSavePost(request, env, origin);
+      }
+      if (path === '/api/saves' && request.method === 'GET') {
+        return await handleSavesGet(url, env, origin);
+      }
+      if (path === '/api/save/delete' && request.method === 'POST') {
+        return await handleSaveDelete(request, env, origin);
       }
       return json({ ok: false, error: 'not found' }, origin, 404);
     } catch (e) {

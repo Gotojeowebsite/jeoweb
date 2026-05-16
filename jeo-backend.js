@@ -107,6 +107,24 @@
     );
   }
 
+  // Submit a 1..5 star rating (0 = clear). Fire-and-forget; degrades to a
+  // no-op when the backend is unreachable.
+  function submitRating(slug, stars) {
+    if (!slug || !BASE_URL) return;
+    const n = parseInt(stars, 10);
+    if (!Number.isFinite(n) || n < 0 || n > 5) return;
+    guard(() => postJson('/api/rate', { game: slug, stars: n, pid: getPlayerId() }), null);
+  }
+
+  // Resolves to a { slug: { avg, count } } map — {} on any failure.
+  function getAllRatings() {
+    return guard(
+      () => fetchJson('/api/ratings')
+        .then((d) => (d && d.ratings && typeof d.ratings === 'object') ? d.ratings : {}),
+      {}
+    );
+  }
+
   // Resolves to an array of { slug, plays } — [] on any failure.
   function getTrending(opts) {
     opts = opts || {};
@@ -260,6 +278,28 @@
     }, { ok: false });
   }
 
+  // Cloud save sync (Part 5C). save-manager.js encrypts the payload before
+  // calling these; the backend stores ciphertext only.
+  function pushCloudSave(game, slot, payload) {
+    return guard(async () => {
+      const d = await postJson('/api/save', { pid: getPlayerId(), game, slot, payload });
+      return { ok: !!(d && d.ok), error: d && d.error };
+    }, { ok: false });
+  }
+  function pullCloudSaves(game) {
+    return guard(
+      () => fetchJson('/api/saves?pid=' + encodeURIComponent(getPlayerId()) + '&game=' + encodeURIComponent(game))
+        .then((d) => (d && Array.isArray(d.saves)) ? d.saves : []),
+      []
+    );
+  }
+  function deleteCloudSave(game, slot) {
+    return guard(async () => {
+      const d = await postJson('/api/save/delete', { pid: getPlayerId(), game, slot });
+      return { ok: !!(d && d.ok) };
+    }, { ok: false });
+  }
+
   // Keep the anonymous player_id in sync with the signed-in account so
   // leaderboards/streaks follow the user across devices (the id rides along
   // in the encrypted .jeo blob). Account value wins if present; otherwise we
@@ -307,6 +347,8 @@
     recordPlay,
     getTrending,
     getAllCounts,
+    submitRating,
+    getAllRatings,
     startPresence,
     stopPresence,
     getPresence,
@@ -316,5 +358,8 @@
     saveProfile,
     pushSubscribe,
     pushUnsubscribe,
+    pushCloudSave,
+    pullCloudSaves,
+    deleteCloudSave,
   };
 })();

@@ -528,11 +528,13 @@ class App {
 		this.newlyAddedCount = document.getElementById('newlyAddedCount');
 		this.newlyAddedNames = [];
 
-		// Global "Trending Now" carousel + live presence badge (backend-powered)
+		// Global "Trending Now" carousel + live presence/playtime/saves chips
 		this.globalTrendingSection = document.getElementById('globalTrendingSection');
 		this.globalTrendingTrack = document.getElementById('globalTrendingTrack');
 		this.globalTrendingCount = document.getElementById('globalTrendingCount');
 		this.playerPresence = document.getElementById('playerPresence');
+		this.playerPlaytime = document.getElementById('playerPlaytime');
+		this.playerSavesBadge = document.getElementById('playerSavesBadge');
 	}
 
 	hideLoading() {
@@ -784,6 +786,7 @@ class App {
 		this.initDeepLinks();
 		this.bindCollectionUI();
 		this.bindLeaderboardUI();
+		this.bindMoreMenu();
 		// Re-render the collections row whenever playlists change
 		if (window.JeoPlaylists) window.JeoPlaylists.onChange(() => this.renderCollections());
 
@@ -799,17 +802,27 @@ class App {
 				const willShow = sb.classList.contains('hidden');
 				sb.classList.toggle('hidden');
 				sb.setAttribute('aria-hidden', willShow ? 'false' : 'true');
-				if (willShow) this.refreshSaveSidebar();
+				if (willShow) { this.refreshSaveSidebar(); this.startSaveStatusTicker(); }
+				else this.stopSaveStatusTicker();
 			});
 		}
 		if (sbClose && sb) {
 			sbClose.addEventListener('click', () => {
 				sb.classList.add('hidden');
 				sb.setAttribute('aria-hidden', 'true');
+				this.stopSaveStatusTicker();
 			});
 		}
 		if (saveNowBtn) saveNowBtn.addEventListener('click', () => this.saveNowFromSidebar(false));
 		if (saveLabelBtn) saveLabelBtn.addEventListener('click', () => this.saveNowFromSidebar(true));
+		const cloudSyncBtn = document.getElementById('cloudSyncBtn');
+		if (cloudSyncBtn) {
+			// Only surface the cloud-sync button when the backend is reachable.
+			if (window.JeoBackend && window.JeoBackend.isConfigured && window.JeoBackend.isConfigured()) {
+				cloudSyncBtn.classList.remove('hidden');
+			}
+			cloudSyncBtn.addEventListener('click', () => this.runCloudSync());
+		}
 		if (sbList) {
 			sbList.addEventListener('click', (e) => {
 				const btn = e.target.closest('button[data-act]');
@@ -829,10 +842,31 @@ class App {
 				}
 			}
 		});
-		// Refresh status line when an autosave happens
+		// Refresh sidebar + saves chip when an autosave happens, plus an
+		// opt-in toast so users can *see* that auto-save is working.
 		if (window.JeoSaves && window.JeoSaves.on) {
 			window.JeoSaves.on('autosave', () => {
 				if (this.currentGameSlug && sb && !sb.classList.contains('hidden')) this.refreshSaveSidebar();
+				this.updateSavesBadge(this.currentGameName || this.currentGameSlug);
+				if (window.JeoToast && localStorage.getItem('jeo:autosaveToast') === 'true') {
+					window.JeoToast.info('💾 Saved', { ttl: 1800 });
+				}
+			});
+		}
+		// Saves preferences (Settings → General) — interval + autosave toast.
+		const intervalSel = document.getElementById('autosaveIntervalSel');
+		if (intervalSel && window.JeoSaves) {
+			intervalSel.value = String(window.JeoSaves.getAutoInterval());
+			intervalSel.addEventListener('change', () => {
+				window.JeoSaves.setAutoInterval(parseInt(intervalSel.value, 10));
+				if (window.JeoToast) window.JeoToast.info('Auto-save interval updated.');
+			});
+		}
+		const toastToggle = document.getElementById('autosaveToastToggle');
+		if (toastToggle) {
+			toastToggle.checked = localStorage.getItem('jeo:autosaveToast') === 'true';
+			toastToggle.addEventListener('change', () => {
+				localStorage.setItem('jeo:autosaveToast', String(toastToggle.checked));
 			});
 		}
 
@@ -1484,7 +1518,6 @@ class App {
 		const statusKind = this.gameStatusKind(g); // 'broken' | 'maintenance' | 'unverified' | ''
 		const isFail = statusKind === 'broken' || statusKind === 'maintenance';
 		const isWish = this.isWishlisted(g.name);
-		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
 		const safeName = this.escapeAttr(g.name);
 		const safeImg = this.escapeAttr(imgSrc);
 		const safeFallback = this.escapeAttr(this.fallbackImage);
@@ -1498,7 +1531,8 @@ class App {
 		if (g.type === 'flash') badges.push('<span class="flash-badge">⚡ Flash</span>');
 		if (g.type === 'snes') badges.push('<span class="retro-badge">🎮 Retro</span>');
 		if (g.requested) badges.push('<span class="requested-badge">📩 Requested</span>');
-		if (rating) badges.push('<span class="rating-badge">★ ' + rating + '</span>');
+		const ratingHtml = this.ratingBadgeHtml(g.name);
+		if (ratingHtml) badges.push(ratingHtml);
 		const plays = this._playCounts && this._playCounts[g.name];
 		if (plays) badges.push('<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>');
 		const MAX_VISIBLE_BADGES = 2;
@@ -1815,6 +1849,14 @@ class App {
 		const dismissBtn = document.getElementById('continueDismiss');
 		if (cover) cover.style.backgroundImage = `url('${game.image || this.fallbackImage}')`;
 		if (title) title.textContent = game.name;
+		// Continue band's eyebrow gets an inline playtime hint when there's history.
+		const eyebrow = sec.querySelector('.continue-eyebrow');
+		if (eyebrow) {
+			const ms = window.JeoPlaytime ? window.JeoPlaytime.getTotalMs(lastSlug) : 0;
+			eyebrow.textContent = ms > 60000
+				? '⏱ Continue playing · ' + window.JeoPlaytime.formatDuration(ms)
+				: '⏱ Continue playing';
+		}
 		if (playBtn) playBtn.onclick = () => this.playGame(game);
 		if (dismissBtn) dismissBtn.onclick = () => {
 			localStorage.removeItem('jeo:lastPlayed');
@@ -2144,6 +2186,43 @@ class App {
 		if (btn) btn.setAttribute('aria-expanded', 'false');
 	}
 
+	/* =============== "⋯ MORE" OVERFLOW MENU =============== */
+	bindMoreMenu() {
+		const btn = document.getElementById('moreBtn');
+		const popover = document.getElementById('morePopover');
+		if (!btn || !popover) return;
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const open = !popover.classList.contains('hidden');
+			if (open) this.closeMoreMenu();
+			else this.openMoreMenu();
+		});
+		document.addEventListener('click', (e) => {
+			if (popover.classList.contains('hidden')) return;
+			if (e.target.closest('#morePopover')) return;
+			if (e.target.closest('#moreBtn')) return;
+			this.closeMoreMenu();
+		});
+	}
+
+	openMoreMenu() {
+		const popover = document.getElementById('morePopover');
+		const btn = document.getElementById('moreBtn');
+		if (!popover) return;
+		popover.classList.remove('hidden');
+		popover.setAttribute('aria-hidden', 'false');
+		if (btn) btn.setAttribute('aria-expanded', 'true');
+	}
+
+	closeMoreMenu() {
+		const popover = document.getElementById('morePopover');
+		const btn = document.getElementById('moreBtn');
+		if (!popover) return;
+		popover.classList.add('hidden');
+		popover.setAttribute('aria-hidden', 'true');
+		if (btn) btn.setAttribute('aria-expanded', 'false');
+	}
+
 	// Handles a `{type:'jeo-score', score}` postMessage from a game iframe.
 	// Only games opted into a 'score'-kind leaderboard are accepted, and only
 	// from the iframe currently open.
@@ -2326,6 +2405,12 @@ class App {
 				this._trendingCache = { ts: Date.now(), entries: [] };
 			}
 		}
+		// Prime the play-count map from the trending response itself so cards
+		// show "▶ N" on first paint instead of waiting on /api/counts.
+		this._playCounts = this._playCounts || {};
+		for (const e of this._trendingCache.entries) {
+			if (e && e.plays != null) this._playCounts[e.slug] = e.plays;
+		}
 		// Map backend slugs onto the local catalog; respect the same filters
 		// the main grid uses so hidden/maintenance games don't leak in.
 		const games = [];
@@ -2341,21 +2426,54 @@ class App {
 		sec.classList.remove('hidden');
 		if (this.globalTrendingCount) this.globalTrendingCount.textContent = games.length;
 		track.innerHTML = '';
-		games.forEach((g, i) => track.appendChild(this.createCarouselCard(g, i)));
+		games.forEach((g, i) => {
+			const card = this.createCarouselCard(g, i);
+			// Rank chip — only the top 10 get one; first three are medal-styled.
+			if (i < 10) card.dataset.rank = String(i + 1);
+			track.appendChild(card);
+		});
 	}
 
-	// Fetches all-time play counts once and re-renders so cards show a "▶ N"
-	// badge. Backend-powered; a no-op (and no badges) when the backend is down.
+	// Fetches all-time play counts + global ratings once and re-renders so
+	// cards show a "▶ N" play count and a "★ 4.3 (1.2k)" global rating badge.
+	// Backend-powered; a silent no-op when the backend is down (cards keep
+	// showing the user's personal star as the fallback).
 	async loadPlayCounts() {
 		if (!window.JeoBackend) return;
+		let changed = false;
 		try {
 			const counts = await window.JeoBackend.getAllCounts();
 			if (counts && Object.keys(counts).length) {
 				this._playCounts = counts;
-				this.renderGames();
-				this.renderCarousels();
+				changed = true;
 			}
 		} catch {}
+		try {
+			const ratings = await window.JeoBackend.getAllRatings();
+			if (ratings && Object.keys(ratings).length) {
+				this._globalRatings = ratings;
+				changed = true;
+			}
+		} catch {}
+		if (changed) {
+			this.renderGames();
+			this.renderCarousels();
+		}
+	}
+
+	// Returns the HTML for a card's rating badge. Prefers the global average
+	// when available (the discovery signal); falls back to the user's personal
+	// star so the card isn't empty when the backend isn't deployed yet.
+	ratingBadgeHtml(slug) {
+		const g = this._globalRatings && this._globalRatings[slug];
+		if (g && g.count >= 1) {
+			const avg = Number(g.avg).toFixed(1);
+			const count = this.formatPlayCount ? this.formatPlayCount(g.count) : String(g.count);
+			return '<span class="rating-badge" title="' + g.count + ' ratings">★ ' + avg + ' <small>(' + count + ')</small></span>';
+		}
+		const personal = window.JeoRatings ? window.JeoRatings.get(slug) : 0;
+		if (personal) return '<span class="rating-badge" title="Your rating">★ ' + personal + '</span>';
+		return '';
 	}
 
 	// 1234 -> "1.2k", 1200000 -> "1.2m". Keeps the card badge compact.
@@ -2367,6 +2485,93 @@ class App {
 			return (k < 10 ? k.toFixed(1).replace(/\.0$/, '') : String(Math.round(k))) + 'k';
 		}
 		return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'm';
+	}
+
+	// "⏱ 2h 14m played · 8 sessions" in the player toolbar — only shown when
+	// there's at least a minute of recorded history for this game.
+	updatePlaytimeChip(slug) {
+		const el = this.playerPlaytime;
+		if (!el) return;
+		el.classList.add('hidden');
+		el.textContent = '';
+		if (!slug || !window.JeoPlaytime) return;
+		const ms = window.JeoPlaytime.getTotalMs(slug);
+		if (ms < 60000) return;
+		const n = window.JeoPlaytime.getSessionCount(slug);
+		el.textContent = '⏱ ' + window.JeoPlaytime.formatDuration(ms) +
+			' · ' + n + (n === 1 ? ' session' : ' sessions');
+		el.classList.remove('hidden');
+	}
+
+	// "💾 3" chip showing the number of saved snapshots for the open game.
+	async updateSavesBadge(slug) {
+		const el = this.playerSavesBadge;
+		if (!el) return;
+		el.classList.add('hidden');
+		el.textContent = '';
+		if (!slug || !window.JeoSaves) return;
+		try {
+			const saves = await window.JeoSaves.listSaves(slug);
+			if (saves && saves.length) {
+				el.textContent = '💾 ' + saves.length;
+				el.classList.remove('hidden');
+				el.title = saves.length + ' saved snapshot' + (saves.length === 1 ? '' : 's');
+			}
+		} catch {}
+	}
+
+	// Live "Saved Xs ago" refresh inside the save sidebar — runs only while
+	// the sidebar is open so it never wakes a backgrounded tab needlessly.
+	startSaveStatusTicker() {
+		this.stopSaveStatusTicker();
+		const sb = document.getElementById('saveSidebar');
+		const status = document.getElementById('saveSidebarStatus');
+		if (!sb || !status) return;
+		this._saveStatusTicker = setInterval(() => {
+			if (!sb || sb.classList.contains('hidden') || !window.JeoSaves) {
+				this.stopSaveStatusTicker();
+				return;
+			}
+			const last = window.JeoSaves.getLastAutoSaveAt();
+			status.textContent = last ? 'Auto-save: ' + this.formatRelTime(last) : 'Auto-save active';
+		}, 10000);
+	}
+	stopSaveStatusTicker() {
+		if (this._saveStatusTicker) { clearInterval(this._saveStatusTicker); this._saveStatusTicker = null; }
+	}
+
+	// "☁ Sync saves" — push local manuals up, pull cloud-only manuals down.
+	// Backend-gated; degrades to a warning toast when unreachable.
+	async runCloudSync() {
+		const slug = this.currentGameName || this.currentGameSlug;
+		const btn = document.getElementById('cloudSyncBtn');
+		if (!slug || !window.JeoSaves || !window.JeoSaves.cloudSync) {
+			if (window.JeoToast) window.JeoToast.warning('No game open.');
+			return;
+		}
+		if (btn) { btn.disabled = true; btn.textContent = '☁ Syncing…'; }
+		try {
+			const res = await window.JeoSaves.cloudSync(slug);
+			if (!res || !res.ok) {
+				if (window.JeoToast) window.JeoToast.warning(
+					res && res.reason === 'no-backend'
+						? 'Cloud sync is offline right now.'
+						: 'Sync failed. Try again later.'
+				);
+			} else {
+				const parts = [];
+				if (res.pushed) parts.push(res.pushed + ' uploaded');
+				if (res.pulled) parts.push(res.pulled + ' downloaded');
+				if (!parts.length) parts.push('already in sync');
+				if (window.JeoToast) window.JeoToast.success('☁ ' + parts.join(' · '));
+				this.refreshSaveSidebar();
+				this.updateSavesBadge(slug);
+			}
+		} catch (e) {
+			if (window.JeoToast) window.JeoToast.error('Sync error: ' + (e.message || e));
+		} finally {
+			if (btn) { btn.disabled = false; btn.textContent = '☁ Sync saves'; }
+		}
 	}
 
 	// Snapshot of "X playing now" for the open game, shown in the player toolbar.
@@ -2398,8 +2603,7 @@ class App {
 		if (statusKind === 'broken') statusBadge = '<span class="status-badge status-broken" title="Confirmed broken">✕ Broken</span>';
 		else if (statusKind === 'maintenance') statusBadge = '<span class="status-badge status-maintenance" title="Marked under maintenance">⚠ Maintenance</span>';
 		else if (statusKind === 'unverified') statusBadge = '<span class="status-badge status-unverified" title="Not recently verified">? Unverified</span>';
-		const rating = window.JeoRatings ? window.JeoRatings.get(g.name) : 0;
-		const ratingBadge = rating ? '<span class="rating-badge">★ ' + rating + '</span>' : '';
+		const ratingBadge = this.ratingBadgeHtml(g.name);
 		const plays = this._playCounts && this._playCounts[g.name];
 		const playBadge = plays ? '<span class="play-count-badge">▶ ' + this.formatPlayCount(plays) + '</span>' : '';
 
@@ -2481,6 +2685,10 @@ class App {
 		const lbBtn = document.getElementById('leaderboardBtn');
 		if (lbBtn) lbBtn.classList.toggle('hidden', !this.currentGameLeaderboard);
 		this.closeLeaderboardPopover();
+
+		// Per-game playtime + save-count chips (local, always available).
+		this.updatePlaytimeChip(this._presenceSlug);
+		this.updateSavesBadge(this._presenceSlug);
 
 		const loadingOverlay = document.getElementById('gameLoadingOverlay');
 		const loadingGameTitle = document.getElementById('loadingGameTitle');
@@ -2800,7 +3008,12 @@ class App {
 		if (this.playerPresence) { this.playerPresence.classList.add('hidden'); this.playerPresence.textContent = ''; }
 		// Close + reset the leaderboard popover for the next game.
 		this.closeLeaderboardPopover();
+		this.closeMoreMenu();
 		this.currentGameLeaderboard = null;
+		// Hide the per-game chips and stop the save-status ticker.
+		if (this.playerPlaytime) { this.playerPlaytime.classList.add('hidden'); this.playerPlaytime.textContent = ''; }
+		if (this.playerSavesBadge) { this.playerSavesBadge.classList.add('hidden'); this.playerSavesBadge.textContent = ''; }
+		this.stopSaveStatusTicker();
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
 		this.gameFrame.src = 'about:blank';

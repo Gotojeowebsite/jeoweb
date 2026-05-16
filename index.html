@@ -496,6 +496,23 @@
 							<div class="toggle-switch"><input type="checkbox" id="dailyRemindersToggle" /><span class="toggle-slider"></span></div>
 						</label>
 					</div>
+					<div class="settings-section">
+						<h3>💾 Game saves</h3>
+						<p class="settings-help">Auto-save runs in the background while you play. Manual saves live in the player sidebar (Ctrl/Cmd+S).</p>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border); margin-bottom:8px; gap:12px;">
+							<span style="color:var(--text); font-size:14px;">Auto-save interval</span>
+							<select id="autosaveIntervalSel" class="cloaker-input" style="width:auto; min-width:120px;">
+								<option value="30000">Every 30 seconds</option>
+								<option value="60000">Every 1 minute</option>
+								<option value="120000">Every 2 minutes</option>
+								<option value="300000">Every 5 minutes</option>
+							</select>
+						</label>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+							<span style="color:var(--text); font-size:14px;">Show a "💾 Saved" toast each auto-save</span>
+							<div class="toggle-switch"><input type="checkbox" id="autosaveToastToggle" /><span class="toggle-slider"></span></div>
+						</label>
+					</div>
 				</section>
 
 				<section class="settings-tab-pane" data-tab="appearance" role="tabpanel" hidden>
@@ -663,22 +680,29 @@
 		<div class="modal-inner">
 			<div class="modal-toolbar">
 				<button id="fullscreenBtn" class="modal-tool-btn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
-				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">➕ Request Game</a>
-				<a href="make-your-own.html" target="_blank" class="modal-tool-btn" style="text-decoration:none; color: var(--accent); border-color: var(--accent); background: rgba(124, 58, 237, 0.1);">🚀 Host Your Own</a>
 				<div id="playerRatingSlot" class="player-rating-slot" aria-label="Rate this game"></div>
 				<span id="playerPresence" class="player-presence hidden" title="Players in this game right now"></span>
-				<div style="text-align: center; flex-grow: 1; font-weight: bold;">Please Share This Website!</div>
-				<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" class="modal-tool-btn" style="text-decoration:none">🐛 Not working? Report it!</a>
+				<span id="playerPlaytime" class="player-playtime hidden" title="Your total time on this game"></span>
+				<span id="playerSavesBadge" class="player-saves-badge hidden" title="Saved snapshots for this game"></span>
+				<div class="modal-toolbar-spacer"></div>
 				<div class="player-collection-wrap">
-					<button id="addToCollectionBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Add this game to a collection">📚 Add to…</button>
+					<button id="addToCollectionBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Add this game to a collection"><span class="mt-emoji">📚</span><span class="mt-label">Add to…</span></button>
 					<div id="collectionsPopover" class="collections-popover hidden" role="menu" aria-hidden="true"></div>
 				</div>
 				<div class="player-leaderboard-wrap">
-					<button id="leaderboardBtn" class="modal-tool-btn hidden" type="button" aria-haspopup="true" aria-expanded="false" title="Global leaderboard for this game">🏆 Scores</button>
+					<button id="leaderboardBtn" class="modal-tool-btn hidden" type="button" aria-haspopup="true" aria-expanded="false" title="Global leaderboard for this game"><span class="mt-emoji">🏆</span><span class="mt-label">Scores</span></button>
 					<div id="leaderboardPopover" class="leaderboard-popover hidden" role="menu" aria-hidden="true"></div>
 				</div>
-				<button id="shareGameBtn" class="modal-tool-btn" aria-label="Copy share link" title="Copy share link">🔗 Share</button>
-				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab">↗ New tab</button>
+				<button id="shareGameBtn" class="modal-tool-btn" aria-label="Copy share link" title="Copy share link"><span class="mt-emoji">🔗</span><span class="mt-label">Share</span></button>
+				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab"><span class="mt-emoji">↗</span><span class="mt-label">New tab</span></button>
+				<div class="player-more-wrap">
+					<button id="moreBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="More options"><span class="mt-emoji">⋯</span><span class="mt-label">More</span></button>
+					<div id="morePopover" class="more-popover hidden" role="menu" aria-hidden="true">
+						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener" class="more-popover-row">➕ Request a game</a>
+						<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener" class="more-popover-row">🐛 Not working? Report it</a>
+						<a href="make-your-own.html" target="_blank" rel="noopener" class="more-popover-row">🚀 Host your own</a>
+					</div>
+				</div>
 				<button id="closeModal" class="modal-close-btn" aria-label="Close">✕</button>
 			</div>
 			
@@ -715,6 +739,7 @@
 				<div class="save-sidebar-actions">
 					<button id="saveNowBtn" class="save-action-btn primary">💾 Save now</button>
 					<button id="saveLabelBtn" class="save-action-btn">🏷 Save with label</button>
+					<button id="cloudSyncBtn" class="save-action-btn hidden" title="Push your manual saves to the cloud and pull any saves from other devices">☁ Sync saves</button>
 				</div>
 				<div id="saveSidebarList" class="save-sidebar-list" role="list">
 					<p class="save-empty">No saves yet for this game. Press <kbd>Ctrl/Cmd+S</kbd> while playing.</p>
@@ -849,6 +874,7 @@
 	<script src="account-system.js"></script>
 	<script src="jeo-backend.js"></script>
 	<script src="save-manager.js"></script>
+	<script src="playtime.js"></script>
 	<script src="toast.js"></script>
 	<script src="ratings.js"></script>
 	<script src="playlists.js"></script>
