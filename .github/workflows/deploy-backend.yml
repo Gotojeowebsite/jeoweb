@@ -1,0 +1,90 @@
+# Manual deploy of the Cloudflare Worker backend.
+#
+# One-shot: run `scripts/deploy-backend.sh` on a GitHub runner (which has the
+# unrestricted egress that the Claude Code web sandbox doesn't), patch
+# backend/wrangler.toml + index.html, and commit the result back to the branch.
+#
+# Setup (one time):
+#   1. https://github.com/Gotojeowebsite/jeoweb/settings/secrets/actions
+#      Add two repo secrets:
+#        CLOUDFLARE_API_TOKEN   — token with "Workers Scripts: Edit" + "D1: Edit"
+#        CLOUDFLARE_ACCOUNT_ID  — your Cloudflare account ID
+#   2. Open https://github.com/Gotojeowebsite/jeoweb/actions/workflows/deploy-backend.yml
+#      Click "Run workflow", pick this branch, click the green button.
+#
+# Re-running is safe: D1 schema is IF NOT EXISTS, wrangler deploy is upsert,
+# index.html patch is a no-op once the meta tag is already set.
+
+name: Deploy backend (Cloudflare Worker)
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy from and commit back to'
+        required: true
+        default: 'claude/website-improvement-plan-r8G8i'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-backend
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Guard against missing secrets
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repo secrets first."
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          # Use a token that can push back to the branch (default GITHUB_TOKEN works
+          # because permissions.contents: write is set above).
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install deps
+        run: |
+          if [ -f package-lock.json ]; then npm ci --no-audit --no-fund
+          else npm install --no-audit --no-fund
+          fi
+
+      - name: Deploy worker + wire meta tag
+        run: bash scripts/deploy-backend.sh
+
+      - name: Commit + push patched files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet backend/wrangler.toml index.html; then
+            echo "No changes to commit (already deployed)."
+            exit 0
+          fi
+
+          # Stage just the two files that the deploy script edits — never node_modules,
+          # never anything that might leak secrets.
+          git add backend/wrangler.toml index.html
+          git commit -m "backend: deploy Cloudflare Worker + wire jeo-backend meta
+
+Done by the deploy-backend workflow. Worker URL printed in the previous
+step's logs. D1 database_id committed to backend/wrangler.toml (safe
+to share — it's a public identifier without auth value)."
+          git push origin HEAD:${{ inputs.branch }}
