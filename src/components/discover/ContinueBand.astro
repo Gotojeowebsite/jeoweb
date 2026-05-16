@@ -50,9 +50,11 @@ import Icon from '../Icon.astro';
 		return `${Math.round(d / 86_400_000)}d ago`;
 	}
 
+	const DISMISS_KEY = 'jeo-recent-dismissed-slug';
 	const band = document.getElementById('continueBand');
 	const r = lastRecent();
-	if (band && r) {
+	const dismissed = (() => { try { return localStorage.getItem(DISMISS_KEY); } catch { return null; } })();
+	if (band && r && r.slug !== dismissed) {
 		const cover = document.getElementById('continueCover');
 		const title = document.getElementById('continueTitle');
 		const sub   = document.getElementById('continueSub');
@@ -64,7 +66,9 @@ import Icon from '../Icon.astro';
 		if (play) play.href = `/play/${r.slug}`;
 		band.hidden = false;
 		x?.addEventListener('click', () => {
-			try { localStorage.removeItem('jeo-recent'); } catch {}
+			// Hide only this entry's prompt — leave the recents history alone so
+			// the user keeps their play history.
+			try { localStorage.setItem(DISMISS_KEY, r.slug); } catch {}
 			band.hidden = true;
 		});
 	}

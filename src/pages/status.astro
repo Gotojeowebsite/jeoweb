@@ -1,47 +1,43 @@
 ---
 import Site from '../layouts/Site.astro';
-import { getAllGames, getHealth, gameSlug } from '../lib/catalog';
+import { getAllGames, getHealth, getHealthGeneratedAt, gameSlug, type Verdict } from '../lib/catalog';
 
 const games = getAllGames();
 const health = getHealth();
 
-const buckets = { healthy: 0, broken: 0, maintenance: 0, unverified: 0 };
-const broken: { name: string; slug: string; verdict: string; checked?: string }[] = [];
+const buckets: Record<Verdict, number> = { healthy: 0, broken: 0, unknown: 0 };
+const broken: { name: string; slug: string; verdict: Verdict }[] = [];
 for (const g of games) {
 	const slug = gameSlug(g);
 	const v = health[slug];
-	const verdict = v?.verdict ?? (g.status === 'broken' ? 'broken' : g.status === 'maintenance' ? 'maintenance' : 'unverified');
-	if (verdict === 'broken' || verdict === 'maintenance') {
-		broken.push({ name: g.name, slug, verdict, checked: v?.lastChecked });
+	const verdict: Verdict = v?.verdict ?? (g.status === 'broken' ? 'broken' : 'unknown');
+	if (verdict === 'broken') {
+		broken.push({ name: g.name, slug, verdict });
 	}
-	(buckets as Record<string, number>)[verdict] = ((buckets as Record<string, number>)[verdict] ?? 0) + 1;
+	buckets[verdict] = (buckets[verdict] ?? 0) + 1;
 }
 broken.sort((a, b) => a.name.localeCompare(b.name));
-const lastCheckedAny = Object.values(health).map(h => h.lastChecked).filter(Boolean).sort().pop();
+const generatedAt = getHealthGeneratedAt();
 ---
 <Site title="Catalog status" description="Live health status of every game on Jeo.">
 	<div class="content-wrap">
 		<header class="page-header">
 			<h1>Catalog status</h1>
 			<p>Live health of all {games.length.toLocaleString()} games. The scanner runs nightly and signals are merged in game_health.json.</p>
-			{lastCheckedAny && <p class="muted">Last refreshed: {new Date(lastCheckedAny).toLocaleString()}</p>}
+			{generatedAt > 0 && <p class="muted">Last refreshed: {new Date(generatedAt).toLocaleString()}</p>}
 		</header>
 		<div class="status-grid">
 			<div class="status-card status-card--ok">
 				<div class="status-value">{buckets.healthy.toLocaleString()}</div>
 				<div class="status-label">Healthy</div>
 			</div>
-			<div class="status-card status-card--warn">
-				<div class="status-value">{buckets.maintenance.toLocaleString()}</div>
-				<div class="status-label">Maintenance</div>
-			</div>
 			<div class="status-card status-card--bad">
 				<div class="status-value">{buckets.broken.toLocaleString()}</div>
 				<div class="status-label">Broken</div>
 			</div>
 			<div class="status-card status-card--mute">
-				<div class="status-value">{buckets.unverified.toLocaleString()}</div>
-				<div class="status-label">Unverified</div>
+				<div class="status-value">{buckets.unknown.toLocaleString()}</div>
+				<div class="status-label">Unknown</div>
 			</div>
 		</div>
 		{broken.length > 0 && (
@@ -51,7 +47,7 @@ const lastCheckedAny = Object.values(health).map(h => h.lastChecked).filter(Bool
 					{broken.map(b => (
 						<li>
 							<a href={`/game/${b.slug}`}>{b.name}</a>
-							<span class:list={['status', b.verdict === 'broken' ? 'status--bad' : 'status--warn']}>{b.verdict}</span>
+							<span class="status status--bad">{b.verdict}</span>
 						</li>
 					))}
 				</ul>
@@ -67,7 +63,7 @@ const lastCheckedAny = Object.values(health).map(h => h.lastChecked).filter(Bool
 
 	.status-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: var(--space-4);
 		margin-bottom: var(--space-8);
 	}
