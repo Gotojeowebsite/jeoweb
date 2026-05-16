@@ -22,7 +22,8 @@ export interface Game {
 	size: number;
 	tags: string[];
 	genre?: string;
-	status?: 'broken' | 'maintenance' | 'unverified' | 'healthy';
+	// scan.js only writes 'broken' today; richer states live in game_health.json.
+	status?: 'broken' | 'maintenance';
 	requested?: boolean;
 	leaderboard?: 'score' | 'time' | false;
 }
@@ -35,14 +36,26 @@ function normalizeType(t: RawGameType | undefined): GameType {
 	return 'webgl';
 }
 
+export type Verdict = 'healthy' | 'broken' | 'unknown';
+
 export interface HealthVerdict {
-	verdict: 'healthy' | 'broken' | 'maintenance' | 'unverified';
-	lastChecked: string;
+	verdict: Verdict;
+	confidence?: 'high' | 'low';
+	source?: string;
+	reason?: string;
 	signals?: Record<string, unknown>;
+}
+
+interface HealthFile {
+	schema?: number;
+	generated_at?: number;
+	games?: Record<string, HealthVerdict>;
+	counts?: { total: number; healthy: number; broken: number; unknown: number };
 }
 
 let _games: Game[] | null = null;
 let _health: Record<string, HealthVerdict> | null = null;
+let _healthMeta: { generatedAt: number; counts: HealthFile['counts'] | null } | null = null;
 let _recent: Game[] | null = null;
 
 function loadJson<T>(relative: string, fallback: T): T {
@@ -75,15 +88,33 @@ export function getAllGames(): Game[] {
 	return _games;
 }
 
+function loadHealthFile(): HealthFile {
+	return loadJson<HealthFile>('game_health.json', { games: {} });
+}
+
 export function getHealth(): Record<string, HealthVerdict> {
 	if (!_health) {
-		const raw = loadJson<{ games?: Record<string, HealthVerdict> }>(
-			'game_health.json',
-			{ games: {} }
-		);
+		const raw = loadHealthFile();
 		_health = raw.games ?? {};
 	}
 	return _health;
+}
+
+/** ms-epoch timestamp game_health.json was generated, or 0 if unknown. */
+export function getHealthGeneratedAt(): number {
+	if (!_healthMeta) {
+		const raw = loadHealthFile();
+		_healthMeta = {
+			generatedAt: typeof raw.generated_at === 'number' ? raw.generated_at * 1000 : 0,
+			counts: raw.counts ?? null,
+		};
+	}
+	return _healthMeta.generatedAt;
+}
+
+export function getHealthCounts(): HealthFile['counts'] | null {
+	if (!_healthMeta) getHealthGeneratedAt();
+	return _healthMeta!.counts;
 }
 
 export function getRecentlyAdded(): Game[] {

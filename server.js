@@ -130,8 +130,22 @@ const server = http.createServer(async (req, res) => {
 	}
 
 	const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
-	const decodedPath = decodeURIComponent(parsedUrl.pathname);
+	let decodedPath;
+	try {
+		decodedPath = decodeURIComponent(parsedUrl.pathname);
+	} catch (e) {
+		res.writeHead(400, { 'Content-Type': 'text/html' });
+		res.end('<h1>400 - Bad Request</h1>');
+		return;
+	}
 	let filePath = path.join(ROOT, decodedPath);
+	// Block path traversal — path.join normalizes "..", so a crafted URL like
+	// "/../etc/passwd" can escape ROOT. Reject anything that resolves outside.
+	if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) {
+		res.writeHead(403, { 'Content-Type': 'text/html' });
+		res.end('<h1>403 - Forbidden</h1>');
+		return;
+	}
 	const ext = path.extname(filePath).toLowerCase();
 
 	// Handle requests with "undefined" in the path (missing game assets)

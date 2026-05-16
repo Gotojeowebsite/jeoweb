@@ -23,6 +23,10 @@ if (entry) {
 		const filtered = list.filter(r => r.slug !== entry.slug);
 		filtered.unshift(entry);
 		localStorage.setItem('jeo-recent', JSON.stringify(filtered.slice(0, 20)));
+		// Replaying a game clears any prior dismissal of its continue prompt.
+		if (localStorage.getItem('jeo-recent-dismissed-slug') === entry.slug) {
+			localStorage.removeItem('jeo-recent-dismissed-slug');
+		}
 	} catch (_) {}
 }
 export {};
