@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1778842288,
+  "updated_at": 1778926730,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": ".recovery-20260515-105021",
+      "name": ".recovery-20260516-101742",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.547,
+      "elapsed_seconds": 13.554,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9258/Assets/.recovery-20260515-105021/index.html"
+          "url": "http://localhost:9427/Assets/.recovery-20260516-101742/index.html"
         }
       ],
       "warnings": [],
