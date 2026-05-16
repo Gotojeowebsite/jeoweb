@@ -1,16 +1,19 @@
 ---
+import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/reset.css';
 import '../styles/chrome.css';
 import TopBar from '../components/chrome/TopBar.astro';
 import Footer from '../components/chrome/Footer.astro';
 
+type NavCurrent = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
+
 interface Props {
 	title: string;
 	description?: string;
 	ogImage?: string;
 	canonical?: string;
-	current?: Parameters<typeof TopBar>[0]['current'];
+	current?: NavCurrent;
 	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 	bodyClass?: string;
 }
@@ -96,12 +99,24 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
 	<script>
 		// Theme toggle — minimal client glue. The full settings live in the Settings sheet.
+		// Theme toggle — flip data-theme, swap icon, label, and persist.
 		const toggle = document.getElementById('theme-toggle');
+		const SUN  = '<path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/><circle cx="12" cy="12" r="4"/>';
+		const MOON = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
+
+		function reflectTheme() {
+			const cur = document.documentElement.getAttribute('data-theme') ?? 'dark';
+			const svg = toggle?.querySelector('svg');
+			if (svg) svg.innerHTML = cur === 'dark' ? MOON : SUN;
+			if (toggle) toggle.setAttribute('aria-label', cur === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+		}
+		reflectTheme();
 		toggle?.addEventListener('click', () => {
 			const cur = document.documentElement.getAttribute('data-theme') ?? 'dark';
 			const next = cur === 'dark' ? 'light' : 'dark';
 			document.documentElement.setAttribute('data-theme', next);
 			try { localStorage.setItem('jeo-theme', next); } catch (_) {}
+			reflectTheme();
 		});
 
 		// ⌘K / Ctrl-K opens the search trigger — palette wires in Sprint 4.

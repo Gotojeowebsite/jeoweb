@@ -1,0 +1,34 @@
+{
+	"name": "Jeo — Unblocked Games",
+	"short_name": "Jeo",
+	"description": "Free unblocked browser, Flash, and retro games. No downloads, no signups, just play.",
+	"start_url": "/?source=pwa",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#0a0a0c",
+	"theme_color": "#0a0a0c",
+	"lang": "en",
+	"categories": ["games", "entertainment"],
+	"icons": [
+		{
+			"src": "/icon.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "any maskable"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Newly added",
+			"short_name": "New",
+			"url": "/new",
+			"icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+		},
+		{
+			"name": "Surprise me",
+			"short_name": "Random",
+			"url": "/?action=surprise"
+		}
+	]
+}

@@ -30,9 +30,9 @@
 	--semantic-info:    #38bdf8;
 
 	/* ───────────────────────── Type scale ───────────────────────── */
-	--font-display: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-text:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+	--font-display: 'Geist Variable', 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-text:    'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-mono:    'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
 	--text-display: clamp(2.5rem, 4vw + 1rem, 4rem);   /* hero */
 	--text-h1:      clamp(2rem, 2.5vw + 1rem, 2.75rem);

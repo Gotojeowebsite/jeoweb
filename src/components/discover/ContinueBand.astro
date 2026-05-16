@@ -1,0 +1,123 @@
+---
+import Icon from '../Icon.astro';
+/*
+ * Continue Playing — client-rendered from localStorage('jeo-recent').
+ * Hidden by default; the script populates and unhides if a recent game exists.
+ * Stays hidden if the user has never launched a game.
+ */
+---
+<section
+	class="continue-band"
+	id="continueBand"
+	aria-label="Continue playing"
+	hidden
+>
+	<div class="continue-cover" id="continueCover" aria-hidden="true"></div>
+	<div class="continue-meta">
+		<div class="continue-eyebrow">
+			<Icon name="history" size={14} />
+			<span>Continue playing</span>
+		</div>
+		<div class="continue-title" id="continueTitle"></div>
+		<div class="continue-sub" id="continueSub"></div>
+	</div>
+	<div class="continue-actions">
+		<a class="btn btn--primary" id="continuePlay" href="#">
+			<Icon name="play" size={14} />Resume
+		</a>
+		<button class="btn btn--ghost btn--sm" id="continueDismiss" type="button" aria-label="Dismiss continue card">
+			<Icon name="x" size={14} />
+		</button>
+	</div>
+</section>
+
+<script>
+	type Recent = { slug: string; name: string; image: string | null; lastPlayed: number };
+	function lastRecent(): Recent | null {
+		try {
+			const raw = localStorage.getItem('jeo-recent');
+			if (!raw) return null;
+			const arr = JSON.parse(raw) as Recent[];
+			if (!Array.isArray(arr) || arr.length === 0) return null;
+			return arr.sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))[0] ?? null;
+		} catch { return null; }
+	}
+	function relTime(ts: number): string {
+		const d = Date.now() - ts;
+		if (d < 60_000)      return 'just now';
+		if (d < 3_600_000)   return `${Math.round(d / 60_000)}m ago`;
+		if (d < 86_400_000)  return `${Math.round(d / 3_600_000)}h ago`;
+		return `${Math.round(d / 86_400_000)}d ago`;
+	}
+
+	const band = document.getElementById('continueBand');
+	const r = lastRecent();
+	if (band && r) {
+		const cover = document.getElementById('continueCover');
+		const title = document.getElementById('continueTitle');
+		const sub   = document.getElementById('continueSub');
+		const play  = document.getElementById('continuePlay') as HTMLAnchorElement | null;
+		const x     = document.getElementById('continueDismiss');
+		if (cover && r.image) cover.style.backgroundImage = `url('/${r.image}')`;
+		if (title) title.textContent = r.name;
+		if (sub) sub.textContent = relTime(r.lastPlayed ?? Date.now());
+		if (play) play.href = `/play/${r.slug}`;
+		band.hidden = false;
+		x?.addEventListener('click', () => {
+			try { localStorage.removeItem('jeo-recent'); } catch {}
+			band.hidden = true;
+		});
+	}
+</script>
+
+<style>
+	.continue-band {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-4);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+	}
+	.continue-cover {
+		width: 96px;
+		height: 56px;
+		flex-shrink: 0;
+		border-radius: var(--radius-md);
+		background-color: var(--bg-2);
+		background-size: cover;
+		background-position: center;
+	}
+	.continue-meta {
+		flex: 1;
+		min-width: 0;
+	}
+	.continue-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		color: var(--fg-2);
+		font-size: var(--text-xs);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+	}
+	.continue-title {
+		font-size: var(--text-h3);
+		font-weight: var(--weight-semibold);
+		margin-top: 2px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.continue-sub {
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+		margin-top: 2px;
+	}
+	.continue-actions {
+		display: flex;
+		gap: var(--space-2);
+		flex-shrink: 0;
+	}
+</style>

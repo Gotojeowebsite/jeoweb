@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/link-assets-into-dist.mjs",
     "preview": "astro preview",
     "typecheck": "astro check",
     "covers:fix": "python3 fix_game_covers.py --apply",
@@ -52,6 +52,9 @@
     "@astrojs/mdx": "^5.0.6",
     "@astrojs/preact": "^5.1.3",
     "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/geist": "^5.2.8",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@nebula-services/bare-server-node": "^2.0.4",
     "@types/node": "^25.8.0",
     "astro": "^6.3.3",

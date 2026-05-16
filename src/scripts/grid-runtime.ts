@@ -30,6 +30,8 @@ if (wrap) {
 	const searchInput = document.querySelector<HTMLInputElement>('#grid-search');
 	const typeButtons = document.querySelectorAll<HTMLButtonElement>('.filter-types .seg-btn');
 	const densityButtons = document.querySelectorAll<HTMLButtonElement>('.density-toggle .density-btn');
+	const sortSelect = document.querySelector<HTMLSelectElement>('#grid-sort');
+	const surpriseBtn = document.querySelector<HTMLButtonElement>('#surprise-me');
 
 	function matchesFilter(name: string, type: string, tags: string[]): boolean {
 		if (typeFilter !== 'all' && type !== typeFilter) return false;
@@ -142,6 +144,40 @@ if (wrap) {
 			grid.dataset.density = btn.dataset.density ?? 'comfy';
 		});
 	});
+
+	// Surprise me — pick a uniformly random non-broken card that's currently visible.
+	function pickSurprise() {
+		const visible = [...grid.querySelectorAll<HTMLAnchorElement>('a.card')]
+			.filter(c => c.style.display !== 'none' && !c.classList.contains('card--broken'));
+		if (!visible.length) return;
+		const pick = visible[Math.floor(Math.random() * visible.length)];
+		const slug = pick.dataset.slug;
+		if (slug) window.location.href = `/play/${slug}`;
+	}
+	surpriseBtn?.addEventListener('click', pickSurprise);
+	// Allow deep-linking from external places: /?action=surprise
+	try {
+		const params = new URLSearchParams(window.location.search);
+		if (params.get('action') === 'surprise') {
+			// Defer one tick so the initial cards exist.
+			window.setTimeout(pickSurprise, 0);
+		}
+	} catch (_) {}
+
+	// Sort order — operates on currently-rendered cards.
+	function applySort() {
+		const mode = sortSelect?.value ?? 'added';
+		const cards = [...grid.querySelectorAll<HTMLElement>('.card')];
+		const sorted = cards.slice();
+		if (mode === 'az') sorted.sort((a, b) => (a.dataset.name ?? '').localeCompare(b.dataset.name ?? ''));
+		else if (mode === 'za') sorted.sort((a, b) => (b.dataset.name ?? '').localeCompare(a.dataset.name ?? ''));
+		else if (mode === 'random') sorted.sort(() => Math.random() - 0.5);
+		// 'added' = SSR order, no-op.
+		const frag = document.createDocumentFragment();
+		for (const c of sorted) frag.appendChild(c);
+		grid.appendChild(frag);
+	}
+	sortSelect?.addEventListener('change', applySort);
 
 	// `/` focuses search.
 	document.addEventListener('keydown', e => {

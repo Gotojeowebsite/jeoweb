@@ -33,9 +33,12 @@ const similar = all
 	.slice(0, 8)
 	.map(x => x.g);
 
-const description = `${game.name} — play ${gameTypeLabel(game.type).toLowerCase()} for free on Jeo. ${
-	game.tags?.length ? `Tags: ${game.tags.slice(0, 4).join(', ')}.` : ''
-} No downloads, no sign-ups.`;
+const typeLabel = gameTypeLabel(game.type);
+const typeArticle = typeLabel === 'WebGL' ? 'a' : typeLabel === 'Flash' ? 'a classic' : 'a';
+const tagSentence = game.tags?.length
+	? `Tagged ${game.tags.slice(0, 4).join(', ')}.`
+	: '';
+const description = `Play ${game.name}, ${typeArticle} ${typeLabel} game, free on Jeo. ${tagSentence} No downloads, no sign-ups, plays right in your browser.`.replace(/\s+/g, ' ').trim();
 
 const jsonLd = [
 	{

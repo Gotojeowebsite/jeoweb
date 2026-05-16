@@ -18,7 +18,13 @@ const iframeSrc = '/' + game.url;
 	description={`Play ${game.name} free on Jeo`}
 	bodyClass="play-body"
 >
-	<div class="player">
+	<div
+		class="player"
+		data-jeo-game
+		data-slug={slug}
+		data-name={game.name}
+		data-image={game.image ?? ''}
+	>
 		<div class="player-top">
 			<a class="player-back" href={`/game/${slug}`}>
 				<Icon name="arrow-left" size={16} />
@@ -64,6 +70,7 @@ const iframeSrc = '/' + game.url;
 	</div>
 
 	<script>
+		import '../../scripts/recent';
 		const stage = document.getElementById('player-stage');
 		const frame = document.getElementById('player-frame') as HTMLIFrameElement | null;
 		const loading = document.getElementById('player-loading');

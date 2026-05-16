@@ -2,13 +2,15 @@
 import Logo from './Logo.astro';
 import Icon from '../Icon.astro';
 
+type NavId = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
+
 interface Props {
 	/** Marks the active nav item for highlighting. */
-	current?: 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
+	current?: NavId;
 }
 const { current } = Astro.props;
 
-const nav: { id: NonNullable<Props['current']>; href: string; label: string }[] = [
+const nav: { id: NavId; href: string; label: string }[] = [
 	{ id: 'flash',     href: '/flash',         label: 'Flash' },
 	{ id: 'retro',     href: '/retro',         label: 'Retro' },
 	{ id: 'new',       href: '/new',           label: 'New' },
@@ -24,6 +26,7 @@ const nav: { id: NonNullable<Props['current']>; href: string; label: string }[] 
 				{nav.map(item => (
 					<a
 						href={item.href}
+						aria-current={current === item.id ? 'page' : undefined}
 						class:list={['topbar-link', { 'is-active': current === item.id }]}
 					>{item.label}</a>
 				))}

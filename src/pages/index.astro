@@ -1,6 +1,7 @@
 ---
 import Site from '../layouts/Site.astro';
 import Hero from '../components/discover/Hero.astro';
+import ContinueBand from '../components/discover/ContinueBand.astro';
 import StatsStrip from '../components/discover/StatsStrip.astro';
 import FiltersBar from '../components/discover/FiltersBar.astro';
 import Rail from '../components/discover/Rail.astro';
@@ -61,6 +62,8 @@ const jsonLd = [
 >
 	<div class="content-wrap home">
 		<Hero game={featured} />
+
+		<ContinueBand />
 
 		<div class="home-stats"><StatsStrip /></div>
 

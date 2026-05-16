@@ -19,6 +19,7 @@ const isBroken = game.status === 'broken' || game.status === 'maintenance';
 	data-slug={slug}
 	data-name={game.name}
 	data-type={game.type}
+	data-tags={(game.tags ?? []).join('|')}
 >
 	<div class="card-cover">
 		{game.image ? (
