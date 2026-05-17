@@ -275,11 +275,28 @@ async function searchGithubRepos(query, opts = {}) {
 		const out = [];
 		for (const it of items) {
 			if (!it.html_url) continue;
-			// Prefer the Pages URL if we can infer it: github.com/foo/bar -> foo.github.io/bar
+			let pagesUrl = null;
 			const m = String(it.html_url).match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)/);
-			const pages = m ? `https://${m[1]}.github.io/${m[2]}/` : null;
+			if (m) {
+				const owner = m[1];
+				const repo = m[2];
+				// Special case: user/org Pages repos named "<owner>.github.io"
+				// serve at the root of <owner>.github.io, NOT under /<repo>/.
+				// The legacy inference produced dead URLs like
+				// https://foo.github.io/foo.github.io/ for those.
+				if (repo.toLowerCase() === `${owner.toLowerCase()}.github.io`) {
+					pagesUrl = `https://${owner}.github.io/`;
+				} else {
+					pagesUrl = `https://${owner}.github.io/${repo}/`;
+				}
+			}
+			// Prefer the repo's declared `homepage` when it points at a Pages
+			// URL — that's authoritative when the repo has been published.
+			if (it.homepage && /^https?:\/\/[^/]+\.github\.io/i.test(it.homepage)) {
+				pagesUrl = it.homepage;
+			}
 			out.push({
-				url: pages || it.html_url,
+				url: pagesUrl || it.html_url,
 				title: (it.full_name || '').slice(0, 240),
 				snippet: (it.description || '').slice(0, 320),
 				source: 'github-repos',

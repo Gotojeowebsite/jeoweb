@@ -46,7 +46,6 @@ const {
 	reservedCandidateFolder,
 	rankCandidates,
 	normalizeName,
-	nameSimilarity,
 } = require('./recovery/atomic-swap');
 const { scrapeCandidate } = require('./recovery/scrape-engines');
 const { buildForSlug, buildForArbitraryRoot } = require('./build-offline-manifest');
@@ -111,7 +110,13 @@ function parseArgs(argv) {
 		else if (a === '--candidate-timeout-ms') args.perCandidateTimeoutMs = Number(argv[++i]) || args.perCandidateTimeoutMs;
 		else if (a === '--search-timeout-ms') args.searchTimeoutMs = Number(argv[++i]) || args.searchTimeoutMs;
 		else if (a === '--no-fuzzy') args.fuzzy = false;
-		else if (a === '--fuzzy-threshold') args.fuzzyThreshold = Number(argv[++i]) || args.fuzzyThreshold;
+		else if (a === '--fuzzy-threshold') {
+			// Don't use `|| fallback` here — that path drops a legitimate 0
+			// (accept any fuzzy match) since 0 is falsy in JS. Parse, validate,
+			// clamp to [0, 1].
+			const v = Number(argv[++i]);
+			if (Number.isFinite(v)) args.fuzzyThreshold = Math.max(0, Math.min(1, v));
+		}
 		else if (a === '--strict-shape') args.strictShape = true;
 		else if (a === '--skip-post-swap-validation') args.skipPostSwapValidation = true;
 	}
@@ -282,32 +287,68 @@ const BLOCKER_PATTERNS_PATH = path.join(__dirname, 'recovery', 'blocker-patterns
 let _blockerPatternsCache = null;
 function loadBlockerPatterns() {
 	if (_blockerPatternsCache) return _blockerPatternsCache;
+	let list = [];
 	try {
 		const raw = JSON.parse(fs.readFileSync(BLOCKER_PATTERNS_PATH, 'utf-8'));
-		const list = Array.isArray(raw.patterns) ? raw.patterns : [];
-		_blockerPatternsCache = list.map((p) => new RegExp(p, 'i'));
+		list = Array.isArray(raw.patterns) ? raw.patterns : [];
 	} catch {
 		_blockerPatternsCache = [];
+		return _blockerPatternsCache;
 	}
+	// Compile patterns one at a time so a single bad regex doesn't disable
+	// captcha detection entirely. Bad patterns are skipped + logged once.
+	const compiled = [];
+	for (const p of list) {
+		try { compiled.push(new RegExp(p, 'i')); }
+		catch (e) { console.warn(`blocker-patterns: skipping invalid pattern "${p}": ${e.message}`); }
+	}
+	_blockerPatternsCache = compiled;
 	return _blockerPatternsCache;
+}
+
+// Follow up to 3 levels of <meta http-equiv="refresh" content="0;url=foo">
+// wrappers. The scraper sometimes captures a wrapper index.html that just
+// redirects into a UUID-named subfolder containing the real game — captcha
+// detection and shape signatures both need to read the inner page, not
+// the wrapper.
+function _readEntryHtml(folder) {
+	let cur = folder;
+	for (let i = 0; i < 4; i++) {
+		let files;
+		try { files = fs.readdirSync(cur); } catch { return ''; }
+		const entry = files.find((f) => /^index\.html?$/i.test(f))
+			|| files.find((f) => /\.html?$/i.test(f));
+		if (!entry) return '';
+		const fullPath = path.join(cur, entry);
+		let html;
+		try { html = fs.readFileSync(fullPath, 'utf-8'); }
+		catch { return ''; }
+		// Meta-refresh detection: tolerant of capitalization + whitespace
+		// + optional quotes around the URL value.
+		const m = html.match(/<meta[^>]+http-equiv\s*=\s*["']?refresh["']?[^>]+content\s*=\s*["']?[^"';]*;\s*url\s*=\s*([^"'\s>]+)/i);
+		if (!m) return html;
+		const target = m[1].trim();
+		if (!target) return html;
+		// Same-folder local target: descend.
+		const candidatePath = path.resolve(cur, target);
+		if (!candidatePath.startsWith(folder)) return html;  // refuses to escape
+		try {
+			const stat = fs.statSync(candidatePath);
+			cur = stat.isDirectory() ? candidatePath : path.dirname(candidatePath);
+		} catch {
+			return html;
+		}
+	}
+	return '';
 }
 
 function detectBlocker(candidateRoot) {
 	const patterns = loadBlockerPatterns();
 	if (!patterns.length) return null;
-	let html = '';
-	try {
-		// Find the entry HTML (first .html file by lexical order, or index.html).
-		const files = fs.readdirSync(candidateRoot);
-		const entry = files.find((f) => /^index\.html?$/i.test(f))
-			|| files.find((f) => /\.html?$/i.test(f));
-		if (!entry) return null;
-		html = fs.readFileSync(path.join(candidateRoot, entry), 'utf-8');
-		// Keep the comparison budget small; captcha text is in the first KB.
-		if (html.length > 16384) html = html.slice(0, 16384);
-	} catch {
-		return null;
-	}
+	let html = _readEntryHtml(candidateRoot);
+	if (!html) return null;
+	// Keep the comparison budget small; captcha text is in the first KB.
+	if (html.length > 16384) html = html.slice(0, 16384);
 	for (const re of patterns) {
 		const m = re.exec(html);
 		if (m) return { pattern: re.source, sample: m[0].slice(0, 80) };
@@ -343,15 +384,13 @@ function _folderShape(folder) {
 		}
 	};
 	walk(folder);
-	// Pull a few distinctive signature strings from the entry HTML for the
-	// "this is the same game" check. Includes <title>, EJS_core / EJS_gameUrl,
-	// any named globals, hashed Unity build filenames.
+	// Pull a few distinctive signature strings from the REAL entry HTML
+	// (follows meta-refresh wrappers via _readEntryHtml) for the
+	// "this is the same game" check. Includes <title>, EJS_core /
+	// EJS_gameUrl, hashed Unity build filenames.
 	try {
-		const files = fs.readdirSync(folder);
-		const entry = files.find((f) => /^index\.html?$/i.test(f))
-			|| files.find((f) => /\.html?$/i.test(f));
-		if (entry) {
-			const html = fs.readFileSync(path.join(folder, entry), 'utf-8').slice(0, 32768);
+		const html = _readEntryHtml(folder).slice(0, 32768);
+		if (html) {
 			const titleM = html.match(/<title>([^<]{2,80})<\/title>/i);
 			if (titleM) out.signatures.add(`title:${titleM[1].trim().toLowerCase()}`);
 			const ejsCoreM = html.match(/EJS_core\s*=\s*["']([a-z0-9_]+)["']/i);
@@ -749,8 +788,6 @@ async function recover(slug, args) {
 			{ name: normalized, type: ctx.gameType },
 			{ timeoutMs: args.searchTimeoutMs, fuzzy: true },
 		);
-		// Drop hits whose host is the same as the canonical site we're trying
-		// to recover (no point re-scraping the broken copy from itself).
 		fuzzyCandidates = rankCandidates(fuzzyHits, ctx.name, args.maxCandidates);
 		console.log(`[${slug}] fuzzy pass: ${fuzzyHits.length} raw hits → ${fuzzyCandidates.length} ranked`);
 
@@ -759,8 +796,11 @@ async function recover(slug, args) {
 	}
 
 	// ---- All failed ----
-	const totalTried = exactCandidates.length + fuzzyCandidates.length;
-	if (totalTried === 0) {
+	// Count from log.candidates_tried so below-threshold fuzzy skips and
+	// pre-tryCandidate filters don't inflate the denominator. blockerHits
+	// is keyed off real tryCandidate outcomes so it stays accurate.
+	const attempted = log.candidates_tried.filter((e) => e.outcome !== 'below_fuzzy_threshold').length;
+	if (attempted === 0 && exactCandidates.length + fuzzyCandidates.length === 0) {
 		bumpCooldownOnFailure(slug, 'no candidates found');
 		appendLog({ ...log, outcome: 'no_candidates' });
 		console.log(`[${slug}] no candidates found.`);
@@ -768,13 +808,20 @@ async function recover(slug, args) {
 	}
 	// Distinguish "all blocked by captcha" from generic failure for smarter
 	// cooldown — captcha gets a shorter retry than verify_failed.
-	const allBlocked = blockerHits.length > 0 && blockerHits.length === totalTried;
+	const allBlocked = blockerHits.length > 0 && blockerHits.length === attempted;
 	const failureReason = allBlocked
 		? 'all_candidates_blocked_by_captcha'
-		: `${totalTried} candidates all failed`;
+		: `${attempted} candidates all failed`;
 	bumpCooldownOnFailure(slug, failureReason);
-	appendLog({ ...log, outcome: 'all_candidates_failed', exact_count: exactCandidates.length, fuzzy_count: fuzzyCandidates.length });
-	console.log(`[${slug}] all ${totalTried} candidates failed.`);
+	appendLog({
+		...log,
+		outcome: 'all_candidates_failed',
+		exact_count: exactCandidates.length,
+		fuzzy_count: fuzzyCandidates.length,
+		attempted_count: attempted,
+		blocker_count: blockerHits.length,
+	});
+	console.log(`[${slug}] all ${attempted} attempted candidates failed (${exactCandidates.length} exact + ${fuzzyCandidates.length} fuzzy ranked).`);
 	return { slug, outcome: 'all_candidates_failed', candidates_tried: log.candidates_tried };
 }
 

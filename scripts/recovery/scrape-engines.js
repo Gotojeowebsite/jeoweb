@@ -135,14 +135,36 @@ function detectEngineFromUrls(urls) {
 }
 
 // Realistic UA strings rotated per scrape so a single host doesn't see the
-// same fingerprint hitting every game we try to recover. Chosen from the
-// 2026-current major-browser UA pool.
+// same fingerprint hitting every game we try to recover. Each entry carries
+// the matching Sec-CH-UA client hints so we never send a Chromium-only
+// Sec-CH-UA alongside a Safari or Firefox UA (which is itself a fingerprint).
+// Chromium entries get full Sec-CH-UA; Safari + Firefox entries leave
+// hints undefined so we OMIT those headers entirely on the request — real
+// non-Chromium browsers don't send them.
 const REAL_USER_AGENTS = [
-	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
-	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15',
-	'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0',
-	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0',
-	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+	{
+		ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+		secChUa: '"Not_A Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
+		secChUaMobile: '?0',
+		secChUaPlatform: '"Windows"',
+	},
+	{
+		ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15',
+		// Safari does NOT send Sec-CH-UA.
+	},
+	{
+		ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0',
+		// Firefox does NOT send Sec-CH-UA by default.
+	},
+	{
+		ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0',
+	},
+	{
+		ua: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+		secChUa: '"Not_A Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
+		secChUaMobile: '?0',
+		secChUaPlatform: '"Linux"',
+	},
 ];
 const REAL_VIEWPORTS = [
 	{ width: 1280, height: 800 },
@@ -225,7 +247,8 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 
 	fs.mkdirSync(candidateRoot, { recursive: true });
 
-	const userAgent = _randomFrom(REAL_USER_AGENTS);
+	const uaProfile = _randomFrom(REAL_USER_AGENTS);
+	const userAgent = uaProfile.ua;
 	const viewport = _randomFrom(REAL_VIEWPORTS);
 
 	let browser;
@@ -247,13 +270,18 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 		await applyStealth(page);
 		await page.setUserAgent(userAgent);
 		await page.setViewport(viewport);
-		await page.setExtraHTTPHeaders({
+		// Send Sec-CH-UA only when the chosen UA is a Chromium derivative;
+		// Safari + Firefox don't send these in real life. The legacy code
+		// always sent the Chromium hints, which alongside a Safari/Firefox
+		// UA was itself a giveaway that the request was scripted.
+		const headers = {
 			'Accept-Language': 'en-US,en;q=0.9',
 			'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-			'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
-			'Sec-Ch-Ua-Mobile': '?0',
-			'Sec-Ch-Ua-Platform': '"Windows"',
-		});
+		};
+		if (uaProfile.secChUa) headers['Sec-Ch-Ua'] = uaProfile.secChUa;
+		if (uaProfile.secChUaMobile) headers['Sec-Ch-Ua-Mobile'] = uaProfile.secChUaMobile;
+		if (uaProfile.secChUaPlatform) headers['Sec-Ch-Ua-Platform'] = uaProfile.secChUaPlatform;
+		await page.setExtraHTTPHeaders(headers);
 
 		// Tiny per-request jitter — 0-250ms — to avoid burst-detection
 		// heuristics on CDNs that rate-limit by request rate.

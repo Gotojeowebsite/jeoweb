@@ -215,11 +215,12 @@ NOISE_CONSOLE_PATTERNS = (
     # Deprecation warnings — informational, never fatal. Anchored to the
     # bracketed prefix or known-noise context so we don't match "X is
     # deprecated and this game requires it" / real error messages that
-    # mention the word.
+    # mention the word. Patterns prefixed `re:` use regex semantics; plain
+    # ones substring-match.
     "[deprecation]",
     "[violation]",
     "deprecationwarning:",
-    "addeventlistener.*passive event listener",
+    "re:addeventlistener.*passive event listener",
     "synchronous xmlhttprequest on the main thread is deprecated",
     "unload event is deprecated",
     "the deprecation date for the legacy",
@@ -234,12 +235,12 @@ NOISE_CONSOLE_PATTERNS = (
     "err_blocked_by_response",
     "net::err_blocked",
     "blocked by client",
-    "failed to load resource:.*doubleclick\\.net",
-    "failed to load resource:.*googletagmanager",
-    "failed to load resource:.*google-analytics",
-    "failed to load resource:.*googlesyndication",
-    "failed to load resource:.*googleadservices",
-    "failed to load resource:.*doubleverify",
+    "re:failed to load resource:.*doubleclick\\.net",
+    "re:failed to load resource:.*googletagmanager",
+    "re:failed to load resource:.*google-analytics",
+    "re:failed to load resource:.*googlesyndication",
+    "re:failed to load resource:.*googleadservices",
+    "re:failed to load resource:.*doubleverify",
 
     # Cookie / consent banners.
     "cookie-banner",
@@ -270,10 +271,10 @@ NOISE_CONSOLE_PATTERNS = (
     # Common third-party library noise. Anchored to the load-failure
     # signature so legitimate errors that happen to pass through a Sentry
     # / New Relic frame don't get swallowed.
-    "failed to load resource:.*polyfill\\.io",
-    "failed to load resource:.*newrelic",
-    "failed to load resource:.*datadog-rum",
-    "failed to load resource:.*sentry",
+    "re:failed to load resource:.*polyfill\\.io",
+    "re:failed to load resource:.*newrelic",
+    "re:failed to load resource:.*datadog-rum",
+    "re:failed to load resource:.*sentry",
     "log4javascript",
 )
 
@@ -843,19 +844,22 @@ def is_critical_local_path(path: str, resource_type: str) -> bool:
     return False
 
 
-_NOISE_CONSOLE_RE = [
-    re.compile(p, re.IGNORECASE) if any(c in p for c in '.*+?()[]{}^$\\|')
-    else re.compile(re.escape(p), re.IGNORECASE)
-    for p in NOISE_CONSOLE_PATTERNS
-]
+# Patterns that need real regex semantics (anchors like `.*sentry` so a real
+# error that happens to mention "sentry" doesn't get swallowed) MUST be
+# prefixed with `re:` in NOISE_CONSOLE_PATTERNS. Without the prefix, the
+# pattern is compiled as an escaped literal — substring match, as before.
+# The legacy heuristic ("contains regex metachars => treat as regex") broke
+# `[deprecation]` / `[violation]` by compiling them as character classes
+# that matched almost any message.
+def _compile_noise_pattern(p: str) -> re.Pattern:
+    if p.startswith('re:'):
+        return re.compile(p[3:], re.IGNORECASE)
+    return re.compile(re.escape(p), re.IGNORECASE)
+
+_NOISE_CONSOLE_RE = [_compile_noise_pattern(p) for p in NOISE_CONSOLE_PATTERNS]
+
 
 def is_noise_console_message(message: str) -> bool:
-    # Each NOISE_CONSOLE_PATTERNS entry compiles into either a regex (if it
-    # contains regex metachars) or an escaped-literal substring search. That
-    # lets us anchor patterns like "failed to load resource:.*sentry" so a
-    # real error that just happens to mention "sentry" doesn't get swallowed,
-    # while keeping the plain-text patterns (e.g. "favicon.ico") substring-
-    # matched as before.
     for pattern in _NOISE_CONSOLE_RE:
         if pattern.search(message):
             return True
