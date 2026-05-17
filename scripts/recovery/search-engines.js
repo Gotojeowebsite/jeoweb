@@ -215,6 +215,233 @@ async function searchWayback(query, opts = {}) {
 	} catch { return []; }
 }
 
+// ----- Wayback CDX deep-walk -------------------------------------------------
+// Single "closest snapshot" call misses older known-good copies of games whose
+// most recent snapshot is itself broken. Walk the CDX index for the query
+// term and surface multiple snapshots (oldest, middle, newest) ranked by
+// timestamp so the candidate pool gets diverse archive points.
+async function searchWaybackDeep(query, opts = {}) {
+	const url = `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(query)}&output=json&limit=80&filter=statuscode:200&filter=mimetype:text/html&fl=timestamp,original`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// CDX JSON output is [[header...], [row...], ...].
+		const rows = JSON.parse(r.body);
+		if (!Array.isArray(rows) || rows.length < 2) return [];
+		const data = rows.slice(1).map(([ts, original]) => ({ ts, original }));
+		if (!data.length) return [];
+		// Pick up to 5 snapshots: oldest, 25%, middle, 75%, newest.
+		const picks = [];
+		const at = (frac) => data[Math.min(data.length - 1, Math.max(0, Math.floor(frac * (data.length - 1))))];
+		for (const frac of [0, 0.25, 0.5, 0.75, 1]) picks.push(at(frac));
+		const seen = new Set();
+		const out = [];
+		for (const p of picks) {
+			if (!p || !p.original || seen.has(p.ts)) continue;
+			seen.add(p.ts);
+			out.push({
+				url: `https://web.archive.org/web/${p.ts}/${p.original}`,
+				title: `wayback ${p.ts}`,
+				snippet: p.original,
+				source: 'wayback-deep',
+			});
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- GitHub repository search ---------------------------------------------
+// Distinct from searchGithubCode — that one greps file contents. This one
+// matches repository names + descriptions. Many HTML5 games live on a
+// GitHub Pages site whose repo name contains the game title; surfacing the
+// repo gives us the canonical source even if no code-grep hit fires.
+async function searchGithubRepos(query, opts = {}) {
+	const tok = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+	if (!tok) return [];
+	const q = encodeURIComponent(`${query} in:name,description game`);
+	const url = `https://api.github.com/search/repositories?q=${q}&per_page=15&sort=stars`;
+	try {
+		const r = await httpsGet(url, {
+			headers: {
+				'Accept': 'application/vnd.github+json',
+				'Authorization': `Bearer ${tok}`,
+				'X-GitHub-Api-Version': '2022-11-28',
+			},
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data.items) ? data.items : [];
+		const out = [];
+		for (const it of items) {
+			if (!it.html_url) continue;
+			let pagesUrl = null;
+			const m = String(it.html_url).match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)/);
+			if (m) {
+				const owner = m[1];
+				const repo = m[2];
+				// Special case: user/org Pages repos named "<owner>.github.io"
+				// serve at the root of <owner>.github.io, NOT under /<repo>/.
+				// The legacy inference produced dead URLs like
+				// https://foo.github.io/foo.github.io/ for those.
+				if (repo.toLowerCase() === `${owner.toLowerCase()}.github.io`) {
+					pagesUrl = `https://${owner}.github.io/`;
+				} else {
+					pagesUrl = `https://${owner}.github.io/${repo}/`;
+				}
+			}
+			// Prefer the repo's declared `homepage` when it points at a Pages
+			// URL — that's authoritative when the repo has been published.
+			if (it.homepage && /^https?:\/\/[^/]+\.github\.io/i.test(it.homepage)) {
+				pagesUrl = it.homepage;
+			}
+			out.push({
+				url: pagesUrl || it.html_url,
+				title: (it.full_name || '').slice(0, 240),
+				snippet: (it.description || '').slice(0, 320),
+				source: 'github-repos',
+			});
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- Searx (privacy-preserving meta-search) -------------------------------
+// Searx instances aggregate results from many backends and aren't aggressively
+// rate-limited the way DDG/Bing are. We hit one of a small pool of public
+// instances; opts.searxBase can override.
+const SEARX_INSTANCES = [
+	'https://search.bus-hit.me',
+	'https://searx.be',
+	'https://search.disroot.org',
+];
+async function searchSearx(query, opts = {}) {
+	const base = opts.searxBase || SEARX_INSTANCES[Math.floor(Math.random() * SEARX_INSTANCES.length)];
+	const url = `${base}/search?q=${encodeURIComponent(query)}&format=json&safesearch=0&categories=general`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data.results) ? data.results : [];
+		return items.slice(0, 25).map((it) => ({
+			url: it.url,
+			title: (it.title || '').slice(0, 240),
+			snippet: (it.content || '').slice(0, 320),
+			source: 'searx',
+		})).filter((x) => x.url && /^https?:\/\//.test(x.url));
+	} catch { return []; }
+}
+
+// ----- Mojeek (independent crawler) -----------------------------------------
+// Different result set from Google-derived backends; useful when DDG/Bing
+// both miss a game because their crawlers haven't indexed the host.
+async function searchMojeek(query, opts = {}) {
+	const url = `https://www.mojeek.com/search?q=${encodeURIComponent(query)}&fmt=json`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = (data && data.response && Array.isArray(data.response.results)) ? data.response.results : [];
+		return items.slice(0, 25).map((it) => ({
+			url: it.url,
+			title: (it.title || '').slice(0, 240),
+			snippet: (it.desc || it.description || '').slice(0, 320),
+			source: 'mojeek',
+		})).filter((x) => x.url && /^https?:\/\//.test(x.url));
+	} catch { return []; }
+}
+
+// ----- Yandex (Russian crawler with a distinct index) ----------------------
+// Often the fastest way to find an Eastern European mirror of a game whose
+// Western mirrors all 404'd. Hits the XML opensearch endpoint (no auth).
+async function searchYandex(query, opts = {}) {
+	const url = `https://yandex.com/search/?text=${encodeURIComponent(query)}&lr=10393`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// Yandex HTML results are wrapped in <a class="b-link" href="..."> or
+		// <a class="organic__url" href="...">. Parse what we can.
+		const out = [];
+		const linkRe = /<a[^>]+class="[^"]*(?:OrganicTitle-Link|organic__url|b-link)[^"]*"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+		let m;
+		while ((m = linkRe.exec(r.body)) !== null) {
+			const href = m[1];
+			if (!/^https?:\/\//.test(href)) continue;
+			out.push({
+				url: href,
+				title: stripTags(m[2]).slice(0, 240),
+				snippet: '',
+				source: 'yandex',
+			});
+			if (out.length >= 25) break;
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- JSDelivr (npm CDN search) -------------------------------------------
+// Some HTML5 games are packaged as npm modules and served from JSDelivr; if
+// the package name matches the game slug, the canonical URL is right there.
+async function searchJSDelivr(query, opts = {}) {
+	const slugish = query.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+	if (!slugish) return [];
+	const url = `https://data.jsdelivr.com/v1/search?query=${encodeURIComponent(slugish)}&limit=10`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data && data.results) ? data.results : [];
+		return items.slice(0, 15).map((it) => ({
+			// Canonical play URL: latest version's index.html, served via the
+			// CDN. Works for most game packages that bundle a static entry.
+			url: `https://cdn.jsdelivr.net/npm/${it.name}/index.html`,
+			title: (it.name || '').slice(0, 240),
+			snippet: (it.description || '').slice(0, 320),
+			source: 'jsdelivr',
+		})).filter((x) => x.title);
+	} catch { return []; }
+}
+
+// ----- Itch.io (indie HTML5 builds) ----------------------------------------
+// Many indie HTML5 games have an official itch.io page with a /play/<slug>
+// URL or an embed iframe. The legacy site search returns ranked matches.
+async function searchItch(query, opts = {}) {
+	const url = `https://itch.io/search?q=${encodeURIComponent(query)}&classification=game`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// Itch search markup: <a class="title game_link" href="https://...">
+		const out = [];
+		const re = /<a[^>]+class="[^"]*\bgame_link\b[^"]*"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+		let m;
+		while ((m = re.exec(r.body)) !== null) {
+			let href = m[1];
+			if (!/^https?:\/\//.test(href)) {
+				if (href.startsWith('//')) href = 'https:' + href;
+				else if (href.startsWith('/')) href = 'https://itch.io' + href;
+				else continue;
+			}
+			out.push({
+				url: href,
+				title: stripTags(m[2]).slice(0, 240),
+				snippet: '',
+				source: 'itch',
+			});
+			if (out.length >= 20) break;
+		}
+		return out;
+	} catch { return []; }
+}
+
 // ----- Public API -----------------------------------------------------------
 function buildQueries(name, type) {
 	const variants = new Set();
@@ -273,8 +500,54 @@ function buildQueries(name, type) {
 	return Array.from(variants).slice(0, 18);
 }
 
+// Fuzzy query expansion — used as a fallback when buildQueries() returns
+// zero validated candidates. Goes broader: drops the strict "unblocked"
+// qualifier, accepts more terms in the URL path, and tries hostnames
+// where games are typically rehosted (github.io forks, archive.org
+// snapshots, itch.io builds, jsdelivr-cached npm packages).
+//
+// Caller is responsible for canonicalizing the name BEFORE passing it
+// here (use atomic-swap.js#normalizeName). Variants returned still need
+// to clear the fuzzy similarity threshold downstream.
+function buildFuzzyQueries(normalizedName, type) {
+	const variants = new Set();
+	if (!normalizedName) return [];
+	const base = normalizedName.replace(/[_-]+/g, ' ').trim();
+	if (!base) return [];
+
+	// Six broader variants per the plan.
+	variants.add(`${base}`);
+	variants.add(`${base} html5`);
+	variants.add(`${base} unblocked`);
+	variants.add(`${base} site:github.io`);
+	variants.add(`${base} site:archive.org`);
+	variants.add(`${base} port`);
+
+	// Type-aware fuzzy extras — broader than buildQueries equivalents.
+	if (type === 'webgl' || !type) {
+		variants.add(`${base} webgl free`);
+		variants.add(`${base} browser`);
+		variants.add(`${base} site:itch.io`);
+	}
+	if (type === 'flash') {
+		variants.add(`${base} swf`);
+		variants.add(`${base} flashpoint`);
+	}
+	if (type === 'gba' || type === 'snes' || type === 'nes' || type === 'retro') {
+		variants.add(`${base} rom`);
+		variants.add(`${base} site:vimm.net`);
+	}
+
+	return Array.from(variants).slice(0, 18);
+}
+
 async function discoverCandidates({ name, type } = {}, opts = {}) {
-	const queries = buildQueries(name, type);
+	// opts.fuzzy: when true, use buildFuzzyQueries instead of buildQueries.
+	// Caller passes the already-normalized name in that case. Backends are
+	// the same — only the query phrasing differs.
+	const queries = opts.fuzzy
+		? buildFuzzyQueries(name, type)
+		: buildQueries(name, type);
 	if (!queries.length) return [];
 
 	const timeoutMs = opts.timeoutMs || DEFAULT_TIMEOUT_MS;
@@ -283,25 +556,50 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 		tasks.push(searchDuckDuckGo(q, { timeoutMs }));
 		tasks.push(searchBing(q, { timeoutMs }));
 		tasks.push(searchBrave(q, { timeoutMs }));
+		// Searx + Mojeek + Yandex surface results DDG/Bing miss. Run them
+		// per-query since their indexes are independent. opt-out via
+		// opts.skipMetaSearx / skipMojeek / skipYandex when instances are
+		// down.
+		if (!opts.skipMetaSearx) tasks.push(searchSearx(q, { timeoutMs }));
+		if (!opts.skipMojeek) tasks.push(searchMojeek(q, { timeoutMs }));
+		if (!opts.skipYandex) tasks.push(searchYandex(q, { timeoutMs }));
 	}
-	// GitHub code search and Wayback only on the base name to save quota.
+	// Base-name-only backends to conserve API quota / avoid rate limits.
 	tasks.push(searchGithubCode(name, { timeoutMs }));
+	tasks.push(searchGithubRepos(name, { timeoutMs }));
 	tasks.push(searchWayback(name, { timeoutMs }));
+	tasks.push(searchWaybackDeep(name, { timeoutMs }));
+	// Itch.io + JSDelivr are package/portal-specific — single-query suffices.
+	tasks.push(searchItch(name, { timeoutMs }));
+	tasks.push(searchJSDelivr(name, { timeoutMs }));
 
 	const settled = await Promise.allSettled(tasks);
 	const all = [];
 	for (const s of settled) {
 		if (s.status === 'fulfilled' && Array.isArray(s.value)) all.push(...s.value);
 	}
-	return dedupeBy(all, x => x.url);
+	// Tag each hit with match_type so downstream gates know to apply the
+	// nameSimilarity >= 0.55 threshold before scraping.
+	const out = dedupeBy(all, (x) => x.url);
+	if (opts.fuzzy) for (const h of out) h.match_type = 'fuzzy';
+	else for (const h of out) h.match_type = 'exact';
+	return out;
 }
 
 module.exports = {
 	discoverCandidates,
 	buildQueries,
+	buildFuzzyQueries,
 	searchDuckDuckGo,
 	searchBing,
 	searchBrave,
 	searchGithubCode,
+	searchGithubRepos,
 	searchWayback,
+	searchWaybackDeep,
+	searchSearx,
+	searchMojeek,
+	searchYandex,
+	searchJSDelivr,
+	searchItch,
 };

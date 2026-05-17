@@ -5,6 +5,7 @@ import '../styles/reset.css';
 import '../styles/chrome.css';
 import TopBar from '../components/chrome/TopBar.astro';
 import Footer from '../components/chrome/Footer.astro';
+import CommandPalette from '../components/CommandPalette.astro';
 
 type NavCurrent = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
 
@@ -96,6 +97,7 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 		<slot />
 	</main>
 	<Footer />
+	<CommandPalette />
 
 	<script>
 		// Theme toggle — minimal client glue. The full settings live in the Settings sheet.
@@ -119,14 +121,14 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 			reflectTheme();
 		});
 
-		// ⌘K / Ctrl-K opens the search trigger — palette wires in Sprint 4.
-		document.addEventListener('keydown', (e) => {
-			const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
-			if (isCmdK) {
-				e.preventDefault();
-				const btn = document.getElementById('topbar-search') as HTMLButtonElement | null;
-				btn?.click();
-			}
+		// ⌘K / Ctrl-K — the CommandPalette island also listens for this and
+		// will preventDefault. This legacy stub still routes the top-bar
+		// search button click for users on devices without keyboard
+		// shortcuts (e.g. when they tap the search button explicitly).
+		document.getElementById('topbar-search')?.addEventListener('click', () => {
+			// Dispatch a synthetic cmd-k so the palette opens.
+			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
+			window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
 		});
 	</script>
 </body>

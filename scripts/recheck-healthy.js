@@ -87,25 +87,42 @@ function selectSlugs(health, args) {
 		.filter((e) => e.source !== 'override')
 		.filter((e) => !e.slug.startsWith('.'));
 
-	// Tier A: stale healthy verdicts (need re-confirmation).
+	// Tier A: stale healthy verdicts (need re-confirmation). Excludes slugs
+	// with last_verified_at === 0 (never observed by any scanner lane) — those
+	// belong in a separate bucket so they don't dominate tier A every nightly.
 	const tierA = all
-		.filter((e) => e.verdict === 'healthy' && e.last_verified_at < maxAgeCutoff)
+		.filter((e) => e.verdict === 'healthy' && e.last_verified_at > 0 && e.last_verified_at < maxAgeCutoff)
 		.sort((a, b) => a.last_verified_at - b.last_verified_at);
 
 	// Tier B: stale non-healthy verdicts (broken / probable_broken / unverified
 	// / unknown). These deserve a re-look at higher cadence than healthy so we
-	// don't leave games marked broken indefinitely on transient signals.
+	// don't leave games marked broken indefinitely on transient signals. Same
+	// last_verified_at > 0 guard.
 	const tierB = all
-		.filter((e) => e.verdict !== 'healthy' && e.last_verified_at < stalePassCutoff)
+		.filter((e) => e.verdict !== 'healthy' && e.last_verified_at > 0 && e.last_verified_at < stalePassCutoff)
 		.sort((a, b) => a.last_verified_at - b.last_verified_at);
 
-	// Interleave 60/40 so we don't starve either tier.
+	// Tier C: never-verified slugs (catalog drift). Run them once each, but
+	// capped so a freshly-added 500-slug batch doesn't burn the budget on
+	// one nightly. Anything in tier C this run gets a last_verified_at
+	// stamp afterward so it falls into tier A/B for subsequent runs.
+	const tierCAll = all.filter((e) => e.last_verified_at === 0);
+	const tierCCap = Math.max(1, Math.floor(args.max / 5));
+	const tierC = tierCAll.slice(0, tierCCap);
+
+	// Pick tier C first (never-verified slugs are highest priority — we don't
+	// know what they look like), then interleave A/B 3:2.
 	const picked = [];
 	const seenSlugs = new Set();
+	for (const c of tierC) {
+		if (seenSlugs.has(c.slug) || picked.length >= args.max) break;
+		seenSlugs.add(c.slug);
+		picked.push(c);
+	}
 	let ia = 0;
 	let ib = 0;
 	while (picked.length < args.max) {
-		const fromA = picked.length % 5 < 3; // 3 out of every 5 from tier A
+		const fromA = (picked.length - tierC.length) % 5 < 3; // 3 out of every 5 from tier A
 		const pool = fromA ? tierA : tierB;
 		const idx = fromA ? ia : ib;
 		if (idx >= pool.length) {
@@ -126,25 +143,86 @@ function selectSlugs(health, args) {
 		seenSlugs.add(cand.slug);
 		picked.push(cand);
 	}
-	return { picked, tierAtotal: tierA.length, tierBtotal: tierB.length };
+	return {
+		picked,
+		tierAtotal: tierA.length,
+		tierBtotal: tierB.length,
+		tierCtotal: tierCAll.length,  // pre-cap so the user sees the real backlog
+		tierCPicked: tierC.length,
+	};
+}
+
+// Merge a subset scan_results into the full-catalog file in place. The
+// scanner emits a JSON array of result objects; we replace any entries with
+// matching `name` and append the rest. Preserves the full prior catalog
+// scan so build-game-health.js still has a complete headless lane.
+function mergeScanResults(subsetPath, fullPath) {
+	let subset, full;
+	try { subset = JSON.parse(fs.readFileSync(subsetPath, 'utf-8')); }
+	catch { return { ok: false, error: `cannot read subset ${subsetPath}` }; }
+	if (!Array.isArray(subset)) return { ok: false, error: 'subset is not an array' };
+	try { full = JSON.parse(fs.readFileSync(fullPath, 'utf-8')); }
+	catch { full = []; }  // first run: nothing to merge with
+	if (!Array.isArray(full)) full = [];
+
+	const subsetBySlug = new Map();
+	for (const r of subset) {
+		if (r && typeof r.name === 'string') subsetBySlug.set(r.name, r);
+	}
+	const out = [];
+	const seen = new Set();
+	for (const r of full) {
+		if (!r || typeof r.name !== 'string') continue;
+		if (subsetBySlug.has(r.name)) {
+			out.push(subsetBySlug.get(r.name));
+			seen.add(r.name);
+		} else {
+			out.push(r);
+		}
+	}
+	for (const [slug, r] of subsetBySlug.entries()) {
+		if (!seen.has(slug)) out.push(r);
+	}
+	try { fs.writeFileSync(fullPath, JSON.stringify(out, null, 2)); }
+	catch (e) { return { ok: false, error: e.message }; }
+	return { ok: true, merged: subset.length, total: out.length };
 }
 
 function runScanner(slugList, args) {
 	if (!slugList.length) return { ok: true, skipped: true };
-	const slugFile = path.join(PATH_REPORTS, `recheck_${new Date().toISOString().slice(0, 10)}_slugs.json`);
+	const dateStamp = new Date().toISOString().slice(0, 10);
+	const slugFile = path.join(PATH_REPORTS, `recheck_${dateStamp}_slugs.json`);
 	const payload = { generated_at: Math.floor(Date.now() / 1000), slugs: slugList };
 	fs.mkdirSync(PATH_REPORTS, { recursive: true });
 	fs.writeFileSync(slugFile, JSON.stringify(payload, null, 2));
+
+	// Route the subset scan to a dedicated report so we don't clobber the
+	// previous full-catalog scan_results.json. After the scanner exits we
+	// merge the subset entries back into scan_results.json by slug so
+	// build-game-health.js sees a complete headless map.
+	const profileSuffix = args.profile === 'chromium-no-gpu' ? '.profile_b' : '';
+	const subsetReport = path.join(PATH_REPORTS, `recheck_${dateStamp}${profileSuffix}_scan.json`);
+	const targetFull = path.join(ROOT, `scan_results${profileSuffix}.json`);
 
 	const scannerArgs = [
 		'broken_game_scanner.py',
 		'--only-from', path.relative(ROOT, slugFile),
 		'--profile', args.profile,
+		'--report-json', path.relative(ROOT, subsetReport),
 		'--sync-markers',
 	];
 	console.log(`running: python3 ${scannerArgs.join(' ')}`);
 	const r = spawnSync('python3', scannerArgs, { cwd: ROOT, stdio: 'inherit' });
-	return { ok: r.status === 0, exitCode: r.status };
+	if (r.status !== 0) {
+		return { ok: false, exitCode: r.status };
+	}
+	const merge = mergeScanResults(subsetReport, targetFull);
+	if (!merge.ok) {
+		console.warn(`scan merge failed: ${merge.error}`);
+	} else {
+		console.log(`merged ${merge.merged} subset results into ${path.relative(ROOT, targetFull)} (total now ${merge.total})`);
+	}
+	return { ok: true, exitCode: 0, merge };
 }
 
 function runHealthRefresh() {
@@ -166,11 +244,12 @@ function main() {
 		process.exit(1);
 	}
 
-	const { picked, tierAtotal, tierBtotal } = selectSlugs(health, args);
+	const { picked, tierAtotal, tierBtotal, tierCtotal, tierCPicked } = selectSlugs(health, args);
 	console.log(`recheck-healthy:`);
 	console.log(`  tier A (stale healthy, > ${args.maxAgeDays}d):  ${tierAtotal} total`);
 	console.log(`  tier B (stale non-healthy, > ${args.stalePassDays}d): ${tierBtotal} total`);
-	console.log(`  picked ${picked.length}/${args.max} for re-scan (3:2 A:B interleave)`);
+	console.log(`  tier C (never verified): ${tierCtotal} total (taking ${tierCPicked} this run)`);
+	console.log(`  picked ${picked.length}/${args.max} for re-scan (C first, then 3:2 A:B interleave)`);
 	for (const p of picked.slice(0, 20)) {
 		const ageStr = p.last_verified_at
 			? `${Math.round((Date.now() / 1000 - p.last_verified_at) / 86400)}d ago`
@@ -188,6 +267,7 @@ function main() {
 		profile: args.profile,
 		tier_a_total: tierAtotal,
 		tier_b_total: tierBtotal,
+		tier_c_total: tierCtotal,
 		picked_count: picked.length,
 		picked,
 	};

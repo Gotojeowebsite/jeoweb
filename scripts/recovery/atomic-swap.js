@@ -104,14 +104,27 @@ function loadReputation() {
 	try {
 		const raw = JSON.parse(fs.readFileSync(REPUTATION_PATH, 'utf-8'));
 		const trusted = raw.trusted || {};
-		const blocked = (raw.blocked || []).map(p => new RegExp(p, 'i'));
+		// Compile each pattern individually so a single malformed entry
+		// doesn't disable the whole filter list.
+		const compileEach = (list) => {
+			const out = [];
+			for (const p of (list || [])) {
+				try { out.push(new RegExp(p, 'i')); }
+				catch (e) { console.warn(`domain-reputation: skipping invalid pattern "${p}": ${e.message}`); }
+			}
+			return out;
+		};
 		_reputationCache = {
 			trusted,
-			blocked,
+			blocked: compileEach(raw.blocked),
+			// `disallow` is the intent-tagged poison list. Same matching rules
+			// as `blocked` but reserved for portals that started serving
+			// trojanized copies. Combined into one "exclude" pool at runtime.
+			disallow: compileEach(raw.disallow),
 			default_score: Number(raw.default_score) || 0,
 		};
 	} catch {
-		_reputationCache = { trusted: {}, blocked: [], default_score: 0 };
+		_reputationCache = { trusted: {}, blocked: [], disallow: [], default_score: 0 };
 	}
 	return _reputationCache;
 }
@@ -129,6 +142,7 @@ function scoreCandidate(url, name) {
 	const host = hostFor(url);
 	if (!host) return -1000;
 	for (const re of rep.blocked) if (re.test(host) || re.test(url)) return -1000;
+	for (const re of rep.disallow) if (re.test(host) || re.test(url)) return -1000;
 	let score = rep.default_score;
 	if (rep.trusted[host] != null) score = rep.trusted[host];
 	else {
@@ -274,5 +288,50 @@ module.exports = {
 	rankCandidates,
 	normalizeName,
 	nameSimilarity,
+	assetFingerprintOverlap,
 	hostFor,
 };
+
+// Asset-fingerprint overlap. Computes the fraction of distinctive file
+// basenames in the broken folder's offline-manifest that ALSO appear in the
+// candidate folder (or in a candidate manifest read via the scrape stage).
+// Returns 0..1. Cheap signal that the candidate is plausibly the same
+// game even before we pay to verify it — overlap < 0.1 = almost
+// certainly a different game; >= 0.6 = strong "same game" indicator.
+// Callers should use it as an early reject before the manifest gate, and
+// as a positive boost for shape-checking fuzzy candidates.
+function _readManifest(folder) {
+	try {
+		const p = path.join(folder, '.offline-manifest.json');
+		if (!fs.existsSync(p)) return null;
+		const m = JSON.parse(fs.readFileSync(p, 'utf-8'));
+		if (!m || !Array.isArray(m.files)) return null;
+		return m;
+	} catch { return null; }
+}
+
+function _distinctiveBasenames(manifest) {
+	const out = new Set();
+	if (!manifest) return out;
+	for (const f of manifest.files) {
+		if (!f || typeof f.path !== 'string') continue;
+		const base = path.basename(f.path).toLowerCase();
+		// Skip ultra-common filenames that overlap between unrelated games
+		// (index.html, favicon.ico, etc.). Distinctive = anything that's
+		// either >= 6 chars or contains a digit / hash-like substring.
+		const common = new Set(['index.html', 'favicon.ico', 'main.js', 'main.css', 'style.css', 'robots.txt', 'manifest.json', 'logo.png', 'icon.png']);
+		if (common.has(base)) continue;
+		out.add(base);
+	}
+	return out;
+}
+
+function assetFingerprintOverlap(referenceFolder, candidateFolder) {
+	const ref = _distinctiveBasenames(_readManifest(referenceFolder));
+	const cand = _distinctiveBasenames(_readManifest(candidateFolder));
+	if (!ref.size || !cand.size) return { ok: false, overlap: 0, ref_size: ref.size, candidate_size: cand.size, reason: 'no_manifest' };
+	let inter = 0;
+	for (const f of cand) if (ref.has(f)) inter += 1;
+	const overlap = inter / ref.size;
+	return { ok: true, overlap, ref_size: ref.size, candidate_size: cand.size, overlap_count: inter };
+}

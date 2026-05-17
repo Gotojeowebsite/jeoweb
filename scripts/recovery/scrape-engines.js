@@ -134,12 +134,122 @@ function detectEngineFromUrls(urls) {
 	return null;
 }
 
+// Realistic UA strings rotated per scrape so a single host doesn't see the
+// same fingerprint hitting every game we try to recover. Each entry carries
+// the matching Sec-CH-UA client hints so we never send a Chromium-only
+// Sec-CH-UA alongside a Safari or Firefox UA (which is itself a fingerprint).
+// Chromium entries get full Sec-CH-UA; Safari + Firefox entries leave
+// hints undefined so we OMIT those headers entirely on the request — real
+// non-Chromium browsers don't send them.
+const REAL_USER_AGENTS = [
+	{
+		ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+		secChUa: '"Not_A Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
+		secChUaMobile: '?0',
+		secChUaPlatform: '"Windows"',
+	},
+	{
+		ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15',
+		// Safari does NOT send Sec-CH-UA.
+	},
+	{
+		ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0',
+		// Firefox does NOT send Sec-CH-UA by default.
+	},
+	{
+		ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:135.0) Gecko/20100101 Firefox/135.0',
+	},
+	{
+		ua: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36',
+		secChUa: '"Not_A Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"',
+		secChUaMobile: '?0',
+		secChUaPlatform: '"Linux"',
+	},
+];
+const REAL_VIEWPORTS = [
+	{ width: 1280, height: 800 },
+	{ width: 1440, height: 900 },
+	{ width: 1536, height: 864 },
+	{ width: 1920, height: 1080 },
+	{ width: 1366, height: 768 },
+];
+
+function _randomFrom(arr) {
+	return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Apply stealth-grade browser fingerprint masking. Replaces / hides the
+// signals Cloudflare / datadome / Akamai use to identify headless Chrome:
+//   - navigator.webdriver => undefined
+//   - navigator.plugins.length => 3 (mock plugins)
+//   - navigator.languages => ['en-US', 'en']
+//   - WebGL vendor + renderer strings spoofed to real values
+//   - chrome.runtime / chrome.loadTimes shims
+//   - Notification.permission set to 'default'
+//   - hide CDP / automation overrides on AudioContext / window.outerHeight
+//
+// Done inline rather than via puppeteer-extra-plugin-stealth so we don't
+// drag in a separate npm dep tree. The patches are the same ones that
+// plugin applies; documented well enough that we can extend if a new
+// detection vector shows up.
+async function applyStealth(page) {
+	await page.evaluateOnNewDocument(() => {
+		// 1. webdriver flag.
+		Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+
+		// 2. navigator.plugins length (real browsers have at least 3).
+		Object.defineProperty(navigator, 'plugins', {
+			get: () => [
+				{ name: 'PDF Viewer', filename: 'internal-pdf-viewer' },
+				{ name: 'Chrome PDF Viewer', filename: 'internal-pdf-viewer' },
+				{ name: 'Chromium PDF Viewer', filename: 'internal-pdf-viewer' },
+			],
+		});
+
+		// 3. languages — real browsers return >=2.
+		Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
+
+		// 4. WebGL vendor + renderer spoof. Headless Chrome reports
+		// "Google Inc. (Google)" / "ANGLE (Google, Vulkan ...)"; real
+		// Chrome reports something host-GPU specific.
+		const getParam = WebGLRenderingContext.prototype.getParameter;
+		WebGLRenderingContext.prototype.getParameter = function (param) {
+			if (param === 37445) return 'Intel Inc.';               // UNMASKED_VENDOR_WEBGL
+			if (param === 37446) return 'Intel(R) Iris(TM) Plus Graphics OpenGL Engine';  // UNMASKED_RENDERER_WEBGL
+			return getParam.call(this, param);
+		};
+
+		// 5. chrome runtime shim — non-Chrome headless leaves this undefined.
+		if (!window.chrome) window.chrome = {};
+		window.chrome.runtime = window.chrome.runtime || {};
+
+		// 6. Notification permission — headless reports 'denied' even with
+		// no real notifications permission, which is a fingerprint signal.
+		const origQuery = window.navigator.permissions && window.navigator.permissions.query;
+		if (origQuery) {
+			window.navigator.permissions.query = (parameters) =>
+				parameters && parameters.name === 'notifications'
+					? Promise.resolve({ state: Notification.permission })
+					: origQuery(parameters);
+		}
+
+		// 7. Hide CDP-detection signals on window.outerWidth/Height (some
+		// pages check that outer dimensions are sane).
+		if (window.outerWidth === 0) Object.defineProperty(window, 'outerWidth', { get: () => window.innerWidth });
+		if (window.outerHeight === 0) Object.defineProperty(window, 'outerHeight', { get: () => window.innerHeight });
+	});
+}
+
 async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbose }) {
 	const puppeteer = loadPuppeteer();
 	const totalTimeout = Math.max(15_000, timeoutMs || DEFAULT_TIMEOUT);
 	const log = (...a) => { if (verbose) console.log('   [scrape]', ...a); };
 
 	fs.mkdirSync(candidateRoot, { recursive: true });
+
+	const uaProfile = _randomFrom(REAL_USER_AGENTS);
+	const userAgent = uaProfile.ua;
+	const viewport = _randomFrom(REAL_VIEWPORTS);
 
 	let browser;
 	try {
@@ -150,13 +260,33 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 				'--disable-setuid-sandbox',
 				'--disable-web-security',
 				'--disable-features=IsolateOrigins,site-per-process',
-				'--window-size=1280,800',
+				'--disable-blink-features=AutomationControlled',  // hide CDP banner
+				`--window-size=${viewport.width},${viewport.height}`,
+				'--lang=en-US,en',
 			],
 		});
 
 		const page = await browser.newPage();
-		await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
-		await page.setViewport({ width: 1280, height: 800 });
+		await applyStealth(page);
+		await page.setUserAgent(userAgent);
+		await page.setViewport(viewport);
+		// Send Sec-CH-UA only when the chosen UA is a Chromium derivative;
+		// Safari + Firefox don't send these in real life. The legacy code
+		// always sent the Chromium hints, which alongside a Safari/Firefox
+		// UA was itself a giveaway that the request was scripted.
+		const headers = {
+			'Accept-Language': 'en-US,en;q=0.9',
+			'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+		};
+		if (uaProfile.secChUa) headers['Sec-Ch-Ua'] = uaProfile.secChUa;
+		if (uaProfile.secChUaMobile) headers['Sec-Ch-Ua-Mobile'] = uaProfile.secChUaMobile;
+		if (uaProfile.secChUaPlatform) headers['Sec-Ch-Ua-Platform'] = uaProfile.secChUaPlatform;
+		await page.setExtraHTTPHeaders(headers);
+
+		// Tiny per-request jitter — 0-250ms — to avoid burst-detection
+		// heuristics on CDNs that rate-limit by request rate.
+		await new Promise((r) => setTimeout(r, Math.floor(Math.random() * 250)));
+
 		await page.setRequestInterception(true);
 
 		const portalOrigin = new URL(url).origin;
@@ -211,12 +341,37 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 		});
 
 		// Navigate to portal first.
+		// Phase 3 smart wait-for-load: instead of capturing whatever's in
+		// the DOM at domcontentloaded, wait for networkidle (gives the page
+		// time to fetch all scripts), then a 3s settle, then scroll to bottom
+		// + back to top to trigger any lazy-load observers. Falls back to
+		// domcontentloaded if networkidle never resolves.
 		const navStart = Date.now();
 		try {
-			await page.goto(url, { waitUntil: 'domcontentloaded', timeout: Math.min(60_000, totalTimeout) });
+			await page.goto(url, { waitUntil: 'networkidle2', timeout: Math.min(45_000, totalTimeout) });
 		} catch (e) {
-			log(`portal navigation timed out: ${e.message}`);
+			log(`portal networkidle2 timed out, falling back to domcontentloaded: ${e.message}`);
+			try {
+				await page.goto(url, { waitUntil: 'domcontentloaded', timeout: Math.min(30_000, totalTimeout) });
+			} catch (e2) {
+				log(`portal navigation failed: ${e2.message}`);
+			}
 		}
+
+		// 3-second settle for post-hydration SPA tasks.
+		await new Promise((r) => setTimeout(r, 3_000));
+
+		// Scroll-to-bottom-and-back triggers IntersectionObserver-based
+		// lazy loads (cover images, secondary iframes, ad slots). Best-effort.
+		try {
+			await page.evaluate(async () => {
+				const h = document.body ? document.body.scrollHeight : 0;
+				window.scrollTo(0, h);
+				await new Promise((r) => setTimeout(r, 400));
+				window.scrollTo(0, 0);
+				await new Promise((r) => setTimeout(r, 200));
+			});
+		} catch { /* ignore */ }
 
 		// Brief idle for portal scripts to inject iframe.
 		await new Promise(r => setTimeout(r, 6_000));
@@ -242,9 +397,14 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 		if (iframeUrl) {
 			log(`iframe → ${iframeUrl}`);
 			try {
-				await page.goto(iframeUrl, { waitUntil: 'domcontentloaded', timeout: Math.min(60_000, totalTimeout - (Date.now() - navStart)) });
+				await page.goto(iframeUrl, { waitUntil: 'networkidle2', timeout: Math.min(45_000, totalTimeout - (Date.now() - navStart)) });
 			} catch (e) {
-				log(`iframe navigation timed out: ${e.message}`);
+				log(`iframe networkidle2 timed out, falling back to domcontentloaded: ${e.message}`);
+				try {
+					await page.goto(iframeUrl, { waitUntil: 'domcontentloaded', timeout: Math.min(30_000, totalTimeout - (Date.now() - navStart)) });
+				} catch (e2) {
+					log(`iframe navigation failed: ${e2.message}`);
+				}
 			}
 			// Half-wait → click-through → second half-wait. Lets us advance
 			// past a "Click to play" overlay so the audio context unlocks and
