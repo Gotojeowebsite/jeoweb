@@ -1050,6 +1050,52 @@ def probe_page(page) -> Dict[str, object]:
                 }
             } catch(_) {}
 
+            // -------- Loading-bar progress (per engine) --------
+            // For each engine that exposes a measurable loading progress,
+            // extract it as a 0..100 percent. A bar that exists but never
+            // crosses 95% in two probes = stuck-loading verdict (analogous
+            // to the existing Unity rule, generalized).
+            let ejsProgressPct = -1;
+            try {
+                // EmulatorJS draws its progress text into #ejs_loading_text /
+                // .ejs_loading_text. Parse "Loading 47%" -> 47.
+                const ejsText = document.querySelector('#ejs_loading_text, .ejs_loading_text, .ejs-loading-text')?.textContent || '';
+                const m = ejsText.match(/(\\d{1,3})\\s*%/);
+                if (m) ejsProgressPct = Math.min(100, Number(m[1]));
+            } catch(_) {}
+            let ruffleProgressPct = -1;
+            try {
+                // Ruffle exposes a `.metadata.fileSize` once decode is far enough;
+                // surrogate progress is the size of the loaded SWF buffer vs.
+                // the announced fileSize. Cheap approximation.
+                const r = document.querySelector('ruffle-player');
+                if (r && r.metadata && r.metadata.fileSize) {
+                    ruffleProgressPct = r.isPlaying ? 100 : 50;
+                }
+            } catch(_) {}
+            let constructProgressPct = -1;
+            try {
+                // Construct shows progress on #c2loadingprogress / #c3loadingprogress.
+                const bar = document.querySelector('#c2loadingprogress, #c3loadingprogress, .c2loadingprogress, .c3loadingprogress');
+                const w = bar && bar.style && bar.style.width || '';
+                const m = w.match(/(\\d+(?:\\.\\d+)?)/);
+                if (m) constructProgressPct = Math.min(100, Number(m[1]));
+            } catch(_) {}
+            let phaserProgressPct = -1;
+            try {
+                // Phaser exposes Loader.progress (0..1) when a Scene is loading.
+                if (typeof window.Phaser !== 'undefined' && window.Phaser.GAMES) {
+                    for (const g of window.Phaser.GAMES) {
+                        const sc = g && g.scene && g.scene.scenes;
+                        if (Array.isArray(sc)) for (const s of sc) {
+                            if (s && s.load && typeof s.load.progress === 'number') {
+                                phaserProgressPct = Math.max(phaserProgressPct, Math.round(s.load.progress * 100));
+                            }
+                        }
+                    }
+                }
+            } catch(_) {}
+
             // -------- AudioContext detection --------
             // Many games create an AudioContext during boot; once it's in
             // 'running' state, the game has reached at least the splash/menu.
@@ -1146,6 +1192,10 @@ def probe_page(page) -> Dict[str, object]:
                 phaserReady,
                 audioContextRunning,
                 audioContextCount,
+                ejsProgressPct,
+                ruffleProgressPct,
+                constructProgressPct,
+                phaserProgressPct,
             };
         }
         """
@@ -1581,19 +1631,65 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 )
                 break
 
-    # Unity-specific: if the loading bar appeared and progress never reached
-    # ~95% by the second probe, the build is stuck loading.
+    # Per-engine loading-bar stall detection. If a bar exists and progress
+    # never reached ~95% by the second probe AND the engine's own "loaded"
+    # marker is false AND we don't already have critical issues, flag it.
+    # The engine_loaded check is the safety valve — a Unity game whose bar
+    # we couldn't parse but whose instance is fully constructed is fine.
     unity_progress_pct = _parse_unity_progress(probe.get("unityProgress"))
     if (
         bool(probe.get("unityLoadingBar"))
         and unity_progress_pct >= 0
         and unity_progress_pct < 95.0
+        and not bool(probe.get("unityInstanceLoaded"))
         and not critical_issues
     ):
         add_issue(
             "critical",
             "UNITY_LOADING_STUCK",
             f"Unity loading bar stuck at {unity_progress_pct:.0f}%",
+            game_url,
+        )
+
+    # EmulatorJS BIOS / ROM load stall.
+    ejs_pct = float(probe.get("ejsProgressPct", -1) or -1)
+    if (
+        ejs_pct >= 0
+        and ejs_pct < 95.0
+        and not bool(probe.get("ejsStarted"))
+        and not critical_issues
+    ):
+        add_issue(
+            "critical",
+            "EJS_LOADING_STUCK",
+            f"EmulatorJS loading stuck at {ejs_pct:.0f}%",
+            game_url,
+        )
+
+    # Construct preloader stall (#c2loadingprogress / #c3loadingprogress).
+    construct_pct = float(probe.get("constructProgressPct", -1) or -1)
+    if construct_pct >= 0 and construct_pct < 95.0 and not critical_issues:
+        add_issue(
+            "critical",
+            "CONSTRUCT_LOADING_STUCK",
+            f"Construct preloader stuck at {construct_pct:.0f}%",
+            game_url,
+        )
+
+    # Phaser asset-load stall. Phaser scenes get Loader.progress in [0, 1];
+    # we already scaled to 0..100. A scene stuck below 95% means assets
+    # didn't all arrive.
+    phaser_pct = float(probe.get("phaserProgressPct", -1) or -1)
+    if (
+        phaser_pct >= 0
+        and phaser_pct < 95.0
+        and not bool(probe.get("phaserReady"))
+        and not critical_issues
+    ):
+        add_issue(
+            "critical",
+            "PHASER_LOADING_STUCK",
+            f"Phaser scene loader stuck at {phaser_pct:.0f}%",
             game_url,
         )
 
