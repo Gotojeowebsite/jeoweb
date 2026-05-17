@@ -64,17 +64,56 @@ CRITICAL_RESOURCE_TYPES = {
 }
 
 IGNORED_LOCAL_404_PATTERNS = [
+    # Browser-default requests.
     re.compile(r"/favicon\.ico$", re.IGNORECASE),
-    re.compile(r"\.map$", re.IGNORECASE),
+    re.compile(r"/apple-touch-icon(?:-precomposed)?\.png$", re.IGNORECASE),
+    re.compile(r"/robots\.txt$", re.IGNORECASE),
+
+    # Source maps in any flavor (sourcemap files are always optional).
+    re.compile(r"\.map(?:\.gz|\.br)?$", re.IGNORECASE),
+    re.compile(r"/sourcemaps?/", re.IGNORECASE),
+
+    # Portal leftovers — JS/CSS the original host serves but our archive doesn't.
     re.compile(r"^/js/main\.js$", re.IGNORECASE),
     re.compile(r"^/css/main\.css$", re.IGNORECASE),
     re.compile(r"^/assets/scripts/game\.js$", re.IGNORECASE),
     re.compile(r"^/assets/promo/promo\.js$", re.IGNORECASE),
-    re.compile(r"^/cdn-cgi/challenge-platform/scripts/jsd/main\.js$", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/", re.IGNORECASE),  # Cloudflare worker scaffolding
+    re.compile(r"^/__cf_chl_jschl_tk__", re.IGNORECASE),
     re.compile(r"^/gadgets/evthdlr", re.IGNORECASE),
+
+    # Dev-mode / HMR / build-tooling stragglers (these only 404 because we
+    # archived a production build that still references its dev tooling).
     re.compile(r"^/sockjs-node/", re.IGNORECASE),
+    re.compile(r"^/__webpack_hmr", re.IGNORECASE),
+    re.compile(r"\.hot-update\.(?:js|json)(?:\.map)?$", re.IGNORECASE),
+    re.compile(r"^/_next/data/development/", re.IGNORECASE),
+    re.compile(r"^/__nextjs_original-stack-frame", re.IGNORECASE),
+
+    # Optional-by-convention filenames. Authors who name an asset `-optional`
+    # or `-fallback` or `.optional.*` are explicitly signalling "this 404 is
+    # fine"; trust them.
+    re.compile(r"-optional\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"\.optional\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"-fallback\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"-placeholder\.[a-z0-9]+$", re.IGNORECASE),
+
+    # PWA / service worker checks that legitimately 404 on archived games.
+    re.compile(r"^/sw-register-options\.json$", re.IGNORECASE),
+    re.compile(r"^/manifest(?:\.webmanifest)?\.bak$", re.IGNORECASE),
+    re.compile(r"^/\.well-known/", re.IGNORECASE),
+
+    # Analytics / ad probes whose absence doesn't break gameplay.
+    re.compile(r"^/(?:ezimba|ad|ads|advert)/", re.IGNORECASE),
+    re.compile(r"/(?:track|analytics|telemetry|beacon)\b", re.IGNORECASE),
+
+    # Engine-specific debris.
     re.compile(r"/emulatorjs/cores/reports/[^/]+\.json$", re.IGNORECASE),
     re.compile(r"-legacy-wasm\.data$", re.IGNORECASE),
+    re.compile(r"\.wasm\.debug\.wasm$", re.IGNORECASE),  # WebAssembly debug companion files
+    re.compile(r"/Build/.*\.symbols\.json(?:\.br|\.gz)?$", re.IGNORECASE),  # Unity debug symbols
+
+    # Old/known broken local references kept for back-compat.
     re.compile(r"/assets/svg/svg-map\.svgindex\.htmlomments$", re.IGNORECASE),
     re.compile(r"/media/posts/\d+/responsive/[^/]+\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE),
 ]
