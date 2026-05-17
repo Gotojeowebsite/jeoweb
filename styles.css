@@ -1,40 +1,39 @@
 /* ========================================
    JEO — CLEAN MINIMAL THEME
+   ========================================
+   Variables below alias the canonical design tokens in /styles/tokens.css
+   (which is loaded before this file). Keeping the legacy names so existing
+   selectors continue to work; new selectors should use --brand-*, --bg-*,
+   --fg-*, --space-*, --radius-* directly.
    ======================================== */
 
 :root {
---primary: #7c3aed;
---primary-hover: #6d28d9;
---accent: var(--primary);
---accent-hover: var(--primary-hover);
---bg: #0c0b14;
---bg-surface: rgba(20, 19, 30, 0.75);
---card-bg: rgba(26, 25, 38, 0.6);
---border: rgba(255, 255, 255, 0.08);
---text: #e8e8ed;
---muted: #8b8d97;
---radius: 16px;
---glass-blur: blur(16px);
---shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
---shadow-md: 0 8px 16px rgba(0, 0, 0, 0.2);
---shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.3);
+--primary: var(--brand-500);
+--primary-hover: var(--brand-600);
+--accent: var(--brand-500);
+--accent-hover: var(--brand-600);
+--bg: var(--bg-0);
+--bg-surface: var(--surface-glass);
+--card-bg: var(--bg-1);
+--border: var(--line-0);
+--text: var(--fg-0);
+--muted: var(--fg-2);
+--radius: var(--radius-xl);
+--glass-blur: blur(var(--blur-glass-2));
+--shadow-sm: var(--shadow-1);
+--shadow-md: var(--shadow-2);
+--shadow-lg: var(--shadow-3);
 }
 
 body.theme-light {
---primary: #7c3aed;
---primary-hover: #6d28d9;
---accent: var(--primary);
---accent-hover: var(--primary-hover);
---bg: #f5f5f7;
---bg-surface: rgba(255, 255, 255, 0.75);
---card-bg: rgba(255, 255, 255, 0.6);
---border: rgba(0, 0, 0, 0.08);
---text: #1d1d1f;
---muted: #6e6e73;
---glass-blur: blur(16px);
---shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
---shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
---shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.15);
+/* tokens.css already swaps --bg-0/--fg-0/--accent under [data-theme='light']
+   on <html>; app.js's loadTheme/toggleTheme mirror that attribute. The
+   legacy class only needs to override the accent here (light theme uses
+   --brand-600 for higher contrast on a pale background). */
+--primary: var(--brand-600);
+--primary-hover: var(--brand-700);
+--accent: var(--brand-600);
+--accent-hover: var(--brand-700);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
