@@ -1,0 +1,338 @@
+---
+import Site from '../layouts/Site.astro';
+import Jeo from '../components/mascot/Jeo.astro';
+import Icon from '../components/Icon.astro';
+import { CATALOG } from '../lib/achievements';
+import { getAllGames, gameSlug } from '../lib/catalog';
+
+// Stream the catalog as a slim slug→game map for client-side lookup. The
+// favorites / recents rails are rendered from localStorage on the client,
+// so the page is fully static and reusable as a logged-out shell.
+const slim = getAllGames().map(g => ({
+	slug: gameSlug(g),
+	name: g.name,
+	image: g.image,
+	type: g.type,
+}));
+---
+<Site title="Your profile" current={undefined}>
+	<div class="content-wrap profile">
+		<section class="profile-header fx-rise">
+			<div class="profile-avatar" id="profileAvatar">
+				<Jeo pose="wave" size={128} />
+			</div>
+			<div class="profile-meta">
+				<div class="profile-eyebrow">Profile</div>
+				<h1 id="profileName">Jeo player</h1>
+				<div class="profile-stats">
+					<div class="profile-stat">
+						<div class="profile-stat__val" id="statStreak">0</div>
+						<div class="profile-stat__lbl">Day streak</div>
+					</div>
+					<div class="profile-stat">
+						<div class="profile-stat__val" id="statGames">0</div>
+						<div class="profile-stat__lbl">Games played</div>
+					</div>
+					<div class="profile-stat">
+						<div class="profile-stat__val" id="statAchievements">0 / {CATALOG.length}</div>
+						<div class="profile-stat__lbl">Achievements</div>
+					</div>
+					<div class="profile-stat">
+						<div class="profile-stat__val" id="statFavs">0</div>
+						<div class="profile-stat__lbl">Favorites</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="profile-section">
+			<h2 class="section-title">Achievements</h2>
+			<div class="achievement-grid">
+				{CATALOG.map(a => (
+					<div class="achievement" data-id={a.id}>
+						<div class="achievement__icon">
+							<Icon name={a.icon as any} size={24} />
+						</div>
+						<div class="achievement__name">{a.name}</div>
+						<div class="achievement__desc">{a.desc}</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="profile-section">
+			<h2 class="section-title">Favorites</h2>
+			<div class="profile-rail" id="profileFavs">
+				<div class="profile-empty">Nothing yet — tap the heart on any card.</div>
+			</div>
+		</section>
+
+		<section class="profile-section">
+			<h2 class="section-title">Recently played</h2>
+			<div class="profile-rail" id="profileRecent">
+				<div class="profile-empty">Once you play a game it'll show up here.</div>
+			</div>
+		</section>
+
+		<section class="profile-section profile-danger">
+			<button class="btn btn--secondary" id="resetEverything" type="button">
+				<Icon name="refresh" size={14} />Reset everything
+			</button>
+			<span class="profile-danger__note">Clears favorites, recents, achievements, and onboarding flag in this browser.</span>
+		</section>
+	</div>
+
+	<script define:vars={{ slim }}>
+		const byMod = (n, m) => ((n % m) + m) % m;
+		const games = new Map(slim.map(g => [g.slug, g]));
+
+		function readArr(key) {
+			try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : []; }
+			catch { return []; }
+		}
+		function readObj(key) {
+			try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : {}; }
+			catch { return {}; }
+		}
+		function getPrefs() {
+			try {
+				const raw = localStorage.getItem('jeo-prefs-v1');
+				return raw ? JSON.parse(raw) : {};
+			} catch { return {}; }
+		}
+		function readDays() {
+			try {
+				const raw = localStorage.getItem('jeo-play-days');
+				return raw ? JSON.parse(raw) : [];
+			} catch { return []; }
+		}
+		function currentStreak() {
+			const days = readDays();
+			if (!days.length) return 0;
+			const today = new Date().toISOString().slice(0, 10);
+			const last = days[days.length - 1];
+			const diff = Math.round((Date.parse(today) - Date.parse(last)) / 86_400_000);
+			if (diff > 1) return 0;
+			let s = 1;
+			for (let i = days.length - 2; i >= 0; i--) {
+				const gap = Math.round((Date.parse(days[i + 1]) - Date.parse(days[i])) / 86_400_000);
+				if (gap === 1) s++;
+				else if (gap === 0) continue;
+				else break;
+			}
+			return s;
+		}
+
+		const prefs = getPrefs();
+		const recents = readArr('jeo-recent');
+		const favs = readArr('jeo-favs');
+		const counts = readObj('jeo-play-counts');
+		const unlocked = readObj('jeo-achievements');
+
+		// Header — avatar + name
+		const avatar = document.getElementById('profileAvatar');
+		const poseClass = (prefs && prefs.avatar) ? `is-${prefs.avatar}` : 'is-wave';
+		const mascot = avatar?.querySelector('.jeo-mascot');
+		if (mascot) {
+			mascot.classList.remove('is-wave','is-sleep','is-cheer','is-shrug','is-peek','is-thinking');
+			mascot.classList.add(poseClass);
+		}
+		const playedCount = Object.keys(counts).length;
+		document.getElementById('statStreak').textContent = String(currentStreak());
+		document.getElementById('statGames').textContent = String(playedCount);
+		document.getElementById('statAchievements').textContent = `${Object.keys(unlocked).length} / ${document.querySelectorAll('.achievement').length}`;
+		document.getElementById('statFavs').textContent = String(favs.length);
+
+		// Achievement lock state
+		document.querySelectorAll('.achievement').forEach(el => {
+			const id = el.dataset.id;
+			if (id && unlocked[id]) el.classList.add('is-unlocked');
+		});
+
+		// Favorites rail
+		const favRail = document.getElementById('profileFavs');
+		if (favs.length && favRail) {
+			favRail.innerHTML = '';
+			for (const slug of favs) {
+				const g = games.get(slug);
+				if (!g) continue;
+				favRail.appendChild(buildCard(g));
+			}
+		}
+
+		// Recent rail
+		const recentRail = document.getElementById('profileRecent');
+		if (recents.length && recentRail) {
+			recentRail.innerHTML = '';
+			for (const r of recents) {
+				const g = games.get(r.slug) ?? { slug: r.slug, name: r.name, image: r.image, type: 'webgl' };
+				recentRail.appendChild(buildCard(g));
+			}
+		}
+
+		function buildCard(g) {
+			const a = document.createElement('a');
+			a.className = 'profile-card fx-tilt';
+			a.href = `/play/${g.slug}`;
+			a.innerHTML = `
+				<span class="profile-card__cover" ${g.image ? `style="background-image:url('/${g.image}')"` : ''}></span>
+				<span class="profile-card__name">${g.name}</span>`;
+			return a;
+		}
+
+		document.getElementById('resetEverything')?.addEventListener('click', () => {
+			if (!confirm("This clears your favorites, recents, achievements, and settings in this browser. Sure?")) return;
+			for (const k of ['jeo-prefs-v1','jeo-favs','jeo-recent','jeo-play-days','jeo-play-counts','jeo-play-tags','jeo-play-type-counts','jeo-achievements','jeo-theme','jeo-accent']) {
+				try { localStorage.removeItem(k); } catch {}
+			}
+			window.location.href = '/';
+		});
+
+		void byMod;
+	</script>
+</Site>
+
+<style>
+	.profile { display: flex; flex-direction: column; gap: var(--space-9); }
+	.profile-header {
+		display: flex;
+		align-items: center;
+		gap: var(--space-6);
+		padding: var(--space-7);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-2xl);
+	}
+	.profile-eyebrow {
+		font-size: var(--text-xs);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		color: var(--fg-2);
+	}
+	.profile-meta h1 {
+		font-family: var(--font-display);
+		font-size: var(--text-h1);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.02em;
+		margin-top: 2px;
+	}
+	.profile-stats {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: var(--space-5);
+		margin-top: var(--space-4);
+	}
+	.profile-stat__val {
+		font-family: var(--font-display);
+		font-size: var(--text-h2);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.02em;
+		background: var(--gradient-aurora);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+	.profile-stat__lbl {
+		font-size: var(--text-xs);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		color: var(--fg-2);
+		margin-top: 2px;
+	}
+
+	.profile-section { margin-top: var(--space-7); }
+	.profile-section .section-title {
+		font-size: var(--text-h2);
+		margin-bottom: var(--space-4);
+	}
+
+	.achievement-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: var(--space-3);
+	}
+	.achievement {
+		display: flex;
+		gap: var(--space-3);
+		align-items: flex-start;
+		padding: var(--space-4);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+		filter: grayscale(1);
+		opacity: 0.55;
+		transition: filter var(--motion-base), opacity var(--motion-base), border-color var(--motion-base);
+	}
+	.achievement.is-unlocked { filter: none; opacity: 1; border-color: color-mix(in srgb, var(--accent) 60%, transparent); }
+	.achievement__icon {
+		width: 40px;
+		height: 40px;
+		border-radius: var(--radius-md);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bg-2);
+		color: var(--fg-1);
+		flex-shrink: 0;
+	}
+	.achievement.is-unlocked .achievement__icon { background: var(--gradient-aurora); color: white; }
+	.achievement__name { font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+	.achievement__desc { font-size: var(--text-xs); color: var(--fg-2); margin-top: 2px; }
+
+	.profile-rail {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: var(--space-3);
+	}
+	.profile-empty {
+		grid-column: 1 / -1;
+		padding: var(--space-6);
+		color: var(--fg-2);
+		background: var(--bg-1);
+		border: 1px dashed var(--line-1);
+		border-radius: var(--radius-lg);
+		text-align: center;
+		font-size: var(--text-sm);
+	}
+	.profile-card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		text-decoration: none;
+		color: var(--fg-0);
+	}
+	.profile-card__cover {
+		aspect-ratio: 16 / 9;
+		background-size: cover;
+		background-position: center;
+		background-color: var(--bg-2);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--line-1);
+	}
+	.profile-card__name {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+
+	.profile-danger {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-5);
+		background: var(--bg-1);
+		border: 1px dashed var(--line-1);
+		border-radius: var(--radius-xl);
+		flex-wrap: wrap;
+	}
+	.profile-danger__note { font-size: var(--text-xs); color: var(--fg-2); }
+
+	@media (max-width: 720px) {
+		.profile-header { flex-direction: column; text-align: center; gap: var(--space-4); }
+		.profile-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+	}
+</style>

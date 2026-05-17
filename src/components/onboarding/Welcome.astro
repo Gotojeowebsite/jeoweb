@@ -1,0 +1,193 @@
+---
+/**
+ * Onboarding mount point. Picks 6 healthy + image-bearing games as
+ * starters and hands them off to the Welcome island.
+ *
+ * The island self-gates on storage.ts.onboarded — server can always
+ * mount, no flash because we render `client:idle` and only render
+ * markup once the island decides it should show.
+ */
+import { getAllGames, gameSlug } from '../../lib/catalog';
+import Welcome from './Welcome.island.tsx';
+
+const playable = getAllGames().filter(g =>
+	g.image && g.status !== 'broken' && g.status !== 'maintenance' && !g.requested
+);
+// Pick 6 deterministically (rotating salt) so each fresh browser sees the
+// same set on its first paint — and no two visits in a row are identical.
+function pick(n: number) {
+	const dateKey = new Date().toISOString().slice(0, 10);
+	let h = 0;
+	for (let i = 0; i < dateKey.length; i++) h = (h * 31 + dateKey.charCodeAt(i)) >>> 0;
+	const out: typeof playable = [];
+	const used = new Set<number>();
+	for (let i = 0; out.length < n && i < playable.length * 2; i++) {
+		const idx = (h + i * 37) % playable.length;
+		if (used.has(idx)) continue;
+		used.add(idx);
+		out.push(playable[idx]);
+	}
+	return out;
+}
+
+const starters = pick(6).map(g => ({
+	slug: gameSlug(g),
+	name: g.name,
+	image: g.image,
+	type: g.type,
+}));
+---
+<Welcome starters={starters} client:idle />
+
+<style is:global>
+	.jeo-onboard {
+		position: fixed;
+		inset: 0;
+		z-index: var(--z-modal);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-5);
+		background: rgba(0,0,0,0.7);
+		backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+		-webkit-backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+		animation: jeo-fade-in var(--motion-base) var(--ease-out-soft);
+	}
+	.jeo-onboard__panel {
+		width: min(560px, 96vw);
+		padding: var(--space-7) var(--space-6);
+		background: var(--bg-1);
+		border: 1px solid var(--line-2);
+		border-radius: var(--radius-2xl);
+		box-shadow: var(--shadow-4);
+		color: var(--fg-0);
+	}
+	.jeo-onboard__dots {
+		display: flex;
+		gap: var(--space-2);
+		justify-content: center;
+		margin-bottom: var(--space-5);
+	}
+	.jeo-onboard__dots .dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: var(--bg-3);
+		transition: background var(--motion-fast), transform var(--motion-fast);
+	}
+	.jeo-onboard__dots .dot.is-active { background: var(--accent); transform: scale(1.4); }
+	.jeo-onboard__dots .dot.is-done   { background: var(--accent); opacity: 0.5; }
+
+	.jeo-onboard__step { display: flex; flex-direction: column; gap: var(--space-4); }
+	.jeo-onboard__step h2 {
+		font-size: var(--text-h1);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.03em;
+		text-align: center;
+	}
+	.jeo-onboard__step p {
+		text-align: center;
+		color: var(--fg-1);
+	}
+
+	.jeo-onboard__avatars {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-3);
+	}
+	.jeo-onboard__avatar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		transition: border-color var(--motion-fast), background var(--motion-fast);
+	}
+	.jeo-onboard__avatar:hover { border-color: var(--line-2); background: var(--bg-3); }
+	.jeo-onboard__avatar.is-active { border-color: var(--accent); background: var(--accent-soft); }
+	.jeo-onboard__avatar-label { font-size: var(--text-xs); color: var(--fg-2); }
+
+	.jeo-onboard__accents {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-3);
+	}
+	.jeo-onboard__accent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		transition: border-color var(--motion-fast), background var(--motion-fast);
+		font-size: var(--text-sm);
+		color: var(--fg-1);
+	}
+	.jeo-onboard__accent:hover { border-color: var(--line-2); background: var(--bg-3); color: var(--fg-0); }
+	.jeo-onboard__accent.is-active { border-color: var(--swatch); color: var(--fg-0); }
+	.jeo-onboard__accent .swatch {
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-pill);
+		background: var(--swatch);
+		box-shadow: 0 0 0 4px rgba(255,255,255,0.04);
+	}
+
+	.jeo-onboard__starters {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-3);
+		max-height: 50vh;
+		overflow-y: auto;
+	}
+	.jeo-onboard__starter {
+		display: flex;
+		gap: var(--space-3);
+		align-items: center;
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		cursor: pointer;
+		text-align: left;
+		transition: border-color var(--motion-fast), background var(--motion-fast);
+	}
+	.jeo-onboard__starter:hover { border-color: var(--accent); }
+	.jeo-onboard__starter .cover {
+		width: 56px;
+		height: 32px;
+		flex-shrink: 0;
+		background-size: cover;
+		background-position: center;
+		background-color: var(--bg-3);
+		border-radius: var(--radius-sm);
+	}
+	.jeo-onboard__starter .meta { display: flex; flex-direction: column; min-width: 0; }
+	.jeo-onboard__starter .name {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.jeo-onboard__starter .type {
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+	}
+
+	.jeo-onboard__actions {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--space-3);
+		margin-top: var(--space-4);
+	}
+</style>

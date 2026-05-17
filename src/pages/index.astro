@@ -2,10 +2,12 @@
 import Site from '../layouts/Site.astro';
 import Hero from '../components/discover/Hero.astro';
 import ContinueBand from '../components/discover/ContinueBand.astro';
+import DailyDrop from '../components/discover/DailyDrop.astro';
 import StatsStrip from '../components/discover/StatsStrip.astro';
 import FiltersBar from '../components/discover/FiltersBar.astro';
 import Rail from '../components/discover/Rail.astro';
 import GameGrid from '../components/discover/GameGrid.astro';
+import Welcome from '../components/onboarding/Welcome.astro';
 import {
 	getAllGames,
 	getRecentlyAdded,
@@ -64,6 +66,7 @@ const jsonLd = [
 		<Hero game={featured} />
 
 		<ContinueBand />
+		<DailyDrop />
 
 		<div class="home-stats"><StatsStrip /></div>
 
@@ -89,6 +92,8 @@ const jsonLd = [
 			<GameGrid games={allGames} />
 		</section>
 	</div>
+
+	<Welcome />
 </Site>
 
 <script>

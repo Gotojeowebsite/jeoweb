@@ -1,6 +1,7 @@
 ---
 import Site from '../../layouts/Site.astro';
 import Icon from '../../components/Icon.astro';
+import LaunchOverlay from '../../components/play/LaunchOverlay.astro';
 import { getAllGames, gameSlug, gameTypeLabel, type Game } from '../../lib/catalog';
 
 export async function getStaticPaths() {
@@ -24,6 +25,8 @@ const iframeSrc = '/' + game.url;
 		data-slug={slug}
 		data-name={game.name}
 		data-image={game.image ?? ''}
+		data-type={game.type}
+		data-tags={(game.tags ?? []).join('|')}
 	>
 		<div class="player-top">
 			<a class="player-back" href={`/game/${slug}`}>
@@ -53,16 +56,12 @@ const iframeSrc = '/' + game.url;
 			</div>
 		</div>
 		<div class="player-stage" id="player-stage">
-			<div class="player-loading" id="player-loading">
-				<div class="player-loading-inner">
-					<div class="skeleton" style="width:120px; height:18px; border-radius: 99px;"></div>
-					<p>Loading {game.name}…</p>
-				</div>
-			</div>
+			<LaunchOverlay game={game} slug={slug} />
 			<iframe
 				id="player-frame"
 				src={iframeSrc}
 				title={game.name}
+				transition:persist="player-frame"
 				allow="autoplay; fullscreen; pointer-lock; gamepad; clipboard-read; clipboard-write"
 				sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-modals allow-pointer-lock allow-orientation-lock allow-presentation"
 			></iframe>
@@ -71,15 +70,11 @@ const iframeSrc = '/' + game.url;
 
 	<script>
 		import '../../scripts/recent';
+		import { recordPlayEnd } from '../../lib/achievements';
 		const stage = document.getElementById('player-stage');
 		const frame = document.getElementById('player-frame') as HTMLIFrameElement | null;
-		const loading = document.getElementById('player-loading');
 		const fsBtn = document.getElementById('player-fullscreen');
-
-		frame?.addEventListener('load', () => {
-			loading?.style.setProperty('opacity', '0');
-			window.setTimeout(() => loading?.style.setProperty('display', 'none'), 240);
-		});
+		const sessionStart = Date.now();
 
 		fsBtn?.addEventListener('click', async () => {
 			if (!stage) return;
@@ -97,12 +92,25 @@ const iframeSrc = '/' + game.url;
 				await navigator.clipboard?.writeText(url);
 			}
 		});
+
+		// Marathon achievement: 30-minute single-session play.
+		window.addEventListener('beforeunload', () => {
+			try { recordPlayEnd(Date.now() - sessionStart); } catch (_) {}
+		});
+		document.addEventListener('visibilitychange', () => {
+			if (document.hidden) {
+				try { recordPlayEnd(Date.now() - sessionStart); } catch (_) {}
+			}
+		});
+		// Silence unused-warning on frame in case future refactors drop it.
+		void frame;
 	</script>
 </Site>
 
 <style is:global>
 	body.play-body { background: var(--bg-0); }
-	body.play-body .site-footer { display: none; }
+	body.play-body .site-footer,
+	body.play-body .sticky-resume { display: none; }
 </style>
 
 <style>
@@ -162,23 +170,6 @@ const iframeSrc = '/' + game.url;
 		height: 100%;
 		border: 0;
 		display: block;
-	}
-	.player-loading {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: var(--bg-0);
-		transition: opacity var(--motion-base) var(--ease-out-soft);
-		z-index: 1;
-	}
-	.player-loading-inner {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: var(--space-4);
-		color: var(--fg-2);
 	}
 	.hide-narrow { display: inline; }
 	@media (max-width: 600px) {

@@ -1,0 +1,196 @@
+---
+/**
+ * Theater overlay shown above the iframe while the game loads. Cover
+ * lifts into frame with parallax, engine badge animates in tinted to the
+ * type's semantic color, and a rotating loading line cycles every 2.5s
+ * while we wait for the iframe load event.
+ */
+import Icon from '../Icon.astro';
+import Jeo from '../mascot/Jeo.astro';
+import type { Game } from '../../lib/catalog';
+import { gameTypeLabel } from '../../lib/catalog';
+import { LOAD_LINES } from '../../lib/voice';
+
+interface Props { game: Game; slug: string; }
+const { game, slug } = Astro.props;
+const cover = game.image ? `/${game.image}` : null;
+const typeIcon = game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles';
+---
+<div
+	class={`launch-overlay launch-overlay--${game.type}`}
+	data-launch-overlay
+	data-slug={slug}
+	aria-hidden="false"
+>
+	<div class="launch-overlay__cover" style={cover ? `background-image:url('${cover}');` : ''}></div>
+	<div class="launch-overlay__veil"></div>
+	<div class="launch-overlay__panel fx-rise">
+		{cover && (
+			<div class="launch-overlay__art" style={`background-image:url('${cover}');view-transition-name: jeo-player-cover;`}></div>
+		)}
+		<div class="launch-overlay__chip">
+			<Icon name={typeIcon} size={12} />
+			<span>{gameTypeLabel(game.type)}</span>
+		</div>
+		<h1 class="launch-overlay__title">{game.name}</h1>
+		<div class="launch-overlay__progress" aria-hidden="true"><span></span></div>
+		<div class="launch-overlay__line" id="launch-line">{LOAD_LINES[0]}</div>
+		<div class="launch-overlay__jeo" aria-hidden="true">
+			<Jeo pose="thinking" size={64} />
+		</div>
+	</div>
+</div>
+
+<script define:vars={{ lines: LOAD_LINES }}>
+	const overlay = document.querySelector('[data-launch-overlay]');
+	const lineEl = document.getElementById('launch-line');
+	let i = 0;
+	const rotate = window.setInterval(() => {
+		if (!lineEl) return;
+		i = (i + 1) % lines.length;
+		lineEl.style.opacity = '0';
+		window.setTimeout(() => {
+			lineEl.textContent = lines[i];
+			lineEl.style.opacity = '1';
+		}, 220);
+	}, 2500);
+
+	function dismiss() {
+		if (!overlay) return;
+		overlay.classList.add('is-dismissing');
+		window.setTimeout(() => {
+			overlay.remove();
+			window.clearInterval(rotate);
+		}, 400);
+	}
+
+	const frame = document.getElementById('player-frame');
+	if (frame) {
+		frame.addEventListener('load', () => {
+			// Slight delay so the iframe paints something before we pull the curtain.
+			window.setTimeout(dismiss, 220);
+		}, { once: true });
+	}
+
+	// Safety hatch — if the iframe never loads, drop the overlay after 25s
+	// so users aren't trapped.
+	window.setTimeout(dismiss, 25_000);
+</script>
+
+<style>
+	.launch-overlay {
+		position: absolute;
+		inset: 0;
+		z-index: 5;
+		overflow: hidden;
+		background: #000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity var(--motion-slow) var(--ease-jeo-glide);
+	}
+	.launch-overlay.is-dismissing { opacity: 0; }
+	.launch-overlay__cover {
+		position: absolute;
+		inset: -20px;
+		background-size: cover;
+		background-position: center;
+		filter: blur(40px) saturate(1.2);
+		opacity: 0.55;
+		transform: scale(1.08);
+		animation: launch-parallax 18s linear infinite alternate;
+	}
+	@keyframes launch-parallax {
+		from { transform: scale(1.08) translate3d(-1%, -1%, 0); }
+		to   { transform: scale(1.14) translate3d( 1%,  1%, 0); }
+	}
+	.launch-overlay__veil {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(60% 80% at 50% 60%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%),
+			linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+	}
+	.launch-overlay__panel {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-7);
+		text-align: center;
+		color: #fff;
+		max-width: 460px;
+	}
+	.launch-overlay__art {
+		width: 260px;
+		aspect-ratio: 16 / 9;
+		border-radius: var(--radius-xl);
+		background-size: cover;
+		background-position: center;
+		box-shadow: 0 12px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
+		animation: launch-art-rise var(--motion-deliberate) var(--ease-jeo-pop) both;
+	}
+	@keyframes launch-art-rise {
+		from { opacity: 0; transform: scale(0.92) translateY(20px); }
+		to   { opacity: 1; transform: scale(1) translateY(0); }
+	}
+	.launch-overlay__chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: 4px var(--space-3);
+		border-radius: var(--radius-pill);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		background: rgba(255,255,255,0.12);
+		border: 1px solid rgba(255,255,255,0.18);
+		backdrop-filter: blur(8px);
+	}
+	.launch-overlay--flash .launch-overlay__chip { color: var(--semantic-flash); border-color: color-mix(in srgb, var(--semantic-flash) 50%, transparent); }
+	.launch-overlay--retro .launch-overlay__chip { color: var(--semantic-retro); border-color: color-mix(in srgb, var(--semantic-retro) 50%, transparent); }
+	.launch-overlay--webgl .launch-overlay__chip { color: var(--semantic-webgl); border-color: color-mix(in srgb, var(--semantic-webgl) 50%, transparent); }
+
+	.launch-overlay__title {
+		font-family: var(--font-display);
+		font-size: var(--text-h1);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+	}
+	.launch-overlay__progress {
+		width: 200px;
+		height: 6px;
+		border-radius: var(--radius-pill);
+		background: rgba(255,255,255,0.12);
+		overflow: hidden;
+	}
+	.launch-overlay__progress span {
+		display: block;
+		height: 100%;
+		width: 30%;
+		border-radius: var(--radius-pill);
+		background: var(--gradient-aurora);
+		animation: launch-progress-slide 1.8s var(--ease-in-out) infinite;
+	}
+	@keyframes launch-progress-slide {
+		0%   { transform: translateX(-100%); }
+		100% { transform: translateX(400%); }
+	}
+	.launch-overlay__line {
+		font-size: var(--text-sm);
+		color: rgba(255,255,255,0.78);
+		transition: opacity var(--motion-base) var(--ease-out-soft);
+		min-height: 1.2em;
+	}
+	.launch-overlay__jeo { margin-top: var(--space-2); }
+
+	@media (prefers-reduced-motion: reduce) {
+		.launch-overlay__cover,
+		.launch-overlay__art,
+		.launch-overlay__progress span { animation: none; }
+	}
+</style>

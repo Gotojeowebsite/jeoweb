@@ -4,25 +4,50 @@
 			<stop offset="0%" stop-color="#0a0a0c"/>
 			<stop offset="100%" stop-color="#2f0d63"/>
 		</linearGradient>
-		<linearGradient id="markGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-			<stop offset="0%" stop-color="#9762ff"/>
-			<stop offset="100%" stop-color="#ec4899"/>
+		<linearGradient id="aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%"  stop-color="#7c3aed"/>
+			<stop offset="50%" stop-color="#ec4899"/>
+			<stop offset="100%" stop-color="#14b8a6"/>
 		</linearGradient>
 		<radialGradient id="glow" cx="50%" cy="50%" r="50%">
 			<stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6"/>
 			<stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
 		</radialGradient>
+		<radialGradient id="jeoBodyGrad" cx="50%" cy="35%" r="65%">
+			<stop offset="0%" stop-color="#b487ff"/>
+			<stop offset="55%" stop-color="#7c3aed"/>
+			<stop offset="100%" stop-color="#41138a"/>
+		</radialGradient>
 	</defs>
+
 	<rect width="1200" height="630" fill="url(#bg)"/>
-	<circle cx="900" cy="200" r="320" fill="url(#glow)"/>
-	<g transform="translate(96 220) scale(8)" fill="url(#markGrad)">
-		<path d="M21.5 4.5c0-1.105.895-2 2-2s2 .895 2 2v17.25c0 4.142-3.358 7.5-7.5 7.5h-1A7.5 7.5 0 0 1 9.5 23.75c0-1.105.895-2 2-2s2 .895 2 2A3.5 3.5 0 0 0 17 25.25h1a3.5 3.5 0 0 0 3.5-3.5V4.5Z"/>
-		<path d="M5 11.75a1.5 1.5 0 0 1 2.245-1.302l7.5 4.25a1.5 1.5 0 0 1 0 2.604l-7.5 4.25A1.5 1.5 0 0 1 5 20.25v-8.5Z"/>
+	<circle cx="950" cy="180" r="380" fill="url(#glow)"/>
+
+	<!-- Jeo, waving -->
+	<g transform="translate(860 180) scale(1.6)">
+		<ellipse cx="100" cy="170" rx="62" ry="10" fill="#000" opacity="0.18"/>
+		<path d="M40,108 C40,68 64,40 100,40 C136,40 160,68 160,108 C160,148 136,168 100,168 C64,168 40,148 40,108Z"
+			fill="url(#jeoBodyGrad)" stroke="#2f0d63" stroke-width="2.5"/>
+		<rect x="92" y="22" width="16" height="22" rx="3" fill="#7c3aed" stroke="#2f0d63" stroke-width="2"/>
+		<circle cx="100" cy="22" r="6" fill="#f5b54a" stroke="#2f0d63" stroke-width="2"/>
+		<circle cx="62" cy="118" r="14" fill="#ec4899" opacity="0.4"/>
+		<circle cx="138" cy="118" r="14" fill="#ec4899" opacity="0.4"/>
+		<ellipse cx="78" cy="100" rx="11" ry="13" fill="#0a0a0c"/>
+		<ellipse cx="81" cy="96" rx="3" ry="4" fill="#fff"/>
+		<ellipse cx="122" cy="100" rx="11" ry="13" fill="#0a0a0c"/>
+		<ellipse cx="125" cy="96" rx="3" ry="4" fill="#fff"/>
+		<path d="M84,134 Q100,148 116,134" fill="none" stroke="#0a0a0c" stroke-width="3.5" stroke-linecap="round"/>
+		<g transform="rotate(15 158 132)">
+			<ellipse cx="158" cy="118" rx="9" ry="14" fill="#6826d4" stroke="#2f0d63" stroke-width="2"/>
+		</g>
+		<ellipse cx="42" cy="118" rx="9" ry="14" fill="#6826d4" stroke="#2f0d63" stroke-width="2"/>
 	</g>
-	<text x="380" y="320" font-family="Inter, sans-serif" font-size="96" font-weight="800" fill="#fafaf9" letter-spacing="-3">jeo</text>
-	<text x="380" y="400" font-family="Inter, sans-serif" font-size="40" font-weight="500" fill="#c9c8d3">Play 596+ unblocked games</text>
-	<text x="380" y="450" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#8e8d9d">No downloads. No sign-ups. Just play.</text>
-	<g transform="translate(96 540)" fill="#5a596b" font-family="Inter, sans-serif" font-size="22" font-weight="500">
+
+	<text x="96" y="320" font-family="Inter, sans-serif" font-size="128" font-weight="800" fill="url(#aurora)" letter-spacing="-5">jeo</text>
+	<text x="96" y="410" font-family="Inter, sans-serif" font-size="44" font-weight="600" fill="#fafaf9">596 unblocked games · zero downloads</text>
+	<text x="96" y="460" font-family="Inter, sans-serif" font-size="28" font-weight="400" fill="#c9c8d3">Browser, Flash, retro — instant play, even offline.</text>
+
+	<g transform="translate(96 560)" fill="#8e8d9d" font-family="Inter, sans-serif" font-size="22" font-weight="500">
 		<text>jeoweb.app</text>
 	</g>
 </svg>

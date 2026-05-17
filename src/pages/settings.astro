@@ -1,0 +1,352 @@
+---
+import Site from '../layouts/Site.astro';
+import Icon from '../components/Icon.astro';
+import Jeo from '../components/mascot/Jeo.astro';
+
+const sections = [
+	{ id: 'general',    label: 'General',    pose: 'wave'     },
+	{ id: 'appearance', label: 'Appearance', pose: 'cheer'    },
+	{ id: 'sound',      label: 'Sound',      pose: 'thinking' },
+	{ id: 'profile',    label: 'Profile',    pose: 'peek'     },
+	{ id: 'about',      label: 'About',      pose: 'shrug'    },
+] as const;
+---
+<Site title="Settings">
+	<div class="content-wrap settings">
+		<aside class="settings-rail" role="tablist" aria-label="Settings sections">
+			{sections.map((s, i) => (
+				<button
+					type="button"
+					role="tab"
+					class={`settings-rail__tab ${i === 0 ? 'is-active' : ''}`}
+					data-target={s.id}
+					aria-controls={`pane-${s.id}`}
+					aria-selected={i === 0 ? 'true' : 'false'}
+				>
+					<span class="settings-rail__mascot">
+						<Jeo pose={s.pose} size={32} bobbing={false} />
+					</span>
+					<span>{s.label}</span>
+				</button>
+			))}
+		</aside>
+
+		<div class="settings-panes">
+			<section class="settings-pane is-active" id="pane-general" role="tabpanel">
+				<h2>General</h2>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Onboarding</div>
+						<div class="setting-row__sub">Reset the welcome flow to see it again.</div>
+					</div>
+					<button class="btn btn--secondary" id="resetOnboard" type="button">Show again</button>
+				</div>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Grid density</div>
+						<div class="setting-row__sub">Comfy fits more meta. Dense fits more games.</div>
+					</div>
+					<div class="seg" role="radiogroup" aria-label="Grid density">
+						<button class="seg-btn" data-density="comfy" role="radio" type="button">Comfy</button>
+						<button class="seg-btn" data-density="dense" role="radio" type="button">Dense</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="settings-pane" id="pane-appearance" role="tabpanel">
+				<h2>Appearance</h2>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Theme</div>
+						<div class="setting-row__sub">Dark looks great on monitors; light looks great in sunlight.</div>
+					</div>
+					<div class="seg" role="radiogroup" aria-label="Theme">
+						<button class="seg-btn" data-theme="dark"  role="radio" type="button">Dark</button>
+						<button class="seg-btn" data-theme="light" role="radio" type="button">Light</button>
+						<button class="seg-btn" data-theme="auto"  role="radio" type="button">Auto</button>
+					</div>
+				</div>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Accent</div>
+						<div class="setting-row__sub">Colors the highlights, buttons, and chime icon.</div>
+					</div>
+					<div class="accent-row">
+						<button class="accent-swatch" data-accent="#7c3aed" style="--c:#7c3aed;" aria-label="Violet"></button>
+						<button class="accent-swatch" data-accent="#f5b54a" style="--c:#f5b54a;" aria-label="Sun"></button>
+						<button class="accent-swatch" data-accent="#ec4899" style="--c:#ec4899;" aria-label="Rose"></button>
+						<button class="accent-swatch" data-accent="#14b8a6" style="--c:#14b8a6;" aria-label="Mint"></button>
+						<button class="accent-swatch" data-accent="#38bdf8" style="--c:#38bdf8;" aria-label="Sky"></button>
+						<button class="accent-swatch" data-accent="#ef4444" style="--c:#ef4444;" aria-label="Ember"></button>
+					</div>
+				</div>
+			</section>
+
+			<section class="settings-pane" id="pane-sound" role="tabpanel">
+				<h2>Sound</h2>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">UI sounds</div>
+						<div class="setting-row__sub">Tiny blips on hover and pops on click. Off by default for keyboards in classrooms.</div>
+					</div>
+					<label class="toggle">
+						<input type="checkbox" id="soundToggle" />
+						<span class="toggle__track"></span>
+					</label>
+				</div>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Test the chime</div>
+						<div class="setting-row__sub">What you'll hear when you unlock an achievement.</div>
+					</div>
+					<button class="btn btn--secondary fx-ripple" id="testChime" type="button">
+						<Icon name="play" size={14} />Play
+					</button>
+				</div>
+			</section>
+
+			<section class="settings-pane" id="pane-profile" role="tabpanel">
+				<h2>Profile</h2>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">View profile</div>
+						<div class="setting-row__sub">Streak, achievements, favorites, recents.</div>
+					</div>
+					<a class="btn btn--primary" href="/profile">Open profile</a>
+				</div>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Reset everything</div>
+						<div class="setting-row__sub">Wipes favorites, recents, achievements, settings in this browser.</div>
+					</div>
+					<button class="btn btn--secondary" id="settingsReset" type="button">Reset</button>
+				</div>
+			</section>
+
+			<section class="settings-pane" id="pane-about" role="tabpanel">
+				<h2>About</h2>
+				<p>
+					Jeo is a self-hosted unblocked-games portal — no signups, no downloads,
+					and the entire catalog is plain HTML you can read on GitHub.
+				</p>
+				<p>
+					<a href="https://github.com/Gotojeowebsite/jeoweb" rel="noopener">
+						<Icon name="external" size={14} />Source on GitHub
+					</a>
+				</p>
+			</section>
+		</div>
+	</div>
+
+	<script>
+		import { setPref, getPref, writePrefs } from '../lib/storage';
+		import { sound } from '../lib/sound';
+
+		// Tab switching.
+		const tabs = document.querySelectorAll<HTMLButtonElement>('.settings-rail__tab');
+		const panes = document.querySelectorAll<HTMLElement>('.settings-pane');
+		tabs.forEach(tab => tab.addEventListener('click', () => {
+			tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+			panes.forEach(p => p.classList.remove('is-active'));
+			tab.classList.add('is-active');
+			tab.setAttribute('aria-selected', 'true');
+			const id = tab.dataset.target;
+			document.getElementById(`pane-${id}`)?.classList.add('is-active');
+		}));
+
+		// Theme segmented control.
+		const currentTheme = (getPref('theme') as string) || 'auto';
+		document.querySelectorAll<HTMLButtonElement>('[data-theme]').forEach(btn => {
+			if (btn.dataset.theme === currentTheme) btn.classList.add('is-active');
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('[data-theme]').forEach(b => b.classList.remove('is-active'));
+				btn.classList.add('is-active');
+				const v = btn.dataset.theme as 'light' | 'dark' | 'auto';
+				setPref('theme', v);
+				if (v === 'auto') {
+					const light = matchMedia('(prefers-color-scheme: light)').matches;
+					document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
+				} else {
+					document.documentElement.setAttribute('data-theme', v);
+				}
+			});
+		});
+
+		// Accent swatches.
+		const currentAccent = getPref('accent');
+		document.querySelectorAll<HTMLButtonElement>('.accent-swatch').forEach(btn => {
+			if (btn.dataset.accent === currentAccent) btn.classList.add('is-active');
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('.accent-swatch').forEach(b => b.classList.remove('is-active'));
+				btn.classList.add('is-active');
+				const v = btn.dataset.accent!;
+				setPref('accent', v);
+				document.documentElement.style.setProperty('--accent', v);
+			});
+		});
+
+		// Density.
+		const currentDensity = (getPref('density') as string) || 'comfy';
+		document.querySelectorAll<HTMLButtonElement>('[data-density]').forEach(btn => {
+			if (btn.dataset.density === currentDensity) btn.classList.add('is-active');
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('[data-density]').forEach(b => b.classList.remove('is-active'));
+				btn.classList.add('is-active');
+				setPref('density', btn.dataset.density as 'comfy' | 'dense');
+			});
+		});
+
+		// Sound toggle.
+		const toggle = document.getElementById('soundToggle') as HTMLInputElement | null;
+		if (toggle) {
+			toggle.checked = getPref('sound') !== false;
+			toggle.addEventListener('change', () => setPref('sound', toggle.checked));
+		}
+		document.getElementById('testChime')?.addEventListener('click', () => sound.play('chime'));
+
+		// Reset everything.
+		document.getElementById('settingsReset')?.addEventListener('click', () => {
+			if (!confirm("This clears your favorites, recents, achievements, and settings in this browser. Sure?")) return;
+			for (const k of ['jeo-prefs-v1','jeo-favs','jeo-recent','jeo-play-days','jeo-play-counts','jeo-play-tags','jeo-play-type-counts','jeo-achievements','jeo-theme','jeo-accent']) {
+				try { localStorage.removeItem(k); } catch {}
+			}
+			window.location.href = '/';
+		});
+
+		// Replay onboarding.
+		document.getElementById('resetOnboard')?.addEventListener('click', () => {
+			writePrefs({ onboarded: false });
+			window.location.href = '/';
+		});
+	</script>
+</Site>
+
+<style>
+	.settings {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: var(--space-7);
+	}
+	.settings-rail {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		padding: var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+		align-self: start;
+		position: sticky;
+		top: calc(var(--header-h) + var(--space-4));
+	}
+	.settings-rail__tab {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		text-align: left;
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.settings-rail__tab:hover { background: var(--bg-2); color: var(--fg-0); }
+	.settings-rail__tab.is-active { background: var(--accent-soft); color: var(--fg-0); }
+	.settings-rail__mascot { width: 32px; height: 32px; flex-shrink: 0; }
+
+	.settings-panes { min-width: 0; }
+	.settings-pane {
+		display: none;
+		padding: var(--space-7);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+		animation: jeo-fade-in var(--motion-base) var(--ease-out-soft);
+	}
+	.settings-pane.is-active { display: block; }
+	.settings-pane h2 {
+		font-size: var(--text-h1);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.02em;
+		margin-bottom: var(--space-5);
+	}
+
+	.setting-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-5);
+		padding: var(--space-4) 0;
+		border-top: 1px solid var(--line-0);
+	}
+	.setting-row:first-of-type { border-top: 0; }
+	.setting-row__title { font-size: var(--text-body); font-weight: var(--weight-semibold); }
+	.setting-row__sub { font-size: var(--text-xs); color: var(--fg-2); margin-top: 2px; max-width: 360px; }
+
+	.seg {
+		display: inline-flex;
+		padding: 4px;
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-pill);
+	}
+	.seg-btn {
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-pill);
+		color: var(--fg-2);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.seg-btn:hover { color: var(--fg-0); }
+	.seg-btn.is-active { background: var(--accent); color: var(--accent-fg); }
+
+	.accent-row { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+	.accent-swatch {
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		background: var(--c);
+		border: 2px solid transparent;
+		cursor: pointer;
+		transition: transform var(--motion-fast), border-color var(--motion-fast);
+	}
+	.accent-swatch:hover { transform: scale(1.1); }
+	.accent-swatch.is-active { border-color: var(--fg-0); }
+
+	.toggle {
+		display: inline-flex;
+		position: relative;
+		width: 44px;
+		height: 24px;
+		cursor: pointer;
+	}
+	.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+	.toggle__track {
+		position: absolute;
+		inset: 0;
+		background: var(--bg-3);
+		border-radius: var(--radius-pill);
+		transition: background var(--motion-fast);
+	}
+	.toggle__track::after {
+		content: '';
+		position: absolute;
+		top: 2px; left: 2px;
+		width: 20px; height: 20px;
+		border-radius: 50%;
+		background: var(--fg-0);
+		transition: transform var(--motion-fast) var(--ease-jeo-pop);
+	}
+	.toggle input:checked + .toggle__track { background: var(--accent); }
+	.toggle input:checked + .toggle__track::after { transform: translateX(20px); }
+
+	@media (max-width: 760px) {
+		.settings { grid-template-columns: 1fr; }
+		.settings-rail { position: static; flex-direction: row; overflow-x: auto; }
+		.settings-rail__tab { white-space: nowrap; }
+	}
+</style>
