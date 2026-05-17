@@ -297,6 +297,8 @@ class Config:
     checked_log: Path
     resume: bool
     state_file: Path
+    profile: str = "chromium-default"
+    screenshot_dir: Optional[Path] = None
 
 
 class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
@@ -350,8 +352,33 @@ def parse_args() -> Config:
     parser.add_argument(
         "--hard-timeout-seconds",
         type=float,
-        default=240.0,
-        help="Hard wall-clock timeout per game; timed-out games are marked broken and scan continues",
+        default=360.0,
+        help=(
+            "Hard wall-clock timeout per game; timed-out games used to be marked broken, "
+            "but under the triple-confirm verdict (see scripts/build-game-health.js) a "
+            "timeout is treated as inconclusive (no fail vote). Default raised from 240 -> 360s."
+        ),
+    )
+    parser.add_argument(
+        "--profile",
+        choices=["chromium-default", "chromium-no-gpu"],
+        default="chromium-default",
+        help=(
+            "Browser profile for this scan. chromium-default = legacy behavior. "
+            "chromium-no-gpu = launches Chromium with --disable-gpu --disable-software-rasterizer "
+            "as a second orthogonal lane (catches canvas/GPU edge cases). "
+            "When --profile=chromium-no-gpu and --report-json is left default, "
+            "scan_results.profile_b.json is used so the two lanes don't overwrite each other."
+        ),
+    )
+    parser.add_argument(
+        "--screenshot-dir",
+        default=None,
+        help=(
+            "If set, save a screenshot per scanned game to "
+            "<dir>/<slug>/<run_id>/{5s,30s,end}.png for fast human triage. "
+            "Adds ~100ms per game; off by default."
+        ),
     )
     parser.add_argument("--batch-size", type=int, default=20, help="Games per browser context batch")
     parser.add_argument(
@@ -463,6 +490,17 @@ def parse_args() -> Config:
     else:
         assets_dir = (root_dir / args.assets_dir).resolve()
 
+    # When --profile=chromium-no-gpu and --report-json wasn't overridden, route
+    # the output to scan_results.profile_b.json so the second lane doesn't
+    # overwrite the default lane's results. build-game-health.js reads both.
+    report_path_str = args.report_json
+    if args.profile == "chromium-no-gpu" and report_path_str == "scan_results.json":
+        report_path_str = "scan_results.profile_b.json"
+
+    screenshot_dir: Optional[Path] = None
+    if args.screenshot_dir:
+        screenshot_dir = (root_dir / args.screenshot_dir).resolve()
+
     return Config(
         root_dir=root_dir,
         assets_dir=assets_dir,
@@ -480,12 +518,14 @@ def parse_args() -> Config:
         sync_markers=args.sync_markers,
         broken_log=(root_dir / args.broken_log).resolve(),
         broken_json=(root_dir / args.broken_json).resolve(),
-        report_json=(root_dir / args.report_json).resolve(),
+        report_json=(root_dir / report_path_str).resolve(),
         working_log=(root_dir / args.working_log).resolve(),
         checked_log=(root_dir / args.checked_log).resolve(),
         review_log=(root_dir / args.review_log).resolve(),
         resume=args.resume,
         state_file=(root_dir / args.state_file).resolve(),
+        profile=args.profile,
+        screenshot_dir=screenshot_dir,
     )
 
 
@@ -837,6 +877,13 @@ def probe_page(page) -> Dict[str, object]:
     # samples come back black even when the game is rendering. We detect that
     # case and fall back to a frame-tick counter (requestAnimationFrame +
     # WebGL drawingBufferWidth) to confirm the game is alive.
+    #
+    # Engine-aware liveness markers (audioContextRunning, unityInstanceLoaded,
+    # ruffleReady, ejsStarted, godotReady) are stronger evidence than the
+    # generic canvas heuristic — a Unity game with a resolved createUnityInstance
+    # promise is unambiguously loaded even if the canvas momentarily looks
+    # blank, and an AudioContext entering 'running' state is a sure sign the
+    # game has gotten past its splash.
     return page.evaluate(
         """
         async () => {
@@ -854,12 +901,78 @@ def probe_page(page) -> Dict[str, object]:
             const unityProgress = document.querySelector('#unity-progress-bar-full')?.style?.width || '';
             const hasRuffleGlobal = typeof window.RufflePlayer !== 'undefined';
             const hasRetroGlobal = typeof window.EJS_player !== 'undefined';
+
+            // -------- Engine-aware "loaded" markers (high confidence) --------
+            // Unity instance: createUnityInstance / UnityLoader.instantiate
+            // either resolve a promise (modern Unity) or assign window.unityInstance.
+            const unityInstanceLoaded = (
+                typeof window.unityInstance !== 'undefined' && window.unityInstance !== null
+                && (window.unityInstance.Module || window.unityInstance.SendMessage)
+            ) ? true : false;
+            // Ruffle: <ruffle-player> exposes .isPlaying and .metadata once ready.
+            let ruffleReady = false;
+            try {
+                const ruffles = document.querySelectorAll('ruffle-player, ruffle-embed, ruffle-object');
+                for (const r of ruffles) {
+                    if (r && (r.isPlaying === true || r.metadata)) { ruffleReady = true; break; }
+                }
+            } catch(_) {}
+            // EmulatorJS: EJS_emulator gets populated once the ROM starts. Some
+            // builds expose EJS_player as a singleton with a .ready property.
+            let ejsStarted = false;
+            try {
+                if (typeof window.EJS_emulator !== 'undefined' && window.EJS_emulator) {
+                    ejsStarted = !!(window.EJS_emulator.started || window.EJS_emulator.gameManager);
+                }
+                if (!ejsStarted && typeof window.EJS_player !== 'undefined' && window.EJS_player) {
+                    ejsStarted = !!(window.EJS_player.ready || window.EJS_player.emulator);
+                }
+            } catch(_) {}
+            // Godot: Engine.startGame resolves and sets window.engine.requestQuit
+            // / window.Module._init_audio_input. Either signal means it's live.
+            let godotReady = false;
+            try {
+                if (typeof window.engine !== 'undefined' && window.engine && window.engine.requestQuit) godotReady = true;
+                else if (typeof window.Engine !== 'undefined' && window.Engine && window.Engine.RuntimeEnvironment) godotReady = true;
+            } catch(_) {}
+            // Phaser: window.Phaser.Game instances expose .isRunning / .scene.
+            let phaserReady = false;
+            try {
+                if (typeof window.Phaser !== 'undefined' && window.Phaser.GAMES && window.Phaser.GAMES.length) {
+                    for (const g of window.Phaser.GAMES) {
+                        if (g && g.isRunning) { phaserReady = true; break; }
+                    }
+                }
+            } catch(_) {}
+
+            // -------- AudioContext detection --------
+            // Many games create an AudioContext during boot; once it's in
+            // 'running' state, the game has reached at least the splash/menu.
+            // We can't read other code's existing contexts directly, but most
+            // engines stash them on a known global (Unity = Module.SDL2 audio
+            // setup hooks a window-level resume; Ruffle uses an internal one).
+            // We probe by counting how many ACs exist via the AudioContext
+            // constructor hook the page may have set up.
+            let audioContextRunning = false;
+            let audioContextCount = 0;
+            try {
+                // Some engines stash their AC on window.audioContext / window._ac
+                const candidates = [window.audioContext, window._ac, window.audioCtx, window.ac];
+                for (const ac of candidates) {
+                    if (ac && typeof ac.state === 'string') {
+                        audioContextCount += 1;
+                        if (ac.state === 'running') audioContextRunning = true;
+                    }
+                }
+            } catch(_) {}
+
             // Sample the first canvas at low resolution to detect "stuck black
             // square" — a canvas with surface but no rendering.
             let canvasHash = '';
             let canvasNonzeroPixels = 0;
             let canvasIsWebGL = false;
             let canvasRAFTicks = 0;
+            let canvasPixelVariance = 0;
             const c = document.querySelector('canvas, #unity-canvas, #game canvas');
             try {
                 if (c && c.width && c.height) {
@@ -879,12 +992,17 @@ def probe_page(page) -> Dict[str, object]:
                         ctx.drawImage(c, 0, 0, w, h);
                         const data = ctx.getImageData(0, 0, w, h).data;
                         let sum = 0;
+                        let minLum = 255, maxLum = 0;
                         for (let i = 0; i < data.length; i += 4) {
                             const v = data[i] + data[i+1] + data[i+2];
                             if (v > 0) canvasNonzeroPixels += 1;
+                            const lum = (data[i] * 299 + data[i+1] * 587 + data[i+2] * 114) >> 10;
+                            if (lum < minLum) minLum = lum;
+                            if (lum > maxLum) maxLum = lum;
                             sum = (sum * 31 + v) | 0;
                         }
                         canvasHash = String(sum);
+                        canvasPixelVariance = maxLum - minLum;
                     }
                 }
             } catch (e) { /* tainted canvas etc. — leave blank */ }
@@ -913,8 +1031,16 @@ def probe_page(page) -> Dict[str, object]:
                 hasRetroGlobal,
                 canvasHash,
                 canvasNonzeroPixels,
+                canvasPixelVariance,
                 canvasIsWebGL,
                 canvasRAFTicks,
+                unityInstanceLoaded,
+                ruffleReady,
+                ejsStarted,
+                godotReady,
+                phaserReady,
+                audioContextRunning,
+                audioContextCount,
             };
         }
         """
@@ -1246,9 +1372,36 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
     canvas_lit_after_input = canvas_pixels_after_input > canvas_pixels
     canvas_animating_after_input = canvas_is_webgl and raf_ticks_after_input >= 3
     interactivity_passed = canvas_changed_after_input or canvas_lit_after_input or canvas_animating_after_input
-    # Truly responsive if EITHER the passive probes show liveness OR the
-    # interactivity probe shows the game responded to input. Either is enough.
-    is_alive = (not (canvas_unchanged and canvas_dark)) or webgl_alive or interactivity_passed
+    # Pixel variance: a frozen canvas with a single static image has very
+    # low variance (≤ 10 luminance steps across the sampled region). A
+    # game showing literally anything dynamic blows past this trivially.
+    pixel_variance = int(probe.get("canvasPixelVariance", 0) or 0)
+    canvas_has_variance = pixel_variance >= 8
+
+    # Engine-aware "loaded" markers — much stronger than canvas heuristics
+    # because they correspond to the engine's own internal "I'm ready" state.
+    # If any of these is true, the game is alive even if the canvas heuristic
+    # would have said otherwise (which kills a large class of false positives).
+    engine_loaded = (
+        bool(probe.get("unityInstanceLoaded"))
+        or bool(probe.get("ruffleReady"))
+        or bool(probe.get("ejsStarted"))
+        or bool(probe.get("godotReady"))
+        or bool(probe.get("phaserReady"))
+    )
+    audio_running = bool(probe.get("audioContextRunning"))
+
+    # Truly responsive if ANY of: passive probes show liveness, interactivity
+    # probe shows input response, an engine reports loaded, or AudioContext is
+    # running. AudioContext running is a strong "past splash screen" signal.
+    is_alive = (
+        (not (canvas_unchanged and canvas_dark))
+        or webgl_alive
+        or interactivity_passed
+        or canvas_has_variance
+        or engine_loaded
+        or audio_running
+    )
 
     if expects_surface and has_surface and not is_alive and not critical_issues:
         add_issue(
@@ -1378,10 +1531,14 @@ def make_broken_result(target: GameTarget, elapsed_seconds: float, code: str, me
 def scan_one_game_worker(config: Config, target: GameTarget, output_queue) -> None:
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(
-                headless=True,
-                args=["--disable-dev-shm-usage", "--no-sandbox", "--disable-setuid-sandbox"],
-            )
+            launch_args = ["--disable-dev-shm-usage", "--no-sandbox", "--disable-setuid-sandbox"]
+            # Second profile: disables GPU + software rasterizer. Catches games
+            # whose canvas rendering depends on a particular GPU code path —
+            # the resulting divergence with the default profile is the
+            # `headless_b` signal in build-game-health.js's 5-lane model.
+            if getattr(config, "profile", "chromium-default") == "chromium-no-gpu":
+                launch_args.extend(["--disable-gpu", "--disable-software-rasterizer"])
+            browser = p.chromium.launch(headless=True, args=launch_args)
             context = browser.new_context(viewport={"width": 1280, "height": 720})
             result = scan_one_game(context, config, target)
             context.close()

@@ -25,7 +25,7 @@ Use when running from bash instead of PowerShell.
 2) Batch website import list
 ----------------------------
 File: flash-batch.txt
-Purpose: Queue multiple web game URLs for import-flash.ps1 and chaos-batch-runner.ps1.
+Purpose: Queue multiple web game URLs for import-flash.ps1.
 Format:
   https://example.com/game/index.html | My-Game-Name
 
@@ -77,9 +77,8 @@ Run:
 6b) Maintenance flag toggle
 ---------------------------
 File: scripts/maintenance-toggle.js
-Purpose: One-shot heal/break/clear of any slug. Updates BOTH
-  maintenance_overrides.json (durable) AND maintenance_status.json (live)
-  so the homepage updates without re-running the supervisor.
+Purpose: One-shot heal/break/clear of any slug. Updates maintenance_overrides.json
+  so the homepage updates after the next health refresh.
 Run:
   node scripts/maintenance-toggle.js heal  bloons-player-pack2
   node scripts/maintenance-toggle.js break some-actually-broken-game
@@ -138,6 +137,15 @@ Purpose: Auto-generated game catalog.
 File: recently_added.json
 Purpose: Auto-generated recent additions list.
 
+File: game_health.json
+Purpose: Canonical merged health verdict (schema 2). Read by the frontend.
+
+File: scan_results.json
+Purpose: Headless Playwright scanner results.
+
+File: static_health.json
+Purpose: Offline-readiness pass results.
+
 File: media_catalog.json
 Purpose: Media catalog data.
 
@@ -145,40 +153,14 @@ Purpose: Media catalog data.
 -----------------------
 - Import website games with import-flash.ps1 or import-flash.sh
 - Batch website imports with flash-batch.txt
-- Run Deep Archival fixes with chaos-batch-runner.ps1
 - Import emulator ROMs with import-gba-batch.sh or import-snes-batch.sh
-- Repair broken imports with repair-games.sh
+- Repair broken imports with `npm run recover:all` (canonical) or `npm run recover -- <slug>` for a single game
 - Rebuild the catalog with scan.js
+- Refresh health verdicts with `npm run health:refresh`
 - Test locally with server.js
 
-10) Deep Archival / Chaos Monkey Pipeline
------------------------------------------
-Purpose: Fixes modern HTML5/WebGL games that load assets dynamically by air-gapping them and forcing them to download missing audio/textures.
-File: chaos-batch-runner.ps1
-  - Automates the full pipeline below using games listed in flash-batch.txt.
-File: verify_game.py
-  - A quarantine server that blocks internet access and tracks missing assets (404s).
-File: auto_play.py
-  - A Playwright bot that mashes keys and clicks randomly to force asset loading. Dumps missing files to missing_assets.txt.
-File: patch-missing.ps1
-  - Translates missing_assets.txt back to the live server and downloads the missing files into the exact Assets/ subfolders.
-Run:
-  pwsh ./chaos-batch-runner.ps1
-
-  pwsh ./import-flash.ps1 --batch ./flash-batch.txt
-
-11) Node.js Automated Pipelines
-----------------------------------
-File: scripts/asset-scraper.js
-Purpose: Headless browser script (Puppeteer) to properly intercept and download dynamic game assets (WebGL payloads, .wasm, .data). Replaces static crawling.
-Run: 
-  node scripts/asset-scraper.js
-
-File: scripts/qa-tester.js
-Purpose: Quality Assurance script that iterates over games_list.json, tests if games load without 404/500 errors, and safely sets "status": "broken" if they fail.
-Run:
-  node scripts/qa-tester.js
-
+10) Canonical recovery engine (Node.js)
+---------------------------------------
 File: scripts/recover-game.js
 Purpose: Canonical single-game recovery. Searches the open web for a working copy of the named game across many search backends (DuckDuckGo, Brave, Bing, GitHub Code Search, Wayback), scores candidate URLs against a hand-editable domain reputation list, scrapes the top candidates with header-spoofing Puppeteer into a sandbox folder, validates with the offline manifest verifier and the Playwright scanner, then atomically swaps the live game folder when a candidate passes. Failures bump a per-slug cooldown.
 Run:
@@ -191,6 +173,23 @@ File: scripts/recover-all-broken.js
 Purpose: Batch driver for recover-game.js. Reads game_health.json, filters out cooldown'd slugs, runs the recovery pipeline across all currently-broken games in parallel workers, writes reports/recovery_summary_<date>.json.
 Run:
   node scripts/recover-all-broken.js --workers 3 --time-budget 90m
+
+File: scripts/recovery/search-engines.js
+Purpose: Candidate-URL discovery layer. Runs DDG/Bing/Brave/GitHub/Wayback in parallel and builds ~18 query variants per game.
+
+File: scripts/recovery/scrape-engines.js
+Purpose: Header-spoofing Puppeteer scrape into Assets/.recovery/<slug>-<ts>/. Builds on scripts/deep-asset-scraper.js.
+
+File: scripts/recovery/atomic-swap.js
+Purpose: rankCandidates() + quarantine + swap logic. Hand-editable trust list lives in scripts/recovery/domain-reputation.json.
+
+11) Health pipeline
+-------------------
+File: scripts/static-health-scan.js
+Purpose: Fast deterministic offline-readiness pass. Runs on every CI push. Writes static_health.json.
+
+File: scripts/build-game-health.js
+Purpose: Merges static + headless + smoke signals + overrides into canonical game_health.json (schema 2). Single source of truth the frontend reads.
 
 File: scripts/build-offline-manifest.js
 Purpose: Builds Assets/<slug>/.offline-manifest.json for one game or the whole catalog. Used as the gate for "is this game self-contained?".
@@ -210,33 +209,17 @@ Run:
   node scripts/localize-all-games.js          # dry run
   node scripts/localize-all-games.js --apply
 
-NOTE: scripts/remediation.js was DELETED — it wrote the invalid status value "operational" directly into games_list.json, conflicting with the canonical game_health.json chain. Use scripts/recover-game.js instead.
-
-LEGACY (kept in tree, no longer canonical):
-  scripts/auto-fix-bot.js
-  auto_fix_and_recover_games.py
-These are the original 7-strategy in-place patch loop. They still work for
-manual debugging but are not the canonical repair path; the recovery engine
-above is. They share .auto_fix_and_recover.lock so they can't run alongside
-each other or the new engine.
-
 File: scripts/detect-broken-games.js
-Purpose: Highly advanced testing script that launches games locally in a headless browser. Simulates human clicks and monitors WebGL context/memory to detect games that crash silently or get stuck on loading screens, marking them as "broken" in the catalog.
+Purpose: Headless QA helper that launches games locally in a headless browser. Diagnostic only — does not mutate the catalog.
 Run:
   node scripts/detect-broken-games.js
 
 File: scripts/deep-asset-scraper.js
-Purpose: The "Foolproof" Deep Downloader. Uses Puppeteer to traverse DOMs, penetrate nested iframes, spoof Origin/Referer headers, and intercept WebAssembly/Godot/Unity stream blobs directly from the network protocol to build 1:1 offline copies of heavily protected games (e.g. Poki).
+Purpose: Puppeteer deep downloader for protected sources. Used inside the recovery engine's scrape stage; can also be invoked directly for manual debugging.
 Run:
   node scripts/deep-asset-scraper.js <Portal_URL> <Game_Slug>
 
-File: scripts-deep-batch-runner.js
-Purpose: Batch processing script for the deep asset scraper. It reads the URLs and slugs from 'deep-batch.txt', downloads them sequentially, and automatically rebuilds the catalog once finished.
-Format for deep-batch.txt: URL | Game-Slug
-Run:
-  node scripts/deep-batch-runner.js
-
-12) Automated Testing & Scanning (Python)
+12) Automated testing & scanning (Python)
 -----------------------------------------
 Prerequisites:
   pip install playwright
@@ -249,12 +232,14 @@ Run:
 
 File: broken_game_scanner.py
 Purpose: Comprehensive offline-readiness scanner. Detects true hard-failure breakage (missing critical local assets, runtime startup failures, and blocking external dependencies).
-Features: 
+Features:
   - Outputs broken_games.txt and broken_games.json for hard failures only.
   - Outputs needs_review_games.txt for warnings and working_games.txt for clean games.
   - Saves full structured results to scan_results.json.
   - Optional marker sync via --sync-markers.
   - Persistent resume/checkpoint support via --resume and --state-file.
+  - The --root <path> flag is used by the recovery engine to validate a candidate folder before swap.
+  - The --only-from <json> flag reads slugs to scan from a recovery summary / health file.
 Run:
   python broken_game_scanner.py
 Resume from last checkpoint:

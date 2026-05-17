@@ -1,10 +1,9 @@
 // qa-tester.js — DIAGNOSTIC-ONLY as of 2026-04-21.
 //
 // This script used to mutate games_list.json in place, which competed with the
-// canonical scanner (broken_game_scanner.py) and the supervisor
-// (auto_fix_and_recover_games.py / maintenance_status.json). It now records
-// suspected failures into reports/qa_diagnostics.json and never edits the
-// catalog. Use broken_game_scanner.py to sync <!--GAME BROKEN--> markers.
+// canonical scanner (broken_game_scanner.py). It now records suspected failures
+// into reports/qa_diagnostics.json and never edits the catalog. Use
+// broken_game_scanner.py to sync <!--GAME BROKEN--> markers.
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');

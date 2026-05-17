@@ -49,17 +49,23 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- Design tokens shared with the Astro tree (src/styles/tokens.css). -->
+	<!-- Loaded before styles.css so legacy selectors build on the same tokens. -->
+	<link rel="stylesheet" href="/styles/tokens.css" />
 	<link rel="stylesheet" href="styles.css" />
 
 	<!-- Pick initial theme from OS preference if user hasn't set one. Run in <head>
-	     before any paint to avoid a dark-then-light flash on light-mode users. -->
+	     before any paint to avoid a dark-then-light flash on light-mode users.
+	     Sets data-theme on <html> so /styles/tokens.css's [data-theme=...] blocks
+	     pick the right palette during first paint. -->
 	<script>
 		(function () {
 			try {
 				var stored = localStorage.getItem('site-theme');
-				if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-					document.documentElement.setAttribute('data-pref-theme', 'light');
-				}
+				var prefersLight = !stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+				var theme = stored === 'light' || prefersLight ? 'light' : 'dark';
+				document.documentElement.setAttribute('data-theme', theme);
+				if (prefersLight) document.documentElement.setAttribute('data-pref-theme', 'light');
 			} catch (e) {}
 		})();
 	</script>
@@ -91,7 +97,7 @@
 		// Apply the theme preference detected in <head> (avoids any flash of dark on light-mode).
 		(function () {
 			try {
-				if (document.documentElement.getAttribute('data-pref-theme') === 'light') {
+				if (document.documentElement.getAttribute('data-theme') === 'light') {
 					document.body.classList.remove('theme-dark');
 					document.body.classList.add('theme-light');
 				}

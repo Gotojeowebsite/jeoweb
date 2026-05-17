@@ -26,6 +26,13 @@ const SRC_HREF_RE = /\b(?:src|href|data-src)\s*=\s*["']([^"'#?]+)(?:[?#][^"']*)?
 const CSS_URL_RE = /url\(\s*["']?([^)"'#?]+)(?:[?#][^)"']*)?["']?\s*\)/gi;
 const UNDEFINED_PATH_RE = /\/undefined(?:\/|\.)/i;
 const NULL_PATH_RE = /\/null(?:\/|\.)/i;
+// Dev URLs that can't possibly resolve in production. Matched against refs
+// extracted from HTML/JS, lowercased before testing.
+const LOCALHOST_RE = /^(?:https?:)?\/\/(?:localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\]|dev\.[a-z0-9-]+|local\.[a-z0-9-]+|\w+:\/\/localhost)(?::\d+)?\//i;
+// Inside-JS dynamic refs: import("...") / fetch("...") / new Worker("...") /
+// new URL("...", import.meta.url). One level deep — enough to catch lazy-load
+// chunks that 404 only when exercised.
+const JS_IMPORT_RE = /(?:^|[^a-zA-Z0-9_$])import\s*\(\s*["']([^"']+)["']\s*\)|(?:^|[^a-zA-Z0-9_$])fetch\s*\(\s*["']([^"']+)["']|new\s+Worker\s*\(\s*["']([^"']+)["']|new\s+URL\s*\(\s*["']([^"']+)["']\s*,\s*import\.meta\.url\s*\)/g;
 
 // Mirror of IGNORED_LOCAL_404_PATTERNS in broken_game_scanner.py — these are
 // portal-leftover references (favicons, master site js/css, source maps, etc.)
@@ -215,16 +222,22 @@ function scanGame(slug) {
 
 	// Empty / near-empty entry HTML. An empty index.html loads cleanly with no
 	// 404s and no errors, so naive ref-walking returns "pass" — but the user
-	// sees a blank page. Catch this explicitly. Threshold of 200 bytes is the
-	// minimum size that could plausibly bootstrap a game (<html><head><script
-	// src=...></script></head><body><canvas/></body></html> is ~150 bytes).
+	// sees a blank page.
+	//
+	// Demoted from critical → warning under the triple-confirm contract
+	// (Phase 2): a single static signal can no longer mark a game broken, so
+	// claiming "this is definitely broken" off an empty-HTML observation
+	// alone is a false positive when the actual entrypoint redirects, the
+	// HTML is intentionally a stub for a SPA, or the headless scanner sees a
+	// canvas render. Headless lane decides — if both static and headless
+	// fail, triple_fail still flags broken.
 	const sizeBytes = Buffer.byteLength(text || '', 'utf-8');
 	const stripped = (text || '').replace(/<!--[\s\S]*?-->/g, '').replace(/\s+/g, '');
 	if (sizeBytes === 0 || stripped.length < 80) {
 		issues.push({
 			code: 'EMPTY_ENTRY_HTML',
 			message: `Entry HTML is empty or near-empty (size=${sizeBytes} bytes, stripped=${stripped.length} chars)`,
-			severity: 'critical',
+			severity: 'warning',
 		});
 	}
 
@@ -321,6 +334,18 @@ function scanGame(slug) {
 				ref,
 			});
 		}
+		// Hardcoded localhost / dev URLs are deterministic broken in production.
+		// Match http(s)://localhost, http(s)://127.0.0.1, or http(s)://dev.* with
+		// any port. data: and chrome-extension: stay allowed (used by some games
+		// for inline manifests).
+		if (LOCALHOST_RE.test(ref)) {
+			issues.push({
+				code: 'HARDCODED_LOCALHOST',
+				message: `Reference points at a local dev URL that won't resolve in production: ${ref}`,
+				severity: 'critical',
+				ref,
+			});
+		}
 	}
 
 	// Resolve each ref. External URLs counted; runtime-critical externals
@@ -331,6 +356,7 @@ function scanGame(slug) {
 	let critMisses = 0;
 	let warnMisses = 0;
 	const cssToFollow = [];
+	const jsToFollow = [];
 	const seenExternalCritical = new Set();
 	for (const ref of refs) {
 		if (isExternalUrl(ref)) {
@@ -390,6 +416,7 @@ function scanGame(slug) {
 			continue;
 		}
 		if (ext === '.css' && cssToFollow.length < 8) cssToFollow.push(found);
+		if ((ext === '.js' || ext === '.mjs') && jsToFollow.length < 12) jsToFollow.push(found);
 	}
 
 	// Follow a few CSS files for url(...) references; missing fonts/images downgrade only.
@@ -411,6 +438,111 @@ function scanGame(slug) {
 				});
 			}
 		}
+	}
+
+	// Recursive dependency walk: scan up to 12 JS files for inline
+	// import("...") / fetch("...") / new Worker("...") / new URL(...,
+	// import.meta.url) references. Catches lazy-loaded chunks that 404 only
+	// when actually exercised — the legacy walk missed these entirely.
+	for (const jsPath of jsToFollow) {
+		const jsText = readSafe(jsPath);
+		if (!jsText) continue;
+		const innerRefs = new Set();
+		JS_IMPORT_RE.lastIndex = 0;
+		let jm;
+		while ((jm = JS_IMPORT_RE.exec(jsText)) !== null) {
+			const r = jm[1] || jm[2] || jm[3] || jm[4];
+			if (r) innerRefs.add(r);
+		}
+		for (const ref of innerRefs) {
+			if (isExternalUrl(ref)) {
+				// External JS-dynamic ref to a non-allowlisted host is a runtime
+				// dep we'd miss otherwise.
+				const host = externalHostFromUrl(ref);
+				if (host && !isOptionalExternalHost(host) && !seenExternalCritical.has(host)) {
+					seenExternalCritical.add(host);
+					externalCriticalCount += 1;
+					issues.push({
+						code: 'EXTERNAL_RUNTIME_DEP',
+						message: `Game depends on external host (dynamic JS import): ${host}`,
+						severity: 'warning',
+						ref,
+						host,
+					});
+				}
+				continue;
+			}
+			if (LOCALHOST_RE.test(ref)) {
+				issues.push({
+					code: 'HARDCODED_LOCALHOST',
+					message: `Dynamic JS reference points at a local dev URL: ${ref}`,
+					severity: 'critical',
+					ref,
+				});
+				continue;
+			}
+			const candidates = resolveLocal(path.dirname(jsPath), folder, ref);
+			if (!candidates || !candidates.length) continue;
+			const safe = candidates.filter(p => p.startsWith(ROOT));
+			if (!safe.length) continue;
+			const found = safe.find(p => fs.existsSync(p));
+			if (found) continue;
+			const rootRel = '/' + path.relative(ROOT, safe[0]).replace(/\\/g, '/');
+			if (isIgnoredRef(rootRel) || isIgnoredRef(ref)) continue;
+			const refExt = path.extname(safe[0]).toLowerCase();
+			if (CRITICAL_EXT.has(refExt)) {
+				critMisses += 1;
+				issues.push({
+					code: 'MISSING_DYNAMIC_IMPORT',
+					message: `Dynamic JS import target missing: ${ref}`,
+					severity: 'critical',
+					ref,
+				});
+			} else {
+				warnMisses += 1;
+				issues.push({
+					code: 'MISSING_DYNAMIC_REF',
+					message: `Dynamic JS reference target missing: ${ref}`,
+					severity: 'warning',
+					ref,
+				});
+			}
+		}
+	}
+
+	// Manifest-hash drift: if Assets/<slug>/.offline-manifest.json says a file
+	// is N bytes but the file on disk is M bytes, the manifest is stale and
+	// the verifier will silently miss real drift. Surface it as a warning so
+	// the build pipeline regenerates the manifest.
+	try {
+		const manifestPath = path.join(folder, '.offline-manifest.json');
+		if (fs.existsSync(manifestPath)) {
+			const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+			const files = Array.isArray(manifest.files) ? manifest.files : [];
+			let drift = 0;
+			for (const entry of files) {
+				if (!entry || typeof entry !== 'object' || typeof entry.path !== 'string') continue;
+				const recordedSize = Number(entry.size);
+				if (!Number.isFinite(recordedSize)) continue;
+				const filePath = path.join(folder, entry.path);
+				if (!fs.existsSync(filePath)) continue;
+				try {
+					const actual = fs.statSync(filePath).size;
+					if (actual !== recordedSize) drift += 1;
+				} catch { /* ignore */ }
+			}
+			if (drift > 0) {
+				warnMisses += 1;
+				issues.push({
+					code: 'MANIFEST_DRIFT',
+					message: `Offline manifest is stale: ${drift} file(s) have a size that disagrees with the recorded value`,
+					severity: 'warning',
+					drift,
+				});
+			}
+		}
+	} catch {
+		// Manifest is malformed; that's a separate concern — the verifier flags it.
 	}
 
 	// Compute verdict.

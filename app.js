@@ -367,8 +367,18 @@ class App {
 					else if (entry.source === 'override' && verdictRaw === 'healthy') status = '';
 					else status = 'unknown';
 				} else if (verdictRaw === 'broken') {
+					// Only fully-confirmed broken hides the game.
 					status = entry.source === 'override' ? 'under_maintenance' : 'broken';
 				} else if (verdictRaw === 'healthy') {
+					status = '';
+				} else if (verdictRaw === 'probable_broken') {
+					// Triple-confirm rule: two fails but no third. Per the plan,
+					// the game stays live in the catalog (we'd rather show a
+					// maybe-broken game than hide a working one). Internal flag
+					// only; the admin "broken games" report includes these.
+					status = '';
+				} else if (verdictRaw === 'unverified') {
+					// Single signal, not enough corroboration. Live; no badge.
 					status = '';
 				} else {
 					status = 'unknown';
@@ -569,31 +579,23 @@ class App {
 
 	loadTheme() {
 		const saved = localStorage.getItem('site-theme');
-		if (saved === 'light') {
-			document.body.classList.add('theme-light');
-			document.body.classList.remove('theme-dark');
-			if (this.themeToggle) this.themeToggle.textContent = '☀️';
-		} else {
-			document.body.classList.add('theme-dark');
-			document.body.classList.remove('theme-light');
-			if (this.themeToggle) this.themeToggle.textContent = '🌙';
-		}
+		const light = saved === 'light';
+		document.body.classList.toggle('theme-light', light);
+		document.body.classList.toggle('theme-dark', !light);
+		// Mirror onto <html data-theme> so /styles/tokens.css picks the right
+		// palette (its [data-theme='dark'] / [data-theme='light'] blocks).
+		document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
+		if (this.themeToggle) this.themeToggle.textContent = light ? '☀️' : '🌙';
 	}
 
 	toggleTheme() {
-		if (document.body.classList.contains('theme-light')) {
-			document.body.classList.remove('theme-light');
-			document.body.classList.add('theme-dark');
-			localStorage.setItem('site-theme', 'dark');
-			if (this.themeToggle) this.themeToggle.textContent = '🌙';
-			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('dark');
-		} else {
-			document.body.classList.remove('theme-dark');
-			document.body.classList.add('theme-light');
-			localStorage.setItem('site-theme', 'light');
-			if (this.themeToggle) this.themeToggle.textContent = '☀️';
-			if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle('light');
-		}
+		const goingLight = !document.body.classList.contains('theme-light');
+		document.body.classList.toggle('theme-light', goingLight);
+		document.body.classList.toggle('theme-dark', !goingLight);
+		document.documentElement.setAttribute('data-theme', goingLight ? 'light' : 'dark');
+		localStorage.setItem('site-theme', goingLight ? 'light' : 'dark');
+		if (this.themeToggle) this.themeToggle.textContent = goingLight ? '☀️' : '🌙';
+		if (window.JeoAnalytics) window.JeoAnalytics.trackThemeToggle(goingLight ? 'light' : 'dark');
 	}
 
 	loadAccent() {
