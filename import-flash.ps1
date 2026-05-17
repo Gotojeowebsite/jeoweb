@@ -1835,23 +1835,5 @@ else {
 }
 
 Write-Host ""
-
-
-# ============================================================
-#  DEEP ARCHIVAL HANDOFF
-#  Automatically triggers the Chaos Monkey batch runner 
-#  after the initial download completes.
-# ============================================================
-
-Write-Host "`n=======================================================" -ForegroundColor Cyan
-Write-Host " INITIAL IMPORT COMPLETE. HANDING OFF TO CHAOS MONKEY..." -ForegroundColor Magenta
-Write-Host "=======================================================" -ForegroundColor Cyan
-
-# Check if a batch file was passed to this script, otherwise default to flash-batch.txt
-$ChaosBatch = if ($BatchFile) { $BatchFile } else { "./flash-batch.txt" }
-
-if (Test-Path $ChaosBatch) {
-    & pwsh ./chaos-batch-runner.ps1 -BatchFile $ChaosBatch
-} else {
-    Write-Host "[!] Could not auto-trigger chaos runner. Batch file not found: $ChaosBatch" -ForegroundColor Red
-}
+Write-Host "Import complete. To repair any newly-broken slugs, run:" -ForegroundColor Cyan
+Write-Host "  npm run recover:all" -ForegroundColor White

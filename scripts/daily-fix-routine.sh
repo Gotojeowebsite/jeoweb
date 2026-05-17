@@ -6,7 +6,7 @@
 #      games that rely on outside hosts at runtime count as broken).
 #   2. Count actionable broken games (non-override, source=signals).
 #   3. If zero -> print NOTHING_TO_DO and exit 0 (Claude exits its turn).
-#   4. Otherwise -> run the auto-fix bot against the broken set.
+#   4. Otherwise -> run the canonical recovery engine against the broken set.
 #   5. Garbage-collect old quarantine entries and stdout debug logs.
 #   6. Print a structured summary the routine prompt can act on.
 #
@@ -57,17 +57,14 @@ if [ "$BROKEN_COUNT" = "0" ]; then
 fi
 
 # ---------------------------------------------------------------- 4. fix
-# Cap per-run so the routine completes in reasonable time. The bot itself
-# enforces a per-game budget so this is a soft ceiling on attempts.
+# Cap per-run so the routine completes in reasonable time. The recovery
+# engine enforces a per-slug cooldown so this is a soft ceiling on attempts.
 MAX_GAMES="${DAILY_FIX_MAX:-25}"
-log "[4/6] running auto-fix-bot --max $MAX_GAMES"
-if ! timeout 1800 node scripts/auto-fix-bot.js \
+log "[4/6] running recover-all-broken --max $MAX_GAMES"
+if ! timeout 1800 node scripts/recover-all-broken.js \
 	--max "$MAX_GAMES" \
-	--probe-timeout 5000 \
-	--scrape-timeout 90000 \
-	--search-budget-ms 12000 \
 	>> "$LOG" 2>&1; then
-	log "auto-fix-bot exited non-zero (timeout or error); continuing to cleanup"
+	log "recover-all-broken exited non-zero (timeout or error); continuing to cleanup"
 fi
 
 # ---------------------------------------------------------------- 5. cleanup
