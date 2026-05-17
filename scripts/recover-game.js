@@ -97,6 +97,7 @@ function parseArgs(argv) {
 		fuzzy: true,           // enabled by default; --no-fuzzy disables
 		fuzzyThreshold: 0.55,
 		strictShape: false,    // shape-check exact matches too (default off)
+		skipPostSwapValidation: false,
 	};
 	for (let i = 2; i < argv.length; i++) {
 		const a = argv[i];
@@ -112,6 +113,7 @@ function parseArgs(argv) {
 		else if (a === '--no-fuzzy') args.fuzzy = false;
 		else if (a === '--fuzzy-threshold') args.fuzzyThreshold = Number(argv[++i]) || args.fuzzyThreshold;
 		else if (a === '--strict-shape') args.strictShape = true;
+		else if (a === '--skip-post-swap-validation') args.skipPostSwapValidation = true;
 	}
 	return args;
 }
@@ -579,8 +581,7 @@ async function tryCandidate(cand, args, ctx) {
 	}
 
 	// Write provenance file so the swapped folder always carries a record of
-	// where it came from (humans + audit trail + the future post-swap
-	// re-validation gauntlet that ties match_type back to outcome).
+	// where it came from (humans + audit trail).
 	writeRecoveryProvenance(ctx.slug, cand, candidateRoot, result.shape_check || null);
 
 	// Post-swap finalization: localize, manifest, scan refresh.
@@ -598,6 +599,42 @@ async function tryCandidate(cand, args, ctx) {
 			if (stripped !== txt) fs.writeFileSync(p, stripped);
 		}
 	} catch {}
+
+	// ---- Post-swap re-validation gauntlet ----
+	// The candidate passed the scanner-on-candidate gate before swap, but
+	// the swap can fail silently in subtle ways: localizeGame might have
+	// stubbed a script the game actually needed; the offline-manifest might
+	// have flagged a critical file we lost in the move; the entry HTML in
+	// the new folder might reference a path that resolves differently when
+	// served from the canonical /Assets/<slug>/ URL. Re-run the scanner
+	// against the LIVE folder and if the verdict still comes back broken,
+	// roll back to the quarantine snapshot.
+	//
+	// --skip-post-swap-validation lets operators bypass for debugging.
+	if (!args.skipPostSwapValidation && !args.skipScanner && quarantineDir) {
+		const liveFolder = path.join(ASSETS_DIR, ctx.slug);
+		const postScan = await runScannerOnCandidate(liveFolder, ctx.slug, args.verbose);
+		result.post_swap_scan = postScan;
+		if (!postScan.ok && !postScan.skipped) {
+			// Swap turned out to not actually fix the game. Roll back.
+			if (args.verbose) console.log(`    × post-swap scanner: ${postScan.reason} — rolling back`);
+			try {
+				// restoreFromQuarantine removes the current live folder and
+				// moves the quarantined snapshot back into place.
+				restoreFromQuarantine(ctx.slug, quarantineDir);
+				result.outcome = 'post_swap_rollback';
+				result.error = `post-swap scanner: ${postScan.reason}`;
+				return result;
+			} catch (e) {
+				// Rollback itself failed — log loudly. Live folder is in an
+				// uncertain state; flag as such so the operator notices.
+				console.error(`[${ctx.slug}] ROLLBACK FAILED after post-swap rejection: ${e.message}`);
+				result.outcome = 'post_swap_rollback_failed';
+				result.error = `${postScan.reason} + rollback: ${e.message}`;
+				return result;
+			}
+		}
+	}
 
 	clearCooldown(ctx.slug);
 	result.outcome = 'recovered';
@@ -649,8 +686,19 @@ async function recover(slug, args) {
 				error: r.error,
 				asset_count: r.scrape && r.scrape.asset_count,
 				shape_check: r.shape_check || null,
+				post_swap_scan: r.post_swap_scan && {
+					ok: r.post_swap_scan.ok,
+					reason: r.post_swap_scan.reason,
+				},
 			});
 			if (r.outcome === 'blocked_by_captcha') blockerHits.push(r);
+			// post_swap_rollback_failed leaves the live folder in a bad state
+			// — stop here and surface loudly. Operator action required.
+			if (r.outcome === 'post_swap_rollback_failed') {
+				console.error(`[${slug}] STOP — post-swap rollback failed for candidate ${cand.url}; Assets/${slug}/ is in an indeterminate state`);
+				appendLog({ ...log, outcome: 'post_swap_rollback_failed', source_url: r.url });
+				return { slug, outcome: 'post_swap_rollback_failed', source_url: r.url };
+			}
 			if (r.outcome === 'recovered' || r.outcome === 'dry_run_pass') {
 				console.log(`[${slug}] ${r.outcome === 'dry_run_pass' ? 'PASS (dry run)' : 'RECOVERED'} from ${cand.url} (${modeLabel})`);
 				appendLog({
