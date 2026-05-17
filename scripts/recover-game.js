@@ -98,6 +98,13 @@ function parseArgs(argv) {
 		fuzzyThreshold: 0.55,
 		strictShape: false,    // shape-check exact matches too (default off)
 		skipPostSwapValidation: false,
+		// Doctor mode — fail-closed gates. When set:
+		//   * candidates that fail the Node-only byte gate are rejected before
+		//     spending Playwright budget on them
+		//   * when the Playwright scanner can't run, candidates are NOT swapped
+		//     in (instead of the legacy "skipped == pass" silent-success)
+		//   * post-swap rescan is required, not optional
+		doctorMode: false,
 	};
 	for (let i = 2; i < argv.length; i++) {
 		const a = argv[i];
@@ -120,6 +127,7 @@ function parseArgs(argv) {
 		}
 		else if (a === '--strict-shape') args.strictShape = true;
 		else if (a === '--skip-post-swap-validation') args.skipPostSwapValidation = true;
+		else if (a === '--doctor-mode') args.doctorMode = true;
 	}
 	return args;
 }
@@ -225,7 +233,9 @@ function runScannerOnCandidate(candidateRoot, slug, verbose) {
 	return new Promise((resolve) => {
 		// Try to invoke the Playwright scanner on the candidate folder.
 		// Resolve { ok, reason, skipped } — skipped=true means Playwright isn't
-		// available and the caller should rely on the manifest gate alone.
+		// available. Legacy callers treat skipped as a pass; doctor-mode
+		// callers (recover() with args.doctorMode) treat it as a fail —
+		// the strict check happens in tryCandidate after this returns.
 		const args = [
 			path.join(ROOT, 'broken_game_scanner.py'),
 			'--root', candidateRoot,
@@ -600,6 +610,29 @@ async function tryCandidate(cand, args, ctx) {
 		}
 	}
 
+	// Doctor mode: Node-only byte-gate pre-check on the candidate. Catches
+	// candidates that scraped portal chrome but lost the entry HTML, before
+	// we spend Playwright budget on them. The byte gate is the same one
+	// the live diagnose lane uses, so a candidate that passes here is
+	// definitionally not in the "empty/no-engine-markers" failure class.
+	if (args.doctorMode) {
+		let byte;
+		try {
+			const { byteGate } = require('./health/diagnose');
+			byte = byteGate(candidateRoot);
+		} catch (e) {
+			byte = { ok: false, codes: ['BYTE_GATE_LOAD_ERROR'], details: { reason: e.message } };
+		}
+		result.byte_gate = byte;
+		if (!byte.ok) {
+			if (args.verbose) console.log(`    × candidate byte gate: ${byte.codes.join(',')}`);
+			try { fs.rmSync(candidateRoot, { recursive: true, force: true }); } catch {}
+			result.outcome = 'candidate_byte_gate_failed';
+			result.error = byte.codes.join(',');
+			return result;
+		}
+	}
+
 	if (!args.skipScanner) {
 		const scan = await runScannerOnCandidate(candidateRoot, ctx.slug, args.verbose);
 		result.scanner = scan;
@@ -607,6 +640,18 @@ async function tryCandidate(cand, args, ctx) {
 			if (args.verbose) console.log(`    × scanner: ${scan.reason}`);
 			try { fs.rmSync(candidateRoot, { recursive: true, force: true }); } catch {}
 			result.outcome = 'scanner_failed';
+			return result;
+		}
+		// Doctor mode: scanner-skipped is NOT a pass. The whole point of
+		// doctor is to never swap in a candidate that wasn't actually
+		// validated. Legacy callers (recover-all-broken without doctor mode)
+		// still treat skipped as pass to avoid CI regressions in dev envs
+		// that don't have Playwright.
+		if (scan.skipped && args.doctorMode) {
+			if (args.verbose) console.log(`    × doctor-mode strict gate: scanner unavailable (${scan.reason})`);
+			try { fs.rmSync(candidateRoot, { recursive: true, force: true }); } catch {}
+			result.outcome = 'scanner_unavailable_strict';
+			result.error = scan.reason;
 			return result;
 		}
 		if (scan.skipped && args.verbose) console.log(`    ⚠ scanner skipped: ${scan.reason}`);
@@ -676,7 +721,13 @@ async function tryCandidate(cand, args, ctx) {
 		const liveFolder = path.join(ASSETS_DIR, ctx.slug);
 		const postScan = await runScannerOnCandidate(liveFolder, ctx.slug, args.verbose);
 		result.post_swap_scan = postScan;
-		if (!postScan.ok && !postScan.skipped) {
+		// Doctor mode: an "unavailable" post-swap scanner also rolls back.
+		// We must not declare success on an unvalidated live swap. The
+		// caller's deepDiagnose (which has its own byte+static lanes) will
+		// do the final word, but rollback here means we never push a
+		// breakable folder into Assets/<slug> based on a guess.
+		const postSkippedIsFail = postScan.skipped && args.doctorMode;
+		if ((!postScan.ok && !postScan.skipped) || postSkippedIsFail) {
 			// Swap turned out to not actually fix the game. Roll back.
 			if (args.verbose) console.log(`    × post-swap scanner: ${postScan.reason} — rolling back`);
 			try {

@@ -431,7 +431,20 @@ function reportFlapping(days, minTransitions = 4) {
 	if (flappers.length > 50) console.log(`  ... and ${flappers.length - 50} more`);
 }
 
-function buildEntry(slug, sig, overrides) {
+// Static issue codes that, when present as a critical, override the
+// triple-confirm quorum. One accurate static lane should not be drowned by
+// two blind passes. Keep this list narrow — every code here must be a
+// "the game cannot possibly work" condition, not a "probably broken" one.
+const SINGLE_FAIL_CRITICAL_CODES = new Set([
+	'EMPTY_ENTRY_HTML_CRITICAL',
+	'NO_ENGINE_MARKER',
+	'RENDERED_ERROR_PAGE',
+	'SRC_LITERAL_UNDEFINED',
+	// Reserved for the Phase 2 Playwright viewport probe.
+	'BLANK_VIEWPORT',
+]);
+
+function buildEntry(slug, sig, overrides, staticIssues) {
 	if (overrides.maintenance.has(slug)) {
 		const o = overrides.maintenance.get(slug);
 		return {
@@ -483,6 +496,33 @@ function buildEntry(slug, sig, overrides) {
 			conflict: null,
 		};
 	}
+	// Single-fail-critical override. Certain static issue codes mean the
+	// game definitely cannot work (e.g. empty entry HTML with no engine
+	// references, rendered error page). One accurate signal beats two
+	// blind passes — otherwise white-screen games like 0v0 slip through
+	// the quorum as "healthy".
+	const critCodes = [];
+	if (Array.isArray(staticIssues)) {
+		for (const issue of staticIssues) {
+			if (issue && issue.severity === 'critical' && SINGLE_FAIL_CRITICAL_CODES.has(issue.code)) {
+				critCodes.push(issue.code);
+			}
+		}
+	}
+	if (critCodes.length) {
+		return {
+			entry: {
+				verdict: 'broken',
+				confidence: 'high',
+				source: 'signals',
+				reason: 'single_fail_critical',
+				critical_codes: critCodes,
+				signals: sig,
+			},
+			conflict: null,
+		};
+	}
+
 	const combined = combineSignals(slug, sig);
 	const entry = {
 		verdict: combined.verdict,
@@ -550,7 +590,8 @@ function main() {
 		const prevLastKnownGood = Number(prevEntry?.last_known_good) || 0;
 		const recentlyGood = prevLastKnownGood >= recentlyGoodCutoff;
 
-		const { entry, conflict } = buildEntry(slug, sig, overrides);
+		const staticIssues = staticSig.map.get(slug)?.issues || [];
+		const { entry, conflict } = buildEntry(slug, sig, overrides, staticIssues);
 		if (conflict) conflicts.push(conflict);
 
 		// Per-game agreement metadata for downstream consumers.

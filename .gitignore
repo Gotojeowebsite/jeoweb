@@ -13,6 +13,12 @@ pipeline_artifacts/
 .quarantine/
 .daily-fix-last.log
 
+# Health Doctor per-run diagnostic dumps. Reports are regenerable; the
+# canonical health data lives in game_health.json / scan_results.json.
+reports/doctor/
+reports/doctor_*.json
+reports/doctor_*.txt
+
 # Claude Code scheduled-task lockfile (per-machine)
 .claude/scheduled_tasks.lock
 

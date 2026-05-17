@@ -76,6 +76,32 @@ function verifyFolder(folder, args) {
 		return { folder, problems };
 	}
 
+	// Entry HTML byte gate. A working game's entry HTML cannot be empty —
+	// the engine loader has to live somewhere. Reject early so recovery
+	// candidates that scraped portal chrome but lost the entry get rejected
+	// before the swap. MIN_ENTRY_HTML_BYTES env var tunes the threshold.
+	const entryName = manifest.entry || 'index.html';
+	const entryPath = path.join(folder, entryName);
+	const MIN_ENTRY_BYTES = Number(process.env.MIN_ENTRY_HTML_BYTES) || 200;
+	try {
+		const entrySize = fs.statSync(entryPath).size;
+		if (entrySize < MIN_ENTRY_BYTES) {
+			problems.push({
+				code: 'ENTRY_HTML_TOO_SMALL',
+				message: `Entry HTML is ${entrySize} bytes (< ${MIN_ENTRY_BYTES}); cannot be a working game`,
+				path: entryName,
+				actual: entrySize,
+				expected: MIN_ENTRY_BYTES,
+			});
+		}
+	} catch (e) {
+		problems.push({
+			code: 'ENTRY_HTML_MISSING',
+			message: `Entry HTML "${entryName}" not statable: ${e.message}`,
+			path: entryName,
+		});
+	}
+
 	const allowlist = new Set(manifest.external_allowlist || []);
 	for (const host of manifest.external_critical || []) {
 		// External_critical was computed at build time; flag any that aren't

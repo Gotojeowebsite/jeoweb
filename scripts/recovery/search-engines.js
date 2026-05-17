@@ -550,6 +550,28 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 		: buildQueries(name, type);
 	if (!queries.length) return [];
 
+	// Portal probing — direct URL HEAD requests against curated unblocked-games
+	// portals (3kh0, classroom6x, tbg95, kbhgames, hoodamath, …). Deterministic
+	// and not subject to DDG/Bing rate limits, so a working copy on a known
+	// portal becomes a high-priority candidate even when search backends
+	// return zero hits. Only runs on the exact pass to avoid wasting requests
+	// on the fuzzy pass (which uses a normalized query that already differs
+	// from the slug a portal URL would use).
+	const portalHits = [];
+	if (!opts.fuzzy && !opts.skipPortalProbe) {
+		try {
+			const { probePortals } = require('./portal-probe');
+			const hits = await probePortals(name, {
+				timeoutMs: Math.min(opts.timeoutMs || DEFAULT_TIMEOUT_MS, 4000),
+				verbose: opts.verbose,
+			});
+			for (const h of hits) portalHits.push(h);
+			if (opts.verbose) console.log(`  portal-probe: ${portalHits.length} hit(s)`);
+		} catch (e) {
+			if (opts.verbose) console.log(`  portal-probe error: ${e.message}`);
+		}
+	}
+
 	const timeoutMs = opts.timeoutMs || DEFAULT_TIMEOUT_MS;
 	const tasks = [];
 	for (const q of queries) {
@@ -575,14 +597,19 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 
 	const settled = await Promise.allSettled(tasks);
 	const all = [];
+	// Portal hits go first so they dedupe-win against any search-engine hit
+	// of the same URL (preserving the portal_host metadata and slightly
+	// higher score from portal-probe).
+	for (const h of portalHits) all.push(h);
 	for (const s of settled) {
 		if (s.status === 'fulfilled' && Array.isArray(s.value)) all.push(...s.value);
 	}
 	// Tag each hit with match_type so downstream gates know to apply the
-	// nameSimilarity >= 0.55 threshold before scraping.
+	// nameSimilarity >= 0.55 threshold before scraping. Portal hits already
+	// set match_type='exact' but the iteration below idempotently re-confirms.
 	const out = dedupeBy(all, (x) => x.url);
 	if (opts.fuzzy) for (const h of out) h.match_type = 'fuzzy';
-	else for (const h of out) h.match_type = 'exact';
+	else for (const h of out) { if (!h.match_type) h.match_type = 'exact'; }
 	return out;
 }
 
