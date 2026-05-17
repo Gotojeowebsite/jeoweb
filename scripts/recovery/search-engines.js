@@ -273,8 +273,54 @@ function buildQueries(name, type) {
 	return Array.from(variants).slice(0, 18);
 }
 
+// Fuzzy query expansion — used as a fallback when buildQueries() returns
+// zero validated candidates. Goes broader: drops the strict "unblocked"
+// qualifier, accepts more terms in the URL path, and tries hostnames
+// where games are typically rehosted (github.io forks, archive.org
+// snapshots, itch.io builds, jsdelivr-cached npm packages).
+//
+// Caller is responsible for canonicalizing the name BEFORE passing it
+// here (use atomic-swap.js#normalizeName). Variants returned still need
+// to clear the fuzzy similarity threshold downstream.
+function buildFuzzyQueries(normalizedName, type) {
+	const variants = new Set();
+	if (!normalizedName) return [];
+	const base = normalizedName.replace(/[_-]+/g, ' ').trim();
+	if (!base) return [];
+
+	// Six broader variants per the plan.
+	variants.add(`${base}`);
+	variants.add(`${base} html5`);
+	variants.add(`${base} unblocked`);
+	variants.add(`${base} site:github.io`);
+	variants.add(`${base} site:archive.org`);
+	variants.add(`${base} port`);
+
+	// Type-aware fuzzy extras — broader than buildQueries equivalents.
+	if (type === 'webgl' || !type) {
+		variants.add(`${base} webgl free`);
+		variants.add(`${base} browser`);
+		variants.add(`${base} site:itch.io`);
+	}
+	if (type === 'flash') {
+		variants.add(`${base} swf`);
+		variants.add(`${base} flashpoint`);
+	}
+	if (type === 'gba' || type === 'snes' || type === 'nes' || type === 'retro') {
+		variants.add(`${base} rom`);
+		variants.add(`${base} site:vimm.net`);
+	}
+
+	return Array.from(variants).slice(0, 18);
+}
+
 async function discoverCandidates({ name, type } = {}, opts = {}) {
-	const queries = buildQueries(name, type);
+	// opts.fuzzy: when true, use buildFuzzyQueries instead of buildQueries.
+	// Caller passes the already-normalized name in that case. Backends are
+	// the same — only the query phrasing differs.
+	const queries = opts.fuzzy
+		? buildFuzzyQueries(name, type)
+		: buildQueries(name, type);
 	if (!queries.length) return [];
 
 	const timeoutMs = opts.timeoutMs || DEFAULT_TIMEOUT_MS;
@@ -293,12 +339,18 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 	for (const s of settled) {
 		if (s.status === 'fulfilled' && Array.isArray(s.value)) all.push(...s.value);
 	}
-	return dedupeBy(all, x => x.url);
+	// Tag each hit with fuzzy_mode so downstream gates know to apply the
+	// nameSimilarity >= 0.55 threshold before scraping.
+	const out = dedupeBy(all, (x) => x.url);
+	if (opts.fuzzy) for (const h of out) h.match_type = 'fuzzy';
+	else for (const h of out) h.match_type = 'exact';
+	return out;
 }
 
 module.exports = {
 	discoverCandidates,
 	buildQueries,
+	buildFuzzyQueries,
 	searchDuckDuckGo,
 	searchBing,
 	searchBrave,
