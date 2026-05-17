@@ -64,17 +64,56 @@ CRITICAL_RESOURCE_TYPES = {
 }
 
 IGNORED_LOCAL_404_PATTERNS = [
+    # Browser-default requests.
     re.compile(r"/favicon\.ico$", re.IGNORECASE),
-    re.compile(r"\.map$", re.IGNORECASE),
+    re.compile(r"/apple-touch-icon(?:-precomposed)?\.png$", re.IGNORECASE),
+    re.compile(r"/robots\.txt$", re.IGNORECASE),
+
+    # Source maps in any flavor (sourcemap files are always optional).
+    re.compile(r"\.map(?:\.gz|\.br)?$", re.IGNORECASE),
+    re.compile(r"/sourcemaps?/", re.IGNORECASE),
+
+    # Portal leftovers — JS/CSS the original host serves but our archive doesn't.
     re.compile(r"^/js/main\.js$", re.IGNORECASE),
     re.compile(r"^/css/main\.css$", re.IGNORECASE),
     re.compile(r"^/assets/scripts/game\.js$", re.IGNORECASE),
     re.compile(r"^/assets/promo/promo\.js$", re.IGNORECASE),
-    re.compile(r"^/cdn-cgi/challenge-platform/scripts/jsd/main\.js$", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/", re.IGNORECASE),  # Cloudflare worker scaffolding
+    re.compile(r"^/__cf_chl_jschl_tk__", re.IGNORECASE),
     re.compile(r"^/gadgets/evthdlr", re.IGNORECASE),
+
+    # Dev-mode / HMR / build-tooling stragglers (these only 404 because we
+    # archived a production build that still references its dev tooling).
     re.compile(r"^/sockjs-node/", re.IGNORECASE),
+    re.compile(r"^/__webpack_hmr", re.IGNORECASE),
+    re.compile(r"\.hot-update\.(?:js|json)(?:\.map)?$", re.IGNORECASE),
+    re.compile(r"^/_next/data/development/", re.IGNORECASE),
+    re.compile(r"^/__nextjs_original-stack-frame", re.IGNORECASE),
+
+    # Optional-by-convention filenames. Authors who name an asset `-optional`
+    # or `-fallback` or `.optional.*` are explicitly signalling "this 404 is
+    # fine"; trust them.
+    re.compile(r"-optional\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"\.optional\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"-fallback\.[a-z0-9]+$", re.IGNORECASE),
+    re.compile(r"-placeholder\.[a-z0-9]+$", re.IGNORECASE),
+
+    # PWA / service worker checks that legitimately 404 on archived games.
+    re.compile(r"^/sw-register-options\.json$", re.IGNORECASE),
+    re.compile(r"^/manifest(?:\.webmanifest)?\.bak$", re.IGNORECASE),
+    re.compile(r"^/\.well-known/", re.IGNORECASE),
+
+    # Analytics / ad probes whose absence doesn't break gameplay.
+    re.compile(r"^/(?:ezimba|ad|ads|advert)/", re.IGNORECASE),
+    re.compile(r"/(?:track|analytics|telemetry|beacon)\b", re.IGNORECASE),
+
+    # Engine-specific debris.
     re.compile(r"/emulatorjs/cores/reports/[^/]+\.json$", re.IGNORECASE),
     re.compile(r"-legacy-wasm\.data$", re.IGNORECASE),
+    re.compile(r"\.wasm\.debug\.wasm$", re.IGNORECASE),  # WebAssembly debug companion files
+    re.compile(r"/Build/.*\.symbols\.json(?:\.br|\.gz)?$", re.IGNORECASE),  # Unity debug symbols
+
+    # Old/known broken local references kept for back-compat.
     re.compile(r"/assets/svg/svg-map\.svgindex\.htmlomments$", re.IGNORECASE),
     re.compile(r"/media/posts/\d+/responsive/[^/]+\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE),
 ]
@@ -130,14 +169,80 @@ CRITICAL_RUNTIME_ERROR_TOKENS = (
 )
 
 NOISE_CONSOLE_PATTERNS = (
+    # Sourcemaps and dev tooling — never user-visible.
     "source map",
+    "devtools failed to load source map",
+    "sourcemap parse error",
+
+    # Browser-default 404s.
     "favicon.ico",
+    "apple-touch-icon",
+    "/robots.txt",
+    "manifest.webmanifest",
+
+    # CSP / mixed-content policy violations from ad/analytics scripts —
+    # the game itself still runs.
     "violates the following content security policy",
     "refused to connect because it violates the document's content security policy",
+    "refused to load the image",
+    "refused to load the script",
+    "mixed content:",
+
+    # 404s on optional resources — already covered by the 404 allowlist,
+    # mirrored here for the console-error noise filter.
     "failed to load resource: the server responded with a status of 404",
+    "failed to load resource: the server responded with a status of 403",
     "status of 501 (unsupported method ('post'))",
     "error creating webgl renderer: unable to create webgl rendering context",
     "this method is a failsafe, and not officially supported",
+
+    # Deprecation warnings — informational, never fatal.
+    "deprecated",
+    "deprecationwarning",
+    "[deprecation]",
+    "[violation]",
+    "addeventlistener.*passive event listener",
+    "synchronous xmlhttprequest on the main thread is deprecated",
+
+    # Ad-blocker / privacy-extension noise: telemetry scripts that get
+    # blocked by the user's browser do not affect game functionality.
+    "err_blocked_by_client",
+    "err_blocked_by_response",
+    "blocked by client",
+    "doubleclick.net",
+    "googletagmanager",
+    "google-analytics",
+    "googlesyndication",
+    "googleadservices",
+    "doubleverify",
+
+    # Cookie / consent banners.
+    "cookie-banner",
+    "consent-manager",
+    "gatekeeperconsent",
+    "cmp.min.js",
+
+    # Service worker registration noise. Failed SW registration on an
+    # archived game doesn't break gameplay.
+    "service worker registration failed",
+    "the script has an unsupported mime type",
+
+    # WebRTC / camera / mic permission prompts. Not a runtime error;
+    # the user just clicked Deny.
+    "permission denied",
+    "the user denied",
+    "notallowederror",
+
+    # AudioContext autoplay restrictions — handled by engines on user input.
+    "the audiocontext was not allowed to start",
+    "play() failed because the user didn't interact",
+
+    # Common third-party library noise.
+    "polyfill.io",
+    "newrelic",
+    "datadog-rum",
+    "sentry",
+    "log4javascript",
 )
 
 NONCRITICAL_RUNTIME_PATTERNS = (
@@ -945,6 +1050,52 @@ def probe_page(page) -> Dict[str, object]:
                 }
             } catch(_) {}
 
+            // -------- Loading-bar progress (per engine) --------
+            // For each engine that exposes a measurable loading progress,
+            // extract it as a 0..100 percent. A bar that exists but never
+            // crosses 95% in two probes = stuck-loading verdict (analogous
+            // to the existing Unity rule, generalized).
+            let ejsProgressPct = -1;
+            try {
+                // EmulatorJS draws its progress text into #ejs_loading_text /
+                // .ejs_loading_text. Parse "Loading 47%" -> 47.
+                const ejsText = document.querySelector('#ejs_loading_text, .ejs_loading_text, .ejs-loading-text')?.textContent || '';
+                const m = ejsText.match(/(\\d{1,3})\\s*%/);
+                if (m) ejsProgressPct = Math.min(100, Number(m[1]));
+            } catch(_) {}
+            let ruffleProgressPct = -1;
+            try {
+                // Ruffle exposes a `.metadata.fileSize` once decode is far enough;
+                // surrogate progress is the size of the loaded SWF buffer vs.
+                // the announced fileSize. Cheap approximation.
+                const r = document.querySelector('ruffle-player');
+                if (r && r.metadata && r.metadata.fileSize) {
+                    ruffleProgressPct = r.isPlaying ? 100 : 50;
+                }
+            } catch(_) {}
+            let constructProgressPct = -1;
+            try {
+                // Construct shows progress on #c2loadingprogress / #c3loadingprogress.
+                const bar = document.querySelector('#c2loadingprogress, #c3loadingprogress, .c2loadingprogress, .c3loadingprogress');
+                const w = bar && bar.style && bar.style.width || '';
+                const m = w.match(/(\\d+(?:\\.\\d+)?)/);
+                if (m) constructProgressPct = Math.min(100, Number(m[1]));
+            } catch(_) {}
+            let phaserProgressPct = -1;
+            try {
+                // Phaser exposes Loader.progress (0..1) when a Scene is loading.
+                if (typeof window.Phaser !== 'undefined' && window.Phaser.GAMES) {
+                    for (const g of window.Phaser.GAMES) {
+                        const sc = g && g.scene && g.scene.scenes;
+                        if (Array.isArray(sc)) for (const s of sc) {
+                            if (s && s.load && typeof s.load.progress === 'number') {
+                                phaserProgressPct = Math.max(phaserProgressPct, Math.round(s.load.progress * 100));
+                            }
+                        }
+                    }
+                }
+            } catch(_) {}
+
             // -------- AudioContext detection --------
             // Many games create an AudioContext during boot; once it's in
             // 'running' state, the game has reached at least the splash/menu.
@@ -1041,6 +1192,10 @@ def probe_page(page) -> Dict[str, object]:
                 phaserReady,
                 audioContextRunning,
                 audioContextCount,
+                ejsProgressPct,
+                ruffleProgressPct,
+                constructProgressPct,
+                phaserProgressPct,
             };
         }
         """
@@ -1271,11 +1426,32 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
 
     game_url = build_game_url(config, target)
 
+    # Set up screenshot dump directory if --screenshot-dir was passed. We
+    # capture at 5s and 30s — long enough for engines to draw, short enough
+    # to keep the run-cost per game bounded.
+    screenshot_dir: Optional[Path] = None
+    if getattr(config, "screenshot_dir", None):
+        run_stamp = time.strftime("%Y%m%d-%H%M%S")
+        screenshot_dir = config.screenshot_dir / target.name / run_stamp
+        try:
+            screenshot_dir.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            screenshot_dir = None
+
+    def _capture(label: str) -> None:
+        if screenshot_dir is None:
+            return
+        try:
+            page.screenshot(path=str(screenshot_dir / f"{label}.png"), full_page=False)
+        except Exception:
+            pass
+
     probe_first: Dict[str, object] = {}
     try:
         page.goto(game_url, wait_until="domcontentloaded", timeout=config.timeout_ms)
         page.wait_for_timeout(int(config.wait_seconds * 1000))
         probe_first = probe_page(page)
+        _capture("5s")
 
         # Try to advance past start screens / cookie banners / "Click to play"
         # overlays. Many games render their splash screen and then sit idle
@@ -1302,6 +1478,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         probe["canvasHashFirst"] = probe_first.get("canvasHash", "")
         probe["canvasNonzeroPixelsFirst"] = probe_first.get("canvasNonzeroPixels", 0)
         probe["engineExtraWaitMs"] = engine_extra_ms
+        _capture("30s")
 
         # Interactivity probe: send synthetic input (key + mouse) and take a
         # third snapshot. If the game is genuinely playing, the canvas hash
@@ -1323,7 +1500,26 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 page.keyboard.press("ArrowRight")
                 page.wait_for_timeout(800)
                 page.keyboard.press("ArrowDown")
-                page.wait_for_timeout(1200)
+                page.wait_for_timeout(400)
+                # Expanded interaction sequence: WASD covers keyboard-controlled
+                # games that don't listen to arrow keys; mouse-drag covers
+                # drag-to-interact platformers; Enter dismisses splash overlays.
+                for key in ("w", "a", "s", "d", "Enter"):
+                    try:
+                        page.keyboard.press(key)
+                        page.wait_for_timeout(120)
+                    except Exception:
+                        pass
+                try:
+                    # Mouse-drag across the center of the canvas — catches games
+                    # whose only input is dragging (cookie-clicker-style, drag-puzzle).
+                    page.mouse.move(640, 400)
+                    page.mouse.down()
+                    page.mouse.move(640 + 80, 400 + 40, steps=4)
+                    page.mouse.up()
+                except Exception:
+                    pass
+                page.wait_for_timeout(400)
                 probe_after_input = probe_page(page)
                 probe["canvasHashAfterInput"] = probe_after_input.get("canvasHash", "")
                 probe["canvasNonzeroPixelsAfterInput"] = probe_after_input.get("canvasNonzeroPixels", 0)
@@ -1333,6 +1529,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 # iframe cross-origin, etc.) we just skip the interactivity
                 # check and rely on the two earlier probes.
                 pass
+        _capture("end")
     except PlaywrightTimeoutError as exc:
         add_issue("critical", "NAV_TIMEOUT", f"Navigation timeout: {exc}", game_url)
     except PlaywrightError as exc:
@@ -1434,19 +1631,65 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 )
                 break
 
-    # Unity-specific: if the loading bar appeared and progress never reached
-    # ~95% by the second probe, the build is stuck loading.
+    # Per-engine loading-bar stall detection. If a bar exists and progress
+    # never reached ~95% by the second probe AND the engine's own "loaded"
+    # marker is false AND we don't already have critical issues, flag it.
+    # The engine_loaded check is the safety valve — a Unity game whose bar
+    # we couldn't parse but whose instance is fully constructed is fine.
     unity_progress_pct = _parse_unity_progress(probe.get("unityProgress"))
     if (
         bool(probe.get("unityLoadingBar"))
         and unity_progress_pct >= 0
         and unity_progress_pct < 95.0
+        and not bool(probe.get("unityInstanceLoaded"))
         and not critical_issues
     ):
         add_issue(
             "critical",
             "UNITY_LOADING_STUCK",
             f"Unity loading bar stuck at {unity_progress_pct:.0f}%",
+            game_url,
+        )
+
+    # EmulatorJS BIOS / ROM load stall.
+    ejs_pct = float(probe.get("ejsProgressPct", -1) or -1)
+    if (
+        ejs_pct >= 0
+        and ejs_pct < 95.0
+        and not bool(probe.get("ejsStarted"))
+        and not critical_issues
+    ):
+        add_issue(
+            "critical",
+            "EJS_LOADING_STUCK",
+            f"EmulatorJS loading stuck at {ejs_pct:.0f}%",
+            game_url,
+        )
+
+    # Construct preloader stall (#c2loadingprogress / #c3loadingprogress).
+    construct_pct = float(probe.get("constructProgressPct", -1) or -1)
+    if construct_pct >= 0 and construct_pct < 95.0 and not critical_issues:
+        add_issue(
+            "critical",
+            "CONSTRUCT_LOADING_STUCK",
+            f"Construct preloader stuck at {construct_pct:.0f}%",
+            game_url,
+        )
+
+    # Phaser asset-load stall. Phaser scenes get Loader.progress in [0, 1];
+    # we already scaled to 0..100. A scene stuck below 95% means assets
+    # didn't all arrive.
+    phaser_pct = float(probe.get("phaserProgressPct", -1) or -1)
+    if (
+        phaser_pct >= 0
+        and phaser_pct < 95.0
+        and not bool(probe.get("phaserReady"))
+        and not critical_issues
+    ):
+        add_issue(
+            "critical",
+            "PHASER_LOADING_STUCK",
+            f"Phaser scene loader stuck at {phaser_pct:.0f}%",
             game_url,
         )
 

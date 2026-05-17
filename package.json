@@ -21,6 +21,8 @@
     "health:static": "node scripts/static-health-scan.js",
     "health:build": "node scripts/build-game-health.js",
     "health:refresh": "node scan.js && node scripts/static-health-scan.js && node scripts/build-game-health.js",
+    "health:recheck": "node scripts/recheck-healthy.js",
+    "health:flapping": "node scripts/build-game-health.js --flapping",
     "offline:manifest": "node scripts/build-offline-manifest.js --all",
     "offline:verify": "node scripts/verify-offline-manifest.js",
     "offline:localize": "node scripts/localize-all-games.js --apply",

@@ -22,6 +22,10 @@ on:
         description: 'Skip the 2nd-pass confirm-broken scan (faster but less accurate)'
         required: false
         default: 'false'
+      skip_profile_b:
+        description: 'Skip the chromium-no-gpu profile scan (the headless_b lane in the 5-lane verdict)'
+        required: false
+        default: 'false'
   push:
     # Manual one-shot trigger. Push to either:
     #   * a tag matching qa-run-*  (preferred — never recurses)
@@ -145,6 +149,31 @@ jobs:
             --timeout-ms 60000 \
             --max-attempts 2
           node scripts/build-game-health.js
+
+      - name: Pass 1b — full-catalog scan on chromium-no-gpu profile (headless_b lane)
+        # The triple-confirm verdict in scripts/build-game-health.js merges
+        # signals from up to 5 lanes (static, cdn_probe, headless, headless_b,
+        # smoke). This step produces the headless_b lane by re-scanning the
+        # whole catalog with --disable-gpu --disable-software-rasterizer,
+        # catching games whose canvas rendering depends on a specific GPU
+        # path. Output goes to scan_results.profile_b.json so it doesn't
+        # clobber the default-profile results. Shorter waits than pass 1
+        # because we only care about divergence, not nailing down details.
+        if: ${{ github.event.inputs.skip_profile_b != 'true' }}
+        timeout-minutes: 110
+        run: |
+          rm -f scan_state_profile_b.json || true
+          python3 broken_game_scanner.py \
+            --profile chromium-no-gpu \
+            --parallel-workers 4 \
+            --state-file scan_state_profile_b.json \
+            --hard-timeout-seconds 150 \
+            --wait-seconds 10 \
+            --timeout-ms 40000 \
+            --report-json scan_results.profile_b.json
+
+      - name: Build game_health.json with all 5 lanes
+        run: node scripts/build-game-health.js
 
       - name: Run aggressive recovery engine
         if: ${{ github.event.inputs.skip_recovery != 'true' }}
