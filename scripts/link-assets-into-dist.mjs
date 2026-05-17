@@ -1,44 +1,88 @@
 #!/usr/bin/env node
 /**
- * Postbuild: symlink the game asset trees into dist/ so `astro preview` (and
- * any direct `dist/` serve) resolves /Assets/<slug>/index.html, /emulatorjs/*,
- * and the cdn-cgi shim correctly.
+ * Postbuild: stage the game asset trees and pipeline JSON artifacts into
+ * dist/ so the published bundle is fully self-contained.
  *
- * Production deploys handle this differently — the Sprint 7 cutover will
- * upload `.` + `dist/` together (or stage them) since GitHub Pages doesn't
- * follow symlinks reliably. Until then, the legacy root remains the artifact.
+ * Default mode (no flag): symlinks for fast local `astro preview`.
+ * `--copy` mode: hard copies for CI — GitHub Pages doesn't follow symlinks,
+ * so the deploy artifact must contain real files.
  */
-import { existsSync, symlinkSync, lstatSync, unlinkSync, mkdirSync } from 'node:fs';
+import { existsSync, symlinkSync, lstatSync, unlinkSync, cpSync, statSync, copyFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = resolve(ROOT, 'dist');
+const COPY = process.argv.includes('--copy');
 
 if (!existsSync(DIST)) {
 	console.error('[link-assets] dist/ not found — run astro build first.');
 	process.exit(1);
 }
 
-const TARGETS = ['Assets', 'emulatorjs', 'cdn-cgi'];
+// Directory trees the live site serves out of /Assets, /emulatorjs, /cdn-cgi.
+const DIRS = ['Assets', 'emulatorjs', 'cdn-cgi'];
 
-for (const name of TARGETS) {
+// Top-level files the SPA / SW / shim depend on. Missing ones are skipped.
+const FILES = [
+	'games_list.json',
+	'game_health.json',
+	'recently_added.json',
+	'manifest.json',
+	'notavailable.svg',
+	'icon.svg',
+	'sw.js',
+	'poki-offline-shim.js',
+	'leaderboard_games.json',
+];
+
+function stageDir(name) {
 	const src = resolve(ROOT, name);
 	const dst = resolve(DIST, name);
 	if (!existsSync(src)) {
 		console.log(`[link-assets] skip ${name} (source missing)`);
-		continue;
+		return;
 	}
 	if (existsSync(dst)) {
 		try {
 			const stat = lstatSync(dst);
 			if (stat.isSymbolicLink()) unlinkSync(dst);
-			else {
-				console.log(`[link-assets] skip ${name} (dist entry exists and is not a symlink)`);
-				continue;
+			else if (COPY && stat.isDirectory()) {
+				// Re-copy is too slow for huge Assets/; trust prior layout.
+				console.log(`[link-assets] skip ${name} (dist dir exists in --copy mode)`);
+				return;
+			} else {
+				console.log(`[link-assets] skip ${name} (dist entry exists)`);
+				return;
 			}
 		} catch (_) {}
 	}
-	symlinkSync(src, dst, 'dir');
-	console.log(`[link-assets] linked dist/${name} -> ../${name}`);
+	if (COPY) {
+		cpSync(src, dst, { recursive: true, dereference: true });
+		console.log(`[link-assets] copied dist/${name} <- ${name}`);
+	} else {
+		symlinkSync(src, dst, 'dir');
+		console.log(`[link-assets] linked dist/${name} -> ../${name}`);
+	}
 }
+
+function stageFile(name) {
+	const src = resolve(ROOT, name);
+	const dst = resolve(DIST, name);
+	if (!existsSync(src)) return;
+	if (existsSync(dst)) {
+		try {
+			const stat = lstatSync(dst);
+			if (stat.isSymbolicLink()) unlinkSync(dst);
+		} catch (_) {}
+	}
+	try {
+		copyFileSync(src, dst);
+		console.log(`[link-assets] copied dist/${name}`);
+	} catch (err) {
+		console.warn(`[link-assets] failed to copy ${name}: ${err.message}`);
+	}
+}
+
+for (const d of DIRS) stageDir(d);
+for (const f of FILES) stageFile(f);

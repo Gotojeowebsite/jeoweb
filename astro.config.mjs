@@ -4,8 +4,8 @@ import preact from '@astrojs/preact';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
-// Sprint 0 scaffold. Builds alongside the legacy root files — does NOT yet
-// replace index.html / app.js / styles.css. Cutover lands in Sprint 7.
+// Canonical deploy artifact: `./dist`, staged with /Assets, /emulatorjs,
+// /cdn-cgi via scripts/link-assets-into-dist.mjs --copy in CI.
 export default defineConfig({
 	site: 'https://jeoweb.app/',
 	output: 'static',
@@ -22,6 +22,9 @@ export default defineConfig({
 		}),
 		mdx(),
 	],
+	experimental: {
+		clientPrerender: true,
+	},
 	build: {
 		assets: '_astro',
 		inlineStylesheets: 'auto',

@@ -1,0 +1,156 @@
+/**
+ * Mascot animation grammar. The SVG (jeo-mascot.svg) is one figure with
+ * stable <g> ids — `jeo-eyes`, `jeo-mouth`, `jeo-arm-r`, etc. Poses are
+ * pure CSS: pose className on the .jeo-mascot wrapper rewrites transforms
+ * and swaps the mouth via a small library of d-path overlays.
+ *
+ * Sizes scale via --jeo-size. Wrapper provides idle bob + blink loops.
+ */
+
+.jeo-mascot {
+	--jeo-size: 120px;
+	display: inline-block;
+	width: var(--jeo-size);
+	height: var(--jeo-size);
+	position: relative;
+	pointer-events: none;
+}
+.jeo-mascot svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: visible;
+}
+
+/* Idle bob — the whole mascot rocks gently. */
+.jeo-mascot.is-bobbing svg {
+	animation: jeo-mascot-bob 3.4s var(--ease-in-out) infinite;
+	transform-origin: 50% 100%;
+}
+@keyframes jeo-mascot-bob {
+	0%, 100% { transform: translateY(0) rotate(-1deg); }
+	50%      { transform: translateY(-4px) rotate(1deg); }
+}
+
+/* Blink — eyes squash vertically every 4-7s. */
+.jeo-mascot #jeo-eyes {
+	transform-origin: 100px 100px;
+	transform-box: fill-box;
+	animation: jeo-mascot-blink 6s var(--ease-in-out) infinite;
+}
+@keyframes jeo-mascot-blink {
+	0%, 92%, 100% { transform: scaleY(1); }
+	95%           { transform: scaleY(0.08); }
+}
+
+/* Pose: wave — right arm rotates rhythmically. */
+.jeo-mascot.is-wave #jeo-arm-r {
+	transform-origin: 158px 132px;
+	transform-box: fill-box;
+	animation: jeo-wave 1.8s var(--ease-in-out) infinite;
+}
+
+/* Pose: cheer — arms up and out. */
+.jeo-mascot.is-cheer #jeo-arm-l {
+	transform: translate(-4px, -22px) rotate(-30deg);
+	transform-origin: 42px 132px;
+	transform-box: fill-box;
+}
+.jeo-mascot.is-cheer #jeo-arm-r {
+	transform: translate(4px, -22px) rotate(30deg);
+	transform-origin: 158px 132px;
+	transform-box: fill-box;
+}
+.jeo-mascot.is-cheer #jeo-mouth path {
+	d: path("M80,128 Q100,156 120,128");
+}
+
+/* Pose: sleep — eyes shut, z floating up. */
+.jeo-mascot.is-sleep #jeo-eyes {
+	transform: scaleY(0.08);
+	animation: none;
+}
+.jeo-mascot.is-sleep::after {
+	content: "z";
+	position: absolute;
+	top: 12%;
+	right: 18%;
+	font-family: var(--font-display);
+	font-weight: 800;
+	font-size: calc(var(--jeo-size) * 0.18);
+	color: var(--fg-2);
+	animation: jeo-z-rise 2.4s var(--ease-in-out) infinite;
+}
+@keyframes jeo-z-rise {
+	0%   { transform: translateY(0); opacity: 0; }
+	40%  { opacity: 1; }
+	100% { transform: translateY(-24px); opacity: 0; }
+}
+
+/* Pose: shrug — arms up shoulders height, mouth wavy. */
+.jeo-mascot.is-shrug #jeo-arm-l {
+	transform: translate(0, -10px) rotate(-15deg);
+	transform-origin: 42px 132px;
+	transform-box: fill-box;
+}
+.jeo-mascot.is-shrug #jeo-arm-r {
+	transform: translate(0, -10px) rotate(15deg);
+	transform-origin: 158px 132px;
+	transform-box: fill-box;
+}
+.jeo-mascot.is-shrug #jeo-mouth path {
+	d: path("M82,138 Q92,132 100,138 T118,138");
+}
+
+/* Pose: peek — slight lean. */
+.jeo-mascot.is-peek svg { transform: rotate(-8deg); }
+
+/* Pose: thinking — pupil glance up-right, mouth tight. */
+.jeo-mascot.is-thinking #jeo-eye-l ellipse:last-child,
+.jeo-mascot.is-thinking #jeo-eye-r ellipse:last-child {
+	transform: translate(2px, -2px);
+}
+.jeo-mascot.is-thinking #jeo-mouth path {
+	d: path("M86,138 Q100,134 114,138");
+}
+
+/* Reduced motion — kill loops, freeze the bob. */
+@media (prefers-reduced-motion: reduce) {
+	.jeo-mascot.is-bobbing svg,
+	.jeo-mascot #jeo-eyes,
+	.jeo-mascot.is-wave #jeo-arm-r,
+	.jeo-mascot.is-sleep::after {
+		animation: none !important;
+	}
+}
+
+/* Speech-bubble companion for MascotMessage. */
+.jeo-bubble {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-3);
+}
+.jeo-bubble__text {
+	max-width: 320px;
+	padding: var(--space-3) var(--space-4);
+	background: var(--bg-1);
+	border: 1px solid var(--line-1);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-1);
+	color: var(--fg-0);
+	font-size: var(--text-sm);
+	line-height: var(--leading-snug);
+	position: relative;
+}
+.jeo-bubble__text::before {
+	content: '';
+	position: absolute;
+	left: -7px;
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+	width: 12px;
+	height: 12px;
+	background: var(--bg-1);
+	border-left: 1px solid var(--line-1);
+	border-bottom: 1px solid var(--line-1);
+}

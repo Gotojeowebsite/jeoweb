@@ -1,5 +1,6 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { EMPTY_SEARCH, pickRandom } from '../lib/voice';
 
 // Tiny serialized shape the host passes via data-games. Mirrors what the
 // catalog loader exports but trimmed for transport. We keep `tags` for the
@@ -123,6 +124,7 @@ export default function CommandPalette({ games }: PaletteProps) {
 			// Defer one tick so the input is mounted.
 			window.setTimeout(() => inputRef.current?.focus(), 0);
 			document.body.style.overflow = 'hidden';
+			window.dispatchEvent(new CustomEvent('jeo:cmdk-open'));
 		} else {
 			document.body.style.overflow = '';
 		}
@@ -207,7 +209,7 @@ export default function CommandPalette({ games }: PaletteProps) {
 				<div class="jeo-cmdk__section-label">{sectionLabel}</div>
 				<ul id="jeo-cmdk-list" class="jeo-cmdk__list" role="listbox">
 					{results.length === 0 && (
-						<li class="jeo-cmdk__empty">No matches for &ldquo;{query}&rdquo;</li>
+						<li class="jeo-cmdk__empty">{pickRandom(EMPTY_SEARCH)}</li>
 					)}
 					{results.map((g, i) => (
 						<li

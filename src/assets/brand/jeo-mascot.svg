@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Jeo, the Jeoweb mascot">
+  <defs>
+    <radialGradient id="jeoBodyGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#b487ff"/>
+      <stop offset="55%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#41138a"/>
+    </radialGradient>
+    <radialGradient id="jeoCheekGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Body: rounded D-pad creature -->
+  <g id="jeo-body">
+    <ellipse cx="100" cy="170" rx="62" ry="10" fill="#000" opacity="0.18"/>
+    <path d="M40,108
+             C40,68 64,40 100,40
+             C136,40 160,68 160,108
+             C160,148 136,168 100,168
+             C64,168 40,148 40,108Z"
+          fill="url(#jeoBodyGrad)"
+          stroke="#2f0d63" stroke-width="2.5"/>
+
+    <!-- Antenna / cartridge tab -->
+    <rect x="92" y="22" width="16" height="22" rx="3" fill="#7c3aed" stroke="#2f0d63" stroke-width="2"/>
+    <circle cx="100" cy="22" r="6" fill="#f5b54a" stroke="#2f0d63" stroke-width="2"/>
+  </g>
+
+  <!-- Cheek blush -->
+  <g id="jeo-cheeks">
+    <circle cx="62" cy="118" r="14" fill="url(#jeoCheekGrad)"/>
+    <circle cx="138" cy="118" r="14" fill="url(#jeoCheekGrad)"/>
+  </g>
+
+  <!-- Eyes — animated via mascot.css blink. Pose changes by class on the parent. -->
+  <g id="jeo-eyes" transform="translate(0,0)">
+    <g id="jeo-eye-l">
+      <ellipse cx="78" cy="100" rx="11" ry="13" fill="#0a0a0c"/>
+      <ellipse cx="81" cy="96"  rx="3"  ry="4"  fill="#fff"/>
+    </g>
+    <g id="jeo-eye-r">
+      <ellipse cx="122" cy="100" rx="11" ry="13" fill="#0a0a0c"/>
+      <ellipse cx="125" cy="96"  rx="3"  ry="4"  fill="#fff"/>
+    </g>
+  </g>
+
+  <!-- Mouth — pose-controlled. Default = soft smile. -->
+  <g id="jeo-mouth">
+    <path id="jeo-mouth-smile"
+          d="M84,134 Q100,148 116,134"
+          fill="none" stroke="#0a0a0c" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Arms — right arm is the wave hand. transform-origin keyed in mascot.css -->
+  <g id="jeo-arm-l">
+    <ellipse cx="42" cy="118" rx="9" ry="14" fill="#6826d4" stroke="#2f0d63" stroke-width="2"/>
+  </g>
+  <g id="jeo-arm-r">
+    <ellipse cx="158" cy="118" rx="9" ry="14" fill="#6826d4" stroke="#2f0d63" stroke-width="2"/>
+  </g>
+</svg>

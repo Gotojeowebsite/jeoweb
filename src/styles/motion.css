@@ -1,0 +1,140 @@
+/**
+ * Motion utilities — the shared vocabulary every component composes from.
+ * Per-component bespoke keyframes are a smell; reach for these first.
+ *
+ * Every animation auto-disables under prefers-reduced-motion via the
+ * --motion-* tokens already collapsing to 1ms.
+ */
+
+/* ─────────────────────── Keyframes ─────────────────────── */
+@keyframes jeo-rise {
+	from { opacity: 0; transform: translateY(12px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes jeo-pop {
+	0%   { opacity: 0; transform: scale(0.92); }
+	60%  { opacity: 1; transform: scale(1.04); }
+	100% { opacity: 1; transform: scale(1); }
+}
+@keyframes jeo-shimmer {
+	0%   { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}
+@keyframes jeo-ripple {
+	from { transform: scale(0); opacity: 0.45; }
+	to   { transform: scale(8); opacity: 0; }
+}
+@keyframes jeo-wave {
+	0%, 100% { transform: rotate(0); }
+	25%      { transform: rotate(14deg); }
+	75%      { transform: rotate(-8deg); }
+}
+@keyframes jeo-confetti {
+	0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+	100% { transform: translate(var(--cx, 0), var(--cy, 0)) rotate(var(--cr, 0deg)); opacity: 0; }
+}
+@keyframes jeo-aurora-shift {
+	0%, 100% { background-position: 0% 50%; }
+	50%      { background-position: 100% 50%; }
+}
+@keyframes jeo-fade-in {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+/* ─────────────────────── Utility classes ─────────────────────── */
+.fx-rise {
+	animation: jeo-rise var(--motion-slow) var(--ease-out-soft) both;
+}
+.fx-pop {
+	animation: jeo-pop var(--motion-base) var(--ease-jeo-pop) both;
+}
+.fx-fade-in {
+	animation: jeo-fade-in var(--motion-base) var(--ease-out-soft) both;
+}
+
+/* Stagger immediate children. Pair with .fx-rise on each child or use
+   the data attribute the JS shim adds. */
+.fx-stagger > * {
+	animation: jeo-rise var(--motion-slow) var(--ease-out-soft) both;
+}
+.fx-stagger > *:nth-child(1) { animation-delay: calc(var(--stagger-step) * 0); }
+.fx-stagger > *:nth-child(2) { animation-delay: calc(var(--stagger-step) * 1); }
+.fx-stagger > *:nth-child(3) { animation-delay: calc(var(--stagger-step) * 2); }
+.fx-stagger > *:nth-child(4) { animation-delay: calc(var(--stagger-step) * 3); }
+.fx-stagger > *:nth-child(5) { animation-delay: calc(var(--stagger-step) * 4); }
+.fx-stagger > *:nth-child(6) { animation-delay: calc(var(--stagger-step) * 5); }
+.fx-stagger > *:nth-child(7) { animation-delay: calc(var(--stagger-step) * 6); }
+.fx-stagger > *:nth-child(8) { animation-delay: calc(var(--stagger-step) * 7); }
+.fx-stagger > *:nth-child(n+9) { animation-delay: calc(var(--stagger-step) * 8); }
+
+/* 3D tilt — JS sets --tilt-x/--tilt-y on mousemove; transform reads them.
+   Touch devices (hover: none) bypass via the @media block below. */
+.fx-tilt {
+	transition: transform var(--motion-base) var(--ease-out-soft);
+	transform: perspective(var(--tilt-perspective))
+		rotateX(var(--tilt-y, 0deg))
+		rotateY(var(--tilt-x, 0deg))
+		translateY(var(--tilt-lift, 0px));
+	transform-style: preserve-3d;
+	will-change: transform;
+}
+@media (hover: none) {
+	.fx-tilt { transform: none; }
+}
+
+/* Click ripple host — JS spawns a span.fx-ripple-ink on click, positioned
+   absolutely at the click coords. */
+.fx-ripple {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+.fx-ripple-ink {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--accent);
+	pointer-events: none;
+	transform-origin: center;
+	animation: jeo-ripple var(--motion-slow) var(--ease-out-soft) forwards;
+	z-index: 0;
+}
+
+/* Aurora text — wordmark / hero accent uses this. */
+.fx-aurora {
+	background: var(--gradient-aurora);
+	background-size: 200% 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: jeo-aurora-shift 8s var(--ease-in-out) infinite;
+}
+
+/* Wave loop — for the footer mascot, the onboard greeting. */
+.fx-wave {
+	transform-origin: 60% 90%;
+	animation: jeo-wave 1.8s var(--ease-in-out) infinite;
+}
+
+/* View-transition pair names — declared once here so any page can opt in
+   by setting view-transition-name on the matching element. */
+::view-transition-old(jeo-hero),
+::view-transition-new(jeo-hero) {
+	animation-duration: var(--motion-slow);
+	animation-timing-function: var(--ease-jeo-glide);
+}
+::view-transition-old(jeo-player-cover),
+::view-transition-new(jeo-player-cover) {
+	animation-duration: var(--motion-slow);
+	animation-timing-function: var(--ease-jeo-glide);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fx-rise, .fx-pop, .fx-stagger > *, .fx-wave, .fx-aurora, .fx-fade-in {
+		animation: none !important;
+	}
+	.fx-tilt { transform: none; }
+	.fx-ripple-ink { display: none; }
+}

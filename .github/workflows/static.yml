@@ -75,12 +75,15 @@ jobs:
             }
           "
 
-      # Sprint 0: Astro build runs in CI to catch regressions, but the output
-      # is NOT yet deployed — the legacy root files still ship from Pages.
-      # Cutover happens in Sprint 7 (swap upload path to `dist`).
+      # Cutover: Astro is now the canonical deploy artifact. The build
+      # writes to ./dist and link-assets --copy stages /Assets, /emulatorjs,
+      # /cdn-cgi and the pipeline JSONs into dist so the bundle is fully
+      # self-contained (Pages doesn't follow symlinks).
       - name: Build new site (Astro)
         run: npx astro build
-        continue-on-error: true
+
+      - name: Stage assets into dist
+        run: node scripts/link-assets-into-dist.mjs --copy
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -88,7 +91,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: './dist'
           
       - name: Deploy to GitHub Pages
         id: deployment

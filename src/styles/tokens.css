@@ -101,6 +101,27 @@
 	--ease-out-snap:  cubic-bezier(0.22, 1, 0.36, 1);
 	--ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
 	--ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+	--ease-jeo-pop:   cubic-bezier(0.5, 1.6, 0.6, 1);
+	--ease-jeo-glide: cubic-bezier(0.24, 0.9, 0.32, 1);
+
+	--stagger-step: 50ms;
+	--tilt-max: 4deg;
+	--tilt-perspective: 800px;
+
+	/* Brand gradient — the "Jeo Aurora": purple → magenta → cyan. Used for
+	   the wordmark, achievement chimes, daily-drop ribbon, OG image. */
+	--gradient-aurora: linear-gradient(120deg, var(--brand-500) 0%, var(--semantic-retro) 50%, var(--semantic-webgl) 100%);
+	--gradient-flame: linear-gradient(135deg, #ff7a3d 0%, var(--semantic-retro) 50%, var(--brand-500) 100%);
+
+	/* Accent presets — six tasteful starting points the onboarding shows.
+	   Each is one stop in the brand-or-semantic ramp so they all sit in the
+	   same family. */
+	--accent-preset-violet: #7c3aed;
+	--accent-preset-sun:    #f5b54a;
+	--accent-preset-rose:   #ec4899;
+	--accent-preset-mint:   #14b8a6;
+	--accent-preset-sky:    #38bdf8;
+	--accent-preset-ember:  #ef4444;
 
 	/* ───────────────────────── Layout ───────────────────────── */
 	--max-w-content:   1280px;

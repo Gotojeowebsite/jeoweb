@@ -1,7 +1,9 @@
 ---
 import Site from '../layouts/Site.astro';
 import Icon from '../components/Icon.astro';
+import Jeo from '../components/mascot/Jeo.astro';
 import { getAllGames, pickOfTheDay, gameSlug } from '../lib/catalog';
+import { NOT_FOUND } from '../lib/voice';
 
 // Stable deterministic suggestion so the 404 isn't a dead-end.
 const suggestion = pickOfTheDay(getAllGames().filter(g => g.image && !g.requested && g.status !== 'broken'));
@@ -9,19 +11,20 @@ const suggSlug = suggestion ? gameSlug(suggestion) : '';
 ---
 <Site title="Not found" description="The page you're looking for couldn't be found.">
 	<div class="content-wrap notfound">
-		<div class="notfound-shell">
+		<div class="notfound-shell fx-rise">
+			<Jeo pose="shrug" size={140} />
 			<div class="notfound-glyph" aria-hidden="true">404</div>
-			<h1>We couldn't find that page.</h1>
-			<p>The link might be old, or the game got renamed. Try one of these:</p>
+			<h1>{NOT_FOUND.headline}</h1>
+			<p>{NOT_FOUND.body}</p>
 			<div class="notfound-actions">
-				<a class="btn btn--primary" href="/">
+				<a class="btn btn--primary fx-ripple" href="/">
 					<Icon name="arrow-left" size={14} />Back home
 				</a>
-				<a class="btn btn--secondary" href="/?action=surprise">
+				<a class="btn btn--secondary fx-ripple" href="/?action=surprise">
 					<Icon name="dice" size={14} />Surprise me
 				</a>
 				{suggestion && (
-					<a class="btn btn--ghost" href={`/game/${suggSlug}`}>
+					<a class="btn btn--ghost fx-ripple" href={`/game/${suggSlug}`}>
 						<Icon name="sparkles" size={14} />Try {suggestion.name}
 					</a>
 				)}
@@ -39,28 +42,27 @@ const suggSlug = suggestion ? gameSlug(suggestion) : '';
 		background: var(--bg-1);
 		border: 1px solid var(--line-1);
 		border-radius: var(--radius-2xl);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-3);
 	}
 	.notfound-glyph {
 		font-family: var(--font-display);
-		font-size: clamp(5rem, 12vw, 8rem);
+		font-size: clamp(4rem, 10vw, 6rem);
 		font-weight: var(--weight-display);
 		letter-spacing: -0.06em;
-		background: linear-gradient(135deg, var(--brand-300), var(--semantic-retro));
+		background: var(--gradient-aurora);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
 		line-height: 0.9;
-		margin-bottom: var(--space-4);
 	}
 	.notfound h1 {
 		font-size: var(--text-h2);
 		letter-spacing: -0.02em;
-		margin-bottom: var(--space-3);
 	}
-	.notfound p {
-		color: var(--fg-1);
-		margin-bottom: var(--space-6);
-	}
+	.notfound p { color: var(--fg-1); margin-bottom: var(--space-4); }
 	.notfound-actions {
 		display: flex;
 		justify-content: center;
