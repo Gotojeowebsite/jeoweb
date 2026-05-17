@@ -18,14 +18,13 @@ interface Props {
 
 const { pose = 'wave', size = 120, bobbing = true, label, class: className = '' } = Astro.props;
 const sizeCss = typeof size === 'number' ? `${size}px` : size;
-const aria = label
-	? { role: 'img', 'aria-label': label }
-	: { 'aria-hidden': 'true' };
 ---
 <span
 	class={`jeo-mascot is-${pose}${bobbing ? ' is-bobbing' : ''} ${className}`.trim()}
 	style={`--jeo-size: ${sizeCss};`}
-	{...aria}
+	role={label ? 'img' : undefined}
+	aria-label={label}
+	aria-hidden={label ? undefined : 'true'}
 >
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
 		<defs>

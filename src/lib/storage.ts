@@ -55,22 +55,25 @@ function migrate(): Partial<Prefs> {
 export function readPrefs(): Prefs {
 	if (cache) return cache;
 	if (!isBrowser()) {
-		cache = { ...DEFAULTS };
-		return cache;
+		const fresh: Prefs = { ...DEFAULTS };
+		cache = fresh;
+		return fresh;
 	}
 	try {
 		const raw = localStorage.getItem(KEY);
 		if (raw) {
 			const parsed = JSON.parse(raw);
 			if (parsed && typeof parsed === 'object' && parsed.v === 1) {
-				cache = { ...DEFAULTS, ...parsed };
-				return cache;
+				const merged: Prefs = { ...DEFAULTS, ...parsed };
+				cache = merged;
+				return merged;
 			}
 		}
 	} catch (_) { /* ignore */ }
-	cache = { ...DEFAULTS, ...migrate() };
-	try { localStorage.setItem(KEY, JSON.stringify(cache)); } catch (_) {}
-	return cache;
+	const next: Prefs = { ...DEFAULTS, ...migrate() };
+	cache = next;
+	try { localStorage.setItem(KEY, JSON.stringify(next)); } catch (_) {}
+	return next;
 }
 
 export function writePrefs(patch: Partial<Prefs>): Prefs {

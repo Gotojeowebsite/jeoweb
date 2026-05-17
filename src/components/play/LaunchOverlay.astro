@@ -41,7 +41,7 @@ const typeIcon = game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepa
 	</div>
 </div>
 
-<script define:vars={{ lines: LOAD_LINES }}>
+<script is:inline define:vars={{ lines: LOAD_LINES }}>
 	const overlay = document.querySelector('[data-launch-overlay]');
 	const lineEl = document.getElementById('launch-line');
 	let i = 0;

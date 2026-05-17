@@ -119,10 +119,9 @@ export function recordPlayEnd(durationMs: number): void {
 export function evaluate(latest?: PlayEvent): void {
 	const counts = readObj<Record<string, number>>(KEY_COUNTS, {});
 	const slugs  = Object.keys(counts);
-	const flashCount = slugs.filter(s => latest && /* per-slug type unknown */ false).length;
-	// Per-type counts require a side table; we derive from the latest event
-	// + a tiny rolling counter so we don't need to call the catalog API at
-	// runtime. The rolling type counter sits next to counts.
+	// Per-type counts live in their own table so this engine doesn't need
+	// the catalog at runtime. The latest event nudges the count; gates
+	// like flash-fanatic / retro-rebel read from here.
 	const typeCounts = readObj<Record<string, number>>('jeo-play-type-counts', { webgl: 0, flash: 0, retro: 0 });
 	if (latest) {
 		typeCounts[latest.type] = (typeCounts[latest.type] ?? 0) + 1;
@@ -161,9 +160,6 @@ export function evaluate(latest?: PlayEvent): void {
 
 	// Completionist — same slug played 5 times
 	if (Object.values(counts).some(c => c >= 5)) unlock('completionist');
-
-	// Silence the unused-var warning for the unused intermediate.
-	void flashCount;
 }
 
 export function totals() {

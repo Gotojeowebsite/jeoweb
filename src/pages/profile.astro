@@ -82,7 +82,7 @@ const slim = getAllGames().map(g => ({
 		</section>
 	</div>
 
-	<script define:vars={{ slim }}>
+	<script is:inline define:vars={{ slim }}>
 		const byMod = (n, m) => ((n % m) + m) % m;
 		const games = new Map(slim.map(g => [g.slug, g]));
 
