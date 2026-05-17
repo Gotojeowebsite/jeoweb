@@ -11,14 +11,30 @@ const { game, priority = false, compact = false } = Astro.props;
 const slug = gameSlug(game);
 const typeIcon: 'zap' | 'gamepad' | 'sparkles' =
 	game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles';
+// Phase-2 triple-confirm verdicts:
+//   broken / maintenance  -> hide-by-default + grayscale ribbon
+//   probable_broken       -> live in catalog, soft warn ribbon
+//   unverified / unknown  -> live in catalog, no ribbon
+//   healthy               -> default state
 const isBroken = game.status === 'broken' || game.status === 'maintenance';
+const isProbable = game.status === 'probable_broken';
+const isUnverified = game.status === 'unverified';
+const variantClass = isBroken ? 'card--broken'
+	: isProbable ? 'card--probable'
+	: isUnverified ? 'card--unverified'
+	: undefined;
+const ribbon = isBroken
+	? (game.status === 'maintenance' ? 'Maintenance' : 'Broken')
+	: isProbable ? 'Probably broken'
+	: null;
 ---
 <a
-	class:list={['card', { 'card--compact': compact, 'card--broken': isBroken }]}
+	class:list={['card', { 'card--compact': compact }, variantClass]}
 	href={`/game/${slug}`}
 	data-slug={slug}
 	data-name={game.name}
 	data-type={game.type}
+	data-status={game.status ?? 'healthy'}
 	data-tags={(game.tags ?? []).join('|')}
 >
 	<div class="card-cover">
@@ -47,10 +63,10 @@ const isBroken = game.status === 'broken' || game.status === 'maintenance';
 		>
 			<Icon name="heart" size={16} />
 		</button>
-		{isBroken && (
+		{ribbon && (
 			<div class="card-broken-ribbon">
 				<Icon name="shield" size={12} />
-				<span>{game.status === 'maintenance' ? 'Maintenance' : 'Broken'}</span>
+				<span>{ribbon}</span>
 			</div>
 		)}
 	</div>
@@ -155,15 +171,26 @@ const isBroken = game.status === 'broken' || game.status === 'maintenance';
 		justify-content: center;
 		gap: var(--space-1);
 		padding: var(--space-1);
-		background: rgba(239, 68, 68, 0.85);
 		color: white;
 		font-size: var(--text-xs);
 		font-weight: var(--weight-semibold);
 		text-transform: uppercase;
 		letter-spacing: var(--tracking-wide);
 	}
+	/* Tier the ribbon color by verdict — broken is the urgent red, probable
+	   is the warn amber. Triple-confirm rules in build-game-health.js drive
+	   which class lands on the card. */
+	.card--broken .card-broken-ribbon  { background: color-mix(in srgb, var(--semantic-broken) 85%, transparent); }
+	.card--probable .card-broken-ribbon { background: color-mix(in srgb, var(--semantic-warn) 85%, transparent); }
 
 	.card--broken .card-cover img { filter: grayscale(0.6) brightness(0.7); }
+	.card--probable .card-cover img { filter: brightness(0.85); }
+	/* Unverified games stay live in the catalog but get a subtle dim so
+	   power users can tell at a glance which ones haven't been re-checked
+	   recently. No ribbon — too noisy when most games are unverified
+	   during the migration window. */
+	.card--unverified .card-cover { border-color: var(--line-0); }
+	.card--unverified .card-cover img { opacity: 0.92; }
 
 	.card-meta {
 		padding: 0 var(--space-1);

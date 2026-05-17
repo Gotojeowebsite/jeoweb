@@ -12,6 +12,8 @@ const ROOT = process.cwd();
 export type GameType = 'webgl' | 'flash' | 'retro';
 export type RawGameType = 'webgl' | 'flash' | 'gba' | 'snes' | 'nes' | 'retro' | string;
 
+export type GameStatus = 'broken' | 'maintenance' | 'unverified' | 'probable_broken' | 'unknown' | 'healthy';
+
 export interface Game {
 	name: string;
 	url: string;
@@ -22,7 +24,14 @@ export interface Game {
 	size: number;
 	tags: string[];
 	genre?: string;
-	status?: 'broken' | 'maintenance' | 'unverified' | 'healthy';
+	/** Canonical merged verdict — from game_health.json when present, otherwise
+	 * the HTML-marker status from games_list.json. Frontend should treat
+	 * `probable_broken` and `unknown` as live (no hide); only `broken` and
+	 * `maintenance` hide the game from default catalog views. */
+	status?: GameStatus;
+	/** Confidence level on the status verdict — only set when sourced from
+	 * game_health.json. Higher confidence = more agreeing signals. */
+	confidence?: 'high' | 'medium' | 'low';
 	requested?: boolean;
 	leaderboard?: 'score' | 'time' | false;
 }
@@ -36,8 +45,12 @@ function normalizeType(t: RawGameType | undefined): GameType {
 }
 
 export interface HealthVerdict {
-	verdict: 'healthy' | 'broken' | 'maintenance' | 'unverified';
-	lastChecked: string;
+	verdict: GameStatus;
+	confidence?: 'high' | 'medium' | 'low';
+	source?: string;
+	reason?: string;
+	last_verified_at?: number;
+	last_known_good?: number;
 	signals?: Record<string, unknown>;
 }
 
@@ -57,20 +70,31 @@ function loadJson<T>(relative: string, fallback: T): T {
 export function getAllGames(): Game[] {
 	if (!_games) {
 		const raw = loadJson<Array<Partial<Game> & { type?: RawGameType }>>('games_list.json', []);
-		_games = raw.map(g => ({
-			name: g.name ?? 'Unknown',
-			url: g.url ?? '',
-			image: g.image ?? null,
-			type: normalizeType(g.type),
-			rawType: g.type,
-			addedDate: g.addedDate ?? '',
-			size: g.size ?? 0,
-			tags: g.tags ?? [],
-			genre: g.genre,
-			status: g.status,
-			requested: g.requested,
-			leaderboard: g.leaderboard,
-		}));
+		const health = getHealth();
+		_games = raw.map((g) => {
+			const name = g.name ?? 'Unknown';
+			// Canonical verdict comes from game_health.json (schema 2). Falls
+			// back to the games_list.json status field (HTML-marker derived)
+			// only when no health entry exists. The HTML-marker path is the
+			// least authoritative signal in the resolution chain.
+			const verdict = health[name];
+			const status: GameStatus | undefined = verdict ? verdict.verdict : g.status;
+			return {
+				name,
+				url: g.url ?? '',
+				image: g.image ?? null,
+				type: normalizeType(g.type),
+				rawType: g.type,
+				addedDate: g.addedDate ?? '',
+				size: g.size ?? 0,
+				tags: g.tags ?? [],
+				genre: g.genre,
+				status,
+				confidence: verdict?.confidence,
+				requested: g.requested,
+				leaderboard: g.leaderboard,
+			};
+		});
 	}
 	return _games;
 }

@@ -223,6 +223,7 @@ export default function CommandPalette({ games }: PaletteProps) {
 							<span class="jeo-cmdk__name">{g.name}</span>
 							{g.status === 'broken' && <span class="jeo-cmdk__tag jeo-cmdk__tag--broken">broken</span>}
 							{g.status === 'maintenance' && <span class="jeo-cmdk__tag jeo-cmdk__tag--warn">maintenance</span>}
+							{g.status === 'probable_broken' && <span class="jeo-cmdk__tag jeo-cmdk__tag--warn">probable broken</span>}
 							{favs.has(g.slug) && <span class="jeo-cmdk__tag" title="Favorite">♥</span>}
 							<span class="jeo-cmdk__enter" aria-hidden="true">↵</span>
 						</li>
