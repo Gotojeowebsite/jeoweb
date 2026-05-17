@@ -1271,11 +1271,32 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
 
     game_url = build_game_url(config, target)
 
+    # Set up screenshot dump directory if --screenshot-dir was passed. We
+    # capture at 5s and 30s — long enough for engines to draw, short enough
+    # to keep the run-cost per game bounded.
+    screenshot_dir: Optional[Path] = None
+    if getattr(config, "screenshot_dir", None):
+        run_stamp = time.strftime("%Y%m%d-%H%M%S")
+        screenshot_dir = config.screenshot_dir / target.name / run_stamp
+        try:
+            screenshot_dir.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            screenshot_dir = None
+
+    def _capture(label: str) -> None:
+        if screenshot_dir is None:
+            return
+        try:
+            page.screenshot(path=str(screenshot_dir / f"{label}.png"), full_page=False)
+        except Exception:
+            pass
+
     probe_first: Dict[str, object] = {}
     try:
         page.goto(game_url, wait_until="domcontentloaded", timeout=config.timeout_ms)
         page.wait_for_timeout(int(config.wait_seconds * 1000))
         probe_first = probe_page(page)
+        _capture("5s")
 
         # Try to advance past start screens / cookie banners / "Click to play"
         # overlays. Many games render their splash screen and then sit idle
@@ -1302,6 +1323,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         probe["canvasHashFirst"] = probe_first.get("canvasHash", "")
         probe["canvasNonzeroPixelsFirst"] = probe_first.get("canvasNonzeroPixels", 0)
         probe["engineExtraWaitMs"] = engine_extra_ms
+        _capture("30s")
 
         # Interactivity probe: send synthetic input (key + mouse) and take a
         # third snapshot. If the game is genuinely playing, the canvas hash
@@ -1323,7 +1345,26 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 page.keyboard.press("ArrowRight")
                 page.wait_for_timeout(800)
                 page.keyboard.press("ArrowDown")
-                page.wait_for_timeout(1200)
+                page.wait_for_timeout(400)
+                # Expanded interaction sequence: WASD covers keyboard-controlled
+                # games that don't listen to arrow keys; mouse-drag covers
+                # drag-to-interact platformers; Enter dismisses splash overlays.
+                for key in ("w", "a", "s", "d", "Enter"):
+                    try:
+                        page.keyboard.press(key)
+                        page.wait_for_timeout(120)
+                    except Exception:
+                        pass
+                try:
+                    # Mouse-drag across the center of the canvas — catches games
+                    # whose only input is dragging (cookie-clicker-style, drag-puzzle).
+                    page.mouse.move(640, 400)
+                    page.mouse.down()
+                    page.mouse.move(640 + 80, 400 + 40, steps=4)
+                    page.mouse.up()
+                except Exception:
+                    pass
+                page.wait_for_timeout(400)
                 probe_after_input = probe_page(page)
                 probe["canvasHashAfterInput"] = probe_after_input.get("canvasHash", "")
                 probe["canvasNonzeroPixelsAfterInput"] = probe_after_input.get("canvasNonzeroPixels", 0)
@@ -1333,6 +1374,7 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
                 # iframe cross-origin, etc.) we just skip the interactivity
                 # check and rely on the two earlier probes.
                 pass
+        _capture("end")
     except PlaywrightTimeoutError as exc:
         add_issue("critical", "NAV_TIMEOUT", f"Navigation timeout: {exc}", game_url)
     except PlaywrightError as exc:
