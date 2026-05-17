@@ -97,7 +97,11 @@ jobs:
         run: node scripts/static-health-scan.js
 
       - name: Build current game_health.json
-        run: node scripts/build-game-health.js
+        # --no-history: intermediate nightly rebuilds (this one, after pass 1,
+        # after pass 1b, after pass 2) all skip the verdict-history append so
+        # only the FINAL rebuild at the end of the run logs transitions. Each
+        # nightly should look like one transition per slug, not 3-4.
+        run: node scripts/build-game-health.js --no-history
 
       - name: Build offline manifests for current catalog
         run: node scripts/build-offline-manifest.js --all
@@ -119,7 +123,7 @@ jobs:
             --timeout-ms 45000
 
       - name: Build interim game_health.json (after pass 1)
-        run: node scripts/build-game-health.js
+        run: node scripts/build-game-health.js --no-history
 
       - name: Pass 2 — re-scan everything flagged broken to confirm
         # Many "broken" verdicts in pass 1 are transient flakes: a slow CDN,
@@ -148,7 +152,7 @@ jobs:
             --wait-seconds 22 \
             --timeout-ms 60000 \
             --max-attempts 2
-          node scripts/build-game-health.js
+          node scripts/build-game-health.js --no-history
 
       - name: Pass 1b — full-catalog scan on chromium-no-gpu profile (headless_b lane)
         # The triple-confirm verdict in scripts/build-game-health.js merges
@@ -173,7 +177,9 @@ jobs:
             --report-json scan_results.profile_b.json
 
       - name: Build game_health.json with all 5 lanes
-        run: node scripts/build-game-health.js
+        # Still intermediate (recovery runs next + the final rebuild logs
+        # history). --no-history keeps the audit trail clean.
+        run: node scripts/build-game-health.js --no-history
 
       - name: Run aggressive recovery engine
         if: ${{ github.event.inputs.skip_recovery != 'true' }}

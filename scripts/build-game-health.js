@@ -60,11 +60,12 @@ const PATHS = {
 	history: path.join(ROOT, 'reports', 'verdict_history.jsonl'),
 };
 
-// Recently-working cache window. A game that was verdict=healthy/high within
+// last_known_good cache window. A game that was verdict=healthy/high within
 // this many days is considered "recently good" — the rule combiner raises the
 // fail-vote bar from 3 to 4 to make sure a one-bad-nightly doesn't flip the
-// catalog. Set generously; lowered later if the signal coverage justifies it.
-const RECENTLY_GOOD_DAYS = 14;
+// catalog. Constant matches the entry field name (last_known_good) for
+// consistency. Set generously; lowered later if signal coverage improves.
+const LAST_KNOWN_GOOD_WINDOW_DAYS = 14;
 
 const MAX_AGE_DAYS_DEFAULT = 7;
 
@@ -301,6 +302,12 @@ function parseCliArgs(argv) {
 		explainOnly: false,
 		flapping: false,
 		flappingDays: 30,
+		// noHistory: do not append to reports/verdict_history.jsonl. Used by
+		// CI for intermediate game_health rebuilds (after pass 1, after pass 1b,
+		// after pass 2) so that only the FINAL rebuild of the nightly run
+		// counts as a real verdict transition. Without this, a single nightly
+		// looked like 3-4 flips per game in the history.
+		noHistory: false,
 	};
 	for (let i = 2; i < argv.length; i++) {
 		if (argv[i] === '--strict-external') args.strictExternal = true;
@@ -311,6 +318,7 @@ function parseCliArgs(argv) {
 			args.flapping = true;
 			args.flappingDays = Math.max(1, Number(argv[++i]) || 30);
 		}
+		else if (argv[i] === '--no-history') args.noHistory = true;
 	}
 	return args;
 }
@@ -326,29 +334,66 @@ function readPreviousGameHealth() {
 	return { games: prev.games, generated_at: Number(prev.generated_at) || 0 };
 }
 
+// Per-month rotation: appends to reports/verdict_history_YYYY-MM.jsonl
+// rather than a single ever-growing file. The --flapping report reads
+// every monthly file within its lookback window. Old months become
+// safely archivable / deletable without touching the active log.
+function historyPathForToday() {
+	const d = new Date();
+	const ym = `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+	return path.join(path.dirname(PATHS.history), `verdict_history_${ym}.jsonl`);
+}
+
 function appendHistory(entries) {
 	if (!entries.length) return;
+	const target = historyPathForToday();
 	try {
-		fs.mkdirSync(path.dirname(PATHS.history), { recursive: true });
+		fs.mkdirSync(path.dirname(target), { recursive: true });
 		const out = entries.map((e) => JSON.stringify(e)).join('\n') + '\n';
-		fs.appendFileSync(PATHS.history, out);
+		fs.appendFileSync(target, out);
 	} catch (e) {
 		console.warn(`failed to append verdict history: ${e.message}`);
 	}
 }
 
-// Flapping detector. Reads reports/verdict_history.jsonl and surfaces slugs
-// whose verdict has flipped more than `minTransitions` times in the last
-// `days` window. Used to exclude unstable detector behavior from auto
-// recovery — a game that flips weekly is more likely a noisy scanner than a
-// real regression.
+// Read every monthly history file whose YYYY-MM covers the lookback window.
+// Returns concatenated JSONL lines (one per transition).
+function readHistoryLines(days) {
+	const lines = [];
+	const dir = path.dirname(PATHS.history);
+	const cutoffMs = Date.now() - days * 24 * 3600 * 1000;
+	let files;
+	try { files = fs.readdirSync(dir); } catch { return []; }
+	// Also include the legacy single verdict_history.jsonl if it exists,
+	// for backward-compat with histories written before the rotation.
+	for (const f of files) {
+		if (f === 'verdict_history.jsonl' || /^verdict_history_\d{4}-\d{2}\.jsonl$/.test(f)) {
+			try {
+				const stat = fs.statSync(path.join(dir, f));
+				if (stat.mtimeMs < cutoffMs - 31 * 24 * 3600 * 1000) continue;  // older than window + 1mo grace
+				const txt = fs.readFileSync(path.join(dir, f), 'utf-8');
+				for (const ln of txt.split(/\r?\n/)) if (ln) lines.push(ln);
+			} catch {}
+		}
+	}
+	return lines;
+}
+
+// Flapping detector. Reads every monthly history file within the lookback
+// window and surfaces slugs whose verdict has moved >= `minTransitions`
+// distinct times. Each JSONL row already represents one transition; a slug
+// oscillating A -> B -> A -> B in four nightlies produces 4 events but only
+// 4 transitions (we count rows directly, which matches what the user sees
+// as "flips" in the UI). We additionally require >= 2 distinct `to`
+// verdicts so a slug that legitimately transitioned once and stayed put
+// doesn't get flagged.
 function reportFlapping(days, minTransitions = 4) {
-	if (!fs.existsSync(PATHS.history)) {
-		console.log('no verdict_history.jsonl yet — flapping report not available');
+	const lines = readHistoryLines(days);
+	if (!lines.length) {
+		console.log(`no verdict history in the last ${days}d — flapping report not available`);
 		return;
 	}
 	const cutoff = Math.floor(Date.now() / 1000) - days * 24 * 3600;
-	const lines = fs.readFileSync(PATHS.history, 'utf-8').split(/\r?\n/).filter(Boolean);
 	const bySlug = new Map();
 	for (const line of lines) {
 		let evt;
@@ -361,16 +406,17 @@ function reportFlapping(days, minTransitions = 4) {
 	const flappers = [];
 	for (const [slug, events] of bySlug.entries()) {
 		if (events.length < minTransitions) continue;
-		// Count distinct verdicts in the window — only count as flapping if
-		// the game actually moves between non-adjacent verdicts repeatedly.
+		// Distinct verdict states the slug landed on. A slug with N events
+		// but only one `to` value isn't oscillating — it just re-transitioned
+		// from the same place repeatedly (usually a stale-data artifact).
 		const verdicts = new Set(events.map((e) => e.to));
 		if (verdicts.size < 2) continue;
-		flappers.push({ slug, transitions: events.length, verdicts: [...verdicts] });
+		flappers.push({ slug, transitions: events.length, distinct_verdicts: [...verdicts] });
 	}
 	flappers.sort((a, b) => b.transitions - a.transitions);
-	console.log(`flapping report: ${flappers.length} slug(s) with >= ${minTransitions} verdict transitions in the last ${days}d`);
+	console.log(`flapping report: ${flappers.length} slug(s) with >= ${minTransitions} verdict transitions and >= 2 distinct end-states in the last ${days}d`);
 	for (const f of flappers.slice(0, 50)) {
-		console.log(`  ${f.slug}: ${f.transitions} flips, between [${f.verdicts.join(', ')}]`);
+		console.log(`  ${f.slug}: ${f.transitions} transitions across [${f.distinct_verdicts.join(', ')}]`);
 	}
 	if (flappers.length > 50) console.log(`  ... and ${flappers.length - 50} more`);
 }
@@ -480,7 +526,7 @@ function main() {
 	const historyEntries = [];
 	const counts = { healthy: 0, broken: 0, probable_broken: 0, unverified: 0, unknown: 0 };
 	const confCounts = { high: 0, medium: 0, low: 0 };
-	const recentlyGoodCutoff = now - RECENTLY_GOOD_DAYS * 24 * 3600;
+	const recentlyGoodCutoff = now - LAST_KNOWN_GOOD_WINDOW_DAYS * 24 * 3600;
 
 	for (const slug of [...slugs].sort()) {
 		const sig = {
@@ -507,7 +553,7 @@ function main() {
 		entry.agreement_count = tally;
 
 		// Recently-working cache: a game that was verdict=healthy/high within
-		// the last RECENTLY_GOOD_DAYS days has earned the benefit of the
+		// the last LAST_KNOWN_GOOD_WINDOW_DAYS days has earned the benefit of the
 		// doubt. We bump the bar for flipping its verdict to "broken" from
 		// 3 fail votes to 4 — one bad nightly shouldn't tank a known-good
 		// game. The new verdict becomes `probable_broken` instead, which
@@ -662,14 +708,19 @@ function main() {
 
 	// Append every verdict transition to reports/verdict_history.jsonl so the
 	// --flapping report can identify unstable detector behavior. First runs
-	// (no previous game_health.json) write no history.
-	appendHistory(historyEntries);
+	// (no previous game_health.json) write no history. --no-history skips
+	// the append entirely; CI uses that for intermediate rebuilds so only
+	// the final rebuild of a nightly counts as a real transition.
+	if (!cli.noHistory) appendHistory(historyEntries);
 
+	const historyNote = cli.noHistory ? ' (history skipped)' : '';
 	console.log(`game_health: total=${slugs.size} healthy=${counts.healthy || 0} probable_broken=${counts.probable_broken || 0} broken=${counts.broken || 0} unverified=${counts.unverified || 0} unknown=${counts.unknown || 0}`);
-	console.log(`           : high_conf=${confCounts.high} med_conf=${confCounts.medium} low_conf=${confCounts.low} override_conflicts=${conflicts.length} expired_overrides=${overrides.expired.length} transitions=${historyEntries.length}`);
+	console.log(`           : high_conf=${confCounts.high} med_conf=${confCounts.medium} low_conf=${confCounts.low} override_conflicts=${conflicts.length} expired_overrides=${overrides.expired.length} transitions=${historyEntries.length}${historyNote}`);
 	console.log(`wrote ${path.relative(ROOT, PATHS.out)}`);
 	console.log(`wrote ${path.relative(ROOT, PATHS.conflicts)}`);
-	if (historyEntries.length > 0) console.log(`appended ${path.relative(ROOT, PATHS.history)}`);
+	if (!cli.noHistory && historyEntries.length > 0) {
+		console.log(`appended ${path.relative(ROOT, historyPathForToday())}`);
+	}
 }
 
 // Export for unit testing

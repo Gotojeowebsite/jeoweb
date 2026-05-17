@@ -78,7 +78,16 @@ IGNORED_LOCAL_404_PATTERNS = [
     re.compile(r"^/css/main\.css$", re.IGNORECASE),
     re.compile(r"^/assets/scripts/game\.js$", re.IGNORECASE),
     re.compile(r"^/assets/promo/promo\.js$", re.IGNORECASE),
-    re.compile(r"^/cdn-cgi/", re.IGNORECASE),  # Cloudflare worker scaffolding
+    # Cloudflare scaffolding — specific known-noise paths only. /cdn-cgi/
+    # ALSO hosts real runtime endpoints (cdn-cgi/trace, cdn-cgi/zaraz,
+    # cdn-cgi/challenge-platform/h/g/cv/*) and Cloudflare Stream/Images
+    # URLs, so the legacy broad `^/cdn-cgi/` pattern silently masked
+    # genuine 404s on Turnstile / Stream integrations.
+    re.compile(r"^/cdn-cgi/challenge-platform/scripts/", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/scripts/", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/bm/", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/rum/?$", re.IGNORECASE),
+    re.compile(r"^/cdn-cgi/zaraz/s\.js$", re.IGNORECASE),
     re.compile(r"^/__cf_chl_jschl_tk__", re.IGNORECASE),
     re.compile(r"^/gadgets/evthdlr", re.IGNORECASE),
 
@@ -103,9 +112,14 @@ IGNORED_LOCAL_404_PATTERNS = [
     re.compile(r"^/manifest(?:\.webmanifest)?\.bak$", re.IGNORECASE),
     re.compile(r"^/\.well-known/", re.IGNORECASE),
 
-    # Analytics / ad probes whose absence doesn't break gameplay.
-    re.compile(r"^/(?:ezimba|ad|ads|advert)/", re.IGNORECASE),
-    re.compile(r"/(?:track|analytics|telemetry|beacon)\b", re.IGNORECASE),
+    # Analytics / ad probes whose absence doesn't break gameplay. Specific
+    # known-vendor paths only — the legacy `^/(?:ezimba|ad|ads|advert)/`
+    # masked some games' legitimate /ad/ or /advert/ asset folders
+    # (kart-racing games use /advert/ for in-game billboard textures).
+    re.compile(r"^/ezimba/", re.IGNORECASE),
+    re.compile(r"^/ads/(?:analytics|impression|click|track)\b", re.IGNORECASE),
+    re.compile(r"/(?:googletagmanager|google-analytics|googlesyndication|doubleclick|cloudflareinsights|datadoghq|newrelic)\.com/", re.IGNORECASE),
+    re.compile(r"^/(?:analytics|telemetry|beacon)\.(?:js|gif|png)$", re.IGNORECASE),
 
     # Engine-specific debris.
     re.compile(r"/emulatorjs/cores/reports/[^/]+\.json$", re.IGNORECASE),
@@ -189,59 +203,77 @@ NOISE_CONSOLE_PATTERNS = (
     "mixed content:",
 
     # 404s on optional resources — already covered by the 404 allowlist,
-    # mirrored here for the console-error noise filter.
+    # mirrored here for the console-error noise filter. Note: 403 is
+    # NOT in this list — a 403 on a required asset (signed-URL expiry,
+    # CDN access denied, origin auth misconfig) is a real broken-game
+    # signal that the scanner should catch.
     "failed to load resource: the server responded with a status of 404",
-    "failed to load resource: the server responded with a status of 403",
     "status of 501 (unsupported method ('post'))",
     "error creating webgl renderer: unable to create webgl rendering context",
     "this method is a failsafe, and not officially supported",
 
-    # Deprecation warnings — informational, never fatal.
-    "deprecated",
-    "deprecationwarning",
+    # Deprecation warnings — informational, never fatal. Anchored to the
+    # bracketed prefix or known-noise context so we don't match "X is
+    # deprecated and this game requires it" / real error messages that
+    # mention the word.
     "[deprecation]",
     "[violation]",
+    "deprecationwarning:",
     "addeventlistener.*passive event listener",
     "synchronous xmlhttprequest on the main thread is deprecated",
+    "unload event is deprecated",
+    "the deprecation date for the legacy",
+    "is deprecated. see https://chromestatus",
 
     # Ad-blocker / privacy-extension noise: telemetry scripts that get
     # blocked by the user's browser do not affect game functionality.
+    # Anchored to the actual "loaded" / "blocked" message wording so a
+    # game whose game.js URL happens to contain "doubleclick.net" as a
+    # query param doesn't get its real errors swallowed.
     "err_blocked_by_client",
     "err_blocked_by_response",
+    "net::err_blocked",
     "blocked by client",
-    "doubleclick.net",
-    "googletagmanager",
-    "google-analytics",
-    "googlesyndication",
-    "googleadservices",
-    "doubleverify",
+    "failed to load resource:.*doubleclick\\.net",
+    "failed to load resource:.*googletagmanager",
+    "failed to load resource:.*google-analytics",
+    "failed to load resource:.*googlesyndication",
+    "failed to load resource:.*googleadservices",
+    "failed to load resource:.*doubleverify",
 
     # Cookie / consent banners.
     "cookie-banner",
     "consent-manager",
     "gatekeeperconsent",
-    "cmp.min.js",
+    "cmp.min.js failed",
+    "cmp.min.js was not loaded",
 
     # Service worker registration noise. Failed SW registration on an
     # archived game doesn't break gameplay.
     "service worker registration failed",
     "the script has an unsupported mime type",
 
-    # WebRTC / camera / mic permission prompts. Not a runtime error;
-    # the user just clicked Deny.
-    "permission denied",
-    "the user denied",
-    "notallowederror",
+    # WebRTC / camera / mic permission prompts. Anchored to the actual
+    # permission-denied wording, not bare "permission denied" (which
+    # also fires for WASM/IndexedDB I/O failures that ARE real bugs).
+    "user gesture is required to play audio",
+    "permission denied by user agent",
+    "user denied permission",
+    "notallowederror: permissions check failed",
+    "notallowederror: play",
 
     # AudioContext autoplay restrictions — handled by engines on user input.
     "the audiocontext was not allowed to start",
     "play() failed because the user didn't interact",
+    "play() request was interrupted by a call to pause",
 
-    # Common third-party library noise.
-    "polyfill.io",
-    "newrelic",
-    "datadog-rum",
-    "sentry",
+    # Common third-party library noise. Anchored to the load-failure
+    # signature so legitimate errors that happen to pass through a Sentry
+    # / New Relic frame don't get swallowed.
+    "failed to load resource:.*polyfill\\.io",
+    "failed to load resource:.*newrelic",
+    "failed to load resource:.*datadog-rum",
+    "failed to load resource:.*sentry",
     "log4javascript",
 )
 
@@ -811,10 +843,21 @@ def is_critical_local_path(path: str, resource_type: str) -> bool:
     return False
 
 
+_NOISE_CONSOLE_RE = [
+    re.compile(p, re.IGNORECASE) if any(c in p for c in '.*+?()[]{}^$\\|')
+    else re.compile(re.escape(p), re.IGNORECASE)
+    for p in NOISE_CONSOLE_PATTERNS
+]
+
 def is_noise_console_message(message: str) -> bool:
-    low = message.lower()
-    for token in NOISE_CONSOLE_PATTERNS:
-        if token in low:
+    # Each NOISE_CONSOLE_PATTERNS entry compiles into either a regex (if it
+    # contains regex metachars) or an escaped-literal substring search. That
+    # lets us anchor patterns like "failed to load resource:.*sentry" so a
+    # real error that just happens to mention "sentry" doesn't get swallowed,
+    # while keeping the plain-text patterns (e.g. "favicon.ico") substring-
+    # matched as before.
+    for pattern in _NOISE_CONSOLE_RE:
+        if pattern.search(message):
             return True
     return False
 
@@ -1052,9 +1095,14 @@ def probe_page(page) -> Dict[str, object]:
 
             // -------- Loading-bar progress (per engine) --------
             // For each engine that exposes a measurable loading progress,
-            // extract it as a 0..100 percent. A bar that exists but never
-            // crosses 95% in two probes = stuck-loading verdict (analogous
-            // to the existing Unity rule, generalized).
+            // extract it as a 0..100 percent at this probe instant. The
+            // Python-side stall check (search for *_LOADING_STUCK in this
+            // file) compares the value at the post-wait probe against the
+            // 95% threshold. Single-shot — we read whatever the bar says
+            // now, not a delta between probes. The engine's own "started"
+            // marker (unityInstanceLoaded / ejsStarted / constructStarted /
+            // phaserReady) is the safety valve that prevents a flagged
+            // stall on a game that's already past the bar.
             let ejsProgressPct = -1;
             try {
                 // EmulatorJS draws its progress text into #ejs_loading_text /
@@ -1063,23 +1111,42 @@ def probe_page(page) -> Dict[str, object]:
                 const m = ejsText.match(/(\\d{1,3})\\s*%/);
                 if (m) ejsProgressPct = Math.min(100, Number(m[1]));
             } catch(_) {}
-            let ruffleProgressPct = -1;
-            try {
-                // Ruffle exposes a `.metadata.fileSize` once decode is far enough;
-                // surrogate progress is the size of the loaded SWF buffer vs.
-                // the announced fileSize. Cheap approximation.
-                const r = document.querySelector('ruffle-player');
-                if (r && r.metadata && r.metadata.fileSize) {
-                    ruffleProgressPct = r.isPlaying ? 100 : 50;
-                }
-            } catch(_) {}
+            // (Ruffle has no reliable mid-decode progress signal — the
+            // .metadata.fileSize estimate from the previous iteration of this
+            // code was a fake. ruffleReady above is the actual liveness
+            // marker we trust; no separate ruffleProgressPct.)
             let constructProgressPct = -1;
             try {
                 // Construct shows progress on #c2loadingprogress / #c3loadingprogress.
+                // The bar's `style.width` can hold either a percent ("47%") or
+                // a pixel value ("294px") depending on how the preloader was
+                // authored. ONLY treat percent values as progress — pixel
+                // widths are layout decisions we can't decode without knowing
+                // the parent width.
                 const bar = document.querySelector('#c2loadingprogress, #c3loadingprogress, .c2loadingprogress, .c3loadingprogress');
-                const w = bar && bar.style && bar.style.width || '';
-                const m = w.match(/(\\d+(?:\\.\\d+)?)/);
-                if (m) constructProgressPct = Math.min(100, Number(m[1]));
+                const w = (bar && bar.style && bar.style.width) || '';
+                const pctMatch = w.match(/^\\s*(\\d{1,3}(?:\\.\\d+)?)\\s*%\\s*$/);
+                if (pctMatch) {
+                    constructProgressPct = Math.min(100, Number(pctMatch[1]));
+                } else if (bar && bar.clientWidth && bar.parentElement && bar.parentElement.clientWidth) {
+                    // Fallback: compute the ratio from rendered widths if the
+                    // CSS used px sizing instead of %.
+                    const ratio = bar.clientWidth / bar.parentElement.clientWidth;
+                    if (isFinite(ratio) && ratio > 0) {
+                        constructProgressPct = Math.min(100, Math.round(ratio * 100));
+                    }
+                }
+            } catch(_) {}
+            // Construct's own "engine started" marker. We surface a couple of
+            // known globals so the Python stall check has a safety valve
+            // analogous to unityInstanceLoaded / ejsStarted / phaserReady.
+            let constructStarted = false;
+            try {
+                // c2 sets window.cr_runtime / window.cr_main; c3 sets
+                // window.c3runtime; both populate after the preloader finishes.
+                if (typeof window.cr_runtime !== 'undefined' && window.cr_runtime) constructStarted = true;
+                else if (typeof window.c3runtime !== 'undefined' && window.c3runtime) constructStarted = true;
+                else if (typeof window.cr_main !== 'undefined' && window.cr_main) constructStarted = true;
             } catch(_) {}
             let phaserProgressPct = -1;
             try {
@@ -1193,8 +1260,8 @@ def probe_page(page) -> Dict[str, object]:
                 audioContextRunning,
                 audioContextCount,
                 ejsProgressPct,
-                ruffleProgressPct,
                 constructProgressPct,
+                constructStarted,
                 phaserProgressPct,
             };
         }
@@ -1667,8 +1734,16 @@ def scan_one_game(context, config: Config, target: GameTarget) -> GameResult:
         )
 
     # Construct preloader stall (#c2loadingprogress / #c3loadingprogress).
+    # Gated on `not constructStarted` (cr_runtime / c3runtime / cr_main absent)
+    # so a Construct game that already handed off to the runtime but left
+    # the bar DOM in place at a low pixel width doesn't get false-flagged.
     construct_pct = float(probe.get("constructProgressPct", -1) or -1)
-    if construct_pct >= 0 and construct_pct < 95.0 and not critical_issues:
+    if (
+        construct_pct >= 0
+        and construct_pct < 95.0
+        and not bool(probe.get("constructStarted"))
+        and not critical_issues
+    ):
         add_issue(
             "critical",
             "CONSTRUCT_LOADING_STUCK",
