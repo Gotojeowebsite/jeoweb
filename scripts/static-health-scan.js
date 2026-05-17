@@ -220,20 +220,28 @@ function scanGame(slug) {
 	const text = readSafe(html);
 	const engine = detectEngine(text, folder);
 
-	// Empty / near-empty entry HTML. An empty index.html loads cleanly with no
-	// 404s and no errors, so naive ref-walking returns "pass" — but the user
-	// sees a blank page.
+	// Empty / near-empty entry HTML.
 	//
-	// Demoted from critical → warning under the triple-confirm contract
-	// (Phase 2): a single static signal can no longer mark a game broken, so
-	// claiming "this is definitely broken" off an empty-HTML observation
-	// alone is a false positive when the actual entrypoint redirects, the
-	// HTML is intentionally a stub for a SPA, or the headless scanner sees a
-	// canvas render. Headless lane decides — if both static and headless
-	// fail, triple_fail still flags broken.
+	// Two variants:
+	//   EMPTY_ENTRY_HTML_CRITICAL — conjunctive: size < 200 bytes AND the raw
+	//     text contains none of script/canvas/iframe/embed/object/ruffle/
+	//     meta-refresh. This cannot be a working game by definition (no engine
+	//     loader can fit). Promoted to critical so the build-game-health
+	//     `single_fail_critical` override fires.
+	//   EMPTY_ENTRY_HTML — warning-only fallback for the (rare) case of a
+	//     legitimately tiny shell that DOES include at least one engine
+	//     marker. Headless lane still decides.
 	const sizeBytes = Buffer.byteLength(text || '', 'utf-8');
 	const stripped = (text || '').replace(/<!--[\s\S]*?-->/g, '').replace(/\s+/g, '');
-	if (sizeBytes === 0 || stripped.length < 80) {
+	const ENGINE_MARKER_PRESENCE_RE = /<canvas|<iframe|<embed|<object|<script|ruffle-(player|embed|object)|ejs_pathtodata|ejs_player|unity|godot|phaser|<meta[^>]+http-equiv\s*=\s*["']refresh["']/i;
+	const hasAnyEngineMarker = ENGINE_MARKER_PRESENCE_RE.test(text || '');
+	if (sizeBytes < 200 && !hasAnyEngineMarker) {
+		issues.push({
+			code: 'EMPTY_ENTRY_HTML_CRITICAL',
+			message: `Entry HTML is ${sizeBytes} bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game`,
+			severity: 'critical',
+		});
+	} else if (sizeBytes === 0 || stripped.length < 80) {
 		issues.push({
 			code: 'EMPTY_ENTRY_HTML',
 			message: `Entry HTML is empty or near-empty (size=${sizeBytes} bytes, stripped=${stripped.length} chars)`,
@@ -250,7 +258,13 @@ function scanGame(slug) {
 	// Exception: meta-refresh wrappers (e.g. harvest-simulator/index.html
 	// redirects to a UUID-named subfolder containing the real game). Follow
 	// the redirect target and check IT for engine markers instead.
-	if (sizeBytes > 0 && !issues.some(i => i.code === 'EMPTY_ENTRY_HTML')) {
+	//
+	// Skipped only when EMPTY_ENTRY_HTML_CRITICAL already fired — no point
+	// adding a redundant critical for the same condition. Empty-and-tiny
+	// files without the critical (size 0 OR stripped<80 BUT has a marker)
+	// also get checked, which is a no-op since the marker presence above
+	// already implied has-marker.
+	if (!issues.some(i => i.code === 'EMPTY_ENTRY_HTML_CRITICAL')) {
 		let textToCheck = text || '';
 		const refreshMatch = (text || '').match(/<meta[^>]+http-equiv\s*=\s*["']refresh["'][^>]+content\s*=\s*["']?[^;"']*;\s*url\s*=\s*([^"'>\s]+)["']?/i);
 		if (refreshMatch) {

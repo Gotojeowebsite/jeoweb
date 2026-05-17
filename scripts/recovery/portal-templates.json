@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "comment": "Direct URL templates for known unblocked-games portals. Each template is HEAD-probed in parallel; 200 responses become high-priority exact candidates that bypass DDG/Bing/Brave rate limiting. Placeholders: {slug} = lowercase joined-by-dash from atomic-swap.normalizeName; {slugDash} = same as {slug}; {slugFlat} = no separator (e.g. 'ovo'); {slugUnder} = underscores. Add a portal here, set score (higher wins ties), list every URL convention it uses for game pages.",
+  "portals": [
+    {
+      "host": "3kh0.github.io",
+      "score": 100,
+      "templates": [
+        "https://3kh0.github.io/{slugFlat}/",
+        "https://3kh0.github.io/{slugDash}/",
+        "https://3kh0.github.io/projects/{slugFlat}/",
+        "https://3kh0.github.io/projects/{slugDash}/"
+      ]
+    },
+    {
+      "host": "classroom6x.github.io",
+      "score": 95,
+      "templates": [
+        "https://classroom6x.github.io/{slugFlat}/",
+        "https://classroom6x.github.io/{slugDash}/",
+        "https://classroom6x.github.io/projects/{slugFlat}/",
+        "https://classroom6x.github.io/projects/{slugDash}/"
+      ]
+    },
+    {
+      "host": "tbg95.github.io",
+      "score": 93,
+      "templates": [
+        "https://tbg95.github.io/projects/{slugFlat}/",
+        "https://tbg95.github.io/projects/{slugDash}/",
+        "https://tbg95.github.io/{slugFlat}/",
+        "https://tbg95.github.io/{slugDash}/"
+      ]
+    },
+    {
+      "host": "kbhgames.com",
+      "score": 90,
+      "templates": [
+        "https://kbhgames.com/game/{slugDash}",
+        "https://kbhgames.com/game/{slugFlat}"
+      ]
+    },
+    {
+      "host": "hoodamath.com",
+      "score": 85,
+      "templates": [
+        "https://hoodamath.com/games/{slugFlat}.html",
+        "https://hoodamath.com/games/{slugDash}.html"
+      ]
+    },
+    {
+      "host": "snokido.com",
+      "score": 80,
+      "templates": [
+        "https://www.snokido.com/game/{slugDash}",
+        "https://www.snokido.com/game/{slugFlat}"
+      ]
+    },
+    {
+      "host": "crazygames.com",
+      "score": 85,
+      "templates": [
+        "https://www.crazygames.com/game/{slugDash}",
+        "https://www.crazygames.com/embed/{slugDash}"
+      ]
+    },
+    {
+      "host": "poki.com",
+      "score": 80,
+      "templates": [
+        "https://poki.com/en/g/{slugDash}",
+        "https://poki.com/en/g/{slugFlat}"
+      ]
+    },
+    {
+      "host": "html5games.com",
+      "score": 88,
+      "templates": [
+        "https://html5games.com/Game/{slugDash}/",
+        "https://html5games.com/Game/{slugFlat}/"
+      ]
+    },
+    {
+      "host": "coolmathgames.com",
+      "score": 88,
+      "templates": [
+        "https://www.coolmathgames.com/0-{slugDash}",
+        "https://www.coolmathgames.com/0-{slugFlat}"
+      ]
+    },
+    {
+      "host": "y8.com",
+      "score": 80,
+      "templates": [
+        "https://www.y8.com/games/{slugUnder}",
+        "https://www.y8.com/games/{slugDash}"
+      ]
+    },
+    {
+      "host": "lagged.com",
+      "score": 75,
+      "templates": [
+        "https://lagged.com/en/g/{slugDash}",
+        "https://lagged.com/en/g/{slugFlat}"
+      ]
+    }
+  ]
+}
