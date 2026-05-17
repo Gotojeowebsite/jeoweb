@@ -150,21 +150,112 @@ function scoreCandidate(url, name) {
 			if (lc.includes(p)) score += 2;
 		}
 	}
-	// Penalize ad/track-style paths.
-	if (/\b(ads?|track|popup|redirect)\b/i.test(url)) score -= 20;
+	// URL-pattern scoring: canonical `/play/<slug>` or `/games/<slug>` URLs
+	// score higher than landing pages, category indexes, or affiliate hops.
+	if (/\/(play|game|games|embed)\/[a-z0-9][a-z0-9-]+/i.test(url)) score += 8;
+	if (/\/(index|home|play)\.html?(?:[?#]|$)/i.test(url)) score += 3;
+	// Penalize tracking-flavored URLs aggressively.
+	if (/\b(ads?|track|popup|redirect|click|sponsor|aff)\b/i.test(url)) score -= 20;
+	if (/[?&](utm_|fbclid|gclid|aff(?:id|src)?=|partner=|ref=)/i.test(url)) score -= 8;
 	return score;
 }
 
+// ----- Fuzzy name matching --------------------------------------------------
+// When the exact-name search returns nothing usable, callers can fall back to
+// a fuzzy expansion. Two helpers:
+//   normalizeName  -> canonical form (lowercase, strip articles, strip version
+//                     suffixes, collapse roman numerals to digits).
+//   nameSimilarity -> 0..1 combining token-set Jaccard and Damerau-Levenshtein
+//                     on the normalized forms. Word-order differences
+//                     ("Snake Battle 2" vs "Battle Snake 2") still match.
+
+const _LEADING_ARTICLES_RE = /^(?:the|a|an)\s+/i;
+const _TRAILING_VERSION_RE = /[\s\-_]*(?:v\d+(?:\.\d+)*|hd|remastered|deluxe|edition|online|unblocked|html5|game)\s*$/i;
+const _PUNCT_RE = /[^a-z0-9\s]+/g;
+const _ROMAN_MAP = { 'i': '1', 'ii': '2', 'iii': '3', 'iv': '4', 'v': '5', 'vi': '6', 'vii': '7', 'viii': '8', 'ix': '9', 'x': '10' };
+
+function normalizeName(s) {
+	if (!s) return '';
+	let out = String(s).toLowerCase().trim();
+	out = out.replace(_LEADING_ARTICLES_RE, '');
+	// Two passes of trailing-suffix stripping (e.g. "Foo HD Online").
+	for (let i = 0; i < 3; i++) {
+		const stripped = out.replace(_TRAILING_VERSION_RE, '');
+		if (stripped === out) break;
+		out = stripped;
+	}
+	out = out.replace(_PUNCT_RE, ' ').replace(/\s+/g, ' ').trim();
+	// Collapse roman numerals at the end ("part iii" -> "part 3").
+	const parts = out.split(' ');
+	const last = parts[parts.length - 1];
+	if (last && _ROMAN_MAP[last]) parts[parts.length - 1] = _ROMAN_MAP[last];
+	return parts.join(' ');
+}
+
+function _damerauLevenshtein(a, b) {
+	if (a === b) return 0;
+	if (!a) return b.length;
+	if (!b) return a.length;
+	const al = a.length, bl = b.length;
+	const m = Array.from({ length: al + 1 }, () => new Array(bl + 1).fill(0));
+	for (let i = 0; i <= al; i++) m[i][0] = i;
+	for (let j = 0; j <= bl; j++) m[0][j] = j;
+	for (let i = 1; i <= al; i++) {
+		for (let j = 1; j <= bl; j++) {
+			const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+			m[i][j] = Math.min(
+				m[i - 1][j] + 1,
+				m[i][j - 1] + 1,
+				m[i - 1][j - 1] + cost,
+			);
+			if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+				m[i][j] = Math.min(m[i][j], m[i - 2][j - 2] + 1);
+			}
+		}
+	}
+	return m[al][bl];
+}
+
+function nameSimilarity(a, b) {
+	const na = normalizeName(a);
+	const nb = normalizeName(b);
+	if (!na || !nb) return 0;
+	if (na === nb) return 1;
+	// Token-set Jaccard: handles word-order differences.
+	const ta = new Set(na.split(' ').filter(Boolean));
+	const tb = new Set(nb.split(' ').filter(Boolean));
+	let inter = 0;
+	for (const t of ta) if (tb.has(t)) inter += 1;
+	const union = ta.size + tb.size - inter;
+	const jaccard = union > 0 ? inter / union : 0;
+	// Damerau-Levenshtein, normalized by the longer string. Substring
+	// containment ("snake battle" vs "snake battle 2") scores high.
+	const longer = Math.max(na.length, nb.length);
+	const dl = _damerauLevenshtein(na, nb);
+	const dlSim = longer > 0 ? 1 - (dl / longer) : 0;
+	// Combine: jaccard slightly preferred (word matches matter more than
+	// character edits), with dl as a tiebreaker for low-overlap pairs.
+	return 0.6 * jaccard + 0.4 * dlSim;
+}
+
 function rankCandidates(hits, name, maxKeep) {
-	const scored = hits.map(h => ({ ...h, score: scoreCandidate(h.url, name) }));
+	const scored = hits.map((h) => {
+		let score = scoreCandidate(h.url, name);
+		// When the hit carries a snippet/title, blend in name similarity.
+		const titleHint = h.title || h.snippet || h.url || '';
+		const sim = nameSimilarity(name || '', titleHint);
+		// Boost score by 0..15 based on similarity. A perfect title match adds
+		// 15; an unrelated title adds 0 and the URL-path bonus still applies.
+		score += Math.round(15 * sim);
+		return { ...h, score, name_similarity: Number(sim.toFixed(3)) };
+	});
 	scored.sort((a, b) => b.score - a.score);
 	const out = [];
 	const seenHosts = new Set();
 	for (const c of scored) {
 		if (c.score <= -1000) continue;
 		const host = hostFor(c.url);
-		// Soft per-host diversity: at most 3 candidates per domain.
-		const tally = [...seenHosts].filter(h => h === host).length;
+		const tally = [...seenHosts].filter((h) => h === host).length;
 		if (tally >= 3) continue;
 		seenHosts.add(host);
 		out.push(c);
@@ -181,5 +272,7 @@ module.exports = {
 	loadReputation,
 	scoreCandidate,
 	rankCandidates,
+	normalizeName,
+	nameSimilarity,
 	hostFor,
 };
