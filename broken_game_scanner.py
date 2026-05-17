@@ -1850,6 +1850,24 @@ def make_broken_result(target: GameTarget, elapsed_seconds: float, code: str, me
     )
 
 
+def make_inconclusive_result(target: GameTarget, elapsed_seconds: float, code: str, message: str, url: str) -> GameResult:
+    # Per Phase 2 plan: a hard timeout or worker crash is "we don't know yet",
+    # NOT "this game is broken." Status `inconclusive` flows through to
+    # parseHeadlessSignal in build-game-health.js as a no-op (doesn't count
+    # toward pass or fail tally), so a slow CDN day no longer flips a
+    # working game's verdict.
+    return GameResult(
+        name=target.name,
+        game_type=target.game_type,
+        entry_file=target.entry_file,
+        status="inconclusive",
+        elapsed_seconds=elapsed_seconds,
+        critical_issues=[],
+        warnings=[Issue(code=code, message=message, severity="warning", url=url)],
+        probe={},
+    )
+
+
 def scan_one_game_worker(config: Config, target: GameTarget, output_queue) -> None:
     try:
         with sync_playwright() as p:
@@ -1890,7 +1908,10 @@ def run_isolated_game_scan(config: Config, target: GameTarget) -> GameResult:
             if process.is_alive():
                 process.kill()
                 process.join(timeout=5)
-            return make_broken_result(
+            # Hard timeout = inconclusive, not broken. Today's slow-CDN day
+            # is tomorrow's working game; let the next nightly retry it
+            # without baking a false-broken into the verdict.
+            return make_inconclusive_result(
                 target,
                 elapsed,
                 "SCAN_HARD_TIMEOUT",
@@ -1899,7 +1920,10 @@ def run_isolated_game_scan(config: Config, target: GameTarget) -> GameResult:
             )
 
         if process.exitcode not in (0, None):
-            return make_broken_result(
+            # Worker crash is also inconclusive — we never got a verdict at
+            # all, so claiming "broken" would be made up. recover-all-broken.js
+            # already skips inconclusive slugs and queues a re-scan.
+            return make_inconclusive_result(
                 target,
                 elapsed,
                 "SCAN_WORKER_CRASH",

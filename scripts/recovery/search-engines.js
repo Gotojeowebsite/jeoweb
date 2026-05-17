@@ -357,6 +357,91 @@ async function searchMojeek(query, opts = {}) {
 	} catch { return []; }
 }
 
+// ----- Yandex (Russian crawler with a distinct index) ----------------------
+// Often the fastest way to find an Eastern European mirror of a game whose
+// Western mirrors all 404'd. Hits the XML opensearch endpoint (no auth).
+async function searchYandex(query, opts = {}) {
+	const url = `https://yandex.com/search/?text=${encodeURIComponent(query)}&lr=10393`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// Yandex HTML results are wrapped in <a class="b-link" href="..."> or
+		// <a class="organic__url" href="...">. Parse what we can.
+		const out = [];
+		const linkRe = /<a[^>]+class="[^"]*(?:OrganicTitle-Link|organic__url|b-link)[^"]*"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+		let m;
+		while ((m = linkRe.exec(r.body)) !== null) {
+			const href = m[1];
+			if (!/^https?:\/\//.test(href)) continue;
+			out.push({
+				url: href,
+				title: stripTags(m[2]).slice(0, 240),
+				snippet: '',
+				source: 'yandex',
+			});
+			if (out.length >= 25) break;
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- JSDelivr (npm CDN search) -------------------------------------------
+// Some HTML5 games are packaged as npm modules and served from JSDelivr; if
+// the package name matches the game slug, the canonical URL is right there.
+async function searchJSDelivr(query, opts = {}) {
+	const slugish = query.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+	if (!slugish) return [];
+	const url = `https://data.jsdelivr.com/v1/search?query=${encodeURIComponent(slugish)}&limit=10`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data && data.results) ? data.results : [];
+		return items.slice(0, 15).map((it) => ({
+			// Canonical play URL: latest version's index.html, served via the
+			// CDN. Works for most game packages that bundle a static entry.
+			url: `https://cdn.jsdelivr.net/npm/${it.name}/index.html`,
+			title: (it.name || '').slice(0, 240),
+			snippet: (it.description || '').slice(0, 320),
+			source: 'jsdelivr',
+		})).filter((x) => x.title);
+	} catch { return []; }
+}
+
+// ----- Itch.io (indie HTML5 builds) ----------------------------------------
+// Many indie HTML5 games have an official itch.io page with a /play/<slug>
+// URL or an embed iframe. The legacy site search returns ranked matches.
+async function searchItch(query, opts = {}) {
+	const url = `https://itch.io/search?q=${encodeURIComponent(query)}&classification=game`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// Itch search markup: <a class="title game_link" href="https://...">
+		const out = [];
+		const re = /<a[^>]+class="[^"]*\bgame_link\b[^"]*"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+		let m;
+		while ((m = re.exec(r.body)) !== null) {
+			let href = m[1];
+			if (!/^https?:\/\//.test(href)) {
+				if (href.startsWith('//')) href = 'https:' + href;
+				else if (href.startsWith('/')) href = 'https://itch.io' + href;
+				else continue;
+			}
+			out.push({
+				url: href,
+				title: stripTags(m[2]).slice(0, 240),
+				snippet: '',
+				source: 'itch',
+			});
+			if (out.length >= 20) break;
+		}
+		return out;
+	} catch { return []; }
+}
+
 // ----- Public API -----------------------------------------------------------
 function buildQueries(name, type) {
 	const variants = new Set();
@@ -471,17 +556,22 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 		tasks.push(searchDuckDuckGo(q, { timeoutMs }));
 		tasks.push(searchBing(q, { timeoutMs }));
 		tasks.push(searchBrave(q, { timeoutMs }));
-		// Searx + Mojeek surface results DDG/Bing miss. Run them per-query
-		// since their indexes are independent. opts.skipMetaSearx lets us
-		// disable when an instance is down.
+		// Searx + Mojeek + Yandex surface results DDG/Bing miss. Run them
+		// per-query since their indexes are independent. opt-out via
+		// opts.skipMetaSearx / skipMojeek / skipYandex when instances are
+		// down.
 		if (!opts.skipMetaSearx) tasks.push(searchSearx(q, { timeoutMs }));
 		if (!opts.skipMojeek) tasks.push(searchMojeek(q, { timeoutMs }));
+		if (!opts.skipYandex) tasks.push(searchYandex(q, { timeoutMs }));
 	}
-	// GitHub code-search and Wayback only on the base name to save quota.
+	// Base-name-only backends to conserve API quota / avoid rate limits.
 	tasks.push(searchGithubCode(name, { timeoutMs }));
 	tasks.push(searchGithubRepos(name, { timeoutMs }));
 	tasks.push(searchWayback(name, { timeoutMs }));
 	tasks.push(searchWaybackDeep(name, { timeoutMs }));
+	// Itch.io + JSDelivr are package/portal-specific — single-query suffices.
+	tasks.push(searchItch(name, { timeoutMs }));
+	tasks.push(searchJSDelivr(name, { timeoutMs }));
 
 	const settled = await Promise.allSettled(tasks);
 	const all = [];
@@ -509,4 +599,7 @@ module.exports = {
 	searchWaybackDeep,
 	searchSearx,
 	searchMojeek,
+	searchYandex,
+	searchJSDelivr,
+	searchItch,
 };

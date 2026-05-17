@@ -96,5 +96,7 @@
     "tracker\\..*",
     "analytics\\..*"
   ],
+  "disallow": [],
+  "_disallow_comment": "Hand-editable list of regex patterns to reject as candidate sources, even if their reputation score would otherwise let them through. Use this when a portal starts serving poisoned / malware-laced copies; the recovery engine will skip every match before the scrape stage. Schema mirrors `blocked` but is intent-tagged (poisoning vs. tracking).",
   "default_score": 10
 }

@@ -164,12 +164,16 @@ function parseHeadlessSignal(raw) {
 	for (const item of raw) {
 		if (!item || typeof item !== 'object' || typeof item.name !== 'string') continue;
 		const status = String(item.status || '').toLowerCase();
-		// "ok" -> pass, "broken" -> fail, "warning" -> warn (treated as ambiguous).
+		// "ok" -> pass, "broken" -> fail, "warning" -> warn (ambiguous).
+		// "inconclusive" -> NO VOTE (the scanner couldn't reach a verdict
+		// because of a timeout or worker crash; per the Phase 2 plan this
+		// must not contribute to either tally so a slow CDN day doesn't
+		// flip a working game to broken).
 		let signal;
 		if (status === 'ok') signal = 'pass';
 		else if (status === 'broken') signal = 'fail';
 		else if (status === 'warning') signal = 'warn';
-		else continue;
+		else continue;  // inconclusive / unknown / missing — skip
 		map.set(item.name, {
 			signal,
 			lead_issue: (Array.isArray(item.critical_issues) && item.critical_issues[0])

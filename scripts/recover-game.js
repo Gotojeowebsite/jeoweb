@@ -46,6 +46,7 @@ const {
 	reservedCandidateFolder,
 	rankCandidates,
 	normalizeName,
+	assetFingerprintOverlap,
 } = require('./recovery/atomic-swap');
 const { scrapeCandidate } = require('./recovery/scrape-engines');
 const { buildForSlug, buildForArbitraryRoot } = require('./build-offline-manifest');
@@ -559,6 +560,27 @@ async function tryCandidate(cand, args, ctx) {
 		return result;
 	}
 
+	// Asset-fingerprint pre-match. Compare distinctive file basenames
+	// between the reference (pre-swap Assets/<slug>/) and the candidate.
+	// >= 60% overlap = strong "same game"; < 10% = almost certainly a
+	// different game. Skipped if either side lacks a manifest (the gate
+	// degrades gracefully). Strict for fuzzy; lenient for exact (we
+	// only short-circuit on a clear < 10% mismatch).
+	const referenceFolder = path.join(ASSETS_DIR, ctx.slug);
+	const fp = assetFingerprintOverlap(referenceFolder, candidateRoot);
+	result.asset_fingerprint = fp;
+	if (fp.ok) {
+		const tooDifferent = fp.overlap < 0.10;
+		if (tooDifferent) {
+			if (args.verbose) console.log(`    × asset_fingerprint_low: overlap=${(fp.overlap * 100).toFixed(0)}% (${fp.overlap_count}/${fp.ref_size})`);
+			try { fs.rmSync(candidateRoot, { recursive: true, force: true }); } catch {}
+			result.outcome = 'fingerprint_mismatch';
+			result.error = `asset overlap=${(fp.overlap * 100).toFixed(0)}% below 10% floor`;
+			return result;
+		}
+		if (args.verbose) console.log(`    asset_fingerprint: overlap=${(fp.overlap * 100).toFixed(0)}% (${fp.overlap_count}/${fp.ref_size})`);
+	}
+
 	// Shape cross-check. ALWAYS for fuzzy candidates; skipped for exact
 	// matches unless --strict-shape is set (an exact-URL hit from a trusted
 	// portal is almost always the same game, and aggressive shape-checking
@@ -803,6 +825,7 @@ async function recover(slug, args) {
 	if (attempted === 0 && exactCandidates.length + fuzzyCandidates.length === 0) {
 		bumpCooldownOnFailure(slug, 'no candidates found');
 		appendLog({ ...log, outcome: 'no_candidates' });
+		queueManualReview(slug, ctx, log, 'no_candidates_found_anywhere');
 		console.log(`[${slug}] no candidates found.`);
 		return { slug, outcome: 'no_candidates' };
 	}
@@ -821,8 +844,44 @@ async function recover(slug, args) {
 		attempted_count: attempted,
 		blocker_count: blockerHits.length,
 	});
-	console.log(`[${slug}] all ${attempted} attempted candidates failed (${exactCandidates.length} exact + ${fuzzyCandidates.length} fuzzy ranked).`);
+	// Per the Phase 3 plan: when fuzzy ALSO fails after exact has, surface
+	// the slug in a structured manual-review queue so an operator can
+	// inspect the candidate list + screenshots + retry with --url override.
+	// The queue is hand-edit allowed (operators may add notes / mark as
+	// reviewed); a fresh queueManualReview call merges on slug key.
+	queueManualReview(slug, ctx, log, failureReason);
+	console.log(`[${slug}] all ${attempted} attempted candidates failed (${exactCandidates.length} exact + ${fuzzyCandidates.length} fuzzy ranked). Queued to reports/manual_review.json.`);
 	return { slug, outcome: 'all_candidates_failed', candidates_tried: log.candidates_tried };
+}
+
+// Manual-review queue. Updated atomically (read → modify → write) so a
+// background nightly + an on-demand `npm run recover` don't race.
+function queueManualReview(slug, ctx, log, reason) {
+	const queuePath = path.join(REPORTS_DIR, 'manual_review.json');
+	ensureReports();
+	let queue;
+	try { queue = JSON.parse(fs.readFileSync(queuePath, 'utf-8')); }
+	catch { queue = { schema: 1, items: {} }; }
+	if (!queue || typeof queue !== 'object' || !queue.items || typeof queue.items !== 'object') {
+		queue = { schema: 1, items: {} };
+	}
+	const prev = queue.items[slug] || {};
+	queue.items[slug] = {
+		slug,
+		name: ctx.name,
+		type: ctx.gameType,
+		first_queued_at: prev.first_queued_at || Math.floor(Date.now() / 1000),
+		last_attempt_at: Math.floor(Date.now() / 1000),
+		attempts: (Number(prev.attempts) || 0) + 1,
+		reason,
+		candidates_tried: log.candidates_tried.slice(0, 25),
+		reviewed: false,
+		notes: prev.notes || '',
+	};
+	queue.generated_at = Math.floor(Date.now() / 1000);
+	queue.count = Object.keys(queue.items).length;
+	try { fs.writeFileSync(queuePath, JSON.stringify(queue, null, 2)); }
+	catch (e) { console.warn(`failed to write manual_review.json: ${e.message}`); }
 }
 
 async function main() {

@@ -341,12 +341,37 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 		});
 
 		// Navigate to portal first.
+		// Phase 3 smart wait-for-load: instead of capturing whatever's in
+		// the DOM at domcontentloaded, wait for networkidle (gives the page
+		// time to fetch all scripts), then a 3s settle, then scroll to bottom
+		// + back to top to trigger any lazy-load observers. Falls back to
+		// domcontentloaded if networkidle never resolves.
 		const navStart = Date.now();
 		try {
-			await page.goto(url, { waitUntil: 'domcontentloaded', timeout: Math.min(60_000, totalTimeout) });
+			await page.goto(url, { waitUntil: 'networkidle2', timeout: Math.min(45_000, totalTimeout) });
 		} catch (e) {
-			log(`portal navigation timed out: ${e.message}`);
+			log(`portal networkidle2 timed out, falling back to domcontentloaded: ${e.message}`);
+			try {
+				await page.goto(url, { waitUntil: 'domcontentloaded', timeout: Math.min(30_000, totalTimeout) });
+			} catch (e2) {
+				log(`portal navigation failed: ${e2.message}`);
+			}
 		}
+
+		// 3-second settle for post-hydration SPA tasks.
+		await new Promise((r) => setTimeout(r, 3_000));
+
+		// Scroll-to-bottom-and-back triggers IntersectionObserver-based
+		// lazy loads (cover images, secondary iframes, ad slots). Best-effort.
+		try {
+			await page.evaluate(async () => {
+				const h = document.body ? document.body.scrollHeight : 0;
+				window.scrollTo(0, h);
+				await new Promise((r) => setTimeout(r, 400));
+				window.scrollTo(0, 0);
+				await new Promise((r) => setTimeout(r, 200));
+			});
+		} catch { /* ignore */ }
 
 		// Brief idle for portal scripts to inject iframe.
 		await new Promise(r => setTimeout(r, 6_000));
@@ -372,9 +397,14 @@ async function scrapeCandidate({ url, candidateRoot, gameType, timeoutMs, verbos
 		if (iframeUrl) {
 			log(`iframe → ${iframeUrl}`);
 			try {
-				await page.goto(iframeUrl, { waitUntil: 'domcontentloaded', timeout: Math.min(60_000, totalTimeout - (Date.now() - navStart)) });
+				await page.goto(iframeUrl, { waitUntil: 'networkidle2', timeout: Math.min(45_000, totalTimeout - (Date.now() - navStart)) });
 			} catch (e) {
-				log(`iframe navigation timed out: ${e.message}`);
+				log(`iframe networkidle2 timed out, falling back to domcontentloaded: ${e.message}`);
+				try {
+					await page.goto(iframeUrl, { waitUntil: 'domcontentloaded', timeout: Math.min(30_000, totalTimeout - (Date.now() - navStart)) });
+				} catch (e2) {
+					log(`iframe navigation failed: ${e2.message}`);
+				}
 			}
 			// Half-wait → click-through → second half-wait. Lets us advance
 			// past a "Click to play" overlay so the audio context unlocks and
