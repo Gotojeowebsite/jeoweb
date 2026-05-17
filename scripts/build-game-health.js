@@ -67,6 +67,12 @@ const PATHS = {
 // consistency. Set generously; lowered later if signal coverage improves.
 const LAST_KNOWN_GOOD_WINDOW_DAYS = 14;
 
+// signal_history[] per-lane retention depth. Five runs is enough to detect a
+// flapping lane (pass→fail→pass→fail→pass) without bloating game_health.json.
+// Each lane entry is { at, signal } so the file footprint is ~150 B/game/lane
+// times 5 lanes = 3.75 KB/game — at 600 games, ~2.3 MB. Fine.
+const SIGNAL_HISTORY_DEPTH = 5;
+
 const MAX_AGE_DAYS_DEFAULT = 7;
 
 function readJsonSafe(p) {
@@ -555,6 +561,27 @@ function main() {
 			return acc;
 		}, { pass: 0, fail: 0, warn: 0 });
 		entry.agreement_count = tally;
+
+		// signal_history[] per-lane: last SIGNAL_HISTORY_DEPTH=5 runs per lane,
+		// durable across CI runs. Per the Phase 2 plan: "a single bad nightly
+		// doesn't reset progress." Each lane carries its own ring buffer keyed
+		// by lane name; we append only when the lane has a signal this run.
+		// Stable schema: signal_history is shaped as
+		//   { lane_name: [{ at, signal }, ...]  }
+		// with the newest entry last.
+		const prevHistory = (prevEntry && prevEntry.signal_history && typeof prevEntry.signal_history === 'object')
+			? prevEntry.signal_history
+			: {};
+		const nextHistory = {};
+		for (const lane of LANES) {
+			const arr = Array.isArray(prevHistory[lane]) ? prevHistory[lane].slice() : [];
+			if (sig[lane]) {
+				arr.push({ at: now, signal: sig[lane] });
+				while (arr.length > SIGNAL_HISTORY_DEPTH) arr.shift();
+			}
+			if (arr.length) nextHistory[lane] = arr;
+		}
+		if (Object.keys(nextHistory).length) entry.signal_history = nextHistory;
 
 		// Recently-working cache: a game that was verdict=healthy/high within
 		// the last LAST_KNOWN_GOOD_WINDOW_DAYS days has earned the benefit of the
