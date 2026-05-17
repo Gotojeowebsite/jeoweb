@@ -111,51 +111,66 @@ body.theme-light .accessibility-overlay {
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 0 24px;
-height: 64px;
-background: var(--bg-surface);
-backdrop-filter: var(--glass-blur);
--webkit-backdrop-filter: var(--glass-blur);
-border: 1px solid var(--border);
-border-radius: 20px;
-box-shadow: var(--shadow-sm);
+padding: 0 var(--space-6);
+height: var(--header-h);
+background: var(--surface-glass);
+backdrop-filter: blur(var(--blur-glass-2));
+-webkit-backdrop-filter: blur(var(--blur-glass-2));
+border: 1px solid var(--line-1);
+border-radius: var(--radius-xl);
+box-shadow: var(--shadow-2);
 position: sticky;
-top: 16px;
-margin: 16px 24px 24px;
-z-index: 100;
+top: var(--space-4);
+margin: var(--space-4) var(--space-6) var(--space-6);
+z-index: var(--z-sticky);
+transition: border-color var(--motion-base) var(--ease-out-soft),
+            box-shadow var(--motion-base) var(--ease-out-soft);
+}
+/* Subtle accent ring on scroll — matches the Astro TopBar polish. */
+.topbar:hover {
+	border-color: color-mix(in srgb, var(--accent) 30%, var(--line-1));
+	box-shadow: var(--shadow-3);
 }
 
-.header-left { display: flex; align-items: center; gap: 16px; }
+.header-left { display: flex; align-items: center; gap: var(--space-4); }
 
 .header-nav-link {
-	font-size: 13px;
-	font-weight: 500;
-	color: var(--muted);
+	font-size: var(--text-sm);
+	font-weight: var(--weight-medium);
+	color: var(--fg-1);
 	text-decoration: none;
-	padding: 6px 12px;
-	border-radius: 6px;
-	transition: color 0.2s, background 0.2s;
+	padding: var(--space-1) var(--space-3);
+	border-radius: var(--radius-sm);
+	transition: color var(--motion-fast) var(--ease-out-soft),
+	            background var(--motion-fast) var(--ease-out-soft);
 }
 
 .header-nav-link:hover {
 	color: var(--accent);
-	background: rgba(124, 58, 237, 0.08);
+	background: var(--accent-soft);
+}
+.header-nav-link[aria-current="page"] {
+	color: var(--accent);
+	background: var(--accent-soft);
 }
 
 .feedback-link {
 	color: var(--accent);
 	border: 1px solid var(--accent);
-	padding: 5px 14px;
-	border-radius: 20px;
-	font-weight: 600;
-	transition: color 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s;
+	padding: var(--space-1) var(--space-4);
+	border-radius: var(--radius-pill);
+	font-weight: var(--weight-semibold);
+	transition: color var(--motion-base) var(--ease-out-soft),
+	            background var(--motion-base) var(--ease-out-soft),
+	            border-color var(--motion-base) var(--ease-out-soft),
+	            box-shadow var(--motion-base) var(--ease-out-soft);
 }
 
 .feedback-link:hover {
-	color: #fff;
+	color: var(--accent-fg);
 	background: var(--accent);
 	border-color: var(--accent);
-	box-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
+	box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 /* Ripple Effect */
@@ -722,48 +737,48 @@ color: var(--accent);
    FLASH BADGE & NAV
    ======================================== */
 
-.flash-badge {
+/* Type badges share a base. Each variant tints from the semantic token
+   that's defined in /styles/tokens.css so the legacy and Astro UIs read
+   the same brand of orange/pink/teal. color-mix lets us derive the
+   translucent fill + border without hard-coding rgba()s. */
+.flash-badge,
+.retro-badge,
+.webgl-badge {
 	position: absolute;
-	bottom: 8px;
-	left: 8px;
-	font-size: 10px;
-	font-weight: 700;
+	bottom: var(--space-2);
+	left: var(--space-2);
+	font-size: var(--text-xs);
+	font-weight: var(--weight-bold);
 	color: #fff;
-	background: rgba(245, 158, 11, 0.4);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 1px solid rgba(245, 158, 11, 0.5);
-	padding: 3px 8px;
-	border-radius: 6px;
-	letter-spacing: 0.3px;
+	backdrop-filter: blur(var(--blur-glass-1));
+	-webkit-backdrop-filter: blur(var(--blur-glass-1));
+	padding: 3px var(--space-2);
+	border-radius: var(--radius-sm);
+	letter-spacing: var(--tracking-wide);
 	text-transform: uppercase;
 	z-index: 5;
-	box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+	border: 1px solid transparent;
+}
+.flash-badge {
+	background: color-mix(in srgb, var(--semantic-flash) 40%, transparent);
+	border-color: color-mix(in srgb, var(--semantic-flash) 60%, transparent);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--semantic-flash) 22%, transparent);
+}
+.retro-badge {
+	background: color-mix(in srgb, var(--semantic-retro) 40%, transparent);
+	border-color: color-mix(in srgb, var(--semantic-retro) 60%, transparent);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--semantic-retro) 22%, transparent);
+}
+.webgl-badge {
+	background: color-mix(in srgb, var(--semantic-webgl) 40%, transparent);
+	border-color: color-mix(in srgb, var(--semantic-webgl) 60%, transparent);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--semantic-webgl) 22%, transparent);
 }
 
 .flash-hero-badge {
 	font-size: 48px;
 	margin-bottom: 8px;
 	line-height: 1;
-}
-
-.retro-badge {
-	position: absolute;
-	bottom: 8px;
-	left: 8px;
-	font-size: 10px;
-	font-weight: 700;
-	color: #fff;
-	background: rgba(236, 72, 153, 0.4);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 1px solid rgba(236, 72, 153, 0.5);
-	padding: 3px 8px;
-	border-radius: 6px;
-	letter-spacing: 0.3px;
-	text-transform: uppercase;
-	z-index: 5;
-	box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
 }
 
 .requested-badge {
@@ -1521,12 +1536,12 @@ cursor: pointer;
 position: relative;
 box-shadow: var(--shadow-md);
 opacity: 0;
-animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+animation: waterfall-in var(--motion-deliberate) var(--ease-out-soft) forwards;
 transform-style: preserve-3d;
 transform: perspective(1000px) translateY(0);
-transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-            border-color 0.25s ease,
-            box-shadow 0.35s ease;
+transition: transform var(--motion-slow) var(--ease-out-soft),
+            border-color var(--motion-base) var(--ease-out-soft),
+            box-shadow var(--motion-slow) var(--ease-out-soft);
 will-change: transform;
 }
 
@@ -3945,34 +3960,75 @@ body.theme-light .rating-badge {
 
 .status-badge {
 	position: absolute;
-	top: 8px;
-	right: 8px;
-	font-size: 10px;
-	font-weight: 700;
+	top: var(--space-2);
+	right: var(--space-2);
+	font-size: var(--text-xs);
+	font-weight: var(--weight-bold);
 	color: #fff;
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	padding: 3px 8px;
-	border-radius: 6px;
-	letter-spacing: 0.3px;
+	backdrop-filter: blur(var(--blur-glass-1));
+	-webkit-backdrop-filter: blur(var(--blur-glass-1));
+	padding: 3px var(--space-2);
+	border-radius: var(--radius-sm);
+	letter-spacing: var(--tracking-wide);
 	text-transform: uppercase;
 	z-index: 6;
 	border: 1px solid transparent;
 }
 .status-badge.status-broken {
-	background: rgba(220, 38, 38, 0.55);
-	border-color: rgba(220, 38, 38, 0.7);
-	box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+	background: color-mix(in srgb, var(--semantic-broken) 55%, transparent);
+	border-color: color-mix(in srgb, var(--semantic-broken) 70%, transparent);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--semantic-broken) 25%, transparent);
 }
 .status-badge.status-maintenance {
-	background: rgba(245, 158, 11, 0.55);
-	border-color: rgba(245, 158, 11, 0.7);
-	box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+	background: color-mix(in srgb, var(--semantic-warn) 55%, transparent);
+	border-color: color-mix(in srgb, var(--semantic-warn) 70%, transparent);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--semantic-warn) 25%, transparent);
 }
 .status-badge.status-unverified {
-	background: rgba(120, 120, 130, 0.55);
-	border-color: rgba(160, 160, 180, 0.55);
-	color: #f0f0f4;
+	background: color-mix(in srgb, var(--fg-3) 55%, transparent);
+	border-color: color-mix(in srgb, var(--fg-3) 55%, transparent);
+	color: var(--fg-0);
+}
+
+/* GameCard.astro-style broken treatment: full-width ribbon at the bottom
+   of the cover + grayscale/darken on the image. Lets users tell at a
+   glance which cards in a row are confirmed broken, without obscuring
+   the cover entirely. */
+.game-card.card-status-broken .game-thumb img,
+.game-card.under-maintenance .game-thumb img {
+	filter: grayscale(0.6) brightness(0.7);
+	transition: filter var(--motion-base) var(--ease-out-soft);
+}
+.game-card.card-status-broken .game-thumb::before,
+.game-card.under-maintenance .game-thumb::before {
+	content: 'Broken';
+	position: absolute;
+	left: 0; right: 0; bottom: 0;
+	z-index: 6;
+	padding: 4px var(--space-2);
+	background: color-mix(in srgb, var(--semantic-broken) 85%, transparent);
+	color: #fff;
+	font-size: var(--text-xs);
+	font-weight: var(--weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wide);
+	text-align: center;
+	pointer-events: none;
+}
+.game-card.card-status-maintenance .game-thumb::before {
+	content: 'Maintenance';
+	position: absolute;
+	left: 0; right: 0; bottom: 0;
+	z-index: 6;
+	padding: 4px var(--space-2);
+	background: color-mix(in srgb, var(--semantic-warn) 85%, transparent);
+	color: #fff;
+	font-size: var(--text-xs);
+	font-weight: var(--weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wide);
+	text-align: center;
+	pointer-events: none;
 }
 
 /* "+N" overflow chip for when there are more badges than we want to show. */
