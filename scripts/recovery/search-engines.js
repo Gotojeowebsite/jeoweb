@@ -215,6 +215,131 @@ async function searchWayback(query, opts = {}) {
 	} catch { return []; }
 }
 
+// ----- Wayback CDX deep-walk -------------------------------------------------
+// Single "closest snapshot" call misses older known-good copies of games whose
+// most recent snapshot is itself broken. Walk the CDX index for the query
+// term and surface multiple snapshots (oldest, middle, newest) ranked by
+// timestamp so the candidate pool gets diverse archive points.
+async function searchWaybackDeep(query, opts = {}) {
+	const url = `https://web.archive.org/cdx/search/cdx?url=${encodeURIComponent(query)}&output=json&limit=80&filter=statuscode:200&filter=mimetype:text/html&fl=timestamp,original`;
+	try {
+		const r = await httpsGet(url, { timeoutMs: opts.timeoutMs });
+		if (!r || r.status !== 200) return [];
+		// CDX JSON output is [[header...], [row...], ...].
+		const rows = JSON.parse(r.body);
+		if (!Array.isArray(rows) || rows.length < 2) return [];
+		const data = rows.slice(1).map(([ts, original]) => ({ ts, original }));
+		if (!data.length) return [];
+		// Pick up to 5 snapshots: oldest, 25%, middle, 75%, newest.
+		const picks = [];
+		const at = (frac) => data[Math.min(data.length - 1, Math.max(0, Math.floor(frac * (data.length - 1))))];
+		for (const frac of [0, 0.25, 0.5, 0.75, 1]) picks.push(at(frac));
+		const seen = new Set();
+		const out = [];
+		for (const p of picks) {
+			if (!p || !p.original || seen.has(p.ts)) continue;
+			seen.add(p.ts);
+			out.push({
+				url: `https://web.archive.org/web/${p.ts}/${p.original}`,
+				title: `wayback ${p.ts}`,
+				snippet: p.original,
+				source: 'wayback-deep',
+			});
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- GitHub repository search ---------------------------------------------
+// Distinct from searchGithubCode — that one greps file contents. This one
+// matches repository names + descriptions. Many HTML5 games live on a
+// GitHub Pages site whose repo name contains the game title; surfacing the
+// repo gives us the canonical source even if no code-grep hit fires.
+async function searchGithubRepos(query, opts = {}) {
+	const tok = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+	if (!tok) return [];
+	const q = encodeURIComponent(`${query} in:name,description game`);
+	const url = `https://api.github.com/search/repositories?q=${q}&per_page=15&sort=stars`;
+	try {
+		const r = await httpsGet(url, {
+			headers: {
+				'Accept': 'application/vnd.github+json',
+				'Authorization': `Bearer ${tok}`,
+				'X-GitHub-Api-Version': '2022-11-28',
+			},
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data.items) ? data.items : [];
+		const out = [];
+		for (const it of items) {
+			if (!it.html_url) continue;
+			// Prefer the Pages URL if we can infer it: github.com/foo/bar -> foo.github.io/bar
+			const m = String(it.html_url).match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)/);
+			const pages = m ? `https://${m[1]}.github.io/${m[2]}/` : null;
+			out.push({
+				url: pages || it.html_url,
+				title: (it.full_name || '').slice(0, 240),
+				snippet: (it.description || '').slice(0, 320),
+				source: 'github-repos',
+			});
+		}
+		return out;
+	} catch { return []; }
+}
+
+// ----- Searx (privacy-preserving meta-search) -------------------------------
+// Searx instances aggregate results from many backends and aren't aggressively
+// rate-limited the way DDG/Bing are. We hit one of a small pool of public
+// instances; opts.searxBase can override.
+const SEARX_INSTANCES = [
+	'https://search.bus-hit.me',
+	'https://searx.be',
+	'https://search.disroot.org',
+];
+async function searchSearx(query, opts = {}) {
+	const base = opts.searxBase || SEARX_INSTANCES[Math.floor(Math.random() * SEARX_INSTANCES.length)];
+	const url = `${base}/search?q=${encodeURIComponent(query)}&format=json&safesearch=0&categories=general`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = Array.isArray(data.results) ? data.results : [];
+		return items.slice(0, 25).map((it) => ({
+			url: it.url,
+			title: (it.title || '').slice(0, 240),
+			snippet: (it.content || '').slice(0, 320),
+			source: 'searx',
+		})).filter((x) => x.url && /^https?:\/\//.test(x.url));
+	} catch { return []; }
+}
+
+// ----- Mojeek (independent crawler) -----------------------------------------
+// Different result set from Google-derived backends; useful when DDG/Bing
+// both miss a game because their crawlers haven't indexed the host.
+async function searchMojeek(query, opts = {}) {
+	const url = `https://www.mojeek.com/search?q=${encodeURIComponent(query)}&fmt=json`;
+	try {
+		const r = await httpsGet(url, {
+			headers: { 'Accept': 'application/json' },
+			timeoutMs: opts.timeoutMs,
+		});
+		if (!r || r.status !== 200) return [];
+		const data = JSON.parse(r.body);
+		const items = (data && data.response && Array.isArray(data.response.results)) ? data.response.results : [];
+		return items.slice(0, 25).map((it) => ({
+			url: it.url,
+			title: (it.title || '').slice(0, 240),
+			snippet: (it.desc || it.description || '').slice(0, 320),
+			source: 'mojeek',
+		})).filter((x) => x.url && /^https?:\/\//.test(x.url));
+	} catch { return []; }
+}
+
 // ----- Public API -----------------------------------------------------------
 function buildQueries(name, type) {
 	const variants = new Set();
@@ -329,17 +454,24 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 		tasks.push(searchDuckDuckGo(q, { timeoutMs }));
 		tasks.push(searchBing(q, { timeoutMs }));
 		tasks.push(searchBrave(q, { timeoutMs }));
+		// Searx + Mojeek surface results DDG/Bing miss. Run them per-query
+		// since their indexes are independent. opts.skipMetaSearx lets us
+		// disable when an instance is down.
+		if (!opts.skipMetaSearx) tasks.push(searchSearx(q, { timeoutMs }));
+		if (!opts.skipMojeek) tasks.push(searchMojeek(q, { timeoutMs }));
 	}
-	// GitHub code search and Wayback only on the base name to save quota.
+	// GitHub code-search and Wayback only on the base name to save quota.
 	tasks.push(searchGithubCode(name, { timeoutMs }));
+	tasks.push(searchGithubRepos(name, { timeoutMs }));
 	tasks.push(searchWayback(name, { timeoutMs }));
+	tasks.push(searchWaybackDeep(name, { timeoutMs }));
 
 	const settled = await Promise.allSettled(tasks);
 	const all = [];
 	for (const s of settled) {
 		if (s.status === 'fulfilled' && Array.isArray(s.value)) all.push(...s.value);
 	}
-	// Tag each hit with fuzzy_mode so downstream gates know to apply the
+	// Tag each hit with match_type so downstream gates know to apply the
 	// nameSimilarity >= 0.55 threshold before scraping.
 	const out = dedupeBy(all, (x) => x.url);
 	if (opts.fuzzy) for (const h of out) h.match_type = 'fuzzy';
@@ -355,5 +487,9 @@ module.exports = {
 	searchBing,
 	searchBrave,
 	searchGithubCode,
+	searchGithubRepos,
 	searchWayback,
+	searchWaybackDeep,
+	searchSearx,
+	searchMojeek,
 };
