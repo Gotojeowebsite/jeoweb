@@ -2246,11 +2246,27 @@ flex-direction: column;
 
 .footer {
 text-align: center;
-padding: 24px 20px;
-color: var(--muted);
-border-top: 1px solid var(--border);
-font-size: 12px;
+padding: var(--space-7) var(--space-5);
+color: var(--fg-2);
+border-top: 1px solid var(--line-0);
+font-size: var(--text-sm);
+line-height: var(--leading-base);
 position: relative;
+background: var(--surface-glass);
+backdrop-filter: blur(var(--blur-glass-1));
+-webkit-backdrop-filter: blur(var(--blur-glass-1));
+margin-top: var(--space-10);
+}
+.footer a {
+color: var(--fg-1);
+text-decoration: none;
+border-bottom: 1px solid transparent;
+transition: color var(--motion-fast) var(--ease-out-soft),
+            border-color var(--motion-fast) var(--ease-out-soft);
+}
+.footer a:hover {
+color: var(--accent);
+border-bottom-color: var(--accent);
 }
 
 /* Last Updated Badge */

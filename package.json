@@ -30,6 +30,8 @@
     "recover:all": "node scripts/recover-all-broken.js",
     "recover:dry": "node scripts/recover-game.js --dry-run --verbose",
     "recover:rollback": "node scripts/recovery/rollback.js",
+    "recover:clinic": "node scripts/recovery/engine-clinic.js",
+    "recover:manual": "node scripts/recovery/manual-replace.js",
     "game:heal": "node scripts/maintenance-toggle.js heal",
     "game:break": "node scripts/maintenance-toggle.js break",
     "game:maintenance:list": "node scripts/maintenance-toggle.js list",
