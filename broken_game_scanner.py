@@ -169,14 +169,80 @@ CRITICAL_RUNTIME_ERROR_TOKENS = (
 )
 
 NOISE_CONSOLE_PATTERNS = (
+    # Sourcemaps and dev tooling — never user-visible.
     "source map",
+    "devtools failed to load source map",
+    "sourcemap parse error",
+
+    # Browser-default 404s.
     "favicon.ico",
+    "apple-touch-icon",
+    "/robots.txt",
+    "manifest.webmanifest",
+
+    # CSP / mixed-content policy violations from ad/analytics scripts —
+    # the game itself still runs.
     "violates the following content security policy",
     "refused to connect because it violates the document's content security policy",
+    "refused to load the image",
+    "refused to load the script",
+    "mixed content:",
+
+    # 404s on optional resources — already covered by the 404 allowlist,
+    # mirrored here for the console-error noise filter.
     "failed to load resource: the server responded with a status of 404",
+    "failed to load resource: the server responded with a status of 403",
     "status of 501 (unsupported method ('post'))",
     "error creating webgl renderer: unable to create webgl rendering context",
     "this method is a failsafe, and not officially supported",
+
+    # Deprecation warnings — informational, never fatal.
+    "deprecated",
+    "deprecationwarning",
+    "[deprecation]",
+    "[violation]",
+    "addeventlistener.*passive event listener",
+    "synchronous xmlhttprequest on the main thread is deprecated",
+
+    # Ad-blocker / privacy-extension noise: telemetry scripts that get
+    # blocked by the user's browser do not affect game functionality.
+    "err_blocked_by_client",
+    "err_blocked_by_response",
+    "blocked by client",
+    "doubleclick.net",
+    "googletagmanager",
+    "google-analytics",
+    "googlesyndication",
+    "googleadservices",
+    "doubleverify",
+
+    # Cookie / consent banners.
+    "cookie-banner",
+    "consent-manager",
+    "gatekeeperconsent",
+    "cmp.min.js",
+
+    # Service worker registration noise. Failed SW registration on an
+    # archived game doesn't break gameplay.
+    "service worker registration failed",
+    "the script has an unsupported mime type",
+
+    # WebRTC / camera / mic permission prompts. Not a runtime error;
+    # the user just clicked Deny.
+    "permission denied",
+    "the user denied",
+    "notallowederror",
+
+    # AudioContext autoplay restrictions — handled by engines on user input.
+    "the audiocontext was not allowed to start",
+    "play() failed because the user didn't interact",
+
+    # Common third-party library noise.
+    "polyfill.io",
+    "newrelic",
+    "datadog-rum",
+    "sentry",
+    "log4javascript",
 )
 
 NONCRITICAL_RUNTIME_PATTERNS = (
