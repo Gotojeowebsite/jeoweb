@@ -367,8 +367,18 @@ class App {
 					else if (entry.source === 'override' && verdictRaw === 'healthy') status = '';
 					else status = 'unknown';
 				} else if (verdictRaw === 'broken') {
+					// Only fully-confirmed broken hides the game.
 					status = entry.source === 'override' ? 'under_maintenance' : 'broken';
 				} else if (verdictRaw === 'healthy') {
+					status = '';
+				} else if (verdictRaw === 'probable_broken') {
+					// Triple-confirm rule: two fails but no third. Per the plan,
+					// the game stays live in the catalog (we'd rather show a
+					// maybe-broken game than hide a working one). Internal flag
+					// only; the admin "broken games" report includes these.
+					status = '';
+				} else if (verdictRaw === 'unverified') {
+					// Single signal, not enough corroboration. Live; no badge.
 					status = '';
 				} else {
 					status = 'unknown';
