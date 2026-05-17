@@ -1,0 +1,82 @@
+/* ======================================
+/* Event Card: Comedy
+/* ====================================== */
+.event-cards-list--comedy {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .event-cards-list--comedy {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+
+/* Event Card
+============================= */
+.post-card-event--comedy {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc((100% - 60px) / 3);
+          flex: 0 0 calc((100% - 60px) / 3);
+  border-radius: 16px 16px 0 0;
+}
+
+.post-card-event--comedy .post-card-event-date {
+  border-radius: 16px 16px 0 0;
+  background: #c2c8ce;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #F2F3F5;
+}
+
+.post-card-event--comedy .post-card-event-content {
+  border-radius: 0 0 16px 16px;
+  background: #F2F3F5;
+  padding: 20px;
+}
+
+.post-card-event--comedy .post-card-event-title {
+  color: #242529;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+
+/* Button */
+.post-card-event--comedy .button-container {
+  margin-top: 20px;
+}
+
+.post-card-event--comedy  .button-container a svg {
+  display: inline-block;
+  margin-left: 8px;
+  height: auto;
+  width: 13px;
+}
+
+.post-card-event--comedy .button-container a:hover svg path {
+  fill: var(--button_accent_hover_color, var(--button_accent_color));
+}
+
+
+/* Dark Mode
+============================= */
+body.dark-mode .post-card-event--comedy .post-card-event-date {
+  background: #8A96A380;
+}
+body.dark-mode .post-card-event--comedy .post-card-event-content {
+  background: #d8d8d8;
+}

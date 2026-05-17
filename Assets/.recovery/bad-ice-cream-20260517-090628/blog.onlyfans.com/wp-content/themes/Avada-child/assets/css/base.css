@@ -1,0 +1,82 @@
+/* ======================================
+/* Base
+/* ====================================== */
+:root {
+	--color-blue: #008CCF;
+}
+
+.sr-only,
+.screen-reader-text {
+	overflow: hidden;
+  position: absolute;
+	left: -10000px;
+	height: 1px;
+	width: 1px;
+	top: auto;
+}
+
+body.single-creators a.fusion-button:not([href]) {
+	display: none
+}
+
+article.creators h1.entry-title {
+	display: none
+}
+
+.creator-social-icons .fusion-column-wrapper:first-child {
+	gap: 10px;
+}
+
+#main {
+	min-height: 100vh;
+}
+
+
+/* Single Creators
+============================= */
+.single-creators .event-cards-list {
+	flex-flow: row wrap;
+	gap: 15px;
+}
+
+.single-creators .event-cards-list .post-card-event {
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.single-creators .post-content i.fb-icon-element:empty {
+	display: none;
+}
+
+@media (min-width: 600px) {
+	.single-creators .event-cards-list .post-card-event {
+		min-width: calc(calc(100% / 2) - 7.5px);
+		max-width: calc(calc(100% / 2) - 7.5px);
+	}
+}
+
+@media (min-width: 900px) {
+	.single-creators .event-cards-list {
+		gap: 30px;
+	}
+
+	.single-creators .event-cards-list .post-card-event {
+		min-width: calc(calc(100% / 3) - 20px);
+		max-width: calc(calc(100% / 3) - 20px);
+	}
+}
+
+
+/* Creator Category
+============================= */
+.tax-creator_category .gs > p:empty {
+	margin: 0;
+}
+
+.tax-creator_category #content {
+	margin-bottom: 0 !important;
+}
+
+.fusion-imageframe.has-aspect-ratio {
+	width: 100%;
+}

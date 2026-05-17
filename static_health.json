@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "generated_at": 1778928024,
+  "generated_at": 1779010747,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 434,
+    "pass": 439,
     "warn": 100,
-    "fail": 64,
+    "fail": 59,
     "total": 598
   },
   "games": [
@@ -37,14 +37,14 @@
     },
     {
       "slug": "0v0",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -55,14 +55,14 @@
     },
     {
       "slug": "1",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -165,14 +165,14 @@
     },
     {
       "slug": "9007199254740992",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -183,14 +183,14 @@
     },
     {
       "slug": "99-nights-in-the-forest",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -346,14 +346,14 @@
     },
     {
       "slug": "amazing-rope-police",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -388,14 +388,14 @@
     },
     {
       "slug": "among-us",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -436,14 +436,14 @@
     },
     {
       "slug": "angelunder",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -454,14 +454,14 @@
     },
     {
       "slug": "angry-bird",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -547,14 +547,14 @@
     },
     {
       "slug": "aqua-park",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -565,14 +565,14 @@
     },
     {
       "slug": "aquapark-slides",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -674,14 +674,14 @@
     },
     {
       "slug": "astray",
-      "verdict": "fail",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
           "code": "EMPTY_ENTRY_HTML",
           "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "critical"
+          "severity": "warning"
         }
       ],
       "refs_checked": 0,
@@ -692,7 +692,7 @@
     },
     {
       "slug": "astrosurvivor",
-      "verdict": "warn",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
@@ -701,12 +701,18 @@
           "message": "Optional local file missing: icons/icon-128.png",
           "severity": "warning",
           "ref": "icons/icon-128.png"
+        },
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: previewworker.js",
+          "severity": "critical",
+          "ref": "previewworker.js"
         }
       ],
       "refs_checked": 10,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 1
     },
     {
@@ -893,39 +899,81 @@
     },
     {
       "slug": "bad-ice-cream",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "flash",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host (dynamic JS import): devs-api.poki.comsa",
+          "severity": "warning",
+          "ref": "https://devs-api.poki.comsa/gameinfo/@sdk?href=",
+          "host": "devs-api.poki.comsa"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
+          "severity": "warning",
+          "ref": "./touchControllerConfig.json"
+        }
+      ],
       "refs_checked": 8,
       "external_refs": 0,
-      "external_critical": 0,
+      "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "bad-ice-cream-2",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "flash",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host (dynamic JS import): devs-api.poki.comsa",
+          "severity": "warning",
+          "ref": "https://devs-api.poki.comsa/gameinfo/@sdk?href=",
+          "host": "devs-api.poki.comsa"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
+          "severity": "warning",
+          "ref": "./touchControllerConfig.json"
+        }
+      ],
       "refs_checked": 8,
       "external_refs": 0,
-      "external_critical": 0,
+      "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "bad-ice-cream-3",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "flash",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host (dynamic JS import): devs-api.poki.comsa",
+          "severity": "warning",
+          "ref": "https://devs-api.poki.comsa/gameinfo/@sdk?href=",
+          "host": "devs-api.poki.comsa"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
+          "severity": "warning",
+          "ref": "./touchControllerConfig.json"
+        }
+      ],
       "refs_checked": 8,
       "external_refs": 0,
-      "external_critical": 0,
+      "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "balatro",
@@ -1283,19 +1331,26 @@
     },
     {
       "slug": "blumgiracers",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: previewworker.js",
+          "severity": "critical",
+          "ref": "previewworker.js"
+        }
+      ],
       "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "blumgislime",
-      "verdict": "warn",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
@@ -1316,12 +1371,18 @@
           "message": "Optional local file missing: icons/icon-512.png",
           "severity": "warning",
           "ref": "icons/icon-512.png"
+        },
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: previewworker.js",
+          "severity": "critical",
+          "ref": "previewworker.js"
         }
       ],
       "refs_checked": 10,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 3
     },
     {
@@ -2612,13 +2673,21 @@
     },
     {
       "slug": "crossword-puzzles",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host (dynamic JS import): arenacloud.cdn.arkadiumhosted.com",
+          "severity": "warning",
+          "ref": "https://arenacloud.cdn.arkadiumhosted.com/gamesfeeds-blob/remote-configs/appinsights-config/appinsights-config.json",
+          "host": "arenacloud.cdn.arkadiumhosted.com"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
-      "external_critical": 0,
+      "external_critical": 1,
       "critical_misses": 0,
       "warning_misses": 0
     },
@@ -7374,7 +7443,7 @@
     },
     {
       "slug": "minecraft-classic",
-      "verdict": "warn",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
@@ -7408,12 +7477,18 @@
           "message": "CSS-referenced asset missing: /projects/minecraft-classic/assets/textures/background.jpg",
           "severity": "warning",
           "ref": "/projects/minecraft-classic/assets/textures/background.jpg"
+        },
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: assets/js/RandomLevelWorker.js",
+          "severity": "critical",
+          "ref": "assets/js/RandomLevelWorker.js"
         }
       ],
       "refs_checked": 5,
       "external_refs": 1,
       "external_critical": 1,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 4
     },
     {
@@ -10240,14 +10315,21 @@
     },
     {
       "slug": "sparta-hoppers",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: previewworker.js",
+          "severity": "critical",
+          "ref": "previewworker.js"
+        }
+      ],
       "refs_checked": 13,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10930,7 +11012,7 @@
     },
     {
       "slug": "tank-trouble-2",
-      "verdict": "warn",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
@@ -10940,12 +11022,24 @@
           "severity": "warning",
           "ref": "http://www.whatbrowser.org",
           "host": "www.whatbrowser.org"
+        },
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: pathfind.js",
+          "severity": "critical",
+          "ref": "pathfind.js"
+        },
+        {
+          "code": "MISSING_DYNAMIC_IMPORT",
+          "message": "Dynamic JS import target missing: waker.js",
+          "severity": "critical",
+          "ref": "waker.js"
         }
       ],
       "refs_checked": 8,
       "external_refs": 1,
       "external_critical": 1,
-      "critical_misses": 0,
+      "critical_misses": 2,
       "warning_misses": 0
     },
     {
@@ -11003,13 +11097,19 @@
           "message": "Optional local file missing: ./bundle.css",
           "severity": "warning",
           "ref": "./bundle.css"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: ./MyComponent",
+          "severity": "warning",
+          "ref": "./MyComponent"
         }
       ],
       "refs_checked": 6,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 2
     },
     {
       "slug": "terranigma",

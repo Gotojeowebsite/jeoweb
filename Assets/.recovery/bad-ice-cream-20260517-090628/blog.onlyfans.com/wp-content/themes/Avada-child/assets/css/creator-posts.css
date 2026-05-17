@@ -1,0 +1,32 @@
+/* ======================================
+/* Posts: Creator
+/* ====================================== */
+.creator-posts {
+  flex-flow: row wrap;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+.creator-posts li {
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .creator-posts li {
+    min-width: calc(calc(100% / 2) - 20px);
+    max-width: calc(calc(100% / 2) - 20px);
+  }
+}
+
+@media (min-width: 900px) {
+  .creator-posts {
+    gap: 30px
+  }
+
+  .creator-posts li {
+    min-width: calc(calc(100% / 3) - 20px);
+    max-width: calc(calc(100% / 3) - 20px);
+  }
+}

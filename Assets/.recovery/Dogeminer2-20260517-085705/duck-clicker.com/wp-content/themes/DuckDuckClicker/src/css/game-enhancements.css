@@ -1,0 +1,479 @@
+/* QR Code Modal */
+.qr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-background-95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.qr-modal-overlay.active {
+  opacity: 1;
+}
+
+.qr-modal-content {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--primary-color-40), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.qr-modal-overlay.active .qr-modal-content {
+  transform: scale(1);
+}
+
+.qr-modal-icon-container {
+  background: var(--primary-gradient);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 24px var(--primary-color-40);
+}
+
+.qr-modal-icon-container svg {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2;
+}
+
+.qr-modal-title {
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.qr-modal-subtitle {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.qr-modal-qr-container {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 0 0 1.5rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 8px var(--primary-color-10);
+  display: inline-block;
+}
+
+.qr-modal-qr-container img {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+
+.qr-modal-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.qr-modal-copy-btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  background: var(--card-background-10);
+  color: var(--text-color);
+  border: 1px solid var(--card-background-20);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-modal-copy-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  margin-right: 0.5rem;
+}
+
+.qr-modal-copy-btn:hover {
+  background: var(--card-background-15);
+  transform: translateY(-2px);
+}
+
+.qr-modal-copy-btn.copied {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.qr-modal-close-btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  background: var(--primary-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px var(--primary-color-40);
+}
+
+.qr-modal-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--primary-color-50);
+}
+
+/* Report Issue Modal */
+.report-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.report-modal-overlay.active {
+  opacity: 1;
+}
+
+.report-modal-content {
+  background: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.report-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.report-modal-close:hover {
+  color: var(--text-color);
+  background: var(--card-background-60);
+}
+
+.report-modal-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.report-game-title {
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.report-game-title strong {
+  color: var(--text-color);
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.form-control {
+  background: var(--card-background-60);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-20);
+}
+
+.form-control::placeholder {
+  color: var(--text-60);
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.report-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  flex: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: var(--primary-color);
+  color: #ffffff;
+  border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.report-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report-message.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.report-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* Touch Optimized Game Actions */
+@media (max-width: 768px) {
+  .game-action-btn {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .game-actions {
+    gap: 0.75rem;
+  }
+}
+
+/* Mobile Fullscreen Enhancements */
+.game-container:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.game-container:-moz-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.game-container:-ms-fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.game-container:fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.game-frame-wrapper:-webkit-full-screen,
+.game-frame-wrapper:-moz-full-screen,
+.game-frame-wrapper:-ms-fullscreen,
+.game-frame-wrapper:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* Orientation Lock Indicator */
+.orientation-notice {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  z-index: 10000;
+  display: none;
+}
+
+.orientation-notice.active {
+  display: block;
+}
+
+.orientation-notice-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+  .game-container.landscape-only .orientation-notice {
+    display: block;
+  }
+}
+
+/* Report Issue Button Styles */
+#reportIssueBtn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+#reportIssueBtn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* Responsive Modal */
+@media (max-width: 640px) {
+  .report-modal-content {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .report-modal-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .report-buttons {
+    flex-direction: column;
+  }
+
+  .qr-modal-content {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .qr-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .qr-modal-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .qr-modal-qr-container {
+    padding: 1rem;
+  }
+
+  .qr-modal-qr-container img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .qr-modal-buttons {
+    flex-direction: column;
+  }
+
+  .qr-modal-icon-container {
+    width: 48px;
+    height: 48px;
+  }
+}

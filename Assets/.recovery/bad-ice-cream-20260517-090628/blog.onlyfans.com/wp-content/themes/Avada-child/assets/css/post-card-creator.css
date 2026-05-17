@@ -1,0 +1,203 @@
+/* ======================================
+/* Post Card: Creator
+/* ====================================== */
+
+.post-card-creator {
+  height: max-content;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(50% - 1px);
+          flex: 1 1 calc(50% - 1px);
+  -webkit-transition: var(--awb-transition);
+  -o-transition: var(--awb-transition);
+  transition: var(--awb-transition);
+  background: var(--awb-color3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.post-card-creator-image-link {
+  position: relative;
+  display: block;
+}
+
+.post-card-creator .plus-button {
+  --button_gradient_top_color_hover: hsla(var(--awb-color1-h), var(--awb-color1-s), var(--awb-color1-l), calc(var(--awb-color1-a) - 20%));
+  --button_gradient_bottom_color_hover: hsla(var(--awb-color1-h), var(--awb-color1-s), var(--awb-color1-l), calc(var(--awb-color1-a) - 20%));
+  --button_accent_color: var(--awb-color1);
+  --button_accent_hover_color: var(--awb-custom_color_2);
+  --button_border_hover_color: var(--awb-custom_color_1);
+  --button_font_size: 0.875rem;
+  --button_gradient_top_color: hsla(var(--awb-custom_color_2-h), var(--awb-custom_color_2-s), var(--awb-custom_color_2-l), calc(var(--awb-custom_color_2-a) - 50%));
+  --button_gradient_bottom_color: hsla(var(--awb-custom_color_2-h), var(--awb-custom_color_2-s), var(--awb-custom_color_2-l), calc(var(--awb-custom_color_2-a) - 50%));
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px !important;
+  height: 28px;
+  width: 28px;
+}
+
+
+@media (min-width: 950px) {
+  .post-card-creator .plus-button {
+    padding: 5px !important;
+    height: 43px;
+    width: 41px;
+  }
+}
+
+.post-card-creator .plus-button i {
+  color: var(--button_accent_color);
+}
+
+
+.post-card-creator i {
+  margin: 0;
+}
+
+/* content */
+.post-card-creator-content {
+  background: #f2f3f5;
+  text-align: left;
+  padding: 10px;
+}
+
+.post-card-creator-content .button-container .plus-button {
+  display: none;
+}
+
+.creator-name {
+  --minFontSize: 11 !important;
+  --fontSize: 11 !important;
+  font-weight: 500 !important;
+  color: #424323;
+  margin: 0;
+}
+
+.creator-name a,
+.creator-name a:hover {
+  color: inherit;
+}
+
+.creator-subtitle {
+  font-weight: 600;
+  margin: 0;
+}
+
+.post-card-creator-image-link img {
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 212.7px;
+  max-width: 100%;
+  height: auto;
+}
+
+.creator-location,
+.creator-subtitle {
+  margin: 0 !important;
+  color: #8A96A3;
+  font-size: 9px;
+}
+
+.post-card-creator .button-container {
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.creator-button {
+  border-radius: var(--button-border-radius-top-left, 0) var(--button-border-radius-top-right, 0) var(--button-border-radius-bottom-right, 0) var(--button-border-radius-bottom-left, 0);
+  background: var(--awb-color8);
+  line-height: var(--button_line_height, 1);
+  font-size: var(--button_font_size, 14px);
+  max-width: calc(100% / 2);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 26px;
+  padding: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.creator-button--full-width {
+  font-weight: 400;
+  font-size: 11px;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.creator-button,
+.creator-button i::before {
+  color: var(--awb-custom_color_3);
+}
+
+@media (min-width: 375px) {
+  .post-card-creator {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(33% - 1px);
+            flex: 1 1 calc(33% - 1px);
+  }
+}
+
+@media (min-width: 500px) {
+  .creator-name {
+    font-size: 14px !important;
+  }
+
+  .creator-location,
+  .creator-subtitle {
+    font-size: 12px;
+  }
+
+  .post-card-creator .button-container {
+    gap: 8px;
+  }
+
+  .creator-button {
+    min-height: 28px;
+  }
+
+  .creator-button--full-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 950px) {
+  .creator-button:hover {
+    color: var(--button_accent_hover_color, var(--button_accent_color));
+    background: var(--button_gradient_top_color_hover);
+    border-color: var(--button_border_hover_color);
+  }
+}
+
+@media (max-width: 499px) {
+  .creators-index-header {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
+  .creator-button i {
+    font-size: 10px;
+  }
+}

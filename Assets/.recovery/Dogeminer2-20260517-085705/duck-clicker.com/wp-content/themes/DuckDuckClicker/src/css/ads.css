@@ -1,0 +1,40 @@
+/* Ad Container Styles */
+.ad-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-before-game,
+.ad-after-game {
+  margin: 1.5rem 0;
+}
+
+.ad-sidebar {
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.ad-between-games {
+  grid-column: 1 / -1;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .ad-container {
+    margin: 1rem 0;
+    padding: 0.75rem;
+  }
+
+  .ad-sidebar {
+    position: relative;
+    top: 0;
+  }
+}

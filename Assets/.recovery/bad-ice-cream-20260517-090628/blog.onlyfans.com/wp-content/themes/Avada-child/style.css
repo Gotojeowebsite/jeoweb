@@ -1,0 +1,34 @@
+/*
+Theme Name: Avada Child
+Theme URI: https://avada.com/
+Template: Avada
+Author: ThemeFusion
+Author URI: https://themeforest.net/user/ThemeFusion
+Description: The Avada Website Builder is the ultimate design and creation suite. Design Anything, Build Everything, Fast. The #1 selling product of all time on ThemeForest.
+Version: 7.11.9.17198562487
+Updated: 2024-07-01 12:50:47
+
+*/
+
+.blur-up {
+	filter: blur(5px);
+	transition: filter 400ms;
+}
+
+.blur-up.lazyloaded {
+	filter: blur(0);
+}
+
+/*.lqip-enabled {*/
+/*	filter: blur(5px) ;*/
+/*	transition: all 0.5s ease-in-out !important;*/
+/*}*/
+
+/*.lqip-enabled.loaded {*/
+/*	filter: blur(0) !important;*/
+/*	-webkit-filter: blur(0) !important;*/
+/*}*/
+
+.event-card > .fusion-column-wrapper:first-child:hover {
+	background: none !important
+}

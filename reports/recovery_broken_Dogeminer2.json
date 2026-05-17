@@ -1,16 +1,16 @@
 [
   {
-    "name": "Dogeminer2-20260511-235730",
+    "name": "Dogeminer2-20260517-085517",
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 13.55,
+    "elapsed_seconds": 13.554,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:9792/Assets/Dogeminer2-20260511-235730/index.html"
+        "url": "http://localhost:9496/Assets/Dogeminer2-20260517-085517/index.html"
       }
     ],
     "warnings": [],
@@ -18,14 +18,27 @@
       "readyState": "complete",
       "surfaceCount": 0,
       "bodyTextLength": 119,
+      "bodyTextSample": "error response\n\nerror code: 404\n\nmessage: file not found.\n\nerror code explanation: 404 - nothing matches the given uri.",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
       "hasRetroGlobal": false,
       "canvasHash": "",
       "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "ruffleProgressPct": -1,
+      "constructProgressPct": -1,
+      "phaserProgressPct": -1,
       "canvasHashFirst": "",
       "canvasNonzeroPixelsFirst": 0,
       "engineExtraWaitMs": 4000

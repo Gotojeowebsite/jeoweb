@@ -1,0 +1,388 @@
+/**
+ * Post Content Styles
+ * Unified styling for all content areas across the site
+ * Applied to: single games, categories, tags, homepage, and general post content
+ */
+
+/* Content Container */
+.game-description-content,
+.description-content,
+.hero-description-content,
+.category-post-content,
+.post-content,
+.entry-content {
+  color: var(--text-80);
+  line-height: 1.8;
+  font-size: 1rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Paragraphs */
+.game-description-content p,
+.description-content p,
+.hero-description-content p,
+.category-post-content p,
+.post-content p,
+.entry-content p {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.game-description-content p:first-of-type,
+.description-content p:first-of-type,
+.hero-description-content p:first-of-type,
+.category-post-content p:first-of-type,
+.post-content p:first-of-type,
+.entry-content p:first-of-type {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Headings Base */
+.game-description-content h2,
+.description-content h2,
+.hero-description-content h2,
+.category-post-content h2,
+.post-content h2,
+.entry-content h2 {
+  color: var(--text-color);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.game-description-content h3,
+.description-content h3,
+.hero-description-content h3,
+.category-post-content h3,
+.post-content h3,
+.entry-content h3,
+.game-description-content h4,
+.description-content h4,
+.hero-description-content h4,
+.category-post-content h4,
+.post-content h4,
+.entry-content h4 {
+  color: var(--text-color);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.game-description-content h3,
+.description-content h3,
+.hero-description-content h3,
+.category-post-content h3,
+.post-content h3,
+.entry-content h3 {
+  font-size: 1.25rem;
+}
+
+/* H2 Vertical Border */
+.game-description-content h2::before,
+.description-content h2::before,
+.hero-description-content h2::before,
+.category-post-content h2::before,
+.post-content h2::before,
+.entry-content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* Lists */
+.game-description-content ul,
+.description-content ul,
+.hero-description-content ul,
+.category-post-content ul,
+.post-content ul,
+.entry-content ul,
+.game-description-content ol,
+.description-content ol,
+.hero-description-content ol,
+.category-post-content ol,
+.post-content ol,
+.entry-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.game-description-content ul li,
+.description-content ul li,
+.hero-description-content ul li,
+.category-post-content ul li,
+.post-content ul li,
+.entry-content ul li,
+.game-description-content ol li,
+.description-content ol li,
+.hero-description-content ol li,
+.category-post-content ol li,
+.post-content ol li,
+.entry-content ol li {
+  margin-bottom: 0.875rem;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.7;
+}
+
+/* Unordered List Icons */
+.game-description-content ul li::before,
+.description-content ul li::before,
+.hero-description-content ul li::before,
+.category-post-content ul li::before,
+.post-content ul li::before,
+.entry-content ul li::before {
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* Ordered Lists */
+.game-description-content ol,
+.description-content ol,
+.hero-description-content ol,
+.category-post-content ol,
+.post-content ol,
+.entry-content ol {
+  counter-reset: content-counter;
+}
+
+.game-description-content ol li,
+.description-content ol li,
+.hero-description-content ol li,
+.category-post-content ol li,
+.post-content ol li,
+.entry-content ol li {
+  counter-increment: content-counter;
+}
+
+.game-description-content ol li::before,
+.description-content ol li::before,
+.hero-description-content ol li::before,
+.category-post-content ol li::before,
+.post-content ol li::before,
+.entry-content ol li::before {
+  content: counter(content-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Formatting */
+.game-description-content strong,
+.description-content strong,
+.hero-description-content strong,
+.category-post-content strong,
+.post-content strong,
+.entry-content strong,
+.game-description-content b,
+.description-content b,
+.hero-description-content b,
+.category-post-content b,
+.post-content b,
+.entry-content b {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.game-description-content em,
+.description-content em,
+.hero-description-content em,
+.category-post-content em,
+.post-content em,
+.entry-content em,
+.game-description-content i,
+.description-content i,
+.hero-description-content i,
+.category-post-content i,
+.post-content i,
+.entry-content i {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Links */
+.game-description-content a,
+.description-content a,
+.hero-description-content a,
+.category-post-content a,
+.post-content a,
+.entry-content a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.game-description-content a:hover,
+.description-content a:hover,
+.hero-description-content a:hover,
+.category-post-content a:hover,
+.post-content a:hover,
+.entry-content a:hover {
+  color: var(--secondary-color);
+}
+
+/* Blockquotes */
+.game-description-content blockquote,
+.description-content blockquote,
+.hero-description-content blockquote,
+.category-post-content blockquote,
+.post-content blockquote,
+.entry-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-60);
+}
+
+/* Code Blocks */
+.game-description-content code,
+.description-content code,
+.hero-description-content code,
+.category-post-content code,
+.post-content code,
+.entry-content code {
+  background: var(--card-background-20);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.game-description-content pre,
+.description-content pre,
+.hero-description-content pre,
+.category-post-content pre,
+.post-content pre,
+.entry-content pre {
+  background: var(--card-background-20);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.game-description-content pre code,
+.description-content pre code,
+.hero-description-content pre code,
+.category-post-content pre code,
+.post-content pre code,
+.entry-content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Tables */
+.game-description-content table,
+.description-content table,
+.hero-description-content table,
+.category-post-content table,
+.post-content table,
+.entry-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.game-description-content table th,
+.description-content table th,
+.hero-description-content table th,
+.category-post-content table th,
+.post-content table th,
+.entry-content table th,
+.game-description-content table td,
+.description-content table td,
+.hero-description-content table td,
+.category-post-content table td,
+.post-content table td,
+.entry-content table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.game-description-content table th,
+.description-content table th,
+.hero-description-content table th,
+.category-post-content table th,
+.post-content table th,
+.entry-content table th {
+  background: var(--card-background-20);
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Images */
+.game-description-content img,
+.description-content img,
+.hero-description-content img,
+.category-post-content img,
+.post-content img,
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-description-content,
+  .description-content,
+  .hero-description-content,
+  .category-post-content,
+  .post-content,
+  .entry-content {
+    font-size: 0.9375rem;
+  }
+
+  .game-description-content p:first-of-type,
+  .description-content p:first-of-type,
+  .hero-description-content p:first-of-type,
+  .category-post-content p:first-of-type,
+  .post-content p:first-of-type,
+  .entry-content p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .game-description-content h2,
+  .description-content h2,
+  .hero-description-content h2,
+  .category-post-content h2,
+  .post-content h2,
+  .entry-content h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .game-description-content h3,
+  .description-content h3,
+  .hero-description-content h3,
+  .category-post-content h3,
+  .post-content h3,
+  .entry-content h3 {
+    font-size: 1.125rem;
+  }
+}
