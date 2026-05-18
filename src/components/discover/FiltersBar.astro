@@ -10,8 +10,18 @@ import Icon from '../Icon.astro';
 			placeholder="Search games — try 'minecraft' or 'platformer'"
 			autocomplete="off"
 			spellcheck="false"
+			aria-label="Search games"
 		/>
-		<kbd class="kbd-inline">/</kbd>
+		<button
+			type="button"
+			id="grid-search-clear"
+			class="filter-search-clear"
+			aria-label="Clear search"
+			hidden
+		>
+			<Icon name="x" size={14} />
+		</button>
+		<kbd class="kbd-inline" aria-hidden="true">/</kbd>
 	</label>
 	<div class="filter-types" role="group" aria-label="Filter by type">
 		<button class="seg-btn is-active" data-type="all">All</button>
@@ -90,6 +100,24 @@ import Icon from '../Icon.astro';
 		font-size: var(--text-sm);
 	}
 	.filter-search input::placeholder { color: var(--fg-2); }
+	/* Hide the WebKit/Safari native ✕ — we render our own that respects the
+	   token system and the empty-state of the search. */
+	.filter-search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+	.filter-search-clear {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 22px;
+		height: 22px;
+		border-radius: var(--radius-pill);
+		background: transparent;
+		color: var(--fg-2);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.filter-search-clear:hover { background: var(--bg-2); color: var(--fg-0); }
+
 	.kbd-inline {
 		font-family: var(--font-mono);
 		font-size: 11px;

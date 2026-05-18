@@ -141,6 +141,7 @@ if (wrap) {
 	const sentinel = wrap.querySelector<HTMLElement>('#grid-sentinel');
 
 	const searchInput = document.querySelector<HTMLInputElement>('#grid-search');
+	const searchClear = document.querySelector<HTMLButtonElement>('#grid-search-clear');
 	const typeButtons = document.querySelectorAll<HTMLButtonElement>('.filter-types .seg-btn');
 	const densityButtons = document.querySelectorAll<HTMLButtonElement>('.density-toggle .density-btn');
 	const sortSelect = document.querySelector<HTMLSelectElement>('#grid-sort');
@@ -279,23 +280,36 @@ if (wrap) {
 	if (sentinel) sentinel.remove();
 
 	// ---- Wire up handlers ----------------------------------------------------
+	function syncSearchUi() {
+		if (searchClear) searchClear.hidden = !searchInput?.value;
+	}
+
+	function clearSearch() {
+		if (!searchInput) return;
+		searchInput.value = '';
+		query = '';
+		if (sort === 'random') randomSeed = null;
+		syncSearchUi();
+		render();
+		searchInput.focus();
+	}
+
 	// Search is cheap on 600 rows — no debounce, every keystroke runs.
 	searchInput?.addEventListener('input', () => {
 		query = searchInput.value;
 		// Clear stable shuffle when the underlying filter changes.
 		if (sort === 'random') randomSeed = null;
+		syncSearchUi();
 		render();
 	});
 	// Allow Escape inside the search field to clear quickly.
 	searchInput?.addEventListener('keydown', e => {
 		if (e.key === 'Escape' && searchInput.value) {
 			e.stopPropagation();
-			searchInput.value = '';
-			query = '';
-			if (sort === 'random') randomSeed = null;
-			render();
+			clearSearch();
 		}
 	});
+	searchClear?.addEventListener('click', clearSearch);
 
 	typeButtons.forEach(btn => {
 		btn.addEventListener('click', () => {
@@ -350,6 +364,7 @@ if (wrap) {
 		if (qParam && searchInput) {
 			searchInput.value = qParam;
 			query = qParam;
+			syncSearchUi();
 		}
 	} catch (_) {}
 
