@@ -78,7 +78,14 @@ const ribbon = isBroken
 	</div>
 </a>
 
-<style>
+<!--
+	Card styles are intentionally GLOBAL: grid-runtime.ts materializes
+	cards at runtime (no data-astro-cid attribute on those nodes), and
+	we need the SSR and runtime cards to look identical. Class names
+	used here are namespaced enough (card, card-cover, card-fav, …)
+	to not collide with anything else in the codebase.
+-->
+<style is:global>
 	.card {
 		display: flex;
 		flex-direction: column;
@@ -86,9 +93,19 @@ const ribbon = isBroken
 		color: var(--fg-0);
 		text-decoration: none;
 		isolation: isolate;
+		border-radius: var(--radius-lg);
 		/* Transform is owned by .fx-tilt utility — don't double-apply here. */
 	}
 	.card:hover { color: var(--fg-0); }
+	/* Override the reset's tiny outline — focus glows the cover, which has
+	   the real visual boundary the user is targeting. Also pause the tilt
+	   so the ring stays axis-aligned (rotated outlines look broken). */
+	.card:focus-visible { outline: none; }
+	.card:focus-visible .card-cover {
+		border-color: var(--accent);
+		box-shadow: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent), var(--shadow-2);
+	}
+	.card:focus-visible.fx-tilt { transform: none; }
 
 	.card-cover {
 		position: relative;

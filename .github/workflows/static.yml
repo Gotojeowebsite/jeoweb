@@ -43,6 +43,13 @@ jobs:
       - name: Generate games list
         run: node scan.js
 
+      - name: Verify catalog parity
+        # Fails the build if any game folder (with an HTML entrypoint) is
+        # missing from games_list.json — the silent "game disappears from
+        # the grid" class of bug. Orphan partial-import folders are logged
+        # but don't fail.
+        run: node scripts/verify-catalog-parity.mjs
+
       - name: Static health scan
         run: node scripts/static-health-scan.js
 

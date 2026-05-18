@@ -10,8 +10,18 @@ import Icon from '../Icon.astro';
 			placeholder="Search games — try 'minecraft' or 'platformer'"
 			autocomplete="off"
 			spellcheck="false"
+			aria-label="Search games"
 		/>
-		<kbd class="kbd-inline">/</kbd>
+		<button
+			type="button"
+			id="grid-search-clear"
+			class="filter-search-clear"
+			aria-label="Clear search"
+			hidden
+		>
+			<Icon name="x" size={14} />
+		</button>
+		<kbd class="kbd-inline" aria-hidden="true">/</kbd>
 	</label>
 	<div class="filter-types" role="group" aria-label="Filter by type">
 		<button class="seg-btn is-active" data-type="all">All</button>
@@ -26,7 +36,7 @@ import Icon from '../Icon.astro';
 		</button>
 	</div>
 	<div class="filter-meta">
-		<button class="btn btn--secondary btn--sm" id="surprise-me" type="button" data-tooltip="Pick a random visible game">
+		<button class="btn btn--secondary btn--sm" id="surprise-me" type="button" data-tooltip="Pick a random game from the current filter">
 			<Icon name="dice" size={14} />Surprise me
 		</button>
 		<select class="filter-select" id="grid-sort" aria-label="Sort order">
@@ -35,6 +45,10 @@ import Icon from '../Icon.astro';
 			<option value="za">Z → A</option>
 			<option value="random">Random</option>
 		</select>
+		<label class="filter-maintenance" title="Reveal games flagged for maintenance">
+			<input id="grid-maintenance" type="checkbox" />
+			<span>Show maintenance</span>
+		</label>
 		<div class="density-toggle" role="group" aria-label="View density">
 			<button class="density-btn is-active" data-density="comfy" aria-label="Comfortable grid">Comfy</button>
 			<button class="density-btn" data-density="dense" aria-label="Dense grid">Dense</button>
@@ -86,6 +100,24 @@ import Icon from '../Icon.astro';
 		font-size: var(--text-sm);
 	}
 	.filter-search input::placeholder { color: var(--fg-2); }
+	/* Hide the WebKit/Safari native ✕ — we render our own that respects the
+	   token system and the empty-state of the search. */
+	.filter-search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+	.filter-search-clear {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 22px;
+		height: 22px;
+		border-radius: var(--radius-pill);
+		background: transparent;
+		color: var(--fg-2);
+		cursor: pointer;
+		transition: background var(--motion-fast), color var(--motion-fast);
+	}
+	.filter-search-clear:hover { background: var(--bg-2); color: var(--fg-0); }
+
 	.kbd-inline {
 		font-family: var(--font-mono);
 		font-size: 11px;
@@ -139,6 +171,22 @@ import Icon from '../Icon.astro';
 		font-size: var(--text-sm);
 		cursor: pointer;
 	}
+	.filter-maintenance {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		user-select: none;
+	}
+	.filter-maintenance input { accent-color: var(--accent); cursor: pointer; }
+	.filter-maintenance:hover { color: var(--fg-0); }
+
 	.density-toggle {
 		display: inline-flex;
 		gap: 2px;

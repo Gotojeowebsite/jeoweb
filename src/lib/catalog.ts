@@ -67,9 +67,24 @@ function loadJson<T>(relative: string, fallback: T): T {
 	}
 }
 
+/** Build-time guard: refuse to ship an empty catalog. A run of scan.js
+ *  that drops the catalog would otherwise silently deploy a blank site. */
+function assertNonEmpty<T>(items: T[], file: string): T[] {
+	if (!items.length) {
+		throw new Error(
+			`catalog: ${file} is empty. Refusing to build a blank site. ` +
+			`Run \`node scan.js\` and confirm games_list.json has entries before retrying.`
+		);
+	}
+	return items;
+}
+
 export function getAllGames(): Game[] {
 	if (!_games) {
-		const raw = loadJson<Array<Partial<Game> & { type?: RawGameType }>>('games_list.json', []);
+		const raw = assertNonEmpty(
+			loadJson<Array<Partial<Game> & { type?: RawGameType }>>('games_list.json', []),
+			'games_list.json',
+		);
 		const health = getHealth();
 		_games = raw.map((g) => {
 			const name = g.name ?? 'Unknown';

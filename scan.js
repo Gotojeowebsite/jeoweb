@@ -362,11 +362,14 @@ function scan() {
 
 		const folderPath = path.join(ASSETS_DIR, it.name);
 
-		// Find any .html file in the folder (prefer index.html)
+		// Find any .htm(l) entrypoint (prefer index.htm[l]). Some legacy
+		// imports ship with just `index.htm` — accepting both spellings
+		// keeps them in the catalog instead of silently dropping them.
 		const files = fs.readdirSync(folderPath);
-		const htmlFiles = files.filter(f => f.toLowerCase().endsWith('.html'));
+		const htmlFiles = files.filter(f => /\.html?$/i.test(f));
 		if (htmlFiles.length === 0) continue;
-		const htmlFile = htmlFiles.find(f => f.toLowerCase() === 'index.html') || htmlFiles[0];
+		const htmlFile =
+			htmlFiles.find(f => /^index\.html?$/i.test(f)) || htmlFiles[0];
 
 		const image = findImage(folderPath, it.name);
 		const htmlFilePath = path.join(folderPath, htmlFile);

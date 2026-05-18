@@ -7,9 +7,10 @@
  * `--copy` mode: hard copies for CI — GitHub Pages doesn't follow symlinks,
  * so the deploy artifact must contain real files.
  */
-import { existsSync, symlinkSync, lstatSync, unlinkSync, cpSync, statSync, copyFileSync } from 'node:fs';
+import { existsSync, symlinkSync, lstatSync, unlinkSync, cpSync, statSync, copyFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = resolve(ROOT, 'dist');
@@ -86,3 +87,23 @@ function stageFile(name) {
 
 for (const d of DIRS) stageDir(d);
 for (const f of FILES) stageFile(f);
+
+// Stamp the service worker with a build hash so every deploy invalidates
+// stale caches. Hash inputs are the SW source, the catalog JSONs, and the
+// commit SHA when present — any of those changing means clients should
+// drop their old cache and refetch.
+const SW_PATH = resolve(DIST, 'sw.js');
+if (existsSync(SW_PATH)) {
+	const swSource = readFileSync(SW_PATH, 'utf8');
+	const hash = createHash('sha256');
+	hash.update(swSource);
+	for (const f of ['games_list.json', 'game_health.json']) {
+		const p = resolve(ROOT, f);
+		if (existsSync(p)) hash.update(readFileSync(p));
+	}
+	hash.update(process.env.GITHUB_SHA ?? process.env.COMMIT_SHA ?? new Date().toISOString().slice(0, 10));
+	const version = hash.digest('hex').slice(0, 12);
+	const stamped = swSource.replace(/__BUILD_VERSION__/g, version);
+	writeFileSync(SW_PATH, stamped);
+	console.log(`[link-assets] stamped sw.js cache version: ${version}`);
+}
