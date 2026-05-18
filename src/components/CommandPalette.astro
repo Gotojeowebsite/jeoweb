@@ -22,7 +22,7 @@ const games = getAllGames().map((g) => ({
 }));
 ---
 
-<CommandPalette games={games} client:idle />
+<CommandPalette games={games} client:load />
 
 <style is:global>
 	.jeo-cmdk-backdrop {

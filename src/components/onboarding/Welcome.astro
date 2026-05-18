@@ -7,8 +7,9 @@
  * (not `client:idle`) so the modal never paints before its onClick
  * handlers are wired up — under `client:idle` the SSR'd modal would
  * appear immediately but stay dead until the browser hit an idle frame,
- * which on the 596-game homepage could be delayed indefinitely and
- * trap users behind unresponsive Next/Skip buttons.
+ * which on a heavy homepage (hundreds of game cards loading images)
+ * could be delayed indefinitely and trap users behind unresponsive
+ * Next/Skip buttons.
  */
 import { getAllGames, gameSlug } from '../../lib/catalog';
 import Welcome from './Welcome.island.tsx';
