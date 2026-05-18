@@ -3,9 +3,15 @@ import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/reset.css';
 import '../styles/chrome.css';
+import '../styles/motion.css';
+import '../styles/mascot.css';
+import '../styles/cursor.css';
+import { ClientRouter } from 'astro:transitions';
 import TopBar from '../components/chrome/TopBar.astro';
 import Footer from '../components/chrome/Footer.astro';
 import CommandPalette from '../components/CommandPalette.astro';
+import StickyResume from '../components/play/StickyResume.astro';
+import AchievementToast from '../components/achievement/AchievementToast.astro';
 
 type NavCurrent = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
 
@@ -52,6 +58,8 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 	<link rel="icon" href="/icon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" href="/icon.svg" />
 
+	<ClientRouter />
+
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Jeo" />
@@ -68,18 +76,36 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={ogImageAbsolute} />
 
-	<!-- Theme bootstrap. Inline, pre-paint, no flash. -->
+	<!-- Theme + accent bootstrap. Inline, pre-paint, no flash. Reads the
+	     unified jeo-prefs-v1 bag first; falls back to the legacy single
+	     keys so visitors who only used the old SPA carry their settings
+	     through the cutover. -->
 	<script is:inline>
 		(function () {
 			try {
-				var stored = localStorage.getItem('jeo-theme');
-				if (stored === 'light' || stored === 'dark') {
-					document.documentElement.setAttribute('data-theme', stored);
+				var theme = null, accent = null;
+				var raw = localStorage.getItem('jeo-prefs-v1');
+				if (raw) {
+					var p = JSON.parse(raw);
+					if (p && p.v === 1) {
+						if (p.theme === 'light' || p.theme === 'dark') theme = p.theme;
+						if (p.accent && /^#[0-9a-f]{6}$/i.test(p.accent)) accent = p.accent;
+					}
+				}
+				if (!theme) {
+					var legacy = localStorage.getItem('jeo-theme') || localStorage.getItem('site-theme');
+					if (legacy === 'light' || legacy === 'dark') theme = legacy;
+				}
+				if (!accent) {
+					var legacyA = localStorage.getItem('jeo-accent') || localStorage.getItem('site-accent');
+					if (legacyA && /^#[0-9a-f]{6}$/i.test(legacyA)) accent = legacyA;
+				}
+				if (theme) {
+					document.documentElement.setAttribute('data-theme', theme);
 				} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
 					document.documentElement.setAttribute('data-theme', 'light');
 				}
-				var accent = localStorage.getItem('jeo-accent');
-				if (accent && /^#[0-9a-f]{6}$/i.test(accent)) {
+				if (accent) {
 					document.documentElement.style.setProperty('--accent', accent);
 				}
 			} catch (_) {}
@@ -98,10 +124,18 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 	</main>
 	<Footer />
 	<CommandPalette />
+	<StickyResume />
+	<AchievementToast />
 
 	<script>
-		// Theme toggle — minimal client glue. The full settings live in the Settings sheet.
-		// Theme toggle — flip data-theme, swap icon, label, and persist.
+		import { setPref, readPrefs } from '../lib/storage';
+		import '../scripts/motion';
+		import '../scripts/transitions';
+		import '../scripts/sound-bindings';
+		import '../scripts/achievement-bindings';
+		import '../scripts/sw-register';
+
+		// Theme toggle — flip data-theme, swap icon, label, and persist via storage.ts.
 		const toggle = document.getElementById('theme-toggle');
 		const SUN  = '<path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/><circle cx="12" cy="12" r="4"/>';
 		const MOON = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
@@ -117,19 +151,18 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 			const cur = document.documentElement.getAttribute('data-theme') ?? 'dark';
 			const next = cur === 'dark' ? 'light' : 'dark';
 			document.documentElement.setAttribute('data-theme', next);
-			try { localStorage.setItem('jeo-theme', next); } catch (_) {}
+			setPref('theme', next);
 			reflectTheme();
 		});
 
-		// ⌘K / Ctrl-K — the CommandPalette island also listens for this and
-		// will preventDefault. This legacy stub still routes the top-bar
-		// search button click for users on devices without keyboard
-		// shortcuts (e.g. when they tap the search button explicitly).
+		// Cmd-K trigger from the top bar's search button.
 		document.getElementById('topbar-search')?.addEventListener('click', () => {
-			// Dispatch a synthetic cmd-k so the palette opens.
 			document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
 			window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
 		});
+
+		// Touch the prefs cache so legacy keys migrate on first paint.
+		readPrefs();
 	</script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 ---
 import Icon from '../Icon.astro';
+import Jeo from '../mascot/Jeo.astro';
 import { getCatalogStats } from '../../lib/catalog';
 
 const stats = getCatalogStats();
@@ -81,16 +82,31 @@ const cols = [
 				</a>
 			</div>
 		</div>
-		<div class="footer-rule">© {year} Jeo · Made for keeping the boredom out.</div>
+		<div class="footer-rule">© {year} Jeo · Made with Jeo's full attention.</div>
+	</div>
+	<div class="footer-mascot" aria-hidden="true">
+		<Jeo pose="wave" size={92} />
 	</div>
 </footer>
 
 <style>
 	.site-footer {
+		position: relative;
 		margin-top: var(--space-12);
 		padding: var(--space-10) var(--space-5) var(--space-7);
 		background: var(--bg-1);
 		border-top: 1px solid var(--line-1);
+	}
+	.footer-mascot {
+		position: absolute;
+		right: var(--space-7);
+		bottom: var(--space-5);
+		pointer-events: none;
+		opacity: 0.95;
+	}
+	@media (max-width: 760px) {
+		.footer-mascot { right: var(--space-4); bottom: var(--space-3); }
+		.footer-mascot .jeo-mascot { --jeo-size: 64px; }
 	}
 	.footer-inner {
 		max-width: var(--max-w-content);

@@ -12,12 +12,12 @@ for (const g of games) {
 	const v = health[slug];
 	const verdict = v?.verdict ?? (g.status === 'broken' ? 'broken' : g.status === 'maintenance' ? 'maintenance' : 'unverified');
 	if (verdict === 'broken' || verdict === 'maintenance') {
-		broken.push({ name: g.name, slug, verdict, checked: v?.lastChecked });
+		broken.push({ name: g.name, slug, verdict, checked: v?.last_verified_at != null ? String(v.last_verified_at) : undefined });
 	}
 	(buckets as Record<string, number>)[verdict] = ((buckets as Record<string, number>)[verdict] ?? 0) + 1;
 }
 broken.sort((a, b) => a.name.localeCompare(b.name));
-const lastCheckedAny = Object.values(health).map(h => h.lastChecked).filter(Boolean).sort().pop();
+const lastCheckedAny = Object.values(health).map(h => h.last_verified_at).filter(Boolean).sort().pop();
 ---
 <Site title="Catalog status" description="Live health status of every game on Jeo.">
 	<div class="content-wrap">

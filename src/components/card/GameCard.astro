@@ -29,8 +29,8 @@ const ribbon = isBroken
 	: null;
 ---
 <a
-	class:list={['card', { 'card--compact': compact }, variantClass]}
-	href={`/game/${slug}`}
+	class:list={['card', 'fx-tilt', 'fx-ripple', { 'card--compact': compact }, variantClass]}
+	href={`/play/${slug}`}
 	data-slug={slug}
 	data-name={game.name}
 	data-type={game.type}
@@ -85,10 +85,10 @@ const ribbon = isBroken
 		gap: var(--space-2);
 		color: var(--fg-0);
 		text-decoration: none;
-		transition: transform var(--motion-fast) var(--ease-out-soft);
 		isolation: isolate;
+		/* Transform is owned by .fx-tilt utility — don't double-apply here. */
 	}
-	.card:hover { color: var(--fg-0); transform: translateY(-2px); }
+	.card:hover { color: var(--fg-0); }
 
 	.card-cover {
 		position: relative;

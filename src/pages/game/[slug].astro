@@ -68,7 +68,7 @@ const jsonLd = [
 
 const verdictUi: { tone: 'ok' | 'warn' | 'bad' | 'mute'; label: string } =
 	verdict?.verdict === 'healthy'
-		? { tone: 'ok',   label: `Verified ${timeAgo(verdict.lastChecked)}` }
+		? { tone: 'ok',   label: `Verified ${timeAgo(verdict.last_verified_at != null ? new Date(verdict.last_verified_at * 1000).toISOString() : undefined)}` }
 		: verdict?.verdict === 'broken'
 		? { tone: 'bad',  label: 'Currently broken' }
 		: verdict?.verdict === 'maintenance'

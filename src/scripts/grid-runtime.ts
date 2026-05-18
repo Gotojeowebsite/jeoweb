@@ -65,8 +65,8 @@ if (wrap) {
 				? '<rect width="22" height="14" x="1" y="5" rx="4" fill="currentColor"/>'
 				: '<circle cx="12" cy="12" r="3" fill="currentColor"/>';
 		const a = document.createElement('a');
-		a.className = 'card' + (isBroken ? ' card--broken' : '');
-		a.href = `/game/${slug}`;
+		a.className = 'card fx-tilt fx-ripple' + (isBroken ? ' card--broken' : '');
+		a.href = `/play/${slug}`;
 		a.dataset.slug = slug;
 		a.dataset.name = g.name;
 		a.dataset.type = g.type;

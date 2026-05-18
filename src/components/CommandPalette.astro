@@ -10,12 +10,15 @@
 import { getAllGames, gameSlug } from '../lib/catalog';
 import CommandPalette from './CommandPalette.island.tsx';
 
+// PaletteGame.status doesn't allow 'unknown' — coerce it away.
+type PaletteStatus = 'broken' | 'maintenance' | 'unverified' | 'probable_broken' | 'healthy';
+const KNOWN: PaletteStatus[] = ['broken', 'maintenance', 'unverified', 'probable_broken', 'healthy'];
 const games = getAllGames().map((g) => ({
 	slug: gameSlug(g),
 	name: g.name,
 	type: g.type,
 	tags: g.tags ?? [],
-	status: g.status,
+	status: (KNOWN as readonly string[]).includes(g.status as string) ? (g.status as PaletteStatus) : undefined,
 }));
 ---
 

@@ -1,0 +1,17 @@
+---
+import Jeo, { type JeoPose } from './Jeo.astro';
+
+interface Props {
+	pose?: JeoPose;
+	size?: number;
+	bobbing?: boolean;
+	class?: string;
+}
+const { pose = 'wave', size = 96, bobbing = true, class: className = '' } = Astro.props;
+---
+<div class={`jeo-bubble ${className}`.trim()}>
+	<Jeo pose={pose} size={size} bobbing={bobbing} />
+	<div class="jeo-bubble__text">
+		<slot />
+	</div>
+</div>

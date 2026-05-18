@@ -33,6 +33,13 @@ const nav: { id: NavId; href: string; label: string }[] = [
 			</nav>
 		</div>
 		<div class="topbar-right">
+			<a class="topbar-streak" id="topbar-streak" href="/profile" hidden aria-label="Play streak">
+				<span class="topbar-streak__flame" aria-hidden="true">
+					<Icon name="flame" size={14} />
+				</span>
+				<span class="topbar-streak__count" id="topbar-streak-count">0</span>
+				<span class="topbar-streak__unit">d</span>
+			</a>
 			<button class="topbar-search-trigger" id="topbar-search" type="button" aria-label="Search games">
 				<Icon name="search" size={16} />
 				<span>Search…</span>
@@ -41,12 +48,12 @@ const nav: { id: NavId; href: string; label: string }[] = [
 			<button class="topbar-icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
 				<Icon name="moon" size={18} />
 			</button>
-			<button class="topbar-icon-btn" id="settings-trigger" type="button" aria-label="Settings">
+			<a class="topbar-icon-btn" href="/settings" aria-label="Settings">
 				<Icon name="settings" size={18} />
-			</button>
-			<a class="topbar-account" href="/login">
+			</a>
+			<a class="topbar-account" href="/profile">
 				<Icon name="user" size={16} />
-				<span>Sign in</span>
+				<span>Profile</span>
 			</a>
 		</div>
 	</div>
@@ -164,11 +171,57 @@ const nav: { id: NavId; href: string; label: string }[] = [
 	}
 	.topbar-account:hover { filter: brightness(1.1); color: var(--accent-fg); }
 
+	.topbar-streak {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-pill);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		transition: border-color var(--motion-fast), color var(--motion-fast);
+	}
+	.topbar-streak:hover { border-color: var(--semantic-warn); color: var(--fg-0); }
+	.topbar-streak[hidden] { display: none; }
+	.topbar-streak__flame {
+		display: inline-flex;
+		color: var(--semantic-warn);
+	}
+	.topbar-streak__unit {
+		font-weight: var(--weight-medium);
+		color: var(--fg-2);
+	}
+
 	@media (max-width: 880px) {
 		.topbar-nav { display: none; }
 		.topbar-search-trigger span, .topbar-search-trigger .kbd { display: none; }
 		.topbar-search-trigger { min-width: 0; padding: var(--space-2); }
 		.topbar-account span { display: none; }
 		.topbar-account { padding: var(--space-2); }
+		.topbar-streak__unit { display: none; }
 	}
 </style>
+
+<script>
+	import { current as currentStreak } from '../../lib/streaks';
+
+	function paint() {
+		const chip = document.getElementById('topbar-streak');
+		const count = document.getElementById('topbar-streak-count');
+		if (!chip || !count) return;
+		const s = currentStreak();
+		if (s <= 0) { chip.hidden = true; return; }
+		chip.hidden = false;
+		count.textContent = String(s);
+		chip.setAttribute(
+			'title',
+			s === 1 ? '1-day streak. Tomorrow makes two.' : `${s}-day streak. Don't break it.`,
+		);
+	}
+	paint();
+	window.addEventListener('jeo:streak-update', paint);
+	document.addEventListener('astro:page-load', paint);
+</script>

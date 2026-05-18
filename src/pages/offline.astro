@@ -1,0 +1,45 @@
+---
+import Site from '../layouts/Site.astro';
+import Jeo from '../components/mascot/Jeo.astro';
+import Icon from '../components/Icon.astro';
+import { OFFLINE } from '../lib/voice';
+---
+<Site title="Offline" description="Jeo is offline — your favorites and recents are still here.">
+	<div class="content-wrap offline">
+		<div class="offline-shell fx-rise">
+			<Jeo pose="sleep" size={160} />
+			<h1>{OFFLINE.headline}</h1>
+			<p>{OFFLINE.body}</p>
+			<button class="btn btn--primary fx-ripple" id="offline-retry" type="button">
+				<Icon name="refresh" size={14} />Try again
+			</button>
+		</div>
+	</div>
+</Site>
+
+<script>
+	document.getElementById('offline-retry')?.addEventListener('click', () => {
+		window.location.reload();
+	});
+</script>
+
+<style>
+	.offline { min-height: 60dvh; display: grid; place-items: center; }
+	.offline-shell {
+		max-width: 480px;
+		padding: var(--space-9) var(--space-6);
+		text-align: center;
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-2xl);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-4);
+	}
+	.offline h1 {
+		font-size: var(--text-h2);
+		letter-spacing: -0.02em;
+	}
+	.offline p { color: var(--fg-1); }
+</style>

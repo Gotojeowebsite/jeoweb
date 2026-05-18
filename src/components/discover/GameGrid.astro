@@ -1,5 +1,7 @@
 ---
 import GameCard from '../card/GameCard.astro';
+import Jeo from '../mascot/Jeo.astro';
+import { EMPTY_SEARCH } from '../../lib/voice';
 import type { Game } from '../../lib/catalog';
 
 interface Props {
@@ -32,7 +34,8 @@ const total = games.length;
 	</div>
 	<div class="grid-sentinel" id="grid-sentinel" aria-hidden="true"></div>
 	<div class="grid-empty" id="grid-empty" hidden>
-		<p>No games match your search.</p>
+		<Jeo pose="peek" size={96} />
+		<p>{EMPTY_SEARCH[0]}</p>
 	</div>
 </div>
 
@@ -62,6 +65,10 @@ const total = games.length;
 		border: 1px dashed var(--line-1);
 		border-radius: var(--radius-xl);
 		margin-top: var(--space-5);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-3);
 	}
 	@media (max-width: 540px) {
 		.grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }

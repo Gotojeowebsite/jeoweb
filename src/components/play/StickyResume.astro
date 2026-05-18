@@ -1,0 +1,113 @@
+---
+/**
+ * Sticky "Continue where you left off" pill. Hidden by default; renders
+ * client-side from localStorage('jeo-recent'). Suppresses on /play/* via
+ * body.play-body styles. Auto-hides if last play was <2 min ago (you're
+ * still there) or >30 days (probably stale).
+ */
+import Icon from '../Icon.astro';
+---
+<a class="sticky-resume" id="stickyResume" href="#" hidden aria-label="Continue playing">
+	<span class="sticky-resume__cover" id="stickyResumeCover" aria-hidden="true"></span>
+	<span class="sticky-resume__meta">
+		<span class="sticky-resume__eyebrow">Continue</span>
+		<span class="sticky-resume__name" id="stickyResumeName"></span>
+	</span>
+	<span class="sticky-resume__icon" aria-hidden="true">
+		<Icon name="play" size={16} />
+	</span>
+</a>
+
+<script>
+	type Recent = { slug: string; name: string; image: string | null; lastPlayed: number };
+
+	function read(): Recent | null {
+		try {
+			const raw = localStorage.getItem('jeo-recent');
+			if (!raw) return null;
+			const arr = JSON.parse(raw) as Recent[];
+			if (!Array.isArray(arr) || !arr.length) return null;
+			return arr[0];
+		} catch { return null; }
+	}
+
+	const TWO_MIN = 2 * 60 * 1000;
+	const THIRTY_DAYS = 30 * 86_400_000;
+
+	function render() {
+		const pill  = document.getElementById('stickyResume') as HTMLAnchorElement | null;
+		const cover = document.getElementById('stickyResumeCover');
+		const name  = document.getElementById('stickyResumeName');
+		if (!pill || !cover || !name) return;
+		const r = read();
+		if (!r) { pill.hidden = true; return; }
+		const age = Date.now() - (r.lastPlayed ?? 0);
+		if (age < TWO_MIN || age > THIRTY_DAYS) { pill.hidden = true; return; }
+		pill.hidden = false;
+		pill.href = `/play/${r.slug}`;
+		name.textContent = r.name;
+		if (r.image) cover.style.backgroundImage = `url('/${r.image}')`;
+	}
+
+	render();
+	document.addEventListener('astro:page-load', render);
+</script>
+
+<style is:global>
+	.sticky-resume {
+		position: fixed;
+		bottom: var(--space-5);
+		right: var(--space-5);
+		z-index: var(--z-sticky);
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: 6px var(--space-4) 6px 6px;
+		background: var(--bg-1);
+		border: 1px solid var(--line-2);
+		border-radius: var(--radius-pill);
+		box-shadow: var(--shadow-3);
+		color: var(--fg-0);
+		text-decoration: none;
+		transition: transform var(--motion-fast) var(--ease-out-soft), border-color var(--motion-fast);
+		animation: jeo-pop var(--motion-base) var(--ease-jeo-pop) both;
+	}
+	.sticky-resume:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--fg-0); }
+	.sticky-resume[hidden] { display: none; }
+	.sticky-resume__cover {
+		width: 36px;
+		height: 36px;
+		flex-shrink: 0;
+		border-radius: var(--radius-pill);
+		background-color: var(--bg-3);
+		background-size: cover;
+		background-position: center;
+	}
+	.sticky-resume__meta { display: flex; flex-direction: column; min-width: 0; max-width: 180px; }
+	.sticky-resume__eyebrow {
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		color: var(--fg-2);
+	}
+	.sticky-resume__name {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.sticky-resume__icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		background: var(--accent);
+		color: var(--accent-fg);
+	}
+	@media (max-width: 540px) {
+		.sticky-resume__meta { max-width: 120px; }
+	}
+</style>

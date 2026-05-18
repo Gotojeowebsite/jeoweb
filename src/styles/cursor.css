@@ -1,0 +1,8 @@
+/*
+ * Tiny mascot-eye cursor on game cards — barely noticeable, but a touch of
+ * personality on hover. Pure data-URL SVG so it survives offline.
+ */
+
+.card.fx-tilt {
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='11' fill='%237c3aed' stroke='%23ffffff' stroke-width='2'/><circle cx='14' cy='14' r='5' fill='%230a0a0c'/><circle cx='16' cy='12' r='2' fill='white'/></svg>") 14 14, pointer;
+}
