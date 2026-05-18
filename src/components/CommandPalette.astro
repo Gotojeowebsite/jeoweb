@@ -115,6 +115,11 @@ const games = getAllGames().map((g) => ({
 	.jeo-cmdk__item.is-active {
 		background: var(--accent-soft);
 	}
+	.jeo-cmdk__item--cmd .jeo-cmdk__type {
+		color: var(--accent);
+		font-size: var(--text-body);
+	}
+	.jeo-cmdk__item--cmd .jeo-cmdk__name { font-weight: var(--weight-semibold); }
 	.jeo-cmdk__type {
 		width: 20px;
 		display: inline-flex;

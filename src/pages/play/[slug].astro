@@ -41,6 +41,16 @@ const iframeSrc = '/' + game.url;
 				<h1>{game.name}</h1>
 			</div>
 			<div class="player-actions">
+				<a
+					class="topbar-icon-btn player-report"
+					href={`https://github.com/Gotojeowebsite/jeoweb/issues/new?title=${encodeURIComponent('Broken game: ' + game.name)}&labels=broken-game&body=${encodeURIComponent(`Slug: \`${slug}\`\nType: ${gameTypeLabel(game.type)}\nURL: https://jeoweb.app/play/${slug}\n\nWhat's broken (what you saw vs. what should happen)?`)}`}
+					target="_blank"
+					rel="noopener"
+					aria-label="Report broken"
+					title="Report this game as broken"
+				>
+					<Icon name="shield" size={18} />
+				</a>
 				<button class="topbar-icon-btn" id="player-fullscreen" aria-label="Fullscreen">
 					<Icon name="maximize" size={18} />
 				</button>

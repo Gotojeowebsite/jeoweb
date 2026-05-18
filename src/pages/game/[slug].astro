@@ -132,6 +132,15 @@ function timeAgo(iso: string | undefined): string {
 					<button class="btn btn--secondary" data-share-url={`https://jeoweb.app/game/${slug}`}>
 						<Icon name="share" size={16} />Share
 					</button>
+					<a
+						class="btn btn--ghost btn--sm detail-report"
+						href={`https://github.com/Gotojeowebsite/jeoweb/issues/new?title=${encodeURIComponent('Broken game: ' + game.name)}&labels=broken-game&body=${encodeURIComponent(`Slug: \`${slug}\`\nType: ${gameTypeLabel(game.type)}\nURL: https://jeoweb.app/game/${slug}\n\nWhat's broken (what you saw vs. what should happen)?`)}`}
+						target="_blank"
+						rel="noopener"
+						aria-label="Report this game as broken (opens GitHub)"
+					>
+						<Icon name="shield" size={14} />Report broken
+					</a>
 				</div>
 				<dl class="detail-facts">
 					<div><dt>Added</dt><dd>{new Date(game.addedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</dd></div>
@@ -230,6 +239,15 @@ function timeAgo(iso: string | undefined): string {
 		display: flex;
 		gap: var(--space-2);
 		flex-wrap: wrap;
+		align-items: center;
+	}
+	.detail-report {
+		margin-left: auto;
+		color: var(--fg-2);
+	}
+	.detail-report:hover { color: var(--semantic-broken); }
+	@media (max-width: 600px) {
+		.detail-report { margin-left: 0; }
 	}
 	.detail-facts {
 		display: grid;
