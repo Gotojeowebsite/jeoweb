@@ -120,6 +120,21 @@ const ribbon = isBroken
 		border-color: var(--line-2);
 		box-shadow: var(--shadow-2);
 	}
+	/* Type-tinted hover halo. Pulled from the same tokens the chip / ribbon
+	   use so a card "remembers" its type when you reach for it. Subtle —
+	   the goal is recognisability, not a disco. */
+	.card[data-type="flash"]:hover .card-cover {
+		box-shadow: var(--shadow-2),
+			0 0 0 1px color-mix(in srgb, var(--semantic-flash) 50%, transparent);
+	}
+	.card[data-type="retro"]:hover .card-cover {
+		box-shadow: var(--shadow-2),
+			0 0 0 1px color-mix(in srgb, var(--semantic-retro) 50%, transparent);
+	}
+	.card[data-type="webgl"]:hover .card-cover {
+		box-shadow: var(--shadow-2),
+			0 0 0 1px color-mix(in srgb, var(--semantic-webgl) 50%, transparent);
+	}
 	.card-cover img {
 		width: 100%;
 		height: 100%;

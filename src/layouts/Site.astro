@@ -8,6 +8,7 @@ import '../styles/mascot.css';
 import '../styles/cursor.css';
 import { ClientRouter } from 'astro:transitions';
 import TopBar from '../components/chrome/TopBar.astro';
+import BottomNav from '../components/chrome/BottomNav.astro';
 import Footer from '../components/chrome/Footer.astro';
 import CommandPalette from '../components/CommandPalette.astro';
 import StickyResume from '../components/play/StickyResume.astro';
@@ -124,6 +125,7 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 		<slot />
 	</main>
 	<Footer />
+	<BottomNav current={current} />
 	<CommandPalette />
 	<StickyResume />
 	<AchievementToast />

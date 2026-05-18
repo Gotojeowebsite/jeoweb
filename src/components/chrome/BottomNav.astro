@@ -1,0 +1,98 @@
+---
+/**
+ * Mobile bottom nav. Hidden ≥ 720 px (the TopBar's full nav covers that
+ * width). Below 720 px the TopBar drops its links into a kebab and this
+ * thumb-reach tab bar takes over.
+ *
+ * Five tabs: Home, Flash, Retro, Search (opens the command palette),
+ * Profile. The active tab is highlighted by the layout via the `current`
+ * prop the Site layout passes.
+ */
+import Icon from '../Icon.astro';
+
+type NavId = 'home' | 'flash' | 'retro' | 'new' | 'requested' | 'links' | 'logs' | 'host';
+
+interface Props {
+	current?: NavId;
+}
+const { current } = Astro.props;
+
+const tabs: { id: NavId | 'search' | 'profile'; href: string; label: string; icon: 'home' | 'zap' | 'gamepad' | 'search' | 'user' }[] = [
+	{ id: 'home',    href: '/',        label: 'Home',   icon: 'home' },
+	{ id: 'flash',   href: '/flash',   label: 'Flash',  icon: 'zap' },
+	{ id: 'retro',   href: '/retro',   label: 'Retro',  icon: 'gamepad' },
+	{ id: 'search',  href: '#search',  label: 'Search', icon: 'search' },
+	{ id: 'profile', href: '/profile', label: 'You',    icon: 'user' },
+];
+---
+<nav class="bottom-nav" aria-label="Primary mobile">
+	{tabs.map(t => (
+		<a
+			href={t.href}
+			class:list={['bottom-nav__tab', { 'is-active': current === t.id }]}
+			data-bottom-nav-id={t.id}
+			aria-current={current === t.id ? 'page' : undefined}
+			aria-label={t.label}
+		>
+			<Icon name={t.icon} size={20} />
+			<span>{t.label}</span>
+		</a>
+	))}
+</nav>
+
+<script>
+	// The "Search" tab opens the command palette instead of navigating.
+	document.querySelector<HTMLAnchorElement>('.bottom-nav__tab[data-bottom-nav-id="search"]')
+		?.addEventListener('click', e => {
+			e.preventDefault();
+			window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
+		});
+</script>
+
+<style>
+	.bottom-nav {
+		display: none;
+	}
+	@media (max-width: 720px) {
+		.bottom-nav {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: var(--z-sticky);
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 2px;
+			padding: 6px max(6px, env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-right));
+			background: color-mix(in oklab, var(--bg-0) 90%, transparent);
+			backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+			-webkit-backdrop-filter: blur(var(--blur-glass-2)) saturate(140%);
+			border-top: 1px solid var(--line-0);
+		}
+		/* Reserve thumb-reach space at the page bottom so content isn't
+		   covered. play-body opts out — the player owns its viewport. */
+		body:not(.play-body) main {
+			padding-bottom: calc(64px + env(safe-area-inset-bottom));
+		}
+	}
+	.bottom-nav__tab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2px;
+		padding: var(--space-2);
+		border-radius: var(--radius-md);
+		color: var(--fg-2);
+		font-size: 10px;
+		font-weight: var(--weight-semibold);
+		letter-spacing: var(--tracking-wide);
+		text-transform: uppercase;
+		transition: color var(--motion-fast), background var(--motion-fast);
+	}
+	.bottom-nav__tab:hover { color: var(--fg-0); }
+	.bottom-nav__tab.is-active {
+		color: var(--accent);
+		background: var(--accent-soft);
+	}
+</style>

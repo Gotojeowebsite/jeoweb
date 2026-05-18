@@ -193,8 +193,15 @@ export default function CommandPalette({ games }: PaletteProps) {
 		return () => window.removeEventListener('keydown', onKeydown);
 	}, [open]);
 
+	// Focus trap: when the palette is open, Tab / Shift-Tab is captured and
+	// focus stays on the input. Arrow keys drive list navigation, so Tab
+	// would otherwise leak focus out to the page chrome behind the modal.
+	// Also restore focus to the element that opened the palette when we
+	// close (the "restore focus" half of WAI-ARIA dialog guidance).
+	const previousFocusRef = useRef<HTMLElement | null>(null);
 	useEffect(() => {
 		if (open) {
+			previousFocusRef.current = document.activeElement as HTMLElement | null;
 			setQuery('');
 			setHighlight(0);
 			// Defer one tick so the input is mounted.
@@ -203,8 +210,20 @@ export default function CommandPalette({ games }: PaletteProps) {
 			window.dispatchEvent(new CustomEvent('jeo:cmdk-open'));
 		} else {
 			document.body.style.overflow = '';
+			previousFocusRef.current?.focus?.();
 		}
 		return () => { document.body.style.overflow = ''; };
+	}, [open]);
+
+	useEffect(() => {
+		if (!open) return;
+		const onTab = (e: KeyboardEvent) => {
+			if (e.key !== 'Tab') return;
+			e.preventDefault();
+			inputRef.current?.focus();
+		};
+		document.addEventListener('keydown', onTab, true);
+		return () => document.removeEventListener('keydown', onTab, true);
 	}, [open]);
 
 	type Item = { kind: 'game'; game: PaletteGame } | { kind: 'cmd'; cmd: Command };

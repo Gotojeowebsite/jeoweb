@@ -12,7 +12,7 @@ export type IconName =
 	| 'arrow-right' | 'arrow-left' | 'play' | 'pause' | 'menu'
 	| 'plus' | 'minus' | 'check' | 'more' | 'share'
 	| 'eye' | 'eye-off' | 'lock' | 'unlock' | 'user'
-	| 'refresh' | 'cloud' | 'cloud-off' | 'keyboard' | 'command';
+	| 'refresh' | 'cloud' | 'cloud-off' | 'keyboard' | 'command' | 'home';
 
 export const ICON_PATHS: Record<IconName, string> = {
 	'zap':           '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
@@ -64,4 +64,5 @@ export const ICON_PATHS: Record<IconName, string> = {
 	'cloud-off':     '<path d="m2 2 20 20"/><path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"/><path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 4.207"/>',
 	'keyboard':      '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01"/><path d="M10 8h.01"/><path d="M14 8h.01"/><path d="M18 8h.01"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/><path d="M7 16h10"/>',
 	'command':       '<path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/>',
+	'home':          '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
 };

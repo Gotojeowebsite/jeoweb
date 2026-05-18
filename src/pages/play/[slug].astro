@@ -120,7 +120,10 @@ const iframeSrc = '/' + game.url;
 <style is:global>
 	body.play-body { background: var(--bg-0); }
 	body.play-body .site-footer,
-	body.play-body .sticky-resume { display: none; }
+	body.play-body .sticky-resume,
+	body.play-body .bottom-nav { display: none; }
+	/* Reclaim the bottom padding the BottomNav added to main on mobile. */
+	body.play-body main { padding-bottom: 0 !important; }
 </style>
 
 <style>
