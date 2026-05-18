@@ -1,0 +1,103 @@
+---
+/**
+ * Tag chip cloud — the homepage's "what kind of game are you in the
+ * mood for" picker. Counts games per tag from the build-time catalog,
+ * shows the top dozen as chips, each linking to `/?q=<tag>` so the
+ * existing grid-runtime search handles the rest (no separate filter
+ * page needed).
+ *
+ * "flash" / "retro" are skipped because the type filter chips and the
+ * dedicated /flash, /retro pages already cover those.
+ */
+import Icon from '../Icon.astro';
+import { getAllGames } from '../../lib/catalog';
+
+const SKIP = new Set(['flash', 'retro']);
+const counts = new Map<string, number>();
+for (const g of getAllGames()) {
+	if (g.status === 'broken' || g.status === 'maintenance') continue;
+	for (const t of g.tags ?? []) {
+		if (SKIP.has(t)) continue;
+		counts.set(t, (counts.get(t) ?? 0) + 1);
+	}
+}
+const tags = [...counts.entries()]
+	.filter(([, n]) => n >= 3)
+	.sort((a, b) => b[1] - a[1])
+	.slice(0, 14);
+---
+{tags.length > 0 && (
+	<section class="tag-cloud" aria-label="Browse by genre">
+		<div class="tag-cloud__head">
+			<Icon name="library" size={16} />
+			<span>Mood board</span>
+		</div>
+		<ul class="tag-cloud__list">
+			{tags.map(([tag, count]) => (
+				<li>
+					<a class="tag-cloud__chip" href={`/?q=${encodeURIComponent(tag)}`}>
+						<span class="tag-cloud__name">{tag}</span>
+						<span class="tag-cloud__count">{count}</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</section>
+)}
+
+<style>
+	.tag-cloud {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		flex-wrap: wrap;
+		padding: var(--space-4);
+		background: var(--bg-1);
+		border: 1px solid var(--line-0);
+		border-radius: var(--radius-xl);
+	}
+	.tag-cloud__head {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		color: var(--fg-2);
+		font-size: var(--text-xs);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		font-weight: var(--weight-semibold);
+		flex-shrink: 0;
+	}
+	.tag-cloud__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.tag-cloud__chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: 4px var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-pill);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		text-transform: capitalize;
+		transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast);
+	}
+	.tag-cloud__chip:hover {
+		background: var(--accent-soft);
+		border-color: var(--accent);
+		color: var(--fg-0);
+	}
+	.tag-cloud__count {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--fg-3);
+	}
+	.tag-cloud__chip:hover .tag-cloud__count { color: var(--fg-1); }
+</style>

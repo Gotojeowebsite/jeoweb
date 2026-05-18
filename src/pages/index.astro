@@ -7,6 +7,7 @@ import StatsStrip from '../components/discover/StatsStrip.astro';
 import FiltersBar from '../components/discover/FiltersBar.astro';
 import Rail from '../components/discover/Rail.astro';
 import GameGrid from '../components/discover/GameGrid.astro';
+import TagCloud from '../components/discover/TagCloud.astro';
 import Welcome from '../components/onboarding/Welcome.astro';
 import {
 	getAllGames,
@@ -69,6 +70,8 @@ const jsonLd = [
 		<DailyDrop />
 
 		<div class="home-stats"><StatsStrip /></div>
+
+		<TagCloud />
 
 		<FiltersBar />
 

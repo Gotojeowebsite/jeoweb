@@ -92,6 +92,12 @@ jobs:
       - name: Stage assets into dist
         run: node scripts/link-assets-into-dist.mjs --copy
 
+      - name: Verify route reachability
+        # Asserts every non-dynamic page in src/pages/ produced its
+        # expected dist/<route>/index.html. The "Astro silently dropped
+        # /retro" class of regression now blocks deploy.
+        run: node scripts/verify-routes.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

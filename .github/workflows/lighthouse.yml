@@ -32,6 +32,9 @@ jobs:
         run: npx astro build
 
       - name: Run Lighthouse CI
+        # Real gate: assertions in lighthouserc.json tier a11y / SEO as
+        # `error` (block) and perf / best-practices as `warn`. The Sprint-0
+        # soft-fail wrapper is removed — a11y/SEO regressions now block.
         run: |
           npm i -g @lhci/cli@0.13.x
-          lhci autorun --config=./lighthouserc.json || echo "Lighthouse soft-failed (Sprint 0 — gates land in Sprint 6)"
+          lhci autorun --config=./lighthouserc.json
