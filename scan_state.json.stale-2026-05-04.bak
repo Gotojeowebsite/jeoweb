@@ -1,0 +1,2902 @@
+{
+  "version": 1,
+  "updated_at": 1778090653,
+  "total_targets": 67,
+  "completed": 67,
+  "results": [
+    {
+      "name": "amongus",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.573,
+      "critical_issues": [],
+      "warnings": [],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 311,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "avatar-the-last-airbender",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.639,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "2k-sports-major-league-baseball-2k7",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.612,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "2006-fifa-world-cup-germany-2006",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.678,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 30,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "avatar-the-last-airbender-the-burning-earth",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.567,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "backyard-baseball",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.681,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "backyard-basketball",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.59,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "backyard-football",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.642,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "bobtherobber1",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.627,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.3,tbsd_.21,tbnd_.-25&srt=3&gadget=default&container=default&view=default&e=&rt=dl.93,ol.97,prt.97"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.3,tbsd_.21,tbnd_.-25&srt=3&gadget=default&container=default&view=default&e=&rt=dl.93,ol.97,prt.97"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "batman-vengeance",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.606,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "backyard-skateboarding",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.612,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "backyard-hockey",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.62,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "bobtherobber5",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.607,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.4,tbsd_.14,tbnd_.-18&srt=4&gadget=default&container=default&view=default&e=&rt=dl.71,ol.72,prt.72"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.4,tbsd_.14,tbnd_.-18&srt=4&gadget=default&container=default&view=default&e=&rt=dl.71,ol.72,prt.72"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "bomberman-max-2-blue-advance",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.606,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 32,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "boulder-dash-ex",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.638,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "bomberman-tournament",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.661,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "btd3",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.723,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "PAGE_ERROR",
+          "message": "Invalid or unexpected token",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "gadgets is not defined",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to resolve module specifier \"_external_mirror/cdn.jsdelivr.net/gh/zhit73/wafedit_bd6c0b779c3d8b175e60c149194f6344807b21aa/wasm/waflash-player.min.js\". Relative references must start with either \"/\", \"./\", or \"../\".",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL",
+          "message": "External non-critical request detected",
+          "severity": "warning",
+          "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+        },
+        {
+          "code": "EXTERNAL_NONCRITICAL_FAILED",
+          "message": "External non-critical request failed",
+          "severity": "warning",
+          "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.8,tbsd_.44,tbnd_.-52&srt=8&gadget=default&container=default&view=default&e=&rt=dl.100,ol.103,prt.103"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.8,tbsd_.44,tbnd_.-52&srt=8&gadget=default&container=default&view=default&e=&rt=dl.100,ol.103,prt.103"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 32,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "bruce-lee-return-of-the-legend",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.645,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "Captain-America-and-the-Advengers",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.625,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "boxing-fever",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.65,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "Captain-Commando",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.607,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "capybara-clicker",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "broken",
+      "elapsed_seconds": 14.736,
+      "critical_issues": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/capybara-clicker/Build/6c6f64c0e2c5198b79ea3d93fe42122d.data"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/capybara-clicker/Build/0bb042ea97e7693116f3da5ce626c771.js.br"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Unable to load file Build/0bb042ea97e7693116f3da5ce626c771.js.br! Check that the file exists on the remote server. (also check browser Console and Devtools Network tab to debug)",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": true,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 32,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "cartoon-network-block-party",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.625,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "cartoon-network-speedway",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.59,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chess",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "broken",
+      "elapsed_seconds": 13.635,
+      "critical_issues": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/chess/build/pixi.js?7bf99ea55f7b59a998d2"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/chess/build/src.js?7bf99ea55f7b59a998d2"
+        }
+      ],
+      "warnings": [],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "casper",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.618,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "cat-in-the-hat-the",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.679,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "catwoman",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.706,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chessmaster",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.575,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chicken-jockey-clicker",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "broken",
+      "elapsed_seconds": 14.668,
+      "critical_issues": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/chicken-jockey-clicker/25042801/Build/chicken-jockey-clicker-v25042801.loader.js"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "PAGE_ERROR",
+          "message": "firebase is not defined",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/chicken-jockey-clicker/25042801/theme/Fredoka-Bold.woff2"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/chicken-jockey-clicker/25042801/theme/Fredoka-Regular.woff2"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 47,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 32,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chicken-shoot",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.609,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chicken-little",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.607,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chicken-shoot-2",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.62,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "chill-guy-clicker",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "broken",
+      "elapsed_seconds": 14.738,
+      "critical_issues": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/chill-guy-clicker/24122704/Build/chill-guy-clicker-v24122704.loader.js"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://api.azgames.io/api/infov2?params=ZD1sb2NhbGhvc3QmZ2lkPWNoaWxsLWd1eS1jbGlja2VyJmhuPWxvY2FsaG9zdCZ0cz0xNzc4MDkwNTA3OTQ4JmllPW5v"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://api.azgames.io/api/infov2?params=ZD1sb2NhbGhvc3QmZ2lkPWNoaWxsLWd1eS1jbGlja2VyJmhuPWxvY2FsaG9zdCZ0cz0xNzc4MDkwNTA3OTQ4JmllPW5v"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to execute 'send' on 'XMLHttpRequest': Failed to load 'https://api.azgames.io/api/infov2?params=ZD1sb2NhbGhvc3QmZ2lkPWNoaWxsLWd1eS1jbGlja2VyJmhuPWxvY2FsaG9zdCZ0cz0xNzc4MDkwNTA3OTQ4JmllPW5v'.",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 42,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 32,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "Clock-Tower",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.645,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "Chromo-Trigger",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.616,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "connect3",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.641,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://fonts.googleapis.com/css?family=Roboto:300"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://fonts.googleapis.com/css?family=Roboto:300"
+        },
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/js/main.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "crossy-road-space",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "broken",
+      "elapsed_seconds": 13.711,
+      "critical_issues": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/crossy-road-space/js/v2.313.0/poki-sdk-core-v2.313.0.js"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/crossy-road-space/scripts/three.min.js"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Critical local HTTP 404",
+          "severity": "critical",
+          "url": "http://localhost:8081/Assets/crossy-road-space/scripts/game.min.js"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/crossy-road-space/sprites/poki-icon.png"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/crossy-road-space/sprites/poki-logo.png"
+        },
+        {
+          "code": "LOCAL_HTTP_ERROR",
+          "message": "Local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/crossy-road-space/sprites/chicken.png"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL",
+          "message": "Optional external request detected",
+          "severity": "warning",
+          "url": "https://ubg235.com/js/ubg235_server_v1_0.js"
+        },
+        {
+          "code": "EXTERNAL_OPTIONAL_FAILED",
+          "message": "Optional external request failed",
+          "severity": "warning",
+          "url": "https://ubg235.com/js/ubg235_server_v1_0.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dbz-legend-of-kakarot-gba",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.61,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dexter-s-laboratory-chess-challenge",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.784,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "doublewires",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.646,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/js/main.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-advanced-adventure",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 13.6,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "NO_RENDER_SURFACE",
+          "message": "No game surface detected after bootstrap wait",
+          "severity": "warning",
+          "url": "http://localhost:8081/Assets/dragon-ball-advanced-adventure/index.html"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 29,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dexter-s-laboratory-deesaster-strikes",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.655,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "donkey-kong-country",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.657,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-z-hyper-dimension",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.595,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-z-super-butouden-3",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.588,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-z-super-saiya-densetsu",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.616,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-z-team-training-v9-2",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.64,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "ducklife2",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.582,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/js/main.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "ducklife1",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.594,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/js/main.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "earthbound",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.646,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "dragon-ball-z-the-legacy-of-goku-i-ii",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.655,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "eel-slap",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.661,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/js/main.js"
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fancypantsadventure2",
+      "type": "flash",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.658,
+      "critical_issues": [],
+      "warnings": [],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 0,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": true,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fifa-soccer-07",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.645,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fifa-soccer-06",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.623,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fifa-soccer-2003",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.683,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fifa-soccer-2005",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.674,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "fifa-soccer-2004",
+      "type": "gba",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.704,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "final-fantasy-iii",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.636,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "final-fantasy-iii-es",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.646,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "final-fight",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.676,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "final-fight-3",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.652,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "final-fight-2",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.664,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "subwaysurfers",
+      "type": "webgl",
+      "entry_file": "index.html",
+      "status": "ok",
+      "elapsed_seconds": 13.554,
+      "critical_issues": [],
+      "warnings": [],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 0,
+        "bodyTextLength": 317,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": false,
+        "canvasHash": "",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": false,
+        "canvasRAFTicks": 0,
+        "canvasHashFirst": "",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "front-mission",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.633,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    },
+    {
+      "name": "flashback-the-quest-for-identity",
+      "type": "snes",
+      "entry_file": "index.html",
+      "status": "warning",
+      "elapsed_seconds": 14.576,
+      "critical_issues": [],
+      "warnings": [
+        {
+          "code": "LOCAL_IGNORED_HTTP",
+          "message": "Ignored optional local HTTP 404",
+          "severity": "warning",
+          "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Failed to fetch",
+          "severity": "warning",
+          "url": ""
+        },
+        {
+          "code": "PAGE_ERROR",
+          "message": "Wake Lock permission request denied",
+          "severity": "warning",
+          "url": ""
+        }
+      ],
+      "probe": {
+        "readyState": "complete",
+        "surfaceCount": 1,
+        "bodyTextLength": 166,
+        "unityLoadingBar": false,
+        "unityProgress": "",
+        "hasRuffleGlobal": false,
+        "hasRetroGlobal": true,
+        "canvasHash": "0",
+        "canvasNonzeroPixels": 0,
+        "canvasIsWebGL": true,
+        "canvasRAFTicks": 31,
+        "canvasHashFirst": "0",
+        "canvasNonzeroPixelsFirst": 0
+      }
+    }
+  ]
+}

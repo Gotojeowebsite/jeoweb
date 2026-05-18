@@ -12,6 +12,8 @@ pipeline_artifacts/
 # Auto-fix bot transient state — backups + per-attempt debug logs
 .quarantine/
 .daily-fix-last.log
+scan.log
+doctor.log
 
 # Health Doctor per-run diagnostic dumps. Reports are regenerable; the
 # canonical health data lives in game_health.json / scan_results.json.

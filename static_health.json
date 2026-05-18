@@ -1,27 +1,14 @@
 {
   "schema": 1,
-  "generated_at": 1779010747,
+  "generated_at": 1779072379,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 439,
+    "pass": 428,
     "warn": 100,
-    "fail": 59,
-    "total": 598
+    "fail": 69,
+    "total": 597
   },
   "games": [
-    {
-      "slug": ".quarantine",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
-    },
     {
       "slug": ".recovery",
       "verdict": "fail",
@@ -37,14 +24,14 @@
     },
     {
       "slug": "0v0",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -55,14 +42,14 @@
     },
     {
       "slug": "1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -165,14 +152,14 @@
     },
     {
       "slug": "9007199254740992",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -183,14 +170,14 @@
     },
     {
       "slug": "99-nights-in-the-forest",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -346,14 +333,14 @@
     },
     {
       "slug": "amazing-rope-police",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -388,14 +375,14 @@
     },
     {
       "slug": "among-us",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -436,14 +423,14 @@
     },
     {
       "slug": "angelunder",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -454,14 +441,14 @@
     },
     {
       "slug": "angry-bird",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -547,14 +534,14 @@
     },
     {
       "slug": "aqua-park",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -565,14 +552,14 @@
     },
     {
       "slug": "aquapark-slides",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
@@ -674,14 +661,14 @@
     },
     {
       "slug": "astray",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML",
-          "message": "Entry HTML is empty or near-empty (size=0 bytes, stripped=0 chars)",
-          "severity": "warning"
+          "code": "EMPTY_ENTRY_HTML_CRITICAL",
+          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
+          "severity": "critical"
         }
       ],
       "refs_checked": 0,
