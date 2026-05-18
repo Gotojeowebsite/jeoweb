@@ -311,6 +311,50 @@ if (wrap) {
 	});
 	searchClear?.addEventListener('click', clearSearch);
 
+	// Enter in the search field launches the first match — feels like a
+	// "lucky" jump and saves the user from scanning the grid when they
+	// know what they want.
+	searchInput?.addEventListener('keydown', e => {
+		if (e.key !== 'Enter') return;
+		const first = visibleGames().find(g => !isBrokenStatus(g.status));
+		if (first) {
+			e.preventDefault();
+			window.location.href = `/play/${first.slug}`;
+		}
+	});
+
+	// Arrow-key navigation across the grid. Treats the grid as a 2D layout
+	// (computed from offsetTop bands) so up/down skips a row, not a card.
+	grid.addEventListener('keydown', e => {
+		if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) return;
+		const focused = document.activeElement as HTMLElement | null;
+		if (!focused || !focused.classList.contains('card')) return;
+		const visible = [...grid.querySelectorAll<HTMLAnchorElement>('a.card')]
+			.filter(c => c.style.display !== 'none');
+		const idx = visible.indexOf(focused as HTMLAnchorElement);
+		if (idx < 0) return;
+		e.preventDefault();
+		let next = focused as HTMLAnchorElement | null;
+		if (e.key === 'ArrowLeft')  next = visible[idx - 1] ?? null;
+		if (e.key === 'ArrowRight') next = visible[idx + 1] ?? null;
+		if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+			const dir = e.key === 'ArrowDown' ? 1 : -1;
+			const row = focused.offsetTop;
+			// Walk until we find the first card on a different row whose
+			// horizontal position is closest to the current card's left.
+			const targets = visible.filter(c => Math.sign(c.offsetTop - row) === dir);
+			if (!targets.length) return;
+			const myLeft = focused.offsetLeft;
+			const closestRow = targets[0].offsetTop;
+			next = targets
+				.filter(c => c.offsetTop === closestRow)
+				.reduce<HTMLAnchorElement | null>((best, c) =>
+					!best || Math.abs(c.offsetLeft - myLeft) < Math.abs(best.offsetLeft - myLeft) ? c : best,
+				null);
+		}
+		next?.focus();
+	});
+
 	typeButtons.forEach(btn => {
 		btn.addEventListener('click', () => {
 			typeButtons.forEach(b => b.classList.remove('is-active'));
