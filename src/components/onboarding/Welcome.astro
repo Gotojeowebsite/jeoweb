@@ -3,9 +3,13 @@
  * Onboarding mount point. Picks 6 healthy + image-bearing games as
  * starters and hands them off to the Welcome island.
  *
- * The island self-gates on storage.ts.onboarded — server can always
- * mount, no flash because we render `client:idle` and only render
- * markup once the island decides it should show.
+ * The island self-gates on storage.ts.onboarded. We render `client:only`
+ * (not `client:idle`) so the modal never paints before its onClick
+ * handlers are wired up — under `client:idle` the SSR'd modal would
+ * appear immediately but stay dead until the browser hit an idle frame,
+ * which on a heavy homepage (hundreds of game cards loading images)
+ * could be delayed indefinitely and trap users behind unresponsive
+ * Next/Skip buttons.
  */
 import { getAllGames, gameSlug } from '../../lib/catalog';
 import Welcome from './Welcome.island.tsx';
@@ -37,7 +41,7 @@ const starters = pick(6).map(g => ({
 	type: g.type,
 }));
 ---
-<Welcome starters={starters} client:idle />
+<Welcome starters={starters} client:only="preact" />
 
 <style is:global>
 	.jeo-onboard {
