@@ -26,7 +26,7 @@ import Icon from '../Icon.astro';
 		</button>
 	</div>
 	<div class="filter-meta">
-		<button class="btn btn--secondary btn--sm" id="surprise-me" type="button" data-tooltip="Pick a random visible game">
+		<button class="btn btn--secondary btn--sm" id="surprise-me" type="button" data-tooltip="Pick a random game from the current filter">
 			<Icon name="dice" size={14} />Surprise me
 		</button>
 		<select class="filter-select" id="grid-sort" aria-label="Sort order">
@@ -35,6 +35,10 @@ import Icon from '../Icon.astro';
 			<option value="za">Z → A</option>
 			<option value="random">Random</option>
 		</select>
+		<label class="filter-maintenance" title="Reveal games flagged for maintenance">
+			<input id="grid-maintenance" type="checkbox" />
+			<span>Show maintenance</span>
+		</label>
 		<div class="density-toggle" role="group" aria-label="View density">
 			<button class="density-btn is-active" data-density="comfy" aria-label="Comfortable grid">Comfy</button>
 			<button class="density-btn" data-density="dense" aria-label="Dense grid">Dense</button>
@@ -139,6 +143,22 @@ import Icon from '../Icon.astro';
 		font-size: var(--text-sm);
 		cursor: pointer;
 	}
+	.filter-maintenance {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		user-select: none;
+	}
+	.filter-maintenance input { accent-color: var(--accent); cursor: pointer; }
+	.filter-maintenance:hover { color: var(--fg-0); }
+
 	.density-toggle {
 		display: inline-flex;
 		gap: 2px;

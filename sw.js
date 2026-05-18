@@ -1,17 +1,21 @@
-const CACHE_NAME = 'jeoweb-pwa-cache-v6';
+// Cache version. The literal "__BUILD_VERSION__" gets stamped at deploy
+// time by scripts/link-assets-into-dist.mjs so every build invalidates
+// stale clients automatically — no more "user has to hard-refresh after a
+// release" support tickets. Falls back to a date string for local dev.
+const CACHE_NAME = 'jeoweb-pwa-cache-__BUILD_VERSION__';
 
 // Core app shell — kept lean so install never fails on a missing file.
-// Everything else (CSS/JS modules) is picked up by the stale-while-revalidate
-// handler on first fetch.
+// Hashed Astro bundles are picked up by the stale-while-revalidate
+// handler on first fetch; we don't list them here because their names
+// change every build.
 const STATIC_ASSETS = [
     '/',
     '/index.html',
-    '/styles.css',
-    '/app.js',
     '/manifest.json',
     '/icon.svg',
     '/notavailable.svg',
-    '/games_list.json'
+    '/games_list.json',
+    '/offline/'
 ];
 
 const IMAGE_FALLBACK = '/notavailable.svg';
