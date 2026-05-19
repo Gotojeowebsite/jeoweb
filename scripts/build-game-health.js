@@ -570,6 +570,22 @@ function main() {
 	for (const s of overrides.healthy.keys()) slugs.add(s);
 	for (const s of overrides.maintenance.keys()) slugs.add(s);
 
+	// Prune stale slugs that no longer exist as folders under Assets/. Signals
+	// linger after a game is removed because each input file is updated
+	// independently; without this filter the frontend never sees the deletion.
+	const diskSlugs = new Set();
+	try {
+		const assetsDir = path.join(ROOT, 'Assets');
+		for (const ent of fs.readdirSync(assetsDir, { withFileTypes: true })) {
+			if (ent.isDirectory() && !ent.name.startsWith('.')) diskSlugs.add(ent.name);
+		}
+	} catch (e) { /* if Assets/ is missing we can't prune safely */ }
+	if (diskSlugs.size) {
+		let prunedCount = 0;
+		for (const s of [...slugs]) if (!diskSlugs.has(s)) { slugs.delete(s); prunedCount++; }
+		if (prunedCount) console.log(`pruned ${prunedCount} stale slug(s) not on disk`);
+	}
+
 	const games = {};
 	const conflicts = [];
 	const explainDiffs = [];
