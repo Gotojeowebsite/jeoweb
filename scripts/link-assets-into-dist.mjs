@@ -31,6 +31,7 @@ const FILES = [
 	'recently_added.json',
 	'game_descriptions.json',
 	'similar.json',
+	'featured.json',
 	'manifest.json',
 	'notavailable.svg',
 	'icon.svg',

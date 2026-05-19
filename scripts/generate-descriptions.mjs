@@ -58,6 +58,36 @@ const TYPE_COPY = {
 	retro: { article: 'a', label: 'retro game', longLabel: 'retro emulator title' },
 };
 
+// Type-specific fallback templates for games we couldn't infer a primary
+// tag for. Three variants per type so the catalog doesn't read like a
+// single sentence copy-pasted 250 times. A name-hash pick keeps the
+// chosen variant stable across re-runs.
+const TYPE_FALLBACKS = {
+	webgl: [
+		(d) => `${d} is a quick browser session — no installs, no signups, just press play.`,
+		(d) => `Open ${d} in a single tab and you're playing. Built to run on whatever browser you're on right now.`,
+		(d) => `${d} is the kind of game you fire up between classes. Loads fast, plays in the tab you've already got open.`,
+	],
+	flash: [
+		(d) => `${d} is a classic Flash title, revived to run in modern browsers without a plugin.`,
+		(d) => `Play ${d} — a Flash-era game that still holds up, running natively in your browser via Ruffle.`,
+		(d) => `${d} brings a piece of Flash gaming back to life. No installs, no Adobe — it just works.`,
+	],
+	retro: [
+		(d) => `${d} runs in a browser-based emulator, so the cartridge nostalgia is just one click away.`,
+		(d) => `Boot up ${d} as if it were the original handheld. Save states, full controls, no downloads.`,
+		(d) => `${d} is emulated right in the browser — same game you remember, no console needed.`,
+	],
+};
+function hash32(s) {
+	let h = 2166136261 >>> 0;
+	for (let i = 0; i < s.length; i++) {
+		h ^= s.charCodeAt(i);
+		h = Math.imul(h, 16777619) >>> 0;
+	}
+	return h;
+}
+
 // Description-time tag inference — more lenient than scan.js because we only
 // use these tags to pick a pitch template, not to surface filter chips. The
 // goal is: every game in the catalog gets a copy-relevant verb-phrase, not a
@@ -166,7 +196,8 @@ function pitchFor(name, tags, type) {
 	const inferred = inferPitchTags(name, tags);
 	const tagList = inferred.filter(tag => TAG_COPY[tag]);
 	if (tagList.length === 0) {
-		return `${display} is ${t.article} ${t.label} you can pick up in a single browser tab. No downloads, no signups — just press play.`;
+		const variants = TYPE_FALLBACKS[type] ?? TYPE_FALLBACKS.webgl;
+		return variants[hash32(String(name)) % variants.length](display);
 	}
 	// Use the first matching tag for the primary verb-phrase, the second tag
 	// (if any) as a qualifier. This keeps copy varied across the catalog

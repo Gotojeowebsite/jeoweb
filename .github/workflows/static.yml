@@ -104,6 +104,12 @@ jobs:
       - name: Stage assets into dist
         run: node scripts/link-assets-into-dist.mjs --copy
 
+      - name: Pre-compress static assets
+        # Generates .br + .gz siblings for HTML/CSS/JS/SVG/JSON. Pages and
+        # Azure SWA serve these natively when Accept-Encoding allows. Skips
+        # /Assets, /emulatorjs, /cdn-cgi (vendored game payloads).
+        run: node scripts/precompress-dist.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

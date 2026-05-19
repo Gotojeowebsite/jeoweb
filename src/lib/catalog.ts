@@ -189,6 +189,36 @@ export function getSimilar(): Record<string, string[]> {
 	return _similar;
 }
 
+/** Weekly editorial picks from scripts/rotate-featured.mjs. Committed by
+ * the featured-rotation GH Actions cron every Monday — readers get a fresh
+ * Hot This Week rail without any backend. Falls back to empty when the
+ * file is missing so the home page degrades cleanly. */
+export interface FeaturedPicks {
+	week: string;
+	generatedAt: string;
+	picks: string[];
+}
+let _featured: FeaturedPicks | null = null;
+export function getFeatured(): FeaturedPicks {
+	if (_featured) return _featured;
+	_featured = loadJson<FeaturedPicks>('featured.json', { week: '', generatedAt: '', picks: [] });
+	return _featured;
+}
+
+/** Resolve a list of slugs into full Game objects via getAllGames(). Drops
+ * any slug that doesn't resolve so a stale featured.json never renders
+ * empty cards. */
+export function gamesBySlugs(slugs: string[]): Game[] {
+	const all = getAllGames();
+	const map = new Map(all.map(g => [gameSlug(g), g] as const));
+	const out: Game[] = [];
+	for (const s of slugs) {
+		const g = map.get(s);
+		if (g && g.image) out.push(g);
+	}
+	return out;
+}
+
 export function getHealth(): Record<string, HealthVerdict> {
 	if (!_health) {
 		const raw = loadJson<{ games?: Record<string, HealthVerdict> }>(

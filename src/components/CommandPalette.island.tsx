@@ -8,6 +8,8 @@ import { EMPTY_SEARCH, pickRandom } from '../lib/voice';
 export type PaletteGame = {
 	slug: string;
 	name: string;
+	displayName?: string;
+	pitch?: string;
 	type: 'webgl' | 'flash' | 'retro';
 	tags: string[];
 	status?: 'broken' | 'maintenance' | 'unverified' | 'probable_broken' | 'healthy';
@@ -27,13 +29,20 @@ function score(query: string, game: PaletteGame): number {
 	if (!query) return 0;
 	const q = query.toLowerCase();
 	const name = game.name.toLowerCase();
+	const display = (game.displayName ?? game.name).toLowerCase();
 	const slug = game.slug.toLowerCase();
+	const pitch = (game.pitch ?? '').toLowerCase();
 	let s = 0;
-	// Exact-prefix wins decisively.
-	if (name.startsWith(q) || slug.startsWith(q)) s += 100;
-	// Substring in name / slug.
+	// Exact-prefix wins decisively — match against the display name first
+	// so users typing "world" find "Where in the World Is Carmen Sandiego".
+	if (display.startsWith(q) || name.startsWith(q) || slug.startsWith(q)) s += 100;
+	// Substring in name / slug / display name.
+	if (display.includes(q)) s += 50;
 	if (name.includes(q)) s += 40;
 	if (slug.includes(q)) s += 25;
+	// Description match — lower weight so descriptions don't outrank a
+	// title hit. Catches "puzzle" → all puzzle games when a tag doesn't.
+	if (pitch.includes(q)) s += 15;
 	// Each query token that matches a tag adds a smaller bonus.
 	const qTokens = q.split(/\s+/).filter(Boolean);
 	for (const t of game.tags || []) {
@@ -42,7 +51,13 @@ function score(query: string, game: PaletteGame): number {
 	}
 	// Per-token AND for multi-word queries (each token must hit somewhere).
 	for (const qt of qTokens) {
-		if (!(name.includes(qt) || slug.includes(qt) || (game.tags || []).some((t) => t.toLowerCase().includes(qt)))) {
+		if (!(
+			name.includes(qt) ||
+			display.includes(qt) ||
+			slug.includes(qt) ||
+			pitch.includes(qt) ||
+			(game.tags || []).some((t) => t.toLowerCase().includes(qt))
+		)) {
 			return 0;  // any unmatched query token disqualifies
 		}
 	}
@@ -222,7 +237,7 @@ export default function CommandPalette({ games }: PaletteProps) {
 							<span class="jeo-cmdk__type" style={`color:${typeBadgeColor(g.type)}`} aria-hidden="true">
 								{g.type === 'flash' ? '⚡' : g.type === 'retro' ? '🎮' : '◆'}
 							</span>
-							<span class="jeo-cmdk__name">{g.name}</span>
+							<span class="jeo-cmdk__name">{g.displayName ?? g.name}</span>
 							{g.status === 'broken' && <span class="jeo-cmdk__tag jeo-cmdk__tag--broken">broken</span>}
 							{g.status === 'maintenance' && <span class="jeo-cmdk__tag jeo-cmdk__tag--warn">maintenance</span>}
 							{g.status === 'probable_broken' && <span class="jeo-cmdk__tag jeo-cmdk__tag--warn">probable broken</span>}

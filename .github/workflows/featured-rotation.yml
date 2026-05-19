@@ -1,0 +1,39 @@
+name: Rotate Hot This Week
+
+# Mondays at 14:00 UTC — roughly 6am Pacific / 9am Eastern, so EU/US visitors
+# arrive Monday morning to a freshly rotated rail. Manual dispatch lets us
+# refresh out-of-band if we ever need to.
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Rotate featured picks
+        run: node scripts/rotate-featured.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain featured.json)" ]; then
+            git add featured.json
+            git commit -m "chore(featured): weekly rotation $(date -u +%Y-W%V)"
+            git push
+          else
+            echo "featured.json unchanged — skipping commit."
+          fi

@@ -21,7 +21,8 @@ const slug = game ? gameSlug(game) : '';
 				<span class="eyebrow-dot"></span>
 				Game of the day
 			</div>
-			<h1 class="hero-title">{game.name}</h1>
+			<h1 class="hero-title">{game.displayName ?? game.name}</h1>
+			{game.pitch && <p class="hero-pitch">{game.pitch}</p>}
 			<p class="hero-sub">
 				<span class:list={['chip', `chip--${game.type}`]}>
 					<Icon name={game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepad' : 'sparkles'} size={12} />
@@ -115,6 +116,13 @@ const slug = game ? gameSlug(game) : '';
 		font-size: var(--text-display);
 		line-height: 1;
 		letter-spacing: -0.04em;
+	}
+	.hero-pitch {
+		color: var(--fg-1);
+		font-size: var(--text-body);
+		line-height: var(--leading-snug);
+		max-width: 540px;
+		margin: calc(var(--space-2) * -1) 0 0 0;
 	}
 	.hero-sub {
 		display: flex;
