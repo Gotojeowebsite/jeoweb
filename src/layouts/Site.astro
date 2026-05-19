@@ -108,6 +108,11 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 				if (accent) {
 					document.documentElement.style.setProperty('--accent', accent);
 				}
+				// Premium FX — glass blur, 3D tilt, animated hero. Off by default
+				// for max scroll perf; set via Settings → Animations & Effects.
+				if (localStorage.getItem('jeo-fx-premium') === 'true') {
+					document.documentElement.setAttribute('data-fx', 'premium');
+				}
 			} catch (_) {}
 		})();
 	</script>

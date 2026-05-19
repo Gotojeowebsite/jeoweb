@@ -25,6 +25,7 @@ class App {
 		this.initRetroToggle();
 		this.initMaintenanceToggle();
 		this.initAnimations();
+		this.initPremiumFx();
 		this.bindUI();
 		this.initProgressTracking();
 		this.bootstrap();
@@ -111,7 +112,7 @@ class App {
 		// Layout
 		const layout = localStorage.getItem('jeo-layout') || 'normal';
 		if (layout === 'compact') document.body.classList.add('layout-compact');
-		
+
 		// Radius
 		const radius = localStorage.getItem('jeo-radius') || 'rounded';
 		document.body.classList.add(`radius-${radius}`);
@@ -120,73 +121,98 @@ class App {
 		this.animHover = localStorage.getItem('jeo-anim-hover') !== 'false';
 		this.animRipple = localStorage.getItem('jeo-anim-ripple') !== 'false';
 		if (!this.animHover) document.body.classList.add('no-anim-hover');
+
+		// Premium FX — master toggle for glass blur, 3D tilt, animated hero,
+		// waterfall stagger. Off by default so scroll stays at 60fps; users
+		// flip it on from Settings → Animations & Effects.
+		this.premiumFx = localStorage.getItem('jeo-fx-premium') === 'true';
+		// The inline pre-paint script in <head> already applied data-fx before
+		// the stylesheet parsed, but mirror it here for safety.
+		if (this.premiumFx) document.documentElement.setAttribute('data-fx', 'premium');
+		else document.documentElement.removeAttribute('data-fx');
 	}
 
 	initAnimations() {
 		// Respect prefers-reduced-motion for tilt
 		const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		// 3D Parallax Hover for cards
+		// 3D Parallax Hover for cards — only when Premium FX is on. The default
+		// path returns at the first guard so cost is one property read per move.
+		let tiltRAF = 0;
 		document.addEventListener('mousemove', (e) => {
-			if (!this.animHover || reduceMotion) return;
+			if (!this.premiumFx || !this.animHover || reduceMotion) return;
 			const card = e.target.closest('.game-card, .carousel-card');
 			if (!card) return;
-			
-			const rect = card.getBoundingClientRect();
-			const x = e.clientX - rect.left;
-			const y = e.clientY - rect.top;
-			
-			const centerX = rect.width / 2;
-			const centerY = rect.height / 2;
-			
-			const rotateX = ((y - centerY) / centerY) * -8; // Max rotation 8deg
-			const rotateY = ((x - centerX) / centerX) * 8;
-			
-			card.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-			card.style.transition = 'none'; // remove transition for smooth tracking
-		});
+			// rAF-throttle to one update per frame; cache rect on the card so we
+			// don't trigger layout reads on every mousemove.
+			if (tiltRAF) return;
+			tiltRAF = requestAnimationFrame(() => {
+				tiltRAF = 0;
+				const rect = card._tiltRect || (card._tiltRect = card.getBoundingClientRect());
+				const x = e.clientX - rect.left;
+				const y = e.clientY - rect.top;
+				const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -8;
+				const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 8;
+				card.style.transform = `perspective(1000px) scale(var(--fx-tilt-scale)) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+				card.style.transition = 'none';
+			});
+		}, { passive: true });
 
-		// More reliable way for mouseleave:
+		// Invalidate the cached rect when the user leaves a card.
 		document.addEventListener('mouseout', (e) => {
 			const card = e.target.closest('.game-card, .carousel-card');
 			if (!card) return;
-			// check if leaving the card entirely
 			if (!card.contains(e.relatedTarget)) {
-				card.style.transform = ''; // reset to default CSS
-				card.style.transition = 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s, box-shadow 0.3s';
+				card._tiltRect = null;
+				card.style.transform = '';
+				card.style.transition = '';
 			}
-		});
+		}, { passive: true });
 
-		// Ripple Click Effect
+		// Ripple Click Effect — gated to Premium FX so default mode skips it
+		// entirely. The CSS rule `button, .header-nav-link { position: relative;
+		// overflow: hidden; }` removes the need for the old sync getComputedStyle.
 		document.addEventListener('click', (e) => {
-			if (!this.animRipple) return;
+			if (!this.premiumFx || !this.animRipple) return;
 			const btn = e.target.closest('button, .header-nav-link');
 			if (!btn || btn.classList.contains('color-wheel-input')) return;
-			
-			// Don't add ripples to elements without position relative
-			const style = window.getComputedStyle(btn);
-			if (style.position === 'static') {
-				btn.style.position = 'relative';
-				btn.style.overflow = 'hidden';
-			} else if (style.overflow !== 'hidden') {
-				btn.style.overflow = 'hidden';
-			}
 
 			const rect = btn.getBoundingClientRect();
-			const ripple = document.createElement('span');
 			const diameter = Math.max(rect.width, rect.height);
 			const radius = diameter / 2;
-
+			const ripple = document.createElement('span');
 			ripple.style.width = ripple.style.height = `${diameter}px`;
 			ripple.style.left = `${e.clientX - rect.left - radius}px`;
 			ripple.style.top = `${e.clientY - rect.top - radius}px`;
 			ripple.className = 'ripple';
-
 			btn.appendChild(ripple);
+			setTimeout(() => ripple.remove(), 600);
+		}, { passive: true });
+	}
 
-			setTimeout(() => {
-				ripple.remove();
-			}, 600);
-		});
+	// Wire up the Premium FX toggle in the settings modal and pause the hero
+	// aurora animation when the hero is off-screen.
+	initPremiumFx() {
+		const toggle = document.getElementById('premiumFxToggle');
+		if (toggle) {
+			toggle.checked = this.premiumFx;
+			toggle.addEventListener('change', () => {
+				this.premiumFx = !!toggle.checked;
+				if (this.premiumFx) document.documentElement.setAttribute('data-fx', 'premium');
+				else document.documentElement.removeAttribute('data-fx');
+				try { localStorage.setItem('jeo-fx-premium', String(this.premiumFx)); } catch (e) {}
+				// Re-apply the glass slider value (it's no-op when FX is off).
+				const slider = document.getElementById('glassSlider');
+				if (slider) slider.dispatchEvent(new Event('input'));
+			});
+		}
+		// Pause kenBurns / heroAurora when the hero leaves the viewport.
+		const hero = document.querySelector('.hero');
+		if (hero && 'IntersectionObserver' in window) {
+			new IntersectionObserver(([entry]) => {
+				hero.classList.toggle('in-view', entry.isIntersecting);
+			}, { rootMargin: '0px 0px -10% 0px' }).observe(hero);
+			hero.classList.add('in-view');
+		}
 	}
 
 	async bootstrap() {
@@ -1168,17 +1194,26 @@ class App {
 			});
 		}
 
-		// Glass intensity slider
+		// Glass intensity slider — only takes effect when Premium FX is on.
+		// In default (flat) mode the CSS hides the slider section entirely; the
+		// JS still binds so the saved value is restored next time FX is on.
 		const glassSlider = document.getElementById('glassSlider');
 		const glassValue = document.getElementById('glassValue');
+		const applyGlass = (v) => {
+			if (this.premiumFx) {
+				document.documentElement.style.setProperty('--glass-blur', `blur(${v}px)`);
+			} else {
+				document.documentElement.style.removeProperty('--glass-blur');
+			}
+		};
 		if (glassSlider) {
 			const saved = Number(localStorage.getItem('jeo:glass') || '16');
 			glassSlider.value = saved;
-			document.documentElement.style.setProperty('--glass-blur', `blur(${saved}px)`);
+			applyGlass(saved);
 			if (glassValue) glassValue.textContent = `${saved}px`;
 			glassSlider.addEventListener('input', () => {
 				const v = glassSlider.value;
-				document.documentElement.style.setProperty('--glass-blur', `blur(${v}px)`);
+				applyGlass(v);
 				if (glassValue) glassValue.textContent = `${v}px`;
 				localStorage.setItem('jeo:glass', v);
 			});
@@ -1476,7 +1511,7 @@ class App {
 				for (const e of entries) {
 					if (e.isIntersecting) { this._renderNextPage(); break; }
 				}
-			}, { rootMargin: '800px 0px' });
+			}, { rootMargin: '250px 0px' });
 			this._renderNextPage();
 		} else {
 			// No IntersectionObserver: fall back to rendering everything at once.
@@ -1580,9 +1615,9 @@ class App {
 		card.querySelector('.heart-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleFavorite(g, e.currentTarget); });
 		card.querySelector('.wish-btn').addEventListener('click', (e) => { e.stopPropagation(); this.toggleWishlist(g); });
 		card.addEventListener('dblclick', () => { this.playGame(g); });
-		// Cap stagger to the first 24 cards — past that it produces a long
-		// cascade for filtered results with no visible benefit.
-		if (i < 24) card.style.animationDelay = (i * 0.03) + 's';
+		// Stagger only applies under Premium FX (CSS gates the animation itself
+		// to [data-fx='premium']). Capped at the first 24 cards.
+		if (this.premiumFx && i < 24) card.style.animationDelay = (i * 0.03) + 's';
 		return card;
 	}
 

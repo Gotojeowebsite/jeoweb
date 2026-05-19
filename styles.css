@@ -55,24 +55,43 @@ background-attachment: fixed;
 }
 
 /* ========================================
-   LOGO ANIMATION
+   LOGO
    ======================================== */
 .brand-logo-svg {
 	margin-right: 8px;
 	overflow: visible;
+	display: block;
+	border-radius: 7px;
 }
 
-.brand-logo-svg path {
+/* Subtle press feedback only — no bouncy split-path animation by default. */
+.brand-section {
+	transition: opacity var(--motion-fast) var(--ease-out-soft);
+}
+.brand-section:hover { opacity: 0.9; }
+
+/* Premium FX restores the original split-path hover animation. */
+[data-fx='premium'] .brand-logo-svg path {
 	transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 	transform-origin: center;
 }
-
-.brand-section:hover .logo-top {
+[data-fx='premium'] .brand-section:hover .logo-top {
 	transform: translateY(-3px) scale(1.05);
 }
-
-.brand-section:hover .logo-bottom {
+[data-fx='premium'] .brand-section:hover .logo-bottom {
 	transform: translateY(3px) scale(0.95);
+}
+
+/* Ripple target prep — avoids the sync getComputedStyle in app.js ripple handler. */
+button, .header-nav-link {
+	position: relative;
+	overflow: hidden;
+}
+
+/* Skip painting off-screen game rails — biggest scroll-perf win. */
+.game-grid, .carousel-track {
+	content-visibility: auto;
+	contain-intrinsic-size: 280px 800px;
 }
 
 .brand-text {
@@ -143,6 +162,14 @@ transition: border-color var(--motion-base) var(--ease-out-soft),
 	border-radius: var(--radius-sm);
 	transition: color var(--motion-fast) var(--ease-out-soft),
 	            background var(--motion-fast) var(--ease-out-soft);
+}
+.header-nav-link.header-nav-cta {
+	color: var(--accent);
+	font-weight: var(--weight-semibold);
+}
+.header-nav-link.header-nav-cta:hover {
+	background: var(--accent-soft);
+	color: var(--fg-0);
 }
 
 .header-nav-link:hover {
@@ -1382,26 +1409,31 @@ body.theme-light .carousel-empty {
 	right: -6px;
 }
 
-/* Carousel Cards */
+/* Carousel Cards
+   Flat by default — opaque bg, crisp 1px border, no blur, no permanent
+   compositor layer. Premium FX adds back glass + tilt + waterfall. */
 .carousel-card {
 	flex: 0 0 180px;
-	background: var(--card-bg);
-	backdrop-filter: var(--glass-blur);
-	-webkit-backdrop-filter: var(--glass-blur);
-	border: 1px solid var(--border);
-	border-radius: var(--radius);
+	background: var(--bg-1);
+	backdrop-filter: blur(var(--blur-glass-2));
+	-webkit-backdrop-filter: blur(var(--blur-glass-2));
+	border: var(--border-card);
+	border-radius: var(--radius-card);
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
 	position: relative;
-	box-shadow: var(--shadow-md);
+	box-shadow: var(--shadow-card);
+	opacity: 1;
+	transition: transform var(--motion-base) var(--ease-out-soft),
+	            border-color var(--motion-fast) var(--ease-out-soft),
+	            box-shadow var(--motion-base) var(--ease-out-soft);
+}
+[data-fx='premium'] .carousel-card {
 	opacity: 0;
-	animation: waterfall-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+	animation: waterfall-in var(--fx-anim-duration-card) cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 	transform-style: preserve-3d;
 	transform: perspective(1000px) translateY(0);
-	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-	            border-color 0.25s ease,
-	            box-shadow 0.35s ease;
 	will-change: transform;
 }
 
@@ -1427,6 +1459,11 @@ body.theme-light .carousel-empty {
 }
 
 .carousel-card:hover {
+	border-color: var(--line-2);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-card-hover);
+}
+[data-fx='premium'] .carousel-card:hover {
 	border-color: color-mix(in srgb, var(--accent) 55%, transparent);
 	transform: perspective(1000px) translateY(-4px);
 	box-shadow: var(--shadow-lg),
@@ -1525,23 +1562,26 @@ gap: 16px;
 }
 
 .game-card {
-background: var(--card-bg);
+background: var(--bg-1);
 backdrop-filter: var(--glass-blur);
 -webkit-backdrop-filter: var(--glass-blur);
-border: 1px solid var(--border);
-border-radius: var(--radius);
+border: var(--border-card);
+border-radius: var(--radius-card);
 display: flex;
 flex-direction: column;
 cursor: pointer;
 position: relative;
-box-shadow: var(--shadow-md);
+box-shadow: var(--shadow-card);
+opacity: 1;
+transition: transform var(--motion-base) var(--ease-out-soft),
+            border-color var(--motion-fast) var(--ease-out-soft),
+            box-shadow var(--motion-base) var(--ease-out-soft);
+}
+[data-fx='premium'] .game-card {
 opacity: 0;
-animation: waterfall-in var(--motion-deliberate) var(--ease-out-soft) forwards;
+animation: waterfall-in var(--fx-anim-duration-card) var(--ease-out-soft) forwards;
 transform-style: preserve-3d;
 transform: perspective(1000px) translateY(0);
-transition: transform var(--motion-slow) var(--ease-out-soft),
-            border-color var(--motion-base) var(--ease-out-soft),
-            box-shadow var(--motion-slow) var(--ease-out-soft);
 will-change: transform;
 }
 
@@ -1567,6 +1607,11 @@ transform: scale(1.05) translateY(10px);
 }
 
 .game-card:hover {
+border-color: var(--line-2);
+transform: translateY(-1px);
+box-shadow: var(--shadow-card-hover);
+}
+[data-fx='premium'] .game-card:hover {
 border-color: color-mix(in srgb, var(--accent) 55%, transparent);
 transform: perspective(1000px) translateY(-4px);
 box-shadow: var(--shadow-lg),
@@ -3116,8 +3161,12 @@ body.theme-light .rating-badge {
 	inset: -10%;
 	background-size: cover;
 	background-position: center;
-	filter: blur(28px) brightness(0.5) saturate(1.2);
+	/* Static darkened backdrop by default. Animated blur is opt-in via Premium FX. */
+	filter: brightness(0.45) saturate(1.05);
 	z-index: 0;
+}
+[data-fx='premium'] .spotlight-bg {
+	filter: blur(28px) brightness(0.5) saturate(1.2);
 	animation: kenBurns 30s ease-in-out infinite alternate;
 }
 @keyframes kenBurns {
@@ -4225,7 +4274,9 @@ body.theme-light .rating-badge {
 	backdrop-filter: blur(4px);
 }
 
-/* Animated aurora behind the hero — CSS-only, disabled for reduced motion. */
+/* Hero backdrop.
+   Default: a single static radial gradient — cheap, no animation, no blur(36px)
+   compositor cost. Premium FX restores the animated aurora. */
 .hero {
 	position: relative;
 	isolation: isolate;
@@ -4241,14 +4292,20 @@ body.theme-light .rating-badge {
 	height: 320px;
 	transform: translateX(-50%);
 	background:
+		radial-gradient(50% 60% at 50% 40%, rgba(124, 58, 237, 0.18), transparent 70%);
+	opacity: 0.9;
+	pointer-events: none;
+}
+[data-fx='premium'] .hero::before {
+	background:
 		radial-gradient(40% 60% at 30% 40%, rgba(168, 85, 247, 0.30), transparent 70%),
 		radial-gradient(40% 60% at 70% 50%, rgba(236, 72, 153, 0.26), transparent 70%),
 		radial-gradient(50% 50% at 50% 70%, rgba(34, 211, 238, 0.18), transparent 70%);
 	filter: blur(36px);
-	opacity: 0.9;
 	animation: heroAurora 16s ease-in-out infinite alternate;
-	pointer-events: none;
 }
+/* Pause when off-screen — JS toggles .in-view on .hero. */
+.hero:not(.in-view)::before { animation-play-state: paused; }
 @keyframes heroAurora {
 	0%   { transform: translateX(-50%) scale(1) rotate(0deg); }
 	100% { transform: translateX(-50%) scale(1.15) rotate(8deg); }
@@ -4371,3 +4428,39 @@ body.theme-light .rating-badge {
 .carousel-card[data-rank="1"]::before { background: linear-gradient(135deg, #f59e0b, #ef4444); }
 .carousel-card[data-rank="2"]::before { background: linear-gradient(135deg, #94a3b8, #64748b); }
 .carousel-card[data-rank="3"]::before { background: linear-gradient(135deg, #b45309, #92400e); }
+
+/* ========================================
+   PREMIUM FX gating
+   ========================================
+   The "Premium FX" settings toggle adds data-fx="premium" to <html>.
+   While off, the Glass intensity slider is a no-op — hide it and surface
+   a hint that Premium FX must be on to use it. */
+html:not([data-fx='premium']) .settings-section-glass {
+	display: none;
+}
+
+/* Hero gradient text — sleek modern dark variant of the H1. */
+.hero h1 {
+	background: var(--gradient-hero-text);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	letter-spacing: var(--tracking-tight);
+}
+[data-theme='light'] .hero h1 {
+	background: linear-gradient(180deg, #15141a 0%, #3d3c47 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+/* Tightened header — flat, no glass. (Premium FX restores the legacy glass look.) */
+.topbar {
+	background: var(--bg-0);
+	border-color: var(--line-1);
+	box-shadow: 0 1px 0 var(--line-0);
+}
+[data-fx='premium'] .topbar {
+	background: var(--surface-glass);
+	box-shadow: var(--shadow-2);
+}

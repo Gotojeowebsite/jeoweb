@@ -66,6 +66,12 @@
 				var theme = stored === 'light' || prefersLight ? 'light' : 'dark';
 				document.documentElement.setAttribute('data-theme', theme);
 				if (prefersLight) document.documentElement.setAttribute('data-pref-theme', 'light');
+				// Premium FX (glass blur, 3D tilt, animated hero) — applied
+				// before stylesheet parse so the user doesn't see a flash from
+				// flat → glass on reload.
+				if (localStorage.getItem('jeo-fx-premium') === 'true') {
+					document.documentElement.setAttribute('data-fx', 'premium');
+				}
 			} catch (e) {}
 		})();
 	</script>
@@ -106,24 +112,24 @@
 	</script>
 	<header class="topbar">
 		<div class="header-left">
-			<a href="." class="brand-section">
-				<svg class="brand-logo-svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<a href="." class="brand-section" aria-label="Jeo home">
+				<svg class="brand-logo-svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Jeo">
 					<defs>
-						<linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+						<linearGradient id="jGrad" x1="0" y1="0" x2="1" y2="1">
 							<stop offset="0%" stop-color="#a855f7" />
-							<stop offset="100%" stop-color="#ec4899" />
+							<stop offset="100%" stop-color="#7c3aed" />
 						</linearGradient>
 					</defs>
-					<path d="M12 2L2 7l10 5 10-5-10-5z" class="logo-top"/>
-					<path d="M2 17l10 5 10-5M2 12l10 5 10-5" class="logo-bottom"/>
+					<rect x="2" y="2" width="28" height="28" rx="7" fill="url(#jGrad)" />
+					<path fill="#fff" d="M20 7.5a1.75 1.75 0 0 1 3.5 0v12.25a6.75 6.75 0 0 1-6.75 6.75h-0.5a6.75 6.75 0 0 1-6.75-6.75 1.75 1.75 0 0 1 3.5 0 3.25 3.25 0 0 0 3.25 3.25h0.5a3.25 3.25 0 0 0 3.25-3.25V7.5Z" />
 				</svg>
 				<div class="brand-text">jeo</div>
 			</a>
-			<a href="flash.html" class="header-nav-link">⚡ Flash Games</a>
-			<a href="retro.html" class="header-nav-link">🎮 Retro Games</a>
+			<a href="flash.html" class="header-nav-link">Flash</a>
+			<a href="retro.html" class="header-nav-link">Retro</a>
 			<a href="logs.html" class="header-nav-link">Logs</a>
-			<a href="links.html" class="header-nav-link">🔗 Links</a>
-			<a href="make-your-own.html" class="header-nav-link" style="color: var(--accent); font-weight: bold;">🚀 Host Your Own</a>
+			<a href="links.html" class="header-nav-link">Links</a>
+			<a href="make-your-own.html" class="header-nav-link header-nav-cta">Host your own</a>
 			<a href="https://forms.gle/HgkCSEzaF5iULyfv8" target="_blank" rel="noopener noreferrer" class="header-nav-link feedback-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Send feedback</a>
 		</div>
 		<div class="header-right">
@@ -528,9 +534,9 @@
 						<div id="lookProfileGrid" class="look-profile-grid"></div>
 					</div>
 
-					<div class="settings-section">
+					<div class="settings-section settings-section-glass">
 						<h3>🌫 Glass intensity</h3>
-						<p class="settings-help">How blurry frosted-glass surfaces feel.</p>
+						<p class="settings-help">How blurry frosted-glass surfaces feel. Requires Premium FX.</p>
 						<input id="glassSlider" type="range" min="0" max="24" step="1" value="16" class="settings-slider" />
 						<div class="settings-slider-row"><span>Off</span><span id="glassValue">16px</span><span>Heavy</span></div>
 					</div>
@@ -548,7 +554,17 @@
 					</div>
 
 					<div class="settings-section">
-						<h3>✨ Animations & Effects</h3>
+						<h3>✨ Premium FX</h3>
+						<p class="settings-help">Glass blur, 3D card tilt, animated hero, waterfall card entrance. Off by default for the smoothest scrolling — flip on for the full visual treatment.</p>
+						<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:12px; border-radius:8px; border:1px solid var(--border);">
+							<span style="color:var(--text); font-size:14px; font-weight:600;">Enable Premium FX</span>
+							<div class="toggle-switch"><input type="checkbox" id="premiumFxToggle" /><span class="toggle-slider"></span></div>
+						</label>
+					</div>
+
+					<div class="settings-section">
+						<h3>🎛 Per-effect toggles</h3>
+						<p class="settings-help">Fine-grained controls (only apply when Premium FX is on).</p>
 						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
 							<label style="display:flex; justify-content:space-between; align-items:center; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
 								<span style="color:var(--text); font-size:14px;">3D Card Hover</span>
@@ -716,9 +732,15 @@
 			<div id="gameLoadingOverlay" class="game-loading-overlay hidden">
 				<div id="loadingDynamicBg" class="dynamic-bg"></div>
 				<div class="loading-content">
-					<svg class="loading-brand-logo" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M12 2L2 7l10 5 10-5-10-5z" class="logo-top"/>
-						<path d="M2 17l10 5 10-5M2 12l10 5 10-5" class="logo-bottom"/>
+					<svg class="loading-brand-logo" width="64" height="64" viewBox="0 0 32 32" role="img" aria-label="Jeo">
+						<defs>
+							<linearGradient id="jGradLoad" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0%" stop-color="#a855f7" />
+								<stop offset="100%" stop-color="#7c3aed" />
+							</linearGradient>
+						</defs>
+						<rect x="2" y="2" width="28" height="28" rx="7" fill="url(#jGradLoad)" />
+						<path fill="#fff" d="M20 7.5a1.75 1.75 0 0 1 3.5 0v12.25a6.75 6.75 0 0 1-6.75 6.75h-0.5a6.75 6.75 0 0 1-6.75-6.75 1.75 1.75 0 0 1 3.5 0 3.25 3.25 0 0 0 3.25 3.25h0.5a3.25 3.25 0 0 0 3.25-3.25V7.5Z" />
 					</svg>
 					<h2 id="loadingGameTitle">Loading Game...</h2>
 					<div class="loading-progress-container">

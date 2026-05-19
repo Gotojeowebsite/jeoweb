@@ -12,22 +12,18 @@ const { size = 32, withWordmark = true, href = '/' } = Astro.props;
 		width={size}
 		height={size}
 		viewBox="0 0 32 32"
-		fill="none"
 		aria-hidden="true"
 	>
 		<defs>
 			<linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-				<stop offset="0%" stop-color="var(--brand-300)" />
-				<stop offset="100%" stop-color="var(--semantic-retro)" />
+				<stop offset="0%" stop-color="var(--brand-400)" />
+				<stop offset="100%" stop-color="var(--brand-600)" />
 			</linearGradient>
 		</defs>
+		<rect x="2" y="2" width="28" height="28" rx="7" fill="url(#logo-grad)" />
 		<path
-			fill="url(#logo-grad)"
-			d="M21.5 4.5c0-1.105.895-2 2-2s2 .895 2 2v17.25c0 4.142-3.358 7.5-7.5 7.5h-1A7.5 7.5 0 0 1 9.5 23.75c0-1.105.895-2 2-2s2 .895 2 2A3.5 3.5 0 0 0 17 25.25h1a3.5 3.5 0 0 0 3.5-3.5V4.5Z"
-		/>
-		<path
-			fill="url(#logo-grad)"
-			d="M5 11.75a1.5 1.5 0 0 1 2.245-1.302l7.5 4.25a1.5 1.5 0 0 1 0 2.604l-7.5 4.25A1.5 1.5 0 0 1 5 20.25v-8.5Z"
+			fill="#fff"
+			d="M20 7.5a1.75 1.75 0 0 1 3.5 0v12.25a6.75 6.75 0 0 1-6.75 6.75h-0.5a6.75 6.75 0 0 1-6.75-6.75 1.75 1.75 0 0 1 3.5 0 3.25 3.25 0 0 0 3.25 3.25h0.5a3.25 3.25 0 0 0 3.25-3.25V7.5Z"
 		/>
 	</svg>
 	{withWordmark && <span class="logo-text">jeo</span>}
@@ -45,8 +41,15 @@ const { size = 32, withWordmark = true, href = '/' } = Astro.props;
 		font-weight: var(--weight-display);
 		letter-spacing: -0.04em;
 	}
-	.logo:hover { color: var(--fg-0); }
-	.logo-mark { flex-shrink: 0; transition: transform var(--motion-fast) var(--ease-out-soft); }
-	.logo:hover .logo-mark { transform: rotate(-6deg); }
+	.logo:hover { opacity: 0.9; }
+	.logo-mark { flex-shrink: 0; border-radius: 7px; }
 	.logo-text { line-height: 1; }
+
+	/* Premium FX restores the rotate-on-hover flourish. */
+	:global([data-fx='premium']) .logo-mark {
+		transition: transform var(--motion-fast) var(--ease-out-soft);
+	}
+	:global([data-fx='premium']) .logo:hover .logo-mark {
+		transform: rotate(-6deg);
+	}
 </style>

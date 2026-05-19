@@ -87,9 +87,25 @@
 	--shadow-3: 0 12px 32px rgba(0, 0, 0, 0.45);
 	--shadow-4: 0 24px 64px rgba(0, 0, 0, 0.55);
 
-	--blur-glass-1: 8px;
-	--blur-glass-2: 16px;
-	--blur-glass-3: 24px;
+	/* Glass blur tokens.
+	   Default to 0px for max scroll-perf — no compositor-blocking blur on
+	   game cards / topbar / spotlight. Restored to non-zero values under
+	   [data-fx='premium'] (set via the "Premium FX" settings toggle). */
+	--blur-glass-1: 0px;
+	--blur-glass-2: 0px;
+	--blur-glass-3: 0px;
+
+	/* Flat-card spec (sleek modern dark default). */
+	--radius-card: 10px;
+	--border-card: 1px solid rgba(255, 255, 255, 0.08);
+	--shadow-card: 0 1px 0 rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.4);
+	--shadow-card-hover: 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px rgba(0, 0, 0, 0.5);
+	--gradient-cta: linear-gradient(135deg, var(--brand-500), var(--brand-700));
+	--gradient-hero-text: linear-gradient(180deg, #ffffff 0%, #b8b8c2 100%);
+
+	/* FX gates — zero by default, overridden under [data-fx='premium']. */
+	--fx-tilt-scale: 1;
+	--fx-anim-duration-card: 0ms;
 
 	/* ───────────────────────── Motion ───────────────────────── */
 	--motion-fast: 120ms;
@@ -120,24 +136,26 @@
 }
 
 /* ─────────────────────── Theme: Dark (default) ─────────────────────── */
+/* Sleek modern dark — deeper near-black backgrounds, opaque card surfaces,
+   crisp 1px borders. Linear / Vercel / Arc aesthetic. */
 :root,
 [data-theme='dark'] {
-	--bg-0: #0a0a0c;   /* page */
-	--bg-1: #121116;   /* card */
-	--bg-2: #1a1923;   /* popover */
-	--bg-3: #232233;   /* toast / elevated */
+	--bg-0: #07070a;   /* page */
+	--bg-1: #0d0d12;   /* card surface (opaque, no glass by default) */
+	--bg-2: #14141c;   /* popover */
+	--bg-3: #1c1c26;   /* toast / elevated */
 
-	--fg-0: #f4f4f7;   /* primary text */
-	--fg-1: #c9c8d3;   /* secondary text */
-	--fg-2: #8e8d9d;   /* muted */
-	--fg-3: #5a596b;   /* disabled */
+	--fg-0: #f5f5f7;   /* primary text */
+	--fg-1: #b8b8c2;   /* secondary text */
+	--fg-2: #7a7a86;   /* muted */
+	--fg-3: #4a4a55;   /* disabled */
 
-	--line-0: rgba(255, 255, 255, 0.06);  /* hairline */
-	--line-1: rgba(255, 255, 255, 0.10);  /* divider */
-	--line-2: rgba(255, 255, 255, 0.18);  /* prominent */
+	--line-0: rgba(255, 255, 255, 0.05);  /* hairline */
+	--line-1: rgba(255, 255, 255, 0.08);  /* divider */
+	--line-2: rgba(255, 255, 255, 0.14);  /* prominent */
 
-	--surface-glass: rgba(18, 17, 22, 0.65);
-	--surface-overlay: rgba(0, 0, 0, 0.55);
+	--surface-glass: var(--bg-1);                 /* opaque by default */
+	--surface-overlay: rgba(7, 7, 10, 0.85);
 
 	--accent: var(--brand-500);
 	--accent-soft: rgba(124, 58, 237, 0.18);
@@ -170,6 +188,24 @@
 	--accent-fg: #ffffff;
 }
 
+/* ─────────────────────── Premium FX (opt-in via settings) ───────────────────────
+   Restores the glassmorphic / animated / 3D-tilt look. Off by default for
+   max scroll perf; users enable it from Settings → Animations & Effects. */
+[data-fx='premium'] {
+	--blur-glass-1: 8px;
+	--blur-glass-2: 16px;
+	--blur-glass-3: 24px;
+	--surface-glass: rgba(13, 13, 18, 0.65);
+	--shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
+	--shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+	--fx-tilt-scale: 1.02;
+	--fx-anim-duration-card: 600ms;
+}
+
+[data-fx='premium'][data-theme='light'] {
+	--surface-glass: rgba(255, 255, 255, 0.72);
+}
+
 /* ─────────────────────── Reduced motion ─────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 	:root {
@@ -177,5 +213,6 @@
 		--motion-base: 1ms;
 		--motion-slow: 1ms;
 		--motion-deliberate: 1ms;
+		--fx-anim-duration-card: 1ms;
 	}
 }
