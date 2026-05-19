@@ -52,14 +52,23 @@ const ribbon = isBroken
 >
 	<div class="card-cover">
 		{game.image ? (
-			<img
-				src={`/${game.image}`}
-				alt=""
-				loading={priority ? 'eager' : 'lazy'}
-				decoding={priority ? 'sync' : 'async'}
-				width="400"
-				height="225"
-			/>
+			<picture>
+				{/* convert-covers-to-webp.mjs writes <stem>.webp siblings for
+				    every catalog cover that wasn't already WebP/SVG. The img
+				    fallback covers older browsers and the handful of covers
+				    where the WebP write was skipped. */}
+				{!game.image.match(/\.(webp|svg|ico|gif)$/i) && (
+					<source srcset={`/${game.image.replace(/\.[^.]+$/, '.webp')}`} type="image/webp" />
+				)}
+				<img
+					src={`/${game.image}`}
+					alt=""
+					loading={priority ? 'eager' : 'lazy'}
+					decoding={priority ? 'sync' : 'async'}
+					width="400"
+					height="225"
+				/>
+			</picture>
 		) : (
 			<div class="card-cover-empty" aria-hidden="true">
 				<Icon name="gamepad" size={36} />

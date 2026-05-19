@@ -127,9 +127,16 @@ function timeAgo(iso: string | undefined): string {
 
 		<div class="detail-hero">
 			<div class="detail-cover">
-				{game.image
-					? <img src={`/${game.image}`} alt={`${game.name} cover`} width="800" height="450" loading="eager" />
-					: <div class="detail-cover-empty"><Icon name="gamepad" size={64} /></div>}
+				{game.image ? (
+					<picture>
+						{!game.image.match(/\.(webp|svg|ico|gif)$/i) && (
+							<source srcset={`/${game.image.replace(/\.[^.]+$/, '.webp')}`} type="image/webp" />
+						)}
+						<img src={`/${game.image}`} alt={`${displayName} cover`} width="800" height="450" loading="eager" />
+					</picture>
+				) : (
+					<div class="detail-cover-empty"><Icon name="gamepad" size={64} /></div>
+				)}
 			</div>
 			<div class="detail-meta">
 				<div class="detail-eyebrow">

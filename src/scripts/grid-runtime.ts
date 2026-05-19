@@ -160,8 +160,17 @@ function createCard(g: Game, favs: Set<string>): HTMLElement {
 	const ribbonHtml = ribbon
 		? `<div class="card-broken-ribbon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${ribbon}</span></div>`
 		: '';
+	// Mirror the GameCard <picture> structure for runtime-rendered tiles so
+	// the WebP siblings written by scripts/convert-covers-to-webp.mjs get
+	// picked up everywhere — not just the first 60 SSR cards.
 	const imgHtml = g.image
-		? `<img src="/${escapeHtml(g.image)}" alt="" loading="lazy" decoding="async" width="400" height="225">`
+		? (() => {
+			const escaped = escapeHtml(g.image);
+			const hasWebpSource = !/\.(webp|svg|ico|gif)$/i.test(g.image);
+			const webp = hasWebpSource ? escapeHtml(g.image.replace(/\.[^.]+$/, '.webp')) : null;
+			const source = webp ? `<source srcset="/${webp}" type="image/webp">` : '';
+			return `<picture>${source}<img src="/${escaped}" alt="" loading="lazy" decoding="async" width="400" height="225"></picture>`;
+		})()
 		: `<div class="card-cover-empty" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="6" rx="3"/><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><circle cx="15" cy="11" r=".5" fill="currentColor"/><circle cx="17" cy="13" r=".5" fill="currentColor"/></svg></div>`;
 	const subHtml = chipsHtml(g);
 

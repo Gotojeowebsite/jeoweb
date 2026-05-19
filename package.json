@@ -10,6 +10,7 @@
     "descriptions:refresh": "node scripts/generate-descriptions.mjs",
     "similarity:build": "node scripts/build-similarity.mjs",
     "featured:rotate": "node scripts/rotate-featured.mjs",
+    "covers:webp": "node scripts/convert-covers-to-webp.mjs",
     "preview": "astro preview",
     "typecheck": "astro check",
     "covers:fix": "python3 fix_game_covers.py --apply",
@@ -73,6 +74,7 @@
     "playwright": "^1.59.1",
     "preact": "^10.29.1",
     "puppeteer": "^24.40.0",
+    "sharp": "^0.34.5",
     "typescript": "^6.0.3"
   }
 }
