@@ -148,7 +148,7 @@ const typeIcon = game.type === 'flash' ? 'zap' : game.type === 'retro' ? 'gamepa
 		letter-spacing: var(--tracking-wide);
 		background: rgba(255,255,255,0.12);
 		border: 1px solid rgba(255,255,255,0.18);
-		backdrop-filter: blur(8px);
+		backdrop-filter: blur(var(--blur-glass-1));
 	}
 	.launch-overlay--flash .launch-overlay__chip { color: var(--semantic-flash); border-color: color-mix(in srgb, var(--semantic-flash) 50%, transparent); }
 	.launch-overlay--retro .launch-overlay__chip { color: var(--semantic-retro); border-color: color-mix(in srgb, var(--semantic-retro) 50%, transparent); }
