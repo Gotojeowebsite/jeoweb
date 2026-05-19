@@ -82,6 +82,25 @@ jobs:
             }
           "
 
+      # Refresh editorial descriptions + difficulty/duration metadata for any
+      # newly-added games. The generator preserves manual=true overrides on
+      # re-runs so hand-curated copy survives.
+      - name: Refresh game descriptions
+        run: node scripts/generate-descriptions.mjs
+
+      # Pre-compute the per-slug similarity matrix. Runs before astro build
+      # so the game detail pages can read similar.json instead of doing
+      # N-squared work at build time.
+      - name: Build similarity matrix
+        run: node scripts/build-similarity.mjs
+
+      # Generate .webp siblings for every catalog cover. Resized to 800px
+      # max width and quality 78 — typically 60% smaller than the source
+      # JPEG/PNG. Idempotent and safe to re-run; existing newer .webps are
+      # left alone.
+      - name: Convert covers to WebP
+        run: node scripts/convert-covers-to-webp.mjs
+
       # Cutover: Astro is now the canonical deploy artifact. The build
       # writes to ./dist and link-assets --copy stages /Assets, /emulatorjs,
       # /cdn-cgi and the pipeline JSONs into dist so the bundle is fully
@@ -91,6 +110,12 @@ jobs:
 
       - name: Stage assets into dist
         run: node scripts/link-assets-into-dist.mjs --copy
+
+      - name: Pre-compress static assets
+        # Generates .br + .gz siblings for HTML/CSS/JS/SVG/JSON. Pages and
+        # Azure SWA serve these natively when Accept-Encoding allows. Skips
+        # /Assets, /emulatorjs, /cdn-cgi (vendored game payloads).
+        run: node scripts/precompress-dist.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

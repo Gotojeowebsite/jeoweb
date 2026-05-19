@@ -16,6 +16,8 @@ const KNOWN: PaletteStatus[] = ['broken', 'maintenance', 'unverified', 'probable
 const games = getAllGames().map((g) => ({
 	slug: gameSlug(g),
 	name: g.name,
+	displayName: g.displayName ?? g.name,
+	pitch: g.pitch ?? '',
 	type: g.type,
 	tags: g.tags ?? [],
 	status: (KNOWN as readonly string[]).includes(g.status as string) ? (g.status as PaletteStatus) : undefined,
