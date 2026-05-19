@@ -82,6 +82,18 @@ jobs:
             }
           "
 
+      # Refresh editorial descriptions + difficulty/duration metadata for any
+      # newly-added games. The generator preserves manual=true overrides on
+      # re-runs so hand-curated copy survives.
+      - name: Refresh game descriptions
+        run: node scripts/generate-descriptions.mjs
+
+      # Pre-compute the per-slug similarity matrix. Runs before astro build
+      # so the game detail pages can read similar.json instead of doing
+      # N-squared work at build time.
+      - name: Build similarity matrix
+        run: node scripts/build-similarity.mjs
+
       # Cutover: Astro is now the canonical deploy artifact. The build
       # writes to ./dist and link-assets --copy stages /Assets, /emulatorjs,
       # /cdn-cgi and the pipeline JSONs into dist so the bundle is fully

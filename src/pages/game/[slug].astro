@@ -7,6 +7,7 @@ import {
 	gameSlug,
 	gameTypeLabel,
 	getHealth,
+	getSimilar,
 	type Game,
 } from '../../lib/catalog';
 
@@ -18,33 +19,55 @@ export async function getStaticPaths() {
 interface Props { game: Game; }
 const { game } = Astro.props;
 const slug = gameSlug(game);
+const displayName = game.displayName ?? game.name;
 const health = getHealth();
 const verdict = health[slug];
 
 const all = getAllGames();
+// Similar games come from the build-time matrix at scripts/build-similarity.mjs
+// when present; falls back to runtime tag overlap (legacy behavior) so we
+// don't break the page before the matrix has been generated for the first
+// time. The matrix is in similar.json, top-10 slugs per game.
+const similarMap = getSimilar();
+const slugToGame = new Map(all.map(g => [gameSlug(g), g] as const));
 function tagOverlap(a: string[], b: string[]) {
 	const setB = new Set(b);
 	return a.reduce((n, t) => n + (setB.has(t) ? 1 : 0), 0);
 }
-const similar = all
-	.filter(g => g.name !== game.name && g.type === game.type && g.image)
-	.map(g => ({ g, score: tagOverlap(g.tags ?? [], game.tags ?? []) }))
-	.sort((a, b) => b.score - a.score)
-	.slice(0, 8)
-	.map(x => x.g);
+const similar: Game[] = similarMap[slug]?.length
+	? similarMap[slug].map(s => slugToGame.get(s)).filter((g): g is Game => !!g && !!g.image).slice(0, 8)
+	: all
+		.filter(g => g.name !== game.name && g.type === game.type && g.image)
+		.map(g => ({ g, score: tagOverlap(g.tags ?? [], game.tags ?? []) }))
+		.sort((a, b) => b.score - a.score)
+		.slice(0, 8)
+		.map(x => x.g);
 
 const typeLabel = gameTypeLabel(game.type);
 const typeArticle = typeLabel === 'WebGL' ? 'a' : typeLabel === 'Flash' ? 'a classic' : 'a';
 const tagSentence = game.tags?.length
 	? `Tagged ${game.tags.slice(0, 4).join(', ')}.`
 	: '';
-const description = `Play ${game.name}, ${typeArticle} ${typeLabel} game, free on Jeo. ${tagSentence} No downloads, no sign-ups, plays right in your browser.`.replace(/\s+/g, ' ').trim();
+// Prefer the editorial pitch from game_descriptions.json; fall back to the
+// templated description for games that haven't been generated yet. Either
+// way the per-page <meta description> is unique to this slug so search
+// engines don't see 596 identical descriptions.
+const description = game.pitch
+	?? `Play ${displayName}, ${typeArticle} ${typeLabel} game, free on Jeo. ${tagSentence} No downloads, no sign-ups, plays right in your browser.`.replace(/\s+/g, ' ').trim();
+const difficultyLabel: Record<'easy' | 'med' | 'hard', string> = {
+	easy: 'Easy', med: 'Medium', hard: 'Tough',
+};
+const durationLabel = game.durationMin
+	? game.durationMin[0] === game.durationMin[1]
+		? `${game.durationMin[0]} min`
+		: `${game.durationMin[0]}-${game.durationMin[1]} min`
+	: null;
 
 const jsonLd = [
 	{
 		'@context': 'https://schema.org',
 		'@type': 'VideoGame',
-		name: game.name,
+		name: displayName,
 		url: `https://jeoweb.app/game/${slug}`,
 		image: game.image ? `https://jeoweb.app/${game.image}` : undefined,
 		description,
@@ -61,7 +84,7 @@ const jsonLd = [
 		itemListElement: [
 			{ '@type': 'ListItem', position: 1, name: 'Jeo',    item: 'https://jeoweb.app/' },
 			{ '@type': 'ListItem', position: 2, name: gameTypeLabel(game.type), item: `https://jeoweb.app/${game.type}` },
-			{ '@type': 'ListItem', position: 3, name: game.name },
+			{ '@type': 'ListItem', position: 3, name: displayName },
 		],
 	},
 ];
@@ -88,7 +111,7 @@ function timeAgo(iso: string | undefined): string {
 }
 ---
 <Site
-	title={`${game.name}`}
+	title={displayName}
 	description={description}
 	ogImage={game.image ? `/${game.image}` : '/og-default.svg'}
 	jsonLd={jsonLd}
@@ -116,7 +139,21 @@ function timeAgo(iso: string | undefined): string {
 					</span>
 					<span class:list={['status', `status--${verdictUi.tone}`]}>{verdictUi.label}</span>
 				</div>
-				<h1 class="detail-title">{game.name}</h1>
+				<h1 class="detail-title">{displayName}</h1>
+				{(game.difficulty || durationLabel) && (
+					<div class="detail-stats">
+						{game.difficulty && (
+							<span class:list={['detail-stat', `detail-stat--diff-${game.difficulty}`]}>
+								<Icon name="flame" size={12} />{difficultyLabel[game.difficulty]}
+							</span>
+						)}
+						{durationLabel && (
+							<span class="detail-stat">
+								<Icon name="history" size={12} />{durationLabel} per session
+							</span>
+						)}
+					</div>
+				)}
 				{game.tags?.length ? (
 					<div class="detail-tags">
 						{game.tags.map(t => <a class="chip" href={`/?tag=${encodeURIComponent(t)}`}>{t}</a>)}
@@ -220,6 +257,34 @@ function timeAgo(iso: string | undefined): string {
 	.detail-title {
 		font-size: var(--text-h1);
 		letter-spacing: -0.04em;
+	}
+	.detail-stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-bottom: var(--space-1);
+	}
+	.detail-stat {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		padding: 4px 10px;
+		border-radius: var(--radius-pill);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-medium);
+		background: var(--bg-2);
+		color: var(--fg-1);
+		border: 1px solid var(--line-1);
+	}
+	.detail-stat--diff-easy {
+		color: color-mix(in srgb, var(--semantic-ok, #4ade80) 90%, white);
+		background: color-mix(in srgb, var(--semantic-ok, #4ade80) 14%, var(--bg-2));
+		border-color: color-mix(in srgb, var(--semantic-ok, #4ade80) 28%, transparent);
+	}
+	.detail-stat--diff-hard {
+		color: color-mix(in srgb, var(--semantic-warn, #f59e0b) 90%, white);
+		background: color-mix(in srgb, var(--semantic-warn, #f59e0b) 16%, var(--bg-2));
+		border-color: color-mix(in srgb, var(--semantic-warn, #f59e0b) 30%, transparent);
 	}
 	.detail-tags {
 		display: flex;

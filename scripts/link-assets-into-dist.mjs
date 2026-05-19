@@ -29,6 +29,8 @@ const FILES = [
 	'games_list.json',
 	'game_health.json',
 	'recently_added.json',
+	'game_descriptions.json',
+	'similar.json',
 	'manifest.json',
 	'notavailable.svg',
 	'icon.svg',

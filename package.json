@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "astro dev",
-    "build": "astro build && node scripts/link-assets-into-dist.mjs",
+    "build": "node scripts/generate-descriptions.mjs && node scripts/build-similarity.mjs && astro build && node scripts/link-assets-into-dist.mjs",
+    "descriptions:refresh": "node scripts/generate-descriptions.mjs",
+    "similarity:build": "node scripts/build-similarity.mjs",
     "preview": "astro preview",
     "typecheck": "astro check",
     "covers:fix": "python3 fix_game_covers.py --apply",

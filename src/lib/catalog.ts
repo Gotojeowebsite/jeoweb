@@ -14,6 +14,17 @@ export type RawGameType = 'webgl' | 'flash' | 'gba' | 'snes' | 'nes' | 'retro' |
 
 export type GameStatus = 'broken' | 'maintenance' | 'unverified' | 'probable_broken' | 'unknown' | 'healthy';
 
+export type Difficulty = 'easy' | 'med' | 'hard';
+
+export interface GameDescription {
+	pitch: string;
+	difficulty: Difficulty;
+	durationMin: [number, number];
+	/** When true, generate-descriptions.mjs leaves this entry untouched on
+	 * re-runs. Set this on hand-curated overrides for top games. */
+	manual?: boolean;
+}
+
 export interface Game {
 	name: string;
 	url: string;
@@ -24,6 +35,17 @@ export interface Game {
 	size: number;
 	tags: string[];
 	genre?: string;
+	/** 1-2 sentence editorial pitch. Sourced from game_descriptions.json
+	 * (build artifact). May be undefined for games not yet generated. */
+	pitch?: string;
+	/** Difficulty bucket surfaced on cards and the detail page. */
+	difficulty?: Difficulty;
+	/** Inclusive [min, max] minutes per play session — drives the "≈5-15 min"
+	 * chip on cards. */
+	durationMin?: [number, number];
+	/** Display-friendly name derived from the slug at build time so cards
+	 * don't show "1on1SoccerBigHeads" or "crossy-road-space". */
+	displayName?: string;
 	/** Canonical merged verdict — from game_health.json when present, otherwise
 	 * the HTML-marker status from games_list.json. Frontend should treat
 	 * `probable_broken` and `unknown` as live (no hide); only `broken` and
@@ -57,6 +79,32 @@ export interface HealthVerdict {
 let _games: Game[] | null = null;
 let _health: Record<string, HealthVerdict> | null = null;
 let _recent: Game[] | null = null;
+let _descriptions: Record<string, GameDescription> | null = null;
+let _similar: Record<string, string[]> | null = null;
+
+// Pretty-print a slug-like game name. Mirrors the logic in
+// scripts/generate-descriptions.mjs so cards, detail pages, and pitches
+// all show the same title. Kept here (and not imported) so the type-checked
+// Astro build doesn't pull a .mjs module — duplication is intentional.
+const NAME_ACRONYMS = new Set(['IO','FPS','RPG','TD','RTS','MMO','MMORPG','2D','3D','VR','NES','SNES','GBA','FIFA','NBA','NFL','NHL','MLB','UFC','MMA','WWE','WW2','WW1','PvP','CO']);
+const NAME_SMALL = new Set(['a','an','and','as','at','but','by','for','in','of','on','or','the','to','vs']);
+export function prettifyGameName(raw: string | undefined | null): string {
+	if (!raw) return 'this game';
+	let s = String(raw)
+		.replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+		.replace(/[-_.]+/g, ' ')
+		.replace(/(\d+)v(\d+)/gi, ' $1v$2 ')
+		.replace(/(\d+)on(\d+)/gi, ' $1on$2 ')
+		.replace(/\s+/g, ' ')
+		.trim();
+	return s.split(' ').map((w, i) => {
+		const up = w.toUpperCase();
+		if (NAME_ACRONYMS.has(up)) return up;
+		if (i > 0 && NAME_SMALL.has(w.toLowerCase())) return w.toLowerCase();
+		if (/^\d/.test(w)) return w;
+		return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+	}).join(' ');
+}
 
 function loadJson<T>(relative: string, fallback: T): T {
 	try {
@@ -86,6 +134,7 @@ export function getAllGames(): Game[] {
 			'games_list.json',
 		);
 		const health = getHealth();
+		const descriptions = getDescriptions();
 		_games = raw.map((g) => {
 			const name = g.name ?? 'Unknown';
 			// Canonical verdict comes from game_health.json (schema 2). Falls
@@ -94,6 +143,11 @@ export function getAllGames(): Game[] {
 			// least authoritative signal in the resolution chain.
 			const verdict = health[name];
 			const status: GameStatus | undefined = verdict ? verdict.verdict : g.status;
+			// Slug is the Assets/<dir>/ folder name — mirrors gameSlug() but
+			// inlined here so we can look up descriptions in the same pass.
+			const slugMatch = /^Assets\/([^/]+)\//.exec(g.url ?? '');
+			const slug = slugMatch ? slugMatch[1] : '';
+			const desc = slug ? descriptions[slug] : undefined;
 			return {
 				name,
 				url: g.url ?? '',
@@ -104,6 +158,10 @@ export function getAllGames(): Game[] {
 				size: g.size ?? 0,
 				tags: g.tags ?? [],
 				genre: g.genre,
+				pitch: desc?.pitch,
+				difficulty: desc?.difficulty,
+				durationMin: desc?.durationMin,
+				displayName: prettifyGameName(name),
 				status,
 				confidence: verdict?.confidence,
 				requested: g.requested,
@@ -112,6 +170,23 @@ export function getAllGames(): Game[] {
 		});
 	}
 	return _games;
+}
+
+export function getDescriptions(): Record<string, GameDescription> {
+	if (!_descriptions) {
+		_descriptions = loadJson<Record<string, GameDescription>>('game_descriptions.json', {});
+	}
+	return _descriptions;
+}
+
+/** Pre-computed similarity map written by scripts/build-similarity.mjs.
+ * Empty object when the build hasn't run yet — callers should fall back
+ * to runtime tag overlap. */
+export function getSimilar(): Record<string, string[]> {
+	if (!_similar) {
+		_similar = loadJson<Record<string, string[]>>('similar.json', {});
+	}
+	return _similar;
 }
 
 export function getHealth(): Record<string, HealthVerdict> {
@@ -126,8 +201,40 @@ export function getHealth(): Record<string, HealthVerdict> {
 }
 
 export function getRecentlyAdded(): Game[] {
-	if (!_recent) _recent = loadJson<Game[]>('recently_added.json', []);
-	return _recent;
+	if (_recent) return _recent;
+	const raw = loadJson<Array<Partial<Game>>>('recently_added.json', []);
+	// Recently-added is a thin pointer list — enrich by looking each slug up
+	// in the main catalog so descriptions, displayName, difficulty, and
+	// duration land on rail cards too. Otherwise the "Newly added" rail
+	// shows raw slugs while the rest of the site shows prettified names.
+	const all = getAllGames();
+	const bySlug = new Map(all.map(g => [gameSlug(g), g] as const));
+	const byName = new Map(all.map(g => [g.name, g] as const));
+	const out: Game[] = [];
+	for (const r of raw) {
+		const slugMatch = /^Assets\/([^/]+)\//.exec(r.url ?? '');
+		const slug = slugMatch ? slugMatch[1] : null;
+		const hit = (slug && bySlug.get(slug)) || (r.name && byName.get(r.name)) || null;
+		if (hit) {
+			out.push(hit);
+		} else if (r.name) {
+			// Fall back to the raw entry but at least prettify the display
+			// name so the rail doesn't show "zombiealienparasites".
+			out.push({
+				name: r.name,
+				url: r.url ?? '',
+				image: r.image ?? null,
+				type: normalizeType(r.type as RawGameType),
+				rawType: r.type as RawGameType | undefined,
+				addedDate: r.addedDate ?? '',
+				size: r.size ?? 0,
+				tags: r.tags ?? [],
+				displayName: prettifyGameName(r.name),
+			});
+		}
+	}
+	_recent = out;
+	return out;
 }
 
 export function slugify(name: string): string {

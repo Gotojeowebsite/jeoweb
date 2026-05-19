@@ -16,6 +16,8 @@
  * search/sort across the whole catalog).
  */
 
+type Difficulty = 'easy' | 'med' | 'hard';
+
 type SerializedGame = {
 	name: string;
 	url: string;
@@ -23,12 +25,61 @@ type SerializedGame = {
 	type: 'webgl' | 'flash' | 'retro';
 	tags: string[];
 	status: string | null;
+	displayName?: string | null;
+	difficulty?: Difficulty | null;
+	durationMin?: [number, number] | null;
 };
 
 type Game = SerializedGame & {
 	slug: string;
+	displayName: string;
+	difficulty: Difficulty | null;
+	durationMin: [number, number] | null;
 	haystack: string;
 };
+
+// Mirrors prettifyGameName() in src/lib/catalog.ts. Kept in sync by hand
+// so we don't drag an ES import into a runtime-bundled script that needs
+// to start fast on first paint.
+const RT_ACRONYMS = new Set(['IO','FPS','RPG','TD','RTS','MMO','MMORPG','2D','3D','VR','NES','SNES','GBA','FIFA','NBA','NFL','NHL','MLB','UFC','MMA','WWE','WW2','WW1','PvP','CO']);
+const RT_SMALL = new Set(['a','an','and','as','at','but','by','for','in','of','on','or','the','to','vs']);
+function prettifyName(raw: string): string {
+	if (!raw) return '';
+	let s = raw
+		.replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+		.replace(/[-_.]+/g, ' ')
+		.replace(/(\d+)v(\d+)/gi, ' $1v$2 ')
+		.replace(/(\d+)on(\d+)/gi, ' $1on$2 ')
+		.replace(/\s+/g, ' ')
+		.trim();
+	return s.split(' ').map((w, i) => {
+		const up = w.toUpperCase();
+		if (RT_ACRONYMS.has(up)) return up;
+		if (i > 0 && RT_SMALL.has(w.toLowerCase())) return w.toLowerCase();
+		if (/^\d/.test(w)) return w;
+		return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+	}).join(' ');
+}
+
+const DIFFICULTY_LABEL: Record<Difficulty, string> = {
+	easy: 'Easy', med: 'Medium', hard: 'Tough',
+};
+
+function chipsHtml(g: { difficulty: Difficulty | null; durationMin: [number, number] | null; tags: string[] }): string {
+	const parts: string[] = [];
+	if (g.difficulty) {
+		parts.push(`<span class="card-chip card-chip--diff-${g.difficulty}">${DIFFICULTY_LABEL[g.difficulty]}</span>`);
+	}
+	if (g.durationMin) {
+		const [lo, hi] = g.durationMin;
+		const range = lo === hi ? `≈${lo} min` : `≈${lo}-${hi} min`;
+		parts.push(`<span class="card-chip card-chip--time">${range}</span>`);
+	}
+	if (!parts.length && g.tags?.length) {
+		parts.push(`<span class="card-chip card-chip--ghost">${escapeHtml(g.tags.slice(0, 2).join(' · '))}</span>`);
+	}
+	return parts.length ? `<div class="card-sub">${parts.join('')}</div>` : '';
+}
 
 type SortMode = 'added' | 'az' | 'za' | 'random';
 type TypeFilter = 'all' | 'webgl' | 'flash' | 'retro';
@@ -102,7 +153,9 @@ function createCard(g: Game, favs: Set<string>): HTMLElement {
 	a.dataset.status = g.status ?? 'healthy';
 	a.dataset.tags = g.tags.join('|');
 
+	const displayName = g.displayName || prettifyName(g.name);
 	const safeName = escapeHtml(g.name);
+	const safeDisplay = escapeHtml(displayName);
 	const favActive = favs.has(g.slug) ? ' is-active' : '';
 	const ribbonHtml = ribbon
 		? `<div class="card-broken-ribbon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${ribbon}</span></div>`
@@ -110,9 +163,7 @@ function createCard(g: Game, favs: Set<string>): HTMLElement {
 	const imgHtml = g.image
 		? `<img src="/${escapeHtml(g.image)}" alt="" loading="lazy" decoding="async" width="400" height="225">`
 		: `<div class="card-cover-empty" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="6" rx="3"/><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><circle cx="15" cy="11" r=".5" fill="currentColor"/><circle cx="17" cy="13" r=".5" fill="currentColor"/></svg></div>`;
-	const tagsHtml = g.tags?.length
-		? `<div class="card-sub">${escapeHtml(g.tags.slice(0, 2).join(' · '))}</div>`
-		: '';
+	const subHtml = chipsHtml(g);
 
 	a.innerHTML = `
 		<div class="card-cover">
@@ -126,8 +177,8 @@ function createCard(g: Game, favs: Set<string>): HTMLElement {
 			${ribbonHtml}
 		</div>
 		<div class="card-meta">
-			<div class="card-title">${safeName}</div>
-			${tagsHtml}
+			<div class="card-title">${safeDisplay}</div>
+			${subHtml}
 		</div>
 	`;
 	return a;
@@ -169,6 +220,12 @@ if (wrap) {
 		const status = el.dataset.status ?? null;
 		const imgEl = el.querySelector('img');
 		const image = imgEl?.getAttribute('src')?.replace(/^\//, '') ?? null;
+		const displayName = el.dataset.displayName || prettifyName(name);
+		const difficulty = (el.dataset.difficulty || null) as Difficulty | null;
+		const dMin = Number(el.dataset.durationMin);
+		const dMax = Number(el.dataset.durationMax);
+		const durationMin: [number, number] | null = Number.isFinite(dMin) && Number.isFinite(dMax) && dMin > 0
+			? [dMin, dMax] : null;
 		const haystack = buildHaystack(name, slug, type, tags);
 		ssrGames.push({
 			slug,
@@ -178,6 +235,9 @@ if (wrap) {
 			type,
 			tags,
 			status,
+			displayName,
+			difficulty,
+			durationMin,
 			haystack,
 		});
 		nodes.set(slug, el);
@@ -198,6 +258,9 @@ if (wrap) {
 		return {
 			...g,
 			slug,
+			displayName: g.displayName || prettifyName(g.name),
+			difficulty: g.difficulty ?? null,
+			durationMin: g.durationMin ?? null,
 			haystack: buildHaystack(g.name, slug, g.type, g.tags ?? []),
 		};
 	});
