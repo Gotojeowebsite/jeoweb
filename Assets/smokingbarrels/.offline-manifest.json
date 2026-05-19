@@ -3,7 +3,7 @@
   "slug": "smokingbarrels",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -29,6 +29,11 @@
       "path": "smokingbarrels.swf",
       "size": 1019514,
       "required": true
+    },
+    {
+      "path": "smokingbarrels.webp",
+      "size": 4946,
+      "required": false
     }
   ],
   "external_hosts": [

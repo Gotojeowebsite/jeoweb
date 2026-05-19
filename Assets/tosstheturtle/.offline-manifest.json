@@ -3,7 +3,7 @@
   "slug": "tosstheturtle",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -29,6 +29,11 @@
       "path": "tosstheturtle.swf",
       "size": 7832060,
       "required": true
+    },
+    {
+      "path": "tosstheturtle.webp",
+      "size": 50966,
+      "required": false
     }
   ],
   "external_hosts": [

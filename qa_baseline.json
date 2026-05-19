@@ -1,6 +1,5 @@
 {
-  "broken_at_main": 18,
-  "generated_at": 1779148800,
-  "source": "qa-nightly",
-  "note": "Bumped from 13 -> 18 after PR #22 EMPTY_ENTRY_HTML_CRITICAL detector caught 5 pre-existing silently-broken slugs (0v0, 1, 9007199254740992, amazing-rope-police, etc.). Not regressions; better detection."
+  "broken_at_main": 21,
+  "generated_at": 1779196651,
+  "source": "qa-nightly"
 }

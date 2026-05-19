@@ -3,7 +3,7 @@
   "slug": "backrooms-2d",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "Build/2-4-23.data.part1",
@@ -47,12 +47,17 @@
     },
     {
       "path": "index.html",
-      "size": 6019,
+      "size": 6000,
       "required": true
     },
     {
       "path": "splash.png",
       "size": 9186,
+      "required": false
+    },
+    {
+      "path": "splash.webp",
+      "size": 1636,
       "required": false
     },
     {

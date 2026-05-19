@@ -3,7 +3,7 @@
   "slug": "ctr",
   "engine": "flash",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "_external_mirror/github.com/fluidicon.png",
@@ -2273,6 +2273,11 @@
     {
       "path": "logo.png",
       "size": 283201,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 26800,
       "required": false
     },
     {

@@ -3,7 +3,7 @@
   "slug": "chessmaster",
   "engine": "emulatorjs",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/mgba-legacy-wasm.data",
@@ -23,6 +23,11 @@
     {
       "path": "logo.png",
       "size": 29162,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 8104,
       "required": false
     }
   ],

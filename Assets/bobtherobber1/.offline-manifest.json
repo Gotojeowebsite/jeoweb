@@ -3,7 +3,7 @@
   "slug": "bobtherobber1",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "_external_mirror/acscdn.com/script/aclib.js",
@@ -238,6 +238,11 @@
     {
       "path": "btr.jpg",
       "size": 56829,
+      "required": false
+    },
+    {
+      "path": "btr.webp",
+      "size": 41482,
       "required": false
     },
     {

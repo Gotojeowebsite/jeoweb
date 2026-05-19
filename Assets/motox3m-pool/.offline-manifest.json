@@ -3,7 +3,7 @@
   "slug": "motox3m-pool",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "_external_mirror/cdn.jsdelivr.net/npm/_orange-games/phaser-cachebuster_2.0/build/phaser-cachebuster.min.js",
@@ -458,6 +458,11 @@
     {
       "path": "splash.jpg",
       "size": 13860,
+      "required": false
+    },
+    {
+      "path": "splash.webp",
+      "size": 13016,
       "required": false
     }
   ],

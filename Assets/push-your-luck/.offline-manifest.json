@@ -3,7 +3,7 @@
   "slug": "push-your-luck",
   "engine": "phaser",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "assets/animation/animace.xml",
@@ -23,6 +23,11 @@
     {
       "path": "assets/atlas/Bg.png",
       "size": 119182,
+      "required": false
+    },
+    {
+      "path": "assets/atlas/Bg.webp",
+      "size": 15876,
       "required": false
     },
     {

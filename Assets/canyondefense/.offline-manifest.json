@@ -3,7 +3,7 @@
   "slug": "canyondefense",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -19,6 +19,11 @@
       "path": "CanyonDefense.swf",
       "size": 1765938,
       "required": true
+    },
+    {
+      "path": "canyondefense.webp",
+      "size": 108258,
+      "required": false
     },
     {
       "path": "index.html",

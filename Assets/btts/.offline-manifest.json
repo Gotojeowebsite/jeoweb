@@ -3,7 +3,7 @@
   "slug": "btts",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "appmanifest.json",
@@ -63,6 +63,11 @@
     {
       "path": "icon.png",
       "size": 2354,
+      "required": false
+    },
+    {
+      "path": "icon.webp",
+      "size": 530,
       "required": false
     },
     {

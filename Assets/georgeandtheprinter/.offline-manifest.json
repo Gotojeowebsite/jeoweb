@@ -3,7 +3,7 @@
   "slug": "georgeandtheprinter",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "Build/add.txt",
@@ -38,6 +38,11 @@
     {
       "path": "img/icon.png",
       "size": 2794,
+      "required": false
+    },
+    {
+      "path": "img/icon.webp",
+      "size": 598,
       "required": false
     },
     {

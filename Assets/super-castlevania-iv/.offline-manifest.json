@@ -3,7 +3,7 @@
   "slug": "super-castlevania-iv",
   "engine": "emulatorjs",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "_external_mirror/cdn.emulatorjs.org/4.2.3/data/cores/snes9x-legacy-wasm.data",
@@ -18,6 +18,11 @@
     {
       "path": "logo.png",
       "size": 20546,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 15992,
       "required": false
     },
     {

@@ -3,7 +3,7 @@
   "slug": "wordle",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "build/bundle.css",
@@ -23,6 +23,11 @@
     {
       "path": "img/logo_144x144.png",
       "size": 2313,
+      "required": false
+    },
+    {
+      "path": "img/logo_144x144.webp",
+      "size": 1124,
       "required": false
     },
     {

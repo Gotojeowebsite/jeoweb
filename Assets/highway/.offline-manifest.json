@@ -3,7 +3,7 @@
   "slug": "highway",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "Build/game.json",
@@ -43,6 +43,11 @@
     {
       "path": "logo.jpg",
       "size": 11875,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 6704,
       "required": false
     },
     {

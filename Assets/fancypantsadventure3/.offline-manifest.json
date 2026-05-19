@@ -3,7 +3,7 @@
   "slug": "fancypantsadventure3",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "fancypantsadventure3.swf",
@@ -18,6 +18,11 @@
     {
       "path": "logo.jpg",
       "size": 5686,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 1348,
       "required": false
     }
   ],

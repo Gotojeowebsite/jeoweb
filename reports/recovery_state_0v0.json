@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1778927372,
+  "updated_at": 1779195345,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": "0v0-20260516-102824",
+      "name": "0v0-20260519-125436",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.557,
+      "elapsed_seconds": 13.555,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9395/Assets/0v0-20260516-102824/index.html"
+          "url": "http://localhost:9181/Assets/0v0-20260519-125436/index.html"
         }
       ],
       "warnings": [],
@@ -30,8 +30,20 @@
         "hasRetroGlobal": false,
         "canvasHash": "",
         "canvasNonzeroPixels": 0,
+        "canvasPixelVariance": 0,
         "canvasIsWebGL": false,
         "canvasRAFTicks": 0,
+        "unityInstanceLoaded": false,
+        "ruffleReady": false,
+        "ejsStarted": false,
+        "godotReady": false,
+        "phaserReady": false,
+        "audioContextRunning": false,
+        "audioContextCount": 0,
+        "ejsProgressPct": -1,
+        "constructProgressPct": -1,
+        "constructStarted": false,
+        "phaserProgressPct": -1,
         "canvasHashFirst": "",
         "canvasNonzeroPixelsFirst": 0,
         "engineExtraWaitMs": 4000

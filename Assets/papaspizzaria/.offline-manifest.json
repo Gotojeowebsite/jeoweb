@@ -3,7 +3,7 @@
   "slug": "papaspizzaria",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -24,6 +24,11 @@
       "path": "papaspizzaria.swf",
       "size": 2842151,
       "required": true
+    },
+    {
+      "path": "papaspizzaria.webp",
+      "size": 15324,
+      "required": false
     },
     {
       "path": "ruffle.js",

@@ -3,7 +3,7 @@
   "slug": "soldier-legend",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "data.js",
@@ -663,6 +663,11 @@
     {
       "path": "images/logo.jpg",
       "size": 8795,
+      "required": false
+    },
+    {
+      "path": "images/logo.webp",
+      "size": 5158,
       "required": false
     },
     {

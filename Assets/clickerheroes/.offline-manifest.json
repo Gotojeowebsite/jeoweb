@@ -3,7 +3,7 @@
   "slug": "clickerheroes",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "clickerheroes.swf",
@@ -18,6 +18,11 @@
     {
       "path": "logo.png",
       "size": 444123,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 54884,
       "required": false
     }
   ],

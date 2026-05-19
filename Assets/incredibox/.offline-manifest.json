@@ -3,7 +3,7 @@
   "slug": "incredibox",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "css/style.min.css",
@@ -123,6 +123,11 @@
     {
       "path": "logo.jpg",
       "size": 17733,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 11562,
       "required": false
     },
     {

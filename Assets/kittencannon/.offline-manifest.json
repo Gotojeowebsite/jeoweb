@@ -3,7 +3,7 @@
   "slug": "kittencannon",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -24,6 +24,11 @@
       "path": "KittenCannon.swf",
       "size": 340697,
       "required": true
+    },
+    {
+      "path": "kittencannon.webp",
+      "size": 9102,
+      "required": false
     },
     {
       "path": "ruffle.js",

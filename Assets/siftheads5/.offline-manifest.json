@@ -3,7 +3,7 @@
   "slug": "siftheads5",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "index.html",
@@ -13,6 +13,11 @@
     {
       "path": "logo.jpg",
       "size": 45877,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 16378,
       "required": false
     },
     {

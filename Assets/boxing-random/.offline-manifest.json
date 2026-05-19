@@ -3,7 +3,7 @@
   "slug": "boxing-random",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": ".config/configstore/update-notifier-npm.json",
@@ -213,6 +213,11 @@
     {
       "path": "img.jpeg",
       "size": 9849,
+      "required": false
+    },
+    {
+      "path": "img.webp",
+      "size": 8608,
       "required": false
     },
     {

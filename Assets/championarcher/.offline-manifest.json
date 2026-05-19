@@ -3,7 +3,7 @@
   "slug": "championarcher",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -19,6 +19,11 @@
       "path": "ChampionArcher.swf",
       "size": 188117,
       "required": true
+    },
+    {
+      "path": "championarcher.webp",
+      "size": 10930,
+      "required": false
     },
     {
       "path": "index.html",

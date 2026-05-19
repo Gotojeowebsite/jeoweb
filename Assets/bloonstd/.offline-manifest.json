@@ -3,7 +3,7 @@
   "slug": "bloonstd",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "bloons_tower_defense_1.swf",
@@ -13,6 +13,11 @@
     {
       "path": "bloonstd.jpg",
       "size": 12256,
+      "required": false
+    },
+    {
+      "path": "bloonstd.webp",
+      "size": 7404,
       "required": false
     },
     {

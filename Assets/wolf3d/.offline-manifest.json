@@ -3,7 +3,7 @@
   "slug": "wolf3d",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "art/attack.png",
@@ -973,6 +973,11 @@
     {
       "path": "art/wolf3d.png",
       "size": 219012,
+      "required": false
+    },
+    {
+      "path": "art/wolf3d.webp",
+      "size": 34826,
       "required": false
     },
     {

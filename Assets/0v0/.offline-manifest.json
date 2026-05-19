@@ -3,7 +3,7 @@
   "slug": "0v0",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010738,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "_external_mirror/427396048-642845047394716217.preview.editmysite.com/uploads/b/139890129-761103484729797659/files/achievements.json",
@@ -988,6 +988,11 @@
     {
       "path": "logo.jpeg",
       "size": 3532,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 1620,
       "required": false
     }
   ],

@@ -3,7 +3,7 @@
   "slug": "particle-clicker",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "_external_mirror/ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js",
@@ -253,6 +253,11 @@
     {
       "path": "assets/mobile/icon.png",
       "size": 14280,
+      "required": false
+    },
+    {
+      "path": "assets/mobile/icon.webp",
+      "size": 2510,
       "required": false
     },
     {

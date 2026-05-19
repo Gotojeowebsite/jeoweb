@@ -3,7 +3,7 @@
   "slug": "thebattle",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -29,6 +29,11 @@
       "path": "thebattle.swf",
       "size": 430176,
       "required": true
+    },
+    {
+      "path": "thebattle.webp",
+      "size": 19444,
+      "required": false
     }
   ],
   "external_hosts": [

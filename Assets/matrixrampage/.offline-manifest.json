@@ -3,7 +3,7 @@
   "slug": "matrixrampage",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -24,6 +24,11 @@
       "path": "matrixrampage.swf",
       "size": 495583,
       "required": true
+    },
+    {
+      "path": "matrixrampage.webp",
+      "size": 4436,
+      "required": false
     },
     {
       "path": "ruffle.js",

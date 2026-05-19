@@ -3,11 +3,16 @@
   "slug": "edgenotfound",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "edge.png",
       "size": 147150,
+      "required": false
+    },
+    {
+      "path": "edge.webp",
+      "size": 55098,
       "required": false
     },
     {

@@ -3,7 +3,7 @@
   "slug": "pandemic2",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -24,6 +24,11 @@
       "path": "pandemic2.swf",
       "size": 4378927,
       "required": true
+    },
+    {
+      "path": "pandemic2.webp",
+      "size": 22530,
+      "required": false
     },
     {
       "path": "ruffle.js",

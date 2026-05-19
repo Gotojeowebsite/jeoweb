@@ -3,7 +3,7 @@
   "slug": "hole.io",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "_external_mirror/cdn.jsdelivr.net/gh/gertdoro/Toolkit_80a659a20b7bb0f4e3141cc82c64286b22bb12cc/Tcl/Hole.json",
@@ -18,6 +18,11 @@
     {
       "path": "hole.io.jpeg",
       "size": 4580,
+      "required": false
+    },
+    {
+      "path": "hole.io.webp",
+      "size": 3236,
       "required": false
     },
     {

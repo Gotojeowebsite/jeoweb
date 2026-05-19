@@ -3,7 +3,7 @@
   "slug": "backrooms",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "Build/UnityLoader.js",
@@ -38,6 +38,11 @@
     {
       "path": "img/icon.png",
       "size": 2807,
+      "required": false
+    },
+    {
+      "path": "img/icon.webp",
+      "size": 1210,
       "required": false
     },
     {

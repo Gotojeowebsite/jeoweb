@@ -3,7 +3,7 @@
   "slug": "gimme-the-airpod",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "Build.json",
@@ -23,6 +23,11 @@
     {
       "path": "img/logo.png",
       "size": 220429,
+      "required": false
+    },
+    {
+      "path": "img/logo.webp",
+      "size": 32830,
       "required": false
     },
     {

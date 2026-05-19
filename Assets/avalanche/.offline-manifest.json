@@ -3,7 +3,7 @@
   "slug": "avalanche",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "avalanche.png",
@@ -14,6 +14,11 @@
       "path": "avalanche.swf",
       "size": 527415,
       "required": true
+    },
+    {
+      "path": "avalanche.webp",
+      "size": 8006,
+      "required": false
     },
     {
       "path": "c5c02c4e65c1c4423a97.wasm",

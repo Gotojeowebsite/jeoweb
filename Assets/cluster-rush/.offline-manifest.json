@@ -3,7 +3,7 @@
   "slug": "cluster-rush",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "icon.jpg",
@@ -73,6 +73,11 @@
     {
       "path": "TemplateData/logo.png",
       "size": 2548,
+      "required": false
+    },
+    {
+      "path": "TemplateData/logo.webp",
+      "size": 1366,
       "required": false
     },
     {

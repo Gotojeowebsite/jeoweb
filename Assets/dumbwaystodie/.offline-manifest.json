@@ -3,7 +3,7 @@
   "slug": "dumbwaystodie",
   "engine": "construct",
   "entry": "dumbwaystodie.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "del",
@@ -18,6 +18,11 @@
     {
       "path": "image.png",
       "size": 471048,
+      "required": false
+    },
+    {
+      "path": "image.webp",
+      "size": 14448,
       "required": false
     }
   ],

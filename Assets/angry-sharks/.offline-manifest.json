@@ -3,7 +3,7 @@
   "slug": "angry-sharks",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "assets/audio/bite1.ogg",
@@ -198,6 +198,11 @@
     {
       "path": "assets/img/splash.png",
       "size": 544082,
+      "required": false
+    },
+    {
+      "path": "assets/img/splash.webp",
+      "size": 23610,
       "required": false
     },
     {

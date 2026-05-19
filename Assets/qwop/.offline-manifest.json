@@ -3,7 +3,7 @@
   "slug": "qwop",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "index.html",
@@ -13,6 +13,11 @@
     {
       "path": "logo.png",
       "size": 94281,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 21618,
       "required": false
     },
     {

@@ -1,6 +1,6 @@
 [
   {
-    "name": "1-20260516-103809",
+    "name": "1-20260519-130458",
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
@@ -10,7 +10,7 @@
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:9743/Assets/1-20260516-103809/index.html"
+        "url": "http://localhost:9259/Assets/1-20260519-130458/index.html"
       }
     ],
     "warnings": [],
@@ -25,8 +25,20 @@
       "hasRetroGlobal": false,
       "canvasHash": "",
       "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
       "canvasHashFirst": "",
       "canvasNonzeroPixelsFirst": 0,
       "engineExtraWaitMs": 4000

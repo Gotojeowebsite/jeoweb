@@ -3,7 +3,7 @@
   "slug": "blackknight",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "black_knight.swf",
@@ -13,6 +13,11 @@
     {
       "path": "blackknight.png",
       "size": 320127,
+      "required": false
+    },
+    {
+      "path": "blackknight.webp",
+      "size": 23040,
       "required": false
     },
     {

@@ -3,7 +3,7 @@
   "slug": "DOOMORI",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010738,
+  "generated_at": 1779196643,
   "files": [
     {
       "path": "Build/WEBGL Doomori Build.data.gz",
@@ -33,6 +33,11 @@
     {
       "path": "splash.png",
       "size": 91694,
+      "required": false
+    },
+    {
+      "path": "splash.webp",
+      "size": 5852,
       "required": false
     }
   ],

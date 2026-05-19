@@ -3,11 +3,16 @@
   "slug": "exo",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "img/small.jpg",
       "size": 4944,
+      "required": false
+    },
+    {
+      "path": "img/small.webp",
+      "size": 3114,
       "required": false
     },
     {

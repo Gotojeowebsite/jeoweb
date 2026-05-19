@@ -3,11 +3,16 @@
   "slug": "ducklife3",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "duck.png",
       "size": 49679,
+      "required": false
+    },
+    {
+      "path": "duck.webp",
+      "size": 6556,
       "required": false
     },
     {

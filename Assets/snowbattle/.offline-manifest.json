@@ -3,7 +3,7 @@
   "slug": "snowbattle",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1779010742,
+  "generated_at": 1779196646,
   "files": [
     {
       "path": "Build/Snowbattle_io-new.data.unityweb",
@@ -33,6 +33,11 @@
     {
       "path": "img/logo.png",
       "size": 90320,
+      "required": false
+    },
+    {
+      "path": "img/logo.webp",
+      "size": 9836,
       "required": false
     },
     {

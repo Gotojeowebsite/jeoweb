@@ -3,7 +3,7 @@
   "slug": "vex3",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010743,
+  "generated_at": 1779196647,
   "files": [
     {
       "path": "_external_mirror/cdn.fbrq.io/orange-games-splash/assets/scripts/newgroundsio.min.js",
@@ -1663,6 +1663,11 @@
     {
       "path": "vex3.png",
       "size": 49637,
+      "required": false
+    },
+    {
+      "path": "vex3.webp",
+      "size": 4756,
       "required": false
     }
   ],

@@ -3,7 +3,7 @@
   "slug": "hba",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010741,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -19,6 +19,11 @@
       "path": "hoverbotarena.swf",
       "size": 1054124,
       "required": true
+    },
+    {
+      "path": "hoverbotarena.webp",
+      "size": 3020,
+      "required": false
     },
     {
       "path": "index.html",

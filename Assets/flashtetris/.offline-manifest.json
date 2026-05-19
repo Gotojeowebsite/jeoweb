@@ -3,7 +3,7 @@
   "slug": "flashtetris",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196645,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -19,6 +19,11 @@
       "path": "flashtetris.swf",
       "size": 14461,
       "required": true
+    },
+    {
+      "path": "flashtetris.webp",
+      "size": 22900,
+      "required": false
     },
     {
       "path": "index.html",

@@ -3,7 +3,7 @@
   "slug": "dragon-vs-bricks",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "files/game.css",
@@ -223,6 +223,11 @@
     {
       "path": "icon.jpg",
       "size": 20902,
+      "required": false
+    },
+    {
+      "path": "icon.webp",
+      "size": 10984,
       "required": false
     },
     {

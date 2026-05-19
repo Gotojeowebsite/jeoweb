@@ -3,7 +3,7 @@
   "slug": "btd3",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1779010739,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "_external_mirror/cdn.jsdelivr.net/gh/zhit73/wafedit_bd6c0b779c3d8b175e60c149194f6344807b21aa/wasm/waflash-player.min.js",
@@ -3628,6 +3628,11 @@
     {
       "path": "images (2).jpeg",
       "size": 5000,
+      "required": false
+    },
+    {
+      "path": "images (2).webp",
+      "size": 3140,
       "required": false
     },
     {

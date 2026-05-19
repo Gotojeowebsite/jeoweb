@@ -3,7 +3,7 @@
   "slug": "doublewires",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1779010740,
+  "generated_at": 1779196644,
   "files": [
     {
       "path": "c5c02c4e65c1c4423a97.wasm",
@@ -19,6 +19,11 @@
       "path": "DoubleWires.swf",
       "size": 30391,
       "required": true
+    },
+    {
+      "path": "doublewires.webp",
+      "size": 1652,
+      "required": false
     },
     {
       "path": "index.html",
