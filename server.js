@@ -7,6 +7,19 @@ const ASSETS_DIR = path.join(ROOT, 'Assets');
 const PORT = process.env.PORT || 3000;
 
 let cachedGames = [];
+let cachedGamesAt = 0;
+// /api/games used to fs.readdirSync the full Assets/ tree on every request,
+// which dominated the request budget when the SPA hammered it during reload.
+// 30 s is well under the background-rescan cadence in scan() below.
+const API_GAMES_TTL_MS = 30_000;
+
+function getCachedGames() {
+	const now = Date.now();
+	if (cachedGames.length && now - cachedGamesAt < API_GAMES_TTL_MS) return cachedGames;
+	cachedGames = scanGames();
+	cachedGamesAt = now;
+	return cachedGames;
+}
 
 const IMAGE_EXTS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico'];
 
@@ -89,12 +102,12 @@ const mimeTypes = {
 
 const server = http.createServer(async (req, res) => {
 	if (req.url === '/api/games') {
-		cachedGames = scanGames();
+		const games = getCachedGames();
 		res.writeHead(200, {
 			'Content-Type': 'application/json',
-			'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0'
+			'Cache-Control': 'public, max-age=30'
 		});
-		res.end(JSON.stringify(cachedGames));
+		res.end(JSON.stringify(games));
 		return;
 	}
 
@@ -164,7 +177,7 @@ const server = http.createServer(async (req, res) => {
 						return;
 					}
 					const realPath = path.join(dir, hit);
-					serveFile(realPath, res);
+					serveFile(realPath, res, req);
 				});
 			} else {
 				res.writeHead(500, { 'Content-Type': 'text/html' });
@@ -178,30 +191,47 @@ const server = http.createServer(async (req, res) => {
 					res.writeHead(404, { 'Content-Type': 'text/html' });
 					res.end('<h1>404 - Not Found</h1>');
 				} else {
-					serveFile(indexPath, res);
+					serveFile(indexPath, res, req);
 				}
 			});
 		} else {
 			// Regular file, serve it
-			serveFile(filePath, res);
+			serveFile(filePath, res, req);
 		}
 	});
 
-	function serveFile(filePath, res) {
+	function serveFile(filePath, res, req) {
+		// Pre-compressed sibling negotiation: if /app.js is requested and
+		// /app.js.br or /app.js.gz exists, prefer it (brotli > gzip) based on
+		// the client's Accept-Encoding. Skip for already-encoded paths.
+		const accept = (req && req.headers && req.headers['accept-encoding']) || '';
+		const alreadyEncoded = filePath.endsWith('.br') || filePath.endsWith('.gz');
+		if (!alreadyEncoded) {
+			if (accept.includes('br') && fs.existsSync(filePath + '.br')) {
+				filePath = filePath + '.br';
+			} else if (accept.includes('gzip') && fs.existsSync(filePath + '.gz')) {
+				filePath = filePath + '.gz';
+			}
+		}
+
 		const ext = path.extname(filePath).toLowerCase();
 		const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
 
 		// Add Content-Encoding for pre-compressed files
 		if (filePath.endsWith('.br')) {
 			headers['Content-Encoding'] = 'br';
+			headers['Vary'] = 'Accept-Encoding';
 			const innerExt = path.extname(filePath.slice(0, -3));
 			if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+			else if (innerExt === '.css') headers['Content-Type'] = 'text/css';
 			else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
 			else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
 		} else if (filePath.endsWith('.gz')) {
 			headers['Content-Encoding'] = 'gzip';
+			headers['Vary'] = 'Accept-Encoding';
 			const innerExt = path.extname(filePath.slice(0, -3));
 			if (innerExt === '.js') headers['Content-Type'] = 'application/javascript';
+			else if (innerExt === '.css') headers['Content-Type'] = 'text/css';
 			else if (innerExt === '.wasm') headers['Content-Type'] = 'application/wasm';
 			else if (innerExt === '.data') headers['Content-Type'] = 'application/octet-stream';
 		}

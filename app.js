@@ -236,12 +236,16 @@ class App {
 
 	async reloadGames() {
 		this.renderSkeletons();
-		const allItems = await this.resolveGames();
 		this.offlineBlockedNames = new Set();
 		// Verdict pipeline: prefer the new game_health.json (single source of truth,
 		// freshness-gated, quorum-based). Fall back to legacy files only if it's
 		// missing entirely so old deploys keep working.
-		const healthByName = await this.resolveGameHealth();
+		// Fetch the catalog and the health verdicts in parallel — health.json
+		// is the larger blob and used to block bootstrap behind the catalog fetch.
+		const [allItems, healthByName] = await Promise.all([
+			this.resolveGames(),
+			this.resolveGameHealth(),
+		]);
 		let legacyMaintenance = new Map();
 		let legacyScan = new Map();
 		if (!healthByName.size) {
@@ -1599,7 +1603,7 @@ class App {
 		// width/height supplied so the browser can reserve box & avoid CLS;
 		// CSS still scales image to fill via object-fit. onerror swaps to the
 		// shared fallback once if the cover is missing or broken.
-		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy"'
+		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy" decoding="async"'
 			+ ' onload="this.classList.add(\'loaded\')"'
 			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
 
@@ -2648,7 +2652,7 @@ class App {
 		card.className = 'carousel-card' + (isFail ? ' under-maintenance' : '') + stateClass;
 		card.style.setProperty('--card-img', "url('" + imgSrc.replace(/'/g, "\\'") + "')");
 		card.dataset.slug = g.name;
-		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="240" height="150" loading="lazy"'
+		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="240" height="150" loading="lazy" decoding="async"'
 			+ ' onload="this.classList.add(\'loaded\')"'
 			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
 		card.innerHTML =

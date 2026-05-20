@@ -356,9 +356,12 @@ function scan() {
 	let flashCount = 0;
 	let retroCount = 0;
 	let webglCount = 0;
+	const skippedFolders = [];
 
 	for (const it of items) {
 		if (!it.isDirectory()) continue;
+		// Internal staging dirs the recovery engine writes into. They're not games.
+		if (it.name.startsWith('.')) continue;
 
 		const folderPath = path.join(ASSETS_DIR, it.name);
 
@@ -367,7 +370,15 @@ function scan() {
 		// keeps them in the catalog instead of silently dropping them.
 		const files = fs.readdirSync(folderPath);
 		const htmlFiles = files.filter(f => /\.html?$/i.test(f));
-		if (htmlFiles.length === 0) continue;
+		if (htmlFiles.length === 0) {
+			// Surface skipped folders so failed/partial imports don't silently
+			// disappear from the catalog. Common causes: incomplete WebGL drop
+			// (draco_* + lib/ but no index.html), unextracted ROM .zip sitting
+			// in the folder, or dev artifacts that shouldn't be under Assets/.
+			const sample = files.slice(0, 4).join(', ');
+			skippedFolders.push({ name: it.name, fileCount: files.length, sample });
+			continue;
+		}
 		const htmlFile =
 			htmlFiles.find(f => /^index\.html?$/i.test(f)) || htmlFiles[0];
 
@@ -447,6 +458,13 @@ function scan() {
 	fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
 	console.log(`Wrote ${OUTFILE} -> ${results.length} games (${flashCount} Flash, ${retroCount} Retro, ${webglCount} WebGL)`);
 	console.log(`Wrote recently_added.json -> Updated with ${recentList.length} newest games.`);
+	if (skippedFolders.length) {
+		console.warn(`\n[scan] Skipped ${skippedFolders.length} folder(s) under Assets/ with no .html entrypoint:`);
+		for (const s of skippedFolders) {
+			console.warn(`  - ${s.name} (${s.fileCount} file(s): ${s.sample}${s.fileCount > 4 ? ', …' : ''})`);
+		}
+		console.warn('[scan] These won\'t appear in the catalog. Run `npm run recover -- <slug>` to repair, or remove the folder if it\'s not a game.\n');
+	}
 
 	// SEO: regenerate per-game share pages + the full sitemap.
 	const gamePages = writeGamePages(results);

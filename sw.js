@@ -32,7 +32,7 @@ const GAME_PATH = /\/Assets\//i;
 let lastProgressUpdate = 0;
 const PROGRESS_THROTTLE = 100; // ms
 
-async function fetchWithProgress(request) {
+async function fetchWithProgress(request, clientId) {
     const response = await fetch(request);
     if (!response.ok || !response.body) return response;
 
@@ -50,7 +50,7 @@ async function fetchWithProgress(request) {
                 while (true) {
                     const { done, value } = await reader.read();
                     if (done) {
-                        broadcastProgress(url, loaded, total, true);
+                        postProgress(clientId, url, loaded, total, true);
                         controller.close();
                         break;
                     }
@@ -59,7 +59,7 @@ async function fetchWithProgress(request) {
                     const now = Date.now();
                     if (now - lastProgressUpdate > PROGRESS_THROTTLE) {
                         lastProgressUpdate = now;
-                        broadcastProgress(url, loaded, total, false);
+                        postProgress(clientId, url, loaded, total, false);
                     }
 
                     controller.enqueue(value);
@@ -77,16 +77,19 @@ async function fetchWithProgress(request) {
     });
 }
 
-function broadcastProgress(url, loaded, total, isDone) {
-    self.clients.matchAll().then(clients => {
-        clients.forEach(client => {
-            client.postMessage({
-                type: 'PROGRESS_UPDATE',
-                url: url,
-                loaded: loaded,
-                total: total,
-                isDone: isDone
-            });
+// Post a progress message to the single client that requested the asset.
+// Earlier versions broadcast to every controlled client via clients.matchAll(),
+// which spammed background tabs and other windows on every chunk.
+function postProgress(clientId, url, loaded, total, isDone) {
+    if (!clientId) return;
+    self.clients.get(clientId).then(client => {
+        if (!client) return;
+        client.postMessage({
+            type: 'PROGRESS_UPDATE',
+            url: url,
+            loaded: loaded,
+            total: total,
+            isDone: isDone
         });
     });
 }
@@ -117,7 +120,7 @@ self.addEventListener('fetch', (event) => {
 
     // Game assets and large binaries: network-first, no caching.
     if (GAME_PATH.test(url) || NO_CACHE_EXT.test(url)) {
-        event.respondWith(fetchWithProgress(req).catch(() => fetch(req).catch(() => caches.match(req))));
+        event.respondWith(fetchWithProgress(req, event.clientId).catch(() => fetch(req).catch(() => caches.match(req))));
         return;
     }
 
