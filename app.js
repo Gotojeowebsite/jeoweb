@@ -131,8 +131,9 @@ class App {
 		// Premium FX — master toggle for glass blur, 3D tilt, animated hero,
 		// waterfall stagger. Off by default so scroll stays at 60fps; users
 		// flip it on from Settings → Animations & Effects.
-		// Also force-off on detected low-end devices (user can still re-enable in Settings).
-		this.premiumFx = !isLowEnd && localStorage.getItem('jeo-fx-premium') === 'true';
+		// Stored user preference is always respected; [data-low-end] CSS handles
+		// the visual protection layer independently without overriding explicit choices.
+		this.premiumFx = localStorage.getItem('jeo-fx-premium') === 'true';
 		// The inline pre-paint script in <head> already applied data-fx before
 		// the stylesheet parsed, but mirror it here for safety.
 		if (this.premiumFx) document.documentElement.setAttribute('data-fx', 'premium');
@@ -225,9 +226,10 @@ class App {
 	async bootstrap() {
 		// Show skeletons immediately so the user sees structure during the async fetches.
 		this.renderSkeletons();
-		// Fetch recently_added and the full catalog/health in parallel — both are
-		// needed before renderGames, and there's no dependency between them.
-		await Promise.all([this.loadNewlyAdded(), this.reloadGames()]);
+		// Load recently_added first (tiny file, fast), then the catalog — keeping
+		// them sequential ensures newlyAddedNames is set before renderCarousels runs.
+		await this.loadNewlyAdded();
+		await this.reloadGames();
 	}
 
 	async loadNewlyAdded() {
@@ -398,7 +400,8 @@ class App {
 			const cached = sessionStorage.getItem(CACHE_KEY);
 			if (cached) {
 				const { d, ts } = JSON.parse(cached);
-				if (d && (Date.now() - ts) < CACHE_TTL) data = d;
+				// Only accept cached data that already passed schema validation.
+				if (d && typeof d === 'object' && d.schema === 2 && (Date.now() - ts) < CACHE_TTL) data = d;
 			}
 		} catch (e) {}
 		if (!data) {
@@ -408,7 +411,13 @@ class App {
 					console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
 					return byName;
 				}
-				data = await response.json();
+				const raw = await response.json();
+				if (!raw || typeof raw !== 'object' || raw.schema !== 2) {
+					console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
+					return byName;
+				}
+				data = raw;
+				// Only cache after schema validation so invalid payloads don't poison the cache.
 				try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ d: data, ts: Date.now() })); } catch (e) {}
 			} catch (e) {
 				console.warn('Could not load game_health.json', e);
@@ -416,7 +425,7 @@ class App {
 			}
 		}
 		try {
-			if (!data || typeof data !== 'object' || data.schema !== 2) {
+			if (!data) {
 				console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
 				return byName;
 			}
@@ -1400,12 +1409,17 @@ class App {
 	}
 
 	refreshGames() {
-		// Clear session cache so the next load fetches fresh data from the server.
-		try { sessionStorage.removeItem('jeo:games-cache'); sessionStorage.removeItem('jeo:health-cache'); } catch (e) {}
+		// Clear all session caches so the next load fetches fresh data from the server.
+		try {
+			sessionStorage.removeItem('jeo:games-cache');
+			sessionStorage.removeItem('jeo:health-cache');
+			sessionStorage.removeItem('jeo:recents-cache');
+		} catch (e) {}
 		this.refreshBtn.classList.add('spinning');
-		this.reloadGames().then(() => {
-			setTimeout(() => this.refreshBtn.classList.remove('spinning'), 600);
-		});
+		// Sequential: ensure newlyAddedNames is refreshed before reloadGames renders carousels.
+		this.loadNewlyAdded()
+			.then(() => this.reloadGames())
+			.then(() => setTimeout(() => this.refreshBtn.classList.remove('spinning'), 600));
 	}
 
 	/* Levenshtein edit distance with an early-exit cap for performance. */

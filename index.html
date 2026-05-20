@@ -838,7 +838,7 @@
 
 				// Fetch last commit for "Last Updated" badge — deferred so it never
 				// competes with game catalog rendering on slow connections.
-				(window.requestIdleCallback || setTimeout)(function() {
+				var _fetchLastCommit = function() {
 					fetch('https://api.github.com/repos/Gotojeowebsite/jeoweb/commits?per_page=1')
 						.then(function(resp) { return resp.ok ? resp.json() : null; })
 						.then(function(data) {
@@ -850,7 +850,12 @@
 							if (el) el.textContent = 'Last updated: ' + dateStr + ' at ' + timeStr;
 						})
 						.catch(function(e) { console.warn('Could not fetch last commit', e); });
-				}, { timeout: 5000 });
+				};
+				if (window.requestIdleCallback) {
+					requestIdleCallback(_fetchLastCommit, { timeout: 5000 });
+				} else {
+					setTimeout(_fetchLastCommit, 5000);
+				}
 			})();
 
 			// Register the service worker for offline support + PWA installability.
@@ -921,6 +926,7 @@
 	<script src="notifications.js" defer></script>
 	<script src="reset-progress.js" defer></script>
 	<script>
+	document.addEventListener('DOMContentLoaded', function() {
 	(function () {
 		const slot = document.getElementById('jeoAccountSlot');
 		if (!slot || !window.JeoAccount) return;
@@ -1185,6 +1191,7 @@
 			});
 		}
 	})();
+	});
 	</script>
 	<script src="https://pl29339094.profitablecpmratenetwork.com/83/59/3f/83593fb83e97e9d850b37eac8c847fa2.js"></script>
 </body>
