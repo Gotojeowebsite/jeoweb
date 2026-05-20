@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "slug": "zelda-sacred-paradox",
+  "engine": "emulatorjs",
+  "entry": "index.html",
+  "generated_at": 1779280968,
+  "files": [
+    {
+      "path": "index.html",
+      "size": 1083,
+      "required": true
+    },
+    {
+      "path": "Zelda Sacred Paradox.zip",
+      "size": 6585927,
+      "required": false
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

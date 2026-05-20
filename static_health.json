@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "generated_at": 1779196650,
+  "generated_at": 1779280972,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 428,
+    "pass": 248,
     "warn": 100,
-    "fail": 70,
-    "total": 598
+    "fail": 246,
+    "total": 594
   },
   "games": [
     {
@@ -92,28 +92,22 @@
     },
     {
       "slug": "1on1SoccerBigHeads",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
-    },
-    {
-      "slug": "1v1space",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
     },
     {
       "slug": "2006-fifa-world-cup-germany-2006",
@@ -153,14 +147,21 @@
     },
     {
       "slug": "3dtanks",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -213,14 +214,21 @@
     },
     {
       "slug": "abobosbigadventure",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -237,74 +245,116 @@
     },
     {
       "slug": "achievementunlocked2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "achievementunlocked3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "actionturnip",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "adaran",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "addict-fishing",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "adrenaline",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -364,26 +414,40 @@
     },
     {
       "slug": "americanracing1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "americanracing2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -424,14 +488,21 @@
     },
     {
       "slug": "amusepark",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -535,14 +606,21 @@
     },
     {
       "slug": "ant-city",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -596,26 +674,40 @@
     },
     {
       "slug": "arkandianrevenant",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "armyofages",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -753,26 +845,40 @@
     },
     {
       "slug": "awesomecars",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "awesomeplanes",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1070,16 +1176,15 @@
     },
     {
       "slug": "batman-rise-of-sin-tzu",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
+      "verdict": "pass",
+      "engine": "emulatorjs",
+      "entry_file": "index.html",
+      "issues": [],
+      "refs_checked": 1,
+      "external_refs": 0,
+      "external_critical": 0,
+      "critical_misses": 0,
+      "warning_misses": 0
     },
     {
       "slug": "batman-vengeance",
@@ -1107,26 +1212,40 @@
     },
     {
       "slug": "battlepanic",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "beat-up-pc",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1283,38 +1402,59 @@
     },
     {
       "slug": "bloonstd3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "bloonstd4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "bloonstd5",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1485,26 +1625,40 @@
     },
     {
       "slug": "boombot2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "booty-rider",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1738,38 +1892,59 @@
     },
     {
       "slug": "bubbletanks2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "bulletbill",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "bullettimefighting",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1870,50 +2045,78 @@
     },
     {
       "slug": "burritobison",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "burritobisonrevenge",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "cactusmccoy",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "cactusmccoy2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1930,14 +2133,21 @@
     },
     {
       "slug": "camper-strike",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -1954,14 +2164,21 @@
     },
     {
       "slug": "cannonbasketball2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -2205,14 +2422,21 @@
     },
     {
       "slug": "chibiknight",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -2381,14 +2605,21 @@
     },
     {
       "slug": "clickerheroes",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -2423,14 +2654,21 @@
     },
     {
       "slug": "computerbashing",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -2717,26 +2955,40 @@
     },
     {
       "slug": "crushthecastle",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "crushthecastle2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -3441,14 +3693,21 @@
     },
     {
       "slug": "cyclomaniacs2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -3670,38 +3929,59 @@
     },
     {
       "slug": "dig-to-china",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "diggy",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "dog-fight-sim",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4156,26 +4436,40 @@
     },
     {
       "slug": "donkeykong",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "dontshootthepuppy",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4200,14 +4494,21 @@
     },
     {
       "slug": "doodledefender",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4260,14 +4561,21 @@
     },
     {
       "slug": "drag-racers",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 2,
       "external_refs": 1,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4478,26 +4786,40 @@
     },
     {
       "slug": "Ducklife4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 2,
       "external_refs": 1,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "duckLife5",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 2,
       "external_refs": 1,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4600,38 +4922,59 @@
     },
     {
       "slug": "earntodie",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "earntodie2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "earntodiesuperwheel",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -4746,14 +5089,21 @@
     },
     {
       "slug": "el-imigranter",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5175,38 +5525,59 @@
     },
     {
       "slug": "electricman",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "electricman2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "elephantquest",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5223,26 +5594,40 @@
     },
     {
       "slug": "epicbattlefantasy3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "epiccomboredux",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5283,14 +5668,21 @@
     },
     {
       "slug": "exitpath",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5407,38 +5799,59 @@
     },
     {
       "slug": "fancypantsadventure",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "fancypantsadventure2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "fancypantsadventure3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5642,50 +6055,78 @@
     },
     {
       "slug": "fire-boy1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "fire-boy2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "fire-boy3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "fire-boy4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5821,14 +6262,21 @@
     },
     {
       "slug": "flashflightsimulator",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5845,26 +6293,40 @@
     },
     {
       "slug": "flight",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "flower-shop",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -5881,38 +6343,59 @@
     },
     {
       "slug": "fracuum",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "freerider2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "frogger",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6082,26 +6565,40 @@
     },
     {
       "slug": "getoff-mylawn",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "getontop",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6118,26 +6615,40 @@
     },
     {
       "slug": "giveuprobot",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "giveuprobot2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6235,14 +6746,21 @@
     },
     {
       "slug": "greyhound-ty",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6295,26 +6813,40 @@
     },
     {
       "slug": "hanger",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hanger2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6391,14 +6923,21 @@
     },
     {
       "slug": "happywheels",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6627,86 +7166,135 @@
     },
     {
       "slug": "hobo1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo5",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo6",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "hobo7",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -6753,14 +7341,21 @@
     },
     {
       "slug": "houseofwolves",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7020,14 +7615,21 @@
     },
     {
       "slug": "jacksmith",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7069,26 +7671,40 @@
     },
     {
       "slug": "jellytruck",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "johnnyupgrade",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7105,14 +7721,21 @@
     },
     {
       "slug": "jumpix2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7161,38 +7784,59 @@
     },
     {
       "slug": "knightmaretower",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "learn2fly2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "learn2fly3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7269,38 +7913,59 @@
     },
     {
       "slug": "magnetface",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "mariocombat",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "marioracingtournament",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7317,26 +7982,40 @@
     },
     {
       "slug": "meatboy",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "megamanprojectx",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7412,14 +8091,21 @@
     },
     {
       "slug": "metroidelements",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7559,14 +8245,21 @@
     },
     {
       "slug": "mirrorsedge",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7583,26 +8276,40 @@
     },
     {
       "slug": "moneymovers",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "moneymovers3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7619,14 +8326,21 @@
     },
     {
       "slug": "motherload",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7713,26 +8427,40 @@
     },
     {
       "slug": "multitask",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "mutilateadoll2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7762,14 +8490,21 @@
     },
     {
       "slug": "myangel",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -7950,14 +8685,21 @@
     },
     {
       "slug": "nanotube",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8034,38 +8776,59 @@
     },
     {
       "slug": "newgroundsrumble",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "ngame",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "nitromemustdie",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8089,38 +8852,59 @@
     },
     {
       "slug": "nucleus",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "nv2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "nyancatlostinspace",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8162,14 +8946,21 @@
     },
     {
       "slug": "offroaders",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8193,14 +8984,21 @@
     },
     {
       "slug": "onemanarmy2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8217,38 +9015,59 @@
     },
     {
       "slug": "outofthisworld",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "pacman",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "pandemic",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8265,38 +9084,59 @@
     },
     {
       "slug": "papalouie",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "papalouie2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "papalouie3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8448,26 +9288,40 @@
     },
     {
       "slug": "picosschool",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "picosschool2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8484,14 +9338,21 @@
     },
     {
       "slug": "pirates",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8647,27 +9508,33 @@
     },
     {
       "slug": "pokemon-water-blue",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
-    },
-    {
-      "slug": "polarjump",
       "verdict": "pass",
-      "engine": "ruffle",
+      "engine": "emulatorjs",
       "entry_file": "index.html",
       "issues": [],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
+      "warning_misses": 0
+    },
+    {
+      "slug": "polarjump",
+      "verdict": "fail",
+      "engine": "ruffle",
+      "entry_file": "index.html",
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
+      "refs_checked": 1,
+      "external_refs": 0,
+      "external_critical": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8711,14 +9578,21 @@
     },
     {
       "slug": "portal2d",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8751,19 +9625,6 @@
       "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 0
-    },
-    {
-      "slug": "promo",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
     },
     {
       "slug": "protektor",
@@ -8810,38 +9671,59 @@
     },
     {
       "slug": "quadrobarreldefence",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "qubeythecube",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "qwop",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8876,26 +9758,40 @@
     },
     {
       "slug": "raftwars",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "raftwars2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -8962,86 +9858,135 @@
     },
     {
       "slug": "riddleschool1",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddleschool2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddleschool3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddleschool4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddleschool5",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddletransfer",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "riddletransfer2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -9154,26 +10099,40 @@
     },
     {
       "slug": "run2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "run3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -9245,19 +10204,6 @@
       "warning_misses": 0
     },
     {
-      "slug": "scripts",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
-    },
-    {
       "slug": "secret-of-evermore",
       "verdict": "pass",
       "engine": "emulatorjs",
@@ -9283,14 +10229,21 @@
     },
     {
       "slug": "sentryknight",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -9801,14 +10754,21 @@
     },
     {
       "slug": "shoppingcarthero3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -9825,62 +10785,97 @@
     },
     {
       "slug": "siftheads",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "siftheads2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "siftheads3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "siftheads4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "siftheads5",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10064,14 +11059,21 @@
     },
     {
       "slug": "sniperassassin4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10334,38 +11336,59 @@
     },
     {
       "slug": "sportsheadsfootball",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "sportsheadsracing",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "sportsheadstennis",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10572,26 +11595,40 @@
     },
     {
       "slug": "stickrpg",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "stickrun2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10644,14 +11681,21 @@
     },
     {
       "slug": "strikeforceheroes2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10686,38 +11730,59 @@
     },
     {
       "slug": "sugarsugar",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "sugarsugar2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "sugarsugar3",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10842,26 +11907,40 @@
     },
     {
       "slug": "superd",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "superfighters",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10896,50 +11975,78 @@
     },
     {
       "slug": "supermario63",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "supermarioflash",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "supermarioflash2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "supersmashflash",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10964,14 +12071,21 @@
     },
     {
       "slug": "swordsandsandals2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -10988,14 +12102,21 @@
     },
     {
       "slug": "tacticalassassin",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11044,14 +12165,21 @@
     },
     {
       "slug": "tanks",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11168,26 +12296,40 @@
     },
     {
       "slug": "thebindingofisaac",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "thegame",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11204,14 +12346,21 @@
     },
     {
       "slug": "theimpossiblequiz2",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11257,14 +12406,21 @@
     },
     {
       "slug": "thingthingarena",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11330,14 +12486,21 @@
     },
     {
       "slug": "truckloader4",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11508,26 +12671,40 @@
     },
     {
       "slug": "ultimateflashsonic",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "ultimatetactics",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11544,14 +12721,21 @@
     },
     {
       "slug": "unrealflash",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11630,38 +12814,59 @@
     },
     {
       "slug": "warfare1917",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "warfare1944",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "warp",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11785,38 +12990,59 @@
     },
     {
       "slug": "xenos",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "xtremecliffdiving",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "yearofthesnake",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
@@ -11852,33 +13078,27 @@
     },
     {
       "slug": "yuriusshouseofspooks",
-      "verdict": "pass",
+      "verdict": "fail",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 0,
+      "critical_misses": 1,
       "warning_misses": 0
     },
     {
       "slug": "zelda-sacred-paradox",
-      "verdict": "fail",
-      "engine": "unknown",
-      "issues": [
-        {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0
-    },
-    {
-      "slug": "zombiealienparasites",
       "verdict": "pass",
-      "engine": "ruffle",
+      "engine": "emulatorjs",
       "entry_file": "index.html",
       "issues": [],
       "refs_checked": 1,
@@ -11888,17 +13108,23 @@
       "warning_misses": 0
     },
     {
-      "slug": "zzruffle",
+      "slug": "zombiealienparasites",
       "verdict": "fail",
-      "engine": "unknown",
+      "engine": "ruffle",
+      "entry_file": "index.html",
       "issues": [
         {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
+          "code": "MISSING_CRITICAL_FILE",
+          "message": "Critical local file referenced but missing: ../zzruffle/ruffle.js",
+          "severity": "critical",
+          "ref": "../zzruffle/ruffle.js"
         }
       ],
-      "refs_checked": 0
+      "refs_checked": 1,
+      "external_refs": 0,
+      "external_critical": 0,
+      "critical_misses": 1,
+      "warning_misses": 0
     }
   ]
 }
