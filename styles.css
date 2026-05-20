@@ -1573,6 +1573,7 @@ cursor: pointer;
 position: relative;
 box-shadow: var(--shadow-card);
 opacity: 1;
+contain: layout style;
 transition: transform var(--motion-base) var(--ease-out-soft),
             border-color var(--motion-fast) var(--ease-out-soft),
             box-shadow var(--motion-base) var(--ease-out-soft);
@@ -4463,4 +4464,76 @@ html:not([data-fx='premium']) .settings-section-glass {
 [data-fx='premium'] .topbar {
 	background: var(--surface-glass);
 	box-shadow: var(--shadow-2);
+}
+
+/* ========================================
+   REDUCED-MOTION & LOW-END DEVICE PERF
+   ========================================
+   Two complementary rules:
+   1. @media prefers-reduced-motion — user-level OS preference for less motion.
+   2. [data-low-end] — set by JS on devices with ≤2 CPU cores or slow network.
+   Both kill all backdrop-filter blurs, remove transitions, and strip expensive
+   animations so scroll stays smooth on weak hardware. */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.topbar,
+	.game-card,
+	.modal-inner,
+	.color-menu,
+	.cloaker-menu,
+	.collections-popover,
+	.leaderboard-popover,
+	.more-popover,
+	.save-sidebar,
+	.spotlight-section,
+	.continue-card {
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+}
+
+/* Low-end device overrides: strip compositor-intensive effects without
+   affecting layout or removing any games from the catalog. */
+[data-low-end] .topbar,
+[data-low-end] .game-card,
+[data-low-end] .modal-inner,
+[data-low-end] .color-menu,
+[data-low-end] .cloaker-menu,
+[data-low-end] .collections-popover,
+[data-low-end] .leaderboard-popover,
+[data-low-end] .more-popover,
+[data-low-end] .save-sidebar,
+[data-low-end] .spotlight-section,
+[data-low-end] .continue-card {
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+}
+[data-low-end] .game-card {
+	transition: none !important;
+}
+[data-low-end] .game-card:hover {
+	transform: none !important;
+}
+[data-low-end] .popular-dot {
+	animation: none !important;
+}
+[data-low-end] .spinner {
+	animation-duration: 1s !important;
+}
+[data-low-end] .skeleton-card {
+	animation: none !important;
+	background: var(--bg-2) !important;
+}
+[data-low-end] .skeleton-thumb,
+[data-low-end] .skeleton-title,
+[data-low-end] .skeleton-btn {
+	background: var(--bg-3) !important;
+	animation: none !important;
 }
