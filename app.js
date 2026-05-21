@@ -122,9 +122,17 @@ class App {
 		this.animRipple = localStorage.getItem('jeo-anim-ripple') !== 'false';
 		if (!this.animHover) document.body.classList.add('no-anim-hover');
 
+		// Detect low-end devices: ≤2 CPU cores, or a slow network connection.
+		// On these devices we flag the document so CSS can remove expensive effects.
+		const isLowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) ||
+			(navigator.connection && (navigator.connection.effectiveType === '2g' || navigator.connection.effectiveType === 'slow-2g'));
+		if (isLowEnd) document.documentElement.setAttribute('data-low-end', '');
+
 		// Premium FX — master toggle for glass blur, 3D tilt, animated hero,
 		// waterfall stagger. Off by default so scroll stays at 60fps; users
 		// flip it on from Settings → Animations & Effects.
+		// Stored user preference is always respected; [data-low-end] CSS handles
+		// the visual protection layer independently without overriding explicit choices.
 		this.premiumFx = localStorage.getItem('jeo-fx-premium') === 'true';
 		// The inline pre-paint script in <head> already applied data-fx before
 		// the stylesheet parsed, but mirror it here for safety.
@@ -218,16 +226,30 @@ class App {
 	async bootstrap() {
 		// Show skeletons immediately so the user sees structure during the async fetches.
 		this.renderSkeletons();
+		// Load recently_added first (tiny file, fast), then the catalog — keeping
+		// them sequential ensures newlyAddedNames is set before renderCarousels runs.
 		await this.loadNewlyAdded();
 		await this.reloadGames();
 	}
 
 	async loadNewlyAdded() {
+		const CACHE_KEY = 'jeo:recents-cache';
+		const CACHE_TTL = 5 * 60 * 1000;
+		try {
+			const cached = sessionStorage.getItem(CACHE_KEY);
+			if (cached) {
+				const { data, ts } = JSON.parse(cached);
+				if (Array.isArray(data) && (Date.now() - ts) < CACHE_TTL) { this.newlyAddedNames = data; return; }
+			}
+		} catch (e) {}
 		try {
 			const res = await fetch('recently_added.json', { cache: 'no-store' });
 			if (res.ok) {
 				const data = await res.json();
-				if (Array.isArray(data)) this.newlyAddedNames = data;
+				if (Array.isArray(data)) {
+					this.newlyAddedNames = data;
+					try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() })); } catch (e) {}
+				}
 			}
 		} catch (e) {
 			console.warn('Could not load recently_added.json', e);
@@ -299,11 +321,23 @@ class App {
 	}
 
 	async resolveGames() {
+		const CACHE_KEY = 'jeo:games-cache';
+		const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+		try {
+			const cached = sessionStorage.getItem(CACHE_KEY);
+			if (cached) {
+				const { data, ts } = JSON.parse(cached);
+				if (Array.isArray(data) && data.length > 0 && (Date.now() - ts) < CACHE_TTL) return data;
+			}
+		} catch (e) {}
 		try {
 			const response = await fetch('games_list.json', { cache: 'no-store' });
 			if (response.ok) {
 				const data = await response.json();
-				if (Array.isArray(data) && data.length > 0) return data;
+				if (Array.isArray(data) && data.length > 0) {
+					try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() })); } catch (e) {}
+					return data;
+				}
 			}
 		} catch (e) {
 			console.warn('Could not load games_list.json', e);
@@ -357,15 +391,41 @@ class App {
 		// Reads game_health.json (schema 2). Verdicts are accepted only when the
 		// file is fresh; if it's older than max_age_days, we fall back to "unverified"
 		// so the UI shows a banner instead of silently trusting stale data.
+		// sessionStorage cache avoids re-fetching the 1 MB blob on every soft reload.
 		const byName = new Map();
+		const CACHE_KEY = 'jeo:health-cache';
+		const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+		let data = null;
 		try {
-			const response = await fetch('game_health.json', { cache: 'no-store' });
-			if (!response.ok) {
-				console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
+			const cached = sessionStorage.getItem(CACHE_KEY);
+			if (cached) {
+				const { d, ts } = JSON.parse(cached);
+				// Only accept cached data that already passed schema validation.
+				if (d && typeof d === 'object' && d.schema === 2 && (Date.now() - ts) < CACHE_TTL) data = d;
+			}
+		} catch (e) {}
+		if (!data) {
+			try {
+				const response = await fetch('game_health.json', { cache: 'no-store' });
+				if (!response.ok) {
+					console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
+					return byName;
+				}
+				const raw = await response.json();
+				if (!raw || typeof raw !== 'object' || raw.schema !== 2) {
+					console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
+					return byName;
+				}
+				data = raw;
+				// Only cache after schema validation so invalid payloads don't poison the cache.
+				try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ d: data, ts: Date.now() })); } catch (e) {}
+			} catch (e) {
+				console.warn('Could not load game_health.json', e);
 				return byName;
 			}
-			const data = await response.json();
-			if (!data || typeof data !== 'object' || data.schema !== 2) {
+		}
+		try {
+			if (!data) {
 				console.warn('[health] game_health.json has unexpected schema — degrading to legacy chain');
 				return byName;
 			}
@@ -1349,10 +1409,17 @@ class App {
 	}
 
 	refreshGames() {
+		// Clear all session caches so the next load fetches fresh data from the server.
+		try {
+			sessionStorage.removeItem('jeo:games-cache');
+			sessionStorage.removeItem('jeo:health-cache');
+			sessionStorage.removeItem('jeo:recents-cache');
+		} catch (e) {}
 		this.refreshBtn.classList.add('spinning');
-		this.reloadGames().then(() => {
-			setTimeout(() => this.refreshBtn.classList.remove('spinning'), 600);
-		});
+		// Sequential: ensure newlyAddedNames is refreshed before reloadGames renders carousels.
+		this.loadNewlyAdded()
+			.then(() => this.reloadGames())
+			.then(() => setTimeout(() => this.refreshBtn.classList.remove('spinning'), 600));
 	}
 
 	/* Levenshtein edit distance with an early-exit cap for performance. */
