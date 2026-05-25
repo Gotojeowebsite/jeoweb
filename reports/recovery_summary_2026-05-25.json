@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "generated_at": 1779715160,
+  "counts": {
+    "attempted": 3,
+    "recovered": 0,
+    "failed": 0,
+    "timeout": 3,
+    "cooldown_skipped": 0
+  },
+  "results": [
+    {
+      "slug": "0v0",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600091,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 23 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600125,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 63 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600118,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 163 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed": [
+    {
+      "slug": "0v0",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600091,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 23 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600125,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 63 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600118,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 163 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    }
+  ],
+  "recovered": [],
+  "skipped": []
+}
