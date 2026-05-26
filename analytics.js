@@ -4,7 +4,9 @@
  */
 
 window.JeoAnalytics = (function() {
-    const GA_ID = 'G-DQM8XXB9GC';
+    const GA_ID = 'G-WQHYZ04776';
+    const GA_STREAM_ID = '14949566361';
+    window.JeoAnalyticsStreamId = GA_STREAM_ID;
 
     /**
      * Internal helper to send events to gtag
@@ -12,7 +14,7 @@ window.JeoAnalytics = (function() {
     function sendEvent(name, params = {}) {
         if (typeof window.gtag === 'function') {
             try {
-                window.gtag('event', name, params);
+                window.gtag('event', name, { send_to: GA_ID, ...params });
             } catch (e) {
                 console.warn('Analytics error:', e);
             }
