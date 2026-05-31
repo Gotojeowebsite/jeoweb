@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1780058319,
+  "updated_at": 1780230718,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": "1-20260529-123725",
+      "name": "1-20260531-123045",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.594,
+      "elapsed_seconds": 13.554,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9204/Assets/1-20260529-123725/index.html"
+          "url": "http://localhost:9126/Assets/1-20260531-123045/index.html"
         }
       ],
       "warnings": [],
