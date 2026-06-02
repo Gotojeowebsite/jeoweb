@@ -6,9 +6,10 @@ import Jeo from '../components/mascot/Jeo.astro';
 const sections = [
 	{ id: 'general',    label: 'General',    pose: 'wave'     },
 	{ id: 'appearance', label: 'Appearance', pose: 'cheer'    },
+	{ id: 'school',     label: 'School Mode', pose: 'peek'     },
 	{ id: 'sound',      label: 'Sound',      pose: 'thinking' },
-	{ id: 'profile',    label: 'Profile',    pose: 'peek'     },
-	{ id: 'about',      label: 'About',      pose: 'shrug'    },
+	{ id: 'profile',    label: 'Profile',    pose: 'shrug'    },
+	{ id: 'about',      label: 'About',      pose: 'wave'     },
 ] as const;
 ---
 <Site title="Settings">
@@ -80,6 +81,83 @@ const sections = [
 						<button class="accent-swatch" data-accent="#ef4444" style="--c:#ef4444;" aria-label="Ember"></button>
 					</div>
 				</div>
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Custom Cursor</div>
+						<div class="setting-row__sub">Change the mouse pointer style on the site.</div>
+					</div>
+					<div class="seg" role="radiogroup" aria-label="Cursor style">
+						<button class="seg-btn" data-cursor="default"  role="radio" type="button">Default</button>
+						<button class="seg-btn" data-cursor="crosshair" role="radio" type="button">Crosshair</button>
+						<button class="seg-btn" data-cursor="neon"      role="radio" type="button">Neon</button>
+						<button class="seg-btn" data-cursor="pixel"     role="radio" type="button">Pixel</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="settings-pane" id="pane-school" role="tabpanel">
+				<h2>School Mode (Stealth Settings)</h2>
+				
+				<div class="setting-row setting-row--vertical">
+					<div>
+						<div class="setting-row__title">Tab Cloaker</div>
+						<div class="setting-row__sub">Disguise this tab as a school tool. Instantly updates the title and favicon.</div>
+					</div>
+					<div class="cloak-presets">
+						<button class="cloak-preset-btn" data-cloak="none" type="button">
+							<span class="cloak-preset-btn__icon">Ø</span>
+							<span>None</span>
+						</button>
+						<button class="cloak-preset-btn" data-cloak="classroom" type="button">
+							<img src="/brand/classroom.png" alt="" width="20" height="20" />
+							<span>Classroom</span>
+						</button>
+						<button class="cloak-preset-btn" data-cloak="drive" type="button">
+							<img src="/brand/drive.png" alt="" width="20" height="20" />
+							<span>Drive</span>
+						</button>
+						<button class="cloak-preset-btn" data-cloak="canvas" type="button">
+							<img src="/brand/canvas.png" alt="" width="20" height="20" />
+							<span>Canvas</span>
+						</button>
+						<button class="cloak-preset-btn" data-cloak="docs" type="button">
+							<img src="/brand/docs.png" alt="" width="20" height="20" />
+							<span>Docs</span>
+						</button>
+						<button class="cloak-preset-btn" data-cloak="custom" type="button">
+							<span class="cloak-preset-btn__icon">✏️</span>
+							<span>Custom</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="setting-row" id="custom-cloak-row" style="display: none;">
+					<div style="width: 100%;">
+						<div class="setting-row__title">Custom Cloak Config</div>
+						<div class="setting-row__sub">Define a custom tab title and favicon URL.</div>
+						<div class="custom-cloak-inputs">
+							<input type="text" id="customCloakTitle" class="form-input" placeholder="Google Docs" />
+							<input type="text" id="customCloakIcon" class="form-input" placeholder="https://google.com/favicon.ico" />
+							<button class="btn btn--primary" id="saveCustomCloak" type="button">Apply</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Panic Button ("Boss Key")</div>
+						<div class="setting-row__sub">Press this hotkey to instantly redirect the tab to safety. Click to record a key.</div>
+					</div>
+					<button class="btn btn--secondary" id="panicKeyBinder" type="button" style="min-width: 100px;">`</button>
+				</div>
+
+				<div class="setting-row">
+					<div>
+						<div class="setting-row__title">Panic Redirect URL</div>
+						<div class="setting-row__sub">The safe website to open (e.g. Google Classroom).</div>
+					</div>
+					<input type="text" id="panicUrlInput" class="form-input" placeholder="https://classroom.google.com" style="width: 280px; max-width: 100%;" />
+				</div>
 			</section>
 
 			<section class="settings-pane" id="pane-sound" role="tabpanel">
@@ -141,6 +219,7 @@ const sections = [
 	<script>
 		import { setPref, getPref, writePrefs } from '../lib/storage';
 		import { sound } from '../lib/sound';
+		import { applyCloak } from '../scripts/cloaker';
 
 		// Tab switching.
 		const tabs = document.querySelectorAll<HTMLButtonElement>('.settings-rail__tab');
@@ -203,6 +282,102 @@ const sections = [
 			toggle.addEventListener('change', () => setPref('sound', toggle.checked));
 		}
 		document.getElementById('testChime')?.addEventListener('click', () => sound.play('chime'));
+
+		// Custom Cursor Select.
+		const currentCursor = getPref('cursorStyle') || 'default';
+		document.querySelectorAll<HTMLButtonElement>('[data-cursor]').forEach(btn => {
+			if (btn.dataset.cursor === currentCursor) btn.classList.add('is-active');
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('[data-cursor]').forEach(b => b.classList.remove('is-active'));
+				btn.classList.add('is-active');
+				const v = btn.dataset.cursor as any;
+				setPref('cursorStyle', v);
+				document.documentElement.classList.remove('cursor--crosshair', 'cursor--neon', 'cursor--pixel');
+				if (v !== 'default') {
+					document.documentElement.classList.add(`cursor--${v}`);
+				}
+			});
+		});
+
+		// School Mode - Tab Cloaker controls.
+		const currentCloak = getPref('cloakPreset') || 'none';
+		const customRow = document.getElementById('custom-cloak-row');
+		const titleInput = document.getElementById('customCloakTitle') as HTMLInputElement | null;
+		const iconInput = document.getElementById('customCloakIcon') as HTMLInputElement | null;
+
+		function updateCloakUI(preset: string) {
+			document.querySelectorAll('[data-cloak]').forEach(b => b.classList.remove('is-active'));
+			const btn = document.querySelector(`[data-cloak="${preset}"]`);
+			if (btn) btn.classList.add('is-active');
+			if (preset === 'custom') {
+				if (customRow) customRow.style.display = 'flex';
+			} else {
+				if (customRow) customRow.style.display = 'none';
+			}
+		}
+
+		updateCloakUI(currentCloak);
+		if (titleInput) titleInput.value = getPref('cloakTitle') || '';
+		if (iconInput) iconInput.value = getPref('cloakIcon') || '';
+
+		document.querySelectorAll<HTMLButtonElement>('[data-cloak]').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const preset = btn.dataset.cloak as any;
+				writePrefs({ cloakPreset: preset });
+				updateCloakUI(preset);
+				applyCloak();
+			});
+		});
+
+		document.getElementById('saveCustomCloak')?.addEventListener('click', () => {
+			const title = titleInput?.value || '';
+			const icon = iconInput?.value || '';
+			writePrefs({
+				cloakPreset: 'custom',
+				cloakTitle: title,
+				cloakIcon: icon
+			});
+			applyCloak();
+		});
+
+		// Panic Key Hotkey Binder
+		const panicBinder = document.getElementById('panicKeyBinder') as HTMLButtonElement | null;
+		const currentPanicKey = getPref('panicKey') || '`';
+
+		function updatePanicBinderText(key: string) {
+			if (!panicBinder) return;
+			if (key === ' ') panicBinder.textContent = 'Space';
+			else panicBinder.textContent = key || 'None';
+		}
+
+		updatePanicBinderText(currentPanicKey);
+
+		panicBinder?.addEventListener('click', () => {
+			if (!panicBinder) return;
+			panicBinder.textContent = 'Press any key...';
+			panicBinder.classList.add('btn--primary');
+
+			const recordKey = (e: KeyboardEvent) => {
+				e.preventDefault();
+				e.stopPropagation();
+				const key = e.key;
+				setPref('panicKey', key);
+				updatePanicBinderText(key);
+				panicBinder.classList.remove('btn--primary');
+				window.removeEventListener('keydown', recordKey, true);
+			};
+
+			window.addEventListener('keydown', recordKey, true);
+		});
+
+		// Panic Redirect URL
+		const panicUrlInput = document.getElementById('panicUrlInput') as HTMLInputElement | null;
+		if (panicUrlInput) {
+			panicUrlInput.value = getPref('panicUrl') || 'https://classroom.google.com';
+			panicUrlInput.addEventListener('change', () => {
+				setPref('panicUrl', panicUrlInput.value.trim());
+			});
+		}
 
 		// Reset everything.
 		document.getElementById('settingsReset')?.addEventListener('click', () => {
@@ -343,6 +518,77 @@ const sections = [
 	}
 	.toggle input:checked + .toggle__track { background: var(--accent); }
 	.toggle input:checked + .toggle__track::after { transform: translateX(20px); }
+
+	/* Cloak Presets styling */
+	.setting-row--vertical {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-3);
+	}
+	.cloak-presets {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+		gap: var(--space-2);
+		width: 100%;
+	}
+	.cloak-preset-btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		color: var(--fg-1);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast);
+	}
+	.cloak-preset-btn img {
+		display: block;
+		object-fit: contain;
+	}
+	.cloak-preset-btn:hover {
+		background: var(--bg-3);
+		border-color: var(--line-2);
+		color: var(--fg-0);
+	}
+	.cloak-preset-btn.is-active {
+		border-color: var(--accent);
+		background: var(--accent-soft);
+		color: var(--fg-0);
+	}
+	.cloak-preset-btn__icon {
+		font-size: 20px;
+		line-height: 20px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 20px;
+	}
+	.custom-cloak-inputs {
+		display: flex;
+		gap: var(--space-2);
+		margin-top: var(--space-3);
+		width: 100%;
+	}
+	.form-input {
+		padding: var(--space-2) var(--space-3);
+		background: var(--bg-2);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-md);
+		color: var(--fg-0);
+		font-size: var(--text-sm);
+		transition: border-color var(--motion-fast);
+	}
+	.form-input:focus {
+		border-color: var(--accent);
+		outline: none;
+	}
+	#customCloakTitle { flex: 1; min-width: 0; }
+	#customCloakIcon { flex: 2; min-width: 0; }
 
 	@media (max-width: 760px) {
 		.settings { grid-template-columns: 1fr; }

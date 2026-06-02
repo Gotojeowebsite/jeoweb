@@ -124,8 +124,16 @@ class App {
 
 		// Detect low-end devices: ≤2 CPU cores, or a slow network connection.
 		// On these devices we flag the document so CSS can remove expensive effects.
-		const isLowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) ||
-			(navigator.connection && (navigator.connection.effectiveType === '2g' || navigator.connection.effectiveType === 'slow-2g'));
+		const isLowEnd = (
+			(navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) ||
+			(navigator.deviceMemory && navigator.deviceMemory <= 2) ||
+			(navigator.connection && (
+				navigator.connection.effectiveType === '2g' ||
+				navigator.connection.effectiveType === 'slow-2g' ||
+				navigator.connection.saveData === true
+			))
+		);
+		this.isLowEnd = isLowEnd;
 		if (isLowEnd) document.documentElement.setAttribute('data-low-end', '');
 
 		// Premium FX — master toggle for glass blur, 3D tilt, animated hero,
@@ -262,33 +270,15 @@ class App {
 		// Verdict pipeline: prefer the new game_health.json (single source of truth,
 		// freshness-gated, quorum-based). Fall back to legacy files only if it's
 		// missing entirely so old deploys keep working.
-		// Fetch the catalog and the health verdicts in parallel — health.json
-		// is the larger blob and used to block bootstrap behind the catalog fetch.
-		const [allItems, healthByName] = await Promise.all([
-			this.resolveGames(),
-			this.resolveGameHealth(),
-		]);
+		// Fetch the catalog immediately. Health verdicts will be fetched asynchronously
+		// after first paint to improve perceived load performance.
+		const allItems = await this.resolveGames();
 		let legacyMaintenance = new Map();
 		let legacyScan = new Map();
-		if (!healthByName.size) {
-			legacyMaintenance = await this.resolveMaintenanceStatusMap();
-			legacyScan = legacyMaintenance.size ? new Map() : await this.resolveScanStatusMap();
-		}
+		
 		this.games = allItems.map((game) => {
 			const currentStatus = this.normalizeScanStatus(game.status);
-			const health = healthByName.get(game.name);
-			let resolvedStatus = '';
-			let healthMeta = null;
-			if (health) {
-				resolvedStatus = this.normalizeScanStatus(health.status);
-				healthMeta = health;
-			} else {
-				const maintenanceStatus = legacyMaintenance.get(game.name) || '';
-				const scannedStatus = legacyScan.get(game.name) || '';
-				resolvedStatus = maintenanceStatus || scannedStatus || currentStatus;
-			}
-			if (!resolvedStatus && !healthMeta) return game;
-			return { ...game, status: resolvedStatus, health: healthMeta };
+			return { ...game, status: currentStatus, health: null };
 		});
 		console.log('Games loaded:', this.games.length);
 		if (this.games.length === 0 && !this._degradedNotified) {
@@ -306,6 +296,27 @@ class App {
 		this.hideLoading();
 		// Resolve any pending deep-link request now that the catalog is ready.
 		if (typeof this.resolvePendingDeepLink === 'function') this.resolvePendingDeepLink();
+
+		// Asynchronously fetch health data and patch the game catalog
+		this.resolveGameHealth().then(async healthByName => {
+			if (!healthByName.size) return;
+			let changed = false;
+			this.games = this.games.map(game => {
+				const health = healthByName.get(game.name);
+				if (health) {
+					const resolvedStatus = this.normalizeScanStatus(health.status);
+					if (game.status !== resolvedStatus || game.health !== health) {
+						changed = true;
+						return { ...game, status: resolvedStatus, health: health };
+					}
+				}
+				return game;
+			});
+			if (changed) {
+				this.renderCarousels();
+				this.renderGames();
+			}
+		});
 	}
 
 	renderSkeletons() {
@@ -331,7 +342,7 @@ class App {
 			}
 		} catch (e) {}
 		try {
-			const response = await fetch('games_list.json', { cache: 'no-store' });
+			const response = await fetch('games_catalog.json', { cache: 'no-store' });
 			if (response.ok) {
 				const data = await response.json();
 				if (Array.isArray(data) && data.length > 0) {
@@ -340,7 +351,7 @@ class App {
 				}
 			}
 		} catch (e) {
-			console.warn('Could not load games_list.json', e);
+			console.warn('Could not load games_catalog.json', e);
 		}
 		try {
 			const apiResponse = await fetch('/api/games', { cache: 'no-store' });
@@ -406,9 +417,9 @@ class App {
 		} catch (e) {}
 		if (!data) {
 			try {
-				const response = await fetch('game_health.json', { cache: 'no-store' });
+				const response = await fetch('game_health_slim.json', { cache: 'no-store' });
 				if (!response.ok) {
-					console.warn('[health] game_health.json missing — catalog will degrade to legacy status chain');
+					console.warn('[health] game_health_slim.json missing — catalog will degrade to legacy status chain');
 					return byName;
 				}
 				const raw = await response.json();
@@ -420,7 +431,7 @@ class App {
 				// Only cache after schema validation so invalid payloads don't poison the cache.
 				try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ d: data, ts: Date.now() })); } catch (e) {}
 			} catch (e) {
-				console.warn('Could not load game_health.json', e);
+				console.warn('Could not load game_health_slim.json', e);
 				return byName;
 			}
 		}
@@ -1594,7 +1605,7 @@ class App {
 	// Renders the next page of cards from this._renderQueue and, if more remain,
 	// drops a sentinel the IntersectionObserver watches to trigger the next page.
 	_renderNextPage() {
-		const PAGE_SIZE = 60;
+		const PAGE_SIZE = this.isLowEnd ? 24 : 60;
 		const queue = this._renderQueue || [];
 		const start = this._renderIndex || 0;
 		if (start >= queue.length) return;
@@ -1670,9 +1681,13 @@ class App {
 		// width/height supplied so the browser can reserve box & avoid CLS;
 		// CSS still scales image to fill via object-fit. onerror swaps to the
 		// shared fallback once if the cover is missing or broken.
-		const img = '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy" decoding="async"'
+		const safeImgWebp = safeImg.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+		const img = '<picture>'
+			+ '<source srcset="' + safeImgWebp + '" type="image/webp">'
+			+ '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy" decoding="async"'
 			+ ' onload="this.classList.add(\'loaded\')"'
-			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />';
+			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />'
+			+ '</picture>';
 
 		card.innerHTML =
 			'<div class="game-thumb">' + img + heartBtn + wishBtn + badgeHtml + '</div>' +
@@ -1842,6 +1857,12 @@ class App {
 	/* =============== CAROUSEL RENDERING =============== */
 
 	renderCarousels() {
+		if (this.isLowEnd) {
+			const wrappers = document.querySelectorAll('.carousel-section');
+			wrappers.forEach(w => w.style.display = 'none');
+			this.renderTagChips();
+			return;
+		}
 		this.renderSpotlight();
 		this.renderContinuePlaying();
 		this.renderFavorites();
@@ -2803,7 +2824,13 @@ class App {
 		const progressBar = document.getElementById('loadingProgressBar');
 		
 		if (loadingGameTitle && game) loadingGameTitle.textContent = `Loading ${game.name}...`;
-		if (loadingDynamicBg && game && game.image) loadingDynamicBg.style.backgroundImage = `url('${game.image}')`;
+		if (loadingDynamicBg) {
+			if (game && game.image && !this.isLowEnd) {
+				loadingDynamicBg.style.backgroundImage = `url('${game.image}')`;
+			} else {
+				loadingDynamicBg.style.backgroundImage = 'none';
+			}
+		}
 		if (progressBar) progressBar.style.width = '10%';
 
 		if (loadingOverlay) {
@@ -2837,6 +2864,7 @@ class App {
 		const startTips = () => {
 			if (rotatingTip) {
 				rotatingTip.textContent = tips[0];
+				if (this.isLowEnd) return;
 				tipInterval = setInterval(() => {
 					// Don't rotate tips if we are showing real progress
 					if (this.loadedBytes.size > 0 && this.totalGameSize > 0) return;

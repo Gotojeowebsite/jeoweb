@@ -90,6 +90,32 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 					if (p && p.v === 1) {
 						if (p.theme === 'light' || p.theme === 'dark') theme = p.theme;
 						if (p.accent && /^#[0-9a-f]{6}$/i.test(p.accent)) accent = p.accent;
+
+						// Tab cloaker pre-paint
+						if (p.cloakPreset && p.cloakPreset !== 'none') {
+							var title = '';
+							var icon = '';
+							if (p.cloakPreset === 'classroom') { title = 'Classes'; icon = '/brand/classroom.png'; }
+							else if (p.cloakPreset === 'drive') { title = 'My Drive - Google Drive'; icon = '/brand/drive.png'; }
+							else if (p.cloakPreset === 'canvas') { title = 'Dashboard'; icon = '/brand/canvas.png'; }
+							else if (p.cloakPreset === 'docs') { title = 'Untitled document - Google Docs'; icon = '/brand/docs.png'; }
+							else if (p.cloakPreset === 'custom') { title = p.cloakTitle || 'Google'; icon = p.cloakIcon || 'https://www.google.com/favicon.ico'; }
+							
+							if (title) {
+								document.title = title;
+								var link = document.querySelector('link[rel="icon"]');
+								if (link) link.setAttribute('href', icon);
+								var shortcutLink = document.querySelector('link[rel="shortcut icon"]');
+								if (shortcutLink) shortcutLink.setAttribute('href', icon);
+								var appleLink = document.querySelector('link[rel="apple-touch-icon"]');
+								if (appleLink) appleLink.setAttribute('href', icon);
+							}
+						}
+
+						// Custom cursor style
+						if (p.cursorStyle && p.cursorStyle !== 'default') {
+							document.documentElement.classList.add('cursor--' + p.cursorStyle);
+						}
 					}
 				}
 				if (!theme) {
@@ -134,11 +160,35 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
 	<script>
 		import { setPref, readPrefs } from '../lib/storage';
+		import { applyCloak, setupPanicListener } from '../scripts/cloaker';
 		import '../scripts/motion';
 		import '../scripts/transitions';
 		import '../scripts/sound-bindings';
 		import '../scripts/achievement-bindings';
 		import '../scripts/sw-register';
+
+		// Run cloaker & panic runtime trigger on page load
+		try {
+			applyCloak();
+			setupPanicListener();
+		} catch (e) {
+			console.error('Stealth system failed to start:', e);
+		}
+
+		// Watch Astro transitions to re-apply the tab cloak and panic key listeners
+		document.addEventListener('astro:page-load', () => {
+			try {
+				applyCloak();
+				setupPanicListener();
+				
+				// Re-apply cursor class to <html> after page navigation swaps <html>
+				const prefs = readPrefs();
+				document.documentElement.classList.remove('cursor--crosshair', 'cursor--neon', 'cursor--pixel');
+				if (prefs.cursorStyle !== 'default') {
+					document.documentElement.classList.add(`cursor--${prefs.cursorStyle}`);
+				}
+			} catch (e) {}
+		});
 
 		// Theme toggle — flip data-theme, swap icon, label, and persist via storage.ts.
 		const toggle = document.getElementById('theme-toggle');
@@ -167,7 +217,13 @@ const ld = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 		});
 
 		// Touch the prefs cache so legacy keys migrate on first paint.
-		readPrefs();
+		const prefs = readPrefs();
+
+		// Apply cursor style on boot
+		document.documentElement.classList.remove('cursor--crosshair', 'cursor--neon', 'cursor--pixel');
+		if (prefs.cursorStyle !== 'default') {
+			document.documentElement.classList.add(`cursor--${prefs.cursorStyle}`);
+		}
 	</script>
 </body>
 </html>

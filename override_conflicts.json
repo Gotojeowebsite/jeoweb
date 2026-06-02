@@ -1,49 +1,6 @@
 {
-  "generated_at": 1780406881,
-  "count": 3,
-  "conflicts": [
-    {
-      "slug": "bad-ice-cream",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "warn",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": "fail",
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    },
-    {
-      "slug": "bad-ice-cream-2",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "warn",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": "fail",
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    },
-    {
-      "slug": "bad-ice-cream-3",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "warn",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": "fail",
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    }
-  ],
+  "generated_at": 1780417390,
+  "count": 0,
+  "conflicts": [],
   "expired_overrides": []
 }

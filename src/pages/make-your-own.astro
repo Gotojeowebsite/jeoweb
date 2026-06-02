@@ -1,36 +1,220 @@
 ---
 import Site from '../layouts/Site.astro';
+import Icon from '../components/Icon.astro';
 ---
 <Site title="Host your own Jeo" current="host">
-	<div class="content-wrap prose">
-		<h1>Host your own copy of Jeo</h1>
-		<p>Jeo is open source. Fork the repo and you get the catalog, the scanner, the recovery pipeline, and the build.</p>
-		<ol>
-			<li>Fork <a href="https://github.com/Gotojeowebsite/jeoweb">Gotojeowebsite/jeoweb</a>.</li>
-			<li>Enable GitHub Pages on your fork (Settings → Pages → Source: GitHub Actions).</li>
-			<li>The build workflow auto-runs <code>npm run game:scan</code> and <code>npm run build</code>, then deploys.</li>
-			<li>Visit your fork's Pages URL. You're hosting Jeo.</li>
-		</ol>
-		<p>
-			Want to add your own games? Drop a folder into <code>Assets/&lt;slug&gt;/</code> with an HTML entry and a
-			cover image, then push. The scanner picks it up automatically.
-		</p>
+	<div class="content-wrap host-page fx-rise">
+		<header class="host-header">
+			<h1>Host Your Own Mirror</h1>
+			<p class="subtitle">Schools block domains quickly. Beat the filters by launching your own private mirror of Jeo in under 60 seconds.</p>
+		</header>
+
+		<div class="deploy-grid">
+			<!-- Option 1: GitHub Pages -->
+			<div class="deploy-card">
+				<div class="deploy-card__icon github">
+					<Icon name="package" size={24} />
+				</div>
+				<h3>GitHub Pages</h3>
+				<p>Deploy directly to GitHub's free hosting with build actions built right in.</p>
+				<ol class="steps-list">
+					<li>Fork the <a href="https://github.com/Gotojeowebsite/jeoweb" target="_blank" rel="noopener">Jeoweb Repository</a>.</li>
+					<li>Go to <strong>Settings &rarr; Pages</strong> on your fork.</li>
+					<li>Set source to <strong>GitHub Actions</strong>.</li>
+					<li>The next push automatically scans, builds, and publishes your site!</li>
+				</ol>
+				<a href="https://github.com/Gotojeowebsite/jeoweb/fork" target="_blank" rel="noopener" class="btn btn--secondary btn--full-w">
+					<Icon name="external" size={14} /> Fork Repo
+				</a>
+			</div>
+
+			<!-- Option 2: Vercel -->
+			<div class="deploy-card">
+				<div class="deploy-card__icon vercel">
+					<Icon name="zap" size={24} />
+				</div>
+				<h3>Vercel Deployment</h3>
+				<p>One-click cloning and lightning fast CDN hosting. Perfect for a clean personal link.</p>
+				<p class="note">Automatically creates a new private repository on your GitHub account and links the build output.</p>
+				<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FGotojeowebsite%2Fjeoweb" target="_blank" rel="noopener" class="btn btn--primary btn--full-w deploy-btn vercel-btn">
+					<Icon name="play" size={14} /> Deploy to Vercel
+				</a>
+			</div>
+
+			<!-- Option 3: Netlify -->
+			<div class="deploy-card">
+				<div class="deploy-card__icon netlify">
+					<Icon name="sparkles" size={24} />
+				</div>
+				<h3>Netlify Host</h3>
+				<p>Deploy your custom branch instantly. Supports customizable subdomains (e.g. <code>my-math-site.netlify.app</code>).</p>
+				<p class="note">Provides an intuitive web panel to change site headers and customize access domains.</p>
+				<a href="https://app.netlify.com/start/deploy?repository=https://github.com/Gotojeowebsite/jeoweb" target="_blank" rel="noopener" class="btn btn--primary btn--full-w deploy-btn netlify-btn">
+					<Icon name="play" size={14} /> Deploy to Netlify
+				</a>
+			</div>
+		</div>
+
+		<section class="host-section">
+			<h2><Icon name="settings" size={20} /> How to Add Your Own Games</h2>
+			<p>Once you have cloned the repository, adding custom files is incredibly simple:</p>
+			<div class="code-box">
+				<p>1. Drop a game folder into <code>Assets/&lt;slug&gt;/</code> containing your game files and an <code>index.html</code>.</p>
+				<p>2. Add a cover image inside that folder (e.g. <code>logo.png</code> or <code>icon.jpg</code>).</p>
+				<p>3. Run <code>npm run game:scan</code> or restart your local server. The scanner detects it and updates the listing automatically!</p>
+			</div>
+		</section>
 	</div>
 </Site>
 
 <style>
-	.prose { max-width: var(--max-w-prose); padding-top: var(--space-7); }
-	.prose h1 { font-size: var(--text-h1); margin-bottom: var(--space-5); }
-	.prose p { color: var(--fg-1); line-height: var(--leading-loose); margin-bottom: var(--space-3); }
-	.prose ol { padding-left: 1.5em; margin: var(--space-3) 0; }
-	.prose li { color: var(--fg-1); margin: var(--space-2) 0; }
-	.prose code {
-		font-family: var(--font-mono);
-		font-size: 0.92em;
-		padding: 2px 6px;
+	.host-page {
+		max-width: var(--max-w-content);
+		padding-top: var(--space-7);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-8);
+	}
+	.host-header {
+		text-align: center;
+		max-width: var(--max-w-prose);
+		margin: 0 auto;
+	}
+	.host-header h1 {
+		font-size: var(--text-display);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.03em;
+		background: var(--gradient-aurora);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: var(--space-3);
+	}
+	.subtitle {
+		font-size: var(--text-h3);
+		color: var(--fg-1);
+		line-height: var(--leading-base);
+	}
+	
+	.deploy-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: var(--space-5);
+	}
+	
+	.deploy-card {
 		background: var(--bg-1);
 		border: 1px solid var(--line-1);
-		border-radius: var(--radius-xs);
+		border-radius: var(--radius-xl);
+		padding: var(--space-6);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		transition: border-color var(--motion-fast), transform var(--motion-fast);
 	}
-	.prose a { color: var(--accent); text-decoration: underline; }
+	.deploy-card:hover {
+		border-color: var(--line-2);
+		transform: translateY(-4px);
+	}
+	
+	.deploy-card__icon {
+		width: 48px;
+		height: 48px;
+		border-radius: var(--radius-lg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.deploy-card__icon.github { background: rgba(255, 255, 255, 0.08); color: var(--fg-0); }
+	.deploy-card__icon.vercel { background: rgba(255, 255, 255, 0.05); color: var(--fg-0); }
+	.deploy-card__icon.netlify { background: rgba(20, 184, 166, 0.15); color: var(--semantic-webgl); }
+	
+	.deploy-card h3 {
+		font-size: var(--text-h2);
+		font-weight: var(--weight-bold);
+		letter-spacing: -0.01em;
+	}
+	.deploy-card p {
+		font-size: var(--text-body);
+		color: var(--fg-1);
+		line-height: var(--leading-base);
+	}
+	.deploy-card .note {
+		font-size: var(--text-xs);
+		color: var(--fg-2);
+	}
+	
+	.steps-list {
+		padding-left: var(--space-4);
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+	.steps-list li {
+		font-size: var(--text-sm);
+		color: var(--fg-1);
+		line-height: var(--leading-snug);
+	}
+	.steps-list a {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+	
+	.btn--full-w {
+		width: 100%;
+		justify-content: center;
+		margin-top: auto;
+	}
+	
+	.vercel-btn {
+		background: #ffffff !important;
+		color: #000000 !important;
+		border: 1px solid #ffffff !important;
+	}
+	.vercel-btn:hover {
+		background: #eaeaea !important;
+	}
+	
+	.netlify-btn {
+		background: var(--semantic-webgl) !important;
+		color: #000000 !important;
+		border: 1px solid var(--semantic-webgl) !important;
+	}
+	.netlify-btn:hover {
+		opacity: 0.9;
+	}
+	
+	.host-section {
+		background: var(--bg-1);
+		border: 1px solid var(--line-1);
+		border-radius: var(--radius-xl);
+		padding: var(--space-6);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+	}
+	.host-section h2 {
+		font-size: var(--text-h2);
+		font-weight: var(--weight-bold);
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+	.host-section p {
+		font-size: var(--text-body);
+		color: var(--fg-1);
+	}
+	
+	.code-box {
+		background: var(--bg-0);
+		border: 1px solid var(--line-0);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		font-family: var(--font-mono);
+		font-size: var(--text-sm);
+		color: var(--fg-1);
+	}
 </style>

@@ -10,6 +10,8 @@
 
 export type ThemePref = 'light' | 'dark' | 'auto';
 export type DensityPref = 'comfy' | 'dense';
+export type CloakPref = 'none' | 'classroom' | 'drive' | 'canvas' | 'docs' | 'custom';
+export type CursorPref = 'default' | 'crosshair' | 'neon' | 'pixel';
 
 export type Prefs = {
 	v: 1;
@@ -21,6 +23,12 @@ export type Prefs = {
 	density: DensityPref;
 	avatar: string;
 	onboarded: boolean;
+	cloakPreset: CloakPref;
+	cloakTitle: string;
+	cloakIcon: string;
+	panicKey: string;
+	panicUrl: string;
+	cursorStyle: CursorPref;
 };
 
 const KEY = 'jeo-prefs-v1';
@@ -34,6 +42,12 @@ const DEFAULTS: Prefs = {
 	density: 'comfy',
 	avatar: 'wave',
 	onboarded: false,
+	cloakPreset: 'none',
+	cloakTitle: '',
+	cloakIcon: '',
+	panicKey: '`',
+	panicUrl: 'https://classroom.google.com',
+	cursorStyle: 'default',
 };
 
 function isBrowser(): boolean {

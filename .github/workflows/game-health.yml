@@ -1,0 +1,41 @@
+name: Game Health CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * 0'
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Static Health Scan
+        run: node scripts/static-health-scan.js
+      - name: Build Health Verdicts
+        run: node scripts/build-game-health.js --strict-external
+      - name: Build Frontend Health
+        run: node scripts/build-frontend-health.js
+      - name: Build Frontend Catalog
+        run: node scripts/build-frontend-catalog.js
+      - name: Verify Catalog Parity
+        run: node scripts/verify-catalog-parity.mjs
+  weekly-repair:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Install Playwright
+        run: npx playwright install chromium
+      - name: Daily Fix Routine
+        run: bash scripts/daily-fix-routine.sh
+        timeout-minutes: 45

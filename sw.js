@@ -14,7 +14,8 @@ const STATIC_ASSETS = [
     '/manifest.json',
     '/icon.svg',
     '/notavailable.svg',
-    '/games_list.json',
+    '/games_catalog.json',
+    '/game_health_slim.json',
     '/offline/'
 ];
 
