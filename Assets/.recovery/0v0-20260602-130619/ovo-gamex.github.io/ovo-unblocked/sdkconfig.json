@@ -1,0 +1,38 @@
+{
+  "networks": [
+    "Poki",
+    "CrazyGames",
+    "GamePix",
+    "GameDistribution",
+    "GameMonetize",
+    "CoolMathGames",
+    "HoodaMath",
+    "FreezeNova"
+  ],
+  "name": "FreezeNova",
+  "gameId": "1377b99c10284c229423118a941af3b1",
+  "removeSocials": true,
+  "stopAudioInBackground": false,
+  "removeMidrollRewarded": true,
+  "noReligion": false,
+  "removeServiceWorker": true,
+  "interTypes": {
+    "loader": true,
+    "mainMenuStart": true,
+    "randomskins": true,
+    "removeads": true,
+    "levelStart": true,
+    "restart": true,
+    "levelStartFromMenu": true,
+    "levelStartOnSuccess": true
+  },
+  "splashScreen": true,
+  "sitelock": true,
+  "sites": [
+    "www.onlinegames.io",
+    "onlinegames.io",
+    "unblocked-games.s3.amazonaws.com",
+    "localhost:44345"
+  ],
+  "correctWebsite": "www.onlinegames.io/ovo/"
+}

@@ -1,0 +1,1024 @@
+{
+  "schema": 1,
+  "slug": "0v0",
+  "engine": "html5",
+  "entry": "index.html",
+  "generated_at": 1780405634,
+  "files": [
+    {
+      "path": "cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css",
+      "size": 232914,
+      "required": false
+    },
+    {
+      "path": "cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js",
+      "size": 80421,
+      "required": true
+    },
+    {
+      "path": "doc-08-bg-sheets.googleusercontent.com/pub/54bogvaave6cua4cdnls17ksc4/kt5d9t8i10ga38vicctu11f3rs/1780405590000/111094283613846284974/*/e@2PACX-1vSOU_pMce0njTy64pTFVI7yLN2t5ReGYaRCmJDdj_KRSSbAEL7XPixR80X4Jzm0r8sDL0KHq1QRkVGC",
+      "size": 36900,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 376,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/index.html",
+      "size": 18775,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/manifest.json",
+      "size": 411,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/achievements.json",
+      "size": 4807,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/animate.css",
+      "size": 76532,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/appmanifest.json",
+      "size": 499,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/c2runtime.js",
+      "size": 1485955,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/data.js",
+      "size": 2779836,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/fonts.css",
+      "size": 143,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/game.html",
+      "size": 5429,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/GameAnalytics.js",
+      "size": 65035,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/hmmg_layoutTransition.css",
+      "size": 824,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/howler.js",
+      "size": 66522,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/html2canvas.min.js",
+      "size": 61011,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/icon-256.png",
+      "size": 3361,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/ablue-sheet0.png",
+      "size": 176,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/adblocksign-sheet0.png",
+      "size": 280,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/agreen-sheet0.png",
+      "size": 176,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/ared-sheet0.png",
+      "size": 164,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/background-sheet0.png",
+      "size": 145083,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/bannercontainer-sheet0.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/bfakenine-sheet0.png",
+      "size": 244,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/body-sheet0.png",
+      "size": 98,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/border.png",
+      "size": 536,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/buttontrigger-sheet0.png",
+      "size": 121,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/buttontrigger-sheet1.png",
+      "size": 125,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/camera-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/checkbox-sheet0.png",
+      "size": 273,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/cmgskin-sheet0.png",
+      "size": 533,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/coin-sheet0.png",
+      "size": 2052,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/collider-sheet0.png",
+      "size": 223,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/collider-sheet1.png",
+      "size": 140,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/credits-sheet0.png",
+      "size": 1012,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/decor-sheet0.png",
+      "size": 181,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/decor-sheet1.png",
+      "size": 233,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/decor2-sheet0.png",
+      "size": 393,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/dedraloader-sheet0.png",
+      "size": 489019,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/dedraloader-sheet1.png",
+      "size": 358753,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/dialogoverlay-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/endcarddialog-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/endflag-sheet0.png",
+      "size": 291,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/fakenine-sheet0.png",
+      "size": 244,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/fakeparseimage-sheet0.png",
+      "size": 3327,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/frank_1-sheet0.png",
+      "size": 253609,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/groundpoundsolid.png",
+      "size": 118,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/head-sheet0.png",
+      "size": 209,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/inputsdialog.png",
+      "size": 104,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/jumpboost-sheet0.png",
+      "size": 147,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/jumpthrough.png",
+      "size": 118,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/languagebutton-sheet0.png",
+      "size": 126,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/languagebutton2-sheet0.png",
+      "size": 144,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/languageflag-sheet0.png",
+      "size": 510,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/languageflag-sheet1.png",
+      "size": 132,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/layoutnameholder-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/layoutnumber.png",
+      "size": 2921,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/layoutsubtitle.png",
+      "size": 2563,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/leftarm-sheet0.png",
+      "size": 98,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/levelbutton-sheet0.png",
+      "size": 207,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/listitem-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/listparent-sheet0.png",
+      "size": 93,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/listsubitembtn-sheet0.png",
+      "size": 260,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/listsubitembtn-sheet1.png",
+      "size": 256,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/listsubitembtn-sheet2.png",
+      "size": 221,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/loadinganim-sheet0.png",
+      "size": 7420,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/loadinganim-sheet1.png",
+      "size": 1589,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/mark-sheet0.png",
+      "size": 627,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton-sheet0.png",
+      "size": 3655,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton-sheet1.png",
+      "size": 2974,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton-sheet2.png",
+      "size": 1675,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton2-sheet0.png",
+      "size": 404,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton3-sheet0.png",
+      "size": 1853,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/menubutton3-sheet1.png",
+      "size": 1014,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/movearea-sheet0.png",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/movearea-sheet1.png",
+      "size": 182,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/particles.png",
+      "size": 117,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/particlesbg.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/portal-sheet0.png",
+      "size": 112,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/pulse-sheet0.png",
+      "size": 685,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/pulse-sheet1.png",
+      "size": 468,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/pulse-sheet2.png",
+      "size": 467,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/pumpkin-sheet0.png",
+      "size": 2164,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/rocket-sheet0.png",
+      "size": 149,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/rocketlauncher-sheet0.png",
+      "size": 179,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/runningcanvas.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin1-sheet0.png",
+      "size": 302,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin10-sheet0.png",
+      "size": 425,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin10-sheet1.png",
+      "size": 307,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin11-sheet0.png",
+      "size": 655,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin12-sheet0.png",
+      "size": 547,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin13-sheet0.png",
+      "size": 481,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin14-sheet0.png",
+      "size": 831,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin15-sheet0.png",
+      "size": 655,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin16-sheet0.png",
+      "size": 417,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin17-sheet0.png",
+      "size": 934,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin18-sheet0.png",
+      "size": 1129,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin19-sheet0.png",
+      "size": 1242,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin19-sheet1.png",
+      "size": 3065,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin2-sheet0.png",
+      "size": 1179,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin20-sheet0.png",
+      "size": 573,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin21-sheet0.png",
+      "size": 651,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin22-sheet0.png",
+      "size": 811,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin23-sheet0.png",
+      "size": 483,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin24-sheet0.png",
+      "size": 453,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin3-sheet0.png",
+      "size": 344,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin3-sheet1.png",
+      "size": 273,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin3-sheet2.png",
+      "size": 259,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin4-sheet0.png",
+      "size": 253,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin4-sheet1.png",
+      "size": 231,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin4-sheet2.png",
+      "size": 243,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin5-sheet0.png",
+      "size": 392,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin6-sheet0.png",
+      "size": 1007,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin6-sheet1.png",
+      "size": 178,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin7-sheet0.png",
+      "size": 395,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin8-sheet0.png",
+      "size": 412,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/skin9-sheet0.png",
+      "size": 404,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sliderbar-sheet0.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/solid.png",
+      "size": 106,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/solid2.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/solid3.png",
+      "size": 105,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/solidmove.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/spike-sheet0.png",
+      "size": 157,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/spike-sheet1.png",
+      "size": 127,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/spike2-sheet0.png",
+      "size": 159,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/splashscreen-sheet0.png",
+      "size": 261937,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite-sheet0.png",
+      "size": 134,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite-sheet1.png",
+      "size": 92,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite10-sheet0.png",
+      "size": 174,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite2-sheet0.png",
+      "size": 155,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite4-sheet0.png",
+      "size": 2860,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite5-sheet0.png",
+      "size": 91,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite6-sheet0.png",
+      "size": 3511,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite7-sheet0.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite8-sheet0.png",
+      "size": 168,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/sprite9-sheet0.png",
+      "size": 749,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/spritefontdeluxe.png",
+      "size": 1469,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/spritefontdeluxew.png",
+      "size": 1566,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/tiledbackground.png",
+      "size": 175,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/tiledbackground2.png",
+      "size": 180625,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/tiledbackground3.png",
+      "size": 20986,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/titlelogo-sheet0.png",
+      "size": 3831,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/triggerarea-sheet0.png",
+      "size": 106,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/uidirectionbtn-sheet0.png",
+      "size": 1829,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/images/vector-sheet0.png",
+      "size": 151,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/jquery-3.4.1.min.js",
+      "size": 88145,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/jquery.gritter.css",
+      "size": 4873,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/jquery.gritter.js",
+      "size": 12853,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/languages.json",
+      "size": 121948,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/loading-logo.png",
+      "size": 1579,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/lzma.js",
+      "size": 25719,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/among us death.ogg",
+      "size": 15922,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/among us slice.ogg",
+      "size": 16955,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/button.ogg",
+      "size": 19211,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/click.ogg",
+      "size": 6101,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/coin1.ogg",
+      "size": 35426,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/death-2.ogg",
+      "size": 46722,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/death.ogg",
+      "size": 9063,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/footstep.ogg",
+      "size": 34520,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/hover.ogg",
+      "size": 5965,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/hurt.ogg",
+      "size": 4995,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/jump.ogg",
+      "size": 35205,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/jumpboost.ogg",
+      "size": 35193,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/jumpstrong.ogg",
+      "size": 35193,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/menutrack.ogg",
+      "size": 637642,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/plunge.ogg",
+      "size": 35567,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/pound.ogg",
+      "size": 26469,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/prepound.ogg",
+      "size": 22532,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/return.ogg",
+      "size": 6062,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/rocket-2.ogg",
+      "size": 36221,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-01.ogg",
+      "size": 42869,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-02.ogg",
+      "size": 43578,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-03.ogg",
+      "size": 43511,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-04.ogg",
+      "size": 43502,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-05.ogg",
+      "size": 43238,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-06.ogg",
+      "size": 44039,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-07.ogg",
+      "size": 43334,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/sfx_transition-08.ogg",
+      "size": 44114,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/slide_recover.ogg",
+      "size": 35695,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/slide.ogg",
+      "size": 35049,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/step.ogg",
+      "size": 4586,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/step2.ogg",
+      "size": 4593,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/step3.ogg",
+      "size": 4523,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/stun.ogg",
+      "size": 6355,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/superjump.ogg",
+      "size": 24963,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/transition.ogg",
+      "size": 28294,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/media/walljump.ogg",
+      "size": 34640,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/offlineClient.js",
+      "size": 1381,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/ovo-level-editor.js",
+      "size": 20544,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/retron2000.ttf",
+      "size": 33348,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/sdkconfig.json",
+      "size": 832,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/skins.json",
+      "size": 3931,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/style.css",
+      "size": 1594,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/tips.json",
+      "size": 774,
+      "required": false
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/Tween.js",
+      "size": 12561,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/unlockalllevels.js",
+      "size": 22073,
+      "required": true
+    },
+    {
+      "path": "ovo-gamex.github.io/ovo-unblocked/websdkwrapper.js",
+      "size": 25545,
+      "required": true
+    }
+  ],
+  "external_hosts": [],
+  "external_critical": [],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

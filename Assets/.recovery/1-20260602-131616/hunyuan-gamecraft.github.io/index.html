@@ -1,0 +1,2572 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Hunyuan-GameCraft</title>
+    <meta name="description" content="Hunyuan-GameCraft">
+    <meta name="keywords" content="Video Generation, Image Generation, Diffusion Transformer">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <meta name="theme-color" content="#9ACBD0">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/logos/logo.png" type="image/x-icon">
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+
+    <script src="assets/js/jquery.event.move.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/twentytwenty.css" />
+    <script src="assets/js/jquery.twentytwenty.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Tencent';
+            font-style: normal;
+            src: url('./assets/fonts/TencentSans-W3.ttf');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'TencentBold';
+            font-style: normal;
+            src: url('./assets/fonts/TencentSans-W7.ttf');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 添加twentytwenty容器的默认样式，确保初始加载时不会崩塌 */
+        .twentytwenty-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            /* 默认最小高度，避免空白 */
+        }
+
+        .twentytwenty-container img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* 确保图片加载前就预留空间 */
+        .prompt-wrap.full-screen-wrap .twentytwenty-container {
+            width: 100%;
+            position: relative;
+        }
+
+        /* 为比较容器添加加载状态样式 */
+        .twentytwenty-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .twentytwenty-container.loading::before {
+            opacity: 1;
+        }
+
+        video {
+            background-color: #000000;
+            aspect-ratio: 16 / 9;
+        }
+
+        section.portrait video {
+            background-color: #000000;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+        }
+
+        section.portrait .prompt-wrap.full-screen-wrap video {
+            object-fit: cover;
+        }
+
+        section.portrait .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        section.portrait2 .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+
+        section.portrait .flex>div {
+            flex: 0 0 calc((100% - 5 * 10px) / 6);
+        }
+
+        section.portrait2 .flex>div {
+            flex: 0 0 calc((100% - 1 * 10px) / 2);
+        }
+
+        section.portrait .prompt {
+            font-size: 10px;
+        }
+
+        section.portrait2 .prompt {
+            font-size: 12px;
+        }
+
+        section.portrait .flex-row {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section.portrait2 .flex-row {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            section.portrait .flex>div {
+                flex: 0 0 calc((100% - 1 * 10px) / 2);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section.portrait2 .flex>div {
+                flex: 0 0 calc((100% - 0 * 10px) / 1);
+            }
+        }
+
+        /* Ensure prompt adjusts for portrait mode */
+        .portrait .prompt {
+            position: absolute;
+            /* Allow positioning relative to the container */
+            bottom: 5%;
+            /* Adjust this to control the vertical placement of the prompt */
+            left: 50%;
+            /* Center horizontally */
+            transform: translateX(-50%);
+            /* Offset by 50% of its width to truly center */
+            max-width: 80%;
+            text-align: center;
+            /* Center the text inside the prompt */
+            color: white;
+            /* Optional, if you want the text to stand out */
+            font-size: 1.2em;
+            /* Optional, adjust the text size */
+        }
+
+        .portrait2 .prompt {
+            position: absolute;
+            /* Allow positioning relative to the container */
+            bottom: 5%;
+            /* Adjust this to control the vertical placement of the prompt */
+            left: 50%;
+            /* Center horizontally */
+            transform: translateX(-50%);
+            /* Offset by 50% of its width to truly center */
+            max-width: 80%;
+            text-align: center;
+            /* Center the text inside the prompt */
+            color: white;
+            /* Optional, if you want the text to stand out */
+            font-size: 1.2em;
+            /* Optional, adjust the text size */
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Tencent", sans-serif;
+            padding: 0;
+            margin: 0;
+            /* 为移动设备添加平滑滚动 */
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        #intro {
+            padding: 80px 0 80px 0;
+            justify-content: center;
+            /* Center content vertically */
+            text-align: center;
+            /* Center text alignment */
+        }
+
+        #intro h1 {
+            font-size: 80px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+
+        #intro h2 {
+            margin: 20px 0 40px 0;
+            font-weight: 300;
+            color: #ccc
+        }
+
+        #intro h2 strong {
+            color: #fff;
+        }
+
+        .authors {
+            font-size: 18px;
+            font-weight: 300;
+            color: #bbb;
+            text-align: center;
+            margin-bottom: 25px;
+            width: 70%;
+            /* More compact */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .author-block {
+            display: inline-block;
+            margin: 0 10px 0 10px;
+        }
+
+        .author-block a {
+            color: #d1d1d1;
+            /* Lighter color for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .author-block a:hover {
+            color: #fff;
+            /* Hover effect */
+        }
+
+        .author-affiliation {
+            font-size: 16px;
+            color: #bbb;
+            text-align: center;
+            margin-bottom: 60px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .author-affiliation .author-block {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        section {
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 0 10%;
+        }
+
+        .button {
+            background-color: #ccc;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+            text-decoration: none;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #fff;
+        }
+
+        .bibtex-section {
+            background-color: #111;
+            padding: 40px 10%;
+            text-align: center;
+            margin-top: 60px;
+            color: #ccc;
+        }
+        
+        .bibtex-container {
+            display: inline-block;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .bibtex-container .bibtex-code {
+            text-align: left;
+        }
+        
+        /* BibTeX 复制按钮 */
+        .bibtex-copy-btn {
+            background: rgba(0, 120, 255, 0.9);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .bibtex-copy-btn:hover {
+            background: rgba(0, 140, 255, 1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bibtex-copy-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bibtex-copy-btn.success {
+            background: rgba(34, 197, 94, 0.9);
+        }
+        
+        /* 移动端 BibTeX 优化 */
+        @media (max-width: 768px) {
+            .bibtex-section {
+                padding: 30px 5%;
+                margin-top: 40px;
+            }
+            
+            .bibtex-container {
+                max-width: 100%;
+            }
+            
+            .bibtex-code {
+                max-width: 100%;
+                margin: 0;
+                font-size: 11px;
+                padding: 12px;
+                border-radius: 8px;
+                position: relative;
+            }
+            
+            .bibtex-copy-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+
+        .bibtex-section h3 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .bibtex-code {
+            background-color: #222;
+            color: #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            display: inline-block;
+            font-family: monospace;
+            max-width: 800px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* 支持换行 */
+            word-wrap: break-word; /* 在需要时断行 */
+            word-break: break-all; /* 在长单词处断行 */
+            line-height: 1.6; /* 增加行高以提高可读性 */
+        }
+
+        section {
+            margin-top: 100px;
+        }
+
+        section:first-of-type {
+            margin-top: 0;
+        }
+
+        .title {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            padding: 20px 10%;
+            font-size: 40px;
+            font-weight: 600;
+            z-index: 1000;
+            min-height: 60px;
+            box-sizing: border-box;
+            font-family: 'TencentBold';
+        }
+
+        .description {
+            padding: 0 10% 20px 10%;
+            color: #fff;
+            line-height: 25px;
+            font-weight: 300;
+        }
+
+        .description-justify {
+            padding: 0 10% 20px 10%;
+            color: #fff;
+            line-height: 25px;
+            font-weight: 300;
+            text-align: justify; /* 两端对齐 */
+        }
+
+
+        .description strong {
+            color: #fff;
+            font-family: 'TencentBold';
+        }
+
+        .description-justify strong {
+            color: #fff;
+            font-family: 'TencentBold';
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .flex-row {
+            display: flex;
+            column-gap: 5px;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 0 5px 5px 5px;
+
+        }
+
+        .flex-row>div {
+            flex-grow: 1;
+            flex-basis: 0;
+            position: relative;
+        }
+
+        .flex>div {
+            width: calc(100% / 3 - 5px * 2 / 3);
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+            position: relative;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+
+        .prompt-wrap {
+            position: relative;
+        }
+
+        video,
+        img {
+            width: 100%;
+        }
+
+        .prompt {
+            max-width: calc(100% - 20px);
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            bottom: 80px;
+            left: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+            box-sizing: border-box;
+        }
+        
+        /* 移动端提示按钮 - 更小更优雅的设计 */
+        .prompt-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(3px);
+        }
+        
+        .prompt-toggle::before {
+            content: 'ℹ';
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .prompt-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .prompt-toggle.active {
+            background: rgba(0, 120, 255, 0.7);
+            border-color: rgba(0, 120, 255, 0.8);
+        }
+        
+        .prompt-toggle.active::before {
+            content: '✕';
+            font-size: 10px;
+        }
+
+        .flex-very-compact .full-screen-button {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            border-radius: 0;
+        }
+
+        .chinese {
+            font-family: 'Tencent', sans-serif;
+            font-weight: bold;
+            color: #d18585;
+            font-size: 1.1em;
+        }
+
+        .video-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: minmax(100px, auto);
+            /* 行高自适应内容 */
+            gap: 20px;
+            /* 定义间隙 */
+            grid-auto-flow: dense;
+            /* 关键：启用密集填充 */
+            width: 90%;
+            /* 左右各留5% (100% - 5%*2) */
+            max-width: 1440px;
+            /* 可选：限制最大宽度 */
+            margin: 0 auto;
+            /* 水平居中 */
+        }
+
+        /* 定义不同尺寸组件的占位 */
+        .video-component-large {
+            grid-column: span 2;
+            /* 横向占2列 */
+            grid-row: span 2;
+            /* 纵向占2行 */
+        }
+
+        .video-component-tall {
+            grid-row: span 2;
+            /* 纵向占2行 */
+        }
+
+        .video-component-wide {
+            grid-column: span 2;
+            /* 纵向占2行 */
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            /* 只在有鼠标的设备上启用hover效果 */
+            .prompt-wrap:hover .prompt,
+            .full-screen-wrap:hover .full-screen-button {
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            /* 在有鼠标的设备上隐藏移动端按钮 */
+            .prompt-toggle {
+                display: none !important;
+            }
+
+            #contributors a:hover {
+                background-color: #222;
+            }
+        }
+        
+        /* 确保触摸设备上的提示按钮可见 */
+        @media (hover: none) {
+            .prompt-toggle {
+                display: none;
+            }
+            
+            .touch-device .prompt-toggle {
+                display: flex !important;
+            }
+        }
+
+        @media (hover: none) {
+            #contributors a {
+                pointer-events: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .flex-dynamic>div {
+                width: calc(100% / 2 - 5px / 2);
+            }
+        }
+
+        @media (max-width: 640px) {
+            #intro h1 {
+                font-size: 40px;
+                line-height: 1.1;
+                margin: 10px 0;
+            }
+
+            #intro h2 {
+                font-size: 18px;
+                line-height: 1.2;
+                margin: 15px 0 30px 0;
+            }
+
+            .ruler {
+                font-size: 10px;
+            }
+            
+            /* 作者信息在小屏幕上的优化 */
+            #intro .authors-info {
+                max-width: 95% !important;
+                font-size: 0.9em;
+            }
+            
+            #intro .author-row {
+                font-size: 0.9em !important;
+                line-height: 1.3;
+                margin-bottom: 8px !important;
+            }
+            
+            #intro .institutions {
+                font-size: 0.7em !important;
+                line-height: 1.4;
+                margin-bottom: 12px !important;
+            }
+            
+            #intro .author {
+                margin-right: 8px !important;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 512px) {
+
+            .flex-dynamic>div,
+            .flex-dynamic-1>div {
+                width: 100%;
+            }
+
+            .content {
+                padding: 0 12px;
+            }
+
+            .description {
+                padding: 0 12px 20px 12px;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            
+            .description-justify {
+                padding: 0 12px 20px 12px;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .title {
+                padding: 20px 12px;
+                font-size: 28px;
+                line-height: 1.1;
+            }
+
+            .ruler-tight {
+                font-size: 6px;
+                column-gap: 0;
+            }
+
+            .title-long {
+                font-size: 16px;
+            }
+            
+            /* 导航按钮优化 */
+            .button {
+                padding: 12px 20px;
+                margin: 8px 4px;
+                font-size: 16px;
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* 视频容器优化 */
+            .prompt {
+                font-size: 12px;
+                padding: 8px 12px;
+                bottom: 10px;
+                left: 8px;
+                max-width: calc(100% - 16px);
+            }
+            
+            /* 滑块导航按钮优化 */
+            .slider-nav {
+                padding: 25px 12px;
+                font-size: 20px;
+                min-width: 50px;
+                min-height: 50px;
+            }
+
+        }
+
+        .margin-top {
+            margin-top: 50px;
+        }
+
+        .ruler {
+            text-align: center;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+            background-color: #000;
+            color: #999;
+            padding: 5px 0;
+        }
+
+        .ruler>div {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .selected {
+            box-shadow: 0 0 0 5px #fff;
+        }
+
+        .container {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            justify-content: left;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slidervideo {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: 0.4s ease;
+            object-fit: contain;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: ew-resize;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 10;
+        }
+
+        body {
+            font-family: 'Tencent', sans-serif;
+            /* background: #fff; */
+            /* padding: 40px; */
+            text-align: center;
+        }
+
+        .video-comparison-container {
+            position: relative;
+            width: 800px;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-wrapper.after {
+            z-index: 1;
+        }
+
+        .video-wrapper.before {
+            z-index: 2;
+            overflow: hidden;
+            background-color: #BBBBBB;
+        }
+
+        .video-wrapper video {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            max-width: none;
+        }
+
+        .divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            left: 50%;
+            transform: translateX(-2px);
+            z-index: 3;
+            cursor: ew-resize;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .divider::after {
+            content: '⟷';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            color: #333;
+            pointer-events: none;
+        }
+
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        body.dragging-video-slider,
+        body.dragging-video-slider * {
+            cursor: ew-resize !important;
+        }
+
+        /* 确保一个容器中的图片和视频保持相同高宽比 */
+        .video-static-flex {
+            display: grid;
+            width: 100%;
+            gap: 2px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000;
+            max-width: 90%;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3列等宽 */
+            grid-template-rows: repeat(2, auto);
+            /* 2行 */
+            grid-template-areas:
+                "img1 img2 img3"
+                "vid1 vid2 vid3";
+        }
+        
+        /* 移动设备上的内容区域优化 */
+        @media (max-width: 768px) {
+            .content {
+                padding: 0 15px;
+            }
+            
+            section {
+                margin-top: 60px;
+            }
+            
+            .bibtex-section {
+                padding: 25px 10px;
+                margin-top: 35px;
+            }
+            
+            .bibtex-code {
+                padding: 12px;
+                font-size: 11px;
+                max-width: 100%;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+                word-break: break-all;
+                line-height: 1.4;
+                overflow-x: visible;
+                margin: 0;
+            }
+        }
+
+        /* 容器样式 */
+        .static-wrapper {
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            aspect-ratio: 1/1;
+            /* 确保1:1的宽高比 */
+            background-color: #BBBBBB;
+            /* 背景色 */
+        }
+
+        .static-wrapper.video {
+            background-color: #000;
+            /* 视频容器背景为黑色 */
+        }
+
+        /* 图片和视频样式 */
+        .static-wrapper img,
+        .static-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 视频和图片布局 - 大屏 (1280px及以上) */
+        .video-static-flex {
+            display: grid;
+            width: 100%;
+            gap: 2px;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000;
+            max-width: 90%;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3列等宽 */
+            grid-template-rows: repeat(2, auto);
+            /* 2行 */
+            grid-template-areas:
+                "img1 img2 img3"
+                "vid1 vid2 vid3";
+        }
+
+        /* 中屏布局 - (680px - 1279px) */
+        @media (min-width: 680px) and (max-width: 1279px) {
+            .video-static-flex {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2列等宽 */
+                grid-template-rows: repeat(3, auto);
+                /* 3行 */
+                grid-template-areas:
+                    "img1 vid1"
+                    "img2 vid2"
+                    "img3 vid3";
+            }
+        }
+
+        /* 小屏布局 - (小于680px) */
+        @media (max-width: 679px) {
+            .video-static-flex {
+                grid-template-columns: 1fr;
+                /* 1列全宽 */
+                grid-template-rows: repeat(6, auto);
+                /* 6行 */
+                grid-template-areas:
+                    "img1"
+                    "vid1"
+                    "img2"
+                    "vid2"
+                    "img3"
+                    "vid3";
+            }
+        }
+
+        /* 网格区域定义 */
+        .static-wrapper:nth-child(1) {
+            grid-area: img1;
+        }
+
+        .static-wrapper:nth-child(2) {
+            grid-area: vid1;
+        }
+
+        .static-wrapper:nth-child(3) {
+            grid-area: img2;
+        }
+
+        .static-wrapper:nth-child(4) {
+            grid-area: vid2;
+        }
+
+        .static-wrapper:nth-child(5) {
+            grid-area: img3;
+        }
+
+        .static-wrapper:nth-child(6) {
+            grid-area: vid3;
+        }
+
+        /* Make the image container in section#image_3 slightly narrower but wider than text */
+        section#image_all .flex-dynamic {
+            max-width: 90%;
+            /* Or adjust as needed, e.g., 85% or 88% */
+            margin-left: auto;
+            margin-right: auto;
+            /* padding: 0 5px; /* This padding is already on .flex so might not be needed here, or could be adjusted */
+        }
+
+        section#video_all .flex-dynamic {
+            max-width: 90%;
+            /* Or adjust as needed, e.g., 85% or 88% */
+            margin-left: auto;
+            margin-right: auto;
+            /* padding: 0 5px; /* This padding is already on .flex so might not be needed here, or could be adjusted */
+        }
+
+        /* Styles for image layout in section#image_all */
+        @media (min-width: 1280px) {
+            section#image_all .flex-dynamic>div {
+                width: calc((100% - 2 * 5px) / 3);
+                /* 3 columns */
+            }
+
+            section#video_all .flex-dynamic>div {
+                width: calc((100% - 2 * 5px) / 3);
+                /* 3 columns */
+            }
+
+            section#compare .flex-dynamic>div {
+                width: calc((100% - 2 * 5px) / 6);
+                /* 3 columns */
+            }
+        }
+
+        @media (min-width: 680px) and (max-width: 1279px) {
+            section#image_all .flex-dynamic>div {
+                width: calc((100% - 1 * 5px) / 2);
+                /* 2 columns */
+            }
+
+            section#video_all .flex-dynamic>div {
+                width: calc((100% - 1 * 5px) / 2);
+                /* 2 columns */
+            }
+
+            section#compare .flex-dynamic>div {
+                width: calc((100% - 2 * 5px) / 6);
+                /* 3 columns */
+            }
+        }
+
+        @media (max-width: 679px) {
+            section#image_all .flex-dynamic>div {
+                width: 100%;
+                /* 1 column */
+            }
+
+            section#video_all .flex-dynamic>div {
+                width: 100%;
+                /* 1 column */
+            }
+
+            section#compare .flex-dynamic>div {
+                width: calc((100% - 2 * 5px) / 6);
+                /* 3 columns */
+            }
+        }
+
+
+        /* Styles for layout in slider */
+        .slider-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .slider-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        
+        .slider-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            flex-shrink: 0;
+            padding: 0 10px;
+        }
+        
+        /* 移动端纵向轮播样式 */
+        @media (max-width: 768px) {
+            .slider-container {
+                flex-direction: column;
+                padding: 20px 10px;
+                max-width: 100%;
+                position: relative;
+                min-height: 200px; /* 确保有足够空间显示箭头 */
+            }
+            
+            .slider-wrapper {
+                width: 100%;
+                max-height: 70vh;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                border-radius: 12px;
+                padding: 0 5px;
+            }
+            
+            .slider-track {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                display: block;
+            }
+            
+            .slider-group {
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin-bottom: 25px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 20px;
+            }
+            
+            .slider-group:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            
+            .slider-group .prompt-wrap {
+                margin-bottom: 15px;
+                width: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            .slider-nav {
+                position: static;
+                margin: 10px 0;
+                align-self: center;
+                display: none; /* 移动端默认隐藏，使用滚动 */
+            }
+            
+            /* 滚动条样式 */
+            .slider-wrapper::-webkit-scrollbar {
+                width: 4px;
+            }
+            
+            .slider-wrapper::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.1);
+                border-radius: 2px;
+            }
+            
+            .slider-wrapper::-webkit-scrollbar-thumb {
+                background: rgba(255,255,255,0.3);
+                border-radius: 2px;
+            }
+            
+            .slider-wrapper::-webkit-scrollbar-thumb:hover {
+                background: rgba(255,255,255,0.5);
+            }
+            
+
+            
+
+        }
+        
+        /* PC端隐藏下一节按钮 */
+        @media (min-width: 769px) {
+            .next-section-btn {
+                display: none !important;
+            }
+        }
+
+        .method-label {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .slider-nav {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 20px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 10;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .slider-nav:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        
+        /* .slider-group prompt-wrap {
+            position: relative;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .slider-group prompt {
+            padding: 12px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            margin-bottom: 20px;
+            left: 0;
+            right: 0;
+        } */
+        
+        @media (max-width: 768px) and (min-width: 481px) {
+            .slider-group {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: 15px;
+                display: grid;
+            }
+
+            .slider-nav {
+                padding: 18px 12px;
+                font-size: 20px;
+                min-width: 45px;
+                min-height: 45px;
+            }
+            
+            /* 移动设备上的标题优化 */
+            .title {
+                font-size: 32px;
+                padding: 15px 20px;
+            }
+            
+            /* 内容区域优化 */
+            .description,
+            .description-justify {
+                padding: 0 20px 20px 20px;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            /* 视频网格优化 */
+            .video-grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                width: 95%;
+            }
+        }
+
+
+
+        /* 修改后的 intro section 样式 */
+        #intro {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* font-family: 'TencentBold'; */
+            /* background-color: #000; 添加黑色背景以防视频加载时出现空白 */
+        }
+        
+        /* 新增的遮罩层样式 */
+        #intro::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩，0.3是透明度，可根据需要调整 */
+            z-index: 1; /* 确保遮罩层在视频上方，内容下方 */
+        }
+        
+        /* 移动设备上的视频优化 */
+        @media (max-width: 768px) {
+            #intro video {
+                object-fit: cover; /* 在移动设备上使用cover以获得更好的视觉效果 */
+            }
+        }
+        
+        #intro .content {
+            position: relative;
+            z-index: 2; /* 确保内容显示在遮罩层上方 */
+            text-align: center;
+            color: white;
+            padding: 20px;
+            /* background-color: rgba(0, 0, 0, 0.5); 内容区域也添加半透明背景 */
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        #intro video {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: contain; /* Changed from 'cover' to 'contain' to show full video */
+        }
+
+        /* Add media queries to handle different aspect ratios */
+        @media (min-aspect-ratio: 1) {
+            #intro video {
+                height: 100%;
+                width: auto;
+            }
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3; /* 滚动提示在内容层上方 */
+            color: white;
+            font-size: 16px;
+            animation: bounce 2s infinite;
+            background-color: rgba(0,0,0,0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        /* 新增：专门针对小屏幕的优化 */
+        @media (max-width: 480px) {
+            #intro h1 {
+                font-size: 32px;
+                margin: 8px 0;
+            }
+            
+            #intro h2 {
+                font-size: 16px;
+                margin: 12px 0 20px 0;
+            }
+            
+            #intro .authors-info {
+                max-width: 98% !important;
+                font-size: 0.85em;
+            }
+            
+            #intro .author-row {
+                font-size: 0.8em !important;
+                margin-bottom: 6px !important;
+            }
+            
+            #intro .institutions {
+                font-size: 0.65em !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .title {
+                font-size: 24px;
+                padding: 15px 10px;
+            }
+            
+            .description,
+            .description-justify {
+                padding: 0 10px 15px 10px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .slider-group {
+                display: block;
+                gap: 10px;
+            }
+            
+            .slider-group .prompt-wrap {
+                margin-bottom: 12px;
+            }
+            
+            .slider-nav {
+                padding: 20px 8px;
+                font-size: 18px;
+                min-width: 40px;
+                min-height: 40px;
+            }
+            
+            .method-label {
+                font-size: 16px;
+                padding: 3px;
+            }
+            
+            .prompt {
+                font-size: 10px;
+                padding: 6px 8px;
+                bottom: 8px;
+                left: 6px;
+                max-width: calc(100% - 12px);
+            }
+            
+            .prompt-toggle {
+                width: 19px;
+                height: 19px;
+                top: 8px;
+                left: 8px;
+            }
+            
+            .prompt-toggle::before {
+                font-size: 9px;
+            }
+            
+            /* 视频容器优化 */
+            .video-comparison-container {
+                width: 95%;
+                margin: 0 auto;
+            }
+            
+            /* flex布局优化 */
+            .flex>div {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .flex-row>div {
+                margin: 2px 0;
+            }
+        }
+        
+        /* 超小屏幕优化 */
+        @media (max-width: 360px) {
+            #intro h1 {
+                font-size: 28px;
+            }
+            
+            #intro h2 {
+                font-size: 14px;
+            }
+            
+            .title {
+                font-size: 20px;
+                padding: 12px 8px;
+            }
+            
+            .description,
+            .description-justify {
+                padding: 0 8px 12px 8px;
+                font-size: 13px;
+            }
+            
+            .button {
+                padding: 10px 16px;
+                font-size: 14px;
+                margin: 6px 2px;
+            }
+            
+            /* 超小屏幕上的内容优化 */
+            .content {
+                padding: 0 8px;
+            }
+            
+            section {
+                margin-top: 40px;
+            }
+            
+            .bibtex-section {
+                padding: 20px 8px;
+                margin-top: 30px;
+            }
+            
+            .bibtex-code {
+                padding: 8px;
+                font-size: 9px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                word-break: break-all;
+                line-height: 1.3;
+                overflow-x: visible;
+                margin: 0;
+                border-radius: 6px;
+            }
+            
+            .bibtex-copy-btn {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+            
+            /* 超小屏幕上的提示按钮优化 */
+            .prompt-toggle {
+                width: 18px;
+                height: 18px;
+                top: 8px;
+                left: 8px;
+            }
+            
+            .prompt-toggle::before {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="intro" style="min-width: 100%;min-height: 100%;">
+        <video id="teaser-video" muted autoplay loop playsinline preload="auto">
+            <source src="./assets/videos/teaser.mov" type="video/mp4">
+        </video>
+        <div class="content" style="font-family: 'TencentBold';">
+            <h1><strong>Hunyuan-GameCraft</strong></h1>
+            <h2><strong>High-dynamic Interactive Game Video Generation with Hybrid History Condition</strong></h2>
+            <div class="authors-info" style="color: white; font-family: Tencent, sans-serif; text-align: center; max-width: 70%; margin: 0 auto;">
+            <!-- <div class="authors-info" style="color: white; text-align: center; max-width: 100%; margin: 0 auto;"></div> -->
+                <!-- 作者行1 -->
+                <div class="author-row" style="margin-bottom: 10px;font-family: 'TencentBold';font-size: 1.1em;">
+                    <span class="author" style="margin-right: 15px;">Jiaqi Li<sup style="font-size: 0.9em;">1,2*</sup></span>
+                    <span class="author" style="margin-right: 15px;">Junshu Tang<sup style="font-size: 0.9em;">1*</sup></span>
+                    <span class="author" style="margin-right: 15px;">Zhiyong Xu<sup style="font-size: 0.9em;">1</sup></span>
+                    <span class="author">Longhuang Wu<sup style="font-size: 1em;">1</sup></span>
+                </div>
+                
+                <!-- 作者行2 -->
+                <div class="author-row" style="margin-bottom: 10px;font-family: 'TencentBold';font-size: 1.1em;">
+                    <span class="author" style="margin-right: 15px;">Yuan Zhou<sup style="font-size: 0.9em;">1</sup></span>
+                    <span class="author" style="margin-right: 15px;">Shuai Shao<sup style="font-size: 0.9em;">1</sup></span>
+                    <span class="author" style="margin-right: 15px;">Tianbao Yu<sup style="font-size: 0.9em;">1</sup></span>
+                    <span class="author" style="margin-right: 15px;">Zhiguo Cao<sup style="font-size: 0.9em;">2</sup></span>
+                    <span class="author">Qinglin Lu<sup style="font-size: 1em;">1†</sup></span>
+                </div>
+                
+                <!-- 机构信息 -->
+                <div class="institutions" style="font-size: 0.8em; line-height: 1.6; margin-bottom: 8px;font-family: 'TencentBold';">
+                    <span class="author" style="margin-right: 30px;">1 Tencent Hunyuan</span>
+                    <span class="author">2 Huazhong University of Science and Technology</span>
+                </div>
+                <div class="institutions" style="font-size: 0.8em; line-height: 1.6; margin-bottom: 15px;font-family: 'TencentBold';">
+                    <span class="author" style="margin-right: 30px;">* Equal Contribution</span>
+                    <span class="author">† Corresponding author</span>
+                    <!-- <span class="author">§ Work is done during the internship at Tencent Hunyuan</span> -->
+                </div>
+
+                <div class="institutions" style="font-size: 0.8em; line-height: 1.6; margin-bottom: 15px;font-family: 'TencentBold';">
+                    <span class="author">We are looking for collaboration and self-motivated interns. Contact: juliatang@tencent.com.</span>
+                    <!-- <span class="author">§ Work is done during the internship at Tencent Hunyuan</span> -->
+                </div>
+                
+                
+            </div>
+            <a class="button" href="http://arxiv.org/abs/2506.17201" target="_blank" rel="noopener noreferrer">
+                <i class="ai ai-arxiv" style="font-size:17px"></i>
+                Paper
+            </a>
+
+            <a class="button" href="https://github.com/Tencent-Hunyuan/Hunyuan-GameCraft-1.0" target="_blank"
+                    rel="noopener noreferrer">
+                      <i class="fab fa-github" style="font-size:17px"></i>
+                    Code
+                  </a>
+            <a class="button" href="https://huggingface.co/tencent/Hunyuan-GameCraft-1.0" target="_blank"
+                    rel="noopener noreferrer">
+                    🤗 Hugging Face
+                  </a>
+            <!-- <a href="https://hunyuan.tencent.com/game/home" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <img src="./assets/icons/game-icon.png" alt="Paper"
+                    style="width:17px; height:1em; vertical-align:-3px; margin-right:5px;">
+                <span>Getting Started</span>
+            </a> -->
+        </div>
+    </section>
+
+    <section id="abstract">
+        <div class="title">
+            Abstract
+        </div>
+        <div class="description-justify">
+            Recent advances in diffusion-based and controllable video generation have enabled high-quality and temporally coherent video synthesis, laying the groundwork for immersive interactive gaming experiences. 
+            However, current methods face limitations in <strong>dynamics, generality, long-term consistency, and efficiency</strong>, which limit the ability to create various gameplay videos. 
+            To address these gaps, we introduce <strong>Hunyuan-GameCraft</strong>, a novel framework for high-dynamic interactive video generation in game environments. 
+            To achieve fine-grained action control, we unify standard keyboard and mouse inputs into a <strong>shared camera representation space</strong>, facilitating smooth interpolation between various camera and movement operations.
+            Then we propose a <strong>hybrid history-conditioned training strategy</strong> that extends video sequences autoregressively while preserving game scene information. 
+            Additionally, to enhance inference efficiency and playability, we achieve <strong>model distillation</strong> to reduce computational overhead while maintaining consistency across long temporal sequences, making it suitable for real-time deployment in complex interactive environments. 
+            The model is trained on a large-scale dataset comprising over <strong>one million</strong> gameplay recordings across over 100 AAA games, ensuring broad coverage and diversity, then fine-tuned on a carefully annotated synthetic dataset to enhance precision and control. 
+            The curated game scene data significantly improves the visual fidelity, realism and action controllability.  
+            Extensive experiments demonstrate that Hunyuan-GameCraft significantly outperforms existing models, advancing the realism and playability of interactive game video generation.
+        </div>
+    </section>
+
+    <section id="method">
+        <div class="title">
+            Method
+        </div>
+        <div class="flex-2 flex-dynamic-1" style="display: flex; justify-content: center; margin-top: 0px;">
+            <div class="prompt-wrap full-screen-wrap" style="position: relative; margin: 0 auto;">
+                <img src="./assets/images/pipeline.png" 
+                    alt="Hunyuan-GameCraft Pipeline Diagram"
+                    style="display: block; width: 70%; height: auto; margin: 0 auto; object-fit: contain;">
+            </div>
+        </div>
+        <div class="description-justify" style="margin-top: 10px;">
+            Overall architecture of Hunyuan-GameCraft. 
+            Given a reference image and the corresponding prompt, the keyboard or mouse signal, we transform these options to the continuous camera space. 
+            Then we design a light-weight action encoder to encode the input camera trajectory. 
+            The action and image features are added after patchify. 
+            For long video extension, we design a variable mask indicator, where 1 and 0 indicate history frames and predicted frames, respectively.
+        </div>
+        <div class="flex-2 flex-dynamic-1" style="display: flex; justify-content: center; margin-top: 0px;">
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder" style="display: none;">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">✨</div>
+                </div>
+                <video controls autoplay playsinline muted loop
+                    onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';"
+                    src="./assets/videos/main.mp4" style="display: block; width: 80%; margin: 0 auto;"></video>
+            </div>
+        </div>
+    </section>
+
+    <section id="video_all">
+        <div class="title">
+            Qualitative Performance
+        </div>
+        <div class="description">
+            We demonstrate and compare control accuracy, long-term consistency, history preservation, and dynamic performance across multiple scenarios and styles to reveal the power of Hunyuan-GameCraft.
+        </div>
+
+        <section id="single-action">
+            <div class="title" style="font-size: 30px;">
+                Single-action Comparison
+            </div>
+            <div class="description">
+                We compared <strong>control accuracy</strong> under single-action control with other interactive video methods in multiple game scenarios and art styles.
+            </div>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="slide(-1)">❮</button>
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <!-- Group 1 (First 6 videos) -->
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/00.png" alt="00">
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/00.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/00.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/00.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/00.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/00.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, sunlit street lined with colorful European-style buildings and a tram track stretches into the distance, framed by modern skyscrapers in the background.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Group 2 (Next 6 videos) -->
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/01.png" alt="01">
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features a river winding through lush green fields under a bright blue sky dotted with fluffy clouds.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+
+
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/08.png" alt="08">
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/08.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/08.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/08.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/08.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/08.mp4" type="video/mp4"></video>
+                                <div class="prompt">A vibrant, idyllic garden scene features lush greenery, blooming purple flowers, a rustic wooden fence, and a small basket resting on the ground amidst the natural beauty.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/11.png" alt="11">
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/11.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/11.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/11.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/11.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/11.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sniper rifle with a mounted scope is positioned on a rocky outcrop overlooking a mountainous landscape under a clear sky.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/13.png" alt="13">
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/13.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/13.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/13.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/13.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/13.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/19.png" alt="19">
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/19.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/19.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/19.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/19.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/19.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque village scene featuring quaint houses, a windmill, lush greenery, and a serene mountain backdrop under a bright blue sky.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group active">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <img src="./assets/videos/singleaction/input/22.png" alt="22">
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">Input</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/our/22.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mat/22.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                            
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/mon/22.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">MotionCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/cam/22.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">CameraCtrl</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/singleaction/wan/22.mp4" type="video/mp4"></video>
+                                <div class="prompt">A picturesque rural landscape featuring a traditional windmill surrounded by golden fields under a partly cloudy sky.</div>
+                                <div class="method-label">WanX-Cam</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav next" onclick="slide(1)">❯</button>
+            </div>
+        </section>
+
+
+
+        <section id="multi-action" class="subsection">
+            <div class="title" style="font-size: 30px;">
+                Multi-action Visualization
+            </div>
+            <div class="description">
+                With multiple sequential operational signal inputs we focus on the quality, continuity and consistency of the overall output generation. 
+                Hunyuan-GameCraft also enables the exploration of multiple complex trajectories for a single scene, and the related comparison and visualization results are shown below.
+            </div>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="slide(-1)">❮</button>
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <!-- Group 1 (First 6 videos) -->
+                        <div class="slider-group active" style="grid-template-columns: repeat(2, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long01_our.mp4" type="video/mp4"></video>
+                                <div class="prompt">A pixelated, blocky landscape featuring a wooden house surrounded by lush greenery and a serene pond, set against a backdrop of towering, jagged mountains under a twilight sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long01_mat.mp4" type="video/mp4"></video>
+                                <div class="prompt">A pixelated, blocky landscape featuring a wooden house surrounded by lush greenery and a serene pond, set against a backdrop of towering, jagged mountains under a twilight sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                        </div>
+                        <!-- <div class="slider-group active" style="grid-template-columns: repeat(2, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long02_our.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long02_our.mp4" type="video/mp4"></video>
+                                <div class="prompt">A charming Parisian street scene featuring "Chez Marceau Brasserie" with its vibrant red awning and outdoor seating area, surrounded by quaint shops and lush greenery under a bright blue sky.</div>
+                                <div class="method-label">Matrix-Game</div>
+                            </div>
+                        </div> -->
+
+                        <div class="slider-group active" style="grid-template-columns: repeat(2, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long03_our01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A cozy, whimsical bedroom filled with colorful decorations, books, and personal items, bathed in soft, ambient lighting.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long03_our02.mp4" type="video/mp4"></video>
+                                <div class="prompt">A cozy, whimsical bedroom filled with colorful decorations, books, and personal items, bathed in soft, ambient lighting.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                        </div>
+                        <div class="slider-group active" style="grid-template-columns: repeat(2, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long04_our01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sunlit courtyard features white adobe buildings with arched doorways and windows, surrounded by lush greenery and palm trees, creating a serene Mediterranean ambiance.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/multiaction/long04_our02.mp4" type="video/mp4"></video>
+                                <div class="prompt">A sunlit courtyard features white adobe buildings with arched doorways and windows, surrounded by lush greenery and palm trees, creating a serene Mediterranean ambiance.</div>
+                                <div class="method-label">Ours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav next" onclick="slide(1)">❯</button>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="history" class="subsection">
+            <div class="title" style="font-size: 30px;">
+                History Preservation
+            </div>
+            <div class="description">
+                For immersive game experiences, 3D consistency and scene coherence are essential for interactive video modeling of game scenes. Thanks to hybrid history condition, Hunyuan-GameCraft effectively preserves the original scene information after significant movement.
+            </div>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="slide(-1)">❮</button>
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <!-- Group 1 (First 6 videos) -->
+                        <div class="slider-group active" style="grid-template-columns: repeat(3, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/09fb1fc9828fb9d6d2fdd2312b9968044d832c3d5902ed943ff83c1d.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene temple courtyard features multiple seated Buddha statues surrounded by misty, lush greenery under a cloudy sky.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/aca4fd926dfae0d7bde2b5f804a4cc8e.mov" type="video/mp4"></video>
+                                <div class="prompt">A sunken pirate ship rests on a sandy beach surrounded by lush tropical vegetation and towering cliffs under a bright blue sky.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/af952e1f7986f755ec1229bffad0e650397d4fe6bd9c23d1ca1e73aa.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene forest scene featuring a wooden bridge crossing over a small stream, surrounded by lush green trees and vibrant wildflowers under a bright blue sky.</div>
+                            </div>
+                        </div>
+                        <div class="slider-group active" style="grid-template-columns: repeat(3, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/d361ba405c1c7b895f293ddb56c919c6.mov" type="video/mp4"></video>
+                                <div class="prompt">A scenic view of a forested hillside under a clear blue sky.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/e72c7119e6f917b0ab2acf3ca59010df6c042a36b5eef555c0ad3be0.mp4" type="video/mp4"></video>
+                                <div class="prompt">A serene landscape features vibrant hot air balloons floating above a lush green meadow with snow-capped mountains in the background under a bright blue sky.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/f9af939cfafdba1edabade7a5c2e3facdf7e05a923abd8e1bb84df43.mp4" type="video/mp4"></video>
+                                <div class="prompt">A wide, open street lined with trees and modern buildings under a partly cloudy sky.</div>
+                            </div>
+                        </div>
+                        <div class="slider-group active" style="grid-template-columns: repeat(3, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/5e644b42e540b6f8eb091773ecced6ea.mov" type="video/mp4"></video>
+                                <div class="prompt">A red-cloaked figure rides a white horse past a lakeside castle with domed towers, surrounded by lush greenery and purple flowers.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/ddb62c25d8624c00c342113cc3487217.mov" type="video/mp4"></video>
+                                <div class="prompt">A quaint cottage with a red-tiled roof sits nestled in a vibrant garden filled with colorful flowers and lush greenery.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/history/dfc60205bdd7cec86194ae68b5eb9b5b.mov" type="video/mp4"></video>
+                                <div class="prompt">A medieval stone castle stands tall under a dark sky, its glowing windows contrasting with the surrounding snow-covered landscape.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav next" onclick="slide(1)">❯</button>
+            </div>
+        </section>
+
+
+        <section id="third" class="subsection">
+            <div class="title" style="font-size: 30px;">
+                Third-person Perspective
+            </div>
+            <div class="description">
+                <!-- Game scenarios require more dynamic capabilities, including NPC, operating characters and other creatures. Hunyuan-GameCraft demonstrates significant dynamic performance superiors. -->
+                As an important category of games, Hunyuan-GameCraft is able to generalize to third-person gaming scenarios to achieve natural controls.
+            </div>
+            <div class="flex flex-dynamic">
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/01.mp4" type="video/mp4"></video>
+                    <div class="prompt">A dark, sleek car is driving down a winding road at night, its headlights illuminating the path ahead.</div>
+                </div>
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/02.mp4" type="video/mp4"></video>
+                    <div class="prompt">A small sailboat navigates through choppy waters under a vast sky.</div>
+                </div>
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/03.mp4" type="video/mp4"></video>
+                    <div class="prompt">A first-person view of a character riding a horse through a dense forest, holding a bow.</div>
+                </div>
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/04.mp4" type="video/mp4"></video>
+                    <div class="prompt">A blue car drives alone on a foggy two-lane country road through rolling hills, with its red taillights glowing in the mist.</div>
+                </div>
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/05.mp4" type="video/mp4"></video>
+                    <div class="prompt">A sniper rifle with a mounted scope is aimed across a vast field of dry grass toward distant trees under a partly cloudy sky.</div>
+                </div>
+                <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                    <video id="interactive_1" muted autoplay loop playsinline><source src="./assets/videos/third/06.mp4" type="video/mp4"></video>
+                    <div class="prompt">A yellow sports car speeds down a tree-lined two-lane road with white walls under a clear blue sky.</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="application" class="subsection">
+            <div class="title" style="font-size: 30px;">
+                Application
+            </div>
+            <div class="description">
+                We show here the results generated by Hunyuan-GameCraft for a wider range of applications, further illustrating the excellent generalization and dynamic performance of the model.
+            </div>
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="slide(-1)">❮</button>
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <!-- Group 1 (First 6 videos) -->
+                        <div class="slider-group active" style="grid-template-columns: repeat(2, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/animal01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A giraffe stands gracefully among golden grasses with a lush green forest in the background.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/animal02.mp4" type="video/mp4"></video>
+                                <div class="prompt">A white dog wearing a blue harness runs energetically along a grassy path surrounded by greenery.</div>
+                            </div>
+                        </div>
+                        <div class="slider-group active" style="grid-template-columns: repeat(3, 1fr);grid-template-rows: repeat(1, 1fr);">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/dynamic01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A figure in dark clothing walks through a sunlit ancient courtyard with cobblestone paths, stone pillars, and vine-covered arches surrounded by lush greenery.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/dynamic02.mp4" type="video/mp4"></video>
+                                <div class="prompt">Two shadowy figures on horseback ride through a foggy medieval village with thatched-roof huts and muddy paths under a gloomy sky.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/dynamic03.mp4" type="video/mp4"></video>
+                                <div class="prompt">A beige Toyota SUV with off-road tires stands parked amidst rugged desert rock formations under a cloudy sky.</div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group active" style="grid-template-columns: repeat(3, 1fr);grid-template-rows: auto;">
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/human01.mp4" type="video/mp4"></video>
+                                <div class="prompt">A young girl blows bubbles in a sunny park setting, surrounded by vibrant colors and natural light.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/human02.mp4" type="video/mp4"></video>
+                                <div class="prompt">A young girl in a blue vest blows bubbles in a sunny park, surrounded by trees and a path.</div>
+                            </div>
+                            <div class="prompt-wrap full-screen-wrap">
+                                <video muted autoplay loop playsinline><source src="./assets/videos/application/human03.mp4" type="video/mp4"></video>
+                                <div class="prompt">A man wearing a hat and vest sits on a brick wall, playing a guitar, with a scenic view of trees and buildings in the background.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav next" onclick="slide(1)">❯</button>
+            </div>
+        </section>
+
+        <section class="bibtex-section">
+            <h3>BibTeX</h3>
+            <pre class="bibtex-code">@misc{li2025hunyuangamecrafthighdynamicinteractivegame,
+    title={Hunyuan-GameCraft: High-dynamic Interactive Game Video Generation with Hybrid History Condition}, 
+    author={Jiaqi Li and Junshu Tang and Zhiyong Xu and Longhuang Wu and Yuan Zhou and Shuai Shao and Tianbao Yu and Zhiguo Cao and Qinglin Lu},
+    year={2025},
+    eprint={2506.17201},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2506.17201}, 
+}</pre>
+        </section>
+
+
+</body>
+
+<script src="assets/js/video-init.js"></script>
+<script src="assets/js/image-preloader.js"></script>
+<script src="assets/js/twentytwenty-init.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sliders = document.querySelectorAll('.slider-container');
+        
+        sliders.forEach(slider => {
+            const track = slider.querySelector('.slider-track');
+            const groups = slider.querySelectorAll('.slider-group');
+            const prevBtn = slider.querySelector('.slider-nav.prev');
+            const nextBtn = slider.querySelector('.slider-nav.next');
+            
+            let currentGroup = 0;
+            const totalGroups = groups.length;
+            let isMobile = window.innerWidth <= 768;
+            
+            // 检测屏幕大小变化
+            function checkMobile() {
+                const wasMobile = isMobile;
+                isMobile = window.innerWidth <= 768;
+                if (wasMobile !== isMobile) {
+                    initSlider();
+                }
+            }
+            
+            window.addEventListener('resize', checkMobile);
+            
+            function initSlider() {
+                // 清除之前的克隆
+                const existingClones = track.querySelectorAll('.slider-group[data-clone]');
+                existingClones.forEach(clone => clone.remove());
+                
+                if (isMobile) {
+                    // 移动端：不需要克隆，直接显示所有内容
+                    track.style.transform = 'none';
+                    currentGroup = 0;
+                    
+                    // 隐藏导航按钮（因为移动端使用滚动）
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
+                } else {
+                    // PC端：使用原有的横向轮播逻辑
+                    const originalGroups = track.querySelectorAll('.slider-group:not([data-clone])');
+                    const firstClone = originalGroups[0].cloneNode(true);
+                    const lastClone = originalGroups[originalGroups.length-1].cloneNode(true);
+                    
+                    firstClone.setAttribute('data-clone', 'true');
+                    lastClone.setAttribute('data-clone', 'true');
+                    
+                    track.insertBefore(lastClone, originalGroups[0]);
+                    track.appendChild(firstClone);
+                    
+                    track.style.transform = 'translateX(-100%)';
+                    
+                    // 显示导航按钮
+                    if (prevBtn) prevBtn.style.display = 'flex';
+                    if (nextBtn) nextBtn.style.display = 'flex';
+                }
+            }
+            
+            // 初始化轮播
+            initSlider();
+            
+            function slide(direction) {
+                if (isMobile) {
+                    // 移动端使用滚动而不是轮播
+                    const groupHeight = groups[0] ? groups[0].offsetHeight + 20 : 300;
+                    const wrapper = slider.querySelector('.slider-wrapper');
+                    const currentScroll = wrapper.scrollTop;
+                    const targetScroll = currentScroll + (direction * groupHeight);
+                    
+                    wrapper.scrollTo({
+                        top: targetScroll,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                // PC端横向轮播逻辑
+                track.style.transition = 'transform 0.5s ease';
+                currentGroup += direction;
+                const translateX = -(currentGroup + 1) * 100;
+                track.style.transform = `translateX(${translateX}%)`;
+            }
+            
+            // 添加触摸手势支持
+            let startX = 0, startY = 0;
+            let endX = 0, endY = 0;
+            let isScrolling = false;
+            
+            track.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                isScrolling = false;
+            }, { passive: true });
+            
+            track.addEventListener('touchmove', function(e) {
+                if (!isScrolling) {
+                    endX = e.touches[0].clientX;
+                    endY = e.touches[0].clientY;
+                    isScrolling = true;
+                }
+            }, { passive: true });
+            
+            track.addEventListener('touchend', function(e) {
+                if (!isScrolling) return;
+                
+                const threshold = 50; // 滑动阈值
+                
+                if (isMobile) {
+                    // 移动端纵向滑动
+                    const deltaY = startY - endY;
+                    if (Math.abs(deltaY) > threshold) {
+                        if (deltaY > 0) {
+                            slide(1); // 向上滑动，显示下一个
+                        } else {
+                            slide(-1); // 向下滑动，显示上一个
+                        }
+                    }
+                } else {
+                    // PC端横向滑动
+                    const deltaX = startX - endX;
+                    if (Math.abs(deltaX) > threshold) {
+                        if (deltaX > 0) {
+                            slide(1); // 向左滑动，显示下一个
+                        } else {
+                            slide(-1); // 向右滑动，显示上一个
+                        }
+                    }
+                }
+                
+                isScrolling = false;
+            }, { passive: true });
+            
+            // Handle transition end for infinite looping (PC only)
+            track.addEventListener('transitionend', function() {
+                if (isMobile) return; // 移动端不需要无限循环
+                
+                // If we've scrolled past the clone of the last group
+                if (currentGroup >= totalGroups) {
+                    track.style.transition = 'none';
+                    currentGroup = 0;
+                    track.style.transform = 'translateX(-100%)';
+                    void track.offsetWidth; // Force reflow
+                }
+                // If we've scrolled before the clone of the first group
+                else if (currentGroup < 0) {
+                    track.style.transition = 'none';
+                    currentGroup = totalGroups - 1;
+                    track.style.transform = `translateX(${-(currentGroup + 1) * 100}%)`;
+                    void track.offsetWidth; // Force reflow
+                }
+                
+                // Update active classes for indicators if needed
+                updateActiveGroups();
+            });
+            
+            function updateActiveGroups() {
+                if (isMobile) return; // 移动端不需要active状态
+                
+                const extendedGroups = slider.querySelectorAll('.slider-group');
+                // Remove active class from all groups
+                extendedGroups.forEach(group => group.classList.remove('active'));
+                
+                // Calculate the real group index (accounting for clones)
+                let realIndex = currentGroup;
+                if (currentGroup < 0) realIndex = totalGroups - 1;
+                if (currentGroup >= totalGroups) realIndex = 0;
+                
+                // Set active class to current group
+                if (extendedGroups[realIndex + 1]) {
+                    extendedGroups[realIndex + 1].classList.add('active');
+                }
+            }
+            
+            // Initialize
+            updateActiveGroups();
+            prevBtn.addEventListener('click', () => slide(-1));
+            nextBtn.addEventListener('click', () => slide(1));
+            
+            // Auto-advance changed to 10 seconds (10000ms) - only for PC
+            let autoSlideInterval;
+            
+            function startAutoSlide() {
+                if (!isMobile) {
+                    autoSlideInterval = setInterval(() => slide(1), 10000);
+                }
+            }
+            
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+            }
+            
+            // PC端自动播放
+            if (!isMobile) {
+                startAutoSlide();
+                
+                slider.addEventListener('mouseenter', stopAutoSlide);
+                slider.addEventListener('mouseleave', startAutoSlide);
+            }
+            
+            // 触摸设备上的交互优化
+            slider.addEventListener('touchstart', stopAutoSlide);
+            slider.addEventListener('touchend', () => {
+                if (!isMobile) startAutoSlide();
+            });
+            
+            // 屏幕大小变化时重新设置自动播放
+            window.addEventListener('resize', () => {
+                stopAutoSlide();
+                setTimeout(() => {
+                    if (!isMobile) startAutoSlide();
+                }, 100);
+            });
+        });
+        
+        // 添加一个全局触摸优化
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            // 为触摸设备优化按钮大小
+            const style = document.createElement('style');
+            style.textContent = `
+                .touch-device .button {
+                    min-height: 44px;
+                    padding: 12px 20px;
+                }
+                .touch-device .slider-nav {
+                    min-width: 50px;
+                    min-height: 50px;
+                }
+                .touch-device .prompt {
+                    pointer-events: auto;
+                    opacity: 0; /* 移动设备上默认隐藏 */
+                    transform: translateY(10px);
+                    transition: all 0.3s ease;
+                }
+                .touch-device .prompt.show {
+                    opacity: 0.95;
+                    transform: translateY(0);
+                }
+                .touch-device .prompt-toggle {
+                    display: flex !important;
+                }
+                /* 移动设备上的其他优化 */
+                @media (max-width: 768px) {
+                    .touch-device .slider-container {
+                        padding: 0 15px;
+                    }
+                    .touch-device .slider-wrapper {
+                        max-height: 75vh;
+                    }
+                    .touch-device .slider-group {
+                        margin-bottom: 20px;
+                    }
+                    .touch-device .flex {
+                        padding: 0 2px;
+                    }
+                    .touch-device .flex>div {
+                        margin: 3px 0;
+                    }
+                    /* 视频控件优化 */
+                    .touch-device video {
+                        -webkit-playsinline: true;
+                        -webkit-media-controls-fullscreen-button: true;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // 为每个prompt-wrap添加提示按钮
+            setTimeout(() => {
+                const promptWraps = document.querySelectorAll('.prompt-wrap');
+                console.log('Found prompt wraps:', promptWraps.length);
+                
+                promptWraps.forEach((wrap, index) => {
+                    const prompt = wrap.querySelector('.prompt');
+                    if (prompt) {
+                        // 检查是否已经有按钮了
+                        if (wrap.querySelector('.prompt-toggle')) {
+                            return; // 已经有按钮了，跳过
+                        }
+                        
+                        // 创建提示按钮
+                        const toggle = document.createElement('div');
+                        toggle.className = 'prompt-toggle';
+                        toggle.setAttribute('aria-label', '显示/隐藏描述');
+                        
+                        console.log('Adding toggle button', index);
+                        
+                        // 添加点击事件
+                        toggle.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            const isShowing = prompt.classList.contains('show');
+                            
+                            console.log('Toggle clicked', isShowing);
+                            
+                            // 关闭其他所有显示的提示
+                            document.querySelectorAll('.prompt.show').forEach(p => {
+                                if (p !== prompt) {
+                                    p.classList.remove('show');
+                                    const otherToggle = p.parentElement.querySelector('.prompt-toggle');
+                                    if (otherToggle) otherToggle.classList.remove('active');
+                                }
+                            });
+                            
+                            if (isShowing) {
+                                prompt.classList.remove('show');
+                                toggle.classList.remove('active');
+                            } else {
+                                prompt.classList.add('show');
+                                toggle.classList.add('active');
+                                
+                                // 5秒后自动隐藏
+                                setTimeout(() => {
+                                    prompt.classList.remove('show');
+                                    toggle.classList.remove('active');
+                                }, 5000);
+                            }
+                        });
+                        
+                        wrap.appendChild(toggle);
+                    }
+                });
+            }, 500);
+        }
+        
+        // BibTeX Copy Function (PC and Mobile)
+        const bibtexCode = document.querySelector('.bibtex-code');
+        
+        if (bibtexCode) {
+            // Create container for better positioning
+            const container = document.createElement('div');
+            container.className = 'bibtex-container';
+            
+            // Create copy button
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'bibtex-copy-btn';
+            copyBtn.textContent = 'Copy BibTeX';
+            
+            // Wrap the code block with container and add button
+            bibtexCode.parentNode.insertBefore(container, bibtexCode);
+            container.appendChild(copyBtn);
+            container.appendChild(bibtexCode);
+            
+            // Copy functionality
+            copyBtn.addEventListener('click', function() {
+                const text = bibtexCode.textContent;
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        // Show success state
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('success');
+                        
+                        setTimeout(() => {
+                            copyBtn.textContent = 'Copy BibTeX';
+                            copyBtn.classList.remove('success');
+                        }, 2000);
+                    }).catch(() => {
+                        // Fallback for older browsers
+                        const textArea = document.createElement('textarea');
+                        textArea.value = text;
+                        textArea.style.position = 'fixed';
+                        textArea.style.left = '-999999px';
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        
+                        // Show success state
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('success');
+                        
+                        setTimeout(() => {
+                            copyBtn.textContent = 'Copy BibTeX';
+                            copyBtn.classList.remove('success');
+                        }, 2000);
+                    });
+                }
+            });
+        }
+        
+
+    });
+    
+
+    
+</script>
+
+</html>

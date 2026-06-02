@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:description" content="OvO Game – the fast-paced parkour platformer loved worldwide. Master jumps, slides, and wall runs through 40+ levels. Play OvO Unblocked anywhere, anytime." />
+  <title>OvO Game – Play the Ultimate Parkour Platformer (OvO Unblocked)</title>
+  <link href="/icons/favicon.png" rel="shortcut icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="OvO Game – Play the Ultimate Parkour Platformer (OvO Unblocked)" />
+  <meta property="og:description" content="OvO Game – the fast-paced parkour platformer loved worldwide. Master jumps, slides, and wall runs through 40+ levels. Play OvO Unblocked anywhere, anytime." />
+  <meta property="og:type" content="game" />
+  <meta property="og:url" content="https://OvO Game.github.io/escape-road" />
+  <meta property="og:image" content="https://OvO Game.github.io/icons/favicon.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OvO Game – Play the Ultimate Parkour Platformer (OvO Unblocked)" />
+  <meta property="og:description" content="OvO Game – the fast-paced parkour platformer loved worldwide. Master jumps, slides, and wall runs through 40+ levels. Play OvO Unblocked anywhere, anytime." />
+  <meta name="twitter:image" content="https://OvO Game.github.io/icons/favicon.png" /> 
+
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Manifest + Theme -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#007bff" />
+
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "OvO Games",
+  "alternateName": ["OvO Game", "OvO Unblocked"],
+  "description": "OvO Games is a fast-paced browser parkour platformer. Jump, slide, and wall-run through over 40 challenging levels. Play OvO Unblocked anywhere.",
+  "genre": ["Platformer", "Arcade", "Parkour"],
+  "applicationCategory": "Game",
+  "operatingSystem": "Web Browser",
+  "url": "https://ovo-gamex.github.io/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "OvO GameX Project",
+    "url": "https://ovo-gamex.github.io/"
+  },
+  "inLanguage": "en"
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is OvO Games?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OvO Games is a browser platformer where players navigate obstacle-filled levels using parkour-inspired moves like jumping, sliding, and wall running."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I play OvO Unblocked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, OvO Unblocked versions are available online so you can play at school, work, or anywhere with restricted networks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many levels are in OvO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The classic OvO Games includes more than 40 levels, while OvO 2 expands the challenge further."
+        }
+      }
+    ]
+  }
+</script>
+
+
+  <style>
+    body { margin:0; padding:0; font-family: Arial, sans-serif; }
+    header { background:white; padding:0; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .navbar-brand { font-weight:bold; color:#333; text-decoration:none; font-size:1.2em; }
+    .navbar-nav .nav-link { color:#666; margin:0 15px; text-decoration:none; }
+    .navbar-nav .nav-link:hover { color:#333; }
+
+    .play-button {
+      background:#007bff; color:white; padding:12px 24px;
+      border:none; border-radius:6px; font-weight:bold;
+      text-decoration:none; display:inline-block; margin:20px auto;
+    }
+    .play-button:hover { background:#0056b3; color:white; }
+
+    .game-box { width:100%; max-width:1200px; margin:0 auto; padding:0 15px; }
+    .game-container {
+      position:relative; height:0; width:100%; padding-bottom:50%;
+      background:linear-gradient(135deg, #ff9a56, #ffad84, #87ceeb);
+      border-radius:10px; overflow:hidden;
+    }
+    .fullscreen-btn {
+      position:absolute; top:10px; right:10px; z-index:2000;
+      background:rgba(0,0,0,0.6); color:white; border:none;
+      padding:8px 12px; border-radius:6px; cursor:pointer; font-size:18px;
+    }
+    .fullscreen-btn:hover { background:rgba(0,0,0,0.8); }
+
+    .fixed-bottom-btn {
+      position:fixed; bottom:0; left:0; right:0;
+      background:#4CAF50; color:white; text-align:center;
+      padding:12px; z-index:1000; font-weight:bold;
+      /* display:none;  */
+    }
+    .fixed-bottom-btn button {
+      background:white; color:#4CAF50; border:none;
+      padding:6px 12px; border-radius:6px; font-weight:bold;
+      margin-left:12px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">OvO Game</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span>☰</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="/How-to-play.html">How to play</a>
+            <a class="nav-link" href="/faq.html">FAQ</a>
+            <!-- <a class="nav-link" href="/blog.html">Blog</a> -->
+            <a class="nav-link" href="/about.html">About us</a>
+            <a class="nav-link" href="/contact.html">Contact</a>
+            <a class="nav-link" href="/privacy.html">Privacy Policy</a>
+            <a class="nav-link" href="/terms.html">Terms and Conditions</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Play Button -->
+  <div class="container text-center">
+    <a href="#" class="play-button">▶ Play OvO Game – No Ads, Unblocked! Start Playing Now</a>
+  </div>
+
+  <!-- Game Area -->
+  <div class="game-box">
+    <div class="game-container" id="gameContainer">
+      <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+      <iframe id="gameIframe" allowtransparency="yes" allow="autoplay" frameborder="0"
+        width="100%" height="100%"
+        style="position:absolute; top:0; left:0; right:0; bottom:0;"
+        marginheight="0" marginwidth="0" scrolling="no"
+        src="/ovo-unblocked/game.html"></iframe>
+    </div>
+  </div>
+
+  <!-- Fixed Bottom Button (Add Now) -->
+  <div class="fixed-bottom-btn" id ='addnowBtn' style="display: none;">
+    
+    📲 Add OvO Gamex to your home screen for faster access!
+    <button onclick="installApp()">Add Now</button>
+  </div>
+
+  <!-- Game Description -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <header>
+        <h1>🎮 OvO Unblocked - The Ultimate Stickman Platformer Experience! 🏃‍♂️</h1>
+        <p>⚡ <strong>Play Instantly • No Downloads • 100% Free • Unblocked Everywhere</strong> ⚡</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>🚀 Jump Into Action - Play OvO Unblocked Now!</h2>
+            <p>Ready for the most addictive stickman platformer on the web? <strong>OvO Unblocked</strong> delivers heart-pounding action with precision controls that'll keep you coming back for more! 🎯</p>
+            
+            <p>Whether you're at school 🏫, work 🏢, or just want uninterrupted gaming fun, our unblocked version gives you instant access to all the OvO excitement without any restrictions or annoying ads!</p>
+        </section>
+
+        <section>
+            <h2>🎪 What Makes OvO Unblocked So Special?</h2>
+            
+            <h3>🎮 Smooth, Responsive Controls</h3>
+            <p>Master the art of precision platforming with intuitive arrow key controls:</p>
+            <ul>
+                <li>🏃 <strong>Arrow Keys</strong> - Move left, right, and jump</li>
+                <li>🛝 <strong>Slide Action</strong> - Press down while running for epic slides</li>
+                <li>💥 <strong>Smash Attack</strong> - Dive down in mid-air to break through obstacles</li>
+                <li>🧗 <strong>Wall Jumps</strong> - Scale walls like a ninja for advanced moves</li>
+                <li>🔄 <strong>Quick Restart</strong> - Press 'R' to instantly retry challenging sections</li>
+            </ul>
+
+            <h3>🏆 40+ Mind-Bending Levels</h3>
+            <p>Each level is a masterpiece of challenge and creativity! From simple jumps to complex obstacle courses that'll test your reflexes and problem-solving skills. 🧠✨</p>
+
+            <h3>⚡ Speedrun Paradise</h3>
+            <p>Think you're fast? Join the global speedrunning community! The current world record sits at under 6 minutes for a complete run - can you beat it? 🏃‍♂️💨</p>
+
+            <h3>🎨 Unlockable Character Skins</h3>
+            <p>Collect coins throughout your adventure to unlock awesome skins:</p>
+            <ul>
+                <li>👽 Alien Invader</li>
+                <li>🍉 Watermelon Warrior</li>
+                <li>🤖 Robot Runner</li>
+                <li>And many more exciting options!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎯 Why Choose OvO Unblocked?</h2>
+            
+            <h3>🔓 Truly Unblocked Experience</h3>
+            <p>Tired of "Access Denied" messages? Our OvO Unblocked version works on ANY network - school WiFi, office internet, or public hotspots. No VPNs needed! 🌐</p>
+
+            <h3>📱 Cross-Platform Compatibility</h3>
+            <p>Play seamlessly on:</p>
+            <ul>
+                <li>💻 Desktop computers</li>
+                <li>📱 Smartphones</li>
+                <li>📟 Tablets</li>
+                <li>🖥️ Chromebooks</li>
+                <li>Any device with a web browser!</li>
+            </ul>
+
+            <h3>🚫 Zero Downloads, Maximum Fun</h3>
+            <p>Forget about storage space or installation hassles. OvO Unblocked runs directly in your browser with lightning-fast loading times! ⚡</p>
+
+            <h3>🎮 Ad-Free Gaming Bliss</h3>
+            <p>No pop-ups, no interruptions, no annoying video ads. Just pure, uninterrupted stickman platforming action from start to finish! 🎊</p>
+        </section>
+
+        <section>
+            <h2>🏃‍♂️ Master These Pro Tips to Dominate OvO!</h2>
+            
+            <h3>💡 Movement Mastery</h3>
+            <ul>
+                <li>🏃 <strong>Slide-Jump Combo</strong>: Slide before jumping for extra distance - perfect for clearing those tricky spike gaps!</li>
+                <li>🧗 <strong>Wall Jump Wizardry</strong>: Use walls to your advantage - you can climb almost any vertical surface with proper timing</li>
+                <li>💥 <strong>Smash Strategy</strong>: After smashing through a platform, immediately jump for bonus height boost</li>
+                <li>⏰ <strong>Rhythm Gaming</strong>: Find your flow - OvO rewards smooth, rhythmic movement over frantic button mashing</li>
+            </ul>
+
+            <h3>🎯 Level-Beating Strategies</h3>
+            <ul>
+                <li>👀 <strong>Scout First</strong>: Take a moment to study each level before rushing in</li>
+                <li>🔄 <strong>Practice Makes Perfect</strong>: Don't be afraid to replay earlier levels to sharpen your skills</li>
+                <li>⚡ <strong>Speed vs. Safety</strong>: Balance quick movement with careful planning - sometimes slow and steady wins!</li>
+                <li>🏆 <strong>Coin Collecting</strong>: Those shiny coins unlock awesome skins - grab them all!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎊 Join the OvO Unblocked Community!</h2>
+            <p>Become part of a thriving community of platforming enthusiasts! Share your best times, discover new strategies, and challenge friends to beat your records. 🤝</p>
+            
+            <h3>🏆 Competitive Features</h3>
+            <ul>
+                <li>⏱️ Built-in timer for speedrun attempts</li>
+                <li>📊 Personal best tracking</li>
+                <li>🎯 Achievement system</li>
+                <li>👥 Challenge friends with your completion times</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎮 Ready to Start Your OvO Adventure?</h2>
+            <p><strong>The ultimate stickman platformer experience awaits!</strong> With its perfect blend of simple controls and challenging gameplay, OvO Unblocked offers endless entertainment that's both easy to learn and impossible to master. 🌟</p>
+            
+            <p>Whether you're looking for a quick gaming break or planning an epic speedrun session, OvO Unblocked delivers the goods. Jump, slide, smash, and wall-jump your way through beautifully designed levels that'll test your skills and reflexes like never before! 🎯</p>
+
+            <p><strong>🚀 Click PLAY and discover why millions of players worldwide are obsessed with OvO Unblocked!</strong></p>
+        </section>
+
+        <section>
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h4>🤔 Is OvO Unblocked really free?</h4>
+            <p><strong>Absolutely!</strong> 💯 OvO Unblocked is completely free to play with no hidden costs, subscriptions, or premium features. Just click and start playing!</p>
+
+            <h4>📱 Can I play on my phone?</h4>
+            <p><strong>Yes!</strong> 📱 OvO Unblocked works perfectly on smartphones, tablets, and any device with a web browser. The touch controls are optimized for mobile gaming.</p>
+
+            <h4>🏫 Will this work at school?</h4>
+            <p><strong>That's the whole point!</strong> 🎯 Our unblocked version is specifically designed to bypass common network restrictions, making it playable virtually anywhere.</p>
+
+            <h4>💾 Do I need to download anything?</h4>
+            <p><strong>Nope!</strong> 🚫 OvO Unblocked runs entirely in your web browser - no downloads, no installations, no software required.</p>
+
+            <h4>⏰ How long does it take to complete?</h4>
+            <p>The full game takes most players several hours to complete, but speedrunners have finished it in under 6 minutes! ⚡ Each level can be replayed for better times and coin collection.</p>
+
+            <h4>🎮 Are the controls difficult to learn?</h4>
+            <p><strong>Not at all!</strong> 😊 OvO uses simple arrow key controls that anyone can pick up in minutes. The challenge comes from mastering the timing and advanced movement combinations!</p>
+        </section>
+
+        <section>
+            <h2>🌟 Start Your OvO Unblocked Journey Today!</h2>
+            <p>Don't wait - dive into the most addictive stickman platformer on the web! With instant access, smooth gameplay, and unlimited replayability, <strong>OvO Unblocked</strong> is your gateway to platforming perfection. 🚪✨</p>
+            
+            <p><em>Ready to test your skills? The flag awaits at the end of each level - can you reach them all? 🏁</em></p>
+        </section>
+    </main>
+        <section>
+          <Br>
+            <h2>🌟 Start Your OvO Unblocked Journey Today!</h2>
+            <p>Don't wait - dive into the most addictive stickman platformer on the web! With instant access, smooth gameplay, and unlimited replayability, <strong>OvO Unblocked</strong> is your gateway to platforming perfection. 🚪✨</p>
+            
+            <p><em>Ready to test your skills? The flag awaits at the end of each level - can you reach them all? 🏁</em></p>
+        </section>
+    </main>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; margin-bottom: 30px;">
+        <p >🎮 <strong>OvO Unblocked</strong> - Play the ultimate stickman platformer adventure anywhere, anytime! 🌟</p>
+        <p ><small>Game originally created by Dedra Games. This unblocked version provides unrestricted access for educational and entertainment purposes.</small></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Auto scroll
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const gameBox = document.querySelector('.play-button');
+        if (gameBox) gameBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    });
+
+    // Fullscreen
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const gameContainer = document.getElementById('gameContainer');
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        gameContainer.requestFullscreen().then(() => {
+          fullscreenBtn.innerHTML = '✖'; fullscreenBtn.title = 'Exit Fullscreen';
+        });
+      } else {
+        document.exitFullscreen().then(() => {
+          fullscreenBtn.innerHTML = '⛶'; fullscreenBtn.title = 'Fullscreen';
+        });
+      }
+    });
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        fullscreenBtn.innerHTML = '⛶'; fullscreenBtn.title = 'Fullscreen';
+      }
+    });
+
+
+    // --- PWA setup ---
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js?v=20250906')
+        .then(() => console.log('✅ Service Worker registered'));
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('addnowBtn').style.display = 'block';
+      console.log('📲 beforeinstallprompt event fired, show Add Now button');
+    });
+
+    function installApp() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          console.log('📊 User choice result:', choice);
+          if (choice.outcome === 'accepted') {
+            console.log('🎉 User accepted: App added to home screen');
+          } else {
+            console.log('❌ User dismissed the install prompt');
+          }
+          deferredPrompt = null;
+          document.getElementById('addnowBtn').style.display = 'none';
+        });
+      } else {
+        console.warn('⚠️ deferredPrompt is null, không thể cài đặt.');
+      }
+    }
+  </script>
+  
+
+</body>
+</html>
