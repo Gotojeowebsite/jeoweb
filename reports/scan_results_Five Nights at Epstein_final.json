@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Five Nights at Epstein",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 18.875,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/Five%20Nights%20at%20Epstein/index.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {}
+  }
+]

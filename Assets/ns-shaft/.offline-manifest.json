@@ -3,57 +3,50 @@
   "slug": "ns-shaft",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1780406875,
+  "generated_at": 1780435604,
   "files": [
     {
-      "path": "_external_mirror/hm.baidu.com/hm.js",
-      "size": 0,
-      "required": true
-    },
-    {
-      "path": "_external_mirror/static.fouryes.com/smile.gif",
-      "size": 93,
-      "required": false
-    },
-    {
-      "path": "bg.png",
-      "size": 2561,
-      "required": false
-    },
-    {
-      "path": "favicon.png",
-      "size": 31623,
-      "required": false
-    },
-    {
-      "path": "icon.png",
-      "size": 3012,
-      "required": false
-    },
-    {
-      "path": "icon.webp",
-      "size": 1084,
+      "path": ".recovery-provenance.json",
+      "size": 258,
       "required": false
     },
     {
       "path": "index.html",
-      "size": 7532,
+      "size": 358,
       "required": true
     },
     {
-      "path": "led.png",
+      "path": "ipel.github.io/NS-SHAFT/bg.png",
+      "size": 2561,
+      "required": false
+    },
+    {
+      "path": "ipel.github.io/NS-SHAFT/index.html",
+      "size": 4170,
+      "required": true
+    },
+    {
+      "path": "ipel.github.io/NS-SHAFT/led.png",
       "size": 1030,
       "required": false
     },
     {
-      "path": "main.js",
-      "size": 11430,
+      "path": "ipel.github.io/NS-SHAFT/main.js",
+      "size": 26621,
       "required": true
+    },
+    {
+      "path": "ipel.github.io/NS-SHAFT/sns.js",
+      "size": 674,
+      "required": true
+    },
+    {
+      "path": "static.fouryes.com/smile.gif",
+      "size": 93,
+      "required": false
     }
   ],
-  "external_hosts": [
-    "www.googletagmanager.com"
-  ],
+  "external_hosts": [],
   "external_critical": [],
   "external_allowlist": [
     "fonts.googleapis.com",

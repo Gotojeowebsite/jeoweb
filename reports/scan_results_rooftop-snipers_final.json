@@ -1,0 +1,26 @@
+[
+  {
+    "name": "rooftop-snipers",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 19.359,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8087/Assets/rooftop-snipers/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8087/js/main.js"
+      }
+    ],
+    "probe": {}
+  }
+]

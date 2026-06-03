@@ -1,0 +1,26 @@
+[
+  {
+    "name": "evil-glitch",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 59.093,
+    "critical_issues": [
+      {
+        "code": "NAV_TIMEOUT",
+        "message": "Navigation timeout: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:8084/Assets/evil-glitch/index.html\", waiting until \"domcontentloaded\"\n",
+        "severity": "critical",
+        "url": "http://localhost:8084/Assets/evil-glitch/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/js/main.js"
+      }
+    ],
+    "probe": {}
+  }
+]

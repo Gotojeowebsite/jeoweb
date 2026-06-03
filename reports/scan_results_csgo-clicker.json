@@ -1,0 +1,206 @@
+[
+  {
+    "name": "csgo-clicker",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 91.196,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Rajdhani:600"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Rajdhani:600"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Open+Sans"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Open+Sans"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUuh6qZJmlD7tiyl4OIlaGhYuLTzjhVupJ12urH89ii3lHlqEdoMDr2I5jVLFFSv_J2Rg/240fx182f"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUuh6qZJmlD7tiyl4OIlaGhYuLTzjhVupJ12urH89ii3lHlqEdoMDr2I5jVLFFSv_J2Rg/240fx182f"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://i.imgur.com/zoKOaEY.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://i.imgur.com/zoKOaEY.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://i.imgur.com/Pw82Pa6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://i.imgur.com/Pw82Pa6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUuh6qZJmlD7tiyl4OIlaGhYuLTzjhVupJ12urH89ii3lHlqEdoMDr2I5jVLFFSv_J2Rg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUuh6qZJmlD7tiyl4OIlaGhYuLTzjhVupJ12urH89ii3lHlqEdoMDr2I5jVLFFSv_J2Rg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFYu0aKfJz8a793gxNLfzvOkMunUwWgH7JIjj-qW8d7x2VXt_UBuMT3zIpjVLFEGDSGUSQ"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFYu0aKfJz8a793gxNLfzvOkMunUwWgH7JIjj-qW8d7x2VXt_UBuMT3zIpjVLFEGDSGUSQ"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFIuh6rJImVGvtjllYaNka6la7rUxWkE65BzibvD9N7z0Q22-0Fka2GlJ5jVLFHqavWW2g"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFIuh6rJImVGvtjllYaNka6la7rUxWkE65BzibvD9N7z0Q22-0Fka2GlJ5jVLFHqavWW2g"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFEuh_KQJTtEuI63xIXbxqOtauyClTMEsJV1jruS89T3iQKx_BBqa2j3JpjVLFH1xpp0EQ"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFEuh_KQJTtEuI63xIXbxqOtauyClTMEsJV1jruS89T3iQKx_BBqa2j3JpjVLFH1xpp0EQ"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FF8ugPDMIWpAuIq1w4KIlaChZOyFwzgJuZNy3-2T89T0jlC2rhZla2vwIJjVLFHz75yKpg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FF8ugPDMIWpAuIq1w4KIlaChZOyFwzgJuZNy3-2T89T0jlC2rhZla2vwIJjVLFHz75yKpg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/U8721VM9p9C2v1o6cKJ4qEnGqnE7IoTQgZI-VTdwyTBeimAcIoxXpgK8bPeslY9pPJIvB5IWW2-452kaM8heLSRgleGAr7BMx-94b6MohOf-Xwsn7-USVDXgHhOG1zPDeLmsxwRtYpItIUb2wskZ6I0FWp9DdsKkOtQslw/100fx100f"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://steamcommunity-a.akamaihd.net/economy/image/U8721VM9p9C2v1o6cKJ4qEnGqnE7IoTQgZI-VTdwyTBeimAcIoxXpgK8bPeslY9pPJIvB5IWW2-452kaM8heLSRgleGAr7BMx-94b6MohOf-Xwsn7-USVDXgHhOG1zPDeLmsxwRtYpItIUb2wskZ6I0FWp9DdsKkOtQslw/100fx100f"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.google-analytics.com/analytics.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 696,
+      "bodyTextSample": "join the discord!\nabout\nsettings\ndisable popup: \nclear game save\nwelcome to csgoclicker.\ncsgoclicker is an incremental clicker game based around csgo and the jackpot/skin community. the goal is to open cases and get rich.\nbanned\nwith csgoclicker just being a thought, banned took it on as a learners project. since version one, csgoclicker has come a long way.\nroflzilla\nhelping with logic and ideas, roflzilla assists in bringing the project to life.\necho\nas the creator of 3kh0.github.io, echo is the heart and soul behind the giant game library.\noperation phoenix case\ncase price: $0.06 | key price: $2.50\nwallet: $7.50\ninventory space: 0/50\ninventory\nshop\ncase\njackpot\ninventory\nvalue:\naccept",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 21,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 24
+    }
+  }
+]

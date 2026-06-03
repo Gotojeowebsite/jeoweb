@@ -1,0 +1,60 @@
+[
+  {
+    "name": "crazy-cow-3d",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 71.983,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8083/Assets/crazy-cow-3d/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "missing ) after argument list",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Engine is not defined",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 2,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 25,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

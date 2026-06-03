@@ -1,0 +1,68 @@
+[
+  {
+    "name": "CrazyCattle3D",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 35.184,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "ERROR: Cannot open resource pack 'CrazyCattle3D.pck'.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "   at: _setup (core/config/project_settings.cpp:577)",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to register a ServiceWorker for scope ('http://localhost:8081/Assets/CrazyCattle3D/') with script ('http://localhost:8081/Assets/CrazyCattle3D/CrazyCattle3D.service.worker.js'): A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 32,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 31
+    }
+  }
+]

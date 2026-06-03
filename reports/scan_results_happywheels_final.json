@@ -1,0 +1,72 @@
+[
+  {
+    "name": "happywheels",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 29.827,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8085/js/all.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8085/js/mimicry.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "window.RufflePlayer.newest is not a function",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000
+    }
+  }
+]

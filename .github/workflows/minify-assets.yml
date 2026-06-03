@@ -1,0 +1,44 @@
+name: Minify Frontend Assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.css'
+      - '*.js'
+      - 'styles/**'
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install minifiers
+        run: npm install -g terser csso-cli
+      - name: Minify CSS
+        run: |
+          csso styles.css -o styles.min.css
+          for f in styles/*.css; do
+            csso "$f" -o "${f%.css}.min.css"
+          done
+      - name: Minify JS
+        run: |
+          for f in app.js about-blank-spawner.js proxy-router.js lazy-loader.js surprise-me.js save-manager.js theme-manager.js command-palette.js confetti.js toast.js notifications.js sounds.js analytics.js playtime.js playlists.js ratings.js stats.js streaks.js achievements.js avatars.js daily-challenge.js seasonal-themes.js reset-progress.js pointer-lock.js shared-page-utils.js account-system.js; do
+            [ -f "$f" ] && terser "$f" -c -m -o "${f%.js}.min.js" || true
+          done
+      - name: Create compressed versions
+        run: |
+          for f in styles.min.css app.min.js; do
+            [ -f "$f" ] && gzip -9 -k "$f" || true
+          done
+      - name: Commit minified files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add *.min.js *.min.css styles/*.min.css *.gz 2>/dev/null || true
+          git diff --cached --quiet || git commit -m 'ci: minify frontend assets'
+          git push

@@ -1,0 +1,200 @@
+[
+  {
+    "name": "cookie-clicker",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 30.677,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/showads.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/showads.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/base64.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/base64.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/main.js?v=2.058"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/main.js?v=2.058"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/style.css?v=2.050"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/style.css?v=2.050"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/vietnamese/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/vietnamese/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/cyrillic/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/cyrillic/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/latin/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/latin/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/latin-ext/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/latin-ext/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/cyrillic-ext/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/cf-fonts/s/merriweather/5.0.11/cyrillic-ext/900/normal.woff2"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/discord.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/discord.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/weeHoodie.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/weeHoodie.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/patreon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/patreon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/aqworldsbanner.jpg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://db.duckmath.org/html/cookie_clicker/img/aqworldsbanner.jpg"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 2,
+      "bodyTextLength": 745,
+      "bodyTextSample": "cookie clicker\u2122 \u00a9 orteil, 2019 - dashnet\ntwitter\ntumblr\ndiscord\nmerch!\npatreon\ncookie clicker for android\nrandomgen\nidle game maker\nother versions\nlive version try the beta! v. 1.0466 classic\nloading...\nthis is taking longer than expected.\n\nslow connection? if not, please make sure your javascript is enabled, then refresh.\nif problems persist, this might be on our side - wait a few minutes, then hit ctrl+f5!\nyour browser may not be recent enough to run cookie clicker.\nyou might want to update, or switch to a more modern browser such as chrome or firefox.\nx\noptions\nstats\nnew update!\ninfo\nlegacy\nbuildings\ncookie clicker is mainly supported by ads.\nconsider unblocking our site or checking out our patreon!\nstore\ncookie\nbuildings\nstore\nmenu",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 32,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 31
+    }
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "craftmine",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 35.361,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8083/Assets/craftmine/offlineClient.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-62234075",
+      "canvasNonzeroPixels": 247,
+      "canvasPixelVariance": 249,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-2097553718",
+      "canvasNonzeroPixelsFirst": 247,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

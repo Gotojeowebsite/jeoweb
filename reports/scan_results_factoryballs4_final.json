@@ -1,0 +1,212 @@
+[
+  {
+    "name": "factoryballs4",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 73.944,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance7\": Cannot set undefined property Some(\"instance7\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Could not resolve parameter type Multiname { ns: [Package(\"flash.net\")], name: Some(\"URLRequest\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got Could not resolve parameter type Multiname { ns: [Package(\"flash.net\")], name: Some(\"URLRequest\"), params: [] } when constructing AVM2 side of movie clip",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance9\": Cannot set undefined property Some(\"instance9\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance19\": Cannot set undefined property Some(\"instance19\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Property does not exist: Multiname { ns: [Package(\"flash.geom\")], name: Some(\"ColorTransform\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got Property does not exist: Multiname { ns: [Package(\"flash.geom\")], name: Some(\"ColorTransform\"), params: [] } when constructing AVM2 side of movie clip",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance127\": Cannot set undefined property Some(\"instance127\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance132\": Cannot set undefined property Some(\"instance132\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance135\": Cannot set undefined property Some(\"instance135\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance151\": Cannot set undefined property Some(\"instance151\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance279\": Cannot set undefined property Some(\"instance279\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance309\": Cannot set undefined property Some(\"instance309\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Property does not exist: Multiname { ns: [Private(\"\"), Private(\"\"), Package(\"\"), PackageInternal(\"\"), Namespace(\"http://adobe.com/AS3/2006/builtin\"), Namespace(\"adobe.utils\"), Package(\"flash.accessibility\"), Namespace(\"flash.desktop\"), Package(\"flash.display\"), Package(\"flash.errors\"), Package(\"flash.events\"), Namespace(\"flash.external\"), Package(\"flash.filters\"), Package(\"flash.geom\"), Namespace(\"flash.globalization\"), Package(\"flash.media\"), Package(\"flash.net\"), Namespace(\"flash.net.drm\"), Namespace(\"flash.printing\"), Namespace(\"flash.profiler\"), Namespace(\"flash.sampler\"), Namespace(\"flash.sensors\"), Package(\"flash.system\"), Package(\"flash.text\"), Package(\"flash.text.ime\"), Namespace(\"flash.text.engine\"), Package(\"flash.ui\"), Package(\"flash.utils\"), Namespace(\"flash.xml\"), Protected(\"intro\"), StaticProtected(\"intro\"), StaticProtected(\"flash.display:MovieClip\"), StaticProtected(\"flash.display:Sprite\"), StaticProtected(\"flash.display:DisplayObjectContainer\"), StaticProtected(\"flash.display:InteractiveObject\"), StaticProtected(\"flash.display:DisplayObject\"), StaticProtected(\"flash.events:EventDispatcher\")], name: Some(\"BlurFilter\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error occured when running AVM2 frame script: Property does not exist: Multiname { ns: [Private(\"\"), Private(\"\"), Package(\"\"), PackageInternal(\"\"), Namespace(\"http://adobe.com/AS3/2006/builtin\"), Namespace(\"adobe.utils\"), Package(\"flash.accessibility\"), Namespace(\"flash.desktop\"), Package(\"flash.display\"), Package(\"flash.errors\"), Package(\"flash.events\"), Namespace(\"flash.external\"), Package(\"flash.filters\"), Package(\"flash.geom\"), Namespace(\"flash.globalization\"), Package(\"flash.media\"), Package(\"flash.net\"), Namespace(\"flash.net.drm\"), Namespace(\"flash.printing\"), Namespace(\"flash.profiler\"), Namespace(\"flash.sampler\"), Namespace(\"flash.sensors\"), Package(\"flash.system\"), Package(\"flash.text\"), Package(\"flash.text.ime\"), Namespace(\"flash.text.engine\"), Package(\"flash.ui\"), Package(\"flash.utils\"), Namespace(\"flash.xml\"), Protected(\"intro\"), StaticProtected(\"intro\"), StaticProtected(\"flash.display:MovieClip\"), StaticProtected(\"flash.display:Sprite\"), StaticProtected(\"flash.display:DisplayObjectContainer\"), StaticProtected(\"flash.display:InteractiveObject\"), StaticProtected(\"flash.display:DisplayObject\"), StaticProtected(\"flash.events:EventDispatcher\")], name: Some(\"BlurFilter\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance458\": Cannot set undefined property Some(\"instance458\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance470\": Cannot set undefined property Some(\"instance470\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance480\": Cannot set undefined property Some(\"instance480\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: TypeError: undefined is not an Object",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got TypeError: undefined is not an Object when constructing AVM2 side of movie clip",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance588\": Cannot set undefined property Some(\"instance588\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance593\": Cannot set undefined property Some(\"instance593\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance596\": Cannot set undefined property Some(\"instance596\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance612\": Cannot set undefined property Some(\"instance612\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance740\": Cannot set undefined property Some(\"instance740\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance770\": Cannot set undefined property Some(\"instance770\")",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "name": "city-brawl",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 92.217,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 90s",
+        "severity": "warning",
+        "url": "http://localhost:9726/Assets/city-brawl/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

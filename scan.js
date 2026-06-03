@@ -344,11 +344,34 @@ function writeSitemap(gamePages) {
 }
 
 function scan() {
-	const results = [];
+	let targetSlug = null;
+	const slugIdx = process.argv.indexOf('--slug');
+	if (slugIdx !== -1 && process.argv[slugIdx + 1]) {
+		targetSlug = process.argv[slugIdx + 1];
+	}
+
+	let results = [];
+	let existingResultsMap = new Map();
+	if (targetSlug && fs.existsSync(OUTFILE)) {
+		try {
+			const parsed = JSON.parse(fs.readFileSync(OUTFILE, 'utf-8'));
+			for (const r of parsed) {
+				r.addedTime = r.addedDate ? new Date(r.addedDate).getTime() : 0;
+				existingResultsMap.set(r.name, r);
+			}
+		} catch (e) {
+			console.error('Error reading existing games list:', e);
+		}
+	}
+
 	if (!fs.existsSync(ASSETS_DIR)) {
 		console.error('Assets folder not found:', ASSETS_DIR);
 		fs.writeFileSync(OUTFILE, JSON.stringify(results, null, 2));
 		return;
+	}
+
+	if (targetSlug && !fs.existsSync(path.join(ASSETS_DIR, targetSlug))) {
+		existingResultsMap.delete(targetSlug);
 	}
 
 	const items = fs.readdirSync(ASSETS_DIR, { withFileTypes: true });
@@ -358,7 +381,12 @@ function scan() {
 	let webglCount = 0;
 	const skippedFolders = [];
 
-	for (const it of items) {
+	let itemsToScan = items;
+	if (targetSlug) {
+		itemsToScan = items.filter(it => it.name === targetSlug);
+	}
+
+	for (const it of itemsToScan) {
 		if (!it.isDirectory()) continue;
 		// Internal staging dirs the recovery engine writes into. They're not games.
 		if (it.name.startsWith('.')) continue;
@@ -377,6 +405,9 @@ function scan() {
 			// in the folder, or dev artifacts that shouldn't be under Assets/.
 			const sample = files.slice(0, 4).join(', ');
 			skippedFolders.push({ name: it.name, fileCount: files.length, sample });
+			if (targetSlug) {
+				existingResultsMap.delete(it.name);
+			}
 			continue;
 		}
 		const htmlFile =
@@ -395,14 +426,10 @@ function scan() {
 		let type = 'webgl';
 		if (isFlash) {
 			type = 'flash';
-			flashCount++;
 		} else if (isRetro) {
 			const core = getEmulatorCore(htmlFilePath);
 			if (core === 'gba') type = 'gba';
 			else type = 'snes';
-			retroCount++;
-		} else {
-			webglCount++;
 		}
 
 		// Get folder creation time to determine "recently added"
@@ -438,7 +465,27 @@ function scan() {
 		// leaderboard_games.json override wins over the in-HTML marker.
 		const lb = leaderboardOverrides[it.name] || leaderboard;
 		if (lb) entry.leaderboard = lb;
-		results.push(entry);
+
+		if (targetSlug) {
+			existingResultsMap.set(it.name, entry);
+		} else {
+			results.push(entry);
+		}
+	}
+
+	if (targetSlug) {
+		results = Array.from(existingResultsMap.values());
+	}
+
+	// Calculate counts from merged results
+	for (const entry of results) {
+		if (entry.type === 'flash') {
+			flashCount++;
+		} else if (entry.type === 'gba' || entry.type === 'snes') {
+			retroCount++;
+		} else {
+			webglCount++;
+		}
 	}
 
 	// Create recently added list (Top 30 newest)

@@ -607,6 +607,13 @@ async function discoverCandidates({ name, type } = {}, opts = {}) {
 	// Tag each hit with match_type so downstream gates know to apply the
 	// nameSimilarity >= 0.55 threshold before scraping. Portal hits already
 	// set match_type='exact' but the iteration below idempotently re-confirms.
+	for (const h of all) {
+		if (!h.url) continue;
+		const match = h.url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/(?:blob|raw|tree)\/[^/]+\/(.+)$/i);
+		if (match) {
+			h.url = `https://${match[1].toLowerCase()}.github.io/${match[2]}/${match[3]}`;
+		}
+	}
 	const out = dedupeBy(all, (x) => x.url);
 	if (opts.fuzzy) for (const h of out) h.match_type = 'fuzzy';
 	else for (const h of out) { if (!h.match_type) h.match_type = 'exact'; }

@@ -1,0 +1,272 @@
+[
+  {
+    "name": "fake-virus",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 268.138,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://quantcast.mgr.consensu.org/choice/xncav4ssEzwLp/localhost/choice.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://quantcast.mgr.consensu.org/choice/xncav4ssEzwLp/localhost/choice.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/pay-with-kidneys.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/fake-virus/scroll.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cmp.gatekeeperconsent.com/min.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cmp.gatekeeperconsent.com/min.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://the.gatekeeperconsent.com/cmp.min.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://the.gatekeeperconsent.com/cmp.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.ezojs.com/ezoic/sa.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.ezojs.com/ezoic/sa.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://ezoicanalytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://ezoicanalytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-WQHYZ04776"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-WQHYZ04776"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/classroom/favicon.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/classroom/favicon.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://pl29339095.profitablecpmratenetwork.com/4e098bda900198a91774b8eba3de1871/invoke.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://pl29339095.profitablecpmratenetwork.com/4e098bda900198a91774b8eba3de1871/invoke.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://pl29339094.profitablecpmratenetwork.com/83/59/3f/83593fb83e97e9d850b37eac8c847fa2.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://pl29339094.profitablecpmratenetwork.com/83/59/3f/83593fb83e97e9d850b37eac8c847fa2.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/2006-fifa-world-cup-germany-2006/logo.webp"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/achievementunlocked/achievementunlocked.webp"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/abobosbigadventure/logo.webp"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/achievementunlocked3/logo.webp"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/Assets/adaran/logo.webp"
+      }
+    ],
+    "probe": {
+      "readyState": "loading",
+      "surfaceCount": 1,
+      "bodyTextLength": 1035,
+      "bodyTextSample": "skip to games\njeo\nflash\nretro\nlogs\nlinks\nhost your own\nsend feedback\n\ud83c\udfa8\n\ud83c\udf19\n\u2699\ufe0f\nsign in\nplay unlimited games\n\nno downloads, no sign-ups \u2014 just play\n\n0\ntotal games\n0\nwebgl games\n0\n\u26a1 flash games\n0\n\ud83c\udfae retro games\n\u2b50 game of the day\n\n\u25b6 play now\nmaybe later\n\u23f1 continue playing\n\u25b6 continue\n\u2715\n\ud83d\udd0d\n\u26a1 flash\n\ud83c\udfae retro\n\u26a0 maintenance\n\ud83c\udfb2 surprise me\n\u21bb refresh\n\nloading games...\n\nall games\n\n\u00a9 2026 jeo\n\n\u2699\ufe0f settings\n\u2715\n\ud83d\udee1 general\n\ud83c\udfa8 appearance\n\ud83d\udce6 profile\n\ud83d\udcca stats\n\u2139 about\n\ud83d\udea8 panic button\n\ninstantly hide the game and open a safe website. (tip: pressing `esc` also closes games.)\n\nsave\n\ud83d\udd14 daily reminders\n\nget a once-a-day nudge to play and keep your streak alive. off by default \u2014 turn it on or off anytime.\n\nsend me daily reminders\n\ud83d\udcbe game saves\n\nauto-save runs in the background while you play. manual saves live in the player sidebar (ctrl/cmd+s).\n\nauto-save interval\nevery 30 seconds\nevery 1 minute\nevery 2 minutes\nevery 5 minutes\nshow a \"\ud83d\udcbe saved\" toast each auto-save\ncollection\n\u270f\ufe0f rename\n\ud83d\uddd1 delete\n\u2715\n\u26f6\n\ud83d\udcda\nadd to\u2026\n\ud83c\udfc6\nscores\n\ud83d\udd17\nshare\n\u2197\nnew tab\n\u22ef\nmore\n\u2715",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

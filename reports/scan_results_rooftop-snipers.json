@@ -1,0 +1,19 @@
+[
+  {
+    "name": "rooftop-snipers",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 360.775,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
+        "severity": "warning",
+        "url": "http://localhost:8087/Assets/rooftop-snipers/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

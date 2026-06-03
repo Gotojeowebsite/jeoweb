@@ -1,0 +1,186 @@
+[
+  {
+    "name": "shellshockers",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 42.932,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8087/Assets/shellshockers/data/housePromo.json?1780436003901"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Sigmar+One|Nunito:100,200,600,700,900"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Sigmar+One|Nunito:100,200,600,700,900"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://api.adinplay.com/libs/aiptag/pub/SSK/shellshock.io/tag.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://api.adinplay.com/libs/aiptag/pub/SSK/shellshock.io/tag.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtm.js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtm.js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://connect.facebook.net/en_US/fbevents.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://connect.facebook.net/en_US/fbevents.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.google-analytics.com/analytics.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 693,
+      "bodyTextSample": "{{ loc.home_desc_about }}\n\n{{ loc.home_desc_pick }}  {{ loc.home_desc_loadout }}  {{ loc.home_desc_madeof }}\n\n{{ loc.home_blocked_start }} shellshockers.website {{ loc.home_blocked_end }}\n\n{{ loc.home_desc_p1 }}\n\n{{ loc.home_desc_p2 }}\n\n{{ loc.home_desc_p3 }}\n\n{{ loc.home_desc_p4 }}\n\n{{ loc.home_game_mode_title }}\n{{ loc.home_desc_controls }}\n\n{{ loc.home_desc_standard }}\n\n{{ loc.home_desc_control1 }}\n{{ loc.home_desc_control2 }}\n{{ loc.home_desc_control3 }}\n{{ loc.home_desc_control4 }}\n{{ loc.home_desc_control5 }}\n{{ loc.home_desc_control6 }}\n{{ loc.home_desc_control7 }}\n{{ loc.home_desc_control8 }}\n{{ loc.home_desc_control9 }}\n\n{{ loc.home_unblocked_text }}\n\n{{ loc.home_backtotop }}",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 2,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

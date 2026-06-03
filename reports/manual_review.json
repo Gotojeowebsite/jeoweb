@@ -1,403 +1,203 @@
 {
   "schema": 1,
   "items": {
-    "1": {
-      "slug": "1",
-      "name": "1",
-      "type": "webgl",
-      "first_queued_at": 1779072425,
-      "last_attempt_at": 1779072425,
+    "nv2": {
+      "slug": "nv2",
+      "name": "Nv2",
+      "type": "flash",
+      "first_queued_at": 1780436333,
+      "last_attempt_at": 1780436333,
       "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
+      "reason": "2 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://nicktrickle.itch.io/nv25-tanker-trailer",
+          "source": "itch",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.009,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://aitronggenesis-cyber.github.io/Game-tu-ti-nv2/",
+          "source": "github-repos",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.112,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://bradfrost.github.io/style-guide-guide/index.html",
+          "source": "github-code",
+          "score": 88,
+          "match_type": "fuzzy",
+          "name_similarity": 0.011,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://lonng.github.io/nano/",
+          "source": "github-repos",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.04,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
       "reviewed": false,
       "notes": ""
     },
-    "1v1space": {
-      "slug": "1v1space",
-      "name": "1v1space",
-      "type": "webgl",
-      "first_queued_at": 1779072409,
-      "last_attempt_at": 1779072409,
+    "hobo2": {
+      "slug": "hobo2",
+      "name": "Hobo2",
+      "type": "flash",
+      "first_queued_at": 1780436725,
+      "last_attempt_at": 1780436725,
       "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
+      "reason": "2 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://55gms.github.io/55GMS/static/misc/play/hobo2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.291,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://mohammedjose1.github.io/mohammed/games/hobo2/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.036,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://accounts.google.com/servicelogin?service=youtube&hl=es-419",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.052,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en-US",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.044,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
       "reviewed": false,
       "notes": ""
     },
-    "0v0": {
-      "slug": "0v0",
-      "name": "0v0",
-      "type": "webgl",
-      "first_queued_at": 1779072425,
-      "last_attempt_at": 1779072425,
+    "fancypantsadventure": {
+      "slug": "fancypantsadventure",
+      "name": "Fancypantsadventure",
+      "type": "flash",
+      "first_queued_at": 1780436728,
+      "last_attempt_at": 1780436728,
       "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
+      "reason": "2 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://a456pur.github.io/seraph/games/fancypantsadventure/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.064,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://catspindev.github.io/vip.gg.catspin.eu.org/games/fancypantsadventure/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.074,
+          "outcome": "scrape_failed",
+          "asset_count": 0,
+          "shape_check": null
+        },
+        {
+          "url": "https://web.archive.org/web/20130715083754/http://fancypantsadventure",
+          "source": "wayback-deep",
+          "score": 23,
+          "match_type": "fuzzy",
+          "name_similarity": 0.036,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.smythstoys.com/uk/en-gb/gaming-and-tech/games/ea-sports-fc-25/c/ea-sports-fc-25",
+          "source": "bing",
+          "score": 19,
+          "match_type": "fuzzy",
+          "name_similarity": 0.053,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
       "reviewed": false,
       "notes": ""
     },
-    "9007199254740992": {
-      "slug": "9007199254740992",
-      "name": "9007199254740992",
+    "shellshockers": {
+      "slug": "shellshockers",
+      "name": "Shellshockers",
       "type": "webgl",
-      "first_queued_at": 1779072428,
-      "last_attempt_at": 1779072428,
+      "first_queued_at": 1780436911,
+      "last_attempt_at": 1780436911,
       "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "amazing-rope-police": {
-      "slug": "amazing-rope-police",
-      "name": "Amazing Rope Police",
-      "type": "webgl",
-      "first_queued_at": 1779072463,
-      "last_attempt_at": 1779072463,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "99-nights-in-the-forest": {
-      "slug": "99-nights-in-the-forest",
-      "name": "99 Nights In The Forest",
-      "type": "webgl",
-      "first_queued_at": 1779072463,
-      "last_attempt_at": 1779072463,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "among-us": {
-      "slug": "among-us",
-      "name": "Among Us",
-      "type": "webgl",
-      "first_queued_at": 1779072464,
-      "last_attempt_at": 1779072464,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "amongus": {
-      "slug": "amongus",
-      "name": "Amongus",
-      "type": "webgl",
-      "first_queued_at": 1779072500,
-      "last_attempt_at": 1779072500,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "angelunder": {
-      "slug": "angelunder",
-      "name": "Angelunder",
-      "type": "webgl",
-      "first_queued_at": 1779072500,
-      "last_attempt_at": 1779072500,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "angry-bird": {
-      "slug": "angry-bird",
-      "name": "Angry Bird",
-      "type": "webgl",
-      "first_queued_at": 1779072500,
-      "last_attempt_at": 1779072500,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "animal-craft": {
-      "slug": "animal-craft",
-      "name": "Animal Craft",
-      "type": "webgl",
-      "first_queued_at": 1779072518,
-      "last_attempt_at": 1779072518,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "arcade-tennis": {
-      "slug": "arcade-tennis",
-      "name": "Arcade Tennis",
-      "type": "webgl",
-      "first_queued_at": 1779072519,
-      "last_attempt_at": 1779072519,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "aqua-park": {
-      "slug": "aqua-park",
-      "name": "Aqua Park",
-      "type": "webgl",
-      "first_queued_at": 1779072536,
-      "last_attempt_at": 1779072536,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "aquapark-slides": {
-      "slug": "aquapark-slides",
-      "name": "Aquapark Slides",
-      "type": "webgl",
-      "first_queued_at": 1779072536,
-      "last_attempt_at": 1779072536,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "astray": {
-      "slug": "astray",
-      "name": "Astray",
-      "type": "webgl",
-      "first_queued_at": 1779072538,
-      "last_attempt_at": 1779072538,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "bat-smash": {
-      "slug": "bat-smash",
-      "name": "Bat Smash",
-      "type": "webgl",
-      "first_queued_at": 1779072556,
-      "last_attempt_at": 1779072556,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "batman-rise-of-sin-tzu": {
-      "slug": "batman-rise-of-sin-tzu",
-      "name": "Batman Rise Of Sin Tzu",
-      "type": "webgl",
-      "first_queued_at": 1779072556,
-      "last_attempt_at": 1779072556,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "brain-lines": {
-      "slug": "brain-lines",
-      "name": "Brain Lines",
-      "type": "webgl",
-      "first_queued_at": 1779072556,
-      "last_attempt_at": 1779072556,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "car-chaos": {
-      "slug": "car-chaos",
-      "name": "Car Chaos",
-      "type": "webgl",
-      "first_queued_at": 1779072557,
-      "last_attempt_at": 1779072557,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "cat-and-granny": {
-      "slug": "cat-and-granny",
-      "name": "Cat And Granny",
-      "type": "webgl",
-      "first_queued_at": 1779072557,
-      "last_attempt_at": 1779072557,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "chase-run": {
-      "slug": "chase-run",
-      "name": "Chase Run",
-      "type": "webgl",
-      "first_queued_at": 1779072557,
-      "last_attempt_at": 1779072557,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "city-brawl": {
-      "slug": "city-brawl",
-      "name": "City Brawl",
-      "type": "webgl",
-      "first_queued_at": 1779072558,
-      "last_attempt_at": 1779072558,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "cowboy-safari": {
-      "slug": "cowboy-safari",
-      "name": "Cowboy Safari",
-      "type": "webgl",
-      "first_queued_at": 1779072558,
-      "last_attempt_at": 1779072558,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "dancing-beat": {
-      "slug": "dancing-beat",
-      "name": "Dancing Beat",
-      "type": "webgl",
-      "first_queued_at": 1779072558,
-      "last_attempt_at": 1779072558,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "fake-cup-head": {
-      "slug": "fake-cup-head",
-      "name": "Fake Cup Head",
-      "type": "webgl",
-      "first_queued_at": 1779072559,
-      "last_attempt_at": 1779072559,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "deer-adventures": {
-      "slug": "deer-adventures",
-      "name": "Deer Adventures",
-      "type": "webgl",
-      "first_queued_at": 1779072559,
-      "last_attempt_at": 1779072559,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "pokemon-water-blue": {
-      "slug": "pokemon-water-blue",
-      "name": "Pokemon Water Blue",
-      "type": "webgl",
-      "first_queued_at": 1779072559,
-      "last_attempt_at": 1779072559,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "promo": {
-      "slug": "promo",
-      "name": "Promo",
-      "type": "webgl",
-      "first_queued_at": 1779072560,
-      "last_attempt_at": 1779072560,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "scripts": {
-      "slug": "scripts",
-      "name": "Scripts",
-      "type": "webgl",
-      "first_queued_at": 1779072560,
-      "last_attempt_at": 1779072560,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "sprinter": {
-      "slug": "sprinter",
-      "name": "Sprinter",
-      "type": "webgl",
-      "first_queued_at": 1779072560,
-      "last_attempt_at": 1779072560,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "zelda-sacred-paradox": {
-      "slug": "zelda-sacred-paradox",
-      "name": "Zelda Sacred Paradox",
-      "type": "webgl",
-      "first_queued_at": 1779072561,
-      "last_attempt_at": 1779072561,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "zzruffle": {
-      "slug": "zzruffle",
-      "name": "Zzruffle",
-      "type": "webgl",
-      "first_queued_at": 1779072561,
-      "last_attempt_at": 1779072561,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
-      "reviewed": false,
-      "notes": ""
-    },
-    "subwaysurfers": {
-      "slug": "subwaysurfers",
-      "name": "Subwaysurfers",
-      "type": "webgl",
-      "first_queued_at": 1779072578,
-      "last_attempt_at": 1779072578,
-      "attempts": 1,
-      "reason": "no_candidates_found_anywhere",
-      "candidates_tried": [],
+      "reason": "2 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://callmemrlong.github.io/Website/Files/Extra/Games/shellshockers.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.283,
+          "outcome": "verify_failed",
+          "asset_count": 52,
+          "shape_check": null
+        },
+        {
+          "url": "https://astrogames06.github.io/astrogames06.github.io/games/ShellShockers/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.052,
+          "outcome": "verify_failed",
+          "asset_count": 13,
+          "shape_check": null
+        },
+        {
+          "url": "https://callmemrlong.github.io/Website/Files/Extra/Games/shellshockers.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.283,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://astrogames06.github.io/astrogames06.github.io/games/ShellShockers/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.052,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
       "reviewed": false,
       "notes": ""
     }
   },
-  "generated_at": 1779072578,
-  "count": 33
+  "generated_at": 1780436911,
+  "count": 4
 }

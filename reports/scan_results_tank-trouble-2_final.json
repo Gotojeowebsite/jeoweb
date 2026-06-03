@@ -1,0 +1,156 @@
+[
+  {
+    "name": "tank-trouble-2",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 33.888,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8088/Assets/tank-trouble-2/firebase.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8088/Assets/tank-trouble-2/media/homing%20missle.ogg"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8088/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "check is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8088/Assets/_external_mirror/apis.google.com/js/client.js"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "A call to screen.orientation.lock() or screen.orientation.unlock() canceled this call.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to register a ServiceWorker for scope ('http://localhost:8088/Assets/tank-trouble-2/') with script ('http://localhost:8088/Assets/tank-trouble-2/sw.js'): A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Lato:400,700,900"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css?family=Lato:400,700,900"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://fiery-heat-3296.firebaseio.com/.lp?start=t&ser=66716202&cb=1&v=5"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://fiery-heat-3296.firebaseio.com/.lp?start=t&ser=66716202&cb=1&v=5"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://fiery-heat-3296.firebaseio.com/.lp?start=t&ser=7398151&cb=2&v=5"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://fiery-heat-3296.firebaseio.com/.lp?start=t&ser=7398151&cb=2&v=5"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://api.ipify.org/?format=text"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://api.ipify.org/?format=text"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "840073231",
+      "canvasNonzeroPixels": 236,
+      "canvasPixelVariance": 249,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "1554135088",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

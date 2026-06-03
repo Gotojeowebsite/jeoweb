@@ -1,0 +1,68 @@
+[
+  {
+    "name": "superhot",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 75.651,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8088/js/main.js"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "pre-main prep time: 11243 ms",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "exception thrown: TypeError: Cannot read properties of undefined (reading 'getSupportedExtensions'),TypeError: Cannot read properties of undefined (reading 'getSupportedExtensions')\n    at _glGetString (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:1:334162)\n    at UDl (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:25:755870)\n    at $Rb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:1019669)\n    at BQb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:974269)\n    at GQb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:983551)\n    at jUb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:1089861)\n    at dUb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:1087925)\n    at WXa (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:13:724855)\n    at Qgb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:269596)\n    at zfb (blob:http://localhost:8088/040a8545-3525-4ec1-aea5-891c15b1c810:9:223168)",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Cannot read properties of undefined (reading 'getSupportedExtensions')",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 1,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 31
+    }
+  }
+]

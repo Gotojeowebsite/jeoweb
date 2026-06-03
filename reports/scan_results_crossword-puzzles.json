@@ -1,0 +1,68 @@
+[
+  {
+    "name": "crossword-puzzles",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 45.737,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AI External Config Error : TypeError: Failed to fetch. Using Sampling Default Values",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/Assets/crossword-puzzles/images/best-free-themed-puzzles/bg.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/Assets/crossword-puzzles/images/best-free-themed-puzzles/logo.png"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 367,
+      "bodyTextSample": "june 2026\nno score for older puzzles\njun total score\n0 pts\npuzzles solved\n0/30\nmon\n1\n\n\u00a0\n\n0%\nplay\ntue\n2\nplay\nwed\n3\nthu\n4\nfri\n5\nsat\n6\nsun\n7\nmon\n8\ntue\n9\nwed\n10\nthu\n11\nfri\n12\nsat\n13\nsun\n14\nmon\n15\ntue\n16\nwed\n17\nthu\n18\nfri\n19\nsat\n20\nsun\n21\nmon\n22\ntue\n23\nwed\n24\nthu\n25\nfri\n26\nsat\n27\nsun\n28\nmon\n29\ntue\n30\nv2.3.16\nsorry, this puzzle is not available. please check again later.",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

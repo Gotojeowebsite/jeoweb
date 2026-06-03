@@ -1,0 +1,164 @@
+[
+  {
+    "name": "block-breaker",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 59.972,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/css/vendor.min.css"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/css/app.css"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/balls.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/break_effect.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/effect.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/paddle.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/blocks.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/background_gradient.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/explosion.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/acid.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/powerups.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/hearts.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/spore.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/rubble.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/marquee.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/lasers.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/v2/powerup_particles.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/bubble_particles.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/warning.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8082/Assets/block-breaker/images/block_breaker/desktop_tutorial.png"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 2,
+      "bodyTextLength": 5,
+      "bodyTextSample": "00000",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-1807011840",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-1807011840",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "-1807011840",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

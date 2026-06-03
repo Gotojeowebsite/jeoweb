@@ -1,0 +1,60 @@
+[
+  {
+    "name": "harvest-simulator",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 203.933,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8085/Assets/harvest-simulator/61eb715d-5fcd-41b0-af87-10568cc3d8eb/files/assets/217616603/1/skybox.png?t=de56bb456eb08fa3bb2a9e2b7aa98cf5"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://game-cdn.poki.com/scripts/9daf7c2c9706644c9c30453f559ed7eb1674e231/poki-sdk-core-9daf7c2c9706644c9c30453f559ed7eb1674e231.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://game-cdn.poki.com/scripts/9daf7c2c9706644c9c30453f559ed7eb1674e231/poki-sdk-core-9daf7c2c9706644c9c30453f559ed7eb1674e231.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 1,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

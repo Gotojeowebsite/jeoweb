@@ -56,6 +56,8 @@
 	<!-- Design tokens shared with the Astro tree (src/styles/tokens.css). -->
 	<!-- Loaded before styles.css so legacy selectors build on the same tokens. -->
 	<link rel="stylesheet" href="/styles/tokens.css" />
+	<link rel="stylesheet" href="/styles/dashboard.css" />
+	<link rel="stylesheet" href="/styles/skeletons.css" />
 	<link rel="stylesheet" href="styles.css" />
 
 	<!-- Pick initial theme from OS preference if user hasn't set one. Run in <head>
@@ -104,6 +106,12 @@
 
 <body class="theme-dark">
 	<a class="skip-link" href="#mainContent">Skip to games</a>
+	<!-- Animated floating orb background (premium aesthetic) -->
+	<div class="jeo-animated-bg" aria-hidden="true">
+		<div class="orb"></div>
+		<div class="orb"></div>
+		<div class="orb"></div>
+	</div>
 	<script>
 		// Apply the theme preference detected in <head> (avoids any flash of dark on light-mode).
 		(function () {
@@ -115,6 +123,49 @@
 			} catch (e) {}
 		})();
 	</script>
+<div class="jeo-dashboard">
+	<!-- Sidebar Navigation -->
+	<aside class="jeo-sidebar" id="mainSidebar">
+		<div class="jeo-sidebar-logo">
+			<svg width="40" height="40" viewBox="0 0 32 32">
+				<rect x="2" y="2" width="28" height="28" rx="7" fill="url(#jGrad)" />
+				<path fill="#fff" d="M20 7.5a1.75 1.75 0 0 1 3.5 0v12.25a6.75 6.75 0 0 1-6.75 6.75h-0.5a6.75 6.75 0 0 1-6.75-6.75 1.75 1.75 0 0 1 3.5 0 3.25 3.25 0 0 0 3.25 3.25h0.5a3.25 3.25 0 0 0 3.25-3.25V7.5Z" />
+			</svg>
+		</div>
+		<nav class="jeo-sidebar-nav">
+			<button class="jeo-sidebar-item active" data-filter="all">
+				<span class="jeo-sidebar-icon">🏠</span>
+				<span class="jeo-sidebar-label">Home</span>
+			</button>
+			<button class="jeo-sidebar-item" data-filter="Action">
+				<span class="jeo-sidebar-icon">⚔️</span>
+				<span class="jeo-sidebar-label">Action</span>
+			</button>
+			<button class="jeo-sidebar-item" data-filter="Retro">
+				<span class="jeo-sidebar-icon">👾</span>
+				<span class="jeo-sidebar-label">Retro</span>
+			</button>
+			<button class="jeo-sidebar-item" data-filter="Puzzle">
+				<span class="jeo-sidebar-icon">🧩</span>
+				<span class="jeo-sidebar-label">Puzzle</span>
+			</button>
+			<button class="jeo-sidebar-item" data-filter="Driving">
+				<span class="jeo-sidebar-icon">🏎️</span>
+				<span class="jeo-sidebar-label">Driving</span>
+			</button>
+			<div class="jeo-sidebar-divider"></div>
+			<button class="jeo-sidebar-item" id="sidebarSurpriseBtn">
+				<span class="jeo-sidebar-icon">🎲</span>
+				<span class="jeo-sidebar-label">Roulette</span>
+			</button>
+			<button class="jeo-sidebar-item" id="sidebarSavesBtn">
+				<span class="jeo-sidebar-icon">💾</span>
+				<span class="jeo-sidebar-label">My Saves</span>
+				<span class="jeo-sidebar-badge" style="display:none">0</span>
+			</button>
+		</nav>
+	</aside>
+	<div class="jeo-dashboard-content">
 	<header class="topbar">
 		<div class="header-left">
 			<a href="." class="brand-section" aria-label="Jeo home">
@@ -464,7 +515,19 @@
 			<h2 class="section-title">All Games</h2>
 			<div id="searchResultsLive" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 			<div id="gameGrid" class="game-grid">
-				<!-- populated by app.js -->
+				<!-- Skeleton placeholders shown while JS loads -->
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
+				<div class="jeo-skeleton jeo-skeleton-card"><div class="jeo-skeleton-image"></div><div class="jeo-skeleton-text"><div class="jeo-skeleton-line medium"></div><div class="jeo-skeleton-line short"></div></div></div>
 			</div>
 		</section>
 	</main>
@@ -476,6 +539,8 @@
 	<footer class="footer">
 		<p>© 2026 jeo</p>
 	</footer>
+	</div> <!-- end .jeo-dashboard-content -->
+</div> <!-- end .jeo-dashboard -->
 
 	<!-- Settings Modal -->
 	<div id="settingsModal" class="modal hidden" aria-hidden="true" style="z-index: 100000;">
@@ -721,6 +786,7 @@
 					<div id="leaderboardPopover" class="leaderboard-popover hidden" role="menu" aria-hidden="true"></div>
 				</div>
 				<button id="shareGameBtn" class="modal-tool-btn" aria-label="Copy share link" title="Copy share link"><span class="mt-emoji">🔗</span><span class="mt-label">Share</span></button>
+				<button id="aboutBlankBtn" class="modal-tool-btn" aria-label="Open in stealth tab" title="Open in stealth about:blank tab"><span class="mt-emoji">🛡</span><span class="mt-label">Stealth</span></button>
 				<button id="openNewTabBtn" class="modal-tool-btn" aria-label="Open in new tab" title="Open in new tab"><span class="mt-emoji">↗</span><span class="mt-label">New tab</span></button>
 				<div class="player-more-wrap">
 					<button id="moreBtn" class="modal-tool-btn" type="button" aria-haspopup="true" aria-expanded="false" title="More options"><span class="mt-emoji">⋯</span><span class="mt-label">More</span></button>
@@ -920,6 +986,14 @@
 	<script src="achievements.js" defer></script>
 	<script src="confetti.js" defer></script>
 	<script src="sounds.js" defer></script>
+	<script src="swr-loader.js" defer></script>
+	<script src="lazy-loader.js" defer></script>
+	<script src="profile-db.js" defer></script>
+	<script src="save-backup.js" defer></script>
+	<script src="about-blank-spawner.js" defer></script>
+	<script src="proxy-router.js" defer></script>
+	<script src="share-session.js" defer></script>
+	<script src="whats-new.js" defer></script>
 	<script src="surprise-me.js" defer></script>
 	<script src="stats.js" defer></script>
 	<script src="avatars.js" defer></script>

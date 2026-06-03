@@ -1,0 +1,74 @@
+[
+  {
+    "name": "crossy-road",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 167.022,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://s3-eu-west-1.amazonaws.com/hipster-whale/upsell-text.txt"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://s3-eu-west-1.amazonaws.com/hipster-whale/upsell-text.txt"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://s3-eu-west-1.amazonaws.com/hipster-whale/upsell-phone.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://s3-eu-west-1.amazonaws.com/hipster-whale/upsell-phone.png"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Error during XHR: [object ProgressEvent]",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 44,
+      "bodyTextSample": "75.5%\nloading editundobrk\nloading 8bitwonder",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 1,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "2081172327",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

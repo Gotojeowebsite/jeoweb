@@ -1,0 +1,62 @@
+[
+  {
+    "name": "factoryballs",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 37.609,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://raw.githubusercontent.com/Piplup7575/factoryballz/b756c41c487dc6daa7b46cf4464e2c9c7e64b4d9/images/preloader.gif"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://raw.githubusercontent.com/Piplup7575/factoryballz/b756c41c487dc6daa7b46cf4464e2c9c7e64b4d9/images/preloader.gif"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "414989002",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 226,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "414989002",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "414989002",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

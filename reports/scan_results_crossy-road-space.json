@@ -1,0 +1,102 @@
+[
+  {
+    "name": "crossy-road-space",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 48.59,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8083/Assets/crossy-road-space/js/v2.313.0/poki-sdk-core-v2.313.0.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8083/Assets/crossy-road-space/scripts/three.min.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8083/Assets/crossy-road-space/scripts/game.min.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/Assets/crossy-road-space/sprites/poki-icon.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/Assets/crossy-road-space/sprites/poki-logo.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8083/Assets/crossy-road-space/sprites/chicken.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-DQM8XXB9GC"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ubg235.com/js/ubg235_server_v1_0.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ubg235.com/js/ubg235_server_v1_0.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 1,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

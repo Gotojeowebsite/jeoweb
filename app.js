@@ -332,6 +332,15 @@ class App {
 	}
 
 	async resolveGames() {
+		if (window.JeoSWR) {
+			try {
+				const data = await window.JeoSWR.loadCatalog();
+				if (data && data.length) return data;
+			} catch (e) {
+				console.warn('SWR failed, falling back', e);
+			}
+		}
+
 		const CACHE_KEY = 'jeo:games-cache';
 		const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 		try {
@@ -885,6 +894,69 @@ class App {
 		if (shareGameBtn) shareGameBtn.addEventListener('click', () => this.copyShareLink());
 		const skipLoadingBtn = document.getElementById('skipLoadingBtn');
 		if (skipLoadingBtn) skipLoadingBtn.addEventListener('click', () => this.skipLoadingOverlay());
+
+		// About:blank stealth button
+		const aboutBlankBtn = document.getElementById('aboutBlankBtn');
+		if (aboutBlankBtn) aboutBlankBtn.addEventListener('click', () => {
+			if (window.JeoBlankSpawner && this.currentPlayingGame) {
+				const gameUrl = window.location.origin + '/' + this.currentPlayingGame.url;
+				window.JeoBlankSpawner.open(gameUrl, this.currentPlayingGame.name);
+			}
+		});
+
+		// Topbar scroll effect
+		const topbar = document.querySelector('.topbar');
+		if (topbar) {
+			let lastScroll = 0;
+			const onScroll = () => {
+				const y = window.scrollY;
+				topbar.classList.toggle('scrolled', y > 50);
+				lastScroll = y;
+			};
+			window.addEventListener('scroll', onScroll, { passive: true });
+		}
+
+		// Sidebar filtering
+		const sidebarItems = document.querySelectorAll('.jeo-sidebar-item[data-filter]');
+		sidebarItems.forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				sidebarItems.forEach(i => i.classList.remove('active'));
+				e.currentTarget.classList.add('active');
+				const filter = e.currentTarget.getAttribute('data-filter');
+				if (filter === 'all') {
+					this.activeTag = null;
+				} else {
+					this.activeTag = filter.toLowerCase();
+				}
+				this.renderGames();
+				// Also scroll to top of games container
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			});
+		});
+
+		const surpriseBtn = document.getElementById('sidebarSurpriseBtn');
+		if (surpriseBtn) {
+			surpriseBtn.addEventListener('click', () => {
+				if (window.JeoSurprise) window.JeoSurprise.open();
+			});
+		}
+		
+		const sidebarSavesBtn = document.getElementById('sidebarSavesBtn');
+		const sbToggle = document.getElementById('saveSidebarToggle');
+		const sb = document.getElementById('saveSidebar');
+		
+		const toggleSaveSidebar = () => {
+			if (!sb) return;
+			const willShow = sb.classList.contains('hidden');
+			sb.classList.toggle('hidden');
+			sb.setAttribute('aria-hidden', willShow ? 'false' : 'true');
+			if (willShow) { this.refreshSaveSidebar(); this.startSaveStatusTicker(); }
+			else this.stopSaveStatusTicker();
+		};
+
+		if (sidebarSavesBtn) sidebarSavesBtn.addEventListener('click', toggleSaveSidebar);
+		if (sbToggle) sbToggle.addEventListener('click', toggleSaveSidebar);
+
 		this.initDeepLinks();
 		this.bindCollectionUI();
 		this.bindLeaderboardUI();
@@ -893,21 +965,11 @@ class App {
 		if (window.JeoPlaylists) window.JeoPlaylists.onChange(() => this.renderCollections());
 
 		// Save sidebar wiring
-		const sbToggle = document.getElementById('saveSidebarToggle');
 		const sbClose = document.getElementById('saveSidebarClose');
-		const sb = document.getElementById('saveSidebar');
 		const saveNowBtn = document.getElementById('saveNowBtn');
 		const saveLabelBtn = document.getElementById('saveLabelBtn');
 		const sbList = document.getElementById('saveSidebarList');
-		if (sbToggle && sb) {
-			sbToggle.addEventListener('click', () => {
-				const willShow = sb.classList.contains('hidden');
-				sb.classList.toggle('hidden');
-				sb.setAttribute('aria-hidden', willShow ? 'false' : 'true');
-				if (willShow) { this.refreshSaveSidebar(); this.startSaveStatusTicker(); }
-				else this.stopSaveStatusTicker();
-			});
-		}
+
 		if (sbClose && sb) {
 			sbClose.addEventListener('click', () => {
 				sb.classList.add('hidden');
@@ -1039,6 +1101,25 @@ class App {
 		const exportProfileBtn = document.getElementById('exportProfileBtn');
 		if (exportProfileBtn) {
 			exportProfileBtn.addEventListener('click', () => {
+				if (window.JeoProfileDB) {
+					window.JeoProfileDB.exportProfile().then(json => {
+						const blob = new Blob([json], { type: 'application/json' });
+						const url = URL.createObjectURL(blob);
+						const a = document.createElement('a');
+						a.href = url;
+						a.download = `jeoweb-profile-${new Date().toISOString().slice(0,10)}.jeo`;
+						document.body.appendChild(a);
+						a.click();
+						document.body.removeChild(a);
+						URL.revokeObjectURL(url);
+						
+						const originalText = exportProfileBtn.textContent;
+						exportProfileBtn.textContent = '✅ Exported!';
+						setTimeout(() => exportProfileBtn.textContent = originalText, 2000);
+					});
+					return;
+				}
+
 				const profileData = {
 					favorites: JSON.parse(localStorage.getItem('jeo-favorites') || '[]'),
 					recentlyPlayed: JSON.parse(localStorage.getItem('jeo-recent') || '[]'),
@@ -1074,7 +1155,18 @@ class App {
 				if (!file) return;
 
 				const reader = new FileReader();
-				reader.onload = (ev) => {
+				reader.onload = async (ev) => {
+					if (window.JeoProfileDB) {
+						const res = await window.JeoProfileDB.importProfile(ev.target.result);
+						if (res.success) {
+							if (window.JeoToast) window.JeoToast.success('Profile imported!');
+							setTimeout(() => window.location.reload(), 1000);
+						} else {
+							if (window.JeoToast) window.JeoToast.error('Failed to import profile.');
+						}
+						return;
+					}
+
 					try {
 						const data = JSON.parse(ev.target.result);
 						if (data.favorites) localStorage.setItem('jeo-favorites', JSON.stringify(data.favorites));
@@ -1086,8 +1178,8 @@ class App {
 						if (data.cloak) localStorage.setItem('jeo-cloak', JSON.stringify(data.cloak));
 						if (data.panicConfig) localStorage.setItem('jeo-panic', JSON.stringify(data.panicConfig));
 						
-						if (window.JeoToast) window.JeoToast.success('Profile imported. Reloading…');
-						setTimeout(() => window.location.reload(), 600);
+						if (window.JeoToast) window.JeoToast.success('Profile imported successfully!');
+						setTimeout(() => window.location.reload(), 1500);
 					} catch (err) {
 						console.error(err);
 						if (window.JeoToast) window.JeoToast.error('Invalid profile file — could not import.');
@@ -1618,6 +1710,7 @@ class App {
 		if (oldSentinel) oldSentinel.remove();
 		this.gameGrid.appendChild(frag);
 		this._renderIndex = end;
+		if (window.JeoLazyLoader) window.JeoLazyLoader.refresh();
 		if (end < queue.length && this._gridObserver) {
 			const sentinel = document.createElement('div');
 			sentinel.className = 'grid-sentinel';
@@ -1683,9 +1776,8 @@ class App {
 		// shared fallback once if the cover is missing or broken.
 		const safeImgWebp = safeImg.replace(/\.(png|jpg|jpeg)$/i, '.webp');
 		const img = '<picture>'
-			+ '<source srcset="' + safeImgWebp + '" type="image/webp">'
-			+ '<img src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy" decoding="async"'
-			+ ' onload="this.classList.add(\'loaded\')"'
+			+ '<source data-srcset="' + safeImgWebp + '" type="image/webp">'
+			+ '<img data-src="' + safeImg + '" alt="' + safeName + '" width="320" height="200" loading="lazy" decoding="async"'
 			+ ' onerror="this.onerror=null;this.classList.add(\'loaded\');this.src=\'' + safeFallback + '\';" />'
 			+ '</picture>';
 
@@ -2799,6 +2891,9 @@ class App {
 			try { window.JeoSaves.bindGame(this.currentGameSlug); } catch {}
 			this.refreshSaveSidebar();
 		}
+		if (window.JeoSaveBackup && this.currentGameSlug) {
+			try { window.JeoSaveBackup.startAutoBackup(this.currentGameSlug); } catch {}
+		}
 
 		// Live presence — heartbeat while playing, show "X playing now".
 		// Keyed on game.name to match recordPlay / trending slugs.
@@ -2886,8 +2981,30 @@ class App {
 		this.playModal.setAttribute('aria-hidden', 'false');
 		document.body.style.overflow = 'hidden';
 		
-		// Move iframe off-screen
-		this.gameFrame.classList.add('offscreen-iframe');
+		// Destroy old iframe if exists and create a fresh one to prevent memory leaks (Agent-03)
+		if (this.gameFrame && this.gameFrame.parentNode) {
+			this.gameFrame.parentNode.removeChild(this.gameFrame);
+		}
+		this.gameFrame = document.createElement('iframe');
+		this.gameFrame.id = 'gameFrame';
+		this.gameFrame.className = 'offscreen-iframe'; // Start off-screen
+		this.gameFrame.setAttribute('frameborder', '0');
+		this.gameFrame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-modals allow-pointer-lock allow-orientation-lock allow-presentation allow-downloads');
+		this.gameFrame.setAttribute('allow', 'autoplay; fullscreen; pointer-lock; gamepad; cross-origin-isolated');
+		
+		const modalInner = this.playModal.querySelector('.modal-inner');
+		// Insert right after the loading overlay
+		const overlay = document.getElementById('gameLoadingOverlay');
+		if (overlay && overlay.nextSibling) {
+			modalInner.insertBefore(this.gameFrame, overlay.nextSibling);
+		} else {
+			modalInner.appendChild(this.gameFrame);
+		}
+		
+		if (window.JeoSaveBackup && this.currentGameSlug) {
+			try { window.JeoSaveBackup.captureEmulatorSaves(this.gameFrame, this.currentGameSlug); } catch {}
+		}
+
 		this.gameFrame.src = target;
 
 		// Fake progress (acts as a baseline if no assets are tracked yet)
@@ -3073,6 +3190,10 @@ class App {
 	}
 
 	copyShareLink() {
+		if (window.JeoShare) {
+			window.JeoShare.buildShareModal();
+			return;
+		}
 		if (!this.currentGameSlug) return;
 		const url = window.location.origin + window.location.pathname + '#game=' + encodeURIComponent(this.currentGameSlug);
 		const done = () => {
@@ -3110,6 +3231,9 @@ class App {
 
 		if (window.JeoSaves) {
 			try { window.JeoSaves.unbindGame(); } catch {}
+		}
+		if (window.JeoSaveBackup) {
+			try { window.JeoSaveBackup.stopAutoBackup(); } catch {}
 		}
 		// Record session duration
 		if (this.currentGameSlug && this.currentSessionStart) {
@@ -3151,11 +3275,16 @@ class App {
 		this.stopSaveStatusTicker();
 		const sb = document.getElementById('saveSidebar');
 		if (sb) { sb.classList.add('hidden'); sb.setAttribute('aria-hidden','true'); }
-		this.gameFrame.src = 'about:blank';
+		if (this.gameFrame) {
+			this.gameFrame.src = 'about:blank';
+			if (this.gameFrame.parentNode) {
+				this.gameFrame.parentNode.removeChild(this.gameFrame);
+			}
+			this.gameFrame = null;
+		}
 		this.playModal.classList.add('hidden');
 		this.playModal.setAttribute('aria-hidden', 'true');
 		document.body.style.overflow = '';
-		this.gameFrame.classList.remove('offscreen-iframe');
 		this.currentGameSlug = null;
 		this.setShareHash(null);
 	}

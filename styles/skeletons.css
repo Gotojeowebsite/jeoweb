@@ -1,0 +1,213 @@
+/* ========================================
+   JEO — SKELETON LOADING PLACEHOLDERS
+   Animated shimmer placeholders that display while
+   content loads, eliminating CLS and making the
+   UI feel instantaneous.
+   ======================================== */
+
+/* ─── Base skeleton shimmer ─── */
+.jeo-skeleton {
+	background: var(--bg-1, #1a1730);
+	border-radius: var(--radius-card, 10px);
+	position: relative;
+	overflow: hidden;
+	animation: jeoSkeletonPulse 1.5s ease-in-out infinite;
+}
+
+.jeo-skeleton::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.05) 25%,
+		rgba(255, 255, 255, 0.1) 50%,
+		rgba(255, 255, 255, 0.05) 75%,
+		transparent 100%
+	);
+	transform: translateX(-100%);
+	animation: jeoSkeletonShimmer 2s ease-in-out infinite;
+}
+
+@keyframes jeoSkeletonShimmer {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(100%); }
+}
+
+@keyframes jeoSkeletonPulse {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.7; }
+}
+
+/* ─── Light theme adjustments ─── */
+[data-theme='light'] .jeo-skeleton {
+	background: #e5e1f0;
+}
+[data-theme='light'] .jeo-skeleton::after {
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.3) 25%,
+		rgba(255, 255, 255, 0.6) 50%,
+		rgba(255, 255, 255, 0.3) 75%,
+		transparent 100%
+	);
+}
+
+/* ─── Game Card Skeleton ─── */
+.jeo-skeleton-card {
+	border: var(--border-card, 1px solid rgba(255, 255, 255, 0.08));
+	aspect-ratio: 3 / 4;
+	min-height: 180px;
+}
+
+.jeo-skeleton-card .jeo-skeleton-image {
+	width: 100%;
+	height: 65%;
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: var(--radius-card, 10px) var(--radius-card, 10px) 0 0;
+}
+
+.jeo-skeleton-card .jeo-skeleton-text {
+	padding: 12px;
+}
+
+.jeo-skeleton-card .jeo-skeleton-line {
+	height: 12px;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.06);
+	margin-bottom: 8px;
+}
+
+.jeo-skeleton-card .jeo-skeleton-line.short {
+	width: 60%;
+}
+
+.jeo-skeleton-card .jeo-skeleton-line.medium {
+	width: 80%;
+}
+
+/* ─── Carousel Skeleton ─── */
+.jeo-skeleton-carousel {
+	display: flex;
+	gap: 16px;
+	padding: 8px 0;
+	overflow: hidden;
+}
+
+.jeo-skeleton-carousel .jeo-skeleton-tile {
+	flex: 0 0 160px;
+	height: 120px;
+	border-radius: var(--radius-md, 10px);
+}
+
+/* ─── Hero Skeleton ─── */
+.jeo-skeleton-hero {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.jeo-skeleton-hero .jeo-skeleton-heading {
+	height: 40px;
+	width: 60%;
+	margin: 0 auto 16px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.jeo-skeleton-hero .jeo-skeleton-subtitle {
+	height: 20px;
+	width: 40%;
+	margin: 0 auto 24px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.jeo-skeleton-hero .jeo-skeleton-stats {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.jeo-skeleton-hero .jeo-skeleton-stat {
+	width: 80px;
+	height: 50px;
+	border-radius: 12px;
+}
+
+/* ─── Spotlight Skeleton ─── */
+.jeo-skeleton-spotlight {
+	height: 200px;
+	border-radius: var(--radius-xl, 20px);
+	margin: 0 20px 20px;
+}
+
+/* ─── Search Bar Skeleton ─── */
+.jeo-skeleton-search {
+	height: 48px;
+	border-radius: var(--radius-pill, 999px);
+	max-width: 600px;
+	margin: 0 auto 20px;
+}
+
+/* ─── Grid Skeleton ─── */
+.jeo-skeleton-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: 16px;
+	padding: 0 20px;
+}
+
+/* ─── Sidebar Skeleton ─── */
+.jeo-skeleton-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 16px;
+}
+
+.jeo-skeleton-sidebar .jeo-skeleton-nav-item {
+	height: 40px;
+	border-radius: 10px;
+}
+
+/* ─── Content Fade-in on load ─── */
+.jeo-content-loaded {
+	animation: jeoContentReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes jeoContentReveal {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ─── Waterfall stagger ─── */
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(1)  { animation-delay: 0s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(2)  { animation-delay: 0.05s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(3)  { animation-delay: 0.10s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(4)  { animation-delay: 0.15s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(5)  { animation-delay: 0.20s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(6)  { animation-delay: 0.25s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(7)  { animation-delay: 0.30s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(8)  { animation-delay: 0.35s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(9)  { animation-delay: 0.40s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(10) { animation-delay: 0.45s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(11) { animation-delay: 0.50s; }
+.jeo-skeleton-grid .jeo-skeleton-card:nth-child(12) { animation-delay: 0.55s; }
+
+/* ─── Respect prefers-reduced-motion ─── */
+@media (prefers-reduced-motion: reduce) {
+	.jeo-skeleton::after { animation: none; }
+	.jeo-skeleton { animation: none; }
+	.jeo-content-loaded { animation: none; opacity: 1; transform: none; }
+}

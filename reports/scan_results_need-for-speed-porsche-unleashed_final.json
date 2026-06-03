@@ -1,0 +1,62 @@
+[
+  {
+    "name": "need-for-speed-porsche-unleashed",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 122.51,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8086/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "NO_RENDER_SURFACE",
+        "message": "No game surface detected after bootstrap wait",
+        "severity": "warning",
+        "url": "http://localhost:8086/Assets/need-for-speed-porsche-unleashed/index.html"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 196,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\ndisks\nsettings\nexit fullscreen\nexit emulation\ndecompress game core 99%",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": 99,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

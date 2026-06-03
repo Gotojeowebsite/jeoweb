@@ -1,0 +1,47 @@
+[
+  {
+    "name": "bendy",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 49.453,
+    "critical_issues": [
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8082/Assets/bendy/undefined/pages/home.html",
+        "severity": "critical",
+        "url": "http://localhost:8082/Assets/bendy/undefined/pages/home.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 22,
+      "bodyTextSample": "starting bendy...\n100%",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 2,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

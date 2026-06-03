@@ -1,0 +1,1014 @@
+[
+  {
+    "name": "my",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 60.171,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/bfb.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Fonts/arial.fnt"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Fonts/IndieFlower.fnt"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Fonts/ShagBlueNumber.fnt"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Fonts/ShagBlack.fnt"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/Teardrop.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/TeardropTired.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/tearDropWatch.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/tearDropLevelUp.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/faceMinigame.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/tearDropTennis.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/oddDroplet.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/GTTTATINT.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/SkewMatrix.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Animations/Box.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/BGLayer.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/GameThumbnails.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/tennisBall.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Food.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Empty.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Audio/Shiny%20Tech.mp3"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Audio/Radio%20Martini.mp3"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Oldies/Bodies/1.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Oldies/Mouths.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Oldies/Limbs.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Oldies/Eyes.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Bodies/1.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Bodies/BodiesCostume_1.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/MouthsCostume21.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Bodies/BodiesCostume21.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/LimbsCostume21.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/MouthsCostume10.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/LimbsCostume17.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Mouths.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/LimbsCostume1.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Limbs.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Eyes.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/EyesCostume21.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/CakeSlicePlane.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Clouds.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Blur.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Poses.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Placeholders.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Box.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/GameUI.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Starfield.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/RepeatingUI.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/discount.json?nocache=1780429123711"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/inputNineSlice.json"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/latest.json?nocache=1780429123712"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Fonts/MenuShag.fnt"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0001.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0002.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Logo.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0019.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0018.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0017.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0016.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0015.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0014.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0013.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0012.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0011.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0010.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0009.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0008.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0006.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0007.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0004.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0005.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0003.png"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error while fetching ./Audio/Shiny Tech.mp3. File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/bfb.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/clouddancer.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/wave.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error while fetching ./Audio/Radio Martini.mp3. File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/faceMatchScores.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/brittlerille.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/Pamgaea.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/LevelUp.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/15countdown.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/purchase.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/Achievement.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/coinlarge.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/switchon.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/yeah.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/Teardrop.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/TeardropTired.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/tearDropWatch.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/tearDropLevelUp.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/faceMinigame.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/fail.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/tearDropTennis.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/oddDroplet.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/GTTTATINT.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/SkewMatrix.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Animations/Box.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/BGLayer.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/switchoff.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/GameThumbnails.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/tennisBall.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Food.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Empty.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/consume.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/slap1.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/coinmedium.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/coinsmall.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/Shiny Tech.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/Radio Martini.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/slap2.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/slap3.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/slap4.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error decoding audio file ./Audio/collect.mp3",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Oldies/Bodies/1.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Oldies/Mouths.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Oldies/Limbs.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Oldies/Eyes.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Bodies/1.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Bodies/BodiesCostume_1.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/MouthsCostume21.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Bodies/BodiesCostume21.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/LimbsCostume21.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/MouthsCostume10.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/LimbsCostume17.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Mouths.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/LimbsCostume1.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Limbs.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Eyes.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/EyesCostume21.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/CakeSlicePlane.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Clouds.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Blur.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Poses.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Placeholders.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Box.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/GameUI.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Starfield.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/RepeatingUI.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/discount.json?nocache=1780429123711.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/inputNineSlice.json.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/latest.json?nocache=1780429123712.\n    SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0001.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0001.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0002.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0002.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Logo.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Logo.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0019.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0019.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0018.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0018.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0017.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0017.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0016.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0016.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0015.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0015.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0014.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0014.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0013.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0013.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0012.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0012.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0011.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0011.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0010.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0010.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0009.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0009.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0008.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0008.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0006.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0006.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0007.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0007.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0004.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0004.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0005.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0005.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "[Loader.load] Failed to load http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0003.png.\n    Error: [WorkerManager.loadImageBitmap] Failed to fetch http://localhost:8086/Assets/my/Sprites/Rooms/Rooms0003.png: 404 File not found",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

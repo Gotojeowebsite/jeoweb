@@ -1,0 +1,32 @@
+[
+  {
+    "name": "mutilateadoll2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 97.244,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/zzruffle/ruffle.js"
+      },
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8086/Assets/mutilateadoll2/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Cannot read properties of undefined (reading 'newest')",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {}
+  }
+]

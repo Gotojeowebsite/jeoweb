@@ -1,0 +1,374 @@
+[
+  {
+    "name": "Doom2",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 55.094,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/includes/TypedArrayShim.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_css/main.css"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Graphics.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Cartridge.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/DMA.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Emulator.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/RunLoop.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Memory.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/IRQ.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/JoyPad.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Serial.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Sound.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Timer.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/CPU.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Saves.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/sound/Channel2.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/sound/FIFO.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/sound/Channel1.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/sound/Channel3.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/CPU/THUMB.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/Wait.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/CPU/CPSR.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/Renderer.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/sound/Channel4.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/CPU/ARM.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/RendererProxy.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/BGMatrix.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/BG2FrameBuffer.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/AffineBG.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/ColorEffects.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/BGTEXT.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/Mosaic.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/OBJ.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/OBJWindow.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/memory/DMA0.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/Window.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/graphics/Compositor.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/memory/DMA1.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/cartridge/FLASH.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/cartridge/SaveDeterminer.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/memory/DMA2.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/cartridge/EEPROM.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/cartridge/SRAM.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/IodineGBA/core/memory/DMA3.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/XAudioJS/resampler.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBAJoyPadGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBAROMLoadGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/XAudioJS/swfobject.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/XAudioJS/XAudioServer.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBASavesGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBACoreGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBAGraphicsGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/IodineGBAAudioGlueCode.js"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/Doom2/_external_mirror/cooleoooo662.github.io/GBA-Emulator-Unblocked/user_scripts/base64.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

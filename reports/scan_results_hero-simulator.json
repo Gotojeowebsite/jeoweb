@@ -1,0 +1,78 @@
+[
+  {
+    "name": "hero-simulator",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 77.478,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8085/Assets/hero-simulator/core.ruffle.f8d86a1fb855b0d2aaff.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Serious error loading Ruffle: ChunkLoadError: Loading chunk 339 failed.\n(error: http://localhost:8085/Assets/hero-simulator/core.ruffle.f8d86a1fb855b0d2aaff.js)",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Serious error occurred loading SWF file: ChunkLoadError: Loading chunk 339 failed.\n(error: http://localhost:8085/Assets/hero-simulator/core.ruffle.f8d86a1fb855b0d2aaff.js)",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "ChunkLoadError: Loading chunk 339 failed.\n(error: http://localhost:8085/Assets/hero-simulator/core.ruffle.f8d86a1fb855b0d2aaff.js)",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000
+    }
+  }
+]

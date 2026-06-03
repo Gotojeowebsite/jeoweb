@@ -1,0 +1,50 @@
+[
+  {
+    "name": "exo",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 64.246,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8084/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 24,
+      "bodyTextSample": "tutorial\nmusic\nsfx\nvoice",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "1793447559",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 228,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "1363666838",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "-182030361",
+      "canvasNonzeroPixelsAfterInput": 224,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

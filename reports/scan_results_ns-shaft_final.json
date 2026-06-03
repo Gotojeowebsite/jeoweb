@@ -1,0 +1,68 @@
+[
+  {
+    "name": "ns-shaft",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 63.515,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://static.fouryes.com/smile.gif"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://static.fouryes.com/smile.gif"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=UA-173616513-1"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=UA-173616513-1"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 483,
+      "bodyTextSample": "how to play\ngo left: press the left half of the screen (for touch screen device), or press the \u2190 key (for keyboard or joystick)\ngo right: press the right half of the screen, or press the \u2192 key\nstart/resume game: press the play again / continue button on screen, or press the space / ok key\nlife: hitting spikes on the top or on a floor reduces the player's life, landing on a floor (without spikes) increases the player's life\ngame over: falling off the bottom or running out of life",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "282822989",
+      "canvasNonzeroPixels": 237,
+      "canvasPixelVariance": 249,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "282822989",
+      "canvasNonzeroPixelsFirst": 237,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "1953781799",
+      "canvasNonzeroPixelsAfterInput": 236,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

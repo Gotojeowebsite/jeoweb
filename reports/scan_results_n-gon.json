@@ -1,0 +1,50 @@
+[
+  {
+    "name": "n-gon",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 41.689,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8086/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 91,
+      "bodyTextSample": "experiment\ntraining\nsettings\ncontrols\nupdates\nabout\nq\nw\ne\na\ns\nd\nswitch\nguns\nmove\nfire\nfield",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "739320085",
+      "canvasNonzeroPixelsAfterInput": 160,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "rolly-vortex",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 47.816,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8087/js/main.js"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "A bad HTTP response code (404) was received when fetching the script.",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-1410298188",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 172,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "1817123695",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "1747228397",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

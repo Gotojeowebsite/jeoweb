@@ -1,0 +1,32 @@
+[
+  {
+    "name": "bloons-player-pack3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 31.517,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8082/Assets/bloons-player-pack3/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "probe": {}
+  }
+]

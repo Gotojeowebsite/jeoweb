@@ -1,0 +1,56 @@
+[
+  {
+    "name": "city-brawl",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 85.246,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 189,
+      "bodyTextSample": "wind speed: -6\nplayer\n\nangle: 0\u00b0\n\nvelocity: 0\n\ncomputer\n\nangle: 0\u00b0\n\nvelocity: 0\n\ngorilla brawl\n\u00a9 copyright 2024 sithum sankajith\nplayer vs. computer\ndrag the bomb to aim!\nnew game\ndark mode",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "1321916738",
+      "canvasNonzeroPixels": 252,
+      "canvasPixelVariance": 229,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "1321916738",
+      "canvasNonzeroPixelsFirst": 252,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "1321916738",
+      "canvasNonzeroPixelsAfterInput": 252,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

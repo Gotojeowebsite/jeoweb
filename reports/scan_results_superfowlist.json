@@ -1,0 +1,74 @@
+[
+  {
+    "name": "superfowlist",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 56.753,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://385910584-173856206849362957.preview.editmysite.com/uploads/b/139890129-427026622691173444/files/set.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://385910584-173856206849362957.preview.editmysite.com/uploads/b/139890129-427026622691173444/files/set.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://385910584-173856206849362957.preview.editmysite.com/uploads/b/139890129-427026622691173444/files/lib/default.pak?947607"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://385910584-173856206849362957.preview.editmysite.com/uploads/b/139890129-427026622691173444/files/lib/default.pak?947607"
+      },
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored local HTTP 501",
+        "severity": "warning",
+        "url": "http://localhost:8088/Assets/superfowlist/_game_local/games.mathpapers.us/superfowlist/index.html"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 74,
+      "bodyTextSample": "this source blocks iframe embedding right now.\nopen game source in new tab",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

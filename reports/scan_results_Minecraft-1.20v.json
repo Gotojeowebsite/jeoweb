@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Minecraft-1.20v",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 18.665,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/Minecraft-1.20v/index.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {}
+  }
+]
