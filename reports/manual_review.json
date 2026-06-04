@@ -6510,8 +6510,1748 @@
       ],
       "reviewed": false,
       "notes": ""
+    },
+    "bulletbill": {
+      "slug": "bulletbill",
+      "name": "Bulletbill",
+      "type": "flash",
+      "first_queued_at": 1780539488,
+      "last_attempt_at": 1780539488,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://SirGarg0yle.github.io/BulletBill/",
+          "source": "github-repos",
+          "score": 104,
+          "match_type": "exact",
+          "name_similarity": 0.482,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://xxsolarxx125.github.io/solarmaths/bulletbill.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.253,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://bradknox.github.io/tamerproject/doc/org/rlcommunity/environments/mario/viz/sprites/BulletBill.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.258,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/bulletbill/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.063,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/bulletbill",
+          "source": "portal-template",
+          "score": 91,
+          "match_type": "exact",
+          "name_similarity": 0.293,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://igasome.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.053,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://github.com/Ranjeet7680/Al-Driven-Crime-Analytics-Visualization-Platform",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.042,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 146,
+          "shape_check": null
+        },
+        {
+          "url": "https://binbashbanana.github.io/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.067,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://thegamesdb.github.io/TheGamesDB/gamesources/infinitemariobros/main.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.065,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://samuelguillemet.github.io/MarioIA/Docs/Doxygen/html/classBill.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.095,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://darealshinji.github.io/abuse-game/doc/frabs/pages/mario.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.059,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://lelegofrog.github.io/lelegofrog.github.io/mariogifs.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.061,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 17,
+          "shape_check": null
+        },
+        {
+          "url": "https://cyaban.github.io/cyaban.github.i0/flash.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.071,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 57,
+          "shape_check": null
+        },
+        {
+          "url": "https://nsmbw-community.github.io/Reggie-Updated/reggiedata/about.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.059,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://novaappsinc.github.io/fracital-static/static/g.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.047,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://SirGarg0yle.github.io/BulletBill/",
+          "source": "github-repos",
+          "score": 104,
+          "match_type": "fuzzy",
+          "name_similarity": 0.482,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://xxsolarxx125.github.io/solarmaths/bulletbill.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.253,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://bradknox.github.io/tamerproject/doc/org/rlcommunity/environments/mario/viz/sprites/BulletBill.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.258,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/bulletbill/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.063,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://igasome.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.053,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://binbashbanana.github.io/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.067,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://thegamesdb.github.io/TheGamesDB/gamesources/infinitemariobros/main.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.065,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://samuelguillemet.github.io/MarioIA/Docs/Doxygen/html/classBill.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.095,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://darealshinji.github.io/abuse-game/doc/frabs/pages/mario.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.059,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://lelegofrog.github.io/lelegofrog.github.io/mariogifs.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.061,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "basketball-stars": {
+      "slug": "basketball-stars",
+      "name": "Basketball Stars",
+      "type": "webgl",
+      "first_queued_at": 1780539663,
+      "last_attempt_at": 1780539663,
+      "attempts": 1,
+      "reason": "17 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://3kh0.github.io/projects/basketball-stars/",
+          "source": "portal-template",
+          "score": 120,
+          "match_type": "exact",
+          "name_similarity": 0.368,
+          "outcome": "verify_failed",
+          "asset_count": 74,
+          "shape_check": null
+        },
+        {
+          "url": "https://www.crazygames.com/game/basketball-stars-2019",
+          "source": "bing",
+          "score": 113,
+          "match_type": "exact",
+          "name_similarity": 0.423,
+          "outcome": "verify_failed",
+          "asset_count": 255,
+          "shape_check": null
+        },
+        {
+          "url": "https://steel5542.github.io/happygames1/play/Basketball-Stars/index.html",
+          "source": "github-code",
+          "score": 111,
+          "match_type": "exact",
+          "name_similarity": 0.038,
+          "outcome": "verify_failed",
+          "asset_count": 75,
+          "shape_check": null
+        },
+        {
+          "url": "https://www.y8.com/games/basketball_stars",
+          "source": "portal-template",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.453,
+          "outcome": "verify_failed",
+          "asset_count": 138,
+          "shape_check": null
+        },
+        {
+          "url": "https://j0n12.github.io/macvg/projects/basketball-stars/",
+          "source": "bing",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.691,
+          "outcome": "verify_failed",
+          "asset_count": 121,
+          "shape_check": null
+        },
+        {
+          "url": "https://games.crazygames.com/en_US/basketball-stars/index.html?v=2.2",
+          "source": "portal-template",
+          "score": 108,
+          "match_type": "exact",
+          "name_similarity": 0.408,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 16,
+          "shape_check": null
+        },
+        {
+          "url": "https://MatteoNasci.github.io/Basketball-Stars/",
+          "source": "github-repos",
+          "score": 108,
+          "match_type": "exact",
+          "name_similarity": 0.629,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://Br3ntD.github.io/Basketball-stars-html/",
+          "source": "github-repos",
+          "score": 107,
+          "match_type": "exact",
+          "name_similarity": 0.529,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://sidDara.github.io/Basketball-Stars-FINAL/",
+          "source": "github-repos",
+          "score": 107,
+          "match_type": "exact",
+          "name_similarity": 0.513,
+          "outcome": "verify_failed",
+          "asset_count": 15,
+          "shape_check": null
+        },
+        {
+          "url": "https://matans6412.github.io/basketball-stars-school/",
+          "source": "github-repos",
+          "score": 106,
+          "match_type": "exact",
+          "name_similarity": 0.488,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://basketball-stars-unblocked-games.github.io/basketball-stars-unblocked-games/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "exact",
+          "name_similarity": 0.398,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://basketball-stars-game.github.io/",
+          "source": "github-repos",
+          "score": 104,
+          "match_type": "exact",
+          "name_similarity": 0.361,
+          "outcome": "verify_failed",
+          "asset_count": 167,
+          "shape_check": null
+        },
+        {
+          "url": "https://ahrdevelopers.github.io/basketball-stars-unblocked-games-premium/",
+          "source": "github-repos",
+          "score": 104,
+          "match_type": "exact",
+          "name_similarity": 0.319,
+          "outcome": "verify_failed",
+          "asset_count": 66,
+          "shape_check": null
+        },
+        {
+          "url": "https://www.snokido.com/game/basketball-stars",
+          "source": "portal-template",
+          "score": 103,
+          "match_type": "exact",
+          "name_similarity": 0.423,
+          "outcome": "verify_failed",
+          "asset_count": 78,
+          "shape_check": null
+        },
+        {
+          "url": "https://basketball-stars-unblocked.github.io/basketball-stars-unblocked.github.io/basketball-stars-unblocked.html",
+          "source": "github-code",
+          "score": 103,
+          "match_type": "exact",
+          "name_similarity": 0.267,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 18,
+          "shape_check": null
+        },
+        {
+          "url": "https://www.crazygames.com/game/basketball-stars-2019",
+          "source": "bing",
+          "score": 113,
+          "match_type": "fuzzy",
+          "name_similarity": 0.423,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://steel5542.github.io/happygames1/play/Basketball-Stars/index.html",
+          "source": "github-code",
+          "score": 111,
+          "match_type": "fuzzy",
+          "name_similarity": 0.038,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://j0n12.github.io/macvg/projects/basketball-stars/",
+          "source": "bing",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.691,
+          "outcome": "verify_failed",
+          "asset_count": 121,
+          "shape_check": null
+        },
+        {
+          "url": "https://MatteoNasci.github.io/Basketball-Stars/",
+          "source": "github-repos",
+          "score": 108,
+          "match_type": "fuzzy",
+          "name_similarity": 0.629,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://Br3ntD.github.io/Basketball-stars-html/",
+          "source": "github-repos",
+          "score": 107,
+          "match_type": "fuzzy",
+          "name_similarity": 0.529,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://sidDara.github.io/Basketball-Stars-FINAL/",
+          "source": "github-repos",
+          "score": 107,
+          "match_type": "fuzzy",
+          "name_similarity": 0.513,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://kodowallonie.itch.io/basketball-stars",
+          "source": "itch",
+          "score": 107,
+          "match_type": "fuzzy",
+          "name_similarity": 0.349,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://matans6412.github.io/basketball-stars-school/",
+          "source": "github-repos",
+          "score": 106,
+          "match_type": "fuzzy",
+          "name_similarity": 0.488,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://basketball-stars-unblocked-games.github.io/basketball-stars-unblocked-games/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "fuzzy",
+          "name_similarity": 0.398,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://basketball-stars-game.github.io/",
+          "source": "github-repos",
+          "score": 104,
+          "match_type": "fuzzy",
+          "name_similarity": 0.361,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "bankrob2": {
+      "slug": "bankrob2",
+      "name": "Bankrob2",
+      "type": "webgl",
+      "first_queued_at": 1780539672,
+      "last_attempt_at": 1780539672,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://55gms.github.io/55GMS/static/misc/bankrob2/index.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.018,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/bankrob2",
+          "source": "portal-template",
+          "score": 91,
+          "match_type": "exact",
+          "name_similarity": 0.273,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://github.com/features/copilot",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.042,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 155,
+          "shape_check": null
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.039,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 27,
+          "shape_check": null
+        },
+        {
+          "url": "https://kenong00.github.io/project08/huntington-bank-teller-jobs.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.055,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://wendy-xiao.github.io/redundancy_reduction_longdoc/vocabulary_arxiv.json",
+          "source": "bing",
+          "score": 85,
+          "match_type": "exact",
+          "name_similarity": 0.03,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 13,
+          "shape_check": null
+        },
+        {
+          "url": "https://github.com/chatanywhere/GPT_API_free",
+          "source": "bing",
+          "score": 85,
+          "match_type": "exact",
+          "name_similarity": 0.032,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 149,
+          "shape_check": null
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+          "source": "bing",
+          "score": 85,
+          "match_type": "exact",
+          "name_similarity": 0.032,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 27,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/2001875157422337827.html",
+          "source": "bing",
+          "score": 12,
+          "match_type": "exact",
+          "name_similarity": 0.1,
+          "outcome": "verify_failed",
+          "asset_count": 108,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/502367102583734012.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.05,
+          "outcome": "verify_failed",
+          "asset_count": 110,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/1435668311390484139.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.044,
+          "outcome": "verify_failed",
+          "asset_count": 115,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/1521011245889996940.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.055,
+          "outcome": "verify_failed",
+          "asset_count": 109,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/1612356130230100627.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.05,
+          "outcome": "verify_failed",
+          "asset_count": 116,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/1900413004750694260.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.05,
+          "outcome": "verify_failed",
+          "asset_count": 116,
+          "shape_check": null
+        },
+        {
+          "url": "https://zhidao.baidu.com/question/701181722044852764.html",
+          "source": "bing",
+          "score": 11,
+          "match_type": "exact",
+          "name_similarity": 0.044,
+          "outcome": "verify_failed",
+          "asset_count": 109,
+          "shape_check": null
+        },
+        {
+          "url": "https://55gms.github.io/55GMS/static/misc/bankrob2/index.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "fuzzy",
+          "name_similarity": 0.018,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://henrycompany.itch.io/bank-robbery-cats",
+          "source": "itch",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.064,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://tech-clippers.itch.io/game",
+          "source": "itch",
+          "score": 88,
+          "match_type": "fuzzy",
+          "name_similarity": 0.015,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://kenong00.github.io/project08/huntington-bank-teller-jobs.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.055,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.walmart.com/",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.053,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.storeopeninghours.com/walmart-sheridan-wy",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.034,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.yellowpages.com/sheridan-wy/walmart",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.036,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.hoursguide.com/walmart/sheridan/4065925/",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.04,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.thetimenow.com/ethiopia",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.04,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://www.worldometers.info/time/addis-ababa-region-ethiopia/",
+          "source": "bing",
+          "score": 11,
+          "match_type": "fuzzy",
+          "name_similarity": 0.036,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "bullettimefighting": {
+      "slug": "bullettimefighting",
+      "name": "Bullettimefighting",
+      "type": "flash",
+      "first_queued_at": 1780539846,
+      "last_attempt_at": 1780539846,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://retrosite.github.io/retros.games/public/cdn/games/bullettimefighting/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.073,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/bullettimefighting/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.063,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/bullettimefighting",
+          "source": "portal-template",
+          "score": 92,
+          "match_type": "exact",
+          "name_similarity": 0.35,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://utopiaunblocker.github.io/Utopia/main/gams/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.073,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://sephirin.github.io/Interstellaar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.038,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://kakaomames.github.io/points.github.io/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.054,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 15,
+          "shape_check": null
+        },
+        {
+          "url": "https://goaded.github.io/utopiasd/gams/INDEX.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.077,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://binbashbanana.github.io/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.067,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://cyaban.github.io/cyaban.github.i0/flash.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.059,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 57,
+          "shape_check": null
+        },
+        {
+          "url": "https://galacticnetwork.github.io/lite-assets/files.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.084,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://r4tn3twork.github.io/R4t/public/games.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.064,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://slash-kill.github.io/gfiles/yetanotherlist.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.076,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://maxiz1225.github.io/the-simple-unblocker-public/public/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.051,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://okinow.github.io/2932017/tag/action/date/index_4.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.044,
+          "outcome": "verify_failed",
+          "asset_count": 103,
+          "shape_check": null
+        },
+        {
+          "url": "https://megathelegend.github.io/File-Z-backend/gs/list/list.old.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.057,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://retrosite.github.io/retros.games/public/cdn/games/bullettimefighting/index.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.073,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/bullettimefighting/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.063,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://utopiaunblocker.github.io/Utopia/main/gams/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.073,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://sephirin.github.io/Interstellaar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.038,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://kakaomames.github.io/points.github.io/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.054,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://goaded.github.io/utopiasd/gams/INDEX.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.077,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://binbashbanana.github.io/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.067,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://cyaban.github.io/cyaban.github.i0/flash.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.059,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://galacticnetwork.github.io/lite-assets/files.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.084,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://r4tn3twork.github.io/R4t/public/games.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "fuzzy",
+          "name_similarity": 0.064,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "burritobison": {
+      "slug": "burritobison",
+      "name": "Burritobison",
+      "type": "flash",
+      "first_queued_at": 1780540270,
+      "last_attempt_at": 1780540270,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://xltranate.github.io/Nautical/games/burritobison.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.283,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 11,
+          "shape_check": null
+        },
+        {
+          "url": "https://nkgm123.github.io/nokiagames/Games/BurritoBison.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.283,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 18,
+          "shape_check": null
+        },
+        {
+          "url": "https://mountain658.github.io/BurritoBison/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "exact",
+          "name_similarity": 0.5,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://kanon1109.github.io/burritoBison/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "exact",
+          "name_similarity": 0.518,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://mountain658.github.io/mountain658.github.io/BurritoBison.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.214,
+          "outcome": "verify_failed",
+          "asset_count": 105,
+          "shape_check": null
+        },
+        {
+          "url": "https://harshulmoon.github.io/harshulmoon.github.io/iframes/burritobison.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.214,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 172,
+          "shape_check": null
+        },
+        {
+          "url": "https://ctbt1.github.io/BOFA-Time/burritobison3.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.141,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 12,
+          "shape_check": null
+        },
+        {
+          "url": "https://blobbo7.github.io/wog/games/buritobison.html",
+          "source": "github-code",
+          "score": 95,
+          "match_type": "exact",
+          "name_similarity": 0.143,
+          "outcome": "scanner_failed",
+          "asset_count": 5,
+          "shape_check": null
+        },
+        {
+          "url": "https://alvieg.github.io/The-Game-Portal-Legacy/static/games/burrito-bison.html",
+          "source": "github-code",
+          "score": 95,
+          "match_type": "exact",
+          "name_similarity": 0.1,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://bulbasaurchat.github.io/bulbasaurchat.github.io/games/Burrito%20Bison.html",
+          "source": "github-code",
+          "score": 94,
+          "match_type": "exact",
+          "name_similarity": 0.086,
+          "outcome": "scanner_failed",
+          "asset_count": 3,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/burritobison",
+          "source": "portal-template",
+          "score": 92,
+          "match_type": "exact",
+          "name_similarity": 0.31,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://iridium-network-dev.github.io/Iridium/static/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.053,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 36,
+          "shape_check": null
+        },
+        {
+          "url": "https://aukak.github.io/fyinx/g/burrito.html",
+          "source": "github-code",
+          "score": 87,
+          "match_type": "exact",
+          "name_similarity": 0.117,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://binbashbanana.github.io/gfiles/list.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.053,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://smartfoloo.github.io/lunarsync/public/games.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.052,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://xltranate.github.io/Nautical/games/burritobison.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.283,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://nkgm123.github.io/nokiagames/Games/BurritoBison.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.283,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://mountain658.github.io/BurritoBison/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "fuzzy",
+          "name_similarity": 0.5,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://kanon1109.github.io/burritoBison/",
+          "source": "github-repos",
+          "score": 105,
+          "match_type": "fuzzy",
+          "name_similarity": 0.518,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://mountain658.github.io/mountain658.github.io/BurritoBison.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "fuzzy",
+          "name_similarity": 0.214,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://harshulmoon.github.io/harshulmoon.github.io/iframes/burritobison.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "fuzzy",
+          "name_similarity": 0.214,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://ctbt1.github.io/BOFA-Time/burritobison3.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "fuzzy",
+          "name_similarity": 0.141,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://blobbo7.github.io/wog/games/buritobison.html",
+          "source": "github-code",
+          "score": 95,
+          "match_type": "fuzzy",
+          "name_similarity": 0.143,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://alvieg.github.io/The-Game-Portal-Legacy/static/games/burrito-bison.html",
+          "source": "github-code",
+          "score": 95,
+          "match_type": "fuzzy",
+          "name_similarity": 0.1,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://bulbasaurchat.github.io/bulbasaurchat.github.io/games/Burrito%20Bison.html",
+          "source": "github-code",
+          "score": 94,
+          "match_type": "fuzzy",
+          "name_similarity": 0.086,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "burritobisonrevenge": {
+      "slug": "burritobisonrevenge",
+      "name": "Burritobisonrevenge",
+      "type": "flash",
+      "first_queued_at": 1780540637,
+      "last_attempt_at": 1780540637,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.262,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://xploite3r.github.io/JaceUBG/Games/Embeds/clburritobisonrevenge.html",
+          "source": "github-code",
+          "score": 108,
+          "match_type": "exact",
+          "name_similarity": 0.173,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 4,
+          "shape_check": null
+        },
+        {
+          "url": "https://guzesqdro.github.io/guzesqdro.github.io/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.261,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 4,
+          "shape_check": null
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/burritobisonrevenge/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.088,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://burritobisonrevenge.github.io/burritobisonrevenge.github.io/term.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.249,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 83,
+          "shape_check": null
+        },
+        {
+          "url": "https://evanclub.github.io/evanclub.github.io/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "exact",
+          "name_similarity": 0.266,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 130,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/burritobisonrevenge",
+          "source": "portal-template",
+          "score": 92,
+          "match_type": "exact",
+          "name_similarity": 0.355,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://utopiaunblocker.github.io/Utopia/main/gams/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.085,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://igasome.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.04,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://juststudy-ce.github.io/juststudy-ce.github.io/studyguide/bb-r/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.061,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 232,
+          "shape_check": null
+        },
+        {
+          "url": "https://skytheguard.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.059,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://madoa5561.github.io/erome-videodownloader/README.md",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.052,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://github.com/kehhhh/erome-downloader/diffs/0?commit=30809aa2e2a0cb1563ae125be0459999face6a47&name=main&qualified_name=refs%2Fheads%2Fmain&sha1=a0d9f28ab91ff1245219dda2d91045a06679f1f6&sha2=30809aa2e2a0cb1563ae125be0459999face6a47&short_path=b335630&unchanged=expanded&w=false",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.052,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 4,
+          "shape_check": null
+        },
+        {
+          "url": "https://github.com/Yuvi9587/Kemono-Downloader/releases",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.057,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 118,
+          "shape_check": null
+        },
+        {
+          "url": "https://guglielmobartelloni.github.io/erome-downloader/README.md",
+          "source": "bing",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.056,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.262,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://xploite3r.github.io/JaceUBG/Games/Embeds/clburritobisonrevenge.html",
+          "source": "github-code",
+          "score": 108,
+          "match_type": "fuzzy",
+          "name_similarity": 0.173,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://guzesqdro.github.io/guzesqdro.github.io/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.261,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/burritobisonrevenge/index.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.088,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://burritobisonrevenge.github.io/burritobisonrevenge.github.io/term.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.249,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://evanclub.github.io/evanclub.github.io/burritobisonrevenge.html",
+          "source": "github-code",
+          "score": 101,
+          "match_type": "fuzzy",
+          "name_similarity": 0.266,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://utopiaunblocker.github.io/Utopia/main/gams/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.085,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://igasome.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.04,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://juststudy-ce.github.io/juststudy-ce.github.io/studyguide/bb-r/index.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.061,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://skytheguard.github.io/interstellar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "fuzzy",
+          "name_similarity": 0.059,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
+    },
+    "cactusmccoy": {
+      "slug": "cactusmccoy",
+      "name": "Cactusmccoy",
+      "type": "flash",
+      "first_queued_at": 1780540991,
+      "last_attempt_at": 1780540991,
+      "attempts": 1,
+      "reason": "15 candidates all failed",
+      "candidates_tried": [
+        {
+          "url": "https://packjackisback.github.io/games/cactusmccoy.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.269,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/cactusmccoy.html",
+          "source": "github-code",
+          "score": 108,
+          "match_type": "exact",
+          "name_similarity": 0.213,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://alexduynguyen.github.io/gamesiteallprojects/games/platformers/cactusmccoy2.html",
+          "source": "github-code",
+          "score": 106,
+          "match_type": "exact",
+          "name_similarity": 0.086,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://tsyuay.github.io/FrivReborn/games/cactusmccoy/f2.html",
+          "source": "github-code",
+          "score": 105,
+          "match_type": "exact",
+          "name_similarity": 0.032,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
+          "shape_check": null
+        },
+        {
+          "url": "https://unlocked25v2.github.io/unlocked25v2.github.io/swfgames/cactusmccoy-1.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.181,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 35,
+          "shape_check": null
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/cactusmccoy/index.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "exact",
+          "name_similarity": 0.025,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://markovityk.github.io/Osmium/n/clcactusmccoy.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.122,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://trapjaww.github.io/awesome-sauce/!flash/cactusmccoy1.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.11,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://pixonetwork.github.io/galactic-lite-storage/clcactusmccoy%20(1).html",
+          "source": "github-code",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.081,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://brickyosu.github.io/ugs-files-sorted/C/clcactusmccoy.html",
+          "source": "github-code",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.098,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://lagged.com/en/g/cactusmccoy",
+          "source": "portal-template",
+          "score": 92,
+          "match_type": "exact",
+          "name_similarity": 0.302,
+          "outcome": "verify_failed",
+          "asset_count": 28,
+          "shape_check": null
+        },
+        {
+          "url": "https://sephirin.github.io/Interstellaar/play.html",
+          "source": "github-code",
+          "score": 89,
+          "match_type": "exact",
+          "name_similarity": 0.038,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://elite-gamez.github.io/elite-gamez.github.io/g/Cactus%20Mccoy.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.086,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 342,
+          "shape_check": null
+        },
+        {
+          "url": "https://jwzimmer-zz.github.io/tv-tropes/trope_list/tropes/LocomotiveLevel.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.038,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://galacticnetwork.github.io/lite-assets/files.html",
+          "source": "github-code",
+          "score": 86,
+          "match_type": "exact",
+          "name_similarity": 0.042,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://packjackisback.github.io/games/cactusmccoy.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.269,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/cactusmccoy.html",
+          "source": "github-code",
+          "score": 108,
+          "match_type": "fuzzy",
+          "name_similarity": 0.213,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://alexduynguyen.github.io/gamesiteallprojects/games/platformers/cactusmccoy2.html",
+          "source": "github-code",
+          "score": 106,
+          "match_type": "fuzzy",
+          "name_similarity": 0.086,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://tsyuay.github.io/FrivReborn/games/cactusmccoy/f2.html",
+          "source": "github-code",
+          "score": 105,
+          "match_type": "fuzzy",
+          "name_similarity": 0.032,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://unlocked25v2.github.io/unlocked25v2.github.io/swfgames/cactusmccoy-1.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "fuzzy",
+          "name_similarity": 0.181,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://gotojeowebsite.github.io/jeoweb/Assets/cactusmccoy/index.html",
+          "source": "github-code",
+          "score": 100,
+          "match_type": "fuzzy",
+          "name_similarity": 0.025,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://markovityk.github.io/Osmium/n/clcactusmccoy.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "fuzzy",
+          "name_similarity": 0.122,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://trapjaww.github.io/awesome-sauce/!flash/cactusmccoy1.html",
+          "source": "github-code",
+          "score": 99,
+          "match_type": "fuzzy",
+          "name_similarity": 0.11,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://pixonetwork.github.io/galactic-lite-storage/clcactusmccoy%20(1).html",
+          "source": "github-code",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.081,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://brickyosu.github.io/ugs-files-sorted/C/clcactusmccoy.html",
+          "source": "github-code",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.098,
+          "outcome": "below_fuzzy_threshold"
+        }
+      ],
+      "reviewed": false,
+      "notes": ""
     }
   },
-  "generated_at": 1780539281,
-  "count": 56
+  "generated_at": 1780540991,
+  "count": 63
 }
