@@ -1,0 +1,1 @@
+define("question-new:widget/ie-detect/ie-detect",(function(e,t,i){var n=e("common-new:widget/js/util/log/log");i.exports={init:function(){n.send({area:"ie-detect",action:"ie-detect",ieVersion:this.detectIeVersion()})},detectIeVersion:function(){var e=navigator.userAgent,t="notie",i="ie11",n="ie6to10";return-1!==e.indexOf("MSIE")?n:-1!==e.indexOf("Trident")?i:t}}}));
