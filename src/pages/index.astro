@@ -8,6 +8,7 @@ import FiltersBar from '../components/discover/FiltersBar.astro';
 import Rail from '../components/discover/Rail.astro';
 import GameGrid from '../components/discover/GameGrid.astro';
 import Welcome from '../components/onboarding/Welcome.astro';
+import TopRatedRail from '../components/discover/TopRatedRail.astro';
 import {
 	getAllGames,
 	getRecentlyAdded,
@@ -78,6 +79,8 @@ const jsonLd = [
 		{hotPicks.length >= 6 && (
 			<Rail title="Hot this week" icon="flame" games={hotPicks} />
 		)}
+		{/* TopRatedRail is client-side only — hidden until backend data arrives */}
+		<TopRatedRail />
 		<Rail title="Newly added"  icon="sparkles"  games={recentlyAdded} viewAllHref="/new" />
 		{TAG_BUCKETS.map(b => {
 			const games = pickByTag(b.tag);

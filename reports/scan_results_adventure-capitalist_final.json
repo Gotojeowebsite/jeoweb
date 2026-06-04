@@ -1,0 +1,19 @@
+[
+  {
+    "name": "adventure-capitalist",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.399,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8300/Assets/adventure-capitalist/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

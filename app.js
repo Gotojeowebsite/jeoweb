@@ -13,6 +13,8 @@ class App {
 		this.offlineBlockedNames = new Set();
 		this.statusFreshness = { generatedAt: null, source: '', maxAgeDays: 7, isStale: false, unknownCount: 0 };
 		this.gameHealth = new Map();
+		// Sort order: 'az' (alphabetical), 'rating' (global avg desc), 'plays' (play count desc)
+		this.sortBy = localStorage.getItem('jeo-sort-by') || 'az';
 
 		this.initElements();
 		this.initRatingsSync();
@@ -24,6 +26,7 @@ class App {
 		this.initFlashToggle();
 		this.initRetroToggle();
 		this.initMaintenanceToggle();
+		this.initSortSelect();
 		this.initAnimations();
 		this.initPremiumFx();
 		this.bindUI();
@@ -654,6 +657,12 @@ class App {
 		this.playerPresence = document.getElementById('playerPresence');
 		this.playerPlaytime = document.getElementById('playerPlaytime');
 		this.playerSavesBadge = document.getElementById('playerSavesBadge');
+		// Sort select dropdown + Top Rated carousel
+		this.sortSelect = document.getElementById('sortSelect');
+		this.topRatedSection = document.getElementById('topRatedSection');
+		this.topRatedTrack = document.getElementById('topRatedTrack');
+		this.topRatedCount = document.getElementById('topRatedCount');
+		this.gridSectionTitle = document.getElementById('gridSectionTitle');
 	}
 
 	hideLoading() {
@@ -1511,6 +1520,20 @@ class App {
 		});
 	}
 
+	/* Wire up the Sort select dropdown — persists the sort preference in
+	   localStorage and immediately re-renders the game grid. Works even if
+	   the backend is not configured (falls back to alpha sort). */
+	initSortSelect() {
+		if (!this.sortSelect) return;
+		// Set initial value from saved preference
+		this.sortSelect.value = this.sortBy || 'az';
+		this.sortSelect.addEventListener('change', () => {
+			this.sortBy = this.sortSelect.value || 'az';
+			try { localStorage.setItem('jeo-sort-by', this.sortBy); } catch (e) {}
+			this.renderGames();
+		});
+	}
+
 	refreshGames() {
 		// Clear all session caches so the next load fetches fresh data from the server.
 		try {
@@ -1627,10 +1650,44 @@ class App {
 			const score = this.scoreGameMatch(g, q, terms, rawQ);
 			if (score > 0) scored.push({ g, score });
 		}
-		// When searching: rank by score (desc), tiebreak alpha. Otherwise: pure alpha.
-		if (q) scored.sort((a, b) => b.score - a.score || a.g.name.localeCompare(b.g.name));
-		else scored.sort((a, b) => a.g.name.localeCompare(b.g.name));
+		// When searching: rank by score (desc), tiebreak alpha.
+		// When not searching: sort according to this.sortBy preference.
+		if (q) {
+			scored.sort((a, b) => b.score - a.score || a.g.name.localeCompare(b.g.name));
+		} else if (this.sortBy === 'rating') {
+			// Sort by global average rating descending; games with no rating go last.
+			scored.sort((a, b) => {
+				const rA = (this._globalRatings && this._globalRatings[a.g.name]) || null;
+				const rB = (this._globalRatings && this._globalRatings[b.g.name]) || null;
+				// Only count if >= 1 rating exists
+				const avgA = (rA && rA.count >= 1) ? rA.avg : -1;
+				const avgB = (rB && rB.count >= 1) ? rB.avg : -1;
+				if (avgB !== avgA) return avgB - avgA;
+				// Tiebreak by number of ratings (more = more reliable)
+				const cA = rA ? rA.count : 0;
+				const cB = rB ? rB.count : 0;
+				if (cB !== cA) return cB - cA;
+				return a.g.name.localeCompare(b.g.name);
+			});
+		} else if (this.sortBy === 'plays') {
+			// Sort by global play count descending; games with no count go last.
+			scored.sort((a, b) => {
+				const pA = (this._playCounts && this._playCounts[a.g.name]) || 0;
+				const pB = (this._playCounts && this._playCounts[b.g.name]) || 0;
+				if (pB !== pA) return pB - pA;
+				return a.g.name.localeCompare(b.g.name);
+			});
+		} else {
+			scored.sort((a, b) => a.g.name.localeCompare(b.g.name));
+		}
 		const filtered = scored.map(s => s.g);
+		// Update the section heading to reflect the active sort
+		if (this.gridSectionTitle) {
+			if (q) this.gridSectionTitle.textContent = 'Search Results';
+			else if (this.sortBy === 'rating') this.gridSectionTitle.textContent = '⭐ Games by Rating';
+			else if (this.sortBy === 'plays') this.gridSectionTitle.textContent = '🔥 Most Played Games';
+			else this.gridSectionTitle.textContent = 'All Games';
+		}
 		// Announce result count to screen readers
 		const live = document.getElementById('searchResultsLive');
 		if (live) {
@@ -1960,6 +2017,7 @@ class App {
 		this.renderFavorites();
 		this.renderTrending();
 		this.renderGlobalTrending();
+		this.renderTopRatedCarousel();
 		this.renderWishlist();
 		this.renderCollections();
 		this.renderRecent();
@@ -2654,6 +2712,48 @@ class App {
 		});
 	}
 
+	/* =============== TOP RATED CAROUSEL (backend-powered) =============== */
+	renderTopRatedCarousel() {
+		const sec = this.topRatedSection;
+		const track = this.topRatedTrack;
+		if (!sec || !track) return;
+		// Need global ratings data from the backend
+		const ratings = this._globalRatings;
+		if (!ratings || !Object.keys(ratings).length) {
+			sec.classList.add('hidden');
+			return;
+		}
+		// Build a sorted list of (slug, {avg, count}) with at least 1 vote, avg > 0
+		const ratedSlugs = Object.entries(ratings)
+			.filter(([, r]) => r && r.count >= 1 && r.avg > 0)
+			.sort((a, b) => {
+				if (b[1].avg !== a[1].avg) return b[1].avg - a[1].avg;
+				return b[1].count - a[1].count;
+			})
+			.slice(0, 20);
+		if (!ratedSlugs.length) { sec.classList.add('hidden'); return; }
+		// Map to game objects in local catalog, applying the same filters as the main grid
+		const games = [];
+		for (const [slug] of ratedSlugs) {
+			const g = this.games.find(x => x.name === slug);
+			if (!g) continue;
+			if (this.hideMaintenance && this.isUnderMaintenance(g)) continue;
+			if (!this.showFlash && g.type === 'flash') continue;
+			if (!this.showRetro && g.type === 'snes') continue;
+			games.push(g);
+		}
+		if (!games.length) { sec.classList.add('hidden'); return; }
+		sec.classList.remove('hidden');
+		if (this.topRatedCount) this.topRatedCount.textContent = games.length;
+		track.innerHTML = '';
+		games.forEach((g, i) => {
+			const card = this.createCarouselCard(g, i);
+			// Show rank position chip for top 10
+			if (i < 10) card.dataset.rank = String(i + 1);
+			track.appendChild(card);
+		});
+	}
+
 	// Fetches all-time play counts + global ratings once and re-renders so
 	// cards show a "▶ N" play count and a "★ 4.3 (1.2k)" global rating badge.
 	// Backend-powered; a silent no-op when the backend is down (cards keep
@@ -2678,6 +2778,8 @@ class App {
 		if (changed) {
 			this.renderGames();
 			this.renderCarousels();
+			// Top Rated carousel depends on global ratings — re-render now that we have data
+			this.renderTopRatedCarousel();
 		}
 	}
 

@@ -340,6 +340,11 @@
 				<span class="search-icon">🔍</span>
 				<input id="searchInput" class="search-input" placeholder="Search games..." />
 			</div>
+			<select id="sortSelect" class="sort-select">
+				<option value="az">Sort: A-Z</option>
+				<option value="rating">Sort: Top Rated</option>
+				<option value="plays">Sort: Most Played</option>
+			</select>
 			<label class="flash-toggle" data-tooltip="Show/hide Flash games">
 				<span class="flash-toggle-label">⚡ Flash</span>
 				<div class="toggle-switch">
@@ -380,6 +385,23 @@
 				<button class="carousel-arrow carousel-arrow-left" data-target="globalTrendingTrack" aria-label="Scroll left">‹</button>
 				<div id="globalTrendingTrack" class="carousel-track"></div>
 				<button class="carousel-arrow carousel-arrow-right" data-target="globalTrendingTrack" aria-label="Scroll right">›</button>
+			</div>
+		</section>
+
+		<!-- Top Rated Games (backend-powered; hidden unless ratings data is available) -->
+		<section id="topRatedSection" class="carousel-section hidden">
+			<div class="carousel-header">
+				<div class="carousel-title-group">
+					<span class="carousel-icon">⭐</span>
+					<h2 class="carousel-title">Top Rated</h2>
+					<span id="topRatedCount" class="carousel-count">0</span>
+				</div>
+				<span class="carousel-subtitle">Sorted by global community ratings</span>
+			</div>
+			<div class="carousel-track-wrap">
+				<button class="carousel-arrow carousel-arrow-left" data-target="topRatedTrack" aria-label="Scroll left">‹</button>
+				<div id="topRatedTrack" class="carousel-track"></div>
+				<button class="carousel-arrow carousel-arrow-right" data-target="topRatedTrack" aria-label="Scroll right">›</button>
 			</div>
 		</section>
 
@@ -512,7 +534,7 @@
 
 		<!-- Games Grid -->
 		<section class="games-section" id="mainContent">
-			<h2 class="section-title">All Games</h2>
+			<h2 class="section-title" id="gridSectionTitle">All Games</h2>
 			<div id="searchResultsLive" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 			<div id="gameGrid" class="game-grid">
 				<!-- Skeleton placeholders shown while JS loads -->

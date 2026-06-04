@@ -1,0 +1,19 @@
+[
+  {
+    "name": "dragon-ball-z-the-legacy-of-goku-i-ii",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 360.142,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
+        "severity": "warning",
+        "url": "http://localhost:8203/Assets/dragon-ball-z-the-legacy-of-goku-i-ii/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

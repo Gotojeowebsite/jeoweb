@@ -1,0 +1,26 @@
+[
+  {
+    "name": "tube-jumpers",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 16.837,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.goto: Page crashed\nCall log:\n  - navigating to \"http://localhost:8122/Assets/tube-jumpers/index.html\", waiting until \"domcontentloaded\"\n",
+        "severity": "critical",
+        "url": "http://localhost:8122/Assets/tube-jumpers/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8122/js/main.js"
+      }
+    ],
+    "probe": {}
+  }
+]

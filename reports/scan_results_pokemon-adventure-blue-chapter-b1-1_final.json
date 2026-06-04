@@ -1,0 +1,62 @@
+[
+  {
+    "name": "pokemon-adventure-blue-chapter-b1-1",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 52.651,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8116/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "NO_RENDER_SURFACE",
+        "message": "No game surface detected after bootstrap wait",
+        "severity": "warning",
+        "url": "http://localhost:8116/Assets/pokemon-adventure-blue-chapter-b1-1/index.html"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 195,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\ndisks\nsettings\nexit fullscreen\nexit emulation\ndecompress game data 3%",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": 3,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

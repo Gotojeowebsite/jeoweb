@@ -1,0 +1,19 @@
+[
+  {
+    "name": "jumpix2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.19,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8306/Assets/jumpix2/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

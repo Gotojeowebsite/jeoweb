@@ -958,6 +958,48 @@ flex-wrap: wrap;
 align-items: center;
 }
 
+/* ========================================
+   SORT DROPDOWN
+   ======================================== */
+
+.sort-select {
+	padding: 10px 36px 10px 14px;
+	border: 1px solid var(--border);
+	background: var(--card-bg);
+	color: var(--text);
+	border-radius: var(--radius);
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	transition: border-color 0.2s, box-shadow 0.2s;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.sort-select:hover,
+.sort-select:focus {
+	border-color: var(--accent);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* ========================================
+   CAROUSEL SUBTITLE
+   ======================================== */
+
+.carousel-subtitle {
+	font-size: 12px;
+	color: var(--muted);
+	font-weight: 500;
+	letter-spacing: 0.2px;
+	opacity: 0.8;
+}
+
 .search-container {
 flex: 1;
 min-width: 250px;

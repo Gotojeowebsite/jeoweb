@@ -1,40 +1,33 @@
 [
   {
-    "name": "1on1SoccerBigHeads",
-    "type": "flash",
+    "name": "blumgiracers",
+    "type": "webgl",
     "entry_file": "index.html",
-    "status": "broken",
-    "elapsed_seconds": 25.6,
-    "critical_issues": [
-      {
-        "code": "LOCAL_HTTP_ERROR",
-        "message": "Critical local HTTP 404",
-        "severity": "critical",
-        "url": "http://localhost:8081/Assets/zzruffle/ruffle.js"
-      }
-    ],
+    "status": "warning",
+    "elapsed_seconds": 83.877,
+    "critical_issues": [],
     "warnings": [
       {
-        "code": "PAGE_ERROR",
-        "message": "Cannot read properties of undefined (reading 'newest')",
+        "code": "CONSOLE_ERROR",
+        "message": "A bad HTTP response code (404) was received when fetching the script.",
         "severity": "warning",
         "url": ""
       }
     ],
     "probe": {
       "readyState": "complete",
-      "surfaceCount": 0,
+      "surfaceCount": 1,
       "bodyTextLength": 0,
       "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
       "hasRetroGlobal": false,
-      "canvasHash": "",
+      "canvasHash": "0",
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
-      "canvasIsWebGL": false,
-      "canvasRAFTicks": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 2,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,
@@ -46,27 +39,43 @@
       "constructProgressPct": -1,
       "constructStarted": false,
       "phaserProgressPct": -1,
-      "canvasHashFirst": "",
+      "canvasHashFirst": "0",
       "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 1
     }
   },
   {
-    "name": "1",
-    "type": "webgl",
+    "name": "bomberman",
+    "type": "flash",
     "entry_file": "index.html",
-    "status": "ok",
-    "elapsed_seconds": 28.714,
+    "status": "warning",
+    "elapsed_seconds": 32.905,
     "critical_issues": [],
-    "warnings": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
     "probe": {
       "readyState": "complete",
-      "surfaceCount": 0,
+      "surfaceCount": 1,
       "bodyTextLength": 0,
       "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
-      "hasRuffleGlobal": false,
+      "hasRuffleGlobal": true,
       "hasRetroGlobal": false,
       "canvasHash": "",
       "canvasNonzeroPixels": 0,
@@ -74,7 +83,7 @@
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
       "unityInstanceLoaded": false,
-      "ruffleReady": false,
+      "ruffleReady": true,
       "ejsStarted": false,
       "godotReady": false,
       "phaserReady": false,
@@ -86,28 +95,233 @@
       "phaserProgressPct": -1,
       "canvasHashFirst": "",
       "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000,
+      "engineExtraWaitMs": 10000,
       "canvasHashAfterInput": "",
       "canvasNonzeroPixelsAfterInput": 0,
       "canvasRAFTicksAfterInput": 0
     }
   },
   {
-    "name": "0v0",
-    "type": "webgl",
+    "name": "bomberman-max-2-blue-advance",
+    "type": "gba",
     "entry_file": "index.html",
-    "status": "ok",
-    "elapsed_seconds": 28.681,
+    "status": "warning",
+    "elapsed_seconds": 43.116,
     "critical_issues": [],
-    "warnings": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
     "probe": {
       "readyState": "complete",
-      "surfaceCount": 0,
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 6,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 10
+    }
+  },
+  {
+    "name": "bomberman-tournament",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 40.87,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 12,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 8
+    }
+  },
+  {
+    "name": "boulder-dash-ex",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 40.648,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 31,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 16
+    }
+  },
+  {
+    "name": "boxhead2play",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 37.684,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/js/main.js"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Tried to instantiate non-registered character Swat_Head_Front",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Tried to instantiate non-registered character Swat_Head_Side",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Tried to instantiate non-registered character Swat_Head_Back",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
       "bodyTextLength": 0,
       "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
-      "hasRuffleGlobal": false,
+      "hasRuffleGlobal": true,
       "hasRetroGlobal": false,
       "canvasHash": "",
       "canvasNonzeroPixels": 0,
@@ -115,7 +329,7 @@
       "canvasIsWebGL": false,
       "canvasRAFTicks": 0,
       "unityInstanceLoaded": false,
-      "ruffleReady": false,
+      "ruffleReady": true,
       "ejsStarted": false,
       "godotReady": false,
       "phaserReady": false,
@@ -127,10 +341,214 @@
       "phaserProgressPct": -1,
       "canvasHashFirst": "",
       "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000,
+      "engineExtraWaitMs": 10000,
       "canvasHashAfterInput": "",
       "canvasNonzeroPixelsAfterInput": 0,
       "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "boxing-fever",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 39.424,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 31,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 14
+    }
+  },
+  {
+    "name": "bruce-lee-return-of-the-legend",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 39.371,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8089/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 32,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 16
+    }
+  },
+  {
+    "name": "btd3",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 27.896,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Invalid or unexpected token",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "gadgets is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to resolve module specifier \"_external_mirror/cdn.jsdelivr.net/gh/zhit73/wafedit_bd6c0b779c3d8b175e60c149194f6344807b21aa/wasm/waflash-player.min.js\". Relative references must start with either \"/\", \"./\", or \"../\".",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.9,tbsd_.64,tbnd_.-73&srt=9&gadget=default&container=default&view=default&e=&rt=dl.179,ol.186,prt.186"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.9,tbsd_.64,tbnd_.-73&srt=9&gadget=default&container=default&view=default&e=&rt=dl.179,ol.186,prt.186"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 32,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 28
     }
   }
 ]

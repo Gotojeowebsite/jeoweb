@@ -1,0 +1,125 @@
+#home h1 {
+  text-align: center;
+  font-size: 70px;
+}
+#home h2 {
+  text-align: center;
+}
+#home h3 {
+  text-align: center;
+}
+#home h3 em {
+  font-size: inherit;
+  font-style: inherit;
+  color: #fff200;
+}
+#canvas-home-title-pacman {
+  background-color: #000;
+  position: absolute;
+  top: 10px;
+  left: 182px;
+  height: 100px;
+  width: 118px;
+  display: none;
+}
+#canvas-panel-title-pacman {
+  background-color: #000;
+  position: absolute;
+  top: 6px;
+  left: 47px;
+  height: 32px;
+  width: 38px;
+  display: none;
+}
+
+@media (max-height: 600px) {
+  #presentation {
+    display: none;
+  }
+}
+
+#presentation {
+  height: 250px;
+}
+#presentation > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#presentation-titles {
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+}
+#canvas-presentation-blinky,
+#canvas-presentation-pinky,
+#canvas-presentation-inky,
+#canvas-presentation-clyde {
+  width: 50px;
+  height: 50px;
+}
+
+#presentation-character-blinky,
+#presentation-character-pinky,
+#presentation-character-inky,
+#presentation-character-clyde,
+#presentation-name-blinky,
+#presentation-name-pinky,
+#presentation-name-inky,
+#presentation-name-clyde {
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 180px;
+}
+#presentation-character-blinky,
+#presentation-name-blinky {
+  color: #ed1b24;
+}
+#presentation-character-pinky,
+#presentation-name-pinky {
+  color: #feaec9;
+}
+#presentation-character-inky,
+#presentation-name-inky {
+  color: #4adecb;
+}
+#presentation-character-clyde,
+#presentation-name-clyde {
+  color: #f99c00;
+}
+
+#trailer {
+  padding: 0px;
+  width: 500px;
+  height: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  #home h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+  #presentation-titles,
+  #presentation-character-blinky,
+  #presentation-character-pinky,
+  #presentation-character-inky,
+  #presentation-character-clyde,
+  #presentation-name-blinky,
+  #presentation-name-pinky,
+  #presentation-name-inky,
+  #presentation-name-clyde {
+    font-size: 15px;
+  }
+  #presentation-character-blinky,
+  #presentation-character-pinky,
+  #presentation-character-inky,
+  #presentation-character-clyde,
+  #presentation-name-blinky,
+  #presentation-name-pinky,
+  #presentation-name-inky,
+  #presentation-name-clyde {
+    width: 120px;
+  }
+}

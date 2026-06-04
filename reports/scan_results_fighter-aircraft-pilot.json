@@ -1,0 +1,19 @@
+[
+  {
+    "name": "fighter-aircraft-pilot",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.588,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8304/Assets/fighter-aircraft-pilot/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

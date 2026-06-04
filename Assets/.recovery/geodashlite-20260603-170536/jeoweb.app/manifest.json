@@ -1,0 +1,20 @@
+{
+  "name": "Jeo Unblocked Games",
+  "short_name": "Jeo",
+  "description": "Play 500+ free unblocked browser, Flash, and retro games. No downloads, no sign-ups.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c0b14",
+  "theme_color": "#0c0b14",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -3,48 +3,17 @@
     "name": "temple-run-2",
     "type": "webgl",
     "entry_file": "index.html",
-    "status": "ok",
-    "elapsed_seconds": 203.245,
+    "status": "inconclusive",
+    "elapsed_seconds": 360.144,
     "critical_issues": [],
     "warnings": [
       {
-        "code": "LOCAL_IGNORED_HTTP",
-        "message": "Ignored optional local HTTP 404",
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
         "severity": "warning",
-        "url": "http://localhost:8088/js/main.js"
+        "url": "http://localhost:8121/Assets/temple-run-2/index.html"
       }
     ],
-    "probe": {
-      "readyState": "complete",
-      "surfaceCount": 1,
-      "bodyTextLength": 59,
-      "bodyTextSample": "press space to play\n100\nstats\nsettings\nchallenges\nabilities",
-      "unityLoadingBar": false,
-      "unityProgress": "",
-      "hasRuffleGlobal": false,
-      "hasRetroGlobal": false,
-      "canvasHash": "0",
-      "canvasNonzeroPixels": 0,
-      "canvasPixelVariance": 0,
-      "canvasIsWebGL": true,
-      "canvasRAFTicks": 1,
-      "unityInstanceLoaded": false,
-      "ruffleReady": false,
-      "ejsStarted": false,
-      "godotReady": false,
-      "phaserReady": false,
-      "audioContextRunning": false,
-      "audioContextCount": 0,
-      "ejsProgressPct": -1,
-      "constructProgressPct": -1,
-      "constructStarted": false,
-      "phaserProgressPct": -1,
-      "canvasHashFirst": "0",
-      "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000,
-      "canvasHashAfterInput": "0",
-      "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 3
-    }
+    "probe": {}
   }
 ]

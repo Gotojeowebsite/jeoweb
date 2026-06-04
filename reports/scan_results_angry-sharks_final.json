@@ -1,0 +1,19 @@
+[
+  {
+    "name": "angry-sharks",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 360.134,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
+        "severity": "warning",
+        "url": "http://localhost:8101/Assets/angry-sharks/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

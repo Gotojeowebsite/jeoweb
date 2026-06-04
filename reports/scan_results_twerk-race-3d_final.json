@@ -1,0 +1,50 @@
+[
+  {
+    "name": "twerk-race-3d",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 19.686,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8209/Assets/twerk-race-3d/Build/TwerkRace.loader.js"
+      },
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8209/Assets/twerk-race-3d/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Unhandled rejection: Cannot read properties of undefined (reading 'then') {additional: Object, message: Unhandled rejection: Cannot read properties of undefined (reading 'then'), name: UnhandledPromiseError, stack: TypeError: Cannot read properties of undefined (re\u2026t:8209/Assets/twerk-race-3d/yandex-sdk.js:4726:11}",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Cannot read properties of undefined (reading 'then')",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Unhandled rejection: Cannot read properties of undefined (reading 'catch') {additional: Object, message: Unhandled rejection: Cannot read properties of undefined (reading 'catch'), name: UnhandledPromiseError, stack: TypeError: Cannot read properties of undefined (re\u2026t:8209/Assets/twerk-race-3d/yandex-sdk.js:5094:29}",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Cannot read properties of undefined (reading 'catch')",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {}
+  }
+]

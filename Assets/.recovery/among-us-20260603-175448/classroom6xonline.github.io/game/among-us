@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<title>Among Us - Classroom 6x</title>
+<meta content="Among Us - Classroom 6x: Enjoy browser play, fullscreen action, and an ad-free gaming experience. Dive into fun today!" name="description"/>
+<link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/assets/fonts/font-awesome.min.css" rel="stylesheet"/>
+<link href="/assets/css/Navbar-Right-Links-icons.css" rel="stylesheet"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EQ4HXG747G"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EQ4HXG747G');
+</script>
+
+<link href="https://classroom6xonline.github.io/game/among-us" rel="canonical"/>
+</head>
+<body>
+<header class="sticky-top" id="header">
+<nav class="navbar navbar-expand-lg py-3">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center" href="/"><img src="/assets/img/logo.png" style="height: 40px"/></a>
+<button class="navbar-toggler" data-bs-target="#navcol-2" data-bs-toggle="collapse">
+<span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse nav-right" id="navcol-2">
+<div class="search">
+<div class="search-game">
+<div class="form-search">
+<input class="search-bar" id="search-bar" placeholder="Search" type="text"/><svg class="bi bi-search icon-search" fill="currentColor" height="1em" id="search-button" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+</svg>
+</div>
+</div>
+</div>
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="/category/2-player">2-Player</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/category/3d">3D</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/category/adventure">Adventure</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/category/car">Car</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/category/moto">Moto</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#">More</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="/category/multiplayer">Multiplayer</a>
+<a class="dropdown-item" href="/category/puzzle">Puzzle</a>
+<a class="dropdown-item" href="/category/racing">Racing</a>
+<a class="dropdown-item" href="/category/running">Running</a>
+<a class="dropdown-item" href="/category/shooting">Shooting</a>
+<a class="dropdown-item" href="/category/skill">Skill</a>
+<a class="dropdown-item" href="/category/sports">Sports</a>
+<a class="dropdown-item" href="/category/stickman">Stickman</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="container">
+<div class="gameFrame">
+<h1 class="text-center">Among Us</h1>
+<iframe allowfullscreen="" class="gm-iframe" id="gameFrame" src="https://classroom-6x-online.github.io/g2/among-us/"></iframe>
+<div class="bt-fullscreen text-center">
+<button class="btn btn-primary btn-full" onclick="openFullscreen();" type="button">
+              FullScreen
+            </button>
+</div>
+</div>
+<div class="product-section">
+<div class="row">
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/11-11">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/11-11.png"/>
+<h3 class="game-card__title" style="font-size: 15px">11-11</h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/2048-multitask">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/2048-multitask.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  2048 Multitask
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/2048">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/2048.png"/>
+<h3 class="game-card__title" style="font-size: 15px">2048</h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/4th-and-goal-2022">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/4th-and-goal-2022.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  4th And Goal 2022
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/8-ball-pool">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/8-ball-pool.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  8 Ball Pool
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/arithmetica">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/arithmetica.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Arithmetica
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/basketball-stars">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/basketball-stars.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Basketball Stars
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/battle-wheels">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/battle-wheels.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Battle Wheels
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/big-shot-boxing">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/big-shot-boxing.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Big Shot Boxing
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/big-tall-small">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/big-tall-small.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Big Tall Small
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/bitlife">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/bitlife.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Bitlife
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/block-the-pig">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/block-the-pig.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Block The Pig
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/blumgi-ball">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/blumgi-ball.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Blumgi Ball
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/blumgi-castle">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/blumgi-castle.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Blumgi Castle
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/blumgi-rocket">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/blumgi-rocket.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Blumgi Rocket
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/blumgi-slime">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/blumgi-slime.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Blumgi Slime
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/brain-for-monster-truck">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/brain-for-monster-truck.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Brain For Monster Truck
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/brain-test-2-tricky-stories">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/brain-test-2-tricky-stories.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Brain Test 2: Tricky Stories
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/brain-test-3-tricky-quests">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/brain-test-3-tricky-quests.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Brain Test 3: Tricky Quests
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/brain-test-tricky-puzzles">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/brain-test-tricky-puzzles.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Brain Test: Tricky Puzzles
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/cat-trap">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/cat-trap.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Cat Trap
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/chicken-merge">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/chicken-merge.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Chicken Merge
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/city-car-driving-stunt-master">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/city-car-driving-stunt-master.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  City Car Driving: Stunt Master
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/cluster-rush">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/cluster-rush.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Cluster Rush
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/cookie-clicker">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/cookie-clicker.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Cookie Clicker
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/crazy-cars">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/crazy-cars.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Crazy Cars
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/crossy-road">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/crossy-road.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Crossy Road
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/cubes-king">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/cubes-king.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Cubes King
+                </h3>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-2 game-item">
+<a class="game-link" href="/game/detective-loupe-puzzle">
+<img class="img-fluid game-card__cover" src="/assets/img/thumbs/classroom6x/detective-loupe-puzzle.png"/>
+<h3 class="game-card__title" style="font-size: 15px">
+                  Detective Loupe Puzzle
+                </h3>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+        function fixGameFrame(reload) {
+          const gameFrame = document.getElementById("gameFrame");
+          if (gameFrame) {
+            gameFrame.style.width = "100%";
+            let frameWidth = gameFrame.clientWidth;
+            if (frameWidth > 840) {
+              frameWidth = 840;
+              // gameFrame.style.height= `${frameWidth}px`;
+            }
+            let frameHeight = Math.floor((frameWidth * 6) / 8);
+            gameFrame.style.height = `${frameHeight}px`;
+            gameFrame.style.scrolling = "none";
+            gameFrame.style.frameborder = 0;
+          }
+        }
+        window.addEventListener("load", (event) => {
+          fixGameFrame(true);
+        });
+        window.addEventListener("resize", (event) => {
+          fixGameFrame(false);
+        });
+      </script>
+<script>
+        var elem = document.getElementById("gameFrame");
+        function openFullscreen() {
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) {
+            /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) {
+            /* IE11 */
+            elem.msRequestFullscreen();
+          }
+        }
+      </script>
+</main>
+<footer>
+<div class="copyright">
+<div class="container">
+<span>Classroom 6x - Play Unblocked Games for Free!</span>
+</div>
+</div>
+</footer>
+<a class="go-top" href="#"><i class="fa fa-arrow-up"></i></a>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-1.11.3.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script src="/assets/js/search_v1_0.js"></script>
+</body>
+</html>

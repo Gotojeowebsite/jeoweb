@@ -1,0 +1,19 @@
+[
+  {
+    "name": "snow-rider-3d",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.21,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8309/Assets/snow-rider-3d/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

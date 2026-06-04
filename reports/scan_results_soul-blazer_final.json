@@ -1,0 +1,19 @@
+[
+  {
+    "name": "soul-blazer",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 360.136,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
+        "severity": "warning",
+        "url": "http://localhost:8119/Assets/soul-blazer/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

@@ -6,10 +6,16 @@ import os
 import sys
 from pathlib import Path
 
-def run_command(args, cwd=None):
+def run_command(args, cwd=None, timeout=120):
     print(f"Running: {' '.join(args)}")
-    res = subprocess.run(args, capture_output=True, text=True, cwd=cwd)
-    return res.returncode, res.stdout, res.stderr
+    try:
+        res = subprocess.run(args, capture_output=True, text=True, cwd=cwd, timeout=timeout)
+        return res.returncode, res.stdout, res.stderr
+    except subprocess.TimeoutExpired as e:
+        print(f"Command timed out after {timeout} seconds: {' '.join(args)}")
+        stdout_str = e.stdout if isinstance(e.stdout, str) else (e.stdout.decode('utf-8', errors='ignore') if e.stdout else "")
+        stderr_str = e.stderr if isinstance(e.stderr, str) else (e.stderr.decode('utf-8', errors='ignore') if e.stderr else "")
+        return 124, stdout_str, stderr_str
 
 def main():
     parser = argparse.ArgumentParser()
@@ -61,7 +67,7 @@ def main():
         if has_html:
             # Step 1: Run scan to check if it works
             code, stdout, stderr = run_command([
-                "python3", "broken_game_scanner.py", "--only", slug, "--report-json", f"reports/scan_results_{slug}.json", "--port", str(args.port)
+                "python3", "broken_game_scanner.py", "--only", slug, "--report-json", f"reports/scan_results_{slug}.json", "--port", str(args.port), "--timeout-ms", "25000", "--hard-timeout-seconds", "60"
             ])
             # Parse scan results
             scan_report_path = Path(f"reports/scan_results_{slug}.json")
@@ -86,8 +92,9 @@ def main():
                     if game_res:
                         verdict = game_res.get("status") or game_res.get("verdict") or "unknown"
                         issues = game_res.get("critical_issues") or game_res.get("issues") or []
-                        print(f"Scan verdict for {slug}: {verdict}, issues count: {len(issues)}")
-                        if verdict in ["broken", "fail"] or any(iss.get("severity") in ["error", "critical"] for iss in issues):
+                        warnings = game_res.get("warnings") or []
+                        print(f"Scan verdict for {slug}: {verdict}, issues count: {len(issues)}, warnings count: {len(warnings)}")
+                        if verdict in ["broken", "fail", "inconclusive"] or any(iss.get("severity") in ["error", "critical"] for iss in issues) or any(w.get("code") == "SCAN_HARD_TIMEOUT" for w in warnings):
                             is_broken = True
                             reason = f"scanner_{verdict}"
                     else:
@@ -135,7 +142,7 @@ def main():
         if has_html or recovered:
             run_command(["node", "scan.js", "--slug", slug]) # update games_list.json
             code, stdout, stderr = run_command([
-                "python3", "broken_game_scanner.py", "--only", slug, "--report-json", f"reports/scan_results_{slug}_final.json", "--port", str(args.port)
+                "python3", "broken_game_scanner.py", "--only", slug, "--report-json", f"reports/scan_results_{slug}_final.json", "--port", str(args.port), "--timeout-ms", "25000", "--hard-timeout-seconds", "60"
             ])
             final_report_path = Path(f"reports/scan_results_{slug}_final.json")
             if final_report_path.exists():

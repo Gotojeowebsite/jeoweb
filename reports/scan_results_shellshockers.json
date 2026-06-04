@@ -4,16 +4,22 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 42.932,
+    "elapsed_seconds": 42.244,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8087/Assets/shellshockers/data/housePromo.json?1780436003901"
+        "url": "http://localhost:8087/Assets/shellshockers/data/housePromo.json?1780496679939"
       }
     ],
     "warnings": [
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      },
       {
         "code": "EXTERNAL_OPTIONAL",
         "message": "Optional external request detected",
@@ -37,12 +43,6 @@
         "message": "External non-critical request failed",
         "severity": "warning",
         "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      },
-      {
-        "code": "RUNTIME_ADVISORY",
-        "message": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
-        "severity": "warning",
-        "url": ""
       },
       {
         "code": "EXTERNAL_OPTIONAL",
@@ -166,7 +166,7 @@
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 2,
+      "canvasRAFTicks": 31,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,

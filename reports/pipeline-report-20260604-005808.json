@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "generated_at": "2026-06-04T00:58:08.118Z",
+  "unix_at": 1780534688,
+  "config": {
+    "phases": [
+      "audit",
+      "localize",
+      "heal",
+      "verify"
+    ],
+    "workers": 2,
+    "dryRun": true,
+    "brokenOnly": false,
+    "baseUrl": null
+  },
+  "summary": {
+    "total": 1,
+    "healthy": 0,
+    "broken": 1,
+    "degraded": 0,
+    "healed": 0,
+    "localized": 0,
+    "errors": 0,
+    "totalDurationMs": 26348
+  },
+  "results": [
+    {
+      "slug": "0v0",
+      "type": "webgl",
+      "phases": {
+        "audit": {
+          "slug": "0v0",
+          "status": "broken",
+          "failures": [
+            "EMPTY_DOM",
+            "WHITE_SCREEN"
+          ],
+          "assets": {
+            "local": [
+              {
+                "url": "file:///workspaces/jeoweb/Assets/0v0/index.html",
+                "type": "other"
+              }
+            ],
+            "external": []
+          },
+          "consoleErrors": [],
+          "timestamp": 1780534676910,
+          "durationMs": 15139
+        },
+        "localize": {
+          "slug": "0v0",
+          "downloaded": 0,
+          "rewritten": 0,
+          "skipped": "no_external_assets"
+        },
+        "heal": {
+          "slug": "0v0",
+          "healed": false,
+          "skipped": "dry_run"
+        },
+        "verify": {
+          "slug": "0v0",
+          "status": "broken",
+          "checks": {
+            "navigation": true,
+            "httpStatus": 200,
+            "domContent": {
+              "elementCount": 0,
+              "hasContent": false,
+              "bodyTextLength": 0
+            },
+            "canvas": {
+              "hasCanvas": false,
+              "contextOk": false,
+              "pixelData": false
+            },
+            "consoleErrorCount": 0,
+            "consoleErrors": [],
+            "failedRequestCount": 0,
+            "networkErrors": [],
+            "title": "",
+            "hasErrorOverlay": false
+          },
+          "failures": [
+            "WHITE_SCREEN",
+            "EMPTY_DOM"
+          ],
+          "timestamp": 1780534688093,
+          "durationMs": 11149
+        }
+      },
+      "startedAt": "2026-06-04T00:57:41.770Z",
+      "completedAt": "2026-06-04T00:58:08.118Z",
+      "durationMs": 26348,
+      "finalStatus": "broken"
+    }
+  ]
+}

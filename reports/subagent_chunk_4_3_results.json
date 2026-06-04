@@ -1,0 +1,32 @@
+{
+  "pacman": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "broken"
+  },
+  "pandemic2": {
+    "initial_broken": true,
+    "initial_reason": "scanner_inconclusive",
+    "recovered": false,
+    "final_verdict": "unknown"
+  },
+  "papalouie": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": false,
+    "final_verdict": "inconclusive"
+  },
+  "papalouie2": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "inconclusive"
+  },
+  "papalouie3": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": true,
+    "final_verdict": "inconclusive"
+  }
+}

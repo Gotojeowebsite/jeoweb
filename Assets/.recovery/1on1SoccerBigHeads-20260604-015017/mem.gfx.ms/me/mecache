@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    
+    
+</head>
+<body>
+    <div id="body" role="main">
+        
+<script>
+    var INIT = "INI", SUCCESS = "OK", FAIL = "BAD", CACHE = "CACHE", MISS = "MISS";
+    var Gets = [], Sets = [], state = "smcconvergence";
+    var targetOrigin = "*";
+    var SevenDaysMS = 604800000, TimeKey = "_timeOffSet_";
+    window.addEventListener("message", handleCacheRequest);
+    postMessageToParent(state, INIT);
+
+    function handleCacheRequest(e) {
+        if (validateArgs(e)) {
+            Sets = e.data.sets;
+            Gets = e.data.gets; 
+            targetOrigin = e.origin;
+            state = e.data.state;
+            try {
+                if (window.localStorage) {
+                    ls = window.localStorage;
+                    for (var idx in Sets) {
+                        try {
+                            if (Sets[idx].key) {
+                                var item = ls.getItem(Sets[idx].key);
+                                item = merge(item, Sets[idx]);
+                                ls.setItem(Sets[idx].key, JSON.stringify(item));
+                            }
+                        }
+                        catch (e) {
+                            postMessageToParent(state, FAIL, { key: Sets[idx].key, error: e });
+                        }
+                    }
+                    var item = undefined;
+                    for (var gKey in Gets) {
+                        var getItemReq = Gets[gKey];
+                        item = ls.getItem(getItemReq.key);
+                        try{
+                            if (!item || itemInvalid(JSON.parse(item, getItemReq._timeOffSet_))) { 
+                                window.localStorage.removeItem(getItemReq.key);
+                                postMessageToParent(state, MISS, { key: getItemReq.key });
+                            }
+                            else {
+                                postMessageToParent(state, CACHE, JSON.parse(item));
+                            }
+                        } catch (e) {
+                            postMessageToParent(state, FAIL, { key: getItemReq.key, error: e });
+                        }
+                    }
+                }
+                window.removeEventListener("message", handleCacheRequest);
+            } catch (e) { postMessageToParent(state, FAIL, { error: e }); }
+        }
+    }
+    function postMessageToParent(state, status, payload) {
+        window.parent.postMessage(
+            { state, status, payload },
+            "https://support.microsoft.com"
+        );
+    }
+    function validateArgs(e) { return e.data.state && (!e.sets && !e.gets) }
+    function itemInvalid(i, t) { return !i || !i[TimeKey] || (Date.now() - i[TimeKey]) > SevenDaysMS; }
+    function merge(trgt, src) {
+        if (!trgt) {
+            src[TimeKey] = Date.now();
+            return src
+        };
+        trgt = JSON.parse(trgt);
+        for (let prop in src) {
+            if (hasOwn(src, prop) && !!src[prop]) {
+                trgt[prop] = src[prop];
+                if(!trgt[TimeKey]){
+                    trgt[TimeKey] = Date.now();
+                }
+            }
+        }
+        return trgt;
+    }
+</script>
+
+    </div>
+    
+</body>
+</html>

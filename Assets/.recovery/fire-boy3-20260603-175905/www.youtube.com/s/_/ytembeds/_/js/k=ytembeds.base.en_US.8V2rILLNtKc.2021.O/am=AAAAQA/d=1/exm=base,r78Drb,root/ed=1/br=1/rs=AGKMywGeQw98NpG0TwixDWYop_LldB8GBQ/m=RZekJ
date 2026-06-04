@@ -1,0 +1,15 @@
+"use strict";this.default_base=this.default_base||{};(function(_){var window=this;
+try{
+var uAa=function(a,b){return a.startsWith(b.uniqueId)},K$=function(){_.yp(new _.Rj("Smartimation player does not exist or is corrupted"))},vAa=async function(a){var b=await _.uI();b?.addEventListener?b.addEventListener("onCueRangeEnter",a):K$()},L$=async function(a){var b=await _.uI();b?.removeEventListener?b.removeEventListener("onCueRangeEnter",a):K$()},wAa=async function(a){var b=await _.uI();if(b?.addCueRange)for(let c of a.Rj)b.addCueRange(`${a.uniqueId}-${c}`,c/1E3,(c+100)/1E3);else K$()},xAa=
+async function(a){var b=await _.uI();if(b?.removeCueRange)for(let c of a.Rj)b.removeCueRange(`${a.uniqueId}-${c}`);else K$()},yAa=async function(){var a=await _.uI();if(a?.getPlayerState)return a.getPlayerState()===2;K$()};_.JD=_.O(a=>{async function b(t){uAa(t,k())&&k().enabled&&!await yAa()&&(c(),setTimeout(()=>{h(!1)},1500))}function c(){setTimeout(()=>{h(!0);d.lottieEl?.goToAndPlay(0)},150)}var d=_.KQ(),[e,f]=_.J(!1,void 0,"vSCwob"),h=f,{settings:k,children:l,className:m}=_.uD(a,{settings:{uniqueId:"this is not intended behavior",enabled:!1,Md:!1,Rj:[]}});_.xK(()=>{k?.()?.uniqueId==="this is not intended behavior"&&_.yp(new _.Rj("Smartimation Settings is undefined"))});_.kF(()=>{k().Md&&(k().enabled?vAa(b):(h(!1),
+L$(b)),_.Iu(()=>{L$(b)}))},"Q8gXRd");_.kF(()=>{k().Rj.join("");k().Md&&(wAa(k()),_.Iu(()=>{xAa(k())}))},"BNNhzc");var n=_.P(()=>{var t=d,r=k();return{animationRef:t,animationConfig:{name:`${r.uniqueId}-border`,autoplay:!1,loop:!1,path:`https://www.gstatic.com/youtube/img/lottie/smartimations/smartimation_border_${_.y().resolve(_.Cn(_.gF))?.()??!1?"dark":"light"}_v2.json`}}},void 0,"ILGD2");try{var p=window.CSS?.supports?window.CSS.supports("-webkit-mask","linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)")&&
+(window.CSS.supports("-webkit-mask-composite","xor")||window.CSS.supports("mask-composite","exclude")):!1}catch(t){_.yp(new _.Rj("Smartimation CSS.supports threw an error")),p=!1}return _.L("yt-smartimation",{class:_.S(m,"ytSmartImationsHost",{ytSmartImationsExperimentEnabled:()=>k().Md,ytSmartImationsActiveBorder:e,ytSmartImationsEnableMasking:p})},_.L(_.R,{A:()=>k().Md,then:()=>_.L("div",{class:"ytSmartImationsBorder"},_.L(_.qM,{className:"ytSmartImationsBorderGradient",data:n,animationName:()=>
+n().animationConfig.name}))}),_.L("div",{class:"ytSmartImationsContent"},l))},"mi");_.JD.idomCompat=!0;
+}catch(e){_._DumpException(e)}
+try{
+_.Rd("RZekJ");
+
+_.Sd();
+}catch(e){_._DumpException(e)}
+}).call(this,this.default_base);
+// Google Inc.

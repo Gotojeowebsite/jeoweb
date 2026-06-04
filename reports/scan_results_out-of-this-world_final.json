@@ -1,0 +1,38 @@
+[
+  {
+    "name": "out-of-this-world",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 34.526,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8206/Assets/out-of-this-world/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8206/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RETRO_CORE_NOT_OBSERVED",
+        "message": "No successful EmulatorJS core load observed during wait window",
+        "severity": "warning",
+        "url": "http://localhost:8206/Assets/out-of-this-world/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

@@ -1,0 +1,2120 @@
+[
+  {
+    "name": "jelly-truck",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 70.309,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Invalid or unexpected token",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "gadgets is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/title.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/title.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/splash_coolmath.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/splash_coolmath.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/loader.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/loader.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/preload.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/Loading/preload.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.1220,tbsd_.595,tbnd_.-1908&srt=1220&gadget=default&container=default&view=default&e=&rt=dl.2164,ol.4633,prt.4633"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.1220,tbsd_.595,tbnd_.-1908&srt=1220&gadget=default&container=default&view=default&e=&rt=dl.2164,ol.4633,prt.4633"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/background/bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/background/bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/background/bg_light.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/background/bg_light.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/menu_bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/menu_bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/paint.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/paint.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/play.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/play.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/help.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/help.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/radio_button.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/radio_button.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options_choose_level.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options_choose_level.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/option_main_menu.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/option_main_menu.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/fx.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/fx.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/sound.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/sound.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/pause.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/pause.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/restart.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/restart.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/leaf1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/leaf1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/yellow_leaf.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/yellow_leaf.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_bg.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_lock.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_lock.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/back_btn.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/back_btn.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/next_mission.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/next_mission.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/down_arrow.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/down_arrow.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/3_star.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/3_star.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/how_to_play_popup.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/how_to_play_popup.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/how_to_play_popup_mobile.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/how_to_play_popup_mobile.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/closeBtn.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/closeBtn.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_restart.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/level_restart.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bolt.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bolt.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_head.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_head.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_mid.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_mid.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_bot.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/flag_bot.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/Truck3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/wheel.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/wheel.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_truck.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_truck.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_wheel_back.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_wheel_back.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_wheel_front.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/enemy_wheel_front.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_5.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_5.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/gum_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/hallow.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/hallow.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/rope1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/rope1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0002.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0002.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/platform_mark.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/platform_mark.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/truck2_icon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/truck2_icon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/arrow14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/arrow14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/level_8_door_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/level_8_door_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/level_8_door_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/level_8_door_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/truck3_icon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/truck/truck3_icon.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/star01.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/star01.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/star02.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/star02.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/go_img.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/go_img.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/stop_img.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/stop_img.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/left.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/left.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/right.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/right.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/ballIcon13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/ballIcon13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Box1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Box1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Box2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Box2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bolt12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bolt12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge15.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge15.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0001.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0001.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/box17_small.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/box17_small.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/box17_long.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/box17_long.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill17_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill17_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill17_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill17_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bar17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bar17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/barWheel17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/barWheel17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge18.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/bridge18.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0005.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/crusher0005.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/balloonburst.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/balloonburst.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill18_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill18_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill18_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/mill18_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Blade_mill.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/Blade_mill.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/yellow_hor_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/yellow_hor_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/small_orange_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/small_orange_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/red_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/red_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/orange_hor_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/orange_hor_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/dark_orange_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/texture/dark_orange_ver_bar.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options_popup.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/menu/options_popup.png"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/100_truck_bang2.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/100_truck_bang2.mp3"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/menu_scene.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/menu_scene.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_5.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_5.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_5_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_5_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_8.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_8.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_9.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_9.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_10.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_10.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_11.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_11.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_15.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_15.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_16.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_16.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_18.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_18.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_19.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_19.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_20.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/scene/scene_20.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/menu_ground.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/menu_ground.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_1.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_2.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_3.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_4.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_6.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_7.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_9.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_9.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_12.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_13.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_14.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_17.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_19.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_19.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_20.png"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/ground/ground_20.png"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/physics.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/physics.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/menu.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/menu.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level01.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level01.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level02.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level02.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level03.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level03.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level04.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level04.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level05.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level05.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level06.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level06.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level07.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level07.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level08.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level08.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level09.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level09.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level10.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level10.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level11.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level11.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level12.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level12.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level13.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level13.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level14.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level14.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level15.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level15.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level16.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level16.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level17.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level17.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level18.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level18.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level19.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level19.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level20.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/data/Level20.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/lego.json"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/js/lego.json"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/93_melodia1.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/93_melodia1.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/92_melodia2a.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/92_melodia2a.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/74_melodia2.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/74_melodia2.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/84_truck_slow.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/84_truck_slow.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/80_truck_speed.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/80_truck_speed.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/94_truck_idle.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/94_truck_idle.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/99_truck_bang1.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/99_truck_bang1.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/70_truck_hit.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/70_truck_hit.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/83_wo11.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/83_wo11.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/82_wo22.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/82_wo22.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/81_wo33.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/81_wo33.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/77_truck_start.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/77_truck_start.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/98_zvuk_over.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/98_zvuk_over.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/68_zvuk_click.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/68_zvuk_click.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/97_zvuk_odraz.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/97_zvuk_odraz.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/95_auto_crash2.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/95_auto_crash2.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/79_auto_crash4.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/79_auto_crash4.mp3"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/62_yeah.mp3"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cdn.jsdelivr.net/gh/MopNop/jello@6fc0bb6fff02f6a562752375b847a9e4ffb50c22/jellytruck/assets/sounds/mp3/62_yeah.mp3"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-333033371",
+      "canvasNonzeroPixels": 1,
+      "canvasPixelVariance": 116,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": true,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-333033371",
+      "canvasNonzeroPixelsFirst": 1,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "-333033371",
+      "canvasNonzeroPixelsAfterInput": 1,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

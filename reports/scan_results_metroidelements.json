@@ -1,0 +1,19 @@
+[
+  {
+    "name": "metroidelements",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 53.646,
+    "critical_issues": [
+      {
+        "code": "SCAN_WORKER_ERROR",
+        "message": "Isolated worker exception: BrowserContext.new_page: Target page, context or browser has been closed",
+        "severity": "critical",
+        "url": "http://localhost:8114/Assets/metroidelements/index.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {}
+  }
+]

@@ -154,5 +154,23 @@
     "initial_reason": "scanner_broken",
     "recovered": false,
     "final_verdict": "broken"
+  },
+  "csgo-clicker": {
+    "initial_broken": false,
+    "initial_reason": "",
+    "recovered": false,
+    "final_verdict": "ok"
+  },
+  "ctr": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "broken"
+  },
+  "ctr-holiday": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "broken"
   }
 }

@@ -172,5 +172,23 @@
     "initial_reason": "",
     "recovered": false,
     "final_verdict": "warning"
+  },
+  "abobosbigadventure": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": false,
+    "final_verdict": "broken"
+  },
+  "achievementunlocked": {
+    "initial_broken": false,
+    "initial_reason": "",
+    "recovered": false,
+    "final_verdict": "ok"
+  },
+  "achievementunlocked2": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "broken"
   }
 }

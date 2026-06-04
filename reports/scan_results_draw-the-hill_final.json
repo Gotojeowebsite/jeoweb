@@ -1,0 +1,19 @@
+[
+  {
+    "name": "draw-the-hill",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 100.063,
+    "critical_issues": [
+      {
+        "code": "SCAN_WORKER_ERROR",
+        "message": "Isolated worker exception: BrowserContext.new_page: Target page, context or browser has been closed",
+        "severity": "critical",
+        "url": "http://localhost:8203/Assets/draw-the-hill/index.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {}
+  }
+]

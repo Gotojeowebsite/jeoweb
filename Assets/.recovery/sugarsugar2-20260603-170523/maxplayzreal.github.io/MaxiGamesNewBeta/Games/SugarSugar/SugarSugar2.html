@@ -1,0 +1,106 @@
+<html>
+    <title>MaxiGames | Sugar, Sugar 2</title>
+    <head>
+        <link rel="stylesheet" href="../stylegames.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/mg_favicon.png">
+
+        <script src="https://kit.fontawesome.com/099ae7de0b.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
+    </head>
+        
+
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <a href="../../index.html">
+                    <img src="../../Assets/maxigameslogoglow.png" alt="MaxiGames Logo" href="../../index.html" draggable="false" id="maxigameslogo">
+                </a>
+                <ul>
+                    <li><a href="../../gamespage.html"><i class="fa-solid fa-gamepad fa-2xl"></i></a></li>
+                    <li><a href="../../index.html"><i class="fa-solid fa-house fa-2xl"></i></a></li>
+                </ul>
+            </div>
+            <div class="content1">
+                <div class="title">
+                    <h1>Sugar, Sugar 2</h1>
+                </div>
+                <div class="player_container">
+                    <script>
+                        window.RufflePlayer = window.Ruffle || {};
+                        window.RufflePlayer.config = {
+                            "scale": "showAll",
+                            "forceScale": true,
+                        }
+                    </script>
+                    <script src="../../SelfHosted/ruffle/ruffle.js"></script>
+<div class="swf"dir="ltr" style="text-align: center;" trbidi="on">
+        <embed width="60%" height="700vh"  pluginspage=" http://www.macromedia.com/go/getflashplayer" src="https://maxplayzreal.github.io/Flash-Games-SWF/SugarSugar2.swf" type="application/x-shockwave-flash"></embed>
+</div>
+                </div>
+                <img draggable="false" src="../../Assets/Fullscreen.png" alt="Fullscreen Game" class="fullscreenBTN" onclick="fullscreenRuffleScript() ">
+
+                <script>
+                    function fullscreenRuffleScript() {
+                        document.querySelector("ruffle-embed, ruffle-object, ruffle-player").enterFullscreen();
+                    }
+                </script>
+                 <script>
+                    var button = document.getElementById("toggle")
+                    let currentTheme = localStorage.getItem("selectedTheme")
+                    if (currentTheme == "light-theme") {
+                        document.body.classList.toggle(localStorage.getItem("selectedTheme"))
+                        button.className = "fa-solid fa-moon fa-2xl"
+                    };
+                    if (currentTheme == "dark-theme") {
+                        document.body.classList.toggle(localStorage.getItem("selectedTheme"));
+                        document.body.classList.toggle(localStorage.getItem("selectedTheme"))
+                        button.className = "fa-solid fa-sun fa-2xl"
+                    };
+                    
+                    button.onclick = function(){
+                        let currentThemee = localStorage.getItem("selectedTheme")
+                        if (currentThemee == "light-theme") {
+                            document.body.classList.toggle("light-theme")
+                            localStorage.setItem("selectedTheme", "dark-theme")
+                            button.className = "fa-solid fa-moon fa-2xl"
+                        } else {
+                            document.body.classList.toggle("light-theme")
+                            localStorage.setItem("selectedTheme", "light-theme")
+                            button.className = "fa-solid fa-sun fa-2xl"
+                            var flashbang = new Audio("Sounds/flash.mp3")
+                            flashbang.play()
+                        };
+                    }
+                </script>
+
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Sugar, Sugar is a strategic puzzle game where you draw lines to direct sugar into cups. Build bridges and slopes to catch the sugar and guide it into the cup. Sugar, Sugar was developed by Bart Bonte and delivers a fresh challenge with each level. <br> <br> <strong><a href="https://crazygames.com" target="_blank">Description by Crazy Games</a></strong></p>
+                </div>
+                <div class="controls">
+                    <h2>Controls</h2>
+                    <i class="fa-solid fa-computer-mouse fa-2xl" style="color: #ffffff;"></i>
+                    <p>Use mouse to draw lines to guide the sugar</p>
+                </div>
+                <div class="agrating">
+                    <h2>Age Rating</h2>
+                    <img src="../../Assets/ARatings/everyone.png" alt="Everyone">
+                    <p>Everyone</p>
+                </div>
+                <div class="plusInfo">
+                    <h2>Additional Info</h2>
+                    <img src="../../Assets/GameEngine/flash.png" alt="Adobe Flash">
+                    <p>Game Engine: Adobe Flash | Emulated with <strong><a href="https://ruffle.rs" target="_blank">Ruffle</a></strong></p>
+                    <p>Original Release Date: May 25, 2006</p>
+                    <p>Release Date on MaxiGames: February 12, 2024</p>
+                </div>
+        </div>
+        <div class="footer">
+            <img src="../../Assets/maxigameswhite.png" alt="MaxiGames Logo">
+            <p>Nightcore 2026. Name It. You got it.</p>
+            <a target="_blank" href="https://github.com/maxplayzreal/MaxiGames_Official"><i class="fa-brands fa-github fa-2xl"></i></a>
+        </div>
+    </body>
+</html>

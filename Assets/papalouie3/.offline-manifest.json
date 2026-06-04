@@ -1,28 +1,53 @@
 {
   "schema": 1,
   "slug": "papalouie3",
-  "engine": "ruffle",
+  "engine": "flash",
   "entry": "index.html",
-  "generated_at": 1780406876,
+  "generated_at": 1780509289,
   "files": [
     {
+      "path": ".recovery-provenance.json",
+      "size": 279,
+      "required": false
+    },
+    {
       "path": "index.html",
-      "size": 993,
+      "size": 378,
       "required": true
     },
     {
-      "path": "logo.jpg",
-      "size": 117978,
-      "required": false
+      "path": "pandausa1453.github.io/games/papalouie3.html",
+      "size": 1613,
+      "required": true
     },
     {
-      "path": "logo.webp",
-      "size": 37406,
-      "required": false
-    },
-    {
-      "path": "papalouie3.swf",
+      "path": "pandausa1453.github.io/games/PapaLouie3.swf",
       "size": 12106193,
+      "required": true
+    },
+    {
+      "path": "unpkg.com/@ruffle-rs/ruffle@0.2.0/core.ruffle.a6584f4c154875f3f805.js",
+      "size": 102936,
+      "required": true
+    },
+    {
+      "path": "unpkg.com/@ruffle-rs/ruffle@0.2.0/ecc5e233d534bdc785c1.wasm",
+      "size": 12974369,
+      "required": true
+    },
+    {
+      "path": "unpkg.com/@ruffle-rs/ruffle@0.2.0/ruffle.js",
+      "size": 457962,
+      "required": true
+    },
+    {
+      "path": "www.fliplineads.com/serve/data/papalouie3.xml",
+      "size": 1415,
+      "required": false
+    },
+    {
+      "path": "www.fliplineads.com/serve/images/v19_pastariaTG.swf",
+      "size": 132449,
       "required": true
     }
   ],

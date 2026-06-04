@@ -1,0 +1,22 @@
+{
+  "name": "KBH Games",
+  "short_name": "KBH Games",
+  "description": "Play free online games",
+  "start_url": "https://kbhgames.com/",
+  "scope": "https://kbhgames.com/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "https://kbhgames.com/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://kbhgames.com/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

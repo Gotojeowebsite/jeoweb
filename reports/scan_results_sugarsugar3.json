@@ -1,0 +1,19 @@
+[
+  {
+    "name": "sugarsugar3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.247,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8310/Assets/sugarsugar3/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

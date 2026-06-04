@@ -1,0 +1,62 @@
+[
+  {
+    "name": "stickman-hook",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 38.672,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "consolelog is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Error: WebGL unsupported in this browser, use \"pixi.js-legacy\" for fallback canvas2d support.\n    at e.create (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:24100:23)\n    at http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:26150:27\n    at e.t (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:26151:14)\n    at new e (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:30161:35)\n    at _c (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:30146:17)\n    at http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:30373:59\n    at h (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:9715:28)\n    at Generator._invoke (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:9697:33)\n    at t.<computed> [as throw] (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:9748:33)\n    at n (http://localhost:8120/Assets/stickman-hook/_game_local/games.mathpapers.us/stickman-hook/bundle.js:397:25)",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 74,
+      "bodyTextSample": "this source blocks iframe embedding right now.\nopen game source in new tab",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "name": "dumbwaystodie",
+    "type": "webgl",
+    "entry_file": "dumbwaystodie.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 362.772,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 360s",
+        "severity": "warning",
+        "url": "http://localhost:8108/Assets/dumbwaystodie/dumbwaystodie.html"
+      }
+    ],
+    "probe": {}
+  }
+]

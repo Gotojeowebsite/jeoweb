@@ -1,0 +1,19 @@
+[
+  {
+    "name": "pokemon-sapphire-version",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "inconclusive",
+    "elapsed_seconds": 60.187,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "SCAN_HARD_TIMEOUT",
+        "message": "Game scan exceeded hard timeout of 60s",
+        "severity": "warning",
+        "url": "http://localhost:8308/Assets/pokemon-sapphire-version/index.html"
+      }
+    ],
+    "probe": {}
+  }
+]

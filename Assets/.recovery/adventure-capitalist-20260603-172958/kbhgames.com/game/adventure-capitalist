@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AdVenture Capitalist - Idle Clicker Tycoon Puzzle Game</title>
+<link rel="preload" as="image" href="https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp" fetchpriority="high">
+<style>
+  html {
+            overflow-y: scroll;
+        }
+  body {
+            color: #ededed;
+            background-color: #000;
+            border: none;
+            margin: 0;
+            font-family: sans-serif;
+                        overflow-x: hidden;
+                    }
+
+        h1 {
+            font-size: 1.8em;
+            font-family: sans-serif;
+            line-height: 1.167em
+        }
+
+        h1,
+        h1 a,
+        h1 a:visited {
+            color: #f4f4f4;
+        }
+
+        h2 {
+            color: #f4f4f4;
+            line-height: 1em;
+        }
+
+    
+	header {
+		height: 60px;
+	}
+
+
+        p {
+            line-height: 1.8em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgb(101 101 101 / 30%);
+            margin: 20px 0;
+        }
+
+        .boxInner2,
+        .boxInner3 {
+            height: 208px;
+            width: 180px;
+            background: #2a2a2a;
+            color: #fff;
+            min-height: 208px;
+            min-width: 180px;
+            contain: layout style;
+        }
+
+
+        .boxInner2 a,
+        .boxInner3 a {
+            color: #626262
+        }
+
+        .boxInner,
+        .boxInner2,
+        .boxInner3 {
+            margin: 4px 5px 12px;
+			border-radius: 12px;
+            position: relative;
+            border: 1px solid rgb(101 101 101 / 20%);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            overflow: hidden;
+        }
+        .boxInner:hover,
+        .boxInner2:hover,
+        .boxInner3:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 198, 0, 0.3);
+        }
+
+        .boxInner3 img {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .titleBox {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 20, 0.9);
+            border-radius: 0 0 12px 12px;
+            font: 14px sans-serif;
+            padding: 6px 8px;
+            overflow: hidden;
+            position: absolute;
+            box-sizing: border-box;
+            color: #ddd;
+            text-align: center;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ededed;
+        }
+
+        .morelinks a {
+            font-weight: 600;
+            font-size: 15px !important;
+        }
+
+        #items li,
+        .navlink,
+        .navlink a,
+        ul.tabs li {
+            display: inline-block
+        }
+
+        .logo {
+            padding: 15px;
+        }
+
+        .logo a {
+            font-size: 20px;
+            color: #ffc600;
+            font-weight: 700;
+        }
+
+        ::placeholder {
+            color: #cbcbcb;
+        }
+
+        #content {
+            text-align: center;
+            background: #000;
+        }
+
+        ol,
+        ul {
+            padding: 0;
+        }
+
+     .boxInner2 img {
+                border-radius: 10px 10px 0 0;
+				    aspect-ratio: 1 / 1;
+                width: 180px;
+                height: auto;
+                background-color: #2a2a2a;
+        }
+
+@font-face {
+    font-family: "font-1";
+    src: url("https://kbhgames.com/wp-content/themes/v1/images/font-aw/fonts/font-1.woff") format("woff"),
+         url("https://kbhgames.com/wp-content/themes/v1/images/font-aw/fonts/font-1.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "font-1" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+}
+.icon-heart:before { content: "\61"; min-width: 20px; }
+.icon-thumbs-up:before { content: "\62"; min-width: 25px; }
+.icon-thumbs-down:before { content: "\63"; min-width: 25px; }
+.icon-arrows-alt:before { content: "\64"; min-width: 20px; }
+.icon-arrows-alt, .icon-heart { font-size: 23px; }
+.icon.icon-thumbs-up, .icon-thumbs-down { font-size: 25px; }
+.score-button .icon-thumbs-up:before { visibility: hidden; }
+.wpfp-span .icon-heart:before { visibility: hidden; }
+
+#useful-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: right;
+    background: #131313;
+    padding: 15px 15px 15px 30px;
+    border-radius: 15px;
+}
+.tooltip-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.tooltip-wrap::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #131313;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+    z-index: 1000;
+}
+.tooltip-wrap:hover::after { opacity: 1; visibility: visible; }
+.tooltip-fullscreen::after { bottom: calc(100% - 5px); }
+
+.right-button {
+    right: 0;
+	margin: 175px -20px;
+    display: inline-block;
+    background-color: #000;
+    width: 3em;
+    height: 3em;
+    border: .5em solid #f9f9f9;
+    border-radius: 50%;
+    margin-left: 1.5em
+}
+
+
+
+.vote-tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: none;
+    /* Position it relative to the score-button */
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.vote-tooltip-error {
+    background: #454545;
+    color: white;
+}
+
+.vote-tooltip-success {
+    background: #4CAF50;
+    color: white;
+}
+
+.vote-tooltip-error:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #454545;
+}
+
+.vote-tooltip-success:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #4CAF50;
+}
+
+p.agelimit {
+	flex-basis: 100%;
+	width: 100%;
+	text-align: center;
+	margin: 16px 0 0;
+	padding: 12px 24px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: 0.3px;
+	position: relative;
+	z-index: 2;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+	background: linear-gradient(90deg, transparent, rgba(255, 183, 77, 0.12), transparent);
+	box-sizing: border-box;
+}
+p.agelimit::before {
+	content: "\26A0";
+	margin-right: 10px;
+	color: #ffc107;
+	font-size: 22px;
+	vertical-align: -3px;
+	text-shadow: 0 0 12px rgba(255, 193, 7, 0.5);
+}
+
+@media screen and (min-width:610px) {
+	p.extlink {
+		margin-top: 150px;
+		margin-left: -300px;
+		color: #fff;
+	}
+}
+@media (min-width: 610px) and (max-width: 1111px) {
+	p.extlink {
+		margin-top: 0px;
+		margin-left: 0px;
+		color: #fff;
+	}
+}
+
+
+.score-button {
+    position: relative; /* Needed for absolute positioning of tooltip */
+}
+
+/* Mobile fullscreen nav - like & favorite buttons */
+.nav-right .mobile-like-wrap {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+}
+.mobile-like-wrap .vote-tooltip {
+    top: 100%;
+    margin-top: 5px;
+}
+.mobile-like-wrap .vote-tooltip:after {
+    bottom: auto;
+    top: -5px;
+    border-top: none;
+    border-bottom: 5px solid #454545;
+}
+.mobile-like-wrap .vote-tooltip-success:after {
+    border-bottom-color: #4CAF50;
+}
+.nav-right .mobile-like-wrap a {
+    text-decoration: none;
+}
+.nav-right .mobile-like-wrap .icon-thumbs-up {
+    font-size: 18px;
+    color: #e7e7e7;
+    white-space: nowrap;
+}
+.nav-right .mobile-like-wrap .action-like div[style] {
+    font-size: 12px;
+    color: #e7e7e7;
+}
+.nav-right .mobile-fav-wrap {
+    display: inline-flex;
+    align-items: center;
+}
+.nav-right .mobile-fav-wrap .wpfp-span {
+    position: static;
+    margin: 0;
+}
+.nav-right .mobile-fav-wrap a {
+    text-decoration: none;
+}
+.nav-right .mobile-fav-wrap .icon-heart {
+    font-size: 18px;
+    color: #e7e7e7;
+}
+.nav-right .mobile-fav-wrap .icon-heart.red {
+    color: #ff1717;
+}
+
+	 #description ul,
+        #description ol {
+			line-height: 1.8em;
+            padding: 5px 30px;
+        }
+       #content {
+            text-align: center;
+            background: #000;
+        }
+div#howto ul {
+    padding-left: 30px;
+}
+
+        .tag-carousel {
+            margin: auto auto;
+            padding: 15px;
+            position: relative;
+        }
+
+        .tag-carousel2 {
+            width: 90%;
+			height: 272px;
+			 min-height: 272px;                                                                                                                           
+			contain: layout style; 
+        }
+		.gamehead{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: rgba(20, 20, 20, 0.95);
+			padding: 5px 20px;
+			border: 1px solid rgb(101 101 101 / 20%);
+			border-bottom: none;
+			border-radius: 16px 16px 0 0;
+		}
+        .score-button {
+            float: none;
+            padding: 10px;
+            margin: 10px;
+        }
+        .score-button .action-like {
+            float: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+        .score-button .action-unlike {
+            float: none;
+            display: inline-flex;
+            align-items: center;
+            width: auto;
+        }
+        .score-button .watch-action {
+            float: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .score-button .watch-position {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .score-button .icon-thumbs-up {
+            color: #e7e7e7;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+        .score-button .icon-thumbs-up:hover {
+            color: #4CAF50;
+        }
+        /* Lottie like animation */
+        .score-button .action-like {
+            position: relative;
+        }
+        .icon-thumbs-up.lottie-active:before {
+            visibility: hidden;
+        }
+        .lottie-like {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            line-height: 0;
+        }
+        .lottie-like dotlottie-wc {
+            display: block;
+            width: 90px;
+        }
+        @keyframes count-bump {
+            0%   { transform: translateY(0); opacity: 1; }
+            35%  { transform: translateY(-8px); opacity: 0.3; }
+            65%  { transform: translateY(2px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .count-bump {
+            animation: count-bump 0.45s ease-out forwards;
+            display: inline-block !important;
+        }
+        /* Lottie favorite animation */
+        .icon-heart.lottie-active {
+            position: relative;
+        }
+        .icon-heart.lottie-active:before {
+            visibility: hidden;
+        }
+        .lottie-fav {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            line-height: 0;
+        }
+        .lottie-fav dotlottie-wc {
+            display: block;
+            width: 90px;
+        }
+        .score-button .icon-thumbs-down {
+            color: #888;
+            transition: color 0.2s ease;
+        }
+        .score-button .icon-thumbs-down:hover {
+            color: #e53935;
+        }
+        .score-button .status {
+            display: none;
+        }
+        .score-button .wti-clear {
+            display: none;
+        }
+
+        .slider,
+        .slider2 {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+			     min-height: 220px;
+        }
+
+        span.sf.alignleft {
+            font-weight: 700;
+            font-size: 1.5em;
+            padding: 10px;
+        }
+
+        .alignleft {
+            float: left;
+        }
+
+        ul.tags {
+            list-style: none;
+        }
+
+        a.moreless.more {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        #playgame {
+            justify-content: center;
+            display: grid;
+            margin: 20px 0;
+        }
+        #game {
+            display: grid;
+            justify-items: center;
+            background-color: #131313;
+            border-radius: 0 0 16px 16px;
+            border: 1px solid rgb(101 101 101 / 20%);
+        }
+        #game hr {
+            border: 1px solid #434343;
+        }
+        #game:fullscreen iframe,
+        #game:-webkit-full-screen iframe {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        #game:fullscreen #useful-buttons,
+        #game:-webkit-full-screen #useful-buttons {
+            display: none;
+        }
+
+        #how-to p,
+        #description p {
+            max-width: 75%;
+            color: #e4e4e4;
+            line-height: 1.8em;
+        }
+
+        ul#breadcrumb {
+            list-style: none;
+            padding: 10px 15px;
+            margin: 0 6%;
+            font-size: 14px;
+            display: flex;
+            flex-flow: wrap;
+            align-items: center;
+            gap: 2px;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 0 0 10px 10px;
+            border: 1px solid rgb(101 101 101 / 12%);
+            border-top: none;
+        }
+        ul#breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+        ul#breadcrumb li a {
+            color: #999;
+            transition: color 0.2s ease;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul#breadcrumb li a:hover {
+            color: #ffc600;
+            text-decoration: none;
+        }
+        ul#breadcrumb li:last-child a {
+            color: #ccc;
+            pointer-events: none;
+        }
+        ul#breadcrumb li+li:before {
+            padding: 0 6px;
+            color: #555;
+            content: "/";
+            font-size: 12px;
+        }
+
+           .playbutton {
+            align-items: center;
+            align-content: center;
+            padding: 20px 200px;
+            min-height: 30vh;
+			position: sticky;
+            display: flex;
+            flex-wrap: wrap;
+            background: #181818;
+            border: 1px solid rgb(101 101 101 / 20%);
+            border-top: none;
+            overflow: hidden;
+        }
+		.playbutton:before {
+			content: " ";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+						background-image: url(https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp);
+						background-repeat: no-repeat;
+			background-size: cover;
+			filter: blur(50px) brightness(0.5);
+			z-index: -1;
+			
+			
+		}
+        .ptb img {
+             border-radius: 100px;
+			border: 3px solid rgba(255, 255, 255, 0.15);
+            aspect-ratio: 1 / 1;
+            width: 180px;
+            height: 180px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .playnowtext:hover .ptb img {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 40px rgba(66, 133, 244, 0.3);
+        }
+		.btnplaynow {
+			background: linear-gradient(180deg, #43a047, #2e7d32);
+			border: none;
+			border-radius: 12px;
+			margin-left: 15px;
+			padding: 14px 24px;
+			color: #fff;
+			box-shadow: 0 4px 0 #1b5e20, 0 6px 20px rgba(0, 0, 0, 0.4);
+			transition: all 0.15s ease;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		}
+		.btnplaynow:hover {
+			background: linear-gradient(180deg, #4caf50, #388e3c);
+			box-shadow: 0 4px 0 #1b5e20, 0 8px 25px rgba(76, 175, 80, 0.3);
+			transform: translateY(-1px);
+		}
+		.btnplaynow:active {
+			box-shadow: 0 2px 0 #1b5e20, 0 3px 10px rgba(0, 0, 0, 0.4);
+			transform: translateY(2px);
+		}
+        #info {
+            padding: 0 7%;
+        }
+
+        ul.tabs {
+				padding: 3px;
+
+				border-radius: 5px 5px 0 0;
+				margin: auto;
+				padding: 5px 0 0px;
+				max-width: 1000px;
+
+        }
+
+        .tags li {
+            margin: 0;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #info-box ul.tags a,
+        #info-box ul.tags a:link,
+        #info-box ul.tags a:visited {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px 9px 14px;
+            border-radius: 999px;
+            font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: normal;
+            color: #dddddd;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: color .25s, background .25s, border-color .25s, transform .25s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #info-box ul.tags a::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex: none;
+            background: #ffc600;
+            box-shadow: 0 0 8px #ffc600;
+            transition: transform .25s, box-shadow .25s;
+            z-index: 1;
+        }
+
+        #info-box ul.tags a::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(110deg, transparent 35%, rgba(255, 198, 0, 0.35) 50%, transparent 65%);
+            transform: translateX(-120%);
+            transition: transform .6s ease;
+        }
+
+        #info-box ul.tags a:hover,
+        #info-box ul.tags a:link:hover,
+        #info-box ul.tags a:visited:hover {
+            color: #ffffff;
+            background: rgba(255, 198, 0, 0.06);
+            border-color: rgba(255, 198, 0, 0.5);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        #info-box ul.tags a:hover::before {
+            transform: scale(1.4);
+            box-shadow: 0 0 14px #ffc600;
+        }
+        #info-box ul.tags a:hover::after {
+            transform: translateX(120%);
+        }
+
+
+        .playnowtext {
+            font-size: 50px;
+            color: white;
+            display: contents;
+            cursor: pointer;
+            padding: 30px 10px;
+            font-weight: 700;
+        }
+
+        #info-box {
+            padding: 30px;
+			max-width: 1000px;
+			background-color: #161616;
+			border-radius: 15px;
+			margin: 15px auto;
+			border: 1px solid rgb(255 255 255 / 15%);
+        }
+
+        #info-box a {
+            color: #abd4fd;
+        }
+
+        #info-box ul {
+            line-height: 1.8em;
+        }
+
+.midbox {
+			font-size: 16px;
+			text-align: left;
+			max-width: 100%;
+			border-radius: 16px;
+			margin: 10px 0;
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+
+        .midbox h1 {
+            color: #e4e4e4;
+  
+        }
+
+        .tab-content {
+            padding: 10px
+        }
+
+        ul.tabs li {
+            color: #fafafa;
+            padding: 3px;
+			    text-align: center;
+            cursor: pointer;
+            width: 150px;
+            font-weight: 600;
+        }
+
+        ul.tabs li.current {
+               color: #EEE;
+			       text-align: center;
+				border-radius: 10px;
+				border: 1px solid #494949;
+				background: #181818;
+				padding: 7px;
+        }
+
+        .tab-content.current {
+            display: inherit;
+        }
+
+
+		.tab-content {
+			display: none;
+		}
+
+        @media (hover:none) {
+            .nomobile {
+                display: none;
+            }
+        }
+
+ @media screen and (max-width: 1600px) {
+            .playbutton {
+                padding: 20px 150px;
+            }
+        }
+
+        @media screen and (max-width: 1400px) {
+            .playbutton {
+                padding: 20px 100px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .playbutton {
+                padding: 20px 70px;
+            }
+        }
+
+        @media screen and (max-width: 979px) {
+            #info {
+                padding: 0 10px;
+            }
+            #extra-desc {
+                padding: 7px;
+            }
+            .playbutton {
+                padding: 20px 40px;
+                justify-content: center;
+            }
+      
+            ul.tabs {
+                display: none;
+            }
+            ul.tabs li {
+                width: 20%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .playbutton {
+                padding: 20px 30px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .playbutton {
+                padding: 20px 20px;
+            }
+			   .playnowtext {
+                font-size: 25px;
+            }
+        }
+
+        @media screen and (max-height: 430px) and (orientation: landscape) {
+            .playbutton {
+                padding: 15px 30px;
+                min-height: 25vh;
+            }
+        }
+
+        #how-to button {
+            font-weight: 600;
+        }
+		p#extra-desc {
+			padding: 0 7%;
+			text-align: left;
+		}
+			
+			
+			.gridofimages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.game-footer {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgb(101 101 101 / 15%);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin: 10px 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+.game-footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+.game-footer-icons .icon-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #b0b0b0;
+}
+.game-footer-icons .icon-item i { font-size: 15px; color: #ffc600; }
+.game-footer p { font-size: 15px; line-height: 1.6; color: #b0b0b0; margin: 0; }
+@media screen and (max-width: 600px) {
+    .game-footer { padding: 1.2rem 1rem; }
+    .game-footer-icons { gap: 8px; }
+    .game-footer-icons .icon-item { padding: 5px 10px; font-size: 12px; }
+    .game-footer p { font-size: 14px; }
+}
+
+
+
+
+
+   .align-right {
+            float: right;
+        }
+
+        #mySidebar {
+            height: 100%;
+            width: 180px;
+            background: #000;
+            position: fixed !important;
+            overflow: hidden;
+            z-index: 999999;
+        }
+
+        #mySidebar:hover {
+            overflow: auto;
+        }
+
+        a.sidebar-bar-item {
+            display: block;
+            padding: 5px;
+            color: #ddd !important;
+            text-decoration: none;
+        }
+
+        a.sidebar-bar-item:hover {
+            background: #19273b;
+            text-decoration: none;
+        }
+
+        #mySidebar::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        #mySidebar::-webkit-scrollbar-thumb {
+            background: rgba(168, 168, 168, 0.8);
+        }
+
+        #searchform input[type="text"] {
+          border-radius: 2px;
+    width: 50%;
+    font-size: 18px;
+    height: 10px;
+    color: #ededed;
+    background-color: #000;
+    border: 1px solid #4b4b4b;
+    padding: 10px;
+        }
+
+        .navlink button {
+            margin: 0 10px;
+            color: #ededed;
+            background-color: #575757;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: x-large;
+            width: 55px;
+            display: none
+        }
+
+        .navlink button:focus {
+            outline: 0;
+        }
+
+
+        button.btn.btn-primary {
+              border-radius: 0px;
+				font-size: 16px;
+				height: 33px;
+				border: 0px solid #000;
+				background-color: #181818;
+				padding: 0 15px 0 15px;
+
+        }
+
+.searchbutton{
+	color: #fff;
+    border: 1px solid #645b5b;
+    background-color: #181818;
+    font-size: 30px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+        #info-box h3 {
+            padding: 20px 0 0;
+            margin: 0 0 20px;
+        }
+
+        .searchbar {
+       
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 480px) {
+            #back-to-top,
+            .login {
+                display: none;
+            }
+            #how-to p,
+            #description p {
+                max-width: 100%;
+            }
+            #searchform input[type="text"] {
+                width: 155px;
+            }
+            .searchbar {
+                width: 0%;
+                padding: 0px
+            }
+            #info-box .align-right {
+                float: none;
+            }
+            #how-to,
+            #description {
+                max-width: 100%;
+            }
+            #extra-desc {
+                padding: 15px !important;
+            }
+            #topnav {
+                height: 60px;
+                padding: 10px;
+            }
+            #mySidebar {
+                overflow-y: auto;
+            }
+            .tagwrap {
+                padding: 1px
+            }
+            .rr {
+                display: none;
+            }
+			
+	
+
+        }
+
+        .rr {
+            margin: auto;
+            float: right;
+            padding: 10px;
+        }
+
+
+/* ===== TOP NAVBAR ===== */
+.top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background-color: #0f0f0f;
+      border-bottom: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 1005;
+      box-sizing: border-box;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* PWA back/forward nav — shown on mobile/tablet and standalone */
+    .pwa-nav-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #999;
+      font-size: 1.15rem;
+      cursor: pointer;
+      padding: 6px;
+      margin: 0;
+      transition: color 0.2s;
+    }
+    .pwa-nav-btn:hover { color: #fff; }
+    .pwa-nav-btn:active { color: #ffc800; }
+
+    @media (display-mode: standalone) {
+      .pwa-nav-btn { display: inline-block; }
+      #install-app-link { display: none; }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ffc800;
+      user-select: none;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      max-width: 600px;
+      margin: 0 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .search-container form {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .search-container input {
+      flex: 1;
+      padding: 10px 80px 10px 16px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      background-color: #121212;
+      color: #fff;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .search-container input:focus {
+      outline: none;
+      border-color: #555;
+    }
+
+    .search-container button[type="submit"] {
+      position: absolute;
+      right: 5px;
+      padding: 6px 12px;
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 1.3rem;
+      transition: background-color 0.2s;
+    }
+
+    .search-container button[type="submit"]:hover {
+      background-color: #303030;
+    }
+
+    .search-container .search-clear-btn {
+      position: absolute;
+      right: 42px;
+      padding: 4px 8px;
+      border: none;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1;
+      border-radius: 50%;
+      display: none;
+      transition: color 0.2s;
+    }
+
+    .search-container input:not(:placeholder-shown) ~ .search-clear-btn {
+      display: block;
+    }
+
+    .search-container .search-clear-btn:hover {
+      color: #fff;
+    }
+
+    /* ===== PROFILE ICON ===== */
+    .profile-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-btn:hover {
+      color: #ffc600;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .wrapper {
+        display: flex;
+	    overflow: hidden;
+    }
+
+    .sidebar {
+      width: 50px;
+      background-color: #000;
+      border-right: 1px solid #222;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      padding-top: 56px;
+      box-sizing: border-box;
+      z-index: 1000;
+      transition: width 0.3s ease;
+      /* Firefox scrollbar - hidden by default */
+      scrollbar-width: none;
+      scrollbar-color: transparent transparent;
+    }
+
+    .sidebar:hover,
+    .sidebar.expanded {
+      width: 200px;
+    }
+
+    .sidebar.hidden {
+      transform: translateX(-100%);
+    }
+
+    .sidebar:hover,
+    .sidebar.expanded {
+      scrollbar-width: thin;
+      scrollbar-color: #333 transparent;
+    }
+
+
+    .sidebar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .sidebar:hover::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 4px;
+    }
+
+    .sidebar:hover::-webkit-scrollbar-thumb {
+      background-color: #333;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb:hover {
+      background-color: #444;
+    }
+
+    .navbar-collapse ul {
+      list-style: none;
+      flex-grow: 1;
+      padding: 10px 0;
+      background-color: #000;
+    }
+
+    .navbar-collapse ul li a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      color: #ccc;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, padding 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .sidebar:hover .navbar-collapse ul li a,
+    .sidebar.expanded .navbar-collapse ul li a {
+      padding: 12px 20px;
+    }
+
+    .navbar-collapse ul li a i {
+      min-width: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-right: 0;
+      transition: margin 0.3s ease;
+    }
+
+    .sidebar:hover .navbar-collapse ul li a i,
+    .sidebar.expanded .navbar-collapse ul li a i {
+      margin-right: 12px;
+    }
+
+    .navbar-collapse ul li a span {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar:hover .navbar-collapse ul li a span,
+    .sidebar.expanded .navbar-collapse ul li a span {
+      opacity: 1;
+    }
+
+    .navbar-collapse ul li a:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    /* Footer links styling */
+    .footer-links {
+      font-size: 0.7rem;
+      color: #666;
+      padding: 8px 15px;
+      margin-top: 10px;
+      border-top: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: padding 0.3s ease;
+    }
+
+    .sidebar:hover .footer-links,
+    .sidebar.expanded .footer-links {
+      padding: 8px 20px;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-links a i {
+      min-width: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-right: 0;
+      transition: margin 0.3s ease;
+    }
+
+    .sidebar:hover .footer-links a i,
+    .sidebar.expanded .footer-links a i {
+      margin-right: 10px;
+    }
+
+    .footer-links a span {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar:hover .footer-links a span,
+    .sidebar.expanded .footer-links a span {
+      opacity: 1;
+    }
+
+    .footer-links a:hover {
+      color: #999;
+    }
+
+    /* Section separators */
+    .section-separator {
+      height: 1px;
+      background-color: #333;
+      margin: 16px 20px;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      flex-grow: 1;
+      padding: 10px;
+      padding-top: 15px;
+      color: #fff;
+      margin-left: 50px;
+      transition: margin-left 0.15s ease, max-width 0.15s ease;
+      box-sizing: border-box;
+      max-width: calc(100vw - 50px);
+    }
+
+    .sidebar.hidden ~ .main-content {
+      margin-left: 0;
+      max-width: 100vw;
+    }
+
+    /* ===== OVERLAY for Mobile ===== */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+    @media (max-width: 992px) {
+      .search-container {
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        width: 220px;
+      }
+
+      .sidebar.show {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        max-width: 100vw;
+        padding-top: 60px;
+      }
+
+      .overlay.show {
+        display: block;
+      }
+
+      .search-container {
+        display: none !important;
+      }
+
+      .search-icon-btn {
+        display: inline-block !important;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 3rem;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .profile-btn {
+        font-size: 1.25rem;
+      }
+
+      .mobile-search-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: #0f0f0f;
+        z-index: 1006;
+        flex-direction: column;
+      }
+      .mobile-search-overlay.show {
+        display: flex;
+        animation: kbhSlideUp 0.25s ease;
+      }
+      @keyframes kbhSlideUp {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .mobile-search-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        border-bottom: 1px solid #222;
+      }
+      .mobile-search-header .search-input-wrap {
+        flex: 1; position: relative; display: flex; align-items: center;
+      }
+      .mobile-search-header input {
+        width: 100%; padding: 12px 44px 12px 16px;
+        border: 1px solid #333; border-radius: 24px;
+        background: #121212; color: #fff; font-size: 1rem;
+        outline: none; transition: border-color 0.2s;
+      }
+      .mobile-search-header input:focus { border-color: #ffc600; }
+      .mobile-search-header .search-input-icon {
+        position: absolute; right: 14px;
+        color: #999; font-size: 1.3rem; pointer-events: none;
+      }
+      .mobile-search-header .search-clear-btn {
+        position: absolute; right: 8px;
+        padding: 6px 10px; border: none; background: transparent;
+        color: #999; cursor: pointer; font-size: 1rem; line-height: 1;
+        border-radius: 50%; display: none; transition: color 0.2s;
+      }
+      .mobile-search-header input:not(:placeholder-shown) ~ .search-clear-btn {
+        display: block;
+      }
+      .mobile-search-header input:not(:placeholder-shown) ~ .search-input-icon {
+        display: none;
+      }
+      .mobile-search-header .search-clear-btn:hover { color: #fff; }
+      .mobile-close-btn {
+        background: none; border: none; color: #999;
+        font-size: 1.4rem; cursor: pointer; padding: 4px 2px;
+        flex-shrink: 0;
+      }
+      .mobile-search-body {
+        flex: 1; overflow-y: auto; padding: 16px;
+      }
+    }
+
+    /* Search dropdown (desktop) */
+    .search-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0; right: 0;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      z-index: 1003;
+      padding: 16px;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .search-dropdown.show { display: block; }
+    .search-dimmer {
+      display: none;
+      position: fixed;
+      top: 56px; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1002;
+    }
+    .search-dimmer.show { display: block; }
+
+    /* Shared search UI styles */
+    .search-section { margin-bottom: 20px; }
+    .search-section-title {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px; color: #ffc600;
+      font-size: 0.95rem; font-weight: 600;
+    }
+    .search-section-title i { font-size: 1rem; }
+    .cp-scroll-wrap { position: relative; }
+    .continue-playing-row {
+      display: flex; gap: 12px; overflow-x: auto;
+      padding-bottom: 8px; scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+    .continue-playing-row::-webkit-scrollbar { display: none; }
+    .cp-card {
+      flex-shrink: 0; width: 110px;
+      text-decoration: none; color: #ddd;
+      transition: transform 0.2s;
+    }
+    .cp-card:hover { transform: translateY(-3px); }
+    .cp-card img {
+      width: 110px; height: 110px; border-radius: 10px;
+      object-fit: cover; background: #2a2a2a; display: block;
+      border: 1px solid rgba(101,101,101,0.2);
+    }
+    .cp-card .cp-title {
+      font-size: 0.8rem; text-align: center; margin-top: 6px;
+      white-space: nowrap; overflow: hidden;
+      text-overflow: ellipsis; color: #ccc;
+    }
+    .cp-title-arrows {
+      margin-left: auto; display: flex; gap: 6px;
+    }
+    .cp-title-arrows .cp-scroll-btn {
+      position: static; transform: none;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(30,30,30,0.9); border: 1px solid #444;
+      color: #fff; font-size: 0.8rem; cursor: pointer;
+      align-items: center; justify-content: center;
+      transition: opacity 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+    }
+    .cp-title-arrows .cp-scroll-btn:hover { background: rgba(255,198,0,0.15); border-color: #ffc600; }
+    .cp-scroll-btn {
+      position: absolute; top: 50%; transform: translateY(-60%);
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(30,30,30,0.9); border: 1px solid #444;
+      color: #fff; font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2; transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .cp-scroll-btn:hover { background: rgba(255,198,0,0.15); border-color: #ffc600; }
+    .cp-scroll-btn.left { left: -8px; }
+    .cp-scroll-btn.right { right: -8px; }
+    .recent-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .recent-pill {
+      padding: 8px 16px; background: #2a2a2a; border: 1px solid #333;
+      border-radius: 20px; color: #ccc; font-size: 0.85rem;
+      cursor: pointer; transition: all 0.2s; text-decoration: none;
+    }
+    .recent-pill:hover { background: rgba(255,198,0,0.1); border-color: rgba(255,198,0,0.3); color: #fff; }
+    .live-results { display: none; }
+    .live-results.show { display: block; }
+    .live-result-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 8px; border-radius: 8px; cursor: pointer;
+      transition: background 0.15s; text-decoration: none; color: #ddd;
+    }
+    .live-result-item:hover { background: rgba(255,198,0,0.08); }
+    .live-result-item img {
+      width: 48px; height: 48px; border-radius: 8px;
+      object-fit: cover; background: #2a2a2a; flex-shrink: 0;
+    }
+    .live-result-item .result-info { flex: 1; min-width: 0; }
+    .live-result-item .result-title {
+      font-size: 0.95rem; font-weight: 500;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .live-result-item .result-tag { font-size: 0.75rem; color: #999; margin-top: 2px; }
+    .search-loading { display: none; text-align: center; padding: 24px; color: #999; }
+    .search-loading.show { display: block; }
+    .search-loading .spinner {
+      display: inline-block; width: 24px; height: 24px;
+      border: 2px solid #333; border-top-color: #ffc600;
+      border-radius: 50%; animation: kbhSpin 0.6s linear infinite;
+    }
+    @keyframes kbhSpin { to { transform: rotate(360deg); } }
+    .live-search-view-all {
+      display: block; text-align: center; padding: 12px;
+      margin-top: 8px; color: #ffc600; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none; border-top: 1px solid #333;
+      transition: background 0.2s;
+    }
+    .live-search-view-all:hover { background: rgba(255,198,0,0.08); }
+    @media (max-width: 768px) {
+      .cp-card { width: 100px; }
+      .cp-card img { width: 100px; height: 100px; }
+    }
+	
+	
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+html { touch-action: pan-x pan-y !important; }
+</style>
+<script>
+document.addEventListener('touchstart',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});
+document.addEventListener('touchmove',function(e){if(e.touches.length>1||(e.scale!==undefined&&e.scale!==1))e.preventDefault();},{passive:false});
+document.addEventListener('gesturestart',function(e){e.preventDefault();});
+document.addEventListener('gesturechange',function(e){e.preventDefault();});
+document.addEventListener('gestureend',function(e){e.preventDefault();});
+</script>
+<link rel="manifest" href="https://kbhgames.com/manifest.json">
+<link rel="apple-touch-icon" href="https://kbhgames.com/pwa-icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="KBH Games">
+<meta name="theme-color" content="#0f0f0f">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEU2Njb/xgCuih97ZSvZqg9LQzNcUDFsWy6JbyiWeSW5kxvEmxfjsQr2wAPPohPtuQYI+9kBAAAAVUlEQVR42mNgwA3SWQsgDBWem4JyjApODCqKzcILE4EMfTlmYUXGzYcYFEWYBUUCBYUYFBcaCzc2AkVUYjcLN04EKeaSFJQNBDLSWc2NTZkTyhiIAADOyRDIUV4GggAAAABJRU5ErkJggg==">
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="canonical" href="https://kbhgames.com/game/adventure-capitalist">
+<meta name="description" content="AdVenture Capitalist - Free Idle Clicker Tycoon Puzzle Game  AdVenture Capitalist is a free single-player idle clicker puzzle game where players...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AdVenture Capitalist Online">
+<meta property="og:description" content="AdVenture Capitalist - Free Idle Clicker Tycoon Puzzle Game  AdVenture Capitalist is a free single-player idle clicker puzzle game where players...">
+<meta property="og:image" content="https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp">
+<meta property="og:url" content="https://kbhgames.com/game/adventure-capitalist">
+<meta property="og:site_name" content="KBH Games">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdVenture Capitalist Online">
+<meta name="twitter:description" content="AdVenture Capitalist - Free Idle Clicker Tycoon Puzzle Game  AdVenture Capitalist is a free single-player idle clicker puzzle game where players...">
+<meta name="twitter:image" content="https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "VideoGame",
+            "name": "AdVenture Capitalist",
+            "url": "https://kbhgames.com/game/adventure-capitalist",
+            "description": "AdVenture Capitalist - Free Idle Clicker Tycoon Puzzle Game  AdVenture Capitalist is a free single-player idle clicker puzzle game where players...",
+            "applicationCategory": "Game",
+            "operatingSystem": "Web Browser, Windows, Linux, MacOS, iOS, Android",
+            "gamePlatform": [
+                "Web Browser"
+            ],
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "datePublished": "2021-03-20",
+            "inLanguage": "en",
+            "genre": [
+                "Business",
+                "Capitalism",
+                "Casual",
+                "Clicker",
+                "Idle"
+            ],
+            "image": "https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp",
+            "thumbnailUrl": "https://kbhgames.com/wp-content/uploads/2021/03/AdVenture-Capitalist.webp",
+            "publisher": {
+                "@type": "Organization",
+                "name": "KBH Games",
+                "url": "https://kbhgames.com"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "KBHGames",
+                    "item": "https://kbhgames.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Simulator",
+                    "item": "https://kbhgames.com/tag/simulator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "AdVenture Capitalist"
+                }
+            ]
+        }
+    ]
+}
+</script>
+
+	 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRHSFW2NJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SRHSFW2NJT');
+</script>
+	 
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+
+
+
+ 
+        <link rel="preconnect" href="https://playgama.com" crossorigin>
+        <script async src="https://playgama.com/ads/partners.v0.2.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6866920588347480"
+     crossorigin="anonymous"></script>
+        </head>
+<body>
+<div class="top-nav">
+    <div class="nav-left">
+      <button class="menu-btn" id="toggle-btn">☰</button>
+      <button class="pwa-nav-btn" id="pwa-back" onclick="history.back()" title="Back"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="pwa-nav-btn" id="pwa-forward" onclick="history.forward()" title="Forward"><i class="fa-solid fa-arrow-right"></i></button>
+      <button class="pwa-nav-btn" id="pwa-refresh" onclick="location.reload()" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
+      <a href="https://kbhgames.com" class="nav-logo">KBHGames</a>
+    </div>
+
+    <div class="search-container" id="desktop-search">
+      <form role="search" class="form-search" method="get" action="https://kbhgames.com/">
+        <input type="text" name="s" id="desktop-search-input" placeholder="Search for a Game" aria-label="Search for a Game" autocomplete="off" value="">
+        <button type="button" class="search-clear-btn" aria-label="Clear search">✕</button>
+        <button type="submit">⌕</button>
+      </form>
+      <div class="search-dropdown" id="search-dropdown">
+        <div id="desktop-default-content">
+          <div class="search-section" id="desktop-cp-section" style="display:none">
+            <div class="search-section-title">
+              <i class="fa-solid fa-gamepad"></i> Continue Playing
+              <span class="cp-title-arrows">
+                <button class="cp-scroll-btn left" style="display:none" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="cp-scroll-btn right" style="display:none" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+              </span>
+            </div>
+            <div class="cp-scroll-wrap">
+              <div class="continue-playing-row" id="desktop-cp-row"></div>
+            </div>
+          </div>
+          <div class="search-section" id="desktop-rs-section" style="display:none">
+            <div class="search-section-title"><i class="fa-solid fa-clock-rotate-left"></i> Recent Searches</div>
+            <div class="recent-pills" id="desktop-rs-pills"></div>
+          </div>
+        </div>
+        <div class="live-results" id="desktop-live-results"></div>
+        <div class="search-loading" id="desktop-loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="search-icon-btn" id="search-icon-btn" style="display: none;">⌕</button>
+      <div class="profile-wrap">
+        <a href="https://kbhgames.com/favorite" class="profile-btn" title="Favorites" aria-label="Favorites"><i class="fa-solid fa-user"></i></a>
+        <div class="profile-dropdown" id="profile-dropdown" hidden>
+          <div class="profile-dropdown-header">
+            <img class="profile-dropdown-avatar" alt="" />
+            <span class="profile-dropdown-name"></span>
+          </div>
+          <a class="profile-dropdown-link" data-slot="profile"><i class="fa-solid fa-id-card"></i> My Profile</a>
+          <a class="profile-dropdown-link" data-slot="favorites"><i class="fa-solid fa-heart"></i> My Favorites</a>
+          <a class="profile-dropdown-link profile-dropdown-logout" data-slot="logout"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+        </div>
+      </div>
+    </div>
+    <style>
+      .profile-wrap { position: relative; display: inline-flex; }
+      .profile-dropdown[hidden] { display: none; }
+      .profile-dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 0;
+        min-width: 200px;
+        background: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.5);
+        padding: 6px;
+        z-index: 1000;
+        font-size: 14px;
+      }
+      .profile-dropdown-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px 10px;
+        border-bottom: 1px solid #333;
+        margin-bottom: 4px;
+      }
+      .profile-dropdown-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .profile-dropdown-name {
+        color: #fff;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .profile-dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 12px;
+        color: #ddd;
+        text-decoration: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .profile-dropdown-link:hover { background: #2a2a2a; color: #fff; }
+      .profile-dropdown-link i { width: 16px; text-align: center; color: #ff8c1a; }
+      .profile-dropdown-logout { border-top: 1px solid #333; margin-top: 4px; padding-top: 10px; border-radius: 0 0 6px 6px; }
+    </style>
+  </div>
+
+  <div class="search-dimmer" id="search-dimmer"></div>
+
+  <div class="mobile-search-overlay" id="mobile-search-overlay">
+    <div class="mobile-search-header">
+      <div class="search-input-wrap">
+        <input type="text" id="mobile-search-input" placeholder="Search for a game" autocomplete="off" value="">
+        <button type="button" class="search-clear-btn" aria-label="Clear search">✕</button>
+        <span class="search-input-icon">⌕</span>
+      </div>
+      <button class="mobile-close-btn" id="mobile-search-close">✕</button>
+    </div>
+    <div class="mobile-search-body">
+      <div id="mobile-default-content">
+        <div class="search-section" id="mobile-cp-section" style="display:none">
+          <div class="search-section-title">
+            <i class="fa-solid fa-gamepad"></i> Continue Playing
+            <span class="cp-title-arrows">
+              <button class="cp-scroll-btn left" style="display:none" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="cp-scroll-btn right" style="display:none" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+            </span>
+          </div>
+          <div class="cp-scroll-wrap">
+            <div class="continue-playing-row" id="mobile-cp-row"></div>
+          </div>
+        </div>
+        <div class="search-section" id="mobile-rs-section" style="display:none">
+          <div class="search-section-title"><i class="fa-solid fa-clock-rotate-left"></i> Recent Searches</div>
+          <div class="recent-pills" id="mobile-rs-pills"></div>
+        </div>
+      </div>
+      <div class="live-results" id="mobile-live-results"></div>
+      <div class="search-loading" id="mobile-loading"><div class="spinner"></div></div>
+    </div>
+  </div>
+
+
+  <div class="wrapper">
+     <div class="sidebar" id="sidebar">
+      <div class="navbar-collapse">
+        <ul class="navbar-nav">
+          <li><a href="https://kbhgames.com/new"><i class="fa-solid fa-star"></i><span>New Games</span></a></li>
+          <li><a href="https://kbhgames.com/popular-games"><i class="fa-solid fa-crown"></i><span>Popular Games</span></a></li>
+          <li><a href="https://kbhgames.com/trending"><i class="fa-solid fa-fire"></i><span>Trending</span></a></li>
+		  	  <li><a href="https://kbhgames.com/featured"><i class="fa-solid fa-trophy"></i><span>Featured</span></a></li>
+		  	  <li><a href="https://kbhgames.com/random"><i class="fa-solid fa-shuffle"></i><span>Lucky Roll</span></a></li>
+		  <li><a href="https://kbhgames.com/tag"><i class="fa-solid fa-tags"></i><span>Tags</span></a></li>
+		  <li><a href="#" id="install-app-link"><i class="fa-solid fa-desktop"></i><span>Install KBH App</span></a></li>
+        </ul>
+        
+        <div class="section-separator"></div>
+        
+        <ul class="navbar-nav">
+          <li><a href="https://kbhgames.com/tag/music"><i class="fa-solid fa-music"></i><span>Music</span></a></li>
+          <li><a href="https://kbhgames.com/tag/action"><i class="fa-solid fa-bolt"></i><span>Action</span></a></li>
+          <li><a href="https://kbhgames.com/tag/puzzle"><i class="fa-solid fa-puzzle-piece"></i><span>Puzzle</span></a></li>
+          <li><a href="https://kbhgames.com/tag/2-player"><i class="fa-solid fa-user-group"></i><span>2 Players</span></a></li>
+          <li><a href="https://kbhgames.com/tag/sports"><i class="fa-solid fa-futbol"></i><span>Sports</span></a></li>
+          <li><a href="https://kbhgames.com/tag/shooting"><i class="fa-solid fa-crosshairs"></i><span>Shooting</span></a></li>
+          <li><a href="https://kbhgames.com/tag/arcade"><i class="fa-solid fa-gamepad"></i><span>Arcade</span></a></li>
+		      <li><a href="https://kbhgames.com/tag/friday-night-funkin"><i class="fa-solid fa-microphone-lines"></i><span>Friday Night Funkin</span></a></li>
+          <li><a href="https://kbhgames.com/tag/3d"><i class="fa-solid fa-cube"></i><span>3D</span></a></li>
+		            <li><a href="https://kbhgames.com/tag/casual"><i class="fa-solid fa-couch"></i><span>Casual</span></a></li>
+          <li><a href="https://kbhgames.com/tag/car"><i class="fa-solid fa-car"></i><span>Car</span></a></li>
+          <li><a href="https://kbhgames.com/tag/strategy"><i class="fa-solid fa-chess"></i><span>Strategy</span></a></li>
+          <li><a href="https://kbhgames.com/tag/fighting"><i class="fa-solid fa-hand-fist"></i><span>Fighting</span></a></li>
+          <li><a href="https://kbhgames.com/tag/simulator"><i class="fa-solid fa-gears"></i><span>Simulator</span></a></li>
+          <li><a href="https://kbhgames.com/tag/platformer"><i class="fa-solid fa-person-running"></i><span>Platformer</span></a></li>
+          <li><a href="https://kbhgames.com/tag/educational"><i class="fa-solid fa-graduation-cap"></i><span>Educational</span></a></li>
+          <li><a href="https://kbhgames.com/tag/racing"><i class="fa-solid fa-flag-checkered"></i><span>Racing</span></a></li>
+          <li><a href="https://kbhgames.com/tag/funny"><i class="fa-solid fa-face-laugh"></i><span>Funny</span></a></li>
+          <li><a href="https://kbhgames.com/tag/horror"><i class="fa-solid fa-ghost"></i><span>Horror</span></a></li>
+          <li><a href="https://kbhgames.com/tag/retro"><i class="fa-solid fa-clock-rotate-left"></i><span>Retro</span></a></li>
+          <li><a href="https://kbhgames.com/tag/multiplayer"><i class="fa-solid fa-users"></i><span>Multiplayer</span></a></li>
+          <li><a href="https://kbhgames.com/tag/running"><i class="fa-solid fa-person-walking"></i><span>Run</span></a></li>
+          <li><a href="https://kbhgames.com/tag/board"><i class="fa-solid fa-chess-board"></i><span>Board</span></a></li>
+          <li><a href="https://kbhgames.com/tag/card"><i class="fa-solid fa-layer-group"></i><span>Card</span></a></li>
+          <li><a href="https://kbhgames.com/tag/cartoon"><i class="fa-solid fa-palette"></i><span>Cartoon</span></a></li>
+          <li><a href="https://kbhgames.com/tag/skill"><i class="fa-solid fa-brain"></i><span>Skill</span></a></li>
+          <li><a href="https://kbhgames.com/tag/download"><i class="fa-solid fa-download"></i><span>Download</span></a></li>
+        </ul>
+        <div class="footer-links">
+          <a href="https://kbhgames.com/about"><i class="fa-solid fa-circle-info"></i><span>About</span></a>
+          <a href="https://kbhgames.com/terms-of-use"><i class="fa-solid fa-file-contract"></i><span>Terms</span></a>
+          <a href="https://kbhgames.com/privacy"><i class="fa-solid fa-shield-halved"></i><span>Privacy</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+<script>window.kbhDisableAd = 0;</script>
+<script>window.kbhPostId = 113589;</script>
+<link rel="preload" href="https://kbhgames.com/wp-content/themes/v1/images/font-aw/fonts/font-1.woff" as="font" type="font/woff" crossorigin>
+
+
+<div class="main-content" id="content">
+
+<ul id="breadcrumb">
+  <li><a href="https://kbhgames.com"><span>KBHGames</span></a></li>
+  <li><a href="https://kbhgames.com/tag/simulator"><span>Simulator</span></a></li>
+  <li><a href="https://kbhgames.com/tag/tycoon"><span>Tycoon</span></a></li>
+  <li><a href="https://kbhgames.com/tag/upgrades"><span>Upgrades</span></a></li>
+  <li><span>AdVenture Capitalist</span></li>
+</ul>
+<div id="playscreen">
+		
+
+
+<div id="kbh-pg-display" style="max-width:980px;margin:0 auto;height:100px"></div>
+<script>
+(function(){
+  var el=document.getElementById('kbh-pg-display');
+  if(!el)return;
+  var AD_SIZES=[[980,90],[970,90],[960,90],[950,90],[728,90],[320,100],[300,100],[320,50],[300,50]];
+  var curTier=-1,sdkReady=false,initDone=false,dTimer=null;
+  function tier(w){
+    if(w>=950)return 4;if(w>=728)return 3;
+    if(w>=320)return 2;if(w>=300)return 1;return 0;
+  }
+  function sizes(w){
+    var r=[];
+    for(var i=0;i<AD_SIZES.length;i++)if(AD_SIZES[i][0]<=w)r.push(AD_SIZES[i]);
+    return r;
+  }
+  function reqAd(){
+    var w=el.offsetWidth||0,t=tier(w);
+    if(t===0){el.innerHTML='';curTier=0;return;}
+    var sz=sizes(w);curTier=t;el.innerHTML='';
+    window.pgAds.requestPageAd({el:'kbh-pg-display',type:'banner_1',sizes:sz,refresh:0})
+      .catch(function(e){console.log('pg display err',e);});
+  }
+  function onResize(){
+    if(!sdkReady)return;
+    var w=el.offsetWidth||0,t=tier(w);
+    if(t===curTier)return;
+    if(dTimer)clearTimeout(dTimer);
+    dTimer=setTimeout(function(){
+      dTimer=null;
+      var fw=el.offsetWidth||0,ft=tier(fw);
+      if(ft===curTier)return;
+      reqAd();
+    },50);
+  }
+  function initAd(){
+    if(initDone)return;initDone=true;
+    if(!window.__kbhPgInitPromise){
+      window.__kbhPgInitPromise=window.pgAds.init({clid:'p_2a375f02-ab07-479b-9efb-7aba37a929f7',gameId:'113589'});
+    }
+    window.__kbhPgInitPromise
+      .then(function(){sdkReady=true;reqAd();window.addEventListener('resize',onResize);})
+      .catch(function(e){console.log('pg display init err',e);});
+  }
+  if(window.pgAds){initAd();}
+  else{window.pgAdsCallbacks=window.pgAdsCallbacks||[];window.pgAdsCallbacks.push(initAd);}
+})();
+</script>
+
+
+
+
+
+		<div id="playgame">
+	
+
+         <div class="gamehead">
+		 <h1>AdVenture Capitalist</h1>
+                          <div class="score-button"><div class='watch-action'><div class='watch-position align-left'><a class='lbg-style1 like-113589 jlk' href='https://kbhgames.com/wp-admin/admin-ajax.php?action=wti_like_post_process_vote&amp;task=like&amp;post_id=113589&amp;nonce=777877778c' data-task='like' data-post_id='113589' data-nonce='777877778c' rel='nofollow'><div class='action-like'><div class='icon icon-thumbs-up'><div style='display: inline;padding-left:15px'>5K</div></div></div></a></div> <div class='status-113589 status align-left'></div></div><div class='wti-clear'></div></div>
+        </div>
+   
+			
+		<div id="game">
+	
+<iframe class="playbutton-iframe" src="https://kbhgames.com/wp-content/themes/v1/embed.php?url=https%3A%2F%2Fkdata1.com%2F2021%2F03%2Fadcapitalist%2F%3Fd&#038;canonical=https%3A%2F%2Fkbhgames.com%2Fgame%2Fadventure-capitalist&#038;w=1024&#038;h=725&#038;pid=113589&#038;thumb=https%3A%2F%2Fkbhgames.com%2Fwp-content%2Fuploads%2F2021%2F03%2FAdVenture-Capitalist.webp&#038;title=AdVenture+Capitalist&#038;agelimit=" width="1024" height="725" allow="autoplay; fullscreen; microphone" allowfullscreen scrolling="no" style="border:0;display:block;max-width:100%;background:#181818;margin:0 auto;"></iframe>
+<template id="kbh-game-embed"><iframe  width="1024" height="725" allowfullscreen="allowfullscreen" src="https://kdata1.com/2021/03/adcapitalist/?d" scrolling="no" allow="autoplay;cross-origin-isolated"></iframe></template>
+<div id="useful-buttons">
+    <div class="tooltip-wrap" data-tooltip="Favorite It">
+        <span class="wpfp-span"></span>
+    </div>
+    <div class="tooltip-wrap tooltip-fullscreen" data-tooltip="FullScreen">
+        <button class="button" style="color:#e7e7e7;background-color:#131313;border:none;cursor:pointer;border-radius:15px;padding:10px 0 0 10px;">
+            <div class="icon icon-arrows-alt"></div>
+        </button>
+    </div>
+</div>
+
+</div>
+
+		</div>
+
+	
+
+
+</div>
+
+	
+<div class="tag-carousel tag-carousel2">
+   <span class="sf alignleft">You might also Like</span>
+   <div id="related" class="slider">
+   
+
+	      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-miner-tycoon-gold-games">
+            <img src="https://kbhgames.com/wp-content/uploads/2026/04/Idle-Miner-TycoonGold-Games.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Miner Tycoon: Gold Games</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-airport-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/12/Idle-Airport-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Airport Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-pizza-business">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/08/Idle-Pizza-Business.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Pizza Business</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-daycare-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/Idle-Daycare-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Daycare Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-restaurant-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/11/Idle-Restaurant-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Restaurant Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-planet-gym-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/09/Idle-Planet-Gym-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Planet Gym Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-train-empire-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/07/Idle-Train-Empire-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Train Empire Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/rpg-idle-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/RPG-Idle-Clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">RPG Idle Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/monster-slayer-idle-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/07/monster-slayer-idle-clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Monster Slayer. Idle Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/gas-station-junkyard-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2026/02/gas-station-junkyard-tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Gas Station: Junkyard Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/airport-simulator-plane-tycoon">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/Airport-Simulator-Plane-Tycoon.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Airport Simulator Plane Tycoon</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/military-capitalist-idle-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2018/09/military-capitalist-idle-clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Military Capitalist: Idle Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-game-dev-simulator">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/Idle-Game-Dev-Simulator.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Game Dev Simulator</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/noob-digger-pro-drill-miner">
+            <img src="https://kbhgames.com/wp-content/uploads/2026/05/noob-digger-pro-drill-miner.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Noob Digger Pro Drill Miner</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/ram-idle-2">
+            <img src="https://kbhgames.com/wp-content/uploads/2026/03/RAM-Idle-2.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">RAM Idle 2</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/real-estate-tycoon-landlord">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/real-estate-tycoon-landlord-1.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Real Estate Tycoon: Landlord</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/drift-idle-drift-earn-upgrade">
+            <img src="https://kbhgames.com/wp-content/uploads/2026/05/Drift-Idle-Drift-Earn-Upgrade.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Drift Idle Drift Earn Upgrade</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/idle-business-empire-money-farm-tycoon-3d">
+            <img src="https://kbhgames.com/wp-content/uploads/2024/02/idle-business-empire-money-farm-tycoon-3d.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Idle Business Empire: Money Farm Tycoon 3D</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/chill-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/Chill-Clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Chill Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/italian-brainrot-clicker-2">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/06/Italian-Brainrot-Clicker-2.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Italian Brainrot Clicker 2</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/mine-clicker-cookie">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/08/mine-clicker-cookie.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Mine Clicker: Cookie!</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/italian-brainrot-baby-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/09/Italian-Brainrot-Baby-Clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Italian Brainrot Baby Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/car-dealer-idle">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/07/Car-Dealer-Idle.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Car Dealer Idle</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/galaxy-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/09/Galaxy-Clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Galaxy Clicker</div>
+         </a>
+      </div>
+
+		      <div class="boxInner2">
+         <a href="https://kbhgames.com/game/stickman-clicker">
+            <img src="https://kbhgames.com/wp-content/uploads/2025/07/Stickman-Clicker.webp" loading="lazy" width="180" height="180">
+            <div class="titleBox">Stickman Clicker</div>
+         </a>
+      </div>
+
+		
+      <div class="left-button onecol" style="display: block;"></div>
+      <div class="right-button onecol" style="display: none;"></div>
+   </div>
+</div>
+		<!-- Fetched from cache -->
+<div id="kbh-pg-display-after-related" class="kbh-pg-display" style="max-width:980px;margin:0 auto;height:100px"></div>
+<script>
+(function(){
+  var elId='kbh-pg-display-after-related';
+  var el=document.getElementById(elId);
+  if(!el)return;
+  var AD_SIZES=[[980,90],[970,90],[960,90],[950,90],[728,90],[320,100],[300,100],[320,50],[300,50]];
+  var curTier=-1,sdkReady=false,initDone=false,dTimer=null;
+  function tier(w){
+    if(w>=950)return 4;if(w>=728)return 3;
+    if(w>=320)return 2;if(w>=300)return 1;return 0;
+  }
+  function sizes(w){
+    var r=[];
+    for(var i=0;i<AD_SIZES.length;i++)if(AD_SIZES[i][0]<=w)r.push(AD_SIZES[i]);
+    return r;
+  }
+  function reqAd(){
+    var w=el.offsetWidth||0,t=tier(w);
+    if(t===0){el.innerHTML='';curTier=0;return;}
+    var sz=sizes(w);curTier=t;el.innerHTML='';
+    window.pgAds.requestPageAd({el:elId,type:'banner_1',sizes:sz,refresh:0})
+      .catch(function(e){console.log('pg display err',e);});
+  }
+  function onResize(){
+    if(!sdkReady)return;
+    var w=el.offsetWidth||0,t=tier(w);
+    if(t===curTier)return;
+    if(dTimer)clearTimeout(dTimer);
+    dTimer=setTimeout(function(){
+      dTimer=null;
+      var fw=el.offsetWidth||0,ft=tier(fw);
+      if(ft===curTier)return;
+      reqAd();
+    },50);
+  }
+  function readyAndReq(){sdkReady=true;reqAd();window.addEventListener('resize',onResize);}
+  function pageInit(){
+    if(initDone)return;initDone=true;
+    if(!window.__kbhPgInitPromise){
+      window.__kbhPgInitPromise=window.pgAds.init({clid:'p_2a375f02-ab07-479b-9efb-7aba37a929f7'});
+    }
+    window.__kbhPgInitPromise.then(readyAndReq).catch(function(e){console.log('pg display init err',e);});
+  }
+  if(window.pgAds){pageInit();}
+  else{window.pgAdsCallbacks=window.pgAdsCallbacks||[];window.pgAdsCallbacks.push(pageInit);}
+})();
+</script>
+
+<div class="midbox">
+
+	<div id="info">
+
+<div id="info-box">
+
+<ul class="tags"><li><a href="https://kbhgames.com/tag/business">Business</a></li><li><a href="https://kbhgames.com/tag/capitalism">Capitalism</a></li><li><a href="https://kbhgames.com/tag/casual">Casual</a></li><li><a href="https://kbhgames.com/tag/clicker">Clicker</a></li><li><a href="https://kbhgames.com/tag/idle">Idle</a></li><li><a href="https://kbhgames.com/tag/incremental">Incremental</a></li><li><a href="https://kbhgames.com/tag/indie">Indie</a></li><li><a href="https://kbhgames.com/tag/management">Management</a></li><li><a href="https://kbhgames.com/tag/puzzle">Puzzle</a></li><li><a href="https://kbhgames.com/tag/simulator">Simulator</a></li><li><a href="https://kbhgames.com/tag/tycoon">Tycoon</a></li><li><a href="https://kbhgames.com/tag/upgrades">Upgrades</a></li></ul>
+
+<!-- 				<div class="rr">
+					<ins class="adsbygoogle"
+						 style="display:inline-block;width:300px;height:250px"
+						 data-ad-client="ca-pub-6866920588347480"
+						 data-ad-slot="3340013601"></ins>
+					<script>
+						 (adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+ -->
+
+
+<div id="description">
+
+<h2 class="text-text-100 mt-3 -mb-1 text-[1.375rem] font-bold">AdVenture Capitalist &#8211; Free Idle Clicker Tycoon Puzzle Game</h2>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">AdVenture Capitalist is a free single-player idle clicker puzzle game where players build a business empire from a single lemon. One click squeezes it, sells the juice, and the cycle begins. Developed by Hyper Hippo Games, it&#8217;s available on PC and mobile.</p>
+<h3 class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold">Build an Empire From Nothing</h3>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">You start small. Really small. A single lemon, a single click, a few cents earned. Reinvest that money and you&#8217;ll afford another lemon, then a stand, then an entire fleet of lemonade stands. Before long you&#8217;re running pizzerias, oil plants, and ventures that stretch the definition of &#8220;business.&#8221;</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">The hiring system is where the game starts playing itself. Bring on an assistant to squeeze lemons for you, and that business runs on autopilot. Walk away, close the tab, come back tomorrow—your empire has been working the whole time. You return richer than you left.</p>
+<h3 class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold">How the Money Actually Moves</h3>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Nearly everything happens on one screen. Each business shows its earnings, upgrade costs, and the time needed to complete a cycle. Secondary menus let you hire managers or check your net worth, but the main screen is the heartbeat. It&#8217;s clean. No clutter, no tutorials to wade through.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Controls don&#8217;t get simpler than this. Forget the space bar. Forget controller compatibility. Your left mouse button is the only thing standing between you and obscene wealth.</p>
+<h3 class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold">The Angel Investor Trick</h3>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Here&#8217;s where strategy sneaks in. The reinvestment system—called &#8220;angel investors&#8221;—lets you reset your progress in exchange for a permanent profit multiplier. Wiping the slate clean sounds painful, but the payoff compounds every time. Players have to weigh the immediate grind against the long-term boost, and that tension is what keeps the loop interesting past the first few hours.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Rewards come constantly. A new milestone every few minutes. A new upgrade every few clicks. It&#8217;s engineered to feel good.</p>
+<h3 class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold">Style and Personality</h3>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">The art leans cartoonish and colorful. Each business has its own animated icon, and the managers look permanently thrilled to be working for you. The business mogul mascot grins through every screen like he knows exactly how absurd the whole premise is. That self-aware humor carries the game.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">It&#8217;s not deep. There&#8217;s no branching decision tree, no failure state, no complex planning. Players looking for heavy strategy will burn out fast. But as a casual time-filler? Hard to beat.</p>
+<h3 class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold">Game Controls</h3>
+<ul class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+<li class="whitespace-normal break-words pl-2">Left-click to squeeze lemons and earn money</li>
+<li class="whitespace-normal break-words pl-2">Click to purchase new businesses and upgrades</li>
+<li class="whitespace-normal break-words pl-2">Click manager icons to hire assistants and automate businesses</li>
+<li class="whitespace-normal break-words pl-2">Click the angel investor option to reset for permanent profit bonuses</li>
+</ul>
+
+
+
+
+
+<p>As always, remember to have fun!</p>
+</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+
+</div>
+ <div class="bottom">
+
+
+<div class="tag-carousel tag-carousel2 nomobile">
+    <span class="sf alignleft">New Games</span>
+    <div class="more"><a href="https://kbhgames.com/new">(See More)</a></div>
+    <div id="new-games" class="slider">
+        <div class="boxInner2" title="FNF: Philly Mix (Playable Darnell)"><a href="https://kbhgames.com/game/fnf-philly-mix-playable-darnell"><img src="https://kbhgames.com/wp-content/uploads/2026/05/fnfphillymix.webp" alt="FNF: Philly Mix (Playable Darnell)" width="180" height="180" loading="lazy"><div class="titleBox">FNF: Philly Mix (Playable Darnell)</div></a></div><div class="boxInner2" title="Catphish"><a href="https://kbhgames.com/game/catphish"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Catphish.webp" alt="Catphish" width="180" height="180" loading="lazy"><div class="titleBox">Catphish</div></a></div><div class="boxInner2" title="Street Racing 3D"><a href="https://kbhgames.com/game/street-racing-3d"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Street-Racing-3D.webp" alt="Street Racing 3D" width="180" height="180" loading="lazy"><div class="titleBox">Street Racing 3D</div></a></div><div class="boxInner2" title="UnderTale Cooking with Kindness"><a href="https://kbhgames.com/game/undertale-cooking-with-kindness"><img src="https://kbhgames.com/wp-content/uploads/2026/05/UnderTale-Cooking-with-Kindness.webp" alt="UnderTale Cooking with Kindness" width="180" height="180" loading="lazy"><div class="titleBox">UnderTale Cooking with Kindness</div></a></div><div class="boxInner2" title="Jujutsu Playground"><a href="https://kbhgames.com/game/jujutsu-playground"><img src="https://kbhgames.com/wp-content/uploads/2026/05/jutuplayground.webp" alt="Jujutsu Playground" width="180" height="180" loading="lazy"><div class="titleBox">Jujutsu Playground</div></a></div><div class="boxInner2" title="Clown Hole"><a href="https://kbhgames.com/game/clown-hole"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Clown-Hole.webp" alt="Clown Hole" width="180" height="180" loading="lazy"><div class="titleBox">Clown Hole</div></a></div><div class="boxInner2" title="Underwater Survival: Deep Dive"><a href="https://kbhgames.com/game/underwater-survival-deep-dive-2"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Underwater-Survival-Deep-Dive.webp" alt="Underwater Survival: Deep Dive" width="180" height="180" loading="lazy"><div class="titleBox">Underwater Survival: Deep Dive</div></a></div><div class="boxInner2" title="Real Robots Final Attack"><a href="https://kbhgames.com/game/real-robots-final-attack"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Real-Robots-Final-Attack.webp" alt="Real Robots Final Attack" width="180" height="180" loading="lazy"><div class="titleBox">Real Robots Final Attack</div></a></div><div class="boxInner2" title="1LDK Escape: Hidden Signals"><a href="https://kbhgames.com/game/1ldk-escape-hidden-signals"><img src="https://kbhgames.com/wp-content/uploads/2026/05/1LDK-Escape.webp" alt="1LDK Escape: Hidden Signals" width="180" height="180" loading="lazy"><div class="titleBox">1LDK Escape: Hidden Signals</div></a></div><div class="boxInner2" title="Build a Bridge!"><a href="https://kbhgames.com/game/build-a-bridge"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Build-a-Bridge.webp" alt="Build a Bridge!" width="180" height="180" loading="lazy"><div class="titleBox">Build a Bridge!</div></a></div><div class="boxInner2" title="The Patriots Revolution"><a href="https://kbhgames.com/game/the-patriots-revolution"><img src="https://kbhgames.com/wp-content/uploads/2026/05/The-Patriots-Revolution.webp" alt="The Patriots Revolution" width="180" height="180" loading="lazy"><div class="titleBox">The Patriots Revolution</div></a></div><div class="boxInner2" title="Riddle School &#8211; Retakes"><a href="https://kbhgames.com/game/riddle-school-retakes"><img src="https://kbhgames.com/wp-content/uploads/2026/05/riddle-school-retakes.webp" alt="Riddle School &#8211; Retakes" width="180" height="180" loading="lazy"><div class="titleBox">Riddle School &#8211; Retakes</div></a></div><div class="boxInner2" title="Dragon Hills"><a href="https://kbhgames.com/game/dragon-hills"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Dragon-Hills.webp" alt="Dragon Hills" width="180" height="180" loading="lazy"><div class="titleBox">Dragon Hills</div></a></div><div class="boxInner2" title="Bears vs. Art"><a href="https://kbhgames.com/game/bears-vs-art"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Bears-vs.-Art.webp" alt="Bears vs. Art" width="180" height="180" loading="lazy"><div class="titleBox">Bears vs. Art</div></a></div><div class="boxInner2" title="Lazy Bear"><a href="https://kbhgames.com/game/lazy-bear"><img src="https://kbhgames.com/wp-content/uploads/2026/05/lazybear.webp" alt="Lazy Bear" width="180" height="180" loading="lazy"><div class="titleBox">Lazy Bear</div></a></div><div class="boxInner2" title="Sliding Wave"><a href="https://kbhgames.com/game/sliding-wave"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Sliding-Wave.webp" alt="Sliding Wave" width="180" height="180" loading="lazy"><div class="titleBox">Sliding Wave</div></a></div><div class="boxInner2" title="Retro Sports Champion"><a href="https://kbhgames.com/game/retro-sports-champion"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Retro-Sports-Champion.webp" alt="Retro Sports Champion" width="180" height="180" loading="lazy"><div class="titleBox">Retro Sports Champion</div></a></div><div class="boxInner2" title="Screw Puzzle 3D &#8211; Brain Teaser"><a href="https://kbhgames.com/game/screw-puzzle-3d-brain-teaser"><img src="https://kbhgames.com/wp-content/uploads/2026/05/screw-puzzle-3d-brain-teaser.webp" alt="Screw Puzzle 3D &#8211; Brain Teaser" width="180" height="180" loading="lazy"><div class="titleBox">Screw Puzzle 3D &#8211; Brain Teaser</div></a></div><div class="boxInner2" title="Slay the Princess Demo"><a href="https://kbhgames.com/game/slay-the-princess-demo"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Slay-the-Princess-Demo.webp" alt="Slay the Princess Demo" width="180" height="180" loading="lazy"><div class="titleBox">Slay the Princess Demo</div></a></div><div class="boxInner2" title="Stick: Tactics &#038; Destruction"><a href="https://kbhgames.com/game/stick-tactics-destruction"><img src="https://kbhgames.com/wp-content/uploads/2026/05/stick-tactics-destruction.webp" alt="Stick: Tactics &#038; Destruction" width="180" height="180" loading="lazy"><div class="titleBox">Stick: Tactics &#038; Destruction</div></a></div><div class="boxInner2" title="Therapy with Dr. Albert Krueger"><a href="https://kbhgames.com/game/therapy-with-dr-albert-krueger"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Therapy-with-Dr.-Albert-Krueger.webp" alt="Therapy with Dr. Albert Krueger" width="180" height="180" loading="lazy"><div class="titleBox">Therapy with Dr. Albert Krueger</div></a></div><div class="boxInner2" title="Enduro Cross Motorsport"><a href="https://kbhgames.com/game/enduro-cross-motorsport"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Enduro-Cross-Motorsport.webp" alt="Enduro Cross Motorsport" width="180" height="180" loading="lazy"><div class="titleBox">Enduro Cross Motorsport</div></a></div><div class="boxInner2" title="Drift Idle Drift Earn Upgrade"><a href="https://kbhgames.com/game/drift-idle-drift-earn-upgrade"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Drift-Idle-Drift-Earn-Upgrade.webp" alt="Drift Idle Drift Earn Upgrade" width="180" height="180" loading="lazy"><div class="titleBox">Drift Idle Drift Earn Upgrade</div></a></div><div class="boxInner2" title="Brain it on the truck!"><a href="https://kbhgames.com/game/brain-it-on-the-truck"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Brain-it-on-the-truck.webp" alt="Brain it on the truck!" width="180" height="180" loading="lazy"><div class="titleBox">Brain it on the truck!</div></a></div><div class="boxInner2" title="FNF Nocturnal Protocol Mod"><a href="https://kbhgames.com/game/fnf-nocturnal-protocol-mod"><img src="https://kbhgames.com/wp-content/uploads/2026/05/fnf-nocturnal-protocol-mod.webp" alt="FNF Nocturnal Protocol Mod" width="180" height="180" loading="lazy"><div class="titleBox">FNF Nocturnal Protocol Mod</div></a></div><div class="boxInner2" title="School Fury"><a href="https://kbhgames.com/game/school-fury"><img src="https://kbhgames.com/wp-content/uploads/2026/05/schoolfury.webp" alt="School Fury" width="180" height="180" loading="lazy"><div class="titleBox">School Fury</div></a></div><div class="boxInner2" title="BMG: Ragdoll Car Race"><a href="https://kbhgames.com/game/bmg-ragdoll-car-race"><img src="https://kbhgames.com/wp-content/uploads/2026/05/BMG-Ragdoll-Car-Race.webp" alt="BMG: Ragdoll Car Race" width="180" height="180" loading="lazy"><div class="titleBox">BMG: Ragdoll Car Race</div></a></div><div class="boxInner2" title="Long Drive to Horizons Sim"><a href="https://kbhgames.com/game/long-drive-to-horizons-sim"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Long-Drive-to-Horizons-Sim.webp" alt="Long Drive to Horizons Sim" width="180" height="180" loading="lazy"><div class="titleBox">Long Drive to Horizons Sim</div></a></div><div class="boxInner2" title="Undertale: Act to Flirt"><a href="https://kbhgames.com/game/undertale-act-to-flirt"><img src="https://kbhgames.com/wp-content/uploads/2026/05/undertale-act-to-flirt.webp" alt="Undertale: Act to Flirt" width="180" height="180" loading="lazy"><div class="titleBox">Undertale: Act to Flirt</div></a></div><div class="boxInner2" title="Kick Lucky Blocks"><a href="https://kbhgames.com/game/kick-lucky-blocks"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Kick-Lucky-Blocks.webp" alt="Kick Lucky Blocks" width="180" height="180" loading="lazy"><div class="titleBox">Kick Lucky Blocks</div></a></div><div class="boxInner2" title="The King of Fighters 10th Anniversary 2005 Unique"><a href="https://kbhgames.com/game/the-king-of-fighters-10th-anniversary-2005-unique"><img src="https://kbhgames.com/wp-content/uploads/2026/05/The-King-of-Fighters-10th-Anniversary-2005-Unique.webp" alt="The King of Fighters 10th Anniversary 2005 Unique" width="180" height="180" loading="lazy"><div class="titleBox">The King of Fighters 10th Anniversary 2005 Unique</div></a></div><div class="boxInner2" title="Tube Fight"><a href="https://kbhgames.com/game/tube-fight"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Tube-Fight.webp" alt="Tube Fight" width="180" height="180" loading="lazy"><div class="titleBox">Tube Fight</div></a></div><div class="boxInner2" title="Double Edged"><a href="https://kbhgames.com/game/double-edged"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Double-Edged.webp" alt="Double Edged" width="180" height="180" loading="lazy"><div class="titleBox">Double Edged</div></a></div><div class="boxInner2" title="FNF Vocaloid Pack"><a href="https://kbhgames.com/game/fnf-vocaloid-pack"><img src="https://kbhgames.com/wp-content/uploads/2026/05/FNF-Vocaloid-Pack.webp" alt="FNF Vocaloid Pack" width="180" height="180" loading="lazy"><div class="titleBox">FNF Vocaloid Pack</div></a></div><div class="boxInner2" title="Five Nights at Frickbear&#8217;s 3"><a href="https://kbhgames.com/game/five-nights-at-frickbears-3"><img src="https://kbhgames.com/wp-content/uploads/2026/05/five-nights-at-frickbears-3.webp" alt="Five Nights at Frickbear&#8217;s 3" width="180" height="180" loading="lazy"><div class="titleBox">Five Nights at Frickbear&#8217;s 3</div></a></div><div class="boxInner2" title="Chicken Merge 2"><a href="https://kbhgames.com/game/chicken-merge-2"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Chicken-Merge-2.webp" alt="Chicken Merge 2" width="180" height="180" loading="lazy"><div class="titleBox">Chicken Merge 2</div></a></div>        <div class="left-button onecol" style="display: none;"></div>
+        <div class="right-button onecol" style="display: none;"></div>
+    </div>
+</div>
+
+<div class="tag-carousel tag-carousel2 nomobile">
+    <span class="sf alignleft">Popular Games</span>
+    <div class="more"><a href="https://kbhgames.com/popular-games">(See More)</a></div>
+    <div id="popular" class="slider">
+        <div class="boxInner2" title="Friday Night Funkin&#8217;"><a href="https://kbhgames.com/game/friday-night-funkin"><img src="https://kbhgames.com/wp-content/uploads/2020/11/Friday-Night-Funkin.webp" alt="Friday Night Funkin&#8217;" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin&#8217;</div></a></div><div class="boxInner2" title="FNF Nocturnal Protocol Mod"><a href="https://kbhgames.com/game/fnf-nocturnal-protocol-mod"><img src="https://kbhgames.com/wp-content/uploads/2026/05/fnf-nocturnal-protocol-mod.webp" alt="FNF Nocturnal Protocol Mod" width="180" height="180" loading="lazy"><div class="titleBox">FNF Nocturnal Protocol Mod</div></a></div><div class="boxInner2" title="Friday Night Funkin VS Garcello"><a href="https://kbhgames.com/game/friday-night-funkin-vs-garcello"><img src="https://kbhgames.com/wp-content/uploads/2021/05/Friday-Night-Funkin-VS-Garcello.webp" alt="Friday Night Funkin VS Garcello" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin VS Garcello</div></a></div><div class="boxInner2" title="The Amazing Digital Circus Dating Sim"><a href="https://kbhgames.com/game/the-amazing-digital-circus-dating-sim"><img src="https://kbhgames.com/wp-content/uploads/2026/05/the-amazing-digital-circus-dating-sim.webp" alt="The Amazing Digital Circus Dating Sim" width="180" height="180" loading="lazy"><div class="titleBox">The Amazing Digital Circus Dating Sim</div></a></div><div class="boxInner2" title="Deadshot.io"><a href="https://kbhgames.com/game/deadshot-io"><img src="https://kbhgames.com/wp-content/uploads/2022/12/Deadshot.io_.webp" alt="Deadshot.io" width="180" height="180" loading="lazy"><div class="titleBox">Deadshot.io</div></a></div><div class="boxInner2" title="FNF vs Impostor Among Us V4"><a href="https://kbhgames.com/game/fnf-vs-impostor-among-us-v4"><img src="https://kbhgames.com/wp-content/uploads/2023/01/FNF-vs-Impostor-Among-Us-V4-2.webp" alt="FNF vs Impostor Among Us V4" width="180" height="180" loading="lazy"><div class="titleBox">FNF vs Impostor Among Us V4</div></a></div><div class="boxInner2" title="Lazy Bear"><a href="https://kbhgames.com/game/lazy-bear"><img src="https://kbhgames.com/wp-content/uploads/2026/05/lazybear.webp" alt="Lazy Bear" width="180" height="180" loading="lazy"><div class="titleBox">Lazy Bear</div></a></div><div class="boxInner2" title="Friday Night Funkin VS. KAPI v2"><a href="https://kbhgames.com/game/friday-night-funkin-vs-kapi"><img src="https://kbhgames.com/wp-content/uploads/2021/04/Friday-Night-Funkin-VS.-KAPI.webp" alt="Friday Night Funkin VS. KAPI v2" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin VS. KAPI v2</div></a></div><div class="boxInner2" title="FNF vs Indie Cross"><a href="https://kbhgames.com/game/friday-night-funkin-vs-indie-cross"><img src="https://kbhgames.com/wp-content/uploads/2025/01/FNF-vs-Indie-Cross-1.webp" alt="FNF vs Indie Cross" width="180" height="180" loading="lazy"><div class="titleBox">FNF vs Indie Cross</div></a></div><div class="boxInner2" title="FNF Vocaloid Pack"><a href="https://kbhgames.com/game/fnf-vocaloid-pack"><img src="https://kbhgames.com/wp-content/uploads/2026/05/FNF-Vocaloid-Pack.webp" alt="FNF Vocaloid Pack" width="180" height="180" loading="lazy"><div class="titleBox">FNF Vocaloid Pack</div></a></div><div class="boxInner2" title="PVZ Fusion Cheats"><a href="https://kbhgames.com/game/pvz-fusion-cheats"><img src="https://kbhgames.com/wp-content/uploads/2026/05/PVZ-Fusion-Cheats.webp" alt="PVZ Fusion Cheats" width="180" height="180" loading="lazy"><div class="titleBox">PVZ Fusion Cheats</div></a></div><div class="boxInner2" title="Sonic Mania Plus"><a href="https://kbhgames.com/game/sonic-mania-plus"><img src="https://kbhgames.com/wp-content/uploads/2026/05/sonicmania.webp" alt="Sonic Mania Plus" width="180" height="180" loading="lazy"><div class="titleBox">Sonic Mania Plus</div></a></div><div class="boxInner2" title="FNF Character Test Playground"><a href="https://kbhgames.com/game/friday-night-funkin-character-test-playground"><img src="https://kbhgames.com/wp-content/uploads/2021/06/FNF-Character-Test-Playground.webp" alt="FNF Character Test Playground" width="180" height="180" loading="lazy"><div class="titleBox">FNF Character Test Playground</div></a></div><div class="boxInner2" title="Buckshot Roulette"><a href="https://kbhgames.com/game/buckshot-roulette"><img src="https://kbhgames.com/wp-content/uploads/2025/08/Buckshot-Roulette.webp" alt="Buckshot Roulette" width="180" height="180" loading="lazy"><div class="titleBox">Buckshot Roulette</div></a></div><div class="boxInner2" title="The Freak Circus"><a href="https://kbhgames.com/game/the-freak-circus"><img src="https://kbhgames.com/wp-content/uploads/2025/06/thefreakshow.webp" alt="The Freak Circus" width="180" height="180" loading="lazy"><div class="titleBox">The Freak Circus</div></a></div><div class="boxInner2" title="FNF: Philly Mix (Playable Darnell)"><a href="https://kbhgames.com/game/fnf-philly-mix-playable-darnell"><img src="https://kbhgames.com/wp-content/uploads/2026/05/fnfphillymix.webp" alt="FNF: Philly Mix (Playable Darnell)" width="180" height="180" loading="lazy"><div class="titleBox">FNF: Philly Mix (Playable Darnell)</div></a></div><div class="boxInner2" title="Five Nights at Epstein&#8217;s"><a href="https://kbhgames.com/game/five-nights-at-epsteins"><img src="https://kbhgames.com/wp-content/uploads/2026/02/five-nights-at-epsteins.webp" alt="Five Nights at Epstein&#8217;s" width="180" height="180" loading="lazy"><div class="titleBox">Five Nights at Epstein&#8217;s</div></a></div><div class="boxInner2" title="FNF vs Nonsense 1.5: A Nonsensical Friday Night"><a href="https://kbhgames.com/game/friday-night-funkin-vs-nonsense"><img src="https://kbhgames.com/wp-content/uploads/2021/07/FNF-vs-Nonsense.webp" alt="FNF vs Nonsense 1.5: A Nonsensical Friday Night" width="180" height="180" loading="lazy"><div class="titleBox">FNF vs Nonsense 1.5: A Nonsensical Friday Night</div></a></div><div class="boxInner2" title="Friday Night Funkin’ Corruption"><a href="https://kbhgames.com/game/friday-night-funkin-corruption"><img src="https://kbhgames.com/wp-content/uploads/2026/02/friday-night-funkin-corruption.webp" alt="Friday Night Funkin’ Corruption" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin’ Corruption</div></a></div><div class="boxInner2" title="FNF Vs. Huggy Wuggy Redux"><a href="https://kbhgames.com/game/fnf-vs-huggy-wuggy-redux"><img src="https://kbhgames.com/wp-content/uploads/2026/04/huggyredux-1.webp" alt="FNF Vs. Huggy Wuggy Redux" width="180" height="180" loading="lazy"><div class="titleBox">FNF Vs. Huggy Wuggy Redux</div></a></div><div class="boxInner2" title="FNF Silly Billy vs Yourself"><a href="https://kbhgames.com/game/fnf-silly-billy-vs-yourself"><img src="https://kbhgames.com/wp-content/uploads/2024/05/FNF-Silly-Billy-vs-Yourself.webp" alt="FNF Silly Billy vs Yourself" width="180" height="180" loading="lazy"><div class="titleBox">FNF Silly Billy vs Yourself</div></a></div><div class="boxInner2" title="Friday Night Funkin&#8217; Pibby Corrupted"><a href="https://kbhgames.com/game/friday-night-funkin-pibby-corrupted"><img src="https://kbhgames.com/wp-content/uploads/2021/12/friday-night-funkin-pibby-corrupted.webp" alt="Friday Night Funkin&#8217; Pibby Corrupted" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin&#8217; Pibby Corrupted</div></a></div><div class="boxInner2" title="FNF Mid-Fight Masses: Repented"><a href="https://kbhgames.com/game/fnf-mid-fight-masses-repented"><img src="https://kbhgames.com/wp-content/uploads/2026/04/midfightrepented.webp" alt="FNF Mid-Fight Masses: Repented" width="180" height="180" loading="lazy"><div class="titleBox">FNF Mid-Fight Masses: Repented</div></a></div><div class="boxInner2" title="Shadow Fight 2"><a href="https://kbhgames.com/game/shadow-fight-2"><img src="https://kbhgames.com/wp-content/uploads/2026/05/Shadow-Fight-2.webp" alt="Shadow Fight 2" width="180" height="180" loading="lazy"><div class="titleBox">Shadow Fight 2</div></a></div><div class="boxInner2" title="FNF Hazier River: Smoke &#8216;Em Out Struggle"><a href="https://kbhgames.com/game/fnf-hazier-river-smoke-em-out-struggle"><img src="https://kbhgames.com/wp-content/uploads/2026/05/garcellohazer.webp" alt="FNF Hazier River: Smoke &#8216;Em Out Struggle" width="180" height="180" loading="lazy"><div class="titleBox">FNF Hazier River: Smoke &#8216;Em Out Struggle</div></a></div><div class="boxInner2" title="Bleach Vs Naruto 3.3"><a href="https://kbhgames.com/game/bleach-vs-naruto-3"><img src="https://kbhgames.com/wp-content/uploads/2017/07/Bleach-Vs-Naruto-3.webp" alt="Bleach Vs Naruto 3.3" width="180" height="180" loading="lazy"><div class="titleBox">Bleach Vs Naruto 3.3</div></a></div><div class="boxInner2" title="FNF Vs. Tricky Version 2.0 (Phase 3)"><a href="https://kbhgames.com/game/fnf-vs-tricky-version-2-0"><img src="https://kbhgames.com/wp-content/uploads/2021/06/fnf-vs-tricky-version-2-0.webp" alt="FNF Vs. Tricky Version 2.0 (Phase 3)" width="180" height="180" loading="lazy"><div class="titleBox">FNF Vs. Tricky Version 2.0 (Phase 3)</div></a></div><div class="boxInner2" title="Friday Night Funkin’ Sarvente&#8217;s Mid-Fight Masses"><a href="https://kbhgames.com/game/friday-night-funkin-sarventes-mid-fight-masses"><img src="https://kbhgames.com/wp-content/uploads/2021/04/friday-night-funkin-sarventes-mid-fight-masses-1.webp" alt="Friday Night Funkin’ Sarvente&#8217;s Mid-Fight Masses" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin’ Sarvente&#8217;s Mid-Fight Masses</div></a></div><div class="boxInner2" title="The Patriots Revolution"><a href="https://kbhgames.com/game/the-patriots-revolution"><img src="https://kbhgames.com/wp-content/uploads/2026/05/The-Patriots-Revolution.webp" alt="The Patriots Revolution" width="180" height="180" loading="lazy"><div class="titleBox">The Patriots Revolution</div></a></div><div class="boxInner2" title="Plants vs. Zombies 2 Gardendless"><a href="https://kbhgames.com/game/plants-vs-zombies-2-gardendless"><img src="https://kbhgames.com/wp-content/uploads/2026/03/plants-vs-zombies-2-gardendless.webp" alt="Plants vs. Zombies 2 Gardendless" width="180" height="180" loading="lazy"><div class="titleBox">Plants vs. Zombies 2 Gardendless</div></a></div><div class="boxInner2" title="FNF vs Huggy Wuggy (Poppy Playtime)"><a href="https://kbhgames.com/game/friday-night-funkin-vs-huggy-wuggy-poppy-playtime"><img src="https://kbhgames.com/wp-content/uploads/2021/10/friday-night-funkin-vs-huggy-wuggy-poppy-playtime.webp" alt="FNF vs Huggy Wuggy (Poppy Playtime)" width="180" height="180" loading="lazy"><div class="titleBox">FNF vs Huggy Wuggy (Poppy Playtime)</div></a></div><div class="boxInner2" title="Level Devil"><a href="https://kbhgames.com/game/level-devil"><img src="https://kbhgames.com/wp-content/uploads/2024/01/Level-Devil.webp" alt="Level Devil" width="180" height="180" loading="lazy"><div class="titleBox">Level Devil</div></a></div><div class="boxInner2" title="Stickman Clash"><a href="https://kbhgames.com/game/stickman-clash"><img src="https://kbhgames.com/wp-content/uploads/2025/05/stickman-clash.webp" alt="Stickman Clash" width="180" height="180" loading="lazy"><div class="titleBox">Stickman Clash</div></a></div><div class="boxInner2" title="Friday Night Funkin&#8217; V.S. Whitty Full Week"><a href="https://kbhgames.com/game/friday-night-funkin-v-s-whitty-full-week"><img src="https://kbhgames.com/wp-content/uploads/2021/03/friday-night-funkin-v-s-whitty-full-week.webp" alt="Friday Night Funkin&#8217; V.S. Whitty Full Week" width="180" height="180" loading="lazy"><div class="titleBox">Friday Night Funkin&#8217; V.S. Whitty Full Week</div></a></div><div class="boxInner2" title="FNF VS Rewrite &#8211; Round 2 &#8211; Sonic.EXE"><a href="https://kbhgames.com/game/fnf-vs-rewrite-round-2-sonic-exe"><img src="https://kbhgames.com/wp-content/uploads/2025/12/fnf-vs-rewrite-round-2-sonic-exe.webp" alt="FNF VS Rewrite &#8211; Round 2 &#8211; Sonic.EXE" width="180" height="180" loading="lazy"><div class="titleBox">FNF VS Rewrite &#8211; Round 2 &#8211; Sonic.EXE</div></a></div><div class="boxInner2" title="FNF: Darkness Takeover vs Pibby Family Guy"><a href="https://kbhgames.com/game/fnf-darkness-takeover-vs-pibby-family-guy"><img src="https://kbhgames.com/wp-content/uploads/2022/08/fnf-darkness-takeover-vs-pibby-family-guy.webp" alt="FNF: Darkness Takeover vs Pibby Family Guy" width="180" height="180" loading="lazy"><div class="titleBox">FNF: Darkness Takeover vs Pibby Family Guy</div></a></div>        <div class="left-button onecol" style="display: none;"></div>
+        <div class="right-button onecol" style="display: none;"></div>
+    </div>
+</div>
+
+<div class="game-footer">
+    <div class="game-footer-icons">
+        <span class="icon-item"><i class="fa-brands fa-chrome"></i> Chrome</span>
+        <span class="icon-item"><i class="fa-brands fa-firefox-browser"></i> Firefox</span>
+        <span class="icon-item"><i class="fa-brands fa-edge"></i> Edge</span>
+        <span class="icon-item"><i class="fa-brands fa-safari"></i> Safari</span>
+        <span class="icon-item"><i class="fa-solid fa-desktop"></i> PC / Mac</span>
+        <span class="icon-item"><i class="fa-solid fa-laptop"></i> Chromebook</span>
+            </div>
+        <p>Play AdVenture Capitalist online for free &mdash; one of thousands of <a href="https://kbhgames.com/tag/simulator">Simulator Games</a> you can enjoy instantly on KBHGames.com. No downloads, no installs, no sign-ups &mdash; just click and play. Whether you're gaming on a PC, Mac, or Chromebook, you can play this game fast and easy on Chrome, Firefox, Edge, and Safari. Discover your next favorite game today.
+    Gamers looking for more <a href="https://kbhgames.com/tag/simulator">Simulator Games</a> can also try out <a href="https://kbhgames.com/game/idle-miner-tycoon-gold-games">Idle Miner Tycoon: Gold Games</a>, <a href="https://kbhgames.com/game/idle-airport-tycoon">Idle Airport Tycoon</a>, <a href="https://kbhgames.com/game/idle-pizza-business">Idle Pizza Business</a>, and <a href="https://kbhgames.com/game/idle-daycare-tycoon">Idle Daycare Tycoon</a>.</p>
+</div>
+
+</div>
+
+<script defer src='https://kbhgames.com/wp-content/themes/v1/js/jquery-3.4.1.min.js'></script>
+
+	 
+
+		</div>
+	</div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggle-btn");
+    const overlay = document.getElementById("overlay");
+    const searchIconBtn = document.getElementById("search-icon-btn");
+
+    if (window.innerWidth <= 768) {
+      sidebar.classList.add("hidden");
+    }
+
+    function toggleSidebar() {
+      if (window.innerWidth <= 768) {
+        const isOpen = sidebar.classList.contains("show");
+        if (isOpen) {
+          sidebar.classList.remove("show");
+          sidebar.classList.remove("expanded");
+          overlay.classList.remove("show");
+        } else {
+          sidebar.classList.remove("hidden");
+          sidebar.classList.add("show");
+          sidebar.classList.add("expanded");
+          overlay.classList.add("show");
+        }
+      } else {
+        sidebar.classList.toggle("expanded");
+      }
+    }
+
+    toggleBtn.addEventListener("click", toggleSidebar);
+    overlay.addEventListener("click", toggleSidebar);
+
+    const desktopInput = document.getElementById("desktop-search-input");
+    const searchDropdown = document.getElementById("search-dropdown");
+    const searchDimmer = document.getElementById("search-dimmer");
+    const mobileOverlay = document.getElementById("mobile-search-overlay");
+    const mobileInput = document.getElementById("mobile-search-input");
+    const LS_CP_KEY = "kbh_continue_playing";
+    const LS_RS_KEY = "kbh_recent_searches";
+    let searchDebounce;
+    let searchRequestId = 0;
+    function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    (function trackGameVisit() {
+      const isGamePage = document.getElementById("playgame") || document.getElementById("game");
+      if (!isGamePage) return;
+      const titleEl = document.querySelector(".gamehead h1") || document.querySelector("h1");
+      if (!titleEl) return;
+      const thumbEl = document.querySelector(".ptb img") || document.querySelector('meta[property="og:image"]');
+      const img = thumbEl ? (thumbEl.tagName === 'IMG' ? thumbEl.src : thumbEl.content) : '';
+      const game = {
+        title: titleEl.textContent.trim(),
+        url: window.location.href,
+        img: img
+      };
+      if (!game.img || !game.title) return;
+      function normalizeUrl(u) { return u.split('?')[0].split('#')[0].replace(/\/+$/, '').replace(/^https?:/, ''); }
+      let games = [];
+      try { games = JSON.parse(localStorage.getItem(LS_CP_KEY)) || []; } catch(e) {}
+      games = games.filter(g => normalizeUrl(g.url) !== normalizeUrl(game.url));
+      games.unshift(game);
+      games = games.slice(0, 10);
+      try { localStorage.setItem(LS_CP_KEY, JSON.stringify(games)); } catch(e) {}
+    })();
+
+    function renderContinuePlaying(prefix) {
+      let games = [];
+      try { games = JSON.parse(localStorage.getItem(LS_CP_KEY)) || []; } catch(e) {}
+      const currentUrl = window.location.href.split('?')[0].split('#')[0];
+      games = games.filter(g => g.url.split('?')[0].split('#')[0] !== currentUrl);
+      const section = document.getElementById(prefix + "-cp-section");
+      const row = document.getElementById(prefix + "-cp-row");
+      if (!games.length || !section || !row) { if (section) section.style.display = "none"; return; }
+      section.style.display = "block";
+      row.innerHTML = games.map(g =>
+        '<a href="' + g.url + '" class="cp-card"><img src="' + g.img + '" alt="' + g.title.replace(/"/g,'&quot;') + '" loading="lazy"><div class="cp-title">' + g.title + '</div></a>'
+      ).join('');
+    }
+
+    function renderRecentSearches(prefix) {
+      let searches = [];
+      try { searches = JSON.parse(localStorage.getItem(LS_RS_KEY)) || []; } catch(e) {}
+      const section = document.getElementById(prefix + "-rs-section");
+      const pills = document.getElementById(prefix + "-rs-pills");
+      if (!searches.length || !section || !pills) { if (section) section.style.display = "none"; return; }
+      section.style.display = "block";
+      pills.innerHTML = searches.map(s =>
+        '<span class="recent-pill" data-term="' + s.replace(/"/g,'&quot;') + '">' + s + '</span>'
+      ).join('');
+      pills.querySelectorAll('.recent-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          const term = pill.dataset.term;
+          const input = prefix === 'desktop' ? desktopInput : mobileInput;
+          input.value = term;
+          input.dispatchEvent(new Event('input'));
+        });
+      });
+    }
+
+    function saveRecentSearch(term) {
+      if (!term || term.length < 2) return;
+      let searches = [];
+      try { searches = JSON.parse(localStorage.getItem(LS_RS_KEY)) || []; } catch(e) {}
+      searches = searches.filter(s => s.toLowerCase() !== term.toLowerCase());
+      searches.unshift(term);
+      searches = searches.slice(0, 10);
+      try { localStorage.setItem(LS_RS_KEY, JSON.stringify(searches)); } catch(e) {}
+    }
+
+    function getScrollParts(section) {
+      const row = section.querySelector('.continue-playing-row');
+      const leftBtn = section.querySelector('.cp-scroll-btn.left');
+      const rightBtn = section.querySelector('.cp-scroll-btn.right');
+      return (row && leftBtn && rightBtn) ? { row, leftBtn, rightBtn } : null;
+    }
+    function showBtn(btn, visible) {
+      btn.style.display = 'flex';
+      btn.style.opacity = visible ? '1' : '0';
+      btn.style.pointerEvents = visible ? 'auto' : 'none';
+    }
+    function updateScrollButtons() {
+      document.querySelectorAll('.search-section').forEach(section => {
+        const parts = getScrollParts(section);
+        if (!parts) return;
+        const { row, leftBtn, rightBtn } = parts;
+        if (row.scrollWidth <= row.clientWidth + 4 || row.clientWidth === 0) {
+          showBtn(leftBtn, false); showBtn(rightBtn, false);
+        } else {
+          showBtn(leftBtn, row.scrollLeft > 4);
+          showBtn(rightBtn, row.scrollLeft + row.clientWidth < row.scrollWidth - 4);
+        }
+      });
+    }
+    function initScrollButtons() {
+      document.querySelectorAll('.search-section').forEach(section => {
+        const parts = getScrollParts(section);
+        if (!parts) return;
+        const { row, leftBtn, rightBtn } = parts;
+        leftBtn.addEventListener('mousedown', e => { e.preventDefault(); e.stopPropagation(); });
+        rightBtn.addEventListener('mousedown', e => { e.preventDefault(); e.stopPropagation(); });
+        leftBtn.addEventListener('touchstart', e => { e.stopPropagation(); }, { passive: true });
+        rightBtn.addEventListener('touchstart', e => { e.stopPropagation(); }, { passive: true });
+        leftBtn.addEventListener('click', e => {
+          e.preventDefault(); e.stopPropagation();
+          row.scrollBy({ left: -240, behavior: 'smooth' });
+          updateScrollButtons();
+          setTimeout(updateScrollButtons, 100);
+          setTimeout(updateScrollButtons, 350);
+        });
+        rightBtn.addEventListener('click', e => {
+          e.preventDefault(); e.stopPropagation();
+          row.scrollBy({ left: 240, behavior: 'smooth' });
+          updateScrollButtons();
+          setTimeout(updateScrollButtons, 100);
+          setTimeout(updateScrollButtons, 350);
+        });
+        row.addEventListener('scroll', updateScrollButtons);
+      });
+    }
+
+    function doLiveSearch(query, prefix) {
+      const resultsEl = document.getElementById(prefix + '-live-results');
+      const loadingEl = document.getElementById(prefix + '-loading');
+      const defaultEl = document.getElementById(prefix + '-default-content');
+      if (!query || query.length < 2) {
+        resultsEl.classList.remove('show'); resultsEl.innerHTML = '';
+        loadingEl.classList.remove('show');
+        defaultEl.style.display = 'block';
+        return;
+      }
+      defaultEl.style.display = 'none';
+      resultsEl.classList.remove('show');
+      loadingEl.classList.add('show');
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => {
+        const reqId = ++searchRequestId;
+        fetch('https://kbhgames.com/wp-admin/admin-ajax.php?action=kbh_live_search&s=' + encodeURIComponent(query))
+          .then(r => r.json())
+          .then(data => {
+            if (reqId !== searchRequestId) return;
+            loadingEl.classList.remove('show');
+            if (!data.length) {
+              resultsEl.innerHTML = '<div style="text-align:center;padding:24px;color:#999;">No games found</div>';
+            } else {
+              resultsEl.innerHTML = data.map(g =>
+                '<a href="' + escHtml(g.url) + '" class="live-result-item"><img src="' + escHtml(g.img) + '" alt="" loading="lazy"><div class="result-info"><div class="result-title">' + escHtml(g.title) + '</div><div class="result-tag">' + escHtml(g.tag || '') + '</div></div></a>'
+              ).join('') + '<a href="https://kbhgames.com/?s=' + encodeURIComponent(query) + '" class="live-search-view-all">View All Results ›</a>';
+            }
+            resultsEl.classList.add('show');
+          })
+          .catch(() => { if (reqId === searchRequestId) loadingEl.classList.remove('show'); });
+      }, 300);
+    }
+
+    if (desktopInput && searchDropdown) {
+      desktopInput.addEventListener('focus', () => {
+        renderContinuePlaying('desktop');
+        renderRecentSearches('desktop');
+        const hasCP = document.getElementById('desktop-cp-section').style.display !== 'none';
+        const hasRS = document.getElementById('desktop-rs-section').style.display !== 'none';
+        if (hasCP || hasRS) {
+          searchDropdown.classList.add('show');
+          searchDimmer.classList.add('show');
+          setTimeout(() => { initScrollButtons(); updateScrollButtons(); }, 50);
+        }
+      });
+      desktopInput.addEventListener('input', () => {
+        const q = desktopInput.value.trim();
+        if (q.length >= 2) {
+          searchDropdown.classList.add('show');
+          searchDimmer.classList.add('show');
+        }
+        doLiveSearch(q, 'desktop');
+      });
+      searchDimmer.addEventListener('click', () => {
+        searchDropdown.classList.remove('show');
+        searchDimmer.classList.remove('show');
+        desktopInput.blur();
+      });
+      desktopInput.closest('form').addEventListener('submit', () => {
+        saveRecentSearch(desktopInput.value.trim());
+      });
+    }
+
+    if (searchIconBtn) {
+      searchIconBtn.addEventListener("click", () => {
+        mobileOverlay.classList.add("show");
+        renderContinuePlaying('mobile');
+        renderRecentSearches('mobile');
+        setTimeout(() => { mobileInput.focus(); initScrollButtons(); updateScrollButtons(); }, 100);
+      });
+    }
+    if (mobileInput) {
+      mobileInput.addEventListener('input', () => {
+        doLiveSearch(mobileInput.value.trim(), 'mobile');
+      });
+      document.getElementById('mobile-search-close').addEventListener('click', () => {
+        mobileOverlay.classList.remove('show');
+        mobileInput.value = '';
+        document.getElementById('mobile-default-content').style.display = 'block';
+        document.getElementById('mobile-live-results').classList.remove('show');
+        document.getElementById('mobile-loading').classList.remove('show');
+      });
+      mobileInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const q = mobileInput.value.trim();
+          if (q) {
+            saveRecentSearch(q);
+            window.location.href = 'https://kbhgames.com/?s=' + encodeURIComponent(q);
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('.search-clear-btn').forEach(btn => {
+      btn.addEventListener('mousedown', (e) => { e.preventDefault(); });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrap = btn.closest('form, .search-input-wrap');
+        const input = wrap && wrap.querySelector('input[type="text"]');
+        if (input) {
+          input.value = '';
+          input.focus();
+          input.dispatchEvent(new Event('input'));
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (searchDropdown) { searchDropdown.classList.remove('show'); searchDimmer.classList.remove('show'); }
+        if (mobileOverlay) mobileOverlay.classList.remove('show');
+      }
+    });
+
+    const btnPlayNow = document.querySelector(".btnplaynow");
+
+    if (btnPlayNow) {
+      btnPlayNow.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove("show");
+          sidebar.classList.remove("expanded");
+          overlay.classList.remove("show");
+        } else {
+          sidebar.classList.remove("expanded");
+        }
+      });
+    }
+
+    sidebar.addEventListener("click", (e) => {
+      var isTouch = window.matchMedia("(hover: none)").matches;
+      if (isTouch && !sidebar.classList.contains("expanded") && window.innerWidth > 768) {
+        var link = e.target.closest("a");
+        if (link) {
+          e.preventDefault();
+          sidebar.classList.add("expanded");
+        }
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (sidebar.classList.contains("expanded") && window.innerWidth > 768 && !sidebar.contains(e.target) && e.target !== toggleBtn) {
+        sidebar.classList.remove("expanded");
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        sidebar.classList.remove("show");
+        sidebar.classList.remove("expanded");
+        sidebar.classList.remove("hidden");
+        overlay.classList.remove("show");
+      } else {
+        sidebar.classList.add("hidden");
+        sidebar.classList.remove("expanded");
+      }
+    });
+
+  </script>
+
+<script>
+// PWA Install / Desktop Bookmark — platform-aware
+(function() {
+    var deferredPrompt = null;
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(function() {});
+    }
+
+    // Platform detection
+    var ua = navigator.userAgent || '';
+    var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    var isFirefox = /Firefox/.test(ua);
+    var isMac = /Mac/.test(navigator.platform || '');
+    var isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+    // Capture Chrome/Chromium install prompt
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+    });
+
+    // Close sidebar on mobile before showing banner
+    function closeSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        var overlay = document.getElementById('overlay');
+        if (sidebar) {
+            sidebar.classList.remove('show');
+            sidebar.classList.remove('expanded');
+        }
+        if (overlay) overlay.classList.remove('show');
+    }
+
+    // Show styled banner with platform-specific message
+    function showInstallBanner(message) {
+        var existing = document.getElementById('pwa-install-banner');
+        if (existing) existing.remove();
+
+        var banner = document.createElement('div');
+        banner.id = 'pwa-install-banner';
+        banner.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">' +
+            '<p style="margin:0;flex:1;min-width:200px">' + message + '</p>' +
+            '<button id="pwa-install-close" style="background:#ffc800;color:#000;border:none;padding:6px 18px;border-radius:4px;font-weight:bold;cursor:pointer;white-space:nowrap">OK</button>' +
+            '</div>';
+        banner.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:999999;background:#2a2a2a;color:#fff;padding:20px 24px;font-size:14px;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,0.5);font-family:sans-serif;border-radius:10px;max-width:360px;width:90%';
+        document.body.appendChild(banner);
+        document.getElementById('pwa-install-close').addEventListener('click', function() {
+            banner.remove();
+        });
+    }
+
+    // Use event delegation on document so it works even if the link loads late
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('#install-app-link');
+        if (!link) return;
+        e.preventDefault();
+
+        if (isStandalone) return;
+
+        // Chromium native prompt
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function() { deferredPrompt = null; });
+            return;
+        }
+
+        // Close sidebar on mobile so banner is visible
+        closeSidebar();
+
+        // Platform-specific instructions
+        if (isIOS) {
+            showInstallBanner('Tap the <strong>Share</strong> button <span style="font-size:1.3em">&#9094;</span> at the bottom of Safari, then tap <strong>&ldquo;Add to Home Screen&rdquo;</strong>.');
+        } else if (isAndroid) {
+            showInstallBanner('Open your browser menu <strong>&#8942;</strong> and tap <strong>&ldquo;Add to Home Screen&rdquo;</strong> or <strong>&ldquo;Install App&rdquo;</strong>.');
+        } else if (isFirefox) {
+            var key = isMac ? 'Cmd+D' : 'Ctrl+D';
+            showInstallBanner('Firefox doesn\'t support app install. Press <strong>' + key + '</strong> to bookmark, or open in <strong>Chrome</strong> or <strong>Edge</strong> to install as an app.');
+        } else {
+            var key = isMac ? 'Cmd+D' : 'Ctrl+D';
+            showInstallBanner('Press <strong>' + key + '</strong> to bookmark KBH Games, or open in <strong>Chrome</strong> or <strong>Edge</strong> to install as an app.');
+        }
+    });
+
+    // Hide after install
+    window.addEventListener('appinstalled', function() {
+        deferredPrompt = null;
+    });
+})();
+</script>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/v1\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	var relevanssi_rt_regex = /(&|\?)_(rt|rt_nonce)=(\w+)/g
+	var newUrl = window.location.search.replace(relevanssi_rt_regex, '')
+	if (newUrl.substr(0, 1) == '&') {
+		newUrl = '?' + newUrl.substr(1)
+	}
+	history.replaceState(null, null, window.location.pathname + newUrl + window.location.hash)
+/* ]]> */
+</script>
+<link rel='stylesheet' id='dashicons-css' href='https://kbhgames.com/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='post-views-counter-frontend-css' href='https://kbhgames.com/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.7.8' type='text/css' media='all' />
+<script type="text/javascript" defer src="https://kbhgames.com/wp-content/plugins/post-views-counter-pro/js/crawler-detect.js?ver=1.7.8" id="post-views-counter-pro-crawler-detect-js"></script>
+<script type="text/javascript" id="post-views-counter-pro-frontend-js-before">
+/* <![CDATA[ */
+var pvcpArgsFrontend = {"mode":"ajax","content":{"type":"post","subtype":"post","data":113589},"contentActive":true,"requestURL":"https:\/\/kbhgames.com\/wp-content\/plugins\/post-views-counter-pro\/includes\/ajax.php","nonce":"fa61a01e44","dataStorage":"cookieless","blockAI":true,"blockBots":false,"multisite":false,"path":"\/","domain":"","adminAjax":"https:\/\/kbhgames.com\/wp-admin\/admin-ajax.php","nonceCount":"211dcf2d94"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer src="https://kbhgames.com/wp-content/plugins/post-views-counter-pro/js/frontend.js?ver=1.7.8" id="post-views-counter-pro-frontend-js"></script>
+
+
+<noscript id="deferred-styles">
+<link rel="stylesheet" href="https://kbhgames.com/wp-content/themes/v1/style.css?20260531a">
+</noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+<script defer src="https://kbhgames.com/wp-content/themes/v1/js/bottom-all.js?v=7"></script>
+<script type="module" src="https://kbhgames.com/wp-content/themes/v1/js/dotlottie-wc/dotlottie-wc.js"></script><script defer src="https://kbhgames.com/wp-content/themes/v1/js/bottom-single.js?20260504a"></script>
+
+<div id="modal-login" class="ml-modal fade" tabindex="-1" role="dialog" aria-label="Login" aria-hidden="true" data-backdrop="static" data-keyboard="false"></div>
+
+<script>
+(function() {
+    var modalLoaded = false;
+    var modalLoading = false;
+    var pendingCallbacks = [];
+
+    function loadLoginModal(callback) {
+        if (modalLoaded) {
+            if (callback) callback();
+            return;
+        }
+        if (callback) pendingCallbacks.push(callback);
+        if (modalLoading) return;
+        modalLoading = true;
+
+        jQuery('#modal-login').load('/wp-admin/admin-ajax.php?action=load_login_modal', function(response, status) {
+            if (status === 'error') {
+                modalLoading = false;
+                pendingCallbacks = [];
+                console.error('Failed to load login modal');
+                return;
+            }
+            modalLoaded = true;
+            modalLoading = false;
+            var cbs = pendingCallbacks;
+            pendingCallbacks = [];
+            cbs.forEach(function(cb) { cb(); });
+        });
+    }
+
+    // Load modal when login/register link is clicked
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href="#modal-login"], a[href="#modal-register"], a[href="#pa_modal_login"], a[href="#pa_modal_register"], a[data-toggle="ml-modal"]');
+        if (link && !modalLoaded) {
+            e.preventDefault();
+            e.stopPropagation();
+            loadLoginModal(function() {
+                // Re-trigger click after modal is loaded
+                link.click();
+            });
+        }
+    }, true);
+
+    // Preload on hover for faster UX
+    document.addEventListener('mouseover', function(e) {
+        var link = e.target.closest('a[href="#modal-login"], a[href="#modal-register"], a[href="#pa_modal_login"], a[href="#pa_modal_register"], a[data-toggle="ml-modal"]');
+        if (link && !modalLoaded && !modalLoading) {
+            loadLoginModal();
+        }
+    });
+
+    // Preload on touch for mobile (no hover available)
+    document.addEventListener('touchstart', function(e) {
+        var link = e.target.closest('a[href="#modal-login"], a[href="#modal-register"], a[href="#pa_modal_login"], a[href="#pa_modal_register"], a[data-toggle="ml-modal"]');
+        if (link && !modalLoaded && !modalLoading) {
+            loadLoginModal();
+        }
+    }, {passive: true});
+})();
+</script>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to top" style="
+  display:none;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  z-index:9999;
+  width:44px;
+  height:44px;
+  border:1px solid #333;
+  border-radius:10px;
+  background:#181818;
+  color:#ededed;
+  font-size:18px;
+  cursor:pointer;
+  transition:background .25s,border-color .25s,opacity .3s;
+  opacity:0;
+  box-shadow:0 2px 10px rgba(0,0,0,.4);
+"><i class="fa-solid fa-arrow-up"></i></button>
+<script>
+(function(){
+  var btn=document.getElementById('back-to-top');
+  var visible=false;
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){
+      ticking=true;
+      requestAnimationFrame(function(){
+        if(window.scrollY>600){
+          if(!visible){btn.style.display='block';setTimeout(function(){btn.style.opacity='1'},10);visible=true;}
+        }else{
+          if(visible){btn.style.opacity='0';setTimeout(function(){btn.style.display='none'},300);visible=false;}
+        }
+        ticking=false;
+      });
+    }
+  });
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  btn.addEventListener('mouseenter',function(){btn.style.background='#ffc600';btn.style.borderColor='#ffc600';btn.style.color='#000'});
+  btn.addEventListener('mouseleave',function(){btn.style.background='#181818';btn.style.borderColor='#333';btn.style.color='#ededed'});
+})();
+</script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0606c76c8074c1d',t:'MTc4MDUwNzgwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"de6c4c5e56cb4393a14233a7407d1c00","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

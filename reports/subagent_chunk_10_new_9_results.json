@@ -1,0 +1,26 @@
+{
+  "tv-static": {
+    "initial_broken": false,
+    "initial_reason": "",
+    "recovered": false,
+    "final_verdict": "inconclusive"
+  },
+  "twerk-race-3d": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "broken"
+  },
+  "ultima-runes-of-virtue-ii": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": false,
+    "final_verdict": "warning"
+  },
+  "ultima-vi-the-false-prophet": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": false,
+    "final_verdict": "unknown"
+  }
+}

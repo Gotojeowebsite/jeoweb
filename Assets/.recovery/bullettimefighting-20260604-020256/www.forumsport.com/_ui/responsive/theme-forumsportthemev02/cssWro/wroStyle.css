@@ -1,0 +1,19 @@
+header ::-webkit-scrollbar {
+    width: 4px;
+}
+header ::-webkit-scrollbar-track {
+    background: #e3e3e3;
+    border-radius: 15px;
+}
+header ::-webkit-scrollbar-thumb {
+    background: rgba(34, 34, 34, 0.3);
+    border-radius: 15px;
+}
+header ::-webkit-scrollbar-thumb:hover {
+    background: #222222;
+}
+@media (max-width: 1024px) {
+    header ::-webkit-scrollbar-thumb {
+        background: red;
+    }
+}

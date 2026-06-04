@@ -1,0 +1,40 @@
+Scan server active on port 8400
+Scanning 9 remaining games (total target set: 9) in batches of 20...
+
+--- Batch 1/1 (9 games) ---
+Testing: cactusmccoy2 (flash)
+  Attempt 1/2...
+  BROKEN: Critical local HTTP 404
+Testing: call-of-duty-zombies (webgl)
+  Attempt 1/2...
+  BROKEN: Critical local HTTP 404
+Testing: camper-strike (flash)
+  Attempt 1/2...
+  BROKEN: Critical local HTTP 404
+Testing: cannon-basketball-4 (webgl)
+  Attempt 1/2...
+  REVIEW: Local HTTP 404
+Testing: cannonbasketball2 (flash)
+  Attempt 1/2...
+  BROKEN: Critical local HTTP 404
+Testing: canyondefense (flash)
+  Attempt 1/2...
+  OK
+Testing: capybara-clicker (webgl)
+  Attempt 1/2...
+  BROKEN: Critical local HTTP 404
+Testing: cartoon-network-block-party (gba)
+  Attempt 1/2...
+  REVIEW: Failed to fetch
+Testing: cartoon-network-speedway (gba)
+  Attempt 1/2...
+  REVIEW: Failed to fetch
+
+Scan complete.
+  Broken: 5
+  Needs review: 3
+  OK: 1
+  Broken log: /workspaces/jeoweb/broken_games.txt
+  Checked log: /workspaces/jeoweb/checked_games.txt
+  Review log: /workspaces/jeoweb/needs_review_games.txt
+  Full report: /workspaces/jeoweb/scan_results.json

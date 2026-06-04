@@ -1,0 +1,32 @@
+[
+  {
+    "name": "boxing-fever",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 20.27,
+    "critical_issues": [
+      {
+        "code": "NAV_ERROR",
+        "message": "Navigation/playwright error: Page.evaluate: Target crashed ",
+        "severity": "critical",
+        "url": "http://localhost:8103/Assets/boxing-fever/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8103/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {}
+  }
+]

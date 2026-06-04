@@ -1,0 +1,19 @@
+[
+  {
+    "name": "pokemon-adventure-gold-chapter-v1-2",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 49.0,
+    "critical_issues": [
+      {
+        "code": "SCAN_WORKER_ERROR",
+        "message": "Isolated worker exception: BrowserContext.new_page: Target page, context or browser has been closed",
+        "severity": "critical",
+        "url": "http://localhost:8116/Assets/pokemon-adventure-gold-chapter-v1-2/index.html"
+      }
+    ],
+    "warnings": [],
+    "probe": {}
+  }
+]

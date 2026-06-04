@@ -1,0 +1,26 @@
+{
+  "flashtetris": {
+    "initial_broken": false,
+    "initial_reason": "",
+    "recovered": false,
+    "final_verdict": "ok"
+  },
+  "flight": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "unknown"
+  },
+  "flower-shop": {
+    "initial_broken": true,
+    "initial_reason": "no_report_file",
+    "recovered": false,
+    "final_verdict": "unknown"
+  },
+  "fortzone": {
+    "initial_broken": true,
+    "initial_reason": "scanner_broken",
+    "recovered": false,
+    "final_verdict": "unknown"
+  }
+}

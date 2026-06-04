@@ -205,7 +205,7 @@ Normalize sources into `Assets/<slug>/`:
 5. On first passing candidate: `moveToQuarantine(slug)` → `swapInCandidate(slug, candidateRoot)` → rebuild manifest → re-scan.
 6. On all-failure: bump `reports/recovery_cooldown.json` (1d → 3d → 7d → 14d → 30d backoff) and log to `reports/recovery_log.jsonl`.
 
-`scripts/recover-all-broken.js` — batch driver. Reads `game_health.json`, filters cooldown, fans out workers, writes `reports/recovery_summary_<date>.json`. Invoked nightly by `.github/workflows/qa-nightly.yml`.
+`scripts/recover-all-broken.js` — batch driver. Reads `game_health.json`, filters cooldown, fans out workers, writes `reports/recovery_summary_<date>.json`. Invoked weekly by `.github/workflows/qa-nightly.yml`.
 
 ### Detection (canonical)
 

@@ -81,7 +81,7 @@ function chipsHtml(g: { difficulty: Difficulty | null; durationMin: [number, num
 	return parts.length ? `<div class="card-sub">${parts.join('')}</div>` : '';
 }
 
-type SortMode = 'added' | 'az' | 'za' | 'random';
+type SortMode = 'added' | 'az' | 'za' | 'random' | 'rating';
 type TypeFilter = 'all' | 'webgl' | 'flash' | 'retro';
 
 const SHOW_MAINTENANCE_KEY = 'jeo-show-maintenance';
@@ -285,6 +285,46 @@ if (wrap) {
 	let sort: SortMode = 'added';
 	let randomSeed: Game[] | null = null;
 
+	// ---- Global ratings state -----------------------------------------------
+	/** Map from slug → { avg: number; count: number } loaded from backend. */
+	const globalRatings = new Map<string, { avg: number; count: number }>();
+
+	function applyGlobalRatings(data: Record<string, { avg: number; count: number }>) {
+		globalRatings.clear();
+		for (const [slug, r] of Object.entries(data)) {
+			if (r && r.count >= 1) globalRatings.set(slug, r);
+		}
+		if (sort === 'rating') render();
+	}
+
+	async function fetchAndApplyRatings() {
+		try {
+			// Prefer JeoRatings (already handles caching, backend URL, optimistic updates)
+			if ((window as any).JeoRatings) {
+				const data = await (window as any).JeoRatings.fetchGlobalRatings();
+				if (data && typeof data === 'object') { applyGlobalRatings(data); return; }
+			}
+			// Direct backend fetch fallback
+			let backendUrl: string | null = null;
+			try {
+				const ls = localStorage.getItem('jeo:backendUrl');
+				if (ls && /^https?:\/\//.test(ls) && !/REPLACE|YOUR-/i.test(ls)) backendUrl = ls.replace(/\/+$/, '');
+			} catch {}
+			if (!backendUrl) {
+				const meta = document.querySelector<HTMLMetaElement>('meta[name="jeo-backend"]');
+				const v = meta?.content?.trim();
+				if (v && /^https?:\/\//.test(v) && !/REPLACE|YOUR-/i.test(v)) backendUrl = v.replace(/\/+$/, '');
+			}
+			if (!backendUrl) return;
+			const res = await fetch(backendUrl + '/api/ratings', { signal: AbortSignal.timeout(5000) });
+			if (!res.ok) return;
+			const data = await res.json() as { ratings?: Record<string, { avg: number; count: number }> };
+			if (data?.ratings) applyGlobalRatings(data.ratings);
+		} catch (e) {
+			console.debug('[grid] fetchAndApplyRatings failed:', e);
+		}
+	}
+
 	function visibleGames(): Game[] {
 		const q = normalize(query);
 		const tokens = q ? q.split(' ').filter(Boolean) : [];
@@ -296,6 +336,20 @@ if (wrap) {
 		});
 		if (sort === 'az') return filtered.slice().sort((a, b) => a.name.localeCompare(b.name));
 		if (sort === 'za') return filtered.slice().sort((a, b) => b.name.localeCompare(a.name));
+		if (sort === 'rating') {
+			return filtered.slice().sort((a, b) => {
+				const rA = globalRatings.get(a.slug);
+				const rB = globalRatings.get(b.slug);
+				const avgA = rA ? rA.avg : -1;
+				const avgB = rB ? rB.avg : -1;
+				if (avgB !== avgA) return avgB - avgA;
+				// tiebreak: more votes = more trustworthy
+				const cA = rA ? rA.count : 0;
+				const cB = rB ? rB.count : 0;
+				if (cB !== cA) return cB - cA;
+				return a.name.localeCompare(b.name);
+			});
+		}
 		if (sort === 'random') {
 			if (!randomSeed) {
 				randomSeed = filtered.slice().sort(() => Math.random() - 0.5);
@@ -515,6 +569,16 @@ if (wrap) {
 
 	// Initial render — captures the URL-driven `?q=` if present.
 	render();
+
+	// Fetch global ratings after first paint so the page feels instant.
+	// When sort=rating is selected, this will auto-trigger a re-render.
+	setTimeout(fetchAndApplyRatings, 500);
+
+	// Re-render when JeoRatings (ratings.js) delivers fresh global data.
+	window.addEventListener('jeo:ratingsUpdated', (e: Event) => {
+		const detail = (e as CustomEvent<{ global: Record<string, { avg: number; count: number }> }>).detail;
+		if (detail?.global) applyGlobalRatings(detail.global);
+	});
 }
 
 export {};

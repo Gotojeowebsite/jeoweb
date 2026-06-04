@@ -1,0 +1,2 @@
+!function(){"use strict";function e(e){return document.querySelectorAll(e)}function t(e,t){e.remove(),t.style.removeProperty("display")}window.addEventListener("load",(function(){var o,r=e(".ocpSectionLayout .ocpSection"),n=e(".ocpSectionLayout .shimmer-effect");if(r.length===n.length)for(var i=0;i<n.length;i++){var c=(o=n[i],Number(o.getAttribute("shimmer-delay")));setTimeout(t,c,n[i],r[i])}else n.forEach((function(e){e.remove()})),r.forEach((function(e){e.style.removeProperty("display")}))}))}();
+//# sourceMappingURL=shimmerExperiment.Main.min.js.map

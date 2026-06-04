@@ -1,0 +1,46 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="awa-authtype" content="None" />
+	
+	
+	<title></title>
+</head>
+<body>
+	
+
+<div id="TAP__SETTINGS" data-settings="{&quot;AllowFeedback&quot;:true,&quot;AllowContent&quot;:true,&quot;AllowScreenshot&quot;:true,&quot;AllowOptionalConnectedExperiences&quot;:true}"></div>
+
+	<script type="text/javascript" src="/js/SilentSignIn.Main.min.js?v=LKkJs9puSk_H_Tyd1JDE20VDXJlRd6pdfRVIUu_WniU"></script>
+	
+
+	<script type="text/javascript">
+		(function () {
+			var silentSignInProperties = {
+				account: {
+					type: '',
+					tenantId: '',
+					memberName: '',
+					displayName: '',
+					firstName: '',
+					lastName: '',
+					authenticatedState: ''
+				},
+				ageGroup: 0,
+				userIsChild: false,
+				localTelemetryId: 'p:',
+				telemetryAuthType: 'None',
+				authType: 'None',
+				puid: '',
+				dataBoundary: 'WW'
+			};
+
+			CurrentSilentSignInAttempt(silentSignInProperties, false);
+		})();
+	</script>
+</body>
+</html>
