@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "generated_at": 1780837384,
+  "counts": {
+    "attempted": 3,
+    "recovered": 0,
+    "failed": 3,
+    "timeout": 0,
+    "cooldown_skipped": 0
+  },
+  "results": [
+    {
+      "slug": "0v0",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 499467,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 21 raw hits → 15 ranked\n[0v0] exact failed — running fuzzy expansion for \"0\"\n[0v0] fuzzy pass: 35 raw hits → 15 ranked\n[0v0] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 381477,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 48 raw hits → 15 ranked\n[1] exact failed — running fuzzy expansion for \"1\"\n[1] fuzzy pass: 40 raw hits → 15 ranked\n[1] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 475752,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 157 raw hits → 15 ranked\n[9007199254740992] exact failed — running fuzzy expansion for \"9007199254740992\"\n[9007199254740992] fuzzy pass: 86 raw hits → 15 ranked\n[9007199254740992] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed": [
+    {
+      "slug": "0v0",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 499467,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 21 raw hits → 15 ranked\n[0v0] exact failed — running fuzzy expansion for \"0\"\n[0v0] fuzzy pass: 35 raw hits → 15 ranked\n[0v0] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 381477,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 48 raw hits → 15 ranked\n[1] exact failed — running fuzzy expansion for \"1\"\n[1] fuzzy pass: 40 raw hits → 15 ranked\n[1] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 475752,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 157 raw hits → 15 ranked\n[9007199254740992] exact failed — running fuzzy expansion for \"9007199254740992\"\n[9007199254740992] fuzzy pass: 86 raw hits → 15 ranked\n[9007199254740992] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    }
+  ],
+  "recovered": [],
+  "skipped": []
+}

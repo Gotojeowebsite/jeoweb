@@ -1,4 +1,11 @@
 {
+  "1": {
+    "attempts": 1,
+    "last_attempt": 1780836909,
+    "next_eligible": 1780840509,
+    "last_error": "15 candidates all failed",
+    "last_reason": "all_candidates_failed"
+  },
   "pandemic": {
     "attempts": 1,
     "last_attempt": 1780498268,
@@ -451,6 +458,20 @@
     "attempts": 1,
     "last_attempt": 1780540991,
     "next_eligible": 1780544591,
+    "last_error": "15 candidates all failed",
+    "last_reason": "all_candidates_failed"
+  },
+  "0v0": {
+    "attempts": 1,
+    "last_attempt": 1780836527,
+    "next_eligible": 1780840127,
+    "last_error": "15 candidates all failed",
+    "last_reason": "all_candidates_failed"
+  },
+  "9007199254740992": {
+    "attempts": 1,
+    "last_attempt": 1780837384,
+    "next_eligible": 1780840984,
     "last_error": "15 candidates all failed",
     "last_reason": "all_candidates_failed"
   }
