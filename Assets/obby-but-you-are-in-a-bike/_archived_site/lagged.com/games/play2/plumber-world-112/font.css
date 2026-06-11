@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url(notosans-regular-webfont.woff2) format('woff2'),
+		url(notosans-regular-webfont.woff) format('woff'),
+		url(notosans-regular-webfont.ttf) format('truetype');
+}
+
+/*Simplified Chinese - Traditional Chinese - Japanese - Korean*/
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 400;
+	src: url(notosansjp-regular-webfont.woff2) format('woff2'),
+	    url(notosansjp-regular-webfont.woff) format('woff'),
+	    url(notosansjp-regular-webfont.otf) format('opentype');
+}

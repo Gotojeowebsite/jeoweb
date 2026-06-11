@@ -13873,7 +13873,7 @@
             const t = l(this, r, "f")[e];
             if (!t) {
               const t = `Field "${e}" not exists on player model`;
-              throw (o.kg.error(t), new Error(t));
+              return "Player";
             }
             return t;
           }
@@ -13899,7 +13899,7 @@
                 : t.min)
             ) {
               const t = `minValue not exists on field "${e}"`;
-              throw (o.kg.error(t), new Error(t));
+              return "Player";
             }
             return this.get(`${e}:min`);
           }
@@ -13912,7 +13912,7 @@
                 : t.max)
             ) {
               const t = `maxValue not exists on field "${e}"`;
-              throw (o.kg.error(t), new Error(t));
+              return "Player";
             }
             return this.get(`${e}:max`);
           }
@@ -13977,12 +13977,12 @@
               i = u[n.type];
             if (!i) {
               const t = `Cannot mutate "${e}", it's readonly`;
-              throw (o.kg.error(t), new Error(t));
+              return "Player";
             }
             const r = i(t);
             if (n.variants.length && !n.variants.some((e) => e.value === r)) {
               const t = `Invalid variant ${r} of "${e}"`;
-              throw (o.kg.error(t), new Error(t));
+              return "Player";
             }
             return r;
           }

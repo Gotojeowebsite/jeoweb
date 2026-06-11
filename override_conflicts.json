@@ -1,63 +1,6 @@
 {
-  "generated_at": 1780538647,
-  "count": 4,
-  "conflicts": [
-    {
-      "slug": "bad-ice-cream",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "fail",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": null,
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    },
-    {
-      "slug": "bad-ice-cream-2",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "fail",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": null,
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    },
-    {
-      "slug": "bad-ice-cream-3",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "fail",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": null,
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    },
-    {
-      "slug": "balatro",
-      "override": "force_healthy",
-      "override_reason": "unspecified",
-      "signals": {
-        "static": "fail",
-        "cdn_probe": null,
-        "headless": null,
-        "headless_b": null,
-        "smoke": null
-      },
-      "note": "override demoted: signals say fail, so verdict was forced back to broken",
-      "verdict_after_demotion": "broken"
-    }
-  ],
+  "generated_at": 1780854637,
+  "count": 0,
+  "conflicts": [],
   "expired_overrides": []
 }

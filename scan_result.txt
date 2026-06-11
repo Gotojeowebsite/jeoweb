@@ -1,0 +1,16 @@
+Scan server active on port 8081
+Scanning 1 remaining games (total target set: 1) in batches of 20...
+
+--- Batch 1/1 (1 games) ---
+Testing: bad-ice-cream-3 (flash)
+  Attempt 1/2...
+  REVIEW: External dependency requested for game runtime
+
+Scan complete.
+  Broken: 0
+  Needs review: 1
+  OK: 0
+  Broken log: /workspaces/jeoweb/broken_games.txt
+  Checked log: /workspaces/jeoweb/checked_games.txt
+  Review log: /workspaces/jeoweb/needs_review_games.txt
+  Full report: /workspaces/jeoweb/scan_results.json

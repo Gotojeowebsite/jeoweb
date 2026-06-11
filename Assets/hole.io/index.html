@@ -507,7 +507,7 @@ return{makeRequest:function(url,callback,opt_params){var params=opt_params||{};
 var httpMethod=params.METHOD||"GET";
 var refreshInterval=params.REFRESH_INTERVAL;
 var auth,st;
-if(params.AUTHORIZATION&¶ms.AUTHORIZATION!=="NONE"){auth=params.AUTHORIZATION.toLowerCase();
+if(params.AUTHORIZATION&&params.AUTHORIZATION!=="NONE"){auth=params.AUTHORIZATION.toLowerCase();
 st=shindig.auth.getSecurityToken()
 }else{if(httpMethod==="GET"&&refreshInterval===undefined){refreshInterval=3600
 }}var signOwner=true;

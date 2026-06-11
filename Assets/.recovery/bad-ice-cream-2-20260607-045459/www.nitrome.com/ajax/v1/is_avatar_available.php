@@ -1,0 +1,1 @@
+status:0|message:this avatar is not yet available

@@ -270,7 +270,8 @@
                 streamingAssetsUrl: "StreamingAssets",
                 companyName: "Fire Games",
                 productName: "Brawl 2018",
-                productVersion: "1.07"
+                productVersion: "1.07",
+                webglContextAttributes: { preserveDrawingBuffer: true }
             };
 
             const container = document.querySelector("#unity-container");
@@ -312,13 +313,9 @@
             window.NO_DATA = NO_DATA;
 
             document.addEventListener('contextmenu', event => event.preventDefault());
-            document.addEventListener('visibilitychange', () => SetVisibility(!document.hidden));
-            window.addEventListener('blur', () => SetVisibility(false));
-            window.addEventListener('focus', () => SetVisibility(true));
 
             window.addEventListener('pointerdown', () => {
                 FocusGame();
-                SetVisibility(true);
             });
 
             const oRequestPointerLock = Element.prototype.requestPointerLock;

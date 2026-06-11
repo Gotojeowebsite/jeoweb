@@ -1,0 +1,1 @@
+callback({"gecbRatesValidDate":"June 07, 2026","productRates":[{"orgName":"GS Bank","orgId":"GECB","instrumentName":"Online Savings","instrumentCode":"Savings Product","rateLabel":"Online Savings","productCode":"SAV","apr":"3.34","apy":"3.40","tierMax":"1000000"}],"resultTotal":1})

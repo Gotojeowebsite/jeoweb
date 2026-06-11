@@ -123,16 +123,11 @@
     }
 
     const fetchGameData = (gameSlug) => {
-        const size = 50;
         return new Promise(resolve => {
-            fetch(`https://api.poki.com/game/${gameSlug}?site=${siteId}`)
-                .then(response => response.json())
-                .then(data => {
-                    resolve({
-                        thumb: `https://img.poki.com/cdn-cgi/image/quality=78,width=${size},height=${size},fit=cover,g=0.5x0.5,f=auto/${data.image.path}`,
-                        title: data.title
-                    });
-                });
+            resolve({
+                thumb: nitromeThumb,
+                title: "Bad Ice-Cream"
+            });
         });
     }
 

@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "generated_at": 1780806248,
+  "counts": {
+    "attempted": 10,
+    "recovered": 0,
+    "failed": 9,
+    "timeout": 1,
+    "cooldown_skipped": 0
+  },
+  "results": [
+    {
+      "slug": "0v0",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 471122,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 54 raw hits → 15 ranked\n[0v0] exact failed — running fuzzy expansion for \"0\"\n[0v0] fuzzy pass: 50 raw hits → 15 ranked\n[0v0] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 364580,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 76 raw hits → 15 ranked\n[1] exact failed — running fuzzy expansion for \"1\"\n[1] fuzzy pass: 50 raw hits → 15 ranked\n[1] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 392945,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 31 raw hits → 15 ranked\n[9007199254740992] exact failed — running fuzzy expansion for \"9007199254740992\"\n[9007199254740992] fuzzy pass: 27 raw hits → 15 ranked\n[9007199254740992] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "amazing-rope-police",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 396245,
+      "stdout_tail": "[amazing-rope-police] discovering candidates for \"Amazing Rope Police\" (webgl)…\n[amazing-rope-police] exact pass: 48 raw hits → 15 ranked\n[amazing-rope-police] exact failed — running fuzzy expansion for \"amazing rope police\"\n[amazing-rope-police] fuzzy pass: 46 raw hits → 15 ranked\n[amazing-rope-police] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "among-us",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600016,
+      "stdout_tail": "[among-us] discovering candidates for \"Among Us\" (webgl)…\n[among-us] exact pass: 67 raw hits → 15 ranked\n[among-us] exact failed — running fuzzy expansion for \"among us\"\n[among-us] fuzzy pass: 75 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "angelunder",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 354335,
+      "stdout_tail": "[angelunder] discovering candidates for \"Angelunder\" (webgl)…\n[angelunder] exact pass: 165 raw hits → 15 ranked\n[angelunder] exact failed — running fuzzy expansion for \"angelunder\"\n[angelunder] fuzzy pass: 90 raw hits → 15 ranked\n[angelunder] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "angry-bird",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 348452,
+      "stdout_tail": "[angry-bird] discovering candidates for \"Angry Bird\" (webgl)…\n[angry-bird] exact pass: 72 raw hits → 15 ranked\n[angry-bird] exact failed — running fuzzy expansion for \"angry bird\"\n[angry-bird] fuzzy pass: 49 raw hits → 15 ranked\n[angry-bird] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "aqua-park",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 419754,
+      "stdout_tail": "[aqua-park] discovering candidates for \"Aqua Park\" (webgl)…\n[aqua-park] exact pass: 30 raw hits → 15 ranked\n[aqua-park] exact failed — running fuzzy expansion for \"aqua park\"\n[aqua-park] fuzzy pass: 38 raw hits → 15 ranked\n[aqua-park] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "aquapark-slides",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 493760,
+      "stdout_tail": "[aquapark-slides] discovering candidates for \"Aquapark Slides\" (webgl)…\n[aquapark-slides] exact pass: 32 raw hits → 15 ranked\n[aquapark-slides] exact failed — running fuzzy expansion for \"aquapark slides\"\n[aquapark-slides] fuzzy pass: 30 raw hits → 15 ranked\n[aquapark-slides] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "astray",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 463854,
+      "stdout_tail": "[astray] discovering candidates for \"Astray\" (webgl)…\n[astray] exact pass: 51 raw hits → 15 ranked\n[astray] exact failed — running fuzzy expansion for \"astray\"\n[astray] fuzzy pass: 50 raw hits → 15 ranked\n[astray] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    }
+  ],
+  "failed": [
+    {
+      "slug": "0v0",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 471122,
+      "stdout_tail": "[0v0] discovering candidates for \"0v0\" (webgl)…\n[0v0] exact pass: 54 raw hits → 15 ranked\n[0v0] exact failed — running fuzzy expansion for \"0\"\n[0v0] fuzzy pass: 50 raw hits → 15 ranked\n[0v0] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "1",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 364580,
+      "stdout_tail": "[1] discovering candidates for \"1\" (webgl)…\n[1] exact pass: 76 raw hits → 15 ranked\n[1] exact failed — running fuzzy expansion for \"1\"\n[1] fuzzy pass: 50 raw hits → 15 ranked\n[1] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "9007199254740992",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 392945,
+      "stdout_tail": "[9007199254740992] discovering candidates for \"9007199254740992\" (webgl)…\n[9007199254740992] exact pass: 31 raw hits → 15 ranked\n[9007199254740992] exact failed — running fuzzy expansion for \"9007199254740992\"\n[9007199254740992] fuzzy pass: 27 raw hits → 15 ranked\n[9007199254740992] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "amazing-rope-police",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 396245,
+      "stdout_tail": "[amazing-rope-police] discovering candidates for \"Amazing Rope Police\" (webgl)…\n[amazing-rope-police] exact pass: 48 raw hits → 15 ranked\n[amazing-rope-police] exact failed — running fuzzy expansion for \"amazing rope police\"\n[amazing-rope-police] fuzzy pass: 46 raw hits → 15 ranked\n[amazing-rope-police] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "among-us",
+      "outcome": "timeout",
+      "exit_code": null,
+      "ms": 600016,
+      "stdout_tail": "[among-us] discovering candidates for \"Among Us\" (webgl)…\n[among-us] exact pass: 67 raw hits → 15 ranked\n[among-us] exact failed — running fuzzy expansion for \"among us\"\n[among-us] fuzzy pass: 75 raw hits → 15 ranked\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "angelunder",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 354335,
+      "stdout_tail": "[angelunder] discovering candidates for \"Angelunder\" (webgl)…\n[angelunder] exact pass: 165 raw hits → 15 ranked\n[angelunder] exact failed — running fuzzy expansion for \"angelunder\"\n[angelunder] fuzzy pass: 90 raw hits → 15 ranked\n[angelunder] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "angry-bird",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 348452,
+      "stdout_tail": "[angry-bird] discovering candidates for \"Angry Bird\" (webgl)…\n[angry-bird] exact pass: 72 raw hits → 15 ranked\n[angry-bird] exact failed — running fuzzy expansion for \"angry bird\"\n[angry-bird] fuzzy pass: 49 raw hits → 15 ranked\n[angry-bird] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "aqua-park",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 419754,
+      "stdout_tail": "[aqua-park] discovering candidates for \"Aqua Park\" (webgl)…\n[aqua-park] exact pass: 30 raw hits → 15 ranked\n[aqua-park] exact failed — running fuzzy expansion for \"aqua park\"\n[aqua-park] fuzzy pass: 38 raw hits → 15 ranked\n[aqua-park] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "aquapark-slides",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 493760,
+      "stdout_tail": "[aquapark-slides] discovering candidates for \"Aquapark Slides\" (webgl)…\n[aquapark-slides] exact pass: 32 raw hits → 15 ranked\n[aquapark-slides] exact failed — running fuzzy expansion for \"aquapark slides\"\n[aquapark-slides] fuzzy pass: 30 raw hits → 15 ranked\n[aquapark-slides] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    },
+    {
+      "slug": "astray",
+      "outcome": "failed",
+      "exit_code": 1,
+      "ms": 463854,
+      "stdout_tail": "[astray] discovering candidates for \"Astray\" (webgl)…\n[astray] exact pass: 51 raw hits → 15 ranked\n[astray] exact failed — running fuzzy expansion for \"astray\"\n[astray] fuzzy pass: 50 raw hits → 15 ranked\n[astray] all 15 attempted candidates failed (15 exact + 15 fuzzy ranked). Queued to reports/manual_review.json.\n",
+      "stderr_tail": ""
+    }
+  ],
+  "recovered": [],
+  "skipped": []
+}

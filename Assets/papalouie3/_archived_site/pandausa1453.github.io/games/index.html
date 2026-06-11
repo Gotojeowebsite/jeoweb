@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Library</title>
+<style>
+:root {
+--bg-color: #1e1e2e;
+--text-color: white;
+--button-bg: #007bff;
+--button-hover: #0056b3;
+--border-color: #007bff;
+}
+
+.light-theme {
+--bg-color: #f5f5f5;
+--text-color: #333;
+--button-bg: #4CAF50;
+--button-hover: #388E3C;
+--border-color: #4CAF50;
+}
+
+/* Apply theme colors */
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+transition: background-color 0.3s, color 0.3s;
+}
+
+/* Toggle Switch */
+.theme-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 26px;
+}
+
+.theme-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: var(--button-bg);
+transition: 0.4s;
+border-radius: 34px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: 0.4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: var(--button-hover);
+}
+
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 20px;
+background-color: #1e1e2e;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
+h1 {
+margin-bottom: 20px;
+}
+.button-container {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+.category-btn, .game-btn, .back-home-btn, .back-console-btn, .bottom-btn {
+padding: 15px 30px;
+font-size: 18px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: transform 0.2s, background-color 0.3s;
+display: inline-block;
+text-decoration: none;
+text-align: center;
+white-space: normal;
+background-color: #007bff;
+color: white;
+width: 250px;
+}
+.category-btn:hover, .game-btn:hover, .back-home-btn:hover, .back-console-btn:hover, .bottom-btn:hover {
+transform: scale(1.1);
+background-color: #0056b3;
+}
+#gameList, #consoleSelection {
+display: none;
+margin-top: 20px;
+}
+.back-home-btn {
+font-size: 16px;
+margin: 10px auto;
+display: block;
+width: 200px;
+}
+.back-console-btn {
+font-size: 16px;
+margin-top: 0;
+display: none;
+}
+.search-container {
+margin-bottom: 20px;
+text-align: center;
+}
+#searchBar {
+padding: 10px;
+font-size: 18px;
+width: 300px;
+border: 2px solid #007bff;
+border-radius: 5px;
+text-align: center;
+}
+#searchButton {
+padding: 10px;
+font-size: 18px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-left: 10px;
+}
+#searchButton:hover {
+background-color: #0056b3;
+}
+.console-btn img {
+width: 150px;
+height: auto;
+border-radius: 10px;
+}
+.bottom-buttons {
+margin-top: auto;
+display: flex;
+justify-content: center;
+gap: 20px;
+padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<label class="theme-switch">
+<input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+<span class="slider"></span>
+</label>
+
+<h1>Game Library</h1>
+
+<div class="search-container">
+<input type="text" id="searchBar" placeholder="Search for a game...">
+<button id="searchButton" onclick="searchGame()">Search</button>
+</div>
+
+<a href="#" class="back-home-btn" onclick="goHome()">🏠 Back to Home</a>
+
+<div class="button-container" id="buttons">
+<button class="category-btn" onclick="showGames('new')">⭐ New Games</button>
+<button class="category-btn" onclick="showConsoles()">🎮 Retro Games</button>
+<button class="category-btn" onclick="showGames('shooter')">🔫 Shooter Games</button>
+<button class="category-btn" onclick="showGames('driving')">🚗 Driving Games</button>
+<button class="category-btn" onclick="showGames('sports')">🏀 Sports Games</button>
+<button class="category-btn" onclick="showGames('idle')">⏳ Idle Games</button>
+<button class="category-btn" onclick="showGames('strategy')">♟️ Strategy Games</button>
+<button class="category-btn" onclick="showGames('skill')">⚡ Skill Games</button>
+<button class="category-btn" onclick="showGames('flash')">👾 Flash Games</button>
+<button class="category-btn" onclick="showGames('papa')">🍩 Papa Games</button>
+<button class="category-btn" onclick="showAllGames()">🔤 Show All Games</button>
+<button class="category-btn" onclick="showGames('chat')">💬 Chat</button>
+<button class="category-btn" onclick="showGames('Ports')">🎞️ Ports</button>
+<button class="category-btn" onclick="showGames('roblox')">☑️ Roblox Clones</button>
+<button class="category-btn" onclick="showGames('Gambling')">💬 Gambling</button>
+</div>
+
+<div id="consoleSelection">
+<h2>Choose a Console</h2>
+<div class="button-container">
+<button class="console-btn" onclick="showGames('gba')">
+<img src="../../i.imgur.com/AWlL2Xb.jpeg" alt="Game Boy Advance">
+</button>
+<button class="console-btn" onclick="showGames('snes')">
+<img src="../../i.imgur.com/gJUJIuX.jpeg" alt="Super Nintendo">
+</button>
+<button class="console-btn" onclick="showGames('gbc')">
+<img src="../../i.imgur.com/G2zsDnv.png" alt="Game Boy Color">
+</button>
+<button class="console-btn" onclick="showGames('n64')">
+<img src="../../i.imgur.com/RQrfCUz.png" alt="Nintendo 64">
+</button>
+<button class="console-btn" onclick="showGames('nes')">
+<img src="../../i.imgur.com/pFIay4g.jpeg" alt="Nintendo System">
+</button>
+<button class="console-btn" onclick="showGames('ds')">
+<img src="../../i.imgur.com/4VIymGW.jpeg" alt="3ds">
+</button>
+</div>
+
+<!-- Move Series title to its own row -->
+<div style="width: 100%; text-align: center; margin-top: 20px;">
+<h3>Series</h3>
+</div>
+
+<!-- Move Pokémon button to its own row -->
+<div style="width: 100%; text-align: center;">
+<button class="console-btn" onclick="showGames('pokemon')">
+<img src="../../i.imgur.com/kUexwxB.png" alt="Pokémon Games">
+</button>
+</div>
+
+<a href="#" class="back-console-btn" onclick="goHome()">⬅ Back to Console Selection</a>
+</div>
+
+<div id="gameList"></div>
+
+<div class="bottom-buttons">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSczP6XRDcjGEQJpXHWGcQEqMMAaSVYEINpcqbQx6Ti5y1jK0A/viewform?usp=dialog" target="_blank" class="bottom-btn">📝 Game Suggestions</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdh6SqVwajDTQN9htRPJH6LtCHytRNSvL5XHjyOnbPdqiKJOQ/viewform?usp=dialog" target="_blank" class="bottom-btn">❌ Blocked Games</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSepO-HRMCXmZmLBzq-eh6Di5lRQKWp5kg9NnZWSNpqktperEQ/viewform?usp=dialog" target="_blank" class="bottom-btn">⭐ Review Us</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdhvceZC4xlbEkCn-qjXGxK2jT__Ur42Bmd4TWYgCxeVVi0Zg/viewform?usp=dialog" target="_blank" class="bottom-btn">🎞️ Movie Suggestions</a>
+</div>
+
+<script> 
+const games = {
+new: {"Epstien Clicker": "eclicker.html","Blocky Rider": "blockrider.html","Cowboy Safari": "cowboy2.html","Ragdoll Flip": "ragflip.html","Five Nights at Epstein's": "fnae.html", "Geoguessr": "geoguessr.html", "Hollow Knight": "hollowknight.html", "Crazy Cattle 3d": "crazycattle3d.html" },
+chat: { "Chat": "docs.html", "Not Working": "pt1.html", "also not working": "randomstuff.html" },
+shooter: { "1v1.LOL": "1v1lol.html", "Getaway Shootout": "getawayshootout.html", "Neon Shooter": "neonshooter.html",  "Pixel Shooter": "pixelshooter.html" },
+gbc: { "Pokémon Crystal": "pkcv.html", "Pokémon Silver": "pksv.html", "Legend of Zelda, The: Oracle of Seasons": "lgfzofs.html", "Pokémon Gold": "pkgv.html", "Pokémon Yellow": "pkyv.html", "Pokémon Rapers": "pkrpv.html"},
+ds: { "Pokémon Platinum": "pkplat.html" },
+nes: { "Legend of Zelda": "lgfz.html", "Google": "Google.html", "test": "docs.html"},
+pokemon: { "Pokémon Crystal": "pkcv.html", "Pokémon Silver": "pksv.html","Pokémon FireRed": "pkfr.html", "Pokémon Emerald": "pkem.html", "Pokémon Ruby": "pkrb.html", "Pokémon Leaf Green": "pklg.html", "Pokémon Sapphire": "pksafv.html", "Pokémon Gold": "pkgv.html", "Pokémon Yellow": "pkyv.html", "Pokémon Rapers": "pkrpv.html" },
+n64: { "Mario Kart 64": "mksf.html" },
+driving: { "Stunt Car": "stuntcar.html", "Escape Road": "escaperoad.html", "Battle Karts (Single Player)": "battlekarts.html", "Drift Boss": "driftboss.html", "Drift Hunters (long load times)": "drifthunters.html", "Slow Roads": "slowdrive.html", "Smash Karts (Multiplayer)": "smashkarts.html", "Poly Track": "polytrack.html", "Kart Bros": "kartbros.html", "Blocky Rider": "blockrider.html" },
+sports: { "Basket Random": "basketrandom.html", "Retro Bowl College": "retrobowlc.html", "Retro Bowl": "retrobowl.html", "Doodle Baseball": "doodlebaseball.html" },
+idle: { "Spacebar Clicker": "spacebarclicker.html", "Idle Mining Empire": "idleminingempire.html", "Idle Startup Tycoon": "idlestartuptycoon.html", "Cookie Clicker": "cookieclicker.html", "Idle Dice (Being Removed in 2 days. Export your save and switch to the new one.)": "idledice.html", "Idle Dice": "idle-dice.html", "Epstein Clicker": "eclicker.html" },
+strategy: { "Paper.io 2": "paperio2.html", "Minecraft": "minecraft.html", "Spongebob Chess": "spongebobchess.html", "Geoguessr": "geoguessr.html" },
+skill: { "Slope": "slope.html", "Subway Surfers": "subwaysurfers.html", "Fruit Merge": "fruitmerge.html", "Escape Jump": "escapejump.html", "Idle Breakout": "idlebreakout.html", "Getting Over It": "gettingoverit.html", "OVO": "ovo.html", "Cowboy Safari": "cowboy2.html", "Ragdoll Flip": "ragflip.html", "Five Nights at Epstein's": "fnae.html"},
+gba: { "Grand Theft Auto Advance": "gtaa.html", "Mario Kart Super Circuit": "mkss.html", "Pokémon FireRed": "pkfr.html", "Pokémon Emerald": "pkem.html", "Pokémon Ruby": "pkrb.html", "Pokémon Leaf Green": "pklg.html", "Pokémon Sapphire": "pksafv.html", "LEGO Star Wars": "LEGOsw.html", "Marvel: Ultimate Allience": "mua.html", "Ultimate Spiderman": "usm.html", "Batman Begins": "bb.html", "Cars": "cars.html", "Hello Kitty: Happy Party Pals": "hk.html", "Madden NFL 07": "m07.html" },
+flash: { "Resort Empire": "resortempire.html" },
+papa: { "Papa Louie 2": "papalouie2.html", "Papa Louie 3": "papalouie3.html"},
+snes: { "Donkey Kong Country": "dkc.html", "Mario Paint": "mpa.html", "Mario Paints": "test45.html", "Street Fighter II": "sf5.html", "Super Mario Kart": "smk.html", "Super Mario World": "smw.html", "Top Gear 2": "tg2.html", "The Legend of Zelda: A Link to the Past": "lttp.html", "Super Mario RPG": "SMRPG.html" },
+Ports: { "Hollow Knight": "hollowknight.html", "A Difficult Game About Climbing": "A Difficult Game About Climbing.html" },
+Gambling: { "Blackjack": "blackjack.html" },
+roblox: { "Roblox Fishing": "robloxfishing.html", "Roblox Tower of Hell": "robloxtowerofhell.html", "Roblox Food Tycoon": "robloxfoodtycoon.html" }
+};
+
+function showAllGames() {
+let gameListDiv = document.getElementById("gameList");
+let allGames = [];
+
+for (const category in games) {
+for (const [name, link] of Object.entries(games[category])) {
+allGames.push({ name, link });
+}
+}
+
+allGames.sort((a, b) => a.name.localeCompare(b.name));
+
+let results = allGames.map(game => `<a href="${game.link}" class="game-btn">${game.name}</a>`);
+
+gameListDiv.innerHTML = "<h2>All Games (A-Z)</h2><div class='button-container'>" + results.join("") + "</div>";
+
+gameListDiv.style.display = "block";
+document.getElementById("buttons").style.display = "none";
+document.getElementById("consoleSelection").style.display = "none";
+}
+function showGames(category) {
+let gameListDiv = document.getElementById("gameList");
+let results = [];
+
+if (games[category]) {
+for (const [name, link] of Object.entries(games[category])) {
+results.push(`<a href="${link}" class="game-btn">${name}</a>`);
+}
+}
+
+if (results.length > 0) {
+gameListDiv.innerHTML = "<h2>Games</h2><div class='button-container'>" + results.join("") + "</div>";
+} else {
+gameListDiv.innerHTML = "<h2>No games found</h2>";
+}
+
+gameListDiv.style.display = "block";
+document.getElementById("buttons").style.display = "none";
+document.getElementById("consoleSelection").style.display = "none";
+}
+
+function showConsoles() {
+document.getElementById("consoleSelection").style.display = "block";
+document.getElementById("buttons").style.display = "none";
+document.getElementById("gameList").style.display = "none";
+}
+
+function searchGame() {
+let query = document.getElementById("searchBar").value.toLowerCase();
+let gameListDiv = document.getElementById("gameList");
+let results = [];
+
+for (const category in games) {
+for (const [name, link] of Object.entries(games[category])) {
+if (name.toLowerCase().includes(query)) {
+results.push(`<a href="${link}" class="game-btn">${name}</a>`);
+}
+}
+}
+
+if (results.length > 0) {
+gameListDiv.innerHTML = "<h2>Search Results</h2><div class='button-container'>" + results.join("") + "</div>";
+} else {
+gameListDiv.innerHTML = "<h2>No games found</h2>";
+}
+
+gameListDiv.style.display = "block";
+document.getElementById("buttons").style.display = "none";
+document.getElementById("consoleSelection").style.display = "none";
+}
+
+document.getElementById("searchBar").addEventListener("keypress", function(event) {
+if (event.key === "Enter") {
+searchGame();
+}
+});
+
+function goHome() {
+document.getElementById("buttons").style.display = "flex";
+document.getElementById("consoleSelection").style.display = "none";
+document.getElementById("gameList").style.display = "none";
+document.getElementById("searchBar").value = "";
+}
+
+</script>
+<script>
+function toggleTheme() {
+const body = document.body;
+const themeToggle = document.getElementById('themeToggle');
+
+// Toggle the light-theme class
+body.classList.toggle('light-theme');
+
+// Check the current theme and store it in localStorage
+const isLightTheme = body.classList.contains('light-theme');
+localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+
+// Update the toggle switch state
+themeToggle.checked = isLightTheme;
+}
+
+// Run this function when the page loads to apply saved theme
+(function applySavedTheme() {
+const savedTheme = localStorage.getItem('theme');
+const body = document.body;
+const themeToggle = document.getElementById('themeToggle');
+
+if (savedTheme === 'light') {
+body.classList.add('light-theme');
+themeToggle.checked = true;
+} else {
+body.classList.remove('light-theme');
+themeToggle.checked = false;
+}
+})();
+
+
+</script>
+
+
+</body></html>

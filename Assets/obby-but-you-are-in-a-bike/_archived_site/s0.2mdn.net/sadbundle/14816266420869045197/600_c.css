@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#container {
+   position: absolute;
+    background-color: #ed4030;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    font-weight:bold;
+    color: #ffffff;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#bdr {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    left: 0px;
+    top: 0px;
+    background-image: url(bdr_p.png);
+    z-index: 4;
+}
+
+#bg1 {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    background-image: url(bg1_p.png);
+    background-color: #ed4030;
+    display: block;
+    z-index: 2;
+}
+    
+#img1 {
+    position: absolute;
+    width: 300px;
+    height: 422px;
+    background-image: url(img1.jpg);
+    display: block;
+    z-index: 2;
+}
+
+#txt1 {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    background-image: url(txt1.png);
+    display: block;
+    z-index: 3;
+}
+
+#logo {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    background-image: url(logo.png);
+}
+
+#logo2 {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    background-image: url(logo2.png);
+}
+
+#comuWindow {
+    position: absolute;
+    width: 300px;
+    height: 425px;
+    left: 0px;
+    top: 24px;
+    overflow: hidden;
+}
+
+#imageMask {
+    position: absolute;
+    width: 300px;
+    height: 195px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.comunHolder {
+    position: absolute;
+    width: 300px;
+    height: 425px;
+    left: 0px;
+    top: 0px;
+}
+
+.comunImg {
+    position: absolute;
+    width: 300px;
+    height: 195px;
+    left: 0px;
+    top: 0px;
+    display: block;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+
+.comunTxt {
+    text-align: center;
+    font-size: 24px;
+    width: 290px;
+    margin-left: 5px;
+    vertical-align: text-top;
+    overflow: hidden;
+    padding-bottom: 2px;
+}
+
+.comunLocal {
+    left: 0px;
+    font-size: 13px;
+    vertical-align: text-top;
+    margin-top: 230px;
+}
+
+
+/*flexing comun headline*/
+
+.comunLocal.small .comunTxt {
+font-size: 20px;
+height: 65px;
+width: 270px;
+margin-left: 15px;
+text-align: center;
+
+}
+
+.comunLocal .small .location {
+     margin-bottom: -8px;
+}
+
+.comunLocal .location {
+    font-size: 13px;
+    text-align: center
+}
+
+.comunPrice {
+    font-size: 19px;
+    color: #ffffff;
+    font-weight: bold;
+    vertical-align: text-top;
+    text-align: center;
+    bottom: 20px;
+    width: 296px;
+    right: 2px;
+    position: absolute;
+}
+
+.subPriceTxt {
+    font-size: 17px;
+    color: #ffffff;
+}

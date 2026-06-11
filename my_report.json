@@ -1,0 +1,3640 @@
+[
+  {
+    "name": "elasticman",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 27.817,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/_external_mirror/sites.google.com/site/elasticmanunblocked/2face.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2kQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2kQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2swCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2swCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2ugCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2ugCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2oQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2oQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2nQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2nQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2tQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2tQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2twCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2twCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2pwCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2owCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2owCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq20ACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq20ACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2qACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2qACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2ogCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2ogCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2qgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2qgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sQCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2sACIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCI.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCI.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rgCIlsw.woff2"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2rgCIlsw.woff2"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 47,
+      "bodyTextSample": "created by david li\naudio by dolphin club audio",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "elephantquest",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 34.951,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "electricman2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 34.765,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "electricman",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 36.608,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "epicbattlefantasy3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 36.759,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "endlesswar3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 76.273,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "escape-car",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 29.866,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 32,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 32
+    }
+  },
+  {
+    "name": "epiccomboredux",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 35.934,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "exitpath",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 35.757,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "factoryballs",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 28.381,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://raw.githubusercontent.com/Piplup7575/factoryballz/b756c41c487dc6daa7b46cf4464e2c9c7e64b4d9/images/preloader.gif"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://raw.githubusercontent.com/Piplup7575/factoryballz/b756c41c487dc6daa7b46cf4464e2c9c7e64b4d9/images/preloader.gif"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "414989002",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 226,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "414989002",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "414989002",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "exo",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 48.61,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 24,
+      "bodyTextSample": "tutorial\nmusic\nsfx\nvoice",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "1579859363",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 228,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-398662660",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "-960933812",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "evil-glitch",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 72.686,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 2,
+      "bodyTextLength": 10,
+      "bodyTextSample": "fullscreen",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-214515255",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 224,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-996632767",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "-295070501",
+      "canvasNonzeroPixelsAfterInput": 256,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "factoryballs2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 32.959,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "escapingtheprison",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 116.528,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Couldn't fill shape with unknown bitmap 59",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Couldn't fill shape with unknown bitmap 58",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Couldn't fill shape with unknown bitmap 57",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Unknown AVM1 opcode: Unknown { opcode: 252, data: [3, 0] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Tried to instantiate non-registered character Asset_Connection_Error",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "factoryballs3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 32.778,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "factoryballs4",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 32.631,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://unpkg.com/@ruffle-rs/ruffle"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance7\": Cannot set undefined property Some(\"instance7\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Could not resolve parameter type Multiname { ns: [Package(\"flash.net\")], name: Some(\"URLRequest\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got Could not resolve parameter type Multiname { ns: [Package(\"flash.net\")], name: Some(\"URLRequest\"), params: [] } when constructing AVM2 side of movie clip",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance9\": Cannot set undefined property Some(\"instance9\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance19\": Cannot set undefined property Some(\"instance19\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Property does not exist: Multiname { ns: [Package(\"flash.geom\")], name: Some(\"ColorTransform\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got Property does not exist: Multiname { ns: [Package(\"flash.geom\")], name: Some(\"ColorTransform\"), params: [] } when constructing AVM2 side of movie clip",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance127\": Cannot set undefined property Some(\"instance127\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance132\": Cannot set undefined property Some(\"instance132\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance135\": Cannot set undefined property Some(\"instance135\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance151\": Cannot set undefined property Some(\"instance151\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance279\": Cannot set undefined property Some(\"instance279\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Got error when setting AVM2 child named \"instance309\": Cannot set undefined property Some(\"instance309\")",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "AVM2 error: Property does not exist: Multiname { ns: [Private(\"\"), Private(\"\"), Package(\"\"), PackageInternal(\"\"), Namespace(\"http://adobe.com/AS3/2006/builtin\"), Namespace(\"adobe.utils\"), Package(\"flash.accessibility\"), Namespace(\"flash.desktop\"), Package(\"flash.display\"), Package(\"flash.errors\"), Package(\"flash.events\"), Namespace(\"flash.external\"), Package(\"flash.filters\"), Package(\"flash.geom\"), Namespace(\"flash.globalization\"), Package(\"flash.media\"), Package(\"flash.net\"), Namespace(\"flash.net.drm\"), Namespace(\"flash.printing\"), Namespace(\"flash.profiler\"), Namespace(\"flash.sampler\"), Namespace(\"flash.sensors\"), Package(\"flash.system\"), Package(\"flash.text\"), Package(\"flash.text.ime\"), Namespace(\"flash.text.engine\"), Package(\"flash.ui\"), Package(\"flash.utils\"), Namespace(\"flash.xml\"), Protected(\"intro\"), StaticProtected(\"intro\"), StaticProtected(\"flash.display:MovieClip\"), StaticProtected(\"flash.display:Sprite\"), StaticProtected(\"flash.display:DisplayObjectContainer\"), StaticProtected(\"flash.display:InteractiveObject\"), StaticProtected(\"flash.display:DisplayObject\"), StaticProtected(\"flash.events:EventDispatcher\")], name: Some(\"BlurFilter\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "Error occured when running AVM2 frame script: Property does not exist: Multiname { ns: [Private(\"\"), Private(\"\"), Package(\"\"), PackageInternal(\"\"), Namespace(\"http://adobe.com/AS3/2006/builtin\"), Namespace(\"adobe.utils\"), Package(\"flash.accessibility\"), Namespace(\"flash.desktop\"), Package(\"flash.display\"), Package(\"flash.errors\"), Package(\"flash.events\"), Namespace(\"flash.external\"), Package(\"flash.filters\"), Package(\"flash.geom\"), Namespace(\"flash.globalization\"), Package(\"flash.media\"), Package(\"flash.net\"), Namespace(\"flash.net.drm\"), Namespace(\"flash.printing\"), Namespace(\"flash.profiler\"), Namespace(\"flash.sampler\"), Namespace(\"flash.sensors\"), Package(\"flash.system\"), Package(\"flash.text\"), Package(\"flash.text.ime\"), Namespace(\"flash.text.engine\"), Package(\"flash.ui\"), Package(\"flash.utils\"), Namespace(\"flash.xml\"), Protected(\"intro\"), StaticProtected(\"intro\"), StaticProtected(\"flash.display:MovieClip\"), StaticProtected(\"flash.display:Sprite\"), StaticProtected(\"flash.display:DisplayObjectContainer\"), StaticProtected(\"flash.display:InteractiveObject\"), StaticProtected(\"flash.display:DisplayObject\"), StaticProtected(\"flash.events:EventDispatcher\")], name: Some(\"BlurFilter\"), params: [] }",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fake-cup-head",
+    "type": "webgl",
+    "entry_file": "index.htm",
+    "status": "broken",
+    "elapsed_seconds": 23.301,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fake-cup-head/media/button_check.ogg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fake-cup-head/media/coin_2.ogg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fake-cup-head/media/bomb_1.ogg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fake-cup-head/media/bomb_2.ogg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fake-cup-head/media/musicbackground.ogg"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to set the 'domain' property on 'Document': '4399.com' is not a suffix of 'localhost'.",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "Unable to decode audio data",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-1462631009",
+      "canvasNonzeroPixels": 254,
+      "canvasPixelVariance": 249,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-1462631009",
+      "canvasNonzeroPixelsFirst": 254,
+      "engineExtraWaitMs": 4000
+    }
+  },
+  {
+    "name": "fairsquares",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 32.122,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-335411058",
+      "canvasNonzeroPixels": 192,
+      "canvasPixelVariance": 133,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": true,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-335411058",
+      "canvasNonzeroPixelsFirst": 192,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "1227193584",
+      "canvasNonzeroPixelsAfterInput": 192,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fake-virus",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 29.35,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://quantcast.mgr.consensu.org/choice/xncav4ssEzwLp/localhost/choice.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://quantcast.mgr.consensu.org/choice/xncav4ssEzwLp/localhost/choice.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/pay-with-kidneys.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/fake-virus/scroll.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://cmp.gatekeeperconsent.com/min.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://cmp.gatekeeperconsent.com/min.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://the.gatekeeperconsent.com/cmp.min.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://the.gatekeeperconsent.com/cmp.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.ezojs.com/ezoic/sa.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.ezojs.com/ezoic/sa.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://ezoicanalytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://ezoicanalytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-WQHYZ04776"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-WQHYZ04776"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/classroom/favicon.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/classroom/favicon.png"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://pl29339095.profitablecpmratenetwork.com/4e098bda900198a91774b8eba3de1871/invoke.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://pl29339095.profitablecpmratenetwork.com/4e098bda900198a91774b8eba3de1871/invoke.js"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://pl29339094.profitablecpmratenetwork.com/83/59/3f/83593fb83e97e9d850b37eac8c847fa2.js"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://pl29339094.profitablecpmratenetwork.com/83/59/3f/83593fb83e97e9d850b37eac8c847fa2.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/0v0/logo.jpeg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/9007199254740992/logo-4.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/amazing-rope-police/splash.jpeg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/among-us/penumbra.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/angelunder/TemplateData/babusgames-logo.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/angry-bird/angry-birds.jpg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/aqua-park/splash.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/aquapark-slides/splash.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/astray/splash.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/papalouie3/logo.jpg"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/clash-royale/logo.png"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/happywheels/logo.webp"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/ns-shaft/icon.png"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 6083,
+      "bodyTextSample": "skip to games\n\ud83c\udfe0\nhome\n\u2694\ufe0f\naction\n\ud83d\udc7e\nretro\n\ud83e\udde9\npuzzle\n\ud83c\udfce\ufe0f\ndriving\n\ud83c\udfb2\nroulette\n\ud83d\udcbe\nmy saves\njeo\nflash\nretro\nlogs\nlinks\nhost your own\nsend feedback\n\ud83c\udfa8\n\ud83c\udf19\n\u2699\ufe0f\nsign in\ncreate\nplay unlimited games\n\nno downloads, no sign-ups \u2014 just play\n\n266\ntotal games\n247\nwebgl games\n217\n\u26a1 flash games\n57\n\ud83c\udfae retro games\n\u2b50 game of the day\nchibiknight\n\ntoday's pick \u00b7 \u26a1 flash\n\n\u25b6 play now\nmaybe later\n\ud83c\udfaf daily challenge \u2014 play this game\n\u23f1 continue playing\n\u25b6 continue\n\u2715\n\ud83d\udd0d\nsort: a-z\nsort: top rated\nsort: most played\n\u26a1 flash\n\ud83c\udfae retro\n\u26a0 maintenance\n\ud83c\udfb2 surprise me\nflash\n251\nretro\n115\nrpg\n43\nsports\n36\nracing\n30\nplatformer\n25\nsimulation\n23\nshooter\n21\nstrategy\n15\nmultiplayer\n12\narcade\n11\npuzzle\n8\n\u21bb refresh\n\ud83d\udec8 status: unverified\n\u2764\ufe0f\nfavorites\n0\n\u2039\n\u2764\ufe0f\nfavorite games appear here\ntap the \u2661 on any game card to pin it to this row.\n\u2715\n\u203a\n\ud83d\udd16\nplay later\n0\n\u2039\n\ud83d\udd16\nsave games for later\ntap the bookmark on any game to add it to play later.\n\u2715\n\u203a\n\u2728\nnewly added\n29\nsee what's new \u2192\n\u2039\n\u2661\n\u22ef\npapalouie3\n\u22ef\n\u2661\n\u22ef\nns-shaft\n\u22ef\n\u2661\n\u22ef\nhappywheels\n\u22ef\n\u2661\n\u22ef\n? unverified\nclash-royale\n\u22ef\n\u2661\n\u22ef\nzombiealienparasites\n\u22ef\n\u2661\n\u22ef\nzelda-sacred-paradox\n\u22ef\n\u2661\n\u22ef\nyuriusshouseofspooks\n\u22ef\n\u2661\n\u22ef\n? unverified\nyou-are-bezos\n\u22ef\n\u2661\n\u22ef\nyearofthesnake\n\u22ef\n\u2661\n\u22ef\nxtremecliffdiving\n\u22ef\n\u2661\n\u22ef\nxenos\n\u22ef\n\u2661\n\u22ef\nworms\n\u22ef\n\u2661\n\u22ef\n? unverified\nworlds-hardest-game\n\u22ef\n\u2661\n\u22ef\nworlds-hardest-game-2\n\u22ef\n\u2661\n\u22ef\nwordle\n\u22ef\n\u2661\n\u22ef\nwolf3d\n\u22ef\n\u2661\n\u22ef\nwild-guns\n\u22ef\n\u2661\n\u22ef\nwhere-in-the-world-is-carmen-sandiego\n\u22ef\n\u2661\n\u22ef\n? unverified\nwebretro-local\n\u22ef\n\u2661\n\u22ef\nwarp\n\u22ef\n\u2661\n\u22ef\nwarfare1944\n\u22ef\n\u2661\n\u22ef\nwarfare1917\n\u22ef\n\u2661\n\u22ef\n? unverified\nvex6\n\u22ef\n\u2661\n\u22ef\n? unverified\nvex5\n\u22ef\n\u2661\n\u22ef\nvex4\n\u22ef\n\u2661\n\u22ef\nvex3\n\u22ef\n\u2661\n\u22ef\nveloce\n\u22ef\n\u2661\n\u22ef\nunrealflash\n\u22ef\n\u2661\n\u22ef\nultrakill\n\u22ef\n\u203a\nall games\n567 games shown\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\n1on1soccer\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\n1on1soccerbigheads\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n2006-fifa-world-cup-germany-2006\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n2048\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n2k-sports-major-league-baseball-2k7\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\n3dtanks\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\na-dance-of-fire-and-ice\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nabobosbigadventure\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nachievementunlocked\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nachievementunlocked2\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nachievementunlocked3\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nactionturnip\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nadaran\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\naddict-fishing\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nadrenaline\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nadrenalinechallenge\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nadventure-capitalist\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\namericanracing1\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\namericanracing2\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\namusepark\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nangry-sharks\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nanimal-stacking\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nant-city\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\narkandianrevenant\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\narmyofages\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nasmallworldcup\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nastrosurvivor\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\navalanche\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\navatar-the-last-airbender\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\navatar-the-last-airbender-the-burning-earth\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nawesomecars\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nawesomeplanes\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nbackrooms\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n? unverified\nbackrooms-2d\n\u2713 verified 5d ago\n\u25b6 play (unverified)\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbackyard-baseball\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbackyard-basketball\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbackyard-football\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbackyard-hockey\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbackyard-skateboarding\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\nbacon-may-die\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flash\nbad-ice-cream\n\u2713 verified 5d ago\n\u25b6 play\n\u22ef\n\u2661\n\u22ef\n\ud83d\udcd1\n\u22ef\n\u26a1 flas",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fancypantsadventure",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 32.875,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fancypantsadventure2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 33.805,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fancypantsadventure3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 33.578,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fifa-soccer-2003",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 41.755,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 31,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 8
+    }
+  },
+  {
+    "name": "fifa-soccer-07",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 44.276,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 5,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 6
+    }
+  },
+  {
+    "name": "fifa-soccer-06",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 45.873,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 6,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 5
+    }
+  },
+  {
+    "name": "fighter-aircraft-pilot",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 24.1,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/nc/script.min.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://pub-2d868f15a1824cc8a2ec51069ed41c6f.r2.dev/Fighter_Aircraft_Pilot.data.unityweb"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://pub-2d868f15a1824cc8a2ec51069ed41c6f.r2.dev/Fighter_Aircraft_Pilot.data.unityweb"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 11,
+      "bodyTextSample": "loading: 0%",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 30,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  },
+  {
+    "name": "fifa-soccer-2005",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 43.419,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 5,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 6
+    }
+  },
+  {
+    "name": "fifa-soccer-2004",
+    "type": "gba",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 45.983,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/mgba.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 4,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 9
+    }
+  },
+  {
+    "name": "final-fantasy-iii",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 42.005,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 9,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 7
+    }
+  },
+  {
+    "name": "final-fantasy-iii-es",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 42.209,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 10,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 12
+    }
+  },
+  {
+    "name": "final-fight",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 43.967,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 8,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 6
+    }
+  },
+  {
+    "name": "fire-boy1",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 34.577,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "final-fight-3",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 42.207,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 11,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 8
+    }
+  },
+  {
+    "name": "fire-boy2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 34.779,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "final-fight-2",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 46.163,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 6,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 10
+    }
+  },
+  {
+    "name": "fire-boy3",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 36.142,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fireboywatergirlforesttemple",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 26.011,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/domains.json?v=1780858667697"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/sitelock.json?v=1780858667697"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/games.json?v=1780858667697"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/internal.json?v=1780858667697"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/special.json?v=1780858667697"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/cdn.fbrq/@azerion/splash/assets/json/contracted.json?v=1780858667697"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.google-analytics.com/analytics.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://cdn.raygun.io/raygun4js/raygun.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://cdn.raygun.io/raygun4js/raygun.min.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/fireboywatergirlforesttemple/img.gamedistribution.com/gamedistributionid-512x512.jpeg"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "status 404",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://tags.crwdcntrl.net/c/13998/cc.js?ns=_cc13998"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://tags.crwdcntrl.net/c/13998/cc.js?ns=_cc13998"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://hb.improvedigital.com/pbw/gameDistributionV1.1.min.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://hb.improvedigital.com/pbw/gameDistributionV1.1.min.js"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 2,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": true,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  },
+  {
+    "name": "fishing.io",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 30.51,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "missing ) after argument list",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "gadgets is not defined",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/cdn.jsdelivr.net/gh/st39/sdk_main/sdk.js"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL",
+        "message": "External non-critical request detected",
+        "severity": "warning",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "EXTERNAL_NONCRITICAL_FAILED",
+        "message": "External non-critical request failed",
+        "severity": "warning",
+        "url": "https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.21,tbsd_.101,tbnd_.-122&srt=21&gadget=default&container=default&view=default&e=&rt=dl.1328,ol.2133,prt.2133"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://csi.gstatic.com/csi?v=3&s=opensocial-gadgets&action=default_default&it=wtsrt_.21,tbsd_.101,tbnd_.-122&srt=21&gadget=default&container=default&view=default&e=&rt=dl.1328,ol.2133,prt.2133"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "https://43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/dat/m.isr"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "https://43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/dat/m.isr"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/inl.png"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/splash.png"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/void.png"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/rybar_spine/rybar.png"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/rybar_spine/rybar.atlas"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/rybar_spine/rybar.json"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/fnt/gamefont_TA.xml"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/img/pak1.png"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/button.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/hudba_loop.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/minca_naratavanie_penazi.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/not_enough_money.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/ryba_na_hacik.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/tahanie_hore_pomaly.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/tahanie_hore_rychlo.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/vhodenie_udice.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/voda_loop.ogg"
+      },
+      {
+        "code": "LOCAL_MIRROR_HTTP",
+        "message": "Generated mirror local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/_external_mirror/43868287-283533260613887793.preview.editmysite.com/uploads/b/8156145-741051280210564939/files/assets/audio/zakupenie_item.ogg"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "365229020",
+      "canvasNonzeroPixels": 35,
+      "canvasPixelVariance": 89,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": true,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "365229020",
+      "canvasNonzeroPixelsFirst": 35,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "365229020",
+      "canvasNonzeroPixelsAfterInput": 35,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flappy-2048",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 28.508,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 0,
+      "bodyTextLength": 179,
+      "bodyTextSample": "flappy 2048\n1\n+1\n 1\n\njump through the tiles and get to 2048!\n\n1\n\nhow to play: press any key to move the tile. when the tile goes through a barrier, you get a point!\n\nmade by echo.",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fire-boy4",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 41.233,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flappy-bird",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 29.322,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 58,
+      "bodyTextSample": "original game/concept/art by dong nguyen\nrecreated by 3kh0",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flashflightsimulator",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 35.61,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flashtetris",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 41.513,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flashback-the-quest-for-identity",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 45.766,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 4,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 6
+    }
+  },
+  {
+    "name": "flappybird",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 59.637,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 2,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 2
+    }
+  },
+  {
+    "name": "flight",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 35.451,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "flower-shop",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 35.431,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "PAGE_ERROR",
+        "message": "aclib is not defined",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "fortzone",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 31.751,
+    "critical_issues": [
+      {
+        "code": "UNITY_LOADING_STUCK",
+        "message": "Unity loading bar stuck at 90%",
+        "severity": "critical",
+        "url": "http://localhost:8081/Assets/fortzone/index.html"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=19252&publicToken=BpD7GZjEbBTtQKB2IwTvVBygo3vhvgtp"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://gs.eponesh.com/sdk/gamepush.js?projectId=19252&publicToken=BpD7GZjEbBTtQKB2IwTvVBygo3vhvgtp"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=19252&publicToken=BpD7GZjEbBTtQKB2IwTvVBygo3vhvgtp"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://s3.eponesh.com/files/gs/sdk/gamepush.js?projectId=19252&publicToken=BpD7GZjEbBTtQKB2IwTvVBygo3vhvgtp"
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "GamePush Timeout 5000ms exceeded: Proxy timeout for url: https://api.eponesh.com/gs/api",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "GamePush Timeout 5000ms exceeded: Proxy timeout for url: https://api.gamepush.com/gs/api",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "GamePush Timeout 5000ms exceeded: Proxy timeout for url: https://apip.eponesh.com/gs/api",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "CONSOLE_ERROR",
+        "message": "GamePush Timeout 5000ms exceeded: Proxy timeout for url: https://apip.gamepush.com/gs/api",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": true,
+      "unityProgress": "90%",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 31,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 5000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 31
+    }
+  },
+  {
+    "name": "fracuum",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 34.956,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "freerider2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 33.997,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "frogger",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 36.875,
+    "critical_issues": [],
+    "warnings": [],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": true,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": true,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 10000,
+      "canvasHashAfterInput": "",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 0
+    }
+  },
+  {
+    "name": "froggys-battle",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 35.845,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 15,
+      "bodyTextSample": "froggy's battle",
+      "unityLoadingBar": true,
+      "unityProgress": "100%",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 3,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 0,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 3
+    }
+  },
+  {
+    "name": "front-mission",
+    "type": "snes",
+    "entry_file": "index.html",
+    "status": "warning",
+    "elapsed_seconds": 44.168,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/emulatorjs/cores/reports/snes9x.json"
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Failed to fetch",
+        "severity": "warning",
+        "url": ""
+      },
+      {
+        "code": "PAGE_ERROR",
+        "message": "Wake Lock permission request denied",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 165,
+      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": true,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 18,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": true,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 15000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 9
+    }
+  }
+]

@@ -1,0 +1,274 @@
+/* IF FONT WEIGHT IS NORMAL USE BELOW REMOVE AND DELETE FILE IF NOT USED */
+@font-face{
+    font-family:BasisGrotesque-Regular-Pro; 
+    src:url("BasisGrotesquePro-Regular.subset.woff") format("woff")
+}
+
+/* IF FONT WEIGHT IS BOLD USE BELOW, REMOVE AND AND DELETE FILE IF NOT USED */
+
+
+:root {
+    --ad-width: 300px;
+    --ad-height: 600px;
+    --bgLogo-width: 600px;
+    --bgLogo-height: 1200px;
+    --fontW-Reg: BasisGrotesque-Regular-Pro;
+    --fontW-Med: BasisGrotesque-Medium-Pro;
+}
+
+body {
+    margin: 0px;
+}
+
+/* OVERALL BANNER SPECS */
+#ad {
+    display: block;
+    overflow: hidden;
+    width: var(--ad-width);
+    height: var(--ad-height);
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+/*default setup*/
+
+#border{
+    position: absolute;
+    display: block;
+    width: var(--ad-width);
+    height: var(--ad-height);
+    /* if dark bg, use below */
+    border: rgb(145, 153, 153) 1px solid;
+    /* if light bg, use below */
+    /* border: rgb(145, 153, 153) 1px solid; */
+    box-sizing:border-box;
+    top: 0;
+    left: 0;
+    z-index:999;
+}
+
+#banner {
+    position: relative;
+    display: block;
+    width: var(--ad-width);
+    height: var(--ad-height);
+    /* UPDATE BG COLOR as shown in the mockup */
+    background-color: #FBA440;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* UPDATE REF PNG AND DELETE THE FILE BEFORE DELIVERY */
+
+/* LAYER PROPERTIES */
+#logo{
+    background: url("logo.png") no-repeat center;
+    position: absolute;
+    width: var(--bgLogo-width);
+    height: var(--bgLogo-height);
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+    transform: scale(0.5);
+    transform-origin: 0% 0%;
+    z-index: 3;
+}
+
+/* ILLUSTRATIONS OBJECTS */
+
+/* MASKS SETUP */
+
+/* Baseline or 0px = 258px */
+
+/* COPY LINE 1 */
+
+/* COPY LINE 2 */
+
+/* COPY LINE 3 */
+
+/* COPY LINE 4 */
+
+/* COPY LINE 5 */
+
+
+
+#bg{
+    background:url("bg.jpg");
+    width: 600px;
+    height: 1200px;
+    scale: 50%;
+    transform-origin: 0% 0%;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* TEXT COPY */
+.txt{
+    position: absolute;
+    width: var(--ad-width);
+    height: var(--ad-height);
+    top: 80px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: 0% 0%;
+    z-index: 3;
+}
+/* FRAME 1 COPY */
+#txt1-a{
+    background:url("txt1-a.svg") center no-repeat;   
+}
+
+#txt1-b-1{
+    background:url("txt1-b-1.svg") center no-repeat;
+}
+
+#txt1-b-2{
+    background:url("txt1-b-2.svg") center no-repeat;
+}
+
+#txt1-b-3{
+    background:url("txt1-b-3.svg") center no-repeat;
+}
+
+#txt1-b-4{
+    background:url("txt1-b-4.svg") center no-repeat;
+}
+
+#txt1-c{
+    background:url("txt1-c.svg") center no-repeat;
+}
+
+
+/* FRAME 2 COPY */
+#txt2-a{
+    background:url("txt2-a.svg") center no-repeat;
+}
+
+
+#txt2-b{
+    background:url("txt2-b.svg") center no-repeat;
+}
+
+
+/* FRAME 3 COPY */
+
+#txt3-a{
+    background:url("txt3-a.svg") center no-repeat;   
+}
+
+#txt3-b{
+    background:url("txt3-b.svg") center no-repeat;
+}
+
+#txt3-c{
+    background:url("txt3-c.svg") center no-repeat;
+}
+
+
+#txt3-d{
+    background:url("txt3-d.svg") center no-repeat;
+}
+
+#txt3-e{
+    background:url("txt3-e.svg") center no-repeat;
+}
+
+
+
+
+
+/* RATE */
+#rate{
+    position: absolute;
+    top: 294px;
+    left: 15px;
+    width: auto;
+    z-index: 999;
+    opacity: 0;
+}
+
+#rate-span{
+    position: relative;
+    font-family: var(--fontW-Reg); 
+    font-size: 56.29px;
+    color: #22263f;
+    top: -39px;
+    z-index: 12;
+    opacity: 1;
+    width: auto;
+    height: 69px;
+    letter-spacing: -2.5px;
+    float: left;
+}
+
+#apy{
+    position: relative;
+    background:url("apy.svg") center no-repeat;
+    width: 33px;
+    height: 42px;
+    top:-27px;
+    left:2px;
+    opacity: 1;
+    z-index: 12;
+    float: left;
+}
+
+/*CTA*/
+#cta{
+    background:url("cta.svg") center no-repeat;
+    width: 132px;
+    height: 40px;
+    position: absolute;
+    top: 189px;
+    left: 158px;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    z-index: 12;
+}
+
+/*TrustArc holder*/
+#trustArc{
+    width: var(--ad-width);
+    height: var(--ad-height);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: 0% 0%;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

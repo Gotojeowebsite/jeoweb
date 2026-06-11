@@ -1,0 +1,21 @@
+{
+    "shop": {
+        "timeless": {
+            "type": "upgradable",
+            "name": "Endless Mode",
+            "idName" : "endlessMode",
+            "quantity":0,
+            "quantityMax": 1,
+            "0":{
+                "price":0,
+                "modifier":0,
+                "moneyType":"normal"
+            },
+            "1":{
+                "price":0,
+                "modifier":0,
+                "moneyType":"normal"
+            }
+        }
+    }
+}

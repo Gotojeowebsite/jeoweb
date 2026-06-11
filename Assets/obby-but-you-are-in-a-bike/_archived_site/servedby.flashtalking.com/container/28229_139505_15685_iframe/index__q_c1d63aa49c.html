@@ -1,0 +1,60 @@
+<html><body>
+
+<script>var urlHarvest = true;</script>
+<!-- Export Date: Feb. 23, 2026 @ 5:46pm UTC -->
+<script type='text/javascript'>new Image().src = 'https://servedby.flashtalking.com/spot/8/28229;139652;15685/?ftXRef=&ftXValue=&ftXType=&ftXName=&ftXNumItems=&ftXCurrency=&U1=&U2=&U3=&U4=&U5=&U6=&U7=&U8=&U9=&U10=&U11=&U12=&U13=&U14=&U15=&U16=&U17=&U18=&U19=&U20=&ft_referrer=https%3A%2F%2Fwww.pulte.com%2Fhomes%2Farizona%2Fphoenix%3Fcmp%3DPROG-_-PRG-_-OTHER-_-PHX-_-PLT7739-_-HU-_-ASM-_-%26gclid%3DEAIaIQobChMIn8rU_uj1lAMVU686BR3FBw7FEAEYASAAEgKrd_D_BwE%26dclid%3DCNqb5I7p9ZQDFdCXOgUdWe0bxQ%26gad_source%3D7%26gad_campaignid%3D23288248778%3F~U1%3DU1_VALUE%26U2%3DU2_VALUE%26U3%3DU3_VALUE%26U4%3DU4_VALUE%26U5%3DU5_VALUE%26U6%3DU6_VALUE%26U7%3DU7_VALUE%26U8%3DU8_VALUE%26U9%3DU9_VALUE%26U10%3DU10_VALUE%26U11%3DU11_VALUE%26U12%3DU12_VALUE%26U13%3DU13_VALUE%26U14%3DU14_VALUE%26U15%3DU15_VALUE%26U16%3DU16_VALUE%26U17%3DU17_VALUE%26U18%3DU18_VALUE%26U19%3DU19_VALUE%26U20%3DU20_VALUE&ns=https%3A%2F%2Fs0.2mdn.net%2F&cb=1852609975';</script><!--  Segment Tag | Add Segment |  (28229) | Pulte_Universal Pixel_Global (al59) | Pulte_Universal Pixel_Global (8152) | Expected URL:  | Export Date: Feb. 8, 2024 @ 6:04pm UTC -->
+<img style="width:1px; height:1px;" src="https://servedby.flashtalking.com/segment/modify/al59;;pixel/?name=Pulte_Universal_Pixel_Global"/><!-- Export Date: Feb. 23, 2026 @ 5:46pm UTC -->
+<script type='text/javascript'>new Image().src = 'https://servedby.flashtalking.com/spot/8/28229;140815;15685/?ftXRef=&ftXValue=&ftXType=&ftXName=&ftXNumItems=&ftXCurrency=&U1=&U2=&U3=&U4=&U5=&U6=&U7=&U8=&U9=&U10=&U11=&U12=&U13=&U14=&U15=&U16=&U17=&U18=&U19=&U20=&ft_referrer=https%3A%2F%2Fwww.pulte.com%2Fhomes%2Farizona%2Fphoenix%3Fcmp%3DPROG-_-PRG-_-OTHER-_-PHX-_-PLT7739-_-HU-_-ASM-_-%26gclid%3DEAIaIQobChMIn8rU_uj1lAMVU686BR3FBw7FEAEYASAAEgKrd_D_BwE%26dclid%3DCNqb5I7p9ZQDFdCXOgUdWe0bxQ%26gad_source%3D7%26gad_campaignid%3D23288248778%3F~U1%3DU1_VALUE%26U2%3DU2_VALUE%26U3%3DU3_VALUE%26U4%3DU4_VALUE%26U5%3DU5_VALUE%26U6%3DU6_VALUE%26U7%3DU7_VALUE%26U8%3DU8_VALUE%26U9%3DU9_VALUE%26U10%3DU10_VALUE%26U11%3DU11_VALUE%26U12%3DU12_VALUE%26U13%3DU13_VALUE%26U14%3DU14_VALUE%26U15%3DU15_VALUE%26U16%3DU16_VALUE%26U17%3DU17_VALUE%26U18%3DU18_VALUE%26U19%3DU19_VALUE%26U20%3DU20_VALUE&ns=https%3A%2F%2Fs0.2mdn.net%2F&cb=1852609975';</script><script>
+  //Pixel Manager | Export Date: Feb. 23, 2026 @ 5:46pm UTC
+  var ft_hSeg = {
+      ref_url:document.referrer,
+      ref_protocol:'',
+      ref_domain:'',
+      ref_path:'',
+      ref_queryStr:'',
+      spot_gID:'15685',
+      seg_set_QStr:false,
+      seg_uri:'',
+      seg_dom:'',
+      ad_domains:['servedby.flashtalking.com','servedby.flashtalking.com'],
+      parseUri:function(str){
+              var o = this,
+                splitObj = /^(http[s]?):\/\/?([^\/\s]+)\/([\w\.]+[^#?;\s]+)(.*)?/.exec(str);
+                if(splitObj===null) return false;
+              var retObj = {
+                    protocol:splitObj[1],
+                    domain:splitObj[2],
+                    path:splitObj[3],
+                    queryString:splitObj[4]
+                    }
+              return retObj;
+          },
+      set_seg:function(run){
+                              if(run == false) { return false };
+                  var split_obj = this.parseUri(this.check_ref(this.ref_url)),
+                    seg_path = '/segment/2/read/a;;pixel/?s='+this.spot_gID+'&d=';
+                  if(split_obj===false) return false;
+                  this.ref_protocol = 'https';
+                  this.ref_domain = split_obj.domain;
+                  this.ref_queryStr = split_obj.queryString;
+                  this.ref_path = split_obj.path.replace(new RegExp(decodeURIComponent('%5E/%7C/%24/g')), '');
+                  this.seg_dom = this.ad_domains[(this.ref_protocol == 'http')? 0 : 1];
+                  this.seg_uri = this.ref_protocol+'://'+this.seg_dom+seg_path+this.ref_domain+'&r='+this.ref_path+(this.seg_set_QStr?'&q='+decodeURIComponent(this.ref_queryStr):'');
+                  new Image().src=this.seg_uri;
+                  return true;
+              },
+      check_ref:function(url){
+              var st=window.location.search.indexOf('ft_referrer=')+12,
+                  en=(window.location.search.substring(st)).indexOf('&ns=');
+                  if(en === -1) en = 9e9;
+                  cont_ref = decodeURIComponent(window.location.search.substring(st,en+st));
+              if (url === ''|| this.ref_url !== cont_ref){
+                  return  cont_ref;
+              }else{
+                  return this.ref_url;
+              }
+      }
+    };
+    ft_hSeg.set_seg(urlHarvest);
+  </script>
+</body></html>

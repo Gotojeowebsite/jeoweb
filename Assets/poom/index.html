@@ -1,32 +1,24 @@
-<!--GAME BROKEN-->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Poom</title>
+  <title>The Poom</title>
   <style>
-    html, body { margin:0; height:100%; background:#000; color:#fff; font-family: system-ui, -apple-system, Segoe UI, sans-serif; }
-    .wrap { position:relative; height:100%; }
-    iframe { border:0; width:100%; height:100%; display:block; background:#000; }
-    .fallback { position:absolute; inset:0; display:none; align-items:center; justify-content:center; flex-direction:column; gap:12px; background:#000; text-align:center; padding:24px; }
-    .fallback a { color:#fff; background:#1f2937; padding:10px 16px; border-radius:8px; text-decoration:none; }
+    html, body { margin: 0; height: 100%; background: #0a0a0a; color: #fff; font-family: system-ui, sans-serif; }
+    .wrap { display: grid; place-items: center; height: 100%; text-align: center; padding: 20px; }
+    a { color: #fff; text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <iframe id="gameFrame" src="_game_local/games.mathpapers.us/poom/index.html" loading="eager" referrerpolicy="no-referrer" allowfullscreen></iframe>
-    <div id="fallback" class="fallback">
-      <div>This source blocks iframe embedding right now.</div>
-      <a href="_game_local/games.mathpapers.us/poom/index.html" target="_blank" rel="noopener noreferrer">Open game source in new tab</a>
+    <div>
+      <p>Launching game...</p>
+      <p><a href="_archived_site/the-poom.github.io/the_poom/index.html">If it does not open, click here.</a></p>
     </div>
   </div>
   <script>
-    const frame = document.getElementById('gameFrame');
-    const fallback = document.getElementById('fallback');
-    let loaded = false;
-    frame.addEventListener('load', () => { loaded = true; });
-    setTimeout(() => { if (!loaded) fallback.style.display = 'flex'; }, 4000);
+    location.replace('_archived_site/the-poom.github.io/the_poom/index.html');
   </script>
 </body>
 </html>

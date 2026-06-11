@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "generated_at": 1780538646,
+  "generated_at": 1780857683,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 433,
-    "warn": 99,
-    "fail": 63,
-    "total": 595
+    "pass": 429,
+    "warn": 105,
+    "fail": 50,
+    "total": 584
   },
   "games": [
     {
@@ -34,42 +34,6 @@
         }
       ],
       "refs_checked": 0
-    },
-    {
-      "slug": "0v0",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "1",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
     },
     {
       "slug": "1on1soccer",
@@ -151,40 +115,95 @@
       "warning_misses": 0
     },
     {
-      "slug": "9007199254740992",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
       "slug": "99-nights-in-the-forest",
-      "verdict": "fail",
-      "engine": "html5",
+      "verdict": "warn",
+      "engine": "unity",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: query ($input: PlayerGetPaymentLinkInput!) {\\n    result: PlayerGetPaymentLink(input: $input) {\\n        __typename\\n        ... on PlayerPaymentLink { link }\\n        ... on Problem { message }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "query ($input: PlayerGetPaymentLinkInput!) {\\n    result: PlayerGetPaymentLink(input: $input) {\\n        __typename\\n        ... on PlayerPaymentLink { link }\\n        ... on Problem { message }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: \\nquery {\\n    result: GetPlayerLoginStatus {\\n        __typename\\n        ... on Problem { message }\\n        ... on PlayerLoginStatus { credentials }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "\\nquery {\\n    result: GetPlayerLoginStatus {\\n        __typename\\n        ... on Problem { message }\\n        ... on PlayerLoginStatus { credentials }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: \\nmutation ($input: LoginPlayerInput!) {\\n    result: LoginPlayer(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "\\nmutation ($input: LoginPlayerInput!) {\\n    result: LoginPlayer(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: \\nmutation {\\n    result: LogoutPlayer {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "\\nmutation {\\n    result: LogoutPlayer {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: query ($input: CheckPlayerCodeInput!) {\\n    result: CheckPlayerCode(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "query ($input: CheckPlayerCodeInput!) {\\n    result: CheckPlayerCode(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: query ($input: CheckPlayerUniqueValueInput!) {\\n    result: CheckPlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on Problem { message }\\n       ... on Success { success }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "query ($input: CheckPlayerUniqueValueInput!) {\\n    result: CheckPlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on Problem { message }\\n       ... on Success { success }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: mutation ($input: RegisterPlayerUniqueValueInput!) {\\n    result: RegisterPlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on UniqueValue { tag value }\\n       ... on Problem { message }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "mutation ($input: RegisterPlayerUniqueValueInput!) {\\n    result: RegisterPlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on UniqueValue { tag value }\\n       ... on Problem { message }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: mutation ($input: DeletePlayerUniqueValueInput!) {\\n    result: DeletePlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on Success { success }\\n       ... on Problem { message }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "mutation ($input: DeletePlayerUniqueValueInput!) {\\n    result: DeletePlayerUniqueValue(input: $input) {\\n        __typename\\n       ... on Success { success }\\n       ... on Problem { message }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: \\nfragment project on Project {\\n    id\\n    url(from: $url)\\n    name(lang: $lang)\\n    description(lang: $lang)\\n    assets {\\n        icon(lang: $lang) {\\n            resources { src(w: 256, h: 256, crop: true) }\\n        }\\n    }\\n}\\nquery ($input: FetchPlayerGamesCollectionInput!, $lang: Lang, $url: String) {\\n    result: FetchPlayerGamesCollection(input: $input) {\\n        __typename\\n        ... on GamesCollection {\\n            id\\n            tag\\n            name(lang: $lang)\\n            description(lang: $lang)\\n            games { ...project }\\n        }\\n        ... on Problem { message }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "\\nfragment project on Project {\\n    id\\n    url(from: $url)\\n    name(lang: $lang)\\n    description(lang: $lang)\\n    assets {\\n        icon(lang: $lang) {\\n            resources { src(w: 256, h: 256, crop: true) }\\n        }\\n    }\\n}\\nquery ($input: FetchPlayerGamesCollectionInput!, $lang: Lang, $url: String) {\\n    result: FetchPlayerGamesCollection(input: $input) {\\n        __typename\\n        ... on GamesCollection {\\n            id\\n            tag\\n            name(lang: $lang)\\n            description(lang: $lang)\\n            games { ...project }\\n        }\\n        ... on Problem { message }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: query($input: FetchPlayerDocumentInput!, $lang: Lang, $format: DocumentFormat) {\\n    result: FetchPlayerDocument(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Document {\\n            type\\n            content(lang: $lang, format: $format)\\n        }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "query($input: FetchPlayerDocumentInput!, $lang: Lang, $format: DocumentFormat) {\\n    result: FetchPlayerDocument(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Document {\\n            type\\n            content(lang: $lang, format: $format)\\n        }\\n    }\\n}"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: \\n    mutation ($input: PlayerRegisterOnSchedulerInput!) {\\n        result: PlayerRegisterOnScheduler(input: $input) {\\n            __typename\\n            ... on Problem { message }\\n            ... on PlayerScheduler { \\n    daysClaimed\\n    schedulerId\\n    stats {\\n        activeDays\\n        activeDaysConsecutive\\n    }\\n }\\n        }\\n    }\\n",
+          "severity": "warning",
+          "ref": "\\n    mutation ($input: PlayerRegisterOnSchedulerInput!) {\\n        result: PlayerRegisterOnScheduler(input: $input) {\\n            __typename\\n            ... on Problem { message }\\n            ... on PlayerScheduler { \\n    daysClaimed\\n    schedulerId\\n    stats {\\n        activeDays\\n        activeDaysConsecutive\\n    }\\n }\\n        }\\n    }\\n"
+        },
+        {
+          "code": "MISSING_DYNAMIC_REF",
+          "message": "Dynamic JS reference target missing: query ($input: PlayerAICensorInput!) {\\n    result: PlayerAICheckCensor(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}",
+          "severity": "warning",
+          "ref": "query ($input: PlayerAICensorInput!) {\\n    result: PlayerAICheckCensor(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 2
         }
       ],
-      "refs_checked": 0,
+      "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 13
     },
     {
       "slug": "a-dance-of-fire-and-ice",
@@ -332,24 +351,6 @@
       "warning_misses": 2
     },
     {
-      "slug": "amazing-rope-police",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
       "slug": "americanracing1",
       "verdict": "pass",
       "engine": "ruffle",
@@ -374,40 +375,29 @@
       "warning_misses": 0
     },
     {
-      "slug": "among-us",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
       "slug": "amongus",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "NO_ENGINE_MARKER",
-          "message": "Entry HTML (and meta-refresh target if any) has no canvas/iframe/script/engine markers — not a playable game page",
-          "severity": "critical"
+          "code": "MISSING_CSS_ASSET",
+          "message": "CSS-referenced asset missing: fonts/in%20your%20face%2C%20joffrey%21.ttf",
+          "severity": "warning",
+          "ref": "fonts/in%20your%20face%2C%20joffrey%21.ttf"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 2
         }
       ],
-      "refs_checked": 0,
+      "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 2
     },
     {
       "slug": "amusepark",
@@ -416,42 +406,6 @@
       "entry_file": "index.html",
       "issues": [],
       "refs_checked": 1,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "angelunder",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "angry-bird",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -527,42 +481,6 @@
       "entry_file": "index.html",
       "issues": [],
       "refs_checked": 1,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "aqua-park",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
-      "slug": "aquapark-slides",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -658,24 +576,6 @@
       "external_critical": 5,
       "critical_misses": 0,
       "warning_misses": 1
-    },
-    {
-      "slug": "astray",
-      "verdict": "fail",
-      "engine": "html5",
-      "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EMPTY_ENTRY_HTML_CRITICAL",
-          "message": "Entry HTML is 0 bytes with no script/canvas/iframe/embed/object/ruffle/meta-refresh — cannot be a working game",
-          "severity": "critical"
-        }
-      ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
     },
     {
       "slug": "astrosurvivor",
@@ -891,22 +791,15 @@
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host (dynamic JS import): devs-api.poki.comsa",
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
           "severity": "warning",
-          "ref": "https://devs-api.poki.comsa/gameinfo/@sdk?href=",
-          "host": "devs-api.poki.comsa"
-        },
-        {
-          "code": "MISSING_DYNAMIC_REF",
-          "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
-          "severity": "warning",
-          "ref": "./touchControllerConfig.json"
+          "drift": 2
         }
       ],
-      "refs_checked": 8,
+      "refs_checked": 7,
       "external_refs": 0,
-      "external_critical": 1,
+      "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 1
     },
@@ -928,13 +821,19 @@
           "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
           "severity": "warning",
           "ref": "./touchControllerConfig.json"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 2
         }
       ],
       "refs_checked": 8,
       "external_refs": 0,
       "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 2
     },
     {
       "slug": "bad-ice-cream-3",
@@ -943,22 +842,15 @@
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host (dynamic JS import): devs-api.poki.comsa",
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
           "severity": "warning",
-          "ref": "https://devs-api.poki.comsa/gameinfo/@sdk?href=",
-          "host": "devs-api.poki.comsa"
-        },
-        {
-          "code": "MISSING_DYNAMIC_REF",
-          "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
-          "severity": "warning",
-          "ref": "./touchControllerConfig.json"
+          "drift": 2
         }
       ],
-      "refs_checked": 8,
+      "refs_checked": 6,
       "external_refs": 0,
-      "external_critical": 1,
+      "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 1
     },
@@ -974,13 +866,19 @@
           "severity": "warning",
           "ref": "https://github.com/Davidobot/love.js",
           "host": "github.com"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
         }
       ],
       "refs_checked": 5,
       "external_refs": 1,
       "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "balldodge",
@@ -1132,13 +1030,19 @@
           "message": "Local file missing: blob",
           "severity": "warning",
           "ref": "blob"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
         }
       ],
       "refs_checked": 6,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 2
+      "warning_misses": 3
     },
     {
       "slug": "bigredbutton",
@@ -5638,15 +5542,22 @@
     },
     {
       "slug": "fire-boy3",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "fire-boy4",
@@ -5877,15 +5788,22 @@
     },
     {
       "slug": "frogger",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "froggys-battle",
@@ -9786,18 +9704,6 @@
       "warning_misses": 0
     },
     {
-      "slug": "siftheads3",
-      "verdict": "pass",
-      "engine": "ruffle",
-      "entry_file": "index.html",
-      "issues": [],
-      "refs_checked": 1,
-      "external_refs": 0,
-      "external_critical": 0,
-      "critical_misses": 0,
-      "warning_misses": 0
-    },
-    {
       "slug": "siftheads4",
       "verdict": "pass",
       "engine": "ruffle",
@@ -10510,15 +10416,22 @@
     },
     {
       "slug": "stickrpg",
-      "verdict": "pass",
+      "verdict": "warn",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [],
+      "issues": [
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
+        }
+      ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 1
     },
     {
       "slug": "stickrun2",
@@ -10606,21 +10519,47 @@
     },
     {
       "slug": "subwaysurfers",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [
         {
-          "code": "NO_ENGINE_MARKER",
-          "message": "Entry HTML (and meta-refresh target if any) has no canvas/iframe/script/engine markers — not a playable game page",
-          "severity": "critical"
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: game-cdn.poki.com",
+          "severity": "warning",
+          "ref": "//game-cdn.poki.com/scripts/v2/poki-sdk.js",
+          "host": "game-cdn.poki.com"
+        },
+        {
+          "code": "MISSING_OPTIONAL_FILE",
+          "message": "Optional local file missing: images/touch-icon-114x114.png",
+          "severity": "warning",
+          "ref": "images/touch-icon-114x114.png"
+        },
+        {
+          "code": "MISSING_OPTIONAL_FILE",
+          "message": "Optional local file missing: images/touch-icon-72x72.png",
+          "severity": "warning",
+          "ref": "images/touch-icon-72x72.png"
+        },
+        {
+          "code": "MISSING_OPTIONAL_FILE",
+          "message": "Optional local file missing: images/touch-icon-57x57.png",
+          "severity": "warning",
+          "ref": "images/touch-icon-57x57.png"
+        },
+        {
+          "code": "MANIFEST_DRIFT",
+          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
+          "severity": "warning",
+          "drift": 1
         }
       ],
-      "refs_checked": 0,
-      "external_refs": 0,
-      "external_critical": 0,
+      "refs_checked": 7,
+      "external_refs": 1,
+      "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 0
+      "warning_misses": 4
     },
     {
       "slug": "sugarsugar",

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "super-liquid-soccer",
+    "type": "webgl",
+    "entry_file": "index.html",
+    "status": "broken",
+    "elapsed_seconds": 27.214,
+    "critical_issues": [
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://devs-api.poki.com/gameinfo/@sdk?href=http%3A%2F%2Flocalhost%3A8093%2FAssets%2Fsuper-liquid-soccer%2Findex.html&referrer=",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://devs-api.poki.com/gameinfo/@sdk?href=http%3A%2F%2Flocalhost%3A8093%2FAssets%2Fsuper-liquid-soccer%2Findex.html&referrer="
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://geo.poki.io/",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://geo.poki.io/"
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://api.poki.com/ads/settings",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://api.poki.com/ads/settings"
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?../_external_mirror/c.amazon-adsystem.com/aax2/apstag.js",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?../_external_mirror/c.amazon-adsystem.com/aax2/apstag.js"
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?../_external_mirror/a.poki.com/prebid/prebid6.12.0.js",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?../_external_mirror/a.poki.com/prebid/prebid6.12.0.js"
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+      },
+      {
+        "code": "BROKEN_URL_LITERAL",
+        "message": "Local URL contains literal undefined/null (HTTP 404): http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?patch/google/ima3.js?imasdk.googleapis.com/js/sdkloader/ima3.js",
+        "severity": "critical",
+        "url": "http://localhost:8093/Assets/super-liquid-soccer/patch/json/null.json?patch/google/ima3.js?imasdk.googleapis.com/js/sdkloader/ima3.js"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "RUNTIME_ADVISORY",
+        "message": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "severity": "warning",
+        "url": ""
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "-2116051376",
+      "canvasNonzeroPixels": 256,
+      "canvasPixelVariance": 119,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": true,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "-1350869980",
+      "canvasNonzeroPixelsFirst": 256,
+      "engineExtraWaitMs": 4000
+    }
+  }
+]

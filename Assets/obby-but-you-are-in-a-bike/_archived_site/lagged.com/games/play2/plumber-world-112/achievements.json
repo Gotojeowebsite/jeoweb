@@ -1,0 +1,62 @@
+{
+	"test":{
+		"achievement_code":"test",
+		"achievement_type": "STANDARD",
+		"achievement_steps": 1,
+		"achievement_state": "HIDDEN",
+		"achievement_order": -1,
+		"achievement_points": 10,
+		"achievement_description":{
+			"de":"description in good language de",
+			"en":"description in good language en",
+			"es":"description in good language es",
+			"fr":"description in{newline}good language fr",
+			"it":"description in good language it",
+			"ko":"description in good language ko",
+			"pt":"description in good language pt",
+			"tr":"description in good language tr",
+			"af":"description in good language af",
+			"ms":"description in good language ms",
+			"nl":"description in good language nl",
+			"ru":"description in good language ru",
+			"vn":"description in good language vn",
+			"zh":"description in good language zh",
+			"tw":"description in good language tw",
+			"ar":"description in good language ar",
+			"hi":"description in good language hi",
+			"id":"description in good language id",
+			"ja":"description in good language ja",
+			"th":"description in good language th"
+		}
+	},
+	"launchTime":{
+		"achievement_code":"launchTime",
+		"achievement_type": "INCREMENTAL",
+		"achievement_steps": 5,
+		"achievement_state": "REVEALED",
+		"achievement_order": -1,
+		"achievement_points": 10,
+		"achievement_description":{
+			"de":"description in good language de",
+			"en":"description in good language en",
+			"es":"description in good language es",
+			"fr":"Lancer le jeux 5 fois !",
+			"it":"description in good language it",
+			"ko":"description in good language ko",
+			"pt":"description in good language pt",
+			"tr":"description in good language tr",
+			"af":"description in good language af",
+			"ms":"description in good language ms",
+			"nl":"description in good language nl",
+			"ru":"description in good language ru",
+			"vn":"description in good language vn",
+			"zh":"description in good language zh",
+			"tw":"description in good language tw",
+			"ar":"description in good language ar",
+			"hi":"description in good language hi",
+			"id":"description in good language id",
+			"ja":"description in good language ja",
+			"th":"description in good language th"
+		}
+	}
+}

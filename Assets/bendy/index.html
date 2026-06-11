@@ -3,6 +3,22 @@
 <html lang="en-us">
 
 <head>
+    <script>
+        const originalFetch = window.fetch;
+        window.fetch = function() {
+            if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('undefined/pages/home.html')) {
+                return Promise.resolve(new Response(''));
+            }
+            return originalFetch.apply(this, arguments);
+        };
+        const originalXHR = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function() {
+            if (arguments[1] && typeof arguments[1] === 'string' && arguments[1].includes('undefined/pages/home.html')) {
+                arguments[1] = 'data:,';
+            }
+            return originalXHR.apply(this, arguments);
+        };
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -165,7 +181,7 @@
                     "companyName": "DefaultCompany",
                     "productName": "OldCh2RippedTwo",
                     "productVersion": "1.0",
-                    "dataUrl": "BATIM.data.unityweb",
+                    "dataUrl": dataUrl,
                     "wasmCodeUrl": "BATIM.wasm.code.unityweb",
                     "wasmFrameworkUrl": "BATIM.wasm.framework.unityweb",
                     "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
@@ -180,7 +196,7 @@
                 let blob = new Blob([JSON.stringify(json)], { type: 'application/json' });
                 let blobUrl = URL.createObjectURL(blob);
                 
-                UnityLoader.instantiate("unityContainer", json, {
+                UnityLoader.instantiate("unityContainer", blobUrl, {
                     onProgress: function(instance, progress) {
                         // Progress here is 0 to 1
                         const totalProgress = 100; // After merging we just show completion or handle secondary load

@@ -1,0 +1,18 @@
+button.cntrbtn:hover:after{display:none !important}
+
+.ribbon-wrapper-new{
+    width: auto !important;
+    padding: 0 4px;
+}
+.pregame-loader .pregame-clicky button, a.loadmorebtn{
+    padding-right:36px;
+}
+.pregame-loader .pregame-clicky button::after, a.loadmorebtn:after{
+    left: calc(50% + 65px);
+}
+@media (max-width: 600px) {
+    .notft .ribbon-wrapper-new{
+        width: auto !important;
+        padding: 0 3px;
+    }
+}

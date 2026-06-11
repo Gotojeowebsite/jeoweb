@@ -1,0 +1,1 @@
+import{_ as t}from"./B-w0hg88.js";import{_ as r,c as s,o as c,s as n,b as a}from"./vSLRz2eZ.js";import"./BTey4W_R.js";const _={},l={class:"min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900"};function m(e,f){const o=t;return c(),s("div",l,[n(e.$slots,"default"),a(o)])}const g=r(_,[["render",m]]);export{g as default};

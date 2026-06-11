@@ -25,6 +25,8 @@
   </center>
 
   <script type='text/javascript'>
+    window.__getWebDB = function(name) { return localStorage.getItem(name) || ""; };
+    window.__setWebDB = function(name, value) { localStorage.setItem(name, value); };
     window.callad = () => {
       window.parent.postMessage({
         type: 'adcall'
