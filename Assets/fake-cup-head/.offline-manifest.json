@@ -1,0 +1,336 @@
+{
+  "schema": 1,
+  "slug": "fake-cup-head",
+  "engine": "construct",
+  "entry": "index.html",
+  "generated_at": 1781444505,
+  "files": [
+    {
+      "path": "c2runtime.js",
+      "size": 771106,
+      "required": true
+    },
+    {
+      "path": "data.js",
+      "size": 201864,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.js",
+      "size": 719410,
+      "required": true
+    },
+    {
+      "path": "draco_decoder.wasm",
+      "size": 285747,
+      "required": true
+    },
+    {
+      "path": "draco_wasm_wrapper.js",
+      "size": 58763,
+      "required": true
+    },
+    {
+      "path": "icon-256.png",
+      "size": 92797,
+      "required": false
+    },
+    {
+      "path": "images/background_info-sheet0.png",
+      "size": 24313,
+      "required": false
+    },
+    {
+      "path": "images/background_layout_levels-sheet0.png",
+      "size": 4244,
+      "required": false
+    },
+    {
+      "path": "images/background_layout-sheet0.png",
+      "size": 769646,
+      "required": false
+    },
+    {
+      "path": "images/button_home_continue-sheet0.png",
+      "size": 8263,
+      "required": false
+    },
+    {
+      "path": "images/button_home_start-sheet0.png",
+      "size": 9159,
+      "required": false
+    },
+    {
+      "path": "images/button_info_again-sheet0.png",
+      "size": 12551,
+      "required": false
+    },
+    {
+      "path": "images/button_info_levels-sheet0.png",
+      "size": 11926,
+      "required": false
+    },
+    {
+      "path": "images/button_info_pause-sheet0.png",
+      "size": 8768,
+      "required": false
+    },
+    {
+      "path": "images/button_info_play-sheet0.png",
+      "size": 16613,
+      "required": false
+    },
+    {
+      "path": "images/button_info_sound-sheet0.png",
+      "size": 12680,
+      "required": false
+    },
+    {
+      "path": "images/button_info_sound-sheet1.png",
+      "size": 11895,
+      "required": false
+    },
+    {
+      "path": "images/button_level-sheet0.png",
+      "size": 4822,
+      "required": false
+    },
+    {
+      "path": "images/button_level-sheet1.png",
+      "size": 5632,
+      "required": false
+    },
+    {
+      "path": "images/door_down-sheet0.png",
+      "size": 5443,
+      "required": false
+    },
+    {
+      "path": "images/door_left-sheet0.png",
+      "size": 6026,
+      "required": false
+    },
+    {
+      "path": "images/door_right-sheet0.png",
+      "size": 5810,
+      "required": false
+    },
+    {
+      "path": "images/effect_blow-sheet0.png",
+      "size": 1551,
+      "required": false
+    },
+    {
+      "path": "images/effect_gold-sheet0.png",
+      "size": 1429,
+      "required": false
+    },
+    {
+      "path": "images/effect_smoke_isla-sheet0.png",
+      "size": 4294,
+      "required": false
+    },
+    {
+      "path": "images/effect_smoke-sheet0.png",
+      "size": 4095,
+      "required": false
+    },
+    {
+      "path": "images/font_info_level.png",
+      "size": 19083,
+      "required": false
+    },
+    {
+      "path": "images/gold_coin-sheet0.png",
+      "size": 2439,
+      "required": false
+    },
+    {
+      "path": "images/ground-sheet0.png",
+      "size": 23505,
+      "required": false
+    },
+    {
+      "path": "images/invitefriends-sheet0.png",
+      "size": 1931,
+      "required": false
+    },
+    {
+      "path": "images/isla_a-sheet0.png",
+      "size": 6229,
+      "required": false
+    },
+    {
+      "path": "images/isla_b-sheet0.png",
+      "size": 6432,
+      "required": false
+    },
+    {
+      "path": "images/isla_big-sheet0.png",
+      "size": 7948,
+      "required": false
+    },
+    {
+      "path": "images/isla_time-sheet0.png",
+      "size": 5423,
+      "required": false
+    },
+    {
+      "path": "images/logo_home-sheet0.png",
+      "size": 63533,
+      "required": false
+    },
+    {
+      "path": "images/ninja-sheet0.png",
+      "size": 30622,
+      "required": false
+    },
+    {
+      "path": "images/ninja-sheet1.png",
+      "size": 14601,
+      "required": false
+    },
+    {
+      "path": "images/share_facebook-sheet0.png",
+      "size": 139,
+      "required": false
+    },
+    {
+      "path": "images/share_twitter-sheet0.png",
+      "size": 139,
+      "required": false
+    },
+    {
+      "path": "images/sky-sheet0.png",
+      "size": 831627,
+      "required": false
+    },
+    {
+      "path": "images/sprite-sheet0.png",
+      "size": 115,
+      "required": false
+    },
+    {
+      "path": "images/thorn-sheet0.png",
+      "size": 1240,
+      "required": false
+    },
+    {
+      "path": "images/totem-sheet0.png",
+      "size": 60007,
+      "required": false
+    },
+    {
+      "path": "images/wall_horizontal-sheet0.png",
+      "size": 20326,
+      "required": false
+    },
+    {
+      "path": "images/wall_vertical_big-sheet0.png",
+      "size": 20692,
+      "required": false
+    },
+    {
+      "path": "images/wall_vertical-sheet0.png",
+      "size": 15180,
+      "required": false
+    },
+    {
+      "path": "images/z_element_cam-sheet0.png",
+      "size": 467,
+      "required": false
+    },
+    {
+      "path": "images/z_element_door-sheet0.png",
+      "size": 183,
+      "required": false
+    },
+    {
+      "path": "images/z_element_isla-sheet0.png",
+      "size": 103,
+      "required": false
+    },
+    {
+      "path": "images/z_element_ninja-sheet0.png",
+      "size": 188,
+      "required": false
+    },
+    {
+      "path": "index.html",
+      "size": 5522,
+      "required": true
+    },
+    {
+      "path": "jquery-2.1.1.min.js",
+      "size": 84248,
+      "required": true
+    },
+    {
+      "path": "lib/ammo.wasm.js",
+      "size": 1561971,
+      "required": true
+    },
+    {
+      "path": "loading-logo.png",
+      "size": 8922,
+      "required": false
+    },
+    {
+      "path": "logo.jpg",
+      "size": 9689,
+      "required": false
+    },
+    {
+      "path": "logo.webp",
+      "size": 4532,
+      "required": false
+    },
+    {
+      "path": "offlineClient.js",
+      "size": 1434,
+      "required": true
+    },
+    {
+      "path": "sw.js",
+      "size": 13848,
+      "required": true
+    }
+  ],
+  "external_hosts": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_critical": [
+    "www.apple.com",
+    "www.google.com",
+    "www.microsoft.com",
+    "www.mozilla.com",
+    "www.whatbrowser.org"
+  ],
+  "external_allowlist": [
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "gstatic.com",
+    "googleapis.com",
+    "ajax.googleapis.com",
+    "cdnjs.cloudflare.com",
+    "cdn.jsdelivr.net",
+    "jsdelivr.net",
+    "unpkg.com",
+    "googletagmanager.com",
+    "google-analytics.com",
+    "doubleclick.net",
+    "googleadservices.com",
+    "googlesyndication.com",
+    "cloudflareinsights.com",
+    "cdn-cgi",
+    "cmp.gatekeeperconsent.com",
+    "gatekeeperconsent.com",
+    "ezojs.com",
+    "ezoicanalytics.com",
+    "ezoic.net"
+  ]
+}

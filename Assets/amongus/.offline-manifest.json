@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "slug": "amongus",
-  "engine": "html5",
+  "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1780837417,
+  "generated_at": 1781444504,
   "files": [
     {
       "path": "_archived_site/archive_manifest.json",
@@ -146,28 +146,397 @@
       "required": true
     },
     {
+      "path": "@source.txt",
+      "size": 49,
+      "required": false
+    },
+    {
+      "path": "ahrefs_585f4691b0e399a160cb6e0c016b4fcd7b0c55de8ae4d7dc4c83d5d0761520b3",
+      "size": 89,
+      "required": false
+    },
+    {
+      "path": "appmanifest.json",
+      "size": 205,
+      "required": true
+    },
+    {
+      "path": "data.json",
+      "size": 399855,
+      "required": true
+    },
+    {
+      "path": "favicon.ico",
+      "size": 25214,
+      "required": false
+    },
+    {
+      "path": "fonts/in your face, joffrey!.ttf",
+      "size": 49032,
+      "required": false
+    },
+    {
+      "path": "fonts/varela-regular.ttf",
+      "size": 182000,
+      "required": true
+    },
+    {
+      "path": "icons/loading-logo.png",
+      "size": 11366,
+      "required": false
+    },
+    {
+      "path": "images/crewmate1-sheet0.png",
+      "size": 34920,
+      "required": false
+    },
+    {
+      "path": "images/crewmate3-sheet0.png",
+      "size": 6253,
+      "required": false
+    },
+    {
+      "path": "images/crewmate5-sheet0.png",
+      "size": 6478,
+      "required": false
+    },
+    {
+      "path": "images/hats-sheet0.png",
+      "size": 24048,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet0.png",
+      "size": 362065,
+      "required": false
+    },
+    {
+      "path": "images/player-sheet1.png",
+      "size": 12943,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet0.png",
+      "size": 1756632,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet1.png",
+      "size": 262960,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet2.png",
+      "size": 96469,
+      "required": false
+    },
+    {
+      "path": "images/shared-0-sheet3.png",
+      "size": 388,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet0.png",
+      "size": 7012397,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet1.png",
+      "size": 2048110,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet2.png",
+      "size": 215929,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet3.png",
+      "size": 124289,
+      "required": false
+    },
+    {
+      "path": "images/shared-1-sheet4.png",
+      "size": 14299,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground-sheet0.png",
+      "size": 5363,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground2-sheet0.png",
+      "size": 337,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground3-sheet0.png",
+      "size": 2445,
+      "required": false
+    },
+    {
+      "path": "images/tiledbackground4-sheet0.png",
+      "size": 622,
+      "required": false
+    },
+    {
       "path": "import_manifest.json",
-      "size": 484,
+      "size": 446,
       "required": false
     },
     {
       "path": "index.html",
-      "size": 1054,
+      "size": 922,
       "required": true
+    },
+    {
+      "path": "js/analytics_ubg_v1_4.js",
+      "size": 745,
+      "required": true
+    },
+    {
+      "path": "js/null.js",
+      "size": 10,
+      "required": true
+    },
+    {
+      "path": "json/null.json",
+      "size": 2,
+      "required": false
     },
     {
       "path": "logo.svg",
       "size": 1265,
       "required": false
+    },
+    {
+      "path": "media/alarm_emergencymeeting.webm",
+      "size": 43286,
+      "required": false
+    },
+    {
+      "path": "media/alarm_sabotage.webm",
+      "size": 16445,
+      "required": false
+    },
+    {
+      "path": "media/amb_hallways.webm",
+      "size": 118459,
+      "required": false
+    },
+    {
+      "path": "media/amb_launchpad.webm",
+      "size": 93536,
+      "required": false
+    },
+    {
+      "path": "media/amb_reactorroom.webm",
+      "size": 58726,
+      "required": false
+    },
+    {
+      "path": "media/amb_storage.webm",
+      "size": 63477,
+      "required": false
+    },
+    {
+      "path": "media/amb_weapons.webm",
+      "size": 48116,
+      "required": false
+    },
+    {
+      "path": "media/Among-Us-Ost-Main-Theme-Song.mp3",
+      "size": 5875669,
+      "required": false
+    },
+    {
+      "path": "media/eject_text.webm",
+      "size": 2294,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal01.webm",
+      "size": 5217,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal02.webm",
+      "size": 4907,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal03.webm",
+      "size": 5093,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal04.webm",
+      "size": 5231,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal05.webm",
+      "size": 5243,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal06.webm",
+      "size": 5687,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal07.webm",
+      "size": 5402,
+      "required": false
+    },
+    {
+      "path": "media/footstepmetal08.webm",
+      "size": 5248,
+      "required": false
+    },
+    {
+      "path": "media/impostor_kill.mp3",
+      "size": 12119,
+      "required": false
+    },
+    {
+      "path": "media/panel_genericappear.webm",
+      "size": 3625,
+      "required": false
+    },
+    {
+      "path": "media/panel_genericdisappear.webm",
+      "size": 3474,
+      "required": false
+    },
+    {
+      "path": "media/report_bobdyfound.webm",
+      "size": 48941,
+      "required": false
+    },
+    {
+      "path": "media/roundstart_main.webm",
+      "size": 61348,
+      "required": false
+    },
+    {
+      "path": "media/ui_hover.webm",
+      "size": 986,
+      "required": false
+    },
+    {
+      "path": "media/ui_select.webm",
+      "size": 5127,
+      "required": false
+    },
+    {
+      "path": "media/vent_move1.webm",
+      "size": 15107,
+      "required": false
+    },
+    {
+      "path": "media/vent_move2.webm",
+      "size": 11470,
+      "required": false
+    },
+    {
+      "path": "media/vent_move3.webm",
+      "size": 12072,
+      "required": false
+    },
+    {
+      "path": "media/vent_open.webm",
+      "size": 16770,
+      "required": false
+    },
+    {
+      "path": "media/victory_crew.webm",
+      "size": 124644,
+      "required": false
+    },
+    {
+      "path": "media/victory_impostor.webm",
+      "size": 139840,
+      "required": false
+    },
+    {
+      "path": "media/videoplayback.mp3",
+      "size": 8544269,
+      "required": false
+    },
+    {
+      "path": "pathfind.js",
+      "size": 6433,
+      "required": true
+    },
+    {
+      "path": "penumbra.png",
+      "size": 14656,
+      "required": false
+    },
+    {
+      "path": "redblackset.js",
+      "size": 11130,
+      "required": true
+    },
+    {
+      "path": "scripts/c3runtime1.js",
+      "size": 1299985,
+      "required": true
+    },
+    {
+      "path": "scripts/dispatchworker.js",
+      "size": 3788,
+      "required": true
+    },
+    {
+      "path": "scripts/jobworker.js",
+      "size": 3127,
+      "required": true
+    },
+    {
+      "path": "scripts/main3.js",
+      "size": 124905,
+      "required": true
+    },
+    {
+      "path": "scripts/offlineclient.js",
+      "size": 603,
+      "required": true
+    },
+    {
+      "path": "scripts/register-sw.js",
+      "size": 302,
+      "required": true
+    },
+    {
+      "path": "scripts/supportcheck.js",
+      "size": 2224,
+      "required": true
+    },
+    {
+      "path": "style.css",
+      "size": 836,
+      "required": true
+    },
+    {
+      "path": "ubg235.html",
+      "size": 98,
+      "required": false
     }
   ],
   "external_hosts": [
     "fonts.gstatic.com",
-    "ssl.gstatic.com",
-    "stats.senty.com.au"
+    "play.google.com",
+    "www.google.com",
+    "www.googletagmanager.com",
+    "www.mozilla.org"
   ],
   "external_critical": [
-    "stats.senty.com.au"
+    "play.google.com",
+    "www.google.com",
+    "www.mozilla.org"
   ],
   "external_allowlist": [
     "fonts.googleapis.com",

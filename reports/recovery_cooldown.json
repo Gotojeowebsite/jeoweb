@@ -231,9 +231,9 @@
     "last_reason": "all_candidates_failed"
   },
   "Dogeminer2": {
-    "attempts": 2,
-    "last_attempt": 1780855659,
-    "next_eligible": 1780870059,
+    "attempts": 3,
+    "last_attempt": 1781443369,
+    "next_eligible": 1781486569,
     "last_error": "16 candidates all failed",
     "last_reason": "all_candidates_failed"
   },
@@ -781,6 +781,13 @@
     "last_attempt": 1780860321,
     "next_eligible": 1780863921,
     "last_error": "16 candidates all failed",
+    "last_reason": "all_candidates_failed"
+  },
+  "bad-ice-cream-2": {
+    "attempts": 1,
+    "last_attempt": 1781444466,
+    "next_eligible": 1781448066,
+    "last_error": "17 candidates all failed",
     "last_reason": "all_candidates_failed"
   }
 }

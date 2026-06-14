@@ -3,7 +3,7 @@
   "slug": "tank-trouble-2",
   "engine": "construct",
   "entry": "index.html",
-  "generated_at": 1780837421,
+  "generated_at": 1781444508,
   "files": [
     {
       "path": "_external_mirror/apis.google.com/js/client.js",
@@ -93,6 +93,11 @@
     {
       "path": "data.js",
       "size": 1188795,
+      "required": true
+    },
+    {
+      "path": "firebase.js",
+      "size": 0,
       "required": true
     },
     {
@@ -571,7 +576,7 @@
       "required": false
     },
     {
-      "path": "media/homing%20missle.ogg",
+      "path": "media/homing missle.ogg",
       "size": 0,
       "required": false
     },

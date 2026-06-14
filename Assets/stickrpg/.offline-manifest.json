@@ -3,11 +3,11 @@
   "slug": "stickrpg",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1780837420,
+  "generated_at": 1781444508,
   "files": [
     {
       "path": "index.html",
-      "size": 991,
+      "size": 968,
       "required": true
     },
     {
@@ -21,13 +21,82 @@
       "required": false
     },
     {
+      "path": "ruffle/25751a94dfaeef8e314c.wasm",
+      "size": 13550409,
+      "required": true
+    },
+    {
+      "path": "ruffle/358b95801d9fa75720b7.wasm",
+      "size": 13841298,
+      "required": true
+    },
+    {
+      "path": "ruffle/core.ruffle.66d87a24e98caec35753.js",
+      "size": 81680,
+      "required": true
+    },
+    {
+      "path": "ruffle/core.ruffle.66d87a24e98caec35753.js.map",
+      "size": 287658,
+      "required": false
+    },
+    {
+      "path": "ruffle/core.ruffle.efde93a4ab76f5cb9d44.js",
+      "size": 85505,
+      "required": true
+    },
+    {
+      "path": "ruffle/core.ruffle.efde93a4ab76f5cb9d44.js.map",
+      "size": 310206,
+      "required": false
+    },
+    {
+      "path": "ruffle/LICENSE_APACHE",
+      "size": 9723,
+      "required": false
+    },
+    {
+      "path": "ruffle/LICENSE_MIT",
+      "size": 1097,
+      "required": false
+    },
+    {
+      "path": "ruffle/package.json",
+      "size": 396,
+      "required": false
+    },
+    {
+      "path": "ruffle/README.md",
+      "size": 2320,
+      "required": false
+    },
+    {
+      "path": "ruffle/ruffle.js",
+      "size": 400277,
+      "required": true
+    },
+    {
+      "path": "ruffle/ruffle.js.LICENSE.txt",
+      "size": 383,
+      "required": false
+    },
+    {
+      "path": "ruffle/ruffle.js.map",
+      "size": 766275,
+      "required": false
+    },
+    {
       "path": "stickrpg.swf",
       "size": 1241165,
       "required": true
     }
   ],
-  "external_hosts": [],
-  "external_critical": [],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
   "external_allowlist": [
     "fonts.googleapis.com",
     "fonts.gstatic.com",

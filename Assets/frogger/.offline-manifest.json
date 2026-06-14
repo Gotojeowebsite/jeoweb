@@ -3,11 +3,16 @@
   "slug": "frogger",
   "engine": "ruffle",
   "entry": "index.html",
-  "generated_at": 1780837418,
+  "generated_at": 1781444505,
   "files": [
     {
       "path": "_external_mirror/acscdn.com/script/aclib.js",
       "size": 167081,
+      "required": true
+    },
+    {
+      "path": "c5c02c4e65c1c4423a97.wasm",
+      "size": 6593880,
       "required": true
     },
     {
@@ -27,12 +32,21 @@
     },
     {
       "path": "index.html",
-      "size": 1367,
+      "size": 1166,
+      "required": true
+    },
+    {
+      "path": "ruffle.js",
+      "size": 83706,
       "required": true
     }
   ],
-  "external_hosts": [],
-  "external_critical": [],
+  "external_hosts": [
+    "github.com"
+  ],
+  "external_critical": [
+    "github.com"
+  ],
   "external_allowlist": [
     "fonts.googleapis.com",
     "fonts.gstatic.com",

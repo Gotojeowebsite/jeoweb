@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "generated_at": 1780857683,
+  "generated_at": 1781444512,
   "generator": "static-health-scan",
   "counts": {
-    "pass": 429,
-    "warn": 105,
-    "fail": 50,
+    "pass": 435,
+    "warn": 101,
+    "fail": 48,
     "total": 584
   },
   "games": [
@@ -191,19 +191,13 @@
           "message": "Dynamic JS reference target missing: query ($input: PlayerAICensorInput!) {\\n    result: PlayerAICheckCensor(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}",
           "severity": "warning",
           "ref": "query ($input: PlayerAICensorInput!) {\\n    result: PlayerAICheckCensor(input: $input) {\\n        __typename\\n        ... on Problem { message }\\n        ... on Success { success }\\n    }\\n}"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 2
         }
       ],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 13
+      "warning_misses": 12
     },
     {
       "slug": "a-dance-of-fire-and-ice",
@@ -385,19 +379,13 @@
           "message": "CSS-referenced asset missing: fonts/in%20your%20face%2C%20joffrey%21.ttf",
           "severity": "warning",
           "ref": "fonts/in%20your%20face%2C%20joffrey%21.ttf"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 2
         }
       ],
       "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 2
+      "warning_misses": 1
     },
     {
       "slug": "amusepark",
@@ -786,22 +774,15 @@
     },
     {
       "slug": "bad-ice-cream",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "flash",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 2
-        }
-      ],
+      "issues": [],
       "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "bad-ice-cream-2",
@@ -821,38 +802,25 @@
           "message": "Dynamic JS reference target missing: ./touchControllerConfig.json",
           "severity": "warning",
           "ref": "./touchControllerConfig.json"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 2
         }
       ],
       "refs_checked": 8,
       "external_refs": 0,
       "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 2
+      "warning_misses": 1
     },
     {
       "slug": "bad-ice-cream-3",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "flash",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 2 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 2
-        }
-      ],
+      "issues": [],
       "refs_checked": 6,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "balatro",
@@ -866,19 +834,13 @@
           "severity": "warning",
           "ref": "https://github.com/Davidobot/love.js",
           "host": "github.com"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
         }
       ],
       "refs_checked": 5,
       "external_refs": 1,
       "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "balldodge",
@@ -1030,19 +992,13 @@
           "message": "Local file missing: blob",
           "severity": "warning",
           "ref": "blob"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
         }
       ],
       "refs_checked": 6,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 3
+      "warning_misses": 2
     },
     {
       "slug": "bigredbutton",
@@ -5251,16 +5207,57 @@
     },
     {
       "slug": "fake-cup-head",
-      "verdict": "fail",
-      "engine": "unknown",
+      "verdict": "warn",
+      "engine": "html5",
+      "entry_file": "index.html",
       "issues": [
         {
-          "code": "NO_HTML",
-          "message": "No HTML entry file found",
-          "severity": "critical"
+          "code": "MISSING_FILE",
+          "message": "Local file missing: appmanifest.json",
+          "severity": "warning",
+          "ref": "appmanifest.json"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.whatbrowser.org",
+          "severity": "warning",
+          "ref": "//www.whatbrowser.org",
+          "host": "www.whatbrowser.org"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.microsoft.com",
+          "severity": "warning",
+          "ref": "//www.microsoft.com/windows/internet-explorer/default.aspx",
+          "host": "www.microsoft.com"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.mozilla.com",
+          "severity": "warning",
+          "ref": "//www.mozilla.com/firefox/",
+          "host": "www.mozilla.com"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.google.com",
+          "severity": "warning",
+          "ref": "https://www.google.com/chrome/",
+          "host": "www.google.com"
+        },
+        {
+          "code": "EXTERNAL_RUNTIME_DEP",
+          "message": "Game depends on external host: www.apple.com",
+          "severity": "warning",
+          "ref": "//www.apple.com/safari/download/",
+          "host": "www.apple.com"
         }
       ],
-      "refs_checked": 0
+      "refs_checked": 9,
+      "external_refs": 5,
+      "external_critical": 5,
+      "critical_misses": 0,
+      "warning_misses": 1
     },
     {
       "slug": "fake-virus",
@@ -5379,16 +5376,10 @@
     },
     {
       "slug": "fighter-aircraft-pilot",
-      "verdict": "fail",
+      "verdict": "warn",
       "engine": "unity",
       "entry_file": "index.html",
       "issues": [
-        {
-          "code": "MISSING_CRITICAL_FILE",
-          "message": "Critical local file referenced but missing: /nc/script.min.js",
-          "severity": "critical",
-          "ref": "/nc/script.min.js"
-        },
         {
           "code": "MISSING_CSS_ASSET",
           "message": "CSS-referenced asset missing: logo.png",
@@ -5450,10 +5441,10 @@
           "ref": "maximize-icon.png"
         }
       ],
-      "refs_checked": 8,
+      "refs_checked": 7,
       "external_refs": 0,
       "external_critical": 0,
-      "critical_misses": 1,
+      "critical_misses": 0,
       "warning_misses": 10
     },
     {
@@ -5542,22 +5533,15 @@
     },
     {
       "slug": "fire-boy3",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
-        }
-      ],
+      "issues": [],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "fire-boy4",
@@ -5577,7 +5561,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 4,
+      "refs_checked": 3,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -5788,22 +5772,15 @@
     },
     {
       "slug": "frogger",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
-        }
-      ],
+      "issues": [],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "froggys-battle",
@@ -7375,7 +7352,7 @@
           "ref": "assets/js/RandomLevelWorker.js"
         }
       ],
-      "refs_checked": 5,
+      "refs_checked": 4,
       "external_refs": 1,
       "external_critical": 1,
       "critical_misses": 1,
@@ -7538,7 +7515,7 @@
           "ref": "../images/rotate.png"
         }
       ],
-      "refs_checked": 14,
+      "refs_checked": 12,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 1,
@@ -10346,18 +10323,6 @@
           "severity": "critical"
         },
         {
-          "code": "MISSING_CRITICAL_FILE",
-          "message": "Critical local file referenced but missing: api.js",
-          "severity": "critical",
-          "ref": "api.js"
-        },
-        {
-          "code": "MISSING_CRITICAL_FILE",
-          "message": "Critical local file referenced but missing: sdkjs.js",
-          "severity": "critical",
-          "ref": "sdkjs.js"
-        },
-        {
           "code": "EXTERNAL_RUNTIME_DEP",
           "message": "Game depends on external host: sites.google.com",
           "severity": "warning",
@@ -10375,7 +10340,7 @@
       "refs_checked": 5,
       "external_refs": 2,
       "external_critical": 2,
-      "critical_misses": 2,
+      "critical_misses": 0,
       "warning_misses": 0
     },
     {
@@ -10416,22 +10381,15 @@
     },
     {
       "slug": "stickrpg",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "ruffle",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
-        }
-      ],
+      "issues": [],
       "refs_checked": 1,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
-      "warning_misses": 1
+      "warning_misses": 0
     },
     {
       "slug": "stickrun2",
@@ -10547,19 +10505,13 @@
           "message": "Optional local file missing: images/touch-icon-57x57.png",
           "severity": "warning",
           "ref": "images/touch-icon-57x57.png"
-        },
-        {
-          "code": "MANIFEST_DRIFT",
-          "message": "Offline manifest is stale: 1 file(s) have a size that disagrees with the recorded value",
-          "severity": "warning",
-          "drift": 1
         }
       ],
-      "refs_checked": 7,
+      "refs_checked": 8,
       "external_refs": 1,
       "external_critical": 1,
       "critical_misses": 0,
-      "warning_misses": 4
+      "warning_misses": 3
     },
     {
       "slug": "sugarsugar",
@@ -11126,7 +11078,7 @@
           "host": "www.apple.com"
         }
       ],
-      "refs_checked": 9,
+      "refs_checked": 8,
       "external_refs": 4,
       "external_critical": 4,
       "critical_misses": 0,
@@ -11272,7 +11224,7 @@
           "ref": "fullscreen.png"
         }
       ],
-      "refs_checked": 4,
+      "refs_checked": 3,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11303,7 +11255,7 @@
           "ref": "progressFull.Light.png"
         }
       ],
-      "refs_checked": 5,
+      "refs_checked": 4,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11323,7 +11275,7 @@
           "host": "3kh0.github.io"
         }
       ],
-      "refs_checked": 7,
+      "refs_checked": 6,
       "external_refs": 1,
       "external_critical": 1,
       "critical_misses": 0,
@@ -11449,7 +11401,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 3,
+      "refs_checked": 2,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11461,7 +11413,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 3,
+      "refs_checked": 2,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11480,7 +11432,7 @@
           "ref": "../images/rotate.png"
         }
       ],
-      "refs_checked": 3,
+      "refs_checked": 2,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11499,7 +11451,7 @@
           "ref": "../rotate.png"
         }
       ],
-      "refs_checked": 3,
+      "refs_checked": 2,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,
@@ -11618,21 +11570,13 @@
     },
     {
       "slug": "worlds-hardest-game",
-      "verdict": "warn",
+      "verdict": "pass",
       "engine": "html5",
       "entry_file": "index.html",
-      "issues": [
-        {
-          "code": "EXTERNAL_RUNTIME_DEP",
-          "message": "Game depends on external host: www.google.com",
-          "severity": "warning",
-          "ref": "//www.google.com/jsapi",
-          "host": "www.google.com"
-        }
-      ],
-      "refs_checked": 31,
-      "external_refs": 1,
-      "external_critical": 1,
+      "issues": [],
+      "refs_checked": 28,
+      "external_refs": 0,
+      "external_critical": 0,
       "critical_misses": 0,
       "warning_misses": 0
     },
@@ -11642,7 +11586,7 @@
       "engine": "html5",
       "entry_file": "index.html",
       "issues": [],
-      "refs_checked": 32,
+      "refs_checked": 30,
       "external_refs": 0,
       "external_critical": 0,
       "critical_misses": 0,

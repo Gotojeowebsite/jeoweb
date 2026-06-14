@@ -1,48 +1,112 @@
 [
   {
-    "name": "zelda-sacred-paradox",
-    "type": "gba",
+    "name": "Dogeminer2",
+    "type": "webgl",
     "entry_file": "index.html",
-    "status": "warning",
-    "elapsed_seconds": 40.147,
+    "status": "broken",
+    "elapsed_seconds": 25.663,
+    "critical_issues": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Critical local HTTP 404",
+        "severity": "critical",
+        "url": "http://localhost:8081/play/dogeloader.svg"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.woff2"
+      },
+      {
+        "code": "LOCAL_HTTP_ERROR",
+        "message": "Local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/Assets/dogesans-regular-webfont.ttf"
+      },
+      {
+        "code": "EXTERNAL_DEPENDENCY",
+        "message": "External dependency requested for game runtime",
+        "severity": "warning",
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
+      },
+      {
+        "code": "EXTERNAL_CRITICAL_FAILED",
+        "message": "External runtime dependency failed",
+        "severity": "warning",
+        "url": "https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.PJsh2cctCQI.O/m=client_platform,signin2/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_QlMhY2cycn60Rs8eI1WInRwuahw/cb=gapi.loaded_0?le=scs"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": false,
+      "canvasRAFTicks": 0,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000
+    }
+  },
+  {
+    "name": "bad-ice-cream",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 32.76,
     "critical_issues": [],
     "warnings": [
       {
         "code": "LOCAL_IGNORED_HTTP",
         "message": "Ignored optional local HTTP 404",
         "severity": "warning",
-        "url": "http://localhost:8172/emulatorjs/cores/reports/mgba.json"
-      },
-      {
-        "code": "PAGE_ERROR",
-        "message": "Failed to fetch",
-        "severity": "warning",
-        "url": ""
-      },
-      {
-        "code": "PAGE_ERROR",
-        "message": "Wake Lock permission request denied",
-        "severity": "warning",
-        "url": ""
+        "url": "http://localhost:8081/js/main.js"
       }
     ],
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 165,
-      "bodyTextSample": "restart\npause\nsave state\nload state\ncontrol settings\ncheats\ncache manager\nexport save file\nimport save file\nmute\ncontext menu\nsettings\nexit fullscreen\nexit emulation",
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
-      "hasRetroGlobal": true,
+      "hasRetroGlobal": false,
       "canvasHash": "0",
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 31,
+      "canvasRAFTicks": 9,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
-      "ejsStarted": true,
+      "ejsStarted": false,
       "godotReady": false,
       "phaserReady": false,
       "audioContextRunning": false,
@@ -53,10 +117,82 @@
       "phaserProgressPct": -1,
       "canvasHashFirst": "0",
       "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 15000,
+      "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 11
+      "canvasRAFTicksAfterInput": 10
+    }
+  },
+  {
+    "name": "bad-ice-cream-2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 32.839,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 9,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 10
     }
   }
 ]

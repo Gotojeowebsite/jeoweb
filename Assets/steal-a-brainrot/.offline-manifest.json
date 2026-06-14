@@ -3,8 +3,13 @@
   "slug": "steal-a-brainrot",
   "engine": "unity",
   "entry": "index.html",
-  "generated_at": 1780837420,
+  "generated_at": 1781444508,
   "files": [
+    {
+      "path": "api.js",
+      "size": 15,
+      "required": true
+    },
     {
       "path": "dev.js",
       "size": 166403,
@@ -54,6 +59,11 @@
       "path": "logo.webp",
       "size": 8014,
       "required": false
+    },
+    {
+      "path": "sdkjs.js",
+      "size": 17,
+      "required": true
     }
   ],
   "external_hosts": [

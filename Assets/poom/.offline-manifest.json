@@ -3,7 +3,7 @@
   "slug": "poom",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1780837419,
+  "generated_at": 1781444507,
   "files": [
     {
       "path": "_archived_site/a.amxrtb.com/js/cframe.js",
@@ -142,7 +142,7 @@
     },
     {
       "path": "_archived_site/archive_manifest.json",
-      "size": 251593,
+      "size": 530,
       "required": false
     },
     {
@@ -4031,6 +4031,16 @@
       "required": true
     },
     {
+      "path": "_archived_site/the-poom.github.io/index/index.html",
+      "size": 9119,
+      "required": false
+    },
+    {
+      "path": "_archived_site/the-poom.github.io/the_poom/index.html",
+      "size": 9137,
+      "required": true
+    },
+    {
       "path": "_archived_site/thrtle.com/insync__q_157c7a03aa.gif",
       "size": 43,
       "required": false
@@ -4333,7 +4343,7 @@
     {
       "path": "_game_local/games.mathpapers.us/poom/index.html",
       "size": 357108,
-      "required": true
+      "required": false
     },
     {
       "path": "favicon.ico",
@@ -4341,8 +4351,13 @@
       "required": false
     },
     {
+      "path": "import_manifest.json",
+      "size": 412,
+      "required": false
+    },
+    {
       "path": "index.html",
-      "size": 1526,
+      "size": 776,
       "required": true
     }
   ],

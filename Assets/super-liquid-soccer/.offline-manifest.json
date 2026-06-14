@@ -3,7 +3,7 @@
   "slug": "super-liquid-soccer",
   "engine": "godot",
   "entry": "index.html",
-  "generated_at": 1780837420,
+  "generated_at": 1781444508,
   "files": [
     {
       "path": "_external_mirror/a.poki.com/images/thumb_anim_2x.gif",
@@ -107,7 +107,7 @@
     },
     {
       "path": "index.html",
-      "size": 9756,
+      "size": 9737,
       "required": true
     },
     {
@@ -154,6 +154,11 @@
       "path": "logo.webp",
       "size": 6976,
       "required": false
+    },
+    {
+      "path": "patch/json/null.json",
+      "size": 3,
+      "required": true
     },
     {
       "path": "patch/poki-sdk-core-v2.263.0.js",

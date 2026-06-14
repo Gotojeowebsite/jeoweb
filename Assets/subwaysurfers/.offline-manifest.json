@@ -3,7 +3,7 @@
   "slug": "subwaysurfers",
   "engine": "html5",
   "entry": "index.html",
-  "generated_at": 1780837420,
+  "generated_at": 1781444508,
   "files": [
     {
       "path": "_archived_site/archive_manifest.json",
@@ -146,13 +146,393 @@
       "required": true
     },
     {
+      "path": "assets/audio/guard_catch.ogg",
+      "size": 25320,
+      "required": false
+    },
+    {
+      "path": "assets/audio/guard_proximity.ogg",
+      "size": 79970,
+      "required": false
+    },
+    {
+      "path": "assets/audio/guard_start.ogg",
+      "size": 33575,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_death_hitcam.ogg",
+      "size": 7573,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_death.ogg",
+      "size": 11175,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_dodge.ogg",
+      "size": 5179,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_foot_l.ogg",
+      "size": 3746,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_foot_r.ogg",
+      "size": 3761,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_hoverboard_crash.ogg",
+      "size": 11385,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_jump.ogg",
+      "size": 8018,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_revive.ogg",
+      "size": 31367,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_roll.ogg",
+      "size": 6267,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_sneakers_foot_l.ogg",
+      "size": 4241,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_sneakers_foot_r.ogg",
+      "size": 4229,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_sneakers_jump.ogg",
+      "size": 6292,
+      "required": false
+    },
+    {
+      "path": "assets/audio/hero_stumble.ogg",
+      "size": 7223,
+      "required": false
+    },
+    {
+      "path": "assets/audio/pickup_coin.ogg",
+      "size": 6030,
+      "required": false
+    },
+    {
+      "path": "assets/audio/pickup_powerup.ogg",
+      "size": 16652,
+      "required": false
+    },
+    {
+      "path": "assets/audio/special_jetpack_start.ogg",
+      "size": 22867,
+      "required": false
+    },
+    {
+      "path": "assets/audio/special_jetpack.ogg",
+      "size": 32211,
+      "required": false
+    },
+    {
+      "path": "assets/audio/special_magnet.ogg",
+      "size": 9789,
+      "required": false
+    },
+    {
+      "path": "assets/audio/theme.ogg",
+      "size": 1277137,
+      "required": false
+    },
+    {
+      "path": "assets/audio/ui_button.ogg",
+      "size": 5891,
+      "required": false
+    },
+    {
+      "path": "assets/data/chunks_game.json",
+      "size": 1302254,
+      "required": false
+    },
+    {
+      "path": "assets/data/chunks_idle.json",
+      "size": 1296,
+      "required": false
+    },
+    {
+      "path": "assets/data/config.json",
+      "size": 499,
+      "required": true
+    },
+    {
+      "path": "assets/data/strings_en.json",
+      "size": 1613,
+      "required": false
+    },
+    {
+      "path": "assets/favicons/favicon.png",
+      "size": 3047,
+      "required": false
+    },
+    {
+      "path": "assets/font/lilita-one.css",
+      "size": 183,
+      "required": false
+    },
+    {
+      "path": "assets/font/lilita-one.woff",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/font/lilita-one.woff2",
+      "size": 104,
+      "required": false
+    },
+    {
+      "path": "assets/font/titan-one.css",
+      "size": 180,
+      "required": false
+    },
+    {
+      "path": "assets/font/titan-one.woff",
+      "size": 0,
+      "required": false
+    },
+    {
+      "path": "assets/font/titan-one.woff2",
+      "size": 103,
+      "required": false
+    },
+    {
+      "path": "assets/game/board_new_york_tex_mip.png",
+      "size": 889,
+      "required": false
+    },
+    {
+      "path": "assets/game/board_new_york.fbx",
+      "size": 43488,
+      "required": false
+    },
+    {
+      "path": "assets/game/board_new_york01.fbx",
+      "size": 61184,
+      "required": false
+    },
+    {
+      "path": "assets/game/effects_tex_mip.png",
+      "size": 2932,
+      "required": false
+    },
+    {
+      "path": "assets/game/enemies_mip.png",
+      "size": 78376,
+      "required": false
+    },
+    {
+      "path": "assets/game/environment.fbx",
+      "size": 4541020,
+      "required": false
+    },
+    {
+      "path": "assets/game/halo_mip.png",
+      "size": 4330,
+      "required": false
+    },
+    {
+      "path": "assets/game/jetpackSmoke_mip.png",
+      "size": 23855,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_avatar_catch.fbx",
+      "size": 1037152,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_avatar_movement.fbx",
+      "size": 1432316,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_avatar_powerup_jet_pack.fbx",
+      "size": 418860,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_avatar_powerup_pogostick.fbx",
+      "size": 1007952,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_avatar_start.fbx",
+      "size": 477804,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_dog_catch.fbx",
+      "size": 305804,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_dog_movement.fbx",
+      "size": 288044,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_guard_catch.fbx",
+      "size": 371408,
+      "required": false
+    },
+    {
+      "path": "assets/game/model_guard_movement.fbx",
+      "size": 336972,
+      "required": false
+    },
+    {
+      "path": "assets/game/ocean_mip.png",
+      "size": 24521,
+      "required": false
+    },
+    {
+      "path": "assets/game/props.fbx",
+      "size": 1674332,
+      "required": false
+    },
+    {
+      "path": "assets/game/shadow_mip.png",
+      "size": 3801,
+      "required": false
+    },
+    {
+      "path": "assets/game/spraySplash_mip.png",
+      "size": 932,
+      "required": false
+    },
+    {
+      "path": "assets/game/trains.fbx",
+      "size": 197852,
+      "required": false
+    },
+    {
+      "path": "assets/idle/environment_idle.fbx",
+      "size": 101996,
+      "required": false
+    },
+    {
+      "path": "assets/idle/environment_tex_mip.png",
+      "size": 63671,
+      "required": false
+    },
+    {
+      "path": "assets/idle/jake_tex_mip.png",
+      "size": 84193,
+      "required": false
+    },
+    {
+      "path": "assets/idle/model_avatar_idle_paint.fbx",
+      "size": 343244,
+      "required": false
+    },
+    {
+      "path": "assets/idle/props_start.fbx",
+      "size": 84588,
+      "required": false
+    },
+    {
+      "path": "assets/idle/props_tex_mip.png",
+      "size": 67959,
+      "required": false
+    },
+    {
+      "path": "assets/idle/train_start_mip.png",
+      "size": 52103,
+      "required": false
+    },
+    {
+      "path": "assets/idle/trains_start.fbx",
+      "size": 82732,
+      "required": false
+    },
+    {
+      "path": "assets/idle/trains_tex_mip.png",
+      "size": 27820,
+      "required": false
+    },
+    {
+      "path": "assets/preload/splash_mip.png",
+      "size": 35549,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui.json",
+      "size": 28140,
+      "required": false
+    },
+    {
+      "path": "assets/ui/ui.png",
+      "size": 270140,
+      "required": false
+    },
+    {
       "path": "import_manifest.json",
       "size": 520,
       "required": false
     },
     {
       "path": "index.html",
-      "size": 1066,
+      "size": 1806,
+      "required": true
+    },
+    {
+      "path": "js/boot.js",
+      "size": 5577,
+      "required": true
+    },
+    {
+      "path": "js/games_lib/ludiAdapter.js",
+      "size": 1233,
+      "required": true
+    },
+    {
+      "path": "js/inflate-135b676120cc9.min",
+      "size": 13389,
+      "required": false
+    },
+    {
+      "path": "js/inflate.min.js",
+      "size": 13389,
+      "required": true
+    },
+    {
+      "path": "js/main.js",
+      "size": 505661,
+      "required": true
+    },
+    {
+      "path": "js/sdk.js",
+      "size": 712227,
+      "required": true
+    },
+    {
+      "path": "js/vendor.js",
+      "size": 1553699,
+      "required": true
+    },
+    {
+      "path": "js/workers/worker.21cc18ec46e616e4eed8.js",
+      "size": 25280,
       "required": true
     },
     {
@@ -162,12 +542,15 @@
     }
   ],
   "external_hosts": [
+    "cdnjs.cloudflare.com",
     "fonts.gstatic.com",
-    "ssl.gstatic.com",
-    "stats.senty.com.au"
+    "game-cdn.poki.com",
+    "mrdoob.github.io",
+    "ssl.gstatic.com"
   ],
   "external_critical": [
-    "stats.senty.com.au"
+    "game-cdn.poki.com",
+    "mrdoob.github.io"
   ],
   "external_allowlist": [
     "fonts.googleapis.com",
