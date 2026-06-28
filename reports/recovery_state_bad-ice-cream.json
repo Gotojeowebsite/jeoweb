@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "updated_at": 1779008689,
+  "updated_at": 1782651924,
   "total_targets": 1,
   "completed": 1,
   "results": [
     {
-      "name": "bad-ice-cream-20260517-090342",
+      "name": "bad-ice-cream-20260628-130448",
       "type": "webgl",
       "entry_file": "index.html",
       "status": "broken",
-      "elapsed_seconds": 13.553,
+      "elapsed_seconds": 13.556,
       "critical_issues": [
         {
           "code": "LOCAL_HTTP_ERROR",
           "message": "Critical local HTTP 404",
           "severity": "critical",
-          "url": "http://localhost:9630/Assets/bad-ice-cream-20260517-090342/index.html"
+          "url": "http://localhost:9817/Assets/bad-ice-cream-20260628-130448/index.html"
         }
       ],
       "warnings": [],
@@ -41,8 +41,8 @@
         "audioContextRunning": false,
         "audioContextCount": 0,
         "ejsProgressPct": -1,
-        "ruffleProgressPct": -1,
         "constructProgressPct": -1,
+        "constructStarted": false,
         "phaserProgressPct": -1,
         "canvasHashFirst": "",
         "canvasNonzeroPixelsFirst": 0,

@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.658,
+    "elapsed_seconds": 25.693,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
@@ -76,11 +76,59 @@
     }
   },
   {
+    "name": "bad-ice-cream",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 33.185,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 9,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 10
+    }
+  },
+  {
     "name": "bad-ice-cream-2",
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.785,
+    "elapsed_seconds": 33.123,
     "critical_issues": [],
     "warnings": [
       {
@@ -145,54 +193,6 @@
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
       "canvasRAFTicksAfterInput": 9
-    }
-  },
-  {
-    "name": "bad-ice-cream",
-    "type": "flash",
-    "entry_file": "index.html",
-    "status": "ok",
-    "elapsed_seconds": 32.6,
-    "critical_issues": [],
-    "warnings": [
-      {
-        "code": "LOCAL_IGNORED_HTTP",
-        "message": "Ignored optional local HTTP 404",
-        "severity": "warning",
-        "url": "http://localhost:8081/js/main.js"
-      }
-    ],
-    "probe": {
-      "readyState": "complete",
-      "surfaceCount": 1,
-      "bodyTextLength": 0,
-      "bodyTextSample": "",
-      "unityLoadingBar": false,
-      "unityProgress": "",
-      "hasRuffleGlobal": false,
-      "hasRetroGlobal": false,
-      "canvasHash": "0",
-      "canvasNonzeroPixels": 0,
-      "canvasPixelVariance": 0,
-      "canvasIsWebGL": true,
-      "canvasRAFTicks": 9,
-      "unityInstanceLoaded": false,
-      "ruffleReady": false,
-      "ejsStarted": false,
-      "godotReady": false,
-      "phaserReady": false,
-      "audioContextRunning": false,
-      "audioContextCount": 0,
-      "ejsProgressPct": -1,
-      "constructProgressPct": -1,
-      "constructStarted": false,
-      "phaserProgressPct": -1,
-      "canvasHashFirst": "0",
-      "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000,
-      "canvasHashAfterInput": "0",
-      "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 11
     }
   }
 ]
