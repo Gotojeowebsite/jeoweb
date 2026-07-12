@@ -1720,8 +1720,8 @@
       "name": "Dogeminer2",
       "type": "webgl",
       "first_queued_at": 1780855659,
-      "last_attempt_at": 1783254269,
-      "attempts": 5,
+      "last_attempt_at": 1783855675,
+      "attempts": 6,
       "reason": "16 candidates all failed",
       "candidates_tried": [
         {
@@ -1732,6 +1732,16 @@
           "name_similarity": 1,
           "outcome": "scrape_failed",
           "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://funny-school.github.io/game/dogeminer2/",
+          "source": "duckduckgo",
+          "score": 110,
+          "match_type": "exact",
+          "name_similarity": 0.333,
+          "outcome": "verify_failed",
+          "asset_count": 117,
           "shape_check": null
         },
         {
@@ -1746,6 +1756,26 @@
           "shape_check": null
         },
         {
+          "url": "https://sn-yr.github.io/nightv2/static/games/Dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.258,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
+          "shape_check": null
+        },
+        {
+          "url": "https://packjackisback.github.io/games/dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.261,
+          "outcome": "verify_failed",
+          "asset_count": 29,
+          "shape_check": null
+        },
+        {
           "url": "https://mvunblocked.github.io/MVUnblocked.github.io/Games/DogeMiner2.html",
           "source": "github-code",
           "score": 108,
@@ -1757,23 +1787,23 @@
           "shape_check": null
         },
         {
-          "url": "https://khanji-ideas.github.io/reimagined-journey/static/games/Dogeminer2.html",
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/dogeminer2.html",
           "source": "github-code",
           "score": 108,
           "match_type": "exact",
-          "name_similarity": 0.185,
+          "name_similarity": 0.205,
           "outcome": "scrape_failed",
           "asset_count": 1,
           "shape_check": null
         },
         {
-          "url": "https://funny-school.github.io/game/dogeminer2/",
-          "source": "duckduckgo",
-          "score": 106,
+          "url": "https://467riguy8.github.io/Inf-script/Games/dogeminer2.html",
+          "source": "github-code",
+          "score": 108,
           "match_type": "exact",
-          "name_similarity": 0.089,
-          "outcome": "verify_failed",
-          "asset_count": 123,
+          "name_similarity": 0.231,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
           "shape_check": null
         },
         {
@@ -1817,65 +1847,35 @@
           "shape_check": null
         },
         {
-          "url": "https://dogeminer2.github.io/gamesgames.github.io/",
-          "source": "github-repos",
+          "url": "https://reider71164.github.io/Astral-Games/storage/gxmes/dogeminer2/index.html",
+          "source": "github-code",
           "score": 101,
           "match_type": "exact",
-          "name_similarity": 0.279,
-          "outcome": "scrape_failed",
-          "asset_count": 1,
-          "shape_check": null
-        },
-        {
-          "url": "https://purplesgamestash.github.io/purplesgamestash.github.io/playgame/dogeminer2.html",
-          "source": "github-code",
-          "score": 100,
-          "match_type": "exact",
-          "name_similarity": 0.188,
+          "name_similarity": 0.069,
           "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 78,
+          "error": "asset overlap=9% below 10% floor",
+          "asset_count": 15,
           "shape_check": null
         },
         {
-          "url": "https://brickyosu.github.io/ugs-files-sorted/D/cldogeminer2.html",
+          "url": "https://popanynomous234.github.io/Goodboy/dogeminer2.html",
           "source": "github-code",
-          "score": 98,
+          "score": 101,
           "match_type": "exact",
-          "name_similarity": 0.091,
+          "name_similarity": 0.253,
           "outcome": "scrape_failed",
           "asset_count": 1,
           "shape_check": null
         },
         {
-          "url": "https://ashton20271.github.io/unblockedgames/cldogeminer2.html",
+          "url": "https://pohakooxd.github.io/thedrcreeper.dev/projects/Dogeminer2/index.html",
           "source": "github-code",
-          "score": 98,
+          "score": 101,
           "match_type": "exact",
-          "name_similarity": 0.091,
-          "outcome": "scrape_failed",
-          "asset_count": 1,
-          "shape_check": null
-        },
-        {
-          "url": "https://lagged.com/en/g/dogeminer2",
-          "source": "portal-template",
-          "score": 91,
-          "match_type": "exact",
-          "name_similarity": 0.293,
-          "outcome": "verify_failed",
-          "asset_count": 28,
-          "shape_check": null
-        },
-        {
-          "url": "https://realben9.github.io/dm2sc/",
-          "source": "duckduckgo",
-          "score": 86,
-          "match_type": "exact",
-          "name_similarity": 0.061,
+          "name_similarity": 0.054,
           "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=1% below 10% floor",
-          "asset_count": 16,
+          "error": "asset overlap=9% below 10% floor",
+          "asset_count": 15,
           "shape_check": null
         },
         {
@@ -1889,11 +1889,35 @@
           "shape_check": null
         },
         {
+          "url": "https://funny-school.github.io/game/dogeminer2/",
+          "source": "bing",
+          "score": 110,
+          "match_type": "fuzzy",
+          "name_similarity": 0.333,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
           "url": "https://p0xx.github.io/p0xx.github.io/g/games/dogeminer2.html",
           "source": "github-code",
           "score": 109,
           "match_type": "fuzzy",
           "name_similarity": 0.234,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://sn-yr.github.io/nightv2/static/games/Dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.258,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://packjackisback.github.io/games/dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.261,
           "outcome": "below_fuzzy_threshold"
         },
         {
@@ -1905,19 +1929,19 @@
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://khanji-ideas.github.io/reimagined-journey/static/games/Dogeminer2.html",
+          "url": "https://goattech-42.github.io/NEBULA-CDN/games/dogeminer2.html",
           "source": "github-code",
           "score": 108,
           "match_type": "fuzzy",
-          "name_similarity": 0.185,
+          "name_similarity": 0.205,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://funny-school.github.io/game/dogeminer2/",
-          "source": "bing",
-          "score": 106,
+          "url": "https://467riguy8.github.io/Inf-script/Games/dogeminer2.html",
+          "source": "github-code",
+          "score": 108,
           "match_type": "fuzzy",
-          "name_similarity": 0.089,
+          "name_similarity": 0.231,
           "outcome": "below_fuzzy_threshold"
         },
         {
@@ -1934,30 +1958,6 @@
           "score": 101,
           "match_type": "fuzzy",
           "name_similarity": 0.08,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://pixelpill.github.io/GojoCatGames/DogeMiner2.html",
-          "source": "github-code",
-          "score": 101,
-          "match_type": "fuzzy",
-          "name_similarity": 0.255,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://ymillan-2011.github.io/Rickrolled-Games-V3/projects/dogeminer2/index.html",
-          "source": "github-code",
-          "score": 101,
-          "match_type": "fuzzy",
-          "name_similarity": 0.056,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://dogeminer2.github.io/gamesgames.github.io/",
-          "source": "github-repos",
-          "score": 101,
-          "match_type": "fuzzy",
-          "name_similarity": 0.279,
           "outcome": "below_fuzzy_threshold"
         }
       ],
@@ -11336,20 +11336,10 @@
       "name": "Bad Ice Cream 2",
       "type": "flash",
       "first_queued_at": 1781444466,
-      "last_attempt_at": 1783255357,
-      "attempts": 3,
-      "reason": "17 candidates all failed",
+      "last_attempt_at": 1783856739,
+      "attempts": 4,
+      "reason": "16 candidates all failed",
       "candidates_tried": [
-        {
-          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
-          "source": "bing",
-          "score": 114,
-          "match_type": "exact",
-          "name_similarity": 0.65,
-          "outcome": "verify_failed",
-          "asset_count": 107,
-          "shape_check": null
-        },
         {
           "url": "https://www.y8.com/games/bad_ice_cream_2",
           "source": "portal-template",
@@ -11377,7 +11367,7 @@
           "match_type": "exact",
           "name_similarity": 0.536,
           "outcome": "verify_failed",
-          "asset_count": 340,
+          "asset_count": 342,
           "shape_check": null
         },
         {
@@ -11391,25 +11381,103 @@
           "shape_check": null
         },
         {
-          "url": "https://www.friv.com/z/games/badicecream2/game.html",
-          "source": "bing",
-          "score": 97,
+          "url": "https://lindy28ca.itch.io/bad-ice-cream",
+          "source": "itch",
+          "score": 99,
           "match_type": "exact",
-          "name_similarity": 0.346,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 14,
+          "name_similarity": 0.344,
+          "outcome": "verify_failed",
+          "asset_count": 12,
           "shape_check": null
         },
         {
-          "url": "https://mrdavidzs.github.io/games/270.html",
-          "source": "github-code",
-          "score": 94,
+          "url": "https://ctx-112266.itch.io/bad-ice-cream-3310",
+          "source": "itch",
+          "score": 99,
           "match_type": "exact",
-          "name_similarity": 0.083,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 4,
+          "name_similarity": 0.31,
+          "outcome": "verify_failed",
+          "asset_count": 11,
+          "shape_check": null
+        },
+        {
+          "url": "https://flashplayergames.itch.io/bad-ice-cream",
+          "source": "itch",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.325,
+          "outcome": "verify_failed",
+          "asset_count": 26,
+          "shape_check": null
+        },
+        {
+          "url": "https://medstudios.itch.io/a-bad-ice-cream-game",
+          "source": "itch",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.31,
+          "outcome": "verify_failed",
+          "asset_count": 9,
+          "shape_check": null
+        },
+        {
+          "url": "https://alexgamerplay202981.itch.io/bad-ice-cream-1",
+          "source": "itch",
+          "score": 99,
+          "match_type": "exact",
+          "name_similarity": 0.314,
+          "outcome": "verify_failed",
+          "asset_count": 21,
+          "shape_check": null
+        },
+        {
+          "url": "https://abraham2022.itch.io/bad-ice-creams-1-2-y-3",
+          "source": "itch",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.275,
+          "outcome": "verify_failed",
+          "asset_count": 8,
+          "shape_check": null
+        },
+        {
+          "url": "https://aka-sparx.itch.io/bad-ice-cream-fan-remake",
+          "source": "itch",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.28,
+          "outcome": "verify_failed",
+          "asset_count": 17,
+          "shape_check": null
+        },
+        {
+          "url": "https://rottenevilchimerabyte.itch.io/breaking-bad-ice-cream",
+          "source": "itch",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.276,
+          "outcome": "verify_failed",
+          "asset_count": 12,
+          "shape_check": null
+        },
+        {
+          "url": "https://lostgamesdev.itch.io/really-bad-ice-cream",
+          "source": "itch",
+          "score": 98,
+          "match_type": "exact",
+          "name_similarity": 0.294,
+          "outcome": "verify_failed",
+          "asset_count": 11,
+          "shape_check": null
+        },
+        {
+          "url": "https://tecnokids-sistemas-2018.itch.io/pau-meli-sofi-bad-ice-cream",
+          "source": "itch",
+          "score": 97,
+          "match_type": "exact",
+          "name_similarity": 0.206,
+          "outcome": "verify_failed",
+          "asset_count": 24,
           "shape_check": null
         },
         {
@@ -11421,87 +11489,6 @@
           "outcome": "fingerprint_mismatch",
           "error": "asset overlap=0% below 10% floor",
           "asset_count": 4,
-          "shape_check": null
-        },
-        {
-          "url": "https://mrdavidzs.github.io/games/271.html",
-          "source": "github-code",
-          "score": 94,
-          "match_type": "exact",
-          "name_similarity": 0.083,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 4,
-          "shape_check": null
-        },
-        {
-          "url": "https://www.crazygames.com/t/casual",
-          "source": "portal-template",
-          "score": 93,
-          "match_type": "exact",
-          "name_similarity": 0.505,
-          "outcome": "verify_failed",
-          "asset_count": 173,
-          "shape_check": null
-        },
-        {
-          "url": "https://poki.com/en/g/bad-ice-cream",
-          "source": "bing",
-          "score": 91,
-          "match_type": "exact",
-          "name_similarity": 0.344,
-          "outcome": "verify_failed",
-          "asset_count": 337,
-          "shape_check": null
-        },
-        {
-          "url": "https://sandy8752.github.io/WebsiteDesign/ice.html",
-          "source": "github-code",
-          "score": 90,
-          "match_type": "exact",
-          "name_similarity": 0.173,
-          "outcome": "scrape_failed",
-          "asset_count": 1,
-          "shape_check": null
-        },
-        {
-          "url": "https://lagged.com/en/g/badicecream2",
-          "source": "portal-template",
-          "score": 89,
-          "match_type": "exact",
-          "name_similarity": 0.525,
-          "outcome": "verify_failed",
-          "asset_count": 28,
-          "shape_check": null
-        },
-        {
-          "url": "https://sherlin03.github.io/sm-market/ice.html",
-          "source": "github-code",
-          "score": 89,
-          "match_type": "exact",
-          "name_similarity": 0.146,
-          "outcome": "scrape_failed",
-          "asset_count": 1,
-          "shape_check": null
-        },
-        {
-          "url": "https://fenixxsm.github.io/Juegos-free/ice.html",
-          "source": "github-code",
-          "score": 89,
-          "match_type": "exact",
-          "name_similarity": 0.158,
-          "outcome": "verify_failed",
-          "asset_count": 38,
-          "shape_check": null
-        },
-        {
-          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
-          "source": "bing",
-          "score": 114,
-          "match_type": "fuzzy",
-          "name_similarity": 0.65,
-          "outcome": "verify_failed",
-          "asset_count": 105,
           "shape_check": null
         },
         {
@@ -11515,67 +11502,75 @@
           "shape_check": null
         },
         {
-          "url": "https://poki.com/en/g/bad-ice-cream-2",
-          "source": "bing",
-          "score": 102,
-          "match_type": "fuzzy",
-          "name_similarity": 0.413,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://www.friv.com/z/games/badicecream2/game.html",
-          "source": "bing",
-          "score": 97,
-          "match_type": "fuzzy",
-          "name_similarity": 0.346,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://mrdavidzs.github.io/games/270.html",
-          "source": "github-code",
-          "score": 94,
-          "match_type": "fuzzy",
-          "name_similarity": 0.083,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://mrdavidzs.github.io/games/269.html",
-          "source": "github-code",
-          "score": 94,
-          "match_type": "fuzzy",
-          "name_similarity": 0.083,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://mrdavidzs.github.io/games/271.html",
-          "source": "github-code",
-          "score": 94,
-          "match_type": "fuzzy",
-          "name_similarity": 0.083,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://poki.com/en/g/bad-ice-cream",
-          "source": "bing",
-          "score": 91,
+          "url": "https://lindy28ca.itch.io/bad-ice-cream",
+          "source": "itch",
+          "score": 99,
           "match_type": "fuzzy",
           "name_similarity": 0.344,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://sandy8752.github.io/WebsiteDesign/ice.html",
-          "source": "github-code",
-          "score": 90,
+          "url": "https://ctx-112266.itch.io/bad-ice-cream-3310",
+          "source": "itch",
+          "score": 99,
           "match_type": "fuzzy",
-          "name_similarity": 0.173,
+          "name_similarity": 0.31,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://sherlin03.github.io/sm-market/ice.html",
-          "source": "github-code",
-          "score": 89,
+          "url": "https://flashplayergames.itch.io/bad-ice-cream",
+          "source": "itch",
+          "score": 99,
           "match_type": "fuzzy",
-          "name_similarity": 0.146,
+          "name_similarity": 0.325,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://medstudios.itch.io/a-bad-ice-cream-game",
+          "source": "itch",
+          "score": 99,
+          "match_type": "fuzzy",
+          "name_similarity": 0.31,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://alexgamerplay202981.itch.io/bad-ice-cream-1",
+          "source": "itch",
+          "score": 99,
+          "match_type": "fuzzy",
+          "name_similarity": 0.314,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://abraham2022.itch.io/bad-ice-creams-1-2-y-3",
+          "source": "itch",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.275,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://aka-sparx.itch.io/bad-ice-cream-fan-remake",
+          "source": "itch",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.28,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://rottenevilchimerabyte.itch.io/breaking-bad-ice-cream",
+          "source": "itch",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.276,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://lostgamesdev.itch.io/really-bad-ice-cream",
+          "source": "itch",
+          "score": 98,
+          "match_type": "fuzzy",
+          "name_similarity": 0.294,
           "outcome": "below_fuzzy_threshold"
         }
       ],
@@ -11583,6 +11578,6 @@
       "notes": ""
     }
   },
-  "generated_at": 1783255357,
+  "generated_at": 1783856739,
   "count": 47
 }
