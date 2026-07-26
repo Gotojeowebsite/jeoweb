@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.793,
+    "elapsed_seconds": 25.781,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
@@ -80,7 +80,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.894,
+    "elapsed_seconds": 32.938,
     "critical_issues": [],
     "warnings": [
       {
@@ -103,7 +103,7 @@
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 8,
+      "canvasRAFTicks": 9,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,
@@ -128,7 +128,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 33.15,
+    "elapsed_seconds": 33.155,
     "critical_issues": [],
     "warnings": [
       {
@@ -192,7 +192,7 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 12
+      "canvasRAFTicksAfterInput": 15
     }
   }
 ]
