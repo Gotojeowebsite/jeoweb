@@ -4,19 +4,19 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.698,
+    "elapsed_seconds": 25.666,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+        "url": "http://localhost:8081/play/dogeloader.svg"
       },
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/dogeloader.svg"
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
       }
     ],
     "warnings": [
@@ -48,8 +48,8 @@
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 0,
-      "bodyTextSample": "",
+      "bodyTextLength": 18,
+      "bodyTextSample": "who juggles geese?",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,

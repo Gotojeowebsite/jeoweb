@@ -1720,8 +1720,8 @@
       "name": "Dogeminer2",
       "type": "webgl",
       "first_queued_at": 1780855659,
-      "last_attempt_at": 1785670143,
-      "attempts": 9,
+      "last_attempt_at": 1786269531,
+      "attempts": 10,
       "reason": "16 candidates all failed",
       "candidates_tried": [
         {
@@ -1756,16 +1756,6 @@
           "shape_check": null
         },
         {
-          "url": "https://packjackisback.github.io/games/dogeminer2.html",
-          "source": "github-code",
-          "score": 109,
-          "match_type": "exact",
-          "name_similarity": 0.261,
-          "outcome": "verify_failed",
-          "asset_count": 29,
-          "shape_check": null
-        },
-        {
           "url": "https://mynamescrax.github.io/aetheris/public/assets/games/dogeminer2.html",
           "source": "github-code",
           "score": 109,
@@ -1776,13 +1766,23 @@
           "shape_check": null
         },
         {
-          "url": "https://glaxyias.github.io/glaxyias.github.io/Games/Dogeminer2/index.html",
+          "url": "https://packjackisback.github.io/games/dogeminer2.html",
           "source": "github-code",
           "score": 109,
           "match_type": "exact",
-          "name_similarity": 0.042,
+          "name_similarity": 0.261,
           "outcome": "verify_failed",
-          "asset_count": 16,
+          "asset_count": 29,
+          "shape_check": null
+        },
+        {
+          "url": "https://u-spe.github.io/spydr/assets/gameassets/pizza/games/dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "exact",
+          "name_similarity": 0.268,
+          "outcome": "scrape_failed",
+          "asset_count": 1,
           "shape_check": null
         },
         {
@@ -1904,14 +1904,6 @@
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://packjackisback.github.io/games/dogeminer2.html",
-          "source": "github-code",
-          "score": 109,
-          "match_type": "fuzzy",
-          "name_similarity": 0.261,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
           "url": "https://mynamescrax.github.io/aetheris/public/assets/games/dogeminer2.html",
           "source": "github-code",
           "score": 109,
@@ -1920,11 +1912,19 @@
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://glaxyias.github.io/glaxyias.github.io/Games/Dogeminer2/index.html",
+          "url": "https://packjackisback.github.io/games/dogeminer2.html",
           "source": "github-code",
           "score": 109,
           "match_type": "fuzzy",
-          "name_similarity": 0.042,
+          "name_similarity": 0.261,
+          "outcome": "below_fuzzy_threshold"
+        },
+        {
+          "url": "https://u-spe.github.io/spydr/assets/gameassets/pizza/games/dogeminer2.html",
+          "source": "github-code",
+          "score": 109,
+          "match_type": "fuzzy",
+          "name_similarity": 0.268,
           "outcome": "below_fuzzy_threshold"
         },
         {
@@ -11335,10 +11335,20 @@
       "name": "Bad Ice Cream 2",
       "type": "flash",
       "first_queued_at": 1781444466,
-      "last_attempt_at": 1785671152,
-      "attempts": 7,
-      "reason": "16 candidates all failed",
+      "last_attempt_at": 1786270621,
+      "attempts": 8,
+      "reason": "17 candidates all failed",
       "candidates_tried": [
+        {
+          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
+          "source": "bing",
+          "score": 114,
+          "match_type": "exact",
+          "name_similarity": 0.65,
+          "outcome": "verify_failed",
+          "asset_count": 107,
+          "shape_check": null
+        },
         {
           "url": "https://www.y8.com/games/bad_ice_cream_2",
           "source": "portal-template",
@@ -11346,7 +11356,7 @@
           "match_type": "exact",
           "name_similarity": 0.55,
           "outcome": "verify_failed",
-          "asset_count": 101,
+          "asset_count": 105,
           "shape_check": null
         },
         {
@@ -11366,7 +11376,7 @@
           "match_type": "exact",
           "name_similarity": 0.536,
           "outcome": "verify_failed",
-          "asset_count": 342,
+          "asset_count": 341,
           "shape_check": null
         },
         {
@@ -11376,7 +11386,7 @@
           "match_type": "exact",
           "name_similarity": 0.53,
           "outcome": "verify_failed",
-          "asset_count": 50,
+          "asset_count": 52,
           "shape_check": null
         },
         {
@@ -11416,7 +11426,7 @@
           "match_type": "exact",
           "name_similarity": 0.325,
           "outcome": "verify_failed",
-          "asset_count": 28,
+          "asset_count": 25,
           "shape_check": null
         },
         {
@@ -11425,8 +11435,9 @@
           "score": 99,
           "match_type": "exact",
           "name_similarity": 0.31,
-          "outcome": "verify_failed",
-          "asset_count": 9,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
           "shape_check": null
         },
         {
@@ -11435,8 +11446,9 @@
           "score": 99,
           "match_type": "exact",
           "name_similarity": 0.314,
-          "outcome": "verify_failed",
-          "asset_count": 22,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
           "shape_check": null
         },
         {
@@ -11445,8 +11457,9 @@
           "score": 98,
           "match_type": "exact",
           "name_similarity": 0.275,
-          "outcome": "verify_failed",
-          "asset_count": 8,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
           "shape_check": null
         },
         {
@@ -11465,9 +11478,8 @@
           "score": 98,
           "match_type": "exact",
           "name_similarity": 0.276,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 2,
+          "outcome": "verify_failed",
+          "asset_count": 12,
           "shape_check": null
         },
         {
@@ -11476,19 +11488,19 @@
           "score": 98,
           "match_type": "exact",
           "name_similarity": 0.294,
-          "outcome": "verify_failed",
-          "asset_count": 11,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 2,
           "shape_check": null
         },
         {
-          "url": "https://www.friv.com/z/games/badicecream2/game.html",
+          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
           "source": "bing",
-          "score": 97,
-          "match_type": "exact",
-          "name_similarity": 0.346,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 14,
+          "score": 114,
+          "match_type": "fuzzy",
+          "name_similarity": 0.65,
+          "outcome": "verify_failed",
+          "asset_count": 107,
           "shape_check": null
         },
         {
@@ -11563,14 +11575,6 @@
           "score": 98,
           "match_type": "fuzzy",
           "name_similarity": 0.275,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://aka-sparx.itch.io/bad-ice-cream-fan-remake",
-          "source": "itch",
-          "score": 98,
-          "match_type": "fuzzy",
-          "name_similarity": 0.28,
           "outcome": "below_fuzzy_threshold"
         }
       ],
@@ -11837,6 +11841,6 @@
       "notes": ""
     }
   },
-  "generated_at": 1785671152,
+  "generated_at": 1786270621,
   "count": 48
 }
