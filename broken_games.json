@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.67,
+    "elapsed_seconds": 25.658,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
@@ -48,8 +48,8 @@
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 0,
-      "bodyTextSample": "",
+      "bodyTextLength": 18,
+      "bodyTextSample": "who juggles geese?",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
