@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.667,
+    "elapsed_seconds": 25.7,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
@@ -48,8 +48,8 @@
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 18,
-      "bodyTextSample": "who juggles geese?",
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
@@ -80,7 +80,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.275,
+    "elapsed_seconds": 32.886,
     "critical_issues": [],
     "warnings": [
       {
@@ -127,7 +127,7 @@
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 11,
+      "canvasRAFTicks": 8,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,
@@ -144,7 +144,7 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 12
+      "canvasRAFTicksAfterInput": 9
     }
   },
   {
@@ -152,7 +152,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.167,
+    "elapsed_seconds": 32.964,
     "critical_issues": [],
     "warnings": [
       {
@@ -175,7 +175,7 @@
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 11,
+      "canvasRAFTicks": 9,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,
@@ -192,7 +192,7 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 12
+      "canvasRAFTicksAfterInput": 9
     }
   }
 ]
