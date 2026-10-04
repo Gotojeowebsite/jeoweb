@@ -4,7 +4,7 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.7,
+    "elapsed_seconds": 25.662,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
@@ -80,7 +80,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.886,
+    "elapsed_seconds": 32.809,
     "critical_issues": [],
     "warnings": [
       {
@@ -144,7 +144,7 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 9
+      "canvasRAFTicksAfterInput": 7
     }
   },
   {
@@ -152,7 +152,7 @@
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.964,
+    "elapsed_seconds": 33.0,
     "critical_issues": [],
     "warnings": [
       {
@@ -192,7 +192,7 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 9
+      "canvasRAFTicksAfterInput": 17
     }
   }
 ]
