@@ -1,0 +1,4513 @@
+/* Modernized Store Assistant Chat - Based on Figma Design */
+
+:root {
+  /* Core colors from Figma */
+  --sa-primary-blue: #0078D4;
+  --sa-background-card: #FEFEFE;
+  --sa-background-light: #F4FAFD;
+  --sa-background-conversation: rgba(244, 250, 253, 0.7);
+  --sa-background-conversation-mobile: rgba(244, 250, 253, 0.8);
+  --sa-border-base: #CBE6F4;
+  --sa-border-main: #7192AC;
+  --sa-border-accent: #279AB9;
+  --sa-text-strong: #0E1726;
+  --sa-text-subtle: #17253D;
+  --sa-text-secondary: #707070;
+  --sa-text-muted: #707070;
+  --sa-user-bubble: #DCEEF8;
+  --sa-accent-subtle: #2A446F;
+  --sa-ai-gradient: linear-gradient(89.97deg, #0078D4 0.03%, #6DD1C1 99.97%);
+  
+  /* Interactive states */
+  --sa-background-hover: rgba(0, 120, 212, 0.1);
+  --sa-background-pressed: rgba(0, 120, 212, 0.2);
+  
+  /* Responsive dimensions - use CSS clamp for fluid scaling */
+  --sa-container-width: clamp(320px, 90vw, 432px);
+  --sa-container-height: clamp(400px, 90vh, 955px);
+  --sa-header-height: clamp(60px, 8vh, 80px);
+  --sa-input-height: clamp(80px, 12vh, 138px);
+  --sa-conversation-height: calc(var(--sa-container-height) - var(--sa-header-height) - var(--sa-input-height));
+  --sa-border-radius: 16px;
+  --sa-card-border-radius: 8px;
+  
+  /* Responsive spacing */
+  --sa-padding-container: clamp(8px, 2vw, 16px);
+  --sa-gap-default: clamp(8px, 2vw, 16px);
+  --sa-gap-small: clamp(4px, 1vw, 8px);
+
+  /* Input region — single source of truth, overridden once for phones */
+  --sa-input-area-padding: 12px;
+  --sa-input-padding: 4px 12px;
+  --sa-input-min-height: 56px;
+  
+  /* Responsive typography */
+  --sa-font-size-title: clamp(16px, 2.5vw, 18px);
+  --sa-font-size-subtitle: clamp(12px, 2vw, 14px);
+  --sa-font-size-body: clamp(12px, 2vw, 14px);
+  --sa-font-size-caption: clamp(10px, 1.5vw, 12px);
+  --sa-line-height-title: 1.33;
+  --sa-line-height-subtitle: 1.43;
+  --sa-line-height-body: 1.43;
+  --sa-line-height-caption: 1.33;
+  --sa-font-weight-semibold: 600;
+  --sa-font-weight-regular: 400;
+  
+  /* Skeleton animation */
+  --skeleton-base-color: #F0F0F0;
+  --skeleton-highlight-color: #E0E0E0;
+  --skeleton-animation-duration: 2s;
+}
+
+/* Main Container - Fully Responsive */
+.sa-modern-container {
+  position: relative;
+  width: var(--sa-container-width);
+  height: var(--sa-container-height);
+  max-width: 100vw;
+  max-height: 100%;
+  border: 1px solid var(--sa-border-main);
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.12)) drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.14));
+  border-radius: var(--sa-border-radius);
+  background: var(--sa-background-card);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Center the container when it's smaller than viewport */
+  margin: auto;
+  
+  /* Ensure proper scaling on different screen sizes */
+  min-width: 320px;
+  min-height: 0;
+}
+
+.sa-modern-container.end-modal-active {
+  overflow: visible;
+}
+
+/* Minimized State for Modern Design */
+.provider.modern-design.provider--minimized .sa-modern-container {
+  height: 68px;
+  min-height: 68px;
+  max-height: 68px;
+  border-radius: var(--sa-border-radius);
+  overflow: hidden;
+  border: 1px solid #7192AC;
+  background: var(--sa-background-light);
+  box-shadow: 0px 2px 8px 0px #0000001F;
+  backdrop-filter: blur(125px);
+}
+
+.provider.modern-design.provider--minimized .sa-modern-header {
+  border-radius: var(--sa-border-radius);
+  border-bottom: none;
+  background: var(--sa-background-light);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  min-height: 68px;
+  box-sizing: border-box;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-header-content {
+  height: 44px;
+  align-items: center;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-title-section {
+  height: 68px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-header-left {
+  align-items: center !important; 
+  height: 68px;
+  display: flex;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-textbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 68px;
+  flex-direction: row;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-title {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* Header */
+.sa-modern-header {
+  /* Layout */
+  display: flex;
+  width: 432px;
+  padding: var(--m, 16px) var(--default, 16px);
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  
+  /* Style */
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid #CBE6F4;
+  background: #F4FAFD;
+  box-sizing: border-box;
+}
+
+.sa-modern-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--m, 16px);
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.sa-modern-chat-container {
+  /* Chat icon layout */
+  display: flex;
+  width: clamp(24px, 8vh, 48px);
+  height: clamp(24px, 8vh, 48px);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  /* Chat icon style */
+  border-radius: var(--s, 8px);
+  border: 1px solid var(--reimagine-day-border-card-card-fade, #E6F2FB);
+  background: var(--reimagine-day-background-card-card-normal, #FEFEFE);
+}
+
+.provider.modern-design.provider--minimized .sa-modern-chat-container {
+  /* Ensure perfect centering in minimized state */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0;
+  height: 48px;
+  width: 48px;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-chat-container .sa-modern-chat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px; 
+}
+
+.sa-modern-chat-icon {
+  /* Chat icon layout — scales with container */
+  width: 60%;
+  height: 60%;
+  flex-shrink: 0;
+  stroke: transparent;
+}
+
+.sa-modern-textbox {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--2xs, 4px);
+  flex: 1 0 0;
+}
+
+.sa-modern-title {
+  /* Text layout */
+  align-self: stretch;
+  
+  /* Typography */
+  color: var(--reimagine-day-foreground-base-theme-strong, #0E1726);
+  
+  /* VP4/sans/label-bold/small */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-minimize-close {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 44px; /* Match other element heights */
+  padding-right: 0; /* Override unscoped padding-right:16px */
+}
+
+/* Minimized chrome buttons — unify size, padding, and color across
+   new-topic, minimize, and close so they read as one button cluster. */
+.provider.modern-design.provider--minimized .sa-modern-new-topic-icon-button,
+.provider.modern-design.provider--minimized .sa-modern-minimize-button,
+.provider.modern-design.provider--minimized .sa-modern-close-button {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #0078D4;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-new-topic-icon-button svg,
+.provider.modern-design.provider--minimized .sa-modern-minimize-button svg,
+.provider.modern-design.provider--minimized .sa-modern-close-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-new-topic-icon-button svg path,
+.provider.modern-design.provider--minimized .sa-modern-new-topic-icon-button path {
+  fill: #0078D4;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-chat-icon {
+  /* Ensure the icon is centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-minimize-button,
+.provider.modern-design.provider--minimized .sa-modern-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-minimize-button path,
+.provider.modern-design.provider--minimized .sa-modern-close-button path {
+  fill: #0078D4;
+}
+
+.sa-modern-minimize-button,
+.sa-modern-close-button {
+  /* Layout */
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  
+  /* Remove default button styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  position: relative;
+  z-index: 1000;
+}
+
+.sa-modern-minimize-button:hover,
+.sa-modern-close-button:hover {
+  opacity: 0.7;
+}
+
+.sa-modern-minimize-button svg,
+.sa-modern-close-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sa-modern-minimize-button:active,
+.sa-modern-close-button:active {
+  background-color: var(--sa-background-pressed) !important;
+}
+
+/* Ensure buttons don't get hidden by Fluent UI overrides */
+.sa-modern-header-icons .fui-Button {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+}
+
+/* Conversation Area - Responsive */
+.sa-modern-conversation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: var(--sa-padding-container);
+  gap: var(--sa-gap-default);
+  width: 100%;
+  flex: 1; /* Take up available space between header and input */
+  /* AB#15715736: must be 0, not 200px. As the scrollable middle child between a
+     fixed header and the input footer, a non-zero min-height floor stops this
+     flex item from shrinking under constraint (e.g. 400% zoom / short viewport),
+     which pushes the input area below the overflow:hidden container and clips it.
+     min-height: 0 lets the conversation shrink (scrolling its own content) so the
+     header and input stay on-screen. flex:1 still fills all space when unconstrained. */
+  min-height: 0;
+  background: var(--sa-background-conversation);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.sa-modern-conversation::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sa-modern-conversation::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+}
+
+.sa-modern-conversation::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 4px;
+}
+
+.sa-modern-conversation::-webkit-scrollbar-thumb:hover {
+  background-color: #242424;
+}
+
+/* Message Bubbles */
+.sa-modern-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  gap: var(--sa-gap-default);
+  width: 100%;
+  max-width: 400px;
+}
+
+.sa-modern-ai-message {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--m, 16px) var(--l, 24px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--l, 24px);
+  border-radius: var(--s, 8px);
+  background: var(--reimagine-day-background-base-theme-neutral, #FFF);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: -0.3% !important;
+}
+
+.fai-SystemMessage.sa-modern-ai-message {
+    display: block !important;
+}
+
+/* Apply font styling to all text content within SystemMessage */
+.sa-modern-ai-message,
+.sa-modern-ai-message *,
+.sa-modern-ai-message .chat-markdown,
+.sa-modern-ai-message .chat-markdown *,
+.sa-modern-ai-message .sa-modern-message-text {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: -0.3% !important;
+}
+
+.connecting-message-text,
+.sa-modern-connecting,
+.sa-connected {
+  text-align: center !important;
+}
+
+.sa-modern-minimize-close {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.sa-modern-minimize-button svg path {
+    stroke: #004275 !important;
+    forced-color-adjust: auto !important;
+}
+
+.sa-modern-close-button svg path {
+    forced-color-adjust: auto !important;
+}
+
+p.connecting-message-text {
+  min-height: 20px;
+  font-weight: 400 !important;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: 0;
+  white-space: pre-line;
+}
+
+.sa-modern-ai-message .figma-table-container {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.fai-CopilotMessage.sa-modern-ai-message {
+  padding: 12px 24px 16px 24px !important;
+}
+
+.fai-CopilotMessage__accessibleHeading {
+  display: none !important;
+}
+
+.figma-table-row.figma-table-header-row .figma-table-cell {
+    font-weight: bold !important;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.figma-table-cell.figma-table-cell-wide {
+    font-weight: 600 !important;
+}
+
+.figma-table-cell.figma-table-cell-wide p {
+    margin: 0 !important;
+    font-weight: 600 !important;
+}
+
+.figma-table-cell.figma-table-cell-wide a {
+    font-weight: 600 !important;
+    color: #0066cc !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.figma-table-cell.figma-table-cell-wide a:hover {
+    color: #004499 !important;
+}
+
+.figma-table-row.figma-table-header-row .figma-table-cell {
+    font-weight: bold !important;
+}
+
+
+/* Override FluentUI SystemMessage component font styles */
+.fai-SystemMessage.sa-modern-ai-message,
+.fai-SystemMessage.sa-modern-ai-message .fai-SystemMessage__message,
+.fai-SystemMessage.sa-modern-ai-message .chat-markdown,
+.fai-SystemMessage.sa-modern-ai-message p,
+.fai-SystemMessage.sa-modern-ai-message div {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 400 !important; /* normal text only */
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: -0.3% !important;
+}
+
+/* Override strong/b bolding */
+.fai-SystemMessage.sa-modern-ai-message strong,
+.fai-SystemMessage.sa-modern-ai-message b {
+  font-weight: 600 !important; /* now it works */
+}
+
+/* DataTable comparison table — override typography with Figma-spec values */
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"],
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"] * {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"] [role="columnheader"],
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"] [role="columnheader"] * {
+  font-weight: 600 !important;
+}
+
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"] [role="rowheader"],
+.fai-SystemMessage.sa-modern-ai-message [data-testid="windows-data-table"] [role="rowheader"] * {
+  font-weight: 600 !important;
+}
+
+/* Ensure surveys don't inherit AI message overrides */
+.fai-SystemMessage.sa-modern-cta-survey *,
+.fai-SystemMessage.sa-modern-cta-survey .fai-SystemMessage__message *,
+.sa-modern-dialog-star-rating *,
+.sa-modern-dialog-star-rating .fai-SystemMessage__message * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+}
+
+/* Ensure message text div has no extra margin/padding */
+.sa-modern-ai-message .sa-modern-message-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: #242424 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+}
+
+.sa-modern-ai-message .sa-modern-message-text,
+.sa-modern-ai-message .sa-modern-message-text.sa-connected  {
+  color: #242424 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+  
+}
+
+/* Message content wrapper for consistent alignment */
+.sa-modern-message-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Ensure Markdown content aligns with table */
+.sa-modern-message-content .chat-markdown {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Align table with text content */
+.sa-modern-message-content .figma-table-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom horizontal scrollbar for tables - matches Figma design */
+.figma-table-container::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.figma-table-container::-webkit-scrollbar-track {
+  background: transparent; /* No track background */
+  border-radius: 2px;
+}
+
+.figma-table-container::-webkit-scrollbar-thumb {
+  background: #DBEDF8; /* Grey color from Figma */
+  border-radius: 2px;
+  border: none;
+}
+
+.figma-table-container::-webkit-scrollbar-thumb:hover {
+  background: #737373; /* Slightly darker on hover */
+}
+
+/* Remove scrollbar arrows/buttons */
+.figma-table-container::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.figma-table-container::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.sa-modern-user-message {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 24px;
+  
+  max-width: 219px;
+  min-height: 52px;
+  
+  background: #DCEEF8;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+  
+  margin-left: auto; /* Align to right */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.sa-modern-user-message .sa-modern-message-text {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* Modern Disclaimer Styles */
+.sa-modern-disclaimer-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.sa-modern-disclaimer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sa-modern-disclaimer-content .sa-modern-message-text {
+  text-align: center !important;
+  width: 100%;
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  /* VP4/body/xs */
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.36px;
+}
+
+.sa-modern-disclaimer-content a {
+  color: var(--sa-primary-blue) !important;
+  text-decoration: none !important;
+}
+
+.sa-modern-disclaimer-content a:hover {
+  text-decoration: underline !important;
+}
+
+/* ===========================================
+   Modern Survey Styles - Based on Figma
+   =========================================== */
+
+/* Common Survey Container */
+.sa-modern-survey-container {
+  margin: 12px 0 !important; /* Add vertical spacing */
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sa-modern-survey-container > * {
+  flex-shrink: 0;
+}
+
+/* Survey Element Base */
+.sa-modern-cta-survey-element,
+.sa-modern-dialog-star-rating {
+  align-items: flex-start;
+  background-color: var(--reimagine-day-background-base-theme-neutral, #FFFFFF);
+  border-radius: var(--radii-s, 8px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l, 15px);
+  padding: var(--spacing-m, 16px) var(--spacing-l, 24px);
+  position: relative;
+  width: 400px;
+  /* elevation/day/level-1 */
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+  margin: 8px 0;
+}
+
+/* Survey Question Text - Fixed for proper centering */
+.sa-modern-survey-question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.sa-modern-survey-label {
+  width: 100%;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: #0E1726;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+/* Star Rating Container - Fixed for proper centering */
+.sa-modern-star-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Hide the "Select a star" label text in ModernStarRating */
+.sa-modern-star-rating-container [aria-live="polite"] {
+  display: none !important;
+}
+
+/* CTA Survey Group */
+.sa-modern-cta-survey-group {
+  align-self: stretch;
+  height: auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Star Rating Actions Group - Fixed for proper layout */
+.sa-modern-star-rating-actions {
+  align-self: stretch;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* Button Wrapper - Fixed for proper layout */
+.sa-modern-button-wrapper {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Submit Button for Star Rating - Fixed layout */
+.sa-modern-submit-button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  width: 100%;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  border: 2px solid #2A446F;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sa-modern-submit-button:hover:not(:disabled) {
+  border-color: var(--reimagine-day-border-accent-subtle-cta-hover, #1e3a63);
+  background-color: rgba(42, 68, 111, 0.05);
+}
+
+.sa-modern-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* CTA Survey Buttons */
+.sa-modern-cta-button {
+  all: unset;
+  align-items: center;
+  background-color: var(--reimagine-day-background-accent-strong-cta-normal, #0078D4);
+  border-radius: var(--radii-s, 8px);
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--spacing-xs, 4px);
+  justify-content: center;
+  min-height: 40px;
+  overflow: hidden;
+  padding: var(--spacing-xs, 4px) var(--spacing-m, 12px);
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sa-modern-cta-button:hover {
+  background-color: var(--reimagine-day-background-accent-strong-cta-hover, #106ebe);
+}
+
+/* Button Label Frame - Fixed layout */
+.sa-modern-button-label-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 0px 2px;
+  flex: none;
+  flex-grow: 0;
+}
+
+/* Button Text - Fixed layout */
+.sa-modern-button-text {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #2A446F;
+  flex: none;
+  flex-grow: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* CTA Button Text - White for blue buttons */
+.sa-modern-cta-button .sa-modern-button-text {
+  color: #FFFFFF;
+}
+
+/* Link Wrapper - Fixed layout */
+.sa-modern-link-wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 0;
+}
+
+/* CTA Survey Link Wrapper - Position at top */
+.sa-modern-cta-survey-group > .sa-modern-link-wrapper {
+  position: relative;
+  top: 0;
+  height: auto;
+  order: -1;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Link - Fixed layout */
+.sa-modern-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 100%;
+  height: auto;
+}
+
+/* Link Label Wrapper - Fixed layout */
+.sa-modern-link-label-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 0px 2px;
+  height: auto;
+  border-bottom: 1px solid #2A446F;
+  flex: none;
+  flex-grow: 0;
+}
+
+.sa-modern-link-label-wrapper:hover {
+  border-color: var(--reimagine-day-foreground-accent-subtle-cta-hover, #1e3a63);
+}
+
+/* Link Text - Fixed layout */
+.sa-modern-link-text {
+  height: auto;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2A446F;
+  flex: none;
+  flex-grow: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.sa-modern-link-text:hover {
+  color: var(--reimagine-day-foreground-accent-subtle-cta-hover, #1e3a63);
+}
+
+/* Survey Submitted State */
+.sa-modern-survey-submitted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.sa-modern-survey-submitted p {
+  color: var(--reimagine-day-foreground-base-theme-strong, #242424);
+  font-family: var(--vp4-body-s-font-family, "Segoe UI");
+  font-size: var(--vp4-body-s-font-size, 15px);
+  font-weight: var(--vp4-body-s-font-weight, 600);
+  margin: 0;
+}
+
+/* Survey SystemMessage Override Styles */
+.fai-SystemMessage.sa-modern-cta-survey,
+.fai-SystemMessage.sa-modern-cta-survey .fai-SystemMessage__message {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1;
+}
+
+.fai-SystemMessage.sa-modern-cta-survey .fai-SystemMessage__message > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Dialog Star Rating SystemMessage Override */
+.sa-modern-dialog-star-rating .fai-SystemMessage__message,
+.sa-modern-dialog-star-rating.fai-SystemMessage,
+.fai-SystemMessage.sa-modern-dialog-star-rating {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1;
+}
+
+/* Modern System Message Container */
+.sa-modern-system-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Modern Closed Message Container */
+.sa-modern-closed-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.sa-modern-closed-container .sa-modern-message-text {
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  /* VP4/body/xs */
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.36px;
+}
+
+/* Modern System Message Styles */
+.sa-modern-system-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sa-modern-system-text {
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  /* VP4/body/xs */
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.36px;
+  width: 100%;
+}
+
+.sa-modern-system-timestamp {
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  font-family: "Segoe UI";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.2px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Modern Agent Unavailable Container - No white background */
+.sa-modern-agent-unavailable-container {
+  display: flex;
+  position: relative;
+  width: 400px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--s, 8px);
+  background: transparent;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: -0.3% !important;
+  padding: 0;
+  margin: 4px 0;
+}
+
+/* Modern Agent Unavailable Styles */
+.sa-modern-agent-unavailable-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+.sa-modern-agent-unavailable-icon {
+  color: #f7d22e;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.sa-modern-agent-unavailable-message {
+  color: #323130;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Modern Survey Form Styles - Single Button Design */
+.sa-modern-survey-form {
+  /* Layout */
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+  
+  /* Background */
+  border-radius: 8px;
+  background: var(--NeutralBackground1-Rest, #FFFFFF);
+  
+  /* Shadow */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  width: 100%;
+}
+
+.sa-modern-survey-question p {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.sa-modern-survey-option-button {
+  /* Button Layout */
+  display: flex;
+  min-height: 32px;
+  padding: var(--2xs, 4px) var(--s, 12px);
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  
+  /* Button Style - Blue filled */
+  border-radius: var(--s, 8px);
+  background: var(--reimagine-day-background-accent-strong-cta-normal, #0078D4);
+  border: none;
+  cursor: pointer;
+  
+  /* Button Text */
+  color: var(--reimagine-day-foreground-accent-strong-cta-normal, #FFFFFF);
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 133.333% */
+  
+  /* Hover state */
+  transition: background-color 0.2s ease;
+}
+
+.sa-modern-survey-option-button:hover {
+  background: var(--reimagine-day-background-accent-strong-cta-hover, #106ebe);
+}
+
+/* Legacy Survey Message Styles - for backward compatibility */
+.sa-modern-survey-content {
+  /* Background Layout */
+  display: flex;
+  padding: 12px 16px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  
+  /* Background Style */
+  border-radius: 8px 8px 0 0;
+  background: var(--NeutralBackground1-Rest, #FFFFFF);
+  
+  /* Elevation/Light/Shadow 02 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.sa-modern-survey-content .sa-modern-message-text {
+  /* Text Typography */
+  color: var(--Neutral-Foreground-1-Rest, #242424);
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 133.333% */
+  
+  /* Layout */
+  align-self: stretch;
+}
+
+.sa-modern-survey-content button {
+  /* Button Layout */
+  display: flex;
+  min-width: 32px;
+  min-height: 32px;
+  padding: var(--2xs, 4px) var(--s, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--2xs, 4px);
+  align-self: stretch;
+  
+  /* Button Style */
+  border-radius: var(--s, 8px);
+  border: 2px solid var(--reimagine-day-border-accent-subtle-cta-normal, #2A446F);
+  background: transparent;
+  cursor: pointer;
+  
+  /* Button Text */
+  color: var(--reimagine-day-border-accent-subtle-cta-normal, #2A446F);
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/* Modern Closed Message Styles */
+.sa-modern-closed-message {
+  text-align: center;
+  width: 100%;
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  /* VP4/body/xs */
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: -0.36px;
+}
+
+/* Modern Button Styles */
+.sa-modern-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  width: auto;
+  min-width: 120px;
+}
+
+.sa-modern-star-rating-container button svg path {
+  stroke: #0078D4
+}
+
+.sa-modern-button-primary:hover:not(:disabled) {
+  background-color: #106ebe;
+  transform: translateY(-1px);
+}
+
+.sa-modern-button-primary:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+.sa-modern-button-primary:disabled {
+  background-color: #C7C7C7;
+  color: #A0A0A0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sa-modern-button:focus {
+  outline: 2px solid #0078D4;
+  outline-offset: 2px;
+}
+
+/* ===========================================
+   Modern Survey Submitted State
+   =========================================== */
+
+.sa-modern-survey-submitted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  color: var(--sa-text-strong);
+  font-size: var(--sa-font-size-body);
+  font-weight: var(--sa-font-weight-regular);
+}
+
+.sa-modern-link-button {
+  background: none;
+  border: none;
+  color: var(--sa-primary-blue);
+  cursor: pointer;
+  font-size: var(--sa-font-size-caption);
+  font-weight: var(--sa-font-weight-regular);
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  line-height: var(--sa-line-height-caption);
+}
+
+.sa-modern-link-button:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.sa-modern-link-button:focus {
+  outline: 2px solid var(--sa-primary-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Mobile responsive adjustments for star rating */
+@media (max-width: 480px) {
+  .sa-modern-dialog-star-rating {
+    width: calc(100vw - 32px) !important; /* Responsive width on mobile */
+    max-width: 400px !important;
+    height: auto !important; /* Allow height to adjust on mobile */
+    min-height: 180px !important;
+    padding: 16px !important;
+    margin: 4px 0 !important;
+  }
+
+  .provider.modern-design.provider--minimized {
+    top: auto !important;
+    bottom: 0 !important;
+    align-items: end !important;
+  }
+
+  .provider.modern-design.provider--minimized .sa-modern-title {
+    display: none;
+  }
+
+  .provider.modern-design.provider--minimized .sa-modern-container {
+    width: auto !important;
+    max-width: fit-content !important;
+    margin-right: 9px !important;
+  }
+
+  .provider.modern-design.provider--minimized .sa-modern-header {
+    justify-content: right;
+    gap: 40px;
+  }
+  
+  .sa-modern-star-rating-actions {
+    margin-top: 16px;
+    gap: 8px;
+  }
+
+  .sa-modern-button {
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 100px;
+  }
+  
+  /* CTA Survey mobile adjustments */
+  .sa-modern-cta-survey .modernCtaSurveyContainer {
+    width: calc(100vw - 32px) !important; /* Responsive width on mobile */
+    max-width: 400px !important;
+    height: auto !important; /* Allow height to adjust on mobile */
+    min-height: 230px !important;
+    margin: 4px 0 !important;
+    padding: 12px 16px !important;
+  }
+  
+  .sa-modern-cta-survey .modernCtaSurveyButton {
+    min-height: 40px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* New Topic Icon Button - Inside Chat Input */
+.sa-modern-new-topic-icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--sa-primary-blue);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+  padding: 2px;
+  margin: 0;
+}
+
+.sa-modern-new-topic-icon-button:hover:not(:disabled) {
+  background-color: var(--sa-background-light);
+}
+
+.sa-modern-new-topic-icon-button:active:not(:disabled) {
+  background-color: var(--sa-background-conversation);
+}
+
+.sa-modern-new-topic-icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--sa-text-muted);
+}
+
+/* Mobile responsive adjustments for New Topic icon button */
+@media (max-width: 480px) {
+  .sa-modern-new-topic-icon-button {
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+  }
+  
+  .sa-modern-new-topic-icon-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* New Topic Icon Button - Inside Chat Input (using contentBefore) */
+.sa-modern-chatinput .sa-modern-new-topic-icon-button {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border-radius: 16px !important;
+  margin-right: 12px !important;
+}
+
+/* Ensure proper spacing and layout when button is inside ChatInput */
+.sa-modern-chatinput [data-testid="new-topic-button"] {
+  margin-right: 12px !important;
+}
+
+/* Chat Input Area - Responsive Design */
+.sa-modern-input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--sa-input-area-padding);
+  gap: var(--sa-gap-small);
+  width: 100%;
+  background: var(--sa-background-light);
+  border-top: 1px solid var(--sa-border-base);
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.sa-modern-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: var(--sa-gap-small);
+  width: 100%;
+  background: var(--sa-background-card);
+  box-sizing: border-box;
+}
+
+/* New Topic Button Container - positioned above ChatInput */
+.sa-modern-new-topic-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* New Topic Icon Button - Inside ChatInput using contentBefore */
+.sa-modern-new-topic-icon-button {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 16px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease, opacity 0.2s ease !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sa-modern-new-topic-icon-button:hover:not(:disabled) {
+  background-color: #f3f2f1 !important;
+}
+
+.sa-modern-new-topic-icon-button:focus:not(:disabled) {
+  background-color: transparent !important;
+  outline: 2px solid #0078d4 !important;
+  outline-offset: 2px !important;
+}
+
+.sa-modern-new-topic-icon-button:active:not(:disabled) {
+  background-color: #e1dfdd !important;
+}
+
+.sa-modern-new-topic-icon-button:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+  color: var(--sa-text-muted) !important;
+  background-color: transparent !important;
+}
+
+.sa-modern-input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 16px 18px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 60px;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.12)) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.14));
+  border-radius: var(--sa-card-border-radius);
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+.sa-modern-input-master {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 21px;
+  width: 368px;
+  height: 76px;
+  z-index: 2;
+}
+
+.sa-modern-input-text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+  width: 368px;
+  height: 24px;
+}
+
+.sa-modern-input-title {
+  width: 368px;
+  height: 24px;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(23, 37, 61, 0.8);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.sa-modern-input-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 21px;
+  width: 368px;
+  height: 24px;
+}
+
+.sa-modern-char-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  width: 42px;
+  height: 16px;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: var(--sa-text-muted);
+}
+
+.sa-modern-input-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0px;
+  gap: var(--sa-gap-default);
+  width: 305px;
+  height: 24px;
+  flex: 1;
+}
+
+.sa-modern-send-button {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* Input Underline with Gradient */
+.sa-modern-input-underline {
+  position: absolute;
+  width: 400px;
+  height: 4px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+}
+
+.sa-modern-input-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  position: absolute;
+  width: 400px;
+  height: 4px;
+  left: 0px;
+  top: 0px;
+  border-radius: 200px;
+}
+
+.sa-modern-gradient-bar {
+  width: 400px;
+  height: 4px;
+  background: var(--sa-ai-gradient);
+  border-radius: 200px;
+}
+
+/* Input Surface */
+.sa-modern-input-surface {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: var(--sa-background-card);
+  border: 1px solid var(--sa-border-accent);
+  border-radius: var(--sa-card-border-radius);
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+/* Button Styles */
+.sa-modern-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  gap: 4px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  border: 2px solid var(--sa-accent-subtle);
+  border-radius: var(--sa-card-border-radius);
+  background: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sa-modern-button-primary {
+  border: 2px solid #2A446F;
+  width: 100%;
+  min-height: 40px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.sa-modern-button-label {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: var(--sa-accent-subtle);
+}
+
+.sa-modern-button-primary .sa-modern-button-label {
+  color: #FFFFFF;
+}
+
+/* Active Bar - Updated to match Figma specs */
+.sa-modern-active-bar {
+  /* Announcement - Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  isolation: isolate;
+
+  /* Render as a normal flex child so it always sits flush beneath the
+     header regardless of viewport, zoom or DPI — no absolute positioning
+     means no manual --sa-header-height syncing needed. */
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 48px;
+  min-height: 48px;
+
+  /* Background - keeping the green theme */
+  background: #348C7E;
+
+  /* depth/day/level/2 shadow and border radius */
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.12)) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.12));
+  border-radius: 0px 0px 16px 16px;
+
+  /* Layout */
+  justify-content: space-between;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.sa-modern-active-bar-text {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sa-modern-active-bar-button {
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  background: transparent;
+  color: #FEFEFE;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.sa-modern-active-bar-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sa-modern-active-bar-button:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Zero Prompt Cards */
+.sa-modern-zero-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 0px;
+  gap: var(--sa-gap-default);
+  width: 400px;
+  border-radius: var(--sa-card-border-radius);
+}
+
+/* Button Stack */
+.sa-modern-button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0px;
+  gap: var(--sa-gap-small);
+  width: 162px;
+}
+
+/* Textarea Styles - Based on Figma Design */
+.sa-modern-textarea-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 12px;
+  width: 100%;
+  max-width: 432px;
+  min-height: 48px;
+  background: var(--sa-background-light);
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: relative;
+  transition: border-color 0.2s ease;
+  backdrop-filter: blur(62.5px);
+}
+
+.sa-modern-textarea-wrapper:focus-within {
+  border-color: var(--sa-primary-blue);
+  box-shadow: 0 0 0 1px var(--sa-primary-blue);
+}
+
+.sa-modern-textarea {
+  flex: 1;
+  min-height: 24px;
+  max-height: 120px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: var(--sa-text-strong);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.sa-modern-textarea::placeholder {
+  color: var(--sa-text-muted);
+  opacity: 1;
+}
+
+.sa-modern-textarea:disabled {
+  color: var(--sa-text-disabled);
+  cursor: not-allowed;
+}
+
+.sa-modern-send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--sa-accent-primary);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.sa-modern-send-button:hover:not(:disabled) {
+  background-color: var(--sa-background-light);
+}
+
+.sa-modern-send-button:active:not(:disabled) {
+  background-color: var(--sa-background-conversation);
+}
+
+.sa-modern-send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--sa-text-disabled);
+}
+
+.sa-modern-character-count {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: var(--sa-text-muted);
+  align-self: flex-end;
+  margin: 0;
+}
+
+.sa-modern-character-count.over-limit {
+  color: var(--sa-error-text);
+}
+
+/* ChatInput Style Overrides - Responsive Design */
+.sa-modern-chatinput-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-gap-small);
+  position: relative; /* Enable absolute positioning for button overlay */
+}
+
+/* New Topic Button Overlay - positioned next to send button on the right */
+.sa-modern-new-topic-button-overlay {
+  z-index: 10;
+  pointer-events: auto;
+  /* Position next to send button (send button is ~24px + some margin) */
+  margin-top: 0;
+}
+
+/* Ensure the button appears above input content with proper order */
+.sa-modern-new-topic-button-overlay .sa-modern-new-topic-icon-button {
+  position: relative;
+  z-index: 11;
+  /* Position as middle element between character count and send button */
+  order: 2 !important;
+}
+
+.sa-modern-new-topic-button-overlay svg path {
+  fill: #004275;
+  forced-color-adjust: auto !important;
+}
+
+.sa-modern-new-topic-icon-button.button-disabled svg path,
+.sa-modern-chatinput.button-disabled svg path {
+  fill: #8D8D8D;
+}
+
+.sa-modern-chatinput {
+  /* Override ChatInput default styles to match Figma */
+  width: 100% !important;
+  min-height: var(--sa-input-min-height) !important;
+  max-width: 100% !important;
+  padding: var(--sa-input-padding) !important;
+  background: var(--sa-background-card) !important;
+  border: 1px solid var(--sa-border-accent) !important;
+  border-radius: 8px !important;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  line-height: 1.33 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--sa-text-strong) !important;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14) !important;
+  transition: border-color 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.sa-modern-chatinput:focus-within {
+  border-color: var(--sa-primary-blue) !important;
+  box-shadow: 0 0 0 1px var(--sa-primary-blue), 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* Suppress Fluent's inner ChatInput border/background so only the outer
+   .sa-modern-chatinput border is visible. Lets the editor span the full
+   inner width. */
+.sa-modern-chatinput .fai-ChatInput__inputWrapper {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fluent draws a 2px blue underline via ::after on focus. We already
+   indicate focus on the outer .sa-modern-chatinput, so hide it. */
+.sa-modern-chatinput .fai-ChatInput__inputWrapper::after {
+  display: none !important;
+}
+
+/* ChatInput internal component overrides */
+.sa-modern-chatinput [data-fluent-copilot-chat-input-editor] {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  letter-spacing: -0.03em !important;
+  color: var(--sa-text-strong) !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 24px !important;
+  max-height: 120px !important;
+  resize: none !important;
+}
+
+.sa-modern-chatinput [data-fluent-copilot-chat-input-editor]::placeholder {
+  color: var(--sa-text-muted) !important;
+  opacity: 1 !important;
+}
+
+/* ChatInput send button overrides - position last (right) */
+.sa-modern-chatinput [data-fluent-copilot-chat-input-send-button] {
+  width: 24px !important;
+  height: 24px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  color: var(--sa-primary-blue) !important;
+  transition: background-color 0.2s ease, opacity 0.2s ease !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* Position as last element (right side) */
+  order: 3 !important;
+  flex-shrink: 0 !important;
+}
+
+.sa-modern-chatinput [data-fluent-copilot-chat-input-send-button]:hover:not(:disabled) {
+  background-color: var(--sa-background-light) !important;
+}
+
+.sa-modern-chatinput [data-fluent-copilot-chat-input-send-button]:active:not(:disabled) {
+  background-color: var(--sa-background-conversation) !important;
+}
+
+.sa-modern-chatinput [data-fluent-copilot-chat-input-send-button]:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  color: var(--sa-text-muted) !important;
+}
+
+/* ChatInput character count overrides - position first (left) */
+.sa-modern-chatinput [data-fluent-copilot-chat-input-character-count] {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: -0.03em !important;
+  color: var(--sa-text-muted) !important;
+  margin-top: 4px !important;
+  /* Position as first element (left side) */
+  order: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* ChatInput container overrides - order: character count, new topic, send button */
+.sa-modern-chatinput [data-fluent-copilot-chat-input-container] {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 21px !important;
+  width: 100% !important;
+  height: 24px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* Figma bottom layer: character count -> new topic -> send button */
+  flex: none !important;
+  align-self: stretch !important;
+}
+
+/* Ensure proper layout for ChatInput internal structure */
+.sa-modern-chatinput > * {
+  width: 100% !important;
+}
+
+/* ChatInput wrapper layout fixes */
+.sa-modern-chatinput-wrapper .sa-modern-chatinput {
+  box-sizing: border-box !important;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - COMPREHENSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Tablets and Small Desktops (1024px and down) */
+@media (max-width: 1024px) {
+  .sa-modern-container {
+    width: clamp(320px, 85vw, 400px);
+    height: clamp(500px, 85vh, 800px);
+  }
+
+  /* Force Fluent's inline grid (editor | actions) only in the
+     collapsed/idle state. When the user focuses the input we let
+     Fluent restore its native stacked layout (editor on top, counter +
+     actions below) so the expanded view matches desktop. */
+  .sa-modern-chatinput .fai-ChatInput__inputWrapper:not(:focus-within) {
+    grid-template-areas:
+      "contentBefore input actions"
+      "attachments attachments attachments"
+      "error error error" !important;
+    grid-template-columns: auto 1fr auto !important;
+    grid-template-rows: auto auto auto !important;
+    align-items: center !important;
+    column-gap: 4px !important;
+  }
+
+  /* Hide the character counter only in the collapsed/idle state. */
+  .sa-modern-chatinput .fai-ChatInput__inputWrapper:not(:focus-within) .fai-ChatInput__count {
+    display: none !important;
+  }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+  .sa-modern-container {
+    width: clamp(320px, 90vw, 380px);
+    height: clamp(400px, 90vh, 700px);
+  }
+  
+  .sa-modern-header {
+    padding: clamp(8px, 2vw, 12px);
+  }
+  
+  .sa-modern-title {
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+  
+  .sa-modern-conversation {
+    padding: clamp(8px, 2vw, 12px);
+    gap: clamp(8px, 1.5vw, 12px);
+    background-color: var(--sa-background-conversation-mobile);
+  }
+  
+  .sa-modern-message-bubble {
+    max-width: 85%;
+    padding: clamp(8px, 2vw, 12px);
+  }
+}
+
+/* Small Tablets and Large Phones (600px and down) */
+@media (max-width: 600px) {
+  .sa-modern-container {
+    width: clamp(300px, 95vw, 360px);
+    height: clamp(400px, 95vh, 600px);
+  }
+  
+  .sa-modern-header {
+    padding: 8px 12px;
+    height: clamp(50px, 8vh, 60px);
+  }
+  
+  .sa-modern-header-icons {
+    gap: 8px;
+  }
+  
+  .sa-modern-conversation {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  
+  .sa-modern-message-bubble {
+    max-width: 90%;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile Phones (480px and down) */
+@media (max-width: 480px) {
+  .sa-modern-container {
+    width: calc(100vw - 16px);
+    height: calc(var(--available-vh, 100vh) - 16px);
+    margin: 8px;
+    min-width: unset;
+    min-height: unset;
+  }
+  
+  .sa-modern-header {
+    padding: 8px 16px;
+    min-height: 50px;
+    height: auto;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .sa-modern-header-left {
+    overflow: visible;
+  }
+
+  /* Use fixed sizes on mobile instead of vh-based clamp() which
+     resolves against the iOS layout viewport (includes URL bar)
+     and can shrink the icon unexpectedly. Matches the clamp() max
+     of 48px / 60% = 28.8px from the base rule. */
+  .sa-modern-chat-container {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sa-modern-chat-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .sa-modern-title {
+    font-size: 16px;
+    width: auto;
+    flex: 1;
+  }
+
+  .sa-modern-minimize-close {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .sa-modern-header-icons {
+    gap: 8px;
+    width: auto;
+  }
+  
+  .sa-modern-conversation {
+    padding: 8px 16px;
+    gap: 8px;
+    backdrop-filter: blur(125px);
+  }
+  
+  .sa-modern-message-bubble {
+    max-width: 95%;
+    padding: 8px 12px;
+  }
+
+  /* Phone-only input region overrides (single source of truth) */
+  .sa-modern-container {
+    --sa-input-area-padding: 8px;
+    --sa-input-padding: 4px 10px;
+    --sa-input-min-height: 44px;
+  }
+
+  /* 16px prevents iOS Safari from auto-zooming when the field gets focus. */
+  .sa-modern-chatinput,
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-editor] {
+    font-size: 16px !important;
+  }
+
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-send-button] {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .sa-modern-agent-unavailable-container {
+    width: 100% !important;
+  }
+}
+
+/* Small Mobile Phones (360px and down) */
+@media (max-width: 360px) {
+  .sa-modern-header {
+    padding: 6px 12px;
+  }
+  
+  .sa-modern-title {
+    font-size: 13px;
+  }
+  
+  .sa-modern-conversation {
+    padding: 6px 12px;
+  }
+
+  .sa-modern-agent-unavailable-container {
+    width: 100% !important;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .sa-modern-container {
+    height: var(--available-vh, 100vh);
+  }
+  
+  .sa-modern-header {
+    height: clamp(40px, 8vh, 50px);
+    padding: 4px 16px;
+    overflow: hidden;
+  }
+
+  .sa-modern-chat-container {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sa-modern-chat-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .sa-modern-input-area {
+    padding: 8px 16px;
+  }
+}
+
+/* Very short viewports — prevent header icon from overflowing */
+@media (max-height: 400px) {
+  .sa-modern-container {
+    height: calc(var(--available-vh, 100vh) - 16px);
+    margin: 8px;
+  }
+
+  .sa-modern-header {
+    height: 40px;
+    min-height: 40px;
+    padding: 4px 12px;
+    overflow: hidden;
+  }
+
+  .sa-modern-chat-container {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sa-modern-chat-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* iOS Safari auto-zooms inputs with font-size < 16px.
+   Use 16px on touch devices to prevent zoom. */
+@supports (-webkit-touch-callout: none) {
+  .sa-modern-textarea,
+  .sa-modern-chatinput,
+  .sa-modern-chatinput .fai-EditorInput,
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-editor] {
+    font-size: 16px !important;
+  }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .sa-modern-container {
+    border-width: 0.5px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sa-modern-container,
+  .sa-modern-chatinput,
+  .sa-modern-message-bubble {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .sa-modern-conversation {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   LEGACY RESPONSIVE STYLES CLEANUP
+   ============================================ */
+
+/* Focus States */
+.sa-modern-icon-button:focus,
+.sa-modern-button:focus,
+.sa-modern-send-button:focus,
+.sa-modern-minimize-button:focus,
+.sa-modern-close-button:focus {
+  outline: 2px solid var(--sa-primary-blue);
+  outline-offset: 2px;
+}
+
+/* Custom Button Style for Minimized Mode */
+.provider.modern-design.provider--minimized .sa-modern-chevron-up-button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.provider.modern-design.provider--minimized .sa-modern-chevron-up-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.provider.modern-design.provider--minimized .sa-modern-chevron-up-button svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* Hidden ChatInput */
+.sa-hidden-chat-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  top: -9999px;
+}
+
+.sa-modern-chatinput svg path {
+  fill: #0078D4;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sa-modern-container,
+  .sa-modern-icon-button,
+  .sa-modern-button {
+    transition: none;
+  }
+  
+  .sa-modern-close-button,
+  .sa-modern-minimize-button,
+  .sa-modern-send-button,
+  .sa-modern-new-topic-icon-button,
+  .sa-modern-textarea {
+    transition: none;
+  }
+  
+  .sa-modern-loading-spinner {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .sa-modern-container {
+    border: 2px solid;
+  }
+  
+  .sa-modern-message-text {
+    color: ButtonText;
+  }
+  
+  .sa-modern-ai-message,
+  .sa-modern-user-message {
+    border: 1px solid;
+  }
+}
+
+/* High Contrast Mode (forced-colors) - Focus indicators for Windows high contrast themes (Aquatic/Desert) */
+@media (forced-colors: active) {
+  /* Header actions use Fluent buttons; include Fluent focus-visible attribute for reliable keyboard rings. */
+  .sa-modern-header .fui-Button:focus,
+  .sa-modern-header .fui-Button:focus-visible,
+  .sa-modern-header .fui-Button[data-fui-focus-visible],
+  .sa-modern-header .fui-Button:focus-within {
+    outline: 3px solid Highlight !important;
+    outline-offset: 2px !important;
+    border: 1px solid ButtonText !important;
+    forced-color-adjust: auto !important;
+  }
+
+  /* Send button focus indicator */
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-send-button]:focus,
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-send-button]:focus-visible,
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-send-button][data-fui-focus-visible],
+  .sa-modern-container .fai-SendButton:focus,
+  .sa-modern-container .fai-SendButton:focus-visible,
+  .sa-modern-container .fai-SendButton[data-fui-focus-visible],
+  .sa-modern-container .fai-ChatInput__send:focus,
+  .sa-modern-container .fai-ChatInput__send:focus-visible,
+  .sa-modern-container .fai-ChatInput__send[data-fui-focus-visible] {
+    outline: 3px solid Highlight !important;
+    outline-offset: 2px !important;
+    forced-color-adjust: auto !important;
+  }
+
+  /* Ensure send button icon remains visible in high contrast */
+  .sa-modern-chatinput [data-fluent-copilot-chat-input-send-button] svg,
+  .fai-SendButton svg,
+  .fai-ChatInput__send svg {
+    forced-color-adjust: auto;
+  }
+
+  /* All interactive buttons should have visible focus indicators */
+  .sa-modern-icon-button:focus,
+  .sa-modern-icon-button:focus-visible,
+  .sa-modern-button:focus,
+  .sa-modern-button:focus-visible,
+  .sa-modern-send-button:focus,
+  .sa-modern-send-button:focus-visible,
+  .sa-modern-send-button[data-fui-focus-visible],
+  .sa-modern-minimize-button:focus,
+  .sa-modern-minimize-button:focus-visible,
+  .sa-modern-minimize-button[data-fui-focus-visible],
+  .sa-modern-close-button:focus,
+  .sa-modern-close-button:focus-visible,
+  .sa-modern-close-button[data-fui-focus-visible],
+  .sa-modern-new-topic-icon-button:focus,
+  .sa-modern-new-topic-icon-button:focus-visible,
+  .sa-modern-new-topic-icon-button[data-fui-focus-visible] {
+    outline: 3px solid Highlight !important;
+    outline-offset: 2px !important;
+    border: 1px solid ButtonText !important;
+    forced-color-adjust: auto !important;
+  }
+}
+
+/* Dark Mode Support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  .sa-modern-container[data-theme="auto"] {
+    --sa-background-card: #1e1e1e;
+    --sa-background-light: #2a2a2a;
+    --sa-background-conversation: rgba(42, 42, 42, 0.7);
+    --sa-text-strong: #ffffff;
+    --sa-text-subtle: #e1e1e1;
+    --sa-text-muted: #b3b3b3;
+    --sa-border-base: #404040;
+    --sa-border-main: #606060;
+    --sa-user-bubble: #3a5d7a;
+  }
+}
+
+/* Ensure proper spacing within ChatInput contentBefore */
+.sa-modern-chatinput [data-fluent-copilot-chat-input-content-before] {
+  margin-right: 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px !important;
+  gap: 0px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  flex: none !important;
+  order: 1 !important;
+  align-self: center !important;
+  flex-grow: 0 !important;
+}
+
+/* Ensure contentBefore button is visible */
+.sa-modern-chatinput .sa-modern-new-topic-icon-button {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
+
+/* Latency Loader Styles */
+.latency-loader-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.latency-loader-spinner {
+  margin-right: 8px;
+}
+
+/* Zero Prompt Loading Styles */
+.zero-prompt-loading {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.zero-prompt-loading-text {
+  margin-left: 8px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--sa-text-muted);
+}
+
+/* ===============================================
+   SKELETON LOADER ANIMATIONS
+   =============================================== */
+
+/* Skeleton Container */
+.skeleton-loader {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+/* Simple Skeleton Lines Container */
+.skeleton-lines {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+/* DEPRECATED - Old skeleton styles replaced with Figma design */
+/*
+.skeleton-line-simple {
+  height: 16px;
+  background: linear-gradient(90deg, 
+    #f0f0f0 25%, 
+    #e0e0e0 50%, 
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: skeleton-shimmer-simple 2s ease-in-out infinite;
+}
+
+.skeleton-line-long {
+  width: 100%;
+}
+
+.skeleton-line-medium {
+  width: 75%;
+}
+
+.skeleton-line-short {
+  width: 50%;
+}
+
+@keyframes skeleton-shimmer-simple {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+*/
+
+/* Skeleton SVG Styles (for future complex version) */
+.skeleton-loader svg {
+  width: 100%;
+  max-width: 404px;
+  height: auto;
+}
+
+/* Skeleton Animation Keyframes */
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Shimmer Effect */
+.skeleton-shimmer {
+  animation: skeleton-shimmer var(--skeleton-animation-duration) ease-in-out infinite;
+}
+
+/* Individual Skeleton Lines */
+.skeleton-line {
+  opacity: 1;
+}
+
+.skeleton-line-1 {
+  animation-delay: 0s;
+}
+
+.skeleton-line-2 {
+  animation-delay: 0.2s;
+}
+
+.skeleton-line-3 {
+  animation-delay: 0.4s;
+}
+
+/* Skeleton Mask Styles for CSS compatibility */
+mask[id^="mask"] {
+  mask-type: alpha;
+}
+
+/* Loading State Container */
+.skeleton-loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 8px;
+  width: 100%;
+  height: 120px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  box-sizing: border-box;
+}
+
+/* ─── CoT → Response Dissolve Transition (800ms) ─── */
+/* Spec: Output container expands over 800ms; inner content performs a
+   simultaneous dissolve (CoT elements fade out while final response fades in). */
+.sa-cot-dissolve-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.sa-cot-dissolve-out {
+  overflow: hidden;
+  animation: cotFadeOutShrink 800ms ease-in-out forwards;
+  pointer-events: none;
+}
+
+.sa-cot-dissolve-in {
+  animation: cotFadeIn 800ms ease-in-out forwards;
+}
+
+@keyframes cotFadeOutShrink {
+  0% { opacity: 1; max-height: 600px; margin-bottom: 8px; }
+  100% { opacity: 0; max-height: 0; margin-bottom: 0; }
+}
+
+@keyframes cotFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Chain of Thought Container - constrain width to match message bubbles */
+.chain-of-thought-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible; /* Changed from hidden to show borders */
+}
+
+/* Chain of Thought in ZeroPromptCard - ensure borders are visible */
+.chain-of-thought-wrapper {
+  width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  /* Ensure Fluent UI ChainOfThought borders are visible */
+  overflow: visible;
+}
+
+/* Force ChainOfThought outer border to be visible */
+.chain-of-thought-wrapper > [class*="fui-ChainOfThought"],
+.chain-of-thought-container > [class*="fui-ChainOfThought"] {
+  border: 1px solid var(--colorNeutralStroke1, #d1d1d1) !important;
+  border-radius: 8px;
+}
+
+/* CoT output padding — match Figma spec: 16px top/right/bottom, 24px left */
+.chain-of-thought-container .fai-ChainOfThought__card {
+  padding: 16px 16px 16px 24px !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+/* CoT font size — Figma spec: 14px (not inherited 15px from message bubble) */
+.chain-of-thought-container,
+.chain-of-thought-container * {
+  font-size: 14px !important;
+}
+
+/* CoT item row — Figma spec: centered vertically */
+.chain-of-thought-container .fai-ChainOfThoughtItem__header {
+  align-items: center;
+}
+
+/* CoT header text — Figma spec: semibold, neutral color, 20px line-height */
+.chain-of-thought-container .fai-ChainOfThought__headerText,
+.chain-of-thought-container .fai-ChainOfThoughtItem__headerText {
+  font-weight: 600 !important;
+  color: #424242 !important;
+  line-height: 20px !important;
+}
+
+/* Align expand button and caret with header text */
+.chain-of-thought-container .fai-ChainOfThought__expandButton {
+  align-self: center;
+  padding: 0 !important;
+  min-height: unset !important;
+  height: 20px !important;
+}
+
+/* Figma spec: 10px gap between icon and text */
+.chain-of-thought-container .fai-ChainOfThought__expandButton .fui-Button__icon {
+  margin-right: 10px !important;
+}
+
+.chain-of-thought-container .fai-ChainOfThought__expandButton .fui-MenuButton__menuIcon {
+  display: flex;
+  align-items: center;
+  height: 20px !important;
+  margin: 0 !important;
+  margin-left: 4px !important;
+  padding: 0 !important;
+}
+
+/* Ensure the caret SVG itself is centered */
+.chain-of-thought-container .fai-ChainOfThought__expandButton .fui-MenuButton__menuIcon svg {
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+}
+
+.chain-of-thought-container > * {
+  max-width: 100%;
+}
+
+/* Hide the expand chevron when COT has no entries (initial "Thinking..." state) */
+.chain-of-thought-container .cot-no-entries .fai-ChainOfThought__expandButton .fui-MenuButton__menuIcon {
+  display: none;
+}
+
+/* Additional skeleton container styling */
+.sa-skeleton-container {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+/* Figma-style skeleton loader - CENTERED */
+.figma-skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 352px; /* 400px - 48px padding */
+  height: auto;
+  padding: 0;
+  background: transparent !important;
+  border-radius: 8px;
+}
+
+/* Individual skeleton lines matching Figma design */
+.figma-skeleton-line {
+  height: 16px !important;
+  background: #8f8f8f !important;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer animation overlay */
+.figma-skeleton-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 33.8542%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 65.1042%,
+    transparent 100%
+  );
+  animation: figma-shimmer 2s infinite ease-in-out;
+}
+
+/* Line width variants to match Figma */
+.figma-skeleton-line-full {
+  width: 100%;
+}
+
+.figma-skeleton-line-medium {
+  width: 60%;
+}
+
+.figma-skeleton-line-short {
+  width: 70%;
+}
+
+/* Shimmer keyframe animation */
+@keyframes figma-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Skeleton Loading Text */
+.skeleton-loading-text {
+  margin-top: 16px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--sa-text-muted);
+  text-align: center;
+}
+
+/* Responsive Skeleton */
+@media (max-width: 480px) {
+  .skeleton-loader svg {
+    max-width: 320px;
+  }
+  
+  .skeleton-loading-container {
+    padding: 16px 12px;
+    min-height: 120px;
+  }
+  
+  .skeleton-lines {
+    max-width: 280px;
+    padding: 12px;
+  }
+}
+
+/* Transfer Cancel Button Styles */
+.sa-modern-transfer-cancel-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sa-modern-transfer-cancel-button {
+  height: 32px;
+  width:100%;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 2px solid #2A446F;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #323130;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: all 0.2s ease;
+}
+
+.sa-modern-transfer-cancel-button:hover {
+  background-color: #f3f2f1;
+  border-color: #c7c6c4;
+}
+
+.sa-modern-transfer-cancel-button:active {
+  background-color: #edebe9;
+  border-color: #a19f9d;
+}
+
+.sa-modern-transfer-cancel-button:focus {
+  outline: 2px solid #605e5c;
+  outline-offset: 2px;
+}
+
+.sa-modern-transfer-cancel-button:disabled {
+  background-color: #f3f2f1;
+  border-color: #c7c6c4;
+  color: #a19f9d;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Locale mismatch message - disclaimer font styling */
+.sa-locale-mismatch-message {
+  text-align: center;
+  width: 100%;
+  color: var(--reimagine-day-foreground-base-theme-subtle, #17253D);
+  font-family: "Segoe UI";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.36px;
+  margin: 8px 0;
+}
+
+/* Mobile responsive adjustments for surveys */
+@media (max-width: 480px) {
+  .sa-modern-cta-survey-element,
+  .sa-modern-dialog-star-rating {
+    width: calc(100vw - 84px) !important;
+    max-width: 400px !important;
+    min-width: 280px !important;
+  }
+  
+  .sa-modern-cta-survey-group,
+  .sa-modern-star-rating-actions {
+    width: 100% !important;
+  }
+  
+  .sa-modern-button-wrapper {
+    width: 100% !important;
+  }
+  
+  .sa-modern-submit-button,
+  .sa-modern-cta-button {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+}
+
+.sa-modern-content-backdrop {
+  pointer-events: none;
+  user-select: none;
+  filter: blur(1px);
+}
+
+.sa-modern-connecting {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #E6E6E6;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sa-modern-connecting:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #0279D4, #6CD1C2);
+    transform: scaleX(1);
+}
+
+.sa-modern-connecting.sa-modern-connecting-loading:before {
+    width: 100%;
+    transform: none;
+    /* Continuous wave: a bright blue crest grows on the left and sweeps to the
+       right, then repeats — the lighter #4FC3F7 highlight gives the eye a clear
+       landmark to track, and the teal valleys make each pass obvious. */
+    background: linear-gradient(
+        90deg,
+        #6CD1C2 0%,
+        #0279D4 18%,
+        #4FC3F7 25%,
+        #0279D4 32%,
+        #6CD1C2 50%,
+        #0279D4 68%,
+        #4FC3F7 75%,
+        #0279D4 82%,
+        #6CD1C2 100%
+    );
+    background-size: 200% 100%;
+    background-repeat: repeat;
+    animation: sa-modern-connecting-indeterminate 1.6s linear infinite;
+}
+
+@keyframes sa-modern-connecting-indeterminate {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sa-modern-connecting.sa-modern-connecting-loading:before {
+        animation: sa-modern-connecting-pulse 1.6s ease-in-out infinite;
+        background: linear-gradient(90deg, #0279D4, #6CD1C2);
+    }
+}
+
+@keyframes sa-modern-connecting-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.45;
+    }
+}
+
+.sa-modern-connecting.sa-modern-connecting-canceled:before {
+    opacity: 0.5;
+    background: #E6E6E6;
+    transform: scaleX(1);
+}
+
+.sa-modern-connecting.sa-modern-connecting-disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.modern-disclaimer-text {
+  text-align: center !important;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: -0.36px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  margin-right: 16px !important;
+  padding-right: 8px !important;
+}
+
+.modern-disclaimer-links {
+  margin-top: 4px;
+  text-align: center !important;
+  width: 100%;
+  display: block;
+}
+.chat-markdown a,
+.chat-markdown a:hover,
+.chat-markdown a:focus,
+.chat-markdown a:active {
+  text-decoration: underline !important;
+}
+
+/* ============================================
+   Accessibility: Focus indicators for chat messages
+   Ensures keyboard users can see focus on conversation articles
+   ============================================ */
+
+/* Chat message focus indicator - uses pseudo-element to bypass Griffel */
+span.fai-SystemMessage__message[data-fui-focus-visible],
+[id^="system-message"][data-fui-focus-visible] {
+  position: relative !important;
+}
+
+span.fai-SystemMessage__message[data-fui-focus-visible]::after,
+[id^="system-message"][data-fui-focus-visible]::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  border: 2px dashed #000000 !important;
+  border-radius: 10px !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+/* Main table container - clean version without borders */
+.figma-table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Changed from flex-start to stretch */
+  padding: 0px;
+  gap: 0px; /* Remove gap completely */
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  overflow-x: auto;
+}
+
+/* Inner table wrapper */
+.figma-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Changed from flex-start to stretch */
+  padding: 0px;
+  width: max-content;
+  min-width: 100%;
+}
+
+/* Header row styling - make entire row bold with white background */
+.figma-table-header-row {
+  background: #FFFFFF !important; /* White background for header, override any inherited styles */
+}
+
+.figma-table-header-row .figma-table-cell {
+  font-weight: 600; /* Bold headers */
+}
+
+/* Table row container */
+.figma-table-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 0px; /* No gap between cells */
+  position: relative;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+/* Alternating row background for even rows (3rd, 5th, etc. since header is 1st) */
+.figma-table-row:nth-child(even):not(.figma-table-header-row) {
+  background-color: #F5F5F5 !important; /* Use background-color instead of background */
+}
+
+/* Ensure all cells in alternating rows have transparent background */
+.figma-table-row:nth-child(even):not(.figma-table-header-row) .figma-table-cell,
+.figma-table-row:nth-child(even):not(.figma-table-header-row) .figma-table-cell-wide {
+  background-color: transparent !important; /* Force transparent backgrounds */
+}
+
+/* Row divider - removed to eliminate any border lines */
+.figma-table-row:not(:last-child)::after {
+  display: none;
+}
+
+/* Header column (device names) */
+.figma-table-header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 12px;
+  width: 139px;
+  min-width: 120px;
+  font-family: 'Segoe Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0E1726;
+}
+
+/* Regular data cells */
+.figma-table-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  flex: 1; /* Use flex to distribute width evenly */
+  min-width: 80px; /* Minimum width for readability */
+  background: transparent; /* No individual cell background */
+  font-family: 'Segoe Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 14px; /* Slightly smaller for better fit */
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: #0E1726;
+  word-wrap: break-word; /* Allow text wrapping */
+}
+
+/* Wider cells for longer content */
+.figma-table-cell-wide {
+  flex: 1.2; /* Slightly wider for content that needs more space */
+}
+
+/* Hyperlink styling within table cells */
+.figma-table-cell a,
+.figma-table-cell-wide a {
+  color: #0078D4;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.figma-table-cell a:hover,
+.figma-table-cell-wide a:hover {
+  color: #106ebe;
+  text-decoration: underline;
+}
+
+.figma-table-cell a:focus,
+.figma-table-cell-wide a:focus {
+  outline: 2px solid #0078D4;
+  outline-offset: 2px;
+}
+
+/* Ensure markdown content in cells doesn't have extra margins */
+.figma-table-cell .chat-markdown,
+.figma-table-cell-wide .chat-markdown {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.figma-table-cell .chat-markdown p,
+.figma-table-cell-wide .chat-markdown p {
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+/* Title text */
+.figma-table-title {
+  width: 100%;
+  max-width: 100%;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
+  color: #0E1726;
+  margin: 0;
+  padding: 0;
+}
+
+.sa-prompt-pill-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  gap: 8px;
+  margin-top: 8px;
+  margin-right: auto;
+  width: 100%;
+  animation: fadeInPills 200ms ease-in;
+}
+
+.sa-prompt-pill {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 4px 12px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  /* Rest — Figma: stroke #2A446F, text #2A446F, bg glass/normal */
+  border: 1px solid #2A446F !important;
+  border-radius: 200px;
+  color: #2A446F !important;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease, opacity 150ms ease;
+}
+
+.sa-prompt-pill:hover:not(:disabled) {
+  /* Hover — Figma: glass/hover bg, stroke #2A446F, text #2A446F */
+  border-color: #2A446F !important;
+  color: #2A446F !important;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.sa-prompt-pill:active:not(:disabled) {
+  /* Pressed — Figma: bg glass/pressed, stroke #121D2F, text accent-subtle(cta)/pressed */
+  border-color: #121D2F;
+  color: #0E1726;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.sa-prompt-pill:disabled {
+  /* Disabled — Figma: bg glass/pressed, stroke #2A446F, 20% opacity */
+  border-color: #2A446F !important;
+  color: #2A446F !important;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.2;
+  cursor: default;
+}
+
+.sa-modern-info-with-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+@keyframes fadeInPills {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sa-welcome-prompt-pills .sa-prompt-pill {
+  height: auto;
+}
+
+/* As a direct sibling of the disclaimer, the message container's gap already separates them. */
+.sa-modern-message-container > .sa-welcome-prompt-pills {
+  margin-top: 0;
+}
+
+/* disabledFocusable renders aria-disabled instead of :disabled, so mirror the disabled style here.
+   Opacity is raised from 0.2 so disabled pills stay perceivable. */
+.sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"],
+.sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"]:hover,
+.sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"]:active {
+  border-color: #2A446F !important;
+  color: #2A446F !important;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.4;
+  cursor: default;
+}
+
+.sa-welcome-prompt-pills .sa-prompt-pill:focus-visible {
+  outline: 2px solid #2A446F;
+  outline-offset: 2px;
+}
+
+@media (forced-colors: active) {
+  .sa-welcome-prompt-pills .sa-prompt-pill {
+    border-color: ButtonText !important;
+    color: ButtonText !important;
+    background: ButtonFace;
+  }
+
+  .sa-welcome-prompt-pills .sa-prompt-pill:hover:not([aria-disabled="true"]) {
+    border-color: Highlight !important;
+  }
+
+  .sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"],
+  .sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"]:hover,
+  .sa-welcome-prompt-pills .sa-prompt-pill[aria-disabled="true"]:active {
+    border-color: GrayText !important;
+    color: GrayText !important;
+    opacity: 1;
+  }
+
+  .sa-welcome-prompt-pills .sa-prompt-pill:focus-visible {
+    outline-color: Highlight;
+  }
+}
+.ratingValueText {
+  justify-content: flex-end;
+  display: flex;
+  word-wrap: break-word;
+  padding-left: auto;
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.ratingDisplayContainer {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: '8px';
+}
+
+.sa-agent-typing-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sa-agent-typing-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #17253D;
+    line-height: 20px;
+}
+
+.sa-agent-typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sa-agent-typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #33A2CC;
+    opacity: 0.6;
+    animation: typing-animation 1.5s infinite ease-in-out both;
+}
+
+/* Hide from view but maintain for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sa-agent-typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.sa-agent-typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.sa-agent-typing-dot:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes typing-animation {
+    0%, 80%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    40% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.end-chat-modal {
+  background-color: #F4FAFD;
+  z-index: 1000;
+  flex-grow: 1;
+  max-width: 100%;
+  position: absolute;
+  min-height: 105px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 24px 24px 16px 16px;
+  padding: 38px 16px;
+  padding-bottom: 15px;
+}
+
+.end-chat-modal .content {
+  color: #2F2F2F;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 100%;
+}
+
+
+.end-chat-modal .content p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #2F2F2F;
+}
+
+.end-chat-modal .content .endchatmodel-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.end-chat-modal .actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.end-chat-modal .buttonGroup {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  flex-direction: column;
+  font-family: 'Segoe Sans', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.end-chat-modal-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  pointer-events: auto;
+  border-radius: 15px;
+}
+
+.end-chat-modal .button:last-child {
+  background-color: #F4FAFD;
+}
+
+.end-chat-modal .button:first-child {
+  background-color: #0078D4;
+}
+
+.end-chat-modal .button {
+  width: 100%;
+  border: none;
+  min-height: 40px;
+}
+
+/* Accessibility: Focus indicators for End Chat Modal buttons */
+.end-chat-modal .button:focus,
+.end-chat-modal .button:focus-visible,
+.end-chat-modal .button[data-fui-focus-visible] {
+  outline: 2px dashed #000000 !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .end-chat-modal .button:focus,
+  .end-chat-modal .button:focus-visible,
+  .end-chat-modal .button[data-fui-focus-visible] {
+    outline: 3px solid Highlight !important;
+    outline-offset: 2px !important;
+    border: 1px solid ButtonText !important;
+    forced-color-adjust: auto !important;
+  }
+  
+  .end-chat-modal .button:last-child {
+    border: 2px solid CanvasText !important;
+  }
+}
+.active-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #107c10;
+  color: white;
+  padding: 4px 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11),
+    0px 3px 7px 0px rgba(0, 0, 0, 0.13);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.active-message {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+}
+
+.end-button {
+  color: var(--Flowkit-White, #fff);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  background-color: #107c10; 
+  padding: 3px, 8px, 3px, 8px;
+  height: 24px;
+  min-width: 36px;
+  box-sizing: border-box;
+  stroke: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+/* Define CSS variables for responsive design */
+:root {
+  --color-neutral-background3: #f5f5f5;
+  --spacing-horizontal-l: 16px;
+  --spacing-vertical-s: 8px;
+  --spacing-vertical-top: 10px;
+  --border-radius-medium: 4px;
+  --header-height: 64px;
+  
+  /* Responsive provider dimensions */
+  --provider-width: clamp(320px, 90vw, 432px);
+  --provider-height: clamp(400px, 90vh, 720px);
+  --provider-desktop-right: clamp(8px, 2vw, 12px);
+  --provider-desktop-bottom: clamp(8px, 2vh, 12px);
+  --provider-desktop-bottom-s: 10px;
+  /* Dynamic bottom safe area (set via JS to height of any sticky/fixed bottom banner) */
+  --chat-bottom-safe-area: 0px;
+  --chat-bottom-safe-gap: 12px;
+}
+
+/* Prevent body scroll when chat is open */
+body.chat-open {
+  overflow: hidden;
+}
+
+/* Root container for the store assistant */
+.storeassistantroot {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+/* Styles for the provider container */
+.provider {
+  background-color: var(--color-neutral-background3);
+  padding: var(--spacing-horizontal-l);
+  border-radius: var(--border-radius-medium);
+  border: var(--None, 1px) solid var(--Neutral-Stroke-2-Rest, #E0E0E0);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.11), 0px 6px 14px 0px rgba(0, 0, 0, 0.13);
+  display: flex;
+  row-gap: 12px;
+  flex-direction: column;
+  /* --available-vh is set by JS (useAvailableViewportHeight hook) to account for
+     CSS zoom or DPI-scaling that 100vh doesn't reflect.  Falls back to 100vh
+     when JS hasn't run yet. */
+  height: min(var(--provider-height), calc(var(--available-vh, 100vh) - var(--spacing-vertical-top) - var(--provider-desktop-bottom)));
+  width: var(--provider-width);
+  box-sizing: border-box;
+  transition: opacity 0.5s linear, height 0.3s ease, max-height 0.3s ease;
+  z-index: 9999;
+  position: fixed;
+  right: var(--provider-desktop-right);
+  bottom: var(--provider-desktop-bottom) !important;
+}
+
+/* Hidden state for the provider */
+.provider.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s linear, visibility 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+/* Minimized state for the provider */
+.provider--minimized {
+  bottom: 12px;
+  overflow: hidden;
+  max-height: 64px;
+  height: min(var(--header-height), calc(var(--available-vh, 100vh) - var(--spacing-vertical-top)))!important;
+}
+
+/* When any bottom banner exists, lift minimized provider */
+/* Dynamic safe area always wins - high specificity to override all other bottom positioning */
+.copilot-container.chat-has-bottom-safe-area .provider.provider--minimized { 
+  bottom: calc(var(--chat-bottom-safe-area) + var(--chat-bottom-safe-gap)) !important; 
+}
+
+
+/* Chat container styles */
+.chat {
+  height: 550px;
+  overflow-y: auto;
+}
+
+/* Hiding the scrollbar for Webkit browsers like Chrome and Safari */
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hiding the scrollbar for Firefox */
+.chat {
+  scrollbar-width: none;
+}
+
+.copilot-container.chat-has-bottom-safe-area .provider:not(.provider--minimized) {
+  bottom: calc(var(--chat-bottom-safe-area) + var(--chat-bottom-safe-gap)) !important;
+  height: min(
+    var(--provider-height),
+    calc(var(--available-vh, 100vh) - var(--spacing-vertical-top) - var(--chat-bottom-safe-area) - var(--chat-bottom-safe-gap))
+  );
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 859px) {
+  .provider {
+    height: 100%;
+    max-height: var(--available-vh, 100vh);
+    width: 100%;
+    overflow: hidden;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  .provider--minimized {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 539px) {
+  .has-configurator-v3 .provider--minimized {
+    width: min(calc(100% - 12px), 140px);
+    right: 12px;
+    bottom: 73px;
+  }
+  .has-configurator-v3 .provider--minimized .store-assistant-header .header-title {
+    display: none;
+  }
+  .has-configurator-v3 .provider--minimized .store-assistant-header svg.chat-icon {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+/* Full height chat container */
+.chat {
+  height: var(--available-vh, 100vh);
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Webkit browsers like Chrome and Safari */
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+/* Overrides to MWF styles */
+.provider span:focus:not(.button-compose *),
+.provider button:focus:not(.button-compose *) {
+    outline: none;
+}
+
+/* Responsive adjustments for smaller screens, makes the store assistant chat at the bottom of the page for smaller screens */
+@media (max-width: 860px) {
+  .provider {
+      bottom: 0 !important;
+  }
+}
+
+.copilot-container a {
+  color: #0067b8; 
+  text-decoration: none;
+}
+
+.copilot-container a:hover {
+  text-decoration: underline;
+}
+
+/* Modern design specific provider styles */
+.provider.modern-design {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 24px 24px 24px 24px;
+  width: var(--sa-container-width, 432px);
+  /* AB#15715736: --sa-container-height has a hard 400px floor (clamp(400px, 90vh, 955px)).
+     At high browser zoom / short viewports that floor exceeds the available height, and
+     because the panel is bottom-anchored (position: fixed) its top is pushed off-screen,
+     cutting off the header + close control and trapping the user. Clamp the height to the
+     available viewport (matching the base .provider rule) so the top stays on-screen. */
+  height: min(
+    var(--sa-container-height, 955px),
+    calc(var(--available-vh, 100vh) - var(--spacing-vertical-top) - var(--provider-desktop-bottom))
+  );
+}
+
+.provider.end-modal-active {
+  overflow: clip !important;
+}
+
+/* Modern design minimized state overrides */
+.provider.modern-design.provider--minimized {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  max-height: 80px;
+  height: 80px !important;
+  /* Keep a comfortable inset from the browser edge — the desktop
+     `right: clamp(8px, 2vw, 12px)` token can collapse the pill flush
+     against scrollbars/browser chrome. The 24px matches the expanded
+     panel inset and survives the maximize→minimize toggle (which
+     re-evaluates the responsive @media .provider rules). */
+  right: 12px !important;
+  left: auto !important;
+}
+
+/* Re-assert the inset across every responsive breakpoint so the
+   responsive `.provider { right: clamp(...) }` rules (specificity 0,1,0)
+   inside @media don't outrank the base inset when the pill rehydrates
+   after a minimize→maximize→minimize toggle. */
+@media (max-width: 1024px) {
+  .provider.modern-design.provider--minimized { right: 12px !important; }
+}
+@media (max-width: 768px) {
+  .provider.modern-design.provider--minimized { right: 12px !important; }
+}
+@media (max-width: 600px) {
+  .provider.modern-design.provider--minimized { right: 12px !important; }
+}
+
+.provider.modern-design .sa-modern-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dynamic height support */
+.provider[data-custom-height] {
+  height: var(--custom-sidecar-height) !important;
+}
+
+/* ============================================
+   RESPONSIVE PROVIDER STYLES
+   ============================================ */
+
+/* Modern design adjustments */
+.provider.modern-design {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 15px;
+}
+
+/* Large screens (desktop) */
+@media (min-width: 1200px) {
+  .provider {
+    width: clamp(400px, 30vw, 480px);
+    height: clamp(600px, 80vh, 900px);
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .provider {
+    width: clamp(350px, 40vw, 420px);
+    height: clamp(500px, 85vh, 800px);
+    right: clamp(8px, 2vw, 16px);
+    bottom: clamp(8px, 2vh, 16px);
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+  .provider {
+    width: clamp(320px, 50vw, 380px);
+    height: clamp(450px, 90vh, 700px);
+    right: clamp(8px, 1.5vw, 12px);
+    bottom: clamp(8px, 1.5vh, 12px);
+  }
+}
+
+/* Large mobile devices */
+@media (max-width: 600px) {
+  .provider {
+    width: clamp(300px, 85vw, 360px);
+    height: clamp(400px, 95vh, 600px);
+    right: clamp(4px, 1vw, 8px);
+    bottom: clamp(4px, 1vh, 8px);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .provider {
+    width: 100vw;
+    height: var(--available-vh, 100vh);
+    border-radius: 0;
+    border: none;
+    position: fixed;
+    /* iOS Safari: when the keyboard opens, the visual viewport scrolls
+       within the layout viewport. --viewport-offset-top (set by
+       useAvailableViewportHeight) compensates so the sidecar stays
+       pinned to the visible area instead of scrolling out of view. */
+    top: var(--viewport-offset-top, 0px);
+    left: 0;
+    right: 0;
+    /* bottom is intentionally omitted — top + height fully define
+       placement.  Adding bottom: 0 would conflict when the keyboard
+       shifts --viewport-offset-top. */
+    z-index: 9999;
+  }
+
+  /* Override .provider.modern-design (higher specificity) so the sidecar
+     goes full-screen on mobile instead of keeping its fixed desktop width/height */
+  .provider.modern-design {
+    width: 100%;
+    height: var(--available-vh, 100vh);
+    border-radius: 0;
+  }
+
+  /* Inner container must also fill the full-screen provider — remove
+     the 8px inset margin and rounded corners */
+  .provider.modern-design .sa-modern-container {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    /* Override the 480px modernChatInterface rule that subtracts 16px for
+       the margin we just removed — fill the provider completely. */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .provider.is-hidden {
+    transform: translateY(100%);
+    visibility: visible;
+    opacity: 1;
+    height: var(--available-vh, 100vh);
+    transition: transform 0.3s ease;
+  }
+  
+  .provider:not(.is-hidden) {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    width: 100vw;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .provider {
+    padding: 0;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .provider {
+    height: var(--available-vh, 100vh);
+    width: clamp(400px, 60vw, 500px);
+    right: clamp(4px, 1vw, 8px);
+    bottom: 0;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .provider {
+    border-width: 0.5px;
+  }
+}
+.chat-markdown {
+    margin: 0;
+    padding: 0;
+}
+
+.chat-markdown table {
+    border-collapse: collapse;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    font-size: 0.8em;
+}
+
+@media (max-width: 859px) {
+    .chat-markdown table {
+        font-size: 0.8em;
+    }
+}
+
+.chat-markdown th,
+.chat-markdown td {
+    padding: 0.125rem;
+    border: 1px solid black;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.chat-markdown ul,
+.chat-markdown ol {
+    padding-left: 1em;
+    margin: 0.25em 0;
+    list-style: disc outside none;
+}
+
+.chat-markdown ol {
+    list-style: decimal outside none;
+}
+
+.chat-markdown ul li,
+.chat-markdown ol li {
+    padding-left: 0.25em;
+    margin: 0.25em 0;
+}
+
+.chat-markdown p:not(:last-child) {
+    margin-bottom: 0.75em;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.chat-markdown p:last-child {
+    margin: 0;
+}
+
+.chat-markdown h1,
+.chat-markdown h2,
+.chat-markdown h3,
+.chat-markdown h4 {
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+}
+.in-house-ai-survey:not([open]) {
+  display: none;
+}
+
+.in-house-ai-survey {
+  --survey-background: #fff;
+  --survey-foreground: #000;
+  --survey-secondary: #525252;
+  --survey-border: #ccc;
+  --survey-accent: #0078d4;
+  --survey-on-accent: #fff;
+  --survey-disabled: #d2d2d2;
+  box-sizing: border-box;
+  position: fixed;
+  inset: auto 12px var(--in-house-ai-survey-bottom, 12px) auto;
+  z-index: 10000;
+  inline-size: min(306px, calc(100vw - 24px));
+  max-block-size: calc(var(--available-vh, 100vh) - var(--in-house-ai-survey-bottom, 12px) - 12px);
+  overflow: auto;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 10px 15px 15px 10px;
+  border: 1px solid #888;
+  border-radius: 16px;
+  background: var(--survey-background);
+  color: var(--survey-foreground);
+  font: 13px/1.5 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.in-house-ai-survey::backdrop {
+  background: transparent;
+}
+
+.in-house-ai-survey *,
+.in-house-ai-survey *::before,
+.in-house-ai-survey *::after {
+  box-sizing: border-box;
+}
+
+.in-house-ai-survey h2,
+.in-house-ai-survey h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.in-house-ai-survey h3 {
+  margin-block-start: 20px;
+  font-size: 16px;
+}
+
+.in-house-ai-survey__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-block-end: 4px;
+}
+
+.in-house-ai-survey__header h2 {
+  flex: 1;
+  min-inline-size: 0;
+  color: var(--survey-accent);
+}
+
+.chat-has-bottom-safe-area .in-house-ai-survey {
+  --in-house-ai-survey-bottom: calc(var(--chat-bottom-safe-area, 0px) + var(--chat-bottom-safe-gap, 12px));
+}
+
+.in-house-ai-survey[data-phase='consent'] {
+  inline-size: min(344px, calc(100vw - 24px));
+  min-block-size: 88px;
+  padding: 12px 18px;
+}
+
+.in-house-ai-survey button.in-house-ai-survey__invitation {
+  padding: 0;
+  min-block-size: 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--survey-accent);
+  font: inherit;
+  text-align: start;
+}
+
+.in-house-ai-survey button.in-house-ai-survey__close {
+  flex: 0 0 24px;
+  inline-size: 24px;
+  block-size: 24px;
+  min-block-size: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.in-house-ai-survey__prompt {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.in-house-ai-survey fieldset {
+  padding: 0;
+  margin: 0 0 24px;
+  min-inline-size: 0;
+  border: 0;
+}
+
+.in-house-ai-survey legend {
+  padding: 0;
+  margin-block-end: 6px;
+  font-weight: 400;
+  max-inline-size: min(244px, 100%);
+}
+
+.in-house-ai-survey__ratings {
+  display: grid;
+  gap: 0;
+  max-inline-size: 244px;
+}
+
+.in-house-ai-survey__rating {
+  display: flex;
+  align-items: center;
+  min-block-size: 25px;
+  gap: 10px;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.in-house-ai-survey__rating:has(input:focus-visible) {
+  outline: 1px dashed var(--survey-foreground);
+  outline-offset: -1px;
+}
+
+.in-house-ai-survey input[type='radio'] {
+  flex: 0 0 20px;
+  inline-size: 20px;
+  block-size: 20px;
+  margin: 0;
+  accent-color: var(--survey-accent);
+}
+
+.in-house-ai-survey input[type='radio']:focus-visible {
+  outline: none;
+}
+
+.in-house-ai-survey__comment {
+  display: block;
+  margin-block-end: 6px;
+  font-weight: 400;
+}
+
+.in-house-ai-survey textarea {
+  display: block;
+  inline-size: calc(100% - 4px);
+  margin-inline-start: 4px;
+  min-block-size: 100px;
+  padding: 4px 10px;
+  border: 1px solid var(--survey-border);
+  border-radius: 0;
+  resize: vertical;
+  background: var(--survey-background);
+  color: var(--survey-foreground);
+  font: inherit;
+}
+
+.in-house-ai-survey textarea::placeholder {
+  color: var(--survey-secondary);
+  opacity: 1;
+}
+
+.in-house-ai-survey__privacy {
+  margin-block: 18px 14px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.in-house-ai-survey__privacy a {
+  display: block;
+  color: var(--survey-accent);
+  text-decoration: underline;
+}
+
+.in-house-ai-survey__pending {
+  min-block-size: 1.5em;
+  margin-block: 8px;
+}
+
+.in-house-ai-survey__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-inline-start: 28px;
+}
+
+.in-house-ai-survey button {
+  min-block-size: 32px;
+  max-inline-size: 100%;
+  padding: 4px 12px;
+  border: 1px solid var(--survey-border);
+  border-radius: 4px;
+  color: var(--survey-foreground);
+  background: var(--survey-background);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.in-house-ai-survey button.in-house-ai-survey__primary {
+  border-color: var(--survey-accent);
+  background: var(--survey-accent);
+  color: var(--survey-on-accent);
+}
+
+.in-house-ai-survey :is(button, input, textarea):disabled {
+  cursor: default;
+}
+
+.in-house-ai-survey button.in-house-ai-survey__primary:disabled {
+  border-color: var(--survey-disabled);
+  background: var(--survey-disabled);
+}
+
+.in-house-ai-survey :focus-visible {
+  outline: 2px solid var(--survey-accent);
+  outline-offset: 3px;
+}
+
+[data-color-mode='dark'] .in-house-ai-survey {
+  --survey-background: #242424;
+  --survey-foreground: #fff;
+  --survey-secondary: #d6d6d6;
+  --survey-border: #adadad;
+  --survey-accent: #75baff;
+  --survey-on-accent: #161616;
+  --survey-disabled: #555;
+  color-scheme: dark;
+}
+
+@media (forced-colors: active) {
+  .in-house-ai-survey {
+    --survey-background: Canvas;
+    --survey-foreground: CanvasText;
+    --survey-secondary: CanvasText;
+    --survey-border: ButtonText;
+    --survey-accent: Highlight;
+    --survey-on-accent: HighlightText;
+    --survey-disabled: GrayText;
+  }
+}
+/* Keep the docked survey compact on phones while leaving the page behind it visible. */
+@media (max-width: 539px) {
+  .in-house-ai-survey {
+    --in-house-ai-survey-bottom: 8px;
+    inset-inline-end: 8px;
+    inline-size: min(306px, calc(100vw - 16px));
+    padding: 8px 12px 12px 8px;
+  }
+
+  .in-house-ai-survey fieldset {
+    margin-block-end: 12px;
+  }
+
+  .in-house-ai-survey__rating {
+    min-block-size: 24px;
+  }
+
+  .in-house-ai-survey textarea {
+    min-block-size: 56px;
+  }
+
+  .in-house-ai-survey__privacy {
+    margin-block: 10px 8px;
+  }
+}
+
+/* Default Entry Point */
+.sa-default-entry-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  min-width: 184px;
+  max-width: 320px;
+  width: max-content;
+  height: auto;
+  min-height: 82px;
+  border-radius: 16px;
+  background: #0078d4;
+  border: 1px solid #e6f2fb;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  position: fixed;
+  letter-spacing: -2%;
+  line-height: 22px;
+  right: 12px;
+  bottom: 12px !important;
+  z-index: 1001;
+  transition: bottom 0.3s ease-out;
+  padding: 10px 14px;
+  box-shadow: 0px 8px 32px 0px rgba(0,0,0,0.12), 0px 8px 16px 0px rgba(0,0,0,0.12);
+}
+.chat-has-bottom-safe-area .sa-default-entry-container { bottom: calc(var(--chat-bottom-safe-area) + var(--chat-bottom-safe-gap)) !important; }
+.is-mobile .sa-default-entry-container {
+  width: 76px;
+  height: 76px;
+  min-width: 76px;
+  max-width: 76px;
+  min-height: 76px;
+  max-height: 76px;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 24px;
+  padding: 0;
+}
+.sa-default-entry-container:focus-within { text-decoration: underline; }
+/* Accessibility: Dashed high-contrast focus indicator for keyboard navigation at all zoom levels */
+.sa-default-entry-button:focus-visible {
+  opacity: 1 !important;
+  outline: 2px dashed #000000 !important;
+  outline-offset: 2px !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+}
+/* Fallback for browsers that don't support :focus-visible */
+.sa-default-entry-button:focus {
+  outline: 2px dashed #000000 !important;
+  outline-offset: 2px !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+}
+/* Remove focus ring only when focus is via mouse click (not keyboard) */
+.sa-default-entry-button:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* Mobile focus indicator - match container's 24px border radius */
+.is-mobile .sa-default-entry-button:focus-visible,
+.is-mobile .sa-default-entry-button:focus {
+  border-radius: 24px !important;
+}
+@media (max-width: 539px){ .has-configurator-v3 .sa-default-entry-container { bottom:73px; } }
+.sa-default-entry-glyph { padding:0 !important; font-size:28px; display:flex; flex-direction:column; }
+.sa-default-entry-text { flex:1; order:2; text-align:left; word-wrap:break-word; overflow-wrap:break-word; hyphens:auto; max-width:100%; overflow:hidden; }
+.sa-default-entry-text>* { margin:0; }
+.sa-profile-container { position:relative; width:56px; height:50px; order:1; flex-shrink:0; }
+.sa-profile-wrapper { display:flex; width:48px; height:48px; padding:4px; justify-content:center; align-items:center; border-radius:50px; border:1px solid #e6f2fb; background:linear-gradient(90deg, rgba(132,86,230,0.1) 11.98%, rgba(22,123,181,0.1) 94.79%); position:absolute; left:0; top:2px; }
+.sa-default-entry-image { width:40px; height:40px; border-radius:50px; flex-shrink:0; }
+.sa-chat-badge { display:flex; width:22px; height:22px; justify-content:center; align-items:center; border-radius:50px; border:1px solid #e6f2fb; background:#fefefe; position:absolute; right:0; top:-2px; z-index:1; }
+.sa-mobile-chat-icon { display:flex; justify-content:center; align-items:center; width:44px; height:44px; }
+.is-mobile .sa-profile-container { display:none; }
+.is-mobile .sa-default-entry-text { display:none !important; }
+.sa-default-entry-button { position:absolute; top:0; bottom:0; left:0; width:100%; opacity:0; border-radius:18px; border:none; background:transparent; cursor:pointer; z-index:9999; }
+/* Highlight Entry Point */
+.sa-highlight-entry-content { background:#0E1726; max-width:328px; padding:38px 16px; border-radius:24px; color:#FFFFFF; position:fixed; right:50px; bottom:50px; z-index:99; text-align:center; }
+.chat-has-bottom-safe-area .sa-highlight-entry-content { bottom: calc(var(--chat-bottom-safe-area) + var(--chat-bottom-safe-gap) + 44px); }
+.is-mobile .sa-highlight-entry-content { right:12px; bottom:12px; }
+@media (max-width:539px){ .has-configurator-v3 .sa-highlight-entry-content { bottom:119px; } .has-configurator-v3.is-mobile .sa-highlight-entry-content { bottom:73px; } .has-configurator-v3 .sa-highlight-entry-image { bottom:73px; } }
+.sa-highlight-entry-header { font-size:24px; line-height:32px; color:#F4FAFD; font-weight:500; font-family:'Segoe Sans', Tahoma, Geneva, Verdana, sans-serif; padding-bottom:12px; margin-top:0; margin-bottom:0;letter-spacing: -0.015em; }
+.sa-highlight-entry-subheader { font-size:16px; font-weight:400; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:24px; color:#DCEEF8; padding-bottom:24px; }
+.sa-highlight-entry-chat-now-button, .sa-highlight-entry-no-thanks-button { border:0; border-radius:4px; font-size:14px; line-height:20px; padding:5px; }
+.sa-highlight-entry-no-thanks-button { border-radius:4px; background-color:#FFFFFF; color:#292929 !important; margin-top:10px; }
+.sa-highlight-entry-image { background-color:#0E1726; padding:4px; width:64px; height:64px; border:none; border-radius:50%; position:fixed; right:12px; bottom:12px; z-index:1001; }
+.chat-has-bottom-safe-area .sa-highlight-entry-image { bottom: calc(var(--chat-bottom-safe-area) + var(--chat-bottom-safe-gap)); }
+/* Animation */
+.sa-default-entry-container, .sa-highlight-entry-container .sa-highlight-entry-content, .sa-highlight-entry-container .sa-highlight-entry-image { opacity:1; visibility:visible; transform:translateX(0); transition:opacity .5s, transform .5s linear; }
+.sa-default-entry-container.is-hidden, .sa-highlight-entry-container.is-hidden .sa-highlight-entry-content, .sa-highlight-entry-container.is-hidden .sa-highlight-entry-image { opacity:0; visibility:hidden; transform:translateX(100%); transition:opacity .5s, transform .5s, visibility .5s linear; }
+.sa-highlight-entry-no-thanks-button { background-color:transparent !important; color:#F4FAFD !important; border:2px solid #B3DAF0 !important; margin-top:10px; }
+.sa-highlight-entry-chat-now-button { background-color:#B3DAF0 !important; color:#0E1726 !important; border:0 !important; }
+.sa-highlight-entry-chat-now-button, .sa-highlight-entry-no-thanks-button { border-radius:8px !important; font-size:15px !important; line-height:22px !important; font-weight:600 !important; padding:7px 12px !important; font-family:'Segoe Sans', Tahoma, Geneva, Verdana, sans-serif; }
+.btn-block { display:block; width:100%; text-align:center; }
+.sa-btn { font-family: 'Segoe Sans', Tahoma, Geneva, Verdana, sans-serif; display:inline-flex; align-items:center; justify-content:center; gap:.4375em; font-weight:600 !important; border:.125rem solid transparent; position:relative; border-radius:.125rem; background-color:#0067b8; color:#fff; text-decoration:none; padding:.625rem .75rem; font-size:1rem; line-height:1; cursor:pointer; }
+.sa-btn:hover { text-decoration: underline; }
+.sa-default-entry-text.d-none { display:none !important; }
+/* Add margin-bottom: 8px to all header levels inside msstore-chatonpage */
+.microsoft-client .msstore-chatonpage h1, .microsoft-client .msstore-chatonpage h2, .microsoft-client .msstore-chatonpage h3, .microsoft-client .msstore-chatonpage h4, .microsoft-client .msstore-chatonpage h5, .microsoft-client .msstore-chatonpage h6 { margin-bottom:8px; }
+.microsoft-client .msstore-chatonpage__heading-container .subtitle { margin-top:8px; margin-bottom:8px; }
+.microsoft-client .msstore-chatonpage__input-container { margin-top:16px; }
+@media (max-width:767px){ .msstore-chatonpage__heading-container h1, .msstore-chatonpage__heading-container h2, .msstore-chatonpage__heading-container h3, .msstore-chatonpage__heading-container .subtitle { text-align:center; margin-left:auto; margin-right:auto; } }
+.msstore-chatonpage__pills-container { text-align:center; }
+.msstore-chatonpage__pills-wrapper { display:inline-flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px; width:auto; }
+@media (max-width:480px){ .msstore-chatonpage__pills-wrapper { gap:6px; } }
+/* Consistent layout for header icons (minimized + expanded) */
+.sa-modern-minimize-close { display:flex; align-items:center; justify-content:flex-end; gap:16px; padding-right:16px; }
+.sa-modern-minimize-close button { margin:0; padding:0; background:none; border:none; }
+.sa-modern-new-topic-button-overlay { display:flex; align-items:center; justify-content:center; }
+.sa-modern-minimize-close svg { display:block; }
+
+/* HTML dir style for chat icon and chat window */
+html[dir="rtl"] .dir-rtl { left: 12px !important; right: auto !important}

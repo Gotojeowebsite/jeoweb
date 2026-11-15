@@ -4,19 +4,19 @@
     "type": "webgl",
     "entry_file": "index.html",
     "status": "broken",
-    "elapsed_seconds": 25.664,
+    "elapsed_seconds": 25.752,
     "critical_issues": [
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
+        "url": "http://localhost:8081/play/dogeloader.svg"
       },
       {
         "code": "LOCAL_HTTP_ERROR",
         "message": "Critical local HTTP 404",
         "severity": "critical",
-        "url": "http://localhost:8081/play/dogeloader.svg"
+        "url": "http://localhost:8081/play/play.8d0fc5ba8f0f0562d947.js"
       }
     ],
     "warnings": [
@@ -48,8 +48,8 @@
     "probe": {
       "readyState": "complete",
       "surfaceCount": 1,
-      "bodyTextLength": 18,
-      "bodyTextSample": "who juggles geese?",
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
       "unityLoadingBar": false,
       "unityProgress": "",
       "hasRuffleGlobal": false,
@@ -76,83 +76,11 @@
     }
   },
   {
-    "name": "bad-ice-cream-2",
-    "type": "flash",
-    "entry_file": "index.html",
-    "status": "ok",
-    "elapsed_seconds": 32.217,
-    "critical_issues": [],
-    "warnings": [
-      {
-        "code": "LOCAL_IGNORED_HTTP",
-        "message": "Ignored optional local HTTP 404",
-        "severity": "warning",
-        "url": "http://localhost:8081/js/main.js"
-      },
-      {
-        "code": "EXTERNAL_OPTIONAL",
-        "message": "Optional external request detected",
-        "severity": "warning",
-        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
-      },
-      {
-        "code": "EXTERNAL_OPTIONAL_FAILED",
-        "message": "Optional external request failed",
-        "severity": "warning",
-        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
-      },
-      {
-        "code": "EXTERNAL_OPTIONAL",
-        "message": "Optional external request detected",
-        "severity": "warning",
-        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
-      },
-      {
-        "code": "EXTERNAL_OPTIONAL_FAILED",
-        "message": "Optional external request failed",
-        "severity": "warning",
-        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
-      }
-    ],
-    "probe": {
-      "readyState": "complete",
-      "surfaceCount": 1,
-      "bodyTextLength": 0,
-      "bodyTextSample": "",
-      "unityLoadingBar": false,
-      "unityProgress": "",
-      "hasRuffleGlobal": false,
-      "hasRetroGlobal": false,
-      "canvasHash": "0",
-      "canvasNonzeroPixels": 0,
-      "canvasPixelVariance": 0,
-      "canvasIsWebGL": true,
-      "canvasRAFTicks": 11,
-      "unityInstanceLoaded": false,
-      "ruffleReady": false,
-      "ejsStarted": false,
-      "godotReady": false,
-      "phaserReady": false,
-      "audioContextRunning": false,
-      "audioContextCount": 0,
-      "ejsProgressPct": -1,
-      "constructProgressPct": -1,
-      "constructStarted": false,
-      "phaserProgressPct": -1,
-      "canvasHashFirst": "0",
-      "canvasNonzeroPixelsFirst": 0,
-      "engineExtraWaitMs": 4000,
-      "canvasHashAfterInput": "0",
-      "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 12
-    }
-  },
-  {
     "name": "bad-ice-cream",
     "type": "flash",
     "entry_file": "index.html",
     "status": "ok",
-    "elapsed_seconds": 32.239,
+    "elapsed_seconds": 33.368,
     "critical_issues": [],
     "warnings": [
       {
@@ -175,7 +103,7 @@
       "canvasNonzeroPixels": 0,
       "canvasPixelVariance": 0,
       "canvasIsWebGL": true,
-      "canvasRAFTicks": 11,
+      "canvasRAFTicks": 8,
       "unityInstanceLoaded": false,
       "ruffleReady": false,
       "ejsStarted": false,
@@ -192,7 +120,79 @@
       "engineExtraWaitMs": 4000,
       "canvasHashAfterInput": "0",
       "canvasNonzeroPixelsAfterInput": 0,
-      "canvasRAFTicksAfterInput": 12
+      "canvasRAFTicksAfterInput": 8
+    }
+  },
+  {
+    "name": "bad-ice-cream-2",
+    "type": "flash",
+    "entry_file": "index.html",
+    "status": "ok",
+    "elapsed_seconds": 33.5,
+    "critical_issues": [],
+    "warnings": [
+      {
+        "code": "LOCAL_IGNORED_HTTP",
+        "message": "Ignored optional local HTTP 404",
+        "severity": "warning",
+        "url": "http://localhost:8081/js/main.js"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/check_login.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL",
+        "message": "Optional external request detected",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
+      },
+      {
+        "code": "EXTERNAL_OPTIONAL_FAILED",
+        "message": "Optional external request failed",
+        "severity": "warning",
+        "url": "http://www.nitrome.com/ajax/v1/is_avatar_available.php"
+      }
+    ],
+    "probe": {
+      "readyState": "complete",
+      "surfaceCount": 1,
+      "bodyTextLength": 0,
+      "bodyTextSample": "",
+      "unityLoadingBar": false,
+      "unityProgress": "",
+      "hasRuffleGlobal": false,
+      "hasRetroGlobal": false,
+      "canvasHash": "0",
+      "canvasNonzeroPixels": 0,
+      "canvasPixelVariance": 0,
+      "canvasIsWebGL": true,
+      "canvasRAFTicks": 7,
+      "unityInstanceLoaded": false,
+      "ruffleReady": false,
+      "ejsStarted": false,
+      "godotReady": false,
+      "phaserReady": false,
+      "audioContextRunning": false,
+      "audioContextCount": 0,
+      "ejsProgressPct": -1,
+      "constructProgressPct": -1,
+      "constructStarted": false,
+      "phaserProgressPct": -1,
+      "canvasHashFirst": "0",
+      "canvasNonzeroPixelsFirst": 0,
+      "engineExtraWaitMs": 4000,
+      "canvasHashAfterInput": "0",
+      "canvasNonzeroPixelsAfterInput": 0,
+      "canvasRAFTicksAfterInput": 7
     }
   }
 ]

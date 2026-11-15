@@ -11333,20 +11333,10 @@
       "name": "Bad Ice Cream 2",
       "type": "flash",
       "first_queued_at": 1781444466,
-      "last_attempt_at": 1794154550,
-      "attempts": 18,
-      "reason": "17 candidates all failed",
+      "last_attempt_at": 1794762195,
+      "attempts": 19,
+      "reason": "14 candidates all failed",
       "candidates_tried": [
-        {
-          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
-          "source": "bing",
-          "score": 114,
-          "match_type": "exact",
-          "name_similarity": 0.65,
-          "outcome": "verify_failed",
-          "asset_count": 103,
-          "shape_check": null
-        },
         {
           "url": "https://www.y8.com/games/bad_ice_cream_2",
           "source": "portal-template",
@@ -11374,7 +11364,7 @@
           "match_type": "exact",
           "name_similarity": 0.536,
           "outcome": "verify_failed",
-          "asset_count": 221,
+          "asset_count": 220,
           "shape_check": null
         },
         {
@@ -11388,34 +11378,13 @@
           "shape_check": null
         },
         {
-          "url": "https://www.friv.com/z/games/badicecream2/game.html",
-          "source": "bing",
-          "score": 97,
-          "match_type": "exact",
-          "name_similarity": 0.346,
-          "outcome": "fingerprint_mismatch",
-          "error": "asset overlap=0% below 10% floor",
-          "asset_count": 14,
-          "shape_check": null
-        },
-        {
           "url": "https://www.crazygames.com/c/adventure",
           "source": "portal-template",
           "score": 93,
           "match_type": "exact",
           "name_similarity": 0.505,
           "outcome": "verify_failed",
-          "asset_count": 191,
-          "shape_check": null
-        },
-        {
-          "url": "https://poki.com/en/g/bad-ice-cream",
-          "source": "bing",
-          "score": 91,
-          "match_type": "exact",
-          "name_similarity": 0.344,
-          "outcome": "verify_failed",
-          "asset_count": 219,
+          "asset_count": 195,
           "shape_check": null
         },
         {
@@ -11429,73 +11398,79 @@
           "shape_check": null
         },
         {
-          "url": "https://www.kongregate.com/en/games/nitrome/bad-ice-cream-2",
+          "url": "https://www.merriam-webster.com/dictionary/bad",
           "source": "bing",
-          "score": 42,
+          "score": 15,
           "match_type": "exact",
-          "name_similarity": 0.501,
+          "name_similarity": 0.191,
           "outcome": "verify_failed",
-          "asset_count": 75,
+          "asset_count": 233,
           "shape_check": null
         },
         {
-          "url": "https://www.y9freegames.com/game/bad-ice-cream-2/",
+          "url": "https://genius.com/Michael-jackson-bad-lyrics",
           "source": "bing",
-          "score": 40,
+          "score": 14,
           "match_type": "exact",
-          "name_similarity": 0.397,
-          "outcome": "verify_failed",
-          "asset_count": 362,
+          "name_similarity": 0.16,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 6,
           "shape_check": null
         },
         {
-          "url": "https://badicecream.org/game/bad-ice-cream-2/",
+          "url": "https://music.youtube.com/watch?v=-DlMoJ2V6uk",
           "source": "bing",
-          "score": 40,
+          "score": -996,
           "match_type": "exact",
-          "name_similarity": 0.389,
-          "outcome": "verify_failed",
-          "asset_count": 102,
+          "name_similarity": 0.241,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 126,
           "shape_check": null
         },
         {
-          "url": "https://www.miniplay.com/game/bad-ice-cream-2",
+          "url": "https://en.wikipedia.org/wiki/Bad",
           "source": "bing",
-          "score": 39,
+          "score": -996,
           "match_type": "exact",
-          "name_similarity": 0.365,
-          "outcome": "verify_failed",
-          "asset_count": 175,
+          "name_similarity": 0.253,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 16,
           "shape_check": null
         },
         {
-          "url": "https://www.nitrome.com/html5-games/badicecream2/",
+          "url": "https://en.wikipedia.org/wiki/Bad_(album)",
           "source": "bing",
-          "score": 21,
+          "score": -997,
           "match_type": "exact",
-          "name_similarity": 0.36,
-          "outcome": "verify_failed",
-          "asset_count": 121,
+          "name_similarity": 0.205,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 22,
           "shape_check": null
         },
         {
-          "url": "https://www.nitrome.com/html5-games/badicecream/",
+          "url": "https://www.youtube.com/watch?v=dsUXAEzaC3Q",
           "source": "bing",
-          "score": 20,
+          "score": -998,
           "match_type": "exact",
-          "name_similarity": 0.297,
-          "outcome": "verify_failed",
-          "asset_count": 122,
+          "name_similarity": 0.138,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 157,
           "shape_check": null
         },
         {
-          "url": "https://www.y8.com/games/bad_ice_cream_2/fullscreen",
+          "url": "https://www.youtube.com/watch?v=BtuWAoteRqg",
           "source": "bing",
-          "score": 114,
-          "match_type": "fuzzy",
-          "name_similarity": 0.65,
-          "outcome": "verify_failed",
-          "asset_count": 103,
+          "score": -998,
+          "match_type": "exact",
+          "name_similarity": 0.157,
+          "outcome": "fingerprint_mismatch",
+          "error": "asset overlap=0% below 10% floor",
+          "asset_count": 148,
           "shape_check": null
         },
         {
@@ -11509,67 +11484,59 @@
           "shape_check": null
         },
         {
-          "url": "https://poki.com/en/g/bad-ice-cream-2",
+          "url": "https://www.merriam-webster.com/dictionary/bad",
           "source": "bing",
-          "score": 102,
+          "score": 15,
           "match_type": "fuzzy",
-          "name_similarity": 0.413,
+          "name_similarity": 0.191,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://lindy28ca.itch.io/bad-ice-cream",
-          "source": "itch",
-          "score": 99,
+          "url": "https://genius.com/Michael-jackson-bad-lyrics",
+          "source": "bing",
+          "score": 14,
           "match_type": "fuzzy",
-          "name_similarity": 0.344,
+          "name_similarity": 0.16,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://ctx-112266.itch.io/bad-ice-cream-3310",
-          "source": "itch",
-          "score": 99,
+          "url": "https://music.youtube.com/watch?v=-DlMoJ2V6uk",
+          "source": "bing",
+          "score": -996,
           "match_type": "fuzzy",
-          "name_similarity": 0.31,
+          "name_similarity": 0.241,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://flashplayergames.itch.io/bad-ice-cream",
-          "source": "itch",
-          "score": 99,
+          "url": "https://en.wikipedia.org/wiki/Bad",
+          "source": "bing",
+          "score": -996,
           "match_type": "fuzzy",
-          "name_similarity": 0.325,
+          "name_similarity": 0.253,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://medstudios.itch.io/a-bad-ice-cream-game",
-          "source": "itch",
-          "score": 99,
+          "url": "https://en.wikipedia.org/wiki/Bad_(album)",
+          "source": "bing",
+          "score": -997,
           "match_type": "fuzzy",
-          "name_similarity": 0.31,
+          "name_similarity": 0.205,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://alexgamerplay202981.itch.io/bad-ice-cream-1",
-          "source": "itch",
-          "score": 99,
+          "url": "https://www.youtube.com/watch?v=dsUXAEzaC3Q",
+          "source": "bing",
+          "score": -998,
           "match_type": "fuzzy",
-          "name_similarity": 0.314,
+          "name_similarity": 0.138,
           "outcome": "below_fuzzy_threshold"
         },
         {
-          "url": "https://abraham2022.itch.io/bad-ice-creams-1-2-y-3",
-          "source": "itch",
-          "score": 98,
+          "url": "https://www.youtube.com/watch?v=BtuWAoteRqg",
+          "source": "bing",
+          "score": -998,
           "match_type": "fuzzy",
-          "name_similarity": 0.275,
-          "outcome": "below_fuzzy_threshold"
-        },
-        {
-          "url": "https://aka-sparx.itch.io/bad-ice-cream-fan-remake",
-          "source": "itch",
-          "score": 98,
-          "match_type": "fuzzy",
-          "name_similarity": 0.28,
+          "name_similarity": 0.157,
           "outcome": "below_fuzzy_threshold"
         }
       ],
@@ -11834,6 +11801,6 @@
       "notes": ""
     }
   },
-  "generated_at": 1794154550,
+  "generated_at": 1794762195,
   "count": 48
 }

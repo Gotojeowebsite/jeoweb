@@ -1,0 +1,3 @@
+dynamic-price{margin-inline-end:-0.25em}
+body[class*="reimagine-"] dynamic-price{display:contents}
+body:not([class*="reimagine-"]) .badge dynamic-price,body:not([class*="reimagine-"]) .link-group dynamic-price,body:not([class*="reimagine-"]) .store-pricing dynamic-price{display:inline-block}

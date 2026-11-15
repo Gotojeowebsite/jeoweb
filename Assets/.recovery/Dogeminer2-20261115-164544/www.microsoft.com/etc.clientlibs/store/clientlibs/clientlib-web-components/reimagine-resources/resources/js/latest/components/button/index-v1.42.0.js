@@ -1,0 +1,1 @@
+import"../../tag.const-v1.42.0.js";import{B as t,n as o}from"../../util1-v1.42.0.js";import"../../fill-color.mixin-v1.42.0.js";import"../../pagination-item.const-v1.42.0.js";import"../../util7-v1.42.0.js";import"../../secondary-nav-item.const-v1.42.0.js";export{t as Button,o as name};

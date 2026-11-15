@@ -1,0 +1,6 @@
+.store-pricing-badge .badge{padding:0rem .5rem .2rem .25rem;border-radius:.25rem}
+.content-footer-top-slot .store-pricing-badge dynamic-price,.banner-content-footer-top-slot .store-pricing-badge dynamic-price{font-size:.75rem}
+.content-footer-top-slot .store-pricing-badge:not(:only-of-type),.banner-content-footer-top-slot .store-pricing-badge:not(:only-of-type){margin-bottom:.625rem}
+.content-footer-top-slot .store-pricing-badge .badge,.banner-content-footer-top-slot .store-pricing-badge .badge{font-size:.75rem;font-weight:600;padding-top:.0625rem;margin-bottom:.625rem}
+.content-footer-top-slot dynamic-price,.banner-content-footer-top-slot dynamic-price{font-size:.875rem;font-weight:600}
+.banner-content-footer-top-slot dynamic-price::part(discounted-card-price){font-size:2rem}

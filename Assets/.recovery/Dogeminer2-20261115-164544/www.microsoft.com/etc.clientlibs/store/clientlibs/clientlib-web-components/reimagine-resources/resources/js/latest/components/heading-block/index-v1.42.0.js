@@ -1,0 +1,1 @@
+import"../../tag.const-v1.42.0.js";import{H as s,n as a}from"../../util6-v1.42.0.js";import"../badge/index-v1.42.0.js";import"../media/index-v1.42.0.js";import"../../secondary-nav-item.const-v1.42.0.js";export{s as HeadingBlock,a as name};

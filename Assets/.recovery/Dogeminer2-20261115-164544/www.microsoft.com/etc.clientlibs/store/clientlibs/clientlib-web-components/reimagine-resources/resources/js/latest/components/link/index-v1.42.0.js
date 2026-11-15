@@ -1,0 +1,1 @@
+import"../../tag.const-v1.42.0.js";import"../../link.styles-v1.42.0.js";import"../../i18nMixin-v1.42.0.js";import"../../util1-v1.42.0.js";import{L as i,n as s}from"../../util10-v1.42.0.js";import"../../util7-v1.42.0.js";export{i as Link,s as name};

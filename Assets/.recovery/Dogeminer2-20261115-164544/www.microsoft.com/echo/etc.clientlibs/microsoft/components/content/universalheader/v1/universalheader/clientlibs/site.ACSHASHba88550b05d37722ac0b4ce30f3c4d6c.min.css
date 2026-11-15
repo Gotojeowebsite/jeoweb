@@ -1,0 +1,6 @@
+[class*="z-"]{position:relative}
+#uhfSkipToMain,.m-skip-to-main,.uhf-skip-link{z-index:1500 !important}
+.context-uhf{position:relative;z-index:1030}
+uhf-dropdown .uhf-dropdown-menu,uhf-search .uhf-autosuggest{z-index:1030 !important}
+@media(forced-colors:active){.context-uhf ol li,.context-uhf ul li{forced-color-adjust:unset}
+}
